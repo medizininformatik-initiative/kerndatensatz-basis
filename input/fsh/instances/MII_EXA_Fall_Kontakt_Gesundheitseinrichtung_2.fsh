@@ -10,10 +10,10 @@ Usage: #example
 * class = $v3-ActCode#IMP "inpatient encounter"
 * type[Kontaktebene] = $Kontaktebene#abteilungskontakt "Abteilungskontakt"
 * serviceType.coding[Fachabteilungsschluessel] = $Fachabteilungsschluessel#0100 "Innere Medizin"
-* subject.reference = "Patient/P_0000000"
+* subject = Reference(mii-exa-person-patient-minimal)
 * period.start = "2020-11-02T03:00:00+00:00"
 * period.end = "2020-11-02T03:59:59+00:00"
-* diagnosis.condition.reference = "Condition/D_0000001"
+* diagnosis.condition = Reference(mii-exa-diagnose-condition-minimal)
 * diagnosis.use.coding[Diagnosetyp] = $KontaktDiagnoseProzedur#treatment-diagnosis "Behandlungsrelevante Diagnosen"
 * diagnosis.use.coding[DiagnosesubTyp] = $KontaktDiagnoseProzedur#department-main-diagnosis "Abteilung Hauptdiagnose"
 * serviceProvider.identifier.system = "http://medizininformatik-initiative.de/fhir/NamingSystem/Abteilungsidentifikator/MusterKrankenhaus"

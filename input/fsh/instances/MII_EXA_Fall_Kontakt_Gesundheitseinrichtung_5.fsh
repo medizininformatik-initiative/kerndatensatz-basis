@@ -5,5 +5,5 @@ Usage: #example
 * insert MetaProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)
 * status = #onleave
 * class = $v3-ActCode#IMP "inpatient encounter"
-* subject.reference = "Patient/mii-exa-test-data-patient-1"
+* subject = Reference(mii-exa-person-patient-minimal)
 * period.start = "2024-06-14"

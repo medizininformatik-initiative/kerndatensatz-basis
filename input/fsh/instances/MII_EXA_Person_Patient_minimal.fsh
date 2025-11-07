@@ -30,4 +30,4 @@ Usage: #example
 * gender.extension.url = "http://fhir.de/StructureDefinition/gender-amtlich-de"
 * gender.extension.valueCoding = $gender-amtlich-de#D "divers"
 * birthDate = "1998-09-19"
-* managingOrganization = Reference(Organization/Charite-Universitaetsmedizin-Berlin)
+// * managingOrganization = Reference(Organization/Charite-Universitaetsmedizin-Berlin)

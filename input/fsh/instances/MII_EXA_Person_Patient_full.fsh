@@ -45,4 +45,4 @@ Usage: #example
 * address.state = "DE-BE"
 * address.postalCode = "10178"
 * address.country = "DE"
-* managingOrganization = Reference(Organization/Charite-Universitaetsmedizin-Berlin)
+// * managingOrganization = Reference(Organization/Charite-Universitaetsmedizin-Berlin)

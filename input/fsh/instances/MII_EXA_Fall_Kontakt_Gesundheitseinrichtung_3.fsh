@@ -7,4 +7,4 @@ Usage: #example
 * extension[plannedEndDate].valueDateTime = "2024-07-17"
 * status = #planned
 * class = $v3-ActCode#IMP "inpatient encounter"
-* subject.reference = "Patient/mii-exa-test-data-patient-1"
+* subject = Reference(mii-exa-person-patient-minimal)

@@ -9,10 +9,10 @@ Usage: #example
 * identifier.value = "F_0000002"
 * class = $v3-ActCode#IMP "inpatient encounter"
 * type[Kontaktebene] = $Kontaktebene#einrichtungskontakt "Einrichtungskontakt"
-* subject.reference = "Patient/2b9d3335-70df-4055-b33d-27a55fe00855"
+* subject = Reference(mii-exa-person-patient-minimal)
 * serviceProvider.identifier.system = "http://medizininformatik-initiative.de/fhir/NamingSystem/Einrichtungsidentifikator/MusterKrankenhaus"
 * serviceProvider.identifier.value = "260123451_MusterKrankenhaus"
-* diagnosis.condition.reference = "Condition/e6b6895c-549b-47c5-a842-41100761385d"
+* diagnosis.condition = Reference(mii-exa-diagnose-condition-minimal)
 * diagnosis.use.coding[Diagnosetyp] = $KontaktDiagnoseProzedur#treatment-diagnosis "Behandlungsrelevante Diagnosen"
 * diagnosis.use.coding[DiagnosesubTyp] = $diagnosis-role#DD "Discharge diagnosis"
 * hospitalization.admitSource = $Aufnahmeanlass#N

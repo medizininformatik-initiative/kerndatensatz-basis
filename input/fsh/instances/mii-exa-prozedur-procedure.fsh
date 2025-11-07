@@ -9,5 +9,6 @@ Usage: #example
 * code.coding[+].version = "2020"
 * code.coding[=] = $ops#5-470 "Appendektomie"
 * performedDateTime = "2020-04-23"
-* subject = Reference(Patient/example)
+* subject = Reference(mii-exa-person-patient-minimal)
+* encounter = Reference(mii-exa-fall-kontakt-gesundheitseinrichtung-1)
 * bodySite.coding[snomed-ct] = $sct-no-ver#66754008 "Appendix structure (body structure)"

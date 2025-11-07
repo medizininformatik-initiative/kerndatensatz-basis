@@ -7,4 +7,4 @@ Usage: #example
 //* category[todesDiagnose].coding[loinc].display = "Cause of death"
 * code.coding[icd10-who] = $icd-10#R96.1
 * code.coding[icd10-who].version = "2019"
-* subject = Reference(Patient/example)
+* subject = Reference(mii-exa-person-patient-minimal)

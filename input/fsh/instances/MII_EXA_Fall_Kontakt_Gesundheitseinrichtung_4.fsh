@@ -8,4 +8,4 @@ Usage: #example
 * type[Kontaktebene] = $Kontaktebene#abteilungskontakt
 * serviceType.coding[ErweiterterFachabteilungsschluessel] = $FachabteilungsschluesselErweitertCS#2315 "Orthopädie/Schwerpunkt Chirurgie"
 * period.start = "2024-06-14"
-* subject.reference = "Patient/mii-exa-test-data-patient-1"
+* subject = Reference(mii-exa-person-patient-minimal)
