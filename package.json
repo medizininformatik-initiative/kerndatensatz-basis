@@ -1,0 +1,38 @@
+{
+  "name": "de.medizininformatikinitiative.kerndatensatz.basis",
+  "version": "2026.0.0-dev.1",
+  "description": "Medizininformatik Initiative - Modul Basis",
+  "author": "juliansass",
+  "fhirVersions": [
+    "4.0.1"
+  ],
+  "keywords": [
+    "MII",
+    "KDS",
+    "Person",
+    "Patient",
+    "Diagnose",
+    "Prozedur",
+    "Fall"
+  ],
+  "license": "CC-BY-4.0",
+  "homepage": "https://www.medizininformatik-initiative.de/",
+  "directories" : {
+    "lib" : "package",
+    "example" : "examples"
+  },
+  "title": "MII IG Basis",
+  "maintainers" : [
+    {
+      "name" : "Medizininformatik Initiative",
+      "url" : "https://www.medizininformatik-initiative.de/"
+    }
+  ],
+  "canonicals": "https://www.medizininformatik-initiative.de/fhir/modul-basis/ImplementationGuide/mii-ig-basis",
+  "jurisdiction": "http://unstats.un.org/unsd/methods/m49/m49.htm#276",
+  "dependencies": {
+    "hl7.fhir.r4.core": "4.0.1",
+    "de.basisprofil.r4": "1.5.x",
+    "de.medizininformatikinitiative.kerndatensatz.meta": "2025.0.x"
+  }
+}
