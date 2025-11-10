@@ -1,5 +1,6 @@
 Instance: mii-exa-fall-kontakt-gesundheitseinrichtung-2
 InstanceOf: mii-pr-fall-kontakt-gesundheitseinrichtung
+Description: "Encounter: Abteilungskontakt mit Angabe Station, Zimmer und Bett"
 Usage: #example
 * insert TestDataLabel
 * insert MetaProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)

@@ -1,6 +1,8 @@
 Instance: mii-exa-diagnose-multiple-kodierungen
 InstanceOf: MII_PR_Diagnose_Condition
 Usage: #example
+Description: "Condition: Diagnose mit mehreren Codings (ICD-10-GM, Alpha-ID, Orpha-Code)"
+* insert TestDataLabel
 * insert MetaProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose)
 * extension[Feststellungsdatum].valueDateTime = "2020-02-13"
 * clinicalStatus = $condition-clinical#active

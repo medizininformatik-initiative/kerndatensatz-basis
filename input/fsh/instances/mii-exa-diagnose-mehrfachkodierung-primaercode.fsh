@@ -1,6 +1,8 @@
 Instance: mii-exa-diagnose-mehrfachkodierung-primaercode
 InstanceOf: MII_PR_Diagnose_Condition
 Usage: #example
+Description: "Condition: Diagnose ICD-10-GM mit Extension für Diagnosesicherheit, Seitenlokalisation und Mehrfachkodierung als Primärcode"
+* insert TestDataLabel
 * insert MetaProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose)
 * clinicalStatus = $condition-clinical#active
 * verificationStatus = $condition-ver-status#confirmed

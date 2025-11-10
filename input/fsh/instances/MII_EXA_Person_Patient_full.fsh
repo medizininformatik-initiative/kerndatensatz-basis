@@ -1,6 +1,7 @@
 Instance: mii-exa-person-patient-full
 InstanceOf: MII_PR_Person_Patient
 Usage: #example
+Description: "Patient: Umfangreiches Beispiel"
 * insert TestDataLabel
 * insert MetaProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient)
 * identifier[0].use = #usual

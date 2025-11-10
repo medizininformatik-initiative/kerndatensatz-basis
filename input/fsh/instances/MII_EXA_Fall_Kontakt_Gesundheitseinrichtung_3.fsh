@@ -1,6 +1,7 @@
 Instance: mii-exa-fall-kontakt-gesundheitseinrichtung-3
 InstanceOf: mii-pr-fall-kontakt-gesundheitseinrichtung
 Usage: #example
+Description: "Encounter: Geplanter Kontakt mit Extensions für geplantes Start- und Enddatum"
 * insert TestDataLabel
 * insert MetaProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)
 * extension[plannedStartDate].valueDateTime = "2024-07-12"

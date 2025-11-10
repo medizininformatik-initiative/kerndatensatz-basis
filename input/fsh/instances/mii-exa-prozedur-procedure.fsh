@@ -1,6 +1,7 @@
 Instance: mii-exa-prozedur-procedure
 InstanceOf: MII_PR_Prozedur_Procedure
 Usage: #example
+Description: "Procedure: Prozedur mit OPS- und SNOMED-Coding"
 * insert TestDataLabel
 * insert MetaProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure)
 * status = #completed

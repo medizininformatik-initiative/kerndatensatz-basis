@@ -1,6 +1,7 @@
 Instance: mii-exa-fall-kontakt-gesundheitseinrichtung-5
 InstanceOf: mii-pr-fall-kontakt-gesundheitseinrichtung
 Usage: #example
+Description: "Encounter: Kontakt mit Status 'onleave'"
 * insert TestDataLabel
 * insert MetaProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)
 * status = #onleave

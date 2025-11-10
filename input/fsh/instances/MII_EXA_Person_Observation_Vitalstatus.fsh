@@ -1,6 +1,7 @@
 Instance: mii-exa-person-observation-vitalstatus
 InstanceOf: MII_PR_Person_Vitalstatus
 Usage: #example
+Description: "Observation: Vitalstatus"
 * insert TestDataLabel
 * insert MetaProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus)
 * status = #final

@@ -1,6 +1,7 @@
 Instance: mii-exa-person-patient-pseudonymisiert
 InstanceOf: MII_PR_Person_PatientPseudonymisiert
 Usage: #example
+Description: "Patient: Pseudonymisierter Patient mit maskiertem Versichertenidentifer"
 * insert TestDataLabel
 * insert MetaProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert)
 * identifier[PseudonymisierterIdentifier].type = $v3-ObservationValue#PSEUDED

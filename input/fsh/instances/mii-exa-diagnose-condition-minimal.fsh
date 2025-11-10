@@ -1,6 +1,8 @@
 Instance: mii-exa-diagnose-condition-minimal
 InstanceOf: MII_PR_Diagnose_Condition
 Usage: #example
+Description: "Condition: Diagnose mit ICD-10-GM und SNOMED Coding"
+* insert TestDataLabel
 * insert MetaProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose)
 * clinicalStatus = $condition-clinical#active
 * code.coding[0].version = "2020"

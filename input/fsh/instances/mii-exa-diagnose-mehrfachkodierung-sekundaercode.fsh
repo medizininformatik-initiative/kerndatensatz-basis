@@ -1,6 +1,8 @@
 Instance: mii-exa-diagnose-mehrfachkodierung-sekundaercode
 InstanceOf: MII_PR_Diagnose_Condition
 Usage: #example
+Description: "Condition: Diagnose ICD-10-GM mit Extension für Mehrfachkodierung als Sekundärcode und Referenz auf Primärcode Condition"
+* insert TestDataLabel
 * insert MetaProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose)
 * extension.url = "http://hl7.org/fhir/StructureDefinition/condition-related"
 * extension.valueReference = Reference(mii-exa-diagnose-mehrfachkodierung-primaercode)
