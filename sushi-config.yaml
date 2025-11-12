@@ -8,13 +8,14 @@ canonical: https://www.medizininformatik-initiative.de/fhir/modul-basis
 name: MII_IG_Basis
 title: MII Implementation Guide Kerndatensatz Basis
 description: Implementation Guide für die Basismodule Person, Diagnose, Prozedur und Fall
-status: draft # draft | active | retired | unknown
+status: active # draft | active | retired | unknown
 version: 2026.0.0-dev.1
 packageId: de.medizininformatikinitiative.kerndatensatz.basis
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2019+
 releaseLabel: ci-build
 license: CC-BY-4.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
+date: 2025-11-11
 jurisdiction: urn:iso:std:iso:3166#DE "Germany" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:
   name: Medizininformatik Initiative
@@ -45,14 +46,56 @@ dependencies:
 # with supported extensions (e.g., .md/.xml) will be treated as
 # sub-pages.
 #
-# pages:
-#   index.md:
-#     title: Example Home
-#   implementation.xml:
-#   examples.xml:
-#     title: Examples Overview
-#     simpleExamples.xml:
-#     complexExamples.xml:
+pages:
+  index.md:
+    title: Home
+  
+  guidance.md:
+    title: Guidance
+    general-guidance.md:
+      title: General Guidance
+    researcher-guidance.md:
+      title: Guidance for Researchers
+    implementer-guidance.md:
+      title: Guidance for Implementers
+    datasets-and-descriptions.md:
+      title: Datasets and Descriptions
+    uml-diagrams.md:
+      title: UML Diagrams
+
+  conformance.md:
+    title: Conformance
+    general-requirements.md:
+      title: General Requirements
+    must-support.md:
+      title: Must Support
+    missing-data.md:
+      title: Handling Missing Data
+
+  profiles-and-extensions.md:
+    title: Profiles and Extensions
+  search-parameters-and-operations.md:
+    title: Search Parameters and Operations
+  terminology.md:
+    title: Terminology
+  capability-statements.md:
+    title: Capability Statements
+  logical-models.md:
+    title: Logical Models
+  examples.md:
+    title: Examples
+
+  downloads.md:
+    title: Downloads
+
+  version-history.md:
+    title: Version History
+    changes.md:
+      title: Change Log
+
+  ImplementationGuide-mii-ig-basis.md:
+    title: MII ImplementationGuide Resource
+
 #
 #
 # The parameters property represents IG.definition.parameter. Rather
@@ -118,7 +161,30 @@ parameters:
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
   Home: index.html
-  Artifacts: artifacts.html
+  Guidance:
+    Guidance: guidance.html
+    General Guidance: general-guidance.html
+    Guidance for Researchers: researcher-guidance.html
+    Guidance for Implementers: implementer-guidance.html
+    Datasets and Descriptions: datasets-and-descriptions.html
+    UML Diagrams: uml-diagrams.html
+  Conformance:
+    Conformance: conformance.html
+    General Requirements: general-requirements.html
+    Must Support: must-support.html
+    Handling Missing Data: missing-data.html
+  Artifacts:
+    Artifacts Summary: artifacts.html
+    Profiles and Extensions: profiles-and-extensions.html
+    Terminology: terminology.html
+    Capability Statements: capability-statements.html
+    Search Parameters and Operations: search-parameters-and-operations.html
+    Logical Models: logical-models.html
+    Examples: examples.html
+  Downloads: downloads.html
+  Version History:
+    Version History: version-history.html
+    Change Log: changes.html
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
 # │  Uncomment the properties below to configure additional properties on the ImplementationGuide  │
