@@ -1,0 +1,143 @@
+@startuml
+scale 0.7
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam packageStyle rectangle
+left to right direction
+
+' ======================================================
+' LEFT COLUMN — MODUL PERSON
+' ======================================================
+package "Modul Person" {
+    class Person {
+    }
+
+    class Patient {
+      +Patienten-Identifikator – PID: Identifier
+      +Patienten-Identifikator Kontext: CodeableConcept
+    }
+
+}
+
+' ======================================================
+' LEFT COLUMN — MODUL STUDIE
+' ======================================================
+package "Modul Studie" {
+
+    class ProbandIn {
+      +Bezeichnung der Studie: Identifier
+      +Subjekt-Identifizierungscode – SIC: Identifier
+      +Rechtsgrundlage: Reference
+      +Beginn Teilnahme: dateTime
+      +Ende Teilnahme: dateTime
+      +Status Teilnahme: code
+    }
+}
+
+' ======================================================
+' CENTER COLUMN — MODUL DIAGNOSE
+' ======================================================
+package "Modul Diagnose" {
+
+    class Diagnose {
+      +Körperstelle: CodeableConcept
+      +Freitextbeschreibung: string
+      +Diagnoseart: string
+      +KlinischerStatus: CodeableConcept
+      +Feststellungsdatum: dateTime
+      +Dokumentationsdatum: dateTime
+    }
+
+    together {
+      class KlinischRelevanterZeitraum
+      class Zeitraum {
+        +von: dateTime
+        +bis: dateTime
+      }
+      class Lebensphase {
+        +von: code
+        +bis: code
+      }
+    }
+
+    ' ---- Codesystem classes (inside Modul Diagnose) ----
+    together {
+      class ICD10GM {
+        +Diagnosekode: code
+        +Ätiologiekode: code
+        +Manifestationskode: code
+        +Ausrufezeichencode: code
+        +Diagnosesicherheit: code
+        +Seitenlokalisation: code
+      }
+
+      class ALPHAID {
+        +Diagnosekode: code
+      }
+
+      class ORPHANET {
+        +Diagnosekode: code
+      }
+
+      class SNOMED {
+        +Diagnosekode: code
+      }
+
+      class WeitereKodesysteme {
+        +Diagnosekode: code
+      }
+    }
+}
+
+' ======================================================
+' RIGHT COLUMN — MODUL FALL
+' ======================================================
+package "Modul Fall" {
+
+    together {
+      class Einrichtungskontakt {
+        +Kontakt-Ebene: CodeableConcept
+        +Kontakt-Klasse: CodeableConcept
+        +Patientenidentifikator: Reference
+        +Aufnahmenummer: Identifier
+        +Aufnahmeanlass: CodeableConcept
+        +Aufnahmegrund: CodeableConcept
+        +BeginnDatum: dateTime
+        +Enddatum: dateTime
+        +Entlassungsgrund: CodeableConcept
+      }
+
+      class Versorgungsstellenkontakt {
+        +Kontakt-Ebene: CodeableConcept
+        +Kontakt-Klasse: CodeableConcept
+        +Patientenidentifikator: Reference
+        +Aufnahmenummer: Identifier
+        +BeginnDatum: dateTime
+        +Enddatum: dateTime
+      }
+    }
+}
+
+' ======================================================
+' RELATIONSHIPS (unchanged)
+' ======================================================
+
+Person "1" -- "0..*" Diagnose
+Patient "0..1" --> "1..*" Person
+ProbandIn "0..1" --> "1..*" Person
+Patient "1" -- "0..*" Einrichtungskontakt
+
+Diagnose "1" *-- "0..*" KlinischRelevanterZeitraum
+KlinischRelevanterZeitraum <|-- Zeitraum
+KlinischRelevanterZeitraum <|-- Lebensphase
+
+Diagnose "0..*" <-- "0..*" Einrichtungskontakt
+Diagnose "0..*" --> "0..1" Versorgungsstellenkontakt
+
+Diagnose "1" *-- "0..1" SNOMED
+Diagnose "1" *-- "0..1" ALPHAID
+Diagnose "1" *-- "0..1" ORPHANET
+Diagnose "1" *-- "0..1" WeitereKodesysteme
+Diagnose "1" *-- "0..1" ICD10GM
+
+@enduml
