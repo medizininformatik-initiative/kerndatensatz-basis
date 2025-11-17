@@ -1,6 +1,7 @@
 Logical: MII_LM_Fall
 Parent: Element
 Id: mii-lm-fall
+Title: "MII LM Fall"
 Description: "Logische Repräsentation des Basismoduls Fall"
 * ^url = "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/LogicalModel/Fall"
 * insert PR_CS_VS_Version

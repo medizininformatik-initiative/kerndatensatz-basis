@@ -7,21 +7,21 @@ This implementation guide describes the FHIR representation of the core dataset 
 This implementation guide is intended for:
 
 <div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
-<h5 style="color: #406A99; margin-top: 0;">Researchers</h5>
-<p>Scientists using MII data for medical research</p>
-<ul>
-  <li>→ See <a href="researcher-guidance.html">Researcher Guidance</a> for guidance, descriptions and sample data for analysis</li>
-  <li>→ See <a href="logical-models.html">Logical Models</a> for data structure overviews</li>
-</ul>
-</div>
-
-<div style="background-color: #F0F8E8; border-left: 5px solid #91BC3D; padding: 15px; margin: 10px 0;">
-<h5 style="color: #66727D; margin-top: 0;">Data Integration Centers (DIZ)</h5>
-<p>Staff responsible for data management and integration, software developers and system architects implementing FHIR-based solutions</p>
+<h5 style="color: #406A99; margin-top: 0;">Implementers</h5>
+<p>Implementers responsible for data management and integration in Data Integration Centers (DIC), software developers and system architects implementing FHIR-based solutions</p>
 <ul>
   <li>→ See <a href="logical-models.html">Logical Models</a> for conceptual data models</li>
   <li>→ See <a href="uml-diagrams.html">UML Diagrams</a> for visual representations</li>
   <li>→ See <a href="artifacts.html">FHIR Artifacts</a> for technical specifications</li>
+</ul>
+</div>
+
+<div style="background-color: #F0F8E8; border-left: 5px solid #91BC3D; padding: 15px; margin: 10px 0;">
+<h5 style="color: #66727D; margin-top: 0;">Researchers</h5>
+<p>Scientists using MII data for medical research</p>
+<ul>
+  <li>→ See <a href="researcher-guidance.html">Researcher Guidance</a> for guidance, descriptions and sample data for analysis</li>
+  <li>→ See <a href="logical-models.html">Logical Models</a> for data structure overviews</li>
 </ul>
 </div>
 
