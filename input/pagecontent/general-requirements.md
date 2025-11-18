@@ -24,15 +24,52 @@ All elements of the core dataset, adapted to the details and requirements for th
 
 Requirements in this specification are indicated by the following keywords written in capital letters based on [RFC-2119](https://datatracker.ietf.org/doc/html/rfc2119):
 
-| German                       | English              | Meaning |
-|------------------------------|----------------------|---------|
-| MUSS / MÜSSEN                | MUST / SHALL         | Required, mandatory |
-| DARF NICHT / DÜRFEN NICHT    | MUST NOT / SHALL NOT | Prohibited |
-| VERPFLICHTEND                | REQUIRED             | Required by specification |
-| SOLLTE / SOLLTEN             | SHOULD               | Recommended |
-| SOLLTE NICHT / SOLLTEN NICHT | SHOULD NOT           | Not recommended |
-| EMPFOHLEN                    | RECOMMENDED          | Recommended |
-| KANN / OPTIONAL              | MAY                  | Optional |
+<table style="border-collapse: collapse; width: 100%;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">German</th>
+      <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">English</th>
+      <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 8px;">MUSS / MÜSSEN</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">MUST / SHALL</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">Required, mandatory</td>
+    </tr>
+    <tr style="background-color: #f9f9f9;">
+      <td style="border: 1px solid #ddd; padding: 8px;">DARF NICHT / DÜRFEN NICHT</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">MUST NOT / SHALL NOT</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">Prohibited</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 8px;">VERPFLICHTEND</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">REQUIRED</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">Required by specification</td>
+    </tr>
+    <tr style="background-color: #f9f9f9;">
+      <td style="border: 1px solid #ddd; padding: 8px;">SOLLTE / SOLLTEN</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">SHOULD</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">Recommended</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 8px;">SOLLTE NICHT / SOLLTEN NICHT</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">SHOULD NOT</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">Not recommended</td>
+    </tr>
+    <tr style="background-color: #f9f9f9;">
+      <td style="border: 1px solid #ddd; padding: 8px;">EMPFOHLEN</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">RECOMMENDED</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">Recommended</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 8px;">KANN / OPTIONAL</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">MAY</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">Optional</td>
+    </tr>
+  </tbody>
+</table>
 
 ### Claiming Conformance to MII Profiles
 
