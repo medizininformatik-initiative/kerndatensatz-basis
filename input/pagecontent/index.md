@@ -40,7 +40,7 @@ The module includes:
 **Treatment Case Module**  
 
 The module includes:
-* Representation of encounters (stays and visits) between patients and healthcare facilities ([Encounter](StructureDefinition-mii-pr-fall-kontaktgesundheitseinrichtung.html))
+* Representation of encounters (stays and visits) between patients and healthcare facilities ([Encounter](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html))
 
 **Diagnosis Module**
 

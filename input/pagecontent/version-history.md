@@ -17,12 +17,6 @@ Starting with version 2024.0.0, the MII Kerndatensatz follows a **Calendar Versi
 
 * **[Change Log](changes.html)** - Detailed change log documenting all modifications across versions, organized by module (Person, Treatment Case, Diagnosis, Procedure)
 
-### Previous Versions
-
-Previous published versions of this Implementation Guide are available at:
-
-* **[Current Published Version](https://www.medizininformatik-initiative.de/fhir/core/modul-person/)** - Latest stable release
-
 ---
 
 For information about downloading this and previous versions, see the [Downloads](downloads.html) page.
