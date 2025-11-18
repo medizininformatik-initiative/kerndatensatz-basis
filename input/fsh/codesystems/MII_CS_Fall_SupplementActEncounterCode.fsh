@@ -1,5 +1,6 @@
 CodeSystem: MII_CS_Fall_SupplementActEncounterCode
 Id: mii-cs-fall-supplement-act-encounter-code
+Title: "MII CS Fall Supplement ActEncounterCode"
 Description: "CodeSystem Supplement für ActEncounterCode"
 * ^url = "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/CodeSystem/SupplementActEncounterCode"
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"

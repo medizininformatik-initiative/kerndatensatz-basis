@@ -1,5 +1,6 @@
 CodeSystem: MII_CS_Diagnose_Lebensphase_Supplement_SNOMED
 Id: mii-cs-diagnose-lebensphase-supplement-snomed
+Title: "MII CS Diagnose Lebensphase Supplement SNOMED"
 Description: "CodeSystem Supplement mit Definitionen zu den SNOMED-Konzepten für Lebensphasen."
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
 * ^url = "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/CodeSystem/mii-cs-diagnose-lebensphase-supplement-snomed"
