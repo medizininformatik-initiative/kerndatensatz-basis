@@ -1,6 +1,6 @@
 ### Introduction
 
-This implementation guide describes the FHIR representation of the core dataset (Kerndatensatz) base modules of the Medical Informatics Initiative (Medizininformatik-Initiative, MII). The specification covers the modules Person, Treatment Case, Diagnosis and Procedure. The MII core dataset aims to enable secondary use of routine clinical data in research.
+This implementation guide describes the FHIR representation of the core dataset (CDS) base modules of the Medical Informatics Initiative (MII). The specification covers the modules Person, Treatment Case, Diagnosis and Procedure. The MII core dataset aims to enable secondary use of routine clinical data in research.
 
 #### Target Audience
 
@@ -26,6 +26,11 @@ This implementation guide is intended for:
 </div>
 
 ### Background
+
+<div style="clear: both;">
+  <img src="2025-06-12_en_KDS-Abb_1.png" alt="MII Core Dataset Overview" style="display: block; max-width: 50%; height: auto; margin: 20px 0 10px 0;" />
+  <p style="text-align: left; font-style: italic; color: #666; margin-top: 0;">MII Core Dataset Modules</p>
+</div>
 
 #### Module Overview
 

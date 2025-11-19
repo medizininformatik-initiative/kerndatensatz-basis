@@ -3,14 +3,14 @@
 # │  used properties are included. For a list of all supported properties and their functions,     │
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: mii-ig-basis
-canonical: https://www.medizininformatik-initiative.de/fhir/modul-basis
-name: MII_IG_Basis
-title: MII Implementation Guide Kerndatensatz Basis
-description: Implementation Guide für die Basismodule Person, Diagnose, Prozedur und Fall
+id: mii-ig-base
+canonical: https://www.medizininformatik-initiative.de/fhir/modul-base
+name: MII_IG_Base
+title: MII Implementation Guide Core Dataset Base
+description: Implementation Guide for the Core Dataset Base Modules Person, Diagnosis, Procedure, and Treatment Case
 status: active # draft | active | retired | unknown
 version: 2026.0.0-dev.1
-packageId: de.medizininformatikinitiative.kerndatensatz.basis
+packageId: de.medizininformatikinitiative.kerndatensatz.base
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2019+
 releaseLabel: ci-build
@@ -18,8 +18,8 @@ license: CC-BY-4.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
 date: 2025-11-11
 jurisdiction: urn:iso:std:iso:3166#DE "Germany" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:
-  name: Medizininformatik Initiative
-  url: https://www.medizininformatik-initiative.de/
+  name: Medical Informatics Initiative (MII)
+  url: https://www.medizininformatik-initiative.de/en
   # email: test@example.org
 
 # The dependencies property corresponds to IG.dependsOn. The key is the
@@ -91,9 +91,9 @@ pages:
   version-history.md:
     title: Version History
     changes.md:
-      title: Change Log
+      title: Changelog
 
-  ImplementationGuide-mii-ig-basis.md:
+  ImplementationGuide-mii-ig-base.md:
     title: MII ImplementationGuide Resource
 
 #
@@ -112,6 +112,12 @@ parameters:
     - input/predefined-resources
   path-pages:
     - input/intro-notes # Custom introductory notes
+  i18n-default-lang: en # Default language
+  i18n-lang:
+    - de # Additional languages
+  translation-sources:
+    - input/translations/de # Path to German translations
+  igs-logo: MII_Logo_rgb.jpg # MII logo for the IG
   special-url:
     - https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/CapabilityStatement/metadata
     - https://www.medizininformatik-initiative.de/fhir/core/modul-fall/CapabilityStatement/metadata
@@ -186,7 +192,7 @@ menu:
   Downloads: downloads.html
   Version History:
     Version History: version-history.html
-    Change Log: changes.html
+    Changelog: changes.html
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
 # │  Uncomment the properties below to configure additional properties on the ImplementationGuide  │

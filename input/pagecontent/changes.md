@@ -1,4 +1,4 @@
-This page documents the changes and updates across versions of the MII Implementation Guide Kerndatensatz Basis. This consolidated changelog combines release notes from all four base modules: Person, Treatment Case (Fall), Diagnosis (Diagnose), and Procedure (Prozedur).
+This page documents the changes and updates across versions of the MII Implementation Guide Kerndatensatz Basis. This consolidated changelog combines release notes from four base modules: Person, Treatment Case, Diagnosis, and Procedure.
 
 ---
 
