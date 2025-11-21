@@ -1,6 +1,4 @@
-Logical models provide a conceptual view of the data structures defined in this implementation guide. They represent the data elements and their relationships independent of the FHIR resource structure, making them easier to understand for domain experts and researchers.
-
-For a complete list of all logical models, see the [Logical Models Overview](logical-models.html).
+Logical models provide a conceptual view of the data structures defined in this implementation guide. They represent the data elements and their relationships independent of the FHIR resource structure.
 
 The following logical models are defined for the MII core dataset base modules:
 

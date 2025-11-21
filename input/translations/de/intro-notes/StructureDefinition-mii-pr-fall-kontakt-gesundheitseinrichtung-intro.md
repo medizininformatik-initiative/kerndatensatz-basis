@@ -1,29 +1,29 @@
-**Example Usage Scenarios:**
+**Beispielhafte Anwendungsszenarien:**
 
-- Document a patient's facility contact (Einrichtungskontakt) representing the overall stay at a healthcare institution from admission to discharge, including admission reason and discharge disposition
-- Track department contacts (Abteilungskontakt) when a patient is transferred between different departments within the same facility stay, capturing department codes and timing
-- Record care unit contacts (Versorgungsstellenkontakt) for specific care locations such as normal ward, intensive care unit, or operating room within a department
-- Model hierarchical encounter structures using `partOf` to link Versorgungsstellenkontakt → Abteilungskontakt → Einrichtungskontakt
-- Support feasibility queries by counting encounters/cases with specific characteristics (e.g., inpatient cases, intensive care stays, emergency admissions)
-- Document planned encounters with expected admission and discharge dates for pre-admission planning
+- Dokumentation eines Einrichtungskontakts, der den gesamten Aufenthalt eines Patienten in einer Gesundheitseinrichtung von Aufnahme bis Entlassung repräsentiert, inklusive Aufnahmegrund und Entlassungsgrund
+- Nachverfolgung von Abteilungskontakten bei Verlegung eines Patienten zwischen verschiedenen Abteilungen innerhalb desselben Aufenthalts, mit Erfassung von Fachabteilungsschlüsseln und Zeitangaben
+- Erfassung von Versorgungsstellenkontakten für spezifische Behandlungsorte wie Normalstation, Intensivstation oder OP-Saal innerhalb einer Abteilung
+- Modellierung hierarchischer Kontaktstrukturen mittels `partOf` zur Verknüpfung von Versorgungsstellenkontakt → Abteilungskontakt → Einrichtungskontakt
+- Unterstützung von Machbarkeitsabfragen durch Zählung von Kontakten mit spezifischen Merkmalen (z.B. stationäre Fälle, Intensivaufenthalte, Notfallaufnahmen)
+- Dokumentation geplanter Kontakte mit erwarteten Aufnahme- und Entlassungsdaten für die Aufnahmeplanung
 
-### Profile Specific Implementation Guidance
+### Profilspezifische Implementierungshinweise
 
-This section provides detailed implementation guidance for the MII Kontakt Gesundheitseinrichtung Profile.
+Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Kontakt-Gesundheitseinrichtung-Profil.
 
-#### Encounter Hierarchies and Contact Levels
+#### Kontakthierarchien und Kontaktebenen
 
-The MII Fall module distinguishes three levels of encounters using `Encounter.type:Kontaktebene`:
+Das MII-Fall-Modul unterscheidet drei Ebenen von Kontakten mittels `Encounter.type:Kontaktebene`:
 
-- **Einrichtungskontakt (Facility Contact)**: Top-level encounter representing the entire stay/visit at a healthcare facility
-- **Abteilungskontakt (Department Contact)**: Encounter at a specific department within the facility
-- **Versorgungsstellenkontakt (Care Unit Contact)**: Encounter at a specific care unit or ward
+- **Einrichtungskontakt**: Kontakt auf oberster Ebene, der den gesamten Aufenthalt/Besuch in einer Gesundheitseinrichtung repräsentiert
+- **Abteilungskontakt**: Kontakt in einer spezifischen Abteilung innerhalb der Einrichtung
+- **Versorgungsstellenkontakt**: Kontakt an einer spezifischen Versorgungsstelle oder Station
 
-These levels are linked using `Encounter.partOf` to create a hierarchical structure.
+Diese Ebenen werden mittels `Encounter.partOf` verknüpft, um eine hierarchische Struktur zu erstellen.
 
-**Example Encounter Hierarchy:**
+**Beispiel einer Kontakthierarchie:**
 
-The following diagram illustrates how different encounter levels are linked together using `partOf` references, along with optional connections to EpisodeOfCare and Account resources:
+Das folgende Diagramm veranschaulicht, wie verschiedene Kontaktebenen mittels `partOf`-Referenzen miteinander verknüpft werden, zusammen mit optionalen Verbindungen zu EpisodeOfCare- und Account-Ressourcen:
 
 <pre class="language-mermaid"><code class="language-mermaid">%%{init: {'flowchart': {'htmlLabels': false}, 'theme': 'base', 'themeVariables': {'primaryColor': '#E8F4F8', 'primaryBorderColor': '#406A99', 'primaryTextColor': '#000000', 'lineColor': '#5C8DB3', 'fontSize': '14px'}}}%%
 graph BT
@@ -81,15 +81,15 @@ graph BT
   VS5 -->|partOf| A2E
 </code></pre>
 
-In this example:
-- **E0** represents the overall facility contact (Einrichtungskontakt) for the hospital stay
-- **A1E** is the department contact (Abteilungskontakt) for the Emergency Department (Notaufnahme)
-- **A2E** is the department contact (Abteilungskontakt) for General Surgery (Allgemeinchirurgie)
-- **VS1-VS5** are care unit contacts (Versorgungsstellenkontakte) for specific locations: Emergency treatment room 3, Radiology CT, OR 4 (laparoscopic appendectomy), PACU, and Surgical Ward C3
-- The hierarchy is established through `partOf` references pointing upward from care units to departments to facility
-- **EP1** (EpisodeOfCare) and **A1** (Account) are shown for completeness but are not currently part of the MII Kerndatensatz specification. Note that for simplicity, only E0 is shown referencing these resources, but in practice any encounter in the hierarchy can reference the EpisodeOfCare and Account it belongs to.
+In diesem Beispiel:
+- **E0** repräsentiert den gesamten Einrichtungskontakt für den Krankenhausaufenthalt
+- **A1E** ist der Abteilungskontakt für die Notaufnahme
+- **A2E** ist der Abteilungskontakt für die Allgemeinchirurgie
+- **VS1-VS5** sind Versorgungsstellenkontakte für spezifische Orte: Notaufnahme Behandlungsraum 3, Radiologie CT, OP-Saal 4 (laparoskopische Appendektomie), Aufwachraum PACU und Chirurgische Station C3
+- Die Hierarchie wird durch `partOf`-Referenzen etabliert, die von Versorgungsstellen zu Abteilungen zur Einrichtung verweisen
+- **EP1** (EpisodeOfCare) und **A1** (Account) werden der Vollständigkeit halber gezeigt, sind aber derzeit nicht Teil der MII-Kerndatensatz-Spezifikation. Aus Vereinfachungsgründen wird nur E0 als referenzierend auf diese Ressourcen dargestellt, aber in der Praxis kann jeder Kontakt in der Hierarchie auf die EpisodeOfCare und das Account verweisen, zu denen er gehört.
 
-#### Representation of Encounter Types in FHIR
+#### Repräsentation der Fallarten in FHIR
 
 <style>
 .encounter-type-table {
@@ -112,51 +112,51 @@ In this example:
 }
 </style>
 
-##### Primary Encounters
+##### Primärkontakte
 
-Based on the [FHIR DE Basisprofile guidance](https://ig.fhir.de/basisprofile-de/1.4.0/Ressourcen-AmbulanterStationaererFall.html):
+Siehe auch Leitfaden [FHIR DE Basisprofile](https://ig.fhir.de/basisprofile-de/1.4.0/Ressourcen-AmbulanterStationaererFall.html):
 
 <table class="encounter-type-table">
 <thead>
 <tr>
-<th>Encounter Type (German)</th>
-<th>HL7 V2 Code</th>
-<th>FHIR Representation</th>
+<th>Fallart</th>
+<th>Code in HL7 V2</th>
+<th>Repräsentation in FHIR</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Ambulant (Outpatient)</td>
+<td>Ambulant</td>
 <td>O</td>
 <td><code>Encounter.class = AMB</code></td>
 </tr>
 <tr>
-<td>Ambulantes Operieren (Outpatient Surgery)</td>
+<td>Ambulantes Operieren</td>
 <td>O</td>
 <td><code>Encounter.class = AMB</code><br/><code>Encounter.type = operation</code></td>
 </tr>
 <tr>
-<td>Stationär (Inpatient)</td>
+<td>Stationär</td>
 <td>I</td>
 <td><code>Encounter.class = IMP</code></td>
 </tr>
 <tr>
-<td>Normalstationär (Normal Ward)</td>
+<td>Normalstationär</td>
 <td>I</td>
 <td><code>Encounter.class = IMP</code><br/><code>Encounter.type = normalstationaer</code></td>
 </tr>
 <tr>
-<td>Intensivstationär (Intensive Care)</td>
+<td>Intensivstationär</td>
 <td>I</td>
 <td><code>Encounter.class = IMP</code><br/><code>Encounter.type = intensivstationaer</code></td>
 </tr>
 <tr>
-<td>Wiederaufnahme (Readmission)</td>
+<td>Wiederaufnahme</td>
 <td>R</td>
 <td><code>Encounter.class = IMP</code><br/><code>Encounter.extension:Aufnahmegrund.extension:ErsteUndZweiteStelle = 07</code></td>
 </tr>
 <tr>
-<td>Voraufnahme (Pre-admission)</td>
+<td>Voraufnahme</td>
 <td>P</td>
 <td><code>Encounter.class = PRENC</code></td>
 </tr>
@@ -203,100 +203,100 @@ Based on the [FHIR DE Basisprofile guidance](https://ig.fhir.de/basisprofile-de/
 </tbody>
 </table>
 
-##### Secondary Encounters During Inpatient Stay
+##### Sekundärkontakte bei stationärem Aufenthalt
 
 <table class="encounter-type-table">
 <thead>
 <tr>
-<th>Encounter Type (German)</th>
-<th>HL7 V2 Code</th>
-<th>FHIR Representation</th>
+<th>Fallart</th>
+<th>Code in HL7 V2</th>
+<th>Repräsentation in FHIR</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Untersuchung und Behandlung (Examination and Treatment)</td>
+<td>Untersuchung und Behandlung</td>
 <td>-</td>
 <td><code>Encounter.class = IMP</code><br/><code>Encounter.type = ub</code></td>
 </tr>
 <tr>
-<td>Konsil (Consultation)</td>
+<td>Konsil</td>
 <td>-</td>
 <td><code>Encounter.class = IMP</code><br/><code>Encounter.type = konsil</code></td>
 </tr>
 <tr>
-<td>Operation (Surgery)</td>
+<td>Operation</td>
 <td>-</td>
 <td><code>Encounter.class = IMP</code><br/><code>Encounter.type = operation</code></td>
 </tr>
 </tbody>
 </table>
 
-#### Encounter Diagnosis
+#### Angaben zu Diagnosen
 
-The `Encounter.diagnosis` element establishes the relationship between encounters and diagnoses/procedures, specifying their role within the encounter context.
+Das Element `Encounter.diagnosis` stellt die Beziehung zwischen Kontakten und Diagnosen/Prozeduren her und spezifiziert deren Rolle im Kontaktkontext.
 
 <div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
-<h5 style="color: #406A99; margin-top: 0;">Best Practice - Diagnosis-Encounter Relationships</h5>
+<h5 style="color: #406A99; margin-top: 0;">Best Practice - Diagnose-Kontakt-Beziehungen</h5>
 
-<p>The reference from <code>Encounter.diagnosis</code> to <code>Condition</code> should be used when the Condition has a specific role during the Encounter (e.g., primary diagnosis, secondary diagnosis).</p>
+<p>Die Referenz von <code>Encounter.diagnosis</code> zu <code>Condition</code> sollte verwendet werden, wenn die Condition eine spezifische Rolle während des Encounters hat (z.B. Hauptdiagnose, Nebendiagnose).</p>
 
-<p><strong>Recommended Implementation:</strong></p>
-<p>Use <code>Condition.encounter</code> to reference from the Condition to the Encounter of type <strong>Abteilungskontakt (Department Contact)</strong>. This approach establishes the general encounter context for the diagnosis, while <code>Encounter.diagnosis</code> can be used to specify particular diagnosis roles when needed.</p>
+<p><strong>Empfohlene Implementierung:</strong></p>
+<p>Verwenden Sie <code>Condition.encounter</code>, um von der Condition auf den Encounter vom Typ <strong>Abteilungskontakt</strong> zu referenzieren. Dieser Ansatz etabliert den allgemeinen Kontaktkontext für die Diagnose, während <code>Encounter.diagnosis</code> verwendet werden kann, um bei Bedarf spezifische Diagnoserollen anzugeben.</p>
 </div>
 
 <div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
 <h5 style="color: #406A99; margin-top: 0;">Best Practice - Encounter.diagnosis.use</h5>
 
-<p>Since <code>Encounter.diagnosis.use</code> has cardinality 1..1, a diagnosis with multiple roles within an encounter requires multiple <code>Encounter.diagnosis</code> entries, each with a different <code>use</code> value.</p>
+<p>Da <code>Encounter.diagnosis.use</code> die Kardinalität 1..1 hat, benötigt eine Diagnose mit mehreren Rollen innerhalb eines Kontakts mehrere <code>Encounter.diagnosis</code>-Einträge, jeweils mit unterschiedlichem <code>use</code>-Wert.</p>
 
-<p><strong>Example:</strong> If a Condition serves as both a Diagnosetyp and a Diagnosesubtyp (or additional roles such as CC/CM), create separate <code>Encounter.diagnosis</code> references for each role, all pointing to the same Condition resource. A single Condition can be referenced multiple times with different <code>use</code> values.</p>
+<p><strong>Beispiel:</strong> Wenn eine Condition sowohl als Diagnosetyp als auch als Diagnosesubtyp (oder zusätzliche Rollen wie CC/CM) dient, erstellen Sie separate <code>Encounter.diagnosis</code>-Referenzen für jede Rolle, die alle auf dieselbe Condition-Ressource verweisen. Eine einzelne Condition kann mehrfach mit unterschiedlichen <code>use</code>-Werten referenziert werden.</p>
 </div>
 
-#### Encounter Location
+#### Kontaktort
 
-- Location details (room, bed, ward) can be specified using `Encounter.location`.
-- The physical type **SHOULD** use the MII-specific ValueSet for location physical types.
-- Location details are primarily relevant for Versorgungsstellenkontakt (care unit contacts).
+- Details zum Kontaktort (Zimmer, Bett, Station) können mittels `Encounter.location` angegeben werden.
+- Der physische Typ SOLL das MII-spezifische ValueSet für location physical types verwenden.
+- Angaben zum Kontaktort sind primär relevant für Versorgungsstellenkontakte.
 
-#### Planned Encounters
+#### Geplante Kontakte
 
-Planned encounters are represented with `Encounter.status = planned` and **SHOULD** include:
-- `Encounter.extension:plannedStartDate` for the planned start date
-- `Encounter.extension:plannedEndDate` for the planned end date
+Geplante Kontakte werden mit `Encounter.status = planned` abgebildet und SOLLTEN zusätzlich angeben:
+- `Encounter.extension:plannedStartDate` für das geplante Startdatum
+- `Encounter.extension:plannedEndDate` für das geplante Enddatum
 
-#### Admission and Discharge
+#### Aufnahme und Entlassung
 
-- **Admission source** (Aufnahmeanlass) is mandatory when hospitalization data is provided and uses codes from § 301 SGB V.
-- **Admission reason** (Aufnahmegrund) with four-part structure (erste und zweite Stelle, dritte Stelle, vierte Stelle) according to § 301 SGB V.
-- **Discharge disposition** with Entlassungsgrund extension provides detailed discharge/transfer reasons.
+- **Aufnahmeanlass** ist verpflichtend, wenn Hospitalisierungsdaten angegeben werden, und verwendet Codes aus § 301 SGB V.
+- **Aufnahmegrund** mit vierteiliger Struktur (erste und zweite Stelle, dritte Stelle, vierte Stelle) gemäß § 301 SGB V.
+- **Entlassungsgrund** mit Entlassungsgrund-Extension liefert detaillierte Entlassungs-/Verlegungsgründe.
 
-#### Encounter Identification
+#### Identifikation von Kontakten
 
-Each Encounter **SHOULD** have a unique identifier. When encounters are organized in a hierarchy:
-- Ensure correct encounter linking via `Encounter.partOf`
-- Each encounter **SHOULD** have a distinct identifier with different systems or values
+Jeder Encounter SOLLTE einen eindeutigen Identifier haben. Wenn Encounters in einer Hierarchie organisiert sind:
+- Stellen Sie die korrekte Encounter-Verlinkung über `Encounter.partOf` sicher
+- Jeder Encounter SOLLTE einen eigenständigen Identifier mit unterschiedlichen Systemen oder Werten enthalten
 
-**Case Number Representation:**
+**Abbildung der Fallnummer:**
 
-The "Fallnummer" (case number) is frequently used in inpatient care to establish the case context for medical documentation, particularly in HL7 V2 communication.
+Die "Fallnummer" wird in der stationären Versorgung häufig verwendet, um den Fallkontext für die medizinische Dokumentation zu etablieren, insbesondere in der HL7 V2-Kommunikation.
 
-In most cases, the "Fallnummer" is a unique identifier for the billing case (Account). Therefore, the Fallnummer should be seen as an identifier of the Account and is not suitable for uniquely identifying an Encounter. To find the correct Encounter, additional criteria such as period (`Encounter.period`), class (`Encounter.class`), or status (`Encounter.status`) must be considered.
+In den meisten Fällen ist die "Fallnummer" ein eindeutiger Identifier für den Abrechnungsfall (Account). Daher sollte die Fallnummer als Identifier des Accounts gesehen werden und ist nicht geeignet, um einen Encounter eindeutig zu identifizieren. Um den korrekten Encounter zu finden, müssen zusätzliche Kriterien wie Zeitraum (`Encounter.period`), Klasse (`Encounter.class`) oder Status (`Encounter.status`) berücksichtigt werden.
 
-**Previous Recommendation:**
+**Frühere Empfehlung:**
 
-Previously, it was recommended that the Aufnahmenummer (admission number) should be provided across all Encounter resources regardless of contact level and type. However, this recommendation did not clearly distinguish between Aufnahmenummer and Fallnummer.
+Früher wurde empfohlen, dass die Aufnahmenummer in allen Encounter-Ressourcen unabhängig von Kontaktebene und Kontakttyp angegeben werden sollte. Diese Empfehlung unterschied jedoch nicht klar zwischen Aufnahmenummer und Fallnummer.
 
 <div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
 <h5 style="color: #406A99; margin-top: 0;">Best Practice - Aufnahmenummer vs. Fallnummer</h5>
 
-<p>It is important to distinguish between:</p>
+<p>Es ist wichtig zu unterscheiden zwischen:</p>
 <ul>
-  <li><strong>Aufnahmenummer (Admission Number):</strong> A unique identifier assigned to a patient during admission planning or at admission itself. Each Encounter <strong>SHOULD</strong> have its own unique Aufnahmenummer in <code>Encounter.identifier:Aufnahmenummer</code> where applicable.</li>
-  <li><strong>Fallnummer (Case Number):</strong> Typically identifies the billing case (Account), not individual encounters.</li>
+  <li><strong>Aufnahmenummer:</strong> Ein eindeutiger Identifier, der einem Patienten bei der Aufnahmeplanung oder bei der Aufnahme selbst zugewiesen wird. Jeder Encounter <strong>SOLLTE</strong> seine eigene eindeutige Aufnahmenummer in <code>Encounter.identifier:Aufnahmenummer</code> haben, wo anwendbar.</li>
+  <li><strong>Fallnummer:</strong> Identifiziert typischerweise den Abrechnungsfall (Account), nicht einzelne Encounters.</li>
 </ul>
 
-<p>The Fallnummer can be made accessible in the Encounter without requiring implementation of the Account resource by including the Account identifier as a logical reference in <code>Encounter.account</code>. This enables Fallnummer-based searches.</p>
+<p>Die Fallnummer kann im Encounter zugänglich gemacht werden, ohne dass die Account-Ressource implementiert werden muss, indem der Account-Identifier als logische Referenz in <code>Encounter.account</code> angegeben wird. Dies ermöglicht Fallnummer-basierte Suchen.</p>
 </div>
 
 {% include link-list.md %}

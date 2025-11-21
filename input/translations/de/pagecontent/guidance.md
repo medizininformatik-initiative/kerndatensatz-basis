@@ -2,7 +2,6 @@ Dieser Abschnitt bietet Hinweise für verschiedene Zielgruppen, die den MII Kern
 
 ### Allgemeine Implementierungshinweise
 
-* **[Allgemeine Hinweise](general-guidance.html)** - Allgemeine Implementierungshinweise für alle Implementierer
 * **[Datensätze und Beschreibungen](datasets-and-descriptions.html)** - Detaillierte Beschreibungen der logischen Modelle des MII-Kerndatensatzes
 * **[UML-Diagramme](uml-diagrams.html)** - UML-Diagramme zur Veranschaulichung der Datenmodelle und Beziehungen
 

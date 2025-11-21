@@ -1,78 +1,78 @@
-**Example Usage Scenarios:**
+**Beispielhafte Anwendungsszenarien:**
 
-- Document patient demographics including name, gender, birth date, and address for clinical care and research
-- Record health insurance information for administrative purposes
-- Maintain organizational patient identifiers (PID) for linking patient data across systems within a healthcare organization
-- Enable pseudonymized patient representations for research use cases while preserving essential demographic characteristics
+- Dokumentation demografischer Patientendaten einschließlich Name, Geschlecht, Geburtsdatum und Adresse für klinische Versorgung und Forschung
+- Erfassung von Krankenversicherungsinformationen für administrative Zwecke
+- Verwaltung organisationsinterner Patienten-Identifikatoren (PID) zur Verknüpfung von Patientendaten über Systeme innerhalb einer Gesundheitseinrichtung hinweg
+- Ermöglichung pseudonymisierter Patientendarstellungen für Forschungszwecke unter Beibehaltung wesentlicher demografischer Merkmale
 
-### Profile Specific Implementation Guidance
+### Profilspezifische Implementierungshinweise
 
-This section provides detailed implementation guidance for the MII Patient Profile.
+Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Patient-Profil.
 
-#### Patient Identification
+#### Patienten-Identifikation
 
-Patient identification uses multiple identifier types depending on the context:
+Die Patienten-Identifikation verwendet je nach Kontext verschiedene Identifier-Typen:
 
-- **`Patient.identifier:versichertenId`**: Lebenslange Krankenversicherten-ID (10-stellige KVID) for all health insurance types (GKV, PKV, Sonderkostenträger)
-  - **IMPORTANT**: The Assigner element **MUST** contain the IKNR (Institutionskennzeichen) of the issuing institution
-  - Always represents the current insurance number of the patient
-  - Use `Identifier.type` code `KVZ10` from `http://fhir.de/CodeSystem/identifier-type-de-basis`
-  - Codes `GKV` and `PKV` have status `retired` and should not be used
+- **`Patient.identifier:versichertenId`**: Lebenslange Krankenversicherten-ID (10-stellige KVID) für alle Krankenversicherungsarten (GKV, PKV, Sonderkostenträger)
+  - **WICHTIG**: Das Assigner-Element MUSS die IKNR (Institutionskennzeichen) der ausgebenden Institution enthalten
+  - Repräsentiert stets die aktuelle Versicherungsnummer der PatientIn
+  - Verwenden Sie als `Identifier.type` den Code `KVZ10` aus `http://fhir.de/CodeSystem/identifier-type-de-basis`
+  - Die Codes `GKV` und `PKV` haben den Status `retired` und sollten nicht verwendet werden
 
-- **`Patient.identifier:pid`**: Organisationsinterner Patienten-Identifier - the leading (MPI) ID of the patient
-  - A reference to the issuing Organization in `Patient.identifier:pid.assigner` is **RECOMMENDED**
-  - Logical reference via IK-Nummer or IHE Affinity Domain OID is permitted
-  - The CodeSystem [Core-Location-Identifier] for all MII sites can be used
+- **`Patient.identifier:pid`**: Organisationsinterner Patienten-Identifier - die führende (MPI) ID der PatientIn
+  - Eine Referenz auf die ausgebende Organization in `Patient.identifier:pid.assigner` ist EMPFOHLEN
+  - Logische Referenz per IK-Nummer oder IHE Affinity Domain OID ist zulässig
+  - Das CodeSystem [Core-Location-Identifier] für alle MII-Standorte kann verwendet werden
 
-- **`Patient.identifier`**: Any other identifiers when GKV/PKV/PID are not applicable
+- **`Patient.identifier`**: Jegliche weiteren Identifier, falls GKV/PKV/PID nicht zutreffend ist
 
 <div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
-<h5 style="color: #406A99; margin-top: 0;">Best Practice - Krankenversicherten-ID Changes</h5>
+<h5 style="color: #406A99; margin-top: 0;">Best Practice - Änderungen bei der Krankenversicherten-ID</h5>
 
-<p>Compared to previous versions, the Krankenversicherten-ID in <code>Patient.identifier</code> is no longer distinguished between GKV and PKV. <code>Patient.identifier:versichertenId</code> applies to all health insurance numbers, regardless of whether GKV, PKV, or special insurance carriers.</p>
+<p>Im Vergleich zu Vorversionen wird die Krankenversicherten-ID in <code>Patient.identifier</code> nicht mehr in GKV und PKV unterschieden. <code>Patient.identifier:versichertenId</code> gilt für alle Krankenversichertennummern, unabhängig davon, ob es sich um GKV, PKV oder Sonderkostenträger handelt.</p>
 
-<p>Use the code <code>KVZ10</code> from <code>http://fhir.de/CodeSystem/identifier-type-de-basis</code> as <code>Identifier.type</code>. The codes <code>GKV</code> and <code>PKV</code> have retired status. See constraint <strong>kvid-2</strong> in the profile <a href="https://simplifier.net/packages/de.basisprofil.r4/1.5.4/files/2879564">IdentifierKvid10</a> in the German FHIR Base Profiles.</p>
+<p>Als <code>Identifier.type</code> SOLL der Code <code>KVZ10</code> aus <code>http://fhir.de/CodeSystem/identifier-type-de-basis</code> verwendet werden. Die Codes <code>GKV</code> und <code>PKV</code> haben den Status <code>retired</code>. Siehe Constraint <strong>kvid-2</strong> im Profil <a href="https://simplifier.net/packages/de.basisprofil.r4/1.5.4/files/2879564">IdentifierKvid10</a> in den Deutschen FHIR-Basisprofilen.</p>
 </div>
 
-#### Patient Name
+#### Patientenname
 
-Patient names follow the [German Base Profile for HumanName]:
+Patientennamen folgen dem [Deutschen FHIR-Basis-Profil für den Datentyp HumanName]:
 
-- **Name Components**: The breakdown of the complete name into components (e.g., Vorsatzwort, Namenszusatz, Nachname) **SHOULD** only be performed if this information is explicitly available at this granularity (e.g., through direct import based on a VSDM dataset)
-- **Birth Name**: By general convention, the birth name (`name.use = maiden`) contains only the family name
-- **Multiple Names**: Multiple name entries are permitted for different use cases (official, maiden, etc.)
+- **Namensbestandteile**: Die Aufteilung des vollständigen Namens in seine Bestandteile (z.B. Vorsatzwort, Namenszusatz, Nachname) SOLLTE nur durchgeführt werden, falls diese Informationen explizit in dieser Granularität zur Verfügung stehen (z.B. durch einen direkten Import auf Basis eines VSDM-Datensatzes)
+- **Geburtsname**: Per allgemeiner Konvention enthält der Geburtsname (`name.use = maiden`) nur den Familiennamen
+- **Mehrere Namen**: Mehrere Namenseinträge sind für verschiedene Anwendungsfälle erlaubt (official, maiden, etc.)
 
-#### Gender
+#### Geschlecht
 
-Gender documentation follows the [German Base Profile for Gender]:
+Die Geschlechtsdokumentation folgt den Vorgaben der [Deutschen FHIR-Basis-Profile für Geschlecht]:
 
-- **`Patient.gender`**: Administrative gender (required)
-- **`Patient.gender.extension:other-amtlich`**: Official gender codes according to German regulations for cases beyond male/female/unknown
+- **`Patient.gender`**: Administratives Geschlecht (verpflichtend)
+- **`Patient.gender.extension:other-amtlich`**: Amtliche Geschlechtscodes gemäß deutscher Vorschriften für Fälle jenseits von männlich/weiblich/unbekannt
 
-#### Birth Date and Vital Status
+#### Geburtsdatum und Vitalstatus
 
-- **`Patient.birthDate`**: Full birth date when available. See [German Base Profile - Geburtsdatum]
+- **`Patient.birthDate`**: Vollständiges Geburtsdatum, wenn verfügbar. Siehe [Basisprofil - Geburtsdatum]
 - **`Patient.deceased[x]`**: 
-  - `deceasedBoolean` **SHOULD** be replaced by `deceasedDateTime` when the patient is deceased and the datetime is known
+  - `deceasedBoolean` SOLLTE, wo möglich, durch `deceasedDateTime` ersetzt werden, wenn die PatientIn verstorben ist und der Zeitpunkt bekannt ist
 
-#### Address Information
+#### Adressinformationen
 
-Address details follow the [German Base Profile - Adresse]:
+Adressdetails folgen dem [Basisprofil - Adresse]:
 
-- **Multiple Addresses**: Multiple addresses are permitted
-- **Address History**: Systems **SHOULD** mark former addresses appropriately so that the current address of the patient is identifiable
-- **Address Components**: 
-  - `address.line` with extensions for Straße, Hausnummer, Adresszusatz, Postfach
-  - `address.city` with extension for Gemeindeschlüssel and Stadtteil (for city-states)
-  - `address.postalCode` for PLZ
-  - `address.country` for Land
+- **Mehrere Adressen**: Mehrere Adressen sind erlaubt
+- **Adressverlauf**: Systeme SOLLTEN ehemalige Adressen als solche kennzeichnen, sodass die aktuelle Adresse der PatientIn erkennbar ist
+- **Adressbestandteile**: 
+  - `address.line` mit Extensions für Straße, Hausnummer, Adresszusatz, Postfach
+  - `address.city` mit Extension für Gemeindeschlüssel und Stadtteil (bei Stadtstaaten)
+  - `address.postalCode` für PLZ
+  - `address.country` für Land
 
 <div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
-<h5 style="color: #406A99; margin-top: 0;">Best Practice - Address Components</h5>
+<h5 style="color: #406A99; margin-top: 0;">Best Practice - Adressbestandteile</h5>
 
-<p><strong>Stadtteil (District):</strong> The Stadtteil is not part of the <a href="https://fachportal.gematik.de/anwendungen/versichertenstammdatenmanagement">VSDM dataset</a> from Gematik. Other sources conforming to §21 KHEntgG may need to be consulted for this information.</p>
+<p><strong>Stadtteil:</strong> Der Stadtteil ist nicht Bestandteil des <a href="https://fachportal.gematik.de/anwendungen/versichertenstammdatenmanagement">VSDM-Datensatzes</a> der Gematik. Andere Quellen konform zu §21 KHEntgG müssen eventuell hinzugezogen werden.</p>
 
-<p><strong>Address Structure:</strong> For city-states (Stadtstaaten), use <code>Patient.address.city</code> combined with <code>Patient.address.extension.Stadtteil</code> to represent <code>Person.Demographie.Adresse.Wohnort</code>.</p>
+<p><strong>Adressstruktur:</strong> Für Stadtstaaten verwenden Sie <code>Patient.address.city</code> kombiniert mit <code>Patient.address.extension.Stadtteil</code>, um <code>Person.Demographie.Adresse.Wohnort</code> darzustellen.</p>
 </div>
 
 {% include link-list.md %}

@@ -25,7 +25,7 @@ The following profiles have been defined for this implementation guide. They are
 
 ### Extensions
 
-The following [extensions](http://hl7.org/fhir/R4/extensibility.html) have been defined as part of the MII Implementation Guide. A [registry of standard extensions](http://hl7.org/fhir/R4/extensibility-registry.html) can be found in the FHIR specification and additional extensions may be registered on the HL7 FHIR registry at <http://hl7.org/fhir/registry>.
+The following [extensions](http://hl7.org/fhir/R4/extensibility.html) have been defined as part of the MII Implementation Guide. A [registry of standard extensions](http://hl7.org/fhir/extensions/extension-registry.html) can be found in the FHIR specification and additional extensions may be registered on the HL7 [FHIR-Registry](https://registry.fhir.org/).
 
 #### Treatment Case Module Extensions
 

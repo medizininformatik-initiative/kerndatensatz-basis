@@ -1,6 +1,4 @@
-Logische Modelle bieten eine konzeptionelle Ansicht der in diesem Implementierungsleitfaden definierten Datenstrukturen. Sie repräsentieren die Datenelemente und ihre Beziehungen unabhängig von der FHIR-Ressourcenstruktur und sind dadurch für Fachexperten und Forschende leichter verständlich.
-
-Eine vollständige Liste aller logischen Modelle finden Sie in der [Übersicht der logischen Modelle](logical-models.html).
+Logische Modelle bieten eine konzeptionelle Ansicht der in diesem Implementierungsleitfaden definierten Datenstrukturen. Sie repräsentieren die Datenelemente und ihre Beziehungen unabhängig von der FHIR-Ressourcenstruktur.
 
 Für die MII-Kerndatensatz-Basismodule sind folgende logische Modelle definiert:
 

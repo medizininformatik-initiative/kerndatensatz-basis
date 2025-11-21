@@ -1,110 +1,111 @@
-**Example Usage Scenarios:**
+**Beispielhafte Anwendungsszenarien:**
 
-- Document diagnoses for patients in clinical care using ICD-10-GM coding
-- Support billing and administrative processes with coded diagnosis information
-- Enable epidemiological research and disease surveillance through standardized diagnosis coding
-- Represent rare diseases using Alpha-ID or Orphanet codes alongside ICD-10-GM
-- Link diagnoses to specific encounters for temporal and contextual documentation
+- Dokumentation von Diagnosen für Patienten in der klinischen Versorgung mittels ICD-10-GM-Codierung
+- Unterstützung von Abrechnungsprozessen mit codierten Diagnoseinformationen
+- Ermöglichung epidemiologischer Forschung durch standardisierte Diagnosecodierung
+- Darstellung seltener Erkrankungen mittels Alpha-ID oder Orphanet-Codes neben ICD-10-GM
+- Verknüpfung von Diagnosen mit spezifischen Behandlungsfällen zur zeitlichen und kontextuellen Dokumentation
 
-### Profile Specific Implementation Guidance
+### Profilspezifische Implementierungshinweise
 
-This section provides detailed implementation guidance for the MII Diagnose (Diagnosis) Profile.
+Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Diagnose-Profil.
 
-#### Coding Requirements
+#### Codierungsanforderungen
 
-**Mandatory Coding:**
-- **`Condition.code`**: At least one coded diagnosis **MUST** be present
-- Code system may be freely selected from: ICD-10-GM, Alpha-ID, SNOMED CT, or Orphanet
-- ICD-10-GM coding is the primary coding system for diagnoses in Germany
+**Verpflichtende Codierung:**
+- **`Condition.code`**: Mindestens eine kodierte Diagnose MUSS enthalten sein
+- System frei wählbar aus: ICD-10-GM, Alpha-ID, SNOMED CT oder Orphanet
+- ICD-10-GM-Codierung ist das primäre Codiersystem für Diagnosen in Deutschland
 
-**Multiple Code Systems:**
-- Multiple codings from different terminologies are permitted and encouraged where applicable
-- Example: ICD-10-GM for billing/administrative purposes + SNOMED CT for semantic interoperability + Alpha-ID/Orphanet for rare diseases
+**Mehrere Codiersysteme:**
+- Mehrfachcodierungen aus verschiedenen Terminologien sind erlaubt und werden, wo anwendbar, empfohlen
+- Beispiel: ICD-10-GM für Abrechnungszwecke + SNOMED CT für semantische Interoperabilität + Alpha-ID/Orphanet für seltene Erkrankungen
 
-#### ICD-10-GM Specific Extensions
-
-<div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
-<h5 style="color: #406A99; margin-top: 0;">Best Practice - ICD-10-GM Extensions and Special Characters</h5>
-
-<p><strong>Separation of Special Characters:</strong> The element <code>Condition.code.coding.where(system='http://fhir.de/CodeSystem/bfarm/icd-10-gm').code</code> <strong>SHOULD NOT</strong> contain multi-coding markers or additional markers (e.g., laterality or diagnostic certainty).</p>
-
-<p><strong>Extension Usage:</strong></p>
-<ul>
-  <li><strong>Mehrfachcodierungs-Kennzeichen:</strong> Multi-coding markers (<code>*</code>, <code>†</code>, <code>!</code>) <strong>SHOULD</strong> be separated from ICD-10-GM codes and captured in the "Mehrfachcodierungs-Kennzeichen" extension</li>
-  <li><strong>Seitenlokalisation:</strong> The "Seitenlokalisation" extension <strong>SHOULD</strong> be used to specify laterality in ICD-10-GM coding</li>
-  <li><strong>Diagnosesicherheit:</strong> The "Diagnosesicherheit" extension <strong>SHOULD</strong> be used to specify diagnostic certainty in ICD-10-GM coding</li>
-</ul>
-
-<p><strong>Reference:</strong> See <a href="https://ig.fhir.de/basisprofile-de/1.5.4/ig-markdown-Datentypen-Coding.html#ig-markdown-Datentypen-ICD-10GM-Coding">ICD-10-GM Coding Profile</a> and <a href="https://ig.fhir.de/basisprofile-de/1.5.4/ig-markdown-ExtensionsfrCondition.html">Diagnosesicherheit Extension</a> in the German Base Profiles for detailed constraints.</p>
-</div>
-
-#### Multi-Coding with ICD-10-GM Cross-Dagger System
+#### ICD-10-GM-spezifische Extensions
 
 <div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
-<h5 style="color: #406A99; margin-top: 0;">Best Practice - Cross-Dagger (Kreuz-Stern) System Implementation</h5>
+<h5 style="color: #406A99; margin-top: 0;">Best Practice - ICD-10-GM-Extensions und Sonderzeichen</h5>
 
-<p><strong>Multiple Condition Instances:</strong> When using ICD-10-GM codes with the cross-dagger system (Kreuz-Stern), create a <strong>separate Condition instance for each ICD-10 code</strong> (etiology, manifestation, additional information).</p>
+<p><strong>Trennung von Sonderzeichen:</strong> Das Element <code>Condition.code.coding.where(system='http://fhir.de/CodeSystem/bfarm/icd-10-gm').code</code> <strong>SOLLTE NICHT</strong> ein Mehrfachkodierungskennzeichen oder Zusatzkennzeichen (z.B. Seitenlokalisation oder Diagnosesicherheit) enthalten.</p>
 
-<p><strong>Linking Secondary to Primary:</strong></p>
+<p><strong>Verwendung von Extensions:</strong></p>
 <ul>
-  <li>The primary diagnosis Condition (etiology/Ätiologie with † marker) is the main instance</li>
-  <li>Secondary diagnosis Conditions (manifestation/Manifestation with * marker, additional information with ! marker) use the <a href="http://hl7.org/fhir/R4/extension-condition-related.html">Condition Related Extension</a> to reference the primary diagnosis</li>
-  <li>This creates an explicit relationship chain: manifestation → etiology</li>
+  <li><strong>Mehrfachcodierungs-Kennzeichen:</strong> Mehrfachcodierungskennzeichen (<code>*</code>, <code>†</code>, <code>!</code>) <strong>SOLLEN</strong> von den ICD-10-GM-Codes getrennt und in der Extension "Mehrfachcodierungs-Kennzeichen" erfasst werden</li>
+  <li><strong>Seitenlokalisation:</strong> Die Extension "Seitenlokalisation" <strong>SOLL</strong> zur Angabe der Seitenlokalisation in der ICD-10-GM-codierung verwendet werden</li>
+  <li><strong>Diagnosesicherheit:</strong> Die Extension "Diagnosesicherheit" <strong>SOLL</strong> zur Angabe der Diagnosesicherheit in der ICD-10-GM-codierung verwendet werden</li>
 </ul>
 
-<p><strong>Alpha-ID and Orphanet Codes:</strong></p>
-<ul>
-  <li>When Alpha-ID or Orphanet codes are mapped to combined ICD-10-GM codes, include them <strong>only in the primary diagnosis Condition instance</strong></li>
-  <li>Do not duplicate Alpha-ID/Orphanet codes in secondary Condition instances</li>
-</ul>
-
-<p><strong>Diagnostic Certainty Considerations:</strong></p>
-<ul>
-  <li>If diagnostic certainty differs between primary and secondary diagnoses, ensure the certainty of the primary Condition applies to the associated Alpha-ID</li>
-  <li>This prevents inconsistencies when rare disease codes (Alpha-ID/Orphanet) are associated with uncertain etiological diagnoses</li>
-</ul>
-
-<p><strong>Example:</strong> See example resources for Alpha-ID <code>I97525</code> with ICD-10-GM <code>A54.4†</code> (etiology) and <code>M73.09*</code> (manifestation).</p>
+<p><strong>Referenz:</strong> Siehe <a href="https://ig.fhir.de/basisprofile-de/1.5.4/ig-markdown-Datentypen-Coding.html#ig-markdown-Datentypen-ICD-10GM-Coding">ICD-10-GM Coding-Profil</a> und <a href="https://ig.fhir.de/basisprofile-de/1.5.4/ig-markdown-ExtensionsfrCondition.html">Diagnosesicherheit Extension</a> in den Deutschen Basisprofilen für detaillierte Constraints.</p>
 </div>
 
-#### Body Site Documentation
+#### Mehrfachcodierung mit ICD-10-GM Kreuz-Stern-System
+
+<div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
+<h5 style="color: #406A99; margin-top: 0;">Best Practice - Kreuz-Stern-System Implementierung</h5>
+
+<p><strong>Mehrere Condition-Instanzen:</strong> Bei der Verwendung von ICD-10-GM-Codes mit dem Kreuz-Stern-System wird für <strong>jeden ICD-10-Code eine separate Condition-Instanz</strong> erstellt (Ätiologie, Manifestation, Zusatzinformation).</p>
+
+<p><strong>Verknüpfung von Sekundär- zu Primärdiagnose:</strong></p>
+<ul>
+  <li>Die Primärdiagnose-Condition (Ätiologie mit †-Kennzeichen) ist die Hauptinstanz</li>
+  <li>Sekundärdiagnose-Conditions (Manifestation mit *-Kennzeichen, Zusatzinformation mit !-Kennzeichen) nutzen die <a href="http://hl7.org/fhir/R4/extension-condition-related.html">Extension Condition Related</a>, um auf die Primärdiagnose zu referenzieren</li>
+  <li>Dies erstellt eine explizite Beziehungskette: Manifestation → Ätiologie</li>
+</ul>
+
+<p><strong>Alpha-ID und Orphanet-Codes:</strong></p>
+<ul>
+  <li>Wenn Alpha-ID- oder Orphanet-Codes zu kombinierten ICD-10-GM-Codes gemappt sind, werden sie <strong>nur in der Primärdiagnose-Condition-Instanz</strong> angegeben</li>
+  <li>Alpha-ID/Orphanet-Codes werden nicht in Sekundärdiagnose-Condition-Instanzen dupliziert</li>
+</ul>
+
+<p><strong>Aspekte zur Diagnosesicherheit:</strong></p>
+<ul>
+  <li>Bei abweichenden Diagnosesicherheiten zwischen Primär- und Sekundärdiagnose MUSS sichergestellt werden, dass die Diagnosesicherheit der Primärcondition auf die assoziierte Alpha-ID zutrifft</li>
+  <li>Dies verhindert Inkonsistenzen, wenn bspw. Seltene-Erkrankungen-Codes (Alpha-ID/Orphanet) mit unsicheren ätiologischen Diagnosen verknüpft sind</li>
+</ul>
+
+<p><strong>Beispiel:</strong> Siehe Beispielressourcen für Alpha-ID <code>I97525</code> mit ICD-10-GM <code>A54.4†</code> (Ätiologie) und <code>M73.09*</code> (Manifestation).</p>
+</div>
+
+#### Dokumentation der Körperstelle
 
 **`Condition.bodySite`:**
-- OPTIONAL element
-- If used, body site **SHOULD** be coded with at least one SNOMED CT code
-- **DO NOT** include laterality in `bodySite` - use the Seitenlokalisation extension on `Condition.code.coding:icd10-gm` instead
+- OPTIONALES Element
+- Falls dieses optionale Element verwendet wird, SOLL die Körperstelle mindestens mit einem SNOMED CT-Code codiert werden
+- Hierbei DARF NICHT die Lateralität angegeben werden - verwenden Sie stattdessen die Extension Seitenlokalisation auf `Condition.code.coding:icd10-gm`
 
-#### Encounter Linkage
+#### Verknüpfung mit dem Fall
 
 <div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
-<h5 style="color: #406A99; margin-top: 0;">Best Practice - Diagnosis-Encounter Relationships</h5>
+<h5 style="color: #406A99; margin-top: 0;">Best Practice - Diagnose-Fall-Beziehungen</h5>
 
-<p><strong>Primary Linkage Method:</strong> Use <code>Encounter.diagnosis</code> to link diagnoses to encounters. This is the <strong>RECOMMENDED</strong> approach for associating diagnoses with hospital stays or visits.</p>
+<p><strong>Primäre Verknüpfungsmethode:</strong> Verwenden Sie <code>Encounter.diagnosis</code>, um Diagnosen mit Behandlungsfällen zu verknüpfen. Dies ist der <strong>EMPFOHLENE</strong> Ansatz zur Verknüpfung von Diagnosen mit Krankenhausaufenthalten oder Besuchen.</p>
 
-<p><strong>Condition.encounter Usage:</strong></p>
+<p><strong>Verwendung von Condition.encounter:</strong></p>
 <ul>
-  <li><strong>SHOULD NOT</strong> be used for general diagnosis-encounter linking</li>
-  <li><strong>Exception:</strong> MAY be used to link the diagnosis to the specific encounter where it was <strong>first established/documented</strong> (always a contact with a concrete care unit/Versorgungsstelle)</li>
-  <li>This represents the "assessment date" context rather than the general association</li>
+  <li><strong>SOLLTE NICHT</strong> zur generellen Diagnose-Fall-Verknüpfung verwendet werden</li>
+  <li><strong>Ausnahme:</strong> KANN zur Verknüpfung der Diagnose mit dem spezifischen Fall/Kontakt verwendet werden, in dem die Diagnose <strong>festgestellt wurde</strong> (immer ein Kontakt mit einer konkreten Versorgungsstelle!)</li>
+  <li>Dies repräsentiert den "Feststellungsdatum"-Kontext und nicht die allgemeine Verknüpfung</li>
 </ul>
 
-<p><strong>Assessment Date Mapping:</strong></p>
+<p><strong>Mapping des Feststellungsdatums:</strong></p>
 <ul>
-  <li>The logical data element "Feststellungsdatum" (assessment/determination date) maps to <code>Encounter.period.start</code>, NOT to an element in the Condition resource</li>
-  <li>Therefore, diagnosis linkage <strong>SHOULD</strong> always reference an Einrichtungs-Kontakt (facility encounter) - see Fall (Encounter) module</li>
+  <li>Das logische Datenelement "Feststellungsdatum" wird auf <code>Encounter.period.start</code> gemappt, NICHT auf ein Element in der Condition-Ressource</li>
+  <li>Somit SOLLTE die Verknüpfung der Diagnose immer auf einen Einrichtungs-Kontakt erfolgen - siehe Modul Fall (Encounter)</li>
 </ul>
 
-<p><strong>Rationale:</strong> This approach maintains clear semantics: <code>Encounter.diagnosis</code> = "diagnoses relevant to this encounter" vs. <code>Condition.encounter</code> = "encounter where this diagnosis was established".</p>
+<p><strong>Begründung:</strong> Dieser Ansatz erhält klare Semantik: <code>Encounter.diagnosis</code> = "für diesen Fall relevante Diagnosen" vs. <code>Condition.encounter</code> = "Fall, in dem diese Diagnose festgestellt wurde".</p>
 </div>
 
-#### Temporal Information
+#### Zeitliche Informationen
 
 **`Condition.onset[x]`:**
-- **MAY** be captured as Period or dateTime
-- OPTIONAL: Use the extension to specify life phase as code when exact timepoints are unknown
-- Represents when the condition began or was first noticed
+- **KANN** als Period oder dateTime erfasst werden
+- OPTIONAL zusätzlich Angabe von Lebensphase als Code mittels Extension, falls genaue Zeitpunkte nicht bekannt sind
+- Repräsentiert, wann die Erkrankung begann oder erstmals bemerkt wurde
 
 **`Condition.recordedDate`:**
-- Represents when the diagnosis was recorded in the system
+- Repräsentiert, wann die Diagnose im System erfasst wurde
+- Dient der zeitlichen Einordnung der Diagnose
 
 {% include link-list.md %}

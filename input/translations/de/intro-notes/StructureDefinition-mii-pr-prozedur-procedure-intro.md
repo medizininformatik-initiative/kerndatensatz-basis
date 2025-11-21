@@ -1,113 +1,113 @@
-**Example Usage Scenarios:**
+**Beispielhafte Anwendungsszenarien:**
 
-- Document procedures performed on patients using OPS (Operationen- und Prozedurenschlüssel) coding for billing and administrative purposes
-- Record surgical interventions, diagnostic procedures, and therapeutic treatments in clinical care
-- Support quality management and clinical research through standardized procedure documentation
-- Enable procedure-based analyses and outcome research across healthcare facilities
-- Represent procedures using SNOMED CT for semantic interoperability alongside OPS coding
-- Link procedures to specific encounters for temporal and contextual documentation
+- Dokumentation von bei PatientInnen durchgeführten Prozeduren mittels OPS-Codierung (Operationen- und Prozedurenschlüssel) für Abrechnungs- und Verwaltungszwecke
+- Erfassung chirurgischer Eingriffe, diagnostischer Prozeduren und therapeutischer Behandlungen in der klinischen Versorgung
+- Unterstützung von Qualitätsmanagement und klinischer Forschung durch standardisierte Prozedurdokumentation
+- Ermöglichung prozedurbasierter Analysen und Outcome-Forschung über Gesundheitseinrichtungen hinweg
+- Darstellung von Prozeduren mittels SNOMED CT für semantische Interoperabilität neben OPS-Codierung
+- Verknüpfung von Prozeduren mit spezifischen Behandlungsfällen zur zeitlichen und kontextuellen Dokumentation
 
-### Profile Specific Implementation Guidance
+### Profilspezifische Implementierungshinweise
 
-This section provides detailed implementation guidance for the MII Procedure (Prozedur) Profile.
+Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Prozedur-Profil.
 
-#### Coding Requirements
+#### Codierungsanforderungen
 
-**Mandatory Coding:**
-- **`Procedure.code`**: [Mandatory] coding using either OPS or SNOMED CT
-- At least one coded procedure **MUST** be present
-- Additional codings from other terminologies are OPTIONAL
+**Verpflichtende Codierung:**
+- **`Procedure.code`**: VERPFLICHTEND Kodierung entweder per OPS oder SNOMED CT
+- Mindestens eine kodierte Prozedur MUSS vorhanden sein
+- Weitere Kodierungen aus anderen Terminologien sind OPTIONAL
 
-**OPS Coding:**
-- **`Procedure.code:ops`**: OPS (Operationen- und Prozedurenschlüssel) is the primary coding system for procedures in Germany
-- See [OPS Coding - German Base Profiles] for detailed OPS coding requirements
-- OPS codes include:
-  - `Procedure.code:ops.coding.code`: Complete procedure code
-  - `Procedure.code:ops.coding.system`: Code system (`http://fhir.de/CodeSystem/bfarm/ops`)
-  - `Procedure.code:ops.coding.version`: OPS version year
-  - `Procedure.code:ops.extension:seitenlokalisation`: Laterality extension
+**OPS-Kodierung:**
+- **`Procedure.code:ops`**: OPS (Operationen- und Prozedurenschlüssel) ist das primäre Codiersystem für Prozeduren in Deutschland
+- Siehe [OPS-Kodierung - Deutsche Basisprofile] für detaillierte OPS-Codierungsanforderungen
+- OPS-Codes umfassen:
+  - `Procedure.code:ops.coding.code`: Vollständiger Prozedurenkode
+  - `Procedure.code:ops.coding.system`: Codesystem (`http://fhir.de/CodeSystem/bfarm/ops`)
+  - `Procedure.code:ops.coding.version`: OPS-Versionsjahr
+  - `Procedure.code:ops.extension:seitenlokalisation`: Seitenlokalisation-Extension
 
-**SNOMED CT Coding:**
-- **`Procedure.code:sct`**: SNOMED CT coding
-- Can be used as primary coding or alongside OPS
+**SNOMED-CT-Kodierung:**
+- **`Procedure.code:sct`**: SNOMED-CT-Codierung
+- Kann als primäre Codierung oder neben OPS verwendet werden
 
-#### Category Classification
+#### Kategorisierung
 
 <div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
-<h5 style="color: #406A99; margin-top: 0;">Best Practice - SNOMED CT Categorization</h5>
+<h5 style="color: #406A99; margin-top: 0;">Best Practice - SNOMED-CT-Kategorisierung</h5>
 
-<p><strong>Mandatory Categorization:</strong> <code>Procedure.category</code> SNOMED CT categorization based on the procedure code.</p>
+<p><strong>Verpflichtende Kategorisierung:</strong> <code>Procedure.category</code> SNOMED-CT-Kategorisierung auf Basis des Prozedurenkodes.</p>
 
-<p><strong>OPS Class Title Mapping:</strong> When the procedure is coded using OPS, the category <strong>SHOULD</strong> be derived by mapping OPS chapter/class titles to SNOMED CT concepts. See the Terminologies section in this IG for OPS-to-SNOMED CT category mappings.</p>
+<p><strong>Mapping von OPS-Klassentiteln:</strong> Wenn die Prozedur per OPS kodiert wird, <strong>SOLLTE</strong> die Kategorie durch Mapping von OPS-Kapitel-/Klassentiteln auf SNOMED-CT-Konzepte abgeleitet werden. Siehe Abschnitt Terminologien in diesem IG für OPS-zu-SNOMED-CT-Kategorie-Mappings.</p>
 
-<p><strong>Constraint proc-mii-1:</strong> This requirement is only relevant when the procedure is coded using OPS.</p>
+<p><strong>Constraint proc-mii-1:</strong> Diese Anforderung ist nur relevant, wenn die Prozedur per OPS kodiert wird.</p>
 
-<p><strong>Purpose:</strong> Category classification enables:</p>
+<p><strong>Zweck:</strong> Die Kategorisierung ermöglicht:</p>
 <ul>
-  <li>High-level procedure grouping for epidemiological analyses</li>
-  <li>Filtering and browsing procedures by broad clinical categories</li>
-  <li>Semantic consistency across differently coded procedures</li>
+  <li>Hochstufige Prozedur-Gruppierung für epidemiologische Analysen</li>
+  <li>Filterung und Durchsuchen von Prozeduren nach breiten klinischen Kategorien</li>
+  <li>Semantische Konsistenz über unterschiedlich kodierte Prozeduren hinweg</li>
 </ul>
 </div>
 
-#### Temporal Information
+#### Zeitliche Informationen
 
 **`Procedure.performed[x]`:**
-- Documents when the procedure was performed
-- **MAY** be specified as `performedDateTime` (single point in time) or `performedPeriod` (start and end times)
-- Use `performedPeriod` when both start and end times are known (e.g., surgical procedures with documented start/end)
-- Use `performedDateTime` for point-in-time procedures or when only a single timestamp is available
+- Dokumentiert, wann die Prozedur durchgeführt wurde
+- **KANN** als `performedDateTime` (einzelner Zeitpunkt) oder `performedPeriod` (Start- und Endzeitpunkt) angegeben werden
+- Verwenden Sie `performedPeriod`, wenn sowohl Start- als auch Endzeitpunkt bekannt sind (z.B. chirurgische Eingriffe mit dokumentiertem Start/Ende)
+- Verwenden Sie `performedDateTime` für zeitpunktbezogene Prozeduren oder wenn nur ein einzelner Zeitstempel verfügbar ist
 
 **`Procedure.extension:Dokumentationsdatum`:**
-- MII-specific extension for documentation date
-- Represents when the procedure was documented/recorded in the system
-- Distinct from `performed[x]` which represents when the procedure actually occurred
-- Useful for auditing and temporal ordering of documentation
+- MII-spezifische Extension für das Dokumentationsdatum
+- Repräsentiert, wann die Prozedur im System dokumentiert/erfasst wurde
+- Unterscheidet sich von `performed[x]`, welches repräsentiert, wann die Prozedur tatsächlich durchgeführt wurde
+- Nützlich für Auditing und zeitliche Einordnung der Dokumentation
 
-#### Body Site Documentation
+#### Dokumentation der Körperstelle
 
 <div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
-<h5 style="color: #406A99; margin-top: 0;">Best Practice - Body Site vs. Laterality</h5>
+<h5 style="color: #406A99; margin-top: 0;">Best Practice - Körperstelle vs. Seitenlokalisation</h5>
 
-<p><strong>Body Site Purpose:</strong> <code>Procedure.bodySite</code> provides detailed anatomical location coding for the procedure using SNOMED CT.</p>
+<p><strong>Zweck von bodySite:</strong> <code>Procedure.bodySite</code> bietet detaillierte Kodierung der anatomischen Lokalisation für die Prozedur mittels SNOMED CT.</p>
 
-<p><strong>NOT for Laterality:</strong> <code>Procedure.bodySite</code> <strong>SHOULD NOT</strong> be used to represent laterality (left/right/bilateral). Laterality is a property of the procedure code itself.</p>
+<p><strong>NICHT für Seitenlokalisation:</strong> <code>Procedure.bodySite</code> <strong>SOLLTE NICHT</strong> verwendet werden, um die Seitenlokalisation (links/rechts/beidseitig) abzubilden. Die Seitenlokalisation ist eine Eigenschaft des Prozedurenkodes selbst.</p>
 
-<p><strong>Laterality Representation:</strong></p>
+<p><strong>Darstellung der Seitenlokalisation:</strong></p>
 <ul>
-  <li>For OPS codes: Use <code>Procedure.code:ops.extension:seitenlokalisation</code></li>
-  <li>For SNOMED CT: Laterality is inherent in the procedure concept (e.g., "Appendectomy of right appendix")</li>
+  <li>Für OPS-Codes: Verwenden Sie <code>Procedure.code:ops.extension:seitenlokalisation</code></li>
+  <li>Für SNOMED CT: Seitenlokalisation ist im Prozedurkonzept inhärent enthalten (z.B. "Appendektomie des rechten Appendix")</li>
 </ul>
 
-<p><strong>When to Use bodySite:</strong></p>
+<p><strong>Wann bodySite zu verwenden ist:</strong></p>
 <ul>
-  <li>To provide additional anatomical detail beyond what the code specifies</li>
-  <li>To specify precise anatomical structures using SNOMED CT anatomy concepts</li>
+  <li>Um zusätzliche anatomische Details bereitzustellen, die über das hinausgehen, was der Code spezifiziert</li>
+  <li>Um präzise anatomische Strukturen mittels SNOMED-CT-Anatomiekonzepten zu spezifizieren</li>
 </ul>
 </div>
 
-#### Procedure Intent
+#### Durchführungsabsicht
 
 **`Procedure.extension:Durchfuehrungsabsicht`:**
-- MII-specific extension for procedure intent/purpose
-- Uses SNOMED CT codes to classify the clinical intent:
-  - Therapeutic procedures
-  - Diagnostic procedures
-  - Prophylactic procedures
-  - Palliative procedures
+- MII-spezifische Extension für die Durchführungsabsicht/den Zweck der Prozedur
+- Verwendet SNOMED-CT-Codes zur Klassifizierung der klinischen Absicht:
+  - Therapeutische Prozeduren
+  - Diagnostische Prozeduren
+  - Prophylaktische Prozeduren
+  - Palliative Prozeduren
   - etc.
-- Provides clinical context for the procedure beyond the procedural code itself
+- Bietet klinischen Kontext für die Prozedur über den Prozedurenkode hinaus
 
-#### Status and Workflow
+#### Status und Workflow
 
 **`Procedure.status`:**
-- No restrictions on status values (preparation, in-progress, on-hold, stopped, completed, entered-in-error, unknown)
-- Most procedures in retrospective documentation will have `status='completed'`
+- Keine Einschränkungen bezüglich des gewählten Status (preparation, in-progress, on-hold, stopped, completed, entered-in-error, unknown)
+- Die meisten Prozeduren in der retrospektiven Dokumentation haben `status='completed'`
 
-#### Patient Reference
+#### Patientenbezug
 
 **`Procedure.subject`:**
-- Reference to Patient **MUST** always be provided
-- Procedures are inherently patient-specific and cannot exist without this reference
+- Referenz auf Patient MUSS stets gegeben sein
+- Prozeduren sind inhärent patientenspezifisch und können ohne diese Referenz nicht existieren
 
 {% include link-list.md %}

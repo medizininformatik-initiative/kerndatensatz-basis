@@ -1,52 +1,52 @@
-**Example Usage Scenarios:**
+**Beispielhafte Anwendungsszenarien:**
 
-- Provide pseudonymized patient data for secondary use in research contexts while protecting patient identity
-- Support federated analyses across multiple MII sites without exposing identifying patient information
-- Enable health insurance-based analyses (e.g., NUM-CON-MON use case) using IK numbers without revealing individual insurance IDs
-- Maintain coarse demographic granularity for research cohort formation while preventing re-identification
+- Bereitstellung pseudonymisierter Patientendaten für die Sekundärnutzung in Forschungskontexten unter Wahrung der Patientenidentität
+- Unterstützung föderierter Analysen über mehrere MII-Standorte hinweg ohne Offenlegung identifizierender Patienteninformationen
+- Ermöglichung krankenkassenbasierter Analysen (z.B. NUM-CON-MON Use Case) mittels IK-Nummern ohne Offenlegung individueller Versicherten-IDs
+- Aufrechterhaltung grober demografischer Granularität für die Bildung von Forschungskohorten unter Vermeidung von Re-Identifikation
 
 <div style="background-color: #FFE5E5; border-left: 5px solid #D32F2F; padding: 15px; margin: 10px 0;">
-<h5 style="color: #C62828; margin-top: 0;">⚠️ Important: Pseudonymization Validation Limitations</h5>
+<h5 style="color: #C62828; margin-top: 0;">⚠️ Wichtig: Einschränkungen bei der Pseudonymisierungs-Validierung</h5>
 
-<p>This profile <strong>does not contain rules to validate correct pseudonymization</strong>. Successful validation against this profile does <strong>not</strong> guarantee that technically or legally compliant pseudonymization has been performed.</p>
+<p>Dieses Profil <strong>enthält keine Regeln zur Prüfung der korrekten Pseudonymisierung</strong>. Ein erfolgreiches Validieren gegen dieses Profil bedeutet daher <strong>nicht</strong>, dass eine fachlich oder datenschutzrechtlich korrekte Pseudonymisierung erfolgt ist.</p>
 
-<p>Pseudonymization requirements vary by project context and cannot be fully represented in a single FHIR profile. For comprehensive pseudonymization guidance, consult the <a href="https://medizininformatik-initiative.github.io/mii-interface-module-pseudonymization/">MII Pseudonymization Interface</a>.</p>
+<p>Anforderungen an die Pseudonymisierung können je nach Projektkontext variieren und lassen sich nicht vollständig in einem einzigen FHIR-Profil abbilden. Für umfassende Hinweise zur Pseudonymisierung konsultieren Sie das <a href="https://medizininformatik-initiative.github.io/mii-interface-module-pseudonymization/">MII Pseudonymization Interface</a>.</p>
 </div>
 
-### Profile Specific Implementation Guidance
+### Profilspezifische Implementierungshinweise
 
-This section provides detailed implementation guidance for the MII Pseudonymized Patient Profile.
+Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Profil für pseudonymisierte Patientendaten.
 
-#### Pseudonymization Identifiers
+#### Pseudonymisierungs-Identifier
 
-The pseudonymized patient profile uses specialized identifier types:
+Das pseudonymisierte Patientenprofil verwendet spezialisierte Identifier-Typen:
 
-- **`Patient.identifier:pseudonymisierterIdentifier`**: Pseudonymized identifier for the patient
-  - **MUST** be appropriately typed if the identifier is a derived pseudonym
-  - Use when the identifier can be linked back to the original patient data through a controlled process
-  - Typically used in research scenarios where de-pseudonymization may be necessary for specific purposes
+- **`Patient.identifier:pseudonymisierterIdentifier`**: Pseudonymisierter Identifier für die PatientIn
+  - **MUSS** entsprechend typisiert werden, falls der Identifier ein abgeleitetes Pseudonym ist
+  - Zu verwenden, wenn der Identifier durch einen kontrollierten Prozess mit den originalen Patientendaten verknüpft werden kann
+  - Typischerweise in Forschungsszenarien verwendet, in denen eine De-Pseudonymisierung für spezifische Zwecke notwendig sein kann
 
-- **`Patient.identifier:anonymisierterIdentifier`**: Anonymized identifier for the patient
-  - **SHOULD** only be used when no inference about the original dataset is possible
-  - Represents irreversible anonymization where re-identification is not feasible
+- **`Patient.identifier:anonymisierterIdentifier`**: Anonymisierter Identifier für die PatientIn
+  - **SOLLTE** nur verwendet werden, wenn keinerlei Rückschlüsse auf den originalen Datensatz möglich sind
+  - Repräsentiert irreversible Anonymisierung, bei der eine Re-Identifikation nicht möglich ist
 
-- **`Patient.identifier:maskierterVersichertenIdentifier`**: Masked health insurance identifier
-  - Used for health insurance-based analyses without revealing the actual insurance ID
-  - See [Best Practice - Masked Insurance ID with IK Number](#best-practice---masked-insurance-id-with-ik-number) for implementation details
+- **`Patient.identifier:maskierterVersichertenIdentifier`**: Maskierter Krankenversicherten-Identifier
+  - Für krankenkassenbasierte Analysen ohne Offenlegung der tatsächlichen Versicherten-ID verwendet
+  - Siehe [Best Practice - Maskierte Versicherten-ID mit IK-Nummer](#best-practice---maskierte-versicherten-id-mit-ik-nummer) für Implementierungsdetails
 
 <div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
-<h5 style="color: #406A99; margin-top: 0;">Best Practice - Masked Insurance ID with IK Number</h5>
+<h5 style="color: #406A99; margin-top: 0;">Best Practice - Maskierte Versicherten-ID mit IK-Nummer</h5>
 
-<p>For use cases requiring health insurance analysis (e.g., NUM-CON-MON), it is necessary to include the IK number (Institutionskennzeichen) of the health insurance provider in the pseudonymized patient profile without exposing the actual insurance ID.</p>
+<p>Für Use Cases, die eine Krankenkassen-Analyse erfordern (z.B. NUM-CON-MON), ist es notwendig, die IK-Nummer (Institutionskennzeichen) der Krankenkasse im pseudonymisierten Patientenprofil mitzuführen, ohne die tatsächliche Versicherten-ID offenzulegen.</p>
 
-<p>This is achieved by:</p>
+<p>Dies wird erreicht, indem:</p>
 <ol>
-  <li>Creating an <code>Identifier</code> with type <code>KVZ10</code> (10-digit health insurance ID)</li>
-  <li>Replacing the <code>Identifier.value</code> element with the [Data Absent Reason] extension using code <code>masked</code></li>
-  <li>Providing the IK number of the health insurance provider in <code>Identifier.assigner.identifier</code></li>
+  <li>Ein <code>Identifier</code> mit dem Typ <code>KVZ10</code> (10-stellige Krankenversicherten-ID) erstellt wird</li>
+  <li>Das Element <code>Identifier.value</code> durch die Extension [Data Absent Reason] mit dem Code <code>masked</code> ersetzt wird</li>
+  <li>Die IK-Nummer der Krankenkasse in <code>Identifier.assigner.identifier</code> angegeben wird</li>
 </ol>
 
-<p>See the example resource for this modeling approach.</p>
+<p>Ein Beispiel für diese Modellierung findet sich in der Beispielressource.</p>
 </div>
 
 {% include link-list.md %}
