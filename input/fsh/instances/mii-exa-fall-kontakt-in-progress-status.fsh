@@ -1,7 +1,8 @@
-Instance: mii-exa-fall-kontakt-gesundheitseinrichtung-4
+Instance: mii-exa-fall-kontakt-in-progress-status
 InstanceOf: mii-pr-fall-kontakt-gesundheitseinrichtung
 Usage: #example
-Description: "Encounter: Abteilungskontakt mit Status 'in-progress'"
+Title: "MII EXA Fall Kontakt Gesundheitseinrichtung (Status in-progress)"
+Description: "Encounter: Status 'in-progress'"
 * insert TestDataLabel
 * insert MetaProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)
 * status = #in-progress
@@ -9,4 +10,4 @@ Description: "Encounter: Abteilungskontakt mit Status 'in-progress'"
 * type[Kontaktebene] = $Kontaktebene#abteilungskontakt
 * serviceType.coding[ErweiterterFachabteilungsschluessel] = $FachabteilungsschluesselErweitertCS#2315 "Orthopädie/Schwerpunkt Chirurgie"
 * period.start = "2024-06-14"
-* subject = Reference(mii-exa-person-patient-minimal)
+* subject = Reference(mii-exa-person-patient-pseudonymisiert)

@@ -10,6 +10,7 @@ Alias: $icd-10 = http://hl7.org/fhir/sid/icd-10
 Alias: $observation-category = http://terminology.hl7.org/CodeSystem/observation-category
 Alias: $MII-Reference = https://www.medizininformatik-initiative.de/fhir/core/StructureDefinition/MII-Reference
 Alias: $data-absent-reason = http://hl7.org/fhir/StructureDefinition/data-absent-reason
+Alias: $Vitalstatus = https://www.medizininformatik-initiative.de/fhir/core/modul-person/CodeSystem/Vitalstatus
 
 // Diagnose
 Alias: $condition-clinical = http://terminology.hl7.org/CodeSystem/condition-clinical
@@ -28,7 +29,6 @@ Alias: $icd-o-3 = http://terminology.hl7.org/CodeSystem/icd-o-3
 Alias: $condition-assertedDate = http://hl7.org/fhir/StructureDefinition/condition-assertedDate
 
 // Prozedur
-Alias: $sct-no-ver = http://snomed.info/sct
 Alias: $ops = http://fhir.de/CodeSystem/bfarm/ops
 
 // Fall
@@ -58,3 +58,8 @@ Alias: $DiagnoseTyp = http://fhir.de/ValueSet/DiagnoseTyp
 Alias: $Diagnosesubtyp = http://fhir.de/ValueSet/Diagnosesubtyp
 Alias: $KontaktDiagnoseProzedur = http://fhir.de/CodeSystem/KontaktDiagnoseProzedur
 Alias: $location-physical-type = http://terminology.hl7.org/CodeSystem/location-physical-type
+Alias: $AufnahmegrundErsteUndZweiteStelle = http://fhir.de/CodeSystem/dkgev/AufnahmegrundErsteUndZweiteStelle
+Alias: $AufnahmegrundDritteStelle = http://fhir.de/CodeSystem/dkgev/AufnahmegrundDritteStelle
+Alias: $AufnahmegrundVierteStelle = http://fhir.de/CodeSystem/dkgev/AufnahmegrundVierteStelle
+Alias: $v3-ActPriority = http://terminology.hl7.org/CodeSystem/v3-ActPriority
+Alias: $kontaktart-de-cs = http://fhir.de/CodeSystem/kontaktart-de

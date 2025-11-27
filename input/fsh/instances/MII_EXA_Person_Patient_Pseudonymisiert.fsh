@@ -1,7 +1,8 @@
 Instance: mii-exa-person-patient-pseudonymisiert
 InstanceOf: MII_PR_Person_PatientPseudonymisiert
 Usage: #example
-Description: "Patient: Pseudonymisierter Patient mit maskiertem Versichertenidentifer"
+Title: "MII EXA Person Patient Pseudonymisiert"
+Description: "Patient: with pseudonym and masked insurance identifier (maskierter Versichertenidentifer)"
 * insert TestDataLabel
 * insert MetaProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert)
 * identifier[PseudonymisierterIdentifier].type = $v3-ObservationValue#PSEUDED
@@ -15,7 +16,7 @@ Description: "Patient: Pseudonymisierter Patient mit maskiertem Versicherteniden
 * identifier[MaskierterVersichertenIdentifer].assigner.identifier.system = "http://fhir.de/sid/arge-ik/iknr"
 * identifier[MaskierterVersichertenIdentifer].assigner.identifier.value = "260326822"
 * address.type = #both
-* address.postalCode = "50"
+* address.postalCode = "10"
 * address.country = "DE"
-* gender = #male
-* birthDate = "2000-04-01"
+* gender = #female
+* birthDate = "1998"

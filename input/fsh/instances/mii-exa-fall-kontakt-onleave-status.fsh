@@ -1,10 +1,11 @@
-Instance: mii-exa-fall-kontakt-gesundheitseinrichtung-6
+Instance: mii-exa-fall-kontakt-onleave-status
 InstanceOf: mii-pr-fall-kontakt-gesundheitseinrichtung
 Usage: #example
-Description: "Encounter: Kontakt mit Status 'unknown'"
+Title: "MII EXA Fall Kontakt Gesundheitseinrichtung (Status onleave)"
+Description: "Encounter: Status 'onleave'"
 * insert TestDataLabel
 * insert MetaProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)
-* status = #unknown
+* status = #onleave
 * class = $v3-ActCode#IMP "inpatient encounter"
-* subject = Reference(mii-exa-person-patient-minimal)
+* subject = Reference(mii-exa-person-patient-pseudonymisiert)
 * period.start = "2024-06-14"
