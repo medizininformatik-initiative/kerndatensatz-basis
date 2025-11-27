@@ -26,20 +26,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Download dependencies via FHIR Package Tool using sushi-config.yaml
-      - name: Download Dependencies
-        run: |
-          fhir-pkg-tool --sushi-deps-file sushi-config.yaml
-
       # Run SUSHI (FSH -> FHIR conversion)
       - name: Run SUSHI
-        run: |
-          sushi .
+        run: sushi .
       
       # Run the HL7 FHIR IG Publisher
       - name: Build IG
-        run: |
-          igpublisher -ig ig.ini
+        run: igpublisher -ig ig.ini
 
       - name: Record branch metadata for Pages cleanup
         if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/')
