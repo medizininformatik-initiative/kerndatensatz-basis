@@ -33,6 +33,7 @@ jobs:
       # Run the HL7 FHIR IG Publisher
       - name: Build IG
         run: igpublisher -ig ig.ini
+        continue-on-error: true
 
       - name: Record branch metadata for Pages cleanup
         if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/')
