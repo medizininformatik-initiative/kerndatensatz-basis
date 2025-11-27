@@ -116,6 +116,13 @@ parameters:
   translation-sources:
     - input/translations/de # Path to German translations
   igs-logo: MII_Logo_rgb.jpg # MII logo for the IG
+  excludexml: false
+  excludejson: false
+  excludettl: true
+  excludemap: false
+  version-comparison-master: '{current}'
+  version-comparison:
+    - '{current}'
   special-url:
     - https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/CapabilityStatement/metadata
     - https://www.medizininformatik-initiative.de/fhir/core/modul-fall/CapabilityStatement/metadata
