@@ -6,7 +6,7 @@ Diese ImplementationGuide-Ressource definiert die technischen Details dieser Pub
 
 ### Versionsübergreifende Analyse
 
-{% capture cross-version-analysis %}{% include cross-version-analysis.xhtml %}{% endcapture %}{{ cross-version-analysis | remove: '<p>' | remove: '</p>'}}
+{% include cross-version-analysis.html %}
 
 ### IG-Abhängigkeiten
 

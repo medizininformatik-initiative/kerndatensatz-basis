@@ -32,10 +32,8 @@ jobs:
       
       # Run the HL7 FHIR IG Publisher
       - name: Build IG
-        id: build_ig
         run: |
           igpublisher -ig ig.ini || true
-          # Check if output directory exists with content
           if [ -d "output" ] && [ "$(ls -A output)" ]; then
             echo "IG build produced output (Jekyll may have failed but core content exists)"
             exit 0

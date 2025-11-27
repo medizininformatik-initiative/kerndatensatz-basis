@@ -38,7 +38,7 @@ Schematrons are also available for download:
 
 The following link to the ImplementationGuide resource defines the technical details of this publication, including dependencies and publishing parameters:
 
-- [MII Kerndatensatz Basis ImplementationGuide Resource](ImplementationGuide-mii-ig-basis.html)
+- [MII Kerndatensatz Basis ImplementationGuide Resource](ImplementationGuide-mii-ig-base.html)
 
 #### Version History
 

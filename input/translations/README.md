@@ -6,7 +6,7 @@ This directory contains translations for the MII Implementation Guide.
 
 **Multi-Language IG**
 - Language switcher working ("English | Deutsch")
-- ImplementationGuide menu items translated (`ImplementationGuide-mii-ig-basis.po`)
+- ImplementationGuide menu items translated (`ImplementationGuide-mii-ig-base.po`)
 - Language-specific MII logos (English/German versions switch automatically)
 - Template: `fhir2.base.template#current` with built-in multi-language support
 
@@ -20,7 +20,7 @@ input/
         │   ├── index.md            
         │   ├── guidance.md         
         │   └── conformance.md      
-        ├── ImplementationGuide-mii-ig-basis.po  Menu items
+        ├── ImplementationGuide-mii-ig-base.po  Menu items
         └── *.po                     # Resource translations (PO format)
 ```
 
@@ -139,7 +139,7 @@ The IG publisher automatically matches filenames with English originals.
 
 ### Start Here 
 1. **Homepage** (`input/translations/de/pagecontent/index.md`) ✅ Done
-2. **ImplementationGuide** (`input/translations/de/ImplementationGuide-mii-ig-basis.po`) ✅ Done
+2. **ImplementationGuide** (`input/translations/de/ImplementationGuide-mii-ig-base.po`) ✅ Done
 3. **Key profiles** - Edit PO files from `translations/de/po/`:
    - Patient (`StructureDefinition-mii-pr-person-patient.po`)
    - Encounter (`StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.po`)

@@ -6,7 +6,7 @@ This ImplementationGuide resource defines the technical details of this publicat
 
 ### Cross Version Analysis
 
-{% capture cross-version-analysis %}{% include cross-version-analysis.xhtml %}{% endcapture %}{{ cross-version-analysis | remove: '<p>' | remove: '</p>'}}
+{% include cross-version-analysis.html %}
 
 ### IG Dependencies
 
