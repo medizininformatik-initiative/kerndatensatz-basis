@@ -32,8 +32,17 @@ jobs:
       
       # Run the HL7 FHIR IG Publisher
       - name: Build IG
-        run: igpublisher -ig ig.ini
-        continue-on-error: true
+        id: build_ig
+        run: |
+          igpublisher -ig ig.ini || true
+          # Check if output directory exists with content
+          if [ -d "output" ] && [ "$(ls -A output)" ]; then
+            echo "IG build produced output (Jekyll may have failed but core content exists)"
+            exit 0
+          else
+            echo "IG build failed to produce output"
+            exit 1
+          fi
 
       - name: Record branch metadata for Pages cleanup
         if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/')
