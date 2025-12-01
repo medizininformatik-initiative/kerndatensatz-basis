@@ -12,7 +12,7 @@
 </head>
 <body style="margin: 20px; background-color: #ffffff">
  <h1>Terminology Server Report for MII_IG_Base</h1>
- <p>Generated Mon Dec 01 10:11:20 UTC 2025, FHIR version 4.0.1 for de.medizininformatikinitiative.kerndatensatz.base#2026.0.0-dev.1 (canonical = <a href="https://www.medizininformatik-initiative.de/fhir/modul-base">https://www.medizininformatik-initiative.de/fhir/modul-base</a> (<a href="https://www.medizininformatik-initiative.de/fhir/modul-base/history.html">history</a>))</p>
+ <p>Generated Mon Dec 01 10:49:43 UTC 2025, FHIR version 4.0.1 for de.medizininformatikinitiative.kerndatensatz.base#2026.0.0-dev.1 (canonical = <a href="https://www.medizininformatik-initiative.de/fhir/modul-base">https://www.medizininformatik-initiative.de/fhir/modul-base</a> (<a href="https://www.medizininformatik-initiative.de/fhir/modul-base/history.html">history</a>))</p>
 <p>This page provides a report on which terminology servers were used while publishing this IG. Note that terminology caching reduces the server hit count - this page only reports content that wasn't cached</p>
 <h2>Terminology Parameters</h2>
 <ul>
@@ -1581,11 +1581,18 @@
     <td>auth = , candidates=</td>
   </tr>
   <tr>
-    <td>Found candidate server https://tx.fhir.org/r4</td>
+    <td>System not handled by any servers. Using primary server</td>
     <td>https://tx.fhir.org/r4</td>
     <td>null</td>
     <td>http://fhir.de/CodeSystem/bfarm/icd-10-gm</td>
-    <td>auth = , candidates=https://tx.fhir.org/r4</td>
+    <td>auth = , candidates=</td>
+  </tr>
+  <tr>
+    <td>Fallback: primary server</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>null</td>
+    <td>http://fhir.de/CodeSystem/bfarm/icd-10-gm</td>
+    <td>auth = , candidates=</td>
   </tr>
   <tr>
     <td>System not handled by any servers. Using primary server</td>
@@ -1934,12 +1941,6 @@
     </td>
     <td>
       <b>Message</b>
-    </td>
-  </tr>
-  <tr>
-    <td>http://fhir.de/CodeSystem/bfarm/icd-10-gm</td>
-    <td style="background-color: #ffe3e3">
-      <span title="https://tx.fhir.org/tx-reg/resolve?fhirVersion=4.0&amp;url=http%3A%2F%2Ffhir.de%2FCodeSystem%2Fbfarm%2Ficd-10-gm&amp;usage=publication">Error resolving system http://fhir.de/CodeSystem/bfarm/icd-10-gm: Connect timed out</span>
     </td>
   </tr>
   <tr>
