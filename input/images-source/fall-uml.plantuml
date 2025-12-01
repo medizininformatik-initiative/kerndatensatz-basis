@@ -1,0 +1,112 @@
+@startuml
+scale 0.7
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam packageStyle rectangle
+top to bottom direction
+
+' =======================================================
+' MODUL FALL — vertical stacking
+' =======================================================
+package "Modul Fall" {
+
+    ' ---------------------------------------------------
+    ' FIRST: KONTAKTORTE (VERTICAL)
+    ' ---------------------------------------------------
+    package "Kontaktorte" {
+        together {
+            class "Einrichtung - temporär" as EinrichtungTemp {
+                +Vollständiger Einrichtungsidentifikator: Identifier
+            }
+
+            class "Abteilung - temporär" as AbteilungTemp {
+                +Abteilungsidentifikator: Identifier
+            }
+
+            class "Versorgungsstelle - temporär" as VersorgungsstelleTemp {
+                +Versorgungsstellenidentifikator: Identifier
+            }
+        }
+    }
+
+    ' ---------------------------------------------------
+    ' SECOND: KONTAKTEBENEN (VERTICAL)
+    ' ---------------------------------------------------
+    package "Kontaktebenen" {
+        together {
+            class Einrichtungskontakt {
+                +Kontakt-Ebene: CodeableConcept
+                +Kontakt-Klasse: CodeableConcept
+                +Patientenidentifikator: Reference
+                +Aufnahmenummer: Identifier
+                +Aufnahmeanlass: CodeableConcept
+                +Aufnahmegrund: CodeableConcept
+                +BeginnDatum: dateTime
+                +Enddatum: dateTime
+                +Entlassungsgrund: CodeableConcept
+            }
+
+            class Abteilungskontakt {
+                +Kontakt-Ebene: CodeableConcept
+                +Kontakt-Klasse: CodeableConcept
+                +Patientenidentifikator: Reference
+                +Aufnahmenummer: Identifier
+                +BeginnDatum: dateTime
+                +Enddatum: dateTime
+            }
+
+            class Versorgungsstellenkontakt {
+                +Kontakt-Ebene: CodeableConcept
+                +Kontakt-Klasse: CodeableConcept
+                +Patientenidentifikator: Reference
+                +Aufnahmenummer: Identifier
+                +BeginnDatum: dateTime
+                +Enddatum: dateTime
+            }
+        }
+    }
+}
+
+' =======================================================
+' MODUL PERSON
+' =======================================================
+package "Modul Person" {
+    class Patient {
+        +Patienten-Identifikator – PID: Identifier
+        +Patienten-Identifikator Kontext: CodeableConcept
+    }
+}
+
+' =======================================================
+' MODUL DIAGNOSE
+' =======================================================
+package "Modul Diagnose" {
+    class Diagnose {
+        +Körperstelle: CodeableConcept
+        +Freitextbeschreibung: string
+        +Diagnoseerläuterung: string
+        +KlinischerStatus: CodeableConcept
+        +Feststellungsdatum: dateTime
+        +Dokumentationsdatum: dateTime
+    }
+}
+
+' =======================================================
+' RELATIONSHIPS
+' =======================================================
+
+EinrichtungTemp       "1" -- "0..*" Einrichtungskontakt
+AbteilungTemp         "1" -- "0..*" Abteilungskontakt
+VersorgungsstelleTemp "1" -- "0..*" Versorgungsstellenkontakt
+
+VersorgungsstelleTemp "0..*" --* "1" AbteilungTemp
+AbteilungTemp         "0..*" --* "1" EinrichtungTemp
+
+Einrichtungskontakt       "1" -- "0..*" Abteilungskontakt
+Abteilungskontakt         "1" -- "0..*" Versorgungsstellenkontakt
+
+Einrichtungskontakt       "0..*" --> "0..*" Diagnose
+Versorgungsstellenkontakt "0..1" <-- "0..*" Diagnose
+
+Patient "1" --> "0..*" Diagnose
+@enduml

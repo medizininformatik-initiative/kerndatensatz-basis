@@ -1,0 +1,93 @@
+@startuml
+scale 0.7
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam packageStyle rectangle
+top to bottom direction
+
+' =============================
+'        PACKAGE: MODUL PERSON
+' =============================
+package "Modul Person" {
+  class Person {
+    +Identifikation: Identifier
+  }
+
+  class Name {
+    +Vorname: string
+    +Nachname: string
+    +Familienname: string
+    +Vorsatzwort: string
+    +Namenszusatz: string
+    +Präfix: string
+    +Art des Präfixes: code
+    +Geburtsname: string
+  }
+
+  class Demographie {
+    +administratives Geschlecht: code
+    +Geburtsdatum: dateTime
+  }
+
+  class Adresse {
+    +Land: string
+    +PLZ: string
+    +Wohnort: string
+    +Straße: string
+  }
+
+  class Vitalstatus {
+    +Patient verstorben: boolean
+    +Todeszeitpunkt: dateTime
+    +Zeitpunkt Feststellung Vitalstatus: dateTime
+    +Informationsquelle: string
+    +Todesursache: CodeableConcept
+  }
+
+  class Rolle
+  class PatientIn
+  class PatientenIdentifikator {
+    +Patienten-Identifikator – PID: Identifier
+    +Patienten-Identifikator Kontext: CodeableConcept
+  }
+  class PatientenPseudonym {
+    +Pseudonym: Identifier
+  }
+  class Versicherung {
+    +Institutionskennzeichen Krankenkasse: string
+    +Versicherungsnummer: string
+    +Versicherungstyp: CodeableConcept
+  }
+}
+
+' =============================
+'        PACKAGE: MODUL STUDIE
+' =============================
+package "Modul Studie" {
+  class ProbandIn {
+    +Bezeichnung der Studie: Identifier
+    +Subjekt-Identifizierungscode – SIC: Identifier
+    +Rechtsgrundlage: Reference
+    +Beginn Teilnahme: dateTime
+    +Ende Teilnahme: dateTime
+    +Status der Teilnahme: code
+  }
+}
+
+' =============================
+'        RELATIONSHIPS
+' =============================
+
+Person "1..*" -down- "0..1" Name
+Person "0..*" -down- "0..1" Demographie
+Person "0..*" -down- "0..*" Adresse
+Person "1..*" -down- "0..1" Vitalstatus
+Person "1..*" -down- "0..*" Rolle
+Rolle <|-- PatientIn
+Rolle <|-- ProbandIn
+
+PatientIn "0..1" -down- "1..*" PatientenIdentifikator
+PatientIn "0..1" -down- "0..*" Versicherung
+PatientIn "0..1" -down- "0..*" PatientenPseudonym
+
+@enduml

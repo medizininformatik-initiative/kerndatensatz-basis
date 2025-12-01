@@ -1,0 +1,90 @@
+@startuml
+scale 0.7
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam packageStyle rectangle
+top to bottom direction
+
+' =============================
+'        PACKAGE: MODUL PROZEDUR
+' =============================
+package "Modul Prozedur" {
+
+  ' ---- Core procedure class ----
+  class Prozedur {
+    +Durchführungsabsicht: Coding
+    +Durchführungsdatum: dateTime
+    +Dokumentationsdatum: dateTime
+    +Freitextbeschreibung: string
+    +Körperstelle: CodeableConcept
+  }
+
+  ' ---- Coding systems ----
+  class SNOMEDProzedurCodiert {
+    +VollständigerProzedurencode: code
+  }
+
+  class OPSProzedurKodiert {
+    +VollständigerProzedurenkode: CodeableConcept
+    +Seitenlokalisation: Coding
+  }
+}
+
+' =============================
+'        PACKAGE: MODUL PERSON
+' =============================
+package "Modul Person" {
+
+  class Person {
+  }
+
+  class Patient {
+    +Patienten-Identifikator – PID: Identifier
+    +Patienten-Identifikator Kontext: CodeableConcept
+  }
+}
+
+' =============================
+'        PACKAGE: MODUL FALL
+' =============================
+package "Modul Fall" {
+
+  class Einrichtungskontakt {
+    +Kontakt-Ebene: CodeableConcept
+    +Kontakt-Klasse: CodeableConcept
+    +Patientenidentifikator: Reference
+    +Aufnahmenummer: Identifier
+    +Aufnahmeanlass: CodeableConcept
+    +Aufnahmegrund: CodeableConcept
+    +BeginnDatum: dateTime
+    +Enddatum: dateTime
+    +Entlassungsgrund: CodeableConcept
+  }
+
+  class Versorgungsstellenkontakt {
+    +Kontakt-Ebene: CodeableConcept
+    +Kontakt-Klasse: CodeableConcept
+    +Patientenidentifikator: Reference
+    +Aufnahmenummer: Identifier
+    +BeginnDatum: dateTime
+    +Enddatum: dateTime
+  }
+}
+
+' =============================
+'        RELATIONSHIPS
+' =============================
+
+' ---- Person & Patient relationships ----
+Person "1..*" -- "0..*" Prozedur
+Patient "0..1" --|> "1..*" Person
+
+' ---- Contacts to Prozedur ----
+Einrichtungskontakt "0..1" --> "0..*" Prozedur
+Versorgungsstellenkontakt "0..1" <-- "0..1" Prozedur
+
+' ---- Coding systems relationships ----
+Prozedur "1" *-- "0..1" SNOMEDProzedurCodiert
+Prozedur "1" *-- "1" OPSProzedurKodiert
+
+@enduml
