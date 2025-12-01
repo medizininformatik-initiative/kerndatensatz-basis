@@ -58,7 +58,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-ex-fall-plann
   "name" : "MII_EX_Fall_Planned_Start_Date",
   "title" : "MII EX Fall Planned Start Date",
   "status" : "active",
-  "date" : "2025-12-01T11:06:33+00:00",
+  "date" : "2025-12-01T11:28:12+00:00",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [
