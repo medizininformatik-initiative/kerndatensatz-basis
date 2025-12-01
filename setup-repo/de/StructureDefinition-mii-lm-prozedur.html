@@ -1,61 +1,65 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE HTML>
+
+
 <html xml:lang="de" xmlns="http://www.w3.org/1999/xhtml" lang="de" dir="ltr">
   <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
     <title>MII LM Prozedur - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
 
-    <link rel="stylesheet" href="fhir.css"/>
+    <link href="fhir.css" rel="stylesheet"/>
 
-      <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
 
-      <!-- Project extras -->
-    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
-    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
-  	<link rel="stylesheet" href="assets/css/prism.css"/>
-    <link rel="stylesheet" href="assets/css/project.css"/>
-  	<link rel="stylesheet" href="assets/css/cqf.css"/>
-      <!-- Placeholder for child template CSS declarations -->
+    <!-- Project extras -->
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link href="assets/css/project.css" rel="stylesheet"/>
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
 
-    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
-    <script src="assets/js/direction-management.js" type="text/javascript"> </script>
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script type="text/javascript" src="assets/js/direction-management.js"> </script>
 
-      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-      <!-- [if lt IE 9]>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
     <script src="assets/js/html5shiv.js"></script>
     <script src="assets/js/respond.min.js"></script>
-    <![endif] -->
+    <![endif]-->
 
-      <!-- Favicons -->
-    <link sizes="144x144" rel="fhir-logo" href="assets/ico/icon-fhir-144.png"/>
-    <link sizes="114x114" rel="fhir-logo" href="assets/ico/icon-fhir-114.png"/>
-    <link sizes="72x72" rel="fhir-logo" href="assets/ico/icon-fhir-72.png"/>
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
     <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
     <link rel="shortcut icon" href="assets/ico/favicon.png"/>
   </head>
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
-    <script src="assets/js/mermaid.js" type="text/javascript"></script>
-    <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
     <style type="text/css">h2{--heading-prefix:"13.8"}
     h3,h4,h5,h6{--heading-prefix:"13.8"}</style>
-    <div id="segment-header" class="segment">    <!-- segment-header -->
-      <div class="container">    <!-- container -->
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
 
         <div id="family-nav">
-  <a no-external="true" id="family-logo" href="http://hl7.org/fhir">
-    <img src="../assets/images/fhir-logo-www.png" alt="Visit the FHIR website" height="50"/>
+  <a id="family-logo" no-external="true" href="http://hl7.org/fhir">
+    <img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/>
   </a>
 </div>
 <div id="hl7-nav"> 
-  <a no-external="true" id="hl7-logo" href="https://www.medizininformatik-initiative.de"><a name="l89">​</a>
+  <a id="hl7-logo" no-external="true" href="https://www.medizininformatik-initiative.de">
     
-    <img src="../assets/images/MII_Logo_rgb.jpg" alt="MII besuchen" height="50"/>
+    <img height="50" alt="MII besuchen" src="MII_Logo_rgb.jpg"/>
     
   </a>
 </div>
@@ -68,34 +72,34 @@
 
 
 
-  <img src="../assets/images/deu.svg" alt="Germany Flagge" title="Germany" height="16"/>
+  <img alt="Germany Flagge" src="../assets/images/deu.svg" height="16" title="Germany"/>
 
 
             </span>
           </p>
         </div>
-      </div>   <!-- /container -->
-    </div>    <!-- /segment-header -->
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
 
-    <div id="segment-navbar" class="segment" data-fhir="generated">    <!-- segment-navbar -->
+    <div id="segment-navbar" class="segment" data-fhir="generated">  <!-- segment-navbar -->
       <div id="stripe"> </div>
-      <div class="container">    <!-- container -->
-          <!-- HEADER CONTENT -->
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
 
         <nav class="navbar navbar-inverse">
-            <!-- status-bar -->
+          <!--status-bar-->
           <div class="container">
 
-            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
               <span class="icon-bar"> </span>
               <span class="icon-bar"> </span>
               <span class="icon-bar"> </span>
             </button>
-            <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR</a>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
             <div class="nav-collapse collapse navbar-inverse-collapse">
-                <!-- menu.xml -->
+              <!-- menu.xml  -->
 
-<ul class="nav navbar-nav">
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
   <li>
     <a href="index.html">Home</a>
   </li>
@@ -185,50 +189,50 @@
     </ul>
   </li>
 </ul>
-            </div>    <!-- /.nav-collapse -->
+            </div>  <!-- /.nav-collapse -->
 
               
 
 
 <div style="float: var(--ig-right);padding: 8px 0px;" id="language">
-  <div style="background-image: url(assets/images/icon_arrow_down.png);background-position: 133px 3px;" id="select_flg" class="flaglist">
-    <div><img src="assets/images/lang-de.png" alt="flag en" class="flag"/>Deutsch</div>
+  <div id="select_flg" class="flaglist" style="background-image: url(assets/images/icon_arrow_down.png);background-position: 133px 3px;">
+    <div><img class="flag" alt="flag en" src="assets/images/lang-de.png"/>Deutsch</div>
   </div>
   <div style="float: var(--ig-right); margin: 2px 0px; padding: 1px 0;color: var(--btn-text-color);font-size:12px">Language:</div>
- 	<div style="display: none;position: absolute;right: 0;z-index: 100;background-image: url(assets/images/icon_arrow_up.png);background-position: 133px 3px;" id="flaglist" class="flaglist">
-    <div><img src="assets/images/lang-de.png" alt="flag de" class="flag"/>Deutsch</div>
+ 	<div id="flaglist" class="flaglist" style="display: none;position: absolute;right: 0;z-index: 100;background-image: url(assets/images/icon_arrow_up.png);background-position: 133px 3px;">
+    <div><img class="flag" alt="flag de" src="assets/images/lang-de.png"/>Deutsch</div>
 
-    <div><a href="../en/StructureDefinition-mii-lm-prozedur.html"><img src="assets/images/lang-en.png" alt="flag en" class="flag"/>English</a></div>
+    <div><a href="../en/StructureDefinition-mii-lm-prozedur.html"><img class="flag" src="assets/images/lang-en.png" alt="flag en"/>English</a></div>
 
   </div>
 </div>
 
 
-          </div>    <!-- /.container -->
-        </nav>    <!-- /.navbar -->
-        <!-- /HEADER CONTENT -->
-      </div>    <!-- /container -->
-    </div>    <!-- /segment-navbar -->
-      <!-- status-bar -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
 
-    <div id="segment-breadcrumb" class="segment" data-fhir="generated">    <!-- segment-breadcrumb -->
-      <div class="container">    <!-- container -->
+    <div id="segment-breadcrumb" class="segment" data-fhir="generated">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href="toc.html"><b>Inhaltsverzeichnis</b></a></li><li><a href="artifacts.html"><b>Artefaktübersicht</b></a></li><li><b>MII LM Prozedur</b></li>
+          <li><a href='toc.html'><b>Inhaltsverzeichnis</b></a></li><li><a href='artifacts.html'><b>Artefaktübersicht</b></a></li><li><b>MII LM Prozedur</b></li>
 
         </ul>
-      </div>    <!-- /container -->
-    </div>    <!-- /segment-breadcrumb -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
 
     <a name="top"> </a>
-    <div id="segment-content" class="segment">    <!-- segment-content -->
-      <div class="container">    <!-- container -->
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
         <div class="row">
           <div class="inner-wrapper">
 
-  <!-- layouts\layout-profile -->
+<!-- layouts\layout-profile -->
 <div class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">MII Implementation Guide Core Dataset Base - Local Development build (v2026.0.0-dev.1) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="https://www.medizininformatik-initiative.de/fhir/modul-base/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+  <!--ReleaseHeader--><p id="publish-box">MII Implementation Guide Core Dataset Base - Local Development build (v2026.0.0-dev.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://www.medizininformatik-initiative.de/fhir/modul-base/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -301,11 +305,11 @@ MII LM Prozedur
   <table class="colsi" data-fhir="generated">
 
     <tr>
-      <td colspan="4"><i>Offizielle URL</i>: <span class="copy-text">https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/LogicalModel/Prozedur<button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/LogicalModel/Prozedur" title="Klicken zum Kopieren der URL" class="btn-copy"></button></span>
+      <td colspan="4"><i>Offizielle URL</i>: <span class="copy-text">https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/LogicalModel/Prozedur<button title="Klicken zum Kopieren der URL" class="btn-copy" data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/LogicalModel/Prozedur"/></span>
       </td>
       <td><i>Version</i>:
 
-      <span class="copy-text">2026.0.0-dev.1<button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/LogicalModel/Prozedur|2026.0.0-dev.1" title="Klicken zum Kopieren der versionierten URL" class="btn-copy"></button></span>
+      <span class="copy-text">2026.0.0-dev.1<button title="Klicken zum Kopieren der versionierten URL" class="btn-copy" data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/LogicalModel/Prozedur|2026.0.0-dev.1"/></span>
       </td>
     </tr>
 
@@ -337,7 +341,7 @@ MII LM Prozedur
 </p>
 
 
-  <!-- insert intro if present -->
+<!-- insert intro if present -->
 
 
 
@@ -353,7 +357,7 @@ MII LM Prozedur
 
 
 
-    <!-- no uri -->
+  <!-- no uri -->
   <a name="profile"> </a>
   <h3 id="profile">Formale Ansichten des Profilinhalts</h3>
   <p>
@@ -372,14 +376,14 @@ MII LM Prozedur
 
 
 
-  <!-- <li>
+<!--      <li>
         <a href="#tabs-xml">Pseudo-XML</a>
-      </li> -->
+      </li>-->
 
 
-  <!-- <li>
+<!--      <li>
         <a href="#tabs-json">Pseudo-JSON</a>
-      </li> -->
+      </li>-->
 
 
       <li>
@@ -453,7 +457,7 @@ MII LM Prozedur
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Freitextbeschreibung</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 76b42177-f964-4ced-bb9a-dc511cef0641
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // b75101bd-9b48-4792-b66f-06a3dfe9055a
 document.getElementById('cbmii-lm-prozedurD-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-lm-prozedurD'), 'binding', document.getElementById('cbmii-lm-prozedurD-binding').checked, document.getElementById('ppmii-lm-prozedurD'));
 document.getElementById('cbmii-lm-prozedurD-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -465,11 +469,11 @@ filterDesc(document.getElementById('mii-lm-prozedurD'), 'obligation', document.g
 
         
           <a name="tx"> </a>
-            <!-- Terminology Bindings heading in the fragment -->
+          <!--Terminology Bindings heading in the fragment -->
           
         
           
-            <!-- 218 is size of empty table -->
+          <!-- 218 is size of empty table -->
           
         </div>
       </div>
@@ -578,7 +582,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Freitextbeschreibung</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 76b42177-f964-4ced-bb9a-dc511cef0641
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // b75101bd-9b48-4792-b66f-06a3dfe9055a
 document.getElementById('cbmii-lm-prozedurS-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-lm-prozedurS'), 'binding', document.getElementById('cbmii-lm-prozedurS-binding').checked, document.getElementById('ppmii-lm-prozedurS'));
 document.getElementById('cbmii-lm-prozedurS-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -589,14 +593,14 @@ filterDesc(document.getElementById('mii-lm-prozedurS'), 'obligation', document.g
 
 
         
-            <!-- Terminology Bindings heading in the fragment -->
+          <!--Terminology Bindings heading in the fragment -->
           
         
           
-            <!-- 218 is size of empty table -->
+          <!-- 218 is size of empty table -->
           
             <a name="inv-snap"> </a>
-              <!-- Constraints  heading in the fragment -->
+            <!--Constraints  heading in the fragment -->
             <h4>Constraints</h4>
 <table class="list presentation" data-fhir="generated-heirarchy">
   <tr>
@@ -648,7 +652,7 @@ filterDesc(document.getElementById('mii-lm-prozedurS'), 'obligation', document.g
 
 
 
-  <!-- <a name="tabs-xml"> </a>
+<!--    <a name="tabs-xml"> </a>
     <div id="tabs-xml">
       <div id="xml">
         <div id="xml-inner">
@@ -656,10 +660,10 @@ filterDesc(document.getElementById('mii-lm-prozedurS'), 'obligation', document.g
 
         </div>
       </div>
-    </div> -->
+    </div>-->
 
 
-  <!-- <a name="tabs-json"> </a>
+<!--    <a name="tabs-json"> </a>
     <div id="tabs-json">
       <div id="json">
         <div id="json-inner">
@@ -688,7 +692,7 @@ filterDesc(document.getElementById('mii-lm-prozedurS'), 'obligation', document.g
 
         </div>
       </div>
-    </div> -->
+    </div>-->
 
 
     <a name="tabs-summ"> </a>
@@ -774,7 +778,7 @@ Summary
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Freitextbeschreibung</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 76b42177-f964-4ced-bb9a-dc511cef0641
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // b75101bd-9b48-4792-b66f-06a3dfe9055a
 document.getElementById('cbmii-lm-prozedurDA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-lm-prozedurDA'), 'binding', document.getElementById('cbmii-lm-prozedurDA-binding').checked, document.getElementById('ppmii-lm-prozedurDA'));
 document.getElementById('cbmii-lm-prozedurDA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -783,11 +787,11 @@ document.getElementById('cbmii-lm-prozedurDA-obligation').checked = 'false' != l
 filterDesc(document.getElementById('mii-lm-prozedurDA'), 'obligation', document.getElementById('cbmii-lm-prozedurDA-obligation').checked, document.getElementById('ppmii-lm-prozedurDA'));
 </script></table>
 
-            <!-- Terminology Bindings heading in the fragment -->
+          <!--Terminology Bindings heading in the fragment -->
           
         
           
-            <!-- 218 is size of empty table -->
+          <!-- 218 is size of empty table -->
           
         </div>
       </div>
@@ -896,7 +900,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Freitextbeschreibung</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 76b42177-f964-4ced-bb9a-dc511cef0641
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // b75101bd-9b48-4792-b66f-06a3dfe9055a
 document.getElementById('cbmii-lm-prozedurSA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-lm-prozedurSA'), 'binding', document.getElementById('cbmii-lm-prozedurSA-binding').checked, document.getElementById('ppmii-lm-prozedurSA'));
 document.getElementById('cbmii-lm-prozedurSA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -905,14 +909,14 @@ document.getElementById('cbmii-lm-prozedurSA-obligation').checked = 'false' != l
 filterDesc(document.getElementById('mii-lm-prozedurSA'), 'obligation', document.getElementById('cbmii-lm-prozedurSA-obligation').checked, document.getElementById('ppmii-lm-prozedurSA'));
 </script></table>
 
-            <!-- Terminology Bindings heading in the fragment -->
+          <!--Terminology Bindings heading in the fragment -->
           
         
           
-            <!-- 218 is size of empty table -->
+          <!-- 218 is size of empty table -->
           
             <a name="inv-all-snap"> </a>
-              <!-- Constraints  heading in the fragment -->
+            <!--Constraints  heading in the fragment -->
             <h4>Constraints</h4>
 <table class="list presentation" data-fhir="generated-heirarchy">
   <tr>
@@ -963,7 +967,7 @@ filterDesc(document.getElementById('mii-lm-prozedurSA'), 'obligation', document.
 
 
 
-        <!-- <div id="all-xml">
+      <!--<div id="all-xml">
         <p>
           <b>XML-Template</b>
         </p>
@@ -971,10 +975,10 @@ filterDesc(document.getElementById('mii-lm-prozedurSA'), 'obligation', document.
           <p><span style="color: maroon; font-weight: bold">yet to be done: Xml template</span></p>
 
         </div>
-      </div> -->
+      </div>-->
 
 
-        <!-- <div id="all-json">
+      <!--<div id="all-json">
         <p>
           <b>JSON-Template</b>
         </p>
@@ -1003,14 +1007,14 @@ filterDesc(document.getElementById('mii-lm-prozedurSA'), 'obligation', document.
   }
 
         </div>
-      </div> -->
+      </div>-->
 
 
       <div id="all-summ">
         <p>Diese Struktur ist abgeleitet von 
   <a href="http://hl7.org/fhir/R4/datatypes.html#Element">Element</a>
 </p>
-        
+        </p>
         <div id="all-summ-inner">
           <a name="a-summary"> </a>
 <p><b>
@@ -1021,45 +1025,45 @@ Summary
       </div>
     </div>
   </div>
-  <p>&nbsp;</p>
+  <p>&#160;</p>
   <p>Weitere Repräsentationen des Profils: <a href="../StructureDefinition-mii-lm-prozedur.csv">CSV</a>, <a href="../StructureDefinition-mii-lm-prozedur.xlsx">Excel</a> 
   </p>
 
   
 
-  <!-- insert notes if present -->
+<!-- insert notes if present -->
 
 
 
 
 </div>
 
-        </div>    <!-- /inner-wrapper -->
-      </div>    <!-- /row -->
-    </div>    <!-- /container -->
-  </div>    <!-- /segment-content -->
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
 
-  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
-  <script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
-  <script src="assets/js/flags.js" type="text/javascript"> </script>
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script type="text/javascript" src="assets/js/flags.js"> </script>
 
-  <script src="assets/js/tabs.js" type="text/javascript"> </script>
+  <script type="text/javascript" src="assets/js/tabs.js"> </script>
 
-  <script src="assets/js/window-hash.js" type="text/javascript"> </script>
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
 
   <a name="bottom"> </a>
-  <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
-    <div class="container" data-fhir="generated">    <!-- container -->
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container" data-fhir="generated">  <!-- container -->
 
       <div class="inner-wrapper">
         <p>
 
 
 
-          IG &copy; 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
+          IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.base#2026.0.0-dev.1 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Erstellt 
-  <span title="2025-12-01 10:44:00 +0000">
+  <span title="2025-12-01 10:53:00 +0000">
     2025-12-01
   </span>
 
@@ -1071,26 +1075,27 @@ Summary
                 
           </span>
         </p>
-      </div>    <!-- /inner-wrapper -->
-    </div>    <!-- /container -->
-  </div>    <!-- /segment-footer -->
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
   
-  <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
-    <div class="container">    <!-- container -->
-    </div>    <!-- /container -->
-  </div>    <!-- /segment-post-footer -->
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
 
-    <!-- JS and analytics only. -->
-    <!-- Bootstrap core JavaScript
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
   ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-  <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
-  <script src="assets/js/respond.min.js" type="text/javascript"> </script>
-  <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
-  <script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
-  <script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
-  <script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
-    <!-- Analytics Below
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
   ================================================== -->
   </body>
 </html>
+
