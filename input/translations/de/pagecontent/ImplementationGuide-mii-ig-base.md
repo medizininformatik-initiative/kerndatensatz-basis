@@ -6,28 +6,19 @@ Diese ImplementationGuide-Ressource definiert die technischen Details dieser Pub
 
 ### Versionsübergreifende Analyse
 
-{% include cross-version-analysis.html %}
+{% include versionsuebergreifende-analyse.html %}
 
 ### IG-Abhängigkeiten
 
 Dieser IG enthält die folgenden Abhängigkeiten von anderen IGs.
 
-{% include dependency-table.xhtml %}
+{% lang-fragment dependency-table.xhtml %}
 
 ### Globale Profile
 
-{% include globals-table.xhtml %}
+{% lang-fragment globals-table.xhtml %}
 
 ### Urheberrechte
 
-{% capture ip-statement %}{% include ip-statements.xhtml %}{% endcapture %}
+{% lang-fragment ip-statements.xhtml %}
 
-{{ ip-statement | remove: '<p>' | remove: '</p>'}}
-
-### Parametereinstellungen
-
-Die folgenden [IG-Parameter](https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters) sind für diesen Implementierungsleitfaden festgelegt:
-
-{% for p in site.data.ig.definition.parameter -%}
-- code: {{p.code}}<br/>value: {{p.value}}
-{% endfor %}

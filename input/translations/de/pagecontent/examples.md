@@ -1,22 +1,4 @@
-### Patient
-
-<ul>{% include list-simple-name-patients.xhtml %}</ul>
-
-### Condition
-
-<ul>{% include list-simple-name-conditions.xhtml %}</ul>
-
-### Encounter
-
-<ul>{% include list-simple-name-encounters.xhtml %}</ul>
-
-### Observation
-
-<ul>{% include list-simple-name-observations.xhtml %}</ul>
-
-### Procedure
-
-<ul>{% include list-simple-name-procedures.xhtml %}</ul>
+Dieser Implementierungsleitfaden enthält Beispielinstanzen für alle Profile. Eine vollständige Liste aller Beispiele, geordnet nach Ressourcentyp, finden Sie auf der Seite [Artefakte](artifacts.html#example-example-instances).
 
 ---
 

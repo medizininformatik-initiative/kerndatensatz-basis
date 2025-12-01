@@ -12,22 +12,13 @@ This ImplementationGuide resource defines the technical details of this publicat
 
 This IG Contains the following dependencies on other IGs.
 
-{% include dependency-table.xhtml %}
+{% lang-fragment dependency-table.xhtml %}
 
 ### Global Profiles
 
-{% include globals-table.xhtml %}
+{% lang-fragment globals-table.xhtml %}
 
 ### Copyrights
 
-{% capture ip-statement %}{% include ip-statements.xhtml %}{% endcapture %}
+{% lang-fragment ip-statements.xhtml %}
 
-{{ ip-statement | remove: '<p>' | remove: '</p>'}}
-
-### Parameter Settings
-
-The following [IG Parameters](https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters) are set for this Implementation Guide:
-
-{% for p in site.data.ig.definition.parameter -%}
-- code: {{p.code}}<br/>value: {{p.value}}
-{% endfor %}
