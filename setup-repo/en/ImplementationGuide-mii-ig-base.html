@@ -1,0 +1,421 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>MII ImplementationGuide Resource - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+    <link rel="stylesheet" href="assets/css/project.css"/>
+  	<link rel="stylesheet" href="assets/css/cqf.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+    <script src="assets/js/direction-management.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+
+      <!-- Favicons -->
+    <link sizes="144x144" rel="fhir-logo" href="assets/ico/icon-fhir-144.png"/>
+    <link sizes="114x114" rel="fhir-logo" href="assets/ico/icon-fhir-114.png"/>
+    <link sizes="72x72" rel="fhir-logo" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script src="assets/js/mermaid.js" type="text/javascript"></script>
+    <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
+    <style type="text/css">h2{--heading-prefix:"12"}
+    h3,h4,h5,h6{--heading-prefix:"12"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+
+        <div id="family-nav">
+  <a no-external="true" id="family-logo" href="http://hl7.org/fhir">
+    <img src="../assets/images/fhir-logo-www.png" alt="Visit the FHIR website" height="50"/>
+  </a>
+</div>
+<div id="hl7-nav"> 
+  <a no-external="true" id="hl7-logo" href="https://www.medizininformatik-initiative.de"><a name="l89">​</a>
+    
+    <img src="../assets/images/MII_Logo_engl_rgb.jpg" alt="Visit MII" height="50"/>
+    
+  </a>
+</div>
+
+
+        <div id="ig-status" data-fhir="generated">
+          <p><span style="font-size:12pt;font-weight:bold">MII Implementation Guide Core Dataset Base</span>
+            <br/>
+            <span style="display:inline-block;">2026.0.0-dev.1 - ci-build
+
+
+
+  <img src="../assets/images/deu.svg" alt="Germany flag" title="Germany" height="16"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment" data-fhir="generated">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <!-- menu.xml -->
+
+<ul class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Guidance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="guidance.html">Guidance</a>
+      </li>
+      <li>
+        <a href="researcher-guidance.html">Guidance for Researchers</a>
+      </li>
+      <li>
+        <a href="implementer-guidance.html">Guidance for Implementers</a>
+      </li>
+      <li>
+        <a href="datasets-and-descriptions.html">Datasets and Descriptions</a>
+      </li>
+      <li>
+        <a href="uml-diagrams.html">UML Diagrams</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Conformance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="conformance.html">Conformance</a>
+      </li>
+      <li>
+        <a href="general-requirements.html">General Requirements</a>
+      </li>
+      <li>
+        <a href="must-support.html">Must Support</a>
+      </li>
+      <li>
+        <a href="missing-data.html">Handling Missing Data</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">Artifacts Summary</a>
+      </li>
+      <li>
+        <a href="profiles-and-extensions.html">Profiles and Extensions</a>
+      </li>
+      <li>
+        <a href="terminology.html">Terminology</a>
+      </li>
+      <li>
+        <a href="capability-statements.html">Capability Statements</a>
+      </li>
+      <li>
+        <a href="search-parameters-and-operations.html">Search Parameters and Operations</a>
+      </li>
+      <li>
+        <a href="logical-models.html">Logical Models</a>
+      </li>
+      <li>
+        <a href="examples.html">Examples</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Version History
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="version-history.html">Version History</a>
+      </li>
+      <li>
+        <a href="changes.html">Changelog</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>    <!-- /.nav-collapse -->
+
+              
+
+
+<div style="float: var(--ig-right);padding: 8px 0px;" id="language">
+  <div style="background-image: url(assets/images/icon_arrow_down.png);background-position: 133px 3px;" id="select_flg" class="flaglist">
+    <div><img src="assets/images/lang-en.png" alt="flag en" class="flag"/>English</div>
+  </div>
+  <div style="float: var(--ig-right); margin: 2px 0px; padding: 1px 0;color: var(--btn-text-color);font-size:12px">Language:</div>
+ 	<div style="display: none;position: absolute;right: 0;z-index: 100;background-image: url(assets/images/icon_arrow_up.png);background-position: 133px 3px;" id="flaglist" class="flaglist">
+    <div><img src="assets/images/lang-en.png" alt="flag en" class="flag"/>English</div>
+
+    <div><a href="../de/ImplementationGuide-mii-ig-base.html"><img src="assets/images/lang-de.png" alt="flag de" class="flag"/>Deutsch</a></div>
+
+  </div>
+</div>
+
+
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+      <!-- status-bar -->
+
+    <div id="segment-breadcrumb" class="segment" data-fhir="generated">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><b>MII ImplementationGuide Resource</b></li>
+
+        </ul>
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+    <!-- ReleaseHeader --><p id="publish-box">MII Implementation Guide Core Dataset Base - Local Development build (v2026.0.0-dev.1) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="https://www.medizininformatik-initiative.de/fhir/modul-base/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+  <h2>MII ImplementationGuide Resource</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <p>  <!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#cross-version-analysis" id="markdown-toc-cross-version-analysis">Cross Version Analysis</a></li>
+  <li><a href="#ig-dependencies" id="markdown-toc-ig-dependencies">IG Dependencies</a></li>
+  <li><a href="#global-profiles" id="markdown-toc-global-profiles">Global Profiles</a></li>
+  <li><a href="#copyrights" id="markdown-toc-copyrights">Copyrights</a></li>
+</ul>
+
+</div>
+<p>This ImplementationGuide resource defines the technical details of this publication, including dependencies and publishing parameters.</p>
+
+<ul>
+  <li><a name="l450">​</a><a href="ImplementationGuide-.xml">XML</a></li>
+  <li><a name="l454">​</a><a href="ImplementationGuide-.json">JSON</a></li>
+  <li><a name="l458">​</a><a href="ImplementationGuide-.ttl">TTL</a></li>
+</ul>
+
+<h3 id="cross-version-analysis">Cross Version Analysis</h3>
+
+<p>This IG can only be used with FHIR R4 systems.</p>
+
+<h3 id="ig-dependencies">IG Dependencies</h3>
+
+<p>This IG Contains the following dependencies on other IGs.</p>
+
+<div><table border="0" fhir="generated-heirarchy" cellpadding="0" cellspacing="0" style="border: 0px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;" id="dep" data-fhir="generated-heirarchy"><tr fhir="generated-heirarchy" style="border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top" data-fhir="generated-heirarchy"><th style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px" class="hierarchy"><span title="Implementation Guide Reference">IG</span></th><th style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px" class="hierarchy"><span title="The NPM Package Id">Package</span></th><th style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px" class="hierarchy"><span title="The version of FHIR that the package is based on">FHIR</span></th><th style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px" class="hierarchy"><span title="Explains why this dependency exists">Comment</span></th></tr><tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white" id="a" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(/__w/kerndatensatz-basis/kerndatensatz-basis/temp/pagesdata:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAACCAYAAACg/LjIAAAALUlEQVR4Xu3IoREAIAwEwfT6/ddA0GBAxO3NrLlKUj9263wAAAAvrgEAADClAVWFQIBRHMicAAAAAElFTkSuQmCC)" class="hierarchy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAYAAAABxvaqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzIs1vtcMQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAE0lEQVQI12P4//8/AxMDAwNdCABMPwMo2ctnoQAAAABJRU5ErkJggg==" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYZCik0qECmbAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABtUlEQVQoz2P8//8/Ayb4///v8xfM4iIMzKxoMkwMOMC3DVv/vXmEKY5Dw///Pw8c+Xn2CLEa/r55+/P07t/nrxKl4f/PX6+8g1mlP/44c4eAhn8fP33bsOV1dBoT51V2+z/MohIfeyYy/P2LXcPfFy8/NLb9efTs//utgjUfft35xRUY8Hnm/N/Xb2LT8P//h5ZOnvjoj+11giXcTH//MTLp/v/x9c/z279uXsOi4e/LRwzsbz6vmMyTLM6m9fnXE3Y2l+yv+yez2nL9eX0Wi4afF5eyW4r/+3qYP1Xjz/N3P17ZsRsKMrJd4rL9wcTxDIsGZqEvLEKv2VT/Mgl+/XGbXSB72s/zxXyBYmwqLCxSLFg0sKkHsAg+YJX7xfBTmt204s/NXE4dQTZtT2beH6yqFv9ebkDXwMhnxixrySb68f9fcWYRTSbGA6ya2QwMsixCvxk/djByiWIJVkbBBGaNOoafO5nYWVlkPRjYtP5/388s+JdJkI+R1xquDMl9zOqMQioM7BIMjJ8Z2IUYWOQZeT0Y/u5mEF+G7AdGLMn7712GnycY/v1g+HOZga+WgUkYWRIAe6ip9OnE1GoAAAAASUVORK5CYII=" alt="." style="background-color: white; background-color: inherit" title="NPM Package" class="hierarchy"/> <span title="Canonical: https://www.medizininformatik-initiative.de/fhir/modul-base">MII Implementation Guide Core Dataset Base</span></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="https://simplifier.net/packages/de.medizininformatikinitiative.kerndatensatz.base/2026.0.0-dev.1">de.medizininformatikinitiative.kerndatensatz.base#2026.0.0-dev.1</a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4">R4</a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td></tr>
+<tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7" id="aa" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(/__w/kerndatensatz-basis/kerndatensatz-basis/temp/pagesdata:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAACCAYAAACg/LjIAAAALUlEQVR4Xu3IoREAIAwEwfT6/ddA0GBAxO3NrLlKUj9263wAAAAvrgEAADClAVWFQIBRHMicAAAAAElFTkSuQmCC)" class="hierarchy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAYAAAABxvaqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzIs1vtcMQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAE0lEQVQI12P4//8/AxMDAwNdCABMPwMo2ctnoQAAAABJRU5ErkJggg==" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAACxMAAAsTAQCanBgAAACwSURBVDhP7ZLBDsIwCIaLZz34xG3f2cQYo5UfYalJoY07ePFL4GcbpZSVWmvJgwifG+njkLDACgfVIehAQ5ffdMDvxSS2Dmqty62UUmS1rIWD8UuWd9xxVt1AnoaSGx6Buap+0G80K3BTtbtwhLPZQL0CSIA9OwUXON7dZkBeASTAThb3bffMjnCHGy00ZgUeqi5f3YOcsw01vsqYMrMljwgLrBDOwP53xL+D3R2k9ALHsmr3Yu73+gAAAABJRU5ErkJggg==" onclick="tableRowAction(this)" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYZCik0qECmbAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABtUlEQVQoz2P8//8/Ayb4///v8xfM4iIMzKxoMkwMOMC3DVv/vXmEKY5Dw///Pw8c+Xn2CLEa/r55+/P07t/nrxKl4f/PX6+8g1mlP/44c4eAhn8fP33bsOV1dBoT51V2+z/MohIfeyYy/P2LXcPfFy8/NLb9efTs//utgjUfft35xRUY8Hnm/N/Xb2LT8P//h5ZOnvjoj+11giXcTH//MTLp/v/x9c/z279uXsOi4e/LRwzsbz6vmMyTLM6m9fnXE3Y2l+yv+yez2nL9eX0Wi4afF5eyW4r/+3qYP1Xjz/N3P17ZsRsKMrJd4rL9wcTxDIsGZqEvLEKv2VT/Mgl+/XGbXSB72s/zxXyBYmwqLCxSLFg0sKkHsAg+YJX7xfBTmt204s/NXE4dQTZtT2beH6yqFv9ebkDXwMhnxixrySb68f9fcWYRTSbGA6ya2QwMsixCvxk/djByiWIJVkbBBGaNOoafO5nYWVlkPRjYtP5/388s+JdJkI+R1xquDMl9zOqMQioM7BIMjJ8Z2IUYWOQZeT0Y/u5mEF+G7AdGLMn7712GnycY/v1g+HOZga+WgUkYWRIAe6ip9OnE1GoAAAAASUVORK5CYII=" alt="." style="background-color: #F7F7F7; background-color: inherit" title="NPM Package" class="hierarchy"/> <a href="http://terminology.hl7.org/7.0.0" title="Canonical: http://terminology.hl7.org">HL7 Terminology (THO)</a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="https://simplifier.net/packages/hl7.terminology.r4/7.0.0">hl7.terminology.r4#7.0.0</a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4">R4</a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Automatically added as a dependency - all IGs depend on HL7 Terminology</td></tr>
+<tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white" id="aaa" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(/__w/kerndatensatz-basis/kerndatensatz-basis/temp/pagesdata:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAACCAYAAACg/LjIAAAALUlEQVR4Xu3IoREAIAwEwfT6/ddA0GBAxO3NrLlKUj9263wAAAAvrgEAADClAVWFQIBRHMicAAAAAElFTkSuQmCC)" class="hierarchy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAYAAAABxvaqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzIs1vtcMQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAE0lEQVQI12P4//8/AxMDAwNdCABMPwMo2ctnoQAAAABJRU5ErkJggg==" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzMPbYccAgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y+3OQREAIBDDwAv+PQcFFN5MIyCzqHMKUGVCpMFLK97heq+gggoq+EiwAVjvMhFGmlEUAAAAAElFTkSuQmCC" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzME+lXFigAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAANklEQVQ4y+3OsRUAIAjEUOL+O8cJABttJM11/x1qZAGqRBEVcNIqdWj1efDqQbb3HwwwwEfABmQUHSPM9dtDAAAAAElFTkSuQmCC" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYZCik0qECmbAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABtUlEQVQoz2P8//8/Ayb4///v8xfM4iIMzKxoMkwMOMC3DVv/vXmEKY5Dw///Pw8c+Xn2CLEa/r55+/P07t/nrxKl4f/PX6+8g1mlP/44c4eAhn8fP33bsOV1dBoT51V2+z/MohIfeyYy/P2LXcPfFy8/NLb9efTs//utgjUfft35xRUY8Hnm/N/Xb2LT8P//h5ZOnvjoj+11giXcTH//MTLp/v/x9c/z279uXsOi4e/LRwzsbz6vmMyTLM6m9fnXE3Y2l+yv+yez2nL9eX0Wi4afF5eyW4r/+3qYP1Xjz/N3P17ZsRsKMrJd4rL9wcTxDIsGZqEvLEKv2VT/Mgl+/XGbXSB72s/zxXyBYmwqLCxSLFg0sKkHsAg+YJX7xfBTmt204s/NXE4dQTZtT2beH6yqFv9ebkDXwMhnxixrySb68f9fcWYRTSbGA6ya2QwMsixCvxk/djByiWIJVkbBBGaNOoafO5nYWVlkPRjYtP5/388s+JdJkI+R1xquDMl9zOqMQioM7BIMjJ8Z2IUYWOQZeT0Y/u5mEF+G7AdGLMn7712GnycY/v1g+HOZga+WgUkYWRIAe6ip9OnE1GoAAAAASUVORK5CYII=" alt="." style="background-color: white; background-color: inherit" title="NPM Package" class="hierarchy"/> <a href="http://hl7.org/fhir/extensions/5.2.0" title="Canonical: http://hl7.org/fhir/extensions">FHIR Extensions Pack</a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="https://simplifier.net/packages/hl7.fhir.uv.extensions.r4/5.2.0">hl7.fhir.uv.extensions.r4#5.2.0</a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4">R4</a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td></tr>
+<tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7" id="ab" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(/__w/kerndatensatz-basis/kerndatensatz-basis/temp/pagesdata:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAACCAYAAACg/LjIAAAALUlEQVR4Xu3IoREAIAwEwfT6/ddA0GBAxO3NrLlKUj9263wAAAAvrgEAADClAVWFQIBRHMicAAAAAElFTkSuQmCC)" class="hierarchy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAYAAAABxvaqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzIs1vtcMQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAE0lEQVQI12P4//8/AxMDAwNdCABMPwMo2ctnoQAAAABJRU5ErkJggg==" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzI3XJ6V3QAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAANklEQVQ4y+2RsQ0AIAzDav7/2VzQwoCY4iWbZSmo1QGoUgNMghvWaIejPQW/CrrNCylIwcOCDYfLNRcNer4SAAAAAElFTkSuQmCC" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYZCik0qECmbAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABtUlEQVQoz2P8//8/Ayb4///v8xfM4iIMzKxoMkwMOMC3DVv/vXmEKY5Dw///Pw8c+Xn2CLEa/r55+/P07t/nrxKl4f/PX6+8g1mlP/44c4eAhn8fP33bsOV1dBoT51V2+z/MohIfeyYy/P2LXcPfFy8/NLb9efTs//utgjUfft35xRUY8Hnm/N/Xb2LT8P//h5ZOnvjoj+11giXcTH//MTLp/v/x9c/z279uXsOi4e/LRwzsbz6vmMyTLM6m9fnXE3Y2l+yv+yez2nL9eX0Wi4afF5eyW4r/+3qYP1Xjz/N3P17ZsRsKMrJd4rL9wcTxDIsGZqEvLEKv2VT/Mgl+/XGbXSB72s/zxXyBYmwqLCxSLFg0sKkHsAg+YJX7xfBTmt204s/NXE4dQTZtT2beH6yqFv9ebkDXwMhnxixrySb68f9fcWYRTSbGA6ya2QwMsixCvxk/djByiWIJVkbBBGaNOoafO5nYWVlkPRjYtP5/388s+JdJkI+R1xquDMl9zOqMQioM7BIMjJ8Z2IUYWOQZeT0Y/u5mEF+G7AdGLMn7712GnycY/v1g+HOZga+WgUkYWRIAe6ip9OnE1GoAAAAASUVORK5CYII=" alt="." style="background-color: #F7F7F7; background-color: inherit" title="NPM Package" class="hierarchy"/> <span title="Canonical: null">de.basisprofil.r4</span></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="https://simplifier.net/packages/de.basisprofil.r4/1.5.4">de.basisprofil.r4#1.5.4</a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4">R4</a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td></tr>
+<tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white" id="ac" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(/__w/kerndatensatz-basis/kerndatensatz-basis/temp/pagesdata:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAACCAYAAACg/LjIAAAALUlEQVR4Xu3IoREAIAwEwfT6/ddA0GBAxO3NrLlKUj9263wAAAAvrgEAADClAVWFQIBRHMicAAAAAElFTkSuQmCC)" class="hierarchy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAYAAAABxvaqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzIs1vtcMQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAE0lEQVQI12P4//8/AxMDAwNdCABMPwMo2ctnoQAAAABJRU5ErkJggg==" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzI3XJ6V3QAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAANklEQVQ4y+2RsQ0AIAzDav7/2VzQwoCY4iWbZSmo1QGoUgNMghvWaIejPQW/CrrNCylIwcOCDYfLNRcNer4SAAAAAElFTkSuQmCC" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYZCik0qECmbAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABtUlEQVQoz2P8//8/Ayb4///v8xfM4iIMzKxoMkwMOMC3DVv/vXmEKY5Dw///Pw8c+Xn2CLEa/r55+/P07t/nrxKl4f/PX6+8g1mlP/44c4eAhn8fP33bsOV1dBoT51V2+z/MohIfeyYy/P2LXcPfFy8/NLb9efTs//utgjUfft35xRUY8Hnm/N/Xb2LT8P//h5ZOnvjoj+11giXcTH//MTLp/v/x9c/z279uXsOi4e/LRwzsbz6vmMyTLM6m9fnXE3Y2l+yv+yez2nL9eX0Wi4afF5eyW4r/+3qYP1Xjz/N3P17ZsRsKMrJd4rL9wcTxDIsGZqEvLEKv2VT/Mgl+/XGbXSB72s/zxXyBYmwqLCxSLFg0sKkHsAg+YJX7xfBTmt204s/NXE4dQTZtT2beH6yqFv9ebkDXwMhnxixrySb68f9fcWYRTSbGA6ya2QwMsixCvxk/djByiWIJVkbBBGaNOoafO5nYWVlkPRjYtP5/388s+JdJkI+R1xquDMl9zOqMQioM7BIMjJ8Z2IUYWOQZeT0Y/u5mEF+G7AdGLMn7712GnycY/v1g+HOZga+WgUkYWRIAe6ip9OnE1GoAAAAASUVORK5CYII=" alt="." style="background-color: white; background-color: inherit" title="NPM Package" class="hierarchy"/> <span title="Canonical: null">MII IG Meta</span></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="https://simplifier.net/packages/de.medizininformatikinitiative.kerndatensatz.meta/2026.0.0">de.medizininformatikinitiative.kerndatensatz.meta#2026.0.0</a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4">R4</a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td></tr>
+<tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #fcf7c0" id="ad" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #fcf7c0; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(/__w/kerndatensatz-basis/kerndatensatz-basis/temp/pagesdata:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAACCAYAAACg/LjIAAAAJUlEQVR4Xu3IIQEAAAgDsHd9/w4EQIOamFnaBgAA4MMKAACAKwNp30CqZFfFmwAAAABJRU5ErkJggg==)" class="hierarchy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAYAAAABxvaqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzIs1vtcMQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAE0lEQVQI12P4//8/AxMDAwNdCABMPwMo2ctnoQAAAABJRU5ErkJggg==" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzME+lXFigAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAANklEQVQ4y+3OsRUAIAjEUOL+O8cJABttJM11/x1qZAGqRBEVcNIqdWj1efDqQbb3HwwwwEfABmQUHSPM9dtDAAAAAElFTkSuQmCC" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAEvnpUWHRSYXcgcHJvZmlsZSB0eXBlIGV4aWYAAHjarVdbdsQmDP1nFV0CEojHcnie0x10+b14EM5kkmbS1k4sLGQk7pVEYsZff07zBy4mScZLTCGHYHH57DMXDJJ9XPV6kvXXc79YHTzpzZlgqByke7xm3voBPca03/N2QmqvCx1PBSO5J0rZ+vqsr3tBTp8X2hE4eni2fX+wF3K8I/KP97YjCjnFp631tj37rUr3r3eRgwSKHk/PNsaQMU5sfQSefQXq4uUeGG1PqtB3NWXExMORs3g6t6N069e7ApnxJMcGhuQiXtilayJdwFtQiRCwcH4sPIs9YH7E5sbom+udbVk4mWMZf2DtTpDn/Dgj+ka/0+CwlsKecM+02nDkl3oSXUgn3PHDHz2ndjw/6cF2+AiF+Uj3nD3Na9PYRfEBWIS9Kd3KNYJdXSheXwXc0QaDrE0YrDvjTrbYhhTotqHSKsaZGNxP8tSp0KRxyUYNIXoeHCGZm2F3KRNIytzcSga/bpockSMdScGuXTnkHZ9Y6HKbL3eNku3GdoIpExZDWv3727xrOOeqJSKbDlaIi1c1IApLoH8JmIERmhtUuQDW+/O1eHVgUC6YEzZYbDWPJarQnVzuItrBUCAftUex7wUAEVwLgiEHBmwgJxQQUWSORAAygaCC0FGNXMEAiXBHkOydCyAH1QHf+CbSZcrCDzW6qvPGiQso2rSqGGR5L8if6BNyqIgTLyJBoiTJUoILq/JCiGG15xJd9FFiiDEmE3MsySWfJIUUU0o5lczZoX1LRp3mlHMuBU4LVi74usCglMrVVV+lhhprqtnU0pA+zTdpocWWWm6lc3cdBd5Djz313MuggVQafsgII4408igTqTbd9FNmmNHMNPMsh7VN68v9C9Zos8YXU8swHtagjVGXoNVOZHEGxtgTCI9gDYwhsRdnNpH3vJhbnOE8QlUII0hZ5HRajIFBP4hl0uFuM2eA4v/Cm4np4o3/K3NmUfcmc6+8fcVaX6dEuxh7lOEC1TpU34yzcMIPjt/vpflqgi6BlVvdGkC8VVHIyzr8Pkljv5n4rbwXykvgtAK0/aGiPvYklbhn6TtpfjJ4UzoT9t6n7YpHLS8j+6M07xp+LdGpdiBm2qzKcmLqQUnid6X55QfphsJpsvSFkwFQkk4kg38byU8RHb7jw+EaWR2JqOeoARZT92Somj2jaEq58n5c5knRmrpqVXXdqy67A8EpomE3LcaOqX5RzMcyqxJ2b4VlbsXx3OQs7Q8aLdzKoXwpQoOKgj36sXMn2/pJt+l/Sk3zkqs8zk4VMZobfT6EpMMlPejC1px+2e7EP1jWE6j8c0zmi/pJCgxXbSPtTo6ssYRwZtF4zO48RQ2bNig66Ha+Qft1Zg+vy5STsvZG6HRBq7Mmxnpa49Rg6vlY9ON4XIwvE8v8Q6YVeYklO/UqGpSQgs25P/dxqodbPrXrtanevULCB8/mnZq8TyV7CNAmzLsg1v8i45SVfhl0K0m34g9q46AW3sXodEX1VHRZOXXp1cicDhaSQpTn5wbGdyf7rheY3/bUl6Nys4Bak/FSEScb+4kp/Lb6f5Lsjtv+8bBfp4jXxJP5uW/8dFLHiT+IsvkbxL7pfRLafrkAAAEiaUNDUElDQyBwcm9maWxlAAB4nJ2Qv0rDUBTGf6niP+qkOKhDBteCg2ZyqQqhoBBjBatTmqRYTGJIUopv4Jvow3QQBJ/BWcHZ70YHB7N44eP8OJzzffdeaNlJmJbzu5BmVeH63cHl4MpefGOZtrTFXhCWedfzTmg8n69Ypr50jFfz3J9nIYrLUHUmZWFeVGAdiJ1plRuWWL/t+0fiB7EdpVkkfhLvRGlk2Oz6aTIJfzzNbdpxdnFu+tI2Lj1O8bAZMmFMQkVHNVPnGId9VZeCgHtKQtWEWL2pZipuRKWcXA5FfZFu05C3Wed5ShnKYywvk3BHKk+Th/nf77WPs3rT2pjlQRHUrTmpNRrB+yOsDmDtGVauG7KWfr+tYcapZ/75xi8Ik1B1a4BIzwAADRxpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+Cjx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IlhNUCBDb3JlIDQuNC4wLUV4aXYyIj4KIDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+CiAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIgogICAgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIKICAgIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIKICAgIHhtbG5zOkdJTVA9Imh0dHA6Ly93d3cuZ2ltcC5vcmcveG1wLyIKICAgIHhtbG5zOnRpZmY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vdGlmZi8xLjAvIgogICAgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIgogICB4bXBNTTpEb2N1bWVudElEPSJnaW1wOmRvY2lkOmdpbXA6ZjNlMmQ5MzgtMDE4Yi00YmEyLThiMzQtNDBiM2Q4MmJjZDMzIgogICB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjQ0ZTMwYzM5LTllYWItNGJjZS1hMjU0LTUxOGY3ODRjODg0NiIKICAgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOmUxNzgzM2U1LWQ1ZWMtNDM3NC1hYzJlLTk0YzVlN2I5OGUzNyIKICAgZGM6Rm9ybWF0PSJpbWFnZS9wbmciCiAgIEdJTVA6QVBJPSIyLjAiCiAgIEdJTVA6UGxhdGZvcm09Ik1hYyBPUyIKICAgR0lNUDpUaW1lU3RhbXA9IjE3MjYxMzMyOTE1MjEwMDciCiAgIEdJTVA6VmVyc2lvbj0iMi4xMC4zMCIKICAgdGlmZjpPcmllbnRhdGlvbj0iMSIKICAgeG1wOkNyZWF0b3JUb29sPSJHSU1QIDIuMTAiPgogICA8eG1wTU06SGlzdG9yeT4KICAgIDxyZGY6U2VxPgogICAgIDxyZGY6bGkKICAgICAgc3RFdnQ6YWN0aW9uPSJzYXZlZCIKICAgICAgc3RFdnQ6Y2hhbmdlZD0iLyIKICAgICAgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDpmN2Q4YzdkZC1mMGNlLTQxNWYtOWQ1ZS04NGE2YThmNGZkMDUiCiAgICAgIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkdpbXAgMi4xMCAoTWFjIE9TKSIKICAgICAgc3RFdnQ6d2hlbj0iMjAyNC0wOS0xMlQxNzoyODoxMSswODowMCIvPgogICAgPC9yZGY6U2VxPgogICA8L3htcE1NOkhpc3Rvcnk+CiAgPC9yZGY6RGVzY3JpcHRpb24+CiA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgCjw/eHBhY2tldCBlbmQ9InciPz7Mhr9VAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH6AkMCRwLD3FR3AAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcAAAC8SURBVBjTY/gPAf9e/YUwmBig4Nh7CA0T+H/7JqrAhzf3UQR+TeB4DGEx/mdgYPhy/vg32W/iIUxQFW+Xvf7h9tb03AOolv8rHU84/Wf69fsRVOAt80F1+Tcal/k/QAVuqfx0e/tRmVmBBSrAyyPG8zTglpmEEFRAgUfkj8Z9BUVO2ddQFeIC/wQYFBj4PnMwMDCwMDAwCDB95RJj+8DDygsVYBFiY2Bj4f4nCncpA8OfH/9/8zMzMDAwAAB49kdRfpOTuAAAAABJRU5ErkJggg==" alt="." style="background-color: #fcf7c0; background-color: inherit" title="NPM Package IG Dependency" class="hierarchy"/> <a href="http://hl7.org/fhir/tools/0.8.0" title="Canonical: http://hl7.org/fhir/tools">FHIR Tooling Extensions IG</a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #fcf7c0; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="https://simplifier.net/packages/hl7.fhir.uv.tools.r4/0.8.0">hl7.fhir.uv.tools.r4#0.8.0</a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #fcf7c0; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4">R4</a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #fcf7c0; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">for example references</td></tr>
+</table></div>
+<table class="grid"><tr><td><p><b>Package hl7.fhir.uv.extensions.r4#5.2.0</b></p>
+<p>This IG defines the global extensions - the ones defined for everyone. These extensions are always in scope wherever FHIR is being used (built Mon, Feb 10, 2025 21:45+1100+11:00)</p>
+</td></tr></table>
+<table class="grid"><tr><td><p><b>Package de.basisprofil.r4#1.5.4</b></p>
+<p>Projekt Basisprofilierung R4 (HL7 Deutschland e.V.)</p>
+</td></tr></table>
+<table class="grid"><tr><td><p><b>Package de.medizininformatikinitiative.kerndatensatz.meta#2026.0.0</b></p>
+<p>Medizininformatik Initiative - Modul Meta</p>
+</td></tr></table>
+<table class="grid"><tr><td><p><b>Package hl7.fhir.uv.tools.r4#0.8.0</b></p>
+<p>This IG defines the extensions that the tools use internally. Some of these extensions are content that are being evaluated for elevation into the main spec, and others are tooling concerns (built Tue, Aug 5, 2025 20:09+1000+10:00)</p>
+</td></tr></table>
+  <!-- $$3$$ -->
+
+<h3 id="global-profiles">Global Profiles</h3>
+
+<p><i>There are no Global profiles defined</i></p>
+  <!-- $$4$$ -->
+
+<h3 id="copyrights">Copyrights</h3>
+
+<p>This publication includes IP covered under the following statements.</p>
+<ul>
+<li>BfArM 1994 - 2024 - Die Erstellung erfolgt unter Verwendung der maschinenlesbaren Fassung des  Bundesinstituts für Arzneimittel und Medizinprodukte (BfArM)<div onclick="if (document.getElementById('ipp2_1').innerHTML != '') {document.getElementById('ipp_1').innerHTML = document.getElementById('ipp2_1').innerHTML; document.getElementById('ipp2_1').innerHTML = ''}" id="ipp_1" data-fhir="generated"> <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show Usage</span></div><div style="display: none" id="ipp2_1">
+<ul>
+<li><a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/bfarm/alpha-id">Alpha-ID</a>: <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>, <a href="Condition-mii-exa-diagnose-condition-multiple-codings.html">Condition/mii-exa-diagnose-condition-multiple-codings</a>, <a href="Condition-mii-exa-diagnose-mehrfachcodierung-primaercode.html">Condition/mii-exa-diagnose-mehrfachcodierung-primaercode</a>, <a href="StructureDefinition-mii-pr-diagnose-condition.html">MII_PR_Diagnose_Condition</a> and <a href="ValueSet-mii-vs-diagnose-alphaid.html">MII_VS_Diagnose_AlphaID</a></li>
+<li><a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/bfarm/ops">OPS</a>: <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>, <a href="StructureDefinition-mii-pr-prozedur-procedure.html">MII_PR_Prozedur_Procedure</a><span onclick="document.getElementById('ips_2').innerHTML = document.getElementById('ips2_2').innerHTML" id="ips_2">... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 4 more</span></span><span style="display: none" id="ips2_2">, <a href="ValueSet-mii-vs-prozedur-ops.html">MII_VS_Prozedur_OPS</a>, <a href="Procedure-mii-exa-prozedur-imaging.html">Procedure/mii-exa-prozedur-imaging</a>, <a href="Procedure-mii-exa-prozedur-procedure.html">Procedure/mii-exa-prozedur-procedure</a> and <a href="Procedure-mii-exa-prozedur-procedure-2.html">Procedure/mii-exa-prozedur-procedure-2</a></span></li>
+</ul>
+</div></li>
+<li>HL7 Deutschland e.V.<div onclick="if (document.getElementById('ipp2_2').innerHTML != '') {document.getElementById('ipp_2').innerHTML = document.getElementById('ipp2_2').innerHTML; document.getElementById('ipp2_2').innerHTML = ''}" id="ipp_2" data-fhir="generated"> <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show Usage</span></div><div style="display: none" id="ipp2_2">
+<ul>
+<li><a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/KontaktDiagnoseProzedur">KontaktDiagnoseProzedur</a>: <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7</a> and <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">MII_PR_Fall_KontaktGesundheitseinrichtung</a></li>
+<li><a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/dgkev/Aufnahmeanlass">CodeSystemAufnahmeanlass</a>: <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1</a> and <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">MII_PR_Fall_KontaktGesundheitseinrichtung</a></li>
+<li><a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/dkgev/AufnahmegrundVierteStelle">AufnahmegrundVierteStelle</a>: <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a> and <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-9.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-9</a></li>
+<li><a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/dkgev/EntlassungsgrundDritteStelle">EntlassungsgrundDritteStelle</a>: <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a> and <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1</a></li>
+<li><a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/dkgev/EntlassungsgrundErsteUndZweiteStelle">EntlassungsgrundErsteUndZweiteStelle</a>: <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a> and <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1</a></li>
+<li><a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel">Fachabteilungsschluessel</a>: <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7</a> and <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">MII_PR_Fall_KontaktGesundheitseinrichtung</a></li>
+<li><a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert">Fachabteilungsschluessel Erweitert</a>: <a href="Encounter-mii-exa-fall-kontakt-in-progress-status.html">Encounter/mii-exa-fall-kontakt-in-progress-status</a> and <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">MII_PR_Fall_KontaktGesundheitseinrichtung</a></li>
+<li><a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/identifier-type-de-basis">Identifier Type De Basis</a>: <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>, <a href="StructureDefinition-mii-pr-person-patient.html">MII_PR_Person_Patient</a>, <a href="StructureDefinition-mii-pr-person-patient-pseudonymisiert.html">MII_PR_Person_PatientPseudonymisiert</a>, <a href="Patient-mii-exa-person-patient-1.html">Patient/mii-exa-person-patient-1</a> and <a href="Patient-mii-exa-person-patient-pseudonymisiert.html">Patient/mii-exa-person-patient-pseudonymisiert</a></li>
+</ul>
+</div></li>
+<li>This material contains content from <a href="http://loinc.org">LOINC</a>. LOINC is copyright &copy; 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the <a href="http://loinc.org/license">license</a>. LOINC&reg; is a registered United States trademark of Regenstrief Institute, Inc.<div onclick="if (document.getElementById('ipp2_3').innerHTML != '') {document.getElementById('ipp_3').innerHTML = document.getElementById('ipp2_3').innerHTML; document.getElementById('ipp2_3').innerHTML = ''}" id="ipp_3" data-fhir="generated"> <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show Usage</span></div><div style="display: none" id="ipp2_3">
+<ul>
+<li>LOINC: <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>, <a href="Condition-mii-exa-person-condition-todesursache.html">Condition/mii-exa-person-condition-todesursache</a><span onclick="document.getElementById('ips_11').innerHTML = document.getElementById('ips2_11').innerHTML" id="ips_11">... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 4 more</span></span><span style="display: none" id="ips2_11">, <a href="StructureDefinition-mii-pr-person-todesursache.html">MII_PR_Person_Todesursache</a>, <a href="StructureDefinition-mii-pr-person-vitalstatus.html">MII_PR_Person_Vitalstatus</a>, <a href="Observation-mii-exa-person-observation-vitalstatus.html">Observation/mii-exa-person-observation-vitalstatus</a> and <a href="Observation-mii-exa-person-observation-vitalstatus-discharge.html">Observation/mii-exa-person-observation-vitalstatus-discharge</a></span></li>
+</ul>
+</div></li>
+<li>This material contains content that is copyright of SNOMED International. Implementers of these specifications must have the appropriate SNOMED CT Affiliate license - for more information contact <a href="https://www.snomed.org/get-snomed">https://www.snomed.org/get-snomed</a> or <a href="mailto:info@snomed.org">info@snomed.org</a>.<div onclick="if (document.getElementById('ipp2_4').innerHTML != '') {document.getElementById('ipp_4').innerHTML = document.getElementById('ipp2_4').innerHTML; document.getElementById('ipp2_4').innerHTML = ''}" id="ipp_4" data-fhir="generated"> <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show Usage</span></div><div style="display: none" id="ipp2_4">
+<ul>
+<li><a href="http://tx.fhir.org/r4/ValueSet/snomedct">SNOMED Clinical Terms&amp;reg; (SNOMED CT&amp;reg;)</a>: <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>, <a href="Condition-mii-exa-diagnose-appendicitis.html">Condition/mii-exa-diagnose-appendicitis</a><span onclick="document.getElementById('ips_12').innerHTML = document.getElementById('ips2_12').innerHTML" id="ips_12">... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 15 more</span></span><span style="display: none" id="ips2_12">, <a href="Condition-mii-exa-diagnose-condition-elbow-contusion.html">Condition/mii-exa-diagnose-condition-elbow-contusion</a>, <a href="Condition-mii-exa-person-condition-todesursache.html">Condition/mii-exa-person-condition-todesursache</a>, <a href="CodeSystem-mii-cs-diagnose-lebensphase-supplement-snomed.html">MII_CS_Diagnose_Lebensphase_Supplement_SNOMED</a>, <a href="StructureDefinition-mii-ex-prozedur-durchfuehrungsabsicht.html">MII_EX_Prozedur_Durchfuehrungsabsicht</a>, <a href="StructureDefinition-mii-pr-diagnose-condition.html">MII_PR_Diagnose_Condition</a>, <a href="StructureDefinition-mii-pr-person-todesursache.html">MII_PR_Person_Todesursache</a>, <a href="StructureDefinition-mii-pr-prozedur-procedure.html">MII_PR_Prozedur_Procedure</a>, <a href="ValueSet-mii-vs-diagnose-bodystructure-snomed.html">MII_VS_Diagnose_BodyStructure_SNOMED</a>, <a href="ValueSet-mii-vs-diagnose-diagnosecodes-snomed.html">MII_VS_Diagnose_DiagnoseCodes_SNOMED</a>, <a href="ValueSet-mii-vs-prozedur-durchfuehrungsabsicht-snomedct.html">MII_VS_Prozedur_Durchfuehrungsabsicht_SNOMEDCT</a>, <a href="ValueSet-mii-vs-prozedur-opskategorien-snomedct.html">MII_VS_Prozedur_OpsKategorien_SNOMEDCT</a>, <a href="ValueSet-mii-vs-prozedur-prozeduren-snomedct.html">MII_VS_Prozedur_Prozeduren_SNOMEDCT</a>, <a href="Procedure-mii-exa-prozedur-imaging.html">Procedure/mii-exa-prozedur-imaging</a>, <a href="Procedure-mii-exa-prozedur-procedure.html">Procedure/mii-exa-prozedur-procedure</a> and <a href="Procedure-mii-exa-prozedur-procedure-2.html">Procedure/mii-exa-prozedur-procedure-2</a></span></li>
+</ul>
+</div></li>
+<li>This material derives from the HL7 Terminology (THO). THO is copyright &copy;1989+ Health Level Seven International and is made available under the CC0 designation. For more licensing information see: <a href="https://terminology.hl7.org/license.html">https://terminology.hl7.org/license.html</a><div onclick="if (document.getElementById('ipp2_5').innerHTML != '') {document.getElementById('ipp_5').innerHTML = document.getElementById('ipp2_5').innerHTML; document.getElementById('ipp2_5').innerHTML = ''}" id="ipp_5" data-fhir="generated"> <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show Usage</span></div><div style="display: none" id="ipp2_5">
+<ul>
+<li><a href="http://terminology.hl7.org/7.0.0/CodeSystem-condition-clinical.html">Condition Clinical Status Codes</a>: <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>, <a href="Condition-mii-exa-diagnose-appendicitis.html">Condition/mii-exa-diagnose-appendicitis</a><span onclick="document.getElementById('ips_13').innerHTML = document.getElementById('ips2_13').innerHTML" id="ips_13">... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 4 more</span></span><span style="display: none" id="ips2_13">, <a href="Condition-mii-exa-diagnose-condition-elbow-contusion.html">Condition/mii-exa-diagnose-condition-elbow-contusion</a>, <a href="Condition-mii-exa-diagnose-condition-multiple-codings.html">Condition/mii-exa-diagnose-condition-multiple-codings</a>, <a href="Condition-mii-exa-diagnose-mehrfachcodierung-primaercode.html">Condition/mii-exa-diagnose-mehrfachcodierung-primaercode</a> and <a href="Condition-mii-exa-diagnose-mehrfachcodierung-sekundaercode.html">Condition/mii-exa-diagnose-mehrfachcodierung-sekundaercode</a></span></li>
+<li><a href="http://terminology.hl7.org/7.0.0/CodeSystem-condition-ver-status.html">ConditionVerificationStatus</a>: <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>, <a href="Condition-mii-exa-diagnose-appendicitis.html">Condition/mii-exa-diagnose-appendicitis</a><span onclick="document.getElementById('ips_14').innerHTML = document.getElementById('ips2_14').innerHTML" id="ips_14">... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 4 more</span></span><span style="display: none" id="ips2_14">, <a href="Condition-mii-exa-diagnose-condition-elbow-contusion.html">Condition/mii-exa-diagnose-condition-elbow-contusion</a>, <a href="Condition-mii-exa-diagnose-condition-multiple-codings.html">Condition/mii-exa-diagnose-condition-multiple-codings</a>, <a href="Condition-mii-exa-diagnose-mehrfachcodierung-primaercode.html">Condition/mii-exa-diagnose-mehrfachcodierung-primaercode</a> and <a href="Condition-mii-exa-diagnose-mehrfachcodierung-sekundaercode.html">Condition/mii-exa-diagnose-mehrfachcodierung-sekundaercode</a></span></li>
+<li><a href="http://terminology.hl7.org/7.0.0/CodeSystem-diagnosis-role.html">Diagnosis Role</a>: <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7</a> and <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">MII_PR_Fall_KontaktGesundheitseinrichtung</a></li>
+<li><a href="http://terminology.hl7.org/7.0.0/CodeSystem-location-physical-type.html">Location type</a>: <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-10.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10</a><span onclick="document.getElementById('ips_16').innerHTML = document.getElementById('ips2_16').innerHTML" id="ips_16">... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 6 more</span></span><span style="display: none" id="ips2_16">, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-11.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-11</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-4.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-5.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-6.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6</a>, <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">MII_PR_Fall_KontaktGesundheitseinrichtung</a> and <a href="ValueSet-mii-vs-fall-location-physical-type.html">MII_VS_Fall_LocationPhysicalType</a></span></li>
+<li><a href="http://terminology.hl7.org/7.0.0/CodeSystem-observation-category.html">Observation Category Codes</a>: <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>, <a href="StructureDefinition-mii-pr-person-vitalstatus.html">MII_PR_Person_Vitalstatus</a>, <a href="Observation-mii-exa-person-observation-vitalstatus.html">Observation/mii-exa-person-observation-vitalstatus</a> and <a href="Observation-mii-exa-person-observation-vitalstatus-discharge.html">Observation/mii-exa-person-observation-vitalstatus-discharge</a></li>
+<li><a href="http://terminology.hl7.org/7.0.0/CodeSystem-v2-0004.html">patientClass</a>: <a href="CodeSystem-mii-cs-fall-supplement-patient-class.html">MII_CS_Fall_SupplementPatientClass</a></li>
+<li><a href="http://terminology.hl7.org/7.0.0/CodeSystem-v2-0203.html">identifierType</a>: <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1</a><span onclick="document.getElementById('ips_19').innerHTML = document.getElementById('ips2_19').innerHTML" id="ips_19">... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 16 more</span></span><span style="display: none" id="ips2_19">, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-10.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-11.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-11</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-3.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-3</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-4.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-5.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-6.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-8.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-8</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-9.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-9</a>, <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">MII_PR_Fall_KontaktGesundheitseinrichtung</a>, <a href="StructureDefinition-mii-pr-person-patient.html">MII_PR_Person_Patient</a>, <a href="StructureDefinition-mii-pr-person-patient-pseudonymisiert.html">MII_PR_Person_PatientPseudonymisiert</a>, <a href="StructureDefinition-mii-pr-person-proband.html">MII_PR_Person_Proband</a>, <a href="ValueSet-mii-vs-fall-identifier-type-codes.html">MII_VS_Fall_IdentifierTypeCodes</a> and <a href="Patient-mii-exa-person-patient-1.html">Patient/mii-exa-person-patient-1</a></span></li>
+<li><a href="http://terminology.hl7.org/7.0.0/CodeSystem-v3-ActCode.html">ActCode</a>: <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1</a><span onclick="document.getElementById('ips_20').innerHTML = document.getElementById('ips2_20').innerHTML" id="ips_20">... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 15 more</span></span><span style="display: none" id="ips2_20">, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-10.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-11.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-11</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-3.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-3</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-4.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-5.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-6.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-8.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-8</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-9.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-9</a>, <a href="Encounter-mii-exa-fall-kontakt-in-progress-status.html">Encounter/mii-exa-fall-kontakt-in-progress-status</a>, <a href="Encounter-mii-exa-fall-kontakt-onleave-status.html">Encounter/mii-exa-fall-kontakt-onleave-status</a>, <a href="Encounter-mii-exa-fall-kontakt-unknown-status.html">Encounter/mii-exa-fall-kontakt-unknown-status</a>, <a href="CodeSystem-mii-cs-fall-supplement-act-encounter-code.html">MII_CS_Fall_SupplementActEncounterCode</a> and <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">MII_PR_Fall_KontaktGesundheitseinrichtung</a></span></li>
+<li><a href="http://terminology.hl7.org/7.0.0/CodeSystem-v3-ActPriority.html">ActPriority</a>: <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a> and <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-9.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-9</a></li>
+<li><a href="http://terminology.hl7.org/7.0.0/CodeSystem-v3-ActReason.html">ActReason</a>: <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>, <a href="Condition-mii-exa-diagnose-appendicitis.html">Condition/mii-exa-diagnose-appendicitis</a><span onclick="document.getElementById('ips_22').innerHTML = document.getElementById('ips2_22').innerHTML" id="ips_22">... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 26 more</span></span><span style="display: none" id="ips2_22">, <a href="Condition-mii-exa-diagnose-condition-elbow-contusion.html">Condition/mii-exa-diagnose-condition-elbow-contusion</a>, <a href="Condition-mii-exa-diagnose-condition-multiple-codings.html">Condition/mii-exa-diagnose-condition-multiple-codings</a>, <a href="Condition-mii-exa-diagnose-mehrfachcodierung-primaercode.html">Condition/mii-exa-diagnose-mehrfachcodierung-primaercode</a>, <a href="Condition-mii-exa-diagnose-mehrfachcodierung-sekundaercode.html">Condition/mii-exa-diagnose-mehrfachcodierung-sekundaercode</a>, <a href="Condition-mii-exa-person-condition-todesursache.html">Condition/mii-exa-person-condition-todesursache</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-10.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-11.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-11</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-3.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-3</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-4.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-5.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-6.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-8.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-8</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-9.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-9</a>, <a href="Encounter-mii-exa-fall-kontakt-in-progress-status.html">Encounter/mii-exa-fall-kontakt-in-progress-status</a>, <a href="Encounter-mii-exa-fall-kontakt-onleave-status.html">Encounter/mii-exa-fall-kontakt-onleave-status</a>, <a href="Encounter-mii-exa-fall-kontakt-unknown-status.html">Encounter/mii-exa-fall-kontakt-unknown-status</a>, <a href="Observation-mii-exa-person-observation-vitalstatus.html">Observation/mii-exa-person-observation-vitalstatus</a>, <a href="Observation-mii-exa-person-observation-vitalstatus-discharge.html">Observation/mii-exa-person-observation-vitalstatus-discharge</a>, <a href="Patient-mii-exa-person-patient-1.html">Patient/mii-exa-person-patient-1</a>, <a href="Patient-mii-exa-person-patient-pseudonymisiert.html">Patient/mii-exa-person-patient-pseudonymisiert</a>, <a href="Procedure-mii-exa-prozedur-imaging.html">Procedure/mii-exa-prozedur-imaging</a>, <a href="Procedure-mii-exa-prozedur-procedure.html">Procedure/mii-exa-prozedur-procedure</a> and <a href="Procedure-mii-exa-prozedur-procedure-2.html">Procedure/mii-exa-prozedur-procedure-2</a></span></li>
+<li><a href="http://terminology.hl7.org/7.0.0/CodeSystem-v3-ObservationValue.html">ObservationValue</a>: <a href="StructureDefinition-mii-pr-person-patient-pseudonymisiert.html">MII_PR_Person_PatientPseudonymisiert</a> and <a href="Patient-mii-exa-person-patient-pseudonymisiert.html">Patient/mii-exa-person-patient-pseudonymisiert</a></li>
+</ul>
+</div></li>
+<li>WHO, BfArM 1994 - 2024 - Die Erstellung erfolgt unter Verwendung der maschinenlesbaren Fassung des  Bundesinstituts für Arzneimittel und Medizinprodukte (BfArM)<div onclick="if (document.getElementById('ipp2_6').innerHTML != '') {document.getElementById('ipp_6').innerHTML = document.getElementById('ipp2_6').innerHTML; document.getElementById('ipp2_6').innerHTML = ''}" id="ipp_6" data-fhir="generated"> <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show Usage</span></div><div style="display: none" id="ipp2_6">
+<ul>
+<li><a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/bfarm/icd-10-gm">ICD-10-GM</a>: <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>, <a href="Condition-mii-exa-diagnose-appendicitis.html">Condition/mii-exa-diagnose-appendicitis</a><span onclick="document.getElementById('ips_24').innerHTML = document.getElementById('ips2_24').innerHTML" id="ips_24">... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 6 more</span></span><span style="display: none" id="ips2_24">, <a href="Condition-mii-exa-diagnose-condition-elbow-contusion.html">Condition/mii-exa-diagnose-condition-elbow-contusion</a>, <a href="Condition-mii-exa-diagnose-condition-multiple-codings.html">Condition/mii-exa-diagnose-condition-multiple-codings</a>, <a href="Condition-mii-exa-diagnose-mehrfachcodierung-primaercode.html">Condition/mii-exa-diagnose-mehrfachcodierung-primaercode</a>, <a href="Condition-mii-exa-diagnose-mehrfachcodierung-sekundaercode.html">Condition/mii-exa-diagnose-mehrfachcodierung-sekundaercode</a>, <a href="StructureDefinition-mii-pr-diagnose-condition.html">MII_PR_Diagnose_Condition</a> and <a href="ValueSet-mii-vs-diagnose-icd10gm.html">MII_VS_Diagnose_ICD10GM</a></span></li>
+</ul>
+</div></li>
+</ul>
+  <!-- $$1$$ -->
+
+
+
+
+</div>
+        </div>    <!-- /inner-wrapper -->
+      </div>    <!-- /row -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-content -->
+
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+  <script src="assets/js/flags.js" type="text/javascript"> </script>
+
+  <script src="assets/js/window-hash.js" type="text/javascript"> </script>
+
+  <a name="bottom"> </a>
+  <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+    <div class="container" data-fhir="generated">    <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+
+
+
+          IG &copy; 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
+          Package de.medizininformatikinitiative.kerndatensatz.base#2026.0.0-dev.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Generated 
+  <span title="2025-12-01 10:03:00 +0000">
+    2025-12-01
+  </span>
+
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>    <!-- /inner-wrapper -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+    <div class="container">    <!-- container -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-post-footer -->
+
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+  <script src="assets/js/respond.min.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
+    <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>

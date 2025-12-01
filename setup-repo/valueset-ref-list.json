@@ -1,0 +1,308 @@
+{
+  "codeSystems" : [
+    {
+      "url" : "http://fhir.de/ValueSet/DiagnoseTyp",
+      "version" : "1.5.4",
+      "status" : "active",
+      "name" : "DiagnoseTyp",
+      "title" : "DiagnoseTyp ValueSet",
+      "description" : "DiagnoseTyp ValueSet",
+      "systems" : ["http://fhir.de/CodeSystem/KontaktDiagnoseProzedur"],
+      "uses" : {
+      },
+      "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung",
+      "ValueSet-mii-vs-fall-diagnosis-use.html" : "MII VS Fall Diagnosis Use"
+    },
+    {
+      "url" : "http://fhir.de/ValueSet/Diagnosesubtyp",
+      "version" : "1.5.4",
+      "status" : "active",
+      "name" : "Diagnosesubtyp",
+      "title" : "Diagnosesubtyp ValueSet",
+      "description" : "Diagnosesubtyp ValueSet",
+      "systems" : [
+        "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+        "http://fhir.de/CodeSystem/KontaktDiagnoseProzedur"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung",
+      "ValueSet-mii-vs-fall-diagnosis-use.html" : "MII VS Fall Diagnosis Use"
+    },
+    {
+      "url" : "http://fhir.de/ValueSet/EncounterClassDE",
+      "version" : "1.5.4",
+      "status" : "active",
+      "name" : "EncounterClassDE",
+      "title" : "EncounterClassDE",
+      "description" : "Fallarten und Patientenstatus zur Codierung von Encounter.class",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/v3-ActCode"],
+      "uses" : {
+      },
+      "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung"
+    },
+    {
+      "url" : "http://fhir.de/ValueSet/EncounterStatusDe",
+      "version" : "1.5.4",
+      "status" : "active",
+      "name" : "EncounterStatusDe",
+      "title" : "Encounter Status ValueSet",
+      "description" : "Einschränkung von Encounter Status in Vorbereitung auf Änderungen in FHIR R5",
+      "systems" : ["http://hl7.org/fhir/encounter-status"],
+      "uses" : {
+      },
+      "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung"
+    },
+    {
+      "url" : "http://fhir.de/ValueSet/dgkev/Aufnahmeanlass",
+      "version" : "1.5.4",
+      "status" : "active",
+      "name" : "AufnahmeanlassVS",
+      "title" : "Aufnahmeanlass ValueSet",
+      "description" : "Aufnahmeanlass, Datenübermittlung nach § 301 Abs. 3 SGB V",
+      "systems" : ["http://fhir.de/CodeSystem/dgkev/Aufnahmeanlass"],
+      "uses" : {
+      },
+      "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung"
+    },
+    {
+      "url" : "http://fhir.de/ValueSet/dkgev/Fachabteilungsschluessel",
+      "version" : "1.5.4",
+      "status" : "active",
+      "name" : "FachabteilungsschluesselVS",
+      "title" : "Fachabteilungsschlüssel ValueSet",
+      "description" : "Fachabteilungen gemäß Anhang 1 der BPflV in der am 31.12.2003 geltenden Fassung",
+      "systems" : ["http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel"],
+      "uses" : {
+      },
+      "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung"
+    },
+    {
+      "url" : "http://fhir.de/ValueSet/dkgev/Fachabteilungsschluessel-erweitert",
+      "version" : "1.5.4",
+      "status" : "active",
+      "name" : "ValueSetFachabteilungsschluesselErweitert",
+      "title" : "FachabteilungsschluesselErweitert ValueSet",
+      "description" : "Fachabteilungen gemäß Anhang 1 der BPflV in der am 31.12.2003 geltenden Fassung inkl. Spezialisierungen",
+      "systems" : [
+        "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung"
+    },
+    {
+      "url" : "http://fhir.de/ValueSet/kontaktart-de",
+      "version" : "1.5.4",
+      "status" : "active",
+      "name" : "KontaktartDe",
+      "title" : "KontaktartDe ValueSet",
+      "description" : "Kontaktarten für die Codierung von Encounter.type",
+      "systems" : ["http://fhir.de/CodeSystem/kontaktart-de"],
+      "uses" : {
+      },
+      "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung"
+    },
+    {
+      "url" : "http://fhir.de/ValueSet/kontaktebene-de",
+      "version" : "1.5.4",
+      "status" : "active",
+      "name" : "KontaktebeneDe",
+      "title" : "KontaktebeneDe ValueSet",
+      "description" : "Kontaktebene für die Codierung von Encounter.type",
+      "systems" : ["http://fhir.de/CodeSystem/Kontaktebene"],
+      "uses" : {
+      },
+      "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/diagnosis-role",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "DiagnosisRole",
+      "title" : "DiagnosisRole",
+      "description" : "This value set defines a set of codes that can be used to express the role of a diagnosis on the Encounter or EpisodeOfCare record.",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/diagnosis-role"],
+      "oids" : ["2.16.840.1.113883.4.642.3.49"],
+      "sources" : ["2.16.840.1.113883.4.642.3.49"],
+      "uses" : {
+      },
+      "ValueSet-mii-vs-fall-diagnosis-use.html" : "MII VS Fall Diagnosis Use"
+    },
+    {
+      "url" : "http://hl7.org/fhir/sid/icd-10/vs",
+      "version" : null,
+      "status" : "active",
+      "name" : "ICD_10_EN",
+      "title" : null,
+      "description" : "",
+      "systems" : ["http://hl7.org/fhir/sid/icd-10"],
+      "uses" : {
+      },
+      "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache"
+    },
+    {
+      "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/diagnoses-sct",
+      "version" : "2026.0.0-dev.1",
+      "status" : "active",
+      "name" : "MII_VS_Diagnose_DiagnoseCodes_SNOMED",
+      "title" : "MII VS Diagnose Diagnose-Codes SNOMED",
+      "description" : "Enthaelt alle SNOMED Clinical finding, Event und Situation with explicit context codes",
+      "systems" : ["http://snomed.info/sct"],
+      "uses" : {
+      },
+      "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition"
+    },
+    {
+      "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-alphaid",
+      "version" : "2026.0.0-dev.1",
+      "status" : "active",
+      "name" : "MII_VS_Diagnose_AlphaID",
+      "title" : "MII VS Diagnose Alpha-ID",
+      "description" : "Enthaelt Alpha-ID-Codes der Versionen 2018 bis 2025",
+      "systems" : ["http://fhir.de/CodeSystem/bfarm/alpha-id"],
+      "uses" : {
+      },
+      "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition"
+    },
+    {
+      "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-bodystructure-snomed",
+      "version" : "2026.0.0-dev.1",
+      "status" : "active",
+      "name" : "MII_VS_Diagnose_BodyStructure_SNOMED",
+      "title" : "MII VS Diagnose BodyStructure SNOMED",
+      "description" : "Enthaelt alle SNOMED Body structure codes",
+      "systems" : ["http://snomed.info/sct"],
+      "uses" : {
+      },
+      "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition"
+    },
+    {
+      "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-icd10gm",
+      "version" : "2026.0.0-dev.1",
+      "status" : "active",
+      "name" : "MII_VS_Diagnose_ICD10GM",
+      "title" : "MII VS Diagnose ICD-10-GM",
+      "description" : "Enthaelt ICD-10-GM-Codes der Versionen 2009 bis 2025",
+      "systems" : ["http://fhir.de/CodeSystem/bfarm/icd-10-gm"],
+      "uses" : {
+      },
+      "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition"
+    },
+    {
+      "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-orphanet",
+      "version" : "2026.0.0-dev.1",
+      "status" : "active",
+      "name" : "MII_VS_Diagnose_Orphanet",
+      "title" : "MII VS Diagnose Orphanet",
+      "description" : "Enthaelt alle Orpha-Kennnummern (ORPHAcodes)",
+      "systems" : ["http://www.orpha.net"],
+      "uses" : {
+      },
+      "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition"
+    },
+    {
+      "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/identifier-type-codes",
+      "version" : "2026.0.0-dev.1",
+      "status" : "active",
+      "name" : "MII_VS_Fall_IdentifierTypeCodes",
+      "title" : "MII VS Fall Identifier Type Codes",
+      "description" : "A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0203"],
+      "uses" : {
+      },
+      "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung"
+    },
+    {
+      "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/location-physical-type",
+      "version" : "2026.0.0-dev.1",
+      "status" : "active",
+      "name" : "MII_VS_Fall_LocationPhysicalType",
+      "title" : "MII VS Fall Location Physical Type",
+      "description" : "A coded type for the physical type of the location.",
+      "systems" : [
+        "http://terminology.hl7.org/CodeSystem/location-physical-type"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung"
+    },
+    {
+      "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/mii-vs-fall-diagnosis-use",
+      "version" : "2026.0.0-dev.1",
+      "status" : "active",
+      "name" : "MII_VS_Fall_Diagnosis_Use",
+      "title" : "MII VS Fall Diagnosis Use",
+      "description" : "Diagnosetyp",
+      "systems" : [
+        "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+        "http://fhir.de/CodeSystem/KontaktDiagnoseProzedur"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung"
+    },
+    {
+      "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/Vitalstatus",
+      "version" : "2026.0.0-dev.1",
+      "status" : "active",
+      "name" : "MII_VS_Person_Vitalstatus",
+      "title" : "MII VS Person Vitalstatus",
+      "description" : "Enthält alle Werte, die den Vitalstatus einer Person beschreiben.",
+      "systems" : [
+        "https://www.medizininformatik-initiative.de/fhir/core/modul-person/CodeSystem/Vitalstatus"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-mii-pr-person-vitalstatus.html" : "MII PR Person Vitalstatus"
+    },
+    {
+      "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/mii-vs-prozedur-ops",
+      "version" : "2026.0.0-dev.1",
+      "status" : "active",
+      "name" : "MII_VS_Prozedur_OPS",
+      "title" : "MII VS Prozedur OPS",
+      "description" : "Enthaelt OPS-Codes der Versionen 2010 bis 2025",
+      "systems" : ["http://fhir.de/CodeSystem/bfarm/ops"],
+      "uses" : {
+      },
+      "StructureDefinition-mii-pr-prozedur-procedure.html" : "MII PR Prozedur Procedure"
+    },
+    {
+      "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-category-sct",
+      "version" : "2026.0.0-dev.1",
+      "status" : "active",
+      "name" : "MII_VS_Prozedur_OpsKategorien_SNOMEDCT",
+      "title" : "MII VS Prozedur OPS Kategorien [SNOMED CT]",
+      "description" : "Enthaelt alle SNOMED CT Codes für ein Mapping der OPS Klassentitel",
+      "systems" : ["http://snomed.info/sct"],
+      "uses" : {
+      },
+      "StructureDefinition-mii-pr-prozedur-procedure.html" : "MII PR Prozedur Procedure"
+    },
+    {
+      "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-intend",
+      "version" : "2026.0.0-dev.1",
+      "status" : "active",
+      "name" : "MII_VS_Prozedur_Durchfuehrungsabsicht_SNOMEDCT",
+      "title" : "MII VS Prozedur Durchführungsabsicht [SNOMED CT]",
+      "description" : "Durchführungsabsicht / Intention mit der Prozedur ausgeführt wird",
+      "systems" : ["http://snomed.info/sct"],
+      "uses" : {
+      },
+      "StructureDefinition-mii-ex-prozedur-durchfuehrungsabsicht.html" : "MII EX Prozedur Durchführungsabsicht"
+    },
+    {
+      "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-sct",
+      "version" : "2026.0.0-dev.1",
+      "status" : "active",
+      "name" : "MII_VS_Prozedur_Prozeduren_SNOMEDCT",
+      "title" : "MII VS Prozedur Prozeduren [SNOMED CT]",
+      "description" : "Enthaelt alle SNOMED CT Procedure Codes",
+      "systems" : ["http://snomed.info/sct"],
+      "uses" : {
+      },
+      "StructureDefinition-mii-pr-prozedur-procedure.html" : "MII PR Prozedur Procedure"
+    }
+  ]
+}
