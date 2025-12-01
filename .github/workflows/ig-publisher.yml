@@ -56,8 +56,8 @@ jobs:
           path: |
             output
 
-      # Publish the IG output to a branch-specific directory on gh-pages
-      - name: Publish branch output to GitHub Pages
+      # Publish the IG output to GitHub Pages
+      - name: Publish to GitHub Pages
         if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/')
         shell: bash
         env:
@@ -88,10 +88,23 @@ jobs:
             cd ..
           fi
 
-          branch_dir="gh-pages/${GITHUB_REF_NAME}"
-          rm -rf "${branch_dir}"
-          mkdir -p "${branch_dir}"
-          cp -R "output/." "${branch_dir}/"
+          # Publish main/master branch to root, other branches to subdirectories
+          if [[ "${GITHUB_REF_NAME}" == "main" ]] || [[ "${GITHUB_REF_NAME}" == "master" ]]; then
+            # Main branch: publish to root
+            cd gh-pages
+            # Remove all files except branch subdirectories and .nojekyll
+            find . -maxdepth 1 ! -name '.' ! -name '.git' ! -name '.nojekyll' ! -path './[a-zA-Z0-9_-]*' -exec rm -rf {} + 2>/dev/null || true
+            cd ..
+            cp -R "output/." "gh-pages/"
+            echo "Published ${GITHUB_REF_NAME} to root"
+          else
+            # Feature branches: publish to subdirectory
+            branch_dir="gh-pages/${GITHUB_REF_NAME}"
+            rm -rf "${branch_dir}"
+            mkdir -p "${branch_dir}"
+            cp -R "output/." "${branch_dir}/"
+            echo "Published ${GITHUB_REF_NAME} to ${GITHUB_REF_NAME}/ subdirectory"
+          fi
 
           cd gh-pages
           git config user.name "${GIT_AUTHOR_NAME}"
@@ -113,7 +126,14 @@ jobs:
           repo_owner="${GITHUB_REPOSITORY_OWNER}"
           repo_name="${GITHUB_REPOSITORY#*/}"
           branch="${GITHUB_REF_NAME}"
-          url="https://${repo_owner}.github.io/${repo_name}/${branch}/"
+          
+          # Main/master branch published to root, others to subdirectory
+          if [[ "${branch}" == "main" ]] || [[ "${branch}" == "master" ]]; then
+            url="https://${repo_owner}.github.io/${repo_name}/"
+          else
+            url="https://${repo_owner}.github.io/${repo_name}/${branch}/"
+          fi
+          
           echo "Published to ${url}"
           printf '### Deployment\n[Open published IG for branch `%s`](%s)\n' "${branch}" "${url}" >> "${GITHUB_STEP_SUMMARY}"
           echo "published_url=${url}" >> "${GITHUB_OUTPUT}"
