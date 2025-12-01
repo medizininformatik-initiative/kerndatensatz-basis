@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Encounter xmlns="http://hl7.org/fhir">
+  <id value="mii-exa-fall-kontakt-gesundheitseinrichtung-2"/>
+  <meta>
+    <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0-dev.1"/>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  <language value="en"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div xml:lang="en" lang="en"><hr/><p><b>English</b></p><hr/><p class="res-header-id"><b>Generated Narrative: Encounter mii-exa-fall-kontakt-gesundheitseinrichtung-2</b></p><a name="mii-exa-fall-kontakt-gesundheitseinrichtung-2"> </a><a name="hcmii-exa-fall-kontakt-gesundheitseinrichtung-2"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Language: en</p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">MII PR Fall Kontakt mit einer Gesundheitseinrichtungversion: null2026.0.0-dev.1)</a></p><p style="margin-bottom: 0px">Security Label: test health data (Details: ActReason code HTEST = 'test health data')</p></div><p><b>identifier</b>: Visit number/A2E</p><p><b>status</b>: Finished</p><p><b>class</b>: <a href="http://terminology.hl7.org/7.0.0/CodeSystem-v3-ActCode.html#v3-ActCode-IMP">ActCode: IMP</a> (inpatient encounter)</p><p><b>type</b>: <span title="Codes:{http://fhir.de/CodeSystem/Kontaktebene abteilungskontakt}">Abteilungskontakt</span></p><p><b>serviceType</b>: <span title="Codes:{http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel 1500}">Allgemeine Chirurgie</span></p><p><b>subject</b>: <a href="Patient-mii-exa-person-patient-1.html">Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))</a></p><p><b>period</b>: 2020-01-08 09:00:00+0100 --&gt; 2020-01-11 23:59:00+0100</p><blockquote><p><b>diagnosis</b></p><p><b>condition</b>: <a href="Condition-mii-exa-diagnose-appendicitis.html">Condition Akute Appendizitis, nicht näher bezeichnet</a></p><p><b>use</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/diagnosis-role AD}">Admission diagnosis</span></p></blockquote><blockquote><p><b>diagnosis</b></p><p><b>condition</b>: <a href="Condition-mii-exa-diagnose-appendicitis.html">Condition Akute Appendizitis, nicht näher bezeichnet</a></p><p><b>use</b>: <span title="Codes:{http://fhir.de/CodeSystem/KontaktDiagnoseProzedur treatment-diagnosis}">Behandlungsrelevante Diagnosen</span></p></blockquote><blockquote><p><b>diagnosis</b></p><p><b>condition</b>: <a href="Condition-mii-exa-diagnose-condition-elbow-contusion.html">Condition Prellung des Ellenbogens</a></p><p><b>use</b>: <span title="Codes:{http://fhir.de/CodeSystem/KontaktDiagnoseProzedur treatment-diagnosis}">Behandlungsrelevante Diagnosen</span></p></blockquote><p><b>account</b>: Account A1 - DRG G23B Appendektomie ohne schwere CC (Identifier: <code>https://www.charite.de/fhir/sid/fallnummer</code>/F-2020-000123)</p><p><b>serviceProvider</b>: Identifier: <code>http://fhir.de/sid/dkgev/iknr</code>/260950472</p><p><b>partOf</b>: <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.html">Encounter: identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Einrichtungskontakt; period = 2020-01-08 07:00:00+0100 --&gt; 2020-01-17 18:00:00+0100</a></p></div><div xml:lang="de" lang="de"><hr/><p><b>German</b></p><hr/><p class="res-header-id"><b>Generated Narrative: Encounter mii-exa-fall-kontakt-gesundheitseinrichtung-2</b></p><a name="de-mii-exa-fall-kontakt-gesundheitseinrichtung-2"> </a><a name="de-hcmii-exa-fall-kontakt-gesundheitseinrichtung-2"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Language: en</p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">MII PR Fall Kontakt mit einer Gesundheitseinrichtungversion: null2026.0.0-dev.1)</a></p><p style="margin-bottom: 0px">Security Label: test health data (Details: ActReason code HTEST = 'test health data')</p></div><p><b>identifier</b>: Fallnummer/A2E</p><p><b>status</b>: Finished</p><p><b>class</b>: <a href="http://terminology.hl7.org/7.0.0/CodeSystem-v3-ActCode.html#v3-ActCode-IMP">ActCode: IMP</a> (inpatient encounter)</p><p><b>type</b>: <span title="Codes:{http://fhir.de/CodeSystem/Kontaktebene abteilungskontakt}">Abteilungskontakt</span></p><p><b>serviceType</b>: <span title="Codes:{http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel 1500}">Allgemeine Chirurgie</span></p><p><b>subject</b>: <a href="Patient-mii-exa-person-patient-1.html">Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Krankenaktennummer (use: usual, ))</a></p><p><b>period</b>: 2020-01-08 09:00:00+0100 --&gt; 2020-01-11 23:59:00+0100</p><blockquote><p><b>diagnosis</b></p><p><b>condition</b>: <a href="Condition-mii-exa-diagnose-appendicitis.html">Condition Akute Appendizitis, nicht näher bezeichnet</a></p><p><b>use</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/diagnosis-role AD}">Admission diagnosis</span></p></blockquote><blockquote><p><b>diagnosis</b></p><p><b>condition</b>: <a href="Condition-mii-exa-diagnose-appendicitis.html">Condition Akute Appendizitis, nicht näher bezeichnet</a></p><p><b>use</b>: <span title="Codes:{http://fhir.de/CodeSystem/KontaktDiagnoseProzedur treatment-diagnosis}">Behandlungsrelevante Diagnosen</span></p></blockquote><blockquote><p><b>diagnosis</b></p><p><b>condition</b>: <a href="Condition-mii-exa-diagnose-condition-elbow-contusion.html">Condition Prellung des Ellenbogens</a></p><p><b>use</b>: <span title="Codes:{http://fhir.de/CodeSystem/KontaktDiagnoseProzedur treatment-diagnosis}">Behandlungsrelevante Diagnosen</span></p></blockquote><p><b>account</b>: Account A1 - DRG G23B Appendektomie ohne schwere CC (Identifier: <code>https://www.charite.de/fhir/sid/fallnummer</code>/F-2020-000123)</p><p><b>serviceProvider</b>: Identifier: <code>http://fhir.de/sid/dkgev/iknr</code>/260950472</p><p><b>partOf</b>: <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.html">Encounter: identifier = Fallnummer; status = finished; class = inpatient encounter (ActCode#IMP); type = Einrichtungskontakt; period = 2020-01-08 07:00:00+0100 --&gt; 2020-01-17 18:00:00+0100</a></p></div></div>
+  </text>
+  <identifier>
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+        <code value="VN"/>
+      </coding>
+    </type>
+    <system value="https://www.charite.de/fhir/sid/aufnahmenummer"/>
+    <value value="A2E"/>
+  </identifier>
+  <status value="finished"/>
+  <class>
+    <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
+    <code value="IMP"/>
+  </class>
+  <type>
+    <coding>
+      <system value="http://fhir.de/CodeSystem/Kontaktebene"/>
+      <code value="abteilungskontakt"/>
+    </coding>
+  </type>
+  <serviceType>
+    <coding>
+      <system value="http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel"/>
+      <code value="1500"/>
+      <display value="Allgemeine Chirurgie"/>
+    </coding>
+  </serviceType>
+  <subject>
+    <reference value="Patient/mii-exa-person-patient-1"/>
+  </subject>
+  <period>
+    <start value="2020-01-08T09:00:00+01:00"/>
+    <end value="2020-01-11T23:59:00+01:00"/>
+  </period>
+  <diagnosis>
+    <condition>
+      <reference value="Condition/mii-exa-diagnose-appendicitis"/>
+    </condition>
+    <use>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/diagnosis-role"/>
+        <code value="AD"/>
+        <display value="Admission diagnosis"/>
+      </coding>
+    </use>
+  </diagnosis>
+  <diagnosis>
+    <condition>
+      <reference value="Condition/mii-exa-diagnose-appendicitis"/>
+    </condition>
+    <use>
+      <coding>
+        <system value="http://fhir.de/CodeSystem/KontaktDiagnoseProzedur"/>
+        <code value="treatment-diagnosis"/>
+      </coding>
+    </use>
+  </diagnosis>
+  <diagnosis>
+    <condition>
+      <reference value="Condition/mii-exa-diagnose-condition-elbow-contusion"/>
+    </condition>
+    <use>
+      <coding>
+        <system value="http://fhir.de/CodeSystem/KontaktDiagnoseProzedur"/>
+        <code value="treatment-diagnosis"/>
+      </coding>
+    </use>
+  </diagnosis>
+  <account>
+    <identifier>
+      <system value="https://www.charite.de/fhir/sid/fallnummer"/>
+      <value value="F-2020-000123"/>
+    </identifier>
+    <display value="Account A1 - DRG G23B Appendektomie ohne schwere CC"/>
+  </account>
+  <serviceProvider>
+    <identifier>
+      <system value="http://fhir.de/sid/dkgev/iknr"/>
+      <value value="260950472"/>
+    </identifier>
+  </serviceProvider>
+  <partOf>
+    <reference value="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1"/>
+  </partOf>
+</Encounter>

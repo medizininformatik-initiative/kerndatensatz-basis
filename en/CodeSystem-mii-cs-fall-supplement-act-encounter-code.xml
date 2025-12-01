@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="mii-cs-fall-supplement-act-encounter-code"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/StructureDefinition/shareablecodesystem"/>
+  </meta>
+  <language value="en"/>
+  <text>
+    <status value="generated"/><div xml:lang="en" lang="en"><hr/><p><b>English</b></p><hr/><p class="res-header-id"><b>Generated Narrative: CodeSystem mii-cs-fall-supplement-act-encounter-code</b></p><a name="mii-cs-fall-supplement-act-encounter-code"> </a><a name="hcmii-cs-fall-supplement-act-encounter-code"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="http://hl7.org/fhir/R4/shareablecodesystem.html">Shareable CodeSystem</a></p></div><p>This code system supplement <code>https://www.medizininformatik-initiative.de/fhir/core/modul-fall/CodeSystem/SupplementActEncounterCode</code> defines displays on the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (Deutschland) (German (Germany), de)</b></td></tr><tr><td><a style="white-space:nowrap" href="http://terminology.hl7.org/7.0.0/CodeSystem-v3-ActCode.html#v3-ActCode-AMB">AMB</a><a name="mii-cs-fall-supplement-act-encounter-code-AMB"> </a></td><td>ambulatory</td><td>Umfasst ambulante Operationen nach § 115b SGB V und eine ambulante spezialfachärztliche Versorgung nach § 116b SGB V</td><td>teilstationäre Behandlung</td></tr><tr><td><a style="white-space:nowrap" href="http://terminology.hl7.org/7.0.0/CodeSystem-v3-ActCode.html#v3-ActCode-EMER">EMER</a><a name="mii-cs-fall-supplement-act-encounter-code-EMER"> </a></td><td>emergency</td><td/><td>Notfall</td></tr><tr><td><a style="white-space:nowrap" href="http://terminology.hl7.org/7.0.0/CodeSystem-v3-ActCode.html#v3-ActCode-IMP">IMP</a><a name="mii-cs-fall-supplement-act-encounter-code-IMP"> </a></td><td>inpatient encounter</td><td/><td>stationär</td></tr></table></div>
+  </text>
+  <extension url="https://www.medizininformatik-initiative.de/fhir/modul-meta/StructureDefinition/mii-ex-meta-license-codeable">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://hl7.org/fhir/spdx-license"/>
+        <code value="CC-BY-4.0"/>
+        <display value="Creative Commons Attribution 4.0 International"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <url value="https://www.medizininformatik-initiative.de/fhir/core/modul-fall/CodeSystem/SupplementActEncounterCode"/>
+  <version value="2026.0.0-dev.1"/>
+  <name value="MII_CS_Fall_SupplementActEncounterCode"/>
+  <title value="MII CS Fall Supplement ActEncounterCode"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2025-12-01T11:03:41+00:00"/>
+  <publisher value="Medical Informatics Initiative (MII)"/>
+  <contact>
+    <name value="Medical Informatics Initiative (MII)"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.medizininformatik-initiative.de/en"/>
+    </telecom>
+  </contact>
+  <description value="CodeSystem Supplement für ActEncounterCode"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <content value="supplement"/>
+  <supplements value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
+  <concept>
+    <code value="AMB"/>
+    <display value="ambulatory"/>
+    <definition value="Umfasst ambulante Operationen nach § 115b SGB V und eine ambulante spezialfachärztliche Versorgung nach § 116b SGB V"/>
+    <designation>
+      <language value="de-DE"/>
+      <value value="teilstationäre Behandlung"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="EMER"/>
+    <display value="emergency"/>
+    <designation>
+      <language value="de-DE"/>
+      <value value="Notfall"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="IMP"/>
+    <display value="inpatient encounter"/>
+    <designation>
+      <language value="de-DE"/>
+      <value value="stationär"/>
+    </designation>
+  </concept>
+</CodeSystem>

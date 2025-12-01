@@ -1,0 +1,57 @@
+{
+  "resourceType" : "Patient",
+  "id" : "mii-exa-person-patient-pseudonymisiert",
+  "meta" : {
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert|2026.0.0-dev.1"],
+    "security" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+      "code" : "HTEST",
+      "display" : "test health data"
+    }]
+  },
+  "language" : "de",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xml:lang=\"de\" lang=\"de\"><hr/><p><b>German</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: Patient mii-exa-person-patient-pseudonymisiert</b></p><a name=\"de-mii-exa-person-patient-pseudonymisiert\"> </a><a name=\"de-hcmii-exa-person-patient-pseudonymisiert\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: en</p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-person-patient-pseudonymisiert.html\">MII PR Person Patient (Pseudonymisiert)version: null2026.0.0-dev.1)</a></p><p style=\"margin-bottom: 0px\">Security Label: test health data (Details: ActReason code HTEST = 'test health data')</p></div><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Anonymous Patient Female, DoB: 1998 ( Krankenversichertennummer\u00a0(use:\u00a0official,\u00a0))</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Other Id (see the one above)\">Other Id:</td><td colspan=\"3\">pseudonymized/1234567890</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Detail</td><td colspan=\"3\">10 DE </td></tr></table></div>"
+  },
+  "identifier" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+        "code" : "PSEUDED"
+      }]
+    },
+    "system" : "https://www.medizininformatik-initiative.de/fhir/sid/pseudonym",
+    "value" : "1234567890"
+  },
+  {
+    "use" : "official",
+    "type" : {
+      "coding" : [{
+        "system" : "http://fhir.de/CodeSystem/identifier-type-de-basis",
+        "code" : "KVZ10"
+      }]
+    },
+    "system" : "http://fhir.de/sid/gkv/kvid-10",
+    "_value" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+        "valueCode" : "masked"
+      }]
+    },
+    "assigner" : {
+      "identifier" : {
+        "use" : "official",
+        "system" : "http://fhir.de/sid/arge-ik/iknr",
+        "value" : "260326822"
+      }
+    }
+  }],
+  "gender" : "female",
+  "birthDate" : "1998",
+  "address" : [{
+    "type" : "both",
+    "postalCode" : "10",
+    "country" : "DE"
+  }]
+}

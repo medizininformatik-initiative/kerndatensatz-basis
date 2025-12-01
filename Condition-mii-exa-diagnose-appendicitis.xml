@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Condition xmlns="http://hl7.org/fhir">
+  <id value="mii-exa-diagnose-appendicitis"/>
+  <meta>
+    <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0-dev.1"/>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  <language value="en"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><div xml:lang="en" lang="en"><hr/><p><b>English</b></p><hr/><p class="res-header-id"><b>Generated Narrative: Condition mii-exa-diagnose-appendicitis</b></p><a name="mii-exa-diagnose-appendicitis"> </a><a name="hcmii-exa-diagnose-appendicitis"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Language: en</p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-mii-pr-diagnose-condition.html">MII PR Diagnose Conditionversion: null2026.0.0-dev.1)</a></p><p style="margin-bottom: 0px">Security Label: test health data (Details: ActReason code HTEST = 'test health data')</p></div><p><b>Condition Asserted Date</b>: 2020-01-08 07:30:00+0100</p><p><b>clinicalStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical resolved}">Resolved</span></p><p><b>verificationStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}">Confirmed</span></p><p><b>code</b>: <span title="Codes:{http://fhir.de/CodeSystem/bfarm/icd-10-gm K35.80}, {http://snomed.info/sct 85189001}">Akute Appendizitis, nicht näher bezeichnet</span></p><p><b>subject</b>: <a href="Patient-mii-exa-person-patient-1.html">Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))</a></p><p><b>encounter</b>: <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html">Encounter: identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Abteilungskontakt; serviceType = Allgemeine Chirurgie; period = 2020-01-08 09:00:00+0100 --&gt; 2020-01-11 23:59:00+0100</a></p><p><b>onset</b>: 2020-01-08 04:00:00+0100</p><p><b>recordedDate</b>: 2020-01-08 09:00:00+0100</p></div><div xml:lang="de" lang="de"><hr/><p><b>German</b></p><hr/><p class="res-header-id"><b>Generated Narrative: Condition mii-exa-diagnose-appendicitis</b></p><a name="de-mii-exa-diagnose-appendicitis"> </a><a name="de-hcmii-exa-diagnose-appendicitis"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Language: en</p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-mii-pr-diagnose-condition.html">MII PR Diagnose Conditionversion: null2026.0.0-dev.1)</a></p><p style="margin-bottom: 0px">Security Label: test health data (Details: ActReason code HTEST = 'test health data')</p></div><p><b>Condition Asserted Date</b>: 2020-01-08 07:30:00+0100</p><p><b>clinicalStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical resolved}">Resolved</span></p><p><b>verificationStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}">Confirmed</span></p><p><b>code</b>: <span title="Codes:{http://fhir.de/CodeSystem/bfarm/icd-10-gm K35.80}, {http://snomed.info/sct 85189001}">Akute Appendizitis, nicht näher bezeichnet</span></p><p><b>subject</b>: <a href="Patient-mii-exa-person-patient-1.html">Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Krankenaktennummer (use: usual, ))</a></p><p><b>encounter</b>: <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html">Encounter: identifier = Fallnummer; status = finished; class = inpatient encounter (ActCode#IMP); type = Abteilungskontakt; serviceType = Allgemeine Chirurgie; period = 2020-01-08 09:00:00+0100 --&gt; 2020-01-11 23:59:00+0100</a></p><p><b>onset</b>: 2020-01-08 04:00:00+0100</p><p><b>recordedDate</b>: 2020-01-08 09:00:00+0100</p></div></div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/condition-assertedDate">
+    <valueDateTime value="2020-01-08T07:30:00+01:00"/>
+  </extension>
+  <clinicalStatus>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+      <code value="resolved"/>
+    </coding>
+  </clinicalStatus>
+  <verificationStatus>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+      <code value="confirmed"/>
+    </coding>
+  </verificationStatus>
+  <code>
+    <coding>
+      <system value="http://fhir.de/CodeSystem/bfarm/icd-10-gm"/>
+      <version value="2020"/>
+      <code value="K35.80"/>
+      <display value="Akute Appendizitis, nicht näher bezeichnet"/>
+    </coding>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="85189001"/>
+      <display value="Acute appendicitis"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/mii-exa-person-patient-1"/>
+  </subject>
+  <encounter>
+    <reference value="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2"/>
+  </encounter>
+  <onsetDateTime value="2020-01-08T04:00:00+01:00"/>
+  <recordedDate value="2020-01-08T09:00:00+01:00"/>
+</Condition>

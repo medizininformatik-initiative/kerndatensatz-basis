@@ -1,0 +1,2497 @@
+# MII EXA Base Test Data Bundle 1 - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+
+## Example Bundle: MII EXA Base Test Data Bundle 1
+
+Language: en
+
+Security Label: test health data (Details: ActReason code HTEST = 'test health data')
+
+Bundle mii-exa-base-test-data-bundle-1 of type transaction
+
+-------
+
+Entry 1 - fullUrl = https://www.medizininformatik-initiative.de/Patient/mii-exa-person-patient-1
+
+Resource Patient:
+
+> 
+
+Language: en
+
+Profile: [MII PR Person Patientversion: null2026.0.0-dev.1)](StructureDefinition-mii-pr-person-patient.md)
+
+Security Label: test health data (Details: ActReason code HTEST = 'test health data')
+
+Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))
+-------
+
+Request:
+
+```
+POST Patient
+
+```
+
+-------
+
+Entry 2 - fullUrl = https://www.medizininformatik-initiative.de/Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-8
+
+Resource Encounter:
+
+> 
+
+Language: en
+
+Profile: [MII PR Fall Kontakt mit einer Gesundheitseinrichtungversion: null2026.0.0-dev.1)](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.md)
+
+Security Label: test health data (Details: ActReason code HTEST = 'test health data')
+
+**identifier**: Visit number/F_20190926_001**status**: completed**class**:ambulatory**subject**:[Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))](Patient-mii-exa-person-patient-1.md)**serviceProvider**: Identifier:`http://fhir.de/sid/dkgev/iknr`/260950472
+
+Request:
+
+```
+POST Encounter
+
+```
+
+-------
+
+Entry 3 - fullUrl = https://www.medizininformatik-initiative.de/Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1
+
+Resource Encounter:
+
+> 
+
+Language: en
+
+Profile: [MII PR Fall Kontakt mit einer Gesundheitseinrichtungversion: null2026.0.0-dev.1)](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.md)
+
+Security Label: test health data (Details: ActReason code HTEST = 'test health data')
+
+**identifier**: Visit number/E0**status**: completed**class**:inpatient encounter**type**:Einrichtungskontakt**subject**:[Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))](Patient-mii-exa-person-patient-1.md)**serviceProvider**: Identifier:`http://fhir.de/sid/dkgev/iknr`/260950472**account**: Account A1 - DRG G23B Appendektomie ohne schwere CC (Identifier:`https://www.charite.de/fhir/sid/fallnummer`/F-2020-000123)
+
+Request:
+
+```
+POST Encounter
+
+```
+
+-------
+
+Entry 4 - fullUrl = https://www.medizininformatik-initiative.de/Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-9
+
+Resource Encounter:
+
+> 
+
+Language: en
+
+Profile: [MII PR Fall Kontakt mit einer Gesundheitseinrichtungversion: null2026.0.0-dev.1)](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.md)
+
+Security Label: test health data (Details: ActReason code HTEST = 'test health data')
+
+> **ExtensionAufnahmegrund**
+* VierteStelle: [AufnahmegrundVierteStelle: 7](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.de/CodeSystem/dkgev/AufnahmegrundVierteStelle#AufnahmegrundVierteStelle-7) (Notfall)
+
+**identifier**: Visit number/A1E**status**: completed**class**:ambulatory**priority**:emergency**type**:Abteilungskontakt**subject**:[Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))](Patient-mii-exa-person-patient-1.md)**partOf**:[Encounter: identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Einrichtungskontakt; period = 2020-01-08 07:00:00+0100 --> 2020-01-17 18:00:00+0100](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.md)**serviceProvider**: Identifier:`http://fhir.de/sid/dkgev/iknr`/260950472**account**: Account A1 - DRG G23B Appendektomie ohne schwere CC (Identifier:`https://www.charite.de/fhir/sid/fallnummer`/F-2020-000123)
+
+Request:
+
+```
+POST Encounter
+
+```
+
+-------
+
+Entry 5 - fullUrl = https://www.medizininformatik-initiative.de/Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-11
+
+Resource Encounter:
+
+> 
+
+Language: en
+
+Profile: [MII PR Fall Kontakt mit einer Gesundheitseinrichtungversion: null2026.0.0-dev.1)](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.md)
+
+Security Label: test health data (Details: ActReason code HTEST = 'test health data')
+
+**identifier**: Visit number/VS1**status**: completed**class**:ambulatory**type**:Versorgungsstellenkontakt**subject**:[Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))](Patient-mii-exa-person-patient-1.md)**partOf**:[Encounter: extension = ; identifier = Visit number; status = finished; class = ambulatory (ActCode#AMB); type = Abteilungskontakt; priority = emergency; period = 2020-01-08 07:00:00+0100 --> 2020-01-08 09:00:00+0100](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-9.md)**serviceProvider**: Identifier:`http://fhir.de/sid/dkgev/iknr`/260950472**account**: Account A1 - DRG G23B Appendektomie ohne schwere CC (Identifier:`https://www.charite.de/fhir/sid/fallnummer`/F-2020-000123)
+
+### Locations
+
+| | | |
+| :--- | :--- | :--- |
+| - | **Location** | **Status** |
+| * | Emergency Department, Treatment Room 3 | Completed |
+
+
+Request:
+
+```
+POST Encounter
+
+```
+
+-------
+
+Entry 6 - fullUrl = https://www.medizininformatik-initiative.de/Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2
+
+Resource Encounter:
+
+> 
+
+Language: en
+
+Profile: [MII PR Fall Kontakt mit einer Gesundheitseinrichtungversion: null2026.0.0-dev.1)](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.md)
+
+Security Label: test health data (Details: ActReason code HTEST = 'test health data')
+
+**identifier**: Visit number/A2E**status**: completed**class**:inpatient encounter**type**:Abteilungskontakt**serviceType**: No display for Encounter.serviceType (concept: Allgemeine Chirurgie)**subject**:[Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))](Patient-mii-exa-person-patient-1.md)**partOf**:[Encounter: identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Einrichtungskontakt; period = 2020-01-08 07:00:00+0100 --> 2020-01-17 18:00:00+0100](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.md)**serviceProvider**: Identifier:`http://fhir.de/sid/dkgev/iknr`/260950472
+> **diagnosis****condition**: No display for Encounter.diagnosis.condition (reference: ->Condition Akute Appendizitis, nicht näher bezeichnet)**use**:Admission diagnosis
+
+> **diagnosis****condition**: No display for Encounter.diagnosis.condition (reference: ->Condition Akute Appendizitis, nicht näher bezeichnet)**use**:Behandlungsrelevante Diagnosen
+
+> **diagnosis****condition**: No display for Encounter.diagnosis.condition (reference: ->Condition Prellung des Ellenbogens)**use**:Behandlungsrelevante Diagnosen
+**account**: Account A1 - DRG G23B Appendektomie ohne schwere CC (Identifier:`https://www.charite.de/fhir/sid/fallnummer`/F-2020-000123)
+
+Request:
+
+```
+POST Encounter
+
+```
+
+-------
+
+Entry 7 - fullUrl = https://www.medizininformatik-initiative.de/Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4
+
+Resource Encounter:
+
+> 
+
+Language: en
+
+Profile: [MII PR Fall Kontakt mit einer Gesundheitseinrichtungversion: null2026.0.0-dev.1)](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.md)
+
+Security Label: test health data (Details: ActReason code HTEST = 'test health data')
+
+**identifier**: Visit number/VS2**status**: completed**class**:inpatient encounter**type**:Versorgungsstellenkontakt**subject**:[Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))](Patient-mii-exa-person-patient-1.md)**partOf**:[Encounter: identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Abteilungskontakt; serviceType = Allgemeine Chirurgie; period = 2020-01-08 09:00:00+0100 --> 2020-01-11 23:59:00+0100](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.md)**serviceProvider**: Identifier:`http://fhir.de/sid/dkgev/iknr`/260950472**account**: Account A1 - DRG G23B Appendektomie ohne schwere CC (Identifier:`https://www.charite.de/fhir/sid/fallnummer`/F-2020-000123)
+
+### Locations
+
+| | | |
+| :--- | :--- | :--- |
+| - | **Location** | **Status** |
+| * | Radiology Department, CT Scanner | Completed |
+
+
+Request:
+
+```
+POST Encounter
+
+```
+
+-------
+
+Entry 8 - fullUrl = https://www.medizininformatik-initiative.de/Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5
+
+Resource Encounter:
+
+> 
+
+Language: en
+
+Profile: [MII PR Fall Kontakt mit einer Gesundheitseinrichtungversion: null2026.0.0-dev.1)](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.md)
+
+Security Label: test health data (Details: ActReason code HTEST = 'test health data')
+
+**identifier**: Visit number/VS3**status**: completed**class**:inpatient encounter**type**:Versorgungsstellenkontakt,Operation**subject**:[Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))](Patient-mii-exa-person-patient-1.md)**partOf**:[Encounter: identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Abteilungskontakt; serviceType = Allgemeine Chirurgie; period = 2020-01-08 09:00:00+0100 --> 2020-01-11 23:59:00+0100](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.md)**serviceProvider**: Identifier:`http://fhir.de/sid/dkgev/iknr`/260950472**account**: Account A1 - DRG G23B Appendektomie ohne schwere CC (Identifier:`https://www.charite.de/fhir/sid/fallnummer`/F-2020-000123)
+
+### Locations
+
+| | | |
+| :--- | :--- | :--- |
+| - | **Location** | **Status** |
+| * | OR 4 (Operating Room 4) | Completed |
+
+
+Request:
+
+```
+POST Encounter
+
+```
+
+-------
+
+Entry 9 - fullUrl = https://www.medizininformatik-initiative.de/Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6
+
+Resource Encounter:
+
+> 
+
+Language: en
+
+Profile: [MII PR Fall Kontakt mit einer Gesundheitseinrichtungversion: null2026.0.0-dev.1)](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.md)
+
+Security Label: test health data (Details: ActReason code HTEST = 'test health data')
+
+**identifier**: Visit number/VS4**status**: completed**class**:inpatient encounter**type**:Versorgungsstellenkontakt**subject**:[Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))](Patient-mii-exa-person-patient-1.md)**partOf**:[Encounter: identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Abteilungskontakt; serviceType = Allgemeine Chirurgie; period = 2020-01-08 09:00:00+0100 --> 2020-01-11 23:59:00+0100](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.md)**serviceProvider**: Identifier:`http://fhir.de/sid/dkgev/iknr`/260950472**account**: Account A1 - DRG G23B Appendektomie ohne schwere CC (Identifier:`https://www.charite.de/fhir/sid/fallnummer`/F-2020-000123)
+
+### Locations
+
+| | | |
+| :--- | :--- | :--- |
+| - | **Location** | **Status** |
+| * | PACU (Post-Anesthesia Care Unit) | Completed |
+
+
+Request:
+
+```
+POST Encounter
+
+```
+
+-------
+
+Entry 10 - fullUrl = https://www.medizininformatik-initiative.de/Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10
+
+Resource Encounter:
+
+> 
+
+Language: en
+
+Profile: [MII PR Fall Kontakt mit einer Gesundheitseinrichtungversion: null2026.0.0-dev.1)](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.md)
+
+Security Label: test health data (Details: ActReason code HTEST = 'test health data')
+
+**identifier**: Visit number/VS5**status**: completed**class**:inpatient encounter**type**:Versorgungsstellenkontakt**subject**:[Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))](Patient-mii-exa-person-patient-1.md)**partOf**:[Encounter: identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Abteilungskontakt; serviceType = Allgemeine Chirurgie; period = 2020-01-08 09:00:00+0100 --> 2020-01-11 23:59:00+0100](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.md)**serviceProvider**: Identifier:`http://fhir.de/sid/dkgev/iknr`/260950472**account**: Account A1 - DRG G23B Appendektomie ohne schwere CC (Identifier:`https://www.charite.de/fhir/sid/fallnummer`/F-2020-000123)
+
+### Locations
+
+| | | |
+| :--- | :--- | :--- |
+| - | **Location** | **Status** |
+| * | Surgical Ward C3, Room 315, Bed 315-02 | Completed |
+
+
+Request:
+
+```
+POST Encounter
+
+```
+
+-------
+
+Entry 11 - fullUrl = https://www.medizininformatik-initiative.de/Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7
+
+Resource Encounter:
+
+> 
+
+Language: en
+
+Profile: [MII PR Fall Kontakt mit einer Gesundheitseinrichtungversion: null2026.0.0-dev.1)](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.md)
+
+Security Label: test health data (Details: ActReason code HTEST = 'test health data')
+
+**identifier**: Visit number/F_20200108_001_INME**status**: completed**class**:inpatient encounter**type**:Abteilungskontakt**serviceType**: No display for Encounter.serviceType (concept: Innere Medizin)**subject**:[Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))](Patient-mii-exa-person-patient-1.md)**partOf**:[Encounter: identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Einrichtungskontakt; period = 2020-01-08 07:00:00+0100 --> 2020-01-17 18:00:00+0100](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.md)**serviceProvider**: Identifier:`http://fhir.de/sid/dkgev/iknr`/260950472
+> **diagnosis****condition**: No display for Encounter.diagnosis.condition (reference: ->Condition Sonstige näher bezeichnete Krankheiten des Innenohres)**use**:Chief complaint
+
+> **diagnosis****condition**: No display for Encounter.diagnosis.condition (reference: ->Condition Sonstige näher bezeichnete Krankheiten des Innenohres)**use**:Admission diagnosis
+
+> **diagnosis****condition**: No display for Encounter.diagnosis.condition (reference: ->Condition Gonokokkeninfektion des Muskel-Skelett-Systems)**use**:Behandlungsrelevante Diagnosen
+**account**: Account A1 - DRG G23B Appendektomie ohne schwere CC (Identifier:`https://www.charite.de/fhir/sid/fallnummer`/F-2020-000123)
+
+Request:
+
+```
+POST Encounter
+
+```
+
+-------
+
+Entry 12 - fullUrl = https://www.medizininformatik-initiative.de/Condition/mii-exa-diagnose-mehrfachcodierung-primaercode
+
+Resource Condition:
+
+> 
+
+Language: en
+
+Profile: [MII PR Diagnose Conditionversion: null2026.0.0-dev.1)](StructureDefinition-mii-pr-diagnose-condition.md)
+
+Security Label: test health data (Details: ActReason code HTEST = 'test health data')
+
+**clinicalStatus**:Active**verificationStatus**:Confirmed**code**:Gonokokkeninfektion des Muskel-Skelett-Systems**subject**:[Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))](Patient-mii-exa-person-patient-1.md)**encounter**:[Encounter: identifier = Visit number; status = finished; class = ambulatory (ActCode#AMB); period = 2019-09-26 10:00:00+0200 --> 2019-09-26 12:00:00+0200](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-8.md)**onset**: 2019-09-26**recordedDate**: 2019-09-26 11:30:00+0200
+
+Request:
+
+```
+POST Condition
+
+```
+
+-------
+
+Entry 13 - fullUrl = https://www.medizininformatik-initiative.de/Condition/mii-exa-diagnose-mehrfachcodierung-sekundaercode
+
+Resource Condition:
+
+> 
+
+Language: en
+
+Profile: [MII PR Diagnose Conditionversion: null2026.0.0-dev.1)](StructureDefinition-mii-pr-diagnose-condition.md)
+
+Security Label: test health data (Details: ActReason code HTEST = 'test health data')
+
+**Condition Related**:[Condition Gonokokkeninfektion des Muskel-Skelett-Systems](Condition-mii-exa-diagnose-mehrfachcodierung-primaercode.md)**clinicalStatus**:Active**verificationStatus**:Confirmed**code**:Bursitis gonorrhoica: Hand**subject**:[Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))](Patient-mii-exa-person-patient-1.md)**encounter**:[Encounter: identifier = Visit number; status = finished; class = ambulatory (ActCode#AMB); period = 2019-09-26 10:00:00+0200 --> 2019-09-26 12:00:00+0200](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-8.md)**onset**: 2019-09-26**recordedDate**: 2019-09-26 11:30:00+0200
+
+Request:
+
+```
+POST Condition
+
+```
+
+-------
+
+Entry 14 - fullUrl = https://www.medizininformatik-initiative.de/Condition/mii-exa-diagnose-appendicitis
+
+Resource Condition:
+
+> 
+
+Language: en
+
+Profile: [MII PR Diagnose Conditionversion: null2026.0.0-dev.1)](StructureDefinition-mii-pr-diagnose-condition.md)
+
+Security Label: test health data (Details: ActReason code HTEST = 'test health data')
+
+**Condition Asserted Date**: 2020-01-08 07:30:00+0100**clinicalStatus**:Resolved**verificationStatus**:Confirmed**code**:Akute Appendizitis, nicht näher bezeichnet**subject**:[Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))](Patient-mii-exa-person-patient-1.md)**encounter**:[Encounter: identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Abteilungskontakt; serviceType = Allgemeine Chirurgie; period = 2020-01-08 09:00:00+0100 --> 2020-01-11 23:59:00+0100](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.md)**onset**: 2020-01-08 04:00:00+0100**recordedDate**: 2020-01-08 09:00:00+0100
+
+Request:
+
+```
+POST Condition
+
+```
+
+-------
+
+Entry 15 - fullUrl = https://www.medizininformatik-initiative.de/Condition/mii-exa-diagnose-condition-elbow-contusion
+
+Resource Condition:
+
+> 
+
+Language: en
+
+Profile: [MII PR Diagnose Conditionversion: null2026.0.0-dev.1)](StructureDefinition-mii-pr-diagnose-condition.md)
+
+Security Label: test health data (Details: ActReason code HTEST = 'test health data')
+
+**Condition Asserted Date**: 2020-01-08 08:00:00+0100**clinicalStatus**:Resolved**verificationStatus**:Confirmed**code**:Prellung des Ellenbogens**subject**:[Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))](Patient-mii-exa-person-patient-1.md)**encounter**:[Encounter: identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Abteilungskontakt; serviceType = Allgemeine Chirurgie; period = 2020-01-08 09:00:00+0100 --> 2020-01-11 23:59:00+0100](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.md)**onset**: 2020-01-08 06:00:00+0100**recordedDate**: 2020-01-08 09:00:00+0100
+
+Request:
+
+```
+POST Condition
+
+```
+
+-------
+
+Entry 16 - fullUrl = https://www.medizininformatik-initiative.de/Condition/mii-exa-diagnose-condition-multiple-codings
+
+Resource Condition:
+
+> 
+
+Language: en
+
+Profile: [MII PR Diagnose Conditionversion: null2026.0.0-dev.1)](StructureDefinition-mii-pr-diagnose-condition.md)
+
+Security Label: test health data (Details: ActReason code HTEST = 'test health data')
+
+**Condition Asserted Date**: 2020-01-13 14:00:00+0100**clinicalStatus**:Active**verificationStatus**:Confirmed**code**:Sonstige näher bezeichnete Krankheiten des Innenohres**subject**:[Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))](Patient-mii-exa-person-patient-1.md)**encounter**:[Encounter: identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Abteilungskontakt; serviceType = Innere Medizin; period = 2020-01-12 00:00:00+0100 --> 2020-01-17 18:00:00+0100](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.md)**onset**: 2020-01-13 14:00:00+0100**recordedDate**: 2020-01-13 16:00:00+0100
+
+Request:
+
+```
+POST Condition
+
+```
+
+-------
+
+Entry 17 - fullUrl = https://www.medizininformatik-initiative.de/Procedure/mii-exa-prozedur-procedure
+
+Resource Procedure:
+
+> 
+
+Language: en
+
+Profile: [MII PR Prozedur Procedureversion: null2026.0.0-dev.1)](StructureDefinition-mii-pr-prozedur-procedure.md)
+
+Security Label: test health data (Details: ActReason code HTEST = 'test health data')
+
+**ExtensionProzedurDokumentationsdatum**: 2020-01-08 23:00:00+0100**MII EX Prozedur Durchführungsabsicht**:[SNOMED CT: 262202000](http://snomed.info/id/262202000)(262202000)**status**: Completed**category**:387713003**code**:Appendektomie**subject**:[Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))](Patient-mii-exa-person-patient-1.md)**encounter**:[Encounter: identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Abteilungskontakt; serviceType = Allgemeine Chirurgie; period = 2020-01-08 09:00:00+0100 --> 2020-01-11 23:59:00+0100](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.md)**bodySite**:Appendix
+
+Request:
+
+```
+POST Procedure
+
+```
+
+-------
+
+Entry 18 - fullUrl = https://www.medizininformatik-initiative.de/Procedure/mii-exa-prozedur-procedure-2
+
+Resource Procedure:
+
+> 
+
+Language: en
+
+Profile: [MII PR Prozedur Procedureversion: null2026.0.0-dev.1)](StructureDefinition-mii-pr-prozedur-procedure.md)
+
+Security Label: test health data (Details: ActReason code HTEST = 'test health data')
+
+**ExtensionProzedurDokumentationsdatum**: 2020-01-17 00:00:00+0100**MII EX Prozedur Durchführungsabsicht**:[SNOMED CT: 262202000](http://snomed.info/id/262202000)(262202000)**status**: Completed**category**:277132007**code**:Funktionsorientierte physikalische Monotherapie**subject**:[Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))](Patient-mii-exa-person-patient-1.md)**encounter**:[Encounter: identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Abteilungskontakt; serviceType = Innere Medizin; period = 2020-01-12 00:00:00+0100 --> 2020-01-17 18:00:00+0100](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.md)**bodySite**:Hand structure
+
+Request:
+
+```
+POST Procedure
+
+```
+
+-------
+
+Entry 19 - fullUrl = https://www.medizininformatik-initiative.de/Procedure/mii-exa-prozedur-imaging
+
+Resource Procedure:
+
+> 
+
+Language: en
+
+Profile: [MII PR Prozedur Procedureversion: null2026.0.0-dev.1)](StructureDefinition-mii-pr-prozedur-procedure.md)
+
+Security Label: test health data (Details: ActReason code HTEST = 'test health data')
+
+**ExtensionProzedurDokumentationsdatum**: 2020-01-08 10:30:00+0100**MII EX Prozedur Durchführungsabsicht**:[SNOMED CT: 261004008](http://snomed.info/id/261004008)(261004008)**status**: Completed**category**:363679005**code**:Native Computertomographie des Abdomens**subject**:[Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))](Patient-mii-exa-person-patient-1.md)**encounter**:[Encounter: identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Abteilungskontakt; serviceType = Allgemeine Chirurgie; period = 2020-01-08 09:00:00+0100 --> 2020-01-11 23:59:00+0100](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.md)**bodySite**:Abdomen
+
+Request:
+
+```
+POST Procedure
+
+```
+
+-------
+
+Entry 20 - fullUrl = https://www.medizininformatik-initiative.de/Observation/mii-exa-person-observation-vitalstatus
+
+Resource Observation:
+
+> 
+
+Language: en
+
+Profile: [MII PR Person Vitalstatusversion: null2026.0.0-dev.1)](StructureDefinition-mii-pr-person-vitalstatus.md)
+
+Security Label: test health data (Details: ActReason code HTEST = 'test health data')
+
+**status**: Final**category**:Survey**code**:Patient Disposition**subject**:[Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))](Patient-mii-exa-person-patient-1.md)**encounter**:[Encounter: extension = ; identifier = Visit number; status = finished; class = ambulatory (ActCode#AMB); type = Abteilungskontakt; priority = emergency; period = 2020-01-08 07:00:00+0100 --> 2020-01-08 09:00:00+0100](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-9.md)**effective**: 2020-01-08 07:00:00+0100**value**:Patient lebt
+
+Request:
+
+```
+POST Observation
+
+```
+
+-------
+
+Entry 21 - fullUrl = https://www.medizininformatik-initiative.de/Observation/mii-exa-person-observation-vitalstatus-discharge
+
+Resource Observation:
+
+> 
+
+Language: en
+
+Profile: [MII PR Person Vitalstatusversion: null2026.0.0-dev.1)](StructureDefinition-mii-pr-person-vitalstatus.md)
+
+Security Label: test health data (Details: ActReason code HTEST = 'test health data')
+
+**status**: Final**category**:Survey**code**:Vital status**subject**:[Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))](Patient-mii-exa-person-patient-1.md)**encounter**:[Encounter: identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Abteilungskontakt; serviceType = Innere Medizin; period = 2020-01-12 00:00:00+0100 --> 2020-01-17 18:00:00+0100](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.md)**effective**: 2020-01-17 18:00:00+0100**value**:Patient lebt
+
+Request:
+
+```
+POST Observation
+
+```
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "Bundle",
+  "id" : "mii-exa-base-test-data-bundle-1",
+  "meta" : {
+    "security" : [
+      {
+        "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code" : "HTEST",
+        "display" : "test health data"
+      }
+    ]
+  },
+  "language" : "en",
+  "type" : "transaction",
+  "timestamp" : "2025-11-28T09:38:00+01:00",
+  "entry" : [
+    {
+      "fullUrl" : "https://www.medizininformatik-initiative.de/Patient/mii-exa-person-patient-1",
+      "resource" : {
+        "resourceType" : "Patient",
+        "id" : "mii-exa-person-patient-1",
+        "meta" : {
+          "profile" : [
+            "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient|2026.0.0-dev.1"
+          ],
+          "security" : [
+            {
+              "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code" : "HTEST",
+              "display" : "test health data"
+            }
+          ]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><a name=\"Patient_mii-exa-person-patient-1\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Patient mii-exa-person-patient-1</b></p><a name=\"mii-exa-person-patient-1\"> </a><a name=\"hcmii-exa-person-patient-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-person-patient.html\">MII PR Person Patientversion: null2026.0.0-dev.1)</a></p><p style=\"margin-bottom: 0px\">Security Label: test health data (Details: ActReason code HTEST = 'test health data')</p></div><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Known status of Patient\">Deceased:</td><td colspan=\"3\">false</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Other Id (see the one above)\">Other Id:</td><td colspan=\"3\">Krankenversichertennummer/A999999999 (use: official, )</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Alternate names (see the one above)\">Alt. Name:</td><td colspan=\"3\">Bachmann (Name changed for Marriage)</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Detail</td><td colspan=\"3\">Anna-Louisa-Karsch Str. 2 Berlin DE-BE 10178 DE </td></tr></table></div></div>"
+        },
+        "identifier" : [
+          {
+            "use" : "usual",
+            "type" : {
+              "coding" : [
+                {
+                  "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code" : "MR"
+                }
+              ]
+            },
+            "system" : "https://www.charite.de/fhir/sid/patienten",
+            "value" : "42285243",
+            "assigner" : {
+              "identifier" : {
+                "system" : "https://www.medizininformatik-initiative.de/fhir/core/CodeSystem/core-location-identifier",
+                "value" : "Charité"
+              },
+              "display" : "Charité – Universitätsmedizin Berlin"
+            }
+          },
+          {
+            "use" : "official",
+            "type" : {
+              "coding" : [
+                {
+                  "system" : "http://fhir.de/CodeSystem/identifier-type-de-basis",
+                  "code" : "KVZ10"
+                }
+              ]
+            },
+            "system" : "http://fhir.de/sid/gkv/kvid-10",
+            "value" : "A999999999",
+            "assigner" : {
+              "identifier" : {
+                "use" : "official",
+                "system" : "http://fhir.de/sid/arge-ik/iknr",
+                "value" : "260326822"
+              }
+            }
+          }
+        ],
+        "name" : [
+          {
+            "use" : "official",
+            "family" : "Van-der-Dussen",
+            "_family" : {
+              "extension" : [
+                {
+                  "url" : "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+                  "valueString" : "Van-der-Dussen"
+                }
+              ]
+            },
+            "given" : ["Maja", "Julia"],
+            "prefix" : ["Prof. Dr. med."],
+            "_prefix" : [
+              {
+                "extension" : [
+                  {
+                    "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier",
+                    "valueCode" : "AC"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "use" : "maiden",
+            "family" : "Bachmann"
+          }
+        ],
+        "gender" : "female",
+        "birthDate" : "1998-09-19",
+        "deceasedBoolean" : false,
+        "address" : [
+          {
+            "type" : "both",
+            "line" : ["Anna-Louisa-Karsch Str. 2"],
+            "city" : "Berlin",
+            "_city" : {
+              "extension" : [
+                {
+                  "url" : "http://fhir.de/StructureDefinition/destatis/ags",
+                  "valueCoding" : {
+                    "system" : "http://fhir.de/sid/destatis/ags",
+                    "code" : "11000000"
+                  }
+                }
+              ]
+            },
+            "state" : "DE-BE",
+            "postalCode" : "10178",
+            "country" : "DE"
+          }
+        ]
+      },
+      "request" : {
+        "method" : "POST",
+        "url" : "Patient"
+      }
+    },
+    {
+      "fullUrl" : "https://www.medizininformatik-initiative.de/Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-8",
+      "resource" : {
+        "resourceType" : "Encounter",
+        "id" : "mii-exa-fall-kontakt-gesundheitseinrichtung-8",
+        "meta" : {
+          "profile" : [
+            "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0-dev.1"
+          ],
+          "security" : [
+            {
+              "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code" : "HTEST",
+              "display" : "test health data"
+            }
+          ]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><a name=\"Encounter_mii-exa-fall-kontakt-gesundheitseinrichtung-8\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Encounter mii-exa-fall-kontakt-gesundheitseinrichtung-8</b></p><a name=\"mii-exa-fall-kontakt-gesundheitseinrichtung-8\"> </a><a name=\"hcmii-exa-fall-kontakt-gesundheitseinrichtung-8\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html\">MII PR Fall Kontakt mit einer Gesundheitseinrichtungversion: null2026.0.0-dev.1)</a></p><p style=\"margin-bottom: 0px\">Security Label: test health data (Details: ActReason code HTEST = 'test health data')</p></div><p><b>identifier</b>: Visit number/F_20190926_001</p><p><b>status</b>: Finished</p><p><b>class</b>: <a href=\"http://terminology.hl7.org/7.0.0/CodeSystem-v3-ActCode.html#v3-ActCode-AMB\">ActCode: AMB</a> (ambulatory)</p><p><b>subject</b>: <a href=\"Patient-mii-exa-person-patient-1.html\">Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))</a></p><p><b>period</b>: 2019-09-26 10:00:00+0200 --&gt; 2019-09-26 12:00:00+0200</p><p><b>serviceProvider</b>: Identifier: <code>http://fhir.de/sid/dkgev/iknr</code>/260950472</p></div></div>"
+        },
+        "identifier" : [
+          {
+            "type" : {
+              "coding" : [
+                {
+                  "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code" : "VN"
+                }
+              ]
+            },
+            "system" : "https://www.charite.de/fhir/sid/aufnahmenummer",
+            "value" : "F_20190926_001"
+          }
+        ],
+        "status" : "finished",
+        "class" : {
+          "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code" : "AMB"
+        },
+        "subject" : {
+          "reference" : "Patient/mii-exa-person-patient-1"
+        },
+        "period" : {
+          "start" : "2019-09-26T10:00:00+02:00",
+          "end" : "2019-09-26T12:00:00+02:00"
+        },
+        "serviceProvider" : {
+          "identifier" : {
+            "system" : "http://fhir.de/sid/dkgev/iknr",
+            "value" : "260950472"
+          }
+        }
+      },
+      "request" : {
+        "method" : "POST",
+        "url" : "Encounter"
+      }
+    },
+    {
+      "fullUrl" : "https://www.medizininformatik-initiative.de/Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1",
+      "resource" : {
+        "resourceType" : "Encounter",
+        "id" : "mii-exa-fall-kontakt-gesundheitseinrichtung-1",
+        "meta" : {
+          "profile" : [
+            "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0-dev.1"
+          ],
+          "security" : [
+            {
+              "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code" : "HTEST",
+              "display" : "test health data"
+            }
+          ]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><a name=\"Encounter_mii-exa-fall-kontakt-gesundheitseinrichtung-1\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Encounter mii-exa-fall-kontakt-gesundheitseinrichtung-1</b></p><a name=\"mii-exa-fall-kontakt-gesundheitseinrichtung-1\"> </a><a name=\"hcmii-exa-fall-kontakt-gesundheitseinrichtung-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html\">MII PR Fall Kontakt mit einer Gesundheitseinrichtungversion: null2026.0.0-dev.1)</a></p><p style=\"margin-bottom: 0px\">Security Label: test health data (Details: ActReason code HTEST = 'test health data')</p></div><p><b>identifier</b>: Visit number/E0</p><p><b>status</b>: Finished</p><p><b>class</b>: <a href=\"http://terminology.hl7.org/7.0.0/CodeSystem-v3-ActCode.html#v3-ActCode-IMP\">ActCode: IMP</a> (inpatient encounter)</p><p><b>type</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/Kontaktebene einrichtungskontakt}\">Einrichtungskontakt</span></p><p><b>subject</b>: <a href=\"Patient-mii-exa-person-patient-1.html\">Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))</a></p><p><b>period</b>: 2020-01-08 07:00:00+0100 --&gt; 2020-01-17 18:00:00+0100</p><p><b>account</b>: Account A1 - DRG G23B Appendektomie ohne schwere CC (Identifier: <code>https://www.charite.de/fhir/sid/fallnummer</code>/F-2020-000123)</p><h3>Hospitalizations</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>AdmitSource</b></td><td><b>DischargeDisposition</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://fhir.de/CodeSystem/dgkev/Aufnahmeanlass N}\">Notfall</span></td><td><span title=\"Codes:\"></span></td></tr></table><p><b>serviceProvider</b>: Identifier: <code>http://fhir.de/sid/dkgev/iknr</code>/260950472</p></div></div>"
+        },
+        "identifier" : [
+          {
+            "type" : {
+              "coding" : [
+                {
+                  "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code" : "VN"
+                }
+              ]
+            },
+            "system" : "https://www.charite.de/fhir/sid/aufnahmenummer",
+            "value" : "E0"
+          }
+        ],
+        "status" : "finished",
+        "class" : {
+          "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code" : "IMP"
+        },
+        "type" : [
+          {
+            "coding" : [
+              {
+                "system" : "http://fhir.de/CodeSystem/Kontaktebene",
+                "code" : "einrichtungskontakt"
+              }
+            ]
+          }
+        ],
+        "subject" : {
+          "reference" : "Patient/mii-exa-person-patient-1"
+        },
+        "period" : {
+          "start" : "2020-01-08T07:00:00+01:00",
+          "end" : "2020-01-17T18:00:00+01:00"
+        },
+        "account" : [
+          {
+            "identifier" : {
+              "system" : "https://www.charite.de/fhir/sid/fallnummer",
+              "value" : "F-2020-000123"
+            },
+            "display" : "Account A1 - DRG G23B Appendektomie ohne schwere CC"
+          }
+        ],
+        "hospitalization" : {
+          "admitSource" : {
+            "coding" : [
+              {
+                "system" : "http://fhir.de/CodeSystem/dgkev/Aufnahmeanlass",
+                "code" : "N",
+                "display" : "Notfall"
+              }
+            ]
+          },
+          "dischargeDisposition" : {
+            "extension" : [
+              {
+                "extension" : [
+                  {
+                    "url" : "ErsteUndZweiteStelle",
+                    "valueCoding" : {
+                      "system" : "http://fhir.de/CodeSystem/dkgev/EntlassungsgrundErsteUndZweiteStelle",
+                      "code" : "01",
+                      "display" : "Behandlung regulär beendet"
+                    }
+                  },
+                  {
+                    "url" : "DritteStelle",
+                    "valueCoding" : {
+                      "system" : "http://fhir.de/CodeSystem/dkgev/EntlassungsgrundDritteStelle",
+                      "code" : "1",
+                      "display" : "arbeitsfähig entlassen"
+                    }
+                  }
+                ],
+                "url" : "http://fhir.de/StructureDefinition/Entlassungsgrund"
+              }
+            ]
+          }
+        },
+        "serviceProvider" : {
+          "identifier" : {
+            "system" : "http://fhir.de/sid/dkgev/iknr",
+            "value" : "260950472"
+          }
+        }
+      },
+      "request" : {
+        "method" : "POST",
+        "url" : "Encounter"
+      }
+    },
+    {
+      "fullUrl" : "https://www.medizininformatik-initiative.de/Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-9",
+      "resource" : {
+        "resourceType" : "Encounter",
+        "id" : "mii-exa-fall-kontakt-gesundheitseinrichtung-9",
+        "meta" : {
+          "profile" : [
+            "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0-dev.1"
+          ],
+          "security" : [
+            {
+              "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code" : "HTEST",
+              "display" : "test health data"
+            }
+          ]
+        },
+        "text" : {
+          "status" : "extensions",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><a name=\"Encounter_mii-exa-fall-kontakt-gesundheitseinrichtung-9\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Encounter mii-exa-fall-kontakt-gesundheitseinrichtung-9</b></p><a name=\"mii-exa-fall-kontakt-gesundheitseinrichtung-9\"> </a><a name=\"hcmii-exa-fall-kontakt-gesundheitseinrichtung-9\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html\">MII PR Fall Kontakt mit einer Gesundheitseinrichtungversion: null2026.0.0-dev.1)</a></p><p style=\"margin-bottom: 0px\">Security Label: test health data (Details: ActReason code HTEST = 'test health data')</p></div><blockquote><p><b>ExtensionAufnahmegrund</b></p><ul><li>VierteStelle: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/dkgev/AufnahmegrundVierteStelle#AufnahmegrundVierteStelle-7\">AufnahmegrundVierteStelle: 7</a> (Notfall)</li></ul></blockquote><p><b>identifier</b>: Visit number/A1E</p><p><b>status</b>: Finished</p><p><b>class</b>: <a href=\"http://terminology.hl7.org/7.0.0/CodeSystem-v3-ActCode.html#v3-ActCode-AMB\">ActCode: AMB</a> (ambulatory)</p><p><b>type</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/Kontaktebene abteilungskontakt}\">Abteilungskontakt</span></p><p><b>priority</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ActPriority EM}\">emergency</span></p><p><b>subject</b>: <a href=\"Patient-mii-exa-person-patient-1.html\">Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))</a></p><p><b>period</b>: 2020-01-08 07:00:00+0100 --&gt; 2020-01-08 09:00:00+0100</p><p><b>account</b>: Account A1 - DRG G23B Appendektomie ohne schwere CC (Identifier: <code>https://www.charite.de/fhir/sid/fallnummer</code>/F-2020-000123)</p><p><b>serviceProvider</b>: Identifier: <code>http://fhir.de/sid/dkgev/iknr</code>/260950472</p><p><b>partOf</b>: <a href=\"Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.html\">Encounter: identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Einrichtungskontakt; period = 2020-01-08 07:00:00+0100 --&gt; 2020-01-17 18:00:00+0100</a></p></div></div>"
+        },
+        "extension" : [
+          {
+            "extension" : [
+              {
+                "url" : "VierteStelle",
+                "valueCoding" : {
+                  "system" : "http://fhir.de/CodeSystem/dkgev/AufnahmegrundVierteStelle",
+                  "code" : "7",
+                  "display" : "Notfall"
+                }
+              }
+            ],
+            "url" : "http://fhir.de/StructureDefinition/Aufnahmegrund"
+          }
+        ],
+        "identifier" : [
+          {
+            "type" : {
+              "coding" : [
+                {
+                  "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code" : "VN"
+                }
+              ]
+            },
+            "system" : "https://www.charite.de/fhir/sid/aufnahmenummer",
+            "value" : "A1E"
+          }
+        ],
+        "status" : "finished",
+        "class" : {
+          "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code" : "AMB"
+        },
+        "type" : [
+          {
+            "coding" : [
+              {
+                "system" : "http://fhir.de/CodeSystem/Kontaktebene",
+                "code" : "abteilungskontakt"
+              }
+            ]
+          }
+        ],
+        "priority" : {
+          "coding" : [
+            {
+              "system" : "http://terminology.hl7.org/CodeSystem/v3-ActPriority",
+              "code" : "EM"
+            }
+          ]
+        },
+        "subject" : {
+          "reference" : "Patient/mii-exa-person-patient-1"
+        },
+        "period" : {
+          "start" : "2020-01-08T07:00:00+01:00",
+          "end" : "2020-01-08T09:00:00+01:00"
+        },
+        "account" : [
+          {
+            "identifier" : {
+              "system" : "https://www.charite.de/fhir/sid/fallnummer",
+              "value" : "F-2020-000123"
+            },
+            "display" : "Account A1 - DRG G23B Appendektomie ohne schwere CC"
+          }
+        ],
+        "serviceProvider" : {
+          "identifier" : {
+            "system" : "http://fhir.de/sid/dkgev/iknr",
+            "value" : "260950472"
+          }
+        },
+        "partOf" : {
+          "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1"
+        }
+      },
+      "request" : {
+        "method" : "POST",
+        "url" : "Encounter"
+      }
+    },
+    {
+      "fullUrl" : "https://www.medizininformatik-initiative.de/Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-11",
+      "resource" : {
+        "resourceType" : "Encounter",
+        "id" : "mii-exa-fall-kontakt-gesundheitseinrichtung-11",
+        "meta" : {
+          "profile" : [
+            "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0-dev.1"
+          ],
+          "security" : [
+            {
+              "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code" : "HTEST",
+              "display" : "test health data"
+            }
+          ]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><a name=\"Encounter_mii-exa-fall-kontakt-gesundheitseinrichtung-11\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Encounter mii-exa-fall-kontakt-gesundheitseinrichtung-11</b></p><a name=\"mii-exa-fall-kontakt-gesundheitseinrichtung-11\"> </a><a name=\"hcmii-exa-fall-kontakt-gesundheitseinrichtung-11\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html\">MII PR Fall Kontakt mit einer Gesundheitseinrichtungversion: null2026.0.0-dev.1)</a></p><p style=\"margin-bottom: 0px\">Security Label: test health data (Details: ActReason code HTEST = 'test health data')</p></div><p><b>identifier</b>: Visit number/VS1</p><p><b>status</b>: Finished</p><p><b>class</b>: <a href=\"http://terminology.hl7.org/7.0.0/CodeSystem-v3-ActCode.html#v3-ActCode-AMB\">ActCode: AMB</a> (ambulatory)</p><p><b>type</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/Kontaktebene versorgungsstellenkontakt}\">Versorgungsstellenkontakt</span></p><p><b>subject</b>: <a href=\"Patient-mii-exa-person-patient-1.html\">Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))</a></p><p><b>period</b>: 2020-01-08 07:00:00+0100 --&gt; 2020-01-08 09:00:00+0100</p><p><b>account</b>: Account A1 - DRG G23B Appendektomie ohne schwere CC (Identifier: <code>https://www.charite.de/fhir/sid/fallnummer</code>/F-2020-000123)</p><h3>Locations</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Location</b></td><td><b>Status</b></td><td><b>PhysicalType</b></td></tr><tr><td style=\"display: none\">*</td><td>Emergency Department, Treatment Room 3</td><td>Completed</td><td><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/location-physical-type ro}\">Room</span></td></tr></table><p><b>serviceProvider</b>: Identifier: <code>http://fhir.de/sid/dkgev/iknr</code>/260950472</p><p><b>partOf</b>: <a href=\"Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-9.html\">Encounter: extension = ; identifier = Visit number; status = finished; class = ambulatory (ActCode#AMB); type = Abteilungskontakt; priority = emergency; period = 2020-01-08 07:00:00+0100 --&gt; 2020-01-08 09:00:00+0100</a></p></div></div>"
+        },
+        "identifier" : [
+          {
+            "type" : {
+              "coding" : [
+                {
+                  "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code" : "VN"
+                }
+              ]
+            },
+            "system" : "https://www.charite.de/fhir/sid/aufnahmenummer",
+            "value" : "VS1"
+          }
+        ],
+        "status" : "finished",
+        "class" : {
+          "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code" : "AMB"
+        },
+        "type" : [
+          {
+            "coding" : [
+              {
+                "system" : "http://fhir.de/CodeSystem/Kontaktebene",
+                "code" : "versorgungsstellenkontakt"
+              }
+            ]
+          }
+        ],
+        "subject" : {
+          "reference" : "Patient/mii-exa-person-patient-1"
+        },
+        "period" : {
+          "start" : "2020-01-08T07:00:00+01:00",
+          "end" : "2020-01-08T09:00:00+01:00"
+        },
+        "account" : [
+          {
+            "identifier" : {
+              "system" : "https://www.charite.de/fhir/sid/fallnummer",
+              "value" : "F-2020-000123"
+            },
+            "display" : "Account A1 - DRG G23B Appendektomie ohne schwere CC"
+          }
+        ],
+        "location" : [
+          {
+            "location" : {
+              "display" : "Emergency Department, Treatment Room 3"
+            },
+            "status" : "completed",
+            "physicalType" : {
+              "coding" : [
+                {
+                  "system" : "http://terminology.hl7.org/CodeSystem/location-physical-type",
+                  "code" : "ro"
+                }
+              ]
+            }
+          }
+        ],
+        "serviceProvider" : {
+          "identifier" : {
+            "system" : "http://fhir.de/sid/dkgev/iknr",
+            "value" : "260950472"
+          }
+        },
+        "partOf" : {
+          "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-9"
+        }
+      },
+      "request" : {
+        "method" : "POST",
+        "url" : "Encounter"
+      }
+    },
+    {
+      "fullUrl" : "https://www.medizininformatik-initiative.de/Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2",
+      "resource" : {
+        "resourceType" : "Encounter",
+        "id" : "mii-exa-fall-kontakt-gesundheitseinrichtung-2",
+        "meta" : {
+          "profile" : [
+            "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0-dev.1"
+          ],
+          "security" : [
+            {
+              "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code" : "HTEST",
+              "display" : "test health data"
+            }
+          ]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><a name=\"Encounter_mii-exa-fall-kontakt-gesundheitseinrichtung-2\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Encounter mii-exa-fall-kontakt-gesundheitseinrichtung-2</b></p><a name=\"mii-exa-fall-kontakt-gesundheitseinrichtung-2\"> </a><a name=\"hcmii-exa-fall-kontakt-gesundheitseinrichtung-2\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html\">MII PR Fall Kontakt mit einer Gesundheitseinrichtungversion: null2026.0.0-dev.1)</a></p><p style=\"margin-bottom: 0px\">Security Label: test health data (Details: ActReason code HTEST = 'test health data')</p></div><p><b>identifier</b>: Visit number/A2E</p><p><b>status</b>: Finished</p><p><b>class</b>: <a href=\"http://terminology.hl7.org/7.0.0/CodeSystem-v3-ActCode.html#v3-ActCode-IMP\">ActCode: IMP</a> (inpatient encounter)</p><p><b>type</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/Kontaktebene abteilungskontakt}\">Abteilungskontakt</span></p><p><b>serviceType</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel 1500}\">Allgemeine Chirurgie</span></p><p><b>subject</b>: <a href=\"Patient-mii-exa-person-patient-1.html\">Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))</a></p><p><b>period</b>: 2020-01-08 09:00:00+0100 --&gt; 2020-01-11 23:59:00+0100</p><blockquote><p><b>diagnosis</b></p><p><b>condition</b>: <a href=\"Condition-mii-exa-diagnose-appendicitis.html\">Condition Akute Appendizitis, nicht näher bezeichnet</a></p><p><b>use</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/diagnosis-role AD}\">Admission diagnosis</span></p></blockquote><blockquote><p><b>diagnosis</b></p><p><b>condition</b>: <a href=\"Condition-mii-exa-diagnose-appendicitis.html\">Condition Akute Appendizitis, nicht näher bezeichnet</a></p><p><b>use</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/KontaktDiagnoseProzedur treatment-diagnosis}\">Behandlungsrelevante Diagnosen</span></p></blockquote><blockquote><p><b>diagnosis</b></p><p><b>condition</b>: <a href=\"Condition-mii-exa-diagnose-condition-elbow-contusion.html\">Condition Prellung des Ellenbogens</a></p><p><b>use</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/KontaktDiagnoseProzedur treatment-diagnosis}\">Behandlungsrelevante Diagnosen</span></p></blockquote><p><b>account</b>: Account A1 - DRG G23B Appendektomie ohne schwere CC (Identifier: <code>https://www.charite.de/fhir/sid/fallnummer</code>/F-2020-000123)</p><p><b>serviceProvider</b>: Identifier: <code>http://fhir.de/sid/dkgev/iknr</code>/260950472</p><p><b>partOf</b>: <a href=\"Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.html\">Encounter: identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Einrichtungskontakt; period = 2020-01-08 07:00:00+0100 --&gt; 2020-01-17 18:00:00+0100</a></p></div></div>"
+        },
+        "identifier" : [
+          {
+            "type" : {
+              "coding" : [
+                {
+                  "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code" : "VN"
+                }
+              ]
+            },
+            "system" : "https://www.charite.de/fhir/sid/aufnahmenummer",
+            "value" : "A2E"
+          }
+        ],
+        "status" : "finished",
+        "class" : {
+          "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code" : "IMP"
+        },
+        "type" : [
+          {
+            "coding" : [
+              {
+                "system" : "http://fhir.de/CodeSystem/Kontaktebene",
+                "code" : "abteilungskontakt"
+              }
+            ]
+          }
+        ],
+        "serviceType" : {
+          "coding" : [
+            {
+              "system" : "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel",
+              "code" : "1500",
+              "display" : "Allgemeine Chirurgie"
+            }
+          ]
+        },
+        "subject" : {
+          "reference" : "Patient/mii-exa-person-patient-1"
+        },
+        "period" : {
+          "start" : "2020-01-08T09:00:00+01:00",
+          "end" : "2020-01-11T23:59:00+01:00"
+        },
+        "diagnosis" : [
+          {
+            "condition" : {
+              "reference" : "Condition/mii-exa-diagnose-appendicitis"
+            },
+            "use" : {
+              "coding" : [
+                {
+                  "system" : "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+                  "code" : "AD",
+                  "display" : "Admission diagnosis"
+                }
+              ]
+            }
+          },
+          {
+            "condition" : {
+              "reference" : "Condition/mii-exa-diagnose-appendicitis"
+            },
+            "use" : {
+              "coding" : [
+                {
+                  "system" : "http://fhir.de/CodeSystem/KontaktDiagnoseProzedur",
+                  "code" : "treatment-diagnosis"
+                }
+              ]
+            }
+          },
+          {
+            "condition" : {
+              "reference" : "Condition/mii-exa-diagnose-condition-elbow-contusion"
+            },
+            "use" : {
+              "coding" : [
+                {
+                  "system" : "http://fhir.de/CodeSystem/KontaktDiagnoseProzedur",
+                  "code" : "treatment-diagnosis"
+                }
+              ]
+            }
+          }
+        ],
+        "account" : [
+          {
+            "identifier" : {
+              "system" : "https://www.charite.de/fhir/sid/fallnummer",
+              "value" : "F-2020-000123"
+            },
+            "display" : "Account A1 - DRG G23B Appendektomie ohne schwere CC"
+          }
+        ],
+        "serviceProvider" : {
+          "identifier" : {
+            "system" : "http://fhir.de/sid/dkgev/iknr",
+            "value" : "260950472"
+          }
+        },
+        "partOf" : {
+          "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1"
+        }
+      },
+      "request" : {
+        "method" : "POST",
+        "url" : "Encounter"
+      }
+    },
+    {
+      "fullUrl" : "https://www.medizininformatik-initiative.de/Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4",
+      "resource" : {
+        "resourceType" : "Encounter",
+        "id" : "mii-exa-fall-kontakt-gesundheitseinrichtung-4",
+        "meta" : {
+          "profile" : [
+            "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0-dev.1"
+          ],
+          "security" : [
+            {
+              "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code" : "HTEST",
+              "display" : "test health data"
+            }
+          ]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><a name=\"Encounter_mii-exa-fall-kontakt-gesundheitseinrichtung-4\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Encounter mii-exa-fall-kontakt-gesundheitseinrichtung-4</b></p><a name=\"mii-exa-fall-kontakt-gesundheitseinrichtung-4\"> </a><a name=\"hcmii-exa-fall-kontakt-gesundheitseinrichtung-4\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html\">MII PR Fall Kontakt mit einer Gesundheitseinrichtungversion: null2026.0.0-dev.1)</a></p><p style=\"margin-bottom: 0px\">Security Label: test health data (Details: ActReason code HTEST = 'test health data')</p></div><p><b>identifier</b>: Visit number/VS2</p><p><b>status</b>: Finished</p><p><b>class</b>: <a href=\"http://terminology.hl7.org/7.0.0/CodeSystem-v3-ActCode.html#v3-ActCode-IMP\">ActCode: IMP</a> (inpatient encounter)</p><p><b>type</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/Kontaktebene versorgungsstellenkontakt}\">Versorgungsstellenkontakt</span></p><p><b>subject</b>: <a href=\"Patient-mii-exa-person-patient-1.html\">Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))</a></p><p><b>period</b>: 2020-01-08 10:00:00+0100 --&gt; 2020-01-08 10:30:00+0100</p><p><b>account</b>: Account A1 - DRG G23B Appendektomie ohne schwere CC (Identifier: <code>https://www.charite.de/fhir/sid/fallnummer</code>/F-2020-000123)</p><h3>Locations</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Location</b></td><td><b>Status</b></td><td><b>PhysicalType</b></td></tr><tr><td style=\"display: none\">*</td><td>Radiology Department, CT Scanner</td><td>Completed</td><td><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/location-physical-type ro}\">Room</span></td></tr></table><p><b>serviceProvider</b>: Identifier: <code>http://fhir.de/sid/dkgev/iknr</code>/260950472</p><p><b>partOf</b>: <a href=\"Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html\">Encounter: identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Abteilungskontakt; serviceType = Allgemeine Chirurgie; period = 2020-01-08 09:00:00+0100 --&gt; 2020-01-11 23:59:00+0100</a></p></div></div>"
+        },
+        "identifier" : [
+          {
+            "type" : {
+              "coding" : [
+                {
+                  "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code" : "VN"
+                }
+              ]
+            },
+            "system" : "https://www.charite.de/fhir/sid/aufnahmenummer",
+            "value" : "VS2"
+          }
+        ],
+        "status" : "finished",
+        "class" : {
+          "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code" : "IMP"
+        },
+        "type" : [
+          {
+            "coding" : [
+              {
+                "system" : "http://fhir.de/CodeSystem/Kontaktebene",
+                "code" : "versorgungsstellenkontakt"
+              }
+            ]
+          }
+        ],
+        "subject" : {
+          "reference" : "Patient/mii-exa-person-patient-1"
+        },
+        "period" : {
+          "start" : "2020-01-08T10:00:00+01:00",
+          "end" : "2020-01-08T10:30:00+01:00"
+        },
+        "account" : [
+          {
+            "identifier" : {
+              "system" : "https://www.charite.de/fhir/sid/fallnummer",
+              "value" : "F-2020-000123"
+            },
+            "display" : "Account A1 - DRG G23B Appendektomie ohne schwere CC"
+          }
+        ],
+        "location" : [
+          {
+            "location" : {
+              "display" : "Radiology Department, CT Scanner"
+            },
+            "status" : "completed",
+            "physicalType" : {
+              "coding" : [
+                {
+                  "system" : "http://terminology.hl7.org/CodeSystem/location-physical-type",
+                  "code" : "ro",
+                  "display" : "Room"
+                }
+              ]
+            }
+          }
+        ],
+        "serviceProvider" : {
+          "identifier" : {
+            "system" : "http://fhir.de/sid/dkgev/iknr",
+            "value" : "260950472"
+          }
+        },
+        "partOf" : {
+          "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2"
+        }
+      },
+      "request" : {
+        "method" : "POST",
+        "url" : "Encounter"
+      }
+    },
+    {
+      "fullUrl" : "https://www.medizininformatik-initiative.de/Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5",
+      "resource" : {
+        "resourceType" : "Encounter",
+        "id" : "mii-exa-fall-kontakt-gesundheitseinrichtung-5",
+        "meta" : {
+          "profile" : [
+            "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0-dev.1"
+          ],
+          "security" : [
+            {
+              "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code" : "HTEST",
+              "display" : "test health data"
+            }
+          ]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><a name=\"Encounter_mii-exa-fall-kontakt-gesundheitseinrichtung-5\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Encounter mii-exa-fall-kontakt-gesundheitseinrichtung-5</b></p><a name=\"mii-exa-fall-kontakt-gesundheitseinrichtung-5\"> </a><a name=\"hcmii-exa-fall-kontakt-gesundheitseinrichtung-5\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html\">MII PR Fall Kontakt mit einer Gesundheitseinrichtungversion: null2026.0.0-dev.1)</a></p><p style=\"margin-bottom: 0px\">Security Label: test health data (Details: ActReason code HTEST = 'test health data')</p></div><p><b>identifier</b>: Visit number/VS3</p><p><b>status</b>: Finished</p><p><b>class</b>: <a href=\"http://terminology.hl7.org/7.0.0/CodeSystem-v3-ActCode.html#v3-ActCode-IMP\">ActCode: IMP</a> (inpatient encounter)</p><p><b>type</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/Kontaktebene versorgungsstellenkontakt}\">Versorgungsstellenkontakt</span>, <span title=\"Codes:{http://fhir.de/CodeSystem/kontaktart-de operation}\">Operation</span></p><p><b>subject</b>: <a href=\"Patient-mii-exa-person-patient-1.html\">Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))</a></p><p><b>period</b>: 2020-01-08 20:30:00+0100 --&gt; 2020-01-08 22:15:00+0100</p><p><b>account</b>: Account A1 - DRG G23B Appendektomie ohne schwere CC (Identifier: <code>https://www.charite.de/fhir/sid/fallnummer</code>/F-2020-000123)</p><h3>Locations</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Location</b></td><td><b>Status</b></td><td><b>PhysicalType</b></td></tr><tr><td style=\"display: none\">*</td><td>OR 4 (Operating Room 4)</td><td>Completed</td><td><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/location-physical-type ro}\">Room</span></td></tr></table><p><b>serviceProvider</b>: Identifier: <code>http://fhir.de/sid/dkgev/iknr</code>/260950472</p><p><b>partOf</b>: <a href=\"Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html\">Encounter: identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Abteilungskontakt; serviceType = Allgemeine Chirurgie; period = 2020-01-08 09:00:00+0100 --&gt; 2020-01-11 23:59:00+0100</a></p></div></div>"
+        },
+        "identifier" : [
+          {
+            "type" : {
+              "coding" : [
+                {
+                  "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code" : "VN"
+                }
+              ]
+            },
+            "system" : "https://www.charite.de/fhir/sid/aufnahmenummer",
+            "value" : "VS3"
+          }
+        ],
+        "status" : "finished",
+        "class" : {
+          "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code" : "IMP"
+        },
+        "type" : [
+          {
+            "coding" : [
+              {
+                "system" : "http://fhir.de/CodeSystem/Kontaktebene",
+                "code" : "versorgungsstellenkontakt"
+              }
+            ]
+          },
+          {
+            "coding" : [
+              {
+                "system" : "http://fhir.de/CodeSystem/kontaktart-de",
+                "code" : "operation"
+              }
+            ]
+          }
+        ],
+        "subject" : {
+          "reference" : "Patient/mii-exa-person-patient-1"
+        },
+        "period" : {
+          "start" : "2020-01-08T20:30:00+01:00",
+          "end" : "2020-01-08T22:15:00+01:00"
+        },
+        "account" : [
+          {
+            "identifier" : {
+              "system" : "https://www.charite.de/fhir/sid/fallnummer",
+              "value" : "F-2020-000123"
+            },
+            "display" : "Account A1 - DRG G23B Appendektomie ohne schwere CC"
+          }
+        ],
+        "location" : [
+          {
+            "location" : {
+              "display" : "OR 4 (Operating Room 4)"
+            },
+            "status" : "completed",
+            "physicalType" : {
+              "coding" : [
+                {
+                  "system" : "http://terminology.hl7.org/CodeSystem/location-physical-type",
+                  "code" : "ro",
+                  "display" : "Room"
+                }
+              ]
+            }
+          }
+        ],
+        "serviceProvider" : {
+          "identifier" : {
+            "system" : "http://fhir.de/sid/dkgev/iknr",
+            "value" : "260950472"
+          }
+        },
+        "partOf" : {
+          "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2"
+        }
+      },
+      "request" : {
+        "method" : "POST",
+        "url" : "Encounter"
+      }
+    },
+    {
+      "fullUrl" : "https://www.medizininformatik-initiative.de/Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6",
+      "resource" : {
+        "resourceType" : "Encounter",
+        "id" : "mii-exa-fall-kontakt-gesundheitseinrichtung-6",
+        "meta" : {
+          "profile" : [
+            "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0-dev.1"
+          ],
+          "security" : [
+            {
+              "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code" : "HTEST",
+              "display" : "test health data"
+            }
+          ]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><a name=\"Encounter_mii-exa-fall-kontakt-gesundheitseinrichtung-6\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Encounter mii-exa-fall-kontakt-gesundheitseinrichtung-6</b></p><a name=\"mii-exa-fall-kontakt-gesundheitseinrichtung-6\"> </a><a name=\"hcmii-exa-fall-kontakt-gesundheitseinrichtung-6\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html\">MII PR Fall Kontakt mit einer Gesundheitseinrichtungversion: null2026.0.0-dev.1)</a></p><p style=\"margin-bottom: 0px\">Security Label: test health data (Details: ActReason code HTEST = 'test health data')</p></div><p><b>identifier</b>: Visit number/VS4</p><p><b>status</b>: Finished</p><p><b>class</b>: <a href=\"http://terminology.hl7.org/7.0.0/CodeSystem-v3-ActCode.html#v3-ActCode-IMP\">ActCode: IMP</a> (inpatient encounter)</p><p><b>type</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/Kontaktebene versorgungsstellenkontakt}\">Versorgungsstellenkontakt</span></p><p><b>subject</b>: <a href=\"Patient-mii-exa-person-patient-1.html\">Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))</a></p><p><b>period</b>: 2020-01-08 22:15:00+0100 --&gt; 2020-01-09 00:00:00+0100</p><p><b>account</b>: Account A1 - DRG G23B Appendektomie ohne schwere CC (Identifier: <code>https://www.charite.de/fhir/sid/fallnummer</code>/F-2020-000123)</p><h3>Locations</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Location</b></td><td><b>Status</b></td><td><b>PhysicalType</b></td></tr><tr><td style=\"display: none\">*</td><td>PACU (Post-Anesthesia Care Unit)</td><td>Completed</td><td><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/location-physical-type wa}\">Ward</span></td></tr></table><p><b>serviceProvider</b>: Identifier: <code>http://fhir.de/sid/dkgev/iknr</code>/260950472</p><p><b>partOf</b>: <a href=\"Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html\">Encounter: identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Abteilungskontakt; serviceType = Allgemeine Chirurgie; period = 2020-01-08 09:00:00+0100 --&gt; 2020-01-11 23:59:00+0100</a></p></div></div>"
+        },
+        "identifier" : [
+          {
+            "type" : {
+              "coding" : [
+                {
+                  "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code" : "VN"
+                }
+              ]
+            },
+            "system" : "https://www.charite.de/fhir/sid/aufnahmenummer",
+            "value" : "VS4"
+          }
+        ],
+        "status" : "finished",
+        "class" : {
+          "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code" : "IMP"
+        },
+        "type" : [
+          {
+            "coding" : [
+              {
+                "system" : "http://fhir.de/CodeSystem/Kontaktebene",
+                "code" : "versorgungsstellenkontakt"
+              }
+            ]
+          }
+        ],
+        "subject" : {
+          "reference" : "Patient/mii-exa-person-patient-1"
+        },
+        "period" : {
+          "start" : "2020-01-08T22:15:00+01:00",
+          "end" : "2020-01-09T00:00:00+01:00"
+        },
+        "account" : [
+          {
+            "identifier" : {
+              "system" : "https://www.charite.de/fhir/sid/fallnummer",
+              "value" : "F-2020-000123"
+            },
+            "display" : "Account A1 - DRG G23B Appendektomie ohne schwere CC"
+          }
+        ],
+        "location" : [
+          {
+            "location" : {
+              "display" : "PACU (Post-Anesthesia Care Unit)"
+            },
+            "status" : "completed",
+            "physicalType" : {
+              "coding" : [
+                {
+                  "system" : "http://terminology.hl7.org/CodeSystem/location-physical-type",
+                  "code" : "wa",
+                  "display" : "Ward"
+                }
+              ]
+            }
+          }
+        ],
+        "serviceProvider" : {
+          "identifier" : {
+            "system" : "http://fhir.de/sid/dkgev/iknr",
+            "value" : "260950472"
+          }
+        },
+        "partOf" : {
+          "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2"
+        }
+      },
+      "request" : {
+        "method" : "POST",
+        "url" : "Encounter"
+      }
+    },
+    {
+      "fullUrl" : "https://www.medizininformatik-initiative.de/Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10",
+      "resource" : {
+        "resourceType" : "Encounter",
+        "id" : "mii-exa-fall-kontakt-gesundheitseinrichtung-10",
+        "meta" : {
+          "profile" : [
+            "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0-dev.1"
+          ],
+          "security" : [
+            {
+              "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code" : "HTEST",
+              "display" : "test health data"
+            }
+          ]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><a name=\"Encounter_mii-exa-fall-kontakt-gesundheitseinrichtung-10\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Encounter mii-exa-fall-kontakt-gesundheitseinrichtung-10</b></p><a name=\"mii-exa-fall-kontakt-gesundheitseinrichtung-10\"> </a><a name=\"hcmii-exa-fall-kontakt-gesundheitseinrichtung-10\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html\">MII PR Fall Kontakt mit einer Gesundheitseinrichtungversion: null2026.0.0-dev.1)</a></p><p style=\"margin-bottom: 0px\">Security Label: test health data (Details: ActReason code HTEST = 'test health data')</p></div><p><b>identifier</b>: Visit number/VS5</p><p><b>status</b>: Finished</p><p><b>class</b>: <a href=\"http://terminology.hl7.org/7.0.0/CodeSystem-v3-ActCode.html#v3-ActCode-IMP\">ActCode: IMP</a> (inpatient encounter)</p><p><b>type</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/Kontaktebene versorgungsstellenkontakt}\">Versorgungsstellenkontakt</span></p><p><b>subject</b>: <a href=\"Patient-mii-exa-person-patient-1.html\">Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))</a></p><p><b>period</b>: 2020-01-09 00:00:00+0100 --&gt; 2020-01-11 23:59:00+0100</p><p><b>account</b>: Account A1 - DRG G23B Appendektomie ohne schwere CC (Identifier: <code>https://www.charite.de/fhir/sid/fallnummer</code>/F-2020-000123)</p><h3>Locations</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Location</b></td><td><b>Status</b></td><td><b>PhysicalType</b></td></tr><tr><td style=\"display: none\">*</td><td>Surgical Ward C3, Room 315, Bed 315-02</td><td>Completed</td><td><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/location-physical-type wa}\">Ward</span></td></tr></table><p><b>serviceProvider</b>: Identifier: <code>http://fhir.de/sid/dkgev/iknr</code>/260950472</p><p><b>partOf</b>: <a href=\"Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html\">Encounter: identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Abteilungskontakt; serviceType = Allgemeine Chirurgie; period = 2020-01-08 09:00:00+0100 --&gt; 2020-01-11 23:59:00+0100</a></p></div></div>"
+        },
+        "identifier" : [
+          {
+            "type" : {
+              "coding" : [
+                {
+                  "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code" : "VN"
+                }
+              ]
+            },
+            "system" : "https://www.charite.de/fhir/sid/aufnahmenummer",
+            "value" : "VS5"
+          }
+        ],
+        "status" : "finished",
+        "class" : {
+          "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code" : "IMP"
+        },
+        "type" : [
+          {
+            "coding" : [
+              {
+                "system" : "http://fhir.de/CodeSystem/Kontaktebene",
+                "code" : "versorgungsstellenkontakt"
+              }
+            ]
+          }
+        ],
+        "subject" : {
+          "reference" : "Patient/mii-exa-person-patient-1"
+        },
+        "period" : {
+          "start" : "2020-01-09T00:00:00+01:00",
+          "end" : "2020-01-11T23:59:00+01:00"
+        },
+        "account" : [
+          {
+            "identifier" : {
+              "system" : "https://www.charite.de/fhir/sid/fallnummer",
+              "value" : "F-2020-000123"
+            },
+            "display" : "Account A1 - DRG G23B Appendektomie ohne schwere CC"
+          }
+        ],
+        "location" : [
+          {
+            "location" : {
+              "display" : "Surgical Ward C3, Room 315, Bed 315-02"
+            },
+            "status" : "completed",
+            "physicalType" : {
+              "coding" : [
+                {
+                  "system" : "http://terminology.hl7.org/CodeSystem/location-physical-type",
+                  "code" : "wa",
+                  "display" : "Ward"
+                }
+              ]
+            }
+          }
+        ],
+        "serviceProvider" : {
+          "identifier" : {
+            "system" : "http://fhir.de/sid/dkgev/iknr",
+            "value" : "260950472"
+          }
+        },
+        "partOf" : {
+          "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2"
+        }
+      },
+      "request" : {
+        "method" : "POST",
+        "url" : "Encounter"
+      }
+    },
+    {
+      "fullUrl" : "https://www.medizininformatik-initiative.de/Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7",
+      "resource" : {
+        "resourceType" : "Encounter",
+        "id" : "mii-exa-fall-kontakt-gesundheitseinrichtung-7",
+        "meta" : {
+          "profile" : [
+            "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0-dev.1"
+          ],
+          "security" : [
+            {
+              "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code" : "HTEST",
+              "display" : "test health data"
+            }
+          ]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><a name=\"Encounter_mii-exa-fall-kontakt-gesundheitseinrichtung-7\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Encounter mii-exa-fall-kontakt-gesundheitseinrichtung-7</b></p><a name=\"mii-exa-fall-kontakt-gesundheitseinrichtung-7\"> </a><a name=\"hcmii-exa-fall-kontakt-gesundheitseinrichtung-7\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html\">MII PR Fall Kontakt mit einer Gesundheitseinrichtungversion: null2026.0.0-dev.1)</a></p><p style=\"margin-bottom: 0px\">Security Label: test health data (Details: ActReason code HTEST = 'test health data')</p></div><p><b>identifier</b>: Visit number/F_20200108_001_INME</p><p><b>status</b>: Finished</p><p><b>class</b>: <a href=\"http://terminology.hl7.org/7.0.0/CodeSystem-v3-ActCode.html#v3-ActCode-IMP\">ActCode: IMP</a> (inpatient encounter)</p><p><b>type</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/Kontaktebene abteilungskontakt}\">Abteilungskontakt</span></p><p><b>serviceType</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel 0100}\">Innere Medizin</span></p><p><b>subject</b>: <a href=\"Patient-mii-exa-person-patient-1.html\">Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))</a></p><p><b>period</b>: 2020-01-12 00:00:00+0100 --&gt; 2020-01-17 18:00:00+0100</p><blockquote><p><b>diagnosis</b></p><p><b>condition</b>: <a href=\"Condition-mii-exa-diagnose-condition-multiple-codings.html\">Condition Sonstige näher bezeichnete Krankheiten des Innenohres</a></p><p><b>use</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/diagnosis-role CC}\">Chief complaint</span></p></blockquote><blockquote><p><b>diagnosis</b></p><p><b>condition</b>: <a href=\"Condition-mii-exa-diagnose-condition-multiple-codings.html\">Condition Sonstige näher bezeichnete Krankheiten des Innenohres</a></p><p><b>use</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/diagnosis-role AD}\">Admission diagnosis</span></p></blockquote><blockquote><p><b>diagnosis</b></p><p><b>condition</b>: <a href=\"Condition-mii-exa-diagnose-mehrfachcodierung-primaercode.html\">Condition Gonokokkeninfektion des Muskel-Skelett-Systems</a></p><p><b>use</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/KontaktDiagnoseProzedur treatment-diagnosis}\">Behandlungsrelevante Diagnosen</span></p></blockquote><p><b>account</b>: Account A1 - DRG G23B Appendektomie ohne schwere CC (Identifier: <code>https://www.charite.de/fhir/sid/fallnummer</code>/F-2020-000123)</p><p><b>serviceProvider</b>: Identifier: <code>http://fhir.de/sid/dkgev/iknr</code>/260950472</p><p><b>partOf</b>: <a href=\"Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.html\">Encounter: identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Einrichtungskontakt; period = 2020-01-08 07:00:00+0100 --&gt; 2020-01-17 18:00:00+0100</a></p></div></div>"
+        },
+        "identifier" : [
+          {
+            "type" : {
+              "coding" : [
+                {
+                  "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code" : "VN"
+                }
+              ]
+            },
+            "system" : "https://www.charite.de/fhir/sid/aufnahmenummer",
+            "value" : "F_20200108_001_INME"
+          }
+        ],
+        "status" : "finished",
+        "class" : {
+          "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code" : "IMP"
+        },
+        "type" : [
+          {
+            "coding" : [
+              {
+                "system" : "http://fhir.de/CodeSystem/Kontaktebene",
+                "code" : "abteilungskontakt"
+              }
+            ]
+          }
+        ],
+        "serviceType" : {
+          "coding" : [
+            {
+              "system" : "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel",
+              "code" : "0100",
+              "display" : "Innere Medizin"
+            }
+          ]
+        },
+        "subject" : {
+          "reference" : "Patient/mii-exa-person-patient-1"
+        },
+        "period" : {
+          "start" : "2020-01-12T00:00:00+01:00",
+          "end" : "2020-01-17T18:00:00+01:00"
+        },
+        "diagnosis" : [
+          {
+            "condition" : {
+              "reference" : "Condition/mii-exa-diagnose-condition-multiple-codings"
+            },
+            "use" : {
+              "coding" : [
+                {
+                  "system" : "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+                  "code" : "CC",
+                  "display" : "Chief complaint"
+                }
+              ]
+            }
+          },
+          {
+            "condition" : {
+              "reference" : "Condition/mii-exa-diagnose-condition-multiple-codings"
+            },
+            "use" : {
+              "coding" : [
+                {
+                  "system" : "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+                  "code" : "AD",
+                  "display" : "Admission diagnosis"
+                }
+              ]
+            }
+          },
+          {
+            "condition" : {
+              "reference" : "Condition/mii-exa-diagnose-mehrfachcodierung-primaercode"
+            },
+            "use" : {
+              "coding" : [
+                {
+                  "system" : "http://fhir.de/CodeSystem/KontaktDiagnoseProzedur",
+                  "code" : "treatment-diagnosis"
+                }
+              ]
+            }
+          }
+        ],
+        "account" : [
+          {
+            "identifier" : {
+              "system" : "https://www.charite.de/fhir/sid/fallnummer",
+              "value" : "F-2020-000123"
+            },
+            "display" : "Account A1 - DRG G23B Appendektomie ohne schwere CC"
+          }
+        ],
+        "serviceProvider" : {
+          "identifier" : {
+            "system" : "http://fhir.de/sid/dkgev/iknr",
+            "value" : "260950472"
+          }
+        },
+        "partOf" : {
+          "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1"
+        }
+      },
+      "request" : {
+        "method" : "POST",
+        "url" : "Encounter"
+      }
+    },
+    {
+      "fullUrl" : "https://www.medizininformatik-initiative.de/Condition/mii-exa-diagnose-mehrfachcodierung-primaercode",
+      "resource" : {
+        "resourceType" : "Condition",
+        "id" : "mii-exa-diagnose-mehrfachcodierung-primaercode",
+        "meta" : {
+          "profile" : [
+            "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0-dev.1"
+          ],
+          "security" : [
+            {
+              "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code" : "HTEST",
+              "display" : "test health data"
+            }
+          ]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><a name=\"Condition_mii-exa-diagnose-mehrfachcodierung-primaercode\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Condition mii-exa-diagnose-mehrfachcodierung-primaercode</b></p><a name=\"mii-exa-diagnose-mehrfachcodierung-primaercode\"> </a><a name=\"hcmii-exa-diagnose-mehrfachcodierung-primaercode\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-diagnose-condition.html\">MII PR Diagnose Conditionversion: null2026.0.0-dev.1)</a></p><p style=\"margin-bottom: 0px\">Security Label: test health data (Details: ActReason code HTEST = 'test health data')</p></div><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>verificationStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}\">Confirmed</span></p><p><b>code</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/bfarm/icd-10-gm A54.4}, {http://fhir.de/CodeSystem/bfarm/alpha-id I97525}\">Gonokokkeninfektion des Muskel-Skelett-Systems</span></p><p><b>subject</b>: <a href=\"Patient-mii-exa-person-patient-1.html\">Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))</a></p><p><b>encounter</b>: <a href=\"Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-8.html\">Encounter: identifier = Visit number; status = finished; class = ambulatory (ActCode#AMB); period = 2019-09-26 10:00:00+0200 --&gt; 2019-09-26 12:00:00+0200</a></p><p><b>onset</b>: 2019-09-26</p><p><b>recordedDate</b>: 2019-09-26 11:30:00+0200</p></div></div>"
+        },
+        "clinicalStatus" : {
+          "coding" : [
+            {
+              "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code" : "active"
+            }
+          ]
+        },
+        "verificationStatus" : {
+          "coding" : [
+            {
+              "system" : "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code" : "confirmed"
+            }
+          ]
+        },
+        "code" : {
+          "coding" : [
+            {
+              "extension" : [
+                {
+                  "url" : "http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen",
+                  "valueCoding" : {
+                    "system" : "http://fhir.de/CodeSystem/icd-10-gm-mehrfachcodierungs-kennzeichen",
+                    "code" : "†"
+                  }
+                },
+                {
+                  "url" : "http://fhir.de/StructureDefinition/seitenlokalisation",
+                  "valueCoding" : {
+                    "system" : "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ICD_SEITENLOKALISATION",
+                    "code" : "L",
+                    "display" : "links"
+                  }
+                },
+                {
+                  "url" : "http://fhir.de/StructureDefinition/icd-10-gm-diagnosesicherheit",
+                  "valueCoding" : {
+                    "system" : "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ICD_DIAGNOSESICHERHEIT",
+                    "code" : "G",
+                    "display" : "Gesicherte Diagnose"
+                  }
+                }
+              ],
+              "system" : "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+              "version" : "2020",
+              "code" : "A54.4",
+              "display" : "Gonokokkeninfektion des Muskel-Skelett-Systems"
+            },
+            {
+              "system" : "http://fhir.de/CodeSystem/bfarm/alpha-id",
+              "version" : "2020",
+              "code" : "I97525"
+            }
+          ]
+        },
+        "subject" : {
+          "reference" : "Patient/mii-exa-person-patient-1"
+        },
+        "encounter" : {
+          "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-8"
+        },
+        "onsetDateTime" : "2019-09-26",
+        "recordedDate" : "2019-09-26T11:30:00+02:00"
+      },
+      "request" : {
+        "method" : "POST",
+        "url" : "Condition"
+      }
+    },
+    {
+      "fullUrl" : "https://www.medizininformatik-initiative.de/Condition/mii-exa-diagnose-mehrfachcodierung-sekundaercode",
+      "resource" : {
+        "resourceType" : "Condition",
+        "id" : "mii-exa-diagnose-mehrfachcodierung-sekundaercode",
+        "meta" : {
+          "profile" : [
+            "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0-dev.1"
+          ],
+          "security" : [
+            {
+              "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code" : "HTEST",
+              "display" : "test health data"
+            }
+          ]
+        },
+        "text" : {
+          "status" : "extensions",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><a name=\"Condition_mii-exa-diagnose-mehrfachcodierung-sekundaercode\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Condition mii-exa-diagnose-mehrfachcodierung-sekundaercode</b></p><a name=\"mii-exa-diagnose-mehrfachcodierung-sekundaercode\"> </a><a name=\"hcmii-exa-diagnose-mehrfachcodierung-sekundaercode\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-diagnose-condition.html\">MII PR Diagnose Conditionversion: null2026.0.0-dev.1)</a></p><p style=\"margin-bottom: 0px\">Security Label: test health data (Details: ActReason code HTEST = 'test health data')</p></div><p><b>Condition Related</b>: <a href=\"Condition-mii-exa-diagnose-mehrfachcodierung-primaercode.html\">Condition Gonokokkeninfektion des Muskel-Skelett-Systems</a></p><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>verificationStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}\">Confirmed</span></p><p><b>code</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/bfarm/icd-10-gm M73.04}\">Bursitis gonorrhoica: Hand</span></p><p><b>subject</b>: <a href=\"Patient-mii-exa-person-patient-1.html\">Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))</a></p><p><b>encounter</b>: <a href=\"Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-8.html\">Encounter: identifier = Visit number; status = finished; class = ambulatory (ActCode#AMB); period = 2019-09-26 10:00:00+0200 --&gt; 2019-09-26 12:00:00+0200</a></p><p><b>onset</b>: 2019-09-26</p><p><b>recordedDate</b>: 2019-09-26 11:30:00+0200</p></div></div>"
+        },
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/condition-related",
+            "valueReference" : {
+              "reference" : "Condition/mii-exa-diagnose-mehrfachcodierung-primaercode"
+            }
+          }
+        ],
+        "clinicalStatus" : {
+          "coding" : [
+            {
+              "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code" : "active"
+            }
+          ]
+        },
+        "verificationStatus" : {
+          "coding" : [
+            {
+              "system" : "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code" : "confirmed"
+            }
+          ]
+        },
+        "code" : {
+          "coding" : [
+            {
+              "extension" : [
+                {
+                  "url" : "http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen",
+                  "valueCoding" : {
+                    "system" : "http://fhir.de/CodeSystem/icd-10-gm-mehrfachcodierungs-kennzeichen",
+                    "code" : "*"
+                  }
+                }
+              ],
+              "system" : "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+              "version" : "2020",
+              "code" : "M73.04",
+              "display" : "Bursitis gonorrhoica: Hand"
+            }
+          ]
+        },
+        "subject" : {
+          "reference" : "Patient/mii-exa-person-patient-1"
+        },
+        "encounter" : {
+          "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-8"
+        },
+        "onsetDateTime" : "2019-09-26",
+        "recordedDate" : "2019-09-26T11:30:00+02:00"
+      },
+      "request" : {
+        "method" : "POST",
+        "url" : "Condition"
+      }
+    },
+    {
+      "fullUrl" : "https://www.medizininformatik-initiative.de/Condition/mii-exa-diagnose-appendicitis",
+      "resource" : {
+        "resourceType" : "Condition",
+        "id" : "mii-exa-diagnose-appendicitis",
+        "meta" : {
+          "profile" : [
+            "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0-dev.1"
+          ],
+          "security" : [
+            {
+              "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code" : "HTEST",
+              "display" : "test health data"
+            }
+          ]
+        },
+        "text" : {
+          "status" : "extensions",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><a name=\"Condition_mii-exa-diagnose-appendicitis\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Condition mii-exa-diagnose-appendicitis</b></p><a name=\"mii-exa-diagnose-appendicitis\"> </a><a name=\"hcmii-exa-diagnose-appendicitis\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-diagnose-condition.html\">MII PR Diagnose Conditionversion: null2026.0.0-dev.1)</a></p><p style=\"margin-bottom: 0px\">Security Label: test health data (Details: ActReason code HTEST = 'test health data')</p></div><p><b>Condition Asserted Date</b>: 2020-01-08 07:30:00+0100</p><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical resolved}\">Resolved</span></p><p><b>verificationStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}\">Confirmed</span></p><p><b>code</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/bfarm/icd-10-gm K35.80}, {http://snomed.info/sct 85189001}\">Akute Appendizitis, nicht näher bezeichnet</span></p><p><b>subject</b>: <a href=\"Patient-mii-exa-person-patient-1.html\">Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))</a></p><p><b>encounter</b>: <a href=\"Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html\">Encounter: identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Abteilungskontakt; serviceType = Allgemeine Chirurgie; period = 2020-01-08 09:00:00+0100 --&gt; 2020-01-11 23:59:00+0100</a></p><p><b>onset</b>: 2020-01-08 04:00:00+0100</p><p><b>recordedDate</b>: 2020-01-08 09:00:00+0100</p></div></div>"
+        },
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/condition-assertedDate",
+            "valueDateTime" : "2020-01-08T07:30:00+01:00"
+          }
+        ],
+        "clinicalStatus" : {
+          "coding" : [
+            {
+              "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code" : "resolved"
+            }
+          ]
+        },
+        "verificationStatus" : {
+          "coding" : [
+            {
+              "system" : "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code" : "confirmed"
+            }
+          ]
+        },
+        "code" : {
+          "coding" : [
+            {
+              "system" : "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+              "version" : "2020",
+              "code" : "K35.80",
+              "display" : "Akute Appendizitis, nicht näher bezeichnet"
+            },
+            {
+              "system" : "http://snomed.info/sct",
+              "code" : "85189001",
+              "display" : "Acute appendicitis"
+            }
+          ]
+        },
+        "subject" : {
+          "reference" : "Patient/mii-exa-person-patient-1"
+        },
+        "encounter" : {
+          "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2"
+        },
+        "onsetDateTime" : "2020-01-08T04:00:00+01:00",
+        "recordedDate" : "2020-01-08T09:00:00+01:00"
+      },
+      "request" : {
+        "method" : "POST",
+        "url" : "Condition"
+      }
+    },
+    {
+      "fullUrl" : "https://www.medizininformatik-initiative.de/Condition/mii-exa-diagnose-condition-elbow-contusion",
+      "resource" : {
+        "resourceType" : "Condition",
+        "id" : "mii-exa-diagnose-condition-elbow-contusion",
+        "meta" : {
+          "profile" : [
+            "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0-dev.1"
+          ],
+          "security" : [
+            {
+              "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code" : "HTEST",
+              "display" : "test health data"
+            }
+          ]
+        },
+        "text" : {
+          "status" : "extensions",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><a name=\"Condition_mii-exa-diagnose-condition-elbow-contusion\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Condition mii-exa-diagnose-condition-elbow-contusion</b></p><a name=\"mii-exa-diagnose-condition-elbow-contusion\"> </a><a name=\"hcmii-exa-diagnose-condition-elbow-contusion\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-diagnose-condition.html\">MII PR Diagnose Conditionversion: null2026.0.0-dev.1)</a></p><p style=\"margin-bottom: 0px\">Security Label: test health data (Details: ActReason code HTEST = 'test health data')</p></div><p><b>Condition Asserted Date</b>: 2020-01-08 08:00:00+0100</p><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical resolved}\">Resolved</span></p><p><b>verificationStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}\">Confirmed</span></p><p><b>code</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/bfarm/icd-10-gm S50.0}, {http://snomed.info/sct 91613004}\">Prellung des Ellenbogens</span></p><p><b>subject</b>: <a href=\"Patient-mii-exa-person-patient-1.html\">Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))</a></p><p><b>encounter</b>: <a href=\"Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html\">Encounter: identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Abteilungskontakt; serviceType = Allgemeine Chirurgie; period = 2020-01-08 09:00:00+0100 --&gt; 2020-01-11 23:59:00+0100</a></p><p><b>onset</b>: 2020-01-08 06:00:00+0100</p><p><b>recordedDate</b>: 2020-01-08 09:00:00+0100</p></div></div>"
+        },
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/condition-assertedDate",
+            "valueDateTime" : "2020-01-08T08:00:00+01:00"
+          }
+        ],
+        "clinicalStatus" : {
+          "coding" : [
+            {
+              "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code" : "resolved"
+            }
+          ]
+        },
+        "verificationStatus" : {
+          "coding" : [
+            {
+              "system" : "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code" : "confirmed"
+            }
+          ]
+        },
+        "code" : {
+          "coding" : [
+            {
+              "system" : "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+              "version" : "2020",
+              "code" : "S50.0",
+              "display" : "Prellung des Ellenbogens"
+            },
+            {
+              "system" : "http://snomed.info/sct",
+              "code" : "91613004",
+              "display" : "Contusion of elbow"
+            }
+          ]
+        },
+        "subject" : {
+          "reference" : "Patient/mii-exa-person-patient-1"
+        },
+        "encounter" : {
+          "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2"
+        },
+        "onsetDateTime" : "2020-01-08T06:00:00+01:00",
+        "recordedDate" : "2020-01-08T09:00:00+01:00"
+      },
+      "request" : {
+        "method" : "POST",
+        "url" : "Condition"
+      }
+    },
+    {
+      "fullUrl" : "https://www.medizininformatik-initiative.de/Condition/mii-exa-diagnose-condition-multiple-codings",
+      "resource" : {
+        "resourceType" : "Condition",
+        "id" : "mii-exa-diagnose-condition-multiple-codings",
+        "meta" : {
+          "profile" : [
+            "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0-dev.1"
+          ],
+          "security" : [
+            {
+              "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code" : "HTEST",
+              "display" : "test health data"
+            }
+          ]
+        },
+        "text" : {
+          "status" : "extensions",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><a name=\"Condition_mii-exa-diagnose-condition-multiple-codings\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Condition mii-exa-diagnose-condition-multiple-codings</b></p><a name=\"mii-exa-diagnose-condition-multiple-codings\"> </a><a name=\"hcmii-exa-diagnose-condition-multiple-codings\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-diagnose-condition.html\">MII PR Diagnose Conditionversion: null2026.0.0-dev.1)</a></p><p style=\"margin-bottom: 0px\">Security Label: test health data (Details: ActReason code HTEST = 'test health data')</p></div><p><b>Condition Asserted Date</b>: 2020-01-13 14:00:00+0100</p><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>verificationStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}\">Confirmed</span></p><p><b>code</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/bfarm/icd-10-gm H83.8}, {http://fhir.de/CodeSystem/bfarm/alpha-id I125918}, {http://www.orpha.net 420402}\">Sonstige näher bezeichnete Krankheiten des Innenohres</span></p><p><b>subject</b>: <a href=\"Patient-mii-exa-person-patient-1.html\">Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))</a></p><p><b>encounter</b>: <a href=\"Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.html\">Encounter: identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Abteilungskontakt; serviceType = Innere Medizin; period = 2020-01-12 00:00:00+0100 --&gt; 2020-01-17 18:00:00+0100</a></p><p><b>onset</b>: 2020-01-13 14:00:00+0100</p><p><b>recordedDate</b>: 2020-01-13 16:00:00+0100</p></div></div>"
+        },
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/condition-assertedDate",
+            "valueDateTime" : "2020-01-13T14:00:00+01:00"
+          }
+        ],
+        "clinicalStatus" : {
+          "coding" : [
+            {
+              "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code" : "active"
+            }
+          ]
+        },
+        "verificationStatus" : {
+          "coding" : [
+            {
+              "system" : "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code" : "confirmed"
+            }
+          ]
+        },
+        "code" : {
+          "coding" : [
+            {
+              "system" : "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+              "version" : "2020",
+              "code" : "H83.8",
+              "display" : "Sonstige näher bezeichnete Krankheiten des Innenohres"
+            },
+            {
+              "system" : "http://fhir.de/CodeSystem/bfarm/alpha-id",
+              "version" : "2020",
+              "code" : "I125918"
+            },
+            {
+              "system" : "http://www.orpha.net",
+              "code" : "420402",
+              "display" : "Semicircular canal dehiscence syndrome"
+            }
+          ]
+        },
+        "subject" : {
+          "reference" : "Patient/mii-exa-person-patient-1"
+        },
+        "encounter" : {
+          "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7"
+        },
+        "onsetDateTime" : "2020-01-13T14:00:00+01:00",
+        "recordedDate" : "2020-01-13T16:00:00+01:00"
+      },
+      "request" : {
+        "method" : "POST",
+        "url" : "Condition"
+      }
+    },
+    {
+      "fullUrl" : "https://www.medizininformatik-initiative.de/Procedure/mii-exa-prozedur-procedure",
+      "resource" : {
+        "resourceType" : "Procedure",
+        "id" : "mii-exa-prozedur-procedure",
+        "meta" : {
+          "profile" : [
+            "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.0-dev.1"
+          ],
+          "security" : [
+            {
+              "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code" : "HTEST",
+              "display" : "test health data"
+            }
+          ]
+        },
+        "text" : {
+          "status" : "extensions",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><a name=\"Procedure_mii-exa-prozedur-procedure\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Procedure mii-exa-prozedur-procedure</b></p><a name=\"mii-exa-prozedur-procedure\"> </a><a name=\"hcmii-exa-prozedur-procedure\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-prozedur-procedure.html\">MII PR Prozedur Procedureversion: null2026.0.0-dev.1)</a></p><p style=\"margin-bottom: 0px\">Security Label: test health data (Details: ActReason code HTEST = 'test health data')</p></div><p><b>ExtensionProzedurDokumentationsdatum</b>: 2020-01-08 23:00:00+0100</p><p><b>MII EX Prozedur Durchführungsabsicht</b>: <a href=\"http://snomed.info/id/262202000\">SNOMED CT: 262202000</a> (262202000)</p><p><b>status</b>: Completed</p><p><b>category</b>: <span title=\"Codes:{http://snomed.info/sct 387713003}\">387713003</span></p><p><b>code</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/bfarm/ops 5-470}, {http://snomed.info/sct 80146002}\">Appendektomie</span></p><p><b>subject</b>: <a href=\"Patient-mii-exa-person-patient-1.html\">Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))</a></p><p><b>encounter</b>: <a href=\"Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html\">Encounter: identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Abteilungskontakt; serviceType = Allgemeine Chirurgie; period = 2020-01-08 09:00:00+0100 --&gt; 2020-01-11 23:59:00+0100</a></p><p><b>performed</b>: 2020-01-08 20:30:00+0100 --&gt; 2020-01-08 22:15:00+0100</p><p><b>bodySite</b>: <span title=\"Codes:{http://snomed.info/sct 181255000}\">Appendix</span></p></div></div>"
+        },
+        "extension" : [
+          {
+            "url" : "http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum",
+            "valueDateTime" : "2020-01-08T23:00:00+01:00"
+          },
+          {
+            "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Durchfuehrungsabsicht",
+            "valueCoding" : {
+              "system" : "http://snomed.info/sct",
+              "code" : "262202000"
+            }
+          }
+        ],
+        "status" : "completed",
+        "category" : {
+          "coding" : [
+            {
+              "system" : "http://snomed.info/sct",
+              "code" : "387713003"
+            }
+          ]
+        },
+        "code" : {
+          "coding" : [
+            {
+              "system" : "http://fhir.de/CodeSystem/bfarm/ops",
+              "version" : "2020",
+              "code" : "5-470"
+            },
+            {
+              "system" : "http://snomed.info/sct",
+              "code" : "80146002"
+            }
+          ],
+          "text" : "Appendektomie"
+        },
+        "subject" : {
+          "reference" : "Patient/mii-exa-person-patient-1"
+        },
+        "encounter" : {
+          "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2"
+        },
+        "performedPeriod" : {
+          "start" : "2020-01-08T20:30:00+01:00",
+          "end" : "2020-01-08T22:15:00+01:00"
+        },
+        "bodySite" : [
+          {
+            "coding" : [
+              {
+                "system" : "http://snomed.info/sct",
+                "code" : "181255000"
+              }
+            ],
+            "text" : "Appendix"
+          }
+        ]
+      },
+      "request" : {
+        "method" : "POST",
+        "url" : "Procedure"
+      }
+    },
+    {
+      "fullUrl" : "https://www.medizininformatik-initiative.de/Procedure/mii-exa-prozedur-procedure-2",
+      "resource" : {
+        "resourceType" : "Procedure",
+        "id" : "mii-exa-prozedur-procedure-2",
+        "meta" : {
+          "profile" : [
+            "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.0-dev.1"
+          ],
+          "security" : [
+            {
+              "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code" : "HTEST",
+              "display" : "test health data"
+            }
+          ]
+        },
+        "text" : {
+          "status" : "extensions",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><a name=\"Procedure_mii-exa-prozedur-procedure-2\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Procedure mii-exa-prozedur-procedure-2</b></p><a name=\"mii-exa-prozedur-procedure-2\"> </a><a name=\"hcmii-exa-prozedur-procedure-2\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-prozedur-procedure.html\">MII PR Prozedur Procedureversion: null2026.0.0-dev.1)</a></p><p style=\"margin-bottom: 0px\">Security Label: test health data (Details: ActReason code HTEST = 'test health data')</p></div><p><b>ExtensionProzedurDokumentationsdatum</b>: 2020-01-17 00:00:00+0100</p><p><b>MII EX Prozedur Durchführungsabsicht</b>: <a href=\"http://snomed.info/id/262202000\">SNOMED CT: 262202000</a> (262202000)</p><p><b>status</b>: Completed</p><p><b>category</b>: <span title=\"Codes:{http://snomed.info/sct 277132007}\">277132007</span></p><p><b>code</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/bfarm/ops 8-561.1}\">Funktionsorientierte physikalische Monotherapie</span></p><p><b>subject</b>: <a href=\"Patient-mii-exa-person-patient-1.html\">Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))</a></p><p><b>encounter</b>: <a href=\"Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.html\">Encounter: identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Abteilungskontakt; serviceType = Innere Medizin; period = 2020-01-12 00:00:00+0100 --&gt; 2020-01-17 18:00:00+0100</a></p><p><b>performed</b>: 2020-01-13 00:00:00+0100 --&gt; 2020-01-16 00:00:00+0100</p><p><b>bodySite</b>: <span title=\"Codes:{http://snomed.info/sct 85562004}\">Hand structure</span></p></div></div>"
+        },
+        "extension" : [
+          {
+            "url" : "http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum",
+            "valueDateTime" : "2020-01-17T00:00:00+01:00"
+          },
+          {
+            "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Durchfuehrungsabsicht",
+            "valueCoding" : {
+              "system" : "http://snomed.info/sct",
+              "code" : "262202000"
+            }
+          }
+        ],
+        "status" : "completed",
+        "category" : {
+          "coding" : [
+            {
+              "system" : "http://snomed.info/sct",
+              "code" : "277132007"
+            }
+          ]
+        },
+        "code" : {
+          "coding" : [
+            {
+              "system" : "http://fhir.de/CodeSystem/bfarm/ops",
+              "version" : "2020",
+              "code" : "8-561.1"
+            }
+          ],
+          "text" : "Funktionsorientierte physikalische Monotherapie"
+        },
+        "subject" : {
+          "reference" : "Patient/mii-exa-person-patient-1"
+        },
+        "encounter" : {
+          "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7"
+        },
+        "performedPeriod" : {
+          "start" : "2020-01-13T00:00:00+01:00",
+          "end" : "2020-01-16T00:00:00+01:00"
+        },
+        "bodySite" : [
+          {
+            "coding" : [
+              {
+                "system" : "http://snomed.info/sct",
+                "code" : "85562004",
+                "display" : "Hand structure"
+              }
+            ]
+          }
+        ]
+      },
+      "request" : {
+        "method" : "POST",
+        "url" : "Procedure"
+      }
+    },
+    {
+      "fullUrl" : "https://www.medizininformatik-initiative.de/Procedure/mii-exa-prozedur-imaging",
+      "resource" : {
+        "resourceType" : "Procedure",
+        "id" : "mii-exa-prozedur-imaging",
+        "meta" : {
+          "profile" : [
+            "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.0-dev.1"
+          ],
+          "security" : [
+            {
+              "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code" : "HTEST",
+              "display" : "test health data"
+            }
+          ]
+        },
+        "text" : {
+          "status" : "extensions",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><a name=\"Procedure_mii-exa-prozedur-imaging\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Procedure mii-exa-prozedur-imaging</b></p><a name=\"mii-exa-prozedur-imaging\"> </a><a name=\"hcmii-exa-prozedur-imaging\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-prozedur-procedure.html\">MII PR Prozedur Procedureversion: null2026.0.0-dev.1)</a></p><p style=\"margin-bottom: 0px\">Security Label: test health data (Details: ActReason code HTEST = 'test health data')</p></div><p><b>ExtensionProzedurDokumentationsdatum</b>: 2020-01-08 10:30:00+0100</p><p><b>MII EX Prozedur Durchführungsabsicht</b>: <a href=\"http://snomed.info/id/261004008\">SNOMED CT: 261004008</a> (261004008)</p><p><b>status</b>: Completed</p><p><b>category</b>: <span title=\"Codes:{http://snomed.info/sct 363679005}\">363679005</span></p><p><b>code</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/bfarm/ops 3-207}, {http://snomed.info/sct 169070004}\">Native Computertomographie des Abdomens</span></p><p><b>subject</b>: <a href=\"Patient-mii-exa-person-patient-1.html\">Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))</a></p><p><b>encounter</b>: <a href=\"Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html\">Encounter: identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Abteilungskontakt; serviceType = Allgemeine Chirurgie; period = 2020-01-08 09:00:00+0100 --&gt; 2020-01-11 23:59:00+0100</a></p><p><b>performed</b>: 2020-01-08 10:00:00+0100</p><p><b>bodySite</b>: <span title=\"Codes:{http://snomed.info/sct 818981001}\">Abdomen</span></p></div></div>"
+        },
+        "extension" : [
+          {
+            "url" : "http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum",
+            "valueDateTime" : "2020-01-08T10:30:00+01:00"
+          },
+          {
+            "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Durchfuehrungsabsicht",
+            "valueCoding" : {
+              "system" : "http://snomed.info/sct",
+              "code" : "261004008"
+            }
+          }
+        ],
+        "status" : "completed",
+        "category" : {
+          "coding" : [
+            {
+              "system" : "http://snomed.info/sct",
+              "code" : "363679005"
+            }
+          ]
+        },
+        "code" : {
+          "coding" : [
+            {
+              "system" : "http://fhir.de/CodeSystem/bfarm/ops",
+              "version" : "2020",
+              "code" : "3-207"
+            },
+            {
+              "system" : "http://snomed.info/sct",
+              "code" : "169070004"
+            }
+          ],
+          "text" : "Native Computertomographie des Abdomens"
+        },
+        "subject" : {
+          "reference" : "Patient/mii-exa-person-patient-1"
+        },
+        "encounter" : {
+          "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2"
+        },
+        "performedDateTime" : "2020-01-08T10:00:00+01:00",
+        "bodySite" : [
+          {
+            "coding" : [
+              {
+                "system" : "http://snomed.info/sct",
+                "code" : "818981001"
+              }
+            ],
+            "text" : "Abdomen"
+          }
+        ]
+      },
+      "request" : {
+        "method" : "POST",
+        "url" : "Procedure"
+      }
+    },
+    {
+      "fullUrl" : "https://www.medizininformatik-initiative.de/Observation/mii-exa-person-observation-vitalstatus",
+      "resource" : {
+        "resourceType" : "Observation",
+        "id" : "mii-exa-person-observation-vitalstatus",
+        "meta" : {
+          "profile" : [
+            "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus|2026.0.0-dev.1"
+          ],
+          "security" : [
+            {
+              "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code" : "HTEST",
+              "display" : "test health data"
+            }
+          ]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><a name=\"Observation_mii-exa-person-observation-vitalstatus\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation mii-exa-person-observation-vitalstatus</b></p><a name=\"mii-exa-person-observation-vitalstatus\"> </a><a name=\"hcmii-exa-person-observation-vitalstatus\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-person-vitalstatus.html\">MII PR Person Vitalstatusversion: null2026.0.0-dev.1)</a></p><p style=\"margin-bottom: 0px\">Security Label: test health data (Details: ActReason code HTEST = 'test health data')</p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category survey}\">Survey</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 67162-8}\">Patient Disposition</span></p><p><b>subject</b>: <a href=\"Patient-mii-exa-person-patient-1.html\">Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))</a></p><p><b>encounter</b>: <a href=\"Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-9.html\">Encounter: extension = ; identifier = Visit number; status = finished; class = ambulatory (ActCode#AMB); type = Abteilungskontakt; priority = emergency; period = 2020-01-08 07:00:00+0100 --&gt; 2020-01-08 09:00:00+0100</a></p><p><b>effective</b>: 2020-01-08 07:00:00+0100</p><p><b>value</b>: <span title=\"Codes:{https://www.medizininformatik-initiative.de/fhir/core/modul-person/CodeSystem/Vitalstatus L}\">Patient lebt</span></p></div></div>"
+        },
+        "status" : "final",
+        "category" : [
+          {
+            "coding" : [
+              {
+                "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code" : "survey"
+              }
+            ]
+          }
+        ],
+        "code" : {
+          "coding" : [
+            {
+              "system" : "http://loinc.org",
+              "code" : "67162-8"
+            }
+          ]
+        },
+        "subject" : {
+          "reference" : "Patient/mii-exa-person-patient-1"
+        },
+        "encounter" : {
+          "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-9"
+        },
+        "effectiveDateTime" : "2020-01-08T07:00:00+01:00",
+        "valueCodeableConcept" : {
+          "coding" : [
+            {
+              "system" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/CodeSystem/Vitalstatus",
+              "code" : "L",
+              "display" : "Patient lebt"
+            }
+          ]
+        }
+      },
+      "request" : {
+        "method" : "POST",
+        "url" : "Observation"
+      }
+    },
+    {
+      "fullUrl" : "https://www.medizininformatik-initiative.de/Observation/mii-exa-person-observation-vitalstatus-discharge",
+      "resource" : {
+        "resourceType" : "Observation",
+        "id" : "mii-exa-person-observation-vitalstatus-discharge",
+        "meta" : {
+          "profile" : [
+            "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus|2026.0.0-dev.1"
+          ],
+          "security" : [
+            {
+              "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code" : "HTEST",
+              "display" : "test health data"
+            }
+          ]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><a name=\"Observation_mii-exa-person-observation-vitalstatus-discharge\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation mii-exa-person-observation-vitalstatus-discharge</b></p><a name=\"mii-exa-person-observation-vitalstatus-discharge\"> </a><a name=\"hcmii-exa-person-observation-vitalstatus-discharge\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-person-vitalstatus.html\">MII PR Person Vitalstatusversion: null2026.0.0-dev.1)</a></p><p style=\"margin-bottom: 0px\">Security Label: test health data (Details: ActReason code HTEST = 'test health data')</p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category survey}\">Survey</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 67162-8}\">Vital status</span></p><p><b>subject</b>: <a href=\"Patient-mii-exa-person-patient-1.html\">Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))</a></p><p><b>encounter</b>: <a href=\"Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.html\">Encounter: identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Abteilungskontakt; serviceType = Innere Medizin; period = 2020-01-12 00:00:00+0100 --&gt; 2020-01-17 18:00:00+0100</a></p><p><b>effective</b>: 2020-01-17 18:00:00+0100</p><p><b>value</b>: <span title=\"Codes:{https://www.medizininformatik-initiative.de/fhir/core/modul-person/CodeSystem/Vitalstatus L}\">Patient lebt</span></p></div></div>"
+        },
+        "status" : "final",
+        "category" : [
+          {
+            "coding" : [
+              {
+                "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code" : "survey"
+              }
+            ]
+          }
+        ],
+        "code" : {
+          "coding" : [
+            {
+              "system" : "http://loinc.org",
+              "code" : "67162-8"
+            }
+          ],
+          "text" : "Vital status"
+        },
+        "subject" : {
+          "reference" : "Patient/mii-exa-person-patient-1"
+        },
+        "encounter" : {
+          "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7"
+        },
+        "effectiveDateTime" : "2020-01-17T18:00:00+01:00",
+        "valueCodeableConcept" : {
+          "coding" : [
+            {
+              "system" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/CodeSystem/Vitalstatus",
+              "code" : "L",
+              "display" : "Patient lebt"
+            }
+          ],
+          "text" : "Patient lebt"
+        }
+      },
+      "request" : {
+        "method" : "POST",
+        "url" : "Observation"
+      }
+    }
+  ]
+}
+
+```

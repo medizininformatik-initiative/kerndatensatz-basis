@@ -1,0 +1,96 @@
+{
+  "resourceType" : "Patient",
+  "id" : "mii-exa-person-patient-1",
+  "meta" : {
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient|2026.0.0-dev.1"],
+    "security" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+      "code" : "HTEST",
+      "display" : "test health data"
+    }]
+  },
+  "language" : "de",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xml:lang=\"de\" lang=\"de\"><hr/><p><b>German</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: Patient mii-exa-person-patient-1</b></p><a name=\"de-mii-exa-person-patient-1\"> </a><a name=\"de-hcmii-exa-person-patient-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: en</p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mii-pr-person-patient.html\">MII PR Person Patientversion: null2026.0.0-dev.1)</a></p><p style=\"margin-bottom: 0px\">Security Label: test health data (Details: ActReason code HTEST = 'test health data')</p></div><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Krankenaktennummer\u00a0(use:\u00a0usual,\u00a0))</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Known status of Patient\">Deceased:</td><td colspan=\"3\">false</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Other Id (see the one above)\">Other Id:</td><td colspan=\"3\">Krankenversichertennummer/A999999999\u00a0(use:\u00a0official,\u00a0)</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Alternate names (see the one above)\">Alt. Name:</td><td colspan=\"3\">Bachmann (Name changed for Marriage)</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Detail</td><td colspan=\"3\">Anna-Louisa-Karsch Str. 2 Berlin DE-BE 10178 DE </td></tr></table></div>"
+  },
+  "identifier" : [{
+    "use" : "usual",
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code" : "MR"
+      }]
+    },
+    "system" : "https://www.charite.de/fhir/sid/patienten",
+    "value" : "42285243",
+    "assigner" : {
+      "identifier" : {
+        "system" : "https://www.medizininformatik-initiative.de/fhir/core/CodeSystem/core-location-identifier",
+        "value" : "Charité"
+      },
+      "display" : "Charité – Universitätsmedizin Berlin"
+    }
+  },
+  {
+    "use" : "official",
+    "type" : {
+      "coding" : [{
+        "system" : "http://fhir.de/CodeSystem/identifier-type-de-basis",
+        "code" : "KVZ10"
+      }]
+    },
+    "system" : "http://fhir.de/sid/gkv/kvid-10",
+    "value" : "A999999999",
+    "assigner" : {
+      "identifier" : {
+        "use" : "official",
+        "system" : "http://fhir.de/sid/arge-ik/iknr",
+        "value" : "260326822"
+      }
+    }
+  }],
+  "name" : [{
+    "use" : "official",
+    "family" : "Van-der-Dussen",
+    "_family" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+        "valueString" : "Van-der-Dussen"
+      }]
+    },
+    "given" : ["Maja",
+    "Julia"],
+    "prefix" : ["Prof. Dr. med."],
+    "_prefix" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier",
+        "valueCode" : "AC"
+      }]
+    }]
+  },
+  {
+    "use" : "maiden",
+    "family" : "Bachmann"
+  }],
+  "gender" : "female",
+  "birthDate" : "1998-09-19",
+  "deceasedBoolean" : false,
+  "address" : [{
+    "type" : "both",
+    "line" : ["Anna-Louisa-Karsch Str. 2"],
+    "city" : "Berlin",
+    "_city" : {
+      "extension" : [{
+        "url" : "http://fhir.de/StructureDefinition/destatis/ags",
+        "valueCoding" : {
+          "system" : "http://fhir.de/sid/destatis/ags",
+          "code" : "11000000"
+        }
+      }]
+    },
+    "state" : "DE-BE",
+    "postalCode" : "10178",
+    "country" : "DE"
+  }]
+}
