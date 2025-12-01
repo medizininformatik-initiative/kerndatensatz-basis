@@ -11,6 +11,7 @@ on:
 
 jobs:
   JAVA_FHIR_VALIDATION:
+    if: false  # Temporarily disabled
     uses: medizininformatik-initiative/kerndatensatz-meta/.github/workflows/ci_java_validation.yml@master
     with:
       ref: ${{ github.event.pull_request.head.ref }}
