@@ -54,7 +54,7 @@ This code system supplement `https://www.medizininformatik-initiative.de/fhir/co
   "title" : "MII CS Fall Supplement PatientClass",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-12-01T11:21:12+00:00",
+  "date" : "2025-12-02T14:44:33+00:00",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [

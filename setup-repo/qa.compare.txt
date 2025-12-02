@@ -4,7 +4,7 @@ MII_IG_Base : Validation Results
 err = 122, warn = 466, info = 184
 $--
 Generated $--. FHIR version $-- for de.medizininformatikinitiative.kerndatensatz.base#$-- (canonical = https://www.medizininformatik-initiative.de/fhir/modul-base)
- Build Errors : 55 / 2 / 0
+ Build Errors : 43 / 2 / 0
  /__w/kerndatensatz-basis/kerndatensatz-basis/fsh-generated/resources/Bundle-mii-exa-base-test-data-bundle-1 : 38 / 56 / 76
  /__w/kerndatensatz-basis/kerndatensatz-basis/fsh-generated/resources/CapabilityStatement-mii-cps-diagnose-capabilitystatement : 0 / 0 / 2
  /__w/kerndatensatz-basis/kerndatensatz-basis/fsh-generated/resources/CapabilityStatement-mii-cps-fall-capabilitystatement : 0 / 1 / 2
@@ -84,12 +84,6 @@ ERROR: de/changes.html#/html/body/div/div/div/div/div/ul/li/a at Line 361, colum
 ERROR: de/conformance.html#/html/body/div/div/div/div/div/p/p/a at Line 248, column 213: The link 'translationinfo.html' for "hier" cannot be resolved
 ERROR: de/datasets-and-descriptions.html#/html/body/div/div/div/div/div/p/p/a at Line 248, column 213: The link 'translationinfo.html' for "hier" cannot be resolved
 ERROR: de/downloads.html#/html/body/div/div/div/div/div/p/p/a at Line 248, column 213: The link 'translationinfo.html' for "hier" cannot be resolved
-ERROR: de/downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 275, column 8: The link 'package.tgz' for "Paket (komprimierter Ordner)" cannot be resolved
-ERROR: de/downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 291, column 8: The link 'examples.xml.zip' for "XML (komprimierter Ordner)" cannot be resolved
-ERROR: de/downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 292, column 8: The link 'examples.json.zip' for "JSON (komprimierter Ordner)" cannot be resolved
-ERROR: de/downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 300, column 8: The link 'csvs.zip' for "CSV (komprimierter Ordner)" cannot be resolved
-ERROR: de/downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 301, column 8: The link 'excels.zip' for "Excel (komprimierter Ordner)" cannot be resolved
-ERROR: de/downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 309, column 8: The link 'schematrons.zip' for "Schematrons (komprimierter Ordner)" cannot be resolved
 ERROR: de/examples.html#/html/body/div/div/div/div/div/p/p/a at Line 248, column 213: The link 'translationinfo.html' for "hier" cannot be resolved
 ERROR: de/examples.html#/html/body/div/div/div/div/div/p/a at Line 266, column 177: The link 'artifacts.html#example-example-instances' for "Artefakte" cannot be resolved (valid targets: [strukturen-ressourcenprofile, publish-box, segment-post-footer, language, verhalten-capabilitystatements, family-logo, select_flg, top, stripe, segment-footer, segment-content, strukturen-extension-definitionen, strukturen-logische-modelle, segment-header, bottom, hl7-logo, terminologie-valuesets, family-nav, ig-status, 1, 2, terminologie-codesysteme, 3, artefaktübersicht, 4, 5, 6, flaglist, 7, hl7-nav, segment-navbar, beispiel-beispielinstanzen, segment-breadcrumb])
 ERROR: de/examples.html#/html/body/div/div/div/div/div/ul/li/a at Line 273, column 8: The link 'examples.xml.zip' for "XML" cannot be resolved
@@ -116,12 +110,6 @@ ERROR: en/ImplementationGuide-mii-ig-base.html#/html/body/div/div/div/div/div/ul
 ERROR: en/ImplementationGuide-mii-ig-base.html#/html/body/div/div/div/div/div/ul/li/a at Line 270, column 8: The link 'ImplementationGuide-.ttl' for "TTL" cannot be resolved
 ERROR: en/StructureDefinition-mii-pr-person-patient-pseudonymisiert.html#/html/body/div/div/div/div/div/div/ul/li/ul/li/a at Line 403, column 16: The link '#best-practice---masked-insurance-id-with-ik-number' for "Best Practice - Masked Insurance ID with IK Number" cannot be resolved (valid targets: 857 targets)
 ERROR: en/changes.html#/html/body/div/div/div/div/div/ul/li/a at Line 354, column 131: The link 'StructureDefinition-mii-pr-fall-kontaktgesundheitseinrichtung.html' for "Encounter" cannot be resolved
-ERROR: en/downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 268, column 8: The link 'package.tgz' for "Package (compressed folder)" cannot be resolved
-ERROR: en/downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 284, column 8: The link 'examples.xml.zip' for "XML (compressed folder)" cannot be resolved
-ERROR: en/downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 285, column 8: The link 'examples.json.zip' for "JSON (compressed folder)" cannot be resolved
-ERROR: en/downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 293, column 8: The link 'csvs.zip' for "CSV (compressed folder)" cannot be resolved
-ERROR: en/downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 294, column 8: The link 'excels.zip' for "Excel (compressed folder)" cannot be resolved
-ERROR: en/downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 302, column 8: The link 'schematrons.zip' for "Schematrons (compressed folder)" cannot be resolved
 ERROR: en/examples.html#/html/body/div/div/div/div/div/ul/li/a at Line 266, column 8: The link 'examples.xml.zip' for "XML" cannot be resolved
 ERROR: en/examples.html#/html/body/div/div/div/div/div/ul/li/a at Line 267, column 8: The link 'examples.json.zip' for "JSON" cannot be resolved
 ERROR: en/examples.html#/html/body/div/div/div/div/div/ul/li/a at Line 268, column 8: The link 'examples.ttl.zip' for "TTL" cannot be resolved
