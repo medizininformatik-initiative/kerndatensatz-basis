@@ -45,18 +45,16 @@ jobs:
 
       - name: Start NGINX Proxy
         run: |
-          docker network create ig-build-network || true
           docker run -d --name nginx-proxy \
-            --network ig-build-network \
             -v $PWD/nginx/nginx.conf:/etc/nginx/nginx.conf:ro \
             -v $PWD/nginx/certs:/etc/nginx/certs:ro \
+            -p 8090:80 \
             nginx:alpine
 
           sleep 5
 
-          # Test NGINX from another container on the same network
           for i in {1..10}; do
-            if docker run --rm --network ig-build-network alpine:latest sh -c "wget -q --spider http://nginx-proxy:80 2>&1"; then
+            if curl --head --silent --fail http://localhost:8090; then
               echo "NGINX is responding."
               break
             else
@@ -72,12 +70,12 @@ jobs:
 
       # Run SUSHI (FSH -> FHIR conversion)
       - name: Run SUSHI
-        run: docker run --rm --network ig-build-network -v $PWD:/workspace -w /workspace ghcr.io/gefyra/ig-publisher-with-snapshot-support:latest sushi .
+        run: docker run --rm --network host -v $PWD:/workspace -w /workspace ghcr.io/gefyra/ig-publisher-with-snapshot-support:latest sushi .
       
       # Run the HL7 FHIR IG Publisher
       - name: Build IG
         run: |
-          docker run --rm --network ig-build-network -v $PWD:/workspace -w /workspace ghcr.io/gefyra/ig-publisher-with-snapshot-support:latest sh -c "igpublisher -ig ig.ini -tx http://nginx-proxy:80/fhir || true"
+          docker run --rm --network host -v $PWD:/workspace -w /workspace ghcr.io/gefyra/ig-publisher-with-snapshot-support:latest sh -c "igpublisher -ig ig.ini -tx http://127.0.0.1:8090/fhir || true"
           if [ -d "output" ] && [ "$(ls -A output)" ]; then
             echo "IG build produced output (Jekyll may have failed but core content exists)"
             exit 0
