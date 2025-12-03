@@ -20,8 +20,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    container:
-      image: ghcr.io/gefyra/ig-publisher-with-snapshot-support:latest
+    services:
+      nginx-proxy:
+        image: nginx:alpine
+        ports:
+          - 8090:80
+        volumes:
+          - ${{ github.workspace }}/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+          - ${{ github.workspace }}/nginx/certs:/etc/nginx/certs:ro
 
     steps:
       - name: Checkout
@@ -46,19 +52,10 @@ jobs:
           # Decrypt the private key using OpenSSL
           openssl rsa -in nginx/certs/client-key-encrypted.key -out nginx/certs/client-key.key -passin env:CDS_DEV_CLIENT_CERT_PASSWORD
 
-      - name: Start NGINX Proxy
+      - name: Wait for NGINX Proxy
         run: |
-          # Start NGINX in the same network as this container
-          docker run -d --name nginx-proxy \
-            --network $GITHUB_ACTIONS_NETWORK \
-            -v $GITHUB_WORKSPACE/nginx/nginx.conf:/etc/nginx/nginx.conf:ro \
-            -v $GITHUB_WORKSPACE/nginx/certs:/etc/nginx/certs:ro \
-            nginx:alpine
-
-          sleep 5  # Give NGINX some time to start
-
           for i in {1..10}; do
-            if curl --head --silent --fail http://nginx-proxy:80; then
+            if curl --head --silent --fail http://localhost:8090; then
               echo "NGINX is responding."
               break
             else
@@ -70,17 +67,15 @@ jobs:
               fi
             fi
           done
-        env:
-          GITHUB_ACTIONS_NETWORK: ${{ job.container.network }}
 
       # Run SUSHI (FSH -> FHIR conversion)
       - name: Run SUSHI
-        run: sushi .
+        run: docker run --rm --network ${{ job.services.nginx-proxy.network }} -v $PWD:/workspace -w /workspace ghcr.io/gefyra/ig-publisher-with-snapshot-support:latest sushi .
       
       # Run the HL7 FHIR IG Publisher
       - name: Build IG
         run: |
-          igpublisher -ig ig.ini -tx http://nginx-proxy:80/fhir || true
+          docker run --rm --network ${{ job.services.nginx-proxy.network }} -v $PWD:/workspace -w /workspace ghcr.io/gefyra/ig-publisher-with-snapshot-support:latest sh -c "igpublisher -ig ig.ini -tx http://nginx-proxy:80/fhir || true"
           if [ -d "output" ] && [ "$(ls -A output)" ]; then
             echo "IG build produced output (Jekyll may have failed but core content exists)"
             exit 0
