@@ -51,7 +51,7 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 - **Changed**: Abhängigkeit von de.basisprofil.r4 auf Version 1.5.0 aktualisiert. Diese Änderung hat keine Auswirkungen auf Implementierungen dieses Moduls
 - **Changed**: Profile enthalten zusätzliche Beschreibungen und Übersetzungen für Implementierer und das Forschungsdatenportal Gesundheit (FDPG)
 - **Removed**: Suchparameter aus diesem Modul entfernt. SearchParameter-Ressourcen werden nun zentral im Meta-Modul verwaltet
-- **Changed**: Kardinalität von `Encounter.period` im [Encounter](StructureDefinition-mii-pr-fall-kontaktgesundheitseinrichtung.html)-Profil von 1..1 auf 0..1, um geplante Behandlungsfälle darzustellen, bei denen der tatsächliche Zeitraum noch unbekannt ist. Siehe: https://github.com/medizininformatik-initiative/kerndatensatzmodul-fall/issues/56
+- **Changed**: Kardinalität von `Encounter.period` im [Encounter](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html)-Profil von 1..1 auf 0..1, um geplante Behandlungsfälle darzustellen, bei denen der tatsächliche Zeitraum noch unbekannt ist. Siehe: https://github.com/medizininformatik-initiative/kerndatensatzmodul-fall/issues/56
 - **Added**: Constraints prüfen nun das Vorhandensein von Start- und Endzeiten (`Encounter.period`) abhängig vom Status eines Falls
 - **Added**: Erweiterung des Encounter-Profils mit zwei Extensions für geplante Start- und Enddaten in `Encounter.extension`
 - **Fixed**: Korrektur des ValueSet-Bindings auf Element `Encounter.serviceType.coding:ErweiterterFachabteilungsschluessel` zu [http://fhir.de/ValueSet/dkgev/Fachabteilungsschluessel-erweitert](https://simplifier.net/packages/de.basisprofil.r4/1.4.0/files/656779)

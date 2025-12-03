@@ -19,21 +19,63 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/gefyra/ig-publisher-with-snapshot-support:latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Create NGINX config and certificates
+        shell: bash
+        env:
+          CDS_DEV_CLIENT_CERT: ${{ secrets.CDS_DEV_CLIENT_CERT }}
+          CDS_DEV_CLIENT_KEY: ${{ secrets.CDS_DEV_CLIENT_KEY }}
+          CDS_DEV_CLIENT_CERT_PASSWORD: ${{ secrets.CDS_DEV_CLIENT_CERT_PASSWORD }}
+        run: |
+          mkdir -p nginx/certs
+
+          # Download the NGINX config
+          curl -sSL -o nginx/nginx.conf https://raw.githubusercontent.com/medizininformatik-initiative/kerndatensatz-meta/refs/heads/master/.github/workflows/nginx.conf
+
+          # Decode and save the client certificate and key
+          echo "$CDS_DEV_CLIENT_CERT" | base64 -d > nginx/certs/client-cert.pem
+          echo "$CDS_DEV_CLIENT_KEY" | base64 -d > nginx/certs/client-key-encrypted.key
+
+          # Decrypt the private key using OpenSSL
+          openssl rsa -in nginx/certs/client-key-encrypted.key -out nginx/certs/client-key.key -passin env:CDS_DEV_CLIENT_CERT_PASSWORD
+
+      - name: Start NGINX Proxy
+        run: |
+          docker run -d --name nginx-proxy \
+            -v $PWD/nginx/nginx.conf:/etc/nginx/nginx.conf:ro \
+            -v $PWD/nginx/certs:/etc/nginx/certs:ro \
+            -p 8090:80 \
+            nginx:alpine
+
+          sleep 5
+
+          for i in {1..10}; do
+            if curl --head --silent --fail http://localhost:8090; then
+              echo "NGINX is responding."
+              break
+            else
+              echo "NGINX not responding. Attempt $i"
+              sleep 2
+              if [ $i -eq 10 ]; then
+                echo "NGINX is still not responding after $i attempts."
+                docker logs nginx-proxy
+                exit 1
+              fi
+            fi
+          done
+
       # Run SUSHI (FSH -> FHIR conversion)
       - name: Run SUSHI
-        run: sushi .
+        run: docker run --rm --network host -v $PWD:/workspace -w /workspace ghcr.io/gefyra/ig-publisher-with-snapshot-support:latest sushi .
       
       # Run the HL7 FHIR IG Publisher
       - name: Build IG
         run: |
-          igpublisher -ig ig.ini || true
+          docker run --rm --network host -v $PWD:/workspace -w /workspace ghcr.io/gefyra/ig-publisher-with-snapshot-support:latest sh -c "igpublisher -ig ig.ini -tx http://127.0.0.1:8090/fhir || true"
           if [ -d "output" ] && [ "$(ls -A output)" ]; then
             echo "IG build produced output (Jekyll may have failed but core content exists)"
             exit 0
@@ -41,6 +83,15 @@ jobs:
             echo "IG build failed to produce output"
             exit 1
           fi
+      
+      - name: Cleanup NGINX
+        if: always()
+        run: |
+          docker stop nginx-proxy || true
+          docker rm nginx-proxy || true
+
+      - name: Fix output directory permissions
+        run: sudo chown -R $USER:$USER output
 
       - name: Record branch metadata for Pages cleanup
         if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/')
