@@ -16,11 +16,11 @@ Security Label: test health data (Details: ActReason code HTEST = 'test health d
 
 **ExtensionProzedurDokumentationsdatum**: 2020-01-08 10:30:00+0100
 
-**MII EX Prozedur Durchführungsabsicht**: [SNOMED CT: 261004008](http://snomed.info/id/261004008) (261004008)
+**MII EX Prozedur Durchführungsabsicht**: [SNOMED CT: 261004008](http://snomed.info/id/261004008) (Diagnostic intent)
 
 **status**: Completed
 
-**category**: 363679005
+**category**: Imaging
 
 **code**: Native Computertomographie des Abdomens
 

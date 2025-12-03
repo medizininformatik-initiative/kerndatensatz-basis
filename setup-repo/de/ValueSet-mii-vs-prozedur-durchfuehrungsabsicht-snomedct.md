@@ -19,7 +19,9 @@ Durchführungsabsicht / Intention mit der Prozedur ausgeführt wird
 
 ### Expansion
 
-No Expansion for this valueset (not supported by Publication Tooling)
+Expansion from 127.0.0.1 based on SNOMED CT International edition 01-Jul 2024
+
+This value set expansion contains 9 concepts.
 
 -------
 

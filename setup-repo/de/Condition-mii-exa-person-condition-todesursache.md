@@ -14,9 +14,9 @@ Profile: [MII PR Person Todesursacheversion: null2026.0.0-dev.1)](StructureDefin
 
 Security Label: test health data (Details: ActReason code HTEST = 'test health data')
 
-**category**: 16100001
+**category**: Death diagnosis
 
-**code**: Death occurring less than 24 hours from onset of symptoms, not otherwise explained
+**code**: Todeseintritt innerhalb von weniger als 24 Stunden nach Beginn der Symptome, ohne anderweitige Angabe
 
 **subject**: [Anonymous Patient Female, DoB: 1998 ( Krankenversichertennummer (use: official, ))](Patient-mii-exa-person-patient-pseudonymisiert.md)
 

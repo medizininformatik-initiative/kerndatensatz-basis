@@ -32,7 +32,18 @@ This value set includes codes based on the following rules:
 
 ### Expansion
 
-No Expansion for this valueset (not supported by Publication Tooling)
+Expansion from 127.0.0.1 based on:
+
+* codesystem Alpha-ID version 2019
+* codesystem Alpha-ID version 2018
+* codesystem Alpha-ID version 2025
+* codesystem Alpha-ID version 2024
+* codesystem Alpha-ID version 2023
+* codesystem Alpha-ID version 2022
+* codesystem Alpha-ID version 2021
+* codesystem Alpha-ID version 2020
+
+This value set has 677,145 codes in it. In order to keep the publication size manageable, only a selection (1,000 codes) of the whole set of codes is shown.
 
 -------
 
