@@ -15,7 +15,7 @@ The following profiles have been defined for this implementation guide. They are
 
 #### Treatment Case Module Profiles
 
-* [MII PR Fall Kontakt Gesundheitseinrichtung](StructureDefinition-mii-pr-fall-kontaktgesundheitseinrichtung.md) - Encounter/contact with healthcare facility
+* [MII PR Fall Kontakt Gesundheitseinrichtung](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.md) - Encounter/contact with healthcare facility
 
 #### Diagnosis Module Profiles
 

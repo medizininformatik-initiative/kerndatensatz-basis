@@ -3,8 +3,8 @@ MII_IG_Base : Validation Results
 
 err = 18, warn = 1398, info = 182
 IG Publisher Version: 2.0.27
-Generated Wed Dec 03 09:27:32 UTC 2025. FHIR version 4.0.1 for de.medizininformatikinitiative.kerndatensatz.base#2026.0.0-dev.1 (canonical = https://www.medizininformatik-initiative.de/fhir/modul-base)
- Build Errors : 43 / 2 / 0
+Generated Wed Dec 03 10:32:43 UTC 2025. FHIR version 4.0.1 for de.medizininformatikinitiative.kerndatensatz.base#2026.0.0-dev.1 (canonical = https://www.medizininformatik-initiative.de/fhir/modul-base)
+ Build Errors : 39 / 2 / 0
  /workspace/fsh-generated/resources/Bundle-mii-exa-base-test-data-bundle-1 : 6 / 37 / 70
  /workspace/fsh-generated/resources/CapabilityStatement-mii-cps-diagnose-capabilitystatement : 0 / 3 / 2
  /workspace/fsh-generated/resources/CapabilityStatement-mii-cps-fall-capabilitystatement : 0 / 4 / 2
@@ -80,7 +80,6 @@ ERROR: de/ImplementationGuide-mii-ig-base.html#/html/body/div/div/div/div/div/ul
 ERROR: de/StructureDefinition-mii-pr-person-patient-pseudonymisiert.html#/html/body/div/div/div/div/div/div/ul/li/ul/li/a at Line 403, column 18: The link '#best-practice---maskierte-versicherten-id-mit-ik-nummer' for "Best Practice - Maskierte Versicherten-ID mit IK-Nummer" cannot be resolved (valid targets: 857 targets)
 ERROR: de/capability-statements.html#/html/body/div/div/div/div/div/p/p/a at Line 248, column 213: The link 'translationinfo.html' for "hier" cannot be resolved
 ERROR: de/changes.html#/html/body/div/div/div/div/div/p/p/a at Line 248, column 213: The link 'translationinfo.html' for "hier" cannot be resolved
-ERROR: de/changes.html#/html/body/div/div/div/div/div/ul/li/a at Line 361, column 129: The link 'StructureDefinition-mii-pr-fall-kontaktgesundheitseinrichtung.html' for "Encounter" cannot be resolved
 ERROR: de/conformance.html#/html/body/div/div/div/div/div/p/p/a at Line 248, column 213: The link 'translationinfo.html' for "hier" cannot be resolved
 ERROR: de/datasets-and-descriptions.html#/html/body/div/div/div/div/div/p/p/a at Line 248, column 213: The link 'translationinfo.html' for "hier" cannot be resolved
 ERROR: de/downloads.html#/html/body/div/div/div/div/div/p/p/a at Line 248, column 213: The link 'translationinfo.html' for "hier" cannot be resolved
@@ -97,7 +96,6 @@ ERROR: de/logical-models.html#/html/body/div/div/div/div/div/p/p/a at Line 248, 
 ERROR: de/missing-data.html#/html/body/div/div/div/div/div/p/p/a at Line 248, column 213: The link 'translationinfo.html' for "hier" cannot be resolved
 ERROR: de/must-support.html#/html/body/div/div/div/div/div/p/p/a at Line 248, column 213: The link 'translationinfo.html' for "hier" cannot be resolved
 ERROR: de/profiles-and-extensions.html#/html/body/div/div/div/div/div/p/p/a at Line 248, column 213: The link 'translationinfo.html' for "hier" cannot be resolved
-ERROR: de/profiles-and-extensions.html#/html/body/div/div/div/div/div/ul/li/a at Line 286, column 8: The link 'StructureDefinition-mii-pr-fall-kontaktgesundheitseinrichtung.html' for "MII PR Fall Kontakt Gesundheitseinrichtung" cannot be resolved
 ERROR: de/researcher-guidance.html#/html/body/div/div/div/div/div/p/p/a at Line 248, column 213: The link 'translationinfo.html' for "hier" cannot be resolved
 ERROR: de/search-parameters-and-operations.html#/html/body/div/div/div/div/div/p/p/a at Line 248, column 213: The link 'translationinfo.html' for "hier" cannot be resolved
 ERROR: de/terminology.html#/html/body/div/div/div/div/div/p/p/a at Line 248, column 213: The link 'translationinfo.html' for "hier" cannot be resolved
@@ -109,11 +107,9 @@ ERROR: en/ImplementationGuide-mii-ig-base.html#/html/body/div/div/div/div/div/ul
 ERROR: en/ImplementationGuide-mii-ig-base.html#/html/body/div/div/div/div/div/ul/li/a at Line 269, column 8: The link 'ImplementationGuide-.json' for "JSON" cannot be resolved
 ERROR: en/ImplementationGuide-mii-ig-base.html#/html/body/div/div/div/div/div/ul/li/a at Line 270, column 8: The link 'ImplementationGuide-.ttl' for "TTL" cannot be resolved
 ERROR: en/StructureDefinition-mii-pr-person-patient-pseudonymisiert.html#/html/body/div/div/div/div/div/div/ul/li/ul/li/a at Line 403, column 16: The link '#best-practice---masked-insurance-id-with-ik-number' for "Best Practice - Masked Insurance ID with IK Number" cannot be resolved (valid targets: 857 targets)
-ERROR: en/changes.html#/html/body/div/div/div/div/div/ul/li/a at Line 354, column 131: The link 'StructureDefinition-mii-pr-fall-kontaktgesundheitseinrichtung.html' for "Encounter" cannot be resolved
 ERROR: en/examples.html#/html/body/div/div/div/div/div/ul/li/a at Line 266, column 8: The link 'examples.xml.zip' for "XML" cannot be resolved
 ERROR: en/examples.html#/html/body/div/div/div/div/div/ul/li/a at Line 267, column 8: The link 'examples.json.zip' for "JSON" cannot be resolved
 ERROR: en/examples.html#/html/body/div/div/div/div/div/ul/li/a at Line 268, column 8: The link 'examples.ttl.zip' for "TTL" cannot be resolved
-ERROR: en/profiles-and-extensions.html#/html/body/div/div/div/div/div/ul/li/a at Line 279, column 8: The link 'StructureDefinition-mii-pr-fall-kontaktgesundheitseinrichtung.html' for "MII PR Fall Kontakt Gesundheitseinrichtung" cannot be resolved
 ERROR: en/terminology.html#/html/body/div/div/div/div/div/ul/li/a at Line 320, column 8: The link 'CodeSystem-mii-cs-fall-supplement-actencountercode.html' for "MII CS Fall Supplement ActEncounterCode" cannot be resolved
 ERROR: en/terminology.html#/html/body/div/div/div/div/div/ul/li/a at Line 321, column 8: The link 'CodeSystem-mii-cs-fall-supplement-patientclass.html' for "MII CS Fall Supplement PatientClass" cannot be resolved
 WARNING: 2: An HTML fragment from the set [cross-version-analysis.xhtml, cross-version-analysis-inline.xhtml, cross-version-analysis.xhtml, cross-version-analysis-inline.xhtml] is not included anywhere in the produced implementation guide
