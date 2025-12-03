@@ -19,7 +19,9 @@ Enthaelt alle SNOMED CT Codes für ein Mapping der OPS Klassentitel
 
 ### Expansion
 
-No Expansion for this valueset (not supported by Publication Tooling)
+Expansion from 127.0.0.1 based on SNOMED CT International edition 01-Jul 2024
+
+This value set expansion contains 6 concepts.
 
 -------
 

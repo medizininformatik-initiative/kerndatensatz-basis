@@ -18,7 +18,7 @@ Die folgenden Profile wurden für diesen Implementierungsleitfaden definiert. Si
 
 #### Modul Fall Profile
 
-* [MII PR Fall Kontakt Gesundheitseinrichtung](StructureDefinition-mii-pr-fall-kontaktgesundheitseinrichtung.md) - Kontakt mit Gesundheitseinrichtung
+* [MII PR Fall Kontakt Gesundheitseinrichtung](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.md) - Kontakt mit Gesundheitseinrichtung
 
 #### Modul Diagnose Profile
 

@@ -41,7 +41,27 @@ This value set includes codes based on the following rules:
 
 ### Expansion
 
-No Expansion for this valueset (not supported by Publication Tooling)
+Expansion from 127.0.0.1 based on:
+
+* codesystem ICD-10-GM version 2023
+* codesystem ICD-10-GM version 2012
+* codesystem ICD-10-GM version 2022
+* codesystem ICD-10-GM version 2011
+* codesystem ICD-10-GM version 2021
+* codesystem ICD-10-GM version 2010
+* codesystem ICD-10-GM version 2020
+* codesystem ICD-10-GM version 2009
+* codesystem ICD-10-GM version 2019
+* codesystem ICD-10-GM version 2018
+* codesystem ICD-10-GM version 2017
+* codesystem ICD-10-GM version 2016
+* codesystem ICD-10-GM version 2015
+* codesystem ICD-10-GM version 2025
+* codesystem ICD-10-GM version 2014
+* codesystem ICD-10-GM version 2024
+* codesystem ICD-10-GM version 2013
+
+This value set has 263,015 codes in it. In order to keep the publication size manageable, only a selection (1,000 codes) of the whole set of codes is shown.
 
 -------
 

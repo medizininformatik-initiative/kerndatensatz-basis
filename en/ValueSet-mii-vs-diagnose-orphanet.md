@@ -23,7 +23,9 @@ Profile: [Shareable ValueSet](http://hl7.org/fhir/R4/shareablevalueset.html)
 
 ### Expansion
 
-No Expansion for this valueset (not supported by Publication Tooling)
+Expansion from 127.0.0.1 based on codesystem www.orpha.net version 2025
+
+This value set has 11,239 codes in it. In order to keep the publication size manageable, only a selection (1,000 codes) of the whole set of codes is shown.
 
 -------
 

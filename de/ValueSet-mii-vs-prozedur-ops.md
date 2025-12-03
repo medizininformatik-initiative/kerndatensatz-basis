@@ -40,7 +40,26 @@ This value set includes codes based on the following rules:
 
 ### Expansion
 
-No Expansion for this valueset (not supported by Publication Tooling)
+Expansion from 127.0.0.1 based on:
+
+* codesystem OPS version 2023
+* codesystem OPS version 2012
+* codesystem OPS version 2022
+* codesystem OPS version 2011
+* codesystem OPS version 2021
+* codesystem OPS version 2010
+* codesystem OPS version 2020
+* codesystem OPS version 2019
+* codesystem OPS version 2018
+* codesystem OPS version 2017
+* codesystem OPS version 2016
+* codesystem OPS version 2015
+* codesystem OPS version 2025
+* codesystem OPS version 2014
+* codesystem OPS version 2024
+* codesystem OPS version 2013
+
+This value set has 548,685 codes in it. In order to keep the publication size manageable, only a selection (1,000 codes) of the whole set of codes is shown.
 
 -------
 

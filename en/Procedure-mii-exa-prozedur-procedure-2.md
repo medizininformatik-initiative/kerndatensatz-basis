@@ -16,11 +16,11 @@ Security Label: test health data (Details: ActReason code HTEST = 'test health d
 
 **ExtensionProzedurDokumentationsdatum**: 2020-01-17 00:00:00+0100
 
-**MII EX Prozedur Durchführungsabsicht**: [SNOMED CT: 262202000](http://snomed.info/id/262202000) (262202000)
+**MII EX Prozedur Durchführungsabsicht**: [SNOMED CT: 262202000](http://snomed.info/id/262202000) (Therapeutic)
 
 **status**: Completed
 
-**category**: 277132007
+**category**: Therapeutic procedure
 
 **code**: Funktionsorientierte physikalische Monotherapie
 

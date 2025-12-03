@@ -16,11 +16,11 @@ Security Label: test health data (Details: ActReason code HTEST = 'test health d
 
 **ExtensionProzedurDokumentationsdatum**: 2020-01-08 23:00:00+0100
 
-**MII EX Prozedur Durchführungsabsicht**: [SNOMED CT: 262202000](http://snomed.info/id/262202000) (262202000)
+**MII EX Prozedur Durchführungsabsicht**: [SNOMED CT: 262202000](http://snomed.info/id/262202000) (Therapeutic)
 
 **status**: Completed
 
-**category**: 387713003
+**category**: Surgical procedure
 
 **code**: Appendektomie
 

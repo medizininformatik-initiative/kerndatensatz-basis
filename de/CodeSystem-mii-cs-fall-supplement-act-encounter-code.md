@@ -54,7 +54,7 @@ This code system supplement `https://www.medizininformatik-initiative.de/fhir/co
   "title" : "MII CS Fall Supplement ActEncounterCode",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-12-01T11:28:12+00:00",
+  "date" : "2025-12-03T11:25:41+00:00",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [
