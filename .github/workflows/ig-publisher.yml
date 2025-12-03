@@ -90,6 +90,9 @@ jobs:
           docker stop nginx-proxy || true
           docker rm nginx-proxy || true
 
+      - name: Fix output directory permissions
+        run: sudo chown -R $USER:$USER output
+
       - name: Record branch metadata for Pages cleanup
         if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/')
         run: |
