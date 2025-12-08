@@ -624,7 +624,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-person-tod
         "mustSupport" : true,
         "binding" : {
           "strength" : "required",
-          "valueSet" : "http://hl7.org/fhir/sid/icd-10/vs"
+          "valueSet" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/mii-vs-person-icd10who"
         }
       },
       {

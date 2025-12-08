@@ -10,8 +10,8 @@
       "systems" : ["http://fhir.de/CodeSystem/KontaktDiagnoseProzedur"],
       "uses" : {
       },
-      "ValueSet-mii-vs-fall-diagnosis-use.html" : "MII VS Fall Diagnosis Use",
-      "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung"
+      "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung",
+      "ValueSet-mii-vs-fall-diagnosis-use.html" : "MII VS Fall Diagnosis Use"
     },
     {
       "url" : "http://fhir.de/ValueSet/Diagnosesubtyp",
@@ -26,8 +26,8 @@
       ],
       "uses" : {
       },
-      "ValueSet-mii-vs-fall-diagnosis-use.html" : "MII VS Fall Diagnosis Use",
-      "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung"
+      "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung",
+      "ValueSet-mii-vs-fall-diagnosis-use.html" : "MII VS Fall Diagnosis Use"
     },
     {
       "url" : "http://fhir.de/ValueSet/EncounterClassDE",
@@ -1176,6 +1176,18 @@
       "uses" : {
       },
       "StructureDefinition-mii-pr-person-vitalstatus.html" : "MII PR Person Vitalstatus"
+    },
+    {
+      "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/mii-vs-person-icd10who",
+      "version" : "2026.0.0-dev.1",
+      "status" : "active",
+      "name" : "MII_VS_Person_ICD10WHO",
+      "title" : "MII VS Person ICD-10-WHO",
+      "description" : "MII VS Person ICD-10-WHO",
+      "systems" : ["http://hl7.org/fhir/sid/icd-10"],
+      "uses" : {
+      },
+      "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache"
     },
     {
       "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/mii-vs-prozedur-ops",

@@ -843,6 +843,19 @@ This publication includes IP covered under the following statements.
         "extension" : [
           {
             "url" : "code",
+            "valueString" : "special-url"
+          },
+          {
+            "url" : "value",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/mii-vs-person-icd10who"
+          }
+        ],
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension" : [
+          {
+            "url" : "code",
             "valueString" : "autoload-resources"
           },
           {
@@ -1775,6 +1788,19 @@ This publication includes IP covered under the following statements.
           {
             "url" : "value",
             "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/LogicalModel/Person"
+          }
+        ],
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension" : [
+          {
+            "url" : "code",
+            "valueCode" : "special-url"
+          },
+          {
+            "url" : "value",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/mii-vs-person-icd10who"
           }
         ],
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
@@ -3066,6 +3092,20 @@ This publication includes IP covered under the following statements.
         },
         "name" : "MII VS Fall Location Physical Type",
         "description" : "A coded type for the physical type of the location.",
+        "exampleBoolean" : false
+      },
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "ValueSet"
+          }
+        ],
+        "reference" : {
+          "reference" : "ValueSet/mii-vs-person-icd10who"
+        },
+        "name" : "MII VS Person ICD-10-WHO",
+        "description" : "MII VS Person ICD-10-WHO",
         "exampleBoolean" : false
       },
       {
