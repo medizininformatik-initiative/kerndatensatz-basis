@@ -1,8 +1,7 @@
 Diese ImplementationGuide-Ressource definiert die technischen Details dieser Publikation, einschließlich Abhängigkeiten und Veröffentlichungsparametern.
 
-- [XML](ImplementationGuide-{{site.data.ig.id}}.xml)
-- [JSON](ImplementationGuide-{{site.data.ig.id}}.json)
-- [TTL](ImplementationGuide-{{site.data.ig.id}}.ttl)
+- [XML](../ImplementationGuide-mii-ig-base.xml)
+- [JSON](../ImplementationGuide-mii-ig-base.json)
 
 ### Versionsübergreifende Analyse
 
