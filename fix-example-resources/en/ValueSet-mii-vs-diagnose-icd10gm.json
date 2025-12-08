@@ -1,0 +1,116 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "mii-vs-diagnose-icd10gm",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/StructureDefinition/shareablevalueset"]
+  },
+  "language" : "en",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: ValueSet mii-vs-diagnose-icd10gm</b></p><a name=\"mii-vs-diagnose-icd10gm\"> </a><a name=\"hcmii-vs-diagnose-icd10gm\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://hl7.org/fhir/R4/shareablevalueset.html\">Shareable ValueSet</a></p></div><p>This value set includes codes based on the following rules:</p><ul><li>Include all codes defined in <code>http://fhir.de/CodeSystem/bfarm/icd-10-gm</code><span title=\"Version is explicitly stated to be 2025\"> version &#x1F4CD;</span></li><li>Include all codes defined in <code>http://fhir.de/CodeSystem/bfarm/icd-10-gm</code><span title=\"Version is explicitly stated to be 2024\"> version &#x1F4CD;</span></li><li>Include all codes defined in <code>http://fhir.de/CodeSystem/bfarm/icd-10-gm</code><span title=\"Version is explicitly stated to be 2023\"> version &#x1F4CD;</span></li><li>Include all codes defined in <code>http://fhir.de/CodeSystem/bfarm/icd-10-gm</code><span title=\"Version is explicitly stated to be 2022\"> version &#x1F4CD;</span></li><li>Include all codes defined in <code>http://fhir.de/CodeSystem/bfarm/icd-10-gm</code><span title=\"Version is explicitly stated to be 2021\"> version &#x1F4CD;</span></li><li>Include all codes defined in <code>http://fhir.de/CodeSystem/bfarm/icd-10-gm</code><span title=\"Version is explicitly stated to be 2020\"> version &#x1F4CD;</span></li><li>Include all codes defined in <code>http://fhir.de/CodeSystem/bfarm/icd-10-gm</code><span title=\"Version is explicitly stated to be 2019\"> version &#x1F4CD;</span></li><li>Include all codes defined in <code>http://fhir.de/CodeSystem/bfarm/icd-10-gm</code><span title=\"Version is explicitly stated to be 2018\"> version &#x1F4CD;</span></li><li>Include all codes defined in <code>http://fhir.de/CodeSystem/bfarm/icd-10-gm</code><span title=\"Version is explicitly stated to be 2017\"> version &#x1F4CD;</span></li><li>Include all codes defined in <code>http://fhir.de/CodeSystem/bfarm/icd-10-gm</code><span title=\"Version is explicitly stated to be 2016\"> version &#x1F4CD;</span></li><li>Include all codes defined in <code>http://fhir.de/CodeSystem/bfarm/icd-10-gm</code><span title=\"Version is explicitly stated to be 2015\"> version &#x1F4CD;</span></li><li>Include all codes defined in <code>http://fhir.de/CodeSystem/bfarm/icd-10-gm</code><span title=\"Version is explicitly stated to be 2014\"> version &#x1F4CD;</span></li><li>Include all codes defined in <code>http://fhir.de/CodeSystem/bfarm/icd-10-gm</code><span title=\"Version is explicitly stated to be 2013\"> version &#x1F4CD;</span></li><li>Include all codes defined in <code>http://fhir.de/CodeSystem/bfarm/icd-10-gm</code><span title=\"Version is explicitly stated to be 2012\"> version &#x1F4CD;</span></li><li>Include all codes defined in <code>http://fhir.de/CodeSystem/bfarm/icd-10-gm</code><span title=\"Version is explicitly stated to be 2011\"> version &#x1F4CD;</span></li><li>Include all codes defined in <code>http://fhir.de/CodeSystem/bfarm/icd-10-gm</code><span title=\"Version is explicitly stated to be 2010\"> version &#x1F4CD;</span></li><li>Include all codes defined in <code>http://fhir.de/CodeSystem/bfarm/icd-10-gm</code><span title=\"Version is explicitly stated to be 2009\"> version &#x1F4CD;</span></li></ul></div>"
+  },
+  "extension" : [{
+    "url" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/StructureDefinition/mii-ex-meta-license-codeable",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/spdx-license",
+        "code" : "CC-BY-4.0",
+        "display" : "Creative Commons Attribution 4.0 International"
+      }]
+    }
+  }],
+  "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-icd10gm",
+  "version" : "2026.0.0-dev.1",
+  "name" : "MII_VS_Diagnose_ICD10GM",
+  "title" : "MII VS Diagnose ICD-10-GM",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2025-03-04",
+  "publisher" : "Medical Informatics Initiative (MII)",
+  "contact" : [{
+    "name" : "Medical Informatics Initiative (MII)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.medizininformatik-initiative.de/en"
+    }]
+  }],
+  "description" : "Enthaelt ICD-10-GM-Codes der Versionen 2009 bis 2025",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DE",
+      "display" : "Germany"
+    }]
+  }],
+  "copyright" : "WHO, BfArM 1994 - 2025 - Die Erstellung erfolgt unter Verwendung der maschinenlesbaren Fassung des Bundesinstituts für Arzneimittel und Medizinprodukte (BfArM).",
+  "compose" : {
+    "include" : [{
+      "system" : "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+      "version" : "2025"
+    },
+    {
+      "system" : "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+      "version" : "2024"
+    },
+    {
+      "system" : "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+      "version" : "2023"
+    },
+    {
+      "system" : "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+      "version" : "2022"
+    },
+    {
+      "system" : "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+      "version" : "2021"
+    },
+    {
+      "system" : "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+      "version" : "2020"
+    },
+    {
+      "system" : "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+      "version" : "2019"
+    },
+    {
+      "system" : "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+      "version" : "2018"
+    },
+    {
+      "system" : "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+      "version" : "2017"
+    },
+    {
+      "system" : "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+      "version" : "2016"
+    },
+    {
+      "system" : "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+      "version" : "2015"
+    },
+    {
+      "system" : "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+      "version" : "2014"
+    },
+    {
+      "system" : "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+      "version" : "2013"
+    },
+    {
+      "system" : "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+      "version" : "2012"
+    },
+    {
+      "system" : "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+      "version" : "2011"
+    },
+    {
+      "system" : "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+      "version" : "2010"
+    },
+    {
+      "system" : "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+      "version" : "2009"
+    }]
+  }
+}
