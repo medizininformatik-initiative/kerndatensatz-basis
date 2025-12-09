@@ -1,0 +1,1597 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="mii-exa-base-test-data-bundle-1"/>
+  <meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  <language value="de"/>
+  <type value="transaction"/>
+  <timestamp value="2025-11-28T09:38:00+01:00"/>
+  <entry>
+    <fullUrl value="https://www.medizininformatik-initiative.de/Patient/mii-exa-person-patient-1"/>
+    <resource>
+      <Patient>
+        <id value="mii-exa-person-patient-1"/>
+        <meta>
+          <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient|2026.0.0-dev.1"/>
+          <security>
+            <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+            <code value="HTEST"/>
+            <display value="test health data"/>
+          </security>
+        </meta>
+        <language value="de"/>
+        <text>
+          <status value="generated"/>
+        </text>
+        <identifier>
+          <use value="usual"/>
+          <type>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+              <code value="MR"/>
+            </coding>
+          </type>
+          <system value="https://www.charite.de/fhir/sid/patienten"/>
+          <value value="42285243"/>
+          <assigner>
+            <identifier>
+              <system value="https://www.medizininformatik-initiative.de/fhir/core/CodeSystem/core-location-identifier"/>
+              <value value="Charité"/>
+            </identifier>
+            <display value="Charité – Universitätsmedizin Berlin"/>
+          </assigner>
+        </identifier>
+        <identifier>
+          <use value="official"/>
+          <type>
+            <coding>
+              <system value="http://fhir.de/CodeSystem/identifier-type-de-basis"/>
+              <code value="KVZ10"/>
+            </coding>
+          </type>
+          <system value="http://fhir.de/sid/gkv/kvid-10"/>
+          <value value="A999999999"/>
+          <assigner>
+            <identifier>
+              <use value="official"/>
+              <system value="http://fhir.de/sid/arge-ik/iknr"/>
+              <value value="260326822"/>
+            </identifier>
+          </assigner>
+        </identifier>
+        <name>
+          <use value="official"/>
+          <family value="Van-der-Dussen">
+            <extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-name">
+              <valueString value="Van-der-Dussen"/>
+            </extension>
+          </family>
+          <given value="Maja"/>
+          <given value="Julia"/>
+          <prefix value="Prof. Dr. med.">
+            <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier">
+              <valueCode value="AC"/>
+            </extension>
+          </prefix>
+        </name>
+        <name>
+          <use value="maiden"/>
+          <family value="Bachmann"/>
+        </name>
+        <gender value="female"/>
+        <birthDate value="1998-09-19"/>
+        <deceasedBoolean value="false"/>
+        <address>
+          <type value="both"/>
+          <line value="Anna-Louisa-Karsch Str. 2"/>
+          <city value="Berlin">
+            <extension url="http://fhir.de/StructureDefinition/destatis/ags">
+              <valueCoding>
+                <system value="http://fhir.de/sid/destatis/ags"/>
+                <code value="11000000"/>
+              </valueCoding>
+            </extension>
+          </city>
+          <state value="DE-BE"/>
+          <postalCode value="10178"/>
+          <country value="DE"/>
+        </address>
+      </Patient>
+    </resource>
+    <request>
+      <method value="POST"/>
+      <url value="Patient"/>
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="https://www.medizininformatik-initiative.de/Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-8"/>
+    <resource>
+      <Encounter>
+        <id value="mii-exa-fall-kontakt-gesundheitseinrichtung-8"/>
+        <meta>
+          <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0-dev.1"/>
+          <security>
+            <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+            <code value="HTEST"/>
+            <display value="test health data"/>
+          </security>
+        </meta>
+        <language value="de"/>
+        <text>
+          <status value="generated"/>
+        </text>
+        <identifier>
+          <type>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+              <code value="VN"/>
+            </coding>
+          </type>
+          <system value="https://www.charite.de/fhir/sid/aufnahmenummer"/>
+          <value value="F_20190926_001"/>
+        </identifier>
+        <status value="finished"/>
+        <class>
+          <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
+          <code value="AMB"/>
+        </class>
+        <subject>
+          <reference value="Patient/mii-exa-person-patient-1"/>
+        </subject>
+        <period>
+          <start value="2019-09-26T10:00:00+02:00"/>
+          <end value="2019-09-26T12:00:00+02:00"/>
+        </period>
+        <serviceProvider>
+          <identifier>
+            <system value="http://fhir.de/sid/dkgev/iknr"/>
+            <value value="260950472"/>
+          </identifier>
+        </serviceProvider>
+      </Encounter>
+    </resource>
+    <request>
+      <method value="POST"/>
+      <url value="Encounter"/>
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="https://www.medizininformatik-initiative.de/Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1"/>
+    <resource>
+      <Encounter>
+        <id value="mii-exa-fall-kontakt-gesundheitseinrichtung-1"/>
+        <meta>
+          <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0-dev.1"/>
+          <security>
+            <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+            <code value="HTEST"/>
+            <display value="test health data"/>
+          </security>
+        </meta>
+        <language value="de"/>
+        <text>
+          <status value="generated"/>
+        </text>
+        <identifier>
+          <type>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+              <code value="VN"/>
+            </coding>
+          </type>
+          <system value="https://www.charite.de/fhir/sid/aufnahmenummer"/>
+          <value value="E0"/>
+        </identifier>
+        <status value="finished"/>
+        <class>
+          <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
+          <code value="IMP"/>
+        </class>
+        <type>
+          <coding>
+            <system value="http://fhir.de/CodeSystem/Kontaktebene"/>
+            <code value="einrichtungskontakt"/>
+          </coding>
+        </type>
+        <subject>
+          <reference value="Patient/mii-exa-person-patient-1"/>
+        </subject>
+        <period>
+          <start value="2020-01-08T07:00:00+01:00"/>
+          <end value="2020-01-17T18:00:00+01:00"/>
+        </period>
+        <account>
+          <identifier>
+            <system value="https://www.charite.de/fhir/sid/fallnummer"/>
+            <value value="F-2020-000123"/>
+          </identifier>
+          <display value="Account A1 - DRG G23B Appendektomie ohne schwere CC"/>
+        </account>
+        <hospitalization>
+          <admitSource>
+            <coding>
+              <system value="http://fhir.de/CodeSystem/dgkev/Aufnahmeanlass"/>
+              <code value="N"/>
+              <display value="Notfall"/>
+            </coding>
+          </admitSource>
+          <dischargeDisposition>
+            <extension url="http://fhir.de/StructureDefinition/Entlassungsgrund">
+              <extension url="ErsteUndZweiteStelle">
+                <valueCoding>
+                  <system value="http://fhir.de/CodeSystem/dkgev/EntlassungsgrundErsteUndZweiteStelle"/>
+                  <code value="01"/>
+                  <display value="Behandlung regulär beendet"/>
+                </valueCoding>
+              </extension>
+              <extension url="DritteStelle">
+                <valueCoding>
+                  <system value="http://fhir.de/CodeSystem/dkgev/EntlassungsgrundDritteStelle"/>
+                  <code value="1"/>
+                  <display value="arbeitsfähig entlassen"/>
+                </valueCoding>
+              </extension>
+            </extension>
+          </dischargeDisposition>
+        </hospitalization>
+        <serviceProvider>
+          <identifier>
+            <system value="http://fhir.de/sid/dkgev/iknr"/>
+            <value value="260950472"/>
+          </identifier>
+        </serviceProvider>
+      </Encounter>
+    </resource>
+    <request>
+      <method value="POST"/>
+      <url value="Encounter"/>
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="https://www.medizininformatik-initiative.de/Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-9"/>
+    <resource>
+      <Encounter>
+        <id value="mii-exa-fall-kontakt-gesundheitseinrichtung-9"/>
+        <meta>
+          <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0-dev.1"/>
+          <security>
+            <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+            <code value="HTEST"/>
+            <display value="test health data"/>
+          </security>
+        </meta>
+        <language value="de"/>
+        <text>
+          <status value="extensions"/>
+        </text>
+        <extension url="http://fhir.de/StructureDefinition/Aufnahmegrund">
+          <extension url="VierteStelle">
+            <valueCoding>
+              <system value="http://fhir.de/CodeSystem/dkgev/AufnahmegrundVierteStelle"/>
+              <code value="7"/>
+              <display value="Notfall"/>
+            </valueCoding>
+          </extension>
+        </extension>
+        <identifier>
+          <type>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+              <code value="VN"/>
+            </coding>
+          </type>
+          <system value="https://www.charite.de/fhir/sid/aufnahmenummer"/>
+          <value value="A1E"/>
+        </identifier>
+        <status value="finished"/>
+        <class>
+          <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
+          <code value="AMB"/>
+        </class>
+        <type>
+          <coding>
+            <system value="http://fhir.de/CodeSystem/Kontaktebene"/>
+            <code value="abteilungskontakt"/>
+          </coding>
+        </type>
+        <priority>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/v3-ActPriority"/>
+            <code value="EM"/>
+          </coding>
+        </priority>
+        <subject>
+          <reference value="Patient/mii-exa-person-patient-1"/>
+        </subject>
+        <period>
+          <start value="2020-01-08T07:00:00+01:00"/>
+          <end value="2020-01-08T09:00:00+01:00"/>
+        </period>
+        <account>
+          <identifier>
+            <system value="https://www.charite.de/fhir/sid/fallnummer"/>
+            <value value="F-2020-000123"/>
+          </identifier>
+          <display value="Account A1 - DRG G23B Appendektomie ohne schwere CC"/>
+        </account>
+        <serviceProvider>
+          <identifier>
+            <system value="http://fhir.de/sid/dkgev/iknr"/>
+            <value value="260950472"/>
+          </identifier>
+        </serviceProvider>
+        <partOf>
+          <reference value="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1"/>
+        </partOf>
+      </Encounter>
+    </resource>
+    <request>
+      <method value="POST"/>
+      <url value="Encounter"/>
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="https://www.medizininformatik-initiative.de/Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-11"/>
+    <resource>
+      <Encounter>
+        <id value="mii-exa-fall-kontakt-gesundheitseinrichtung-11"/>
+        <meta>
+          <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0-dev.1"/>
+          <security>
+            <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+            <code value="HTEST"/>
+            <display value="test health data"/>
+          </security>
+        </meta>
+        <language value="de"/>
+        <text>
+          <status value="generated"/>
+        </text>
+        <identifier>
+          <type>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+              <code value="VN"/>
+            </coding>
+          </type>
+          <system value="https://www.charite.de/fhir/sid/aufnahmenummer"/>
+          <value value="VS1"/>
+        </identifier>
+        <status value="finished"/>
+        <class>
+          <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
+          <code value="AMB"/>
+        </class>
+        <type>
+          <coding>
+            <system value="http://fhir.de/CodeSystem/Kontaktebene"/>
+            <code value="versorgungsstellenkontakt"/>
+          </coding>
+        </type>
+        <subject>
+          <reference value="Patient/mii-exa-person-patient-1"/>
+        </subject>
+        <period>
+          <start value="2020-01-08T07:00:00+01:00"/>
+          <end value="2020-01-08T09:00:00+01:00"/>
+        </period>
+        <account>
+          <identifier>
+            <system value="https://www.charite.de/fhir/sid/fallnummer"/>
+            <value value="F-2020-000123"/>
+          </identifier>
+          <display value="Account A1 - DRG G23B Appendektomie ohne schwere CC"/>
+        </account>
+        <location>
+          <location>
+            <display value="Emergency Department, Treatment Room 3"/>
+          </location>
+          <status value="completed"/>
+          <physicalType>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/location-physical-type"/>
+              <code value="ro"/>
+            </coding>
+          </physicalType>
+        </location>
+        <serviceProvider>
+          <identifier>
+            <system value="http://fhir.de/sid/dkgev/iknr"/>
+            <value value="260950472"/>
+          </identifier>
+        </serviceProvider>
+        <partOf>
+          <reference value="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-9"/>
+        </partOf>
+      </Encounter>
+    </resource>
+    <request>
+      <method value="POST"/>
+      <url value="Encounter"/>
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="https://www.medizininformatik-initiative.de/Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2"/>
+    <resource>
+      <Encounter>
+        <id value="mii-exa-fall-kontakt-gesundheitseinrichtung-2"/>
+        <meta>
+          <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0-dev.1"/>
+          <security>
+            <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+            <code value="HTEST"/>
+            <display value="test health data"/>
+          </security>
+        </meta>
+        <language value="de"/>
+        <text>
+          <status value="generated"/>
+        </text>
+        <identifier>
+          <type>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+              <code value="VN"/>
+            </coding>
+          </type>
+          <system value="https://www.charite.de/fhir/sid/aufnahmenummer"/>
+          <value value="A2E"/>
+        </identifier>
+        <status value="finished"/>
+        <class>
+          <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
+          <code value="IMP"/>
+        </class>
+        <type>
+          <coding>
+            <system value="http://fhir.de/CodeSystem/Kontaktebene"/>
+            <code value="abteilungskontakt"/>
+          </coding>
+        </type>
+        <serviceType>
+          <coding>
+            <system value="http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel"/>
+            <code value="1500"/>
+            <display value="Allgemeine Chirurgie"/>
+          </coding>
+        </serviceType>
+        <subject>
+          <reference value="Patient/mii-exa-person-patient-1"/>
+        </subject>
+        <period>
+          <start value="2020-01-08T09:00:00+01:00"/>
+          <end value="2020-01-11T23:59:00+01:00"/>
+        </period>
+        <diagnosis>
+          <condition>
+            <reference value="Condition/mii-exa-diagnose-appendicitis"/>
+          </condition>
+          <use>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/diagnosis-role"/>
+              <code value="AD"/>
+              <display value="Admission diagnosis"/>
+            </coding>
+          </use>
+        </diagnosis>
+        <diagnosis>
+          <condition>
+            <reference value="Condition/mii-exa-diagnose-appendicitis"/>
+          </condition>
+          <use>
+            <coding>
+              <system value="http://fhir.de/CodeSystem/KontaktDiagnoseProzedur"/>
+              <code value="treatment-diagnosis"/>
+            </coding>
+          </use>
+        </diagnosis>
+        <diagnosis>
+          <condition>
+            <reference value="Condition/mii-exa-diagnose-condition-elbow-contusion"/>
+          </condition>
+          <use>
+            <coding>
+              <system value="http://fhir.de/CodeSystem/KontaktDiagnoseProzedur"/>
+              <code value="treatment-diagnosis"/>
+            </coding>
+          </use>
+        </diagnosis>
+        <account>
+          <identifier>
+            <system value="https://www.charite.de/fhir/sid/fallnummer"/>
+            <value value="F-2020-000123"/>
+          </identifier>
+          <display value="Account A1 - DRG G23B Appendektomie ohne schwere CC"/>
+        </account>
+        <serviceProvider>
+          <identifier>
+            <system value="http://fhir.de/sid/dkgev/iknr"/>
+            <value value="260950472"/>
+          </identifier>
+        </serviceProvider>
+        <partOf>
+          <reference value="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1"/>
+        </partOf>
+      </Encounter>
+    </resource>
+    <request>
+      <method value="POST"/>
+      <url value="Encounter"/>
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="https://www.medizininformatik-initiative.de/Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4"/>
+    <resource>
+      <Encounter>
+        <id value="mii-exa-fall-kontakt-gesundheitseinrichtung-4"/>
+        <meta>
+          <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0-dev.1"/>
+          <security>
+            <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+            <code value="HTEST"/>
+            <display value="test health data"/>
+          </security>
+        </meta>
+        <language value="de"/>
+        <text>
+          <status value="generated"/>
+        </text>
+        <identifier>
+          <type>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+              <code value="VN"/>
+            </coding>
+          </type>
+          <system value="https://www.charite.de/fhir/sid/aufnahmenummer"/>
+          <value value="VS2"/>
+        </identifier>
+        <status value="finished"/>
+        <class>
+          <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
+          <code value="IMP"/>
+        </class>
+        <type>
+          <coding>
+            <system value="http://fhir.de/CodeSystem/Kontaktebene"/>
+            <code value="versorgungsstellenkontakt"/>
+          </coding>
+        </type>
+        <subject>
+          <reference value="Patient/mii-exa-person-patient-1"/>
+        </subject>
+        <period>
+          <start value="2020-01-08T10:00:00+01:00"/>
+          <end value="2020-01-08T10:30:00+01:00"/>
+        </period>
+        <account>
+          <identifier>
+            <system value="https://www.charite.de/fhir/sid/fallnummer"/>
+            <value value="F-2020-000123"/>
+          </identifier>
+          <display value="Account A1 - DRG G23B Appendektomie ohne schwere CC"/>
+        </account>
+        <location>
+          <location>
+            <display value="Radiology Department, CT Scanner"/>
+          </location>
+          <status value="completed"/>
+          <physicalType>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/location-physical-type"/>
+              <code value="ro"/>
+              <display value="Room"/>
+            </coding>
+          </physicalType>
+        </location>
+        <serviceProvider>
+          <identifier>
+            <system value="http://fhir.de/sid/dkgev/iknr"/>
+            <value value="260950472"/>
+          </identifier>
+        </serviceProvider>
+        <partOf>
+          <reference value="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2"/>
+        </partOf>
+      </Encounter>
+    </resource>
+    <request>
+      <method value="POST"/>
+      <url value="Encounter"/>
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="https://www.medizininformatik-initiative.de/Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5"/>
+    <resource>
+      <Encounter>
+        <id value="mii-exa-fall-kontakt-gesundheitseinrichtung-5"/>
+        <meta>
+          <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0-dev.1"/>
+          <security>
+            <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+            <code value="HTEST"/>
+            <display value="test health data"/>
+          </security>
+        </meta>
+        <language value="de"/>
+        <text>
+          <status value="generated"/>
+        </text>
+        <identifier>
+          <type>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+              <code value="VN"/>
+            </coding>
+          </type>
+          <system value="https://www.charite.de/fhir/sid/aufnahmenummer"/>
+          <value value="VS3"/>
+        </identifier>
+        <status value="finished"/>
+        <class>
+          <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
+          <code value="IMP"/>
+        </class>
+        <type>
+          <coding>
+            <system value="http://fhir.de/CodeSystem/Kontaktebene"/>
+            <code value="versorgungsstellenkontakt"/>
+          </coding>
+        </type>
+        <type>
+          <coding>
+            <system value="http://fhir.de/CodeSystem/kontaktart-de"/>
+            <code value="operation"/>
+          </coding>
+        </type>
+        <subject>
+          <reference value="Patient/mii-exa-person-patient-1"/>
+        </subject>
+        <period>
+          <start value="2020-01-08T20:30:00+01:00"/>
+          <end value="2020-01-08T22:15:00+01:00"/>
+        </period>
+        <account>
+          <identifier>
+            <system value="https://www.charite.de/fhir/sid/fallnummer"/>
+            <value value="F-2020-000123"/>
+          </identifier>
+          <display value="Account A1 - DRG G23B Appendektomie ohne schwere CC"/>
+        </account>
+        <location>
+          <location>
+            <display value="OR 4 (Operating Room 4)"/>
+          </location>
+          <status value="completed"/>
+          <physicalType>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/location-physical-type"/>
+              <code value="ro"/>
+              <display value="Room"/>
+            </coding>
+          </physicalType>
+        </location>
+        <serviceProvider>
+          <identifier>
+            <system value="http://fhir.de/sid/dkgev/iknr"/>
+            <value value="260950472"/>
+          </identifier>
+        </serviceProvider>
+        <partOf>
+          <reference value="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2"/>
+        </partOf>
+      </Encounter>
+    </resource>
+    <request>
+      <method value="POST"/>
+      <url value="Encounter"/>
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="https://www.medizininformatik-initiative.de/Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6"/>
+    <resource>
+      <Encounter>
+        <id value="mii-exa-fall-kontakt-gesundheitseinrichtung-6"/>
+        <meta>
+          <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0-dev.1"/>
+          <security>
+            <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+            <code value="HTEST"/>
+            <display value="test health data"/>
+          </security>
+        </meta>
+        <language value="de"/>
+        <text>
+          <status value="generated"/>
+        </text>
+        <identifier>
+          <type>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+              <code value="VN"/>
+            </coding>
+          </type>
+          <system value="https://www.charite.de/fhir/sid/aufnahmenummer"/>
+          <value value="VS4"/>
+        </identifier>
+        <status value="finished"/>
+        <class>
+          <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
+          <code value="IMP"/>
+        </class>
+        <type>
+          <coding>
+            <system value="http://fhir.de/CodeSystem/Kontaktebene"/>
+            <code value="versorgungsstellenkontakt"/>
+          </coding>
+        </type>
+        <subject>
+          <reference value="Patient/mii-exa-person-patient-1"/>
+        </subject>
+        <period>
+          <start value="2020-01-08T22:15:00+01:00"/>
+          <end value="2020-01-09T00:00:00+01:00"/>
+        </period>
+        <account>
+          <identifier>
+            <system value="https://www.charite.de/fhir/sid/fallnummer"/>
+            <value value="F-2020-000123"/>
+          </identifier>
+          <display value="Account A1 - DRG G23B Appendektomie ohne schwere CC"/>
+        </account>
+        <location>
+          <location>
+            <display value="PACU (Post-Anesthesia Care Unit)"/>
+          </location>
+          <status value="completed"/>
+          <physicalType>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/location-physical-type"/>
+              <code value="wa"/>
+              <display value="Ward"/>
+            </coding>
+          </physicalType>
+        </location>
+        <serviceProvider>
+          <identifier>
+            <system value="http://fhir.de/sid/dkgev/iknr"/>
+            <value value="260950472"/>
+          </identifier>
+        </serviceProvider>
+        <partOf>
+          <reference value="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2"/>
+        </partOf>
+      </Encounter>
+    </resource>
+    <request>
+      <method value="POST"/>
+      <url value="Encounter"/>
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="https://www.medizininformatik-initiative.de/Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10"/>
+    <resource>
+      <Encounter>
+        <id value="mii-exa-fall-kontakt-gesundheitseinrichtung-10"/>
+        <meta>
+          <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0-dev.1"/>
+          <security>
+            <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+            <code value="HTEST"/>
+            <display value="test health data"/>
+          </security>
+        </meta>
+        <language value="de"/>
+        <text>
+          <status value="generated"/>
+        </text>
+        <identifier>
+          <type>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+              <code value="VN"/>
+            </coding>
+          </type>
+          <system value="https://www.charite.de/fhir/sid/aufnahmenummer"/>
+          <value value="VS5"/>
+        </identifier>
+        <status value="finished"/>
+        <class>
+          <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
+          <code value="IMP"/>
+        </class>
+        <type>
+          <coding>
+            <system value="http://fhir.de/CodeSystem/Kontaktebene"/>
+            <code value="versorgungsstellenkontakt"/>
+          </coding>
+        </type>
+        <subject>
+          <reference value="Patient/mii-exa-person-patient-1"/>
+        </subject>
+        <period>
+          <start value="2020-01-09T00:00:00+01:00"/>
+          <end value="2020-01-11T23:59:00+01:00"/>
+        </period>
+        <account>
+          <identifier>
+            <system value="https://www.charite.de/fhir/sid/fallnummer"/>
+            <value value="F-2020-000123"/>
+          </identifier>
+          <display value="Account A1 - DRG G23B Appendektomie ohne schwere CC"/>
+        </account>
+        <location>
+          <location>
+            <display value="Surgical Ward C3, Room 315, Bed 315-02"/>
+          </location>
+          <status value="completed"/>
+          <physicalType>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/location-physical-type"/>
+              <code value="wa"/>
+              <display value="Ward"/>
+            </coding>
+          </physicalType>
+        </location>
+        <serviceProvider>
+          <identifier>
+            <system value="http://fhir.de/sid/dkgev/iknr"/>
+            <value value="260950472"/>
+          </identifier>
+        </serviceProvider>
+        <partOf>
+          <reference value="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2"/>
+        </partOf>
+      </Encounter>
+    </resource>
+    <request>
+      <method value="POST"/>
+      <url value="Encounter"/>
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="https://www.medizininformatik-initiative.de/Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7"/>
+    <resource>
+      <Encounter>
+        <id value="mii-exa-fall-kontakt-gesundheitseinrichtung-7"/>
+        <meta>
+          <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0-dev.1"/>
+          <security>
+            <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+            <code value="HTEST"/>
+            <display value="test health data"/>
+          </security>
+        </meta>
+        <language value="de"/>
+        <text>
+          <status value="generated"/>
+        </text>
+        <identifier>
+          <type>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+              <code value="VN"/>
+            </coding>
+          </type>
+          <system value="https://www.charite.de/fhir/sid/aufnahmenummer"/>
+          <value value="F_20200108_001_INME"/>
+        </identifier>
+        <status value="finished"/>
+        <class>
+          <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
+          <code value="IMP"/>
+        </class>
+        <type>
+          <coding>
+            <system value="http://fhir.de/CodeSystem/Kontaktebene"/>
+            <code value="abteilungskontakt"/>
+          </coding>
+        </type>
+        <serviceType>
+          <coding>
+            <system value="http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel"/>
+            <code value="0100"/>
+            <display value="Innere Medizin"/>
+          </coding>
+        </serviceType>
+        <subject>
+          <reference value="Patient/mii-exa-person-patient-1"/>
+        </subject>
+        <period>
+          <start value="2020-01-12T00:00:00+01:00"/>
+          <end value="2020-01-17T18:00:00+01:00"/>
+        </period>
+        <diagnosis>
+          <condition>
+            <reference value="Condition/mii-exa-diagnose-condition-multiple-codings"/>
+          </condition>
+          <use>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/diagnosis-role"/>
+              <code value="CC"/>
+              <display value="Chief complaint"/>
+            </coding>
+          </use>
+        </diagnosis>
+        <diagnosis>
+          <condition>
+            <reference value="Condition/mii-exa-diagnose-condition-multiple-codings"/>
+          </condition>
+          <use>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/diagnosis-role"/>
+              <code value="AD"/>
+              <display value="Admission diagnosis"/>
+            </coding>
+          </use>
+        </diagnosis>
+        <diagnosis>
+          <condition>
+            <reference value="Condition/mii-exa-diagnose-mehrfachcodierung-primaercode"/>
+          </condition>
+          <use>
+            <coding>
+              <system value="http://fhir.de/CodeSystem/KontaktDiagnoseProzedur"/>
+              <code value="treatment-diagnosis"/>
+            </coding>
+          </use>
+        </diagnosis>
+        <account>
+          <identifier>
+            <system value="https://www.charite.de/fhir/sid/fallnummer"/>
+            <value value="F-2020-000123"/>
+          </identifier>
+          <display value="Account A1 - DRG G23B Appendektomie ohne schwere CC"/>
+        </account>
+        <serviceProvider>
+          <identifier>
+            <system value="http://fhir.de/sid/dkgev/iknr"/>
+            <value value="260950472"/>
+          </identifier>
+        </serviceProvider>
+        <partOf>
+          <reference value="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1"/>
+        </partOf>
+      </Encounter>
+    </resource>
+    <request>
+      <method value="POST"/>
+      <url value="Encounter"/>
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="https://www.medizininformatik-initiative.de/Condition/mii-exa-diagnose-mehrfachcodierung-primaercode"/>
+    <resource>
+      <Condition>
+        <id value="mii-exa-diagnose-mehrfachcodierung-primaercode"/>
+        <meta>
+          <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0-dev.1"/>
+          <security>
+            <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+            <code value="HTEST"/>
+            <display value="test health data"/>
+          </security>
+        </meta>
+        <language value="de"/>
+        <text>
+          <status value="generated"/>
+        </text>
+        <clinicalStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+            <code value="active"/>
+          </coding>
+        </clinicalStatus>
+        <verificationStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+            <code value="confirmed"/>
+          </coding>
+        </verificationStatus>
+        <code>
+          <coding>
+            <extension url="http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen">
+              <valueCoding>
+                <system value="http://fhir.de/CodeSystem/icd-10-gm-mehrfachcodierungs-kennzeichen"/>
+                <code value="†"/>
+              </valueCoding>
+            </extension>
+            <extension url="http://fhir.de/StructureDefinition/seitenlokalisation">
+              <valueCoding>
+                <system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ICD_SEITENLOKALISATION"/>
+                <code value="L"/>
+                <display value="links"/>
+              </valueCoding>
+            </extension>
+            <extension url="http://fhir.de/StructureDefinition/icd-10-gm-diagnosesicherheit">
+              <valueCoding>
+                <system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ICD_DIAGNOSESICHERHEIT"/>
+                <code value="G"/>
+                <display value="gesicherte Diagnose"/>
+              </valueCoding>
+            </extension>
+            <system value="http://fhir.de/CodeSystem/bfarm/icd-10-gm"/>
+            <version value="2020"/>
+            <code value="A54.4"/>
+            <display value="Gonokokkeninfektion des Muskel-Skelett-Systems"/>
+          </coding>
+          <coding>
+            <system value="http://fhir.de/CodeSystem/bfarm/alpha-id"/>
+            <version value="2020"/>
+            <code value="I97525"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="Patient/mii-exa-person-patient-1"/>
+        </subject>
+        <encounter>
+          <reference value="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-8"/>
+        </encounter>
+        <onsetDateTime value="2019-09-26"/>
+        <recordedDate value="2019-09-26T11:30:00+02:00"/>
+      </Condition>
+    </resource>
+    <request>
+      <method value="POST"/>
+      <url value="Condition"/>
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="https://www.medizininformatik-initiative.de/Condition/mii-exa-diagnose-mehrfachcodierung-sekundaercode"/>
+    <resource>
+      <Condition>
+        <id value="mii-exa-diagnose-mehrfachcodierung-sekundaercode"/>
+        <meta>
+          <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0-dev.1"/>
+          <security>
+            <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+            <code value="HTEST"/>
+            <display value="test health data"/>
+          </security>
+        </meta>
+        <language value="de"/>
+        <text>
+          <status value="extensions"/>
+        </text>
+        <extension url="http://hl7.org/fhir/StructureDefinition/condition-related">
+          <valueReference>
+            <reference value="Condition/mii-exa-diagnose-mehrfachcodierung-primaercode"/>
+          </valueReference>
+        </extension>
+        <clinicalStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+            <code value="active"/>
+          </coding>
+        </clinicalStatus>
+        <verificationStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+            <code value="confirmed"/>
+          </coding>
+        </verificationStatus>
+        <code>
+          <coding>
+            <extension url="http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen">
+              <valueCoding>
+                <system value="http://fhir.de/CodeSystem/icd-10-gm-mehrfachcodierungs-kennzeichen"/>
+                <code value="*"/>
+              </valueCoding>
+            </extension>
+            <system value="http://fhir.de/CodeSystem/bfarm/icd-10-gm"/>
+            <version value="2020"/>
+            <code value="M73.04"/>
+          </coding>
+          <text value="Bursitis gonorrhoica: Hand"/>
+        </code>
+        <subject>
+          <reference value="Patient/mii-exa-person-patient-1"/>
+        </subject>
+        <encounter>
+          <reference value="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-8"/>
+        </encounter>
+        <onsetDateTime value="2019-09-26"/>
+        <recordedDate value="2019-09-26T11:30:00+02:00"/>
+      </Condition>
+    </resource>
+    <request>
+      <method value="POST"/>
+      <url value="Condition"/>
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="https://www.medizininformatik-initiative.de/Condition/mii-exa-diagnose-appendicitis"/>
+    <resource>
+      <Condition>
+        <id value="mii-exa-diagnose-appendicitis"/>
+        <meta>
+          <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0-dev.1"/>
+          <security>
+            <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+            <code value="HTEST"/>
+            <display value="test health data"/>
+          </security>
+        </meta>
+        <language value="de"/>
+        <text>
+          <status value="extensions"/>
+        </text>
+        <extension url="http://hl7.org/fhir/StructureDefinition/condition-assertedDate">
+          <valueDateTime value="2020-01-08T07:30:00+01:00"/>
+        </extension>
+        <clinicalStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+            <code value="resolved"/>
+          </coding>
+        </clinicalStatus>
+        <verificationStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+            <code value="confirmed"/>
+          </coding>
+        </verificationStatus>
+        <code>
+          <coding>
+            <system value="http://fhir.de/CodeSystem/bfarm/icd-10-gm"/>
+            <version value="2020"/>
+            <code value="K35.8"/>
+          </coding>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="85189001"/>
+            <display value="Acute appendicitis"/>
+          </coding>
+          <text value="Akute Appendizitis"/>
+        </code>
+        <subject>
+          <reference value="Patient/mii-exa-person-patient-1"/>
+        </subject>
+        <encounter>
+          <reference value="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2"/>
+        </encounter>
+        <onsetDateTime value="2020-01-08T04:00:00+01:00"/>
+        <recordedDate value="2020-01-08T09:00:00+01:00"/>
+      </Condition>
+    </resource>
+    <request>
+      <method value="POST"/>
+      <url value="Condition"/>
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="https://www.medizininformatik-initiative.de/Condition/mii-exa-diagnose-condition-elbow-contusion"/>
+    <resource>
+      <Condition>
+        <id value="mii-exa-diagnose-condition-elbow-contusion"/>
+        <meta>
+          <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0-dev.1"/>
+          <security>
+            <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+            <code value="HTEST"/>
+            <display value="test health data"/>
+          </security>
+        </meta>
+        <language value="de"/>
+        <text>
+          <status value="extensions"/>
+        </text>
+        <extension url="http://hl7.org/fhir/StructureDefinition/condition-assertedDate">
+          <valueDateTime value="2020-01-08T08:00:00+01:00"/>
+        </extension>
+        <clinicalStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+            <code value="resolved"/>
+          </coding>
+        </clinicalStatus>
+        <verificationStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+            <code value="confirmed"/>
+          </coding>
+        </verificationStatus>
+        <code>
+          <coding>
+            <system value="http://fhir.de/CodeSystem/bfarm/icd-10-gm"/>
+            <version value="2020"/>
+            <code value="S50.0"/>
+            <display value="Prellung des Ellenbogens"/>
+          </coding>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="91613004"/>
+            <display value="Contusion of elbow"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="Patient/mii-exa-person-patient-1"/>
+        </subject>
+        <encounter>
+          <reference value="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2"/>
+        </encounter>
+        <onsetDateTime value="2020-01-08T06:00:00+01:00"/>
+        <recordedDate value="2020-01-08T09:00:00+01:00"/>
+      </Condition>
+    </resource>
+    <request>
+      <method value="POST"/>
+      <url value="Condition"/>
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="https://www.medizininformatik-initiative.de/Condition/mii-exa-diagnose-condition-multiple-codings"/>
+    <resource>
+      <Condition>
+        <id value="mii-exa-diagnose-condition-multiple-codings"/>
+        <meta>
+          <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0-dev.1"/>
+          <security>
+            <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+            <code value="HTEST"/>
+            <display value="test health data"/>
+          </security>
+        </meta>
+        <language value="de"/>
+        <text>
+          <status value="extensions"/>
+        </text>
+        <extension url="http://hl7.org/fhir/StructureDefinition/condition-assertedDate">
+          <valueDateTime value="2020-01-13T14:00:00+01:00"/>
+        </extension>
+        <clinicalStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+            <code value="active"/>
+          </coding>
+        </clinicalStatus>
+        <verificationStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+            <code value="confirmed"/>
+          </coding>
+        </verificationStatus>
+        <code>
+          <coding>
+            <system value="http://fhir.de/CodeSystem/bfarm/icd-10-gm"/>
+            <version value="2020"/>
+            <code value="H83.8"/>
+            <display value="Sonstige näher bezeichnete Krankheiten des Innenohres"/>
+          </coding>
+          <coding>
+            <system value="http://fhir.de/CodeSystem/bfarm/alpha-id"/>
+            <version value="2020"/>
+            <code value="I125918"/>
+          </coding>
+          <coding>
+            <system value="http://www.orpha.net"/>
+            <code value="420402"/>
+            <display value="Semicircular canal dehiscence syndrome"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="Patient/mii-exa-person-patient-1"/>
+        </subject>
+        <encounter>
+          <reference value="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7"/>
+        </encounter>
+        <onsetDateTime value="2020-01-13T14:00:00+01:00"/>
+        <recordedDate value="2020-01-13T16:00:00+01:00"/>
+      </Condition>
+    </resource>
+    <request>
+      <method value="POST"/>
+      <url value="Condition"/>
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="https://www.medizininformatik-initiative.de/Procedure/mii-exa-prozedur-procedure"/>
+    <resource>
+      <Procedure>
+        <id value="mii-exa-prozedur-procedure"/>
+        <meta>
+          <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.0-dev.1"/>
+          <security>
+            <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+            <code value="HTEST"/>
+            <display value="test health data"/>
+          </security>
+        </meta>
+        <language value="de"/>
+        <text>
+          <status value="extensions"/>
+        </text>
+        <extension url="http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum">
+          <valueDateTime value="2020-01-08T23:00:00+01:00"/>
+        </extension>
+        <extension url="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Durchfuehrungsabsicht">
+          <valueCoding>
+            <system value="http://snomed.info/sct"/>
+            <code value="262202000"/>
+          </valueCoding>
+        </extension>
+        <status value="completed"/>
+        <category>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="387713003"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://fhir.de/CodeSystem/bfarm/ops"/>
+            <version value="2020"/>
+            <code value="5-470"/>
+          </coding>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="80146002"/>
+          </coding>
+          <text value="Appendektomie"/>
+        </code>
+        <subject>
+          <reference value="Patient/mii-exa-person-patient-1"/>
+        </subject>
+        <encounter>
+          <reference value="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2"/>
+        </encounter>
+        <performedPeriod>
+          <start value="2020-01-08T20:30:00+01:00"/>
+          <end value="2020-01-08T22:15:00+01:00"/>
+        </performedPeriod>
+        <bodySite>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="181255000"/>
+          </coding>
+          <text value="Appendix"/>
+        </bodySite>
+      </Procedure>
+    </resource>
+    <request>
+      <method value="POST"/>
+      <url value="Procedure"/>
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="https://www.medizininformatik-initiative.de/Procedure/mii-exa-prozedur-procedure-2"/>
+    <resource>
+      <Procedure>
+        <id value="mii-exa-prozedur-procedure-2"/>
+        <meta>
+          <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.0-dev.1"/>
+          <security>
+            <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+            <code value="HTEST"/>
+            <display value="test health data"/>
+          </security>
+        </meta>
+        <language value="de"/>
+        <text>
+          <status value="extensions"/>
+        </text>
+        <extension url="http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum">
+          <valueDateTime value="2020-01-17T00:00:00+01:00"/>
+        </extension>
+        <extension url="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Durchfuehrungsabsicht">
+          <valueCoding>
+            <system value="http://snomed.info/sct"/>
+            <code value="262202000"/>
+          </valueCoding>
+        </extension>
+        <status value="completed"/>
+        <category>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="277132007"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://fhir.de/CodeSystem/bfarm/ops"/>
+            <version value="2020"/>
+            <code value="8-561.1"/>
+          </coding>
+          <text value="Funktionsorientierte physikalische Monotherapie"/>
+        </code>
+        <subject>
+          <reference value="Patient/mii-exa-person-patient-1"/>
+        </subject>
+        <encounter>
+          <reference value="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7"/>
+        </encounter>
+        <performedPeriod>
+          <start value="2020-01-13T00:00:00+01:00"/>
+          <end value="2020-01-16T00:00:00+01:00"/>
+        </performedPeriod>
+        <bodySite>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="85562004"/>
+            <display value="Hand structure"/>
+          </coding>
+        </bodySite>
+      </Procedure>
+    </resource>
+    <request>
+      <method value="POST"/>
+      <url value="Procedure"/>
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="https://www.medizininformatik-initiative.de/Procedure/mii-exa-prozedur-imaging"/>
+    <resource>
+      <Procedure>
+        <id value="mii-exa-prozedur-imaging"/>
+        <meta>
+          <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.0-dev.1"/>
+          <security>
+            <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+            <code value="HTEST"/>
+            <display value="test health data"/>
+          </security>
+        </meta>
+        <language value="de"/>
+        <text>
+          <status value="extensions"/>
+        </text>
+        <extension url="http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum">
+          <valueDateTime value="2020-01-08T10:30:00+01:00"/>
+        </extension>
+        <extension url="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Durchfuehrungsabsicht">
+          <valueCoding>
+            <system value="http://snomed.info/sct"/>
+            <code value="261004008"/>
+          </valueCoding>
+        </extension>
+        <status value="completed"/>
+        <category>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="363679005"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://fhir.de/CodeSystem/bfarm/ops"/>
+            <version value="2020"/>
+            <code value="3-207"/>
+          </coding>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="169070004"/>
+          </coding>
+          <text value="Native Computertomographie des Abdomens"/>
+        </code>
+        <subject>
+          <reference value="Patient/mii-exa-person-patient-1"/>
+        </subject>
+        <encounter>
+          <reference value="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2"/>
+        </encounter>
+        <performedDateTime value="2020-01-08T10:00:00+01:00"/>
+        <bodySite>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="818981001"/>
+          </coding>
+          <text value="Abdomen"/>
+        </bodySite>
+      </Procedure>
+    </resource>
+    <request>
+      <method value="POST"/>
+      <url value="Procedure"/>
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="https://www.medizininformatik-initiative.de/Observation/mii-exa-person-observation-vitalstatus"/>
+    <resource>
+      <Observation>
+        <id value="mii-exa-person-observation-vitalstatus"/>
+        <meta>
+          <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus|2026.0.0-dev.1"/>
+          <security>
+            <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+            <code value="HTEST"/>
+            <display value="test health data"/>
+          </security>
+        </meta>
+        <language value="de"/>
+        <text>
+          <status value="generated"/>
+        </text>
+        <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="survey"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="67162-8"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="Patient/mii-exa-person-patient-1"/>
+        </subject>
+        <encounter>
+          <reference value="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-9"/>
+        </encounter>
+        <effectiveDateTime value="2020-01-08T07:00:00+01:00"/>
+        <valueCodeableConcept>
+          <coding>
+            <system value="https://www.medizininformatik-initiative.de/fhir/core/modul-person/CodeSystem/Vitalstatus"/>
+            <code value="L"/>
+            <display value="Patient lebt"/>
+          </coding>
+        </valueCodeableConcept>
+      </Observation>
+    </resource>
+    <request>
+      <method value="POST"/>
+      <url value="Observation"/>
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="https://www.medizininformatik-initiative.de/Observation/mii-exa-person-observation-vitalstatus-discharge"/>
+    <resource>
+      <Observation>
+        <id value="mii-exa-person-observation-vitalstatus-discharge"/>
+        <meta>
+          <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus|2026.0.0-dev.1"/>
+          <security>
+            <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+            <code value="HTEST"/>
+            <display value="test health data"/>
+          </security>
+        </meta>
+        <language value="de"/>
+        <text>
+          <status value="generated"/>
+        </text>
+        <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="survey"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="67162-8"/>
+          </coding>
+          <text value="Vital status"/>
+        </code>
+        <subject>
+          <reference value="Patient/mii-exa-person-patient-1"/>
+        </subject>
+        <encounter>
+          <reference value="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7"/>
+        </encounter>
+        <effectiveDateTime value="2020-01-17T18:00:00+01:00"/>
+        <valueCodeableConcept>
+          <coding>
+            <system value="https://www.medizininformatik-initiative.de/fhir/core/modul-person/CodeSystem/Vitalstatus"/>
+            <code value="L"/>
+            <display value="Patient lebt"/>
+          </coding>
+          <text value="Patient lebt"/>
+        </valueCodeableConcept>
+      </Observation>
+    </resource>
+    <request>
+      <method value="POST"/>
+      <url value="Observation"/>
+    </request>
+  </entry>
+</Bundle>

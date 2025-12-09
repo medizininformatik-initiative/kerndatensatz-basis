@@ -1,0 +1,458 @@
+# MII LM Fall - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+
+## Logical Model: MII LM Fall 
+
+ 
+Logische Repräsentation des Basismoduls Fall 
+
+**Usages:**
+
+* This Logical Model is not used by any profiles in this Implementation Guide
+
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/mii-lm-fall)
+
+**Changes since version {current}:**
+
+* New Content
+
+### Formal Views of Profile Content
+
+ [Description Differentials, Snapshots, and other representations](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 
+
+ 
+
+Other representations of profile: [CSV](../StructureDefinition-mii-lm-fall.csv), [Excel](../StructureDefinition-mii-lm-fall.xlsx) 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "mii-lm-fall",
+  "extension" : [
+    {
+      "url" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/StructureDefinition/mii-ex-meta-license-codeable",
+      "valueCodeableConcept" : {
+        "coding" : [
+          {
+            "system" : "http://hl7.org/fhir/spdx-license",
+            "code" : "CC-BY-4.0",
+            "display" : "Creative Commons Attribution 4.0 International"
+          }
+        ]
+      }
+    }
+  ],
+  "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/LogicalModel/Fall",
+  "version" : "2026.0.0-dev.1",
+  "name" : "MII_LM_Fall",
+  "title" : "MII LM Fall",
+  "status" : "active",
+  "date" : "2025-11-07",
+  "publisher" : "Medical Informatics Initiative (MII)",
+  "_publisher" : {
+    "extension" : [
+      {
+        "extension" : [
+          {
+            "url" : "lang",
+            "valueCode" : "de"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Medizininformatik-Initiative (MII)"
+          }
+        ],
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+      }
+    ]
+  },
+  "contact" : [
+    {
+      "name" : "Medical Informatics Initiative (MII)",
+      "telecom" : [
+        {
+          "system" : "url",
+          "value" : "https://www.medizininformatik-initiative.de/en"
+        }
+      ]
+    }
+  ],
+  "description" : "Logische Repräsentation des Basismoduls Fall",
+  "jurisdiction" : [
+    {
+      "coding" : [
+        {
+          "system" : "urn:iso:std:iso:3166",
+          "code" : "DE",
+          "display" : "Germany"
+        }
+      ]
+    }
+  ],
+  "fhirVersion" : "4.0.1",
+  "mapping" : [
+    {
+      "identity" : "rim",
+      "uri" : "http://hl7.org/v3",
+      "name" : "RIM Mapping"
+    }
+  ],
+  "kind" : "logical",
+  "abstract" : false,
+  "type" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/LogicalModel/Fall",
+  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Element",
+  "derivation" : "specialization",
+  "differential" : {
+    "element" : [
+      {
+        "id" : "Fall",
+        "path" : "Fall",
+        "short" : "MII LM Fall",
+        "definition" : "Logische Repräsentation des Basismoduls Fall"
+      },
+      {
+        "id" : "Fall.Einrichtungskontakt",
+        "path" : "Fall.Einrichtungskontakt",
+        "short" : "Beschreibt den Kontakt zur Einrichtung, bestimmt durch den Behandlungsvertrag.",
+        "definition" : "Beschreibt den Kontakt zur Einrichtung, bestimmt durch den Behandlungsvertrag.",
+        "min" : 0,
+        "max" : "*",
+        "type" : [
+          {
+            "code" : "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id" : "Fall.Einrichtungskontakt.KontaktEbene",
+        "path" : "Fall.Einrichtungskontakt.KontaktEbene",
+        "short" : "Für die Unterscheidung der Kontakt-Hierarchieebenen im Modul FALL werden folgende Ausprägungen unterschieden:\r\n\r\n1. Einrichtungskontakt\r\n\r\n2. Abteilungskontakt\r\n\r\n3. Versorgungsstellenkontakt\r\n\r\nDiese Gliederung gilt zunächst für stationäre Kontakte (siehe Kontakt-Klasse). Die Übertragung auf ambulante und teilstationäre Kontakte muss noch abgestimmt werden.",
+        "definition" : "Für die Unterscheidung der Kontakt-Hierarchieebenen im Modul FALL werden folgende Ausprägungen unterschieden:\r\n\r\n1. Einrichtungskontakt\r\n\r\n2. Abteilungskontakt\r\n\r\n3. Versorgungsstellenkontakt\r\n\r\nDiese Gliederung gilt zunächst für stationäre Kontakte (siehe Kontakt-Klasse). Die Übertragung auf ambulante und teilstationäre Kontakte muss noch abgestimmt werden.",
+        "min" : 0,
+        "max" : "*",
+        "type" : [
+          {
+            "code" : "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id" : "Fall.Einrichtungskontakt.KontaktKlasse",
+        "path" : "Fall.Einrichtungskontakt.KontaktKlasse",
+        "short" : "Auf Einrichtungsebene, also auf der Kontakt-Ebene Einrichtungskontakt, kann die Kontakt-Klasse stationär, ambulant oder teilstationär sein.",
+        "definition" : "Auf Einrichtungsebene, also auf der Kontakt-Ebene Einrichtungskontakt, kann die Kontakt-Klasse stationär, ambulant oder teilstationär sein.",
+        "min" : 0,
+        "max" : "*",
+        "type" : [
+          {
+            "code" : "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id" : "Fall.Einrichtungskontakt.KontaktArt",
+        "path" : "Fall.Einrichtungskontakt.KontaktArt",
+        "short" : "Differenzierung zwischen verschiedenen Arten von Kontakten (z.B. vorstationär, nachstationär, intensivstationär)",
+        "definition" : "Differenzierung zwischen verschiedenen Arten von Kontakten (z.B. vorstationär, nachstationär, intensivstationär)",
+        "min" : 0,
+        "max" : "*",
+        "type" : [
+          {
+            "code" : "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id" : "Fall.Einrichtungskontakt.PatientenIdentifikator",
+        "path" : "Fall.Einrichtungskontakt.PatientenIdentifikator",
+        "short" : "Bei der internen Nutzung dient die sogenannte Patientennummer als Identifikator. Diese wird bei der ersten Aufnahme in die Einrichtung parallel zur ersten Fallnummer (Aufnahmenummer) vergeben. Bei jeder Wiederaufnahme (oder korrigierend danach) erfolgt eine Zuordnung zu dieser konstanten Patientennummer und die Vergabe einer neuen wechselnden Fallnummer.",
+        "definition" : "Bei der internen Nutzung dient die sogenannte Patientennummer als Identifikator. Diese wird bei der ersten Aufnahme in die Einrichtung parallel zur ersten Fallnummer (Aufnahmenummer) vergeben. Bei jeder Wiederaufnahme (oder korrigierend danach) erfolgt eine Zuordnung zu dieser konstanten Patientennummer und die Vergabe einer neuen wechselnden Fallnummer.",
+        "min" : 0,
+        "max" : "*",
+        "type" : [
+          {
+            "code" : "Identifier"
+          }
+        ]
+      },
+      {
+        "id" : "Fall.Einrichtungskontakt.Aufnahmenummer",
+        "path" : "Fall.Einrichtungskontakt.Aufnahmenummer",
+        "short" : "Jeder Patient erhält bei der Planung einer Aufnahme oder bei der Aufnahme selbst eine Aufnahmenummer (auch Fallnummer oder Krankenhausinternes Kennzeichen genannt). Im Prinzip gilt diese Aufnahmenummer von der Aufnahme bis zur Entlassung - und auch bei den zugehörigen vorstationären und nachstationären Kontakten. Sie dient bei allen digital unterstüzten Vorgängen der Zuordnung zu dem Aufenthalt des Patienten in der Einrichtung.",
+        "definition" : "Jeder Patient erhält bei der Planung einer Aufnahme oder bei der Aufnahme selbst eine Aufnahmenummer (auch Fallnummer oder Krankenhausinternes Kennzeichen genannt). Im Prinzip gilt diese Aufnahmenummer von der Aufnahme bis zur Entlassung - und auch bei den zugehörigen vorstationären und nachstationären Kontakten. Sie dient bei allen digital unterstüzten Vorgängen der Zuordnung zu dem Aufenthalt des Patienten in der Einrichtung.",
+        "min" : 0,
+        "max" : "*",
+        "type" : [
+          {
+            "code" : "Identifier"
+          }
+        ]
+      },
+      {
+        "id" : "Fall.Einrichtungskontakt.Aufnahmeanlass",
+        "path" : "Fall.Einrichtungskontakt.Aufnahmeanlass",
+        "short" : "Gemäß §21 KHEntgG",
+        "definition" : "Gemäß §21 KHEntgG",
+        "min" : 0,
+        "max" : "*",
+        "type" : [
+          {
+            "code" : "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id" : "Fall.Einrichtungskontakt.Aufnahmegrund",
+        "path" : "Fall.Einrichtungskontakt.Aufnahmegrund",
+        "short" : "Gemäß §21 KHEntgG",
+        "definition" : "Es ist der Aufnahmegrund entsprechend Schlüssel 1 der Anlage 2 zur § 301-Vereinbarung anzugeben. Als 3. und 4. Stelle (xx) sind die nach Schlüssel 1 möglichen Werte (01 bis 07, bei tagesbezogenen Ent- gelten auch 21 bis 27) anzugeben. Fälle mit den Werten „41“ bis „47“ in der 3. und 4. Stelle (Behandlun- gen im Rahmen von Verträgen zur integrierten Versorgung) können übermittelt werden.\r\nDer Aufnahmegrund kann bei Begleitpersonen und mitaufgenommenen Pflegekräften (Aufnahmeanlass „B“) entfallen. In allen anderen Fällen ist der Aufnahmegrund eine Muss-Angabe.",
+        "min" : 0,
+        "max" : "*",
+        "type" : [
+          {
+            "code" : "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id" : "Fall.Einrichtungskontakt.Beginndatum",
+        "path" : "Fall.Einrichtungskontakt.Beginndatum",
+        "short" : "Start des Kontakt Zeitraums",
+        "definition" : "Start des Kontakt Zeitraums",
+        "min" : 0,
+        "max" : "*",
+        "type" : [
+          {
+            "code" : "dateTime"
+          }
+        ]
+      },
+      {
+        "id" : "Fall.Einrichtungskontakt.Enddatum",
+        "path" : "Fall.Einrichtungskontakt.Enddatum",
+        "short" : "Ende des Kontakt Zeitraums",
+        "definition" : "Ende des Kontakt Zeitraums",
+        "min" : 0,
+        "max" : "*",
+        "type" : [
+          {
+            "code" : "dateTime"
+          }
+        ]
+      },
+      {
+        "id" : "Fall.Einrichtungskontakt.Entlassungsgrund",
+        "path" : "Fall.Einrichtungskontakt.Entlassungsgrund",
+        "short" : "Gemäß §21 KHEntgG",
+        "definition" : "Gemäß §21 KHEntgG",
+        "min" : 0,
+        "max" : "*",
+        "type" : [
+          {
+            "code" : "code"
+          }
+        ]
+      },
+      {
+        "id" : "Fall.Abteilungskontakt",
+        "path" : "Fall.Abteilungskontakt",
+        "short" : "Kontakte zur Abteilung",
+        "definition" : "Kontakte zur Abteilung",
+        "min" : 0,
+        "max" : "*",
+        "type" : [
+          {
+            "code" : "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id" : "Fall.Abteilungskontakt.KontaktEbene",
+        "path" : "Fall.Abteilungskontakt.KontaktEbene",
+        "short" : "Für die Unterscheidung der Kontakt-Hierarchieebenen im Modul FALL werden folgende Ausprägungen unterschieden:\r\n\r\n1. Einrichtungskontakt\r\n\r\n2. Abteilungskontakt\r\n\r\n3. Versorgungsstellenkontakt\r\n\r\nDiese Gliederung gilt zunächst für stationäre Kontakte (siehe Kontakt-Klasse). Die Übertragung auf ambulante und teilstationäre Kontakte muss noch abgestimmt werden.",
+        "definition" : "Für die Unterscheidung der Kontakt-Hierarchieebenen im Modul FALL werden folgende Ausprägungen unterschieden:\r\n\r\n1. Einrichtungskontakt\r\n\r\n2. Abteilungskontakt\r\n\r\n3. Versorgungsstellenkontakt\r\n\r\nDiese Gliederung gilt zunächst für stationäre Kontakte (siehe Kontakt-Klasse). Die Übertragung auf ambulante und teilstationäre Kontakte muss noch abgestimmt werden.",
+        "min" : 0,
+        "max" : "*",
+        "type" : [
+          {
+            "code" : "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id" : "Fall.Abteilungskontakt.KontaktArt",
+        "path" : "Fall.Abteilungskontakt.KontaktArt",
+        "short" : "Differenzierung zwischen verschiedenen Arten von Kontakten (z.B. vorstationär, nachstationär, intensivstationär).",
+        "definition" : "Differenzierung zwischen verschiedenen Arten von Kontakten (z.B. vorstationär, nachstationär, intensivstationär).",
+        "min" : 0,
+        "max" : "*",
+        "type" : [
+          {
+            "code" : "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id" : "Fall.Abteilungskontakt.PatientenIdentifikator",
+        "path" : "Fall.Abteilungskontakt.PatientenIdentifikator",
+        "short" : "Bei der internen Nutzung dient die sogenannte Patientennummer als Identifikator. Diese wird bei der ersten Aufnahme in die Einrichtung parallel zur ersten Fallnummer (Aufnahmenummer) vergeben. Bei jeder Wiederaufnahme (oder korrigierend danach) erfolgt eine Zuordnung zu dieser konstanten Patientennummer und die Vergabe einer neuen wechselnden Fallnummer.",
+        "definition" : "Bei der internen Nutzung dient die sogenannte Patientennummer als Identifikator. Diese wird bei der ersten Aufnahme in die Einrichtung parallel zur ersten Fallnummer (Aufnahmenummer) vergeben. Bei jeder Wiederaufnahme (oder korrigierend danach) erfolgt eine Zuordnung zu dieser konstanten Patientennummer und die Vergabe einer neuen wechselnden Fallnummer.",
+        "min" : 0,
+        "max" : "*",
+        "type" : [
+          {
+            "code" : "Identifier"
+          }
+        ]
+      },
+      {
+        "id" : "Fall.Abteilungskontakt.Aufnahmenummer",
+        "path" : "Fall.Abteilungskontakt.Aufnahmenummer",
+        "short" : "Jeder Patient erhält bei der Planung einer Aufnahme oder bei der Aufnahme selbst eine Aufnahmenummer (auch Fallnummer oder Krankenhausinternes Kennzeichen genannt). Im Prinzip gilt diese Aufnahmenummer von der Aufnahme bis zur Entlassung - und auch bei den zugehörigen vorstationären und nachstationären Kontakten. Sie dient bei allen digital unterstüzten Vorgängen der Zuordnung zu dem Aufenthalt des Patienten in der Einrichtung. Im MII KDS dient sie als Identifikator bzw. Referenz zum Einrichtungskontakt.",
+        "definition" : "Jeder Patient erhält bei der Planung einer Aufnahme oder bei der Aufnahme selbst eine Aufnahmenummer (auch Fallnummer oder Krankenhausinternes Kennzeichen genannt). Im Prinzip gilt diese Aufnahmenummer von der Aufnahme bis zur Entlassung - und auch bei den zugehörigen vorstationären und nachstationären Kontakten. Sie dient bei allen digital unterstüzten Vorgängen der Zuordnung zu dem Aufenthalt des Patienten in der Einrichtung. Im MII KDS dient sie als Identifikator bzw. Referenz zum Einrichtungskontakt.",
+        "min" : 0,
+        "max" : "*",
+        "type" : [
+          {
+            "code" : "Identifier"
+          }
+        ]
+      },
+      {
+        "id" : "Fall.Abteilungskontakt.Beginndatum",
+        "path" : "Fall.Abteilungskontakt.Beginndatum",
+        "short" : "Start des Kontakt Zeitraums",
+        "definition" : "Start des Kontakt Zeitraums",
+        "min" : 0,
+        "max" : "*",
+        "type" : [
+          {
+            "code" : "dateTime"
+          }
+        ]
+      },
+      {
+        "id" : "Fall.Abteilungskontakt.Enddatum",
+        "path" : "Fall.Abteilungskontakt.Enddatum",
+        "short" : "Ende des Kontakt Zeitraums",
+        "definition" : "Ende des Kontakt Zeitraums",
+        "min" : 0,
+        "max" : "*",
+        "type" : [
+          {
+            "code" : "dateTime"
+          }
+        ]
+      },
+      {
+        "id" : "Fall.Abteilungskontakt.Fachabteilungsschluessel",
+        "path" : "Fall.Abteilungskontakt.Fachabteilungsschluessel",
+        "short" : "Bis auf Weiteres wird der proprietäre deutsche  Fachabteilungsschlüssel des § 301 SGB V und des Datensatzes gemäß § 21 KHentgG als Fachrichtungsschlüssel genutzt, weil dieser in jedem Krankenhaus als |Fachabteilungsschlüssel im Einsatz ist. Der Einsatz des IHE-Fachabteilungsschlüssel wird geprüft, sobald einschlägige Anforderungen formuliert werden.",
+        "definition" : "Bis auf Weiteres wird der proprietäre deutsche  Fachabteilungsschlüssel des § 301 SGB V und des Datensatzes gemäß § 21 KHentgG als Fachrichtungsschlüssel genutzt, weil dieser in jedem Krankenhaus als |Fachabteilungsschlüssel im Einsatz ist. Der Einsatz des IHE-Fachabteilungsschlüssel wird geprüft, sobald einschlägige Anforderungen formuliert werden.",
+        "min" : 0,
+        "max" : "*",
+        "type" : [
+          {
+            "code" : "code"
+          }
+        ]
+      },
+      {
+        "id" : "Fall.Versorgungsstellenkontakt",
+        "path" : "Fall.Versorgungsstellenkontakt",
+        "short" : "Kontakte zu Versorgungsstellen und den eigentlich Behandelnden",
+        "definition" : "Kontakte zu Versorgungsstellen und den eigentlich Behandelnden",
+        "min" : 0,
+        "max" : "*",
+        "type" : [
+          {
+            "code" : "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id" : "Fall.Versorgungsstellenkontakt.KontaktEbene",
+        "path" : "Fall.Versorgungsstellenkontakt.KontaktEbene",
+        "short" : "Für die Unterscheidung der Kontakt-Hierarchieebenen im Modul FALL werden folgende Ausprägungen unterschieden:\r\n\r\n1. Einrichtungskontakt\r\n\r\n2. Abteilungskontakt\r\n\r\n3. Versorgungsstellenkontakt\r\n\r\nDiese Gliederung gilt zunächst für stationäre Kontakte (siehe Kontakt-Klasse). Die Übertragung auf ambulante und teilstationäre Kontakte muss noch abgestimmt werden.",
+        "definition" : "Für die Unterscheidung der Kontakt-Hierarchieebenen im Modul FALL werden folgende Ausprägungen unterschieden:\r\n\r\n1. Einrichtungskontakt\r\n\r\n2. Abteilungskontakt\r\n\r\n3. Versorgungsstellenkontakt\r\n\r\nDiese Gliederung gilt zunächst für stationäre Kontakte (siehe Kontakt-Klasse). Die Übertragung auf ambulante und teilstationäre Kontakte muss noch abgestimmt werden.",
+        "min" : 0,
+        "max" : "*",
+        "type" : [
+          {
+            "code" : "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id" : "Fall.Versorgungsstellenkontakt.KontaktArt",
+        "path" : "Fall.Versorgungsstellenkontakt.KontaktArt",
+        "short" : "Differenzierung zwischen verschiedenen Arten von Kontakten (z.B. vorstationär, nachstationär, intensivstationär).",
+        "definition" : "Differenzierung zwischen verschiedenen Arten von Kontakten (z.B. vorstationär, nachstationär, intensivstationär).",
+        "min" : 0,
+        "max" : "*",
+        "type" : [
+          {
+            "code" : "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id" : "Fall.Versorgungsstellenkontakt.PatientenIdentifikator",
+        "path" : "Fall.Versorgungsstellenkontakt.PatientenIdentifikator",
+        "short" : "Bei der internen Nutzung dient die sogenannte Patientennummer als Identifikator. Diese wird bei der ersten Aufnahme in die Einrichtung parallel zur ersten Fallnummer (Aufnahmenummer) vergeben. Bei jeder Wiederaufnahme (oder korrigierend danach) erfolgt eine Zuordnung zu dieser konstanten Patientennummer und die Vergabe einer neuen wechselnden Fallnummer.",
+        "definition" : "Bei der internen Nutzung dient die sogenannte Patientennummer als Identifikator. Diese wird bei der ersten Aufnahme in die Einrichtung parallel zur ersten Fallnummer (Aufnahmenummer) vergeben. Bei jeder Wiederaufnahme (oder korrigierend danach) erfolgt eine Zuordnung zu dieser konstanten Patientennummer und die Vergabe einer neuen wechselnden Fallnummer.",
+        "min" : 0,
+        "max" : "*",
+        "type" : [
+          {
+            "code" : "Identifier"
+          }
+        ]
+      },
+      {
+        "id" : "Fall.Versorgungsstellenkontakt.Aufnahmenummer",
+        "path" : "Fall.Versorgungsstellenkontakt.Aufnahmenummer",
+        "short" : "Jeder Patient erhält bei der Planung einer Aufnahme oder bei der Aufnahme selbst eine Aufnahmenummer (auch Fallnummer oder Krankenhausinternes Kennzeichen genannt). Im Prinzip gilt diese Aufnahmenummer von der Aufnahme bis zur Entlassung - und auch bei den zugehörigen vorstationären und nachstationären Kontakten. Sie dient bei allen digital unterstüzten Vorgängen der Zuordnung zu dem Aufenthalt des Patienten in der Einrichtung. Im MII KDS dient sie als Identifikator bzw. Referenz zum Einrichtungskontakt.",
+        "definition" : "Jeder Patient erhält bei der Planung einer Aufnahme oder bei der Aufnahme selbst eine Aufnahmenummer (auch Fallnummer oder Krankenhausinternes Kennzeichen genannt). Im Prinzip gilt diese Aufnahmenummer von der Aufnahme bis zur Entlassung - und auch bei den zugehörigen vorstationären und nachstationären Kontakten. Sie dient bei allen digital unterstüzten Vorgängen der Zuordnung zu dem Aufenthalt des Patienten in der Einrichtung. Im MII KDS dient sie als Identifikator bzw. Referenz zum Einrichtungskontakt.",
+        "min" : 0,
+        "max" : "*",
+        "type" : [
+          {
+            "code" : "Identifier"
+          }
+        ]
+      },
+      {
+        "id" : "Fall.Versorgungsstellenkontakt.Beginndatum",
+        "path" : "Fall.Versorgungsstellenkontakt.Beginndatum",
+        "short" : "Start des Kontakt Zeitraums",
+        "definition" : "Start des Kontakt Zeitraums",
+        "min" : 0,
+        "max" : "*",
+        "type" : [
+          {
+            "code" : "dateTime"
+          }
+        ]
+      },
+      {
+        "id" : "Fall.Versorgungsstellenkontakt.Enddatum",
+        "path" : "Fall.Versorgungsstellenkontakt.Enddatum",
+        "short" : "Ende des Kontakt Zeitraums",
+        "definition" : "Ende des Kontakt Zeitraums",
+        "min" : 0,
+        "max" : "*",
+        "type" : [
+          {
+            "code" : "dateTime"
+          }
+        ]
+      }
+    ]
+  }
+}
+
+```

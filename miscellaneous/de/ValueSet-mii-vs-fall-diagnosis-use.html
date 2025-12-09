@@ -1,0 +1,422 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+
+
+<html xml:lang="de" xmlns="http://www.w3.org/1999/xhtml" lang="de" dir="ltr">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>MII VS Fall Diagnosis Use - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link href="assets/css/project.css" rel="stylesheet"/>
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script type="text/javascript" src="assets/js/direction-management.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"14.25"}
+    h3,h4,h5,h6{--heading-prefix:"14.25"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <div id="family-nav">
+  <a id="family-logo" no-external="true" href="http://hl7.org/fhir">
+    <img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/>
+  </a>
+</div>
+<div id="hl7-nav"> 
+  <a id="hl7-logo" no-external="true" href="https://www.medizininformatik-initiative.de">
+    
+    <img height="50" alt="MII besuchen" src="MII_Logo_rgb.jpg"/>
+    
+  </a>
+</div>
+
+
+        <div id="ig-status" data-fhir="generated">
+          <p><span style="font-size:12pt;font-weight:bold">MII Implementierungsleitfaden Kerndatensatz Basis</span>
+            <br/>
+            <span style="display:inline-block;">2026.0.0-dev.1 - ci-build
+
+
+
+  Germany
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment" data-fhir="generated">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Guidance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="guidance.html">Guidance</a>
+      </li>
+      <li>
+        <a href="researcher-guidance.html">Guidance for Researchers</a>
+      </li>
+      <li>
+        <a href="implementer-guidance.html">Guidance for Implementers</a>
+      </li>
+      <li>
+        <a href="datasets-and-descriptions.html">Datasets and Descriptions</a>
+      </li>
+      <li>
+        <a href="uml-diagrams.html">UML Diagrams</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Conformance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="conformance.html">Conformance</a>
+      </li>
+      <li>
+        <a href="general-requirements.html">General Requirements</a>
+      </li>
+      <li>
+        <a href="must-support.html">Must Support</a>
+      </li>
+      <li>
+        <a href="missing-data.html">Handling Missing Data</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">Artifacts Summary</a>
+      </li>
+      <li>
+        <a href="profiles-and-extensions.html">Profiles and Extensions</a>
+      </li>
+      <li>
+        <a href="terminology.html">Terminology</a>
+      </li>
+      <li>
+        <a href="capability-statements.html">Capability Statements</a>
+      </li>
+      <li>
+        <a href="search-parameters-and-operations.html">Search Parameters and Operations</a>
+      </li>
+      <li>
+        <a href="logical-models.html">Logical Models</a>
+      </li>
+      <li>
+        <a href="examples.html">Examples</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Version History
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="version-history.html">Version History</a>
+      </li>
+      <li>
+        <a href="changes.html">Changelog</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+
+              
+
+
+<div style="float: var(--ig-right);padding: 8px 0px;" id="language">
+  <div id="select_flg" class="flaglist" style="background-image: url(assets/images/icon_arrow_down.png);background-position: 133px 3px;">
+    <div><img class="flag" alt="flag en" src="assets/images/lang-de.png"/>Deutsch</div>
+  </div>
+  <div style="float: var(--ig-right); margin: 2px 0px; padding: 1px 0;color: var(--btn-text-color);font-size:12px">Language:</div>
+ 	<div id="flaglist" class="flaglist" style="display: none;position: absolute;right: 0;z-index: 100;background-image: url(assets/images/icon_arrow_up.png);background-position: 133px 3px;">
+    <div><img class="flag" alt="flag de" src="assets/images/lang-de.png"/>Deutsch</div>
+
+    <div><a href="../en/ValueSet-mii-vs-fall-diagnosis-use.html"><img class="flag" src="assets/images/lang-en.png" alt="flag en"/>English</a></div>
+
+  </div>
+</div>
+
+
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment" data-fhir="generated">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Inhaltsverzeichnis</b></a></li><li><a href='artifacts.html'><b>Artefaktübersicht</b></a></li><li><b>MII VS Fall Diagnosis Use</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<!-- layouts\layout-valueset -->
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">MII Implementation Guide Core Dataset Base - Local Development build (v2026.0.0-dev.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://www.medizininformatik-initiative.de/fhir/modul-base/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrativer Inhalt</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="ValueSet-mii-vs-fall-diagnosis-use.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="ValueSet-mii-vs-fall-diagnosis-use.json.html">JSON</a>
+    </li>
+  
+
+
+
+
+</ul>
+
+  <a name="root"> </a>
+  <h2 id="root">ValueSet: MII VS Fall Diagnosis Use
+
+  </h2>
+  <table class="colsi" data-fhir="generated">
+
+    <tr>
+      <td colspan="4"><i>Offizielle URL</i>: <span class="copy-text">https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/mii-vs-fall-diagnosis-use<button title="Klicken zum Kopieren der URL" class="btn-copy" data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/mii-vs-fall-diagnosis-use"/></span>
+      </td>
+      <td><i>Version</i>:
+
+      <span class="copy-text">2026.0.0-dev.1<button title="Klicken zum Kopieren der versionierten URL" class="btn-copy" data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/mii-vs-fall-diagnosis-use|2026.0.0-dev.1"/></span>
+      </td>
+    </tr>
+
+    <tr>
+
+
+
+
+
+
+
+      <td colspan="4">
+        
+      </td>
+
+
+
+      <td><i>Maschinenlesbarer Name</i>: <span style="font-family: monospace;">MII_VS_Fall_Diagnosis_Use</span></td>
+    </tr>
+
+
+
+
+  </table>
+
+<p>
+<p>Diagnosetyp</p>
+
+</p>
+
+
+  <p>
+    <b>References</b>
+  </p>
+  
+<ul>
+ <li><a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">MII PR Fall Kontakt mit einer Gesundheitseinrichtung</a></li>
+</ul>
+<div style="background-color: #fff2ff; border-left: solid 3px #ffa0ff; margin: 4px; padding: 4px">
+<p><b>Changes since version {current}:</b></p>
+<li>New Content</li>
+</div>
+
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <a name="definition"> </a>
+
+<!-- Content Logical Definition heading in the fragment -->
+  <h3>Logical Definition (CLD)</h3>
+<div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated"><p class="res-header-id"></p><a name="mii-vs-fall-diagnosis-use"> </a><a name="hcmii-vs-fall-diagnosis-use"> </a>
+<div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"></p><p style="margin-bottom: 0px">Profile: <a href="http://hl7.org/fhir/R4/shareablevalueset.html">Shareable ValueSet</a></p></div><p>This value set includes codes based on the following rules:</p>
+<ul><li>Import all the codes that are contained in <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/ValueSet/DiagnoseTyp">DiagnoseTyp ValueSet</a></li>
+<li>Import all the codes that are contained in <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/ValueSet/Diagnosesubtyp">Diagnosesubtyp ValueSet</a></li>
+<li>Import all the codes that are contained in <a href="http://hl7.org/fhir/R4/valueset-diagnosis-role.html">DiagnosisRole</a></li></ul></div>
+
+  <p>&#160;</p>
+  <a name="expansion"> </a>
+  <h3 id="expansion">Expansion</h3>
+
+  <div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated"><p class="res-header-id"/><div style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px"><p>Expansion performed internally based on:</p><ul><li><a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/KontaktDiagnoseProzedur">codesystem KontaktDiagnoseProzedur v1.5.4 (CodeSystem)</a><span class="copy-text-inline"><button data-clipboard-text="http://fhir.de/CodeSystem/KontaktDiagnoseProzedur|1.5.4" title="Click to Copy URL" class="btn-copy"> </button></span></li><li><a href="http://terminology.hl7.org/7.0.0/CodeSystem-diagnosis-role.html">codesystem Diagnosis Role v1.1.1 (CodeSystem)</a><span class="copy-text-inline"><button data-clipboard-text="http://terminology.hl7.org/CodeSystem/diagnosis-role|1.1.1" title="Click to Copy URL" class="btn-copy"> </button></span></li><li><a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/diagnosis-role-supplement">supplement Rolle der Diagnose v1.5.4 (CodeSystem)</a><span class="copy-text-inline"><button data-clipboard-text="http://fhir.de/CodeSystem/diagnosis-role-supplement|1.5.4" title="Click to Copy URL" class="btn-copy"> </button></span></li><li><a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/ValueSet/DiagnoseTyp">valueset DiagnoseTyp ValueSet v1.5.4 (ValueSet)</a><span class="copy-text-inline"><button data-clipboard-text="http://fhir.de/ValueSet/DiagnoseTyp|1.5.4" title="Click to Copy URL" class="btn-copy"> </button></span></li><li><a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/ValueSet/Diagnosesubtyp">valueset Diagnosesubtyp ValueSet v1.5.4 (ValueSet)</a><span class="copy-text-inline"><button data-clipboard-text="http://fhir.de/ValueSet/Diagnosesubtyp|1.5.4" title="Click to Copy URL" class="btn-copy"> </button></span></li><li><a href="http://hl7.org/fhir/R4/valueset-diagnosis-role.html">valueset DiagnosisRole v4.0.1 (ValueSet)</a><span class="copy-text-inline"><button data-clipboard-text="http://hl7.org/fhir/ValueSet/diagnosis-role|4.0.1" title="Click to Copy URL" class="btn-copy"> </button></span></li></ul></div><p>This value set contains 13 concepts</p><table class="codes" data-fhir="generated"><tr><td><b>System</b></td><td style="white-space:nowrap"><b>Code</b></td><td><b>Display (de)</b></td><td><b>Definition</b></td><td><b>JSON</b></td><td><b>XML</b></td></tr><tr><td><a name="x-http://fhir.de/CodeSystem/KontaktDiagnoseProzedur-referral-diagnosis"> </a><code>http://fhir.de/CodeSystem/KontaktDiagnoseProzedur</code></td><td style="white-space:nowrap">  <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/KontaktDiagnoseProzedur#KontaktDiagnoseProzedur-referral-diagnosis">referral-diagnosis</a></td><td/><td>Die Einweisungsdiagnose/Überweisungsdiagnose ist die Verdachtsdiagnose oder Arbeitsdiagnose, die ein Arzt oder eine Ärztin beim Einweisen/Überweisen eines Patienten in ein Krankenhaus stellt.</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://fhir.de/CodeSystem/KontaktDiagnoseProzedur&quot;, &quot;version&quot;: &quot;1.5.4&quot;, &quot;code&quot;: &quot;referral-diagnosis&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://fhir.de/CodeSystem/KontaktDiagnoseProzedur&quot;&gt;&lt;version value=&quot;1.5.4&quot;&gt;&lt;code value=&quot;referral-diagnosis&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://fhir.de/CodeSystem/KontaktDiagnoseProzedur-treatment-diagnosis"> </a><code>http://fhir.de/CodeSystem/KontaktDiagnoseProzedur</code></td><td style="white-space:nowrap">  <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/KontaktDiagnoseProzedur#KontaktDiagnoseProzedur-treatment-diagnosis">treatment-diagnosis</a></td><td/><td>Alle medizinischen Diagnosen, die Einfluss auf die Diagnostik, Therapie, Pflege oder den Verlauf der Behandlung haben.</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://fhir.de/CodeSystem/KontaktDiagnoseProzedur&quot;, &quot;version&quot;: &quot;1.5.4&quot;, &quot;code&quot;: &quot;treatment-diagnosis&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://fhir.de/CodeSystem/KontaktDiagnoseProzedur&quot;&gt;&lt;version value=&quot;1.5.4&quot;&gt;&lt;code value=&quot;treatment-diagnosis&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://fhir.de/CodeSystem/KontaktDiagnoseProzedur-surgery-diagnosis"> </a><code>http://fhir.de/CodeSystem/KontaktDiagnoseProzedur</code></td><td style="white-space:nowrap">  <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/KontaktDiagnoseProzedur#KontaktDiagnoseProzedur-surgery-diagnosis">surgery-diagnosis</a></td><td/><td>Eine Operationsdiagnose bezeichnet die spezifische medizinische Diagnose, die den unmittelbaren Anlass für eine durchgeführte Operation darstellt. Sie beschreibt die Erkrankung oder Verletzung, die chirurgisch behandelt wurde, und wird oft im Rahmen der Operationsdokumentation, der Abrechnung sowie für statistische und medizinische Auswertungen angegeben, vgl. §630f BGB Dokumentation der Behandlung</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://fhir.de/CodeSystem/KontaktDiagnoseProzedur&quot;, &quot;version&quot;: &quot;1.5.4&quot;, &quot;code&quot;: &quot;surgery-diagnosis&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://fhir.de/CodeSystem/KontaktDiagnoseProzedur&quot;&gt;&lt;version value=&quot;1.5.4&quot;&gt;&lt;code value=&quot;surgery-diagnosis&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://fhir.de/CodeSystem/KontaktDiagnoseProzedur-department-main-diagnosis"> </a><code>http://fhir.de/CodeSystem/KontaktDiagnoseProzedur</code></td><td style="white-space:nowrap">  <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/KontaktDiagnoseProzedur#KontaktDiagnoseProzedur-department-main-diagnosis">department-main-diagnosis</a></td><td/><td>Eine Fachabteilungsdiagnose ist die medizinische Diagnose, die eine Fachabteilung eines Krankenhauses nach der Aufnahme eines Patienten stellt und dokumentiert. Sie beschreibt die Krankheit oder den Befund, der innerhalb der jeweiligen Fachabteilung behandelt oder weiter abgeklärt wird.</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://fhir.de/CodeSystem/KontaktDiagnoseProzedur&quot;, &quot;version&quot;: &quot;1.5.4&quot;, &quot;code&quot;: &quot;department-main-diagnosis&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://fhir.de/CodeSystem/KontaktDiagnoseProzedur&quot;&gt;&lt;version value=&quot;1.5.4&quot;&gt;&lt;code value=&quot;department-main-diagnosis&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://fhir.de/CodeSystem/KontaktDiagnoseProzedur-cause-of-death"> </a><code>http://fhir.de/CodeSystem/KontaktDiagnoseProzedur</code></td><td style="white-space:nowrap">  <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/KontaktDiagnoseProzedur#KontaktDiagnoseProzedur-cause-of-death">cause-of-death</a></td><td/><td>Als Todesursache bezeichnet man Krankheiten oder Verletzungen, die zum Tod eines Menschen führten (bzw. wesentlich dazu beitrugen) oder äußere Ursachen (Unfall, Gewalteinwirkung, etc.), die zu einer tödlichen Verletzung geführt hatten. Die Todesursache ist für den Eintritt des Sterbens und des Todes verantwortlich.</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://fhir.de/CodeSystem/KontaktDiagnoseProzedur&quot;, &quot;version&quot;: &quot;1.5.4&quot;, &quot;code&quot;: &quot;cause-of-death&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://fhir.de/CodeSystem/KontaktDiagnoseProzedur&quot;&gt;&lt;version value=&quot;1.5.4&quot;&gt;&lt;code value=&quot;cause-of-death&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://fhir.de/CodeSystem/KontaktDiagnoseProzedur-infection-control-diagnosis"> </a><code>http://fhir.de/CodeSystem/KontaktDiagnoseProzedur</code></td><td style="white-space:nowrap">  <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/KontaktDiagnoseProzedur#KontaktDiagnoseProzedur-infection-control-diagnosis">infection-control-diagnosis</a></td><td/><td>Meldepflichtige Krankheit nach §6 Infektionsschutzgesetz - IfSG</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://fhir.de/CodeSystem/KontaktDiagnoseProzedur&quot;, &quot;version&quot;: &quot;1.5.4&quot;, &quot;code&quot;: &quot;infection-control-diagnosis&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://fhir.de/CodeSystem/KontaktDiagnoseProzedur&quot;&gt;&lt;version value=&quot;1.5.4&quot;&gt;&lt;code value=&quot;infection-control-diagnosis&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://terminology.hl7.org/CodeSystem/diagnosis-role-AD"> </a><code>http://terminology.hl7.org/CodeSystem/diagnosis-role</code></td><td style="white-space:nowrap">  <code>AD</code></td><td>Aufnahmediagnose</td><td>The diagnoses documented for administrative purposes as the basis for a hospital or other institutional admission</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/diagnosis-role&quot;, &quot;version&quot;: &quot;1.1.1&quot;, &quot;code&quot;: &quot;AD&quot;, &quot;display&quot;: &quot;Aufnahmediagnose&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://terminology.hl7.org/CodeSystem/diagnosis-role&quot;&gt;&lt;version value=&quot;1.1.1&quot;&gt;&lt;code value=&quot;AD&quot;&gt;&lt;display value=&quot;Aufnahmediagnose&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://terminology.hl7.org/CodeSystem/diagnosis-role-DD"> </a><code>http://terminology.hl7.org/CodeSystem/diagnosis-role</code></td><td style="white-space:nowrap">  <code>DD</code></td><td>Entlassdiagnose</td><td>The diagnoses documented for administrative purposes at the time of hospital or other institutional discharge</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/diagnosis-role&quot;, &quot;version&quot;: &quot;1.1.1&quot;, &quot;code&quot;: &quot;DD&quot;, &quot;display&quot;: &quot;Entlassdiagnose&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://terminology.hl7.org/CodeSystem/diagnosis-role&quot;&gt;&lt;version value=&quot;1.1.1&quot;&gt;&lt;code value=&quot;DD&quot;&gt;&lt;display value=&quot;Entlassdiagnose&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://terminology.hl7.org/CodeSystem/diagnosis-role-CC"> </a><code>http://terminology.hl7.org/CodeSystem/diagnosis-role</code></td><td style="white-space:nowrap">  <code>CC</code></td><td>Hauptdiagnose</td><td/><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/diagnosis-role&quot;, &quot;version&quot;: &quot;1.1.1&quot;, &quot;code&quot;: &quot;CC&quot;, &quot;display&quot;: &quot;Hauptdiagnose&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://terminology.hl7.org/CodeSystem/diagnosis-role&quot;&gt;&lt;version value=&quot;1.1.1&quot;&gt;&lt;code value=&quot;CC&quot;&gt;&lt;display value=&quot;Hauptdiagnose&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://terminology.hl7.org/CodeSystem/diagnosis-role-CM"> </a><code>http://terminology.hl7.org/CodeSystem/diagnosis-role</code></td><td style="white-space:nowrap">  <code>CM</code></td><td>Nebendiagnose</td><td/><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/diagnosis-role&quot;, &quot;version&quot;: &quot;1.1.1&quot;, &quot;code&quot;: &quot;CM&quot;, &quot;display&quot;: &quot;Nebendiagnose&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://terminology.hl7.org/CodeSystem/diagnosis-role&quot;&gt;&lt;version value=&quot;1.1.1&quot;&gt;&lt;code value=&quot;CM&quot;&gt;&lt;display value=&quot;Nebendiagnose&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://terminology.hl7.org/CodeSystem/diagnosis-role-pre-op"> </a><code>http://terminology.hl7.org/CodeSystem/diagnosis-role</code></td><td style="white-space:nowrap">  <code>pre-op</code></td><td>prä-operative Diagnose</td><td/><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/diagnosis-role&quot;, &quot;version&quot;: &quot;1.1.1&quot;, &quot;code&quot;: &quot;pre-op&quot;, &quot;display&quot;: &quot;prä-operative Diagnose&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://terminology.hl7.org/CodeSystem/diagnosis-role&quot;&gt;&lt;version value=&quot;1.1.1&quot;&gt;&lt;code value=&quot;pre-op&quot;&gt;&lt;display value=&quot;prä-operative Diagnose&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://terminology.hl7.org/CodeSystem/diagnosis-role-post-op"> </a><code>http://terminology.hl7.org/CodeSystem/diagnosis-role</code></td><td style="white-space:nowrap">  <code>post-op</code></td><td>post-operative Diagnose</td><td/><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/diagnosis-role&quot;, &quot;version&quot;: &quot;1.1.1&quot;, &quot;code&quot;: &quot;post-op&quot;, &quot;display&quot;: &quot;post-operative Diagnose&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://terminology.hl7.org/CodeSystem/diagnosis-role&quot;&gt;&lt;version value=&quot;1.1.1&quot;&gt;&lt;code value=&quot;post-op&quot;&gt;&lt;display value=&quot;post-operative Diagnose&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://terminology.hl7.org/CodeSystem/diagnosis-role-billing"> </a><code>http://terminology.hl7.org/CodeSystem/diagnosis-role</code></td><td style="white-space:nowrap">  <code>billing</code></td><td>Abrechnungsdiagnose</td><td>The diagnosis documented for billing purposes</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/diagnosis-role&quot;, &quot;version&quot;: &quot;1.1.1&quot;, &quot;code&quot;: &quot;billing&quot;, &quot;display&quot;: &quot;Abrechnungsdiagnose&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://terminology.hl7.org/CodeSystem/diagnosis-role&quot;&gt;&lt;version value=&quot;1.1.1&quot;&gt;&lt;code value=&quot;billing&quot;&gt;&lt;display value=&quot;Abrechnungsdiagnose&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr></table></div>
+
+  <hr/>
+  <p>
+    <a href="http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#terminology">Beschreibung der obigen Tabelle(n)</a>.
+  </p>
+
+  
+
+  <!-- insert notes if present -->
+  
+
+
+
+  
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script type="text/javascript" src="assets/js/flags.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container" data-fhir="generated">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+
+
+
+          IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
+          Package de.medizininformatikinitiative.kerndatensatz.base#2026.0.0-dev.1 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Erstellt 
+  <span title="2025-12-09 20:17:00 +0000">
+    2025-12-09
+  </span>
+
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Inhaltsverzeichnis</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA-Bericht</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

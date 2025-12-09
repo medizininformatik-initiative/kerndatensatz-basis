@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+
+
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Must Support - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link href="assets/css/project.css" rel="stylesheet"/>
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script type="text/javascript" src="assets/js/direction-management.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"3.2"}
+    h3,h4,h5,h6{--heading-prefix:"3.2"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <div id="family-nav">
+  <a id="family-logo" no-external="true" href="http://hl7.org/fhir">
+    <img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/>
+  </a>
+</div>
+<div id="hl7-nav"> 
+  <a id="hl7-logo" no-external="true" href="https://www.medizininformatik-initiative.de">
+    
+    <img height="50" alt="Visit MII" src="MII_Logo_engl_rgb.jpg"/>
+    
+  </a>
+</div>
+
+
+        <div id="ig-status" data-fhir="generated">
+          <p><span style="font-size:12pt;font-weight:bold">MII Implementation Guide Core Dataset Base</span>
+            <br/>
+            <span style="display:inline-block;">2026.0.0-dev.1 - ci-build
+
+
+
+  Germany
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment" data-fhir="generated">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Guidance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="guidance.html">Guidance</a>
+      </li>
+      <li>
+        <a href="researcher-guidance.html">Guidance for Researchers</a>
+      </li>
+      <li>
+        <a href="implementer-guidance.html">Guidance for Implementers</a>
+      </li>
+      <li>
+        <a href="datasets-and-descriptions.html">Datasets and Descriptions</a>
+      </li>
+      <li>
+        <a href="uml-diagrams.html">UML Diagrams</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Conformance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="conformance.html">Conformance</a>
+      </li>
+      <li>
+        <a href="general-requirements.html">General Requirements</a>
+      </li>
+      <li>
+        <a href="must-support.html">Must Support</a>
+      </li>
+      <li>
+        <a href="missing-data.html">Handling Missing Data</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">Artifacts Summary</a>
+      </li>
+      <li>
+        <a href="profiles-and-extensions.html">Profiles and Extensions</a>
+      </li>
+      <li>
+        <a href="terminology.html">Terminology</a>
+      </li>
+      <li>
+        <a href="capability-statements.html">Capability Statements</a>
+      </li>
+      <li>
+        <a href="search-parameters-and-operations.html">Search Parameters and Operations</a>
+      </li>
+      <li>
+        <a href="logical-models.html">Logical Models</a>
+      </li>
+      <li>
+        <a href="examples.html">Examples</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Version History
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="version-history.html">Version History</a>
+      </li>
+      <li>
+        <a href="changes.html">Changelog</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+
+              
+
+
+<div style="float: var(--ig-right);padding: 8px 0px;" id="language">
+  <div id="select_flg" class="flaglist" style="background-image: url(assets/images/icon_arrow_down.png);background-position: 133px 3px;">
+    <div><img class="flag" alt="flag en" src="assets/images/lang-en.png"/>English</div>
+  </div>
+  <div style="float: var(--ig-right); margin: 2px 0px; padding: 1px 0;color: var(--btn-text-color);font-size:12px">Language:</div>
+ 	<div id="flaglist" class="flaglist" style="display: none;position: absolute;right: 0;z-index: 100;background-image: url(assets/images/icon_arrow_up.png);background-position: 133px 3px;">
+    <div><img class="flag" alt="flag en" src="assets/images/lang-en.png"/>English</div>
+
+    <div><a href="../de/must-support.html"><img class="flag" src="assets/images/lang-de.png" alt="flag de"/>Deutsch</a></div>
+
+  </div>
+</div>
+
+
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment" data-fhir="generated">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='conformance.html'><b>Conformance</b></a></li><li><b>Must Support</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">MII Implementation Guide Core Dataset Base - Local Development build (v2026.0.0-dev.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://www.medizininformatik-initiative.de/fhir/modul-base/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Must Support</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#mandatory-elements" id="markdown-toc-mandatory-elements">Mandatory Elements</a></li>
+  <li><a href="#must-support-elements" id="markdown-toc-must-support-elements">Must Support Elements</a></li>
+  <li><a href="#presentation-of-must-support-and-mandatory-elements" id="markdown-toc-presentation-of-must-support-and-mandatory-elements">Presentation of Must Support and Mandatory Elements</a></li>
+</ul>
+
+</div>
+<p>For querying and reading MII Profiles, <em>Must Support</em> on any profile data element <strong>SHALL</strong> be interpreted as follows:</p>
+
+<h3 id="mandatory-elements">Mandatory Elements</h3>
+
+<p>Elements of a FHIR resource can be defined in a profile as mandatory or "Must Support". Mandatory elements are elements with a minimum cardinality of 1 (min=1). When an element is mandatory, the data is expected to always be present. In rare cases, data may be missing despite a minimum cardinality of 1. Guidance for cases where data is missing can be found in the <a href="missing-data.html">Missing Data</a> section.</p>
+
+<h3 id="must-support-elements">Must Support Elements</h3>
+
+<p>Resource elements marked as "Must Support" (MS) in a profile must be supported by systems that claim conformance to that particular profile. This is different from cardinality. It is possible to have an element with a minimum cardinality of 0, but still expect systems to support the element.</p>
+
+<p>Support (Must Support) of an element is understood within the MII core dataset specifications as follows:</p>
+
+<p>A distinction is made between data-requesting systems (recipients/clients) and data-providing systems (senders/servers). In the context of the MII infrastructure, the FHIR API of a Data Integration Center (DIZ) is the sending system that accepts requests.</p>
+
+<h4 id="server-expectations">Server Expectations</h4>
+
+<p>The system (sender/server) <strong>SHALL</strong> be capable of:</p>
+<ul>
+  <li>Meaningfully populating a Must Support element with data (e.g., via ETL processes from primary data sources), if the data is locally available</li>
+  <li>Storing the element in a resource</li>
+  <li>Making it retrievable upon request (e.g., feasibility query)</li>
+</ul>
+
+<h4 id="client-expectations">Client Expectations</h4>
+
+<p>The data-requesting system (recipient/client) <strong>SHALL</strong> be capable of:</p>
+<ul>
+  <li>Displaying the element to the user</li>
+  <li>Considering it for further calculations or other processing</li>
+  <li>Processing resource instances containing the Must Support data elements without generating an error or causing the application to fail</li>
+</ul>
+
+<h4 id="missing-data">Missing Data</h4>
+
+<ul>
+  <li>When information on a particular data element is not present, and the reason for absence is unknown, MII Servers <strong>SHALL NOT</strong> include the data element in the resource instance returned as part of the query results</li>
+  <li>When querying MII Servers, MII Clients <strong>SHALL</strong> interpret missing data elements within resource instances as data not present in the MII Server's system</li>
+  <li>When information on a particular data element is missing, and the MII Server knows the precise reason for the absence of data, MII Servers <strong>SHOULD</strong> send the reason for the missing information following the guidance in the <a href="missing-data.html">Missing Data</a> section</li>
+</ul>
+
+<h3 id="presentation-of-must-support-and-mandatory-elements">Presentation of Must Support and Mandatory Elements</h3>
+
+<p>On each profile page, several different formal views of the profile contents are displayed in a tree format under tabs labeled "Differential Table", "Key Elements Table", and "Snapshot Table".</p>
+
+<h4 id="differential-table-view">Differential Table View</h4>
+
+<p>Elements with a cardinality starting with "1" under the column header "Card." (e.g., 1..1) are <em>Mandatory</em> elements. Elements labeled <em>Must Support</em> in the "Differential Table" view are flagged with an <span style="padding-left: 3px; padding-right: 3px; color: white; background-color: red" title="This element must be supported">S</span>.</p>
+
+<h4 id="must-support---primitive-elements">Must Support - Primitive Elements</h4>
+
+<p>Primitive elements are single elements with a primitive value. If they are marked as <em>Must Support</em>, then the Server <strong>SHALL</strong> be capable of providing the element value to meet the Must Support requirement.</p>
+
+<p>For example, if an element like <code class="language-plaintext highlighter-rouge">Patient.birthDate</code> is marked as Must Support:</p>
+<ul>
+  <li>MII Servers <strong>SHALL</strong> be capable of providing a value in <code class="language-plaintext highlighter-rouge">Patient.birthDate</code></li>
+  <li>MII Clients <strong>SHALL</strong> be capable of processing the value in <code class="language-plaintext highlighter-rouge">Patient.birthDate</code></li>
+</ul>
+
+<h4 id="must-support---complex-elements">Must Support - Complex Elements</h4>
+
+<p>Complex elements are composed of primitive and other complex elements. For any complex element marked as <em>Must Support</em>, the Server <strong>SHALL</strong> be capable of providing at least one of the sub-element values. If any sub-element is marked as <em>Must Support</em>, it must also meet the Must Support requirements and satisfy the Must Support requirements for the parent element.</p>
+
+<p>For example, if <code class="language-plaintext highlighter-rouge">Patient.name</code> is labeled <em>Must Support</em> and has <em>Must Support</em> sub-elements "family" and "given":</p>
+<ul>
+  <li>MII Servers <strong>SHALL</strong> be capable of providing values in <code class="language-plaintext highlighter-rouge">Patient.name.family</code> and <code class="language-plaintext highlighter-rouge">Patient.name.given</code></li>
+  <li>MII Clients <strong>SHALL</strong> be capable of processing the values in <code class="language-plaintext highlighter-rouge">Patient.name.family</code> and <code class="language-plaintext highlighter-rouge">Patient.name.given</code></li>
+</ul>
+
+<p>On the other hand, if any sub-element is marked as <em>Must Support</em> and the parent element is not, there is <em>no expectation</em> that you must support the parent. However, if the parent element is represented in the structure, Servers <strong>SHALL</strong> support the sub-element(s) marked as <em>Must Support</em>.</p>
+
+<h4 id="must-support---resource-references">Must Support - Resource References</h4>
+
+<p>When a Reference type element is labeled as <em>Must Support</em> and has a single target profile referenced, the target profile <strong>SHALL</strong> be supported.</p>
+
+<p>For example, if <code class="language-plaintext highlighter-rouge">Condition.subject</code> references the MII Patient profile and is marked as Must Support:</p>
+<ul>
+  <li>MII Servers <strong>SHALL</strong> be capable of providing a <code class="language-plaintext highlighter-rouge">Condition.subject</code> with a valid reference to an MII Patient Profile</li>
+  <li>MII Clients <strong>SHALL</strong> be capable of processing a <code class="language-plaintext highlighter-rouge">Condition.subject</code> with a valid reference to an MII Patient Profile</li>
+</ul>
+
+<p>When a Reference type element is labeled as <em>Must Support</em>, has multiple target profiles referenced, but none are labeled as <em>Must Support</em>, <em>at least one</em> target profile <strong>SHALL</strong> be supported.</p>
+
+<h4 id="must-support---choice-of-data-types">Must Support - Choice of Data Types</h4>
+
+<p>If a <em>Must Support</em> element has a choice of datatypes for its content, the datatypes the Server <strong>SHALL</strong> support are labeled as <em>Must Support</em>.</p>
+
+<p>For example, if <code class="language-plaintext highlighter-rouge">Observation.value[x]</code> has multiple Must Support datatypes:</p>
+<ul>
+  <li>MII Servers <strong>SHALL</strong> be capable of populating the labeled Must Support datatypes (e.g., <code class="language-plaintext highlighter-rouge">valueQuantity</code>, <code class="language-plaintext highlighter-rouge">valueCodeableConcept</code>, <code class="language-plaintext highlighter-rouge">valueString</code>)</li>
+  <li>MII Clients <strong>SHALL</strong> be capable of processing all labeled Must Support datatypes</li>
+  <li>Systems <strong>MAY</strong> support other choice elements, but this is not a requirement</li>
+</ul>
+
+<h4 id="must-support---slices">Must Support - Slices</h4>
+
+<p>FHIR profiles use <a href="http://hl7.org/fhir/R4/profiling.html#slicing">slicing</a> to define constraints on repeating elements. The element that defines the slicing discriminator ("slicer") may be marked as Must Support, but each slice must be explicitly tagged with the Must Support property to define that slice's conformance requirements.</p>
+
+<p>For example, if <code class="language-plaintext highlighter-rouge">Identifier</code> is a Must Support slicer element and defines slices for different identifier types, only the slices explicitly marked as Must Support are required:</p>
+<ul>
+  <li>MII Servers <strong>SHALL</strong> be capable of providing identifiers that conform to the Must Support slices</li>
+  <li>MII Clients <strong>SHALL</strong> be capable of processing identifiers that conform to the Must Support slices</li>
+  <li>Systems <strong>MAY</strong> support other slices, but this is not required</li>
+</ul>
+
+<hr />
+
+<p>For more information, see:</p>
+<ul>
+  <li><a href="general-requirements.html">General Requirements</a> - Requirements common to all actors and profiles</li>
+  <li><a href="missing-data.html">Missing Data</a> - Guidance for handling missing data</li>
+  <li><a href="conformance.html">Conformance</a> - General conformance requirements</li>
+</ul>
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script type="text/javascript" src="assets/js/flags.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container" data-fhir="generated">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+
+
+
+          IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
+          Package de.medizininformatikinitiative.kerndatensatz.base#2026.0.0-dev.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Generated 
+  <span title="2025-12-09 20:17:00 +0000">
+    2025-12-09
+  </span>
+
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+
