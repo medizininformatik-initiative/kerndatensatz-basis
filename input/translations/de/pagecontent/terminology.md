@@ -45,8 +45,8 @@ Eine vollständige Diskussion über Codesysteme und eine Liste der in FHIR verwe
 
 * [MII CS Person Vitalstatus](CodeSystem-mii-cs-person-vitalstatus.html) - Codesystem für Vitalstatus
 * [MII CS Diagnose Lebensphase Supplement SNOMED](CodeSystem-mii-cs-diagnose-lebensphase-supplement-snomed.html) - Supplement für SNOMED CT-Lebensphasen-Konzepte mit deutschen Beschreibungen
-* [MII CS Fall Supplement ActEncounterCode](CodeSystem-mii-cs-fall-supplement-actencountercode.html) - Ergänzung für HL7 V3 ActEncounterCode
-* [MII CS Fall Supplement PatientClass](CodeSystem-mii-cs-fall-supplement-patientclass.html) - Supplement für Behandlungsfall-Klassen-Codes
+* [MII CS Fall Supplement ActEncounterCode](CodeSystem-mii-cs-fall-supplement-act-encounter-code.html) - Ergänzung für HL7 V3 ActEncounterCode
+* [MII CS Fall Supplement PatientClass](CodeSystem-mii-cs-fall-supplement-patient-class.html) - Supplement für Behandlungsfall-Klassen-Codes
 
 #### Verwendete externe CodeSystems
 

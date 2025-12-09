@@ -97,7 +97,7 @@ Description: "Condition: Primary code (†) - gonococcal bursitis etiology"
 * code.coding[icd10-gm].extension[+].url = "http://fhir.de/StructureDefinition/seitenlokalisation"
 * code.coding[icd10-gm].extension[=].valueCoding = $KBV_CS_SFHIR_ICD_SEITENLOKALISATION#L "links"
 * code.coding[icd10-gm].extension[+].url = "http://fhir.de/StructureDefinition/icd-10-gm-diagnosesicherheit"
-* code.coding[icd10-gm].extension[=].valueCoding = $KBV_CS_SFHIR_ICD_DIAGNOSESICHERHEIT#G "Gesicherte Diagnose"
+* code.coding[icd10-gm].extension[=].valueCoding = $KBV_CS_SFHIR_ICD_DIAGNOSESICHERHEIT#G "gesicherte Diagnose"
 * code.coding[alpha-id].system = $alpha-id
 * code.coding[alpha-id].version = "2020"
 * code.coding[alpha-id].code = #I97525
@@ -118,10 +118,11 @@ Description: "Condition: Secondary code (*) - bursitis manifestation"
 * extension.valueReference = Reference(mii-exa-diagnose-mehrfachcodierung-primaercode)
 * clinicalStatus = $condition-clinical#active
 * verificationStatus = $condition-ver-status#confirmed
-* code.coding[icd10-gm] = $icd-10-gm#M73.04 "Bursitis gonorrhoica: Hand"
+* code.coding[icd10-gm] = $icd-10-gm#M73.04 
 * code.coding[icd10-gm].version = "2020"
 * code.coding[icd10-gm].extension[0].url = "http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen"
 * code.coding[icd10-gm].extension[=].valueCoding = $icd-10-gm-mehrfachcodierungs-kennzeichen#*
+* code.text = "Bursitis gonorrhoica: Hand"
 * subject = Reference(mii-exa-person-patient-1)
 * encounter = Reference(mii-exa-fall-kontakt-gesundheitseinrichtung-8)
 * onsetDateTime = "2019-09-26"
@@ -271,9 +272,10 @@ Description: "Condition: Acute appendicitis diagnosis as admission diagnosis"
 * extension[Feststellungsdatum].valueDateTime = "2020-01-08T07:30:00+01:00"
 * clinicalStatus = $condition-clinical#resolved
 * verificationStatus = $condition-ver-status#confirmed
-* code.coding[icd10-gm] = $icd-10-gm#K35.80 "Akute Appendizitis, nicht näher bezeichnet"
+* code.coding[icd10-gm] = $icd-10-gm#K35.8
 * code.coding[icd10-gm].version = "2020"
 * code.coding[sct] = $sct-no-ver#85189001 "Acute appendicitis"
+* code.text = "Akute Appendizitis"
 * subject = Reference(mii-exa-person-patient-1)
 * encounter = Reference(mii-exa-fall-kontakt-gesundheitseinrichtung-2)
 * onsetDateTime = "2020-01-08T04:00:00+01:00"

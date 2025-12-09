@@ -94,6 +94,9 @@ pages:
   ImplementationGuide-mii-ig-base.md:
     title: MII ImplementationGuide Resource
 
+  translationinfo.md:
+    title: Translation Information
+
 #
 #
 # The parameters property represents IG.definition.parameter. Rather
@@ -115,7 +118,6 @@ parameters:
     - de # Additional languages
   translation-sources:
     - input/translations/de # Path to German translations
-  igs-logo: MII_Logo_rgb.jpg # MII logo for the IG
   excludexml: false
   excludejson: false
   excludettl: true
@@ -160,6 +162,7 @@ parameters:
     - https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-category-sct
     - https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-sct
     - https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/LogicalModel/Person
+    - https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/mii-vs-person-icd10who
 
 #   excludettl: true
 #   validation: [allow-any-extensions, no-broken-links]
