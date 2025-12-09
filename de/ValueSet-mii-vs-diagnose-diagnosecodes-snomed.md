@@ -15,19 +15,9 @@ Enthaelt alle SNOMED Clinical finding, Event und Situation with explicit context
 
 ### Logical Definition (CLD)
 
-This value set includes codes based on the following rules:
-
-* Include codes from[`http://snomed.info/sct`](http://www.snomed.org/)version 📍 where concept is-a 404684003 (Clinical finding)
-* Include codes from[`http://snomed.info/sct`](http://www.snomed.org/)version 📍 where concept is-a 272379006 (Event)
-* Include codes from[`http://snomed.info/sct`](http://www.snomed.org/)version 📍 where concept is-a 243796009 (Situation with explicit context)
-
  
 
 ### Expansion
-
-Expansion from 127.0.0.1 based on SNOMED CT International edition 01-Jul 2024
-
-This value set has >1000 codes in it. In order to keep the publication size manageable, only a selection (1000 codes) of the whole set of codes is shown
 
 -------
 

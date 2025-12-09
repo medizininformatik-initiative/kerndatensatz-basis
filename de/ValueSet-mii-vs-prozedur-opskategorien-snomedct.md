@@ -19,10 +19,6 @@ Enthaelt alle SNOMED CT Codes für ein Mapping der OPS Klassentitel
 
 ### Expansion
 
-Expansion from 127.0.0.1 based on SNOMED CT International edition 01-Jul 2024
-
-This value set expansion contains 6 concepts.
-
 -------
 
  [Beschreibung der obigen Tabelle(n)](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#terminology). 

@@ -89,7 +89,7 @@ Security Label: test health data (Details: ActReason code HTEST = 'test health d
             "valueCoding" : {
               "system" : "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ICD_DIAGNOSESICHERHEIT",
               "code" : "G",
-              "display" : "Gesicherte Diagnose"
+              "display" : "gesicherte Diagnose"
             }
           }
         ],

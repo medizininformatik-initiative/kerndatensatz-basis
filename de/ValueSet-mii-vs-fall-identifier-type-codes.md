@@ -19,8 +19,6 @@ A coded type for an identifier that can be used to determine which identifier to
 
 ### Expansion
 
-This value set contains 19 concepts
-
 -------
 
  [Beschreibung der obigen Tabelle(n)](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#terminology). 

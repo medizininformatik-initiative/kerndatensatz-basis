@@ -47,8 +47,8 @@ See the [FHIR terminology section](http://hl7.org/fhir/R4/terminologies-systems.
 
 * [MII CS Person Vitalstatus](CodeSystem-mii-cs-person-vitalstatus.md) - Code system for vital status
 * [MII CS Diagnose Lebensphase Supplement SNOMED](CodeSystem-mii-cs-diagnose-lebensphase-supplement-snomed.md) - Supplement for SNOMED CT life phase concepts with German descriptions
-* [MII CS Fall Supplement ActEncounterCode](CodeSystem-mii-cs-fall-supplement-actencountercode.md) - Supplement for HL7 V3 ActEncounterCode
-* [MII CS Fall Supplement PatientClass](CodeSystem-mii-cs-fall-supplement-patientclass.md) - Supplement for encounter class codes
+* [MII CS Fall Supplement ActEncounterCode](CodeSystem-mii-cs-fall-supplement-act-encounter-code.md) - Supplement for HL7 V3 ActEncounterCode
+* [MII CS Fall Supplement PatientClass](CodeSystem-mii-cs-fall-supplement-patient-class.md) - Supplement for encounter class codes
 
 #### External Code Systems Used
 

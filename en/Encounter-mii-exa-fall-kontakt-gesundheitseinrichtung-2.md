@@ -28,9 +28,9 @@ Security Label: test health data (Details: ActReason code HTEST = 'test health d
 
 **period**: 2020-01-08 09:00:00+0100 --> 2020-01-11 23:59:00+0100
 
-> **diagnosis****condition**:[Condition Akute Appendizitis, nicht näher bezeichnet](Condition-mii-exa-diagnose-appendicitis.md)**use**:Admission diagnosis
+> **diagnosis****condition**:[Condition Acute appendicitis](Condition-mii-exa-diagnose-appendicitis.md)**use**:Admission diagnosis
 
-> **diagnosis****condition**:[Condition Akute Appendizitis, nicht näher bezeichnet](Condition-mii-exa-diagnose-appendicitis.md)**use**:Behandlungsrelevante Diagnosen
+> **diagnosis****condition**:[Condition Acute appendicitis](Condition-mii-exa-diagnose-appendicitis.md)**use**:Behandlungsrelevante Diagnosen
 
 > **diagnosis****condition**:[Condition Prellung des Ellenbogens](Condition-mii-exa-diagnose-condition-elbow-contusion.md)**use**:Behandlungsrelevante Diagnosen
 

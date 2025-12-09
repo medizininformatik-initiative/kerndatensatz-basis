@@ -690,7 +690,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-perso
         "mustSupport" : true,
         "binding" : {
           "strength" : "required",
-          "valueSet" : "http://hl7.org/fhir/sid/icd-10/vs"
+          "valueSet" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/mii-vs-person-icd10who"
         }
       },
       {

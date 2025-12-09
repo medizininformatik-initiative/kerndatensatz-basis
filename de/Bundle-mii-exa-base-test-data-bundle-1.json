@@ -1015,7 +1015,7 @@
             "valueCoding" : {
               "system" : "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ICD_DIAGNOSESICHERHEIT",
               "code" : "G",
-              "display" : "Gesicherte Diagnose"
+              "display" : "gesicherte Diagnose"
             }
           }],
           "system" : "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
@@ -1089,9 +1089,9 @@
           }],
           "system" : "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
           "version" : "2020",
-          "code" : "M73.04",
-          "display" : "Bursitis gonorrhoica: Hand"
-        }]
+          "code" : "M73.04"
+        }],
+        "text" : "Bursitis gonorrhoica: Hand"
       },
       "subject" : {
         "reference" : "Patient/mii-exa-person-patient-1"
@@ -1144,14 +1144,14 @@
         "coding" : [{
           "system" : "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
           "version" : "2020",
-          "code" : "K35.80",
-          "display" : "Akute Appendizitis, nicht näher bezeichnet"
+          "code" : "K35.8"
         },
         {
           "system" : "http://snomed.info/sct",
           "code" : "85189001",
           "display" : "Acute appendicitis"
-        }]
+        }],
+        "text" : "Akute Appendizitis"
       },
       "subject" : {
         "reference" : "Patient/mii-exa-person-patient-1"

@@ -13,16 +13,6 @@ This Code system is referenced in the definition of the following value sets:
 
 * New Content
 
-Profile: [Shareable CodeSystem](http://hl7.org/fhir/R4/shareablecodesystem.html)
-
-**Properties**
-
-**This code system defines the following properties for its concepts**
-
-**Concepts**
-
-This code system supplement `https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/CodeSystem/mii-cs-diagnose-lebensphase-supplement-snomed` defines properties on the following codes:
-
 -------
 
  [Description of the above table(s)](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#terminology). 

@@ -15,17 +15,9 @@ Enthaelt alle SNOMED Body structure codes
 
 ### Logical Definition (CLD)
 
-Profile: [Shareable ValueSet](http://hl7.org/fhir/R4/shareablevalueset.html)
-
-* Include codes from[`http://snomed.info/sct`](http://www.snomed.org/)version 📍 where concept descends from 123037004 (Body structure)
-
  
 
 ### Expansion
-
-Expansion from 127.0.0.1 based on SNOMED CT International edition 01-Jul 2024
-
-This value set has >1000 codes in it. In order to keep the publication size manageable, only a selection (1000 codes) of the whole set of codes is shown
 
 -------
 

@@ -13,10 +13,6 @@ This Code system is referenced in the definition of the following value sets:
 
 * New Content
 
-Profile: [Shareable CodeSystem](http://hl7.org/fhir/R4/shareablecodesystem.html)
-
-This code system supplement `https://www.medizininformatik-initiative.de/fhir/core/modul-fall/CodeSystem/SupplementPatientClass` defines displays on the following codes:
-
 -------
 
  [Description of the above table(s)](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#terminology). 
@@ -54,7 +50,7 @@ This code system supplement `https://www.medizininformatik-initiative.de/fhir/co
   "title" : "MII CS Fall Supplement PatientClass",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-12-03T11:25:41+00:00",
+  "date" : "2025-12-09T09:11:58+00:00",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [

@@ -7,69 +7,6 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
 
  [Rohdatei der OpenAPI-/Swagger-Definition](../mii-cps-diagnose-capabilitystatement.openapi.json) | [Download](../mii-cps-diagnose-capabilitystatement.openapi.json) 
 
--------
-
-**German**
-
--------
-
-## MII CPS Diagnose CapabilityStatement
-
-* Implementation Guide Version: 2026.0.0-dev.1 
-* FHIR Version: 4.0.1 
-* Supported Formats: `xml`, `json`
-* Published on: 2025-03-31 
-* Published by: Medical Informatics Initiative (MII) 
-
-> **Note to Implementers: FHIR Capabilities**Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.
-
-## FHIR RESTful Capabilities
-
-### Mode: server
-
-### Capabilities by Resource/Profile
-
-#### Summary
-
-The summary table lists the resources that are part of this configuration, and for each resource it lists:
-
-* The relevant profiles (if any)
-* The interactions supported by each resource (**R**ead, **S**earch, **U**pdate, and **C**reate, are always shown, while **VR**ead, **P**atch, **D**elete, **H**istory on **I**nstance, or **H**istory on **T**ype are only present if at least one of the resources has support for them.
-* The required, recommended, and some optional search parameters (if any).
-* The linked resources enabled for `_include`
-* The other resources enabled for `_revinclude`
-* The operations on the resource (if any)
-
-| | | | | | | | | | |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| [Condition](#de-Condition1-1) | [http://hl7.org/fhir/StructureDefinition/Condition](http://hl7.org/fhir/R4/condition.html)**Additional supported profiles:**  [MII PR Diagnose Conditionversion: 2026.0.0-dev.1)](StructureDefinition-mii-pr-diagnose-condition.md) | **Y** | **Y** |  |  | _count, _summary, _id, _lastUpdated, _profile, abatement-age, abatement-date, abatement-string, body-site, category, clinical-status, code, encounter, evidence, evidence-detail, identifier, onset-age, onset-date, onset-info, patient, recorded-date, severity, stage, subject, verification-status, icd10gm-diagnosesicherheit, icd10gm-mehrfachcodierung, icd10gm-seitenlokalisation |  |  |  |
-
--------
-
-#### Resource Conformance: SHALL Condition
-
-Base System Profile
-
-[Condition](http://hl7.org/fhir/R4/condition.html)
-
-Profile Conformance
-
-**SHALL**
-
-Reference Policy
-
-Supported Profiles
-[MII PR Diagnose Conditionversion: 2026.0.0-dev.1)](StructureDefinition-mii-pr-diagnose-condition.md)
-
-Interaction summary
-
-* **SHALL** support `read`, `search-type`.
-
-Search Parameters
-
-
- 
-
 
 
 ## Resource Content

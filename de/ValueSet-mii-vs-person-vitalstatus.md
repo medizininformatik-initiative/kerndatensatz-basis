@@ -15,10 +15,6 @@ Enthält alle Werte, die den Vitalstatus einer Person beschreiben.
 
 ### Logical Definition (CLD)
 
-Profile: [Shareable ValueSet](http://hl7.org/fhir/R4/shareablevalueset.html)
-
-* Include all codes defined in [`https://www.medizininformatik-initiative.de/fhir/core/modul-person/CodeSystem/Vitalstatus`](CodeSystem-mii-cs-person-vitalstatus.md)version 📦2026.0.0-dev.1
-
  
 
 ### Expansion

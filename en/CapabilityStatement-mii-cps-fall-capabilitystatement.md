@@ -7,69 +7,6 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
 
  [Raw OpenAPI-Swagger Definition file](../mii-cps-fall-capabilitystatement.openapi.json) | [Download](../mii-cps-fall-capabilitystatement.openapi.json) 
 
--------
-
-**English**
-
--------
-
-## MII CPS Fall CapabilityStatement
-
-* Implementation Guide Version: 2026.0.0-dev.1 
-* FHIR Version: 4.0.1 
-* Supported Formats: `xml`, `json`
-* Published on: 2025-10-22 
-* Published by: Medical Informatics Initiative (MII) 
-
-> **Note to Implementers: FHIR Capabilities**Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.
-
-## FHIR RESTful Capabilities
-
-### Mode: server
-
-### Capabilities by Resource/Profile
-
-#### Summary
-
-The summary table lists the resources that are part of this configuration, and for each resource it lists:
-
-* The relevant profiles (if any)
-* The interactions supported by each resource (**R**ead, **S**earch, **U**pdate, and **C**reate, are always shown, while **VR**ead, **P**atch, **D**elete, **H**istory on **I**nstance, or **H**istory on **T**ype are only present if at least one of the resources has support for them.
-* The required, recommended, and some optional search parameters (if any).
-* The linked resources enabled for `_include`
-* The other resources enabled for `_revinclude`
-* The operations on the resource (if any)
-
-| | | | | | | | | | |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| [Encounter](#Encounter1-1) | [http://hl7.org/fhir/StructureDefinition/Encounter](http://hl7.org/fhir/R4/encounter.html)**Additional supported profiles:**  `https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2025.0.1|2026.0.0-dev.1` | **Y** | **Y** |  |  | _id, _lastUpdated, _profile, identifier, status, class, type, category, subject, date, diagnosis, location, service-provider, part-of, service-type, diagnosis-use, hospitalization-admitsource, location-physical-type |  |  |  |
-
--------
-
-#### Resource Conformance: SHALL Encounter
-
-Base System Profile
-
-[Encounter](http://hl7.org/fhir/R4/encounter.html)
-
-Profile Conformance
-
-**SHALL**
-
-Reference Policy
-
-Supported Profiles
-`https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2025.0.1|2026.0.0-dev.1`
-
-Interaction summary
-
-* **SHALL** support `read`, `search-type`.
-
-Search Parameters
-
-
- 
-
 
 
 ## Resource Content

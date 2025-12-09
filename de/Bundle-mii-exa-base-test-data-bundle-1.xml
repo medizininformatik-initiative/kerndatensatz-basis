@@ -1013,7 +1013,7 @@
               <valueCoding>
                 <system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ICD_DIAGNOSESICHERHEIT"/>
                 <code value="G"/>
-                <display value="Gesicherte Diagnose"/>
+                <display value="gesicherte Diagnose"/>
               </valueCoding>
             </extension>
             <system value="http://fhir.de/CodeSystem/bfarm/icd-10-gm"/>
@@ -1087,8 +1087,8 @@
             <system value="http://fhir.de/CodeSystem/bfarm/icd-10-gm"/>
             <version value="2020"/>
             <code value="M73.04"/>
-            <display value="Bursitis gonorrhoica: Hand"/>
           </coding>
+          <text value="Bursitis gonorrhoica: Hand"/>
         </code>
         <subject>
           <reference value="Patient/mii-exa-person-patient-1"/>
@@ -1141,14 +1141,14 @@
           <coding>
             <system value="http://fhir.de/CodeSystem/bfarm/icd-10-gm"/>
             <version value="2020"/>
-            <code value="K35.80"/>
-            <display value="Akute Appendizitis, nicht näher bezeichnet"/>
+            <code value="K35.8"/>
           </coding>
           <coding>
             <system value="http://snomed.info/sct"/>
             <code value="85189001"/>
             <display value="Acute appendicitis"/>
           </coding>
+          <text value="Akute Appendizitis"/>
         </code>
         <subject>
           <reference value="Patient/mii-exa-person-patient-1"/>

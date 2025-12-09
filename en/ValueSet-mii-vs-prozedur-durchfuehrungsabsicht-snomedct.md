@@ -19,10 +19,6 @@ Durchführungsabsicht / Intention mit der Prozedur ausgeführt wird
 
 ### Expansion
 
-Expansion from 127.0.0.1 based on SNOMED CT International edition 01-Jul 2024
-
-This value set expansion contains 9 concepts.
-
 -------
 
  [Description of the above table(s)](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#terminology). 
