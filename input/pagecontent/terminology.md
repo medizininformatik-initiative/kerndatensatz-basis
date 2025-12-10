@@ -13,6 +13,7 @@ Most value sets used in this guide reference external code systems such as ICD-1
 #### Person Module Value Sets
 
 * [MII VS Person Vitalstatus](ValueSet-mii-vs-person-vitalstatus.html) - Vital status codes
+* [MII VS Person ICD-10-WHO](ValueSet-mii-vs-person-icd10who.html) - ICD-10 WHO codes for causes of death
 
 #### Treatment Case Module Value Sets
 
@@ -54,8 +55,9 @@ The following external code systems are referenced in this implementation guide:
 
 | Code System | URI | Note |
 |-------------|-----|------|
-| ICD-10-GM | `http://fhir.de/CodeSystem/bfarm/icd-10-gm` | Available via MII TermServ |
-| OPS | `http://fhir.de/CodeSystem/bfarm/ops` | Available via MII TermServ |
+| ICD-10-GM | `http://fhir.de/CodeSystem/bfarm/icd-10-gm` | German modification of ICD-10 for diagnoses |
+| ICD-10 WHO | `http://hl7.org/fhir/sid/icd-10` | WHO International Classification of Diseases |
+| OPS | `http://fhir.de/CodeSystem/bfarm/ops` | German classification for operations and procedures |
 | SNOMED CT | `http://snomed.info/sct` | International clinical terminology |
 | Orphanet | `http://www.orpha.net` | Rare disease codes |
 | Alpha-ID | `http://fhir.de/CodeSystem/bfarm/alpha-id` | ICD-10-GM alphabetical index |

@@ -1,9 +1,3 @@
-This section provides information about the version history of the MII Kerndatensatz Basis Implementation Guide.
-
-### Current Version
-
-This is version **2026.0.0-dev.1** of the MII Kerndatensatz Basis Implementation Guide, published as a development build.
-
 ### Versioning Scheme
 
 Starting with version 2024.0.0, the MII Kerndatensatz follows a **Calendar Versioning (CalVer)** scheme:
@@ -16,7 +10,3 @@ Starting with version 2024.0.0, the MII Kerndatensatz follows a **Calendar Versi
 ### Version History and Changes
 
 * **[Change Log](changes.html)** - Detailed change log documenting all modifications across versions, organized by module (Person, Treatment Case, Diagnosis, Procedure)
-
----
-
-For information about downloading this and previous versions, see the [Downloads](downloads.html) page.

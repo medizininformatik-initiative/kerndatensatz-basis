@@ -79,22 +79,21 @@ This section provides detailed implementation guidance for the MII Diagnose (Dia
 <div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
 <h5 style="color: #406A99; margin-top: 0;">Best Practice - Diagnosis-Encounter Relationships</h5>
 
-<p><strong>Primary Linkage Method:</strong> Use <code>Encounter.diagnosis</code> to link diagnoses to encounters. This is the <strong>RECOMMENDED</strong> approach for associating diagnoses with hospital stays or visits.</p>
+<p><strong>Change from Previous Version:</strong> In previous versions of this implementation guide, it was recommended to use <code>Encounter.diagnosis</code> to link diagnoses to encounters. This guidance has been updated to align with gematik ISiK (Informationssysteme im Krankenhaus) recommendations.</p>
 
-<p><strong>Condition.encounter Usage:</strong></p>
+<p><strong>Current Recommendation - Condition.encounter:</strong></p>
 <ul>
-  <li><strong>SHOULD NOT</strong> be used for general diagnosis-encounter linking</li>
-  <li><strong>Exception:</strong> MAY be used to link the diagnosis to the specific encounter where it was <strong>first established/documented</strong> (always a contact with a concrete care unit/Versorgungsstelle)</li>
-  <li>This represents the "assessment date" context rather than the general association</li>
+  <li>The link to an Encounter resource documents the reference to a hospital stay and enables important API functions such as chained search, (reverse) include, etc.</li>
+  <li><strong>Department Contact Level:</strong> The reference <strong>SHOULD</strong> be to an Encounter at the "Abteilungskontakt" (department contact) level.</li>
+  <li>When selecting the Encounter, note that multiple Encounters may be grouped under a single (billing) case number (<code>Encounter.account</code>), such as an inpatient visit with multiple pre- and post-hospitalization contacts</li>
 </ul>
 
 <p><strong>Assessment Date Mapping:</strong></p>
 <ul>
   <li>The logical data element "Feststellungsdatum" (assessment/determination date) maps to <code>Encounter.period.start</code>, NOT to an element in the Condition resource</li>
-  <li>Therefore, diagnosis linkage <strong>SHOULD</strong> always reference an Einrichtungs-Kontakt (facility encounter) - see Fall (Encounter) module</li>
+  <li>Therefore, the Encounter reference represents both the technical documentation context and the temporal context of when the diagnosis was established</li>
 </ul>
 
-<p><strong>Rationale:</strong> This approach maintains clear semantics: <code>Encounter.diagnosis</code> = "diagnoses relevant to this encounter" vs. <code>Condition.encounter</code> = "encounter where this diagnosis was established".</p>
 </div>
 
 #### Temporal Information
