@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="mii-vs-diagnose-alphaid"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
+  </meta>
+  <language value="en"/>
+  <text>
+    <status value="generated"/><div xml:lang="en" lang="en"><hr/><p><b>English</b></p><hr/><p class="res-header-id"><b>Generated Narrative: ValueSet mii-vs-diagnose-alphaid</b></p><a name="mii-vs-diagnose-alphaid"> </a><a name="hcmii-vs-diagnose-alphaid"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="http://hl7.org/fhir/R4/shareablevalueset.html">Shareable ValueSet</a></p></div><p>This value set includes codes based on the following rules:</p><ul><li>Include all codes defined in <code>http://fhir.de/CodeSystem/bfarm/alpha-id</code><span title="Version is explicitly stated to be 2025"> version &#x1F4CD;</span></li><li>Include all codes defined in <code>http://fhir.de/CodeSystem/bfarm/alpha-id</code><span title="Version is explicitly stated to be 2024"> version &#x1F4CD;</span></li><li>Include all codes defined in <code>http://fhir.de/CodeSystem/bfarm/alpha-id</code><span title="Version is explicitly stated to be 2023"> version &#x1F4CD;</span></li><li>Include all codes defined in <code>http://fhir.de/CodeSystem/bfarm/alpha-id</code><span title="Version is explicitly stated to be 2022"> version &#x1F4CD;</span></li><li>Include all codes defined in <code>http://fhir.de/CodeSystem/bfarm/alpha-id</code><span title="Version is explicitly stated to be 2021"> version &#x1F4CD;</span></li><li>Include all codes defined in <code>http://fhir.de/CodeSystem/bfarm/alpha-id</code><span title="Version is explicitly stated to be 2020"> version &#x1F4CD;</span></li><li>Include all codes defined in <code>http://fhir.de/CodeSystem/bfarm/alpha-id</code><span title="Version is explicitly stated to be 2019"> version &#x1F4CD;</span></li><li>Include all codes defined in <code>http://fhir.de/CodeSystem/bfarm/alpha-id</code><span title="Version is explicitly stated to be 2018"> version &#x1F4CD;</span></li></ul></div>
+  </text>
+  <extension url="https://www.medizininformatik-initiative.de/fhir/modul-meta/StructureDefinition/mii-ex-meta-license-codeable">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://hl7.org/fhir/spdx-license"/>
+        <code value="CC-BY-4.0"/>
+        <display value="Creative Commons Attribution 4.0 International"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <url value="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-alphaid"/>
+  <version value="2026.0.0"/>
+  <name value="MII_VS_Diagnose_AlphaID"/>
+  <title value="MII VS Diagnose Alpha-ID"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2025-03-17"/>
+  <publisher value="Medical Informatics Initiative (MII)"/>
+  <contact>
+    <name value="Medical Informatics Initiative (MII)"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.medizininformatik-initiative.de/en"/>
+    </telecom>
+  </contact>
+  <description value="Enthaelt Alpha-ID-Codes der Versionen 2018 bis 2025"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <copyright value="WHO, BfArM 1994 - 2025 - Die Erstellung erfolgt unter Verwendung der maschinenlesbaren Fassung des Bundesinstituts für Arzneimittel und Medizinprodukte (BfArM)."/>
+  <compose>
+    <include>
+      <system value="http://fhir.de/CodeSystem/bfarm/alpha-id"/>
+      <version value="2025"/>
+    </include>
+    <include>
+      <system value="http://fhir.de/CodeSystem/bfarm/alpha-id"/>
+      <version value="2024"/>
+    </include>
+    <include>
+      <system value="http://fhir.de/CodeSystem/bfarm/alpha-id"/>
+      <version value="2023"/>
+    </include>
+    <include>
+      <system value="http://fhir.de/CodeSystem/bfarm/alpha-id"/>
+      <version value="2022"/>
+    </include>
+    <include>
+      <system value="http://fhir.de/CodeSystem/bfarm/alpha-id"/>
+      <version value="2021"/>
+    </include>
+    <include>
+      <system value="http://fhir.de/CodeSystem/bfarm/alpha-id"/>
+      <version value="2020"/>
+    </include>
+    <include>
+      <system value="http://fhir.de/CodeSystem/bfarm/alpha-id"/>
+      <version value="2019"/>
+    </include>
+    <include>
+      <system value="http://fhir.de/CodeSystem/bfarm/alpha-id"/>
+      <version value="2018"/>
+    </include>
+  </compose>
+</ValueSet>

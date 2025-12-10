@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+
+
+<html xml:lang="de" xmlns="http://www.w3.org/1999/xhtml" lang="de" dir="ltr">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Allgemeine Anforderungen - MII Implementation Guide Core Dataset Base v2026.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link href="assets/css/project.css" rel="stylesheet"/>
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script type="text/javascript" src="assets/js/direction-management.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"3.1"}
+    h3,h4,h5,h6{--heading-prefix:"3.1"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <div id="family-nav">
+  <a id="family-logo" no-external="true" href="http://hl7.org/fhir">
+    <img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/>
+  </a>
+</div>
+<div id="hl7-nav"> 
+  <a id="hl7-logo" no-external="true" href="https://www.medizininformatik-initiative.de">
+    
+    <img height="50" alt="MII besuchen" src="MII_Logo_rgb.jpg"/>
+    
+  </a>
+</div>
+
+
+        <div id="ig-status" data-fhir="generated">
+          <p><span style="font-size:12pt;font-weight:bold">MII Implementierungsleitfaden Kerndatensatz Basis</span>
+            <br/>
+            <span style="display:inline-block;">2026.0.0 - Release
+
+
+
+  Germany
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment" data-fhir="generated">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Guidance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="guidance.html">Guidance</a>
+      </li>
+      <li>
+        <a href="researcher-guidance.html">Guidance for Researchers</a>
+      </li>
+      <li>
+        <a href="implementer-guidance.html">Guidance for Implementers</a>
+      </li>
+      <li>
+        <a href="datasets-and-descriptions.html">Datasets and Descriptions</a>
+      </li>
+      <li>
+        <a href="uml-diagrams.html">UML Diagrams</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Conformance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="conformance.html">Conformance</a>
+      </li>
+      <li>
+        <a href="general-requirements.html">General Requirements</a>
+      </li>
+      <li>
+        <a href="must-support.html">Must Support</a>
+      </li>
+      <li>
+        <a href="missing-data.html">Handling Missing Data</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">Artifacts Summary</a>
+      </li>
+      <li>
+        <a href="profiles-and-extensions.html">Profiles and Extensions</a>
+      </li>
+      <li>
+        <a href="terminology.html">Terminology</a>
+      </li>
+      <li>
+        <a href="capability-statements.html">Capability Statements</a>
+      </li>
+      <li>
+        <a href="search-parameters-and-operations.html">Search Parameters and Operations</a>
+      </li>
+      <li>
+        <a href="logical-models.html">Logical Models</a>
+      </li>
+      <li>
+        <a href="examples.html">Examples</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Versioning
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="version-history.html">Versioning</a>
+      </li>
+      <li>
+        <a href="changes.html">Changelog</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+
+              
+
+
+<div style="float: var(--ig-right);padding: 8px 0px;" id="language">
+  <div id="select_flg" class="flaglist" style="background-image: url(assets/images/icon_arrow_down.png);background-position: 133px 3px;">
+    <div><img class="flag" alt="flag en" src="assets/images/lang-de.png"/>Deutsch</div>
+  </div>
+  <div style="float: var(--ig-right); margin: 2px 0px; padding: 1px 0;color: var(--btn-text-color);font-size:12px">Language:</div>
+ 	<div id="flaglist" class="flaglist" style="display: none;position: absolute;right: 0;z-index: 100;background-image: url(assets/images/icon_arrow_up.png);background-position: 133px 3px;">
+    <div><img class="flag" alt="flag de" src="assets/images/lang-de.png"/>Deutsch</div>
+
+    <div><a href="../en/general-requirements.html"><img class="flag" src="assets/images/lang-en.png" alt="flag en"/>English</a></div>
+
+  </div>
+</div>
+
+
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment" data-fhir="generated">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Inhaltsverzeichnis</b></a></li><li><a href='conformance.html'><b>Konformität</b></a></li><li><b>Allgemeine Anforderungen</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">MII Implementation Guide Core Dataset Base - Local Development build (v2026.0.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://www.medizininformatik-initiative.de/fhir/modul-base/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Allgemeine Anforderungen</h2>
+  
+
+
+
+
+<p style="border:var(--translation-box-border);background-color:var(--translation-background-color);padding: 5px 5px 5px 5px;">
+
+<p>Diese Seite enthält Übersetzungen aus der Originalsprache, in der der Leitfaden verfasst wurde.  Informationen zu diesen Übersetzungen und Anweisungen zum Abgeben von Feedback zu den Übersetzungen finden Sie <a href="translationinfo.html">hier</a>.</p>
+
+
+</p>
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#mii-konformitätsartefakte" id="markdown-toc-mii-konformitätsartefakte">MII-Konformitätsartefakte</a></li>
+  <li><a href="#standards-und-harmonisierung" id="markdown-toc-standards-und-harmonisierung">Standards und Harmonisierung</a></li>
+  <li><a href="#konformitätsverben" id="markdown-toc-konformitätsverben">Konformitätsverben</a></li>
+  <li><a href="#beanspruchung-der-konformität-zu-mii-profilen" id="markdown-toc-beanspruchung-der-konformität-zu-mii-profilen">Beanspruchung der Konformität zu MII-Profilen</a></li>
+  <li><a href="#verwendung-von-codes-in-mii-profilen" id="markdown-toc-verwendung-von-codes-in-mii-profilen">Verwendung von Codes in MII-Profilen</a></li>
+  <li><a href="#fehlende-daten" id="markdown-toc-fehlende-daten">Fehlende Daten</a></li>
+  <li><a href="#fhir-restful-search-api-anforderungen" id="markdown-toc-fhir-restful-search-api-anforderungen">FHIR RESTful Search API Anforderungen</a></li>
+  <li><a href="#modifier-elemente" id="markdown-toc-modifier-elemente">Modifier-Elemente</a></li>
+</ul>
+
+</div>
+<p>Diese Seite dokumentiert Anforderungen, die für alle MII-Akteure in diesem Leitfaden gelten. Die verwendeten Konformitätsverben - <strong>MUSS</strong>, <strong>SOLLTE</strong>, <strong>KANN</strong> - sind in den <a href="http://hl7.org/fhir/R4/conformance-rules.html#conflang">FHIR Conformance Rules</a> definiert.</p>
+
+<h3 id="mii-konformitätsartefakte">MII-Konformitätsartefakte</h3>
+
+<p>Die Seite <a href="profiles-and-extensions.html">Profile und Extensions</a> listet die für diesen Implementierungsleitfaden definierten MII-Profile auf. MII-Profil-<a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinitions</a> definieren die <em>minimalen</em> Elemente, Extensions, Vokabulare und ValueSets, die vorhanden sein <strong>MÜSSEN</strong>, und schränken ein, wie die Elemente bei Verwendung des Profils verwendet werden.</p>
+
+<p>Die MII-Profilelemente umfassen <em>verpflichtende</em> und <em>Must Support</em> Anforderungen. Verpflichtende Elemente sind erforderlich und haben eine Mindest-Kardinalität von 1 (min=1). Must Support Element Server- und Client-Erwartungen werden von der MII definiert. Die Seite <a href="must-support.html">Must Support</a> definiert die Server- und Client-Erwartungen für die Verarbeitung dieser Elementanforderungen und veranschaulicht, wie sie angezeigt und dokumentiert werden.</p>
+
+<p>Die Seite <a href="capability-statements.html">CapabilityStatements</a> zeigt Konformitätsanforderungen und -erwartungen für MII-Server und Client-Anwendungen. Die MII-CapabilityStatements identifizieren die spezifischen Profile und RESTful-Transaktionen, die unterstützt werden müssen. Die MII-Profile identifizieren die strukturellen Einschränkungen, Terminologiebindungen und Invarianten. Implementierer müssen die CapabilityStatements für Details zu den RESTful-Transaktionen, spezifischen Profilen und den für jeden MII-Akteur anwendbaren Suchparametern konsultieren.</p>
+
+<h3 id="standards-und-harmonisierung">Standards und Harmonisierung</h3>
+
+<p>Die MII-Kerndatensatz-Spezifikationen basieren, wo möglich, auf internationalen Standards und Terminologien. Insbesondere werden folgende Standards hervorgehoben:</p>
+
+<ul>
+  <li><strong><a href="http://hl7.org/fhir/uv/ips/">International Patient Summary (IPS)</a></strong> - Internationaler Standard für Patientenkurzakten</li>
+  <li><strong><a href="https://ig.fhir.de/basisprofile-de/">German Base Profiles (Basisprofil DE R4)</a></strong> - Profile für Anpassung an die Rahmenbedingungen des deutschen Gesundheitswesens</li>
+  <li><strong><a href="https://simplifier.net/organization/kassenrztlichebundesvereinigungkbv">KBV FHIR Spezifikationen</a></strong> - Kompatibilität mit Spezifikationen der Kassenärztlichen Bundesvereinigung</li>
+  <li><strong><a href="https://simplifier.net/organization/gematik">gematik FHIR Spezifikationen</a></strong> - Kompatibilität mit gematik-Spezifikationen</li>
+  <li><strong><a href="https://fachportal.gematik.de/informationen-fuer/isik">ISiK (Informationssysteme im Krankenhaus)</a></strong> - Referenzprojekt für Krankenhausinformationssysteme</li>
+</ul>
+
+<p>Alle Elemente des Kerndatensatzes, angepasst an die Details und Anforderungen für die Anwendungsfälle der Medizininformatik-Initiative, werden nachfolgend in Form von FHIR StructureDefinitions beschrieben. Die Notwendigkeit der Anpassung der FHIR-Profile wird auf jeder Profilseite in Textform erläutert.</p>
+
+<h3 id="konformitätsverben">Konformitätsverben</h3>
+
+<p>Anforderungen in dieser Spezifikation werden durch die folgenden Schlüsselwörter angezeigt, die in Großbuchstaben geschrieben sind und auf <a href="https://datatracker.ietf.org/doc/html/rfc2119">RFC-2119</a> basieren:</p>
+
+<table style="border-collapse: collapse; width: 100%;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Deutsch</th>
+      <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Englisch</th>
+      <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Bedeutung</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 8px;">MUSS / MÜSSEN</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">MUST / SHALL</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">Erforderlich, verpflichtend</td>
+    </tr>
+    <tr style="background-color: #f9f9f9;">
+      <td style="border: 1px solid #ddd; padding: 8px;">DARF NICHT / DÜRFEN NICHT</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">MUST NOT / SHALL NOT</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">Verboten</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 8px;">VERPFLICHTEND</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">REQUIRED</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">Durch Spezifikation erforderlich</td>
+    </tr>
+    <tr style="background-color: #f9f9f9;">
+      <td style="border: 1px solid #ddd; padding: 8px;">SOLLTE / SOLLTEN</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">SHOULD</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">Empfohlen</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 8px;">SOLLTE NICHT / SOLLTEN NICHT</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">SHOULD NOT</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">Nicht empfohlen</td>
+    </tr>
+    <tr style="background-color: #f9f9f9;">
+      <td style="border: 1px solid #ddd; padding: 8px;">EMPFOHLEN</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">RECOMMENDED</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">Empfohlen</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 8px;">KANN / OPTIONAL</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">MAY</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">Optional</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="beanspruchung-der-konformität-zu-mii-profilen">Beanspruchung der Konformität zu MII-Profilen</h3>
+
+<h4 id="profilunterstützung">Profilunterstützung</h4>
+
+<p>Systeme können ein oder mehrere MII-Profile zur Repräsentation klinischer Informationen bereitstellen und unterstützen. Sie verwenden das Inhaltsmodell des Profils ohne Erwartung, die MII-Interaktionen zu implementieren.</p>
+
+<p>Um ein MII-Profil zu unterstützen, <strong>MUSS</strong> ein Server:</p>
+
+<ul>
+  <li><strong>in der Lage sein</strong>, alle Profildatenelemente zu befüllen, die verpflichtend sind und als Must Support gekennzeichnet sind, wie in der StructureDefinition dieses Profils definiert</li>
+  <li><strong>SOLLTE</strong> die Unterstützung für ein MII-Profil deklarieren, indem er dessen offizielle URL im Element <code class="language-plaintext highlighter-rouge">CapabilityStatement.rest.resource.supportedProfile</code> des Servers einschließt
+    <ul>
+      <li>Die offizielle oder "kanonische" URL des MII-Profils befindet sich auf jeder MII-Profilseite</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="profilunterstützung--interaktionsunterstützung">Profilunterstützung + Interaktionsunterstützung</h4>
+
+<p>Systeme können ein oder mehrere MII-Profile zur Darstellung klinischer Informationen bereitstellen und unterstützen <em>und</em> die für diese Ressourcen definierten RESTful-Interaktionen unterstützen.</p>
+
+<p>Ein konformer Server:</p>
+
+<ul>
+  <li><strong>MUSS</strong> in der Lage sein, alle Profildatenelemente zu befüllen, die verpflichtend sind und/oder als Must Support gekennzeichnet sind, wie in der StructureDefinition dieses Profils definiert</li>
+  <li><strong>SOLLTE</strong> Konformität mit dem entsprechenden MII-CapabilityStatement deklarieren, indem er dessen offizielle URL im Element <code class="language-plaintext highlighter-rouge">CapabilityStatement.instantiates</code> des Servers einschließt</li>
+  <li><strong>MUSS</strong> die vollständigen Fähigkeitsdetails aus dem MII-CapabilityStatement spezifizieren, das er zu implementieren behauptet
+    <ul>
+      <li>Deklarieren Sie die Unterstützung für das MII-Profil, indem Sie dessen offizielle URL im Element <code class="language-plaintext highlighter-rouge">CapabilityStatement.rest.resource.supportedProfile</code> des Servers einschließen</li>
+      <li>Deklarieren Sie die Unterstützung für die FHIR-RESTful-Transaktionen des MII-Profils</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="verwendung-von-codes-in-mii-profilen">Verwendung von Codes in MII-Profilen</h3>
+
+<p>Die folgenden Regeln fassen die durch <a href="http://hl7.org/fhir/R4/terminologies.html">FHIR Terminology</a> definierten Anforderungen für kodierte Elemente (CodeableConcept-, Coding- und code-Datentypen) zusammen.</p>
+
+<h4 id="required-bindings-für-codierte-elemente">Required Bindings für codierte Elemente</h4>
+
+<p><a href="http://hl7.org/fhir/R4/terminologies.html#required">Required binding</a> zu einer ValueSet-Definition bedeutet, dass einer der Codes aus dem angegebenen ValueSet verwendet werden <strong>MUSS</strong>. Für <code class="language-plaintext highlighter-rouge">CodeableConcept</code>, das mehrere Codierungen und ein Textelement zulässt, gilt diese Regel für <em>mindestens</em> eine der Codierungen, und nur Text ist <em>nicht</em> gültig.</p>
+
+<p>Bei Beanspruchung der Konformität zu einem Profil mit Required Bindings:</p>
+
+<ul>
+  <li>MII-Server <strong>MÜSSEN</strong> mindestens einen Code aus dem gebundenen ValueSet bereitstellen (zusätzliche Codes aus anderen Systemen <strong>KÖNNEN</strong> bereitgestellt werden)</li>
+  <li>MII-Clients <strong>MÜSSEN</strong> in der Lage sein, den Code aus dem gebundenen ValueSet zu verarbeiten</li>
+</ul>
+
+<h4 id="extensible-binding-für-codierte-elemente">Extensible Binding für codierte Elemente</h4>
+
+<p><a href="http://hl7.org/fhir/R4/terminologies.html#extensible">Extensible binding</a> bedeutet, dass einer der Codes aus dem angegebenen ValueSet verwendet werden <strong>MUSS</strong>, wenn ein anwendbares Konzept vorhanden ist. Wenn kein geeigneter Code im ValueSet existiert, können alternative Code(s) angegeben werden. Für <code class="language-plaintext highlighter-rouge">CodeableConcept</code>, das mehrere Codierungen und ein Textelement zulässt, gilt diese Regel für <em>mindestens</em> eines der Codings. Wenn nur Text verfügbar ist und dieser keine konzeptionelle Überschneidung mit den gebundenen codierten Werten hat, kann nur Text verwendet werden.</p>
+
+<p>Bei Beanspruchung der Konformität zu einem Profil mit Extensible Bindings:</p>
+
+<ul>
+  <li>MII-Server <strong>MÜSSEN</strong> Folgendes bereitstellen:
+    <ul>
+      <li>Einen Code aus dem gebundenen ValueSet <em>wenn das Konzept</em> im ValueSet existiert</li>
+      <li>Oder einen alternativen Code <em>wenn das Konzept nicht</em> im ValueSet existiert</li>
+      <li>Oder Text, wenn nur Text verfügbar ist</li>
+    </ul>
+  </li>
+  <li>MII-Clients <strong>MÜSSEN</strong> in der Lage sein, Codes aus dem gebundenen ValueSet oder alternative Codes oder Text zu verarbeiten</li>
+</ul>
+
+<h4 id="verwendung-mehrerer-codes-mit-dem-codeableconcept-datentyp">Verwendung mehrerer Codes mit dem CodeableConcept-Datentyp</h4>
+
+<p>Alternative Codes können zusätzlich zu den in Required- oder Extensible-ValueSets definierten Standardcodes bereitgestellt werden. Diese alternativen Codes werden als "zusätzliche Codierungen" bezeichnet. Sie können in ihrer Bedeutung dem Standard-Konzeptcode entsprechen oder enger gefasst sein.</p>
+
+<p>Beispielsweise kann eine Diagnose sowohl einen ICD-10-GM-Code als auch einen SNOMED CT-Code enthalten:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://fhir.de/CodeSystem/bfarm/icd-10-gm"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E11.90"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Diabetes mellitus, Typ 2, ohne Komplikationen"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://snomed.info/sct"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"44054006"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Diabetes mellitus type 2"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="fehlende-daten">Fehlende Daten</h3>
+
+<p>Es gibt Situationen, in denen Informationen zu einem bestimmten Datenelement fehlen und das Quellsystem den Grund für das Fehlen der Daten nicht kennt. Siehe die Seite <a href="missing-data.html">Fehlende Daten</a> für detaillierte Leitlinien zum Umgang mit fehlenden Daten in MII-Profilen.</p>
+
+<h3 id="fhir-restful-search-api-anforderungen">FHIR RESTful Search API Anforderungen</h3>
+
+<p>Für alle unterstützten Suchinteraktionen in diesem Leitfaden:</p>
+
+<ul>
+  <li>Server <strong>MÜSSEN</strong> die HTTP-<code class="language-plaintext highlighter-rouge">POST</code>-basierte Suche unterstützen</li>
+  <li>Server <strong>MÜSSEN</strong> die <code class="language-plaintext highlighter-rouge">GET</code>-basierte Suche unterstützen</li>
+</ul>
+
+<p>Bei der Suche mit verschiedenen Suchparametertypen:</p>
+
+<ul>
+  <li><strong>Token-Suchparameter</strong> - <a href="http://hl7.org/fhir/R4/search.html#token">(Anleitung zur Token-Suche)</a>
+    <ul>
+      <li>Der Client <strong>MUSS</strong> mindestens einen Code-Wert bereitstellen und <strong>KANN</strong> sowohl System- als auch Code-Werte bereitstellen</li>
+      <li>Der Server <strong>MUSS</strong> beides unterstützen</li>
+    </ul>
+  </li>
+  <li><strong>Referenz-Suchparameter</strong> - <a href="http://hl7.org/fhir/R4/search.html#reference">(Anleitung zur Referenz-Suche)</a>
+    <ul>
+      <li>Der Client <strong>MUSS</strong> mindestens einen ID-Wert bereitstellen und <strong>KANN</strong> sowohl Typ- als auch ID-Werte bereitstellen</li>
+      <li>Der Server <strong>MUSS</strong> beides unterstützen</li>
+    </ul>
+  </li>
+  <li><strong>Datums-Suchparameter</strong> - <a href="http://hl7.org/fhir/R4/search.html#date">(Anleitung zur Datumssuche)</a>
+    <ul>
+      <li>Der Client <strong>MUSS</strong> Werte mit Genauigkeit auf den <em>Tag</em> für Elemente des Datentyps <code class="language-plaintext highlighter-rouge">date</code> und auf die <em>Sekunde + Zeitverschiebung</em> für Elemente des Datentyps <code class="language-plaintext highlighter-rouge">dateTime</code> bereitstellen</li>
+      <li>Der Server <strong>MUSS</strong> Werte mit Genauigkeit auf den <em>Tag</em> für Elemente des Datentyps <code class="language-plaintext highlighter-rouge">date</code> und auf die <em>Sekunde + Zeitverschiebung</em> für Elemente des Datentyps <code class="language-plaintext highlighter-rouge">dateTime</code> unterstützen</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="modifier-elemente">Modifier-Elemente</h3>
+
+<p>Ein FHIR-<a href="http://hl7.org/fhir/R4/conformance-rules.html#isModifier">Modifier-Element</a> ist ein Element, das die Bedeutung eines Ressourcenelements modifiziert. Obwohl Server und Clients in der Lage sein <strong>MÜSSEN</strong>, verpflichtende oder Must Support Elemente zu verarbeiten, sind nicht alle Modifier-Elemente verpflichtend oder Must Support, und es besteht keine Anforderung, sie zu unterstützen.</p>
+
+<p>FHIR-Clients müssen sich unerwarteter Modifier-Elemente in den empfangenen Daten bewusst sein, da diese die Bedeutung der Daten verändern können und bei unsachgemäßer Handhabung potenziell zu Fehlern oder sogar Sicherheitsrisiken führen können. Sofern ein Client nicht feststellt, dass er sie sicher verarbeiten kann, ist die Ablehnung typischerweise die einzige sichere Maßnahme, wenn unerwartete Modifier-Elemente vorhanden sind.</p>
+
+<p>Einige Beispiele für Modifier, die in MII-Profilen möglicherweise keine Must Support Elemente sind:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">modifierExtension</code>-Element, das allen Profilen gemeinsam ist</li>
+  <li><code class="language-plaintext highlighter-rouge">Observation.valueQuantity.comparator</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Patient.active</code></li>
+</ul>
+
+<p>Implementierer <strong>SOLLTEN</strong> die Profilseiten sorgfältig überprüfen, um zu verstehen, welche Elemente Modifier sind und wie sie die Interpretation der Ressource beeinflussen.</p>
+
+<hr />
+
+<p>Weitere Informationen finden Sie unter:</p>
+<ul>
+  <li><a href="must-support.html">Must Support</a> - Detaillierte Must Support Anforderungen</li>
+  <li><a href="general-requirements.html">Allgemeine Anforderungen</a> - Zusätzliche allgemeine Anforderungen</li>
+  <li><a href="missing-data.html">Fehlende Daten</a> - Leitfaden für den Umgang mit fehlenden Daten</li>
+  <li><a href="capability-statements.html">CapabilityStatements</a> - Server- und Client-Fähigkeitsanforderungen</li>
+</ul>
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script type="text/javascript" src="assets/js/flags.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container" data-fhir="generated">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+
+
+
+          IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
+          Package de.medizininformatikinitiative.kerndatensatz.base#2026.0.0 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Erstellt 
+  <span title="2025-12-10 12:07:00 +0000">
+    2025-12-10
+  </span>
+
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Inhaltsverzeichnis</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA-Bericht</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

@@ -1,0 +1,117 @@
+# de.medizininformatikinitiative.kerndatensatz.base#2026.0.0: MII Implementation Guide Core Dataset Base(en)
+
+## Pages
+
+* [Home](index.md)
+* [Capability Statements](capability-statements.md)
+* [Guidance](guidance.md)
+* [Translation Information](translationinfo.md)
+* [Logical Models](logical-models.md)
+* [Must Support](must-support.md)
+* [General Requirements](general-requirements.md)
+* [Artifacts Summary](artifacts.md)
+* [Profiles and Extensions](profiles-and-extensions.md)
+* [Terminology](terminology.md)
+* [Guidance for Implementers](implementer-guidance.md)
+* [Changelog](changes.md)
+* [Conformance](conformance.md)
+* [Guidance for Researchers](researcher-guidance.md)
+* [Datasets and Descriptions](datasets-and-descriptions.md)
+* [Search Parameters and Operations](search-parameters-and-operations.md)
+* [Examples](examples.md)
+* [Versioning](version-history.md)
+* [Handling Missing Data](missing-data.md)
+* [UML Diagrams](uml-diagrams.md)
+* [Downloads](downloads.md)
+
+## Resources
+
+### CodeSystems
+
+* [MII CS Diagnose Lebensphase Supplement SNOMED](CodeSystem-mii-cs-diagnose-lebensphase-supplement-snomed.md)
+* [MII CS Fall Supplement ActEncounterCode](CodeSystem-mii-cs-fall-supplement-act-encounter-code.md)
+* [MII CS Fall Supplement PatientClass](CodeSystem-mii-cs-fall-supplement-patient-class.md)
+* [MII CS Person Vitalstatus](CodeSystem-mii-cs-person-vitalstatus.md)
+
+### ValueSets
+
+* [MII VS Diagnose Alpha-ID](ValueSet-mii-vs-diagnose-alphaid.md)
+* [MII VS Diagnose BodyStructure SNOMED](ValueSet-mii-vs-diagnose-bodystructure-snomed.md)
+* [MII VS Diagnose Diagnose-Codes SNOMED](ValueSet-mii-vs-diagnose-diagnosecodes-snomed.md)
+* [MII VS Diagnose ICD-10-GM](ValueSet-mii-vs-diagnose-icd10gm.md)
+* [MII VS Diagnose Orphanet](ValueSet-mii-vs-diagnose-orphanet.md)
+* [MII VS Fall Diagnosis Use](ValueSet-mii-vs-fall-diagnosis-use.md)
+* [MII VS Fall Identifier Type Codes](ValueSet-mii-vs-fall-identifier-type-codes.md)
+* [MII VS Fall Location Physical Type](ValueSet-mii-vs-fall-location-physical-type.md)
+* [MII VS Person ICD-10-WHO](ValueSet-mii-vs-person-icd10who.md)
+* [MII VS Person Vitalstatus](ValueSet-mii-vs-person-vitalstatus.md)
+* [MII VS Prozedur Durchführungsabsicht [SNOMED CT]](ValueSet-mii-vs-prozedur-durchfuehrungsabsicht-snomedct.md)
+* [MII VS Prozedur OPS](ValueSet-mii-vs-prozedur-ops.md)
+* [MII VS Prozedur OPS Kategorien [SNOMED CT]](ValueSet-mii-vs-prozedur-opskategorien-snomedct.md)
+* [MII VS Prozedur Prozeduren [SNOMED CT]](ValueSet-mii-vs-prozedur-prozeduren-snomedct.md)
+
+### Logicals
+
+* [MII LM Diagnose](StructureDefinition-mii-lm-diagnose.md)
+* [MII LM Fall](StructureDefinition-mii-lm-fall.md)
+* [MII LM Person](StructureDefinition-mii-lm-person.md)
+* [MII LM Prozedur](StructureDefinition-mii-lm-prozedur.md)
+
+### Resource Profiles
+
+* [MII PR Diagnose Condition](StructureDefinition-mii-pr-diagnose-condition.md)
+* [MII PR Fall Kontakt mit einer Gesundheitseinrichtung](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.md)
+* [MII PR Person Patient (Pseudonymisiert)](StructureDefinition-mii-pr-person-patient-pseudonymisiert.md)
+* [MII PR Person Patient](StructureDefinition-mii-pr-person-patient.md)
+* [MII PR Person Proband](StructureDefinition-mii-pr-person-proband.md)
+* [MII PR Person Todesursache](StructureDefinition-mii-pr-person-todesursache.md)
+* [MII PR Person Vitalstatus](StructureDefinition-mii-pr-person-vitalstatus.md)
+* [MII PR Prozedur Procedure](StructureDefinition-mii-pr-prozedur-procedure.md)
+
+### Extensions
+
+* [MII EX Fall Planned End Date](StructureDefinition-mii-ex-fall-planned-end-date.md)
+* [MII EX Fall Planned Start Date](StructureDefinition-mii-ex-fall-planned-start-date.md)
+* [MII EX Prozedur Durchführungsabsicht](StructureDefinition-mii-ex-prozedur-durchfuehrungsabsicht.md)
+
+### CapabilityStatements
+
+* [MII CPS Diagnose CapabilityStatement](CapabilityStatement-mii-cps-diagnose-capabilitystatement.md)
+* [MII CPS Fall CapabilityStatement](CapabilityStatement-mii-cps-fall-capabilitystatement.md)
+* [MII CPS Person CapabilityStatement](CapabilityStatement-mii-cps-person-capabilitystatement.md)
+* [MII CPS Prozedur CapabilityStatement](CapabilityStatement-mii-cps-prozedur-capabilitystatement.md)
+
+### ImplementationGuides
+
+* [MII Implementation Guide Core Dataset Base](ImplementationGuide-mii-ig-base.md)
+
+### Examples
+
+* [mii-exa-base-test-data-bundle-1 (Bundle)](Bundle-mii-exa-base-test-data-bundle-1.md)
+* [mii-exa-diagnose-appendicitis (Condition)](Condition-mii-exa-diagnose-appendicitis.md)
+* [mii-exa-diagnose-condition-elbow-contusion (Condition)](Condition-mii-exa-diagnose-condition-elbow-contusion.md)
+* [mii-exa-diagnose-condition-multiple-codings (Condition)](Condition-mii-exa-diagnose-condition-multiple-codings.md)
+* [mii-exa-diagnose-mehrfachcodierung-primaercode (Condition)](Condition-mii-exa-diagnose-mehrfachcodierung-primaercode.md)
+* [mii-exa-diagnose-mehrfachcodierung-sekundaercode (Condition)](Condition-mii-exa-diagnose-mehrfachcodierung-sekundaercode.md)
+* [mii-exa-person-condition-todesursache (Condition)](Condition-mii-exa-person-condition-todesursache.md)
+* [mii-exa-fall-kontakt-gesundheitseinrichtung-1 (Encounter)](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.md)
+* [mii-exa-fall-kontakt-gesundheitseinrichtung-10 (Encounter)](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-10.md)
+* [mii-exa-fall-kontakt-gesundheitseinrichtung-11 (Encounter)](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-11.md)
+* [mii-exa-fall-kontakt-gesundheitseinrichtung-2 (Encounter)](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.md)
+* [mii-exa-fall-kontakt-gesundheitseinrichtung-3 (Encounter)](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-3.md)
+* [mii-exa-fall-kontakt-gesundheitseinrichtung-4 (Encounter)](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-4.md)
+* [mii-exa-fall-kontakt-gesundheitseinrichtung-5 (Encounter)](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-5.md)
+* [mii-exa-fall-kontakt-gesundheitseinrichtung-6 (Encounter)](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-6.md)
+* [mii-exa-fall-kontakt-gesundheitseinrichtung-7 (Encounter)](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.md)
+* [mii-exa-fall-kontakt-gesundheitseinrichtung-8 (Encounter)](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-8.md)
+* [mii-exa-fall-kontakt-gesundheitseinrichtung-9 (Encounter)](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-9.md)
+* [mii-exa-fall-kontakt-in-progress-status (Encounter)](Encounter-mii-exa-fall-kontakt-in-progress-status.md)
+* [mii-exa-fall-kontakt-onleave-status (Encounter)](Encounter-mii-exa-fall-kontakt-onleave-status.md)
+* [mii-exa-fall-kontakt-unknown-status (Encounter)](Encounter-mii-exa-fall-kontakt-unknown-status.md)
+* [mii-exa-person-observation-vitalstatus-discharge (Observation)](Observation-mii-exa-person-observation-vitalstatus-discharge.md)
+* [mii-exa-person-observation-vitalstatus (Observation)](Observation-mii-exa-person-observation-vitalstatus.md)
+* [mii-exa-person-patient-1 (Patient)](Patient-mii-exa-person-patient-1.md)
+* [mii-exa-person-patient-pseudonymisiert (Patient)](Patient-mii-exa-person-patient-pseudonymisiert.md)
+* [mii-exa-prozedur-imaging (Procedure)](Procedure-mii-exa-prozedur-imaging.md)
+* [mii-exa-prozedur-procedure-2 (Procedure)](Procedure-mii-exa-prozedur-procedure-2.md)
+* [mii-exa-prozedur-procedure (Procedure)](Procedure-mii-exa-prozedur-procedure.md)
