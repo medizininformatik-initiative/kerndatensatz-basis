@@ -3692,24 +3692,7 @@ This publication includes IP covered under the following statements.
             }
           ],
           "nameUrl" : "version-history.html",
-          "title" : "Version History",
-          "_title" : {
-            "extension" : [
-              {
-                "extension" : [
-                  {
-                    "url" : "lang",
-                    "valueCode" : "de"
-                  },
-                  {
-                    "url" : "content",
-                    "valueString" : "Versionshistorie"
-                  }
-                ],
-                "url" : "http://hl7.org/fhir/StructureDefinition/translation"
-              }
-            ]
-          },
+          "title" : "Versioning",
           "generation" : "markdown",
           "page" : [
             {

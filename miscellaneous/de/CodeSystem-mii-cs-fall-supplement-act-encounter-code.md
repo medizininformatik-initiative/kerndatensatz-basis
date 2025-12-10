@@ -50,7 +50,7 @@ Dieses CodeSystem wird in der Definition der folgenden ValueSets referenziert:
   "title" : "MII CS Fall Supplement ActEncounterCode",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-12-09T20:17:25+00:00",
+  "date" : "2025-12-10T11:38:15+00:00",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [

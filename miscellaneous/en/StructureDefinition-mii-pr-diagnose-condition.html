@@ -176,12 +176,12 @@
     <a href="downloads.html">Downloads</a>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Version History
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Versioning
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="version-history.html">Version History</a>
+        <a href="version-history.html">Versioning</a>
       </li>
       <li>
         <a href="changes.html">Changelog</a>
@@ -447,22 +447,21 @@ MII PR Diagnose Condition
 <div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
 <h5 style="color: #406A99; margin-top: 0;">Best Practice - Diagnosis-Encounter Relationships</h5>
 
-<p><strong>Primary Linkage Method:</strong> Use <code>Encounter.diagnosis</code> to link diagnoses to encounters. This is the <strong>RECOMMENDED</strong> approach for associating diagnoses with hospital stays or visits.</p>
+<p><strong>Change from Previous Version:</strong> In previous versions of this implementation guide, it was recommended to use <code>Encounter.diagnosis</code> to link diagnoses to encounters. This guidance has been updated to align with gematik ISiK (Informationssysteme im Krankenhaus) recommendations.</p>
 
-<p><strong>Condition.encounter Usage:</strong></p>
+<p><strong>Current Recommendation - Condition.encounter:</strong></p>
 <ul>
-  <li><strong>SHOULD NOT</strong> be used for general diagnosis-encounter linking</li>
-  <li><strong>Exception:</strong> MAY be used to link the diagnosis to the specific encounter where it was <strong>first established/documented</strong> (always a contact with a concrete care unit/Versorgungsstelle)</li>
-  <li>This represents the "assessment date" context rather than the general association</li>
+  <li>The link to an Encounter resource documents the reference to a hospital stay and enables important API functions such as chained search, (reverse) include, etc.</li>
+  <li><strong>Department Contact Level:</strong> The reference <strong>SHOULD</strong> be to an Encounter at the "Abteilungskontakt" (department contact) level.</li>
+  <li>When selecting the Encounter, note that multiple Encounters may be grouped under a single (billing) case number (<code>Encounter.account</code>), such as an inpatient visit with multiple pre- and post-hospitalization contacts</li>
 </ul>
 
 <p><strong>Assessment Date Mapping:</strong></p>
 <ul>
   <li>The logical data element "Feststellungsdatum" (assessment/determination date) maps to <code>Encounter.period.start</code>, NOT to an element in the Condition resource</li>
-  <li>Therefore, diagnosis linkage <strong>SHOULD</strong> always reference an Einrichtungs-Kontakt (facility encounter) - see Fall (Encounter) module</li>
+  <li>Therefore, the Encounter reference represents both the technical documentation context and the temporal context of when the diagnosis was established</li>
 </ul>
 
-<p><strong>Rationale:</strong> This approach maintains clear semantics: <code>Encounter.diagnosis</code> = "diagnoses relevant to this encounter" vs. <code>Condition.encounter</code> = "encounter where this diagnosis was established".</p>
 </div>
 
 <h4 id="temporal-information">Temporal Information</h4>
@@ -1057,7 +1056,7 @@ Hierdurch wird der Tatsache Rechnung getragen, dass jede der jährlich neu ersch
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Hinweis<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 05118c06-1389-4f83-8a47-a1e5dc210947
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 18a1a3a6-5ba2-4b82-9bc8-6e85a18d5331
 document.getElementById('cbmii-pr-diagnose-conditionK-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-diagnose-conditionK'), 'binding', document.getElementById('cbmii-pr-diagnose-conditionK-binding').checked, document.getElementById('ppmii-pr-diagnose-conditionK'));
 document.getElementById('cbmii-pr-diagnose-conditionK-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1699,7 +1698,7 @@ filterDesc(document.getElementById('mii-pr-diagnose-conditionK'), 'obligation', 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">*</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5; opacity: 0.5" href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Hinweis</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 05118c06-1389-4f83-8a47-a1e5dc210947
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 18a1a3a6-5ba2-4b82-9bc8-6e85a18d5331
 document.getElementById('cbmii-pr-diagnose-conditionD-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-diagnose-conditionD'), 'binding', document.getElementById('cbmii-pr-diagnose-conditionD-binding').checked, document.getElementById('ppmii-pr-diagnose-conditionD'));
 document.getElementById('cbmii-pr-diagnose-conditionD-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -2799,7 +2798,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Hinweis<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 05118c06-1389-4f83-8a47-a1e5dc210947
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 18a1a3a6-5ba2-4b82-9bc8-6e85a18d5331
 document.getElementById('cbmii-pr-diagnose-conditionS-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-diagnose-conditionS'), 'binding', document.getElementById('cbmii-pr-diagnose-conditionS-binding').checked, document.getElementById('ppmii-pr-diagnose-conditionS'));
 document.getElementById('cbmii-pr-diagnose-conditionS-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -4043,7 +4042,7 @@ Hierdurch wird der Tatsache Rechnung getragen, dass jede der jährlich neu ersch
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Hinweis<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 05118c06-1389-4f83-8a47-a1e5dc210947
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 18a1a3a6-5ba2-4b82-9bc8-6e85a18d5331
 document.getElementById('cbmii-pr-diagnose-conditionKA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-diagnose-conditionKA'), 'binding', document.getElementById('cbmii-pr-diagnose-conditionKA-binding').checked, document.getElementById('ppmii-pr-diagnose-conditionKA'));
 document.getElementById('cbmii-pr-diagnose-conditionKA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -4684,7 +4683,7 @@ filterDesc(document.getElementById('mii-pr-diagnose-conditionKA'), 'obligation',
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">*</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5; opacity: 0.5" href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Hinweis</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 05118c06-1389-4f83-8a47-a1e5dc210947
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 18a1a3a6-5ba2-4b82-9bc8-6e85a18d5331
 document.getElementById('cbmii-pr-diagnose-conditionDA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-diagnose-conditionDA'), 'binding', document.getElementById('cbmii-pr-diagnose-conditionDA-binding').checked, document.getElementById('ppmii-pr-diagnose-conditionDA'));
 document.getElementById('cbmii-pr-diagnose-conditionDA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -5781,7 +5780,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Hinweis<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 05118c06-1389-4f83-8a47-a1e5dc210947
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 18a1a3a6-5ba2-4b82-9bc8-6e85a18d5331
 document.getElementById('cbmii-pr-diagnose-conditionSA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-diagnose-conditionSA'), 'binding', document.getElementById('cbmii-pr-diagnose-conditionSA-binding').checked, document.getElementById('ppmii-pr-diagnose-conditionSA'));
 document.getElementById('cbmii-pr-diagnose-conditionSA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -6537,8 +6536,8 @@ Summary
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.base#2026.0.0-dev.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2025-12-09 20:17:00 +0000">
-    2025-12-09
+  <span title="2025-12-10 11:38:00 +0000">
+    2025-12-10
   </span>
 
           <br/>

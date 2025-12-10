@@ -1,11 +1,11 @@
 MII_IG_Base : Validation Results
 =========================================
 
-err = 0, warn = 1397, info = 181
+err = 0, warn = 1396, info = 184
 $--
 Generated $--. FHIR version $-- for de.medizininformatikinitiative.kerndatensatz.base#$-- (canonical = https://www.medizininformatik-initiative.de/fhir/modul-base)
  Build Errors : 0 / 2 / 0
- /workspace/fsh-generated/resources/Bundle-mii-exa-base-test-data-bundle-1 : 0 / 35 / 66
+ /workspace/fsh-generated/resources/Bundle-mii-exa-base-test-data-bundle-1 : 0 / 35 / 67
  /workspace/fsh-generated/resources/CapabilityStatement-mii-cps-diagnose-capabilitystatement : 0 / 3 / 2
  /workspace/fsh-generated/resources/CapabilityStatement-mii-cps-fall-capabilitystatement : 0 / 4 / 2
  /workspace/fsh-generated/resources/CapabilityStatement-mii-cps-person-capabilitystatement : 0 / 3 / 2
@@ -16,7 +16,7 @@ Generated $--. FHIR version $-- for de.medizininformatikinitiative.kerndatensatz
  /workspace/fsh-generated/resources/CodeSystem-mii-cs-person-vitalstatus : 0 / 3 / 2
  /workspace/fsh-generated/resources/Condition-mii-exa-diagnose-appendicitis : 0 / 1 / 3
  /workspace/fsh-generated/resources/Condition-mii-exa-diagnose-condition-elbow-contusion : 0 / 1 / 3
- /workspace/fsh-generated/resources/Condition-mii-exa-diagnose-condition-multiple-codings : 0 / 1 / 2
+ /workspace/fsh-generated/resources/Condition-mii-exa-diagnose-condition-multiple-codings : 0 / 1 / 3
  /workspace/fsh-generated/resources/Condition-mii-exa-diagnose-mehrfachcodierung-primaercode : 0 / 1 / 2
  /workspace/fsh-generated/resources/Condition-mii-exa-diagnose-mehrfachcodierung-sekundaercode : 0 / 1 / 2
  /workspace/fsh-generated/resources/Condition-mii-exa-person-condition-todesursache : 0 / 1 / 3
@@ -34,7 +34,7 @@ Generated $--. FHIR version $-- for de.medizininformatikinitiative.kerndatensatz
  /workspace/fsh-generated/resources/Encounter-mii-exa-fall-kontakt-in-progress-status : 0 / 1 / 3
  /workspace/fsh-generated/resources/Encounter-mii-exa-fall-kontakt-onleave-status : 0 / 1 / 3
  /workspace/fsh-generated/resources/Encounter-mii-exa-fall-kontakt-unknown-status : 0 / 1 / 3
- /workspace/fsh-generated/resources/ImplementationGuide-mii-ig-base : 0 / 38 / 38
+ /workspace/fsh-generated/resources/ImplementationGuide-mii-ig-base : 0 / 37 / 39
  /workspace/fsh-generated/resources/Observation-mii-exa-person-observation-vitalstatus : 0 / 2 / 2
  /workspace/fsh-generated/resources/Observation-mii-exa-person-observation-vitalstatus-discharge : 0 / 2 / 2
  /workspace/fsh-generated/resources/Patient-mii-exa-person-patient-1 : 0 / 4 / 3
@@ -132,6 +132,7 @@ INFORMATION: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[10].resource/*
 INFORMATION: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[10].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7*/.diagnosis[0].use.coding[0]: This element does not match any known slice defined in the profile https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0-dev.1 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[13].resource/*Condition/mii-exa-diagnose-appendicitis*/.code.coding[1]: Reference to experimental ValueSet https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/diagnoses-sct|2026.0.0-dev.1
 INFORMATION: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[14].resource/*Condition/mii-exa-diagnose-condition-elbow-contusion*/.code.coding[1]: Reference to experimental ValueSet https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/diagnoses-sct|2026.0.0-dev.1
+INFORMATION: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[15].resource/*Condition/mii-exa-diagnose-condition-multiple-codings*/.code.coding[2]: Reference to experimental ValueSet https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-orphanet|2026.0.0-dev.1
 WARNING: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[19].resource/*Observation/mii-exa-person-observation-vitalstatus*/: Best Practice Recommendation: In general, all observations should have a performer
 WARNING: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[20].resource/*Observation/mii-exa-person-observation-vitalstatus-discharge*/: Best Practice Recommendation: In general, all observations should have a performer
 == fsh-generated/resources/CapabilityStatement-mii-cps-diagnose-capabilitystatement.json ==
@@ -190,6 +191,7 @@ WARNING: Condition/mii-exa-diagnose-condition-elbow-contusion: Condition.languag
 INFORMATION: Condition/mii-exa-diagnose-condition-elbow-contusion: Condition.code.coding[1]: Reference to experimental ValueSet https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/diagnoses-sct|2026.0.0-dev.1
 == fsh-generated/resources/Condition-mii-exa-diagnose-condition-multiple-codings.json ==
 WARNING: Condition/mii-exa-diagnose-condition-multiple-codings: Condition.language: A definition for CodeSystem 'null' could not be found, so the code cannot be validated
+INFORMATION: Condition/mii-exa-diagnose-condition-multiple-codings: Condition.code.coding[2]: Reference to experimental ValueSet https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-orphanet|2026.0.0-dev.1
 == fsh-generated/resources/Condition-mii-exa-diagnose-mehrfachcodierung-primaercode.json ==
 WARNING: Condition/mii-exa-diagnose-mehrfachcodierung-primaercode: Condition.language: A definition for CodeSystem 'null' could not be found, so the code cannot be validated
 == fsh-generated/resources/Condition-mii-exa-diagnose-mehrfachcodierung-sekundaercode.json ==
@@ -314,6 +316,7 @@ INFORMATION: ImplementationGuide.definition.resource.description: Unused 'de' tr
 INFORMATION: ImplementationGuide.definition.resource.name: Unused 'de' translation 'mii-exa-prozedur-procedure-2' -> ''
 INFORMATION: ImplementationGuide.definition.resource.description: Unused 'de' translation 'Procedure: Prozedur mit OPS-Coding' -> ''
 INFORMATION: ImplementationGuide.definition.page.title: Unused 'de' translation 'General Guidance' -> 'Allgemeine Hinweise'
+INFORMATION: ImplementationGuide.definition.page.title: Unused 'de' translation 'Version History' -> 'Versionshistorie'
 WARNING: ImplementationGuide/mii-ig-base: ImplementationGuide.language: A definition for CodeSystem 'null' could not be found, so the code cannot be validated
 WARNING: ImplementationGuide/mii-ig-base: ImplementationGuide.name.extension[0].extension[0].value.ofType(code): A definition for CodeSystem 'null' could not be found, so the code cannot be validated
 WARNING: ImplementationGuide/mii-ig-base: ImplementationGuide.title.extension[0].extension[0].value.ofType(code): A definition for CodeSystem 'null' could not be found, so the code cannot be validated
@@ -348,7 +351,6 @@ WARNING: ImplementationGuide/mii-ig-base: ImplementationGuide.definition.page.pa
 WARNING: ImplementationGuide/mii-ig-base: ImplementationGuide.definition.page.page[7].title.extension[0].extension[0].value.ofType(code): A definition for CodeSystem 'null' could not be found, so the code cannot be validated
 WARNING: ImplementationGuide/mii-ig-base: ImplementationGuide.definition.page.page[8].title.extension[0].extension[0].value.ofType(code): A definition for CodeSystem 'null' could not be found, so the code cannot be validated
 WARNING: ImplementationGuide/mii-ig-base: ImplementationGuide.definition.page.page[9].title.extension[0].extension[0].value.ofType(code): A definition for CodeSystem 'null' could not be found, so the code cannot be validated
-WARNING: ImplementationGuide/mii-ig-base: ImplementationGuide.definition.page.page[10].title.extension[0].extension[0].value.ofType(code): A definition for CodeSystem 'null' could not be found, so the code cannot be validated
 WARNING: ImplementationGuide/mii-ig-base: ImplementationGuide.definition.page.page[10].page[0].title.extension[0].extension[0].value.ofType(code): A definition for CodeSystem 'null' could not be found, so the code cannot be validated
 WARNING: ImplementationGuide/mii-ig-base: ImplementationGuide.definition.page.page[11].title.extension[0].extension[0].value.ofType(code): A definition for CodeSystem 'null' could not be found, so the code cannot be validated
 WARNING: ImplementationGuide/mii-ig-base: ImplementationGuide.dependsOn[2]: The canonical URL http://fhir.org/packages/de.basisprofil.r4/ImplementationGuide/de.basisprofil.r4 doesn't point to an actual ImplementationGuide resource
