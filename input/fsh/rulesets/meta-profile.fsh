@@ -1,2 +1,2 @@
 RuleSet: MetaProfile(canonical)
-* meta.profile[+] = "{canonical}|2026.0.0-dev.1"
+* meta.profile[+] = "{canonical}|2026.0.0"
