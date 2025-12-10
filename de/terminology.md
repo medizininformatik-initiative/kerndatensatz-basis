@@ -18,6 +18,7 @@ Die meisten in diesem Leitfaden verwendeten ValueSets verweisen auf externe Code
 #### Modul Person ValueSets
 
 * [MII VS Person Vitalstatus](ValueSet-mii-vs-person-vitalstatus.md) - Vitalstatus-Codes
+* [MII VS Person ICD-10-WHO](ValueSet-mii-vs-person-icd10who.md) - ICD-10 WHO-Codes für Todesursachen
 
 #### Modul Fall ValueSets
 
@@ -59,8 +60,9 @@ Die folgenden externen Codesysteme werden in diesem Implementierungsleitfaden re
 
 | | | |
 | :--- | :--- | :--- |
-| ICD-10-GM | `http://fhir.de/CodeSystem/bfarm/icd-10-gm` | Verfügbar über MII TermServ |
-| OPS | `http://fhir.de/CodeSystem/bfarm/ops` | Verfügbar über MII TermServ |
+| ICD-10-GM | `http://fhir.de/CodeSystem/bfarm/icd-10-gm` | Deutsche Modifikation der ICD-10 für Diagnosen |
+| ICD-10 WHO | `http://hl7.org/fhir/sid/icd-10` | WHO Internationale Klassifikation der Krankheiten |
+| OPS | `http://fhir.de/CodeSystem/bfarm/ops` | Deutsche Klassifikation für Operationen und Prozeduren |
 | SNOMED CT | `http://snomed.info/sct` | Internationale klinische Terminologie |
 | Orphanet | `http://www.orpha.net` | Codes für seltene Erkrankungen |
 | Alpha-ID | `http://fhir.de/CodeSystem/bfarm/alpha-id` | ICD-10-GM-alphabetisches Verzeichnis |

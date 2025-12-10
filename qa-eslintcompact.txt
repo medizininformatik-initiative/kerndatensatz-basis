@@ -59,6 +59,8 @@ Generic: line 0, col 0, Warning - An HTML fragment from the set [cross-version-a
 /workspace/fsh-generated/resources/Bundle-mii-exa-base-test-data-bundle-1.json: line 1081, col 18, Info - This element does not match any known slice defined in the profile https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0-dev.1 (this may not be a problem, but you should check that it's not intended to match a slice) (INFORMATIONAL)
 /workspace/fsh-generated/resources/Bundle-mii-exa-base-test-data-bundle-1.json: line 1334, col 14, Info - Reference to experimental ValueSet https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/diagnoses-sct|2026.0.0-dev.1 (BUSINESSRULE)
 /workspace/fsh-generated/resources/Bundle-mii-exa-base-test-data-bundle-1.json: line 1403, col 14, Info - Reference to experimental ValueSet https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/diagnoses-sct|2026.0.0-dev.1 (BUSINESSRULE)
+/workspace/fsh-generated/resources/Bundle-mii-exa-base-test-data-bundle-1.json: line 1463, col 10, Info - Reference to experimental ValueSet https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-orphanet|2026.0.0-dev.1 (BUSINESSRULE)
+/workspace/fsh-generated/resources/Bundle-mii-exa-base-test-data-bundle-1.json: line 1476, col 14, Info - Reference to experimental ValueSet https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-orphanet|2026.0.0-dev.1 (BUSINESSRULE)
 /workspace/fsh-generated/resources/Bundle-mii-exa-base-test-data-bundle-1.json: line 1748, col 8, Warning - Best Practice Recommendation: In general, all observations should have a performer (INVALID)
 /workspace/fsh-generated/resources/Bundle-mii-exa-base-test-data-bundle-1.json: line 1806, col 8, Warning - Best Practice Recommendation: In general, all observations should have a performer (INVALID)
 /workspace/fsh-generated/resources/CapabilityStatement-mii-cps-diagnose-capabilitystatement.json: line 1, col 20705, Info - Reference to draft CodeSystem http://hl7.org/fhir/spdx-license|84728b7 (BUSINESSRULE)
@@ -106,6 +108,8 @@ Generic: line 0, col 0, Warning - An HTML fragment from the set [cross-version-a
 /workspace/fsh-generated/resources/Condition-mii-exa-diagnose-condition-elbow-contusion.json: line 0, col 0, Warning - A definition for CodeSystem 'null' could not be found, so the code cannot be validated (CODEINVALID)
 /workspace/fsh-generated/resources/Condition-mii-exa-diagnose-condition-elbow-contusion.json: line 30, col 8, Info - Reference to experimental ValueSet https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/diagnoses-sct|2026.0.0-dev.1 (BUSINESSRULE)
 /workspace/fsh-generated/resources/Condition-mii-exa-diagnose-condition-multiple-codings.json: line 0, col 0, Warning - A definition for CodeSystem 'null' could not be found, so the code cannot be validated (CODEINVALID)
+/workspace/fsh-generated/resources/Condition-mii-exa-diagnose-condition-multiple-codings.json: line 22, col 4, Info - Reference to experimental ValueSet https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-orphanet|2026.0.0-dev.1 (BUSINESSRULE)
+/workspace/fsh-generated/resources/Condition-mii-exa-diagnose-condition-multiple-codings.json: line 35, col 8, Info - Reference to experimental ValueSet https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-orphanet|2026.0.0-dev.1 (BUSINESSRULE)
 /workspace/fsh-generated/resources/Condition-mii-exa-diagnose-mehrfachcodierung-primaercode.json: line 0, col 0, Warning - A definition for CodeSystem 'null' could not be found, so the code cannot be validated (CODEINVALID)
 /workspace/fsh-generated/resources/Condition-mii-exa-diagnose-mehrfachcodierung-sekundaercode.json: line 0, col 0, Warning - A definition for CodeSystem 'null' could not be found, so the code cannot be validated (CODEINVALID)
 /workspace/fsh-generated/resources/Condition-mii-exa-person-condition-todesursache.json: line 0, col 0, Warning - A definition for CodeSystem 'null' could not be found, so the code cannot be validated (CODEINVALID)
@@ -212,6 +216,7 @@ Generic: line 0, col 0, Warning - An HTML fragment from the set [cross-version-a
 /workspace/fsh-generated/resources/ImplementationGuide-mii-ig-base.json: line 0, col 0, Info - Unused 'de' translation 'mii-exa-prozedur-procedure-2' -> '' (INFORMATIONAL)
 /workspace/fsh-generated/resources/ImplementationGuide-mii-ig-base.json: line 0, col 0, Info - Unused 'de' translation 'Procedure: Prozedur mit OPS-Coding' -> '' (INFORMATIONAL)
 /workspace/fsh-generated/resources/ImplementationGuide-mii-ig-base.json: line 0, col 0, Info - Unused 'de' translation 'General Guidance' -> 'Allgemeine Hinweise' (INFORMATIONAL)
+/workspace/fsh-generated/resources/ImplementationGuide-mii-ig-base.json: line 0, col 0, Info - Unused 'de' translation 'Version History' -> 'Versionshistorie' (INFORMATIONAL)
 /workspace/fsh-generated/resources/ImplementationGuide-mii-ig-base.json: line 1, col 73, Warning - A definition for CodeSystem 'null' could not be found, so the code cannot be validated (CODEINVALID)
 /workspace/fsh-generated/resources/ImplementationGuide-mii-ig-base.json: line 1, col 1848, Warning - A definition for CodeSystem 'null' could not be found, so the code cannot be validated (CODEINVALID)
 /workspace/fsh-generated/resources/ImplementationGuide-mii-ig-base.json: line 1, col 2080, Warning - A definition for CodeSystem 'null' could not be found, so the code cannot be validated (CODEINVALID)
@@ -246,9 +251,8 @@ Generic: line 0, col 0, Warning - An HTML fragment from the set [cross-version-a
 /workspace/fsh-generated/resources/ImplementationGuide-mii-ig-base.json: line 1, col 70587, Warning - A definition for CodeSystem 'null' could not be found, so the code cannot be validated (CODEINVALID)
 /workspace/fsh-generated/resources/ImplementationGuide-mii-ig-base.json: line 1, col 70952, Warning - A definition for CodeSystem 'null' could not be found, so the code cannot be validated (CODEINVALID)
 /workspace/fsh-generated/resources/ImplementationGuide-mii-ig-base.json: line 1, col 71313, Warning - A definition for CodeSystem 'null' could not be found, so the code cannot be validated (CODEINVALID)
-/workspace/fsh-generated/resources/ImplementationGuide-mii-ig-base.json: line 1, col 71692, Warning - A definition for CodeSystem 'null' could not be found, so the code cannot be validated (CODEINVALID)
-/workspace/fsh-generated/resources/ImplementationGuide-mii-ig-base.json: line 1, col 72063, Warning - A definition for CodeSystem 'null' could not be found, so the code cannot be validated (CODEINVALID)
-/workspace/fsh-generated/resources/ImplementationGuide-mii-ig-base.json: line 1, col 72493, Warning - A definition for CodeSystem 'null' could not be found, so the code cannot be validated (CODEINVALID)
+/workspace/fsh-generated/resources/ImplementationGuide-mii-ig-base.json: line 1, col 71874, Warning - A definition for CodeSystem 'null' could not be found, so the code cannot be validated (CODEINVALID)
+/workspace/fsh-generated/resources/ImplementationGuide-mii-ig-base.json: line 1, col 72304, Warning - A definition for CodeSystem 'null' could not be found, so the code cannot be validated (CODEINVALID)
 /workspace/fsh-generated/resources/ImplementationGuide-mii-ig-base.json: line 1, col 4143, Warning - The canonical URL http://fhir.org/packages/de.basisprofil.r4/ImplementationGuide/de.basisprofil.r4 doesn't point to an actual ImplementationGuide resource (BUSINESSRULE)
 /workspace/fsh-generated/resources/Observation-mii-exa-person-observation-vitalstatus.json: line 0, col 0, Warning - A definition for CodeSystem 'null' could not be found, so the code cannot be validated (CODEINVALID)
 /workspace/fsh-generated/resources/Observation-mii-exa-person-observation-vitalstatus.json: line 1, col 2, Warning - Best Practice Recommendation: In general, all observations should have a performer (INVALID)
@@ -1580,5 +1584,5 @@ Generic: line 0, col 0, Warning - An HTML fragment from the set [cross-version-a
 /workspace/fsh-generated/resources/ValueSet-mii-vs-prozedur-prozeduren-snomedct.json: line 1, col 2444, Warning - Unable to check whether the code is in the value set 'http://hl7.org/fhir/ValueSet/jurisdiction|4.0.1' because the code system urn:iso:std:iso:3166 was not found (NOTFOUND)
 /workspace/fsh-generated/resources/ValueSet-mii-vs-prozedur-prozeduren-snomedct.json: line 1, col 2444, Warning - A definition for CodeSystem 'urn:iso:std:iso:3166:-2' could not be found, so the code cannot be validated (NOTFOUND)
 
-err = 0, warn = 1397, info = 181
+err = 0, warn = 1396, info = 186
 IG Publisher Version: 2.0.28

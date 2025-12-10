@@ -79,22 +79,21 @@ Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Dia
 <div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
 <h5 style="color: #406A99; margin-top: 0;">Best Practice - Diagnose-Fall-Beziehungen</h5>
 
-<p><strong>Primäre Verknüpfungsmethode:</strong> Verwenden Sie <code>Encounter.diagnosis</code>, um Diagnosen mit Behandlungsfällen zu verknüpfen. Dies ist der <strong>EMPFOHLENE</strong> Ansatz zur Verknüpfung von Diagnosen mit Krankenhausaufenthalten oder Besuchen.</p>
+<p><strong>Änderung gegenüber vorheriger Version:</strong> In früheren Versionen dieses Implementierungsleitfadens wurde empfohlen, <code>Encounter.diagnosis</code> zur Verknüpfung von Diagnosen mit Behandlungsfällen zu verwenden. Diese Empfehlung wurde aktualisiert, um sich an die gematik ISiK-Empfehlungen (Informationssysteme im Krankenhaus) anzupassen.</p>
 
-<p><strong>Verwendung von Condition.encounter:</strong></p>
+<p><strong>Aktuelle Empfehlung - Condition.encounter:</strong></p>
 <ul>
-  <li><strong>SOLLTE NICHT</strong> zur generellen Diagnose-Fall-Verknüpfung verwendet werden</li>
-  <li><strong>Ausnahme:</strong> KANN zur Verknüpfung der Diagnose mit dem spezifischen Fall/Kontakt verwendet werden, in dem die Diagnose <strong>festgestellt wurde</strong> (immer ein Kontakt mit einer konkreten Versorgungsstelle!)</li>
-  <li>Dies repräsentiert den "Feststellungsdatum"-Kontext und nicht die allgemeine Verknüpfung</li>
+  <li>Die Verlinkung auf eine Encounter-Ressource dokumentiert die Referenz zu einem Aufenthalt und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.</li>
+  <li><strong>Ebene Abteilungskontakt:</strong> Die Zuordnung <strong>SOLLTE</strong> auf einen Encounter der Ebene "Abteilungskontakt" erfolgen</li>
+  <li>Bei der Auswahl des Encounters ist zu beachten, dass unter einer (Abrechnungs-)"Fallnummer" (hier: <code>Encounter.account</code>) unter Umständen mehrere Encounter gruppiert sein können (z.B. stationärer Besuch mit mehreren vor- und nachstationären Aufenthalten)</li>
 </ul>
 
 <p><strong>Mapping des Feststellungsdatums:</strong></p>
 <ul>
   <li>Das logische Datenelement "Feststellungsdatum" wird auf <code>Encounter.period.start</code> gemappt, NICHT auf ein Element in der Condition-Ressource</li>
-  <li>Somit SOLLTE die Verknüpfung der Diagnose immer auf einen Einrichtungs-Kontakt erfolgen - siehe Modul Fall (Encounter)</li>
+  <li>Somit repräsentiert die Encounter-Referenz sowohl den technischen Dokumentationskontext als auch den zeitlichen Kontext, wann die Diagnose festgestellt wurde</li>
 </ul>
 
-<p><strong>Begründung:</strong> Dieser Ansatz erhält klare Semantik: <code>Encounter.diagnosis</code> = "für diesen Fall relevante Diagnosen" vs. <code>Condition.encounter</code> = "Fall, in dem diese Diagnose festgestellt wurde".</p>
 </div>
 
 #### Zeitliche Informationen

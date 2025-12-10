@@ -151,9 +151,8 @@ FHIR-Clients müssen sich unerwarteter Modifier-Elemente in den empfangenen Date
 
 Einige Beispiele für Modifier, die in MII-Profilen möglicherweise keine Must Support Elemente sind:
 
-* `implicitRules`-Element, das allen Profilen gemeinsam ist
 * `modifierExtension`-Element, das allen Profilen gemeinsam ist
-* `Observation.value[x].comparator`
+* `Observation.valueQuantity.comparator`
 * `Patient.active`
 
 Implementierer **SOLLTEN** die Profilseiten sorgfältig überprüfen, um zu verstehen, welche Elemente Modifier sind und wie sie die Interpretation der Ressource beeinflussen.

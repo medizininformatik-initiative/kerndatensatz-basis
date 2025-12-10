@@ -174,12 +174,12 @@
     <a href="downloads.html">Downloads</a>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Version History
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Versioning
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="version-history.html">Version History</a>
+        <a href="version-history.html">Versioning</a>
       </li>
       <li>
         <a href="changes.html">Changelog</a>
@@ -263,7 +263,87 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div>
 <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
+<h3 id="leitfaden-für-implementierer">Leitfaden für Implementierer</h3>
 
+<p>Dieser Leitfaden bietet wesentliche Informationen für die Implementierung des MII-Kerndatensatzes in FHIR-basierten Systemen.</p>
+
+<h4 id="verständnis-der-anforderungen">Verständnis der Anforderungen</h4>
+
+<p><strong>1. Logische Modelle - Fachliche Anforderungen</strong></p>
+
+<p><a href="logical-models.html">Logischen Modelle</a> enthalten die fachlichen und klinischen Anforderungen für jedes Modul:</p>
+
+<ul>
+  <li><strong>Modul Person</strong> - Patientendemographie und Vitalstatus</li>
+  <li><strong>Modul Diagnose</strong> - Anforderungen an die Diagnosedokumentation</li>
+  <li><strong>Modul Prozedur</strong> - Dokumentation von Prozeduren und Interventionen</li>
+  <li><strong>Modul Fall</strong> - Behandlungsfällen und Versorgungsepisoden</li>
+</ul>
+
+<p>Diese Modelle bieten eine technologieunabhängige Sicht darauf, welche Daten erfasst und ausgetauscht werden.</p>
+
+<p><strong>2. UML-Diagramme - Datenbeziehungen</strong></p>
+
+<p>Die <a href="uml-diagrams.html">UML-Diagramme</a> veranschaulichen:</p>
+
+<ul>
+  <li>Beziehungen zwischen verschiedenen Datenelementen</li>
+  <li>Kardinalitäten und Einschränkungen</li>
+  <li>Modulabhängigkeiten und Querverweise</li>
+</ul>
+
+<h4 id="konformität-und-implementierungsanforderungen">Konformität und Implementierungsanforderungen</h4>
+
+<p><strong>3. Konformitätsregeln</strong></p>
+
+<p>Konformitätsanforderungen:</p>
+
+<ul>
+  <li><a href="general-requirements.html">Allgemeine Anforderungen</a> - Übergreifende Implementierungsregeln und Erwartungen</li>
+  <li><a href="must-support.html">Must Support</a> - Kritische Elemente, die Systeme verarbeiten können müssen</li>
+  <li><a href="missing-data.html">Umgang mit fehlenden Daten</a> - Strategien für den Umgang mit unvollständigen Daten</li>
+</ul>
+
+<p>Diese Seiten definieren die minimalen Konformitätskriterien für die Einhaltung des MII-Kerndatensatzes.</p>
+
+<p><strong>4. Technische Artefakte</strong></p>
+
+<p>Implementierungsartefakte:</p>
+
+<ul>
+  <li><a href="profiles-and-extensions.html">Profile und Extensions</a> - FHIR-Profile mit Einschränkungen und Erweiterungen</li>
+  <li><a href="terminology.html">Terminologie</a> - ValueSets und CodeSystems</li>
+  <li><a href="capability-statements.html">Capability Statements</a> - Anforderungen an Server-Fähigkeiten</li>
+  <li><a href="search-parameters-and-operations.html">Suchparameter und Operationen</a> - Erforderliche Suchfähigkeiten</li>
+  <li><a href="examples.html">Beispiele</a> - Beispielressourcen zur Demonstration korrekter Implementierung</li>
+</ul>
+
+<p><strong>5. Downloads</strong></p>
+
+<p>Die Seite <a href="downloads.html">Downloads</a> enthält:</p>
+
+<ul>
+  <li><strong>FHIR-Package</strong> - Vollständiges Implementierungsleitfaden-Package zur Validierung</li>
+  <li><strong>Beispielressourcen</strong> - Beispieldaten in JSON- und XML-Formaten</li>
+  <li><strong>ImplementationGuide-Ressource</strong> - Maschinenlesbare IG-Definition</li>
+</ul>
+
+<h4 id="validierung-und-testen">Validierung und Testen</h4>
+
+<p><strong>Terminologiedienste</strong></p>
+
+<p>Verwenden Sie für die Terminologievalidierung den MII-Terminologieservice:</p>
+<ul>
+  <li><strong>URL:</strong> <a href="https://www.ontoserver.mii-termserv.de/">https://www.ontoserver.mii-termserv.de/</a></li>
+  <li><strong>Zweck:</strong> ValueSet-Expansionen, Code-Validierung und Terminologie-Lookups</li>
+</ul>
+
+<p><strong>Validierungswerkzeuge</strong></p>
+
+<p>Verwenden des FHIR-Package mit:</p>
+<ul>
+  <li><a href="https://confluence.hl7.org/spaces/FHIR/pages/35718580/Using+the+FHIR+Validator">FHIR Validator</a></li>
+</ul>
 
 
 
@@ -291,8 +371,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.base#2026.0.0-dev.1 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Erstellt 
-  <span title="2025-12-09 20:40:00 +0000">
-    2025-12-09
+  <span title="2025-12-10 11:57:00 +0000">
+    2025-12-10
   </span>
 
           <br/>

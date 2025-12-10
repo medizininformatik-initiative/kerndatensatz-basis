@@ -174,12 +174,12 @@
     <a href="downloads.html">Downloads</a>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Version History
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Versioning
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="version-history.html">Version History</a>
+        <a href="version-history.html">Versioning</a>
       </li>
       <li>
         <a href="changes.html">Changelog</a>
@@ -256,6 +256,43 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div>
 <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
+<h3 id="search-parameters-and-operations">Search Parameters and Operations</h3>
+
+<p>This page describes the search capabilities and operations defined for the MII Core Dataset Base modules.</p>
+
+<h4 id="search-parameters">Search Parameters</h4>
+
+<p>The MII Core Dataset utilizes both standard FHIR search parameters and custom search parameters to enable efficient querying of clinical data.</p>
+
+<p><strong>Standard FHIR Search Parameters</strong></p>
+
+<p>All base FHIR search parameters defined in the FHIR R4 specification SHOULD be supported by implementations. See the <a href="http://hl7.org/fhir/R4/search.html">FHIR Search specification</a> for complete details.</p>
+
+<p><strong>Module-Specific Search Requirements</strong></p>
+
+<p>The relevant search parameters required for each module are listed in the respective Capability Statements:</p>
+
+<ul>
+  <li><a href="CapabilityStatement-mii-cps-person-capabilitystatement.html">Person Module Capability Statement</a></li>
+  <li><a href="CapabilityStatement-mii-cps-diagnose-capabilitystatement.html">Diagnosis Module Capability Statement</a></li>
+  <li><a href="CapabilityStatement-mii-cps-prozedur-capabilitystatement.html">Procedure Module Capability Statement</a></li>
+  <li><a href="CapabilityStatement-mii-cps-fall-capabilitystatement.html">Treatment Case Module Capability Statement</a></li>
+</ul>
+
+<p><strong>Custom Search Parameters</strong></p>
+
+<p>Custom SearchParameter resources specific to the MII Core Dataset are published in the <strong>MII Meta Module</strong>:</p>
+
+<ul>
+  <li><strong>Simplifier Project:</strong> <a href="https://simplifier.net/MedizininformatikInitiative-Kerndatensatz">MedizininformatikInitiative-Kerndatensatz</a></li>
+  <li><strong>Purpose:</strong> Enable specialized queries relevant to research use cases</li>
+</ul>
+
+<p>Implementers should review the Meta Module for any custom SearchParameter definitions that extend standard FHIR search capabilities.</p>
+
+<h4 id="operations">Operations</h4>
+
+<p>There are currently <strong>no custom operations</strong> defined in this module.</p>
 
 
 
@@ -284,8 +321,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.base#2026.0.0-dev.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2025-12-09 20:40:00 +0000">
-    2025-12-09
+  <span title="2025-12-10 11:57:00 +0000">
+    2025-12-10
   </span>
 
           <br/>
