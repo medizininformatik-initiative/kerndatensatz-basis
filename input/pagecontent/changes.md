@@ -2,22 +2,48 @@ This page documents the changes and updates across versions of the MII Implement
 
 ---
 
+## Version 2026.0.0
+
+**Date:** 2026-12-11
+
+### Major Structural Changes
+
+**Module Consolidation:**
+- **Consolidated Implementation Guide:** The four base modules (Person, Treatment Case, Diagnosis, and Procedure) have been consolidated into a single Implementation Guide
+- **Package ID:** `de.medizininformatikinitiative.kerndatensatz.base`
+
+**Example Consolidation:**
+- **Unified Test Data Bundle:** Example resources have been consolidated into a comprehensive test data bundle
+- **Cross-Module Examples:** Examples now demonstrate relationships and references across all four modules
+
+### Content Changes
+
+**Diagnosis Module:**
+- **Changed:** Updated guidance on Condition.encounter usage to align with gematik ISiK recommendations (Information Systems in Hospitals)
+- **Changed:** Condition.encounter SHOULD now reference an Encounter at the "Abteilungskontakt" (department contact) level
+- **Note:** This represents a change from previous versions where Encounter.diagnosis was the primary linkage method
+
+**Person Module:**
+- **Added:** ValueSet MII VS Person ICD-10-WHO published under MII Canonical URL for causes of death coding
+
+---
+
 ## Version 2025.0.1
 
 ### Person Module
-**Date:** 08.10.2025
+**Date:** 2025-10-08
 
 - **Added**: Profile [Patient Pseudonymized](StructureDefinition-mii-pr-person-patient-pseudonymisiert.html) now contains an optional identifier for masked health insurance ID under `Patient.identifier`
 - **Changed**: ValueSet MII_VS_Person_ICD10WHO was [retired](http://hl7.org/fhir/R4/codesystem-publication-status.html#publication-status-retired) as redundant. The ICD-10-WHO CodeSystem already references an implicit ICD-10-WHO ValueSet via `CodeSystem.valueSet`. See: https://github.com/medizininformatik-initiative/kerndatensatzmodul-person/issues/86
 - **Changed**: Dependency updated to [de.basisprofil.r4 1.5.4](https://simplifier.net/packages/de.basisprofil.r4/1.5.4). This release of the FHIR Base Profiles contains a fix for the kvid-2 invariant applied to `Patient.identifier:versichertenId.type` in the Patient profile
 
 ### Treatment Case Module
-**Date:** 28.10.2025
+**Date:** 2025-10-28
 
 - **Changed**: `Encounter.location` now allows specification of former encounter locations. See: https://github.com/medizininformatik-initiative/kerndatensatzmodul-fall/issues/79
 
 ### Diagnosis Module
-**Date:** 20.10.2025
+**Date:** 2025-10-20
 
 - **Added**: `Condition.onsetAge` - The data type `Age` can now be used under `Condition.onset[x]`. See: https://github.com/medizininformatik-initiative/kerndatensatzmodul-diagnose/issues/78
 - **Changed**: `Condition.bodySite` - Cardinality of the SNOMED-Coding slice changed from 1..1 to 0..1. See: https://github.com/medizininformatik-initiative/kerndatensatzmodul-diagnose/issues/75
@@ -25,7 +51,7 @@ This page documents the changes and updates across versions of the MII Implement
 - **Updated**: CapabilityStatement now contains requirement documentation for search parameters `_count` and `_summary`
 
 ### Procedure Module
-**Date:** 22.10.2025
+**Date:** 2025-10-22
 
 - **Added**: `Procedure.bodySite` - Now contains optional SNOMED-Coding slice, adopting the modeling from the Diagnosis module's `Condition.bodySite`
 - **Added**: ValueSet and binding for OPS (Canonical URL: `https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/mii-vs-prozedur-ops`). This can be expanded using the MII terminology server (https://www.ontoserver.mii-termserv.de/) enabling enhanced validation
@@ -36,7 +62,7 @@ This page documents the changes and updates across versions of the MII Implement
 ## Version 2025.0.0
 
 ### Person Module
-**Date:** 06.12.2024
+**Date:** 2024-12-06
 
 - **Updated**: Dependency on de.basisprofil.r4 updated to version 1.5.0
   - This changes the [Patient](StructureDefinition-mii-pr-person-patient.html) profile in the `Patient.identifier` element: Statutory and private health insurance numbers now use a unified identifier profile [IdentifierKvid10](https://simplifier.net/packages/de.basisprofil.r4/1.5.0/files/2461154). `Patient.identifier.type` MUST be changed to `KVZ10` for health insurance numbers. The previously used codes `GKV` and `PKV` for `Patient.identifier.type` have the status `retired` (see [CodeSystem IdentifierTypeDeBasis](https://simplifier.net/packages/de.basisprofil.r4/1.5.0/files/2461165)). Patient resources from version 2024 remain valid but SHOULD switch to the new identifier
@@ -46,7 +72,7 @@ This page documents the changes and updates across versions of the MII Implement
 - **Enhanced**: Profiles contain additional descriptions and translations for implementers and the Research Data Portal for Health (FDPG)
 
 ### Treatment Case Module
-**Date:** 10.12.2024
+**Date:** 2024-12-10
 
 - **Updated**: Dependency on de.basisprofil.r4 updated to version 1.5.0. This change has no impact on implementations of this module
 - **Enhanced**: Profiles contain additional descriptions and translations for implementers and the Research Data Portal for Health (FDPG)
@@ -61,7 +87,7 @@ This page documents the changes and updates across versions of the MII Implement
 - **Removed**: MustSupport labels removed from `Encounter.location` and `Encounter.serviceProvider`
 
 ### Diagnosis Module
-**Date:** 09.12.2024
+**Date:** 2024-12-09
 
 - **Updated**: Dependency on de.basisprofil.r4 updated to [version 1.5.0](https://simplifier.net/packages/de.basisprofil.r4/1.5.0). This change has no impact on implementations of this module
 - **Removed**: `Condition.code` and `Condition.bodySite` ICD-O-3 slices removed. These are now defined by the Oncology module
@@ -71,7 +97,7 @@ This page documents the changes and updates across versions of the MII Implement
 - **Added**: `Condition.verificationStatus` now has MustSupport label. See: https://github.com/medizininformatik-initiative/kerndatensatzmodul-diagnose/issues/64
 
 ### Procedure Module
-**Date:** 09.12.2024
+**Date:** 2024-12-09
 
 - **Updated**: Dependency on de.basisprofil.r4 updated to [version 1.5.0](https://simplifier.net/packages/de.basisprofil.r4/1.5.0). This change has no impact on implementations of this module
 - **Enhanced**: Profiles contain additional descriptions and translations for implementers and the Research Data Portal for Health (FDPG)
@@ -84,7 +110,7 @@ This page documents the changes and updates across versions of the MII Implement
 ## Version 2024.0.1
 
 ### Treatment Case Module
-**Date:** 17.04.2024
+**Date:** 2024-04-17
 
 - **Fixed**: Correction of version parameters in conformance resources. In the previously published package, `StructureDefinition.version` did not uniformly match the package version. See: https://github.com/medizininformatik-initiative/kerndatensatzmodul-fall/issues/51
 
@@ -95,7 +121,7 @@ This page documents the changes and updates across versions of the MII Implement
 All modules adopted [Calendar Versioning (CalVer)](https://calver.org/) following the YYYY.MINOR.PATCH scheme, establishing an annual release cycle.
 
 ### Person Module
-**Date:** 16.04.2024
+**Date:** 2024-04-16
 
 - **Changed**: Versioning scheme changed to [Calendar Versioning (CalVer)](https://calver.org/) with schema YYYY.MINOR.PATCH
 - **Standardized**: Naming of conformance resources and example instances follows uniform [MII naming conventions](https://github.com/medizininformatik-initiative/kerndatensatz-meta/wiki/Namenskonventionen-f%C3%BCr-FHIR%E2%80%90Ressourcen-in-der-MII)
@@ -109,7 +135,7 @@ All modules adopted [Calendar Versioning (CalVer)](https://calver.org/) followin
 - **Changed**: Data types in the logical model were adjusted to match the data types of elements in the FHIR profile to which they are mapped
 
 ### Treatment Case Module
-**Date:** 28.03.2024
+**Date:** 2024-03-28
 
 - **Changed**: Versioning scheme changed to [Calendar Versioning (CalVer)](https://calver.org/)
 - **Standardized**: Naming of conformance resources and example instances follows uniform MII naming conventions
@@ -123,7 +149,7 @@ All modules adopted [Calendar Versioning (CalVer)](https://calver.org/) followin
   - In version 1.0, `Encounter.serviceType` only contained a specification for the department code. This has been extended in this version to include the extended department code
 
 ### Diagnosis Module
-**Date:** 16.04.2024
+**Date:** 2024-04-16
 
 - **Changed**: Versioning scheme changed to [Calendar Versioning (CalVer)](https://calver.org/)
 - **Standardized**: Naming of conformance resources and example instances follows uniform MII naming conventions
@@ -141,7 +167,7 @@ All modules adopted [Calendar Versioning (CalVer)](https://calver.org/) followin
 - **Added**: Module was extended with SearchParameter resources enabling search for ICD-10-GM codes in combination with multiple coding indicators, laterality and diagnostic certainty
 
 ### Procedure Module
-**Date:** 16.04.2024
+**Date:** 2024-04-16
 
 - **Changed**: Versioning scheme changed to [Calendar Versioning (CalVer)](https://calver.org/)
 - **Standardized**: Naming of conformance resources and example instances follows uniform MII naming conventions
