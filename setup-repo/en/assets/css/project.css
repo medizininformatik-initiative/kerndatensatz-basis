@@ -700,18 +700,37 @@ li a[href^="http://"]:not([no-external^="true"]):after,li a[href^="https://"]:no
 
 /* ----------New content for ballot styling------*/
 
-.new-content::before {
+
+span.new-content::before,
+li.new-content::before {
+  content: "New Content: ";
+  color: red;
+  font-weight: bold;
+  display: inline-block;
+  margin-right: 0.25em;
+}
+p.new-content::before,
+div.new-content::before {
   white-space: pre;
   content: "New Content\A ";
   color: red;
   font-weight: bold;}
-.new-content{
+span.new-content,
+li.new-content{
+    padding: 2px;
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+p.new-content,
+div.new-content{
     margin: 5px;
     padding: 10px;
     color: #3c763d;
     background-color: #dff0d8;
     border-color: #d6e9c6;
 }
+
 .changes-disabled .new-content::before {
     all:unset;
 }
@@ -724,12 +743,29 @@ li a[href^="http://"]:not([no-external^="true"]):after,li a[href^="https://"]:no
 }
 
 
-.modified-content::before {
+span.modified-content::before,
+li.modified-content::before {
+  content: "Modified Content: ";
+  color: red;
+  font-weight: bold;
+  display: inline-block;
+  margin-right: 0.25em;
+}
+p.modified-content::before,
+div.modified-content::before {
   white-space: pre;
   content: "Modified Content\A ";
   color: red;
   font-weight: bold;}
-.modified-content{
+span.modified-content,
+li.modified-content{
+    padding: 2px;
+    color: #784212;
+    background-color: #fef9e7;
+    border-color: #f9e79f;
+}
+p.modified-content,
+div.modified-content{
     margin: 5px;
     padding: 10px;
     color: #784212;

@@ -7,7 +7,7 @@
     "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide mii-ig-base</b></p><a name=\"mii-ig-base\"> </a><a name=\"hcmii-ig-base\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: en</p></div><h2>MII_IG_Base</h2><p>The official URL for this implementation guide is: </p><pre>https://www.medizininformatik-initiative.de/fhir/modul-base/ImplementationGuide/mii-ig-base</pre><div><p>Implementation Guide for the Core Dataset Base Modules Person, Diagnosis, Procedure, and Treatment Case</p>\n</div></div><div xml:lang=\"de\" lang=\"de\"><hr/><p><b>German</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide mii-ig-base</b></p><a name=\"de-mii-ig-base\"> </a><a name=\"de-hcmii-ig-base\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: en</p></div><h2>MII_IG_Base</h2><p>The official URL for this implementation guide is: </p><pre>https://www.medizininformatik-initiative.de/fhir/modul-base/ImplementationGuide/mii-ig-base</pre><div><p>Implementation Guide for the Core Dataset Base Modules Person, Diagnosis, Procedure, and Treatment Case</p>\n</div></div></div>"
   },
   "url" : "https://www.medizininformatik-initiative.de/fhir/modul-base/ImplementationGuide/mii-ig-base",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_IG_Base",
   "_name" : {
     "extension" : [{
@@ -37,7 +37,7 @@
     }]
   },
   "status" : "active",
-  "date" : "2025-11-24",
+  "date" : "2025-12-10",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [{
@@ -134,7 +134,7 @@
       },
       {
         "url" : "value",
-        "valueString" : "ci-build"
+        "valueString" : "Release"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -168,17 +168,6 @@
       {
         "url" : "value",
         "valueString" : "input/translations/de"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "igs-logo"
-      },
-      {
-        "url" : "value",
-        "valueString" : "MII_Logo_rgb.jpg"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -647,6 +636,17 @@
     {
       "extension" : [{
         "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/mii-vs-person-icd10who"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
         "valueString" : "autoload-resources"
       },
       {
@@ -941,7 +941,7 @@
       },
       {
         "url" : "value",
-        "valueString" : "ci-build"
+        "valueString" : "Release"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -975,17 +975,6 @@
       {
         "url" : "value",
         "valueString" : "input/translations/de"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueCode" : "igs-logo"
-      },
-      {
-        "url" : "value",
-        "valueString" : "MII_Logo_rgb.jpg"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -1448,6 +1437,17 @@
       {
         "url" : "value",
         "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/LogicalModel/Person"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/mii-vs-person-icd10who"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -2544,6 +2544,18 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
+        "reference" : "ValueSet/mii-vs-person-icd10who"
+      },
+      "name" : "MII VS Person ICD-10-WHO",
+      "description" : "MII VS Person ICD-10-WHO",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
         "reference" : "ValueSet/mii-vs-person-vitalstatus"
       },
       "name" : "MII VS Person Vitalstatus",
@@ -2999,20 +3011,7 @@
           "valueUrl" : "version-history.html"
         }],
         "nameUrl" : "version-history.html",
-        "title" : "Version History",
-        "_title" : {
-          "extension" : [{
-            "extension" : [{
-              "url" : "lang",
-              "valueCode" : "de"
-            },
-            {
-              "url" : "content",
-              "valueString" : "Versionshistorie"
-            }],
-            "url" : "http://hl7.org/fhir/StructureDefinition/translation"
-          }]
-        },
+        "title" : "Versioning",
         "generation" : "markdown",
         "page" : [{
           "extension" : [{
@@ -3057,6 +3056,15 @@
             "url" : "http://hl7.org/fhir/StructureDefinition/translation"
           }]
         },
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "translationinfo.html"
+        }],
+        "nameUrl" : "translationinfo.html",
+        "title" : "Translation Information",
         "generation" : "markdown"
       }]
     },

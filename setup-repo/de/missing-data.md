@@ -1,4 +1,4 @@
-# Umgang mit fehlenden Daten - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# Umgang mit fehlenden Daten - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## Umgang mit fehlenden Daten
 

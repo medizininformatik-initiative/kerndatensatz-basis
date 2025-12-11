@@ -1,4 +1,4 @@
-# MII VS Prozedur Prozeduren [SNOMED CT] - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII VS Prozedur Prozeduren [SNOMED CT] - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## ValueSet: MII VS Prozedur Prozeduren [SNOMED CT] 
 
@@ -15,15 +15,9 @@ Enthaelt alle SNOMED CT Procedure Codes
 
 ### Logical Definition (CLD)
 
-* Include codes from[`http://snomed.info/sct`](http://www.snomed.org/)version 📍 where concept descends from 71388002 (Procedure)
-
  
 
 ### Expansion
-
-Expansion from 127.0.0.1 based on SNOMED CT International edition 01-Jul 2024
-
-This value set has >1000 codes in it. In order to keep the publication size manageable, only a selection (1000 codes) of the whole set of codes is shown
 
 -------
 
@@ -52,7 +46,7 @@ This value set has >1000 codes in it. In order to keep the publication size mana
     }
   ],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-sct",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_VS_Prozedur_Prozeduren_SNOMEDCT",
   "title" : "MII VS Prozedur Prozeduren [SNOMED CT]",
   "status" : "active",

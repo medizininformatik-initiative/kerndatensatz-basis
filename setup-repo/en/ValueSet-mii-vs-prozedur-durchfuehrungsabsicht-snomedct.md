@@ -1,4 +1,4 @@
-# MII VS Prozedur Durchführungsabsicht [SNOMED CT] - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII VS Prozedur Durchführungsabsicht [SNOMED CT] - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## ValueSet: MII VS Prozedur Durchführungsabsicht [SNOMED CT] 
 
@@ -18,10 +18,6 @@ Durchführungsabsicht / Intention mit der Prozedur ausgeführt wird
  
 
 ### Expansion
-
-Expansion from 127.0.0.1 based on SNOMED CT International edition 01-Jul 2024
-
-This value set expansion contains 9 concepts.
 
 -------
 
@@ -50,7 +46,7 @@ This value set expansion contains 9 concepts.
     }
   ],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-intend",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_VS_Prozedur_Durchfuehrungsabsicht_SNOMEDCT",
   "title" : "MII VS Prozedur Durchführungsabsicht [SNOMED CT]",
   "status" : "active",

@@ -1,4 +1,4 @@
-# Terminology - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# Terminology - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## Terminology
 
@@ -15,6 +15,7 @@ Most value sets used in this guide reference external code systems such as ICD-1
 #### Person Module Value Sets
 
 * [MII VS Person Vitalstatus](ValueSet-mii-vs-person-vitalstatus.md) - Vital status codes
+* [MII VS Person ICD-10-WHO](ValueSet-mii-vs-person-icd10who.md) - ICD-10 WHO codes for causes of death
 
 #### Treatment Case Module Value Sets
 
@@ -47,8 +48,8 @@ See the [FHIR terminology section](http://hl7.org/fhir/R4/terminologies-systems.
 
 * [MII CS Person Vitalstatus](CodeSystem-mii-cs-person-vitalstatus.md) - Code system for vital status
 * [MII CS Diagnose Lebensphase Supplement SNOMED](CodeSystem-mii-cs-diagnose-lebensphase-supplement-snomed.md) - Supplement for SNOMED CT life phase concepts with German descriptions
-* [MII CS Fall Supplement ActEncounterCode](CodeSystem-mii-cs-fall-supplement-actencountercode.md) - Supplement for HL7 V3 ActEncounterCode
-* [MII CS Fall Supplement PatientClass](CodeSystem-mii-cs-fall-supplement-patientclass.md) - Supplement for encounter class codes
+* [MII CS Fall Supplement ActEncounterCode](CodeSystem-mii-cs-fall-supplement-act-encounter-code.md) - Supplement for HL7 V3 ActEncounterCode
+* [MII CS Fall Supplement PatientClass](CodeSystem-mii-cs-fall-supplement-patient-class.md) - Supplement for encounter class codes
 
 #### External Code Systems Used
 
@@ -56,8 +57,9 @@ The following external code systems are referenced in this implementation guide:
 
 | | | |
 | :--- | :--- | :--- |
-| ICD-10-GM | `http://fhir.de/CodeSystem/bfarm/icd-10-gm` | Available via MII TermServ |
-| OPS | `http://fhir.de/CodeSystem/bfarm/ops` | Available via MII TermServ |
+| ICD-10-GM | `http://fhir.de/CodeSystem/bfarm/icd-10-gm` | German modification of ICD-10 for diagnoses |
+| ICD-10 WHO | `http://hl7.org/fhir/sid/icd-10` | WHO International Classification of Diseases |
+| OPS | `http://fhir.de/CodeSystem/bfarm/ops` | German classification for operations and procedures |
 | SNOMED CT | `http://snomed.info/sct` | International clinical terminology |
 | Orphanet | `http://www.orpha.net` | Rare disease codes |
 | Alpha-ID | `http://fhir.de/CodeSystem/bfarm/alpha-id` | ICD-10-GM alphabetical index |

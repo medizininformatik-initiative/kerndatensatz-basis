@@ -1,4 +1,4 @@
-# MII CS Fall Supplement PatientClass - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII CS Fall Supplement PatientClass - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## CodeSystem: MII CS Fall Supplement PatientClass 
 
@@ -12,10 +12,6 @@ This Code system is referenced in the definition of the following value sets:
 **Changes since version {current}:**
 
 * New Content
-
-Profile: [Shareable CodeSystem](http://hl7.org/fhir/R4/shareablecodesystem.html)
-
-This code system supplement `https://www.medizininformatik-initiative.de/fhir/core/modul-fall/CodeSystem/SupplementPatientClass` defines displays on the following codes:
 
 -------
 
@@ -49,12 +45,12 @@ This code system supplement `https://www.medizininformatik-initiative.de/fhir/co
     }
   ],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/CodeSystem/SupplementPatientClass",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_CS_Fall_SupplementPatientClass",
   "title" : "MII CS Fall Supplement PatientClass",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-12-03T10:23:08+00:00",
+  "date" : "2025-12-11T17:49:30+00:00",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [

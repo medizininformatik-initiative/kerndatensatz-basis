@@ -7,7 +7,7 @@
 <html xml:lang="de" xmlns="http://www.w3.org/1999/xhtml" lang="de" dir="ltr">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>MII PR Diagnose Condition - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1</title>
+    <title>MII PR Diagnose Condition - MII Implementation Guide Core Dataset Base v2026.0.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -46,8 +46,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"13.9"}
-    h3,h4,h5,h6{--heading-prefix:"13.9"}</style>
+    <style type="text/css">h2{--heading-prefix:"14.9"}
+    h3,h4,h5,h6{--heading-prefix:"14.9"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -68,7 +68,7 @@
         <div id="ig-status" data-fhir="generated">
           <p><span style="font-size:12pt;font-weight:bold">MII Implementierungsleitfaden Kerndatensatz Basis</span>
             <br/>
-            <span style="display:inline-block;">2026.0.0-dev.1 - ci-build
+            <span style="display:inline-block;">2026.0.0 - Release
 
 
 
@@ -176,12 +176,12 @@
     <a href="downloads.html">Downloads</a>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Version History
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Versioning
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="version-history.html">Version History</a>
+        <a href="version-history.html">Versioning</a>
       </li>
       <li>
         <a href="changes.html">Changelog</a>
@@ -232,7 +232,7 @@
 
 <!-- layouts\layout-profile -->
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MII Implementation Guide Core Dataset Base - Local Development build (v2026.0.0-dev.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://www.medizininformatik-initiative.de/fhir/modul-base/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MII Implementation Guide Core Dataset Base - Local Development build (v2026.0.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://www.medizininformatik-initiative.de/fhir/modul-base/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -319,7 +319,7 @@ MII PR Diagnose Condition
       </td>
       <td><i>Version</i>:
 
-      <span class="copy-text">2026.0.0-dev.1<button title="Klicken zum Kopieren der versionierten URL" class="btn-copy" data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0-dev.1"/></span>
+      <span class="copy-text">2026.0.0<button title="Klicken zum Kopieren der versionierten URL" class="btn-copy" data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0"/></span>
       </td>
     </tr>
 
@@ -447,22 +447,21 @@ MII PR Diagnose Condition
 <div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
 <h5 style="color: #406A99; margin-top: 0;">Best Practice - Diagnose-Fall-Beziehungen</h5>
 
-<p><strong>Primäre Verknüpfungsmethode:</strong> Verwenden Sie <code>Encounter.diagnosis</code>, um Diagnosen mit Behandlungsfällen zu verknüpfen. Dies ist der <strong>EMPFOHLENE</strong> Ansatz zur Verknüpfung von Diagnosen mit Krankenhausaufenthalten oder Besuchen.</p>
+<p><strong>Änderung gegenüber vorheriger Version:</strong> In früheren Versionen dieses Implementierungsleitfadens wurde empfohlen, <code>Encounter.diagnosis</code> zur Verknüpfung von Diagnosen mit Behandlungsfällen zu verwenden. Diese Empfehlung wurde aktualisiert, um sich an die gematik ISiK-Empfehlungen (Informationssysteme im Krankenhaus) anzupassen.</p>
 
-<p><strong>Verwendung von Condition.encounter:</strong></p>
+<p><strong>Aktuelle Empfehlung - Condition.encounter:</strong></p>
 <ul>
-  <li><strong>SOLLTE NICHT</strong> zur generellen Diagnose-Fall-Verknüpfung verwendet werden</li>
-  <li><strong>Ausnahme:</strong> KANN zur Verknüpfung der Diagnose mit dem spezifischen Fall/Kontakt verwendet werden, in dem die Diagnose <strong>festgestellt wurde</strong> (immer ein Kontakt mit einer konkreten Versorgungsstelle!)</li>
-  <li>Dies repräsentiert den "Feststellungsdatum"-Kontext und nicht die allgemeine Verknüpfung</li>
+  <li>Die Verlinkung auf eine Encounter-Ressource dokumentiert die Referenz zu einem Aufenthalt und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.</li>
+  <li><strong>Ebene Abteilungskontakt:</strong> Die Zuordnung <strong>SOLLTE</strong> auf einen Encounter der Ebene "Abteilungskontakt" erfolgen</li>
+  <li>Bei der Auswahl des Encounters ist zu beachten, dass unter einer (Abrechnungs-)"Fallnummer" (hier: <code>Encounter.account</code>) unter Umständen mehrere Encounter gruppiert sein können (z.B. stationärer Besuch mit mehreren vor- und nachstationären Aufenthalten)</li>
 </ul>
 
 <p><strong>Mapping des Feststellungsdatums:</strong></p>
 <ul>
   <li>Das logische Datenelement "Feststellungsdatum" wird auf <code>Encounter.period.start</code> gemappt, NICHT auf ein Element in der Condition-Ressource</li>
-  <li>Somit SOLLTE die Verknüpfung der Diagnose immer auf einen Einrichtungs-Kontakt erfolgen - siehe Modul Fall (Encounter)</li>
+  <li>Somit repräsentiert die Encounter-Referenz sowohl den technischen Dokumentationskontext als auch den zeitlichen Kontext, wann die Diagnose festgestellt wurde</li>
 </ul>
 
-<p><strong>Begründung:</strong> Dieser Ansatz erhält klare Semantik: <code>Encounter.diagnosis</code> = "für diesen Fall relevante Diagnosen" vs. <code>Condition.encounter</code> = "Fall, in dem diese Diagnose festgestellt wurde".</p>
 </div>
 
 <h4 id="zeitliche-informationen">Zeitliche Informationen</h4>
@@ -1058,7 +1057,7 @@ Hierdurch wird der Tatsache Rechnung getragen, dass jede der jährlich neu ersch
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Hinweis<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 22e03121-aaec-4b1d-92d9-47a0e0c4e4a8
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 1e519546-0658-47ea-9208-7896d53b1f62
 document.getElementById('cbmii-pr-diagnose-conditionK-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-diagnose-conditionK'), 'binding', document.getElementById('cbmii-pr-diagnose-conditionK-binding').checked, document.getElementById('ppmii-pr-diagnose-conditionK'));
 document.getElementById('cbmii-pr-diagnose-conditionK-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1146,7 +1145,7 @@ filterDesc(document.getElementById('mii-pr-diagnose-conditionK'), 'obligation', 
       <a style="opacity: 1.0" href="ValueSet-mii-vs-diagnose-icd10gm.html">MII VS Diagnose ICD-10-GM</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-icd10gm" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0-dev.1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -1159,7 +1158,7 @@ filterDesc(document.getElementById('mii-pr-diagnose-conditionK'), 'obligation', 
       <a style="opacity: 1.0" href="ValueSet-mii-vs-diagnose-alphaid.html">MII VS Diagnose Alpha-ID</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-alphaid" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0-dev.1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -1172,7 +1171,7 @@ filterDesc(document.getElementById('mii-pr-diagnose-conditionK'), 'obligation', 
       <a style="opacity: 1.0" href="ValueSet-mii-vs-diagnose-diagnosecodes-snomed.html">MII VS Diagnose Diagnose-Codes SNOMED</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/diagnoses-sct" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0-dev.1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -1185,7 +1184,7 @@ filterDesc(document.getElementById('mii-pr-diagnose-conditionK'), 'obligation', 
       <a style="opacity: 1.0" href="ValueSet-mii-vs-diagnose-orphanet.html">MII VS Diagnose Orphanet</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-orphanet" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0-dev.1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -1213,7 +1212,7 @@ filterDesc(document.getElementById('mii-pr-diagnose-conditionK'), 'obligation', 
       <a style="opacity: 1.0" href="ValueSet-mii-vs-diagnose-bodystructure-snomed.html">MII VS Diagnose BodyStructure SNOMED</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-bodystructure-snomed" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0-dev.1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -1702,7 +1701,7 @@ filterDesc(document.getElementById('mii-pr-diagnose-conditionK'), 'obligation', 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">*</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5; opacity: 0.5" href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Hinweis</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 22e03121-aaec-4b1d-92d9-47a0e0c4e4a8
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 1e519546-0658-47ea-9208-7896d53b1f62
 document.getElementById('cbmii-pr-diagnose-conditionD-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-diagnose-conditionD'), 'binding', document.getElementById('cbmii-pr-diagnose-conditionD-binding').checked, document.getElementById('ppmii-pr-diagnose-conditionD'));
 document.getElementById('cbmii-pr-diagnose-conditionD-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1747,7 +1746,7 @@ filterDesc(document.getElementById('mii-pr-diagnose-conditionD'), 'obligation', 
       <a style="opacity: 0.5" href="ValueSet-mii-vs-diagnose-icd10gm.html">MII VS Diagnose ICD-10-GM</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-icd10gm" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0-dev.1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -1760,7 +1759,7 @@ filterDesc(document.getElementById('mii-pr-diagnose-conditionD'), 'obligation', 
       <a style="opacity: 0.5" href="ValueSet-mii-vs-diagnose-alphaid.html">MII VS Diagnose Alpha-ID</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-alphaid" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0-dev.1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -1773,7 +1772,7 @@ filterDesc(document.getElementById('mii-pr-diagnose-conditionD'), 'obligation', 
       <a style="opacity: 0.5" href="ValueSet-mii-vs-diagnose-diagnosecodes-snomed.html">MII VS Diagnose Diagnose-Codes SNOMED</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/diagnoses-sct" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0-dev.1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -1786,7 +1785,7 @@ filterDesc(document.getElementById('mii-pr-diagnose-conditionD'), 'obligation', 
       <a style="opacity: 0.5" href="ValueSet-mii-vs-diagnose-orphanet.html">MII VS Diagnose Orphanet</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-orphanet" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0-dev.1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -1799,7 +1798,7 @@ filterDesc(document.getElementById('mii-pr-diagnose-conditionD'), 'obligation', 
       <a style="opacity: 0.5" href="ValueSet-mii-vs-diagnose-bodystructure-snomed.html">MII VS Diagnose BodyStructure SNOMED</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-bodystructure-snomed" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0-dev.1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0</td>
     <td>This IG</td>
   </tr>
 </table>
@@ -2802,7 +2801,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Hinweis<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 22e03121-aaec-4b1d-92d9-47a0e0c4e4a8
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 1e519546-0658-47ea-9208-7896d53b1f62
 document.getElementById('cbmii-pr-diagnose-conditionS-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-diagnose-conditionS'), 'binding', document.getElementById('cbmii-pr-diagnose-conditionS-binding').checked, document.getElementById('ppmii-pr-diagnose-conditionS'));
 document.getElementById('cbmii-pr-diagnose-conditionS-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -2966,7 +2965,7 @@ filterDesc(document.getElementById('mii-pr-diagnose-conditionS'), 'obligation', 
       <a style="opacity: 1.0" href="ValueSet-mii-vs-diagnose-icd10gm.html">MII VS Diagnose ICD-10-GM</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-icd10gm" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0-dev.1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -2979,7 +2978,7 @@ filterDesc(document.getElementById('mii-pr-diagnose-conditionS'), 'obligation', 
       <a style="opacity: 1.0" href="ValueSet-mii-vs-diagnose-alphaid.html">MII VS Diagnose Alpha-ID</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-alphaid" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0-dev.1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -2992,7 +2991,7 @@ filterDesc(document.getElementById('mii-pr-diagnose-conditionS'), 'obligation', 
       <a style="opacity: 1.0" href="ValueSet-mii-vs-diagnose-diagnosecodes-snomed.html">MII VS Diagnose Diagnose-Codes SNOMED</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/diagnoses-sct" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0-dev.1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -3005,7 +3004,7 @@ filterDesc(document.getElementById('mii-pr-diagnose-conditionS'), 'obligation', 
       <a style="opacity: 1.0" href="ValueSet-mii-vs-diagnose-orphanet.html">MII VS Diagnose Orphanet</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-orphanet" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0-dev.1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -3033,7 +3032,7 @@ filterDesc(document.getElementById('mii-pr-diagnose-conditionS'), 'obligation', 
       <a style="opacity: 1.0" href="ValueSet-mii-vs-diagnose-bodystructure-snomed.html">MII VS Diagnose BodyStructure SNOMED</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-bodystructure-snomed" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0-dev.1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -4048,7 +4047,7 @@ Hierdurch wird der Tatsache Rechnung getragen, dass jede der jährlich neu ersch
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Hinweis<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 22e03121-aaec-4b1d-92d9-47a0e0c4e4a8
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 1e519546-0658-47ea-9208-7896d53b1f62
 document.getElementById('cbmii-pr-diagnose-conditionKA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-diagnose-conditionKA'), 'binding', document.getElementById('cbmii-pr-diagnose-conditionKA-binding').checked, document.getElementById('ppmii-pr-diagnose-conditionKA'));
 document.getElementById('cbmii-pr-diagnose-conditionKA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -4135,7 +4134,7 @@ filterDesc(document.getElementById('mii-pr-diagnose-conditionKA'), 'obligation',
       <a style="opacity: 1.0" href="ValueSet-mii-vs-diagnose-icd10gm.html">MII VS Diagnose ICD-10-GM</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-icd10gm" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0-dev.1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -4148,7 +4147,7 @@ filterDesc(document.getElementById('mii-pr-diagnose-conditionKA'), 'obligation',
       <a style="opacity: 1.0" href="ValueSet-mii-vs-diagnose-alphaid.html">MII VS Diagnose Alpha-ID</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-alphaid" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0-dev.1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -4161,7 +4160,7 @@ filterDesc(document.getElementById('mii-pr-diagnose-conditionKA'), 'obligation',
       <a style="opacity: 1.0" href="ValueSet-mii-vs-diagnose-diagnosecodes-snomed.html">MII VS Diagnose Diagnose-Codes SNOMED</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/diagnoses-sct" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0-dev.1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -4174,7 +4173,7 @@ filterDesc(document.getElementById('mii-pr-diagnose-conditionKA'), 'obligation',
       <a style="opacity: 1.0" href="ValueSet-mii-vs-diagnose-orphanet.html">MII VS Diagnose Orphanet</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-orphanet" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0-dev.1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -4202,7 +4201,7 @@ filterDesc(document.getElementById('mii-pr-diagnose-conditionKA'), 'obligation',
       <a style="opacity: 1.0" href="ValueSet-mii-vs-diagnose-bodystructure-snomed.html">MII VS Diagnose BodyStructure SNOMED</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-bodystructure-snomed" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0-dev.1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -4691,7 +4690,7 @@ filterDesc(document.getElementById('mii-pr-diagnose-conditionKA'), 'obligation',
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">*</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5; opacity: 0.5" href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Hinweis</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 22e03121-aaec-4b1d-92d9-47a0e0c4e4a8
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 1e519546-0658-47ea-9208-7896d53b1f62
 document.getElementById('cbmii-pr-diagnose-conditionDA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-diagnose-conditionDA'), 'binding', document.getElementById('cbmii-pr-diagnose-conditionDA-binding').checked, document.getElementById('ppmii-pr-diagnose-conditionDA'));
 document.getElementById('cbmii-pr-diagnose-conditionDA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -4733,7 +4732,7 @@ filterDesc(document.getElementById('mii-pr-diagnose-conditionDA'), 'obligation',
       <a style="opacity: 0.5" href="ValueSet-mii-vs-diagnose-icd10gm.html">MII VS Diagnose ICD-10-GM</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-icd10gm" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0-dev.1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -4746,7 +4745,7 @@ filterDesc(document.getElementById('mii-pr-diagnose-conditionDA'), 'obligation',
       <a style="opacity: 0.5" href="ValueSet-mii-vs-diagnose-alphaid.html">MII VS Diagnose Alpha-ID</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-alphaid" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0-dev.1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -4759,7 +4758,7 @@ filterDesc(document.getElementById('mii-pr-diagnose-conditionDA'), 'obligation',
       <a style="opacity: 0.5" href="ValueSet-mii-vs-diagnose-diagnosecodes-snomed.html">MII VS Diagnose Diagnose-Codes SNOMED</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/diagnoses-sct" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0-dev.1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -4772,7 +4771,7 @@ filterDesc(document.getElementById('mii-pr-diagnose-conditionDA'), 'obligation',
       <a style="opacity: 0.5" href="ValueSet-mii-vs-diagnose-orphanet.html">MII VS Diagnose Orphanet</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-orphanet" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0-dev.1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -4785,7 +4784,7 @@ filterDesc(document.getElementById('mii-pr-diagnose-conditionDA'), 'obligation',
       <a style="opacity: 0.5" href="ValueSet-mii-vs-diagnose-bodystructure-snomed.html">MII VS Diagnose BodyStructure SNOMED</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-bodystructure-snomed" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0-dev.1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0</td>
     <td>This IG</td>
   </tr>
 </table>
@@ -5788,7 +5787,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Hinweis<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 22e03121-aaec-4b1d-92d9-47a0e0c4e4a8
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 1e519546-0658-47ea-9208-7896d53b1f62
 document.getElementById('cbmii-pr-diagnose-conditionSA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-diagnose-conditionSA'), 'binding', document.getElementById('cbmii-pr-diagnose-conditionSA-binding').checked, document.getElementById('ppmii-pr-diagnose-conditionSA'));
 document.getElementById('cbmii-pr-diagnose-conditionSA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -5950,7 +5949,7 @@ filterDesc(document.getElementById('mii-pr-diagnose-conditionSA'), 'obligation',
       <a style="opacity: 1.0" href="ValueSet-mii-vs-diagnose-icd10gm.html">MII VS Diagnose ICD-10-GM</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-icd10gm" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0-dev.1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -5963,7 +5962,7 @@ filterDesc(document.getElementById('mii-pr-diagnose-conditionSA'), 'obligation',
       <a style="opacity: 1.0" href="ValueSet-mii-vs-diagnose-alphaid.html">MII VS Diagnose Alpha-ID</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-alphaid" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0-dev.1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -5976,7 +5975,7 @@ filterDesc(document.getElementById('mii-pr-diagnose-conditionSA'), 'obligation',
       <a style="opacity: 1.0" href="ValueSet-mii-vs-diagnose-diagnosecodes-snomed.html">MII VS Diagnose Diagnose-Codes SNOMED</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/diagnoses-sct" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0-dev.1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -5989,7 +5988,7 @@ filterDesc(document.getElementById('mii-pr-diagnose-conditionSA'), 'obligation',
       <a style="opacity: 1.0" href="ValueSet-mii-vs-diagnose-orphanet.html">MII VS Diagnose Orphanet</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-orphanet" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0-dev.1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -6017,7 +6016,7 @@ filterDesc(document.getElementById('mii-pr-diagnose-conditionSA'), 'obligation',
       <a style="opacity: 1.0" href="ValueSet-mii-vs-diagnose-bodystructure-snomed.html">MII VS Diagnose BodyStructure SNOMED</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-bodystructure-snomed" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0-dev.1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2026.0.0</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -6544,10 +6543,10 @@ Summary
 
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
-          Package de.medizininformatikinitiative.kerndatensatz.base#2026.0.0-dev.1 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Package de.medizininformatikinitiative.kerndatensatz.base#2026.0.0 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Erstellt 
-  <span title="2025-12-03 10:23:00 +0000">
-    2025-12-03
+  <span title="2025-12-11 17:49:00 +0000">
+    2025-12-11
   </span>
 
           <br/>

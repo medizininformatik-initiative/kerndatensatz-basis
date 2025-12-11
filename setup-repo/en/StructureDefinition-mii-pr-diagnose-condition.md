@@ -1,4 +1,4 @@
-# MII PR Diagnose Condition - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII PR Diagnose Condition - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## Resource Profile: MII PR Diagnose Condition 
 
@@ -80,20 +80,18 @@ This section provides detailed implementation guidance for the MII Diagnose (Dia
 
 ##### Best Practice - Diagnosis-Encounter Relationships
 
-**Primary Linkage Method:** Use `Encounter.diagnosis` to link diagnoses to encounters. This is the **RECOMMENDED** approach for associating diagnoses with hospital stays or visits.
+**Change from Previous Version:** In previous versions of this implementation guide, it was recommended to use `Encounter.diagnosis` to link diagnoses to encounters. This guidance has been updated to align with gematik ISiK (Informationssysteme im Krankenhaus) recommendations.
 
-**Condition.encounter Usage:**
+**Current Recommendation - Condition.encounter:**
 
-* **SHOULD NOT** be used for general diagnosis-encounter linking
-* **Exception:** MAY be used to link the diagnosis to the specific encounter where it was **first established/documented** (always a contact with a concrete care unit/Versorgungsstelle)
-* This represents the "assessment date" context rather than the general association
+* The link to an Encounter resource documents the reference to a hospital stay and enables important API functions such as chained search, (reverse) include, etc.
+* **Department Contact Level:** The reference **SHOULD** be to an Encounter at the "Abteilungskontakt" (department contact) level.
+* When selecting the Encounter, note that multiple Encounters may be grouped under a single (billing) case number (`Encounter.account`), such as an inpatient visit with multiple pre- and post-hospitalization contacts
 
 **Assessment Date Mapping:**
 
 * The logical data element "Feststellungsdatum" (assessment/determination date) maps to `Encounter.period.start`, NOT to an element in the Condition resource
-* Therefore, diagnosis linkage **SHOULD** always reference an Einrichtungs-Kontakt (facility encounter) - see Fall (Encounter) module
-
-**Rationale:** This approach maintains clear semantics: `Encounter.diagnosis` = "diagnoses relevant to this encounter" vs. `Condition.encounter` = "encounter where this diagnosis was established".
+* Therefore, the Encounter reference represents both the technical documentation context and the temporal context of when the diagnosis was established
 
 #### Temporal Information
 
@@ -149,7 +147,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-diagnose-c
     }
   ],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_PR_Diagnose_Condition",
   "title" : "MII PR Diagnose Condition",
   "_title" : {

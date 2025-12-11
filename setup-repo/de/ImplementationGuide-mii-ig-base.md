@@ -1,4 +1,4 @@
-# MII ImplementationGuide Ressource - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII ImplementationGuide Ressource - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## MII ImplementationGuide Ressource
 
@@ -7,9 +7,8 @@ Diese Seite enthält Übersetzungen aus der Originalsprache, in der der Leitfade
 
 Diese ImplementationGuide-Ressource definiert die technischen Details dieser Publikation, einschließlich Abhängigkeiten und Veröffentlichungsparametern.
 
-* [XML](ImplementationGuide-.xml)
-* [JSON](ImplementationGuide-.json)
-* [TTL](ImplementationGuide-.ttl)
+* [XML](../ImplementationGuide-mii-ig-base.xml)
+* [JSON](../ImplementationGuide-mii-ig-base.json)
 
 ### Versionsübergreifende Analyse
 
@@ -89,7 +88,7 @@ This publication includes IP covered under the following statements.
   "id" : "mii-ig-base",
   "language" : "en",
   "url" : "https://www.medizininformatik-initiative.de/fhir/modul-base/ImplementationGuide/mii-ig-base",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_IG_Base",
   "_name" : {
     "extension" : [
@@ -127,7 +126,7 @@ This publication includes IP covered under the following statements.
     ]
   },
   "status" : "active",
-  "date" : "2025-11-24",
+  "date" : "2025-12-10",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [
@@ -250,7 +249,7 @@ This publication includes IP covered under the following statements.
           },
           {
             "url" : "value",
-            "valueString" : "ci-build"
+            "valueString" : "Release"
           }
         ],
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
@@ -290,19 +289,6 @@ This publication includes IP covered under the following statements.
           {
             "url" : "value",
             "valueString" : "input/translations/de"
-          }
-        ],
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-      },
-      {
-        "extension" : [
-          {
-            "url" : "code",
-            "valueString" : "igs-logo"
-          },
-          {
-            "url" : "value",
-            "valueString" : "MII_Logo_rgb.jpg"
           }
         ],
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
@@ -857,6 +843,19 @@ This publication includes IP covered under the following statements.
         "extension" : [
           {
             "url" : "code",
+            "valueString" : "special-url"
+          },
+          {
+            "url" : "value",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/mii-vs-person-icd10who"
+          }
+        ],
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension" : [
+          {
+            "url" : "code",
             "valueString" : "autoload-resources"
           },
           {
@@ -1203,7 +1202,7 @@ This publication includes IP covered under the following statements.
           },
           {
             "url" : "value",
-            "valueString" : "ci-build"
+            "valueString" : "Release"
           }
         ],
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
@@ -1243,19 +1242,6 @@ This publication includes IP covered under the following statements.
           {
             "url" : "value",
             "valueString" : "input/translations/de"
-          }
-        ],
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-      },
-      {
-        "extension" : [
-          {
-            "url" : "code",
-            "valueCode" : "igs-logo"
-          },
-          {
-            "url" : "value",
-            "valueString" : "MII_Logo_rgb.jpg"
           }
         ],
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
@@ -1802,6 +1788,19 @@ This publication includes IP covered under the following statements.
           {
             "url" : "value",
             "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/LogicalModel/Person"
+          }
+        ],
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension" : [
+          {
+            "url" : "code",
+            "valueCode" : "special-url"
+          },
+          {
+            "url" : "value",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/mii-vs-person-icd10who"
           }
         ],
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
@@ -3103,6 +3102,20 @@ This publication includes IP covered under the following statements.
           }
         ],
         "reference" : {
+          "reference" : "ValueSet/mii-vs-person-icd10who"
+        },
+        "name" : "MII VS Person ICD-10-WHO",
+        "description" : "MII VS Person ICD-10-WHO",
+        "exampleBoolean" : false
+      },
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "ValueSet"
+          }
+        ],
+        "reference" : {
           "reference" : "ValueSet/mii-vs-person-vitalstatus"
         },
         "name" : "MII VS Person Vitalstatus",
@@ -3682,24 +3695,7 @@ This publication includes IP covered under the following statements.
             }
           ],
           "nameUrl" : "version-history.html",
-          "title" : "Version History",
-          "_title" : {
-            "extension" : [
-              {
-                "extension" : [
-                  {
-                    "url" : "lang",
-                    "valueCode" : "de"
-                  },
-                  {
-                    "url" : "content",
-                    "valueString" : "Versionshistorie"
-                  }
-                ],
-                "url" : "http://hl7.org/fhir/StructureDefinition/translation"
-              }
-            ]
-          },
+          "title" : "Versioning",
           "generation" : "markdown",
           "page" : [
             {
@@ -3758,6 +3754,17 @@ This publication includes IP covered under the following statements.
               }
             ]
           },
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [
+            {
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "translationinfo.html"
+            }
+          ],
+          "nameUrl" : "translationinfo.html",
+          "title" : "Translation Information",
           "generation" : "markdown"
         }
       ]

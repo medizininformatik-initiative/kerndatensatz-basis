@@ -1,4 +1,4 @@
-# MII VS Fall Diagnosis Use - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII VS Fall Diagnosis Use - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## ValueSet: MII VS Fall Diagnosis Use 
 
@@ -15,19 +15,9 @@ Diagnosetyp
 
 ### Logical Definition (CLD)
 
-Profile: [Shareable ValueSet](http://hl7.org/fhir/R4/shareablevalueset.html)
-
-This value set includes codes based on the following rules:
-
-* Import all the codes that are contained in [DiagnoseTyp ValueSet](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.de/ValueSet/DiagnoseTyp)
-* Import all the codes that are contained in [Diagnosesubtyp ValueSet](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.de/ValueSet/Diagnosesubtyp)
-* Import all the codes that are contained in [DiagnosisRole](http://hl7.org/fhir/R4/valueset-diagnosis-role.html)
-
  
 
 ### Expansion
-
-This value set contains 13 concepts
 
 -------
 
@@ -59,7 +49,7 @@ This value set contains 13 concepts
     }
   ],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/mii-vs-fall-diagnosis-use",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_VS_Fall_Diagnosis_Use",
   "title" : "MII VS Fall Diagnosis Use",
   "status" : "active",

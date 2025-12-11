@@ -1,4 +1,4 @@
-# MII VS Prozedur OPS - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII VS Prozedur OPS - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## ValueSet: MII VS Prozedur OPS 
 
@@ -15,51 +15,9 @@ Enthaelt OPS-Codes der Versionen 2010 bis 2025
 
 ### Logical Definition (CLD)
 
-Profile: [Shareable ValueSet](http://hl7.org/fhir/R4/shareablevalueset.html)
-
-This value set includes codes based on the following rules:
-
-* Include all codes defined in `http://fhir.de/CodeSystem/bfarm/ops`version 📍
-* Include all codes defined in `http://fhir.de/CodeSystem/bfarm/ops`version 📍
-* Include all codes defined in `http://fhir.de/CodeSystem/bfarm/ops`version 📍
-* Include all codes defined in `http://fhir.de/CodeSystem/bfarm/ops`version 📍
-* Include all codes defined in `http://fhir.de/CodeSystem/bfarm/ops`version 📍
-* Include all codes defined in `http://fhir.de/CodeSystem/bfarm/ops`version 📍
-* Include all codes defined in `http://fhir.de/CodeSystem/bfarm/ops`version 📍
-* Include all codes defined in `http://fhir.de/CodeSystem/bfarm/ops`version 📍
-* Include all codes defined in `http://fhir.de/CodeSystem/bfarm/ops`version 📍
-* Include all codes defined in `http://fhir.de/CodeSystem/bfarm/ops`version 📍
-* Include all codes defined in `http://fhir.de/CodeSystem/bfarm/ops`version 📍
-* Include all codes defined in `http://fhir.de/CodeSystem/bfarm/ops`version 📍
-* Include all codes defined in `http://fhir.de/CodeSystem/bfarm/ops`version 📍
-* Include all codes defined in `http://fhir.de/CodeSystem/bfarm/ops`version 📍
-* Include all codes defined in `http://fhir.de/CodeSystem/bfarm/ops`version 📍
-* Include all codes defined in `http://fhir.de/CodeSystem/bfarm/ops`version 📍
-
  
 
 ### Expansion
-
-Expansion from 127.0.0.1 based on:
-
-* codesystem OPS version 2023
-* codesystem OPS version 2012
-* codesystem OPS version 2022
-* codesystem OPS version 2011
-* codesystem OPS version 2021
-* codesystem OPS version 2010
-* codesystem OPS version 2020
-* codesystem OPS version 2019
-* codesystem OPS version 2018
-* codesystem OPS version 2017
-* codesystem OPS version 2016
-* codesystem OPS version 2015
-* codesystem OPS version 2025
-* codesystem OPS version 2014
-* codesystem OPS version 2024
-* codesystem OPS version 2013
-
-This value set has 548,685 codes in it. In order to keep the publication size manageable, only a selection (1,000 codes) of the whole set of codes is shown.
 
 -------
 
@@ -91,7 +49,7 @@ This value set has 548,685 codes in it. In order to keep the publication size ma
     }
   ],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/mii-vs-prozedur-ops",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_VS_Prozedur_OPS",
   "title" : "MII VS Prozedur OPS",
   "status" : "active",

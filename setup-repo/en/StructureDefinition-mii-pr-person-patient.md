@@ -1,4 +1,4 @@
-# MII PR Person Patient - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII PR Person Patient - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## Resource Profile: MII PR Person Patient 
 
@@ -122,7 +122,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-person-pat
     }
   ],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_PR_Person_Patient",
   "title" : "MII PR Person Patient",
   "_title" : {

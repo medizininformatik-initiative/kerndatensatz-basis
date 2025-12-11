@@ -1,4 +1,4 @@
-# Profile und Extensions - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# Profile und Extensions - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## Profile und Extensions
 
@@ -32,7 +32,7 @@ Die folgenden Profile wurden für diesen Implementierungsleitfaden definiert. Si
 
 ### Extensions
 
-Die folgenden [Extensions](http://hl7.org/fhir/R4/extensibility.html) wurden als Teil des MII-Implementierungsleitfadens definiert. Ein [Verzeichnis der Standard-Extensions](http://hl7.org/fhir/extensions/extension-registry.html) findet sich in der FHIR-Spezifikation und zusätzliche Erweiterungen können in der HL7 [FHIR-Registry](https://registry.fhir.org/) gefunden werden.
+Die folgenden [Extensions](http://hl7.org/fhir/R4/extensibility.html) wurden als Teil des MII-Implementierungsleitfadens definiert.
 
 #### Modul Fall Extensions
 

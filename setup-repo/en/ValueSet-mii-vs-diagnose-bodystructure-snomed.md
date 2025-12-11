@@ -1,4 +1,4 @@
-# MII VS Diagnose BodyStructure SNOMED - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII VS Diagnose BodyStructure SNOMED - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## ValueSet: MII VS Diagnose BodyStructure SNOMED (Experimental) 
 
@@ -15,17 +15,9 @@ Enthaelt alle SNOMED Body structure codes
 
 ### Logical Definition (CLD)
 
-Profile: [Shareable ValueSet](http://hl7.org/fhir/R4/shareablevalueset.html)
-
-* Include codes from[`http://snomed.info/sct`](http://www.snomed.org/)version 📍 where concept descends from 123037004 (Body structure)
-
  
 
 ### Expansion
-
-Expansion from 127.0.0.1 based on SNOMED CT International edition 01-Jul 2024
-
-This value set has >1000 codes in it. In order to keep the publication size manageable, only a selection (1000 codes) of the whole set of codes is shown
 
 -------
 
@@ -57,7 +49,7 @@ This value set has >1000 codes in it. In order to keep the publication size mana
     }
   ],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-bodystructure-snomed",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_VS_Diagnose_BodyStructure_SNOMED",
   "title" : "MII VS Diagnose BodyStructure SNOMED",
   "status" : "active",

@@ -1,4 +1,4 @@
-# MII PR Diagnose Condition - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII PR Diagnose Condition - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## Ressourcenprofil: MII PR Diagnose Condition 
 
@@ -80,20 +80,18 @@ Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Dia
 
 ##### Best Practice - Diagnose-Fall-Beziehungen
 
-**Primäre Verknüpfungsmethode:** Verwenden Sie `Encounter.diagnosis`, um Diagnosen mit Behandlungsfällen zu verknüpfen. Dies ist der **EMPFOHLENE** Ansatz zur Verknüpfung von Diagnosen mit Krankenhausaufenthalten oder Besuchen.
+**Änderung gegenüber vorheriger Version:** In früheren Versionen dieses Implementierungsleitfadens wurde empfohlen, `Encounter.diagnosis` zur Verknüpfung von Diagnosen mit Behandlungsfällen zu verwenden. Diese Empfehlung wurde aktualisiert, um sich an die gematik ISiK-Empfehlungen (Informationssysteme im Krankenhaus) anzupassen.
 
-**Verwendung von Condition.encounter:**
+**Aktuelle Empfehlung - Condition.encounter:**
 
-* **SOLLTE NICHT** zur generellen Diagnose-Fall-Verknüpfung verwendet werden
-* **Ausnahme:** KANN zur Verknüpfung der Diagnose mit dem spezifischen Fall/Kontakt verwendet werden, in dem die Diagnose **festgestellt wurde** (immer ein Kontakt mit einer konkreten Versorgungsstelle!)
-* Dies repräsentiert den "Feststellungsdatum"-Kontext und nicht die allgemeine Verknüpfung
+* Die Verlinkung auf eine Encounter-Ressource dokumentiert die Referenz zu einem Aufenthalt und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.
+* **Ebene Abteilungskontakt:** Die Zuordnung **SOLLTE** auf einen Encounter der Ebene "Abteilungskontakt" erfolgen
+* Bei der Auswahl des Encounters ist zu beachten, dass unter einer (Abrechnungs-)"Fallnummer" (hier: `Encounter.account`) unter Umständen mehrere Encounter gruppiert sein können (z.B. stationärer Besuch mit mehreren vor- und nachstationären Aufenthalten)
 
 **Mapping des Feststellungsdatums:**
 
 * Das logische Datenelement "Feststellungsdatum" wird auf `Encounter.period.start` gemappt, NICHT auf ein Element in der Condition-Ressource
-* Somit SOLLTE die Verknüpfung der Diagnose immer auf einen Einrichtungs-Kontakt erfolgen - siehe Modul Fall (Encounter)
-
-**Begründung:** Dieser Ansatz erhält klare Semantik: `Encounter.diagnosis` = "für diesen Fall relevante Diagnosen" vs. `Condition.encounter` = "Fall, in dem diese Diagnose festgestellt wurde".
+* Somit repräsentiert die Encounter-Referenz sowohl den technischen Dokumentationskontext als auch den zeitlichen Kontext, wann die Diagnose festgestellt wurde
 
 #### Zeitliche Informationen
 
@@ -246,7 +244,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-diagn
     }
   ],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_PR_Diagnose_Condition",
   "title" : "MII PR Diagnose Condition",
   "_title" : {

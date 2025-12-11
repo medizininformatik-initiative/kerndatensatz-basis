@@ -1,4 +1,4 @@
-# MII CPS Person CapabilityStatement - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII CPS Person CapabilityStatement - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## CapabilityStatement: MII CPS Person CapabilityStatement 
 
@@ -6,108 +6,6 @@
 Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein konformes System unterstützen muss um das Modul Person der Medizininformatik Initiative zu implementieren. 
 
  [Raw OpenAPI-Swagger Definition file](../mii-cps-person-capabilitystatement.openapi.json) | [Download](../mii-cps-person-capabilitystatement.openapi.json) 
-
--------
-
-**English**
-
--------
-
-## MII CPS Person CapabilityStatement
-
-* Implementation Guide Version: 2026.0.0-dev.1 
-* FHIR Version: 4.0.1 
-* Supported Formats: `xml`, `json`
-* Published on: 2025-02-28 
-* Published by: Medical Informatics Initiative (MII) 
-
-> **Note to Implementers: FHIR Capabilities**Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.
-
-## FHIR RESTful Capabilities
-
-### Mode: server
-
-### Capabilities by Resource/Profile
-
-#### Summary
-
-The summary table lists the resources that are part of this configuration, and for each resource it lists:
-
-* The relevant profiles (if any)
-* The interactions supported by each resource (**R**ead, **S**earch, **U**pdate, and **C**reate, are always shown, while **VR**ead, **P**atch, **D**elete, **H**istory on **I**nstance, or **H**istory on **T**ype are only present if at least one of the resources has support for them.
-* The required, recommended, and some optional search parameters (if any).
-* The linked resources enabled for `_include`
-* The other resources enabled for `_revinclude`
-* The operations on the resource (if any)
-
-| | | | | | | | | | |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| [Patient](#Patient1-1) | Supported Profiles  [MII PR Person Patientversion: 2026.0.0-dev.1)](StructureDefinition-mii-pr-person-patient.md)  [MII PR Person Patient (Pseudonymisiert)version: 2026.0.0-dev.1)](StructureDefinition-mii-pr-person-patient-pseudonymisiert.md) | **Y** | **Y** |  |  | _count, _summary, _id, _profile, identifier, assigner-pid, given, family, name, prefix, prefix-qualifier, gender, other-amtlich, birthdate, death-date, deceased, address, address-city, address-postalcode, address-country, gemeindeschluessel, strasse, hausnummer, adresszusatz, postfach, stadtteil, link |  |  |  |
-| [Observation](#Observation1-2) | Supported Profiles  [MII PR Person Vitalstatusversion: 2026.0.0-dev.1)](StructureDefinition-mii-pr-person-vitalstatus.md) | **Y** | **Y** |  |  | _count, _summary, _id, _profile, status, code, subject, patient, date, value-concept, code-value-concept |  |  |  |
-| [Condition](#Condition1-3) | Supported Profiles  [MII PR Person Todesursacheversion: 2026.0.0-dev.1)](StructureDefinition-mii-pr-person-todesursache.md) | **Y** | **Y** |  |  | _count, _summary, _id, _profile, category, code, subject, patient |  |  |  |
-
--------
-
-#### Resource Conformance: SHALL Patient
-
-Core FHIR Resource
-
-[Patient](http://hl7.org/fhir/R4/patient.html)
-
-Reference Policy
-
-Interaction summary
-
-* **SHALL** support `read`, `search-type`.
-
-Supported Profiles
-[MII PR Person Patientversion: 2026.0.0-dev.1)](StructureDefinition-mii-pr-person-patient.md)
-[MII PR Person Patient (Pseudonymisiert)version: 2026.0.0-dev.1)](StructureDefinition-mii-pr-person-patient-pseudonymisiert.md)
-
-Search Parameters
-
-
- 
-
-#### Resource Conformance: SHALL Observation
-
-Core FHIR Resource
-
-[Observation](http://hl7.org/fhir/R4/observation.html)
-
-Reference Policy
-
-Interaction summary
-
-* **SHALL** support `read`, `search-type`.
-
-Supported Profiles
-[MII PR Person Vitalstatusversion: 2026.0.0-dev.1)](StructureDefinition-mii-pr-person-vitalstatus.md)
-
-Search Parameters
-
-
- 
-
-#### Resource Conformance: SHALL Condition
-
-Core FHIR Resource
-
-[Condition](http://hl7.org/fhir/R4/condition.html)
-
-Reference Policy
-
-Interaction summary
-
-* **SHALL** support `read`, `search-type`.
-
-Supported Profiles
-[MII PR Person Todesursacheversion: 2026.0.0-dev.1)](StructureDefinition-mii-pr-person-todesursache.md)
-
-Search Parameters
-
-
- 
 
 
 
@@ -132,7 +30,7 @@ Search Parameters
     }
   ],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/CapabilityStatement/metadata",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_CPS_Person_CapabilityStatement",
   "title" : "MII CPS Person CapabilityStatement",
   "status" : "active",
@@ -195,8 +93,8 @@ Search Parameters
           ],
           "type" : "Patient",
           "supportedProfile" : [
-            "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient|2026.0.0-dev.1",
-            "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert|2026.0.0-dev.1"
+            "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient|2026.0.0",
+            "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert|2026.0.0"
           ],
           "interaction" : [
             {
@@ -525,7 +423,7 @@ Search Parameters
           ],
           "type" : "Observation",
           "supportedProfile" : [
-            "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus|2026.0.0-dev.1"
+            "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus|2026.0.0"
           ],
           "interaction" : [
             {
@@ -678,7 +576,7 @@ Search Parameters
           ],
           "type" : "Condition",
           "supportedProfile" : [
-            "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Todesursache|2026.0.0-dev.1"
+            "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Todesursache|2026.0.0"
           ],
           "interaction" : [
             {

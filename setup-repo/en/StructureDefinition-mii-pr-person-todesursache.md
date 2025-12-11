@@ -1,4 +1,4 @@
-# MII PR Person Todesursache - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII PR Person Todesursache - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## Resource Profile: MII PR Person Todesursache 
 
@@ -92,7 +92,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-person-tod
     }
   ],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Todesursache",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_PR_Person_Todesursache",
   "title" : "MII PR Person Todesursache",
   "_title" : {
@@ -624,7 +624,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-person-tod
         "mustSupport" : true,
         "binding" : {
           "strength" : "required",
-          "valueSet" : "http://hl7.org/fhir/sid/icd-10/vs"
+          "valueSet" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/mii-vs-person-icd10who"
         }
       },
       {

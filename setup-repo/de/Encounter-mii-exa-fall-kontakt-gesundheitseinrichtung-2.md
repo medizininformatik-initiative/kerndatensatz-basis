@@ -1,4 +1,4 @@
-# MII EXA Fall Kontakt Gesundheitseinrichtung (Abteilungskontakt Chirurgie A2E) - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII EXA Fall Kontakt Gesundheitseinrichtung (Abteilungskontakt Chirurgie A2E) - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## Beispiel Encounter: MII EXA Fall Kontakt Gesundheitseinrichtung (Abteilungskontakt Chirurgie A2E)
 
@@ -10,7 +10,7 @@
 
 Language: en
 
-Profile: [MII PR Fall Kontakt mit einer Gesundheitseinrichtungversion: null2026.0.0-dev.1)](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.md)
+Profile: [MII PR Fall Kontakt mit einer Gesundheitseinrichtungversion: null2026.0.0)](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.md)
 
 Security Label: test health data (Details: ActReason code HTEST = 'test health data')
 
@@ -28,9 +28,9 @@ Security Label: test health data (Details: ActReason code HTEST = 'test health d
 
 **period**: 2020-01-08 09:00:00+0100 --> 2020-01-11 23:59:00+0100
 
-> **diagnosis****condition**:[Condition Akute Appendizitis, nicht näher bezeichnet](Condition-mii-exa-diagnose-appendicitis.md)**use**:Admission diagnosis
+> **diagnosis****condition**:[Condition Acute appendicitis](Condition-mii-exa-diagnose-appendicitis.md)**use**:Admission diagnosis
 
-> **diagnosis****condition**:[Condition Akute Appendizitis, nicht näher bezeichnet](Condition-mii-exa-diagnose-appendicitis.md)**use**:Behandlungsrelevante Diagnosen
+> **diagnosis****condition**:[Condition Acute appendicitis](Condition-mii-exa-diagnose-appendicitis.md)**use**:Behandlungsrelevante Diagnosen
 
 > **diagnosis****condition**:[Condition Prellung des Ellenbogens](Condition-mii-exa-diagnose-condition-elbow-contusion.md)**use**:Behandlungsrelevante Diagnosen
 
@@ -50,7 +50,7 @@ Security Label: test health data (Details: ActReason code HTEST = 'test health d
   "id" : "mii-exa-fall-kontakt-gesundheitseinrichtung-2",
   "meta" : {
     "profile" : [
-      "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0-dev.1"
+      "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"
     ],
     "security" : [
       {

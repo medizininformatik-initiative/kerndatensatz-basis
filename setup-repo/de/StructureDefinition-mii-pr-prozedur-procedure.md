@@ -1,4 +1,4 @@
-# MII PR Prozedur Procedure - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII PR Prozedur Procedure - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## Ressourcenprofil: MII PR Prozedur Procedure 
 
@@ -260,7 +260,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-proze
     }
   ],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_PR_Prozedur_Procedure",
   "title" : "MII PR Prozedur Procedure",
   "_title" : {

@@ -1,4 +1,4 @@
-# UML Diagramme - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# UML Diagramme - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## UML Diagramme
 

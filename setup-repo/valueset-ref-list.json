@@ -131,7 +131,7 @@
     },
     {
       "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/diagnoses-sct",
-      "version" : "2026.0.0-dev.1",
+      "version" : "2026.0.0",
       "status" : "active",
       "name" : "MII_VS_Diagnose_DiagnoseCodes_SNOMED",
       "title" : "MII VS Diagnose Diagnose-Codes SNOMED",
@@ -143,7 +143,7 @@
     },
     {
       "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-alphaid",
-      "version" : "2026.0.0-dev.1",
+      "version" : "2026.0.0",
       "status" : "active",
       "name" : "MII_VS_Diagnose_AlphaID",
       "title" : "MII VS Diagnose Alpha-ID",
@@ -155,7 +155,7 @@
     },
     {
       "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-bodystructure-snomed",
-      "version" : "2026.0.0-dev.1",
+      "version" : "2026.0.0",
       "status" : "active",
       "name" : "MII_VS_Diagnose_BodyStructure_SNOMED",
       "title" : "MII VS Diagnose BodyStructure SNOMED",
@@ -167,7 +167,7 @@
     },
     {
       "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-icd10gm",
-      "version" : "2026.0.0-dev.1",
+      "version" : "2026.0.0",
       "status" : "active",
       "name" : "MII_VS_Diagnose_ICD10GM",
       "title" : "MII VS Diagnose ICD-10-GM",
@@ -179,7 +179,7 @@
     },
     {
       "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-orphanet",
-      "version" : "2026.0.0-dev.1",
+      "version" : "2026.0.0",
       "status" : "active",
       "name" : "MII_VS_Diagnose_Orphanet",
       "title" : "MII VS Diagnose Orphanet",
@@ -191,7 +191,7 @@
     },
     {
       "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/identifier-type-codes",
-      "version" : "2026.0.0-dev.1",
+      "version" : "2026.0.0",
       "status" : "active",
       "name" : "MII_VS_Fall_IdentifierTypeCodes",
       "title" : "MII VS Fall Identifier Type Codes",
@@ -203,7 +203,7 @@
     },
     {
       "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/location-physical-type",
-      "version" : "2026.0.0-dev.1",
+      "version" : "2026.0.0",
       "status" : "active",
       "name" : "MII_VS_Fall_LocationPhysicalType",
       "title" : "MII VS Fall Location Physical Type",
@@ -217,7 +217,7 @@
     },
     {
       "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/mii-vs-fall-diagnosis-use",
-      "version" : "2026.0.0-dev.1",
+      "version" : "2026.0.0",
       "status" : "active",
       "name" : "MII_VS_Fall_Diagnosis_Use",
       "title" : "MII VS Fall Diagnosis Use",
@@ -232,7 +232,7 @@
     },
     {
       "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/Vitalstatus",
-      "version" : "2026.0.0-dev.1",
+      "version" : "2026.0.0",
       "status" : "active",
       "name" : "MII_VS_Person_Vitalstatus",
       "title" : "MII VS Person Vitalstatus",
@@ -245,8 +245,20 @@
       "StructureDefinition-mii-pr-person-vitalstatus.html" : "MII PR Person Vitalstatus"
     },
     {
+      "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/mii-vs-person-icd10who",
+      "version" : "2026.0.0",
+      "status" : "active",
+      "name" : "MII_VS_Person_ICD10WHO",
+      "title" : "MII VS Person ICD-10-WHO",
+      "description" : "MII VS Person ICD-10-WHO",
+      "systems" : ["http://hl7.org/fhir/sid/icd-10"],
+      "uses" : {
+      },
+      "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache"
+    },
+    {
       "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/mii-vs-prozedur-ops",
-      "version" : "2026.0.0-dev.1",
+      "version" : "2026.0.0",
       "status" : "active",
       "name" : "MII_VS_Prozedur_OPS",
       "title" : "MII VS Prozedur OPS",
@@ -258,7 +270,7 @@
     },
     {
       "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-category-sct",
-      "version" : "2026.0.0-dev.1",
+      "version" : "2026.0.0",
       "status" : "active",
       "name" : "MII_VS_Prozedur_OpsKategorien_SNOMEDCT",
       "title" : "MII VS Prozedur OPS Kategorien [SNOMED CT]",
@@ -270,7 +282,7 @@
     },
     {
       "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-intend",
-      "version" : "2026.0.0-dev.1",
+      "version" : "2026.0.0",
       "status" : "active",
       "name" : "MII_VS_Prozedur_Durchfuehrungsabsicht_SNOMEDCT",
       "title" : "MII VS Prozedur Durchführungsabsicht [SNOMED CT]",
@@ -282,7 +294,7 @@
     },
     {
       "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-sct",
-      "version" : "2026.0.0-dev.1",
+      "version" : "2026.0.0",
       "status" : "active",
       "name" : "MII_VS_Prozedur_Prozeduren_SNOMEDCT",
       "title" : "MII VS Prozedur Prozeduren [SNOMED CT]",

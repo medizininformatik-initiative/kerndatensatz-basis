@@ -1,4 +1,4 @@
-# MII PR Person Vitalstatus - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII PR Person Vitalstatus - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## Ressourcenprofil: MII PR Person Vitalstatus 
 
@@ -194,7 +194,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-perso
     }
   ],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_PR_Person_Vitalstatus",
   "title" : "MII PR Person Vitalstatus",
   "_title" : {

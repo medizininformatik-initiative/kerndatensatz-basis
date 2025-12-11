@@ -35,7 +35,7 @@ The pseudonymized patient profile uses specialized identifier types:
   - See [Best Practice - Masked Insurance ID with IK Number](#best-practice---masked-insurance-id-with-ik-number) for implementation details
 
 <div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
-<h5 style="color: #406A99; margin-top: 0;">Best Practice - Masked Insurance ID with IK Number</h5>
+<h5 id="best-practice---masked-insurance-id-with-ik-number" style="color: #406A99; margin-top: 0;">Best Practice - Masked Insurance ID with IK Number</h5>
 
 <p>For use cases requiring health insurance analysis (e.g., NUM-CON-MON), it is necessary to include the IK number (Institutionskennzeichen) of the health insurance provider in the pseudonymized patient profile without exposing the actual insurance ID.</p>
 

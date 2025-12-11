@@ -1,4 +1,4 @@
-# General Requirements - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# General Requirements - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## General Requirements
 
@@ -148,9 +148,8 @@ FHIR Clients need to be aware of unexpected modifier elements in the data they r
 
 Some examples of modifiers that may not be Must Support elements in MII Profiles include:
 
-* `implicitRules` element common to all profiles
 * `modifierExtension` element common to all profiles
-* `Observation.value[x].comparator`
+* `Observation.valueQuantity.comparator`
 * `Patient.active`
 
 Implementers **SHOULD** review the profile pages carefully to understand which elements are modifiers and how they affect the interpretation of the resource.

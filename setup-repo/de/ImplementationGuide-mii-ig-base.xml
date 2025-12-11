@@ -8,11 +8,11 @@
 </div></div>
   </text>
   <url value="https://www.medizininformatik-initiative.de/fhir/modul-base/ImplementationGuide/mii-ig-base"/>
-  <version value="2026.0.0-dev.1"/>
+  <version value="2026.0.0"/>
   <name value="MII_IG_Base"/>
   <title value="MII Implementierungsleitfaden Kerndatensatz Basis"/>
   <status value="active"/>
-  <date value="2025-11-24"/>
+  <date value="2025-12-10"/>
   <publisher value="Medizininformatik-Initiative (MII)"/>
   <contact>
     <name value="Medical Informatics Initiative (MII)"/>
@@ -72,7 +72,7 @@
         <valueString value="releaselabel"/>
       </extension>
       <extension url="value">
-        <valueString value="ci-build"/>
+        <valueString value="Release"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -97,14 +97,6 @@
       </extension>
       <extension url="value">
         <valueString value="input/translations/de"/>
-      </extension>
-    </extension>
-    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
-      <extension url="code">
-        <valueString value="igs-logo"/>
-      </extension>
-      <extension url="value">
-        <valueString value="MII_Logo_rgb.jpg"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -445,6 +437,14 @@
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/mii-vs-person-icd10who"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
         <valueString value="autoload-resources"/>
       </extension>
       <extension url="value">
@@ -659,7 +659,7 @@
         <valueCode value="releaselabel"/>
       </extension>
       <extension url="value">
-        <valueString value="ci-build"/>
+        <valueString value="Release"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -684,14 +684,6 @@
       </extension>
       <extension url="value">
         <valueString value="input/translations/de"/>
-      </extension>
-    </extension>
-    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
-      <extension url="code">
-        <valueCode value="igs-logo"/>
-      </extension>
-      <extension url="value">
-        <valueString value="MII_Logo_rgb.jpg"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -1028,6 +1020,14 @@
       </extension>
       <extension url="value">
         <valueString value="https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/LogicalModel/Person"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/mii-vs-person-icd10who"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -1884,6 +1884,17 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
+        <reference value="ValueSet/mii-vs-person-icd10who"/>
+      </reference>
+      <name value="MII VS Person ICD-10-WHO"/>
+      <description value="MII VS Person ICD-10-WHO"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
         <reference value="ValueSet/mii-vs-person-vitalstatus"/>
       </reference>
       <name value="MII VS Person Vitalstatus"/>
@@ -2082,7 +2093,7 @@
           <valueUrl value="version-history.html"/>
         </extension>
         <nameUrl value="version-history.html"/>
-        <title value="Versionshistorie"/>
+        <title value="Versioning"/>
         <generation value="markdown"/>
         <page>
           <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
@@ -2099,6 +2110,14 @@
         </extension>
         <nameUrl value="ImplementationGuide-mii-ig-base.html"/>
         <title value="MII ImplementationGuide Ressource"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="translationinfo.html"/>
+        </extension>
+        <nameUrl value="translationinfo.html"/>
+        <title value="Translation Information"/>
         <generation value="markdown"/>
       </page>
     </page>

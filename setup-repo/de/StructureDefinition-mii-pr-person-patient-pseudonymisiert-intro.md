@@ -35,7 +35,7 @@ Das pseudonymisierte Patientenprofil verwendet spezialisierte Identifier-Typen:
   - Siehe [Best Practice - Maskierte Versicherten-ID mit IK-Nummer](#best-practice---maskierte-versicherten-id-mit-ik-nummer) für Implementierungsdetails
 
 <div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
-<h5 style="color: #406A99; margin-top: 0;">Best Practice - Maskierte Versicherten-ID mit IK-Nummer</h5>
+<h5 id="best-practice---maskierte-versicherten-id-mit-ik-nummer" style="color: #406A99; margin-top: 0;">Best Practice - Maskierte Versicherten-ID mit IK-Nummer</h5>
 
 <p>Für Use Cases, die eine Krankenkassen-Analyse erfordern (z.B. NUM-CON-MON), ist es notwendig, die IK-Nummer (Institutionskennzeichen) der Krankenkasse im pseudonymisierten Patientenprofil mitzuführen, ohne die tatsächliche Versicherten-ID offenzulegen.</p>
 

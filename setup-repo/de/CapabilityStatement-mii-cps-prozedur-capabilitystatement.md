@@ -1,4 +1,4 @@
-# MII CPS Prozedur CapabilityStatement - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII CPS Prozedur CapabilityStatement - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## CapabilityStatement: MII CPS Prozedur CapabilityStatement 
 
@@ -6,69 +6,6 @@
 Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein konformes System unterstützen muss um das Modul Prozedur der Medizininformatik Initiative zu implementieren. 
 
  [Rohdatei der OpenAPI-/Swagger-Definition](../mii-cps-prozedur-capabilitystatement.openapi.json) | [Download](../mii-cps-prozedur-capabilitystatement.openapi.json) 
-
--------
-
-**German**
-
--------
-
-## MII CPS Prozedur CapabilityStatement
-
-* Implementation Guide Version: 2026.0.0-dev.1 
-* FHIR Version: 4.0.1 
-* Supported Formats: `xml`, `json`
-* Published on: 2025-10-21 
-* Published by: Medical Informatics Initiative (MII) 
-
-> **Note to Implementers: FHIR Capabilities**Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.
-
-## FHIR RESTful Capabilities
-
-### Mode: server
-
-### Capabilities by Resource/Profile
-
-#### Summary
-
-The summary table lists the resources that are part of this configuration, and for each resource it lists:
-
-* The relevant profiles (if any)
-* The interactions supported by each resource (**R**ead, **S**earch, **U**pdate, and **C**reate, are always shown, while **VR**ead, **P**atch, **D**elete, **H**istory on **I**nstance, or **H**istory on **T**ype are only present if at least one of the resources has support for them.
-* The required, recommended, and some optional search parameters (if any).
-* The linked resources enabled for `_include`
-* The other resources enabled for `_revinclude`
-* The operations on the resource (if any)
-
-| | | | | | | | | | |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| [Procedure](#de-Procedure1-1) | [http://hl7.org/fhir/StructureDefinition/Procedure](http://hl7.org/fhir/R4/procedure.html)**Additional supported profiles:**  [MII PR Prozedur Procedureversion: 2026.0.0-dev.1)](StructureDefinition-mii-pr-prozedur-procedure.md) | **Y** | **Y** |  |  | _count, _summary, _id, _lastUpdated, _profile, status, category, code, date, patient, subject, bodySite, dokumentationsdatum, durchfuehrungsabsicht, ops-seitenlokalisation |  |  |  |
-
--------
-
-#### Resource Conformance: SHALL Procedure
-
-Base System Profile
-
-[Procedure](http://hl7.org/fhir/R4/procedure.html)
-
-Profile Conformance
-
-**SHALL**
-
-Reference Policy
-
-Supported Profiles
-[MII PR Prozedur Procedureversion: 2026.0.0-dev.1)](StructureDefinition-mii-pr-prozedur-procedure.md)
-
-Interaction summary
-
-* **SHALL** support `read`, `search-type`.
-
-Search Parameters
-
-
- 
 
 
 
@@ -93,7 +30,7 @@ Search Parameters
     }
   ],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/CapabilityStatement/metadata",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_CPS_Prozedur_CapabilityStatement",
   "title" : "MII CPS Prozedur CapabilityStatement",
   "status" : "active",
@@ -157,7 +94,7 @@ Search Parameters
           "type" : "Procedure",
           "profile" : "http://hl7.org/fhir/StructureDefinition/Procedure",
           "supportedProfile" : [
-            "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.0-dev.1"
+            "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.0"
           ],
           "_supportedProfile" : [
             {

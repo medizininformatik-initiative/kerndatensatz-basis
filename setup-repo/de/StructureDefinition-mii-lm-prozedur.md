@@ -1,4 +1,4 @@
-# MII LM Prozedur - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII LM Prozedur - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## Logisches Modell: MII LM Prozedur 
 
@@ -75,7 +75,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-proze
     }
   ],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/LogicalModel/Prozedur",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_LM_Prozedur",
   "title" : "MII LM Prozedur",
   "status" : "active",

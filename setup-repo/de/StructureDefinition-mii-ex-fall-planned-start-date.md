@@ -1,4 +1,4 @@
-# MII EX Fall Planned Start Date - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII EX Fall Planned Start Date - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## Extension: MII EX Fall Planned Start Date 
 
@@ -83,11 +83,11 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-ex-fall-
     }
   ],
   "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_EX_Fall_Planned_Start_Date",
   "title" : "MII EX Fall Planned Start Date",
   "status" : "active",
-  "date" : "2025-12-03T10:23:08+00:00",
+  "date" : "2025-12-11T17:49:30+00:00",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [

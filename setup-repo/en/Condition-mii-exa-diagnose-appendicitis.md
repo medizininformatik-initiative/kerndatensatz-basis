@@ -1,4 +1,4 @@
-# MII EXA Diagnose Condition Appendicitis - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII EXA Diagnose Condition Appendicitis - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## Example Condition: MII EXA Diagnose Condition Appendicitis
 
@@ -10,7 +10,7 @@
 
 Language: en
 
-Profile: [MII PR Diagnose Conditionversion: null2026.0.0-dev.1)](StructureDefinition-mii-pr-diagnose-condition.md)
+Profile: [MII PR Diagnose Conditionversion: null2026.0.0)](StructureDefinition-mii-pr-diagnose-condition.md)
 
 Security Label: test health data (Details: ActReason code HTEST = 'test health data')
 
@@ -20,7 +20,7 @@ Security Label: test health data (Details: ActReason code HTEST = 'test health d
 
 **verificationStatus**: Confirmed
 
-**code**: Akute Appendizitis, nicht näher bezeichnet
+**code**: Akute Appendizitis
 
 **subject**: [Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))](Patient-mii-exa-person-patient-1.md)
 
@@ -40,7 +40,7 @@ Security Label: test health data (Details: ActReason code HTEST = 'test health d
   "id" : "mii-exa-diagnose-appendicitis",
   "meta" : {
     "profile" : [
-      "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0-dev.1"
+      "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0"
     ],
     "security" : [
       {
@@ -78,15 +78,15 @@ Security Label: test health data (Details: ActReason code HTEST = 'test health d
       {
         "system" : "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
         "version" : "2020",
-        "code" : "K35.80",
-        "display" : "Akute Appendizitis, nicht näher bezeichnet"
+        "code" : "K35.8"
       },
       {
         "system" : "http://snomed.info/sct",
         "code" : "85189001",
         "display" : "Acute appendicitis"
       }
-    ]
+    ],
+    "text" : "Akute Appendizitis"
   },
   "subject" : {
     "reference" : "Patient/mii-exa-person-patient-1"
