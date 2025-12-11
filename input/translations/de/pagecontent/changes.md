@@ -2,21 +2,47 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 
 ---
 
-## Version 2025.0.1
+### Version 2026.0.0
 
-### Modul Person
+**Datum:** 11.12.2026
+
+#### Modulkonsolidierung
+
+- **Konsolidierter Implementierungsleitfaden:** Die vier Basismodule (Person, Fall, Diagnose und Prozedur) wurden zu einem Implementierungsleitfaden zusammengeführt
+- **Package-ID:** `de.medizininformatikinitiative.kerndatensatz.base`
+
+#### Beispielkonsolidierung
+
+- **Einheitliches Testdaten-Bundle:** Beispielressourcen wurden in einem umfassenden Testdaten-Bundle zusammengeführt
+- **Modulübergreifende Beispiele:** Beispiele demonstrieren nun Beziehungen und Referenzen über alle vier Module hinweg
+
+#### Modul Diagnose
+
+- **Changed:** Aktualisierte Anleitung zur Verwendung von Condition.encounter zur Ausrichtung an gematik ISiK-Empfehlungen (Informationstechnische Systeme in Krankenhäusern)
+- **Changed:** Condition.encounter SOLLTE nun auf einen Encounter der Ebene "Abteilungskontakt" referenzieren
+- **Hinweis:** Dies stellt eine Änderung gegenüber vorherigen Versionen dar, in denen Encounter.diagnosis die primäre Verknüpfungsmethode war
+
+#### Modul Person
+
+- **Added:** ValueSet MII VS Person ICD-10-WHO veröffentlicht unter MII-Canonical URL für Todesursachen-Codierung
+
+---
+
+### Version 2025.0.1
+
+#### Modul Person
 **Datum:** 08.10.2025
 
 - **Added**: Profil [Patient Pseudonymisiert](StructureDefinition-mii-pr-person-patient-pseudonymisiert.html) enthält nun einen optionalen Identifikator für maskierte Krankenversicherungsnummer unter `Patient.identifier`
 - **Changed**: ValueSet MII_VS_Person_ICD10WHO wurde als redundant [zurückgezogen](http://hl7.org/fhir/R4/codesystem-publication-status.html#publication-status-retired). Das ICD-10-WHO CodeSystem referenziert bereits ein implizites ICD-10-WHO ValueSet über `CodeSystem.valueSet`. Siehe: https://github.com/medizininformatik-initiative/kerndatensatzmodul-person/issues/86
 - **Changed**: Abhängigkeit aktualisiert auf [de.basisprofil.r4 1.5.4](https://simplifier.net/packages/de.basisprofil.r4/1.5.4). Diese Version der FHIR-Basisprofile enthält eine Korrektur für die kvid-2-Invariante, die auf `Patient.identifier:versichertenId.type` im Patient-Profil angewendet wird
 
-### Modul Fall
+#### Modul Fall
 **Datum:** 28.10.2025
 
 - **Changed**: `Encounter.location` erlaubt nun die Angabe früherer Behandlungsorte. Siehe: https://github.com/medizininformatik-initiative/kerndatensatzmodul-fall/issues/79
 
-### Modul Diagnose
+#### Modul Diagnose
 **Datum:** 20.10.2025
 
 - **Added**: `Condition.onsetAge` - Der Datentyp `Age` kann nun unter `Condition.onset[x]` verwendet werden. Siehe: https://github.com/medizininformatik-initiative/kerndatensatzmodul-diagnose/issues/78
@@ -24,7 +50,7 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 - **Added**: Neue ValueSets und Bindings für ICD-10-GM (Canonical URL: `https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-icd10gm`) und AlphaID (Canonical URL: `https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-alphaid`), die über den MII-Terminologieserver (https://www.ontoserver.mii-termserv.de/) expandiert werden können, was erweiterte Validierung ermöglicht
 - **Changed**: CapabilityStatement enthält nun Anforderungsdokumentation für Suchparameter `_count` und `_summary`
 
-### Modul Prozedur
+#### Modul Prozedur
 **Datum:** 22.10.2025
 
 - **Added**: `Procedure.bodySite` - Enthält nun optionalen SNOMED-Coding-Slice, übernimmt die Modellierung aus dem `Condition.bodySite` des Diagnose-Moduls
@@ -33,9 +59,9 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 
 ---
 
-## Version 2025.0.0
+### Version 2025.0.0
 
-### Modul Person
+#### Modul Person
 **Datum:** 06.12.2024
 
 - **Changed**: Abhängigkeit von de.basisprofil.r4 auf Version 1.5.0 aktualisiert
@@ -45,7 +71,7 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 - **Removed**: Suchparameter aus diesem Modul wurden entfernt. SearchParameter-Ressourcen werden nun zentral im Meta-Modul verwaltet
 - **Changed**: Profile enthalten zusätzliche Beschreibungen und Übersetzungen für Implementierer und das Forschungsdatenportal Gesundheit (FDPG)
 
-### Modul Fall
+#### Modul Fall
 **Datum:** 10.12.2024
 
 - **Changed**: Abhängigkeit von de.basisprofil.r4 auf Version 1.5.0 aktualisiert. Diese Änderung hat keine Auswirkungen auf Implementierungen dieses Moduls
@@ -60,7 +86,7 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 - **Changed**: In `Encounter.location`-Slices für Zimmer, Bett, Station - Kardinalität der Elemente `Encounter.location.location.identifier` und `Encounter.location.location.display` von 1..1 auf 0..1 geändert
 - **Removed**: MustSupport-Labels von `Encounter.location` und `Encounter.serviceProvider` entfernt
 
-### Modul Diagnose
+#### Modul Diagnose
 **Datum:** 09.12.2024
 
 - **Changed**: Abhängigkeit von de.basisprofil.r4 auf [Version 1.5.0](https://simplifier.net/packages/de.basisprofil.r4/1.5.0) aktualisiert. Diese Änderung hat keine Auswirkungen auf Implementierungen dieses Moduls
@@ -70,7 +96,7 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 - **Changed**: Ressourcen verwenden SNOMED CT-Version `http://snomed.info/sct/900000000000207008/version/20240701` modulübergreifend, um stabile [ValueSet-Expansion](http://hl7.org/fhir/R4/valueset.html#expansion) zu gewährleisten
 - **Added**: `Condition.verificationStatus` hat nun MustSupport-Label. Siehe: https://github.com/medizininformatik-initiative/kerndatensatzmodul-diagnose/issues/64
 
-### Modul Prozedur
+#### Modul Prozedur
 **Datum:** 09.12.2024
 
 - **Changed**: Abhängigkeit von de.basisprofil.r4 auf [Version 1.5.0](https://simplifier.net/packages/de.basisprofil.r4/1.5.0) aktualisiert. Diese Änderung hat keine Auswirkungen auf Implementierungen dieses Moduls
@@ -81,20 +107,20 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 
 ---
 
-## Version 2024.0.1
+### Version 2024.0.1
 
-### Modul Fall
+#### Modul Fall
 **Datum:** 17.04.2024
 
 - **Fixed**: Korrektur der Versionsparameter in Konformitätsressourcen. Im zuvor veröffentlichten Paket stimmte `StructureDefinition.version` nicht einheitlich mit der Paketversion überein. Siehe: https://github.com/medizininformatik-initiative/kerndatensatzmodul-fall/issues/51
 
 ---
 
-## Version 2024.0.0
+### Version 2024.0.0
 
 Alle Module haben [Calendar Versioning (CalVer)](https://calver.org/) mit dem Schema YYYY.MINOR.PATCH übernommen und damit einen jährlichen Release-Zyklus etabliert.
 
-### Modul Person
+#### Modul Person
 **Datum:** 16.04.2024
 
 - **Changed**: Versionierungsschema auf [Calendar Versioning (CalVer)](https://calver.org/) mit Schema YYYY.MINOR.PATCH umgestellt
@@ -108,7 +134,7 @@ Alle Module haben [Calendar Versioning (CalVer)](https://calver.org/) mit dem Sc
 - **Added**: Neues Profil [Todesursache](StructureDefinition-mii-pr-person-todesursache.html) zur Darstellung der Todesursache mit ICD-10-WHO
 - **Changed**: Datentypen im logischen Modell wurden angepasst, um den Datentypen der Elemente im FHIR-Profil zu entsprechen, auf die sie gemappt sind
 
-### Modul Fall
+#### Modul Fall
 **Datum:** 28.03.2024
 
 - **Changed**: Versionierungsschema auf [Calendar Versioning (CalVer)](https://calver.org/) umgestellt
@@ -122,7 +148,7 @@ Alle Module haben [Calendar Versioning (CalVer)](https://calver.org/) mit dem Sc
   - In Version 1.0 war `Encounter.diagnosis.use` bei der Angabe einer Diagnose OPTIONAL. Neu in dieser Version ist die Aufteilung von `Encounter.diagnosis.use.coding` in Diagnosetyp und Diagnoseuntertyp, von denen mindestens einer vorhanden sein MUSS
   - In Version 1.0 enthielt `Encounter.serviceType` nur eine Spezifikation für den Fachabteilungsschlüssel. Dies wurde in dieser Version um den erweiterten Fachabteilungsschlüssel erweitert
 
-### Modul Diagnose
+#### Modul Diagnose
 **Datum:** 16.04.2024
 
 - **Changed**: Versionierungsschema auf [Calendar Versioning (CalVer)](https://calver.org/) umgestellt
@@ -140,7 +166,7 @@ Alle Module haben [Calendar Versioning (CalVer)](https://calver.org/) mit dem Sc
 - **Added**: Im Profil unter `Condition.onsetPeriod.(start|end).extension` gibt es nun OPTIONAL eine Spezifikation zur Angabe der Lebensphase als Code via Extension, ab der ein Patient eine Erkrankung hat oder nicht mehr hat
 - **Added**: Modul wurde um SearchParameter-Ressourcen erweitert, die die Suche nach ICD-10-GM-Codes in Kombination mit Mehrfachkodierungskennzeichen, Lateralität und diagnostischer Sicherheit ermöglichen
 
-### Modul Prozedur
+#### Modul Prozedur
 **Datum:** 16.04.2024
 
 - **Changed**: Versionierungsschema auf [Calendar Versioning (CalVer)](https://calver.org/) umgestellt
@@ -154,7 +180,7 @@ Alle Module haben [Calendar Versioning (CalVer)](https://calver.org/) mit dem Sc
 
 ---
 
-## Versionierungsschema
+### Versionierungsschema
 
 Ab Version 2024.0.0 verwenden alle Module [Calendar Versioning (CalVer)](https://calver.org/) mit dem Schema YYYY.MINOR.PATCH:
 
