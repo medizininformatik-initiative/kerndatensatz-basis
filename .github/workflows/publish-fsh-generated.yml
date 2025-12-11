@@ -8,6 +8,7 @@ on:
     branches:
       - main
       - 'release/**'
+      - publish-fsh-generated
   workflow_dispatch:
 
 jobs:
@@ -33,6 +34,15 @@ jobs:
       
       - name: Create/Update fsh-generated branch
         run: |
+          # Store the current branch and generated files location
+          CURRENT_BRANCH="${{ github.ref_name }}"
+          CURRENT_SHA="${{ github.sha }}"
+          
+          # Copy generated files to a temporary location
+          mkdir -p /tmp/fsh-output
+          cp -r fsh-generated /tmp/fsh-output/
+          cp package.json /tmp/fsh-output/
+          
           # Configure git
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -41,15 +51,18 @@ jobs:
           if git rev-parse --verify origin/fsh-generated >/dev/null 2>&1; then
             git checkout fsh-generated
             git pull origin fsh-generated
+            # Remove all files
+            git rm -rf . 2>/dev/null || true
+            rm -rf * .* 2>/dev/null || true
           else
             git checkout --orphan fsh-generated
+            # Remove all files from staging
+            git rm -rf . 2>/dev/null || true
           fi
           
-          # Remove all files from staging
-          git rm -rf . 2>/dev/null || true
-          
-          # Copy only the files we need
-          git checkout ${{ github.ref_name }} -- fsh-generated/ package.json
+          # Copy the generated files from temp location
+          cp -r /tmp/fsh-output/fsh-generated .
+          cp /tmp/fsh-output/package.json .
           
           # Add and commit
           git add fsh-generated/ package.json
@@ -58,6 +71,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "Update FHIR resources from ${{ github.ref_name }} @ ${{ github.sha }}"
+            git commit -m "Update FHIR resources from ${CURRENT_BRANCH} @ ${CURRENT_SHA}"
             git push origin fsh-generated
           fi
