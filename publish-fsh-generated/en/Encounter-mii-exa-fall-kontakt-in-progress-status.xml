@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Encounter xmlns="http://hl7.org/fhir">
+  <id value="mii-exa-fall-kontakt-in-progress-status"/>
+  <meta>
+    <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"/>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  <language value="en"/>
+  <text>
+    <status value="generated"/><div xml:lang="en" lang="en"><hr/><p><b>English</b></p><hr/><p class="res-header-id"><b>Generated Narrative: Encounter mii-exa-fall-kontakt-in-progress-status</b></p><a name="mii-exa-fall-kontakt-in-progress-status"> </a><a name="hcmii-exa-fall-kontakt-in-progress-status"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Language: en</p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">MII PR Fall Kontakt mit einer Gesundheitseinrichtungversion: null2026.0.0)</a></p><p style="margin-bottom: 0px">Security Label: test health data (Details: ActReason code HTEST = 'test health data')</p></div><p><b>status</b>: In Progress</p><p><b>class</b>: <a href="http://terminology.hl7.org/7.0.0/CodeSystem-v3-ActCode.html#v3-ActCode-IMP">ActCode: IMP</a> (inpatient encounter)</p><p><b>type</b>: <span title="Codes:{http://fhir.de/CodeSystem/Kontaktebene abteilungskontakt}">Abteilungskontakt</span></p><p><b>serviceType</b>: <span title="Codes:{http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert 2315}">Orthopädie/Schwerpunkt Chirurgie</span></p><p><b>subject</b>: <a href="Patient-mii-exa-person-patient-pseudonymisiert.html">Anonymous Patient Female, DoB: 1998 ( Krankenversichertennummer (use: official, ))</a></p><p><b>period</b>: 2024-06-14 --&gt; (ongoing)</p></div>
+  </text>
+  <status value="in-progress"/>
+  <class>
+    <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
+    <code value="IMP"/>
+    <display value="inpatient encounter"/>
+  </class>
+  <type>
+    <coding>
+      <system value="http://fhir.de/CodeSystem/Kontaktebene"/>
+      <code value="abteilungskontakt"/>
+    </coding>
+  </type>
+  <serviceType>
+    <coding>
+      <system value="http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"/>
+      <code value="2315"/>
+      <display value="Orthopädie/Schwerpunkt Chirurgie"/>
+    </coding>
+  </serviceType>
+  <subject>
+    <reference value="Patient/mii-exa-person-patient-pseudonymisiert"/>
+  </subject>
+  <period>
+    <start value="2024-06-14"/>
+  </period>
+</Encounter>

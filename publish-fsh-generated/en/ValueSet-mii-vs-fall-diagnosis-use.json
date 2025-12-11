@@ -1,0 +1,56 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "mii-vs-fall-diagnosis-use",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/StructureDefinition/shareablevalueset"]
+  },
+  "language" : "en",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: ValueSet mii-vs-fall-diagnosis-use</b></p><a name=\"mii-vs-fall-diagnosis-use\"> </a><a name=\"hcmii-vs-fall-diagnosis-use\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://hl7.org/fhir/R4/shareablevalueset.html\">Shareable ValueSet</a></p></div><p>This value set includes codes based on the following rules:</p><ul><li>Import all the codes that are contained in <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/ValueSet/DiagnoseTyp\">DiagnoseTyp ValueSet</a></li><li>Import all the codes that are contained in <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/ValueSet/Diagnosesubtyp\">Diagnosesubtyp ValueSet</a></li><li>Import all the codes that are contained in <a href=\"http://hl7.org/fhir/R4/valueset-diagnosis-role.html\">DiagnosisRole</a></li></ul></div>"
+  },
+  "extension" : [{
+    "url" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/StructureDefinition/mii-ex-meta-license-codeable",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/spdx-license",
+        "code" : "CC-BY-4.0",
+        "display" : "Creative Commons Attribution 4.0 International"
+      }]
+    }
+  }],
+  "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/mii-vs-fall-diagnosis-use",
+  "version" : "2026.0.0",
+  "name" : "MII_VS_Fall_Diagnosis_Use",
+  "title" : "MII VS Fall Diagnosis Use",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2024-12-10",
+  "publisher" : "Medical Informatics Initiative (MII)",
+  "contact" : [{
+    "name" : "Medical Informatics Initiative (MII)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.medizininformatik-initiative.de/en"
+    }]
+  }],
+  "description" : "Diagnosetyp",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DE",
+      "display" : "Germany"
+    }]
+  }],
+  "compose" : {
+    "include" : [{
+      "valueSet" : ["http://fhir.de/ValueSet/DiagnoseTyp"]
+    },
+    {
+      "valueSet" : ["http://fhir.de/ValueSet/Diagnosesubtyp"]
+    },
+    {
+      "valueSet" : ["http://hl7.org/fhir/ValueSet/diagnosis-role"]
+    }]
+  }
+}

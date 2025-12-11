@@ -1,0 +1,74 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "mii-vs-fall-location-physical-type",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/StructureDefinition/shareablevalueset"]
+  },
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: ValueSet mii-vs-fall-location-physical-type</b></p><a name=\"mii-vs-fall-location-physical-type\"> </a><a name=\"hcmii-vs-fall-location-physical-type\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://hl7.org/fhir/R4/shareablevalueset.html\">Shareable ValueSet</a></p></div><ul><li>Include these codes as defined in <a href=\"http://terminology.hl7.org/7.0.0/CodeSystem-location-physical-type.html\"><code>http://terminology.hl7.org/CodeSystem/location-physical-type</code></a><span title=\"Version is not explicitly stated, which means it is fixed to 2.0.1, the version found through the package references\"> version &#x1F4E6;2.0.1</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href=\"http://terminology.hl7.org/7.0.0/CodeSystem-location-physical-type.html#location-physical-type-bd\">bd</a></td><td>Bed</td><td>A space that is allocated for sleeping/laying on. This is not the physical bed/trolley that may be moved about, but the space it may occupy.</td></tr><tr><td><a href=\"http://terminology.hl7.org/7.0.0/CodeSystem-location-physical-type.html#location-physical-type-ro\">ro</a></td><td>Room</td><td>A space that is allocated as a room, it may have walls/roof etc., but does not require these.</td></tr><tr><td><a href=\"http://terminology.hl7.org/7.0.0/CodeSystem-location-physical-type.html#location-physical-type-wa\">wa</a></td><td>Ward</td><td>A Ward is a section of a medical facility that may contain rooms and other types of location.</td></tr></table></li></ul></div><div xml:lang=\"de\" lang=\"de\"><hr/><p><b>German</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: ValueSet mii-vs-fall-location-physical-type</b></p><a name=\"de-mii-vs-fall-location-physical-type\"> </a><a name=\"de-hcmii-vs-fall-location-physical-type\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://hl7.org/fhir/R4/shareablevalueset.html\">Shareable ValueSet</a></p></div><ul><li>Include these codes as defined in <a href=\"http://terminology.hl7.org/7.0.0/CodeSystem-location-physical-type.html\"><code>http://terminology.hl7.org/CodeSystem/location-physical-type</code></a><span title=\"Version is not explicitly stated, which means it is fixed to 2.0.1, the version found through the package references\"> version &#x1F4E6;2.0.1</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href=\"http://terminology.hl7.org/7.0.0/CodeSystem-location-physical-type.html#location-physical-type-bd\">bd</a></td><td>Bed</td><td>A space that is allocated for sleeping/laying on. This is not the physical bed/trolley that may be moved about, but the space it may occupy.</td></tr><tr><td><a href=\"http://terminology.hl7.org/7.0.0/CodeSystem-location-physical-type.html#location-physical-type-ro\">ro</a></td><td>Room</td><td>A space that is allocated as a room, it may have walls/roof etc., but does not require these.</td></tr><tr><td><a href=\"http://terminology.hl7.org/7.0.0/CodeSystem-location-physical-type.html#location-physical-type-wa\">wa</a></td><td>Ward</td><td>A Ward is a section of a medical facility that may contain rooms and other types of location.</td></tr></table></li></ul></div></div>"
+  },
+  "extension" : [{
+    "url" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/StructureDefinition/mii-ex-meta-license-codeable",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/spdx-license",
+        "code" : "CC-BY-4.0",
+        "display" : "Creative Commons Attribution 4.0 International"
+      }]
+    }
+  }],
+  "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/location-physical-type",
+  "version" : "2026.0.0",
+  "name" : "MII_VS_Fall_LocationPhysicalType",
+  "title" : "MII VS Fall Location Physical Type",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2024-12-10",
+  "publisher" : "Medical Informatics Initiative (MII)",
+  "_publisher" : {
+    "extension" : [{
+      "extension" : [{
+        "url" : "lang",
+        "valueCode" : "de"
+      },
+      {
+        "url" : "content",
+        "valueString" : "Medizininformatik-Initiative (MII)"
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+    }]
+  },
+  "contact" : [{
+    "name" : "Medical Informatics Initiative (MII)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.medizininformatik-initiative.de/en"
+    }]
+  }],
+  "description" : "A coded type for the physical type of the location.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DE",
+      "display" : "Germany"
+    }]
+  }],
+  "compose" : {
+    "include" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/location-physical-type",
+      "concept" : [{
+        "code" : "bd",
+        "display" : "Bed"
+      },
+      {
+        "code" : "ro",
+        "display" : "Room"
+      },
+      {
+        "code" : "wa",
+        "display" : "Ward"
+      }]
+    }]
+  }
+}
