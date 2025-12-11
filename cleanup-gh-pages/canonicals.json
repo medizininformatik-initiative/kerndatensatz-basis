@@ -1,0 +1,268 @@
+[
+  {
+    "id" : "mii-ex-fall-planned-end-date",
+    "type" : "StructureDefinition",
+    "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedEndDate",
+    "version" : "2026.0.0",
+    "name" : "MII_EX_Fall_Planned_End_Date"
+  },
+  {
+    "id" : "mii-ex-fall-planned-start-date",
+    "type" : "StructureDefinition",
+    "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate",
+    "version" : "2026.0.0",
+    "name" : "MII_EX_Fall_Planned_Start_Date"
+  },
+  {
+    "id" : "mii-cps-diagnose-capabilitystatement",
+    "type" : "CapabilityStatement",
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/CapabilityStatement/metadata",
+    "version" : "2026.0.0",
+    "name" : "MII_CPS_Diagnose_CapabilityStatement"
+  },
+  {
+    "id" : "mii-cs-diagnose-lebensphase-supplement-snomed",
+    "type" : "CodeSystem",
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/CodeSystem/mii-cs-diagnose-lebensphase-supplement-snomed",
+    "version" : "2026.0.0",
+    "name" : "MII_CS_Diagnose_Lebensphase_Supplement_SNOMED"
+  },
+  {
+    "id" : "mii-pr-diagnose-condition",
+    "type" : "StructureDefinition",
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose",
+    "version" : "2026.0.0",
+    "name" : "MII_PR_Diagnose_Condition"
+  },
+  {
+    "id" : "mii-lm-diagnose",
+    "type" : "StructureDefinition",
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/LogicalModel/Diagnose",
+    "version" : "2026.0.0",
+    "name" : "MII_LM_Diagnose"
+  },
+  {
+    "id" : "mii-vs-diagnose-diagnosecodes-snomed",
+    "type" : "ValueSet",
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/diagnoses-sct",
+    "version" : "2026.0.0",
+    "name" : "MII_VS_Diagnose_DiagnoseCodes_SNOMED"
+  },
+  {
+    "id" : "mii-vs-diagnose-alphaid",
+    "type" : "ValueSet",
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-alphaid",
+    "version" : "2026.0.0",
+    "name" : "MII_VS_Diagnose_AlphaID"
+  },
+  {
+    "id" : "mii-vs-diagnose-bodystructure-snomed",
+    "type" : "ValueSet",
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-bodystructure-snomed",
+    "version" : "2026.0.0",
+    "name" : "MII_VS_Diagnose_BodyStructure_SNOMED"
+  },
+  {
+    "id" : "mii-vs-diagnose-icd10gm",
+    "type" : "ValueSet",
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-icd10gm",
+    "version" : "2026.0.0",
+    "name" : "MII_VS_Diagnose_ICD10GM"
+  },
+  {
+    "id" : "mii-vs-diagnose-orphanet",
+    "type" : "ValueSet",
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-orphanet",
+    "version" : "2026.0.0",
+    "name" : "MII_VS_Diagnose_Orphanet"
+  },
+  {
+    "id" : "mii-cps-fall-capabilitystatement",
+    "type" : "CapabilityStatement",
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/CapabilityStatement/metadata",
+    "version" : "2026.0.0",
+    "name" : "MII_CPS_Fall_CapabilityStatement"
+  },
+  {
+    "id" : "mii-cs-fall-supplement-act-encounter-code",
+    "type" : "CodeSystem",
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/CodeSystem/SupplementActEncounterCode",
+    "version" : "2026.0.0",
+    "name" : "MII_CS_Fall_SupplementActEncounterCode"
+  },
+  {
+    "id" : "mii-cs-fall-supplement-patient-class",
+    "type" : "CodeSystem",
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/CodeSystem/SupplementPatientClass",
+    "version" : "2026.0.0",
+    "name" : "MII_CS_Fall_SupplementPatientClass"
+  },
+  {
+    "id" : "mii-pr-fall-kontakt-gesundheitseinrichtung",
+    "type" : "StructureDefinition",
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung",
+    "version" : "2026.0.0",
+    "name" : "MII_PR_Fall_KontaktGesundheitseinrichtung"
+  },
+  {
+    "id" : "mii-lm-fall",
+    "type" : "StructureDefinition",
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/LogicalModel/Fall",
+    "version" : "2026.0.0",
+    "name" : "MII_LM_Fall"
+  },
+  {
+    "id" : "mii-vs-fall-identifier-type-codes",
+    "type" : "ValueSet",
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/identifier-type-codes",
+    "version" : "2026.0.0",
+    "name" : "MII_VS_Fall_IdentifierTypeCodes"
+  },
+  {
+    "id" : "mii-vs-fall-location-physical-type",
+    "type" : "ValueSet",
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/location-physical-type",
+    "version" : "2026.0.0",
+    "name" : "MII_VS_Fall_LocationPhysicalType"
+  },
+  {
+    "id" : "mii-vs-fall-diagnosis-use",
+    "type" : "ValueSet",
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/mii-vs-fall-diagnosis-use",
+    "version" : "2026.0.0",
+    "name" : "MII_VS_Fall_Diagnosis_Use"
+  },
+  {
+    "id" : "mii-cps-person-capabilitystatement",
+    "type" : "CapabilityStatement",
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/CapabilityStatement/metadata",
+    "version" : "2026.0.0",
+    "name" : "MII_CPS_Person_CapabilityStatement"
+  },
+  {
+    "id" : "mii-cs-person-vitalstatus",
+    "type" : "CodeSystem",
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/CodeSystem/Vitalstatus",
+    "version" : "2026.0.0",
+    "name" : "MII_CS_Person_Vitalstatus"
+  },
+  {
+    "id" : "mii-lm-person",
+    "type" : "StructureDefinition",
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/LogicalModel/Person",
+    "version" : "2026.0.0",
+    "name" : "MII_LM_Person"
+  },
+  {
+    "id" : "mii-pr-person-patient",
+    "type" : "StructureDefinition",
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient",
+    "version" : "2026.0.0",
+    "name" : "MII_PR_Person_Patient"
+  },
+  {
+    "id" : "mii-pr-person-patient-pseudonymisiert",
+    "type" : "StructureDefinition",
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert",
+    "version" : "2026.0.0",
+    "name" : "MII_PR_Person_PatientPseudonymisiert"
+  },
+  {
+    "id" : "mii-pr-person-proband",
+    "type" : "StructureDefinition",
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/ResearchSubject",
+    "version" : "2026.0.0",
+    "name" : "MII_PR_Person_Proband"
+  },
+  {
+    "id" : "mii-pr-person-todesursache",
+    "type" : "StructureDefinition",
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Todesursache",
+    "version" : "2026.0.0",
+    "name" : "MII_PR_Person_Todesursache"
+  },
+  {
+    "id" : "mii-pr-person-vitalstatus",
+    "type" : "StructureDefinition",
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus",
+    "version" : "2026.0.0",
+    "name" : "MII_PR_Person_Vitalstatus"
+  },
+  {
+    "id" : "mii-vs-person-vitalstatus",
+    "type" : "ValueSet",
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/Vitalstatus",
+    "version" : "2026.0.0",
+    "name" : "MII_VS_Person_Vitalstatus"
+  },
+  {
+    "id" : "mii-vs-person-icd10who",
+    "type" : "ValueSet",
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/mii-vs-person-icd10who",
+    "version" : "2026.0.0",
+    "name" : "MII_VS_Person_ICD10WHO"
+  },
+  {
+    "id" : "mii-cps-prozedur-capabilitystatement",
+    "type" : "CapabilityStatement",
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/CapabilityStatement/metadata",
+    "version" : "2026.0.0",
+    "name" : "MII_CPS_Prozedur_CapabilityStatement"
+  },
+  {
+    "id" : "mii-ex-prozedur-durchfuehrungsabsicht",
+    "type" : "StructureDefinition",
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Durchfuehrungsabsicht",
+    "version" : "2026.0.0",
+    "name" : "MII_EX_Prozedur_Durchfuehrungsabsicht"
+  },
+  {
+    "id" : "mii-lm-prozedur",
+    "type" : "StructureDefinition",
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/LogicalModel/Prozedur",
+    "version" : "2026.0.0",
+    "name" : "MII_LM_Prozedur"
+  },
+  {
+    "id" : "mii-pr-prozedur-procedure",
+    "type" : "StructureDefinition",
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure",
+    "version" : "2026.0.0",
+    "name" : "MII_PR_Prozedur_Procedure"
+  },
+  {
+    "id" : "mii-vs-prozedur-ops",
+    "type" : "ValueSet",
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/mii-vs-prozedur-ops",
+    "version" : "2026.0.0",
+    "name" : "MII_VS_Prozedur_OPS"
+  },
+  {
+    "id" : "mii-vs-prozedur-opskategorien-snomedct",
+    "type" : "ValueSet",
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-category-sct",
+    "version" : "2026.0.0",
+    "name" : "MII_VS_Prozedur_OpsKategorien_SNOMEDCT"
+  },
+  {
+    "id" : "mii-vs-prozedur-durchfuehrungsabsicht-snomedct",
+    "type" : "ValueSet",
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-intend",
+    "version" : "2026.0.0",
+    "name" : "MII_VS_Prozedur_Durchfuehrungsabsicht_SNOMEDCT"
+  },
+  {
+    "id" : "mii-vs-prozedur-prozeduren-snomedct",
+    "type" : "ValueSet",
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-sct",
+    "version" : "2026.0.0",
+    "name" : "MII_VS_Prozedur_Prozeduren_SNOMEDCT"
+  },
+  {
+    "id" : "mii-ig-base",
+    "type" : "ImplementationGuide",
+    "url" : "https://www.medizininformatik-initiative.de/fhir/modul-base/ImplementationGuide/mii-ig-base",
+    "version" : "2026.0.0",
+    "name" : "MII_IG_Base"
+  }
+]

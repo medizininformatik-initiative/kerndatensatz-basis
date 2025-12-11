@@ -1,0 +1,1177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+
+
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Artifacts Summary - MII Implementation Guide Core Dataset Base v2026.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link href="assets/css/project.css" rel="stylesheet"/>
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script type="text/javascript" src="assets/js/direction-management.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"14"}
+    h3,h4,h5,h6{--heading-prefix:"14.0"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <div id="family-nav">
+  <a id="family-logo" no-external="true" href="http://hl7.org/fhir">
+    <img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/>
+  </a>
+</div>
+<div id="hl7-nav"> 
+  <a id="hl7-logo" no-external="true" href="https://www.medizininformatik-initiative.de">
+    
+    <img height="50" alt="Visit MII" src="MII_Logo_engl_rgb.jpg"/>
+    
+  </a>
+</div>
+
+
+        <div id="ig-status" data-fhir="generated">
+          <p><span style="font-size:12pt;font-weight:bold">MII Implementation Guide Core Dataset Base</span>
+            <br/>
+            <span style="display:inline-block;">2026.0.0 - Release
+
+
+
+  Germany
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment" data-fhir="generated">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Guidance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="guidance.html">Guidance</a>
+      </li>
+      <li>
+        <a href="researcher-guidance.html">Guidance for Researchers</a>
+      </li>
+      <li>
+        <a href="implementer-guidance.html">Guidance for Implementers</a>
+      </li>
+      <li>
+        <a href="datasets-and-descriptions.html">Datasets and Descriptions</a>
+      </li>
+      <li>
+        <a href="uml-diagrams.html">UML Diagrams</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Conformance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="conformance.html">Conformance</a>
+      </li>
+      <li>
+        <a href="general-requirements.html">General Requirements</a>
+      </li>
+      <li>
+        <a href="must-support.html">Must Support</a>
+      </li>
+      <li>
+        <a href="missing-data.html">Handling Missing Data</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">Artifacts Summary</a>
+      </li>
+      <li>
+        <a href="profiles-and-extensions.html">Profiles and Extensions</a>
+      </li>
+      <li>
+        <a href="terminology.html">Terminology</a>
+      </li>
+      <li>
+        <a href="capability-statements.html">Capability Statements</a>
+      </li>
+      <li>
+        <a href="search-parameters-and-operations.html">Search Parameters and Operations</a>
+      </li>
+      <li>
+        <a href="logical-models.html">Logical Models</a>
+      </li>
+      <li>
+        <a href="examples.html">Examples</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Versioning
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="version-history.html">Versioning</a>
+      </li>
+      <li>
+        <a href="changes.html">Changelog</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+
+              
+
+
+<div style="float: var(--ig-right);padding: 8px 0px;" id="language">
+  <div id="select_flg" class="flaglist" style="background-image: url(assets/images/icon_arrow_down.png);background-position: 133px 3px;">
+    <div><img class="flag" alt="flag en" src="assets/images/lang-en.png"/>English</div>
+  </div>
+  <div style="float: var(--ig-right); margin: 2px 0px; padding: 1px 0;color: var(--btn-text-color);font-size:12px">Language:</div>
+ 	<div id="flaglist" class="flaglist" style="display: none;position: absolute;right: 0;z-index: 100;background-image: url(assets/images/icon_arrow_up.png);background-position: 133px 3px;">
+    <div><img class="flag" alt="flag en" src="assets/images/lang-en.png"/>English</div>
+
+    <div><a href="../de/artifacts.html"><img class="flag" src="assets/images/lang-de.png" alt="flag de"/>Deutsch</a></div>
+
+  </div>
+</div>
+
+
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment" data-fhir="generated">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Artifacts Summary</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">MII Implementation Guide Core Dataset Base - Local Development build (v2026.0.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://www.medizininformatik-initiative.de/fhir/modul-base/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Artifacts Summary</h2>
+  
+  
+  
+  
+  <!--DO NOT EDIT THIS FILE - It is generated by https://github.com/HL7/ig-template-base/blob/master/scripts/createArtifactSummary.xslt and any changes made will be overwritten--><div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f="http://hl7.org/fhir"
+     xmlns:html="http://www.w3.org/1999/xhtml"
+     class="markdown-toc"
+     data-fhir="generated">
+   <p>Contents:</p>
+   <ul>
+      <li>
+         <a href="#1">Behavior: Capability Statements</a>
+      </li>
+      <li>
+         <a href="#2">Structures: Logical Models</a>
+      </li>
+      <li>
+         <a href="#3">Structures: Resource Profiles</a>
+      </li>
+      <li>
+         <a href="#4">Structures: Extension Definitions</a>
+      </li>
+      <li>
+         <a href="#5">Terminology: Value Sets</a>
+      </li>
+      <li>
+         <a href="#6">Terminology: Code Systems</a>
+      </li>
+      <li>
+         <a href="#7">Example: Example Instances</a>
+      </li>
+   </ul>
+</div>
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f="http://hl7.org/fhir"
+     xmlns:html="http://www.w3.org/1999/xhtml"
+     data-fhir="generated">
+   <p>This page provides a list of the FHIR artifacts defined as part of this implementation guide.</p>
+   <a name="1"> </a>
+   <h3>Behavior: Capability Statements </h3>
+    <p>The following artifacts define the specific capabilities that different types of systems are expected to have in order to comply with this implementation guide.  Systems conforming to this implementation guide are expected to declare conformance to one or more of the following capability statements.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CapabilityStatement-mii-cps-diagnose-capabilitystatement.html"
+                  title="CapabilityStatement/mii-cps-diagnose-capabilitystatement">
+                  <span title="CapabilityStatement/mii-cps-diagnose-capabilitystatement">MII CPS Diagnose CapabilityStatement
+</span>
+               </a>
+            </td>
+            <td>
+<p>Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein konformes System unterstützen muss, um das Modul Diagnose der Medizininformatik Initiative zu implementieren.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CapabilityStatement-mii-cps-fall-capabilitystatement.html"
+                  title="CapabilityStatement/mii-cps-fall-capabilitystatement">
+                  <span title="CapabilityStatement/mii-cps-fall-capabilitystatement">MII CPS Fall CapabilityStatement
+</span>
+               </a>
+            </td>
+            <td>
+<p>Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein konformes System unterstützen muss, um das Modul Fall der Medizininformatik Initiative zu implementieren.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CapabilityStatement-mii-cps-person-capabilitystatement.html"
+                  title="CapabilityStatement/mii-cps-person-capabilitystatement">
+                  <span title="CapabilityStatement/mii-cps-person-capabilitystatement">MII CPS Person CapabilityStatement
+</span>
+               </a>
+            </td>
+            <td>
+<p>Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein konformes System unterstützen muss um das Modul Person der Medizininformatik Initiative zu implementieren.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CapabilityStatement-mii-cps-prozedur-capabilitystatement.html"
+                  title="CapabilityStatement/mii-cps-prozedur-capabilitystatement">
+                  <span title="CapabilityStatement/mii-cps-prozedur-capabilitystatement">MII CPS Prozedur CapabilityStatement
+</span>
+               </a>
+            </td>
+            <td>
+<p>Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein konformes System unterstützen muss um das Modul Prozedur der Medizininformatik Initiative zu implementieren.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="2"> </a>
+   <h3>Structures: Logical Models </h3>
+    <p>These define data models that represent the domain covered by this implementation guide in more business-friendly terms than the underlying FHIR resources.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-mii-lm-diagnose.html"
+                  title="StructureDefinition/mii-lm-diagnose">
+                  <span title="StructureDefinition/mii-lm-diagnose">MII LM Diagnose
+</span>
+               </a>
+            </td>
+            <td>
+<p>Logische Repräsentation des Basismoduls Diagnose</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-mii-lm-fall.html"
+                  title="StructureDefinition/mii-lm-fall">
+                  <span title="StructureDefinition/mii-lm-fall">MII LM Fall
+</span>
+               </a>
+            </td>
+            <td>
+<p>Logische Repräsentation des Basismoduls Fall</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-mii-lm-person.html"
+                  title="StructureDefinition/mii-lm-person">
+                  <span title="StructureDefinition/mii-lm-person">MII LM Person
+</span>
+               </a>
+            </td>
+            <td>
+<p>Logische Repräsentation des Basismoduls Person</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-mii-lm-prozedur.html"
+                  title="StructureDefinition/mii-lm-prozedur">
+                  <span title="StructureDefinition/mii-lm-prozedur">MII LM Prozedur
+</span>
+               </a>
+            </td>
+            <td>
+<p>Logische Repräsentation des Basismoduls Prozedur</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="3"> </a>
+   <h3>Structures: Resource Profiles </h3>
+    <p>These define constraints on FHIR resources for systems conforming to this implementation guide.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-mii-pr-diagnose-condition.html"
+                  title="StructureDefinition/mii-pr-diagnose-condition">
+                  <span title="StructureDefinition/mii-pr-diagnose-condition">MII PR Diagnose Condition
+</span>
+               </a>
+            </td>
+            <td>
+<p>Dieses Profil beschreibt eine Diagnose der Medizininformatik Initiative</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html"
+                  title="StructureDefinition/mii-pr-fall-kontakt-gesundheitseinrichtung">
+                  <span title="StructureDefinition/mii-pr-fall-kontakt-gesundheitseinrichtung">MII PR Fall Kontakt mit einer Gesundheitseinrichtung
+</span>
+               </a>
+            </td>
+            <td>
+<p>Kontakt zu einer Einrichtung, Abteilung oder Versorgungsstelle</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-mii-pr-person-patient.html"
+                  title="StructureDefinition/mii-pr-person-patient">
+                  <span title="StructureDefinition/mii-pr-person-patient">MII PR Person Patient
+</span>
+               </a>
+            </td>
+            <td>
+<p>Dieses Profil beschreibt eine Patient*in in der Medizininformatik-Initiative.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-mii-pr-person-patient-pseudonymisiert.html"
+                  title="StructureDefinition/mii-pr-person-patient-pseudonymisiert">
+                  <span title="StructureDefinition/mii-pr-person-patient-pseudonymisiert">MII PR Person Patient (Pseudonymisiert)
+</span>
+               </a>
+            </td>
+            <td>
+<p>Dieses Profil beschreibt eine<em>n pseudonymisierte</em>n Patient*in in der Medizininformatik-Initiative.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-mii-pr-person-proband.html"
+                  title="StructureDefinition/mii-pr-person-proband">
+                  <span title="StructureDefinition/mii-pr-person-proband">MII PR Person Proband
+</span>
+               </a>
+            </td>
+            <td>
+<p>Dieses Profil beschreibt eine Proband*in in der Medizininformatik-Initiative.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-mii-pr-person-todesursache.html"
+                  title="StructureDefinition/mii-pr-person-todesursache">
+                  <span title="StructureDefinition/mii-pr-person-todesursache">MII PR Person Todesursache
+</span>
+               </a>
+            </td>
+            <td>
+<p>Dieses Profil beschreibt den Todesursache der Patient*in als Element des Kerndatensatzes Medizininformatik-Initiative</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-mii-pr-person-vitalstatus.html"
+                  title="StructureDefinition/mii-pr-person-vitalstatus">
+                  <span title="StructureDefinition/mii-pr-person-vitalstatus">MII PR Person Vitalstatus
+</span>
+               </a>
+            </td>
+            <td>
+<p>Dieses Profil beschreibt den Vitalstatus der Patient*in in der Medizininformatik-Initiative.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-mii-pr-prozedur-procedure.html"
+                  title="StructureDefinition/mii-pr-prozedur-procedure">
+                  <span title="StructureDefinition/mii-pr-prozedur-procedure">MII PR Prozedur Procedure
+</span>
+               </a>
+            </td>
+            <td>
+<p>Dieses Profil beschreibt eine Prozedur in der Medizininformatik-Initiative.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="4"> </a>
+   <h3>Structures: Extension Definitions </h3>
+    <p>These define constraints on FHIR data types for systems conforming to this implementation guide.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-mii-ex-fall-planned-end-date.html"
+                  title="StructureDefinition/mii-ex-fall-planned-end-date">
+                  <span title="StructureDefinition/mii-ex-fall-planned-end-date">MII EX Fall Planned End Date
+</span>
+               </a>
+            </td>
+            <td>
+<p>The planned end date/time (or discharge date) of the encounter</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-mii-ex-fall-planned-start-date.html"
+                  title="StructureDefinition/mii-ex-fall-planned-start-date">
+                  <span title="StructureDefinition/mii-ex-fall-planned-start-date">MII EX Fall Planned Start Date
+</span>
+               </a>
+            </td>
+            <td>
+<p>The planned start date/time (or admission date) of the encounter</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-mii-ex-prozedur-durchfuehrungsabsicht.html"
+                  title="StructureDefinition/mii-ex-prozedur-durchfuehrungsabsicht">
+                  <span title="StructureDefinition/mii-ex-prozedur-durchfuehrungsabsicht">MII EX Prozedur Durchführungsabsicht
+</span>
+               </a>
+            </td>
+            <td>
+<p>Intention der Prozedur</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="5"> </a>
+   <h3>Terminology: Value Sets </h3>
+    <p>These define sets of codes used by systems conforming to this implementation guide.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-mii-vs-diagnose-alphaid.html"
+                  title="ValueSet/mii-vs-diagnose-alphaid">
+                  <span title="ValueSet/mii-vs-diagnose-alphaid">MII VS Diagnose Alpha-ID
+</span>
+               </a>
+            </td>
+            <td>
+<p>Enthaelt Alpha-ID-Codes der Versionen 2018 bis 2025</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-mii-vs-diagnose-bodystructure-snomed.html"
+                  title="ValueSet/mii-vs-diagnose-bodystructure-snomed">
+                  <span title="ValueSet/mii-vs-diagnose-bodystructure-snomed">MII VS Diagnose BodyStructure SNOMED
+</span>
+               </a>
+            </td>
+            <td>
+<p>Enthaelt alle SNOMED Body structure codes</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-mii-vs-diagnose-diagnosecodes-snomed.html"
+                  title="ValueSet/mii-vs-diagnose-diagnosecodes-snomed">
+                  <span title="ValueSet/mii-vs-diagnose-diagnosecodes-snomed">MII VS Diagnose Diagnose-Codes SNOMED
+</span>
+               </a>
+            </td>
+            <td>
+<p>Enthaelt alle SNOMED Clinical finding, Event und Situation with explicit context codes</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-mii-vs-diagnose-icd10gm.html"
+                  title="ValueSet/mii-vs-diagnose-icd10gm">
+                  <span title="ValueSet/mii-vs-diagnose-icd10gm">MII VS Diagnose ICD-10-GM
+</span>
+               </a>
+            </td>
+            <td>
+<p>Enthaelt ICD-10-GM-Codes der Versionen 2009 bis 2025</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-mii-vs-diagnose-orphanet.html"
+                  title="ValueSet/mii-vs-diagnose-orphanet">
+                  <span title="ValueSet/mii-vs-diagnose-orphanet">MII VS Diagnose Orphanet
+</span>
+               </a>
+            </td>
+            <td>
+<p>Enthaelt alle Orpha-Kennnummern (ORPHAcodes)</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-mii-vs-fall-diagnosis-use.html"
+                  title="ValueSet/mii-vs-fall-diagnosis-use">
+                  <span title="ValueSet/mii-vs-fall-diagnosis-use">MII VS Fall Diagnosis Use
+</span>
+               </a>
+            </td>
+            <td>
+<p>Diagnosetyp</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-mii-vs-fall-identifier-type-codes.html"
+                  title="ValueSet/mii-vs-fall-identifier-type-codes">
+                  <span title="ValueSet/mii-vs-fall-identifier-type-codes">MII VS Fall Identifier Type Codes
+</span>
+               </a>
+            </td>
+            <td>
+<p>A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-mii-vs-fall-location-physical-type.html"
+                  title="ValueSet/mii-vs-fall-location-physical-type">
+                  <span title="ValueSet/mii-vs-fall-location-physical-type">MII VS Fall Location Physical Type
+</span>
+               </a>
+            </td>
+            <td>
+<p>A coded type for the physical type of the location.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-mii-vs-person-icd10who.html"
+                  title="ValueSet/mii-vs-person-icd10who">
+                  <span title="ValueSet/mii-vs-person-icd10who">MII VS Person ICD-10-WHO
+</span>
+               </a>
+            </td>
+            <td>
+<p>MII VS Person ICD-10-WHO</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-mii-vs-person-vitalstatus.html"
+                  title="ValueSet/mii-vs-person-vitalstatus">
+                  <span title="ValueSet/mii-vs-person-vitalstatus">MII VS Person Vitalstatus
+</span>
+               </a>
+            </td>
+            <td>
+<p>Enthält alle Werte, die den Vitalstatus einer Person beschreiben.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-mii-vs-prozedur-durchfuehrungsabsicht-snomedct.html"
+                  title="ValueSet/mii-vs-prozedur-durchfuehrungsabsicht-snomedct">
+                  <span title="ValueSet/mii-vs-prozedur-durchfuehrungsabsicht-snomedct">MII VS Prozedur Durchführungsabsicht [SNOMED CT]
+</span>
+               </a>
+            </td>
+            <td>
+<p>Durchführungsabsicht / Intention mit der Prozedur ausgeführt wird</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-mii-vs-prozedur-ops.html"
+                  title="ValueSet/mii-vs-prozedur-ops">
+                  <span title="ValueSet/mii-vs-prozedur-ops">MII VS Prozedur OPS
+</span>
+               </a>
+            </td>
+            <td>
+<p>Enthaelt OPS-Codes der Versionen 2010 bis 2025</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-mii-vs-prozedur-opskategorien-snomedct.html"
+                  title="ValueSet/mii-vs-prozedur-opskategorien-snomedct">
+                  <span title="ValueSet/mii-vs-prozedur-opskategorien-snomedct">MII VS Prozedur OPS Kategorien [SNOMED CT]
+</span>
+               </a>
+            </td>
+            <td>
+<p>Enthaelt alle SNOMED CT Codes für ein Mapping der OPS Klassentitel</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-mii-vs-prozedur-prozeduren-snomedct.html"
+                  title="ValueSet/mii-vs-prozedur-prozeduren-snomedct">
+                  <span title="ValueSet/mii-vs-prozedur-prozeduren-snomedct">MII VS Prozedur Prozeduren [SNOMED CT]
+</span>
+               </a>
+            </td>
+            <td>
+<p>Enthaelt alle SNOMED CT Procedure Codes</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="6"> </a>
+   <h3>Terminology: Code Systems </h3>
+    <p>These define new code systems used by systems conforming to this implementation guide.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-mii-cs-diagnose-lebensphase-supplement-snomed.html"
+                  title="CodeSystem/mii-cs-diagnose-lebensphase-supplement-snomed">
+                  <span title="CodeSystem/mii-cs-diagnose-lebensphase-supplement-snomed">MII CS Diagnose Lebensphase Supplement SNOMED
+</span>
+               </a>
+            </td>
+            <td>
+<p>CodeSystem Supplement mit Definitionen zu den SNOMED-Konzepten für Lebensphasen.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-mii-cs-fall-supplement-act-encounter-code.html"
+                  title="CodeSystem/mii-cs-fall-supplement-act-encounter-code">
+                  <span title="CodeSystem/mii-cs-fall-supplement-act-encounter-code">MII CS Fall Supplement ActEncounterCode
+</span>
+               </a>
+            </td>
+            <td>
+<p>CodeSystem Supplement für ActEncounterCode</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-mii-cs-fall-supplement-patient-class.html"
+                  title="CodeSystem/mii-cs-fall-supplement-patient-class">
+                  <span title="CodeSystem/mii-cs-fall-supplement-patient-class">MII CS Fall Supplement PatientClass
+</span>
+               </a>
+            </td>
+            <td>
+<p>CodeSystem Supplement für v2-0004</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-mii-cs-person-vitalstatus.html"
+                  title="CodeSystem/mii-cs-person-vitalstatus">
+                  <span title="CodeSystem/mii-cs-person-vitalstatus">MII CS Person Vitalstatus
+</span>
+               </a>
+            </td>
+            <td>
+<p>Vitalstatus des Patienten</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="7"> </a>
+   <h3>Example: Example Instances </h3>
+    <p>These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Bundle-mii-exa-base-test-data-bundle-1.html"
+                  title="Bundle/mii-exa-base-test-data-bundle-1">
+                  <span title="Bundle/mii-exa-base-test-data-bundle-1">MII EXA Base Test Data Bundle 1
+</span>
+               </a>
+            </td>
+            <td>
+<p>Bundle: collection of example scenario resources as transaction bundle</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Condition-mii-exa-diagnose-appendicitis.html"
+                  title="Condition/mii-exa-diagnose-appendicitis">
+                  <span title="Condition/mii-exa-diagnose-appendicitis">MII EXA Diagnose Condition Appendicitis
+</span>
+               </a>
+            </td>
+            <td>
+<p>Condition: Acute appendicitis diagnosis as admission diagnosis</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Condition-mii-exa-diagnose-condition-elbow-contusion.html"
+                  title="Condition/mii-exa-diagnose-condition-elbow-contusion">
+                  <span title="Condition/mii-exa-diagnose-condition-elbow-contusion">MII EXA Diagnose Condition Contusion Elbow
+</span>
+               </a>
+            </td>
+            <td>
+<p>Condition: Elbow contusion diagnosis</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Condition-mii-exa-diagnose-mehrfachcodierung-primaercode.html"
+                  title="Condition/mii-exa-diagnose-mehrfachcodierung-primaercode">
+                  <span title="Condition/mii-exa-diagnose-mehrfachcodierung-primaercode">MII EXA Diagnose Mehrfachcodierung Primaercode
+</span>
+               </a>
+            </td>
+            <td>
+<p>Condition: Primary code (†) - gonococcal bursitis etiology</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Condition-mii-exa-diagnose-mehrfachcodierung-sekundaercode.html"
+                  title="Condition/mii-exa-diagnose-mehrfachcodierung-sekundaercode">
+                  <span title="Condition/mii-exa-diagnose-mehrfachcodierung-sekundaercode">MII EXA Diagnose Mehrfachcodierung Sekundaercode
+</span>
+               </a>
+            </td>
+            <td>
+<p>Condition: Secondary code (*) - bursitis manifestation</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Condition-mii-exa-diagnose-condition-multiple-codings.html"
+                  title="Condition/mii-exa-diagnose-condition-multiple-codings">
+                  <span title="Condition/mii-exa-diagnose-condition-multiple-codings">MII EXA Diagnose Multiple Codings
+</span>
+               </a>
+            </td>
+            <td>
+<p>Condition: Multiple coding systems - ICD-10-GM, Alpha-ID, and Orphanet</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html"
+                  title="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2">
+                  <span title="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2">MII EXA Fall Kontakt Gesundheitseinrichtung (Abteilungskontakt Chirurgie A2E)
+</span>
+               </a>
+            </td>
+            <td>
+<p>Encounter: Department-level encounter (Abteilungskontakt) for surgical care</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.html"
+                  title="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7">
+                  <span title="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7">MII EXA Fall Kontakt Gesundheitseinrichtung (Abteilungskontakt Innere Medizin)
+</span>
+               </a>
+            </td>
+            <td>
+<p>Encounter: Department-level encounter (Abteilungskontakt) for Internal Medicine ward care</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-9.html"
+                  title="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-9">
+                  <span title="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-9">MII EXA Fall Kontakt Gesundheitseinrichtung (Abteilungskontakt Notaufnahme A1E)
+</span>
+               </a>
+            </td>
+            <td>
+<p>Encounter: Emergency department encounter as entry point for hospital admission</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-8.html"
+                  title="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-8">
+                  <span title="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-8">MII EXA Fall Kontakt Gesundheitseinrichtung (Ambulanter Kontakt)
+</span>
+               </a>
+            </td>
+            <td>
+<p>Encounter: Example demonstrating an outpatient rheumatology encounter for initial bursitis diagnosis</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.html"
+                  title="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1">
+                  <span title="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1">MII EXA Fall Kontakt Gesundheitseinrichtung (Einrichtungskontakt E0)
+</span>
+               </a>
+            </td>
+            <td>
+<p>Encounter: Facility-level encounter (Einrichtungskontakt) for entire hospital stay</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-3.html"
+                  title="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-3">
+                  <span title="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-3">MII EXA Fall Kontakt Gesundheitseinrichtung (Planned Encounter)
+</span>
+               </a>
+            </td>
+            <td>
+<p>Encounter: Planned encounter with future dates</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Encounter-mii-exa-fall-kontakt-in-progress-status.html"
+                  title="Encounter/mii-exa-fall-kontakt-in-progress-status">
+                  <span title="Encounter/mii-exa-fall-kontakt-in-progress-status">MII EXA Fall Kontakt Gesundheitseinrichtung (Status in-progress)
+</span>
+               </a>
+            </td>
+            <td>
+<p>Encounter: Status 'in-progress'</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Encounter-mii-exa-fall-kontakt-onleave-status.html"
+                  title="Encounter/mii-exa-fall-kontakt-onleave-status">
+                  <span title="Encounter/mii-exa-fall-kontakt-onleave-status">MII EXA Fall Kontakt Gesundheitseinrichtung (Status onleave)
+</span>
+               </a>
+            </td>
+            <td>
+<p>Encounter: Status 'onleave'</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Encounter-mii-exa-fall-kontakt-unknown-status.html"
+                  title="Encounter/mii-exa-fall-kontakt-unknown-status">
+                  <span title="Encounter/mii-exa-fall-kontakt-unknown-status">MII EXA Fall Kontakt Gesundheitseinrichtung (Status unknown)
+</span>
+               </a>
+            </td>
+            <td>
+<p>Encounter: Status 'unknown'</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-11.html"
+                  title="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-11">
+                  <span title="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-11">MII EXA Fall Kontakt Gesundheitseinrichtung (Versorgungsstellenkontakt ED Treatment Room VS1)
+</span>
+               </a>
+            </td>
+            <td>
+<p>Encounter: Care unit encounter (Versorgungsstellenkontakt) for ED treatment room</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-5.html"
+                  title="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5">
+                  <span title="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5">MII EXA Fall Kontakt Gesundheitseinrichtung (Versorgungsstellenkontakt OR VS3)
+</span>
+               </a>
+            </td>
+            <td>
+<p>Encounter: Care unit encounter (Versorgungsstellenkontakt) for operating room</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-6.html"
+                  title="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6">
+                  <span title="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6">MII EXA Fall Kontakt Gesundheitseinrichtung (Versorgungsstellenkontakt PACU VS4)
+</span>
+               </a>
+            </td>
+            <td>
+<p>Encounter: Care unit encounter (Versorgungsstellenkontakt) for post-anesthesia care unit</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-4.html"
+                  title="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4">
+                  <span title="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4">MII EXA Fall Kontakt Gesundheitseinrichtung (Versorgungsstellenkontakt Radiology VS2)
+</span>
+               </a>
+            </td>
+            <td>
+<p>Encounter: Care unit encounter (Versorgungsstellenkontakt) for radiology CT procedure</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-10.html"
+                  title="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10">
+                  <span title="Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10">MII EXA Fall Kontakt Gesundheitseinrichtung (Versorgungsstellenkontakt Surgical Ward VS5)
+</span>
+               </a>
+            </td>
+            <td>
+<p>Encounter: Care unit encounter (Versorgungsstellenkontakt) for surgical ward post-operative care</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Condition-mii-exa-person-condition-todesursache.html"
+                  title="Condition/mii-exa-person-condition-todesursache">
+                  <span title="Condition/mii-exa-person-condition-todesursache">MII EXA Person Condition (Todesursache)
+</span>
+               </a>
+            </td>
+            <td>
+<p>Condition: Cause of Death (Todesursache)</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-mii-exa-person-observation-vitalstatus.html"
+                  title="Observation/mii-exa-person-observation-vitalstatus">
+                  <span title="Observation/mii-exa-person-observation-vitalstatus">MII EXA Person Observation Vitalstatus
+</span>
+               </a>
+            </td>
+            <td>
+<p>Observation: Vital status at hospital admission</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-mii-exa-person-observation-vitalstatus-discharge.html"
+                  title="Observation/mii-exa-person-observation-vitalstatus-discharge">
+                  <span title="Observation/mii-exa-person-observation-vitalstatus-discharge">MII EXA Person Observation Vitalstatus Discharge
+</span>
+               </a>
+            </td>
+            <td>
+<p>Observation: Vital status observation at hospital discharge</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Patient-mii-exa-person-patient-1.html"
+                  title="Patient/mii-exa-person-patient-1">
+                  <span title="Patient/mii-exa-person-patient-1">MII EXA Person Patient
+</span>
+               </a>
+            </td>
+            <td>
+<p>Patient: with insurance identifier, name and address</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Patient-mii-exa-person-patient-pseudonymisiert.html"
+                  title="Patient/mii-exa-person-patient-pseudonymisiert">
+                  <span title="Patient/mii-exa-person-patient-pseudonymisiert">MII EXA Person Patient Pseudonymisiert
+</span>
+               </a>
+            </td>
+            <td>
+<p>Patient: with pseudonym and masked insurance identifier (maskierter Versichertenidentifer)</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Procedure-mii-exa-prozedur-procedure.html"
+                  title="Procedure/mii-exa-prozedur-procedure">
+                  <span title="Procedure/mii-exa-prozedur-procedure">MII EXA Prozedur Procedure Appendectomy
+</span>
+               </a>
+            </td>
+            <td>
+<p>Procedure: Surgical procedure (appendectomy)</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Procedure-mii-exa-prozedur-imaging.html"
+                  title="Procedure/mii-exa-prozedur-imaging">
+                  <span title="Procedure/mii-exa-prozedur-imaging">MII EXA Prozedur Procedure Imaging CT Abdomen
+</span>
+               </a>
+            </td>
+            <td>
+<p>Procedure: Diagnostic imaging procedure (CT abdomen) for appendicitis workup</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Procedure-mii-exa-prozedur-procedure-2.html"
+                  title="Procedure/mii-exa-prozedur-procedure-2">
+                  <span title="Procedure/mii-exa-prozedur-procedure-2">MII EXA Prozedur Procedure Physiotherapy
+</span>
+               </a>
+            </td>
+            <td>
+<p>Procedure: Physiotherapy procedure for bursitis treatment</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+</div>
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script type="text/javascript" src="assets/js/flags.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container" data-fhir="generated">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+
+
+
+          IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
+          Package de.medizininformatikinitiative.kerndatensatz.base#2026.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Generated 
+  <span title="2025-12-11 17:16:00 +0000">
+    2025-12-11
+  </span>
+
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

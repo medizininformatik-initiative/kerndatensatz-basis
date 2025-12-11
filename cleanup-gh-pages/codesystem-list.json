@@ -1,0 +1,39 @@
+{
+  "codeSystems" : [
+    {
+      "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/CodeSystem/mii-cs-diagnose-lebensphase-supplement-snomed",
+      "version" : "2026.0.0",
+      "status" : "active",
+      "name" : "MII_CS_Diagnose_Lebensphase_Supplement_SNOMED",
+      "title" : "MII CS Diagnose Lebensphase Supplement SNOMED",
+      "description" : "CodeSystem Supplement mit Definitionen zu den SNOMED-Konzepten für Lebensphasen."
+    },
+    {
+      "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/CodeSystem/SupplementActEncounterCode",
+      "version" : "2026.0.0",
+      "status" : "active",
+      "name" : "MII_CS_Fall_SupplementActEncounterCode",
+      "title" : "MII CS Fall Supplement ActEncounterCode",
+      "description" : "CodeSystem Supplement für ActEncounterCode"
+    },
+    {
+      "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/CodeSystem/SupplementPatientClass",
+      "version" : "2026.0.0",
+      "status" : "active",
+      "name" : "MII_CS_Fall_SupplementPatientClass",
+      "title" : "MII CS Fall Supplement PatientClass",
+      "description" : "CodeSystem Supplement für v2-0004"
+    },
+    {
+      "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/CodeSystem/Vitalstatus",
+      "version" : "2026.0.0",
+      "status" : "active",
+      "name" : "MII_CS_Person_Vitalstatus",
+      "title" : "MII CS Person Vitalstatus",
+      "description" : "Vitalstatus des Patienten",
+      "uses" : {
+      },
+      "ValueSet-mii-vs-person-vitalstatus.html" : "MII VS Person Vitalstatus"
+    }
+  ]
+}
