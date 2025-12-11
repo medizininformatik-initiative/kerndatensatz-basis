@@ -9,6 +9,36 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 
 -------
 
+## Version 2026.0.0
+
+**Datum:** 11.12.2026
+
+### Wesentliche Strukturänderungen
+
+**Modulkonsolidierung:**
+
+* **Konsolidierter Implementierungsleitfaden:** Die vier Basismodule (Person, Fall, Diagnose und Prozedur) wurden zu einem Implementierungsleitfaden zusammengeführt
+* **Package-ID:** `de.medizininformatikinitiative.kerndatensatz.base`
+
+**Beispielkonsolidierung:**
+
+* **Einheitliches Testdaten-Bundle:** Beispielressourcen wurden in einem umfassenden Testdaten-Bundle zusammengeführt
+* **Modulübergreifende Beispiele:** Beispiele demonstrieren nun Beziehungen und Referenzen über alle vier Module hinweg
+
+### Inhaltsänderungen
+
+**Modul Diagnose:**
+
+* **Changed:** Aktualisierte Anleitung zur Verwendung von Condition.encounter zur Ausrichtung an gematik ISiK-Empfehlungen (Informationstechnische Systeme in Krankenhäusern)
+* **Changed:** Condition.encounter SOLLTE nun auf einen Encounter der Ebene "Abteilungskontakt" referenzieren
+* **Hinweis:** Dies stellt eine Änderung gegenüber vorherigen Versionen dar, in denen Encounter.diagnosis die primäre Verknüpfungsmethode war
+
+**Modul Person:**
+
+* **Added:** ValueSet MII VS Person ICD-10-WHO veröffentlicht unter MII-Canonical URL für Todesursachen-Codierung
+
+-------
+
 ## Version 2025.0.1
 
 ### Modul Person

@@ -262,6 +262,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><!-- white space is critical inside of capture --></p>
 <div class="markdown-toc">
 <ul id="markdown-toc">
+  <li><a href="#version-202600" id="markdown-toc-version-202600">Version 2026.0.0</a>    <ul>
+      <li><a href="#wesentliche-strukturänderungen" id="markdown-toc-wesentliche-strukturänderungen">Wesentliche Strukturänderungen</a></li>
+      <li><a href="#inhaltsänderungen" id="markdown-toc-inhaltsänderungen">Inhaltsänderungen</a></li>
+    </ul>
+  </li>
   <li><a href="#version-202501" id="markdown-toc-version-202501">Version 2025.0.1</a>    <ul>
       <li><a href="#modul-person" id="markdown-toc-modul-person">Modul Person</a></li>
       <li><a href="#modul-fall" id="markdown-toc-modul-fall">Modul Fall</a></li>
@@ -292,6 +297,40 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 </div>
 <p>Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Implementierungsleitfadens Kerndatensatz Basis hinweg. Dieses konsolidierte Änderungsprotokoll kombiniert Release Notes aus allen vier Basismodulen: Person, Fall, Diagnose und Prozedur.</p>
+
+<hr />
+
+<h2 id="version-202600">Version 2026.0.0</h2>
+
+<p><strong>Datum:</strong> 11.12.2026</p>
+
+<h3 id="wesentliche-strukturänderungen">Wesentliche Strukturänderungen</h3>
+
+<p><strong>Modulkonsolidierung:</strong></p>
+<ul>
+  <li><strong>Konsolidierter Implementierungsleitfaden:</strong> Die vier Basismodule (Person, Fall, Diagnose und Prozedur) wurden zu einem Implementierungsleitfaden zusammengeführt</li>
+  <li><strong>Package-ID:</strong> <code class="language-plaintext highlighter-rouge">de.medizininformatikinitiative.kerndatensatz.base</code></li>
+</ul>
+
+<p><strong>Beispielkonsolidierung:</strong></p>
+<ul>
+  <li><strong>Einheitliches Testdaten-Bundle:</strong> Beispielressourcen wurden in einem umfassenden Testdaten-Bundle zusammengeführt</li>
+  <li><strong>Modulübergreifende Beispiele:</strong> Beispiele demonstrieren nun Beziehungen und Referenzen über alle vier Module hinweg</li>
+</ul>
+
+<h3 id="inhaltsänderungen">Inhaltsänderungen</h3>
+
+<p><strong>Modul Diagnose:</strong></p>
+<ul>
+  <li><strong>Changed:</strong> Aktualisierte Anleitung zur Verwendung von Condition.encounter zur Ausrichtung an gematik ISiK-Empfehlungen (Informationstechnische Systeme in Krankenhäusern)</li>
+  <li><strong>Changed:</strong> Condition.encounter SOLLTE nun auf einen Encounter der Ebene "Abteilungskontakt" referenzieren</li>
+  <li><strong>Hinweis:</strong> Dies stellt eine Änderung gegenüber vorherigen Versionen dar, in denen Encounter.diagnosis die primäre Verknüpfungsmethode war</li>
+</ul>
+
+<p><strong>Modul Person:</strong></p>
+<ul>
+  <li><strong>Added:</strong> ValueSet MII VS Person ICD-10-WHO veröffentlicht unter MII-Canonical URL für Todesursachen-Codierung</li>
+</ul>
 
 <hr />
 
@@ -526,8 +565,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.base#2026.0.0 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Erstellt 
-  <span title="2025-12-10 12:07:00 +0000">
-    2025-12-10
+  <span title="2025-12-11 09:01:00 +0000">
+    2025-12-11
   </span>
 
           <br/>
