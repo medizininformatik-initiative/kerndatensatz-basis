@@ -1,4 +1,4 @@
-# Orientierungshilfe für Forschende - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# Orientierungshilfe für Forschende - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## Orientierungshilfe für Forschende
 

@@ -1,4 +1,4 @@
-# MII ImplementationGuide Resource - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII ImplementationGuide Resource - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## MII ImplementationGuide Resource
 
@@ -85,7 +85,7 @@ This publication includes IP covered under the following statements.
   "id" : "mii-ig-base",
   "language" : "en",
   "url" : "https://www.medizininformatik-initiative.de/fhir/modul-base/ImplementationGuide/mii-ig-base",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_IG_Base",
   "_name" : {
     "extension" : [
@@ -123,7 +123,7 @@ This publication includes IP covered under the following statements.
     ]
   },
   "status" : "active",
-  "date" : "2025-11-24",
+  "date" : "2025-12-10",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [
@@ -246,7 +246,7 @@ This publication includes IP covered under the following statements.
           },
           {
             "url" : "value",
-            "valueString" : "ci-build"
+            "valueString" : "Release"
           }
         ],
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
@@ -1199,7 +1199,7 @@ This publication includes IP covered under the following statements.
           },
           {
             "url" : "value",
-            "valueString" : "ci-build"
+            "valueString" : "Release"
           }
         ],
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"

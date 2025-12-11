@@ -1,4 +1,4 @@
-# MII CPS Prozedur CapabilityStatement - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII CPS Prozedur CapabilityStatement - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## CapabilityStatement: MII CPS Prozedur CapabilityStatement 
 
@@ -30,7 +30,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
     }
   ],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/CapabilityStatement/metadata",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_CPS_Prozedur_CapabilityStatement",
   "title" : "MII CPS Prozedur CapabilityStatement",
   "status" : "active",
@@ -94,7 +94,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
           "type" : "Procedure",
           "profile" : "http://hl7.org/fhir/StructureDefinition/Procedure",
           "supportedProfile" : [
-            "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.0-dev.1"
+            "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.0"
           ],
           "_supportedProfile" : [
             {

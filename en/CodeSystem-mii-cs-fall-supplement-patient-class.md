@@ -1,4 +1,4 @@
-# MII CS Fall Supplement PatientClass - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII CS Fall Supplement PatientClass - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## CodeSystem: MII CS Fall Supplement PatientClass 
 
@@ -45,12 +45,12 @@ This Code system is referenced in the definition of the following value sets:
     }
   ],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/CodeSystem/SupplementPatientClass",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_CS_Fall_SupplementPatientClass",
   "title" : "MII CS Fall Supplement PatientClass",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-12-10T11:57:53+00:00",
+  "date" : "2025-12-11T14:06:00+00:00",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [

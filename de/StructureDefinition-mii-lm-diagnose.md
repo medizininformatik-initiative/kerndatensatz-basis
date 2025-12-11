@@ -1,4 +1,4 @@
-# MII LM Diagnose - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII LM Diagnose - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## Logisches Modell: MII LM Diagnose 
 
@@ -75,7 +75,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-diagn
     }
   ],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/LogicalModel/Diagnose",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_LM_Diagnose",
   "title" : "MII LM Diagnose",
   "status" : "active",

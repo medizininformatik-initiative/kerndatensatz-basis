@@ -1,4 +1,4 @@
-# MII VS Prozedur Prozeduren [SNOMED CT] - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII VS Prozedur Prozeduren [SNOMED CT] - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## ValueSet: MII VS Prozedur Prozeduren [SNOMED CT] 
 
@@ -46,7 +46,7 @@ Enthaelt alle SNOMED CT Procedure Codes
     }
   ],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-sct",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_VS_Prozedur_Prozeduren_SNOMEDCT",
   "title" : "MII VS Prozedur Prozeduren [SNOMED CT]",
   "status" : "active",

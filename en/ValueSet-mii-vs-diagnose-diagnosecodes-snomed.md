@@ -1,4 +1,4 @@
-# MII VS Diagnose Diagnose-Codes SNOMED - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII VS Diagnose Diagnose-Codes SNOMED - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## ValueSet: MII VS Diagnose Diagnose-Codes SNOMED (Experimental) 
 
@@ -46,7 +46,7 @@ Enthaelt alle SNOMED Clinical finding, Event und Situation with explicit context
     }
   ],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/diagnoses-sct",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_VS_Diagnose_DiagnoseCodes_SNOMED",
   "title" : "MII VS Diagnose Diagnose-Codes SNOMED",
   "status" : "active",

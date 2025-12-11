@@ -1,4 +1,4 @@
-# MII EXA Prozedur Procedure Appendectomy - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII EXA Prozedur Procedure Appendectomy - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## Example Procedure: MII EXA Prozedur Procedure Appendectomy
 
@@ -10,7 +10,7 @@
 
 Language: en
 
-Profile: [MII PR Prozedur Procedureversion: null2026.0.0-dev.1)](StructureDefinition-mii-pr-prozedur-procedure.md)
+Profile: [MII PR Prozedur Procedureversion: null2026.0.0)](StructureDefinition-mii-pr-prozedur-procedure.md)
 
 Security Label: test health data (Details: ActReason code HTEST = 'test health data')
 
@@ -42,7 +42,7 @@ Security Label: test health data (Details: ActReason code HTEST = 'test health d
   "id" : "mii-exa-prozedur-procedure",
   "meta" : {
     "profile" : [
-      "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.0-dev.1"
+      "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.0"
     ],
     "security" : [
       {

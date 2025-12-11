@@ -1,4 +1,4 @@
-# MII PR Fall Kontakt mit einer Gesundheitseinrichtung - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII PR Fall Kontakt mit einer Gesundheitseinrichtung - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## Resource Profile: MII PR Fall Kontakt mit einer Gesundheitseinrichtung 
 
@@ -236,7 +236,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-fall-konta
     }
   ],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_PR_Fall_KontaktGesundheitseinrichtung",
   "title" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung",
   "_title" : {

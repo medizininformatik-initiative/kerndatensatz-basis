@@ -1,4 +1,4 @@
-# MII LM Fall - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII LM Fall - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## Logical Model: MII LM Fall 
 
@@ -46,7 +46,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-fall.csv),
     }
   ],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/LogicalModel/Fall",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_LM_Fall",
   "title" : "MII LM Fall",
   "status" : "active",

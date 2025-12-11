@@ -5,7 +5,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Changelog - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1</title>
+    <title>Changelog - MII Implementation Guide Core Dataset Base v2026.0.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -66,7 +66,7 @@
         <div id="ig-status" data-fhir="generated">
           <p><span style="font-size:12pt;font-weight:bold">MII Implementation Guide Core Dataset Base</span>
             <br/>
-            <span style="display:inline-block;">2026.0.0-dev.1 - ci-build
+            <span style="display:inline-block;">2026.0.0 - Release
 
 
 
@@ -236,7 +236,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MII Implementation Guide Core Dataset Base - Local Development build (v2026.0.0-dev.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://www.medizininformatik-initiative.de/fhir/modul-base/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MII Implementation Guide Core Dataset Base - Local Development build (v2026.0.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://www.medizininformatik-initiative.de/fhir/modul-base/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Changelog</h2>
   
 
@@ -255,31 +255,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><!-- white space is critical inside of capture --></p>
 <div class="markdown-toc">
 <ul id="markdown-toc">
-  <li><a href="#version-202501" id="markdown-toc-version-202501">Version 2025.0.1</a>    <ul>
-      <li><a href="#person-module" id="markdown-toc-person-module">Person Module</a></li>
-      <li><a href="#treatment-case-module" id="markdown-toc-treatment-case-module">Treatment Case Module</a></li>
-      <li><a href="#diagnosis-module" id="markdown-toc-diagnosis-module">Diagnosis Module</a></li>
-      <li><a href="#procedure-module" id="markdown-toc-procedure-module">Procedure Module</a></li>
-    </ul>
-  </li>
-  <li><a href="#version-202500" id="markdown-toc-version-202500">Version 2025.0.0</a>    <ul>
-      <li><a href="#person-module-1" id="markdown-toc-person-module-1">Person Module</a></li>
-      <li><a href="#treatment-case-module-1" id="markdown-toc-treatment-case-module-1">Treatment Case Module</a></li>
-      <li><a href="#diagnosis-module-1" id="markdown-toc-diagnosis-module-1">Diagnosis Module</a></li>
-      <li><a href="#procedure-module-1" id="markdown-toc-procedure-module-1">Procedure Module</a></li>
-    </ul>
-  </li>
-  <li><a href="#version-202401" id="markdown-toc-version-202401">Version 2024.0.1</a>    <ul>
-      <li><a href="#treatment-case-module-2" id="markdown-toc-treatment-case-module-2">Treatment Case Module</a></li>
-    </ul>
-  </li>
-  <li><a href="#version-202400" id="markdown-toc-version-202400">Version 2024.0.0</a>    <ul>
-      <li><a href="#person-module-2" id="markdown-toc-person-module-2">Person Module</a></li>
-      <li><a href="#treatment-case-module-3" id="markdown-toc-treatment-case-module-3">Treatment Case Module</a></li>
-      <li><a href="#diagnosis-module-2" id="markdown-toc-diagnosis-module-2">Diagnosis Module</a></li>
-      <li><a href="#procedure-module-2" id="markdown-toc-procedure-module-2">Procedure Module</a></li>
-    </ul>
-  </li>
+  <li><a href="#version-202600" id="markdown-toc-version-202600">Version 2026.0.0</a></li>
+  <li><a href="#version-202501" id="markdown-toc-version-202501">Version 2025.0.1</a></li>
+  <li><a href="#version-202500" id="markdown-toc-version-202500">Version 2025.0.0</a></li>
+  <li><a href="#version-202401" id="markdown-toc-version-202401">Version 2024.0.1</a></li>
+  <li><a href="#version-202400" id="markdown-toc-version-202400">Version 2024.0.0</a></li>
   <li><a href="#versioning-scheme" id="markdown-toc-versioning-scheme">Versioning Scheme</a></li>
 </ul>
 
@@ -288,10 +268,44 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <hr />
 
-<h2 id="version-202501">Version 2025.0.1</h2>
+<h3 id="version-202600">Version 2026.0.0</h3>
 
-<h3 id="person-module">Person Module</h3>
-<p><strong>Date:</strong> 08.10.2025</p>
+<p><strong>Date:</strong> 2026-12-11</p>
+
+<h4 id="module-consolidation">Module Consolidation</h4>
+
+<ul>
+  <li><strong>Consolidated Implementation Guide:</strong> The four base modules (Person, Treatment Case, Diagnosis, and Procedure) have been consolidated into a single Implementation Guide</li>
+  <li><strong>Package ID:</strong> <code class="language-plaintext highlighter-rouge">de.medizininformatikinitiative.kerndatensatz.base</code></li>
+</ul>
+
+<h4 id="example-consolidation">Example Consolidation</h4>
+
+<ul>
+  <li><strong>Unified Test Data Bundle:</strong> Example resources have been consolidated into a comprehensive test data bundle</li>
+  <li><strong>Cross-Module Examples:</strong> Examples now demonstrate relationships and references across all four modules</li>
+</ul>
+
+<h4 id="diagnosis-module">Diagnosis Module</h4>
+
+<ul>
+  <li><strong>Changed:</strong> Updated guidance on Condition.encounter usage to align with gematik ISiK recommendations (Information Systems in Hospitals)</li>
+  <li><strong>Changed:</strong> Condition.encounter SHOULD now reference an Encounter at the "Abteilungskontakt" (department contact) level</li>
+  <li><strong>Note:</strong> This represents a change from previous versions where Encounter.diagnosis was the primary linkage method</li>
+</ul>
+
+<h4 id="person-module">Person Module</h4>
+
+<ul>
+  <li><strong>Added:</strong> ValueSet MII VS Person ICD-10-WHO published under MII Canonical URL for causes of death coding</li>
+</ul>
+
+<hr />
+
+<h3 id="version-202501">Version 2025.0.1</h3>
+
+<h4 id="person-module-1">Person Module</h4>
+<p><strong>Date:</strong> 2025-10-08</p>
 
 <ul>
   <li><strong>Added</strong>: Profile <a href="StructureDefinition-mii-pr-person-patient-pseudonymisiert.html">Patient Pseudonymized</a> now contains an optional identifier for masked health insurance ID under <code class="language-plaintext highlighter-rouge">Patient.identifier</code></li>
@@ -299,15 +313,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Changed</strong>: Dependency updated to <a href="https://simplifier.net/packages/de.basisprofil.r4/1.5.4">de.basisprofil.r4 1.5.4</a>. This release of the FHIR Base Profiles contains a fix for the kvid-2 invariant applied to <code class="language-plaintext highlighter-rouge">Patient.identifier:versichertenId.type</code> in the Patient profile</li>
 </ul>
 
-<h3 id="treatment-case-module">Treatment Case Module</h3>
-<p><strong>Date:</strong> 28.10.2025</p>
+<h4 id="treatment-case-module">Treatment Case Module</h4>
+<p><strong>Date:</strong> 2025-10-28</p>
 
 <ul>
   <li><strong>Changed</strong>: <code class="language-plaintext highlighter-rouge">Encounter.location</code> now allows specification of former encounter locations. See: https://github.com/medizininformatik-initiative/kerndatensatzmodul-fall/issues/79</li>
 </ul>
 
-<h3 id="diagnosis-module">Diagnosis Module</h3>
-<p><strong>Date:</strong> 20.10.2025</p>
+<h4 id="diagnosis-module-1">Diagnosis Module</h4>
+<p><strong>Date:</strong> 2025-10-20</p>
 
 <ul>
   <li><strong>Added</strong>: <code class="language-plaintext highlighter-rouge">Condition.onsetAge</code> - The data type <code class="language-plaintext highlighter-rouge">Age</code> can now be used under <code class="language-plaintext highlighter-rouge">Condition.onset[x]</code>. See: https://github.com/medizininformatik-initiative/kerndatensatzmodul-diagnose/issues/78</li>
@@ -316,8 +330,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Updated</strong>: CapabilityStatement now contains requirement documentation for search parameters <code class="language-plaintext highlighter-rouge">_count</code> and <code class="language-plaintext highlighter-rouge">_summary</code></li>
 </ul>
 
-<h3 id="procedure-module">Procedure Module</h3>
-<p><strong>Date:</strong> 22.10.2025</p>
+<h4 id="procedure-module">Procedure Module</h4>
+<p><strong>Date:</strong> 2025-10-22</p>
 
 <ul>
   <li><strong>Added</strong>: <code class="language-plaintext highlighter-rouge">Procedure.bodySite</code> - Now contains optional SNOMED-Coding slice, adopting the modeling from the Diagnosis module's <code class="language-plaintext highlighter-rouge">Condition.bodySite</code></li>
@@ -327,10 +341,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <hr />
 
-<h2 id="version-202500">Version 2025.0.0</h2>
+<h3 id="version-202500">Version 2025.0.0</h3>
 
-<h3 id="person-module-1">Person Module</h3>
-<p><strong>Date:</strong> 06.12.2024</p>
+<h4 id="person-module-2">Person Module</h4>
+<p><strong>Date:</strong> 2024-12-06</p>
 
 <ul>
   <li><strong>Updated</strong>: Dependency on de.basisprofil.r4 updated to version 1.5.0
@@ -344,8 +358,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Enhanced</strong>: Profiles contain additional descriptions and translations for implementers and the Research Data Portal for Health (FDPG)</li>
 </ul>
 
-<h3 id="treatment-case-module-1">Treatment Case Module</h3>
-<p><strong>Date:</strong> 10.12.2024</p>
+<h4 id="treatment-case-module-1">Treatment Case Module</h4>
+<p><strong>Date:</strong> 2024-12-10</p>
 
 <ul>
   <li><strong>Updated</strong>: Dependency on de.basisprofil.r4 updated to version 1.5.0. This change has no impact on implementations of this module</li>
@@ -361,8 +375,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Removed</strong>: MustSupport labels removed from <code class="language-plaintext highlighter-rouge">Encounter.location</code> and <code class="language-plaintext highlighter-rouge">Encounter.serviceProvider</code></li>
 </ul>
 
-<h3 id="diagnosis-module-1">Diagnosis Module</h3>
-<p><strong>Date:</strong> 09.12.2024</p>
+<h4 id="diagnosis-module-2">Diagnosis Module</h4>
+<p><strong>Date:</strong> 2024-12-09</p>
 
 <ul>
   <li><strong>Updated</strong>: Dependency on de.basisprofil.r4 updated to <a href="https://simplifier.net/packages/de.basisprofil.r4/1.5.0">version 1.5.0</a>. This change has no impact on implementations of this module</li>
@@ -373,8 +387,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Added</strong>: <code class="language-plaintext highlighter-rouge">Condition.verificationStatus</code> now has MustSupport label. See: https://github.com/medizininformatik-initiative/kerndatensatzmodul-diagnose/issues/64</li>
 </ul>
 
-<h3 id="procedure-module-1">Procedure Module</h3>
-<p><strong>Date:</strong> 09.12.2024</p>
+<h4 id="procedure-module-1">Procedure Module</h4>
+<p><strong>Date:</strong> 2024-12-09</p>
 
 <ul>
   <li><strong>Updated</strong>: Dependency on de.basisprofil.r4 updated to <a href="https://simplifier.net/packages/de.basisprofil.r4/1.5.0">version 1.5.0</a>. This change has no impact on implementations of this module</li>
@@ -386,10 +400,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <hr />
 
-<h2 id="version-202401">Version 2024.0.1</h2>
+<h3 id="version-202401">Version 2024.0.1</h3>
 
-<h3 id="treatment-case-module-2">Treatment Case Module</h3>
-<p><strong>Date:</strong> 17.04.2024</p>
+<h4 id="treatment-case-module-2">Treatment Case Module</h4>
+<p><strong>Date:</strong> 2024-04-17</p>
 
 <ul>
   <li><strong>Fixed</strong>: Correction of version parameters in conformance resources. In the previously published package, <code class="language-plaintext highlighter-rouge">StructureDefinition.version</code> did not uniformly match the package version. See: https://github.com/medizininformatik-initiative/kerndatensatzmodul-fall/issues/51</li>
@@ -397,12 +411,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <hr />
 
-<h2 id="version-202400">Version 2024.0.0</h2>
+<h3 id="version-202400">Version 2024.0.0</h3>
 
 <p>All modules adopted <a href="https://calver.org/">Calendar Versioning (CalVer)</a> following the YYYY.MINOR.PATCH scheme, establishing an annual release cycle.</p>
 
-<h3 id="person-module-2">Person Module</h3>
-<p><strong>Date:</strong> 16.04.2024</p>
+<h4 id="person-module-3">Person Module</h4>
+<p><strong>Date:</strong> 2024-04-16</p>
 
 <ul>
   <li><strong>Changed</strong>: Versioning scheme changed to <a href="https://calver.org/">Calendar Versioning (CalVer)</a> with schema YYYY.MINOR.PATCH</li>
@@ -420,8 +434,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Changed</strong>: Data types in the logical model were adjusted to match the data types of elements in the FHIR profile to which they are mapped</li>
 </ul>
 
-<h3 id="treatment-case-module-3">Treatment Case Module</h3>
-<p><strong>Date:</strong> 28.03.2024</p>
+<h4 id="treatment-case-module-3">Treatment Case Module</h4>
+<p><strong>Date:</strong> 2024-03-28</p>
 
 <ul>
   <li><strong>Changed</strong>: Versioning scheme changed to <a href="https://calver.org/">Calendar Versioning (CalVer)</a></li>
@@ -439,8 +453,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </li>
 </ul>
 
-<h3 id="diagnosis-module-2">Diagnosis Module</h3>
-<p><strong>Date:</strong> 16.04.2024</p>
+<h4 id="diagnosis-module-3">Diagnosis Module</h4>
+<p><strong>Date:</strong> 2024-04-16</p>
 
 <ul>
   <li><strong>Changed</strong>: Versioning scheme changed to <a href="https://calver.org/">Calendar Versioning (CalVer)</a></li>
@@ -462,8 +476,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Added</strong>: Module was extended with SearchParameter resources enabling search for ICD-10-GM codes in combination with multiple coding indicators, laterality and diagnostic certainty</li>
 </ul>
 
-<h3 id="procedure-module-2">Procedure Module</h3>
-<p><strong>Date:</strong> 16.04.2024</p>
+<h4 id="procedure-module-2">Procedure Module</h4>
+<p><strong>Date:</strong> 2024-04-16</p>
 
 <ul>
   <li><strong>Changed</strong>: Versioning scheme changed to <a href="https://calver.org/">Calendar Versioning (CalVer)</a></li>
@@ -481,7 +495,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <hr />
 
-<h2 id="versioning-scheme">Versioning Scheme</h2>
+<h3 id="versioning-scheme">Versioning Scheme</h3>
 
 <p>Starting with version 2024.0.0, all modules use <a href="https://calver.org/">Calendar Versioning (CalVer)</a> following the YYYY.MINOR.PATCH scheme:</p>
 
@@ -517,10 +531,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
-          Package de.medizininformatikinitiative.kerndatensatz.base#2026.0.0-dev.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Package de.medizininformatikinitiative.kerndatensatz.base#2026.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2025-12-10 11:57:00 +0000">
-    2025-12-10
+  <span title="2025-12-11 14:06:00 +0000">
+    2025-12-11
   </span>
 
           <br/>

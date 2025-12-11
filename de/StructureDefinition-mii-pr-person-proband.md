@@ -1,4 +1,4 @@
-# MII PR Person Proband - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII PR Person Proband - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## Ressourcenprofil: MII PR Person Proband 
 
@@ -90,7 +90,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-perso
   "resourceType" : "StructureDefinition",
   "id" : "mii-pr-person-proband",
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/ResearchSubject",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_PR_Person_Proband",
   "title" : "MII PR Person Proband",
   "status" : "retired",

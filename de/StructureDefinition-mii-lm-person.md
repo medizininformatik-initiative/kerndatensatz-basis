@@ -1,4 +1,4 @@
-# MII LM Person - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII LM Person - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## Logisches Modell: MII LM Person 
 
@@ -75,7 +75,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-perso
     }
   ],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/LogicalModel/Person",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_LM_Person",
   "title" : "MII LM Person",
   "status" : "active",

@@ -1,4 +1,4 @@
-# MII EXA Diagnose Condition Contusion Elbow - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII EXA Diagnose Condition Contusion Elbow - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## Beispiel Condition: MII EXA Diagnose Condition Contusion Elbow
 
@@ -10,7 +10,7 @@
 
 Language: en
 
-Profile: [MII PR Diagnose Conditionversion: null2026.0.0-dev.1)](StructureDefinition-mii-pr-diagnose-condition.md)
+Profile: [MII PR Diagnose Conditionversion: null2026.0.0)](StructureDefinition-mii-pr-diagnose-condition.md)
 
 Security Label: test health data (Details: ActReason code HTEST = 'test health data')
 
@@ -40,7 +40,7 @@ Security Label: test health data (Details: ActReason code HTEST = 'test health d
   "id" : "mii-exa-diagnose-condition-elbow-contusion",
   "meta" : {
     "profile" : [
-      "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0-dev.1"
+      "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0"
     ],
     "security" : [
       {

@@ -1,4 +1,4 @@
-# MII PR Diagnose Condition - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII PR Diagnose Condition - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## Ressourcenprofil: MII PR Diagnose Condition 
 
@@ -244,7 +244,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-diagn
     }
   ],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_PR_Diagnose_Condition",
   "title" : "MII PR Diagnose Condition",
   "_title" : {

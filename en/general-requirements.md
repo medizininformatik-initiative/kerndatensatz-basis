@@ -1,4 +1,4 @@
-# General Requirements - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# General Requirements - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## General Requirements
 

@@ -1,4 +1,4 @@
-# MII VS Diagnose Orphanet - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII VS Diagnose Orphanet - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## ValueSet: MII VS Diagnose Orphanet (Experimentell) 
 
@@ -49,7 +49,7 @@ Enthaelt alle Orpha-Kennnummern (ORPHAcodes)
     }
   ],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-orphanet",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_VS_Diagnose_Orphanet",
   "title" : "MII VS Diagnose Orphanet",
   "status" : "active",

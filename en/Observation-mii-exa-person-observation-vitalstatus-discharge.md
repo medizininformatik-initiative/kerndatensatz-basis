@@ -1,4 +1,4 @@
-# MII EXA Person Observation Vitalstatus Discharge - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII EXA Person Observation Vitalstatus Discharge - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## Example Observation: MII EXA Person Observation Vitalstatus Discharge
 
@@ -10,7 +10,7 @@
 
 Language: en
 
-Profile: [MII PR Person Vitalstatusversion: null2026.0.0-dev.1)](StructureDefinition-mii-pr-person-vitalstatus.md)
+Profile: [MII PR Person Vitalstatusversion: null2026.0.0)](StructureDefinition-mii-pr-person-vitalstatus.md)
 
 Security Label: test health data (Details: ActReason code HTEST = 'test health data')
 
@@ -38,7 +38,7 @@ Security Label: test health data (Details: ActReason code HTEST = 'test health d
   "id" : "mii-exa-person-observation-vitalstatus-discharge",
   "meta" : {
     "profile" : [
-      "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus|2026.0.0-dev.1"
+      "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus|2026.0.0"
     ],
     "security" : [
       {

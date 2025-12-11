@@ -1,4 +1,4 @@
-# MII VS Diagnose Alpha-ID - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII VS Diagnose Alpha-ID - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## ValueSet: MII VS Diagnose Alpha-ID 
 
@@ -49,7 +49,7 @@ Enthaelt Alpha-ID-Codes der Versionen 2018 bis 2025
     }
   ],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-alphaid",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_VS_Diagnose_AlphaID",
   "title" : "MII VS Diagnose Alpha-ID",
   "status" : "active",

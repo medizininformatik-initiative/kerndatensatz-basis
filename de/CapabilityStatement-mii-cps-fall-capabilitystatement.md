@@ -1,4 +1,4 @@
-# MII CPS Fall CapabilityStatement - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII CPS Fall CapabilityStatement - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## CapabilityStatement: MII CPS Fall CapabilityStatement 
 
@@ -30,7 +30,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
     }
   ],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/CapabilityStatement/metadata",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_CPS_Fall_CapabilityStatement",
   "title" : "MII CPS Fall CapabilityStatement",
   "status" : "active",
@@ -94,7 +94,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
           "type" : "Encounter",
           "profile" : "http://hl7.org/fhir/StructureDefinition/Encounter",
           "supportedProfile" : [
-            "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2025.0.1|2026.0.0-dev.1"
+            "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2025.0.1|2026.0.0"
           ],
           "_supportedProfile" : [
             {

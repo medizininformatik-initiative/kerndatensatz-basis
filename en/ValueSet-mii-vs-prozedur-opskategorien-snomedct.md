@@ -1,4 +1,4 @@
-# MII VS Prozedur OPS Kategorien [SNOMED CT] - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII VS Prozedur OPS Kategorien [SNOMED CT] - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## ValueSet: MII VS Prozedur OPS Kategorien [SNOMED CT] 
 
@@ -46,7 +46,7 @@ Enthaelt alle SNOMED CT Codes für ein Mapping der OPS Klassentitel
     }
   ],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-category-sct",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_VS_Prozedur_OpsKategorien_SNOMEDCT",
   "title" : "MII VS Prozedur OPS Kategorien [SNOMED CT]",
   "status" : "active",
