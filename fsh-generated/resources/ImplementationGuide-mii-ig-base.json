@@ -1,0 +1,897 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "mii-ig-base",
+  "url": "https://www.medizininformatik-initiative.de/fhir/modul-base/ImplementationGuide/mii-ig-base",
+  "version": "2026.0.0",
+  "name": "MII_IG_Base",
+  "title": "MII Implementation Guide Core Dataset Base",
+  "status": "active",
+  "date": "2025-12-10",
+  "publisher": "Medical Informatics Initiative (MII)",
+  "contact": [
+    {
+      "name": "Medical Informatics Initiative (MII)",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de/en"
+        }
+      ]
+    }
+  ],
+  "description": "Implementation Guide for the Core Dataset Base Modules Person, Diagnosis, Procedure, and Treatment Case",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "DE",
+          "system": "urn:iso:std:iso:3166",
+          "display": "Germany"
+        }
+      ]
+    }
+  ],
+  "packageId": "de.medizininformatikinitiative.kerndatensatz.base",
+  "license": "CC-BY-4.0",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "dependsOn": [
+    {
+      "packageId": "de.basisprofil.r4",
+      "version": "1.5.x",
+      "uri": "http://fhir.org/packages/de.basisprofil.r4/ImplementationGuide/de.basisprofil.r4",
+      "id": "de_basisprofil_r4"
+    },
+    {
+      "packageId": "de.medizininformatikinitiative.kerndatensatz.meta",
+      "version": "2026.0.x",
+      "uri": "https://www.medizininformatik-initiative.de/fhir/modul-meta/ImplementationGuide/mii-ig-meta",
+      "id": "de_medizininformatikinitiative_kerndatensatz_meta"
+    }
+  ],
+  "definition": {
+    "resource": [
+      {
+        "reference": {
+          "reference": "CapabilityStatement/mii-cps-diagnose-capabilitystatement"
+        },
+        "name": "MII CPS Diagnose CapabilityStatement",
+        "description": "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein konformes System unterstützen muss, um das Modul Diagnose der Medizininformatik Initiative zu implementieren.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/mii-cps-fall-capabilitystatement"
+        },
+        "name": "MII CPS Fall CapabilityStatement",
+        "description": "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein konformes System unterstützen muss, um das Modul Fall der Medizininformatik Initiative zu implementieren.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/mii-cps-person-capabilitystatement"
+        },
+        "name": "MII CPS Person CapabilityStatement",
+        "description": "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein konformes System unterstützen muss um das Modul Person der Medizininformatik Initiative zu implementieren.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/mii-cps-prozedur-capabilitystatement"
+        },
+        "name": "MII CPS Prozedur CapabilityStatement",
+        "description": "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein konformes System unterstützen muss um das Modul Prozedur der Medizininformatik Initiative zu implementieren.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mii-cs-diagnose-lebensphase-supplement-snomed"
+        },
+        "name": "MII CS Diagnose Lebensphase Supplement SNOMED",
+        "description": "CodeSystem Supplement mit Definitionen zu den SNOMED-Konzepten für Lebensphasen.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mii-cs-fall-supplement-act-encounter-code"
+        },
+        "name": "MII CS Fall Supplement ActEncounterCode",
+        "description": "CodeSystem Supplement für ActEncounterCode",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mii-cs-fall-supplement-patient-class"
+        },
+        "name": "MII CS Fall Supplement PatientClass",
+        "description": "CodeSystem Supplement für v2-0004",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mii-cs-person-vitalstatus"
+        },
+        "name": "MII CS Person Vitalstatus",
+        "description": "Vitalstatus des Patienten",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-ex-fall-planned-end-date"
+        },
+        "name": "MII EX Fall Planned End Date",
+        "description": "The planned end date/time (or discharge date) of the encounter",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-ex-fall-planned-start-date"
+        },
+        "name": "MII EX Fall Planned Start Date",
+        "description": "The planned start date/time (or admission date) of the encounter",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-ex-prozedur-durchfuehrungsabsicht"
+        },
+        "name": "MII EX Prozedur Durchführungsabsicht",
+        "description": "Intention der Prozedur",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Bundle/mii-exa-base-test-data-bundle-1"
+        },
+        "name": "MII EXA Base Test Data Bundle 1",
+        "description": "Bundle: collection of example scenario resources as transaction bundle",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Condition/mii-exa-diagnose-appendicitis"
+        },
+        "name": "MII EXA Diagnose Condition Appendicitis",
+        "description": "Condition: Acute appendicitis diagnosis as admission diagnosis",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose"
+      },
+      {
+        "reference": {
+          "reference": "Condition/mii-exa-diagnose-condition-elbow-contusion"
+        },
+        "name": "MII EXA Diagnose Condition Contusion Elbow",
+        "description": "Condition: Elbow contusion diagnosis",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose"
+      },
+      {
+        "reference": {
+          "reference": "Condition/mii-exa-diagnose-mehrfachcodierung-primaercode"
+        },
+        "name": "MII EXA Diagnose Mehrfachcodierung Primaercode",
+        "description": "Condition: Primary code (†) - gonococcal bursitis etiology",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose"
+      },
+      {
+        "reference": {
+          "reference": "Condition/mii-exa-diagnose-mehrfachcodierung-sekundaercode"
+        },
+        "name": "MII EXA Diagnose Mehrfachcodierung Sekundaercode",
+        "description": "Condition: Secondary code (*) - bursitis manifestation",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose"
+      },
+      {
+        "reference": {
+          "reference": "Condition/mii-exa-diagnose-condition-multiple-codings"
+        },
+        "name": "MII EXA Diagnose Multiple Codings",
+        "description": "Condition: Multiple coding systems - ICD-10-GM, Alpha-ID, and Orphanet",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2"
+        },
+        "name": "MII EXA Fall Kontakt Gesundheitseinrichtung (Abteilungskontakt Chirurgie A2E)",
+        "description": "Encounter: Department-level encounter (Abteilungskontakt) for surgical care",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7"
+        },
+        "name": "MII EXA Fall Kontakt Gesundheitseinrichtung (Abteilungskontakt Innere Medizin)",
+        "description": "Encounter: Department-level encounter (Abteilungskontakt) for Internal Medicine ward care",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-9"
+        },
+        "name": "MII EXA Fall Kontakt Gesundheitseinrichtung (Abteilungskontakt Notaufnahme A1E)",
+        "description": "Encounter: Emergency department encounter as entry point for hospital admission",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-8"
+        },
+        "name": "MII EXA Fall Kontakt Gesundheitseinrichtung (Ambulanter Kontakt)",
+        "description": "Encounter: Example demonstrating an outpatient rheumatology encounter for initial bursitis diagnosis",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1"
+        },
+        "name": "MII EXA Fall Kontakt Gesundheitseinrichtung (Einrichtungskontakt E0)",
+        "description": "Encounter: Facility-level encounter (Einrichtungskontakt) for entire hospital stay",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-3"
+        },
+        "name": "MII EXA Fall Kontakt Gesundheitseinrichtung (Planned Encounter)",
+        "description": "Encounter: Planned encounter with future dates",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/mii-exa-fall-kontakt-in-progress-status"
+        },
+        "name": "MII EXA Fall Kontakt Gesundheitseinrichtung (Status in-progress)",
+        "description": "Encounter: Status 'in-progress'",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/mii-exa-fall-kontakt-onleave-status"
+        },
+        "name": "MII EXA Fall Kontakt Gesundheitseinrichtung (Status onleave)",
+        "description": "Encounter: Status 'onleave'",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/mii-exa-fall-kontakt-unknown-status"
+        },
+        "name": "MII EXA Fall Kontakt Gesundheitseinrichtung (Status unknown)",
+        "description": "Encounter: Status 'unknown'",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-11"
+        },
+        "name": "MII EXA Fall Kontakt Gesundheitseinrichtung (Versorgungsstellenkontakt ED Treatment Room VS1)",
+        "description": "Encounter: Care unit encounter (Versorgungsstellenkontakt) for ED treatment room",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5"
+        },
+        "name": "MII EXA Fall Kontakt Gesundheitseinrichtung (Versorgungsstellenkontakt OR VS3)",
+        "description": "Encounter: Care unit encounter (Versorgungsstellenkontakt) for operating room",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6"
+        },
+        "name": "MII EXA Fall Kontakt Gesundheitseinrichtung (Versorgungsstellenkontakt PACU VS4)",
+        "description": "Encounter: Care unit encounter (Versorgungsstellenkontakt) for post-anesthesia care unit",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4"
+        },
+        "name": "MII EXA Fall Kontakt Gesundheitseinrichtung (Versorgungsstellenkontakt Radiology VS2)",
+        "description": "Encounter: Care unit encounter (Versorgungsstellenkontakt) for radiology CT procedure",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10"
+        },
+        "name": "MII EXA Fall Kontakt Gesundheitseinrichtung (Versorgungsstellenkontakt Surgical Ward VS5)",
+        "description": "Encounter: Care unit encounter (Versorgungsstellenkontakt) for surgical ward post-operative care",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung"
+      },
+      {
+        "reference": {
+          "reference": "Condition/mii-exa-person-condition-todesursache"
+        },
+        "name": "MII EXA Person Condition (Todesursache)",
+        "description": "Condition: Cause of Death (Todesursache)",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Todesursache"
+      },
+      {
+        "reference": {
+          "reference": "Observation/mii-exa-person-observation-vitalstatus"
+        },
+        "name": "MII EXA Person Observation Vitalstatus",
+        "description": "Observation: Vital status at hospital admission",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus"
+      },
+      {
+        "reference": {
+          "reference": "Observation/mii-exa-person-observation-vitalstatus-discharge"
+        },
+        "name": "MII EXA Person Observation Vitalstatus Discharge",
+        "description": "Observation: Vital status observation at hospital discharge",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus"
+      },
+      {
+        "reference": {
+          "reference": "Patient/mii-exa-person-patient-1"
+        },
+        "name": "MII EXA Person Patient",
+        "description": "Patient: with insurance identifier, name and address",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient"
+      },
+      {
+        "reference": {
+          "reference": "Patient/mii-exa-person-patient-pseudonymisiert"
+        },
+        "name": "MII EXA Person Patient Pseudonymisiert",
+        "description": "Patient: with pseudonym and masked insurance identifier (maskierter Versichertenidentifer)",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert"
+      },
+      {
+        "reference": {
+          "reference": "Procedure/mii-exa-prozedur-procedure"
+        },
+        "name": "MII EXA Prozedur Procedure Appendectomy",
+        "description": "Procedure: Surgical procedure (appendectomy)",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure"
+      },
+      {
+        "reference": {
+          "reference": "Procedure/mii-exa-prozedur-imaging"
+        },
+        "name": "MII EXA Prozedur Procedure Imaging CT Abdomen",
+        "description": "Procedure: Diagnostic imaging procedure (CT abdomen) for appendicitis workup",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure"
+      },
+      {
+        "reference": {
+          "reference": "Procedure/mii-exa-prozedur-procedure-2"
+        },
+        "name": "MII EXA Prozedur Procedure Physiotherapy",
+        "description": "Procedure: Physiotherapy procedure for bursitis treatment",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-lm-diagnose"
+        },
+        "name": "MII LM Diagnose",
+        "description": "Logische Repräsentation des Basismoduls Diagnose",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-lm-fall"
+        },
+        "name": "MII LM Fall",
+        "description": "Logische Repräsentation des Basismoduls Fall",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-lm-person"
+        },
+        "name": "MII LM Person",
+        "description": "Logische Repräsentation des Basismoduls Person",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-lm-prozedur"
+        },
+        "name": "MII LM Prozedur",
+        "description": "Logische Repräsentation des Basismoduls Prozedur",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-diagnose-condition"
+        },
+        "name": "MII PR Diagnose Condition",
+        "description": "Dieses Profil beschreibt eine Diagnose der Medizininformatik Initiative",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-fall-kontakt-gesundheitseinrichtung"
+        },
+        "name": "MII PR Fall Kontakt mit einer Gesundheitseinrichtung",
+        "description": "Kontakt zu einer Einrichtung, Abteilung oder Versorgungsstelle",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-person-patient"
+        },
+        "name": "MII PR Person Patient",
+        "description": "Dieses Profil beschreibt eine Patient*in in der Medizininformatik-Initiative.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-person-patient-pseudonymisiert"
+        },
+        "name": "MII PR Person Patient (Pseudonymisiert)",
+        "description": "Dieses Profil beschreibt eine*n pseudonymisierte*n Patient*in in der Medizininformatik-Initiative.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-person-proband"
+        },
+        "name": "MII PR Person Proband",
+        "description": "Dieses Profil beschreibt eine Proband*in in der Medizininformatik-Initiative.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-person-todesursache"
+        },
+        "name": "MII PR Person Todesursache",
+        "description": "Dieses Profil beschreibt den Todesursache der Patient*in als Element des Kerndatensatzes Medizininformatik-Initiative",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-person-vitalstatus"
+        },
+        "name": "MII PR Person Vitalstatus",
+        "description": "Dieses Profil beschreibt den Vitalstatus der Patient*in in der Medizininformatik-Initiative.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-prozedur-procedure"
+        },
+        "name": "MII PR Prozedur Procedure",
+        "description": "Dieses Profil beschreibt eine Prozedur in der Medizininformatik-Initiative.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-diagnose-alphaid"
+        },
+        "name": "MII VS Diagnose Alpha-ID",
+        "description": "Enthaelt Alpha-ID-Codes der Versionen 2018 bis 2025",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-diagnose-bodystructure-snomed"
+        },
+        "name": "MII VS Diagnose BodyStructure SNOMED",
+        "description": "Enthaelt alle SNOMED Body structure codes",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-diagnose-diagnosecodes-snomed"
+        },
+        "name": "MII VS Diagnose Diagnose-Codes SNOMED",
+        "description": "Enthaelt alle SNOMED Clinical finding, Event und Situation with explicit context codes",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-diagnose-icd10gm"
+        },
+        "name": "MII VS Diagnose ICD-10-GM",
+        "description": "Enthaelt ICD-10-GM-Codes der Versionen 2009 bis 2025",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-diagnose-orphanet"
+        },
+        "name": "MII VS Diagnose Orphanet",
+        "description": "Enthaelt alle Orpha-Kennnummern (ORPHAcodes)",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-fall-diagnosis-use"
+        },
+        "name": "MII VS Fall Diagnosis Use",
+        "description": "Diagnosetyp",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-fall-identifier-type-codes"
+        },
+        "name": "MII VS Fall Identifier Type Codes",
+        "description": "A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-fall-location-physical-type"
+        },
+        "name": "MII VS Fall Location Physical Type",
+        "description": "A coded type for the physical type of the location.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-person-icd10who"
+        },
+        "name": "MII VS Person ICD-10-WHO",
+        "description": "MII VS Person ICD-10-WHO",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-person-vitalstatus"
+        },
+        "name": "MII VS Person Vitalstatus",
+        "description": "Enthält alle Werte, die den Vitalstatus einer Person beschreiben.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-prozedur-durchfuehrungsabsicht-snomedct"
+        },
+        "name": "MII VS Prozedur Durchführungsabsicht [SNOMED CT]",
+        "description": "Durchführungsabsicht / Intention mit der Prozedur ausgeführt wird",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-prozedur-ops"
+        },
+        "name": "MII VS Prozedur OPS",
+        "description": "Enthaelt OPS-Codes der Versionen 2010 bis 2025",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-prozedur-opskategorien-snomedct"
+        },
+        "name": "MII VS Prozedur OPS Kategorien [SNOMED CT]",
+        "description": "Enthaelt alle SNOMED CT Codes für ein Mapping der OPS Klassentitel",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-prozedur-prozeduren-snomedct"
+        },
+        "name": "MII VS Prozedur Prozeduren [SNOMED CT]",
+        "description": "Enthaelt alle SNOMED CT Procedure Codes",
+        "exampleBoolean": false
+      }
+    ],
+    "page": {
+      "nameUrl": "toc.html",
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "nameUrl": "index.html",
+          "title": "Home",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "guidance.html",
+          "title": "Guidance",
+          "generation": "markdown",
+          "page": [
+            {
+              "nameUrl": "researcher-guidance.html",
+              "title": "Guidance for Researchers",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "implementer-guidance.html",
+              "title": "Guidance for Implementers",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "datasets-and-descriptions.html",
+              "title": "Datasets and Descriptions",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "uml-diagrams.html",
+              "title": "UML Diagrams",
+              "generation": "markdown"
+            }
+          ]
+        },
+        {
+          "nameUrl": "conformance.html",
+          "title": "Conformance",
+          "generation": "markdown",
+          "page": [
+            {
+              "nameUrl": "general-requirements.html",
+              "title": "General Requirements",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "must-support.html",
+              "title": "Must Support",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "missing-data.html",
+              "title": "Handling Missing Data",
+              "generation": "markdown"
+            }
+          ]
+        },
+        {
+          "nameUrl": "profiles-and-extensions.html",
+          "title": "Profiles and Extensions",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "search-parameters-and-operations.html",
+          "title": "Search Parameters and Operations",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "terminology.html",
+          "title": "Terminology",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "capability-statements.html",
+          "title": "Capability Statements",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "logical-models.html",
+          "title": "Logical Models",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "examples.html",
+          "title": "Examples",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "downloads.html",
+          "title": "Downloads",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "version-history.html",
+          "title": "Versioning",
+          "generation": "markdown",
+          "page": [
+            {
+              "nameUrl": "changes.html",
+              "title": "Changelog",
+              "generation": "markdown"
+            }
+          ]
+        },
+        {
+          "nameUrl": "ImplementationGuide-mii-ig-base.html",
+          "title": "MII ImplementationGuide Resource",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "translationinfo.html",
+          "title": "Translation Information",
+          "generation": "markdown"
+        }
+      ]
+    },
+    "parameter": [
+      {
+        "code": "copyrightyear",
+        "value": "2019+"
+      },
+      {
+        "code": "releaselabel",
+        "value": "Release"
+      },
+      {
+        "code": "path-resource",
+        "value": "input/predefined-resources"
+      },
+      {
+        "code": "path-pages",
+        "value": "input/intro-notes"
+      },
+      {
+        "code": "i18n-default-lang",
+        "value": "en"
+      },
+      {
+        "code": "i18n-lang",
+        "value": "de"
+      },
+      {
+        "code": "translation-sources",
+        "value": "input/translations/de"
+      },
+      {
+        "code": "excludexml",
+        "value": "false"
+      },
+      {
+        "code": "excludejson",
+        "value": "false"
+      },
+      {
+        "code": "excludettl",
+        "value": "true"
+      },
+      {
+        "code": "excludemap",
+        "value": "false"
+      },
+      {
+        "code": "version-comparison-master",
+        "value": "{current}"
+      },
+      {
+        "code": "version-comparison",
+        "value": "{current}"
+      },
+      {
+        "code": "special-url",
+        "value": "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/CapabilityStatement/metadata"
+      },
+      {
+        "code": "special-url",
+        "value": "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/CapabilityStatement/metadata"
+      },
+      {
+        "code": "special-url",
+        "value": "https://www.medizininformatik-initiative.de/fhir/core/modul-person/CapabilityStatement/metadata"
+      },
+      {
+        "code": "special-url",
+        "value": "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/CapabilityStatement/metadata"
+      },
+      {
+        "code": "special-url",
+        "value": "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/CodeSystem/SupplementActEncounterCode"
+      },
+      {
+        "code": "special-url",
+        "value": "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/CodeSystem/SupplementPatientClass"
+      },
+      {
+        "code": "special-url",
+        "value": "https://www.medizininformatik-initiative.de/fhir/core/modul-person/CodeSystem/Vitalstatus"
+      },
+      {
+        "code": "special-url",
+        "value": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedEndDate"
+      },
+      {
+        "code": "special-url",
+        "value": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate"
+      },
+      {
+        "code": "special-url",
+        "value": "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Durchfuehrungsabsicht"
+      },
+      {
+        "code": "special-url",
+        "value": "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/LogicalModel/Diagnose"
+      },
+      {
+        "code": "special-url",
+        "value": "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/LogicalModel/Fall"
+      },
+      {
+        "code": "special-url",
+        "value": "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/LogicalModel/Prozedur"
+      },
+      {
+        "code": "special-url",
+        "value": "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose"
+      },
+      {
+        "code": "special-url",
+        "value": "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung"
+      },
+      {
+        "code": "special-url",
+        "value": "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient"
+      },
+      {
+        "code": "special-url",
+        "value": "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert"
+      },
+      {
+        "code": "special-url",
+        "value": "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/ResearchSubject"
+      },
+      {
+        "code": "special-url",
+        "value": "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Todesursache"
+      },
+      {
+        "code": "special-url",
+        "value": "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus"
+      },
+      {
+        "code": "special-url",
+        "value": "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure"
+      },
+      {
+        "code": "special-url",
+        "value": "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-alphaid"
+      },
+      {
+        "code": "special-url",
+        "value": "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-bodystructure-snomed"
+      },
+      {
+        "code": "special-url",
+        "value": "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/diagnoses-sct"
+      },
+      {
+        "code": "special-url",
+        "value": "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-icd10gm"
+      },
+      {
+        "code": "special-url",
+        "value": "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-orphanet"
+      },
+      {
+        "code": "special-url",
+        "value": "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/CodeSystem/mii-cs-diagnose-lebensphase-supplement-snomed"
+      },
+      {
+        "code": "special-url",
+        "value": "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/mii-vs-fall-diagnosis-use"
+      },
+      {
+        "code": "special-url",
+        "value": "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/identifier-type-codes"
+      },
+      {
+        "code": "special-url",
+        "value": "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/location-physical-type"
+      },
+      {
+        "code": "special-url",
+        "value": "https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/Vitalstatus"
+      },
+      {
+        "code": "special-url",
+        "value": "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-intend"
+      },
+      {
+        "code": "special-url",
+        "value": "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/mii-vs-prozedur-ops"
+      },
+      {
+        "code": "special-url",
+        "value": "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-category-sct"
+      },
+      {
+        "code": "special-url",
+        "value": "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-sct"
+      },
+      {
+        "code": "special-url",
+        "value": "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/LogicalModel/Person"
+      },
+      {
+        "code": "special-url",
+        "value": "https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/mii-vs-person-icd10who"
+      }
+    ]
+  }
+}

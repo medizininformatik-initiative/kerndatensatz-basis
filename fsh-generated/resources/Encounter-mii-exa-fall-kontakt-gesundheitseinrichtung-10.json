@@ -1,0 +1,87 @@
+{
+  "resourceType": "Encounter",
+  "id": "mii-exa-fall-kontakt-gesundheitseinrichtung-10",
+  "meta": {
+    "security": [
+      {
+        "code": "HTEST",
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "display": "test health data"
+      }
+    ],
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "code": "VN",
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+          }
+        ]
+      },
+      "system": "https://www.charite.de/fhir/sid/aufnahmenummer",
+      "value": "VS5"
+    }
+  ],
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://fhir.de/CodeSystem/Kontaktebene",
+          "code": "versorgungsstellenkontakt"
+        }
+      ]
+    }
+  ],
+  "period": {
+    "start": "2020-01-09T00:00:00+01:00",
+    "end": "2020-01-11T23:59:00+01:00"
+  },
+  "serviceProvider": {
+    "identifier": {
+      "system": "http://fhir.de/sid/dkgev/iknr",
+      "value": "260950472"
+    }
+  },
+  "account": [
+    {
+      "identifier": {
+        "system": "https://www.charite.de/fhir/sid/fallnummer",
+        "value": "F-2020-000123"
+      },
+      "display": "Account A1 - DRG G23B Appendektomie ohne schwere CC"
+    }
+  ],
+  "location": [
+    {
+      "location": {
+        "display": "Surgical Ward C3, Room 315, Bed 315-02"
+      },
+      "status": "completed",
+      "physicalType": {
+        "coding": [
+          {
+            "code": "wa",
+            "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+            "display": "Ward"
+          }
+        ]
+      }
+    }
+  ],
+  "status": "finished",
+  "class": {
+    "code": "IMP",
+    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode"
+  },
+  "subject": {
+    "reference": "Patient/mii-exa-person-patient-1"
+  },
+  "partOf": {
+    "reference": "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2"
+  }
+}

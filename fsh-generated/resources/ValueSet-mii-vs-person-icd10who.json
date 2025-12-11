@@ -1,0 +1,63 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "MII_VS_Person_ICD10WHO",
+  "id": "mii-vs-person-icd10who",
+  "title": "MII VS Person ICD-10-WHO",
+  "description": "MII VS Person ICD-10-WHO",
+  "url": "https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/mii-vs-person-icd10who",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+    ]
+  },
+  "experimental": true,
+  "date": "2025-12-08",
+  "version": "2026.0.0",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "extension": [
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/modul-meta/StructureDefinition/mii-ex-meta-license-codeable",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "CC-BY-4.0",
+            "system": "http://hl7.org/fhir/spdx-license",
+            "display": "Creative Commons Attribution 4.0 International"
+          }
+        ]
+      }
+    }
+  ],
+  "copyright": "BfArM - Bundesinstitut für Arzneimittel und Medizinprodukte",
+  "compose": {
+    "include": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "version": "2011"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "version": "2013"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "version": "2016"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "version": "2019"
+      }
+    ]
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "supplement",
+  "name": "MII_CS_Fall_SupplementActEncounterCode",
+  "id": "mii-cs-fall-supplement-act-encounter-code",
+  "title": "MII CS Fall Supplement ActEncounterCode",
+  "description": "CodeSystem Supplement für ActEncounterCode",
+  "url": "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/CodeSystem/SupplementActEncounterCode",
+  "concept": [
+    {
+      "code": "AMB",
+      "display": "ambulatory",
+      "definition": "Umfasst ambulante Operationen nach § 115b SGB V und eine ambulante spezialfachärztliche Versorgung nach § 116b SGB V",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "teilstationäre Behandlung"
+        }
+      ]
+    },
+    {
+      "code": "EMER",
+      "display": "emergency",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Notfall"
+        }
+      ]
+    },
+    {
+      "code": "IMP",
+      "display": "inpatient encounter",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "stationär"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
+    ]
+  },
+  "version": "2026.0.0",
+  "extension": [
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/modul-meta/StructureDefinition/mii-ex-meta-license-codeable",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "CC-BY-4.0",
+            "system": "http://hl7.org/fhir/spdx-license",
+            "display": "Creative Commons Attribution 4.0 International"
+          }
+        ]
+      }
+    }
+  ],
+  "experimental": false,
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
+  "supplements": "http://terminology.hl7.org/CodeSystem/v3-ActCode"
+}
