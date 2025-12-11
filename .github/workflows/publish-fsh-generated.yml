@@ -1,0 +1,63 @@
+# This workflow publishes the SUSHI-generated FHIR resources to a separate branch.
+# NOTE: This is only needed as long as Simplifier requires the generated FHIR files to publish the package.
+
+name: Publish FSH Generated Resources
+
+on:
+  push:
+    branches:
+      - main
+      - 'release/**'
+  workflow_dispatch:
+
+jobs:
+  publish-fsh-output:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install SUSHI
+        run: npm install -g fsh-sushi
+      
+      - name: Run SUSHI
+        run: sushi .
+      
+      - name: Create/Update fsh-generated branch
+        run: |
+          # Configure git
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Create or switch to fsh-generated branch (orphan if new)
+          if git rev-parse --verify origin/fsh-generated >/dev/null 2>&1; then
+            git checkout fsh-generated
+            git pull origin fsh-generated
+          else
+            git checkout --orphan fsh-generated
+          fi
+          
+          # Remove all files from staging
+          git rm -rf . 2>/dev/null || true
+          
+          # Copy only the files we need
+          git checkout ${{ github.ref_name }} -- fsh-generated/ package.json
+          
+          # Add and commit
+          git add fsh-generated/ package.json
+          
+          # Only commit if there are changes
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update FHIR resources from ${{ github.ref_name }} @ ${{ github.sha }}"
+            git push origin fsh-generated
+          fi
