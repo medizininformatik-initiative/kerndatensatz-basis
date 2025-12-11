@@ -1,0 +1,217 @@
+name: Cleanup stale GitHub Pages deployments
+
+on:
+  schedule:
+    # Run weekly on Sunday at midnight UTC
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (show what would be deleted without deleting)'
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout gh-pages branch
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          fetch-depth: 1
+      
+      - name: Fetch all branches
+        run: |
+          git fetch --all
+      
+      - name: Cleanup stale branch deployments
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
+        run: |
+          set -euo pipefail
+          
+          echo "DRY_RUN mode: $DRY_RUN"
+          echo ""
+          
+          # Get list of all active branches (excluding gh-pages)
+          active_branches=$(git ls-remote --heads origin | awk '{print $2}' | sed 's|refs/heads/||' | grep -v '^gh-pages$')
+          
+          # Get all deployed paths including nested deployments (e.g., release/v2026.0.0)
+          # Explicitly exclude .git and .github directories themselves and their contents
+          # maxdepth 2 matches the IG publisher's deployment pattern: ${GITHUB_REF_NAME}
+          # (e.g., main, feature-branch, release/v2026.0.0)
+          mapfile -t deployed_paths < <(find . -mindepth 1 -maxdepth 2 -type d \
+            ! -name '.git' ! -name '.github' \
+            ! -path './.git/*' ! -path './.github/*' \
+            -printf '%P\n')
+          
+          echo "=== Active branches ==="
+          echo "$active_branches"
+          echo ""
+          echo "=== Deployed paths (all levels) ==="
+          printf '%s\n' "${deployed_paths[@]}"
+          echo ""
+          echo "Note: Root-level files and IG output directories won't be touched"
+          echo ""
+          
+          # Configure git
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          stale_count=0
+          preserved_count=0
+          to_delete=()
+          
+          # Directories that are part of the IG output and should never be cleaned up
+          ig_output_dirs=("assets" "de" "en")
+          
+          # Track which parent directories contain preserved deployments
+          declare -A preserved_parents
+          
+          for path in "${deployed_paths[@]}"; do
+            # Skip IG output directories (part of main/master deployment)
+            skip=false
+            for ig_dir in "${ig_output_dirs[@]}"; do
+              if [[ "$path" == "$ig_dir" ]] || [[ "$path" == "$ig_dir/"* ]]; then
+                echo "⊘ Skipping IG output directory: $path (part of main deployment)"
+                skip=true
+                break
+              fi
+            done
+            if [[ "$skip" == "true" ]]; then
+              continue
+            fi
+            
+            # Always preserve main and master (even if they don't exist as branches)
+            if [[ "$path" == "main" ]] || [[ "$path" == "master" ]]; then
+              echo "✓ Preserving main/master deployment: $path"
+              ((preserved_count++))
+              continue
+            fi
+            
+            # Always preserve release branches (release/*)
+            if [[ "$path" == release/* ]] || [[ "$path" =~ ^release- ]]; then
+              echo "✓ Preserving release branch deployment: $path"
+              ((preserved_count++))
+              # Mark parent directory as containing preserved content
+              if [[ "$path" == */* ]]; then
+                parent="${path%%/*}"
+                preserved_parents["$parent"]=1
+              fi
+              continue
+            fi
+            
+            # Always preserve version number branches (e.g., 2026.0.0, 2025.0.1, 2026.0.0-rc.1, 2026.0.0-ballot)
+            if [[ "$path" =~ ^[0-9]{4}\.[0-9]+\.[0-9]+(-[a-zA-Z0-9\.]+)?$ ]]; then
+              echo "✓ Preserving version deployment: $path"
+              ((preserved_count++))
+              continue
+            fi
+            
+            # Check if this path corresponds to an active branch
+            if echo "$active_branches" | grep -Fxq "$path"; then
+              echo "✓ Preserving active branch deployment: $path"
+              ((preserved_count++))
+              # Mark parent directory as containing preserved content
+              if [[ "$path" == */* ]]; then
+                parent="${path%%/*}"
+                preserved_parents["$parent"]=1
+              fi
+            else
+              # Check if this is a parent directory containing preserved deployments
+              if [[ -n "${preserved_parents[$path]:-}" ]]; then
+                echo "✓ Preserving parent directory: $path (contains preserved deployments)"
+                ((preserved_count++))
+              else
+                echo "✗ Stale deployment found: $path (branch no longer exists)"
+                ((stale_count++))
+                to_delete+=("$path")
+              fi
+            fi
+          done
+          
+          # Filter out parent directories that contain preserved deployments
+          if [[ ${#to_delete[@]} -gt 0 ]]; then
+            filtered_to_delete=()
+            for path in "${to_delete[@]}"; do
+              if [[ -n "${preserved_parents[$path]:-}" ]]; then
+                echo "⟳ Not deleting parent directory: $path (contains preserved deployments)"
+                ((preserved_count++))
+                continue
+              fi
+              filtered_to_delete+=("$path")
+            done
+            to_delete=("${filtered_to_delete[@]}")
+          fi
+          
+          # Now delete the stale deployments
+          # Only delete top-level directories - git rm -rf will handle nested content
+          if [[ ${#to_delete[@]} -gt 0 ]]; then
+            # Get unique top-level directories from paths to delete
+            declare -A top_level_dirs
+            for path in "${to_delete[@]}"; do
+              if [[ "$path" == */* ]]; then
+                # Nested path - extract top-level directory
+                top_dir="${path%%/*}"
+                top_level_dirs["$top_dir"]=1
+              else
+                # Already top-level
+                top_level_dirs["$path"]=1
+              fi
+            done
+            
+            # Delete each top-level directory once
+            for dir in "${!top_level_dirs[@]}"; do
+              if [[ "$DRY_RUN" == "true" ]]; then
+                echo "  [DRY RUN] Would delete: $dir (and all nested deployments)"
+              else
+                echo "  Deleting: $dir (and all nested deployments)"
+                git rm -rf "$dir"
+              fi
+            done
+          fi
+          
+          echo ""
+          echo "=== Summary ==="
+          echo "Preserved deployments: $preserved_count"
+          echo "Stale deployments: $stale_count"
+          
+          if [[ "$DRY_RUN" == "true" ]]; then
+            echo ""
+            echo "DRY RUN MODE - No changes were made"
+            exit 0
+          fi
+          
+          # Commit and push if there are changes
+          if git diff --cached --quiet; then
+            echo ""
+            echo "No stale deployments to remove"
+          else
+            echo ""
+            echo "Committing cleanup..."
+            git commit -m "chore: cleanup stale branch deployments" \
+              -m "Removed $stale_count stale deployment(s)" \
+              -m "Preserved $preserved_count active deployment(s)"
+            git push origin gh-pages
+            echo "✓ Cleanup complete"
+          fi
+      
+      - name: Create summary
+        if: always()
+        run: |
+          echo "### GitHub Pages Cleanup Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [[ "${{ github.event.inputs.dry_run }}" == "true" ]]; then
+            echo "**Mode:** Dry Run (no changes made)" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "**Mode:** Active cleanup" >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Check the job logs for details on preserved and removed deployments." >> $GITHUB_STEP_SUMMARY
