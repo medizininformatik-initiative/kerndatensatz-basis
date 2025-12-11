@@ -6,39 +6,35 @@ This page documents the changes and updates across versions of the MII Implement
 
 -------
 
-## Version 2026.0.0
+### Version 2026.0.0
 
 **Date:** 2026-12-11
 
-### Major Structural Changes
-
-**Module Consolidation:**
+#### Module Consolidation
 
 * **Consolidated Implementation Guide:** The four base modules (Person, Treatment Case, Diagnosis, and Procedure) have been consolidated into a single Implementation Guide
 * **Package ID:** `de.medizininformatikinitiative.kerndatensatz.base`
 
-**Example Consolidation:**
+#### Example Consolidation
 
 * **Unified Test Data Bundle:** Example resources have been consolidated into a comprehensive test data bundle
 * **Cross-Module Examples:** Examples now demonstrate relationships and references across all four modules
 
-### Content Changes
-
-**Diagnosis Module:**
+#### Diagnosis Module
 
 * **Changed:** Updated guidance on Condition.encounter usage to align with gematik ISiK recommendations (Information Systems in Hospitals)
 * **Changed:** Condition.encounter SHOULD now reference an Encounter at the "Abteilungskontakt" (department contact) level
 * **Note:** This represents a change from previous versions where Encounter.diagnosis was the primary linkage method
 
-**Person Module:**
+#### Person Module
 
 * **Added:** ValueSet MII VS Person ICD-10-WHO published under MII Canonical URL for causes of death coding
 
 -------
 
-## Version 2025.0.1
+### Version 2025.0.1
 
-### Person Module
+#### Person Module
 
 **Date:** 2025-10-08
 
@@ -46,13 +42,13 @@ This page documents the changes and updates across versions of the MII Implement
 * **Changed**: ValueSet MII_VS_Person_ICD10WHO was [retired](http://hl7.org/fhir/R4/codesystem-publication-status.html#publication-status-retired) as redundant. The ICD-10-WHO CodeSystem already references an implicit ICD-10-WHO ValueSet via `CodeSystem.valueSet`. See: https://github.com/medizininformatik-initiative/kerndatensatzmodul-person/issues/86
 * **Changed**: Dependency updated to [de.basisprofil.r4 1.5.4](https://simplifier.net/packages/de.basisprofil.r4/1.5.4). This release of the FHIR Base Profiles contains a fix for the kvid-2 invariant applied to `Patient.identifier:versichertenId.type` in the Patient profile
 
-### Treatment Case Module
+#### Treatment Case Module
 
 **Date:** 2025-10-28
 
 * **Changed**: `Encounter.location` now allows specification of former encounter locations. See: https://github.com/medizininformatik-initiative/kerndatensatzmodul-fall/issues/79
 
-### Diagnosis Module
+#### Diagnosis Module
 
 **Date:** 2025-10-20
 
@@ -61,7 +57,7 @@ This page documents the changes and updates across versions of the MII Implement
 * **Added**: New ValueSets and bindings for ICD-10-GM (Canonical URL: `https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-icd10gm`) and AlphaID (Canonical URL: `https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-alphaid`), which can be expanded using the MII terminology server (https://www.ontoserver.mii-termserv.de/) enabling enhanced validation
 * **Updated**: CapabilityStatement now contains requirement documentation for search parameters `_count` and `_summary`
 
-### Procedure Module
+#### Procedure Module
 
 **Date:** 2025-10-22
 
@@ -71,9 +67,9 @@ This page documents the changes and updates across versions of the MII Implement
 
 -------
 
-## Version 2025.0.0
+### Version 2025.0.0
 
-### Person Module
+#### Person Module
 
 **Date:** 2024-12-06
 
@@ -85,7 +81,7 @@ This page documents the changes and updates across versions of the MII Implement
 * **Removed**: Search parameters from this module were removed. SearchParameter resources are now centrally managed in the Meta module
 * **Enhanced**: Profiles contain additional descriptions and translations for implementers and the Research Data Portal for Health (FDPG)
 
-### Treatment Case Module
+#### Treatment Case Module
 
 **Date:** 2024-12-10
 
@@ -101,7 +97,7 @@ This page documents the changes and updates across versions of the MII Implement
 * **Changed**: In `Encounter.location` slices for room, bed, station - cardinality of elements `Encounter.location.location.identifier` and `Encounter.location.location.display` changed from 1..1 to 0..1
 * **Removed**: MustSupport labels removed from `Encounter.location` and `Encounter.serviceProvider`
 
-### Diagnosis Module
+#### Diagnosis Module
 
 **Date:** 2024-12-09
 
@@ -112,7 +108,7 @@ This page documents the changes and updates across versions of the MII Implement
 * **Updated**: Resources use SNOMED CT version `http://snomed.info/sct/900000000000207008/version/20240701` across modules to ensure stable [ValueSet expansion](http://hl7.org/fhir/R4/valueset.html#expansion)
 * **Added**: `Condition.verificationStatus` now has MustSupport label. See: https://github.com/medizininformatik-initiative/kerndatensatzmodul-diagnose/issues/64
 
-### Procedure Module
+#### Procedure Module
 
 **Date:** 2024-12-09
 
@@ -124,9 +120,9 @@ This page documents the changes and updates across versions of the MII Implement
 
 -------
 
-## Version 2024.0.1
+### Version 2024.0.1
 
-### Treatment Case Module
+#### Treatment Case Module
 
 **Date:** 2024-04-17
 
@@ -134,11 +130,11 @@ This page documents the changes and updates across versions of the MII Implement
 
 -------
 
-## Version 2024.0.0
+### Version 2024.0.0
 
 All modules adopted [Calendar Versioning (CalVer)](https://calver.org/) following the YYYY.MINOR.PATCH scheme, establishing an annual release cycle.
 
-### Person Module
+#### Person Module
 
 **Date:** 2024-04-16
 
@@ -154,7 +150,7 @@ All modules adopted [Calendar Versioning (CalVer)](https://calver.org/) followin
 * **Added**: New profile [Cause of Death](StructureDefinition-mii-pr-person-todesursache.md) for representing cause of death using ICD-10-WHO
 * **Changed**: Data types in the logical model were adjusted to match the data types of elements in the FHIR profile to which they are mapped
 
-### Treatment Case Module
+#### Treatment Case Module
 
 **Date:** 2024-03-28
 
@@ -170,7 +166,7 @@ All modules adopted [Calendar Versioning (CalVer)](https://calver.org/) followin
 * In version 1.0, `Encounter.serviceType` only contained a specification for the department code. This has been extended in this version to include the extended department code
  
 
-### Diagnosis Module
+#### Diagnosis Module
 
 **Date:** 2024-04-16
 
@@ -190,7 +186,7 @@ All modules adopted [Calendar Versioning (CalVer)](https://calver.org/) followin
 * **Added**: In the profile under `Condition.onsetPeriod.(start|end).extension` there is now OPTIONALLY a specification for indicating the life phase as a code via extension, from which a patient has or no longer has a disease
 * **Added**: Module was extended with SearchParameter resources enabling search for ICD-10-GM codes in combination with multiple coding indicators, laterality and diagnostic certainty
 
-### Procedure Module
+#### Procedure Module
 
 **Date:** 2024-04-16
 
@@ -206,7 +202,7 @@ All modules adopted [Calendar Versioning (CalVer)](https://calver.org/) followin
 
 -------
 
-## Versioning Scheme
+### Versioning Scheme
 
 Starting with version 2024.0.0, all modules use [Calendar Versioning (CalVer)](https://calver.org/) following the YYYY.MINOR.PATCH scheme:
 
