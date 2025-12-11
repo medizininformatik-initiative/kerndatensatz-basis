@@ -47,17 +47,20 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
+          # Fetch all branches
+          git fetch origin
+          
           # Create or switch to fsh-generated branch (orphan if new)
           if git rev-parse --verify origin/fsh-generated >/dev/null 2>&1; then
-            git checkout fsh-generated
-            git pull origin fsh-generated
+            git checkout --track origin/fsh-generated
             # Remove all files
             git rm -rf . 2>/dev/null || true
-            rm -rf * .* 2>/dev/null || true
+            find . -maxdepth 1 ! -name '.git' ! -name '.' -exec rm -rf {} + 2>/dev/null || true
           else
             git checkout --orphan fsh-generated
-            # Remove all files from staging
+            # Remove all files from staging and working directory
             git rm -rf . 2>/dev/null || true
+            find . -maxdepth 1 ! -name '.git' ! -name '.' -exec rm -rf {} + 2>/dev/null || true
           fi
           
           # Copy the generated files from temp location
@@ -65,7 +68,7 @@ jobs:
           cp /tmp/fsh-output/package.json .
           
           # Add and commit
-          git add fsh-generated/ package.json
+          git add -A
           
           # Only commit if there are changes
           if git diff --staged --quiet; then
