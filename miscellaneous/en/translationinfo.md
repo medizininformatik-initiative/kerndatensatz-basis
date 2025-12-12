@@ -1,4 +1,4 @@
-# Translation Information - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# Translation Information - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## Translation Information
 

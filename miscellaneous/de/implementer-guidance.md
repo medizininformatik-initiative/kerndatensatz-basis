@@ -1,4 +1,4 @@
-# Anleitung für Implementierer - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# Anleitung für Implementierer - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## Anleitung für Implementierer
 

@@ -1,4 +1,4 @@
-# MII EX Fall Planned End Date - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII EX Fall Planned End Date - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## Extension: MII EX Fall Planned End Date 
 
@@ -83,11 +83,11 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-ex-fall-
     }
   ],
   "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedEndDate",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_EX_Fall_Planned_End_Date",
   "title" : "MII EX Fall Planned End Date",
   "status" : "active",
-  "date" : "2025-12-10T11:38:15+00:00",
+  "date" : "2025-12-12T11:35:51+00:00",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [

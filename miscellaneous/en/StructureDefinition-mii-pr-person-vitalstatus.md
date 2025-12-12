@@ -1,4 +1,4 @@
-# MII PR Person Vitalstatus - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII PR Person Vitalstatus - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## Resource Profile: MII PR Person Vitalstatus 
 
@@ -124,7 +124,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-person-vit
     }
   ],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_PR_Person_Vitalstatus",
   "title" : "MII PR Person Vitalstatus",
   "_title" : {
@@ -158,7 +158,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-person-vit
     ]
   },
   "status" : "active",
-  "date" : "2024-12-04",
+  "date" : "2025-12-12",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [
@@ -576,7 +576,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-person-vit
       {
         "id" : "Observation.encounter",
         "path" : "Observation.encounter",
-        "short" : "Fall oder Kontakt",
+        "short" : "Kontakt (Aufenthaltsbezug)",
         "_short" : {
           "extension" : [
             {
@@ -587,7 +587,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-person-vit
                 },
                 {
                   "url" : "content",
-                  "valueString" : "Fall oder Kontakt"
+                  "valueString" : "Kontakt"
                 }
               ],
               "url" : "http://hl7.org/fhir/StructureDefinition/translation"
@@ -607,7 +607,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-person-vit
             }
           ]
         },
-        "definition" : "Fall oder Kontakt, bei dem der Vitalstatus festgestellt wurde.",
+        "definition" : "Kontakt, bei dem der Vitalstatus festgestellt wurde.",
         "_definition" : {
           "extension" : [
             {
@@ -618,7 +618,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-person-vit
                 },
                 {
                   "url" : "content",
-                  "valueString" : "Fall oder Kontakt, bei dem der Vitalstatus festgestellt wurde."
+                  "valueString" : "Kontakt, bei dem der Vitalstatus festgestellt wurde."
                 }
               ],
               "url" : "http://hl7.org/fhir/StructureDefinition/translation"

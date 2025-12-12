@@ -1,4 +1,4 @@
-# MII CS Person Vitalstatus - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII CS Person Vitalstatus - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## CodeSystem: MII CS Person Vitalstatus 
 
@@ -45,7 +45,7 @@ Dieses CodeSystem wird in der Definition der folgenden ValueSets referenziert:
     }
   ],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/CodeSystem/Vitalstatus",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_CS_Person_Vitalstatus",
   "title" : "MII CS Person Vitalstatus",
   "status" : "active",

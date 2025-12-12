@@ -1,4 +1,4 @@
-# MII CPS Person CapabilityStatement - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII CPS Person CapabilityStatement - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## CapabilityStatement: MII CPS Person CapabilityStatement 
 
@@ -30,7 +30,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
     }
   ],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/CapabilityStatement/metadata",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_CPS_Person_CapabilityStatement",
   "title" : "MII CPS Person CapabilityStatement",
   "status" : "active",
@@ -93,8 +93,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
           ],
           "type" : "Patient",
           "supportedProfile" : [
-            "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient|2026.0.0-dev.1",
-            "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert|2026.0.0-dev.1"
+            "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient|2026.0.0",
+            "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert|2026.0.0"
           ],
           "interaction" : [
             {
@@ -423,7 +423,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
           ],
           "type" : "Observation",
           "supportedProfile" : [
-            "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus|2026.0.0-dev.1"
+            "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus|2026.0.0"
           ],
           "interaction" : [
             {
@@ -576,7 +576,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
           ],
           "type" : "Condition",
           "supportedProfile" : [
-            "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Todesursache|2026.0.0-dev.1"
+            "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Todesursache|2026.0.0"
           ],
           "interaction" : [
             {

@@ -1,4 +1,4 @@
-# MII PR Diagnose Condition - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII PR Diagnose Condition - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## Ressourcenprofil: MII PR Diagnose Condition 
 
@@ -84,14 +84,8 @@ Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Dia
 
 **Aktuelle Empfehlung - Condition.encounter:**
 
-* Die Verlinkung auf eine Encounter-Ressource dokumentiert die Referenz zu einem Aufenthalt und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.
 * **Ebene Abteilungskontakt:** Die Zuordnung **SOLLTE** auf einen Encounter der Ebene "Abteilungskontakt" erfolgen
 * Bei der Auswahl des Encounters ist zu beachten, dass unter einer (Abrechnungs-)"Fallnummer" (hier: `Encounter.account`) unter Umständen mehrere Encounter gruppiert sein können (z.B. stationärer Besuch mit mehreren vor- und nachstationären Aufenthalten)
-
-**Mapping des Feststellungsdatums:**
-
-* Das logische Datenelement "Feststellungsdatum" wird auf `Encounter.period.start` gemappt, NICHT auf ein Element in der Condition-Ressource
-* Somit repräsentiert die Encounter-Referenz sowohl den technischen Dokumentationskontext als auch den zeitlichen Kontext, wann die Diagnose festgestellt wurde
 
 #### Zeitliche Informationen
 
@@ -244,7 +238,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-diagn
     }
   ],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_PR_Diagnose_Condition",
   "title" : "MII PR Diagnose Condition",
   "_title" : {
@@ -278,7 +272,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-diagn
     ]
   },
   "status" : "active",
-  "date" : "2025-03-31",
+  "date" : "2025-12-12",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [
@@ -1388,7 +1382,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-diagn
       {
         "id" : "Condition.encounter",
         "path" : "Condition.encounter",
-        "short" : "Fall oder Kontakt",
+        "short" : "Kontakt (Aufenthaltsbezug)",
         "_short" : {
           "extension" : [
             {
@@ -1399,7 +1393,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-diagn
                 },
                 {
                   "url" : "content",
-                  "valueString" : "Fall oder Kontakt"
+                  "valueString" : "Kontakt"
                 }
               ],
               "url" : "http://hl7.org/fhir/StructureDefinition/translation"
@@ -1419,7 +1413,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-diagn
             }
           ]
         },
-        "definition" : "Fall oder Kontakt, bei dem die Diagnose festgestellt wurde.",
+        "definition" : "Kontakt, während dem die Diagnose erstellt wurde oder mit dem die Diagnose in Zusammenhang steht.",
         "_definition" : {
           "extension" : [
             {
@@ -1430,7 +1424,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-diagn
                 },
                 {
                   "url" : "content",
-                  "valueString" : "Fall oder Kontakt, bei dem die Diagnose festgestellt wurde."
+                  "valueString" : "Kontakt, während dem die Diagnose erstellt wurde oder mit dem die Diagnose in Zusammenhang steht."
                 }
               ],
               "url" : "http://hl7.org/fhir/StructureDefinition/translation"
@@ -1443,7 +1437,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-diagn
                 },
                 {
                   "url" : "content",
-                  "valueString" : "Encounter during which the diagnosis was determined."
+                  "valueString" : "The Encounter during which this Condition was created or to which the creation of this record is tightly associated."
                 }
               ],
               "url" : "http://hl7.org/fhir/StructureDefinition/translation"

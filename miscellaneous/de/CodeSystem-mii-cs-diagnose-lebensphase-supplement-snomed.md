@@ -1,4 +1,4 @@
-# MII CS Diagnose Lebensphase Supplement SNOMED - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII CS Diagnose Lebensphase Supplement SNOMED - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## CodeSystem: MII CS Diagnose Lebensphase Supplement SNOMED (Experimentell) 
 
@@ -45,7 +45,7 @@ Dieses CodeSystem wird in der Definition der folgenden ValueSets referenziert:
     }
   ],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/CodeSystem/mii-cs-diagnose-lebensphase-supplement-snomed",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_CS_Diagnose_Lebensphase_Supplement_SNOMED",
   "title" : "MII CS Diagnose Lebensphase Supplement SNOMED",
   "status" : "active",

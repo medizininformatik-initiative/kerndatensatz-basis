@@ -1,4 +1,4 @@
-# MII VS Prozedur OPS - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII VS Prozedur OPS - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## ValueSet: MII VS Prozedur OPS 
 
@@ -49,7 +49,7 @@ Enthaelt OPS-Codes der Versionen 2010 bis 2025
     }
   ],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/mii-vs-prozedur-ops",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_VS_Prozedur_OPS",
   "title" : "MII VS Prozedur OPS",
   "status" : "active",

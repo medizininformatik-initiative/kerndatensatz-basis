@@ -1,4 +1,4 @@
-# MII VS Fall Location Physical Type - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII VS Fall Location Physical Type - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## ValueSet: MII VS Fall Location Physical Type 
 
@@ -49,7 +49,7 @@ A coded type for the physical type of the location.
     }
   ],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/location-physical-type",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_VS_Fall_LocationPhysicalType",
   "title" : "MII VS Fall Location Physical Type",
   "status" : "active",

@@ -251,6 +251,8 @@ Das Element `Encounter.diagnosis` stellt die Beziehung zwischen Kontakten und Di
 <p>Da <code>Encounter.diagnosis.use</code> die Kardinalität 1..1 hat, benötigt eine Diagnose mit mehreren Rollen innerhalb eines Kontakts mehrere <code>Encounter.diagnosis</code>-Einträge, jeweils mit unterschiedlichem <code>use</code>-Wert.</p>
 
 <p><strong>Beispiel:</strong> Wenn eine Condition sowohl als Diagnosetyp als auch als Diagnosesubtyp (oder zusätzliche Rollen wie CC/CM) dient, erstellen Sie separate <code>Encounter.diagnosis</code>-Referenzen für jede Rolle, die alle auf dieselbe Condition-Ressource verweisen. Eine einzelne Condition kann mehrfach mit unterschiedlichen <code>use</code>-Werten referenziert werden.</p>
+
+<p><strong>Hinweis zur CC/CM-Klassifikation:</strong> Wenn Sie eine Diagnose als CC (Komplikation oder Komorbidität) oder CM (Komorbidität) klassifizieren möchten, handelt es sich hierbei typischerweise um abrechnungsrelevante Informationen, die in der Account-Ressource und nicht in <code>Encounter.diagnosis</code> platziert werden sollten. Die Account-Ressource ist der geeignete Ort für Abrechnungsfallkontext und DRG-relevante Klassifikationen.</p>
 </div>
 
 #### Kontaktort
@@ -290,13 +292,28 @@ Früher wurde empfohlen, dass die Aufnahmenummer in allen Encounter-Ressourcen u
 <div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
 <h5 style="color: #406A99; margin-top: 0;">Best Practice - Aufnahmenummer vs. Fallnummer</h5>
 
+<p><em>Hinweis: Diese Empfehlung basiert auf der <a href="https://simplifier.net/packages/de.gematik.isik/5.1.0/files/3020028" target="_blank">ISiK-Spezifikation</a>.</em></p>
+
 <p>Es ist wichtig zu unterscheiden zwischen:</p>
 <ul>
   <li><strong>Aufnahmenummer:</strong> Ein eindeutiger Identifier, der einem Patienten bei der Aufnahmeplanung oder bei der Aufnahme selbst zugewiesen wird. Jeder Encounter <strong>SOLLTE</strong> seine eigene eindeutige Aufnahmenummer in <code>Encounter.identifier:Aufnahmenummer</code> haben, wo anwendbar.</li>
   <li><strong>Fallnummer:</strong> Identifiziert typischerweise den Abrechnungsfall (Account), nicht einzelne Encounters.</li>
 </ul>
 
-<p>Die Fallnummer kann im Encounter zugänglich gemacht werden, ohne dass die Account-Ressource implementiert werden muss, indem der Account-Identifier als logische Referenz in <code>Encounter.account</code> angegeben wird. Dies ermöglicht Fallnummer-basierte Suchen.</p>
+<p><strong>Account-Referenzen und Abrechnungskontext:</strong></p>
+<p>Der Bezug zu einem Account stellt den Abrechnungskontext für einen oder mehrere Encounter her. Mittels der Account-Referenz können zum Beispiel ein vorstationärer, ein stationärer und ein nachstationärer Besuch zu einem "DRG-Fall" zusammengefasst werden.</p>
+
+<p><strong>Hinweis:</strong> Wenn man den Abrechnungsfall implementieren möchte, wird empfohlen, das <a href="https://simplifier.net/packages/de.gematik.isik/5.1.0/files/3019857" target="_blank">ISiK Account-Profil</a> zu verwenden.</p>
+
+<p><strong>Wichtiger Hinweis für Implementierer:</strong> Im deutschen Sprachgebrauch ist unter dem Begriff "Fall" meist der Abrechnungskontext gemeint, nicht der einzelne Besuch. Die "Fallnummer" ist daher nicht der Identifier des Encounters, sondern der des Accounts auf den der Encounter referenziert. Auf diesem Wege können mehrere Besuche einer Fallnummer zugeordnet werden.</p>
+
+<p><strong>Logische Referenzen für die Suche:</strong></p>
+<p>Da die Fallnummer ein häufig verwendetes Suchkriterium darstellt, ist diese als logische Referenz (<code>account.identifier</code>) im Encounter zu hinterlegen. Damit wird sichergestellt, dass diese als Suchparameter für die Suche nach Encountern zur Verfügung steht, auch wenn:</p>
+<ul>
+  <li>Einzelne Systeme kein Chaining unterstützen</li>
+  <li>Einzelne Benutzer keine Sichtberechtigung auf Abrechnungsdaten haben</li>
+  <li>Benutzer im Versorgungskontext dennoch Encounter anhand der assoziierten Fallnummer suchen möchten</li>
+</ul>
 </div>
 
 {% include link-list.md %}

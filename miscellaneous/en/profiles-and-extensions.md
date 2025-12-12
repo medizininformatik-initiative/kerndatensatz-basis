@@ -1,4 +1,4 @@
-# Profiles and Extensions - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# Profiles and Extensions - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## Profiles and Extensions
 

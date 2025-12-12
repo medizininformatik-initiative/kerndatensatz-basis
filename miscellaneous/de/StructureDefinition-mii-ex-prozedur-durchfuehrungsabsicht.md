@@ -1,4 +1,4 @@
-# MII EX Prozedur Durchführungsabsicht - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII EX Prozedur Durchführungsabsicht - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## Extension: MII EX Prozedur Durchführungsabsicht 
 
@@ -87,7 +87,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-ex-proze
     }
   ],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Durchfuehrungsabsicht",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_EX_Prozedur_Durchfuehrungsabsicht",
   "title" : "MII EX Prozedur Durchführungsabsicht",
   "status" : "active",

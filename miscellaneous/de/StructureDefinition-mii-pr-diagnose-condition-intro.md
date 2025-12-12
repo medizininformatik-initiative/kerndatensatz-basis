@@ -83,15 +83,8 @@ Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Dia
 
 <p><strong>Aktuelle Empfehlung - Condition.encounter:</strong></p>
 <ul>
-  <li>Die Verlinkung auf eine Encounter-Ressource dokumentiert die Referenz zu einem Aufenthalt und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.</li>
   <li><strong>Ebene Abteilungskontakt:</strong> Die Zuordnung <strong>SOLLTE</strong> auf einen Encounter der Ebene "Abteilungskontakt" erfolgen</li>
   <li>Bei der Auswahl des Encounters ist zu beachten, dass unter einer (Abrechnungs-)"Fallnummer" (hier: <code>Encounter.account</code>) unter Umständen mehrere Encounter gruppiert sein können (z.B. stationärer Besuch mit mehreren vor- und nachstationären Aufenthalten)</li>
-</ul>
-
-<p><strong>Mapping des Feststellungsdatums:</strong></p>
-<ul>
-  <li>Das logische Datenelement "Feststellungsdatum" wird auf <code>Encounter.period.start</code> gemappt, NICHT auf ein Element in der Condition-Ressource</li>
-  <li>Somit repräsentiert die Encounter-Referenz sowohl den technischen Dokumentationskontext als auch den zeitlichen Kontext, wann die Diagnose festgestellt wurde</li>
 </ul>
 
 </div>

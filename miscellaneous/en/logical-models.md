@@ -1,4 +1,4 @@
-# Logical Models - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# Logical Models - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## Logical Models
 

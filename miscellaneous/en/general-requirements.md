@@ -1,4 +1,4 @@
-# General Requirements - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# General Requirements - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## General Requirements
 
@@ -20,7 +20,7 @@ The MII core dataset specifications are based, where possible, on international 
 * **[German Base Profiles (Basisprofil DE R4)](https://ig.fhir.de/basisprofile-de/)** - Adaptation to the general conditions of the German healthcare system
 * **[KBV FHIR Specifications](https://simplifier.net/organization/kassenrztlichebundesvereinigungkbv)** - Compatibility with specifications from the National Association of Statutory Health Insurance Physicians
 * **[gematik FHIR Specifications](https://simplifier.net/organization/gematik)** - Compatibility with gematik specifications
-* **[ISiK (Informationssysteme im Krankenhaus)](https://fachportal.gematik.de/informationen-fuer/isik)** - Reference project for hospital information systems
+* **[ISiK (Informationssysteme im Krankenhaus)](https://fachportal.gematik.de/informationen-fuer/isik)** - Reference specification for information systems in hospitals
 
 All elements of the core dataset, adapted to the details and requirements for the use cases of the Medical Informatics Initiative, are described below in the form of FHIR StructureDefinitions. The necessity of adapting the FHIR profiles is explained in textual form on each profile page.
 

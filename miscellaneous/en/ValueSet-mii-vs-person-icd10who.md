@@ -1,4 +1,4 @@
-# MII VS Person ICD-10-WHO - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII VS Person ICD-10-WHO - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## ValueSet: MII VS Person ICD-10-WHO (Experimental) 
 
@@ -49,7 +49,7 @@ MII VS Person ICD-10-WHO
     }
   ],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/mii-vs-person-icd10who",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_VS_Person_ICD10WHO",
   "title" : "MII VS Person ICD-10-WHO",
   "status" : "active",

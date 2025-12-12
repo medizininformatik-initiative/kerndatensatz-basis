@@ -1,4 +1,4 @@
-# MII CPS Diagnose CapabilityStatement - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII CPS Diagnose CapabilityStatement - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## CapabilityStatement: MII CPS Diagnose CapabilityStatement 
 
@@ -30,7 +30,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
     }
   ],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/CapabilityStatement/metadata",
-  "version" : "2026.0.0-dev.1",
+  "version" : "2026.0.0",
   "name" : "MII_CPS_Diagnose_CapabilityStatement",
   "title" : "MII CPS Diagnose CapabilityStatement",
   "status" : "active",
@@ -94,7 +94,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
           "type" : "Condition",
           "profile" : "http://hl7.org/fhir/StructureDefinition/Condition",
           "supportedProfile" : [
-            "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0-dev.1"
+            "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0"
           ],
           "_supportedProfile" : [
             {

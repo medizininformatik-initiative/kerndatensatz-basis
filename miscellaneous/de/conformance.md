@@ -1,4 +1,4 @@
-# Konformität - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# Konformität - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## Konformität
 

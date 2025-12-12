@@ -1,4 +1,4 @@
-# MII EXA Person Condition (Todesursache) - MII Implementation Guide Core Dataset Base v2026.0.0-dev.1
+# MII EXA Person Condition (Todesursache) - MII Implementation Guide Core Dataset Base v2026.0.0
 
 ## Beispiel Condition: MII EXA Person Condition (Todesursache)
 
@@ -10,7 +10,7 @@
 
 Language: en
 
-Profile: [MII PR Person Todesursacheversion: null2026.0.0-dev.1)](StructureDefinition-mii-pr-person-todesursache.md)
+Profile: [MII PR Person Todesursacheversion: null2026.0.0)](StructureDefinition-mii-pr-person-todesursache.md)
 
 Security Label: test health data (Details: ActReason code HTEST = 'test health data')
 
@@ -30,7 +30,7 @@ Security Label: test health data (Details: ActReason code HTEST = 'test health d
   "id" : "mii-exa-person-condition-todesursache",
   "meta" : {
     "profile" : [
-      "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Todesursache|2026.0.0-dev.1"
+      "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Todesursache|2026.0.0"
     ],
     "security" : [
       {
