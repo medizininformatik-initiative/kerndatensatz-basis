@@ -46,7 +46,7 @@ This Code system is referenced in the definition of the following value sets:
   "title" : "MII CS Fall Supplement ActEncounterCode",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-12-12T17:41:10+00:00",
+  "date" : "2025-12-12T18:00:23+00:00",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [
