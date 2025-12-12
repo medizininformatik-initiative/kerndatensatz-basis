@@ -9,5 +9,5 @@ Description: "Enthaelt alle SNOMED CT Procedure Codes"
 * insert LicenseCodeableCCBY40
 * ^status = #active
 * ^experimental = false
-* ^date = "2024-12-09"
+* ^date = "2025-12-12"
 * include codes from system $sct where concept descendent-of #71388002
