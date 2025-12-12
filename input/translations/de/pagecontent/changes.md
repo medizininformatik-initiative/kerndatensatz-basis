@@ -29,6 +29,10 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 - **Changed:** Klargestellt, dass die Fallnummer den Abrechnungsfall (Account) identifiziert und als logische Referenz in `Encounter.account.identifier` angegeben werden sollte
 - **Changed:** Jeder Encounter SOLLTE seine eigene eindeutige Aufnahmenummer in `Encounter.identifier:Aufnahmenummer` haben
 
+#### Modul Prozedur
+
+- **Changed:** Anleitung hinzugefügt mit Empfehlung zur Verwendung von `Procedure.encounter` zur Etablierung des Kontaktkontexts, abgestimmt mit den Empfehlungen des Diagnose-Moduls
+
 #### Modul Person
 
 - **Added:** ValueSet MII VS Person ICD-10-WHO veröffentlicht unter MII-Canonical URL für Todesursachen-Codierung

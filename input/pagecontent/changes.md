@@ -29,6 +29,10 @@ This page documents the changes and updates across versions of the MII Implement
 - **Changed:** Clarified that Fallnummer identifies the billing case (Account) and should be provided as logical reference in `Encounter.account.identifier`
 - **Changed:** Each Encounter SHOULD have its own unique Aufnahmenummer in `Encounter.identifier:Aufnahmenummer`
 
+#### Procedure Module
+
+- **Changed:** Added guidance recommending use of `Procedure.encounter` to establish encounter context, aligned with Condition module recommendations
+
 #### Person Module
 
 - **Added:** ValueSet MII VS Person ICD-10-WHO published under MII Canonical URL for causes of death coding

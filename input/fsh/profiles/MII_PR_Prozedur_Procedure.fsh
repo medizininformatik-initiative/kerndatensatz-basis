@@ -12,7 +12,7 @@ Description: "Dieses Profil beschreibt eine Prozedur in der Medizininformatik-In
 * insert Publisher
 * insert LicenseCodeableCCBY40
 * ^status = #active
-* ^date = "2025-04-08"
+* ^date = "2025-12-12"
 * obeys proc-mii-1
 * id MS
 * meta MS
@@ -90,6 +90,13 @@ Description: "Dieses Profil beschreibt eine Prozedur in der Medizininformatik-In
 * code.coding[sct].code 1.. MS
 * subject 1..1 MS
 //* subject only $MII-Reference
+* encounter MS
+* encounter ^short = "Kontakt (Aufenthaltsbezug)"
+* insert Translation(encounter ^short, de-DE, Kontakt)
+* insert Translation(encounter ^short, en-US, Encounter)
+* encounter ^definition = "Kontakt, während dem die Prozedur durchgeführt wurde oder mit dem die Prozedur in Zusammenhang steht."
+* insert Translation(encounter ^definition, de-DE, Kontakt\, während dem die Prozedur durchgeführt wurde oder mit dem die Prozedur in Zusammenhang steht.)
+* insert Translation(encounter ^definition, en-US, The Encounter during which this Procedure was performed or to which the creation of this record is tightly associated.)
 * performed[x] 1.. MS
 * performed[x] ^short = "Durchführungsdatum"
 * insert Translation(performed[x] ^short, de-DE, Durchführungsdatum)
