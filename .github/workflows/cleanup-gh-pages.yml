@@ -41,7 +41,10 @@ jobs:
           echo ""
           
           # Get list of all active branches (excluding gh-pages)
-          active_branches=$(git ls-remote --heads origin | awk '{print $2}' | sed 's|refs/heads/||' | grep -v '^gh-pages$')
+          active_branches=$(git ls-remote --heads origin | awk '{print $2}' | sed 's|refs/heads/||')
+          if [[ -n "$active_branches" ]]; then
+            active_branches=$(printf '%s\n' "$active_branches" | grep -v '^gh-pages$' || true)
+          fi
           
           # Get all deployed paths including nested deployments (e.g., release/v2026.0.0)
           # Explicitly exclude .git and .github directories themselves and their contents
@@ -75,6 +78,34 @@ jobs:
           # Track which parent directories contain preserved deployments
           declare -A preserved_parents
           
+          # First pass: identify which parent directories contain preserved content
+          for path in "${deployed_paths[@]}"; do
+            # Check if this is a preserved deployment
+            is_preserved=false
+            
+            # Check for release branches
+            if [[ "$path" == release/* ]] || [[ "$path" =~ ^release- ]]; then
+              is_preserved=true
+            fi
+            
+            # Check for version numbers
+            if [[ "$path" =~ ^[0-9]{4}\.[0-9]+\.[0-9]+(-[a-zA-Z0-9\.]+)?$ ]]; then
+              is_preserved=true
+            fi
+            
+            # Check for active branches
+            if echo "$active_branches" | grep -Fxq "$path"; then
+              is_preserved=true
+            fi
+            
+            # If preserved and has a parent, mark the parent
+            if [[ "$is_preserved" == "true" ]] && [[ "$path" == */* ]]; then
+              parent="${path%%/*}"
+              preserved_parents["$parent"]=1
+            fi
+          done
+          
+          # Second pass: determine what to delete
           for path in "${deployed_paths[@]}"; do
             # Skip IG output directories (part of main/master deployment)
             skip=false
@@ -173,7 +204,8 @@ jobs:
                 echo "  [DRY RUN] Would delete: $dir (and all nested deployments)"
               else
                 echo "  Deleting: $dir (and all nested deployments)"
-                git rm -rf "$dir"
+                rm -rf "$dir"
+                git add -A
               fi
             done
           fi
