@@ -107,11 +107,13 @@ jobs:
           
           # Second pass: determine what to delete
           for path in "${deployed_paths[@]}"; do
-            # Skip IG output directories (part of main/master deployment)
+            # Skip IG output directories (part of any deployment, not just main)
             skip=false
             for ig_dir in "${ig_output_dirs[@]}"; do
-              if [[ "$path" == "$ig_dir" ]] || [[ "$path" == "$ig_dir/"* ]]; then
-                echo "⊘ Skipping IG output directory: $path (part of main deployment)"
+              # Match root-level IG dirs: "en", "de", "assets"
+              # Match nested IG dirs: "*/en", "*/de", "*/assets"
+              if [[ "$path" == "$ig_dir" ]] || [[ "$path" == "$ig_dir/"* ]] || [[ "$path" == */"$ig_dir" ]] || [[ "$path" == */"$ig_dir/"* ]]; then
+                echo "⊘ Skipping IG output directory: $path (part of branch deployment)"
                 skip=true
                 break
               fi
