@@ -51,7 +51,7 @@ Durchführungsabsicht / Intention mit der Prozedur ausgeführt wird
   "title" : "MII VS Prozedur Durchführungsabsicht [SNOMED CT]",
   "status" : "active",
   "experimental" : false,
-  "date" : "2024-12-09",
+  "date" : "2025-12-12",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [
@@ -98,7 +98,7 @@ Durchführungsabsicht / Intention mit der Prozedur ausgeführt wird
     "include" : [
       {
         "system" : "http://snomed.info/sct",
-        "version" : "http://snomed.info/sct/900000000000207008/version/20240701",
+        "version" : "http://snomed.info/sct/900000000000207008/version/20250701",
         "concept" : [
           {
             "code" : "262202000",

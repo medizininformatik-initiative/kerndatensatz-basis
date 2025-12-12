@@ -18,6 +18,10 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 * **Konsolidierter Implementierungsleitfaden:** Die vier Basismodule (Person, Fall, Diagnose und Prozedur) wurden zu einem Implementierungsleitfaden zusammengeführt
 * **Package-ID:** `de.medizininformatikinitiative.kerndatensatz.base`
 
+#### Terminologie-Updates
+
+* **Changed:** Ressourcen verwenden SNOMED CT-Version `http://snomed.info/sct/900000000000207008/version/20250701` (Juli 2025) modulübergreifend, um stabile [ValueSet-Expansion](http://hl7.org/fhir/R4/valueset.html#expansion) zu gewährleisten
+
 #### Beispielkonsolidierung
 
 * **Einheitliches Testdaten-Bundle:** Beispielressourcen wurden in einem umfassenden Testdaten-Bundle zusammengeführt
