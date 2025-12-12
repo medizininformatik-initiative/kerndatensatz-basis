@@ -98,6 +98,16 @@ Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Pro
   - etc.
 - Bietet klinischen Kontext für die Prozedur über den Prozedurenkode hinaus
 
+#### Kontaktkontext
+
+<div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
+<h5 style="color: #406A99; margin-top: 0;">Best Practice - Prozedur-Kontakt-Beziehungen</h5>
+
+<p><strong>Empfohlene Implementierung:</strong></p>
+<p>Verwenden von <code>Procedure.encounter</code>, um von der Prozedur auf den Encounter vom Typ <strong>Abteilungskontakt</strong> zu referenzieren. Dieser Ansatz etabliert den allgemeinen Aufenthaltskontext für die Prozedur und stellt den zeitlichen und organisatorischen Kontext bereit.</p>
+
+</div>
+
 #### Status und Workflow
 
 **`Procedure.status`:**

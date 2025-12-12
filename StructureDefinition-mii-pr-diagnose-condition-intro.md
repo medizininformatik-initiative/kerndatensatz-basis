@@ -83,15 +83,8 @@ This section provides detailed implementation guidance for the MII Diagnose (Dia
 
 <p><strong>Current Recommendation - Condition.encounter:</strong></p>
 <ul>
-  <li>The link to an Encounter resource documents the reference to a hospital stay and enables important API functions such as chained search, (reverse) include, etc.</li>
   <li><strong>Department Contact Level:</strong> The reference <strong>SHOULD</strong> be to an Encounter at the "Abteilungskontakt" (department contact) level.</li>
   <li>When selecting the Encounter, note that multiple Encounters may be grouped under a single (billing) case number (<code>Encounter.account</code>), such as an inpatient visit with multiple pre- and post-hospitalization contacts</li>
-</ul>
-
-<p><strong>Assessment Date Mapping:</strong></p>
-<ul>
-  <li>The logical data element "Feststellungsdatum" (assessment/determination date) maps to <code>Encounter.period.start</code>, NOT to an element in the Condition resource</li>
-  <li>Therefore, the Encounter reference represents both the technical documentation context and the temporal context of when the diagnosis was established</li>
 </ul>
 
 </div>

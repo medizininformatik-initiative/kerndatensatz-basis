@@ -279,6 +279,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Package ID:</strong> <code class="language-plaintext highlighter-rouge">de.medizininformatikinitiative.kerndatensatz.base</code></li>
 </ul>
 
+<h4 id="terminology-updates">Terminology Updates</h4>
+
+<ul>
+  <li><strong>Updated:</strong> Resources use SNOMED CT version <code class="language-plaintext highlighter-rouge">http://snomed.info/sct/900000000000207008/version/20250701</code> (July 2025) across modules to ensure stable <a href="http://hl7.org/fhir/R4/valueset.html#expansion">ValueSet expansion</a></li>
+</ul>
+
 <h4 id="example-consolidation">Example Consolidation</h4>
 
 <ul>
@@ -292,6 +298,21 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Changed:</strong> Updated guidance on Condition.encounter usage to align with gematik ISiK recommendations (Information Systems in Hospitals)</li>
   <li><strong>Changed:</strong> Condition.encounter SHOULD now reference an Encounter at the "Abteilungskontakt" (department contact) level</li>
   <li><strong>Note:</strong> This represents a change from previous versions where Encounter.diagnosis was the primary linkage method</li>
+</ul>
+
+<h4 id="treatment-case-module">Treatment Case Module</h4>
+
+<ul>
+  <li><strong>Changed:</strong> Updated guidance on billing case context (Abrechnungsfallkontext) and Account references based on gematik ISiK specification</li>
+  <li><strong>Changed:</strong> Enhanced documentation differentiating between Aufnahmenummer (admission number) and Fallnummer (case number)</li>
+  <li><strong>Changed:</strong> Clarified that Fallnummer identifies the billing case (Account) and should be provided as logical reference in <code class="language-plaintext highlighter-rouge">Encounter.account.identifier</code></li>
+  <li><strong>Changed:</strong> Each Encounter SHOULD have its own unique Aufnahmenummer in <code class="language-plaintext highlighter-rouge">Encounter.identifier:Aufnahmenummer</code></li>
+</ul>
+
+<h4 id="procedure-module">Procedure Module</h4>
+
+<ul>
+  <li><strong>Changed:</strong> Added guidance recommending use of <code class="language-plaintext highlighter-rouge">Procedure.encounter</code> to establish encounter context, aligned with Condition module recommendations</li>
 </ul>
 
 <h4 id="person-module">Person Module</h4>
@@ -313,7 +334,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Changed</strong>: Dependency updated to <a href="https://simplifier.net/packages/de.basisprofil.r4/1.5.4">de.basisprofil.r4 1.5.4</a>. This release of the FHIR Base Profiles contains a fix for the kvid-2 invariant applied to <code class="language-plaintext highlighter-rouge">Patient.identifier:versichertenId.type</code> in the Patient profile</li>
 </ul>
 
-<h4 id="treatment-case-module">Treatment Case Module</h4>
+<h4 id="treatment-case-module-1">Treatment Case Module</h4>
 <p><strong>Date:</strong> 2025-10-28</p>
 
 <ul>
@@ -330,7 +351,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Updated</strong>: CapabilityStatement now contains requirement documentation for search parameters <code class="language-plaintext highlighter-rouge">_count</code> and <code class="language-plaintext highlighter-rouge">_summary</code></li>
 </ul>
 
-<h4 id="procedure-module">Procedure Module</h4>
+<h4 id="procedure-module-1">Procedure Module</h4>
 <p><strong>Date:</strong> 2025-10-22</p>
 
 <ul>
@@ -358,7 +379,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Enhanced</strong>: Profiles contain additional descriptions and translations for implementers and the Research Data Portal for Health (FDPG)</li>
 </ul>
 
-<h4 id="treatment-case-module-1">Treatment Case Module</h4>
+<h4 id="treatment-case-module-2">Treatment Case Module</h4>
 <p><strong>Date:</strong> 2024-12-10</p>
 
 <ul>
@@ -387,7 +408,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Added</strong>: <code class="language-plaintext highlighter-rouge">Condition.verificationStatus</code> now has MustSupport label. See: https://github.com/medizininformatik-initiative/kerndatensatzmodul-diagnose/issues/64</li>
 </ul>
 
-<h4 id="procedure-module-1">Procedure Module</h4>
+<h4 id="procedure-module-2">Procedure Module</h4>
 <p><strong>Date:</strong> 2024-12-09</p>
 
 <ul>
@@ -402,7 +423,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="version-202401">Version 2024.0.1</h3>
 
-<h4 id="treatment-case-module-2">Treatment Case Module</h4>
+<h4 id="treatment-case-module-3">Treatment Case Module</h4>
 <p><strong>Date:</strong> 2024-04-17</p>
 
 <ul>
@@ -434,7 +455,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Changed</strong>: Data types in the logical model were adjusted to match the data types of elements in the FHIR profile to which they are mapped</li>
 </ul>
 
-<h4 id="treatment-case-module-3">Treatment Case Module</h4>
+<h4 id="treatment-case-module-4">Treatment Case Module</h4>
 <p><strong>Date:</strong> 2024-03-28</p>
 
 <ul>
@@ -476,7 +497,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Added</strong>: Module was extended with SearchParameter resources enabling search for ICD-10-GM codes in combination with multiple coding indicators, laterality and diagnostic certainty</li>
 </ul>
 
-<h4 id="procedure-module-2">Procedure Module</h4>
+<h4 id="procedure-module-3">Procedure Module</h4>
 <p><strong>Date:</strong> 2024-04-16</p>
 
 <ul>
@@ -533,8 +554,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.base#2026.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2025-12-11 18:40:00 +0000">
-    2025-12-11
+  <span title="2025-12-12 15:37:00 +0000">
+    2025-12-12
   </span>
 
           <br/>

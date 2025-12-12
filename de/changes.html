@@ -286,6 +286,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Package-ID:</strong> <code class="language-plaintext highlighter-rouge">de.medizininformatikinitiative.kerndatensatz.base</code></li>
 </ul>
 
+<h4 id="terminologie-updates">Terminologie-Updates</h4>
+
+<ul>
+  <li><strong>Changed:</strong> Ressourcen verwenden SNOMED CT-Version <code class="language-plaintext highlighter-rouge">http://snomed.info/sct/900000000000207008/version/20250701</code> (Juli 2025) modulübergreifend, um stabile <a href="http://hl7.org/fhir/R4/valueset.html#expansion">ValueSet-Expansion</a> zu gewährleisten</li>
+</ul>
+
 <h4 id="beispielkonsolidierung">Beispielkonsolidierung</h4>
 
 <ul>
@@ -299,6 +305,21 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Changed:</strong> Aktualisierte Anleitung zur Verwendung von Condition.encounter zur Ausrichtung an gematik ISiK-Empfehlungen (Informationstechnische Systeme in Krankenhäusern)</li>
   <li><strong>Changed:</strong> Condition.encounter SOLLTE nun auf einen Encounter der Ebene "Abteilungskontakt" referenzieren</li>
   <li><strong>Hinweis:</strong> Dies stellt eine Änderung gegenüber vorherigen Versionen dar, in denen Encounter.diagnosis die primäre Verknüpfungsmethode war</li>
+</ul>
+
+<h4 id="modul-fall">Modul Fall</h4>
+
+<ul>
+  <li><strong>Changed:</strong> Aktualisierte Anleitung zum Abrechnungsfallkontext und Account-Referenzen basierend auf der gematik ISiK-Spezifikation</li>
+  <li><strong>Changed:</strong> Erweiterte Dokumentation zur Unterscheidung zwischen Aufnahmenummer und Fallnummer</li>
+  <li><strong>Changed:</strong> Klargestellt, dass die Fallnummer den Abrechnungsfall (Account) identifiziert und als logische Referenz in <code class="language-plaintext highlighter-rouge">Encounter.account.identifier</code> angegeben werden sollte</li>
+  <li><strong>Changed:</strong> Jeder Encounter SOLLTE seine eigene eindeutige Aufnahmenummer in <code class="language-plaintext highlighter-rouge">Encounter.identifier:Aufnahmenummer</code> haben</li>
+</ul>
+
+<h4 id="modul-prozedur">Modul Prozedur</h4>
+
+<ul>
+  <li><strong>Changed:</strong> Anleitung hinzugefügt mit Empfehlung zur Verwendung von <code class="language-plaintext highlighter-rouge">Procedure.encounter</code> zur Etablierung des Kontaktkontexts, abgestimmt mit den Empfehlungen des Diagnose-Moduls</li>
 </ul>
 
 <h4 id="modul-person">Modul Person</h4>
@@ -320,7 +341,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Changed</strong>: Abhängigkeit aktualisiert auf <a href="https://simplifier.net/packages/de.basisprofil.r4/1.5.4">de.basisprofil.r4 1.5.4</a>. Diese Version der FHIR-Basisprofile enthält eine Korrektur für die kvid-2-Invariante, die auf <code class="language-plaintext highlighter-rouge">Patient.identifier:versichertenId.type</code> im Patient-Profil angewendet wird</li>
 </ul>
 
-<h4 id="modul-fall">Modul Fall</h4>
+<h4 id="modul-fall-1">Modul Fall</h4>
 <p><strong>Datum:</strong> 28.10.2025</p>
 
 <ul>
@@ -337,7 +358,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Changed</strong>: CapabilityStatement enthält nun Anforderungsdokumentation für Suchparameter <code class="language-plaintext highlighter-rouge">_count</code> und <code class="language-plaintext highlighter-rouge">_summary</code></li>
 </ul>
 
-<h4 id="modul-prozedur">Modul Prozedur</h4>
+<h4 id="modul-prozedur-1">Modul Prozedur</h4>
 <p><strong>Datum:</strong> 22.10.2025</p>
 
 <ul>
@@ -365,7 +386,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Changed</strong>: Profile enthalten zusätzliche Beschreibungen und Übersetzungen für Implementierer und das Forschungsdatenportal Gesundheit (FDPG)</li>
 </ul>
 
-<h4 id="modul-fall-1">Modul Fall</h4>
+<h4 id="modul-fall-2">Modul Fall</h4>
 <p><strong>Datum:</strong> 10.12.2024</p>
 
 <ul>
@@ -394,7 +415,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Added</strong>: <code class="language-plaintext highlighter-rouge">Condition.verificationStatus</code> hat nun MustSupport-Label. Siehe: https://github.com/medizininformatik-initiative/kerndatensatzmodul-diagnose/issues/64</li>
 </ul>
 
-<h4 id="modul-prozedur-1">Modul Prozedur</h4>
+<h4 id="modul-prozedur-2">Modul Prozedur</h4>
 <p><strong>Datum:</strong> 09.12.2024</p>
 
 <ul>
@@ -409,7 +430,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="version-202401">Version 2024.0.1</h3>
 
-<h4 id="modul-fall-2">Modul Fall</h4>
+<h4 id="modul-fall-3">Modul Fall</h4>
 <p><strong>Datum:</strong> 17.04.2024</p>
 
 <ul>
@@ -441,7 +462,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Changed</strong>: Datentypen im logischen Modell wurden angepasst, um den Datentypen der Elemente im FHIR-Profil zu entsprechen, auf die sie gemappt sind</li>
 </ul>
 
-<h4 id="modul-fall-3">Modul Fall</h4>
+<h4 id="modul-fall-4">Modul Fall</h4>
 <p><strong>Datum:</strong> 28.03.2024</p>
 
 <ul>
@@ -483,7 +504,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Added</strong>: Modul wurde um SearchParameter-Ressourcen erweitert, die die Suche nach ICD-10-GM-Codes in Kombination mit Mehrfachkodierungskennzeichen, Lateralität und diagnostischer Sicherheit ermöglichen</li>
 </ul>
 
-<h4 id="modul-prozedur-2">Modul Prozedur</h4>
+<h4 id="modul-prozedur-3">Modul Prozedur</h4>
 <p><strong>Datum:</strong> 16.04.2024</p>
 
 <ul>
@@ -540,8 +561,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.base#2026.0.0 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Erstellt 
-  <span title="2025-12-11 18:40:00 +0000">
-    2025-12-11
+  <span title="2025-12-12 15:37:00 +0000">
+    2025-12-12
   </span>
 
           <br/>

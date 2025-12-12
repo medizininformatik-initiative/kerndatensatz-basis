@@ -149,6 +149,8 @@ Since `Encounter.diagnosis.use` has cardinality 1..1, a diagnosis with multiple 
 
 **Example:** If a Condition serves as both a Diagnosetyp and a Diagnosesubtyp (or additional roles such as CC/CM), create separate `Encounter.diagnosis` references for each role, all pointing to the same Condition resource. A single Condition can be referenced multiple times with different `use` values.
 
+**Note on CC/CM Classification:** If you want to classify a diagnosis as CC (Complication or Comorbidity) or CM (Comorbidity), this is typically billing-related information and should be placed in the Account resource rather than in `Encounter.diagnosis`. The Account resource is the appropriate location for billing case context and DRG-relevant classifications.
+
 #### Encounter Location
 
 * Location details (room, bed, ward) can be specified using `Encounter.location`.
@@ -187,12 +189,28 @@ Previously, it was recommended that the Aufnahmenummer (admission number) should
 
 ##### Best Practice - Aufnahmenummer vs. Fallnummer
 
+**Note: This guidance is based on the[ISiK specification](https://simplifier.net/packages/de.gematik.isik/5.1.0/files/3020028).**
+
 It is important to distinguish between:
 
 * **Aufnahmenummer (Admission Number):** A unique identifier assigned to a patient during admission planning or at admission itself. Each Encounter **SHOULD** have its own unique Aufnahmenummer in `Encounter.identifier:Aufnahmenummer` where applicable.
 * **Fallnummer (Case Number):** Typically identifies the billing case (Account), not individual encounters.
 
-The Fallnummer can be made accessible in the Encounter without requiring implementation of the Account resource by including the Account identifier as a logical reference in `Encounter.account`. This enables Fallnummer-based searches.
+**Account References and Billing Context:**
+
+The reference to an Account establishes the billing context for one or more Encounters. Using the Account reference, multiple encounters can be grouped together into a single billing case (e.g., a "DRG-Fall" comprising pre-inpatient, inpatient, and post-inpatient visits).
+
+**Note:** If you want to implement the billing case (Abrechnungsfall), it is recommended to use the [ISiK Account profile](https://simplifier.net/packages/de.gematik.isik/5.1.0/files/3019857).
+
+**Important Note for Implementers:** In German healthcare terminology, the term "Fall" (case) usually refers to the billing context, not individual encounters. Therefore, the "Fallnummer" is not the identifier of the Encounter, but rather the identifier of the Account that the Encounter references. This enables multiple encounters to be associated with a single Fallnummer.
+
+**Logical References for Search:**
+
+Since the Fallnummer is a frequently used search criterion, it **SHOULD** be provided as a logical reference (`account.identifier`) in the Encounter. This ensures that the Fallnummer is available as a search parameter for finding Encounters, even when:
+
+* Individual systems do not support chaining
+* Individual users lack viewing permissions for billing data
+* Users in the care context need to search for Encounters using the associated Fallnummer
 
 **Usages:**
 
@@ -270,7 +288,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-fall-konta
     ]
   },
   "status" : "active",
-  "date" : "2024-12-10",
+  "date" : "2025-12-12",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [
@@ -854,7 +872,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-fall-konta
             }
           ]
         },
-        "definition" : "OPTIONAL, Aufnahmenummer/Fallnummer, die Patient:innen bei der Planung einer Aufnahme oder bei der Aufnahme selbst bekommt. \nGenerell SOLLTE die Aufnahmenummer in allen Encounter-Ressourcen unabhängig von der Kontaktebene und dem Kontakttyp angegeben werden. \nAls Gründe würden dagegen sprechen, wenn die Aufnahmenummer nur in einem Encounter der Encounter-Hierarchie angegeben werden kann. \nIn diesem Fall SOLL auf die korrekte Encounter-Verlinkung über .partOf geachtet werden, \nsowie dass jeder Encounter einen eigenständigen Identifier mit unterschiedlichen Systemen enthält.",
+        "definition" : "OPTIONAL, Ein eindeutiger Identifier, der einem Patienten bei der Aufnahmeplanung oder bei der Aufnahme selbst zugewiesen wird.\nJeder Encounter SOLLTE seine eigene eindeutige Aufnahmenummer haben. Die Aufnahmenummer ist nicht die Fallnummer, \nwelche sich auf den kompletten Abrechnungsfall bezieht. Hier wird ein Identifier angegeben, der den Kontakt eindeutig identifiziert.",
         "_definition" : {
           "extension" : [
             {
@@ -1730,7 +1748,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-fall-konta
             }
           ]
         },
-        "definition" : "OPTIONAL, Angaben zu Diagnosen",
+        "definition" : "OPTIONAL, Verweis auf Diagnosen/Prozeduren, die eine besondere Rolle im Kontext eines Encounters haben.\nDer Fallbezug von Diagnosen und Prozeduren wird über das jeweilige encounter-Element der Condition bzw. Procedure-Ressource hinreichend etabliert. \nDie zusätzliche Rückverlinkung von Encounter.diagnosis auf Condition/Procedure wird nur dann verwendet, \nwenn einer Diagnose bzw. Prozedur im Kontext eines Aufenthaltes eine besondere Rolle zugewiesen werden soll, \nz.B. Haupt-/Neben-/Aufnahme- oder Überweisungsdiagnose).",
         "_definition" : {
           "extension" : [
             {
@@ -1767,7 +1785,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-fall-konta
         "id" : "Encounter.diagnosis.condition",
         "path" : "Encounter.diagnosis.condition",
         "short" : "Referenz zu Diagnose-Ressource",
-        "definition" : "VERPFLICHTEND, wenn Diagnosedaten angegeben werden, dann MUSS diese referenziert werden. \nEs SOLLTE nur die Primärdiagnose referenziert werden.",
+        "definition" : "VERPFLICHTEND, wenn Diagnosedaten angegeben werden, dann MUSS diese referenziert werden. \nBei ICD-10 Primär- und Sekundärcodes SOLLTE nur die Primärdiagnose referenziert werden.",
         "mustSupport" : true
       },
       {
@@ -1833,11 +1851,104 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-fall-konta
         "mustSupport" : true
       },
       {
+        "id" : "Encounter.account",
+        "path" : "Encounter.account",
+        "short" : "Abrechnungskontext",
+        "_short" : {
+          "extension" : [
+            {
+              "extension" : [
+                {
+                  "url" : "lang",
+                  "valueCode" : "de-DE"
+                },
+                {
+                  "url" : "content",
+                  "valueString" : "Abrechnungskontext"
+                }
+              ],
+              "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+            },
+            {
+              "extension" : [
+                {
+                  "url" : "lang",
+                  "valueCode" : "en-US"
+                },
+                {
+                  "url" : "content",
+                  "valueString" : "Billing Context"
+                }
+              ],
+              "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+            }
+          ]
+        },
+        "definition" : "OPTIONAL. Referenz auf den Abrechnungsfall. Eine logische Referenz ist ausreichend zur Abbildung des Abrechnungskontextes.",
+        "_definition" : {
+          "extension" : [
+            {
+              "extension" : [
+                {
+                  "url" : "lang",
+                  "valueCode" : "de-DE"
+                },
+                {
+                  "url" : "content",
+                  "valueString" : "Referenz auf den Abrechnungsfall."
+                }
+              ],
+              "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+            },
+            {
+              "extension" : [
+                {
+                  "url" : "lang",
+                  "valueCode" : "en-US"
+                },
+                {
+                  "url" : "content",
+                  "valueString" : "Reference to the billing case."
+                }
+              ],
+              "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+            }
+          ]
+        },
+        "mustSupport" : true
+      },
+      {
         "id" : "Encounter.hospitalization",
         "path" : "Encounter.hospitalization",
         "short" : "Klinikaufenthalt",
         "_short" : {
           "extension" : [
+            {
+              "extension" : [
+                {
+                  "url" : "lang",
+                  "valueCode" : "de-DE"
+                },
+                {
+                  "url" : "content",
+                  "valueString" : "Klinikaufenthalt"
+                }
+              ],
+              "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+            },
+            {
+              "extension" : [
+                {
+                  "url" : "lang",
+                  "valueCode" : "en-US"
+                },
+                {
+                  "url" : "content",
+                  "valueString" : "Hospitalization"
+                }
+              ],
+              "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+            },
             {
               "extension" : [
                 {

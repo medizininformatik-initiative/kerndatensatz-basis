@@ -106,6 +106,14 @@ Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Pro
  
 * Bietet klinischen Kontext für die Prozedur über den Prozedurenkode hinaus
 
+#### Kontaktkontext
+
+##### Best Practice - Prozedur-Kontakt-Beziehungen
+
+**Empfohlene Implementierung:**
+
+Verwenden von `Procedure.encounter`, um von der Prozedur auf den Encounter vom Typ **Abteilungskontakt** zu referenzieren. Dieser Ansatz etabliert den allgemeinen Aufenthaltskontext für die Prozedur und stellt den zeitlichen und organisatorischen Kontext bereit.
+
 #### Status und Workflow
 
 **`Procedure.status`:**
@@ -160,7 +168,7 @@ Diese Struktur ist abgeleitet von [Procedure](http://hl7.org/fhir/R4/procedure.h
 **Summary**
 
 Mandatory: 3 elements(6 nested mandatory elements)
- Must-Support: 31 elements
+ Must-Support: 32 elements
 
 **Structures**
 
@@ -209,7 +217,7 @@ Diese Struktur ist abgeleitet von [Procedure](http://hl7.org/fhir/R4/procedure.h
 **Summary**
 
 Mandatory: 3 elements(6 nested mandatory elements)
- Must-Support: 31 elements
+ Must-Support: 32 elements
 
 **Structures**
 
@@ -294,7 +302,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-proze
     ]
   },
   "status" : "active",
-  "date" : "2025-04-08",
+  "date" : "2025-12-12",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [
@@ -1123,6 +1131,73 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-proze
       {
         "id" : "Procedure.subject",
         "path" : "Procedure.subject",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Procedure.encounter",
+        "path" : "Procedure.encounter",
+        "short" : "Kontakt (Aufenthaltsbezug)",
+        "_short" : {
+          "extension" : [
+            {
+              "extension" : [
+                {
+                  "url" : "lang",
+                  "valueCode" : "de-DE"
+                },
+                {
+                  "url" : "content",
+                  "valueString" : "Kontakt"
+                }
+              ],
+              "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+            },
+            {
+              "extension" : [
+                {
+                  "url" : "lang",
+                  "valueCode" : "en-US"
+                },
+                {
+                  "url" : "content",
+                  "valueString" : "Encounter"
+                }
+              ],
+              "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+            }
+          ]
+        },
+        "definition" : "Kontakt, während dem die Prozedur durchgeführt wurde oder mit dem die Prozedur in Zusammenhang steht.",
+        "_definition" : {
+          "extension" : [
+            {
+              "extension" : [
+                {
+                  "url" : "lang",
+                  "valueCode" : "de-DE"
+                },
+                {
+                  "url" : "content",
+                  "valueString" : "Kontakt, während dem die Prozedur durchgeführt wurde oder mit dem die Prozedur in Zusammenhang steht."
+                }
+              ],
+              "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+            },
+            {
+              "extension" : [
+                {
+                  "url" : "lang",
+                  "valueCode" : "en-US"
+                },
+                {
+                  "url" : "content",
+                  "valueString" : "The Encounter during which this Procedure was performed or to which the creation of this record is tightly associated."
+                }
+              ],
+              "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+            }
+          ]
+        },
         "mustSupport" : true
       },
       {

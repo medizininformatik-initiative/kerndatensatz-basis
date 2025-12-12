@@ -23,7 +23,7 @@ Die MII-Kerndatensatz-Spezifikationen basieren, wo möglich, auf internationalen
 * **[German Base Profiles (Basisprofil DE R4)](https://ig.fhir.de/basisprofile-de/)** - Profile für Anpassung an die Rahmenbedingungen des deutschen Gesundheitswesens
 * **[KBV FHIR Spezifikationen](https://simplifier.net/organization/kassenrztlichebundesvereinigungkbv)** - Kompatibilität mit Spezifikationen der Kassenärztlichen Bundesvereinigung
 * **[gematik FHIR Spezifikationen](https://simplifier.net/organization/gematik)** - Kompatibilität mit gematik-Spezifikationen
-* **[ISiK (Informationssysteme im Krankenhaus)](https://fachportal.gematik.de/informationen-fuer/isik)** - Referenzprojekt für Krankenhausinformationssysteme
+* **[ISiK (Informationssysteme im Krankenhaus)](https://fachportal.gematik.de/informationen-fuer/isik)** - Referenzspezifikation für Informationssysteme im Krankenhaus
 
 Alle Elemente des Kerndatensatzes, angepasst an die Details und Anforderungen für die Anwendungsfälle der Medizininformatik-Initiative, werden nachfolgend in Form von FHIR StructureDefinitions beschrieben. Die Notwendigkeit der Anpassung der FHIR-Profile wird auf jeder Profilseite in Textform erläutert.
 

@@ -126,7 +126,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-person-tod
     ]
   },
   "status" : "active",
-  "date" : "2024-12-04",
+  "date" : "2025-12-12",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [
@@ -658,7 +658,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-person-tod
       {
         "id" : "Condition.encounter",
         "path" : "Condition.encounter",
-        "short" : "Fall oder Kontakt",
+        "short" : "Kontakt (Aufenthaltsbezug)",
         "_short" : {
           "extension" : [
             {
@@ -669,7 +669,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-person-tod
                 },
                 {
                   "url" : "content",
-                  "valueString" : "Fall oder Kontakt"
+                  "valueString" : "Kontakt"
                 }
               ],
               "url" : "http://hl7.org/fhir/StructureDefinition/translation"
@@ -689,7 +689,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-person-tod
             }
           ]
         },
-        "definition" : "Fall oder Kontakt, bei dem die Todesursache festgestellt wurde.",
+        "definition" : "Kontakt, während dem die Todesursache festgestellt wurde.",
         "_definition" : {
           "extension" : [
             {
@@ -700,7 +700,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-person-tod
                 },
                 {
                   "url" : "content",
-                  "valueString" : "Fall oder Kontakt, bei dem die Todesursache festgestellt wurde."
+                  "valueString" : "Kontakt, bei dem die Todesursache festgestellt wurde."
                 }
               ],
               "url" : "http://hl7.org/fhir/StructureDefinition/translation"

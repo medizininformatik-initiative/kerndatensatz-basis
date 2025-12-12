@@ -18,6 +18,10 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 * **Konsolidierter Implementierungsleitfaden:** Die vier Basismodule (Person, Fall, Diagnose und Prozedur) wurden zu einem Implementierungsleitfaden zusammengeführt
 * **Package-ID:** `de.medizininformatikinitiative.kerndatensatz.base`
 
+#### Terminologie-Updates
+
+* **Changed:** Ressourcen verwenden SNOMED CT-Version `http://snomed.info/sct/900000000000207008/version/20250701` (Juli 2025) modulübergreifend, um stabile [ValueSet-Expansion](http://hl7.org/fhir/R4/valueset.html#expansion) zu gewährleisten
+
 #### Beispielkonsolidierung
 
 * **Einheitliches Testdaten-Bundle:** Beispielressourcen wurden in einem umfassenden Testdaten-Bundle zusammengeführt
@@ -28,6 +32,17 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 * **Changed:** Aktualisierte Anleitung zur Verwendung von Condition.encounter zur Ausrichtung an gematik ISiK-Empfehlungen (Informationstechnische Systeme in Krankenhäusern)
 * **Changed:** Condition.encounter SOLLTE nun auf einen Encounter der Ebene "Abteilungskontakt" referenzieren
 * **Hinweis:** Dies stellt eine Änderung gegenüber vorherigen Versionen dar, in denen Encounter.diagnosis die primäre Verknüpfungsmethode war
+
+#### Modul Fall
+
+* **Changed:** Aktualisierte Anleitung zum Abrechnungsfallkontext und Account-Referenzen basierend auf der gematik ISiK-Spezifikation
+* **Changed:** Erweiterte Dokumentation zur Unterscheidung zwischen Aufnahmenummer und Fallnummer
+* **Changed:** Klargestellt, dass die Fallnummer den Abrechnungsfall (Account) identifiziert und als logische Referenz in `Encounter.account.identifier` angegeben werden sollte
+* **Changed:** Jeder Encounter SOLLTE seine eigene eindeutige Aufnahmenummer in `Encounter.identifier:Aufnahmenummer` haben
+
+#### Modul Prozedur
+
+* **Changed:** Anleitung hinzugefügt mit Empfehlung zur Verwendung von `Procedure.encounter` zur Etablierung des Kontaktkontexts, abgestimmt mit den Empfehlungen des Diagnose-Moduls
 
 #### Modul Person
 
