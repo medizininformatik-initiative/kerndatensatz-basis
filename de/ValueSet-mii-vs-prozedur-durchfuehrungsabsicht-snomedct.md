@@ -9,10 +9,6 @@ Durchführungsabsicht / Intention mit der Prozedur ausgeführt wird
 
 * [MII EX Prozedur Durchführungsabsicht](StructureDefinition-mii-ex-prozedur-durchfuehrungsabsicht.md)
 
-**Changes since version {current}:**
-
-* New Content
-
 ### Logical Definition (CLD)
 
  

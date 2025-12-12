@@ -9,10 +9,6 @@ Enthaelt alle SNOMED Clinical finding, Event und Situation with explicit context
 
 * [MII PR Diagnose Condition](StructureDefinition-mii-pr-diagnose-condition.md)
 
-**Changes since version {current}:**
-
-* New Content
-
 ### Logical Definition (CLD)
 
  

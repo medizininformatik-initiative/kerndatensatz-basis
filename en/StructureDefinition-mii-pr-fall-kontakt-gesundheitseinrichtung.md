@@ -219,10 +219,6 @@ Since the Fallnummer is a frequently used search criterion, it **SHOULD** be pro
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/mii-pr-fall-kontakt-gesundheitseinrichtung)
 
-**Changes since version {current}:**
-
-* New Content
-
 ### Formal Views of Profile Content
 
  [Description Differentials, Snapshots, and other representations](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 

@@ -9,10 +9,6 @@ Enthaelt ICD-10-GM-Codes der Versionen 2009 bis 2025
 
 * [MII PR Diagnose Condition](StructureDefinition-mii-pr-diagnose-condition.md)
 
-**Changes since version {current}:**
-
-* New Content
-
 ### Logical Definition (CLD)
 
  

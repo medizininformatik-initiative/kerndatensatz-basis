@@ -15,10 +15,6 @@ The planned start date/time (or admission date) of the encounter
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/mii-ex-fall-planned-start-date)
 
-**Changes since version {current}:**
-
-* New Content
-
 ### Formale Ansichten des Extension-Inhalts
 
  [Beschreibung von Profilen, Differentials, Snapshots und deren Repräsentationen](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 
@@ -87,7 +83,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-ex-fall-
   "name" : "MII_EX_Fall_Planned_Start_Date",
   "title" : "MII EX Fall Planned Start Date",
   "status" : "active",
-  "date" : "2025-12-12T15:37:34+00:00",
+  "date" : "2025-12-12T16:35:12+00:00",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [

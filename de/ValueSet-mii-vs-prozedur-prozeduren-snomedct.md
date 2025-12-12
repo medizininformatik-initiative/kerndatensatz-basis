@@ -9,10 +9,6 @@ Enthaelt alle SNOMED CT Procedure Codes
 
 * [MII PR Prozedur Procedure](StructureDefinition-mii-pr-prozedur-procedure.md)
 
-**Changes since version {current}:**
-
-* New Content
-
 ### Logical Definition (CLD)
 
  

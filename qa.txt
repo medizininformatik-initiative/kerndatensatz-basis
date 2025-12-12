@@ -1,9 +1,9 @@
 MII_IG_Base : Validation Results
 =========================================
 
-err = 0, warn = 1416, info = 182
+err = 0, warn = 1413, info = 180
 IG Publisher Version: 2.0.28
-Generated Fri Dec 12 15:50:12 UTC 2025. FHIR version 4.0.1 for de.medizininformatikinitiative.kerndatensatz.base#2026.0.0 (canonical = https://www.medizininformatik-initiative.de/fhir/modul-base)
+Generated Fri Dec 12 16:46:50 UTC 2025. FHIR version 4.0.1 for de.medizininformatikinitiative.kerndatensatz.base#2026.0.0 (canonical = https://www.medizininformatik-initiative.de/fhir/modul-base)
  Build Errors : 0 / 2 / 0
  /workspace/fsh-generated/resources/Bundle-mii-exa-base-test-data-bundle-1 : 0 / 35 / 66
  /workspace/fsh-generated/resources/CapabilityStatement-mii-cps-diagnose-capabilitystatement : 0 / 3 / 2
@@ -53,7 +53,6 @@ Generated Fri Dec 12 15:50:12 UTC 2025. FHIR version 4.0.1 for de.medizininforma
  /workspace/fsh-generated/resources/StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung : 0 / 181 / 16
  /workspace/fsh-generated/resources/StructureDefinition-mii-pr-person-patient : 0 / 137 / 11
  /workspace/fsh-generated/resources/StructureDefinition-mii-pr-person-patient-pseudonymisiert : 0 / 78 / 9
- /workspace/fsh-generated/resources/StructureDefinition-mii-pr-person-proband : 0 / 3 / 3
  /workspace/fsh-generated/resources/StructureDefinition-mii-pr-person-todesursache : 0 / 65 / 8
  /workspace/fsh-generated/resources/StructureDefinition-mii-pr-person-vitalstatus : 0 / 63 / 8
  /workspace/fsh-generated/resources/StructureDefinition-mii-pr-prozedur-procedure : 0 / 125 / 8
@@ -1376,12 +1375,6 @@ INFORMATION: StructureDefinition/mii-pr-person-patient-pseudonymisiert: Structur
 INFORMATION: StructureDefinition/mii-pr-person-patient-pseudonymisiert: StructureDefinition.snapshot.element[19].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 INFORMATION: StructureDefinition/mii-pr-person-patient-pseudonymisiert: StructureDefinition.snapshot.element[61].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: StructureDefinition/mii-pr-person-patient-pseudonymisiert: StructureDefinition.snapshot.element[62].pattern.ofType(Address): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
-== fsh-generated/resources/StructureDefinition-mii-pr-person-proband.json ==
-WARNING: StructureDefinition/mii-pr-person-proband: StructureDefinition.publisher.extension[0].extension[0].value.ofType(code): A definition for CodeSystem 'null' could not be found, so the code cannot be validated
-WARNING: StructureDefinition/mii-pr-person-proband: StructureDefinition.jurisdiction[0]: Unable to check whether the code is in the value set 'http://hl7.org/fhir/ValueSet/jurisdiction|4.0.1' because the code system urn:iso:std:iso:3166 was not found
-WARNING: StructureDefinition/mii-pr-person-proband: StructureDefinition.jurisdiction[0].coding[0].system: A definition for CodeSystem 'urn:iso:std:iso:3166:-2' could not be found, so the code cannot be validated
-INFORMATION: StructureDefinition/mii-pr-person-proband: StructureDefinition.differential.element[4].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
-INFORMATION: StructureDefinition/mii-pr-person-proband: StructureDefinition.snapshot.element[17].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 == fsh-generated/resources/StructureDefinition-mii-pr-person-todesursache.json ==
 INFORMATION: StructureDefinition/mii-pr-person-todesursache: StructureDefinition.extension[0].value.ofType(CodeableConcept): Reference to draft CodeSystem http://hl7.org/fhir/spdx-license|84728b7
 WARNING: StructureDefinition/mii-pr-person-todesursache: StructureDefinition.title.extension[0].extension[0].value.ofType(code): A definition for CodeSystem 'null' could not be found, so the code cannot be validated
