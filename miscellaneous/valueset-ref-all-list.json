@@ -10,8 +10,8 @@
       "systems" : ["http://fhir.de/CodeSystem/KontaktDiagnoseProzedur"],
       "uses" : {
       },
-      "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung",
-      "ValueSet-mii-vs-fall-diagnosis-use.html" : "MII VS Fall Diagnosis Use"
+      "ValueSet-mii-vs-fall-diagnosis-use.html" : "MII VS Fall Diagnosis Use",
+      "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung"
     },
     {
       "url" : "http://fhir.de/ValueSet/Diagnosesubtyp",
@@ -26,8 +26,8 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung",
-      "ValueSet-mii-vs-fall-diagnosis-use.html" : "MII VS Fall Diagnosis Use"
+      "ValueSet-mii-vs-fall-diagnosis-use.html" : "MII VS Fall Diagnosis Use",
+      "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung"
     },
     {
       "url" : "http://fhir.de/ValueSet/EncounterClassDE",
@@ -251,10 +251,10 @@
       "sources" : ["2.16.840.1.113883.4.642.3.141"],
       "uses" : {
       },
-      "StructureDefinition-mii-pr-prozedur-procedure.html" : "MII PR Prozedur Procedure",
+      "StructureDefinition-mii-pr-person-vitalstatus.html" : "MII PR Person Vitalstatus",
       "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition",
-      "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache",
-      "StructureDefinition-mii-pr-person-vitalstatus.html" : "MII PR Person Vitalstatus"
+      "StructureDefinition-mii-pr-prozedur-procedure.html" : "MII PR Prozedur Procedure",
+      "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/common-tags",
@@ -268,14 +268,13 @@
       "sources" : ["2.16.840.1.113883.4.642.3.79"],
       "uses" : {
       },
-      "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung",
-      "StructureDefinition-mii-pr-person-proband.html" : "MII PR Person Proband",
-      "StructureDefinition-mii-pr-prozedur-procedure.html" : "MII PR Prozedur Procedure",
-      "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition",
       "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)",
+      "StructureDefinition-mii-pr-person-vitalstatus.html" : "MII PR Person Vitalstatus",
+      "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition",
+      "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung",
+      "StructureDefinition-mii-pr-prozedur-procedure.html" : "MII PR Prozedur Procedure",
       "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient",
-      "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache",
-      "StructureDefinition-mii-pr-person-vitalstatus.html" : "MII PR Person Vitalstatus"
+      "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/condition-category",
@@ -319,8 +318,8 @@
       "sources" : ["2.16.840.1.113883.4.642.3.161"],
       "uses" : {
       },
-      "StructureDefinition-mii-pr-prozedur-procedure.html" : "MII PR Prozedur Procedure",
       "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition",
+      "StructureDefinition-mii-pr-prozedur-procedure.html" : "MII PR Prozedur Procedure",
       "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache"
     },
     {
@@ -602,7 +601,6 @@
       "sources" : ["2.16.840.1.113883.4.642.3.45"],
       "uses" : {
       },
-      "StructureDefinition-mii-pr-person-proband.html" : "MII PR Person Proband",
       "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient"
     },
     {
@@ -617,9 +615,8 @@
       "sources" : ["2.16.840.1.113883.4.642.3.57"],
       "uses" : {
       },
-      "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung",
-      "StructureDefinition-mii-pr-person-proband.html" : "MII PR Person Proband",
       "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)",
+      "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung",
       "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient"
     },
     {
@@ -647,14 +644,13 @@
       "sources" : ["2.16.840.1.113883.4.642.3.20"],
       "uses" : {
       },
-      "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung",
-      "StructureDefinition-mii-pr-person-proband.html" : "MII PR Person Proband",
-      "StructureDefinition-mii-pr-prozedur-procedure.html" : "MII PR Prozedur Procedure",
-      "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition",
       "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)",
+      "StructureDefinition-mii-pr-person-vitalstatus.html" : "MII PR Person Vitalstatus",
+      "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition",
+      "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung",
+      "StructureDefinition-mii-pr-prozedur-procedure.html" : "MII PR Prozedur Procedure",
       "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient",
-      "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache",
-      "StructureDefinition-mii-pr-person-vitalstatus.html" : "MII PR Person Vitalstatus"
+      "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/link-type",
@@ -951,20 +947,6 @@
       "StructureDefinition-mii-pr-person-vitalstatus.html" : "MII PR Person Vitalstatus"
     },
     {
-      "url" : "http://hl7.org/fhir/ValueSet/research-subject-status",
-      "version" : "4.0.1",
-      "status" : "draft",
-      "name" : "ResearchSubjectStatus",
-      "title" : "ResearchSubjectStatus",
-      "description" : "Indicates the progression of a study subject through a study.",
-      "systems" : ["http://hl7.org/fhir/research-subject-status"],
-      "oids" : ["2.16.840.1.113883.4.642.3.829"],
-      "sources" : ["2.16.840.1.113883.4.642.3.829"],
-      "uses" : {
-      },
-      "StructureDefinition-mii-pr-person-proband.html" : "MII PR Person Proband"
-    },
-    {
       "url" : "http://hl7.org/fhir/ValueSet/resource-types",
       "version" : "4.0.1",
       "status" : "active",
@@ -997,14 +979,13 @@
       "sources" : ["2.16.840.1.113883.4.642.3.47"],
       "uses" : {
       },
-      "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung",
-      "StructureDefinition-mii-pr-person-proband.html" : "MII PR Person Proband",
-      "StructureDefinition-mii-pr-prozedur-procedure.html" : "MII PR Prozedur Procedure",
-      "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition",
       "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)",
+      "StructureDefinition-mii-pr-person-vitalstatus.html" : "MII PR Person Vitalstatus",
+      "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition",
+      "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung",
+      "StructureDefinition-mii-pr-prozedur-procedure.html" : "MII PR Prozedur Procedure",
       "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient",
-      "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache",
-      "StructureDefinition-mii-pr-person-vitalstatus.html" : "MII PR Person Vitalstatus"
+      "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/service-type",

@@ -9,10 +9,6 @@ This Code system is referenced in the definition of the following value sets:
 
 * This CodeSystem Supplement is not used here; it may be used elsewhere (e.g. specifications and/or implementations that use this content)
 
-**Changes since version {current}:**
-
-* New Content
-
 -------
 
  [Description of the above table(s)](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#terminology). 

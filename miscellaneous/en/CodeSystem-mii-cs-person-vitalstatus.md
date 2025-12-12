@@ -9,10 +9,6 @@ This Code system is referenced in the definition of the following value sets:
 
 * [MII_VS_Person_Vitalstatus](ValueSet-mii-vs-person-vitalstatus.md)
 
-**Changes since version {current}:**
-
-* New Content
-
 -------
 
  [Description of the above table(s)](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#terminology). 

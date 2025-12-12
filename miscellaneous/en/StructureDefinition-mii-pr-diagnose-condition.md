@@ -106,10 +106,6 @@ This section provides detailed implementation guidance for the MII Diagnose (Dia
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/mii-pr-diagnose-condition)
 
-**Changes since version {current}:**
-
-* New Content
-
 ### Formal Views of Profile Content
 
  [Description Differentials, Snapshots, and other representations](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 

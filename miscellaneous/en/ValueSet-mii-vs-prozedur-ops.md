@@ -9,10 +9,6 @@ Enthaelt OPS-Codes der Versionen 2010 bis 2025
 
 * [MII PR Prozedur Procedure](StructureDefinition-mii-pr-prozedur-procedure.md)
 
-**Changes since version {current}:**
-
-* New Content
-
 ### Logical Definition (CLD)
 
  

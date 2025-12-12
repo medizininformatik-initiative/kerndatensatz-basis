@@ -57,10 +57,6 @@ This section provides detailed implementation guidance for the MII Cause of Deat
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/mii-pr-person-todesursache)
 
-**Changes since version {current}:**
-
-* New Content
-
 ### Formal Views of Profile Content
 
  [Description Differentials, Snapshots, and other representations](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 

@@ -9,10 +9,6 @@ MII VS Person ICD-10-WHO
 
 * [MII PR Person Todesursache](StructureDefinition-mii-pr-person-todesursache.md)
 
-**Changes since version {current}:**
-
-* New Content
-
 ### Logical Definition (CLD)
 
  

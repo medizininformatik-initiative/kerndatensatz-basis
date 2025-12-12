@@ -9,10 +9,6 @@ This Code system is referenced in the definition of the following value sets:
 
 * This CodeSystem Supplement is not used here; it may be used elsewhere (e.g. specifications and/or implementations that use this content)
 
-**Changes since version {current}:**
-
-* New Content
-
 -------
 
  [Description of the above table(s)](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#terminology). 
@@ -50,7 +46,7 @@ This Code system is referenced in the definition of the following value sets:
   "title" : "MII CS Fall Supplement ActEncounterCode",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-12-12T15:07:24+00:00",
+  "date" : "2025-12-12T16:13:34+00:00",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [

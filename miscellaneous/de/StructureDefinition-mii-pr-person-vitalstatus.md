@@ -89,10 +89,6 @@ Siehe [Formal Views](#profile) für das vollständige ValueSet-Binding.
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/mii-pr-person-vitalstatus)
 
-**Changes since version {current}:**
-
-* New Content
-
 ### Formale Ansichten des Profilinhalts
 
  [Beschreibung von Profilen, Differentials, Snapshots und deren Repräsentationen](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 
