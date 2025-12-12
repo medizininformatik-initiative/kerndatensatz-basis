@@ -12,7 +12,7 @@ Description: "Dieses Profil beschreibt den Todesursache der Patient*in als Eleme
 * insert Publisher
 * insert LicenseCodeableCCBY40
 * ^status = #active
-* ^date = "2024-12-04"
+* ^date = "2025-12-12"
 * id MS
 * meta MS
 //* meta.source MS
@@ -75,11 +75,11 @@ Description: "Dieses Profil beschreibt den Todesursache der Patient*in als Eleme
 * code.text MS
 * subject MS
 * encounter MS
-* encounter ^short = "Fall oder Kontakt"
-* encounter ^definition = "Fall oder Kontakt, bei dem die Todesursache festgestellt wurde."
-* insert Translation(encounter ^short, de-DE, Fall oder Kontakt)
+* encounter ^short = "Kontakt (Aufenthaltsbezug)"
+* encounter ^definition = "Kontakt, während dem die Todesursache festgestellt wurde."
+* insert Translation(encounter ^short, de-DE, Kontakt)
 * insert Translation(encounter ^short, en-US, Encounter)
-* insert Translation(encounter ^definition, de-DE, Fall oder Kontakt\, bei dem die Todesursache festgestellt wurde.)
+* insert Translation(encounter ^definition, de-DE, Kontakt\, bei dem die Todesursache festgestellt wurde.)
 * insert Translation(encounter ^definition, en-US, Encounter during which the cause of death was determined.)
 * recordedDate MS
 * recordedDate ^short = "Aufzeichnungsdatum"

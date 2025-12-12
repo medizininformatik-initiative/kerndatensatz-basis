@@ -8,7 +8,10 @@ This page lists all ValueSets and CodeSystems defined as part of the MII Impleme
 Most value sets used in this guide reference external code systems such as ICD-10-GM, OPS, SNOMED CT, and Orphanet. The following sections list the value sets defined and used in this implementation guide, organized by module.
 
 {:.bg-info}
-**Note:** The following ValueSets do not include expansions. For validation purposes, expansions MUST be created via a FHIR terminology server.
+**Note:** The ValueSet expansions in this Implementation Guide have been generated with the terminology server provided by Service Unit Terminologische Dienste (SU-TermServ): [https://mii-termserv.de/](https://mii-termserv.de/). For validation purposes, expansions MUST be created via a FHIR terminology server.
+
+{:.bg-info}
+**SNOMED CT Version:** ValueSets using SNOMED CT use version `http://snomed.info/sct/900000000000207008/version/20250701` (July 2025) for expansions.
 
 #### Person Module Value Sets
 

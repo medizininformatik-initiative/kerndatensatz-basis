@@ -10,5 +10,5 @@ Description: "Enthaelt alle SNOMED Body structure codes"
 * insert LicenseCodeableCCBY40
 * ^status = #active
 * ^experimental = true
-* ^date = "2024-12-09"
+* ^date = "2025-12-12"
 * include codes from system $sct where concept descendent-of #123037004

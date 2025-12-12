@@ -9,7 +9,7 @@ Description: "Kontakt zu einer Einrichtung, Abteilung oder Versorgungsstelle"
 * insert PR_CS_VS_Version
 * insert LicenseCodeableCCBY40
 * obeys mii-enc-1 and mii-enc-2 and mii-enc-3 and mii-enc-4 and mii-enc-5 and mii-enc-6 and mii-enc-7
-* ^date = "2024-12-10"
+* ^date = "2025-12-12"
 * id MS
 * id ^definition = "Angabe OPTIONAL, vom Server automatisch vergebene system-abhängige ID"
 * meta MS
@@ -71,11 +71,9 @@ Description: "Kontakt zu einer Einrichtung, Abteilung oder Versorgungsstelle"
 * insert Translation(identifier[Aufnahmenummer] ^short, de-DE, Aufnahmenummer)
 * insert Translation(identifier[Aufnahmenummer] ^short, en-US, Admission number)
 * identifier[Aufnahmenummer] ^definition = """
-    OPTIONAL, Aufnahmenummer/Fallnummer, die Patient:innen bei der Planung einer Aufnahme oder bei der Aufnahme selbst bekommt. 
-    Generell SOLLTE die Aufnahmenummer in allen Encounter-Ressourcen unabhängig von der Kontaktebene und dem Kontakttyp angegeben werden. 
-    Als Gründe würden dagegen sprechen, wenn die Aufnahmenummer nur in einem Encounter der Encounter-Hierarchie angegeben werden kann. 
-    In diesem Fall SOLL auf die korrekte Encounter-Verlinkung über .partOf geachtet werden, 
-    sowie dass jeder Encounter einen eigenständigen Identifier mit unterschiedlichen Systemen enthält.
+    OPTIONAL, Ein eindeutiger Identifier, der einem Patienten bei der Aufnahmeplanung oder bei der Aufnahme selbst zugewiesen wird.
+    Jeder Encounter SOLLTE seine eigene eindeutige Aufnahmenummer haben. Die Aufnahmenummer ist nicht die Fallnummer, 
+    welche sich auf den kompletten Abrechnungsfall bezieht. Hier wird ein Identifier angegeben, der den Kontakt eindeutig identifiziert.
     """
 * insert Translation(identifier[Aufnahmenummer] ^definition, de-DE, Aufnahmenummer/Fallnummer\, die Patient:in bei einer Aufnahme bekommt.)
 * insert Translation(identifier[Aufnahmenummer] ^definition, en-US, Admission number\, the patient receives during an admission.)
@@ -220,14 +218,20 @@ Description: "Kontakt zu einer Einrichtung, Abteilung oder Versorgungsstelle"
 * diagnosis ^short = "Diagnosen"
 * insert Translation(diagnosis ^short, de-DE, Diagnosen)
 * insert Translation(diagnosis ^short, en-US, Diagnoses)
-* diagnosis ^definition = "OPTIONAL, Angaben zu Diagnosen"
+* diagnosis ^definition = """
+    OPTIONAL, Verweis auf Diagnosen/Prozeduren, die eine besondere Rolle im Kontext eines Encounters haben.
+    Der Fallbezug von Diagnosen und Prozeduren wird über das jeweilige encounter-Element der Condition bzw. Procedure-Ressource hinreichend etabliert. 
+    Die zusätzliche Rückverlinkung von Encounter.diagnosis auf Condition/Procedure wird nur dann verwendet, 
+    wenn einer Diagnose bzw. Prozedur im Kontext eines Aufenthaltes eine besondere Rolle zugewiesen werden soll, 
+    z.B. Haupt-/Neben-/Aufnahme- oder Überweisungsdiagnose).
+    """
 * insert Translation(diagnosis ^definition, de-DE, Angaben zu für den Kontakt relevanten Diagnosen)
 * insert Translation(diagnosis ^definition, en-US, Information about diagnoses relevant for the encounter)
 * diagnosis.condition 1.. MS
 * diagnosis.condition ^short = "Referenz zu Diagnose-Ressource"
 * diagnosis.condition ^definition = """
     VERPFLICHTEND, wenn Diagnosedaten angegeben werden, dann MUSS diese referenziert werden. 
-    Es SOLLTE nur die Primärdiagnose referenziert werden.
+    Bei ICD-10 Primär- und Sekundärcodes SOLLTE nur die Primärdiagnose referenziert werden.
     """
 * diagnosis.use 1.. MS
 * diagnosis.use ^short = "Diagnosetyp"
@@ -255,6 +259,17 @@ Description: "Kontakt zu einer Einrichtung, Abteilung oder Versorgungsstelle"
 * diagnosis.rank MS
 * diagnosis.rank ^short = "Rangfolge"
 * diagnosis.rank ^definition = "OPTIONAL, Rangfolge der Diagnose"
+* account MS
+* account ^short = "Abrechnungskontext"
+* account ^definition = """
+        OPTIONAL. Referenz auf den Abrechnungsfall. Eine logische Referenz ist ausreichend zur Abbildung des Abrechnungskontextes.
+        """
+* insert Translation(account ^short, de-DE, Abrechnungskontext)
+* insert Translation(account ^short, en-US, Billing Context)
+* insert Translation(account ^definition, de-DE, Referenz auf den Abrechnungsfall.)
+* insert Translation(account ^definition, en-US, Reference to the billing case.)
+* insert Translation(hospitalization ^short, de-DE, Klinikaufenthalt)
+* insert Translation(hospitalization ^short, en-US, Hospitalization)
 * hospitalization MS
 * hospitalization ^short = "Klinikaufenthalt"
 * insert Translation(hospitalization ^short, de-DE, Klinikaufenthalt)

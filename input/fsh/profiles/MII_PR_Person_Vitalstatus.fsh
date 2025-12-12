@@ -11,7 +11,7 @@ Description: "Dieses Profil beschreibt den Vitalstatus der Patient*in in der Med
 * insert PR_CS_VS_Version
 * insert Publisher
 * insert LicenseCodeableCCBY40
-* ^date = "2024-12-04"
+* ^date = "2025-12-12"
 * id MS
 * meta MS
 //* meta.source MS
@@ -57,11 +57,11 @@ Description: "Dieses Profil beschreibt den Vitalstatus der Patient*in in der Med
 * subject only Reference(Patient or Group)
 //* subject only $MII-Reference
 * encounter MS
-* encounter ^short = "Fall oder Kontakt"
-* encounter ^definition = "Fall oder Kontakt, bei dem der Vitalstatus festgestellt wurde."
-* insert Translation(encounter ^short, de-DE, Fall oder Kontakt)
+* encounter ^short = "Kontakt (Aufenthaltsbezug)"
+* encounter ^definition = "Kontakt, bei dem der Vitalstatus festgestellt wurde."
+* insert Translation(encounter ^short, de-DE, Kontakt)
 * insert Translation(encounter ^short, en-US, Encounter)
-* insert Translation(encounter ^definition, de-DE, Fall oder Kontakt\, bei dem der Vitalstatus festgestellt wurde.)
+* insert Translation(encounter ^definition, de-DE, Kontakt\, bei dem der Vitalstatus festgestellt wurde.)
 * insert Translation(encounter ^definition, en-US, Encounter during which the vital status was determined.)
 * effective[x] 1.. MS
 * effective[x] ^short = "Zeitpunkt"

@@ -9,7 +9,7 @@ Description: "Durchführungsabsicht / Intention mit der Prozedur ausgeführt wir
 * insert LicenseCodeableCCBY40
 * ^status = #active
 * ^experimental = false
-* ^date = "2024-12-09"
+* ^date = "2025-12-12"
 * $sct#262202000 "Therapeutic"
 * $sct#363676003 "Palliative intent"
 * $sct#261004008 "Diagnostic intent"

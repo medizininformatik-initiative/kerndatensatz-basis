@@ -12,7 +12,7 @@ Description: "Dieses Profil beschreibt eine Diagnose der Medizininformatik Initi
 * insert Publisher
 * insert LicenseCodeableCCBY40
 * ^status = #active
-* ^date = "2025-03-31"
+* ^date = "2025-12-12"
 * id MS
 * meta MS
 * meta.source MS
@@ -114,12 +114,12 @@ Description: "Dieses Profil beschreibt eine Diagnose der Medizininformatik Initi
 //* subject only $MII-Reference
 //* encounter only $MII-Reference
 * encounter MS
-* encounter ^short = "Fall oder Kontakt"
-* insert Translation(encounter ^short, de-DE, Fall oder Kontakt)
+* encounter ^short = "Kontakt (Aufenthaltsbezug)"
+* insert Translation(encounter ^short, de-DE, Kontakt)
 * insert Translation(encounter ^short, en-US, Encounter)
-* encounter ^definition = "Fall oder Kontakt, bei dem die Diagnose festgestellt wurde."
-* insert Translation(encounter ^definition, de-DE, Fall oder Kontakt\, bei dem die Diagnose festgestellt wurde.)
-* insert Translation(encounter ^definition, en-US, Encounter during which the diagnosis was determined.)
+* encounter ^definition = "Kontakt, während dem die Diagnose erstellt wurde oder mit dem die Diagnose in Zusammenhang steht."
+* insert Translation(encounter ^definition, de-DE, Kontakt\, während dem die Diagnose erstellt wurde oder mit dem die Diagnose in Zusammenhang steht.)
+* insert Translation(encounter ^definition, en-US, The Encounter during which this Condition was created or to which the creation of this record is tightly associated.)
 * onset[x] only dateTime or Period or Age
 * onset[x] MS
 * onset[x] ^short = "Beginn"

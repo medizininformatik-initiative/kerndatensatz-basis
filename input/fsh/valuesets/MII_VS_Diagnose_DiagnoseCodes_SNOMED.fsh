@@ -9,7 +9,7 @@ Description: "Enthaelt alle SNOMED Clinical finding, Event und Situation with ex
 * insert LicenseCodeableCCBY40
 * ^status = #active
 * ^experimental = true
-* ^date = "2024-12-09"
+* ^date = "2025-12-12"
 * include codes from system $sct where concept is-a #404684003
 * include codes from system $sct where concept is-a #272379006
 * include codes from system $sct where concept is-a #243796009

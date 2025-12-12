@@ -11,6 +11,10 @@ This page documents the changes and updates across versions of the MII Implement
 - **Consolidated Implementation Guide:** The four base modules (Person, Treatment Case, Diagnosis, and Procedure) have been consolidated into a single Implementation Guide
 - **Package ID:** `de.medizininformatikinitiative.kerndatensatz.base`
 
+#### Terminology Updates
+
+- **Updated:** Resources use SNOMED CT version `http://snomed.info/sct/900000000000207008/version/20250701` (July 2025) across modules to ensure stable [ValueSet expansion](http://hl7.org/fhir/R4/valueset.html#expansion)
+
 #### Example Consolidation
 
 - **Unified Test Data Bundle:** Example resources have been consolidated into a comprehensive test data bundle
@@ -21,6 +25,17 @@ This page documents the changes and updates across versions of the MII Implement
 - **Changed:** Updated guidance on Condition.encounter usage to align with gematik ISiK recommendations (Information Systems in Hospitals)
 - **Changed:** Condition.encounter SHOULD now reference an Encounter at the "Abteilungskontakt" (department contact) level
 - **Note:** This represents a change from previous versions where Encounter.diagnosis was the primary linkage method
+
+#### Treatment Case Module
+
+- **Changed:** Updated guidance on billing case context (Abrechnungsfallkontext) and Account references based on gematik ISiK specification
+- **Changed:** Enhanced documentation differentiating between Aufnahmenummer (admission number) and Fallnummer (case number)
+- **Changed:** Clarified that Fallnummer identifies the billing case (Account) and should be provided as logical reference in `Encounter.account.identifier`
+- **Changed:** Each Encounter SHOULD have its own unique Aufnahmenummer in `Encounter.identifier:Aufnahmenummer`
+
+#### Procedure Module
+
+- **Changed:** Added guidance recommending use of `Procedure.encounter` to establish encounter context, aligned with Condition module recommendations
 
 #### Person Module
 
