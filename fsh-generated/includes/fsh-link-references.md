@@ -45,7 +45,6 @@
 [MII_PR_Fall_KontaktGesundheitseinrichtung]: StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html
 [MII_PR_Person_Patient]: StructureDefinition-mii-pr-person-patient.html
 [MII_PR_Person_PatientPseudonymisiert]: StructureDefinition-mii-pr-person-patient-pseudonymisiert.html
-[MII_PR_Person_Proband]: StructureDefinition-mii-pr-person-proband.html
 [MII_PR_Person_Todesursache]: StructureDefinition-mii-pr-person-todesursache.html
 [MII_PR_Person_Vitalstatus]: StructureDefinition-mii-pr-person-vitalstatus.html
 [MII_PR_Prozedur_Procedure]: StructureDefinition-mii-pr-prozedur-procedure.html
