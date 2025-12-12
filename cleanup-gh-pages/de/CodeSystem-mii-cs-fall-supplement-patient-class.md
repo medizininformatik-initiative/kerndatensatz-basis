@@ -46,7 +46,7 @@ Dieses CodeSystem wird in der Definition der folgenden ValueSets referenziert:
   "title" : "MII CS Fall Supplement PatientClass",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-12-12T18:00:23+00:00",
+  "date" : "2025-12-12T18:44:46+00:00",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [
