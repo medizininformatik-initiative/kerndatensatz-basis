@@ -149,6 +149,8 @@ Da `Encounter.diagnosis.use` die Kardinalität 1..1 hat, benötigt eine Diagnose
 
 **Beispiel:** Wenn eine Condition sowohl als Diagnosetyp als auch als Diagnosesubtyp (oder zusätzliche Rollen wie CC/CM) dient, erstellen Sie separate `Encounter.diagnosis`-Referenzen für jede Rolle, die alle auf dieselbe Condition-Ressource verweisen. Eine einzelne Condition kann mehrfach mit unterschiedlichen `use`-Werten referenziert werden.
 
+**Hinweis zur CC/CM-Klassifikation:** Wenn Sie eine Diagnose als CC (Komplikation oder Komorbidität) oder CM (Komorbidität) klassifizieren möchten, handelt es sich hierbei typischerweise um abrechnungsrelevante Informationen, die in der Account-Ressource und nicht in `Encounter.diagnosis` platziert werden sollten. Die Account-Ressource ist der geeignete Ort für Abrechnungsfallkontext und DRG-relevante Klassifikationen.
+
 #### Kontaktort
 
 * Details zum Kontaktort (Zimmer, Bett, Station) können mittels `Encounter.location` angegeben werden.
@@ -187,12 +189,28 @@ Früher wurde empfohlen, dass die Aufnahmenummer in allen Encounter-Ressourcen u
 
 ##### Best Practice - Aufnahmenummer vs. Fallnummer
 
+**Hinweis: Diese Empfehlung basiert auf der[ISiK-Spezifikation](https://simplifier.net/packages/de.gematik.isik/5.1.0/files/3020028).**
+
 Es ist wichtig zu unterscheiden zwischen:
 
 * **Aufnahmenummer:** Ein eindeutiger Identifier, der einem Patienten bei der Aufnahmeplanung oder bei der Aufnahme selbst zugewiesen wird. Jeder Encounter **SOLLTE** seine eigene eindeutige Aufnahmenummer in `Encounter.identifier:Aufnahmenummer` haben, wo anwendbar.
 * **Fallnummer:** Identifiziert typischerweise den Abrechnungsfall (Account), nicht einzelne Encounters.
 
-Die Fallnummer kann im Encounter zugänglich gemacht werden, ohne dass die Account-Ressource implementiert werden muss, indem der Account-Identifier als logische Referenz in `Encounter.account` angegeben wird. Dies ermöglicht Fallnummer-basierte Suchen.
+**Account-Referenzen und Abrechnungskontext:**
+
+Der Bezug zu einem Account stellt den Abrechnungskontext für einen oder mehrere Encounter her. Mittels der Account-Referenz können zum Beispiel ein vorstationärer, ein stationärer und ein nachstationärer Besuch zu einem "DRG-Fall" zusammengefasst werden.
+
+**Hinweis:** Wenn man den Abrechnungsfall implementieren möchte, wird empfohlen, das [ISiK Account-Profil](https://simplifier.net/packages/de.gematik.isik/5.1.0/files/3019857) zu verwenden.
+
+**Wichtiger Hinweis für Implementierer:** Im deutschen Sprachgebrauch ist unter dem Begriff "Fall" meist der Abrechnungskontext gemeint, nicht der einzelne Besuch. Die "Fallnummer" ist daher nicht der Identifier des Encounters, sondern der des Accounts auf den der Encounter referenziert. Auf diesem Wege können mehrere Besuche einer Fallnummer zugeordnet werden.
+
+**Logische Referenzen für die Suche:**
+
+Da die Fallnummer ein häufig verwendetes Suchkriterium darstellt, ist diese als logische Referenz (`account.identifier`) im Encounter zu hinterlegen. Damit wird sichergestellt, dass diese als Suchparameter für die Suche nach Encountern zur Verfügung steht, auch wenn:
+
+* Einzelne Systeme kein Chaining unterstützen
+* Einzelne Benutzer keine Sichtberechtigung auf Abrechnungsdaten haben
+* Benutzer im Versorgungskontext dennoch Encounter anhand der assoziierten Fallnummer suchen möchten
 
 **Usages:**
 
@@ -200,10 +218,6 @@ Die Fallnummer kann im Encounter zugänglich gemacht werden, ohne dass die Accou
 * CapabilityStatements using this Profile: [MII CPS Fall CapabilityStatement](CapabilityStatement-mii-cps-fall-capabilitystatement.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/mii-pr-fall-kontakt-gesundheitseinrichtung)
-
-**Changes since version {current}:**
-
-* New Content
 
 ### Formale Ansichten des Profilinhalts
 
@@ -234,7 +248,7 @@ Diese Struktur ist abgeleitet von [Encounter](http://hl7.org/fhir/R4/encounter.h
 **Summary**
 
 Mandatory: 1 element(20 nested mandatory elements)
- Must-Support: 48 elements
+ Must-Support: 49 elements
 
 **Extensions**
 
@@ -281,7 +295,7 @@ Diese Struktur ist abgeleitet von [Encounter](http://hl7.org/fhir/R4/encounter.h
 **Summary**
 
 Mandatory: 1 element(20 nested mandatory elements)
- Must-Support: 48 elements
+ Must-Support: 49 elements
 
 **Extensions**
 
@@ -364,7 +378,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-fall-
     ]
   },
   "status" : "active",
-  "date" : "2024-12-10",
+  "date" : "2025-12-12",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [
@@ -948,7 +962,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-fall-
             }
           ]
         },
-        "definition" : "OPTIONAL, Aufnahmenummer/Fallnummer, die Patient:innen bei der Planung einer Aufnahme oder bei der Aufnahme selbst bekommt. \nGenerell SOLLTE die Aufnahmenummer in allen Encounter-Ressourcen unabhängig von der Kontaktebene und dem Kontakttyp angegeben werden. \nAls Gründe würden dagegen sprechen, wenn die Aufnahmenummer nur in einem Encounter der Encounter-Hierarchie angegeben werden kann. \nIn diesem Fall SOLL auf die korrekte Encounter-Verlinkung über .partOf geachtet werden, \nsowie dass jeder Encounter einen eigenständigen Identifier mit unterschiedlichen Systemen enthält.",
+        "definition" : "OPTIONAL, Ein eindeutiger Identifier, der einem Patienten bei der Aufnahmeplanung oder bei der Aufnahme selbst zugewiesen wird.\nJeder Encounter SOLLTE seine eigene eindeutige Aufnahmenummer haben. Die Aufnahmenummer ist nicht die Fallnummer, \nwelche sich auf den kompletten Abrechnungsfall bezieht. Hier wird ein Identifier angegeben, der den Kontakt eindeutig identifiziert.",
         "_definition" : {
           "extension" : [
             {
@@ -1824,7 +1838,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-fall-
             }
           ]
         },
-        "definition" : "OPTIONAL, Angaben zu Diagnosen",
+        "definition" : "OPTIONAL, Verweis auf Diagnosen/Prozeduren, die eine besondere Rolle im Kontext eines Encounters haben.\nDer Fallbezug von Diagnosen und Prozeduren wird über das jeweilige encounter-Element der Condition bzw. Procedure-Ressource hinreichend etabliert. \nDie zusätzliche Rückverlinkung von Encounter.diagnosis auf Condition/Procedure wird nur dann verwendet, \nwenn einer Diagnose bzw. Prozedur im Kontext eines Aufenthaltes eine besondere Rolle zugewiesen werden soll, \nz.B. Haupt-/Neben-/Aufnahme- oder Überweisungsdiagnose).",
         "_definition" : {
           "extension" : [
             {
@@ -1861,7 +1875,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-fall-
         "id" : "Encounter.diagnosis.condition",
         "path" : "Encounter.diagnosis.condition",
         "short" : "Referenz zu Diagnose-Ressource",
-        "definition" : "VERPFLICHTEND, wenn Diagnosedaten angegeben werden, dann MUSS diese referenziert werden. \nEs SOLLTE nur die Primärdiagnose referenziert werden.",
+        "definition" : "VERPFLICHTEND, wenn Diagnosedaten angegeben werden, dann MUSS diese referenziert werden. \nBei ICD-10 Primär- und Sekundärcodes SOLLTE nur die Primärdiagnose referenziert werden.",
         "mustSupport" : true
       },
       {
@@ -1927,11 +1941,104 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-fall-
         "mustSupport" : true
       },
       {
+        "id" : "Encounter.account",
+        "path" : "Encounter.account",
+        "short" : "Abrechnungskontext",
+        "_short" : {
+          "extension" : [
+            {
+              "extension" : [
+                {
+                  "url" : "lang",
+                  "valueCode" : "de-DE"
+                },
+                {
+                  "url" : "content",
+                  "valueString" : "Abrechnungskontext"
+                }
+              ],
+              "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+            },
+            {
+              "extension" : [
+                {
+                  "url" : "lang",
+                  "valueCode" : "en-US"
+                },
+                {
+                  "url" : "content",
+                  "valueString" : "Billing Context"
+                }
+              ],
+              "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+            }
+          ]
+        },
+        "definition" : "OPTIONAL. Referenz auf den Abrechnungsfall. Eine logische Referenz ist ausreichend zur Abbildung des Abrechnungskontextes.",
+        "_definition" : {
+          "extension" : [
+            {
+              "extension" : [
+                {
+                  "url" : "lang",
+                  "valueCode" : "de-DE"
+                },
+                {
+                  "url" : "content",
+                  "valueString" : "Referenz auf den Abrechnungsfall."
+                }
+              ],
+              "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+            },
+            {
+              "extension" : [
+                {
+                  "url" : "lang",
+                  "valueCode" : "en-US"
+                },
+                {
+                  "url" : "content",
+                  "valueString" : "Reference to the billing case."
+                }
+              ],
+              "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+            }
+          ]
+        },
+        "mustSupport" : true
+      },
+      {
         "id" : "Encounter.hospitalization",
         "path" : "Encounter.hospitalization",
         "short" : "Klinikaufenthalt",
         "_short" : {
           "extension" : [
+            {
+              "extension" : [
+                {
+                  "url" : "lang",
+                  "valueCode" : "de-DE"
+                },
+                {
+                  "url" : "content",
+                  "valueString" : "Klinikaufenthalt"
+                }
+              ],
+              "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+            },
+            {
+              "extension" : [
+                {
+                  "url" : "lang",
+                  "valueCode" : "en-US"
+                },
+                {
+                  "url" : "content",
+                  "valueString" : "Hospitalization"
+                }
+              ],
+              "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+            },
             {
               "extension" : [
                 {

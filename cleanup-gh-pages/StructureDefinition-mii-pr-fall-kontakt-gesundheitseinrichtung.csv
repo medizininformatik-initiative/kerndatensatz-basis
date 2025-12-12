@@ -132,11 +132,9 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","",,"open","Encounter.identifier",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.identifier",".id","FiveWs.identifier","PV1-19"
 "Encounter.identifier:Aufnahmenummer","Encounter.identifier","Aufnahmenummer","","",0,1,"Y","","Y","Identifier {[]} {[]}
-","Aufnahmenummer","OPTIONAL, Aufnahmenummer/Fallnummer, die Patient:innen bei der Planung einer Aufnahme oder bei der Aufnahme selbst bekommt. 
-Generell SOLLTE die Aufnahmenummer in allen Encounter-Ressourcen unabhängig von der Kontaktebene und dem Kontakttyp angegeben werden. 
-Als Gründe würden dagegen sprechen, wenn die Aufnahmenummer nur in einem Encounter der Encounter-Hierarchie angegeben werden kann. 
-In diesem Fall SOLL auf die korrekte Encounter-Verlinkung über .partOf geachtet werden, 
-sowie dass jeder Encounter einen eigenständigen Identifier mit unterschiedlichen Systemen enthält.","","","","","","<valueIdentifier xmlns=""http://hl7.org/fhir"">
+","Aufnahmenummer","OPTIONAL, Ein eindeutiger Identifier, der einem Patienten bei der Aufnahmeplanung oder bei der Aufnahme selbst zugewiesen wird.
+Jeder Encounter SOLLTE seine eigene eindeutige Aufnahmenummer haben. Die Aufnahmenummer ist nicht die Fallnummer, 
+welche sich auf den kompletten Abrechnungsfall bezieht. Hier wird ein Identifier angegeben, der den Kontakt eindeutig identifiziert.","","","","","","<valueIdentifier xmlns=""http://hl7.org/fhir"">
   <type>
     <coding>
       <system value=""http://terminology.hl7.org/CodeSystem/v2-0203""/>
@@ -434,7 +432,11 @@ Admission diagnosis","",0,*,"","","Y","Reference {[]} {[CanonicalType[http://hl7
 ","Reason the encounter takes place (reference)","Reason the encounter takes place, expressed as a code. For admissions, this can be used for a coded admission diagnosis.","For systems that need to know which was the primary diagnosis, these will be marked with the standard extension primaryDiagnosis (which is a sequence value rather than a flag, 1 = primary diagnosis).","","","","","","","","",,,,,"",,,,"Encounter.reasonReference",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.reasonCode",".reasonCode","FiveWs.why[x]","EVN-4 / PV2-3 (note: PV2-3 is nominally constrained to inpatient admissions; HL7 v2 makes no vocabulary suggestions for PV2-3; would not expect PV2 segment or PV2-3 to be in use in all implementations )"
 "Encounter.diagnosis","Encounter.diagnosis","","","",0,*,"Y","","Y","BackboneElement {[]} {[]}
-","Diagnosen","OPTIONAL, Angaben zu Diagnosen","","","","","","","","","",,,,,"",,,,"Encounter.diagnosis",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","Diagnosen","OPTIONAL, Verweis auf Diagnosen/Prozeduren, die eine besondere Rolle im Kontext eines Encounters haben.
+Der Fallbezug von Diagnosen und Prozeduren wird über das jeweilige encounter-Element der Condition bzw. Procedure-Ressource hinreichend etabliert. 
+Die zusätzliche Rückverlinkung von Encounter.diagnosis auf Condition/Procedure wird nur dann verwendet, 
+wenn einer Diagnose bzw. Prozedur im Kontext eines Aufenthaltes eine besondere Rolle zugewiesen werden soll, 
+z.B. Haupt-/Neben-/Aufnahme- oder Überweisungsdiagnose).","","","","","","","","","",,,,,"",,,,"Encounter.diagnosis",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=RSON]"
 "Encounter.diagnosis.id","Encounter.diagnosis.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
@@ -451,7 +453,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Encounter.diagnosis.condition","Encounter.diagnosis.condition","","Admission diagnosis
 discharge diagnosisindication","",1,1,"Y","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Condition|4.0.1], CanonicalType[http://hl7.org/fhir/StructureDefinition/Procedure|4.0.1]]}
 ","Referenz zu Diagnose-Ressource","VERPFLICHTEND, wenn Diagnosedaten angegeben werden, dann MUSS diese referenziert werden. 
-Es SOLLTE nur die Primärdiagnose referenziert werden.","For systems that need to know which was the primary diagnosis, these will be marked with the standard extension primaryDiagnosis (which is a sequence value rather than a flag, 1 = primary diagnosis).","","","","","","","","",,,,,"",,,,"Encounter.diagnosis.condition",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+Bei ICD-10 Primär- und Sekundärcodes SOLLTE nur die Primärdiagnose referenziert werden.","For systems that need to know which was the primary diagnosis, these will be marked with the standard extension primaryDiagnosis (which is a sequence value rather than a flag, 1 = primary diagnosis).","","","","","","","","",,,,,"",,,,"Encounter.diagnosis.condition",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.reasonReference",".outboundRelationship[typeCode=RSON].target","FiveWs.why[x]","Resources that would commonly referenced at Encounter.indication would be Condition and/or Procedure. These most closely align with DG1/PRB and PR1 respectively."
 "Encounter.diagnosis.use","Encounter.diagnosis.use","","","",1,1,"Y","","","CodeableConcept {[]} {[]}
 ","Diagnosetyp","Attribute wie Aufnahme- oder Entlassdiagnose sind immer im Kontext eines stationären Aufenthaltes zu betrachten
@@ -482,8 +484,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Encounter.diagnosis.rank","Encounter.diagnosis.rank","","","",0,1,"Y","","","positiveInt {[]} {[]}
 ","Rangfolge","OPTIONAL, Rangfolge der Diagnose","","","","","","","","","",,,,,"",,,,"Encounter.diagnosis.rank",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=RSON].priority"
-"Encounter.account","Encounter.account","","","",0,*,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Account|4.0.1]]}
-","The set of accounts that may be used for billing for this Encounter","The set of accounts that may be used for billing for this Encounter.","The billing system may choose to allocate billable items associated with the Encounter to different referenced Accounts based on internal business rules.","","","","","","","","",,,,,"",,,,"Encounter.account",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"Encounter.account","Encounter.account","","","",0,*,"Y","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Account|4.0.1]]}
+","Abrechnungskontext","OPTIONAL. Referenz auf den Abrechnungsfall. Eine logische Referenz ist ausreichend zur Abbildung des Abrechnungskontextes.","The billing system may choose to allocate billable items associated with the Encounter to different referenced Accounts based on internal business rules.","","","","","","","","",,,,,"",,,,"Encounter.account",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".pertains.A_Account"
 "Encounter.hospitalization","Encounter.hospitalization","","","",0,1,"Y","","","BackboneElement {[]} {[]}
 ","Klinikaufenthalt","OPTIONAL, Details zur Aufnahme und Entlassung","An Encounter may cover more than just the inpatient stay. Contexts such as outpatients, community clinics, and aged care facilities are also included.The duration recorded in the period of this encounter covers the entire scope of this hospitalization record.","","","","","","","","",,,,,"",,,,"Encounter.hospitalization",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}

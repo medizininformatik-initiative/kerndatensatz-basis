@@ -9,10 +9,6 @@ Enthaelt alle Orpha-Kennnummern (ORPHAcodes)
 
 * [MII PR Diagnose Condition](StructureDefinition-mii-pr-diagnose-condition.md)
 
-**Changes since version {current}:**
-
-* New Content
-
 ### Logical Definition (CLD)
 
  

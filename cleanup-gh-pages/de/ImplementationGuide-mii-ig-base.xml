@@ -133,22 +133,6 @@
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
-        <valueString value="version-comparison-master"/>
-      </extension>
-      <extension url="value">
-        <valueString value="{current}"/>
-      </extension>
-    </extension>
-    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
-      <extension url="code">
-        <valueString value="version-comparison"/>
-      </extension>
-      <extension url="value">
-        <valueString value="{current}"/>
-      </extension>
-    </extension>
-    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
-      <extension url="code">
         <valueString value="special-url"/>
       </extension>
       <extension url="value">
@@ -716,22 +700,6 @@
       </extension>
       <extension url="value">
         <valueString value="false"/>
-      </extension>
-    </extension>
-    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
-      <extension url="code">
-        <valueCode value="version-comparison-master"/>
-      </extension>
-      <extension url="value">
-        <valueString value="{current}"/>
-      </extension>
-    </extension>
-    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
-      <extension url="code">
-        <valueCode value="version-comparison"/>
-      </extension>
-      <extension url="value">
-        <valueString value="{current}"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -1745,17 +1713,6 @@
       </reference>
       <name value="MII PR Person Patient (Pseudonymisiert)"/>
       <description value="Dieses Profil beschreibt eine*n pseudonymisierte*n Patient*in in der Medizininformatik-Initiative."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/mii-pr-person-proband"/>
-      </reference>
-      <name value="MII PR Person Proband"/>
-      <description value="Dieses Profil beschreibt eine Proband*in in der Medizininformatik-Initiative."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>

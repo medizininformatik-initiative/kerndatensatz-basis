@@ -9,10 +9,6 @@ Enthält alle Werte, die den Vitalstatus einer Person beschreiben.
 
 * [MII PR Person Vitalstatus](StructureDefinition-mii-pr-person-vitalstatus.md)
 
-**Changes since version {current}:**
-
-* New Content
-
 ### Logical Definition (CLD)
 
  

@@ -15,10 +15,6 @@ The planned end date/time (or discharge date) of the encounter
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/mii-ex-fall-planned-end-date)
 
-**Changes since version {current}:**
-
-* New Content
-
 ### Formale Ansichten des Extension-Inhalts
 
  [Beschreibung von Profilen, Differentials, Snapshots und deren Repräsentationen](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 
@@ -87,7 +83,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-ex-fall-
   "name" : "MII_EX_Fall_Planned_End_Date",
   "title" : "MII EX Fall Planned End Date",
   "status" : "active",
-  "date" : "2025-12-11T17:16:24+00:00",
+  "date" : "2025-12-12T16:55:39+00:00",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [

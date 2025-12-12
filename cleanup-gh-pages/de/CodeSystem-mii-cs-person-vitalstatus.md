@@ -9,10 +9,6 @@ Dieses CodeSystem wird in der Definition der folgenden ValueSets referenziert:
 
 * [MII_VS_Person_Vitalstatus](ValueSet-mii-vs-person-vitalstatus.md)
 
-**Changes since version {current}:**
-
-* New Content
-
 -------
 
  [Beschreibung der obigen Tabelle(n)](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#terminology). 

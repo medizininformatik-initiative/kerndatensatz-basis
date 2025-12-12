@@ -87,10 +87,6 @@ Address details follow the [German Base Profile - Adresse](https://ig.fhir.de/ba
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/mii-pr-person-patient)
 
-**Changes since version {current}:**
-
-* New Content
-
 ### Formal Views of Profile Content
 
  [Description Differentials, Snapshots, and other representations](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 

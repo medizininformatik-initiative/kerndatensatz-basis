@@ -89,10 +89,6 @@ See [Formal Views](#profile) for the complete ValueSet binding.
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/mii-pr-person-vitalstatus)
 
-**Changes since version {current}:**
-
-* New Content
-
 ### Formal Views of Profile Content
 
  [Description Differentials, Snapshots, and other representations](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 
@@ -158,7 +154,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-person-vit
     ]
   },
   "status" : "active",
-  "date" : "2024-12-04",
+  "date" : "2025-12-12",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [
@@ -576,7 +572,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-person-vit
       {
         "id" : "Observation.encounter",
         "path" : "Observation.encounter",
-        "short" : "Fall oder Kontakt",
+        "short" : "Kontakt (Aufenthaltsbezug)",
         "_short" : {
           "extension" : [
             {
@@ -587,7 +583,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-person-vit
                 },
                 {
                   "url" : "content",
-                  "valueString" : "Fall oder Kontakt"
+                  "valueString" : "Kontakt"
                 }
               ],
               "url" : "http://hl7.org/fhir/StructureDefinition/translation"
@@ -607,7 +603,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-person-vit
             }
           ]
         },
-        "definition" : "Fall oder Kontakt, bei dem der Vitalstatus festgestellt wurde.",
+        "definition" : "Kontakt, bei dem der Vitalstatus festgestellt wurde.",
         "_definition" : {
           "extension" : [
             {
@@ -618,7 +614,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-person-vit
                 },
                 {
                   "url" : "content",
-                  "valueString" : "Fall oder Kontakt, bei dem der Vitalstatus festgestellt wurde."
+                  "valueString" : "Kontakt, bei dem der Vitalstatus festgestellt wurde."
                 }
               ],
               "url" : "http://hl7.org/fhir/StructureDefinition/translation"

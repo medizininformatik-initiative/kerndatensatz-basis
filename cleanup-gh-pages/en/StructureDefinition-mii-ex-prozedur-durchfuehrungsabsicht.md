@@ -15,10 +15,6 @@ Intention der Prozedur
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/mii-ex-prozedur-durchfuehrungsabsicht)
 
-**Changes since version {current}:**
-
-* New Content
-
 ### Formal Views of Extension Content
 
  [Description Differentials, Snapshots, and other representations](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 

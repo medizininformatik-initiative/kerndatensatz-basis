@@ -9,10 +9,6 @@ Enthaelt alle SNOMED Clinical finding, Event und Situation with explicit context
 
 * [MII PR Diagnose Condition](StructureDefinition-mii-pr-diagnose-condition.md)
 
-**Changes since version {current}:**
-
-* New Content
-
 ### Logical Definition (CLD)
 
  
@@ -51,7 +47,7 @@ Enthaelt alle SNOMED Clinical finding, Event und Situation with explicit context
   "title" : "MII VS Diagnose Diagnose-Codes SNOMED",
   "status" : "active",
   "experimental" : true,
-  "date" : "2024-12-09",
+  "date" : "2025-12-12",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [
@@ -98,7 +94,7 @@ Enthaelt alle SNOMED Clinical finding, Event und Situation with explicit context
     "include" : [
       {
         "system" : "http://snomed.info/sct",
-        "version" : "http://snomed.info/sct/900000000000207008/version/20240701",
+        "version" : "http://snomed.info/sct/900000000000207008/version/20250701",
         "filter" : [
           {
             "property" : "concept",
@@ -109,7 +105,7 @@ Enthaelt alle SNOMED Clinical finding, Event und Situation with explicit context
       },
       {
         "system" : "http://snomed.info/sct",
-        "version" : "http://snomed.info/sct/900000000000207008/version/20240701",
+        "version" : "http://snomed.info/sct/900000000000207008/version/20250701",
         "filter" : [
           {
             "property" : "concept",
@@ -120,7 +116,7 @@ Enthaelt alle SNOMED Clinical finding, Event und Situation with explicit context
       },
       {
         "system" : "http://snomed.info/sct",
-        "version" : "http://snomed.info/sct/900000000000207008/version/20240701",
+        "version" : "http://snomed.info/sct/900000000000207008/version/20250701",
         "filter" : [
           {
             "property" : "concept",

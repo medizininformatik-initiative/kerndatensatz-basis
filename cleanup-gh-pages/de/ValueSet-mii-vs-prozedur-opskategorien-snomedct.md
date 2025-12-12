@@ -9,10 +9,6 @@ Enthaelt alle SNOMED CT Codes für ein Mapping der OPS Klassentitel
 
 * [MII PR Prozedur Procedure](StructureDefinition-mii-pr-prozedur-procedure.md)
 
-**Changes since version {current}:**
-
-* New Content
-
 ### Logical Definition (CLD)
 
  
@@ -51,7 +47,7 @@ Enthaelt alle SNOMED CT Codes für ein Mapping der OPS Klassentitel
   "title" : "MII VS Prozedur OPS Kategorien [SNOMED CT]",
   "status" : "active",
   "experimental" : false,
-  "date" : "2024-12-09",
+  "date" : "2025-12-12",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [
@@ -98,7 +94,7 @@ Enthaelt alle SNOMED CT Codes für ein Mapping der OPS Klassentitel
     "include" : [
       {
         "system" : "http://snomed.info/sct",
-        "version" : "http://snomed.info/sct/900000000000207008/version/20240701",
+        "version" : "http://snomed.info/sct/900000000000207008/version/20250701",
         "concept" : [
           {
             "code" : "165197003",

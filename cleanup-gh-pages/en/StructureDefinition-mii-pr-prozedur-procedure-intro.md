@@ -98,6 +98,16 @@ This section provides detailed implementation guidance for the MII Procedure (Pr
   - etc.
 - Provides clinical context for the procedure beyond the procedural code itself
 
+#### Encounter Context
+
+<div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
+<h5 style="color: #406A99; margin-top: 0;">Best Practice - Procedure-Encounter Relationships</h5>
+
+<p><strong>Recommended Implementation:</strong></p>
+<p>Use <code>Procedure.encounter</code> to reference from the Procedure to the Encounter of type <strong>Abteilungskontakt (Department Contact)</strong>. This approach establishes the general encounter context for the procedure, providing temporal and organizational context.</p>
+
+</div>
+
 #### Status and Workflow
 
 **`Procedure.status`:**
