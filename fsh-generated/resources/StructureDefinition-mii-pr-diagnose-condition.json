@@ -50,7 +50,7 @@
     ]
   },
   "status": "active",
-  "date": "2025-03-31",
+  "date": "2025-12-12",
   "publisher": "Medizininformatik Initiative",
   "contact": [
     {
@@ -1103,7 +1103,7 @@
       {
         "id": "Condition.encounter",
         "path": "Condition.encounter",
-        "short": "Fall oder Kontakt",
+        "short": "Kontakt (Aufenthaltsbezug)",
         "_short": {
           "extension": [
             {
@@ -1115,7 +1115,7 @@
                 },
                 {
                   "url": "content",
-                  "valueString": "Fall oder Kontakt"
+                  "valueString": "Kontakt"
                 }
               ]
             },
@@ -1134,7 +1134,7 @@
             }
           ]
         },
-        "definition": "Fall oder Kontakt, bei dem die Diagnose festgestellt wurde.",
+        "definition": "Kontakt, während dem die Diagnose erstellt wurde oder mit dem die Diagnose in Zusammenhang steht.",
         "_definition": {
           "extension": [
             {
@@ -1146,7 +1146,7 @@
                 },
                 {
                   "url": "content",
-                  "valueString": "Fall oder Kontakt, bei dem die Diagnose festgestellt wurde."
+                  "valueString": "Kontakt, während dem die Diagnose erstellt wurde oder mit dem die Diagnose in Zusammenhang steht."
                 }
               ]
             },
@@ -1159,7 +1159,7 @@
                 },
                 {
                   "url": "content",
-                  "valueString": "Encounter during which the diagnosis was determined."
+                  "valueString": "The Encounter during which this Condition was created or to which the creation of this record is tightly associated."
                 }
               ]
             }

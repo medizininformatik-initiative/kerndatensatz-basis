@@ -50,7 +50,7 @@
     ]
   },
   "status": "active",
-  "date": "2024-12-10",
+  "date": "2025-12-12",
   "description": "Kontakt zu einer Einrichtung, Abteilung oder Versorgungsstelle",
   "fhirVersion": "4.0.1",
   "kind": "resource",
@@ -574,7 +574,7 @@
             }
           ]
         },
-        "definition": "OPTIONAL, Aufnahmenummer/Fallnummer, die Patient:innen bei der Planung einer Aufnahme oder bei der Aufnahme selbst bekommt. \nGenerell SOLLTE die Aufnahmenummer in allen Encounter-Ressourcen unabhängig von der Kontaktebene und dem Kontakttyp angegeben werden. \nAls Gründe würden dagegen sprechen, wenn die Aufnahmenummer nur in einem Encounter der Encounter-Hierarchie angegeben werden kann. \nIn diesem Fall SOLL auf die korrekte Encounter-Verlinkung über .partOf geachtet werden, \nsowie dass jeder Encounter einen eigenständigen Identifier mit unterschiedlichen Systemen enthält.",
+        "definition": "OPTIONAL, Ein eindeutiger Identifier, der einem Patienten bei der Aufnahmeplanung oder bei der Aufnahme selbst zugewiesen wird.\nJeder Encounter SOLLTE seine eigene eindeutige Aufnahmenummer haben. Die Aufnahmenummer ist nicht die Fallnummer, \nwelche sich auf den kompletten Abrechnungsfall bezieht. Hier wird ein Identifier angegeben, der den Kontakt eindeutig identifiziert.",
         "_definition": {
           "extension": [
             {
@@ -1450,7 +1450,7 @@
             }
           ]
         },
-        "definition": "OPTIONAL, Angaben zu Diagnosen",
+        "definition": "OPTIONAL, Verweis auf Diagnosen/Prozeduren, die eine besondere Rolle im Kontext eines Encounters haben.\nDer Fallbezug von Diagnosen und Prozeduren wird über das jeweilige encounter-Element der Condition bzw. Procedure-Ressource hinreichend etabliert. \nDie zusätzliche Rückverlinkung von Encounter.diagnosis auf Condition/Procedure wird nur dann verwendet, \nwenn einer Diagnose bzw. Prozedur im Kontext eines Aufenthaltes eine besondere Rolle zugewiesen werden soll, \nz.B. Haupt-/Neben-/Aufnahme- oder Überweisungsdiagnose).",
         "_definition": {
           "extension": [
             {
@@ -1487,7 +1487,7 @@
         "id": "Encounter.diagnosis.condition",
         "path": "Encounter.diagnosis.condition",
         "short": "Referenz zu Diagnose-Ressource",
-        "definition": "VERPFLICHTEND, wenn Diagnosedaten angegeben werden, dann MUSS diese referenziert werden. \nEs SOLLTE nur die Primärdiagnose referenziert werden.",
+        "definition": "VERPFLICHTEND, wenn Diagnosedaten angegeben werden, dann MUSS diese referenziert werden. \nBei ICD-10 Primär- und Sekundärcodes SOLLTE nur die Primärdiagnose referenziert werden.",
         "mustSupport": true
       },
       {
@@ -1553,11 +1553,104 @@
         "mustSupport": true
       },
       {
+        "id": "Encounter.account",
+        "path": "Encounter.account",
+        "short": "Abrechnungskontext",
+        "_short": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Abrechnungskontext"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en-US"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Billing Context"
+                }
+              ]
+            }
+          ]
+        },
+        "definition": "OPTIONAL. Referenz auf den Abrechnungsfall. Eine logische Referenz ist ausreichend zur Abbildung des Abrechnungskontextes.",
+        "_definition": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Referenz auf den Abrechnungsfall."
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en-US"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Reference to the billing case."
+                }
+              ]
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
         "id": "Encounter.hospitalization",
         "path": "Encounter.hospitalization",
         "short": "Klinikaufenthalt",
         "_short": {
           "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "de-DE"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Klinikaufenthalt"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [
+                {
+                  "url": "lang",
+                  "valueCode": "en-US"
+                },
+                {
+                  "url": "content",
+                  "valueString": "Hospitalization"
+                }
+              ]
+            },
             {
               "url": "http://hl7.org/fhir/StructureDefinition/translation",
               "extension": [
