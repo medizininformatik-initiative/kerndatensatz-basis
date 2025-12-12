@@ -123,14 +123,14 @@ jobs:
             # Always preserve main and master (even if they don't exist as branches)
             if [[ "$path" == "main" ]] || [[ "$path" == "master" ]]; then
               echo "✓ Preserving main/master deployment: $path"
-              ((preserved_count++))
+              preserved_count=$((preserved_count + 1))
               continue
             fi
             
             # Always preserve release branches (release/*)
             if [[ "$path" == release/* ]] || [[ "$path" =~ ^release- ]]; then
               echo "✓ Preserving release branch deployment: $path"
-              ((preserved_count++))
+              preserved_count=$((preserved_count + 1))
               # Mark parent directory as containing preserved content
               if [[ "$path" == */* ]]; then
                 parent="${path%%/*}"
@@ -142,14 +142,14 @@ jobs:
             # Always preserve version number branches (e.g., 2026.0.0, 2025.0.1, 2026.0.0-rc.1, 2026.0.0-ballot)
             if [[ "$path" =~ ^[0-9]{4}\.[0-9]+\.[0-9]+(-[a-zA-Z0-9\.]+)?$ ]]; then
               echo "✓ Preserving version deployment: $path"
-              ((preserved_count++))
+              preserved_count=$((preserved_count + 1))
               continue
             fi
             
             # Check if this path corresponds to an active branch
             if echo "$active_branches" | grep -Fxq "$path"; then
               echo "✓ Preserving active branch deployment: $path"
-              ((preserved_count++))
+              preserved_count=$((preserved_count + 1))
               # Mark parent directory as containing preserved content
               if [[ "$path" == */* ]]; then
                 parent="${path%%/*}"
@@ -159,10 +159,10 @@ jobs:
               # Check if this is a parent directory containing preserved deployments
               if [[ -n "${preserved_parents[$path]:-}" ]]; then
                 echo "✓ Preserving parent directory: $path (contains preserved deployments)"
-                ((preserved_count++))
+                preserved_count=$((preserved_count + 1))
               else
                 echo "✗ Stale deployment found: $path (branch no longer exists)"
-                ((stale_count++))
+                stale_count=$((stale_count + 1))
                 to_delete+=("$path")
               fi
             fi
@@ -174,7 +174,7 @@ jobs:
             for path in "${to_delete[@]}"; do
               if [[ -n "${preserved_parents[$path]:-}" ]]; then
                 echo "⟳ Not deleting parent directory: $path (contains preserved deployments)"
-                ((preserved_count++))
+                preserved_count=$((preserved_count + 1))
                 continue
               fi
               filtered_to_delete+=("$path")
