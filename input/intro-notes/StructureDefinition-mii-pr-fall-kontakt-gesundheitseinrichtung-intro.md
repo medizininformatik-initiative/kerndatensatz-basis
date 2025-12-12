@@ -251,6 +251,8 @@ The `Encounter.diagnosis` element establishes the relationship between encounter
 <p>Since <code>Encounter.diagnosis.use</code> has cardinality 1..1, a diagnosis with multiple roles within an encounter requires multiple <code>Encounter.diagnosis</code> entries, each with a different <code>use</code> value.</p>
 
 <p><strong>Example:</strong> If a Condition serves as both a Diagnosetyp and a Diagnosesubtyp (or additional roles such as CC/CM), create separate <code>Encounter.diagnosis</code> references for each role, all pointing to the same Condition resource. A single Condition can be referenced multiple times with different <code>use</code> values.</p>
+
+<p><strong>Note on CC/CM Classification:</strong> If you want to classify a diagnosis as CC (Complication or Comorbidity) or CM (Comorbidity), this is typically billing-related information and should be placed in the Account resource rather than in <code>Encounter.diagnosis</code>. The Account resource is the appropriate location for billing case context and DRG-relevant classifications.</p>
 </div>
 
 #### Encounter Location
@@ -290,13 +292,28 @@ Previously, it was recommended that the Aufnahmenummer (admission number) should
 <div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
 <h5 style="color: #406A99; margin-top: 0;">Best Practice - Aufnahmenummer vs. Fallnummer</h5>
 
+<p><em>Note: This guidance is based on the <a href="https://simplifier.net/packages/de.gematik.isik/5.1.0/files/3020028" target="_blank">ISiK specification</a>.</em></p>
+
 <p>It is important to distinguish between:</p>
 <ul>
   <li><strong>Aufnahmenummer (Admission Number):</strong> A unique identifier assigned to a patient during admission planning or at admission itself. Each Encounter <strong>SHOULD</strong> have its own unique Aufnahmenummer in <code>Encounter.identifier:Aufnahmenummer</code> where applicable.</li>
   <li><strong>Fallnummer (Case Number):</strong> Typically identifies the billing case (Account), not individual encounters.</li>
 </ul>
 
-<p>The Fallnummer can be made accessible in the Encounter without requiring implementation of the Account resource by including the Account identifier as a logical reference in <code>Encounter.account</code>. This enables Fallnummer-based searches.</p>
+<p><strong>Account References and Billing Context:</strong></p>
+<p>The reference to an Account establishes the billing context for one or more Encounters. Using the Account reference, multiple encounters can be grouped together into a single billing case (e.g., a "DRG-Fall" comprising pre-inpatient, inpatient, and post-inpatient visits).</p>
+
+<p><strong>Note:</strong> If you want to implement the billing case (Abrechnungsfall), it is recommended to use the <a href="https://simplifier.net/packages/de.gematik.isik/5.1.0/files/3019857" target="_blank">ISiK Account profile</a>.</p>
+
+<p><strong>Important Note for Implementers:</strong> In German healthcare terminology, the term "Fall" (case) usually refers to the billing context, not individual encounters. Therefore, the "Fallnummer" is not the identifier of the Encounter, but rather the identifier of the Account that the Encounter references. This enables multiple encounters to be associated with a single Fallnummer.</p>
+
+<p><strong>Logical References for Search:</strong></p>
+<p>Since the Fallnummer is a frequently used search criterion, it <strong>SHOULD</strong> be provided as a logical reference (<code>account.identifier</code>) in the Encounter. This ensures that the Fallnummer is available as a search parameter for finding Encounters, even when:</p>
+<ul>
+  <li>Individual systems do not support chaining</li>
+  <li>Individual users lack viewing permissions for billing data</li>
+  <li>Users in the care context need to search for Encounters using the associated Fallnummer</li>
+</ul>
 </div>
 
 {% include link-list.md %}

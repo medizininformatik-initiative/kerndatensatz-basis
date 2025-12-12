@@ -22,6 +22,13 @@ This page documents the changes and updates across versions of the MII Implement
 - **Changed:** Condition.encounter SHOULD now reference an Encounter at the "Abteilungskontakt" (department contact) level
 - **Note:** This represents a change from previous versions where Encounter.diagnosis was the primary linkage method
 
+#### Treatment Case Module
+
+- **Changed:** Updated guidance on billing case context (Abrechnungsfallkontext) and Account references based on gematik ISiK specification
+- **Changed:** Enhanced documentation differentiating between Aufnahmenummer (admission number) and Fallnummer (case number)
+- **Changed:** Clarified that Fallnummer identifies the billing case (Account) and should be provided as logical reference in `Encounter.account.identifier`
+- **Changed:** Each Encounter SHOULD have its own unique Aufnahmenummer in `Encounter.identifier:Aufnahmenummer`
+
 #### Person Module
 
 - **Added:** ValueSet MII VS Person ICD-10-WHO published under MII Canonical URL for causes of death coding

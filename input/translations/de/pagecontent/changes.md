@@ -22,6 +22,13 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 - **Changed:** Condition.encounter SOLLTE nun auf einen Encounter der Ebene "Abteilungskontakt" referenzieren
 - **Hinweis:** Dies stellt eine Änderung gegenüber vorherigen Versionen dar, in denen Encounter.diagnosis die primäre Verknüpfungsmethode war
 
+#### Modul Fall
+
+- **Changed:** Aktualisierte Anleitung zum Abrechnungsfallkontext und Account-Referenzen basierend auf der gematik ISiK-Spezifikation
+- **Changed:** Erweiterte Dokumentation zur Unterscheidung zwischen Aufnahmenummer und Fallnummer
+- **Changed:** Klargestellt, dass die Fallnummer den Abrechnungsfall (Account) identifiziert und als logische Referenz in `Encounter.account.identifier` angegeben werden sollte
+- **Changed:** Jeder Encounter SOLLTE seine eigene eindeutige Aufnahmenummer in `Encounter.identifier:Aufnahmenummer` haben
+
 #### Modul Person
 
 - **Added:** ValueSet MII VS Person ICD-10-WHO veröffentlicht unter MII-Canonical URL für Todesursachen-Codierung
