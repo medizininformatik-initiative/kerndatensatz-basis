@@ -29,8 +29,8 @@ Die folgenden [Extensions](http://hl7.org/fhir/R4/extensibility.html) wurden als
 
 #### Modul Fall Extensions
 
-* [MII EX Fall Planned Start Date](StructureDefinition-mii-ex-fall-planned-start-date.html) - Geplantes Startdatum für einen Kontakt
-* [MII EX Fall Planned End Date](StructureDefinition-mii-ex-fall-planned-end-date.html) - Geplantes Enddatum für einen Kontakt
+* [R5: The planned start date/time (or admission date) of the encounter](https://hl7.org/fhir/uv/xver-r5.r4/0.1.0/StructureDefinition-ext-R5-Encounter.plannedStartDate.html) - Geplantes Startdatum für einen Kontakt
+* [R5: The planned end date/time (or discharge date) of the encounter](https://hl7.org/fhir/uv/xver-r5.r4/0.1.0/StructureDefinition-ext-R5-Encounter.plannedEndDate.html) - Geplantes Enddatum für einen Kontakt
 
 #### Modul Prozedur Extensions
 

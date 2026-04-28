@@ -2,6 +2,16 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 
 ---
 
+### Version 2026.0.1
+
+**Datum:** 2026-XX-XX
+
+#### Modul Fall
+
+- **Removed:** Selbst veröffentlichte R5-Backport-Extensions für geplante Encounter-Start- und Enddaten (zuvor `mii-ex-fall-planned-start-date` und `mii-ex-fall-planned-end-date`). Diese Extensions werden nun durch die offizielle `hl7.fhir.uv.xver-r5.r4`-Dependency bereitgestellt
+
+---
+
 ### Version 2026.0.0
 
 **Datum:** 11.12.2026
