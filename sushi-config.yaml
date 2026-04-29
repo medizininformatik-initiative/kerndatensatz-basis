@@ -126,6 +126,15 @@ parameters:
   #version-comparison-master: '{current}'
   #version-comparison:
   #  - '{current}'
+  logging:
+    - init
+    - progress
+    - context
+    - html
+    - tx
+  pin-canonicals: pin-all
+  path-expansion-params: '../../input/resources/Parameters-manifest.json'
+  pin-manifest: 'manifest'
   special-url:
     - https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/CapabilityStatement/metadata
     - https://www.medizininformatik-initiative.de/fhir/core/modul-fall/CapabilityStatement/metadata
