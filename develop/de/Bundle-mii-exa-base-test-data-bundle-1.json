@@ -1,0 +1,1600 @@
+{
+  "resourceType" : "Bundle",
+  "id" : "mii-exa-base-test-data-bundle-1",
+  "meta" : {
+    "security" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+      "code" : "HTEST",
+      "display" : "test health data"
+    }]
+  },
+  "language" : "de",
+  "type" : "transaction",
+  "timestamp" : "2025-11-28T09:38:00+01:00",
+  "entry" : [{
+    "fullUrl" : "https://www.medizininformatik-initiative.de/Patient/mii-exa-person-patient-1",
+    "resource" : {
+      "resourceType" : "Patient",
+      "id" : "mii-exa-person-patient-1",
+      "meta" : {
+        "profile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient|2026.0.0"],
+        "security" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+          "code" : "HTEST",
+          "display" : "test health data"
+        }]
+      },
+      "language" : "de",
+      "text" : {
+        "status" : "generated"
+      },
+      "identifier" : [{
+        "use" : "usual",
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "MR"
+          }]
+        },
+        "system" : "https://www.charite.de/fhir/sid/patienten",
+        "value" : "42285243",
+        "assigner" : {
+          "identifier" : {
+            "system" : "https://www.medizininformatik-initiative.de/fhir/core/CodeSystem/core-location-identifier",
+            "value" : "Charité"
+          },
+          "display" : "Charité – Universitätsmedizin Berlin"
+        }
+      },
+      {
+        "use" : "official",
+        "type" : {
+          "coding" : [{
+            "system" : "http://fhir.de/CodeSystem/identifier-type-de-basis",
+            "code" : "KVZ10"
+          }]
+        },
+        "system" : "http://fhir.de/sid/gkv/kvid-10",
+        "value" : "A999999999",
+        "assigner" : {
+          "identifier" : {
+            "use" : "official",
+            "system" : "http://fhir.de/sid/arge-ik/iknr",
+            "value" : "260326822"
+          }
+        }
+      }],
+      "name" : [{
+        "use" : "official",
+        "family" : "Van-der-Dussen",
+        "_family" : {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+            "valueString" : "Van-der-Dussen"
+          }]
+        },
+        "given" : ["Maja",
+        "Julia"],
+        "prefix" : ["Prof. Dr. med."],
+        "_prefix" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier",
+            "valueCode" : "AC"
+          }]
+        }]
+      },
+      {
+        "use" : "maiden",
+        "family" : "Bachmann"
+      }],
+      "gender" : "female",
+      "birthDate" : "1998-09-19",
+      "deceasedBoolean" : false,
+      "address" : [{
+        "type" : "both",
+        "line" : ["Anna-Louisa-Karsch Str. 2"],
+        "city" : "Berlin",
+        "_city" : {
+          "extension" : [{
+            "url" : "http://fhir.de/StructureDefinition/destatis/ags",
+            "valueCoding" : {
+              "system" : "http://fhir.de/sid/destatis/ags",
+              "code" : "11000000"
+            }
+          }]
+        },
+        "state" : "DE-BE",
+        "postalCode" : "10178",
+        "country" : "DE"
+      }]
+    },
+    "request" : {
+      "method" : "POST",
+      "url" : "Patient"
+    }
+  },
+  {
+    "fullUrl" : "https://www.medizininformatik-initiative.de/Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-8",
+    "resource" : {
+      "resourceType" : "Encounter",
+      "id" : "mii-exa-fall-kontakt-gesundheitseinrichtung-8",
+      "meta" : {
+        "profile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"],
+        "security" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+          "code" : "HTEST",
+          "display" : "test health data"
+        }]
+      },
+      "language" : "de",
+      "text" : {
+        "status" : "generated"
+      },
+      "identifier" : [{
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "VN"
+          }]
+        },
+        "system" : "https://www.charite.de/fhir/sid/aufnahmenummer",
+        "value" : "F_20190926_001"
+      }],
+      "status" : "finished",
+      "class" : {
+        "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code" : "AMB"
+      },
+      "subject" : {
+        "reference" : "Patient/mii-exa-person-patient-1"
+      },
+      "period" : {
+        "start" : "2019-09-26T10:00:00+02:00",
+        "end" : "2019-09-26T12:00:00+02:00"
+      },
+      "serviceProvider" : {
+        "identifier" : {
+          "system" : "http://fhir.de/sid/dkgev/iknr",
+          "value" : "260950472"
+        }
+      }
+    },
+    "request" : {
+      "method" : "POST",
+      "url" : "Encounter"
+    }
+  },
+  {
+    "fullUrl" : "https://www.medizininformatik-initiative.de/Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1",
+    "resource" : {
+      "resourceType" : "Encounter",
+      "id" : "mii-exa-fall-kontakt-gesundheitseinrichtung-1",
+      "meta" : {
+        "profile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"],
+        "security" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+          "code" : "HTEST",
+          "display" : "test health data"
+        }]
+      },
+      "language" : "de",
+      "text" : {
+        "status" : "generated"
+      },
+      "identifier" : [{
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "VN"
+          }]
+        },
+        "system" : "https://www.charite.de/fhir/sid/aufnahmenummer",
+        "value" : "E0"
+      }],
+      "status" : "finished",
+      "class" : {
+        "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code" : "IMP"
+      },
+      "type" : [{
+        "coding" : [{
+          "system" : "http://fhir.de/CodeSystem/Kontaktebene",
+          "code" : "einrichtungskontakt"
+        }]
+      }],
+      "subject" : {
+        "reference" : "Patient/mii-exa-person-patient-1"
+      },
+      "period" : {
+        "start" : "2020-01-08T07:00:00+01:00",
+        "end" : "2020-01-17T18:00:00+01:00"
+      },
+      "account" : [{
+        "identifier" : {
+          "system" : "https://www.charite.de/fhir/sid/fallnummer",
+          "value" : "F-2020-000123"
+        },
+        "display" : "Account A1 - DRG G23B Appendektomie ohne schwere CC"
+      }],
+      "hospitalization" : {
+        "admitSource" : {
+          "coding" : [{
+            "system" : "http://fhir.de/CodeSystem/dgkev/Aufnahmeanlass",
+            "code" : "N",
+            "display" : "Notfall"
+          }]
+        },
+        "dischargeDisposition" : {
+          "extension" : [{
+            "extension" : [{
+              "url" : "ErsteUndZweiteStelle",
+              "valueCoding" : {
+                "system" : "http://fhir.de/CodeSystem/dkgev/EntlassungsgrundErsteUndZweiteStelle",
+                "code" : "01",
+                "display" : "Behandlung regulär beendet"
+              }
+            },
+            {
+              "url" : "DritteStelle",
+              "valueCoding" : {
+                "system" : "http://fhir.de/CodeSystem/dkgev/EntlassungsgrundDritteStelle",
+                "code" : "1",
+                "display" : "arbeitsfähig entlassen"
+              }
+            }],
+            "url" : "http://fhir.de/StructureDefinition/Entlassungsgrund"
+          }]
+        }
+      },
+      "serviceProvider" : {
+        "identifier" : {
+          "system" : "http://fhir.de/sid/dkgev/iknr",
+          "value" : "260950472"
+        }
+      }
+    },
+    "request" : {
+      "method" : "POST",
+      "url" : "Encounter"
+    }
+  },
+  {
+    "fullUrl" : "https://www.medizininformatik-initiative.de/Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-9",
+    "resource" : {
+      "resourceType" : "Encounter",
+      "id" : "mii-exa-fall-kontakt-gesundheitseinrichtung-9",
+      "meta" : {
+        "profile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"],
+        "security" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+          "code" : "HTEST",
+          "display" : "test health data"
+        }]
+      },
+      "language" : "de",
+      "text" : {
+        "status" : "extensions"
+      },
+      "extension" : [{
+        "extension" : [{
+          "url" : "VierteStelle",
+          "valueCoding" : {
+            "system" : "http://fhir.de/CodeSystem/dkgev/AufnahmegrundVierteStelle",
+            "code" : "7",
+            "display" : "Notfall"
+          }
+        }],
+        "url" : "http://fhir.de/StructureDefinition/Aufnahmegrund"
+      }],
+      "identifier" : [{
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "VN"
+          }]
+        },
+        "system" : "https://www.charite.de/fhir/sid/aufnahmenummer",
+        "value" : "A1E"
+      }],
+      "status" : "finished",
+      "class" : {
+        "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code" : "AMB"
+      },
+      "type" : [{
+        "coding" : [{
+          "system" : "http://fhir.de/CodeSystem/Kontaktebene",
+          "code" : "abteilungskontakt"
+        }]
+      }],
+      "priority" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/v3-ActPriority",
+          "code" : "EM"
+        }]
+      },
+      "subject" : {
+        "reference" : "Patient/mii-exa-person-patient-1"
+      },
+      "period" : {
+        "start" : "2020-01-08T07:00:00+01:00",
+        "end" : "2020-01-08T09:00:00+01:00"
+      },
+      "account" : [{
+        "identifier" : {
+          "system" : "https://www.charite.de/fhir/sid/fallnummer",
+          "value" : "F-2020-000123"
+        },
+        "display" : "Account A1 - DRG G23B Appendektomie ohne schwere CC"
+      }],
+      "serviceProvider" : {
+        "identifier" : {
+          "system" : "http://fhir.de/sid/dkgev/iknr",
+          "value" : "260950472"
+        }
+      },
+      "partOf" : {
+        "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1"
+      }
+    },
+    "request" : {
+      "method" : "POST",
+      "url" : "Encounter"
+    }
+  },
+  {
+    "fullUrl" : "https://www.medizininformatik-initiative.de/Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-11",
+    "resource" : {
+      "resourceType" : "Encounter",
+      "id" : "mii-exa-fall-kontakt-gesundheitseinrichtung-11",
+      "meta" : {
+        "profile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"],
+        "security" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+          "code" : "HTEST",
+          "display" : "test health data"
+        }]
+      },
+      "language" : "de",
+      "text" : {
+        "status" : "generated"
+      },
+      "identifier" : [{
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "VN"
+          }]
+        },
+        "system" : "https://www.charite.de/fhir/sid/aufnahmenummer",
+        "value" : "VS1"
+      }],
+      "status" : "finished",
+      "class" : {
+        "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code" : "AMB"
+      },
+      "type" : [{
+        "coding" : [{
+          "system" : "http://fhir.de/CodeSystem/Kontaktebene",
+          "code" : "versorgungsstellenkontakt"
+        }]
+      }],
+      "subject" : {
+        "reference" : "Patient/mii-exa-person-patient-1"
+      },
+      "period" : {
+        "start" : "2020-01-08T07:00:00+01:00",
+        "end" : "2020-01-08T09:00:00+01:00"
+      },
+      "account" : [{
+        "identifier" : {
+          "system" : "https://www.charite.de/fhir/sid/fallnummer",
+          "value" : "F-2020-000123"
+        },
+        "display" : "Account A1 - DRG G23B Appendektomie ohne schwere CC"
+      }],
+      "location" : [{
+        "location" : {
+          "display" : "Emergency Department, Treatment Room 3"
+        },
+        "status" : "completed",
+        "physicalType" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/location-physical-type",
+            "code" : "ro"
+          }]
+        }
+      }],
+      "serviceProvider" : {
+        "identifier" : {
+          "system" : "http://fhir.de/sid/dkgev/iknr",
+          "value" : "260950472"
+        }
+      },
+      "partOf" : {
+        "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-9"
+      }
+    },
+    "request" : {
+      "method" : "POST",
+      "url" : "Encounter"
+    }
+  },
+  {
+    "fullUrl" : "https://www.medizininformatik-initiative.de/Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2",
+    "resource" : {
+      "resourceType" : "Encounter",
+      "id" : "mii-exa-fall-kontakt-gesundheitseinrichtung-2",
+      "meta" : {
+        "profile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"],
+        "security" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+          "code" : "HTEST",
+          "display" : "test health data"
+        }]
+      },
+      "language" : "de",
+      "text" : {
+        "status" : "generated"
+      },
+      "identifier" : [{
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "VN"
+          }]
+        },
+        "system" : "https://www.charite.de/fhir/sid/aufnahmenummer",
+        "value" : "A2E"
+      }],
+      "status" : "finished",
+      "class" : {
+        "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code" : "IMP"
+      },
+      "type" : [{
+        "coding" : [{
+          "system" : "http://fhir.de/CodeSystem/Kontaktebene",
+          "code" : "abteilungskontakt"
+        }]
+      }],
+      "serviceType" : {
+        "coding" : [{
+          "system" : "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel",
+          "code" : "1500",
+          "display" : "Allgemeine Chirurgie"
+        }]
+      },
+      "subject" : {
+        "reference" : "Patient/mii-exa-person-patient-1"
+      },
+      "period" : {
+        "start" : "2020-01-08T09:00:00+01:00",
+        "end" : "2020-01-11T23:59:00+01:00"
+      },
+      "diagnosis" : [{
+        "condition" : {
+          "reference" : "Condition/mii-exa-diagnose-appendicitis"
+        },
+        "use" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+            "code" : "AD",
+            "display" : "Admission diagnosis"
+          }]
+        }
+      },
+      {
+        "condition" : {
+          "reference" : "Condition/mii-exa-diagnose-appendicitis"
+        },
+        "use" : {
+          "coding" : [{
+            "system" : "http://fhir.de/CodeSystem/KontaktDiagnoseProzedur",
+            "code" : "treatment-diagnosis"
+          }]
+        }
+      },
+      {
+        "condition" : {
+          "reference" : "Condition/mii-exa-diagnose-condition-elbow-contusion"
+        },
+        "use" : {
+          "coding" : [{
+            "system" : "http://fhir.de/CodeSystem/KontaktDiagnoseProzedur",
+            "code" : "treatment-diagnosis"
+          }]
+        }
+      }],
+      "account" : [{
+        "identifier" : {
+          "system" : "https://www.charite.de/fhir/sid/fallnummer",
+          "value" : "F-2020-000123"
+        },
+        "display" : "Account A1 - DRG G23B Appendektomie ohne schwere CC"
+      }],
+      "serviceProvider" : {
+        "identifier" : {
+          "system" : "http://fhir.de/sid/dkgev/iknr",
+          "value" : "260950472"
+        }
+      },
+      "partOf" : {
+        "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1"
+      }
+    },
+    "request" : {
+      "method" : "POST",
+      "url" : "Encounter"
+    }
+  },
+  {
+    "fullUrl" : "https://www.medizininformatik-initiative.de/Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4",
+    "resource" : {
+      "resourceType" : "Encounter",
+      "id" : "mii-exa-fall-kontakt-gesundheitseinrichtung-4",
+      "meta" : {
+        "profile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"],
+        "security" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+          "code" : "HTEST",
+          "display" : "test health data"
+        }]
+      },
+      "language" : "de",
+      "text" : {
+        "status" : "generated"
+      },
+      "identifier" : [{
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "VN"
+          }]
+        },
+        "system" : "https://www.charite.de/fhir/sid/aufnahmenummer",
+        "value" : "VS2"
+      }],
+      "status" : "finished",
+      "class" : {
+        "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code" : "IMP"
+      },
+      "type" : [{
+        "coding" : [{
+          "system" : "http://fhir.de/CodeSystem/Kontaktebene",
+          "code" : "versorgungsstellenkontakt"
+        }]
+      }],
+      "subject" : {
+        "reference" : "Patient/mii-exa-person-patient-1"
+      },
+      "period" : {
+        "start" : "2020-01-08T10:00:00+01:00",
+        "end" : "2020-01-08T10:30:00+01:00"
+      },
+      "account" : [{
+        "identifier" : {
+          "system" : "https://www.charite.de/fhir/sid/fallnummer",
+          "value" : "F-2020-000123"
+        },
+        "display" : "Account A1 - DRG G23B Appendektomie ohne schwere CC"
+      }],
+      "location" : [{
+        "location" : {
+          "display" : "Radiology Department, CT Scanner"
+        },
+        "status" : "completed",
+        "physicalType" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/location-physical-type",
+            "code" : "ro",
+            "display" : "Room"
+          }]
+        }
+      }],
+      "serviceProvider" : {
+        "identifier" : {
+          "system" : "http://fhir.de/sid/dkgev/iknr",
+          "value" : "260950472"
+        }
+      },
+      "partOf" : {
+        "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2"
+      }
+    },
+    "request" : {
+      "method" : "POST",
+      "url" : "Encounter"
+    }
+  },
+  {
+    "fullUrl" : "https://www.medizininformatik-initiative.de/Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5",
+    "resource" : {
+      "resourceType" : "Encounter",
+      "id" : "mii-exa-fall-kontakt-gesundheitseinrichtung-5",
+      "meta" : {
+        "profile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"],
+        "security" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+          "code" : "HTEST",
+          "display" : "test health data"
+        }]
+      },
+      "language" : "de",
+      "text" : {
+        "status" : "generated"
+      },
+      "identifier" : [{
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "VN"
+          }]
+        },
+        "system" : "https://www.charite.de/fhir/sid/aufnahmenummer",
+        "value" : "VS3"
+      }],
+      "status" : "finished",
+      "class" : {
+        "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code" : "IMP"
+      },
+      "type" : [{
+        "coding" : [{
+          "system" : "http://fhir.de/CodeSystem/Kontaktebene",
+          "code" : "versorgungsstellenkontakt"
+        }]
+      },
+      {
+        "coding" : [{
+          "system" : "http://fhir.de/CodeSystem/kontaktart-de",
+          "code" : "operation"
+        }]
+      }],
+      "subject" : {
+        "reference" : "Patient/mii-exa-person-patient-1"
+      },
+      "period" : {
+        "start" : "2020-01-08T20:30:00+01:00",
+        "end" : "2020-01-08T22:15:00+01:00"
+      },
+      "account" : [{
+        "identifier" : {
+          "system" : "https://www.charite.de/fhir/sid/fallnummer",
+          "value" : "F-2020-000123"
+        },
+        "display" : "Account A1 - DRG G23B Appendektomie ohne schwere CC"
+      }],
+      "location" : [{
+        "location" : {
+          "display" : "OR 4 (Operating Room 4)"
+        },
+        "status" : "completed",
+        "physicalType" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/location-physical-type",
+            "code" : "ro",
+            "display" : "Room"
+          }]
+        }
+      }],
+      "serviceProvider" : {
+        "identifier" : {
+          "system" : "http://fhir.de/sid/dkgev/iknr",
+          "value" : "260950472"
+        }
+      },
+      "partOf" : {
+        "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2"
+      }
+    },
+    "request" : {
+      "method" : "POST",
+      "url" : "Encounter"
+    }
+  },
+  {
+    "fullUrl" : "https://www.medizininformatik-initiative.de/Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6",
+    "resource" : {
+      "resourceType" : "Encounter",
+      "id" : "mii-exa-fall-kontakt-gesundheitseinrichtung-6",
+      "meta" : {
+        "profile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"],
+        "security" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+          "code" : "HTEST",
+          "display" : "test health data"
+        }]
+      },
+      "language" : "de",
+      "text" : {
+        "status" : "generated"
+      },
+      "identifier" : [{
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "VN"
+          }]
+        },
+        "system" : "https://www.charite.de/fhir/sid/aufnahmenummer",
+        "value" : "VS4"
+      }],
+      "status" : "finished",
+      "class" : {
+        "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code" : "IMP"
+      },
+      "type" : [{
+        "coding" : [{
+          "system" : "http://fhir.de/CodeSystem/Kontaktebene",
+          "code" : "versorgungsstellenkontakt"
+        }]
+      }],
+      "subject" : {
+        "reference" : "Patient/mii-exa-person-patient-1"
+      },
+      "period" : {
+        "start" : "2020-01-08T22:15:00+01:00",
+        "end" : "2020-01-09T00:00:00+01:00"
+      },
+      "account" : [{
+        "identifier" : {
+          "system" : "https://www.charite.de/fhir/sid/fallnummer",
+          "value" : "F-2020-000123"
+        },
+        "display" : "Account A1 - DRG G23B Appendektomie ohne schwere CC"
+      }],
+      "location" : [{
+        "location" : {
+          "display" : "PACU (Post-Anesthesia Care Unit)"
+        },
+        "status" : "completed",
+        "physicalType" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/location-physical-type",
+            "code" : "wa",
+            "display" : "Ward"
+          }]
+        }
+      }],
+      "serviceProvider" : {
+        "identifier" : {
+          "system" : "http://fhir.de/sid/dkgev/iknr",
+          "value" : "260950472"
+        }
+      },
+      "partOf" : {
+        "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2"
+      }
+    },
+    "request" : {
+      "method" : "POST",
+      "url" : "Encounter"
+    }
+  },
+  {
+    "fullUrl" : "https://www.medizininformatik-initiative.de/Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10",
+    "resource" : {
+      "resourceType" : "Encounter",
+      "id" : "mii-exa-fall-kontakt-gesundheitseinrichtung-10",
+      "meta" : {
+        "profile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"],
+        "security" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+          "code" : "HTEST",
+          "display" : "test health data"
+        }]
+      },
+      "language" : "de",
+      "text" : {
+        "status" : "generated"
+      },
+      "identifier" : [{
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "VN"
+          }]
+        },
+        "system" : "https://www.charite.de/fhir/sid/aufnahmenummer",
+        "value" : "VS5"
+      }],
+      "status" : "finished",
+      "class" : {
+        "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code" : "IMP"
+      },
+      "type" : [{
+        "coding" : [{
+          "system" : "http://fhir.de/CodeSystem/Kontaktebene",
+          "code" : "versorgungsstellenkontakt"
+        }]
+      }],
+      "subject" : {
+        "reference" : "Patient/mii-exa-person-patient-1"
+      },
+      "period" : {
+        "start" : "2020-01-09T00:00:00+01:00",
+        "end" : "2020-01-11T23:59:00+01:00"
+      },
+      "account" : [{
+        "identifier" : {
+          "system" : "https://www.charite.de/fhir/sid/fallnummer",
+          "value" : "F-2020-000123"
+        },
+        "display" : "Account A1 - DRG G23B Appendektomie ohne schwere CC"
+      }],
+      "location" : [{
+        "location" : {
+          "display" : "Surgical Ward C3, Room 315, Bed 315-02"
+        },
+        "status" : "completed",
+        "physicalType" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/location-physical-type",
+            "code" : "wa",
+            "display" : "Ward"
+          }]
+        }
+      }],
+      "serviceProvider" : {
+        "identifier" : {
+          "system" : "http://fhir.de/sid/dkgev/iknr",
+          "value" : "260950472"
+        }
+      },
+      "partOf" : {
+        "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2"
+      }
+    },
+    "request" : {
+      "method" : "POST",
+      "url" : "Encounter"
+    }
+  },
+  {
+    "fullUrl" : "https://www.medizininformatik-initiative.de/Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7",
+    "resource" : {
+      "resourceType" : "Encounter",
+      "id" : "mii-exa-fall-kontakt-gesundheitseinrichtung-7",
+      "meta" : {
+        "profile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"],
+        "security" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+          "code" : "HTEST",
+          "display" : "test health data"
+        }]
+      },
+      "language" : "de",
+      "text" : {
+        "status" : "generated"
+      },
+      "identifier" : [{
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "VN"
+          }]
+        },
+        "system" : "https://www.charite.de/fhir/sid/aufnahmenummer",
+        "value" : "F_20200108_001_INME"
+      }],
+      "status" : "finished",
+      "class" : {
+        "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code" : "IMP"
+      },
+      "type" : [{
+        "coding" : [{
+          "system" : "http://fhir.de/CodeSystem/Kontaktebene",
+          "code" : "abteilungskontakt"
+        }]
+      }],
+      "serviceType" : {
+        "coding" : [{
+          "system" : "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel",
+          "code" : "0100",
+          "display" : "Innere Medizin"
+        }]
+      },
+      "subject" : {
+        "reference" : "Patient/mii-exa-person-patient-1"
+      },
+      "period" : {
+        "start" : "2020-01-12T00:00:00+01:00",
+        "end" : "2020-01-17T18:00:00+01:00"
+      },
+      "diagnosis" : [{
+        "condition" : {
+          "reference" : "Condition/mii-exa-diagnose-condition-multiple-codings"
+        },
+        "use" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+            "code" : "CC",
+            "display" : "Chief complaint"
+          }]
+        }
+      },
+      {
+        "condition" : {
+          "reference" : "Condition/mii-exa-diagnose-condition-multiple-codings"
+        },
+        "use" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+            "code" : "AD",
+            "display" : "Admission diagnosis"
+          }]
+        }
+      },
+      {
+        "condition" : {
+          "reference" : "Condition/mii-exa-diagnose-mehrfachcodierung-primaercode"
+        },
+        "use" : {
+          "coding" : [{
+            "system" : "http://fhir.de/CodeSystem/KontaktDiagnoseProzedur",
+            "code" : "treatment-diagnosis"
+          }]
+        }
+      }],
+      "account" : [{
+        "identifier" : {
+          "system" : "https://www.charite.de/fhir/sid/fallnummer",
+          "value" : "F-2020-000123"
+        },
+        "display" : "Account A1 - DRG G23B Appendektomie ohne schwere CC"
+      }],
+      "serviceProvider" : {
+        "identifier" : {
+          "system" : "http://fhir.de/sid/dkgev/iknr",
+          "value" : "260950472"
+        }
+      },
+      "partOf" : {
+        "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1"
+      }
+    },
+    "request" : {
+      "method" : "POST",
+      "url" : "Encounter"
+    }
+  },
+  {
+    "fullUrl" : "https://www.medizininformatik-initiative.de/Condition/mii-exa-diagnose-mehrfachcodierung-primaercode",
+    "resource" : {
+      "resourceType" : "Condition",
+      "id" : "mii-exa-diagnose-mehrfachcodierung-primaercode",
+      "meta" : {
+        "profile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0"],
+        "security" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+          "code" : "HTEST",
+          "display" : "test health data"
+        }]
+      },
+      "language" : "de",
+      "text" : {
+        "status" : "generated"
+      },
+      "clinicalStatus" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code" : "active"
+        }]
+      },
+      "verificationStatus" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code" : "confirmed"
+        }]
+      },
+      "code" : {
+        "coding" : [{
+          "extension" : [{
+            "url" : "http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen",
+            "valueCoding" : {
+              "system" : "http://fhir.de/CodeSystem/icd-10-gm-mehrfachcodierungs-kennzeichen",
+              "code" : "†"
+            }
+          },
+          {
+            "url" : "http://fhir.de/StructureDefinition/seitenlokalisation",
+            "valueCoding" : {
+              "system" : "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ICD_SEITENLOKALISATION",
+              "code" : "L",
+              "display" : "links"
+            }
+          },
+          {
+            "url" : "http://fhir.de/StructureDefinition/icd-10-gm-diagnosesicherheit",
+            "valueCoding" : {
+              "system" : "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ICD_DIAGNOSESICHERHEIT",
+              "code" : "G",
+              "display" : "gesicherte Diagnose"
+            }
+          }],
+          "system" : "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+          "version" : "2020",
+          "code" : "A54.4",
+          "display" : "Gonokokkeninfektion des Muskel-Skelett-Systems"
+        },
+        {
+          "system" : "http://fhir.de/CodeSystem/bfarm/alpha-id",
+          "version" : "2020",
+          "code" : "I97525"
+        }]
+      },
+      "subject" : {
+        "reference" : "Patient/mii-exa-person-patient-1"
+      },
+      "encounter" : {
+        "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-8"
+      },
+      "onsetDateTime" : "2019-09-26",
+      "recordedDate" : "2019-09-26T11:30:00+02:00"
+    },
+    "request" : {
+      "method" : "POST",
+      "url" : "Condition"
+    }
+  },
+  {
+    "fullUrl" : "https://www.medizininformatik-initiative.de/Condition/mii-exa-diagnose-mehrfachcodierung-sekundaercode",
+    "resource" : {
+      "resourceType" : "Condition",
+      "id" : "mii-exa-diagnose-mehrfachcodierung-sekundaercode",
+      "meta" : {
+        "profile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0"],
+        "security" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+          "code" : "HTEST",
+          "display" : "test health data"
+        }]
+      },
+      "language" : "de",
+      "text" : {
+        "status" : "extensions"
+      },
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/condition-related",
+        "valueReference" : {
+          "reference" : "Condition/mii-exa-diagnose-mehrfachcodierung-primaercode"
+        }
+      }],
+      "clinicalStatus" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code" : "active"
+        }]
+      },
+      "verificationStatus" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code" : "confirmed"
+        }]
+      },
+      "code" : {
+        "coding" : [{
+          "extension" : [{
+            "url" : "http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen",
+            "valueCoding" : {
+              "system" : "http://fhir.de/CodeSystem/icd-10-gm-mehrfachcodierungs-kennzeichen",
+              "code" : "*"
+            }
+          }],
+          "system" : "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+          "version" : "2020",
+          "code" : "M73.04"
+        }],
+        "text" : "Bursitis gonorrhoica: Hand"
+      },
+      "subject" : {
+        "reference" : "Patient/mii-exa-person-patient-1"
+      },
+      "encounter" : {
+        "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-8"
+      },
+      "onsetDateTime" : "2019-09-26",
+      "recordedDate" : "2019-09-26T11:30:00+02:00"
+    },
+    "request" : {
+      "method" : "POST",
+      "url" : "Condition"
+    }
+  },
+  {
+    "fullUrl" : "https://www.medizininformatik-initiative.de/Condition/mii-exa-diagnose-appendicitis",
+    "resource" : {
+      "resourceType" : "Condition",
+      "id" : "mii-exa-diagnose-appendicitis",
+      "meta" : {
+        "profile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0"],
+        "security" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+          "code" : "HTEST",
+          "display" : "test health data"
+        }]
+      },
+      "language" : "de",
+      "text" : {
+        "status" : "extensions"
+      },
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/condition-assertedDate",
+        "valueDateTime" : "2020-01-08T07:30:00+01:00"
+      }],
+      "clinicalStatus" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code" : "resolved"
+        }]
+      },
+      "verificationStatus" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code" : "confirmed"
+        }]
+      },
+      "code" : {
+        "coding" : [{
+          "system" : "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+          "version" : "2020",
+          "code" : "K35.8"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "85189001",
+          "display" : "Acute appendicitis"
+        }],
+        "text" : "Akute Appendizitis"
+      },
+      "subject" : {
+        "reference" : "Patient/mii-exa-person-patient-1"
+      },
+      "encounter" : {
+        "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2"
+      },
+      "onsetDateTime" : "2020-01-08T04:00:00+01:00",
+      "recordedDate" : "2020-01-08T09:00:00+01:00"
+    },
+    "request" : {
+      "method" : "POST",
+      "url" : "Condition"
+    }
+  },
+  {
+    "fullUrl" : "https://www.medizininformatik-initiative.de/Condition/mii-exa-diagnose-condition-elbow-contusion",
+    "resource" : {
+      "resourceType" : "Condition",
+      "id" : "mii-exa-diagnose-condition-elbow-contusion",
+      "meta" : {
+        "profile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0"],
+        "security" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+          "code" : "HTEST",
+          "display" : "test health data"
+        }]
+      },
+      "language" : "de",
+      "text" : {
+        "status" : "extensions"
+      },
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/condition-assertedDate",
+        "valueDateTime" : "2020-01-08T08:00:00+01:00"
+      }],
+      "clinicalStatus" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code" : "resolved"
+        }]
+      },
+      "verificationStatus" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code" : "confirmed"
+        }]
+      },
+      "code" : {
+        "coding" : [{
+          "system" : "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+          "version" : "2020",
+          "code" : "S50.0",
+          "display" : "Prellung des Ellenbogens"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "91613004",
+          "display" : "Contusion of elbow"
+        }]
+      },
+      "subject" : {
+        "reference" : "Patient/mii-exa-person-patient-1"
+      },
+      "encounter" : {
+        "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2"
+      },
+      "onsetDateTime" : "2020-01-08T06:00:00+01:00",
+      "recordedDate" : "2020-01-08T09:00:00+01:00"
+    },
+    "request" : {
+      "method" : "POST",
+      "url" : "Condition"
+    }
+  },
+  {
+    "fullUrl" : "https://www.medizininformatik-initiative.de/Condition/mii-exa-diagnose-condition-multiple-codings",
+    "resource" : {
+      "resourceType" : "Condition",
+      "id" : "mii-exa-diagnose-condition-multiple-codings",
+      "meta" : {
+        "profile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0"],
+        "security" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+          "code" : "HTEST",
+          "display" : "test health data"
+        }]
+      },
+      "language" : "de",
+      "text" : {
+        "status" : "extensions"
+      },
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/condition-assertedDate",
+        "valueDateTime" : "2020-01-13T14:00:00+01:00"
+      }],
+      "clinicalStatus" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code" : "active"
+        }]
+      },
+      "verificationStatus" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code" : "confirmed"
+        }]
+      },
+      "code" : {
+        "coding" : [{
+          "system" : "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+          "version" : "2020",
+          "code" : "H83.8",
+          "display" : "Sonstige näher bezeichnete Krankheiten des Innenohres"
+        },
+        {
+          "system" : "http://fhir.de/CodeSystem/bfarm/alpha-id",
+          "version" : "2020",
+          "code" : "I125918"
+        },
+        {
+          "system" : "http://www.orpha.net",
+          "code" : "420402",
+          "display" : "Semicircular canal dehiscence syndrome"
+        }]
+      },
+      "subject" : {
+        "reference" : "Patient/mii-exa-person-patient-1"
+      },
+      "encounter" : {
+        "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7"
+      },
+      "onsetDateTime" : "2020-01-13T14:00:00+01:00",
+      "recordedDate" : "2020-01-13T16:00:00+01:00"
+    },
+    "request" : {
+      "method" : "POST",
+      "url" : "Condition"
+    }
+  },
+  {
+    "fullUrl" : "https://www.medizininformatik-initiative.de/Procedure/mii-exa-prozedur-procedure",
+    "resource" : {
+      "resourceType" : "Procedure",
+      "id" : "mii-exa-prozedur-procedure",
+      "meta" : {
+        "profile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.0"],
+        "security" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+          "code" : "HTEST",
+          "display" : "test health data"
+        }]
+      },
+      "language" : "de",
+      "text" : {
+        "status" : "extensions"
+      },
+      "extension" : [{
+        "url" : "http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum",
+        "valueDateTime" : "2020-01-08T23:00:00+01:00"
+      },
+      {
+        "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Durchfuehrungsabsicht",
+        "valueCoding" : {
+          "system" : "http://snomed.info/sct",
+          "code" : "262202000"
+        }
+      }],
+      "status" : "completed",
+      "category" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "387713003"
+        }]
+      },
+      "code" : {
+        "coding" : [{
+          "system" : "http://fhir.de/CodeSystem/bfarm/ops",
+          "version" : "2020",
+          "code" : "5-470"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "80146002"
+        }],
+        "text" : "Appendektomie"
+      },
+      "subject" : {
+        "reference" : "Patient/mii-exa-person-patient-1"
+      },
+      "encounter" : {
+        "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2"
+      },
+      "performedPeriod" : {
+        "start" : "2020-01-08T20:30:00+01:00",
+        "end" : "2020-01-08T22:15:00+01:00"
+      },
+      "bodySite" : [{
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "181255000"
+        }],
+        "text" : "Appendix"
+      }]
+    },
+    "request" : {
+      "method" : "POST",
+      "url" : "Procedure"
+    }
+  },
+  {
+    "fullUrl" : "https://www.medizininformatik-initiative.de/Procedure/mii-exa-prozedur-procedure-2",
+    "resource" : {
+      "resourceType" : "Procedure",
+      "id" : "mii-exa-prozedur-procedure-2",
+      "meta" : {
+        "profile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.0"],
+        "security" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+          "code" : "HTEST",
+          "display" : "test health data"
+        }]
+      },
+      "language" : "de",
+      "text" : {
+        "status" : "extensions"
+      },
+      "extension" : [{
+        "url" : "http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum",
+        "valueDateTime" : "2020-01-17T00:00:00+01:00"
+      },
+      {
+        "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Durchfuehrungsabsicht",
+        "valueCoding" : {
+          "system" : "http://snomed.info/sct",
+          "code" : "262202000"
+        }
+      }],
+      "status" : "completed",
+      "category" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "277132007"
+        }]
+      },
+      "code" : {
+        "coding" : [{
+          "system" : "http://fhir.de/CodeSystem/bfarm/ops",
+          "version" : "2020",
+          "code" : "8-561.1"
+        }],
+        "text" : "Funktionsorientierte physikalische Monotherapie"
+      },
+      "subject" : {
+        "reference" : "Patient/mii-exa-person-patient-1"
+      },
+      "encounter" : {
+        "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7"
+      },
+      "performedPeriod" : {
+        "start" : "2020-01-13T00:00:00+01:00",
+        "end" : "2020-01-16T00:00:00+01:00"
+      },
+      "bodySite" : [{
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "85562004",
+          "display" : "Hand structure"
+        }]
+      }]
+    },
+    "request" : {
+      "method" : "POST",
+      "url" : "Procedure"
+    }
+  },
+  {
+    "fullUrl" : "https://www.medizininformatik-initiative.de/Procedure/mii-exa-prozedur-imaging",
+    "resource" : {
+      "resourceType" : "Procedure",
+      "id" : "mii-exa-prozedur-imaging",
+      "meta" : {
+        "profile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.0"],
+        "security" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+          "code" : "HTEST",
+          "display" : "test health data"
+        }]
+      },
+      "language" : "de",
+      "text" : {
+        "status" : "extensions"
+      },
+      "extension" : [{
+        "url" : "http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum",
+        "valueDateTime" : "2020-01-08T10:30:00+01:00"
+      },
+      {
+        "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Durchfuehrungsabsicht",
+        "valueCoding" : {
+          "system" : "http://snomed.info/sct",
+          "code" : "261004008"
+        }
+      }],
+      "status" : "completed",
+      "category" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "363679005"
+        }]
+      },
+      "code" : {
+        "coding" : [{
+          "system" : "http://fhir.de/CodeSystem/bfarm/ops",
+          "version" : "2020",
+          "code" : "3-207"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "169070004"
+        }],
+        "text" : "Native Computertomographie des Abdomens"
+      },
+      "subject" : {
+        "reference" : "Patient/mii-exa-person-patient-1"
+      },
+      "encounter" : {
+        "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2"
+      },
+      "performedDateTime" : "2020-01-08T10:00:00+01:00",
+      "bodySite" : [{
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "818981001"
+        }],
+        "text" : "Abdomen"
+      }]
+    },
+    "request" : {
+      "method" : "POST",
+      "url" : "Procedure"
+    }
+  },
+  {
+    "fullUrl" : "https://www.medizininformatik-initiative.de/Observation/mii-exa-person-observation-vitalstatus",
+    "resource" : {
+      "resourceType" : "Observation",
+      "id" : "mii-exa-person-observation-vitalstatus",
+      "meta" : {
+        "profile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus|2026.0.0"],
+        "security" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+          "code" : "HTEST",
+          "display" : "test health data"
+        }]
+      },
+      "language" : "de",
+      "text" : {
+        "status" : "generated"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "survey"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "67162-8"
+        }]
+      },
+      "subject" : {
+        "reference" : "Patient/mii-exa-person-patient-1"
+      },
+      "encounter" : {
+        "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-9"
+      },
+      "effectiveDateTime" : "2020-01-08T07:00:00+01:00",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/CodeSystem/Vitalstatus",
+          "code" : "L",
+          "display" : "Patient lebt"
+        }]
+      }
+    },
+    "request" : {
+      "method" : "POST",
+      "url" : "Observation"
+    }
+  },
+  {
+    "fullUrl" : "https://www.medizininformatik-initiative.de/Observation/mii-exa-person-observation-vitalstatus-discharge",
+    "resource" : {
+      "resourceType" : "Observation",
+      "id" : "mii-exa-person-observation-vitalstatus-discharge",
+      "meta" : {
+        "profile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus|2026.0.0"],
+        "security" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+          "code" : "HTEST",
+          "display" : "test health data"
+        }]
+      },
+      "language" : "de",
+      "text" : {
+        "status" : "generated"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "survey"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "67162-8"
+        }],
+        "text" : "Vital status"
+      },
+      "subject" : {
+        "reference" : "Patient/mii-exa-person-patient-1"
+      },
+      "encounter" : {
+        "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7"
+      },
+      "effectiveDateTime" : "2020-01-17T18:00:00+01:00",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/CodeSystem/Vitalstatus",
+          "code" : "L",
+          "display" : "Patient lebt"
+        }],
+        "text" : "Patient lebt"
+      }
+    },
+    "request" : {
+      "method" : "POST",
+      "url" : "Observation"
+    }
+  }]
+}

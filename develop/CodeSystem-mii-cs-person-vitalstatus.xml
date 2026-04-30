@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="mii-cs-person-vitalstatus"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/StructureDefinition/shareablecodesystem"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div xml:lang="en" lang="en"><hr/><p><b>English</b></p><hr/><p class="res-header-id"><b>Generated Narrative: CodeSystem mii-cs-person-vitalstatus</b></p><a name="mii-cs-person-vitalstatus"> </a><a name="hcmii-cs-person-vitalstatus"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="http://hl7.org/fhir/R4/shareablecodesystem.html">Shareable CodeSystem</a></p></div><p>This case-sensitive code system <code>https://www.medizininformatik-initiative.de/fhir/core/modul-person/CodeSystem/Vitalstatus</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style="white-space:nowrap">L<a name="mii-cs-person-vitalstatus-L"> </a></td><td>Patient lebt</td></tr><tr><td style="white-space:nowrap">T<a name="mii-cs-person-vitalstatus-T"> </a></td><td>Patient verstorben</td></tr><tr><td style="white-space:nowrap">A<a name="mii-cs-person-vitalstatus-A"> </a></td><td>unbekannt, Patient nicht mehr auffindbar (lost to follow-up)</td></tr><tr><td style="white-space:nowrap">N<a name="mii-cs-person-vitalstatus-N"> </a></td><td>unbekannt, Betreuung/Nachsorge nicht mehr nötig</td></tr><tr><td style="white-space:nowrap">B<a name="mii-cs-person-vitalstatus-B"> </a></td><td>unbekannt, Patient ist anderenorts in Betreuung</td></tr><tr><td style="white-space:nowrap">V<a name="mii-cs-person-vitalstatus-V"> </a></td><td>unbekannt, Patient verweigert weitere Betreuung</td></tr><tr><td style="white-space:nowrap">X<a name="mii-cs-person-vitalstatus-X"> </a></td><td>unbekannt</td></tr></table></div><div xml:lang="de" lang="de"><hr/><p><b>German</b></p><hr/><p class="res-header-id"><b>Generated Narrative: CodeSystem mii-cs-person-vitalstatus</b></p><a name="de-mii-cs-person-vitalstatus"> </a><a name="de-hcmii-cs-person-vitalstatus"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="http://hl7.org/fhir/R4/shareablecodesystem.html">Shareable CodeSystem</a></p></div><p>This case-sensitive code system <code>https://www.medizininformatik-initiative.de/fhir/core/modul-person/CodeSystem/Vitalstatus</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style="white-space:nowrap">L<a name="de-mii-cs-person-vitalstatus-L"> </a></td><td>Patient lebt</td></tr><tr><td style="white-space:nowrap">T<a name="de-mii-cs-person-vitalstatus-T"> </a></td><td>Patient verstorben</td></tr><tr><td style="white-space:nowrap">A<a name="de-mii-cs-person-vitalstatus-A"> </a></td><td>unbekannt, Patient nicht mehr auffindbar (lost to follow-up)</td></tr><tr><td style="white-space:nowrap">N<a name="de-mii-cs-person-vitalstatus-N"> </a></td><td>unbekannt, Betreuung/Nachsorge nicht mehr nötig</td></tr><tr><td style="white-space:nowrap">B<a name="de-mii-cs-person-vitalstatus-B"> </a></td><td>unbekannt, Patient ist anderenorts in Betreuung</td></tr><tr><td style="white-space:nowrap">V<a name="de-mii-cs-person-vitalstatus-V"> </a></td><td>unbekannt, Patient verweigert weitere Betreuung</td></tr><tr><td style="white-space:nowrap">X<a name="de-mii-cs-person-vitalstatus-X"> </a></td><td>unbekannt</td></tr></table></div></div>
+  </text>
+  <extension url="https://www.medizininformatik-initiative.de/fhir/modul-meta/StructureDefinition/mii-ex-meta-license-codeable">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://hl7.org/fhir/spdx-license"/>
+        <code value="CC-BY-4.0"/>
+        <display value="Creative Commons Attribution 4.0 International"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <url value="https://www.medizininformatik-initiative.de/fhir/core/modul-person/CodeSystem/Vitalstatus"/>
+  <version value="2026.0.0"/>
+  <name value="MII_CS_Person_Vitalstatus"/>
+  <title value="MII CS Person Vitalstatus"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2024-12-04"/>
+  <publisher value="Medical Informatics Initiative (MII)">
+    <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+      <extension url="lang">
+        <valueCode value="de"/>
+      </extension>
+      <extension url="content">
+        <valueString value="Medizininformatik-Initiative (MII)"/>
+      </extension>
+    </extension>
+  </publisher>
+  <contact>
+    <name value="Medical Informatics Initiative (MII)"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.medizininformatik-initiative.de/en"/>
+    </telecom>
+  </contact>
+  <description value="Vitalstatus des Patienten"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <caseSensitive value="true"/>
+  <valueSet value="https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/Vitalstatus"/>
+  <content value="complete"/>
+  <count value="7"/>
+  <concept>
+    <code value="L"/>
+    <display value="Patient lebt"/>
+  </concept>
+  <concept>
+    <code value="T"/>
+    <display value="Patient verstorben"/>
+  </concept>
+  <concept>
+    <code value="A"/>
+    <display value="unbekannt, Patient nicht mehr auffindbar (lost to follow-up)"/>
+  </concept>
+  <concept>
+    <code value="N"/>
+    <display value="unbekannt, Betreuung/Nachsorge nicht mehr nötig"/>
+  </concept>
+  <concept>
+    <code value="B"/>
+    <display value="unbekannt, Patient ist anderenorts in Betreuung"/>
+  </concept>
+  <concept>
+    <code value="V"/>
+    <display value="unbekannt, Patient verweigert weitere Betreuung"/>
+  </concept>
+  <concept>
+    <code value="X"/>
+    <display value="unbekannt"/>
+  </concept>
+</CodeSystem>

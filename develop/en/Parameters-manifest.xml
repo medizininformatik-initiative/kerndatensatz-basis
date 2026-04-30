@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Parameters xmlns="http://hl7.org/fhir">
+  <id value="manifest"/>
+  <language value="en"/>
+  <parameter>
+    <name value="system-version"/>
+    <valueUri value="http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20250701"/>
+  </parameter>
+  <parameter>
+    <name value="system-version"/>
+    <valueUri value="http://hl7.org/fhir/encounter-status|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/StructureDefinition/shareablecodesystem|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="system-version"/>
+    <valueUri value="http://terminology.hl7.org/CodeSystem/v3-ActCode|10.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="system-version"/>
+    <valueUri value="http://terminology.hl7.org/CodeSystem/v2-0004|3.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/StructureDefinition/shareablevalueset|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-valueset-version"/>
+    <valueUri value="http://fhir.de/ValueSet/DiagnoseTyp|1.5.4"/>
+  </parameter>
+  <parameter>
+    <name value="default-valueset-version"/>
+    <valueUri value="http://fhir.de/ValueSet/Diagnosesubtyp|1.5.4"/>
+  </parameter>
+  <parameter>
+    <name value="default-valueset-version"/>
+    <valueUri value="http://hl7.org/fhir/ValueSet/diagnosis-role|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="system-version"/>
+    <valueUri value="http://terminology.hl7.org/CodeSystem/v2-0203|5.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="system-version"/>
+    <valueUri value="http://terminology.hl7.org/CodeSystem/location-physical-type|2.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="system-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/core/modul-person/CodeSystem/Vitalstatus|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/StructureDefinition/Condition|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/Resource-id|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/Resource-lastUpdated|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/Resource-profile|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/Condition-abatement-age|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/Condition-abatement-date|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/Condition-abatement-string|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/Condition-body-site|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/Condition-category|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/Condition-clinical-status|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/clinical-code|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/Condition-encounter|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/Condition-evidence|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/Condition-evidence-detail|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/clinical-identifier|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/Condition-onset-age|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/Condition-onset-date|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/Condition-onset-info|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/clinical-patient|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/Condition-recorded-date|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/Condition-severity|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/Condition-stage|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/Condition-subject|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/Condition-verification-status|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-condition-icd10gm-diagnosesicherheit|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-condition-icd10gm-mehrfachcodierung|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-condition-icd10gm-seitenlokalisation|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/StructureDefinition/Encounter|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/Encounter-status|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/Encounter-class|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/clinical-type|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/Encounter-subject|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/clinical-date|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/Encounter-diagnosis|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/Encounter-location|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/Encounter-service-provider|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/Encounter-part-of|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-encounter-servicetype|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-encounter-diagnosis-use|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-encounter-location-physical-type|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/Patient-identifier|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-patient-assignerpid|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/individual-given|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/individual-family|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/Patient-name|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-patient-prefix|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-patient-prefixqualifier|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/individual-gender|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-patient-otheramtlich|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/individual-birthdate|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/Patient-death-date|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/Patient-deceased|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/individual-address|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/individual-address-city|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/individual-address-postalcode|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/individual-address-country|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-patient-gemeindeschluessel|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-patient-strasse|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-patient-hausnummer|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-patient-adresszusatz|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-patient-postfach|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-patient-stadtteil|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/Patient-link|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/Observation-status|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/Observation-subject|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/Observation-value-concept|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/Observation-code-value-concept|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/StructureDefinition/Procedure|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/Procedure-status|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/Procedure-category|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/SearchParameter/Procedure-subject|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-procedure-bodysite|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-procedure-dokumentationsdatum|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-procedure-durchfuehrungsabsicht|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-procedure-ops-seitenlokalisation|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Todesursache|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/StructureDefinition/Extension|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/StructureDefinition/Element|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-valueset-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-intend|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/StructureDefinition/Consent|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/StructureDefinition/DomainResource|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-valueset-version"/>
+    <valueUri value="http://hl7.org/fhir/ValueSet/all-languages|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/StructureDefinition/condition-related|5.2.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/StructureDefinition/condition-assertedDate|5.2.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://fhir.de/StructureDefinition/CodingICD10GM|1.5.4"/>
+  </parameter>
+  <parameter>
+    <name value="default-valueset-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-icd10gm|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen|1.5.4"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://fhir.de/StructureDefinition/seitenlokalisation|1.5.4"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://fhir.de/StructureDefinition/icd-10-gm-diagnosesicherheit|1.5.4"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://fhir.de/StructureDefinition/CodingAlphaID|1.5.4"/>
+  </parameter>
+  <parameter>
+    <name value="default-valueset-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-alphaid|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-valueset-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/diagnoses-sct|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-valueset-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-orphanet|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-valueset-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-bodystructure-snomed|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://fhir.de/StructureDefinition/lebensphase|1.5.4"/>
+  </parameter>
+  <parameter>
+    <name value="default-valueset-version"/>
+    <valueUri value="http://fhir.de/ValueSet/lebensphase-de|1.5.4"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://fhir.de/StructureDefinition/Aufnahmegrund|1.5.4"/>
+  </parameter>
+  <parameter>
+    <name value="default-valueset-version"/>
+    <valueUri value="http://fhir.de/ValueSet/dkgev/AufnahmegrundErsteUndZweiteStelle|1.5.4"/>
+  </parameter>
+  <parameter>
+    <name value="default-valueset-version"/>
+    <valueUri value="http://fhir.de/ValueSet/dkgev/AufnahmegrundDritteStelle|1.5.4"/>
+  </parameter>
+  <parameter>
+    <name value="default-valueset-version"/>
+    <valueUri value="http://fhir.de/ValueSet/dkgev/AufnahmegrundVierteStelle|1.5.4"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate|0.1.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedEndDate|0.1.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-valueset-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/identifier-type-codes|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-valueset-version"/>
+    <valueUri value="http://fhir.de/ValueSet/EncounterStatusDe|1.5.4"/>
+  </parameter>
+  <parameter>
+    <name value="default-valueset-version"/>
+    <valueUri value="http://fhir.de/ValueSet/EncounterClassDE|1.5.4"/>
+  </parameter>
+  <parameter>
+    <name value="default-valueset-version"/>
+    <valueUri value="http://terminology.hl7.org/ValueSet/v3-ActEncounterCode|3.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-valueset-version"/>
+    <valueUri value="http://fhir.de/ValueSet/kontaktebene-de|1.5.4"/>
+  </parameter>
+  <parameter>
+    <name value="default-valueset-version"/>
+    <valueUri value="http://fhir.de/ValueSet/kontaktart-de|1.5.4"/>
+  </parameter>
+  <parameter>
+    <name value="default-valueset-version"/>
+    <valueUri value="http://fhir.de/ValueSet/dkgev/Fachabteilungsschluessel|1.5.4"/>
+  </parameter>
+  <parameter>
+    <name value="default-valueset-version"/>
+    <valueUri value="http://fhir.de/ValueSet/dkgev/Fachabteilungsschluessel-erweitert|1.5.4"/>
+  </parameter>
+  <parameter>
+    <name value="default-valueset-version"/>
+    <valueUri value="http://terminology.hl7.org/ValueSet/v3-ActPriority|3.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-valueset-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/mii-vs-fall-diagnosis-use|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-valueset-version"/>
+    <valueUri value="http://fhir.de/ValueSet/dgkev/Aufnahmeanlass|1.5.4"/>
+  </parameter>
+  <parameter>
+    <name value="default-valueset-version"/>
+    <valueUri value="http://terminology.hl7.org/ValueSet/v2-0092|3.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://fhir.de/StructureDefinition/Entlassungsgrund|1.5.4"/>
+  </parameter>
+  <parameter>
+    <name value="default-valueset-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/location-physical-type|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://fhir.de/StructureDefinition/identifier-kvid-10|1.5.4"/>
+  </parameter>
+  <parameter>
+    <name value="default-valueset-version"/>
+    <valueUri value="http://fhir.de/ValueSet/identifier-type-de-basis|1.5.4"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/StructureDefinition/data-absent-reason|5.2.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-valueset-version"/>
+    <valueUri value="http://hl7.org/fhir/ValueSet/data-absent-reason|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://fhir.de/StructureDefinition/identifier-iknr|1.5.4"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://fhir.de/StructureDefinition/gender-amtlich-de|1.5.4"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://fhir.de/StructureDefinition/address-de-basis|1.5.4"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-precinct|5.2.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName|5.2.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber|5.2.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator|5.2.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox|5.2.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://fhir.de/StructureDefinition/destatis/ags|1.5.4"/>
+  </parameter>
+  <parameter>
+    <name value="default-valueset-version"/>
+    <valueUri value="http://fhir.de/ValueSet/iso/bundeslaender|1.5.4"/>
+  </parameter>
+  <parameter>
+    <name value="default-valueset-version"/>
+    <valueUri value="http://hl7.org/fhir/ValueSet/iso3166-1-2|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://fhir.de/StructureDefinition/identifier-pid|1.5.4"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://fhir.de/StructureDefinition/humanname-de-basis|1.5.4"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://fhir.de/StructureDefinition/humanname-namenszusatz|1.5.4"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/StructureDefinition/humanname-own-name|5.2.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/StructureDefinition/humanname-own-prefix|5.2.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier|5.2.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-valueset-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/mii-vs-person-icd10who|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/StructureDefinition/Observation|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://hl7.org/fhir/StructureDefinition/Group|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-valueset-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/Vitalstatus|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum|1.5.4"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Durchfuehrungsabsicht|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-valueset-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-category-sct|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueUri value="http://fhir.de/StructureDefinition/CodingOPS|1.5.4"/>
+  </parameter>
+  <parameter>
+    <name value="default-valueset-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/mii-vs-prozedur-ops|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-valueset-version"/>
+    <valueUri value="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-sct|2026.0.0"/>
+  </parameter>
+</Parameters>
