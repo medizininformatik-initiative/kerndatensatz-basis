@@ -6,6 +6,10 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 
 **Datum:** 2026-XX-XX
 
+#### Terminologie-Updates
+
+- **Added:** ICD-10-GM 2026, OPS 2026 und Alpha-ID 2026 Versionen zu den jeweiligen ValueSet-Definitionen für die Module Diagnose und Prozedur hinzugefügt
+
 #### Modul Fall
 
 - **Removed:** Selbst veröffentlichte R5-Backport-Extensions für geplante Encounter-Start- und Enddaten (zuvor `mii-ex-fall-planned-start-date` und `mii-ex-fall-planned-end-date`). Diese Extensions werden nun durch die offizielle `hl7.fhir.uv.xver-r5.r4`-Dependency bereitgestellt

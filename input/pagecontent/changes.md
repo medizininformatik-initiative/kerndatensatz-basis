@@ -6,6 +6,10 @@ This page documents the changes and updates across versions of the MII Implement
 
 **Date:** 2026-XX-XX
 
+#### Terminology Updates
+
+- **Added:** ICD-10-GM 2026, OPS 2026, and Alpha-ID 2026 versions to respective ValueSet definitions
+
 #### Treatment Case Module
 
 - **Removed:** Self-published R5 backport extensions for planned encounter start and end dates (previously `mii-ex-fall-planned-start-date` and `mii-ex-fall-planned-end-date`). These extensions are now provided by the official `hl7.fhir.uv.xver-r5.r4` dependency

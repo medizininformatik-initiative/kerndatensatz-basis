@@ -10,7 +10,8 @@ Description: "Enthaelt Alpha-ID-Codes der Versionen 2018 bis 2025"
 * insert LicenseCodeableCCBY40
 * ^status = #active
 * ^experimental = false
-* ^date = "2025-03-17"
+* ^date = "2026-05-08"
+* include codes from system $alpha-id|2026
 * include codes from system $alpha-id|2025
 * include codes from system $alpha-id|2024
 * include codes from system $alpha-id|2023

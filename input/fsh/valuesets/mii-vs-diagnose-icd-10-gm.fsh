@@ -10,7 +10,8 @@ Description: "Enthaelt ICD-10-GM-Codes der Versionen 2009 bis 2025"
 * insert LicenseCodeableCCBY40
 * ^status = #active
 * ^experimental = false
-* ^date = "2025-03-04"
+* ^date = "2026-05-08"
+* include codes from system http://fhir.de/CodeSystem/bfarm/icd-10-gm|2026
 * include codes from system http://fhir.de/CodeSystem/bfarm/icd-10-gm|2025
 * include codes from system http://fhir.de/CodeSystem/bfarm/icd-10-gm|2024
 * include codes from system http://fhir.de/CodeSystem/bfarm/icd-10-gm|2023

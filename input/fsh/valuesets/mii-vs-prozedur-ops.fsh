@@ -10,7 +10,8 @@ Description: "Enthaelt OPS-Codes der Versionen 2010 bis 2025"
 * insert LicenseCodeableCCBY40
 * ^status = #active
 * ^experimental = false
-* ^date = "2025-03-17"
+* ^date = "2026-05-08"
+* include codes from system $ops|2026
 * include codes from system $ops|2025
 * include codes from system $ops|2024
 * include codes from system $ops|2023
