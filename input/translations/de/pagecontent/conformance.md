@@ -11,3 +11,8 @@ Dieser Abschnitt definiert die Konformitätsanforderungen für Systeme, die die 
 Für Implementierungshinweise siehe den Abschnitt [Hinweise](guidance.html).
 
 Für technische Artefakte siehe den Abschnitt [FHIR-Artefakte](artifacts.html).
+
+---
+
+{:.bg-info}
+**Hinweis:** Eine Liste der Konformitätsanforderungen ist in der englischen Version dieses Implementierungsleitfadens verfügbar.

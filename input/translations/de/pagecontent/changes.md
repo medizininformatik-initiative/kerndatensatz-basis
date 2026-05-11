@@ -6,6 +6,10 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 
 **Datum:** 2026-XX-XX
 
+#### Dokumentation
+
+- **Added:** Eine Liste der Konformitätsanforderungen ist in der englischen Version der [Conformance Seite](conformance.html) verfügbar
+
 #### Terminologie-Updates
 
 - **Added:** ICD-10-GM 2026, OPS 2026 und Alpha-ID 2026 Versionen zu den jeweiligen ValueSet-Definitionen für die Module Diagnose und Prozedur hinzugefügt

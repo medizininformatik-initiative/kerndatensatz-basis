@@ -6,6 +6,10 @@ This page documents the changes and updates across versions of the MII Implement
 
 **Date:** 2026-XX-XX
 
+#### Documentation
+
+- **Added:** A list of conformance statements is available via the [List of Conformance Statements](conformance.html#list-of-conformance-statements)
+
 #### Terminology Updates
 
 - **Added:** ICD-10-GM 2026, OPS 2026, and Alpha-ID 2026 versions to respective ValueSet definitions

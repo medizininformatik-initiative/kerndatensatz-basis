@@ -11,3 +11,11 @@ This section defines the conformance requirements for systems implementing the M
 For implementation guidance, see the [Guidance](guidance.html) section.
 
 For technical artifacts, see the [FHIR Artifacts](artifacts.html) section.
+
+---
+
+### List of Conformance Statements
+
+The following table lists all conformance statements (sentences containing SHALL, SHOULD, or MAY) found in the narrative pages of this implementation guide, with links back to their source location.
+
+§§§

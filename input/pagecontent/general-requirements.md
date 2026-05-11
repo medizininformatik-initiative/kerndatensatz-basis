@@ -77,23 +77,21 @@ Requirements in this specification are indicated by the following keywords writt
 
 Systems may deploy and support one or more MII Profiles to represent clinical information. They use the profile's content model without any expectations to implement the MII interactions.
 
-To support an MII Profile, a Server:
+To support an MII Profile:
 
-* **SHALL** be able to populate all profile data elements that are mandatory and flagged as Must Support as defined by that profile's StructureDefinition
-* **SHOULD** declare support for an MII Profile by including its official URL in the Server's `CapabilityStatement.rest.resource.supportedProfile` element
-  * The MII Profile's official or "canonical" URL is located on each MII Profile page
+* §general-1:Servers **SHALL** be able to populate all profile data elements that are mandatory and flagged as *Must Support* as defined by that profile's StructureDefinition§
+* §general-2:Servers **SHOULD** declare support for an MII Profile by including its official URL in the Server's `CapabilityStatement.rest.resource.supportedProfile` element§
+  * The MII profile's official or "canonical" URL is located on each MII profile page
 
 #### Profile Support + Interaction Support
 
 Systems may deploy and support one or more MII Profiles to represent clinical information *and* support the RESTful interactions defined for those resources.
 
-A conformant Server:
-
-* **SHALL** be able to populate all profile data elements that are mandatory and/or flagged as Must Support as defined by that profile's StructureDefinition
-* **SHOULD** declare conformance with the appropriate MII CapabilityStatement by including its official URL in the Server's `CapabilityStatement.instantiates` element
-* **SHALL** specify the full capability details from the MII CapabilityStatement it claims to implement
-  * Declare support for the MII Profile by including its official URL in the Server's `CapabilityStatement.rest.resource.supportedProfile` element
-  * Declare support for the MII Profile's FHIR RESTful transactions
+* §general-3:A conformant server **SHALL** be able to populate all profile data elements that are mandatory and/or flagged as *Must Support* as defined by that profile's StructureDefinition§
+* §general-4:A conformant server **SHOULD** declare conformance with the appropriate MII CapabilityStatement by including its official URL in the Server's `CapabilityStatement.instantiates` element§
+* §general-5:A conformant server **SHALL** specify the full capability details from the MII CapabilityStatement it claims to implement§
+  * §general-6:A conformant server claiming interaction support **SHALL** declare support for the MII Profile by including its official URL in the Server's `CapabilityStatement.rest.resource.supportedProfile` element§
+  * §general-7:A conformant server claiming interaction support **SHALL** declare support for the MII Profile's FHIR RESTful transactions§
 
 ### Using Codes in MII Profiles
 
@@ -103,22 +101,15 @@ The following rules summarize the requirements defined by [FHIR Terminology](htt
 
 [Required binding](http://hl7.org/fhir/R4/terminologies.html#required) to a ValueSet definition means that one of the codes from the specified ValueSet **SHALL** be used. For `CodeableConcept`, which permits multiple codings and a text element, this rule applies to *at least* one of the codings, and only text is *not* valid.
 
-When claiming conformance to a profile with required bindings:
-
-* MII Servers **SHALL** provide at least one code from the bound ValueSet (additional codes from other systems **MAY** be provided)
-* MII Clients **SHALL** be capable of processing the code from the bound ValueSet
+* §general-8:When claiming conformance to a profile with required bindings, Servers **SHALL** provide at least one code from the bound ValueSet (additional codes from other systems **MAY** be provided)§
+* §general-9:When claiming conformance to a profile with required bindings, Clients **SHALL** be capable of processing the code from the bound ValueSet§
 
 #### Extensible Binding for Coded Elements
 
 [Extensible binding](http://hl7.org/fhir/R4/terminologies.html#extensible) means that one of the codes from the specified ValueSet **SHALL** be used if an applicable concept is present. If no suitable code exists in the ValueSet, alternate code(s) may be provided. For `CodeableConcept`, which permits multiple codings and a text element, this rule applies to *at least* one of the codings. If only text is available and it has no conceptual overlap with the bound coded values, then just text may be used.
 
-When claiming conformance to a profile with extensible bindings:
-
-* MII Servers **SHALL** provide:
-  * A code from the bound ValueSet *if the concept exists* in the ValueSet
-  * Or an alternative code *if the concept does not exist* in the ValueSet
-  * Or text if only text is available
-* MII Clients **SHALL** be capable of processing codes from the bound ValueSet or alternative codes or text
+* §general-10:When claiming conformance to a profile with extensible bindings, Servers **SHALL** provide a code from the bound ValueSet *if the concept exists* in the ValueSet or an alternative code *if the concept does not exist* in the ValueSet or text if only text is available§
+* §general-11:When claiming conformance to a profile with extensible bindings, Clients **SHALL** be capable of processing codes from the bound ValueSet, alternative codes, or text§
 
 #### Using Multiple Codes with CodeableConcept Datatype
 
@@ -151,24 +142,24 @@ There are situations when information on a particular data element is missing, a
 
 For all supported search interactions in this guide:
 
-* Servers **SHALL** support the HTTP `POST`-based search
-* Servers **SHALL** support the `GET`-based search
+* §general-12:Servers **SHALL** support the HTTP `POST`-based search§
+* §general-13:Servers **SHALL** support the `GET`-based search§
 
 When searching using different search parameter types:
 
 * **Token search parameters** - [(how to search by token)](http://hl7.org/fhir/R4/search.html#token)
-  * The Client **SHALL** provide at least a code value and **MAY** provide both the system and code values
-  * The Server **SHALL** support both
+  * §general-14:For token search parameters, the Client **SHALL** provide at least a code value and **MAY** provide both the system and code values§
+  * §general-15:For token search parameters, the Server **SHALL** support both code-only and system+code token searches§
 * **Reference search parameters** - [(how to search by reference)](http://hl7.org/fhir/R4/search.html#reference)
-  * The Client **SHALL** provide at least an id value and **MAY** provide both the Type and id values
-  * The Server **SHALL** support both
+  * §general-16:For reference search parameters, the Client **SHALL** provide at least an id value and **MAY** provide both the Type and id values§
+  * §general-17:For reference search parameters, the Server **SHALL** support both id-only and Type+id reference searches§
 * **Date search parameters** - [(how to search by date)](http://hl7.org/fhir/R4/search.html#date)
-  * The Client **SHALL** provide values precise to the *day* for elements of datatype `date` and to the *second + time offset* for elements of datatype `dateTime`
-  * The Server **SHALL** support values precise to the *day* for elements of datatype `date` and to the *second + time offset* for elements of datatype `dateTime`
+  * §general-18:For date search parameters, the Client **SHALL** provide values precise to the *day* for elements of datatype `date` and to the *second + time offset* for elements of datatype `dateTime`§
+  * §general-19:For date search parameters, the Server **SHALL** support values precise to the *day* for elements of datatype `date` and to the *second + time offset* for elements of datatype `dateTime`§
 
 ### Modifier Elements
 
-A FHIR [modifier element](http://hl7.org/fhir/R4/conformance-rules.html#isModifier) is an element that modifies the meaning of a resource element. Although Servers and Clients **SHALL** be able to process Mandatory or Must Support elements, not all modifier elements are Mandatory or Must Support, and there is no requirement for supporting them.
+A FHIR [modifier element](http://hl7.org/fhir/R4/conformance-rules.html#isModifier) is an element that modifies the meaning of a resource element. Not all modifier elements are Mandatory or Must Support, and there is no requirement for supporting them. §general-20:For modifier elements that are Mandatory or *Must Support*, Servers and Clients **SHALL** be able to process them.§
 
 FHIR Clients need to be aware of unexpected modifier elements in the data they receive because they can alter the meaning of the data and can potentially lead to errors or even security risks if not properly handled. Unless a Client determines they can process it safely, rejection is typically the only safe action if unexpected modifier elements are present.
 
@@ -178,7 +169,7 @@ Some examples of modifiers that may not be Must Support elements in MII Profiles
 * `Observation.valueQuantity.comparator`
 * `Patient.active`
 
-Implementers **SHOULD** review the profile pages carefully to understand which elements are modifiers and how they affect the interpretation of the resource.
+Implementers **SHOULD** review the profile pages carefully to understand which elements are modifiers and how they affect the interpretation of the resource
 
 ---
 

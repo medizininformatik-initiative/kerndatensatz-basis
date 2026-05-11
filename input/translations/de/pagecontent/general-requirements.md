@@ -77,10 +77,10 @@ Anforderungen in dieser Spezifikation werden durch die folgenden Schlüsselwört
 
 Systeme können ein oder mehrere MII-Profile zur Repräsentation klinischer Informationen bereitstellen und unterstützen. Sie verwenden das Inhaltsmodell des Profils ohne Erwartung, die MII-Interaktionen zu implementieren.
 
-Um ein MII-Profil zu unterstützen, **MUSS** ein Server:
+Um ein MII-Profil zu unterstützen:
 
-* **in der Lage sein**, alle Profildatenelemente zu befüllen, die verpflichtend sind und als Must Support gekennzeichnet sind, wie in der StructureDefinition dieses Profils definiert
-* **SOLLTE** die Unterstützung für ein MII-Profil deklarieren, indem er dessen offizielle URL im Element `CapabilityStatement.rest.resource.supportedProfile` des Servers einschließt
+* Ein Server **MUSS** in der Lage sein, alle Profildatenelemente zu befüllen, die verpflichtend sind und als Must Support gekennzeichnet sind, wie in der StructureDefinition dieses Profils definiert
+* Ein Server **SOLLTE** die Unterstützung für ein MII-Profil deklarieren, indem er dessen offizielle URL im Element `CapabilityStatement.rest.resource.supportedProfile` des Servers einschließt
   * Die offizielle oder "kanonische" URL des MII-Profils befindet sich auf jeder MII-Profilseite
 
 #### Profilunterstützung + Interaktionsunterstützung

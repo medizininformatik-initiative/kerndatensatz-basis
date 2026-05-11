@@ -14,12 +14,16 @@ A distinction is made between data-requesting systems (recipients/clients) and d
 
 #### Server Expectations
 
+§must-support-1:For *Must Support* elements, the Server **SHALL** be capable of meaningfully populating the element if the data is locally available, storing it in a resource, and making it retrievable upon request.§
+
 The system (sender/server) **SHALL** be capable of:
 * Meaningfully populating a Must Support element with data (e.g., via ETL processes from primary data sources), if the data is locally available
 * Storing the element in a resource
 * Making it retrievable upon request (e.g., feasibility query)
 
 #### Client Expectations  
+
+§must-support-2:For *Must Support* elements, the Client **SHALL** be capable of displaying the element to the user, considering it for calculations, and processing resource instances containing it without error.§
 
 The data-requesting system (recipient/client) **SHALL** be capable of:
 * Displaying the element to the user
@@ -28,9 +32,9 @@ The data-requesting system (recipient/client) **SHALL** be capable of:
 
 #### Missing Data
 
-* When information on a particular data element is not present, and the reason for absence is unknown, MII Servers **SHALL NOT** include the data element in the resource instance returned as part of the query results
-* When querying MII Servers, MII Clients **SHALL** interpret missing data elements within resource instances as data not present in the MII Server's system
-* When information on a particular data element is missing, and the MII Server knows the precise reason for the absence of data, MII Servers **SHOULD** send the reason for the missing information following the guidance in the [Missing Data](missing-data.html) section
+* §must-support-3:When information on a particular data element is not present, and the reason for absence is unknown, MII Servers **SHALL NOT** include the data element in the resource instance returned as part of the query results§
+* §must-support-4:When querying MII Servers, MII Clients **SHALL** interpret missing data elements within resource instances as data not present in the MII Server's system§
+* §must-support-5:When information on a particular data element is missing, and the MII Server knows the precise reason for the absence of data, MII Servers **SHOULD** send the reason for the missing information following the guidance in the [Missing Data](missing-data.html) section§
 
 ### Presentation of Must Support and Mandatory Elements
 
@@ -42,7 +46,7 @@ Elements with a cardinality starting with "1" under the column header "Card." (e
 
 #### Must Support - Primitive Elements
 
-Primitive elements are single elements with a primitive value. If they are marked as *Must Support*, then the Server **SHALL** be capable of providing the element value to meet the Must Support requirement.
+Primitive elements are single elements with a primitive value. §must-support-6:For *Must Support* primitive elements, the Server **SHALL** be capable of providing the element value.§ §must-support-7:For *Must Support* primitive elements, the Client **SHALL** be capable of processing the element value.§
 
 For example, if an element like `Patient.birthDate` is marked as Must Support:
 * MII Servers **SHALL** be capable of providing a value in `Patient.birthDate`
@@ -50,27 +54,27 @@ For example, if an element like `Patient.birthDate` is marked as Must Support:
 
 #### Must Support - Complex Elements
 
-Complex elements are composed of primitive and other complex elements. For any complex element marked as *Must Support*, the Server **SHALL** be capable of providing at least one of the sub-element values. If any sub-element is marked as *Must Support*, it must also meet the Must Support requirements and satisfy the Must Support requirements for the parent element.
+Complex elements are composed of primitive and other complex elements. §must-support-8:For any complex element marked as *Must Support*, the Server **SHALL** be capable of providing at least one of the sub-element values.§ §must-support-9:For *Must Support* complex elements, the Client **SHALL** be capable of processing the *Must Support* sub-element values.§ If any sub-element is marked as *Must Support*, it must also meet the *Must Support* requirements and satisfy the *Must Support* requirements for the parent element.
 
 For example, if `Patient.name` is labeled *Must Support* and has *Must Support* sub-elements "family" and "given":
 * MII Servers **SHALL** be capable of providing values in `Patient.name.family` and `Patient.name.given`
 * MII Clients **SHALL** be capable of processing the values in `Patient.name.family` and `Patient.name.given`
 
-On the other hand, if any sub-element is marked as *Must Support* and the parent element is not, there is *no expectation* that you must support the parent. However, if the parent element is represented in the structure, Servers **SHALL** support the sub-element(s) marked as *Must Support*.
+On the other hand, if any sub-element is marked as *Must Support* and the parent element is not, there is *no expectation* that you must support the parent. However, §must-support-10:for *Must Support* complex elements, if the parent element is represented in the structure but is not itself marked as *Must Support*, Servers **SHALL** support the *Must Support* sub-element(s).§
 
 #### Must Support - Resource References
 
-When a Reference type element is labeled as *Must Support* and has a single target profile referenced, the target profile **SHALL** be supported.
+§must-support-11:When a *Must Support* reference element has a single target profile, the target profile **SHALL** be supported.§
 
 For example, if `Condition.subject` references the MII Patient profile and is marked as Must Support:
 * MII Servers **SHALL** be capable of providing a `Condition.subject` with a valid reference to an MII Patient Profile
 * MII Clients **SHALL** be capable of processing a `Condition.subject` with a valid reference to an MII Patient Profile
 
-When a Reference type element is labeled as *Must Support*, has multiple target profiles referenced, but none are labeled as *Must Support*, *at least one* target profile **SHALL** be supported.
+§must-support-12:When a *Must Support* reference element has multiple target profiles and none are labeled as *Must Support*, *at least one* target profile **SHALL** be supported.§
 
 #### Must Support - Choice of Data Types
 
-If a *Must Support* element has a choice of datatypes for its content, the datatypes the Server **SHALL** support are labeled as *Must Support*.
+§must-support-13:For *Must Support* choice elements, the Server **SHALL** support the datatypes labeled as *Must Support*.§ §must-support-14:For *Must Support* choice elements, the Client **SHALL** be capable of processing all datatypes labeled as *Must Support*.§
 
 For example, if `Observation.value[x]` has multiple Must Support datatypes:
 * MII Servers **SHALL** be capable of populating the labeled Must Support datatypes (e.g., `valueQuantity`, `valueCodeableConcept`, `valueString`)
@@ -79,7 +83,7 @@ For example, if `Observation.value[x]` has multiple Must Support datatypes:
 
 #### Must Support - Slices
 
-FHIR profiles use [slicing](http://hl7.org/fhir/R4/profiling.html#slicing) to define constraints on repeating elements. The element that defines the slicing discriminator ("slicer") may be marked as Must Support, but each slice must be explicitly tagged with the Must Support property to define that slice's conformance requirements.
+FHIR profiles use [slicing](http://hl7.org/fhir/R4/profiling.html#slicing) to define constraints on repeating elements. The element that defines the slicing discriminator ("slicer") may be marked as *Must Support*, but each slice must be explicitly tagged with the *Must Support* property to define that slice's conformance requirements. §must-support-15:For *Must Support* slice elements, the Server **SHALL** be capable of providing data that conforms to the explicitly *Must Support*-tagged slices.§ §must-support-16:For *Must Support* slice elements, the Client **SHALL** be capable of processing data that conforms to the explicitly *Must Support*-tagged slices.§
 
 For example, if `Identifier` is a Must Support slicer element and defines slices for different identifier types, only the slices explicitly marked as Must Support are required:
 * MII Servers **SHALL** be capable of providing identifiers that conform to the Must Support slices
