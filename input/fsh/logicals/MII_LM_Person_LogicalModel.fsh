@@ -7,7 +7,7 @@ Description: "Logische Repräsentation des Basismoduls Person"
 * insert PR_CS_VS_Version
 * insert Publisher
 * insert LicenseCodeableCCBY40
-* ^date = "2024-12-04"
+* ^date = "2026-05-12"
 * . ^short = "-- Überschrift --"
 * . insert Translation(^short, en, -- Heading --)
 * Name 0..* BackboneElement "Vollständiger Name einer Person." "Vollständiger Name einer Person."
@@ -112,3 +112,37 @@ Description: "Logische Repräsentation des Basismoduls Person"
   //* Todesdatum insert Translation(^short, en, [[Time of death limited to year, month and day.]])
   //* VergroebertePLZ 0..* string "Erste zwei Stellen der Postleitzahl" "Erste zwei Stellen der Postleitzahl"
   //* VergroebertePLZ insert Translation(^short, en, [[First two digits of the postal code]])
+
+Mapping: Person-LogicalModel
+Id: FHIR
+Title: "Person LogicalModel FHIR Mapping"
+Source: MII_LM_Person
+Target: "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+* PatientIn.Versicherung.Versichertennummer.VersichertenIDGKV -> "Patient.identifier:versichertenId_GKV"
+* PatientIn.Versicherung.Versichertennummer.VersichertennummerPKV -> "Patient.identifier:versicherungsnummer_pkv"
+* PatientIn.Versicherung -> "Patient.identifier:default"
+* PatientIn.PatientenIdentifikator.PatientenIdentifikator -> "Patient.identifier:pid"
+* Name -> "Patient.name"
+  * Vorname -> "Patient.name.given"
+  * Familienname -> "Patient.name.family"
+  * Nachname -> "Patient.name.family.extension.nachname"
+  * Vorsatzwort -> "Patient.name.family.extension.vorsatzwort"
+  * Namenszusatz -> "Patient.name.family.extension.namenszusatz"
+  * Praefix -> "Patient.name.prefix"
+    * ArtdesPraefixes -> "Patient.name.prefix.extension-prefix-qualifier"
+  * Geburtsname -> "Patient.name.use"
+* Demographie.AdministrativesGeschlecht -> "Patient.gender"
+* Demographie.Geburtsdatum -> "Patient.birthDate"
+* Demographie.Vitalstatus.PatientVerstorben -> "Patient.deceased[x]"
+* Demographie.Vitalstatus.Todeszeitpunkt -> "Patient.deceased[x]"
+* Demographie.Adresse -> "Patient.address"
+  * Strassenanschrift.Land -> "Patient.address.country"
+  * Strassenanschrift.PLZ -> "Patient.address.postalCode"
+  * Strassenanschrift.Wohnort -> "Patient.address.city + Patient.address.extension.Stadtteil"
+  * Strassenanschrift.Strasse -> "Patient.address.line"
+  * Postfach.Land -> "Patient.address.country"
+  * Postfach.PLZ -> "Patient.address.postalCode"
+  * Postfach.Wohnort -> "Patient.address.city + Patient.address.extension.Stadtteil"
+  * Postfach.Strasse -> "Patient.address.line"
+* PatientInPseudonym
+  * Pseudonym -> "Patient.identifier:PseudonymisierterIdentifier"

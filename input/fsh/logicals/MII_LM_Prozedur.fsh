@@ -7,7 +7,7 @@ Description: "Logische Repräsentation des Basismoduls Prozedur"
 * insert PR_CS_VS_Version
 * insert Publisher
 * insert LicenseCodeableCCBY40
-* ^date = "2024-12-09"
+* ^date = "2026-05-12"
 * . ^short = "Das Basismodul Prozeduren umfasst die Beschreibung diagnostischer oder therapeutischer Maßnahmen, die als Leistungskomplexe auch für die Abrechnung dokumentiert und kodiert werden, z.B. Operationen."
 * OPSProzedurKodiert 0..1 BackboneElement "Kodierung der durchgeführten Prozedur mittels OPS." "Kodierung der durchgeführten Prozedur mittels OPS."
   * VollstaendigerProzedurencode 0..1 Coding "Vollständiger Prozedurencode" "Der vollständige Prozedurencode: Tripel aus OPS-Code, Codesystem (inkl. Version!) und Katalogtext."
@@ -24,6 +24,7 @@ Mapping: Prozedur-LogicalModel
 Id: FHIR
 Title: "Prozedur LogicalModel FHIR Mapping"
 Source: MII_LM_Prozedur
+Target: "http://hl7.org/fhir/StructureDefinition/Procedure|4.0.1"
 * OPSProzedurKodiert -> "Procedure.code.coding.where(system='http://fhir.de/CodeSystem/bfarm/ops')"
   * VollstaendigerProzedurencode -> "Procedure.code.coding.where(system='http://fhir.de/CodeSystem/bfarm/ops')"
   * Seitenlokalisation -> "Procedure.code.coding.where(system='http://fhir.de/CodeSystem/bfarm/ops').extension('http://fhir.de/StructureDefinition/seitenlokalisation').value"

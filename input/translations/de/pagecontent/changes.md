@@ -10,6 +10,7 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 
 - **Added:** Eine Liste der Konformitätsanforderungen ist in der englischen Version der [Conformance Seite](conformance.html) verfügbar
 - **Added:** CapabilityStatements dokumentieren nun Beispiel-FHIR-Suchanfragen für unterstützte SearchParameters
+- **Added:** LogicalModel-Seiten enthalten nun Mapping-Tabellen zu den entsprechenden FHIR-Zielstrukturen
 
 #### Terminologie-Updates
 

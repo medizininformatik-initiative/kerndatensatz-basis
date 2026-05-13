@@ -7,7 +7,7 @@ Description: "Logische Repräsentation des Basismoduls Diagnose"
 * insert PR_CS_VS_Version
 * insert Publisher
 * insert LicenseCodeableCCBY40
-* ^date = "2024-12-09"
+* ^date = "2026-05-12"
 * . ^short = "Das Basismodul Diagnosen enthält Diagnosen als Behandlungsbegründungen und abrechnungsbasiertes Gliederungsmerkmal, z.B. als Hauptdiagnose, Nebendiagnose, Quartalsdiagnose etc."
 * ICD10GMDiagnoseKodiert 0..1 BackboneElement "Im Bereich der administrativen und statistischen Auswertung wird die Diagnose mit Hilfe von Codiersystemen verschlüsselt. So wird z.B. bei der Abrechnung nach §301 und §295 SGB V die Codierung von Diagnosen mittels ICD-10-GM gesetzlich vorgeschrieben. Weitere Codiersysteme sind z.B. die Alpha-ID oder SNOMED CT. Die Kodierung einer Diagnose mittels verschiedener Codesysteme sollte möglich sein."
   * Diagnosecode 1..1 code "Diagnosecode ICD-10-GM" "Code ohne Zusatzkennzeichen"
@@ -40,6 +40,7 @@ Mapping: Diagnose-LogicalModel
 Id: FHIR
 Title: "Diagnose LogicalModel FHIR Mapping"
 Source: MII_LM_Diagnose
+Target: "http://hl7.org/fhir/StructureDefinition/Condition|4.0.1"
 * ICD10GMDiagnoseKodiert -> "Condition.code.coding.where(system='http://fhir.de/CodeSystem/bfarm/icd-10-gm')"
   * Diagnosecode -> "Condition.code.coding.where(system='http://fhir.de/CodeSystem/bfarm/icd-10-gm').code"
   * Mehrfachkodierungskennzeichen -> "Condition.code.coding.where(system='http://fhir.de/CodeSystem/bfarm/icd-10-gm').extension('http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen').valueCoding.code"
