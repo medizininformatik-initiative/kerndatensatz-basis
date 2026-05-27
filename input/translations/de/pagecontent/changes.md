@@ -18,6 +18,7 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 
 #### Modul Fall
 
+- **Added:** Verwendung von `Encounter.location` in der Dokumentation erläutert. Siehe: https://github.com/medizininformatik-initiative/kerndatensatzmodul-fall/issues/62
 - **Removed:** Selbst veröffentlichte R5-Backport-Extensions für geplante Encounter-Start- und Enddaten (zuvor `mii-ex-fall-planned-start-date` und `mii-ex-fall-planned-end-date`). Diese Extensions werden nun durch die offizielle `hl7.fhir.uv.xver-r5.r4`-Dependency bereitgestellt
 
 ---
