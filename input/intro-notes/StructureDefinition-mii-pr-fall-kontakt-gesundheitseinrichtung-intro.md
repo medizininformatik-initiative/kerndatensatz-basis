@@ -328,6 +328,11 @@ Previously, it was recommended that the Aufnahmenummer (admission number) should
   <li>Individual users lack viewing permissions for billing data</li>
   <li>Users in the care context need to search for Encounters using the associated Fallnummer</li>
 </ul>
+
+<p>Servers <strong>SHOULD</strong> support the <code>account:identifier</code> search modifier to allow clients to retrieve all Encounters belonging to a billing case by Fallnummer. This modifier enables token-based searching on the logical reference stored in <code>Encounter.account.identifier</code>, without requiring the Account resource itself to be present or accessible.</p>
+
+<p><strong>Example query</strong> to retrieve all Encounters associated with a specific Fallnummer:</p>
+<pre><code>GET [base]/Encounter?account:identifier=https://www.charite.de/fhir/sid/fallnummer|F-2020-000123</code></pre>
 </div>
 
 {% include link-list.md %}

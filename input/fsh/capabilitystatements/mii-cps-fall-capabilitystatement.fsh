@@ -24,6 +24,18 @@ Usage: #definition
 * insert SupportProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung, #SHALL)
 * insert SupportInteraction(#read, #SHALL)
 * insert SupportInteraction(#search-type, #SHALL)
+* insert SupportSpecialSearchParam(_count, #special, #SHALL)
+* rest.resource[=].searchParam[=].documentation = """**Example:**
+`GET [base]/Encounter?_count=10`
+
+**Notes:**
+For further details see FHIR core specification, section [Page Count](https://www.hl7.org/fhir/R4/search.html#count)."""
+* insert SupportSpecialSearchParam(_summary, #special, #SHALL)
+* rest.resource[=].searchParam[=].documentation = """**Example:**
+`GET [base]/Encounter?_summary=count`
+
+**Notes:**
+For further details see FHIR core specification, section [Summary](https://www.hl7.org/fhir/R4/search.html#summary)."""
 * insert SupportSearchParam(_id, http://hl7.org/fhir/SearchParameter/Resource-id, #token, #SHALL)
 * rest.resource[=].searchParam[=].documentation = """**Example:**
 `GET [base]/Encounter?_id=mii-exa-fall-kontakt-gesundheitseinrichtung-1`
@@ -124,7 +136,7 @@ Searches on `Encounter.serviceType`. For further details see [FHIR core specific
 
 **Notes:**
 Searches on `Encounter.diagnosis.use`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."""
-* insert SupportSearchParam(hospitalization-admitsource, https://www.medizininformatik-initiative.de/fhir/core/modul-fall/SearchParameter/Encounter-hospitalization-admitSource, #token, #SHALL)
+* insert SupportSearchParam(hospitalization-admitsource, https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-encounter-hospitalization-admitsource, #token, #SHALL)
 * rest.resource[=].searchParam[=].documentation = """**Example:**
 `GET [base]/Encounter?hospitalization-admitsource=http://fhir.de/CodeSystem/dgkev/Aufnahmeanlass|N`
 `GET [base]/Encounter?hospitalization-admitsource=N`
@@ -141,3 +153,9 @@ Searches on `Encounter.hospitalization.admitSource`. For further details see [FH
 
 **Notes:**
 Searches on `Encounter.location.physicalType`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."""
+* insert SupportSearchParam(account, http://hl7.org/fhir/SearchParameter/Encounter-account, #reference, #SHOULD)
+* rest.resource[=].searchParam[=].documentation = """**Example:**
+`GET [base]/Encounter?account:identifier=https://www.charite.de/fhir/sid/fallnummer|F-2020-000123`
+
+**Notes:**
+Searches on `Encounter.account`. Use the `:identifier` modifier to search by Fallnummer stored as a logical reference in `Encounter.account.identifier`, without requiring the Account resource to be present. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#reference)."""

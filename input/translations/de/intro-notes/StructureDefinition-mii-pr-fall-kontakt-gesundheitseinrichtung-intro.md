@@ -328,6 +328,11 @@ Früher wurde empfohlen, dass die Aufnahmenummer in allen Encounter-Ressourcen u
   <li>Einzelne Benutzer keine Sichtberechtigung auf Abrechnungsdaten haben</li>
   <li>Benutzer im Versorgungskontext dennoch Encounter anhand der assoziierten Fallnummer suchen möchten</li>
 </ul>
+
+<p>Server <strong>SOLLTEN</strong> den Modifier <code>account:identifier</code> unterstützen, damit Clients alle zu einem Abrechnungsfall gehörenden Encounter anhand der Fallnummer abrufen können. Dieser Modifier ermöglicht eine tokenbasierte Suche auf der logischen Referenz in <code>Encounter.account.identifier</code>, ohne dass die Account-Ressource selbst vorhanden oder zugänglich sein muss.</p>
+
+<p><strong>Beispielanfrage</strong> zur Suche aller Encounter einer bestimmten Fallnummer:</p>
+<pre><code>GET [base]/Encounter?account:identifier=https://www.charite.de/fhir/sid/fallnummer|F-2020-000123</code></pre>
 </div>
 
 {% include link-list.md %}
