@@ -148,6 +148,22 @@
           }
         },
         {
+          "source": "invalid/kontakt-invalid-mii-enc-2.json",
+          "description": "Invalid: status=finished, class=IMP without period.start (violates mii-enc-2)",
+          "valid": false,
+          "outcome": {
+            "resourceType": "OperationOutcome",
+            "issue": [
+              {
+                "severity": "error",
+                "details": {
+                  "text": "Constraint failed: mii-enc-2: 'Abgeschlossene, stationäre Kontakte MÜSSEN einen Start- und End-Zeitpunkt angeben (status = 'finished' and class.code = 'IMP' implies period.start.exists() and period.end.exists())' (defined in https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)"
+                }
+              }
+            ]
+          }
+        },
+        {
           "source": "invalid/kontakt-invalid-mii-enc-3.json",
           "description": "Invalid: status=planned with a period present (violates mii-enc-3)",
           "valid": false,
