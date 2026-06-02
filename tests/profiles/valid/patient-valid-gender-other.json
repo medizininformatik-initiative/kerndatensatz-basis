@@ -1,0 +1,22 @@
+{
+  "resourceType": "Patient",
+  "id": "patient-valid-gender-other",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient"
+    ]
+  },
+  "gender": "other",
+  "_gender": {
+    "extension": [
+      {
+        "url": "http://fhir.de/StructureDefinition/gender-amtlich-de",
+        "valueCoding": {
+          "system": "http://fhir.de/CodeSystem/gender-amtlich-de",
+          "code": "D",
+          "display": "divers"
+        }
+      }
+    ]
+  }
+}

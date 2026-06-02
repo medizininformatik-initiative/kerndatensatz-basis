@@ -1,0 +1,21 @@
+{
+  "resourceType": "Condition",
+  "id": "diagnose-invalid-missing-recordeddate",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose"
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+        "version": "2024",
+        "code": "J06.9"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/example"
+  }
+}

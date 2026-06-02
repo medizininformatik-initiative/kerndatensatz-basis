@@ -1,0 +1,297 @@
+{
+  "profiles": [
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient",
+      "tests": [
+        {
+          "source": "valid/patient-valid-pid.json",
+          "description": "Valid patient with PID using MII core-location-identifier assigner (mii-pat-2 satisfied)",
+          "valid": true
+        },
+        {
+          "source": "valid/patient-valid-gender-other.json",
+          "description": "Valid patient with gender=other and gender-amtlich-de extension present (mii-pat-1 satisfied)",
+          "valid": true
+        },
+        {
+          "source": "invalid/patient-invalid-mii-pat-1.json",
+          "description": "Invalid: gender=other without gender-amtlich-de extension (violates mii-pat-1)",
+          "valid": false,
+          "outcome": {
+            "resourceType": "OperationOutcome",
+            "issue": [
+              {
+                "severity": "error",
+                "details": {
+                  "text": "Constraint failed: mii-pat-1: 'Falls die Geschlechtsangabe 'other' gewählt wird, muss die amtliche Differenzierung per Extension angegeben werden (gender.exists() and gender='other' implies gender.extension('http://fhir.de/StructureDefinition/gender-amtlich-de').exists())' (defined in https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient)"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "source": "invalid/patient-invalid-mii-pat-2.json",
+          "description": "Invalid: pid.assigner.identifier.system is neither IKNR nor MII core-location-identifier (violates mii-pat-2)",
+          "valid": false,
+          "outcome": {
+            "resourceType": "OperationOutcome",
+            "issue": [
+              {
+                "severity": "error",
+                "details": {
+                  "text": "Constraint failed: mii-pat-2: 'Entweder IKNR oder MII Core Location Identifier muss verwendet werden ($this = 'http://fhir.de/sid/arge-ik/iknr' or $this = 'https://www.medizininformatik-initiative.de/fhir/core/CodeSystem/core-location-identifier')' (defined in https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient)"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ,
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose",
+      "tests": [
+        {
+          "source": "valid/diagnose-valid-icd10.json",
+          "description": "Valid Condition with ICD-10-GM code, subject, and recordedDate (all mandatory elements present)",
+          "valid": true
+        },
+        {
+          "source": "invalid/diagnose-invalid-missing-code.json",
+          "description": "Invalid: Condition.code is absent (violates code 1..)",
+          "valid": false,
+          "outcome": {
+            "resourceType": "OperationOutcome",
+            "issue": [
+              {
+                "severity": "error",
+                "details": {
+                  "text": "Condition.code: minimum required = 1, but only found 0 (from https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0)"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "source": "invalid/diagnose-invalid-missing-recordeddate.json",
+          "description": "Invalid: Condition.recordedDate is absent (violates recordedDate 1..)",
+          "valid": false,
+          "outcome": {
+            "resourceType": "OperationOutcome",
+            "issue": [
+              {
+                "severity": "error",
+                "details": {
+                  "text": "Condition.recordedDate: minimum required = 1, but only found 0 (from https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0)"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ,
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert",
+      "tests": [
+        {
+          "source": "valid/patient-pseudonymisiert-valid-pseudonym.json",
+          "description": "Valid pseudonymised patient with pseudonym identifier and gender female (mii-pat-1 not triggered)",
+          "valid": true
+        },
+        {
+          "source": "valid/patient-pseudonymisiert-valid-gender-other.json",
+          "description": "Valid pseudonymised patient with gender=other and gender-amtlich-de extension present (mii-pat-1 satisfied)",
+          "valid": true
+        },
+        {
+          "source": "invalid/patient-pseudonymisiert-invalid-mii-pat-1.json",
+          "description": "Invalid: gender=other without gender-amtlich-de extension (violates mii-pat-1)",
+          "valid": false,
+          "outcome": {
+            "resourceType": "OperationOutcome",
+            "issue": [
+              {
+                "severity": "error",
+                "details": {
+                  "text": "Constraint failed: mii-pat-1: 'Falls die Geschlechtsangabe 'other' gewählt wird, muss die amtliche Differenzierung per Extension angegeben werden (gender.exists() and gender='other' implies gender.extension('http://fhir.de/StructureDefinition/gender-amtlich-de').exists())' (defined in https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert)"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ,
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung",
+      "tests": [
+        {
+          "source": "valid/kontakt-valid-finished-inpatient.json",
+          "description": "Valid finished inpatient encounter with period.start and period.end (mii-enc-1 and mii-enc-2 satisfied)",
+          "valid": true
+        },
+        {
+          "source": "invalid/kontakt-invalid-mii-enc-1.json",
+          "description": "Invalid: status=finished without period.end (violates mii-enc-1)",
+          "valid": false,
+          "outcome": {
+            "resourceType": "OperationOutcome",
+            "issue": [
+              {
+                "severity": "error",
+                "details": {
+                  "text": "Constraint failed: mii-enc-1: 'Falls der Encounter abgeschlossen wurde, MUSS ein Enddatum bekannt sein (status = 'finished' implies period.end.exists())' (defined in https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "source": "invalid/kontakt-invalid-mii-enc-3.json",
+          "description": "Invalid: status=planned with a period present (violates mii-enc-3)",
+          "valid": false,
+          "outcome": {
+            "resourceType": "OperationOutcome",
+            "issue": [
+              {
+                "severity": "error",
+                "details": {
+                  "text": "Constraint failed: mii-enc-3: 'Geplante Kontakte D\u00dcRFEN NICHT einen Start- oder End-Zeitpunkt angeben (status = 'planned' implies period.exists().not())' (defined in https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "source": "invalid/kontakt-invalid-mii-enc-5.json",
+          "description": "Invalid: status=in-progress without period.start (violates mii-enc-5)",
+          "valid": false,
+          "outcome": {
+            "resourceType": "OperationOutcome",
+            "issue": [
+              {
+                "severity": "error",
+                "details": {
+                  "text": "Constraint failed: mii-enc-5: 'In-Durchf\u00fchrung befindliche Kontakte M\u00dcSSEN einen Start-Zeitpunkt angeben (status = 'in-progress' implies period.start.exists())' (defined in https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "source": "invalid/kontakt-invalid-mii-enc-6.json",
+          "description": "Invalid: status=onleave without period.start (violates mii-enc-6)",
+          "valid": false,
+          "outcome": {
+            "resourceType": "OperationOutcome",
+            "issue": [
+              {
+                "severity": "error",
+                "details": {
+                  "text": "Constraint failed: mii-enc-6: 'Kontakte mit Abwesenheitsstatus M\u00dcSSEN einen Start-Zeitpunkt angeben (status = 'onleave' implies period.start.exists())' (defined in https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ,
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure",
+      "tests": [
+        {
+          "source": "valid/procedure-valid-snomed.json",
+          "description": "Valid Procedure with SNOMED CT code only (sct-ops-1 satisfied, proc-mii-1 not triggered)",
+          "valid": true
+        },
+        {
+          "source": "invalid/procedure-invalid-proc-mii-1.json",
+          "description": "Invalid: OPS code present but no SNOMED CT category (violates proc-mii-1)",
+          "valid": false,
+          "outcome": {
+            "resourceType": "OperationOutcome",
+            "issue": [
+              {
+                "severity": "error",
+                "details": {
+                  "text": "Constraint failed: proc-mii-1: 'Falls die Prozedur per OPS kodiert wird, MUSS eine SNOMED-CT kodierte Category abgebildet werden (code.coding.where(system = 'http://fhir.de/CodeSystem/bfarm/ops').exists() implies category.coding.where(system = 'http://snomed.info/sct').exists())' (defined in https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure)"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "source": "invalid/procedure-invalid-sct-ops-1.json",
+          "description": "Invalid: code.coding uses neither OPS nor SNOMED CT system (violates sct-ops-1)",
+          "valid": false,
+          "outcome": {
+            "resourceType": "OperationOutcome",
+            "issue": [
+              {
+                "severity": "error",
+                "details": {
+                  "text": "Constraint failed: sct-ops-1: 'Eine Prozedur MUSS mit OPS oder SNOMED-CT kodiert werden. (coding.where(system = 'http://snomed.info/sct').exists() or coding.where(system = 'http://fhir.de/CodeSystem/bfarm/ops').exists())' (defined in https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure)"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ,
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus",
+      "tests": [
+        {
+          "source": "valid/vitalstatus-valid-lebt.json",
+          "description": "Valid Vitalstatus Observation with all mandatory elements (status, category[survey], code[loinc], subject, effectiveDateTime, valueCodeableConcept[Vitalstatus])",
+          "valid": true
+        },
+        {
+          "source": "invalid/vitalstatus-invalid-missing-effective.json",
+          "description": "Invalid: effective[x] is absent (violates effective[x] 1..)",
+          "valid": false,
+          "outcome": {
+            "resourceType": "OperationOutcome",
+            "issue": [
+              {
+                "severity": "error",
+                "details": {
+                  "text": "Observation.effective[x]: minimum required = 1, but only found 0 (from https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus|2026.0.0)"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Todesursache",
+      "tests": [
+        {
+          "source": "valid/todesursache-valid-icd10.json",
+          "description": "Valid: minimal Todesursache with ICD-10-WHO code and required category",
+          "valid": true
+        },
+        {
+          "source": "invalid/todesursache-invalid-missing-code.json",
+          "description": "Invalid: code is absent (violates code 1..)",
+          "valid": false,
+          "outcome": {
+            "resourceType": "OperationOutcome",
+            "issue": [
+              {
+                "severity": "error",
+                "details": {
+                  "text": "Condition.code: minimum required = 1, but only found 0 (from https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Todesursache|2026.0.0)"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

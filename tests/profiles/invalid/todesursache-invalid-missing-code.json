@@ -1,0 +1,26 @@
+{
+  "resourceType": "Condition",
+  "id": "todesursache-invalid-missing-code",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Todesursache"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "16100001"
+        },
+        {
+          "system": "http://loinc.org",
+          "code": "79378-6"
+        }
+      ]
+    }
+  ],
+  "subject": {
+    "reference": "Patient/example"
+  }
+}

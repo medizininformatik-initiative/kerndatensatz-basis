@@ -1,0 +1,22 @@
+{
+  "resourceType": "Procedure",
+  "id": "procedure-valid-snomed",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure"
+    ]
+  },
+  "status": "completed",
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "80146002"
+      }
+    ]
+  },
+  "subject": {
+    "display": "Test Patient"
+  },
+  "performedDateTime": "2024-03-01"
+}
