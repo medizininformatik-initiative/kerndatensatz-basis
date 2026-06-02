@@ -11,7 +11,7 @@ Description: "Dieses Profil beschreibt eine*n pseudonymisierte*n Patient*in in d
 * insert PR_CS_VS_Version
 * insert Publisher
 * insert LicenseCodeableCCBY40
-* ^date = "2025-07-22"
+* ^date = "2026-06-02"
 * obeys mii-pat-1
 * id MS
 * meta MS
@@ -37,6 +37,19 @@ Description: "Dieses Profil beschreibt eine*n pseudonymisierte*n Patient*in in d
     Die Verarbeitung ist umkehrbar. Zusätzliche Informationen sind erforderlich, um den Originalwert zu rekonstruieren, bspw. eine Trusted Third Party.
     """
 * identifier[PseudonymisierterIdentifier] ^patternIdentifier.type = $v3-ObservationValue#PSEUDED
+* identifier[PseudonymisierterIdentifier].type 1.. MS
+* identifier[PseudonymisierterIdentifier].type.coding ^slicing.discriminator.type = #pattern
+* identifier[PseudonymisierterIdentifier].type.coding ^slicing.discriminator.path = "$this"
+* identifier[PseudonymisierterIdentifier].type.coding ^slicing.rules = #open
+* identifier[PseudonymisierterIdentifier].type.coding contains pseuded 1..1 MS and mr 0..1
+* identifier[PseudonymisierterIdentifier].type.coding[pseuded] = $v3-ObservationValue#PSEUDED
+* identifier[PseudonymisierterIdentifier].type.coding[mr] = $v2-0203#MR
+* identifier[PseudonymisierterIdentifier].type.coding[mr] ^short = "Medical Record Number"
+* identifier[PseudonymisierterIdentifier].type.coding[mr] ^definition = """
+    Wenn dieses Pseudonym einen pseudonymisierten organisationsinternen Patienten-Identifier (Medical Record Number) ersetzt,
+    SOLL dieser Code zusätzlich gesetzt werden, um die funktionale Rolle des Identifiers
+    unabhängig vom Standort-spezifischen system auffindbar zu machen.
+    """
 * identifier[AnonymisierterIdentifier] ^patternIdentifier.type = $v3-ObservationValue#ANONYED
 * identifier[AnonymisierterIdentifier] ^short = "Anonymisierter Identifikator"
 * identifier[AnonymisierterIdentifier] ^definition = """

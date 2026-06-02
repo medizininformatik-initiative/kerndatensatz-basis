@@ -16,6 +16,10 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 
 - **Added:** ICD-10-GM 2026, OPS 2026 und Alpha-ID 2026 Versionen zu den jeweiligen ValueSet-Definitionen für die Module Diagnose und Prozedur hinzugefügt [#67](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/67), [#66](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/66)
 
+#### Modul Person
+
+- **Added:** Profil [Patient Pseudonymisiert](StructureDefinition-mii-pr-person-patient-pseudonymisiert.html): Optionaler `type.coding`-Slice `mr` (`http://terminology.hl7.org/CodeSystem/v2-0203|MR`) zu `PseudonymisierterIdentifier` hinzugefügt. Wenn das Pseudonym eine Medical Record Number ersetzt, SOLL dieser Code gesetzt werden, um die standortunabhängige Auffindbarkeit des Identifiers zu ermöglichen. Siehe: [#63](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/63)
+
 #### Modul Fall
 
 - **Added:** Verwendung von `Encounter.location` in der Dokumentation erläutert. Siehe: [#62](https://github.com/medizininformatik-initiative/kerndatensatzmodul-fall/issues/62)

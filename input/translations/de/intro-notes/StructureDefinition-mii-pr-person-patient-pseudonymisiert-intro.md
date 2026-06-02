@@ -25,6 +25,8 @@ Das pseudonymisierte Patientenprofil verwendet spezialisierte Identifier-Typen:
   - **MUSS** entsprechend typisiert werden, falls der Identifier ein abgeleitetes Pseudonym ist
   - Zu verwenden, wenn der Identifier durch einen kontrollierten Prozess mit den originalen Patientendaten verknüpft werden kann
   - Typischerweise in Forschungsszenarien verwendet, in denen eine De-Pseudonymisierung für spezifische Zwecke notwendig sein kann
+  - **`identifier.type.coding:pseuded`** (`PSEUDED`, Pflicht): Gibt an, dass der Wert ein Pseudonym ist
+  - **`identifier.type.coding:mr`** (`MR`, optional): SOLL zusätzlich gesetzt werden, wenn das Pseudonym einen organisationsinternen Patienten-Identifier (Medical Record Number) ersetzt. Dies ermöglicht es Konsumenten, die pseudonymisierte Patientennummer standortübergreifend aufzufinden, ohne das standortspezifische `identifier.system` zu kennen. Siehe [Best Practice - Pseudonymisierter MR-Identifier](#best-practice---pseudonymisierter-mr-identifier) für Details.
 
 - **`Patient.identifier:anonymisierterIdentifier`**: Anonymisierter Identifier für die PatientIn
   - **SOLLTE** nur verwendet werden, wenn keinerlei Rückschlüsse auf den originalen Datensatz möglich sind
@@ -33,6 +35,37 @@ Das pseudonymisierte Patientenprofil verwendet spezialisierte Identifier-Typen:
 - **`Patient.identifier:maskierterVersichertenIdentifier`**: Maskierter Krankenversicherten-Identifier
   - Für krankenkassenbasierte Analysen ohne Offenlegung der tatsächlichen Versicherten-ID verwendet
   - Siehe [Best Practice - Maskierte Versicherten-ID mit IK-Nummer](#best-practice---maskierte-versicherten-id-mit-ik-nummer) für Implementierungsdetails
+
+<div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
+<h5 id="best-practice---pseudonymisierter-mr-identifier" style="color: #406A99; margin-top: 0;">Best Practice - Pseudonymisierter organisationsinterner Patienten-Identifier</h5>
+
+<p>Wenn ein Pseudonym einen organisationsinternen Patienten-Identifier (Medical Record Number, MR) ersetzt, SOLL <code>identifier.type</code> beide Codings enthalten:</p>
+
+<ul>
+  <li><code>http://terminology.hl7.org/CodeSystem/v3-ObservationValue|PSEUDED</code> — Pflicht, signalisiert, dass der Wert ein Pseudonym ist</li>
+  <li><code>http://terminology.hl7.org/CodeSystem/v2-0203|MR</code> — optional, signalisiert die funktionale Rolle des ursprünglichen Identifiers</li>
+</ul>
+
+<p>Das Setzen des <code>MR</code>-Codes wird empfohlen, da es Abfragen ermöglicht, pseudonymisierte Patientennummern standortübergreifend über einen stabilen, standortunabhängigen Typcode zu finden, ohne das proprietäre <code>identifier.system</code> des jeweiligen Standorts kennen zu müssen.</p>
+
+<p>Hinweis: <code>MR</code> beschreibt hier die funktionale Rolle des Identifiers (d.h. was er repräsentiert), nicht die Art des pseudonymen Wertes selbst. Pseudonyme, die keine Medical Record Number ersetzen (z.B. studiespezifische Pseudonyme), SOLLTEN NICHT den <code>MR</code>-Code tragen.</p>
+
+<pre><code class="language-json">{
+  "type": {
+    "coding": [{
+      "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+      "code": "PSEUDED"
+    },
+    {
+      "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+      "code": "MR"
+    }]
+  },
+  "system": "https://ttp.example.org/pseudonyme",
+  "value": "a3f2c1d9-pseudonym"
+}
+</code></pre>
+</div>
 
 <div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
 <h5 id="best-practice---maskierte-versicherten-id-mit-ik-nummer" style="color: #406A99; margin-top: 0;">Best Practice - Maskierte Versicherten-ID mit IK-Nummer</h5>

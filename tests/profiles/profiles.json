@@ -119,6 +119,27 @@
               }
             ]
           }
+        },
+        {
+          "source": "valid/patient-pseudonymisiert-valid-pseudonym-mr.json",
+          "description": "Valid pseudonymised patient with both PSEUDED and MR codings on PseudonymisierterIdentifier (new MR use case)",
+          "valid": true
+        },
+        {
+          "source": "invalid/patient-pseudonymisiert-invalid-mr-duplicate.json",
+          "description": "Invalid: PseudonymisierterIdentifier.type.coding contains two MR codings (violates type.coding:mr 0..1)",
+          "valid": false,
+          "outcome": {
+            "resourceType": "OperationOutcome",
+            "issue": [
+              {
+                "severity": "error",
+                "details": {
+                  "text": "Patient.identifier:PseudonymisierterIdentifier.type.coding:mr: max allowed = 1, but found 2 (from https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert|2026.0.0)"
+                }
+              }
+            ]
+          }
         }
       ]
     }

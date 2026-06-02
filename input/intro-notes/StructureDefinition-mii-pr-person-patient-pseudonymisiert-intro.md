@@ -25,6 +25,8 @@ The pseudonymized patient profile uses specialized identifier types:
   - **MUST** be appropriately typed if the identifier is a derived pseudonym
   - Use when the identifier can be linked back to the original patient data through a controlled process
   - Typically used in research scenarios where de-pseudonymization may be necessary for specific purposes
+  - **`identifier.type.coding:pseuded`** (`PSEUDED`, required): Indicates the value is a pseudonym
+  - **`identifier.type.coding:mr`** (`MR`, optional): **SHOULD** additionally be set when the pseudonym replaces an organization-internal patient identifier (Medical Record Number). This allows consumers to locate the pseudonymized patient number without knowing the site-specific `identifier.system`. See [Best Practice - Pseudonymized MR Identifier](#best-practice---pseudonymized-mr-identifier) for details.
 
 - **`Patient.identifier:anonymisierterIdentifier`**: Anonymized identifier for the patient
   - **SHOULD** only be used when no inference about the original dataset is possible
@@ -33,6 +35,37 @@ The pseudonymized patient profile uses specialized identifier types:
 - **`Patient.identifier:maskierterVersichertenIdentifier`**: Masked health insurance identifier
   - Used for health insurance-based analyses without revealing the actual insurance ID
   - See [Best Practice - Masked Insurance ID with IK Number](#best-practice---masked-insurance-id-with-ik-number) for implementation details
+
+<div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
+<h5 id="best-practice---pseudonymized-mr-identifier" style="color: #406A99; margin-top: 0;">Best Practice - Pseudonymized Medical Record Number Identifier</h5>
+
+<p>When a pseudonym replaces an organization-internal patient identifier (Medical Record Number, MR), the <code>identifier.type</code> SHOULD carry both codings:</p>
+
+<ul>
+  <li><code>http://terminology.hl7.org/CodeSystem/v3-ObservationValue|PSEUDED</code> — required, signals that the value is a pseudonym</li>
+  <li><code>http://terminology.hl7.org/CodeSystem/v2-0203|MR</code> — optional, signals the functional role of the original identifier</li>
+</ul>
+
+<p>Setting the <code>MR</code> code is recommended because it allows queries to locate pseudonymized patient numbers across sites using a stable, site-independent type code, without needing to know each site's proprietary <code>identifier.system</code> value.</p>
+
+<p>Note: <code>MR</code> here describes the functional role of the identifier (i.e., what it represents), not the nature of the pseudonymous value itself. Pseudonyms that do not replace a Medical Record Number (e.g., study-specific pseudonyms) SHOULD NOT carry the <code>MR</code> code.</p>
+
+<pre><code class="language-json">{
+  "type": {
+    "coding": [{
+      "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+      "code": "PSEUDED"
+    },
+    {
+      "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+      "code": "MR"
+    }]
+  },
+  "system": "https://ttp.example.org/pseudonyms",
+  "value": "a3f2c1d9-pseudonym"
+}
+</code></pre>
+</div>
 
 <div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
 <h5 id="best-practice---masked-insurance-id-with-ik-number" style="color: #406A99; margin-top: 0;">Best Practice - Masked Insurance ID with IK Number</h5>
