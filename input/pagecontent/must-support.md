@@ -54,7 +54,7 @@ For example, if an element like `Patient.birthDate` is marked as Must Support:
 
 #### Must Support - Complex Elements
 
-Complex elements are composed of primitive and other complex elements. §must-support-8:For any complex element marked as *Must Support*, the Server **SHALL** be capable of providing at least one of the sub-element values.§ §must-support-9:For *Must Support* complex elements, the Client **SHALL** be capable of processing the *Must Support* sub-element values.§ If any sub-element is marked as *Must Support*, it must also meet the *Must Support* requirements and satisfy the *Must Support* requirements for the parent element.
+Complex elements are composed of primitive and other complex elements. §must-support-8:For any complex element marked as *Must Support*, the Server **SHALL** be capable of providing the sub-element values that are marked as *Must Support*. If no sub-elements are marked as *Must Support*, the Server **SHALL** be capable of providing at least one sub-element value.§ §must-support-9:For *Must Support* complex elements, the Client **SHALL** be capable of processing the *Must Support* sub-element values.§ When sub-elements of a complex element are marked as *Must Support*, the support expectation for the parent element is fulfilled by supporting those marked sub-elements.
 
 For example, if `Patient.name` is labeled *Must Support* and has *Must Support* sub-elements "family" and "given":
 * MII Servers **SHALL** be capable of providing values in `Patient.name.family` and `Patient.name.given`

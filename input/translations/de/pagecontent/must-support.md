@@ -50,7 +50,7 @@ Beispielsweise, wenn ein Element wie `Patient.birthDate` als Must Support gekenn
 
 #### Must Support - Komplexe Elemente
 
-Komplexe Elemente setzen sich aus primitiven und anderen komplexen Elementen zusammen. Für jedes komplexe Element, das als *Must Support* gekennzeichnet ist, **MUSS** der Server in der Lage sein, mindestens einen der Unterelementwerte bereitzustellen. Wenn ein Unterelement als *Must Support* gekennzeichnet ist, muss es ebenfalls die Must Support Anforderungen erfüllen und die Must Support Anforderungen für das übergeordnete Element erfüllen.
+Komplexe Elemente setzen sich aus primitiven und anderen komplexen Elementen zusammen. Für jedes komplexe Element, das als *Must Support* gekennzeichnet ist, **MUSS** der Server in der Lage sein, Werte für die Unterelemente bereitzustellen, die als *Must Support* gekennzeichnet sind. Wenn keine Unterelemente als *Must Support* gekennzeichnet sind, **MUSS** der Server in der Lage sein, mindestens einen Unterelementwert bereitzustellen. Für jedes komplexe Element, das als *Must Support* gekennzeichnet ist, **MUSS** der Client in der Lage sein, Werte für die Unterelemente zu verarbeiten, die als *Must Support* gekennzeichnet sind. Wenn Unterelemente eines komplexen Elements als *Must Support* gekennzeichnet sind, wird die Erwartung für das übergeordnete Element durch die Unterstützung dieser gekennzeichneten Unterelemente erfüllt.
 
 Beispielsweise, wenn `Patient.name` als *Must Support* gekennzeichnet ist und die *Must Support* Unterelemente "family" und "given" hat:
 * MII-Server **MÜSSEN** in der Lage sein, Werte in `Patient.name.family` und `Patient.name.given` bereitzustellen

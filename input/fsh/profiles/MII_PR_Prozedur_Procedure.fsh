@@ -12,7 +12,7 @@ Description: "Dieses Profil beschreibt eine Prozedur in der Medizininformatik-In
 * insert Publisher
 * insert LicenseCodeableCCBY40
 * ^status = #active
-* ^date = "2025-12-12"
+* ^date = "2026-06-03"
 * obeys proc-mii-1
 * id MS
 * meta MS
@@ -25,12 +25,18 @@ Description: "Dieses Profil beschreibt eine Prozedur in der Medizininformatik-In
 * extension contains
     ExtensionProzedurDokumentationsdatum named Dokumentationsdatum 0..1 MS and
     MII_EX_Prozedur_Durchfuehrungsabsicht named durchfuehrungsabsicht 0..1 MS
+* extension[Dokumentationsdatum].url MS
+* extension[Dokumentationsdatum].valueDateTime MS
 * extension[Dokumentationsdatum] ^short = "Dokumentationsdatum"
 * insert Translation(extension[Dokumentationsdatum] ^short, de-DE, Dokumentationsdatum)
 * insert Translation(extension[Dokumentationsdatum] ^short, en-US, Recorded date)
 * extension[Dokumentationsdatum] ^definition = "Dokumentationsdatum der Prozedur, falls abweichend vom Durchführungsdatum"
 * insert Translation(extension[Dokumentationsdatum] ^definition, de-DE, Dokumentationsdatum der Prozedur\, falls abweichend vom Durchführungsdatum)
 * insert Translation(extension[Dokumentationsdatum] ^definition, en-US, The date the procedure was documented\, if different from the performed date)
+* extension[durchfuehrungsabsicht].url MS
+* extension[durchfuehrungsabsicht].valueCoding MS
+* extension[durchfuehrungsabsicht].valueCoding.system MS
+* extension[durchfuehrungsabsicht].valueCoding.code MS
 * extension[durchfuehrungsabsicht] ^short = "Durchführungsabsicht"
 * insert Translation(extension[durchfuehrungsabsicht] ^short, de-DE, Durchführungsabsicht)
 * insert Translation(extension[durchfuehrungsabsicht] ^short, en-US, Intention)
@@ -51,6 +57,7 @@ Description: "Dieses Profil beschreibt eine Prozedur in der Medizininformatik-In
 * category ^definition = "Diagnostische Maßnahmen | Bildgebende Diagnostik | Operationen | Medikamente | Nichtoperative therapeutische Maßnahmen | Ergänzende Maßnahmen"
 * insert Translation(category ^definition, de-DE, Diagnostische Maßnahmen | Bildgebende Diagnostik | Operationen | Medikamente | Nichtoperative therapeutische Maßnahmen | Ergänzende Maßnahmen)
 * insert Translation(category ^definition, en-US, Diagnostic procedures | Imaging procedures | Operations | Medications | Non-operative therapeutic procedures | Other procedures)
+* category.coding MS
 * category.coding ^slicing.discriminator.type = #pattern
 * category.coding ^slicing.discriminator.path = "$this"
 * category.coding ^slicing.rules = #open
@@ -79,7 +86,11 @@ Description: "Dieses Profil beschreibt eine Prozedur in der Medizininformatik-In
 * code.coding[ops] only CodingOPS
 * code.coding[ops] from mii-vs-prozedur-ops (required)
 * code.coding[ops] ^patternCoding.system = "http://fhir.de/CodeSystem/bfarm/ops"
-* code.coding[ops].extension[Seitenlokalisation] ^mustSupport = true
+* code.coding[ops].extension[Seitenlokalisation] MS
+* code.coding[ops].extension[Seitenlokalisation].url MS
+* code.coding[ops].extension[Seitenlokalisation].valueCoding MS
+* code.coding[ops].extension[Seitenlokalisation].valueCoding.system MS
+* code.coding[ops].extension[Seitenlokalisation].valueCoding.code MS
 * code.coding[ops].system MS
 * code.coding[ops].version MS
 * code.coding[ops].code MS
@@ -89,8 +100,10 @@ Description: "Dieses Profil beschreibt eine Prozedur in der Medizininformatik-In
 * code.coding[sct].system 1.. MS
 * code.coding[sct].code 1.. MS
 * subject 1..1 MS
+* subject.reference MS
 //* subject only $MII-Reference
 * encounter MS
+* encounter.reference MS
 * encounter ^short = "Kontakt (Aufenthaltsbezug)"
 * insert Translation(encounter ^short, de-DE, Kontakt)
 * insert Translation(encounter ^short, en-US, Encounter)
@@ -105,12 +118,14 @@ Description: "Dieses Profil beschreibt eine Prozedur in der Medizininformatik-In
 * insert Translation(performed[x] ^definition, de-DE, Durchführungsdatum oder -zeitraum der Prozedur.)
 * insert Translation(performed[x] ^definition, en-US, The date or period of time the procedure was performed.)
 * performed[x] only dateTime or Period
+* performedDateTime MS
 * performedDateTime ^short = "Durchführungsdatum"
 * insert Translation(performedDateTime ^short, de-DE, Durchführungsdatum)
 * insert Translation(performedDateTime ^short, en-US, Performed date)
 * performedDateTime ^definition = "Durchführungsdatum der Prozedur."
 * insert Translation(performedDateTime ^definition, de-DE, Durchführungsdatum der Prozedur.)
 * insert Translation(performedDateTime ^definition, en-US, The date the procedure was performed.)
+* performedPeriod MS
 * performedPeriod ^short = "Durchführungszeitraum"
 * insert Translation(performedPeriod ^short, de-DE, Durchführungszeitraum)
 * insert Translation(performedPeriod ^short, en-US, Performed period)

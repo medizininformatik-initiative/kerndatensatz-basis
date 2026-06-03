@@ -9,7 +9,7 @@ Description: "Kontakt zu einer Einrichtung, Abteilung oder Versorgungsstelle"
 * insert PR_CS_VS_Version
 * insert LicenseCodeableCCBY40
 * obeys mii-enc-1 and mii-enc-2 and mii-enc-3 and mii-enc-4 and mii-enc-5 and mii-enc-6 and mii-enc-7
-* ^date = "2025-12-12"
+* ^date = "2026-06-03"
 * id MS
 * id ^definition = "Angabe OPTIONAL, vom Server automatisch vergebene system-abhängige ID"
 * meta MS
@@ -36,6 +36,8 @@ Description: "Kontakt zu einer Einrichtung, Abteilung oder Versorgungsstelle"
     """
 * insert Translation(extension[Aufnahmegrund].extension[ErsteUndZweiteStelle] ^definition, de-DE, Aufnahmegrund 1. und 2. Stelle)
 * insert Translation(extension[Aufnahmegrund].extension[ErsteUndZweiteStelle] ^definition, en-US, Admission reason 1st and 2nd position)
+* extension[Aufnahmegrund].extension[ErsteUndZweiteStelle].url MS
+* extension[Aufnahmegrund].extension[ErsteUndZweiteStelle].valueCoding MS
 * extension[Aufnahmegrund].extension[DritteStelle] MS
 * extension[Aufnahmegrund].extension[DritteStelle] ^short = "3. Stelle"
 * insert Translation(extension[Aufnahmegrund].extension[DritteStelle] ^short, de-DE, 3. Stelle)
@@ -45,6 +47,8 @@ Description: "Kontakt zu einer Einrichtung, Abteilung oder Versorgungsstelle"
     """
 * insert Translation(extension[Aufnahmegrund].extension[DritteStelle] ^definition, de-DE, Aufnahmegrund 3. Stelle)
 * insert Translation(extension[Aufnahmegrund].extension[DritteStelle] ^definition, en-US, Admission reason 3rd position)
+* extension[Aufnahmegrund].extension[DritteStelle].url MS
+* extension[Aufnahmegrund].extension[DritteStelle].valueCoding MS
 * extension[Aufnahmegrund].extension[VierteStelle] MS
 * extension[Aufnahmegrund].extension[VierteStelle] ^short = "4. Stelle"
 * insert Translation(extension[Aufnahmegrund].extension[VierteStelle] ^short, de-DE, 4. Stelle)
@@ -54,6 +58,8 @@ Description: "Kontakt zu einer Einrichtung, Abteilung oder Versorgungsstelle"
     """
 * insert Translation(extension[Aufnahmegrund].extension[VierteStelle] ^definition, de-DE, Aufnahmegrund 4. Stelle)
 * insert Translation(extension[Aufnahmegrund].extension[VierteStelle] ^definition, en-US, Admission reason 4th position)
+* extension[Aufnahmegrund].extension[VierteStelle].url MS
+* extension[Aufnahmegrund].extension[VierteStelle].valueCoding MS
 * identifier MS
 * identifier ^short = "Identifikator"
 * insert Translation(identifier ^short, de-DE, Identifikator)
@@ -81,6 +87,7 @@ Description: "Kontakt zu einer Einrichtung, Abteilung oder Versorgungsstelle"
 * identifier[Aufnahmenummer].type 1.. MS
 * identifier[Aufnahmenummer].type from mii-vs-fall-identifier-type-codes (extensible)
 * identifier[Aufnahmenummer].type = $v2-0203#VN
+* identifier[Aufnahmenummer].type.coding MS
 * identifier[Aufnahmenummer].type.coding ^slicing.discriminator.type = #pattern
 * identifier[Aufnahmenummer].type.coding ^slicing.discriminator.path = "$this"
 * identifier[Aufnahmenummer].type.coding ^slicing.rules = #open
@@ -101,6 +108,8 @@ Description: "Kontakt zu einer Einrichtung, Abteilung oder Versorgungsstelle"
 * insert Translation(status ^definition, en-US, planned | in-progress | onleave | finished | cancelled | entered-in-error | unknown)
 * status from $EncounterStatusDe (required)
 * class MS
+* class.system MS
+* class.code MS
 * class ^short = "Kontaktklasse"
 * insert Translation(class ^short, de-DE, Kontaktklasse)
 * insert Translation(class ^short, en-US, Classification of patient encounter)
@@ -135,6 +144,8 @@ Description: "Kontakt zu einer Einrichtung, Abteilung oder Versorgungsstelle"
 * type[Kontaktebene] from $kontaktebene-de (required)
 * type[Kontaktebene] ^patternCodeableConcept.coding.system = "http://fhir.de/CodeSystem/Kontaktebene"
 * type[Kontaktebene] ^binding.description = "Kontaktebene"
+* type[Kontaktebene].coding.system MS
+* type[Kontaktebene].coding.code MS
 * type[KontaktArt] ^short = "Kontaktart"
 * insert Translation(type[KontaktArt] ^short, de-DE, Kontaktart)
 * insert Translation(type[KontaktArt] ^short, en-US, Type of encounter)
@@ -146,6 +157,8 @@ Description: "Kontakt zu einer Einrichtung, Abteilung oder Versorgungsstelle"
 * insert Translation(type[KontaktArt] ^definition, en-US, Type of encounter such as pre-admission | post-admission | intensive care)
 * type[KontaktArt] from $kontaktart-de (required)
 * type[KontaktArt] ^patternCodeableConcept.coding.system = "http://fhir.de/CodeSystem/kontaktart-de"
+* type[KontaktArt].coding.system MS
+* type[KontaktArt].coding.code MS
 * serviceType MS
 * serviceType ^short = "Fachabteilung"
 * insert Translation(serviceType ^short, de-DE, Fachabteilung)
@@ -189,6 +202,7 @@ Description: "Kontakt zu einer Einrichtung, Abteilung oder Versorgungsstelle"
 * serviceType.coding[ErweiterterFachabteilungsschluessel].system 1.. MS
 * serviceType.coding[ErweiterterFachabteilungsschluessel].code 1.. MS
 * subject 1.. MS
+* subject.reference MS
 * subject ^short = "Patientenidentifikator"
 * subject ^definition = "VERPFLICHTEND, Referenz auf Patient:in."
 //* subject only $MII-Reference
@@ -253,13 +267,20 @@ Description: "Kontakt zu einer Einrichtung, Abteilung oder Versorgungsstelle"
 * diagnosis.use.coding[Diagnosetyp] from $DiagnoseTyp (required)
 * diagnosis.use.coding[Diagnosetyp] ^short = "Diagnosetyp"
 * diagnosis.use.coding[Diagnosetyp] ^definition = "Einweisungs-/Überweisungsdiagnose | Behandlungsrelevante Diagnosen"
+* diagnosis.use.coding[Diagnosetyp].system MS
+* diagnosis.use.coding[Diagnosetyp].code MS
 * diagnosis.use.coding[DiagnosesubTyp] from $Diagnosesubtyp (required)
 * diagnosis.use.coding[DiagnosesubTyp] ^short = "Diagnosesubtyp"
 * diagnosis.use.coding[DiagnosesubTyp] ^definition = "Operationsdiagnose | Abteilung Hauptdiagnose | Todesursache | Infektionsschutzdiagnose +"
+* diagnosis.use.coding[DiagnosesubTyp].system MS
+* diagnosis.use.coding[DiagnosesubTyp].code MS
 * diagnosis.rank MS
 * diagnosis.rank ^short = "Rangfolge"
 * diagnosis.rank ^definition = "OPTIONAL, Rangfolge der Diagnose"
 * account MS
+* account.identifier MS
+* account.identifier.system MS
+* account.identifier.value MS
 * account ^short = "Abrechnungskontext"
 * account ^definition = """
         OPTIONAL. Referenz auf den Abrechnungsfall. Eine logische Referenz ist ausreichend zur Abbildung des Abrechnungskontextes.
@@ -278,6 +299,9 @@ Description: "Kontakt zu einer Einrichtung, Abteilung oder Versorgungsstelle"
 * insert Translation(hospitalization ^definition, de-DE, Details zur Aufnahme und Entlassung)
 * insert Translation(hospitalization ^definition, en-US, Details about admission and discharge)
 * hospitalization.admitSource 1.. MS
+* hospitalization.admitSource.coding MS
+* hospitalization.admitSource.coding.system MS
+* hospitalization.admitSource.coding.code MS
 * hospitalization.admitSource ^short = "Aufnahmeanlass"
 * hospitalization.admitSource ^definition = """
         VERPFLICHTEND, Aufnahmeanlass. Preferred Binding auf http://fhir.de/ValueSet/dgkev/Aufnahmeanlass
@@ -291,7 +315,14 @@ Description: "Kontakt zu einer Einrichtung, Abteilung oder Versorgungsstelle"
 * hospitalization.dischargeDisposition.extension[Entlassungsgrund] ^definition = """
         OPTIONAL, Entlassungs-/Verlegungsgrund nach § 301 Abs. 3 SGB V
         """
-* location //MS
+* hospitalization.dischargeDisposition.extension[Entlassungsgrund].url MS
+* hospitalization.dischargeDisposition.extension[Entlassungsgrund].extension[ErsteUndZweiteStelle] MS
+* hospitalization.dischargeDisposition.extension[Entlassungsgrund].extension[ErsteUndZweiteStelle].url MS
+* hospitalization.dischargeDisposition.extension[Entlassungsgrund].extension[ErsteUndZweiteStelle].valueCoding MS
+* hospitalization.dischargeDisposition.extension[Entlassungsgrund].extension[DritteStelle] MS
+* hospitalization.dischargeDisposition.extension[Entlassungsgrund].extension[DritteStelle].url MS
+* hospitalization.dischargeDisposition.extension[Entlassungsgrund].extension[DritteStelle].valueCoding MS
+* location MS
 * location ^short = "Kontaktort"
 * insert Translation(location ^short, de-DE, Kontaktort)
 * insert Translation(location ^short, en-US, Location)
@@ -309,33 +340,42 @@ Description: "Kontakt zu einer Einrichtung, Abteilung oder Versorgungsstelle"
 * location ^slicing.discriminator[=].path = "status"
 * location ^slicing.rules = #open
 * location contains  Zimmer 0..1 and Bett 0..1 and Station 0..1
-* location[Station]
+* location[Station] MS
 * location[Station] ^short = "Station"
 * location[Station] ^definition = "Die Station, auf welcher der Patient oder die Patientin während des Kontaktes behandelt wurde."
   * location 1.. 
     //* identifier 1.. MS
     //* display 1.. MS
-  * physicalType 1..1 //MS
+  * physicalType 1..1 MS
+    * coding MS
+      * system MS
+      * code MS
   * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#wa
   * status MS
   * status = #active
-* location[Zimmer]
+* location[Zimmer] MS
 * location[Zimmer] ^short = "Zimmer"
 * location[Zimmer] ^definition = "Von Patient oder Patientin während des Kontaktes belegtes Zimmer auf einer Station."
   * location 1.. 
     //* identifier 1.. MS
     //* display 1.. MS
-  * physicalType 1..1 //MS
+  * physicalType 1..1 MS
+    * coding MS
+      * system MS
+      * code MS
   * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#ro
   * status MS
   * status = #active
-* location[Bett]
+* location[Bett] MS
 * location[Bett] ^short = "Bett"
 * location[Bett] ^definition = "Von Patient oder Patientin während des Kontaktes belegter Bettenstellplatz."
   * location 1.. //MS
     //* identifier 1.. MS
     //* display 1.. MS
-  * physicalType 1..1 //MS
+  * physicalType 1..1 MS
+    * coding MS
+      * system MS
+      * code MS
   * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#bd
   * status MS
   * status = #active
@@ -350,6 +390,7 @@ Description: "Kontakt zu einer Einrichtung, Abteilung oder Versorgungsstelle"
 * insert Translation(serviceProvider ^definition, de-DE, Leistungserbringer\, der für den Kontakt verantwortlich ist.)
 * insert Translation(serviceProvider ^definition, en-US, Service provider responsible for the encounter.)
 * partOf MS
+* partOf.reference MS
 * partOf ^short = "Teil von Kontakt"
 * insert Translation(partOf ^short, de-DE, Teil von Kontakt)
 * insert Translation(partOf ^short, en-US, Part of encounter)

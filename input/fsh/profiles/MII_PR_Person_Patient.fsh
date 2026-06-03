@@ -11,7 +11,7 @@ Description: "Dieses Profil beschreibt eine Patient*in in der Medizininformatik-
 * insert PR_CS_VS_Version
 * insert Publisher
 * insert LicenseCodeableCCBY40
-* ^date = "2024-12-04"
+* ^date = "2026-06-03"
 * obeys mii-pat-1
 * id MS
 * meta MS
@@ -35,12 +35,18 @@ Description: "Dieses Profil beschreibt eine Patient*in in der Medizininformatik-
 * identifier[versichertenId] only IdentifierKvid10
 * identifier[versichertenId] ^patternIdentifier.type = $identifier-type-de-basis#KVZ10
 * identifier[versichertenId].type 1.. MS
+* identifier[versichertenId].type.coding MS
+* identifier[versichertenId].type.coding.system MS
+* identifier[versichertenId].type.coding.code MS
 * identifier[versichertenId].system MS
 * identifier[versichertenId].value MS
 * identifier[versichertenId].assigner 1.. MS
 * identifier[versichertenId].assigner.identifier 1.. MS
 * identifier[versichertenId].assigner.identifier only IdentifierIknr
 * identifier[versichertenId].assigner.identifier.type MS
+* identifier[versichertenId].assigner.identifier.type.coding MS
+* identifier[versichertenId].assigner.identifier.type.coding.system MS
+* identifier[versichertenId].assigner.identifier.type.coding.code MS
 * identifier[versichertenId].assigner.identifier.system MS
 * identifier[versichertenId].assigner.identifier.value MS
 * identifier[versichertenId] ^short = "Krankenversichertennummer"
@@ -67,12 +73,19 @@ Description: "Dieses Profil beschreibt eine Patient*in in der Medizininformatik-
 * identifier[pid] only IdentifierPid
 * identifier[pid] ^patternIdentifier.type = $v2-0203#MR
 * identifier[pid].type 1.. MS
+* identifier[pid].type.coding MS
+* identifier[pid].type.coding.system MS
+* identifier[pid].type.coding.code MS
 * identifier[pid].system MS
 * identifier[pid].value MS
 //* identifier[pid].assigner only $MII-Reference
 * identifier[pid].assigner MS
+* identifier[pid].assigner.identifier MS
 * identifier[pid].assigner.identifier.type = $v2-0203#XX
 * identifier[pid].assigner.identifier.type MS
+* identifier[pid].assigner.identifier.type.coding MS
+* identifier[pid].assigner.identifier.type.coding.system MS
+* identifier[pid].assigner.identifier.type.coding.code MS
 * identifier[pid].assigner.identifier.system obeys mii-pat-2
 * identifier[pid] ^short = "Patientenidentifikation"
 * identifier[pid] ^definition = "Patientenidentifikator innerhalb einer Organisation"
@@ -153,6 +166,10 @@ Description: "Dieses Profil beschreibt eine Patient*in in der Medizininformatik-
 * insert Translation(gender.extension[other-amtlich] ^short, en-US, Extension administrative gender)
 * insert Translation(gender.extension[other-amtlich] ^definition, de-DE, Extension zur genaueren Differenzierung des administrativen Geschlechts)
 * insert Translation(gender.extension[other-amtlich] ^definition, en-US, Extension for detailed differentiation of administrative gender)
+* gender.extension[other-amtlich].url MS
+* gender.extension[other-amtlich].valueCoding MS
+* gender.extension[other-amtlich].valueCoding.system MS
+* gender.extension[other-amtlich].valueCoding.code MS
 * birthDate MS
 * birthDate ^short = "Geburtsdatum"
 * birthDate ^definition = "Das Geburtsdatum der Patientin oder des Patienten"
@@ -168,6 +185,8 @@ Description: "Dieses Profil beschreibt eine Patient*in in der Medizininformatik-
 * insert Translation(deceased[x] ^short, en-US, Deceased)
 * insert Translation(deceased[x] ^definition, de-DE, Gibt an\, ob die Person verstorben ist oder nicht)
 * insert Translation(deceased[x] ^definition, en-US, Indicates if the individual is deceased or not)
+* deceasedBoolean MS
+* deceasedDateTime MS
 * address MS
 * address ^short = "Adresse"
 * address ^definition = "Eine Adresse der Patientin oder des Patienten"
@@ -192,6 +211,10 @@ Description: "Dieses Profil beschreibt eine Patient*in in der Medizininformatik-
 * address[Strassenanschrift].line.extension[Postfach] 0..0 MS
 * address[Strassenanschrift].city 1.. MS
 * address[Strassenanschrift].city.extension contains ExtensionDestatisAgs named gemeindeschluessel 0..1 MS
+* address[Strassenanschrift].city.extension[gemeindeschluessel].url MS
+* address[Strassenanschrift].city.extension[gemeindeschluessel].valueCoding MS
+* address[Strassenanschrift].city.extension[gemeindeschluessel].valueCoding.system MS
+* address[Strassenanschrift].city.extension[gemeindeschluessel].valueCoding.code MS
 * address[Strassenanschrift].postalCode 1.. MS
 * address[Strassenanschrift].country 1.. MS
 * address[Strassenanschrift] obeys pat-cnt-2or3-char
@@ -212,6 +235,10 @@ Description: "Dieses Profil beschreibt eine Patient*in in der Medizininformatik-
 * address[Postfach].line.extension[Postfach] MS
 * address[Postfach].city 1.. MS
 * address[Postfach].city.extension contains ExtensionDestatisAgs named gemeindeschluessel 0..1 MS
+* address[Postfach].city.extension[gemeindeschluessel].url MS
+* address[Postfach].city.extension[gemeindeschluessel].valueCoding MS
+* address[Postfach].city.extension[gemeindeschluessel].valueCoding.system MS
+* address[Postfach].city.extension[gemeindeschluessel].valueCoding.code MS
 * address[Postfach].postalCode 1.. MS
 * address[Postfach].country 1.. MS
 * address[Postfach] obeys pat-cnt-2or3-char

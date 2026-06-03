@@ -11,6 +11,7 @@ This page documents the changes and updates across versions of the MII Implement
 - **Added:** A list of conformance statements is available via the [List of Conformance Statements](conformance.html#list-of-conformance-statements)
 - **Added:** CapabilityStatements now document example FHIR search queries for supported SearchParameters
 - **Added:** Logical model pages now include mapping tables to the corresponding FHIR target structures
+- **Changed:** Must Support flags are applied consistently to relevant sub-elements across profiles, and the [Must Support](must-support.html) documentation now clarifies how complex elements and their marked sub-elements define concrete Server and Client support expectations.
 
 #### Terminology Updates
 
