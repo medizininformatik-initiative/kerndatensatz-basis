@@ -15,14 +15,24 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
 {
   "resourceType" : "CapabilityStatement",
   "id" : "mii-cps-fall-capabilitystatement",
+  "meta" : {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-license",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/spdx-license",
+          "code" : "CC-BY-4.0",
+          "display" : "Creative Commons Attribution 4.0 International"
+        }]
+      }
+    }]
+  },
   "extension" : [{
-    "url" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/StructureDefinition/mii-ex-meta-license-codeable",
-    "valueCodeableConcept" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/spdx-license",
-        "code" : "CC-BY-4.0",
-        "display" : "Creative Commons Attribution 4.0 International"
-      }]
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm",
+    "valueCoding" : {
+      "system" : "http://hl7.org/fhir/version-algorithm",
+      "code" : "semver",
+      "display" : "SemVer"
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/CapabilityStatement/metadata",
@@ -31,7 +41,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
   "title" : "MII CPS Fall CapabilityStatement",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-10-22",
+  "date" : "2026-05-11",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [{
@@ -73,7 +83,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
       }],
       "type" : "Encounter",
       "profile" : "http://hl7.org/fhir/StructureDefinition/Encounter",
-      "supportedProfile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2025.0.1|2026.0.0"],
+      "supportedProfile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"],
       "_supportedProfile" : [{
         "extension" : [{
           "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
@@ -99,9 +109,28 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
           "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
           "valueCode" : "SHALL"
         }],
+        "name" : "_count",
+        "type" : "special",
+        "documentation" : "**Example:**\n`GET [base]/Encounter?_count=10`\n\n**Notes:**\nFor further details see FHIR core specification, section [Page Count](https://www.hl7.org/fhir/R4/search.html#count)."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "_summary",
+        "type" : "special",
+        "documentation" : "**Example:**\n`GET [base]/Encounter?_summary=count`\n\n**Notes:**\nFor further details see FHIR core specification, section [Summary](https://www.hl7.org/fhir/R4/search.html#summary)."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
         "name" : "_id",
         "definition" : "http://hl7.org/fhir/SearchParameter/Resource-id",
-        "type" : "token"
+        "type" : "token",
+        "documentation" : "**Example:**\n`GET [base]/Encounter?_id=mii-exa-fall-kontakt-gesundheitseinrichtung-1`\n\n**Notes:**\nSearches on `Encounter.id`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."
       },
       {
         "extension" : [{
@@ -110,7 +139,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         }],
         "name" : "_lastUpdated",
         "definition" : "http://hl7.org/fhir/SearchParameter/Resource-lastUpdated",
-        "type" : "date"
+        "type" : "date",
+        "documentation" : "**Example:**\n`GET [base]/Encounter?_lastUpdated=ge2026-05-05`\n\n**Notes:**\nSearches on `Encounter.meta.lastUpdated`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#date)."
       },
       {
         "extension" : [{
@@ -119,7 +149,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         }],
         "name" : "_profile",
         "definition" : "http://hl7.org/fhir/SearchParameter/Resource-profile",
-        "type" : "uri"
+        "type" : "uri",
+        "documentation" : "**Example:**\n`GET [base]/Encounter?_profile=https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung`\n\n**Notes:**\nSearches on `Encounter.meta.profile`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#uri)."
       },
       {
         "extension" : [{
@@ -128,7 +159,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         }],
         "name" : "identifier",
         "definition" : "http://hl7.org/fhir/SearchParameter/clinical-identifier",
-        "type" : "token"
+        "type" : "token",
+        "documentation" : "**Example:**\n`GET [base]/Encounter?identifier=https://www.charite.de/fhir/sid/aufnahmenummer|E0`\n`GET [base]/Encounter?identifier=E0`\n\n**Notes:**\nSearches on `Encounter.identifier`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."
       },
       {
         "extension" : [{
@@ -137,7 +169,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         }],
         "name" : "status",
         "definition" : "http://hl7.org/fhir/SearchParameter/Encounter-status",
-        "type" : "token"
+        "type" : "token",
+        "documentation" : "**Example:**\n`GET [base]/Encounter?status=finished`\n\n**Notes:**\nSearches on `Encounter.status`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."
       },
       {
         "extension" : [{
@@ -146,7 +179,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         }],
         "name" : "class",
         "definition" : "http://hl7.org/fhir/SearchParameter/Encounter-class",
-        "type" : "token"
+        "type" : "token",
+        "documentation" : "**Example:**\n`GET [base]/Encounter?class=http://terminology.hl7.org/CodeSystem/v3-ActCode|IMP`\n`GET [base]/Encounter?class=IMP`\n\n**Notes:**\nSearches on `Encounter.class`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."
       },
       {
         "extension" : [{
@@ -155,7 +189,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         }],
         "name" : "type",
         "definition" : "http://hl7.org/fhir/SearchParameter/clinical-type",
-        "type" : "token"
+        "type" : "token",
+        "documentation" : "**Example:**\n`GET [base]/Encounter?type=http://fhir.de/CodeSystem/Kontaktebene|einrichtungskontakt`\n`GET [base]/Encounter?type=einrichtungskontakt`\n\n**Notes:**\nSearches on `Encounter.type`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."
       },
       {
         "extension" : [{
@@ -173,7 +208,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         }],
         "name" : "subject",
         "definition" : "http://hl7.org/fhir/SearchParameter/Encounter-subject",
-        "type" : "reference"
+        "type" : "reference",
+        "documentation" : "**Example:**\n`GET [base]/Encounter?subject=Patient/DHPYT7SPMZBGZE46`\n`GET [base]/Encounter?subject=DHPYT7SPMZBGZE46`\n\n**Notes:**\nSearches on `Encounter.subject`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#reference)."
       },
       {
         "extension" : [{
@@ -182,7 +218,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         }],
         "name" : "date",
         "definition" : "http://hl7.org/fhir/SearchParameter/clinical-date",
-        "type" : "date"
+        "type" : "date",
+        "documentation" : "**Example:**\n`GET [base]/Encounter?date=2020-01-08`\n\n**Notes:**\nSearches on `Encounter.period`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#date)."
       },
       {
         "extension" : [{
@@ -191,7 +228,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         }],
         "name" : "diagnosis",
         "definition" : "http://hl7.org/fhir/SearchParameter/Encounter-diagnosis",
-        "type" : "reference"
+        "type" : "reference",
+        "documentation" : "**Example:**\n`GET [base]/Encounter?diagnosis=Condition/DHPYT7SPS2RNMVLB`\n`GET [base]/Encounter?diagnosis=DHPYT7SPS2RNMVLB`\n\n**Notes:**\nSearches on `Encounter.diagnosis.condition`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#reference)."
       },
       {
         "extension" : [{
@@ -200,7 +238,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         }],
         "name" : "location",
         "definition" : "http://hl7.org/fhir/SearchParameter/Encounter-location",
-        "type" : "reference"
+        "type" : "reference",
+        "documentation" : "**Example:**\n`GET [base]/Encounter?location:identifier=https://www.charite.de/fhir/sid/Zimmernummern|RHC-06-210b`\n\n**Notes:**\nSearches on `Encounter.location.location.identifier`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#reference)."
       },
       {
         "extension" : [{
@@ -209,7 +248,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         }],
         "name" : "service-provider",
         "definition" : "http://hl7.org/fhir/SearchParameter/Encounter-service-provider",
-        "type" : "reference"
+        "type" : "reference",
+        "documentation" : "**Example:**\n`GET [base]/Encounter?service-provider=Organization/DHPYT7SPMZBGZE5W`\n`GET [base]/Encounter?service-provider=DHPYT7SPMZBGZE5W`\n\n**Notes:**\nSearches on `Encounter.serviceProvider`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#reference)."
       },
       {
         "extension" : [{
@@ -218,7 +258,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         }],
         "name" : "part-of",
         "definition" : "http://hl7.org/fhir/SearchParameter/Encounter-part-of",
-        "type" : "reference"
+        "type" : "reference",
+        "documentation" : "**Example:**\n`GET [base]/Encounter?part-of=Encounter/DHPYT7SPS2RNMVLD`\n`GET [base]/Encounter?part-of=DHPYT7SPS2RNMVLD`\n\n**Notes:**\nSearches on `Encounter.partOf`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#reference)."
       },
       {
         "extension" : [{
@@ -227,7 +268,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         }],
         "name" : "service-type",
         "definition" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-encounter-servicetype",
-        "type" : "token"
+        "type" : "token",
+        "documentation" : "**Example:**\n`GET [base]/Encounter?service-type=http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel|1500`\n`GET [base]/Encounter?service-type=1500`\n\n**Notes:**\nSearches on `Encounter.serviceType`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."
       },
       {
         "extension" : [{
@@ -236,7 +278,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         }],
         "name" : "diagnosis-use",
         "definition" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-encounter-diagnosis-use",
-        "type" : "token"
+        "type" : "token",
+        "documentation" : "**Example:**\n`GET [base]/Encounter?diagnosis-use=http://terminology.hl7.org/CodeSystem/diagnosis-role|AD`\n`GET [base]/Encounter?diagnosis-use=AD`\n\n**Notes:**\nSearches on `Encounter.diagnosis.use`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."
       },
       {
         "extension" : [{
@@ -244,8 +287,9 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
           "valueCode" : "SHALL"
         }],
         "name" : "hospitalization-admitsource",
-        "definition" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/SearchParameter/Encounter-hospitalization-admitSource",
-        "type" : "token"
+        "definition" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-encounter-hospitalization-admitsource",
+        "type" : "token",
+        "documentation" : "**Example:**\n`GET [base]/Encounter?hospitalization-admitsource=http://fhir.de/CodeSystem/dgkev/Aufnahmeanlass|N`\n`GET [base]/Encounter?hospitalization-admitsource=N`\n\n**Notes:**\nSearches on `Encounter.hospitalization.admitSource`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."
       },
       {
         "extension" : [{
@@ -254,7 +298,18 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         }],
         "name" : "location-physical-type",
         "definition" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-encounter-location-physical-type",
-        "type" : "token"
+        "type" : "token",
+        "documentation" : "**Example:**\n`GET [base]/Encounter?location-physical-type=http://terminology.hl7.org/CodeSystem/location-physical-type|ro`\n`GET [base]/Encounter?location-physical-type=ro`\n\n**Notes:**\nSearches on `Encounter.location.physicalType`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHOULD"
+        }],
+        "name" : "account",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Encounter-account",
+        "type" : "reference",
+        "documentation" : "**Example:**\n`GET [base]/Encounter?account:identifier=https://www.charite.de/fhir/sid/fallnummer|F-2020-000123`\n\n**Notes:**\nSearches on `Encounter.account`. Use the `:identifier` modifier to search by Fallnummer stored as a logical reference in `Encounter.account.identifier`, without requiring the Account resource to be present. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#reference)."
       }]
     }]
   }]

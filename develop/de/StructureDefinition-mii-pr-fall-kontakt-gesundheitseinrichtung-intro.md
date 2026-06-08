@@ -261,6 +261,20 @@ Das Element `Encounter.diagnosis` stellt die Beziehung zwischen Kontakten und Di
 - Der physische Typ SOLL das MII-spezifische ValueSet für location physical types verwenden.
 - Angaben zum Kontaktort sind primär relevant für Versorgungsstellenkontakte.
 
+**Slicing von Encounter.location**
+
+`Encounter.location` verwendet ein **ungeordnetes, offenes** Slicing, das durch `physicalType` und `status` diskriminiert wird. Das Profil definiert drei benannte Slices:
+
+| Slice | physicalType | status | Kardinalität |
+|---|---|---|---|
+| `Zimmer` | `ro` | `active` | 0..1 |
+| `Bett` | `bd` | `active` | 0..1 |
+| `Station` | `wa` | `active` | 0..1 |
+
+Jeder Slice schränkt `status = active` mit Kardinalität 0..1 ein. Eine konforme Implementierung DARF NICHT mehr als ein aktives Zimmer, ein aktives Bett oder eine aktive Station gleichzeitig innerhalb eines einzelnen Encounters befüllen.
+
+Da das Slicing **offen** ist, KÖNNEN Implementierungen zusätzliche `Encounter.location`-Einträge über diese drei benannten Slices hinaus aufnehmen. Um die Bewegungshistorie während eines Kontakts zu erfassen (z.B. frühere Stationen, Zimmer oder Betten, durch die der Patient verlegt wurde), SOLLTEN Implementierungen für diese Einträge `status = completed` verwenden. Damit wird die Verlaufshistorie klar von den Slices für aktive Orte getrennt, ohne mit diesen zu kollidieren.
+
 #### Geplante Kontakte
 
 Geplante Kontakte werden mit `Encounter.status = planned` abgebildet und SOLLTEN zusätzlich angeben:
@@ -314,6 +328,11 @@ Früher wurde empfohlen, dass die Aufnahmenummer in allen Encounter-Ressourcen u
   <li>Einzelne Benutzer keine Sichtberechtigung auf Abrechnungsdaten haben</li>
   <li>Benutzer im Versorgungskontext dennoch Encounter anhand der assoziierten Fallnummer suchen möchten</li>
 </ul>
+
+<p>Server <strong>SOLLTEN</strong> den Modifier <code>account:identifier</code> unterstützen, damit Clients alle zu einem Abrechnungsfall gehörenden Encounter anhand der Fallnummer abrufen können. Dieser Modifier ermöglicht eine tokenbasierte Suche auf der logischen Referenz in <code>Encounter.account.identifier</code>, ohne dass die Account-Ressource selbst vorhanden oder zugänglich sein muss.</p>
+
+<p><strong>Beispielanfrage</strong> zur Suche aller Encounter einer bestimmten Fallnummer:</p>
+<pre><code>GET [base]/Encounter?account:identifier=https://www.charite.de/fhir/sid/fallnummer|F-2020-000123</code></pre>
 </div>
 
 {% include link-list.md %}

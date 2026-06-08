@@ -10,13 +10,13 @@
 
 Profile: [MII PR Fall Kontakt mit einer Gesundheitseinrichtung](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.md) version: 2026.0.0
 
-Security Label: test health data (Details: ActReason code HTEST = 'test health data')
+Security Label: [test health data (Details: v3 Code System ActReason code HTEST = 'test health data')](http://hl7.org/fhir/R4/v3/ActReason/cs.html)
 
 **identifier**: Fallnummer/F_20190926_001
 
 **status**: Finished
 
-**class**: [ActCode: AMB](http://terminology.hl7.org/7.1.0/CodeSystem-v3-ActCode.html#v3-ActCode-AMB) (ambulatory)
+**class**: [v3 Code System ActCode: AMB](http://hl7.org/fhir/R4/v3/ActCode/cs.html#v3-ActCode-AMB) (ambulatory)
 
 **subject**: [Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Krankenaktennummer (use: usual, ))](Patient-mii-exa-person-patient-1.md)
 

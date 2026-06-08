@@ -2,9 +2,20 @@
 
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="mii-lm-person"/>
+  <meta>
+    <extension url="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-license">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://hl7.org/fhir/spdx-license"/>
+          <code value="CC-BY-4.0"/>
+          <display value="Creative Commons Attribution 4.0 International"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+  </meta>
   <language value="en"/>
   <text>
-    <status value="extensions"/><div xml:lang="en" lang="en"><hr/><p><b>English</b></p><hr/><p class="res-header-id"><b>Generated Narrative: StructureDefinition mii-lm-person</b></p><a name="mii-lm-person"> </a><a name="hcmii-lm-person"> </a><table border="0" cellpadding="0" cellspacing="0" style="border: 0px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;"><tr style="border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top"><th style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px" class="hierarchy"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="The logical name of the element">Name</a></th><th style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px" class="hierarchy"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Information about the use of the element">Flags</a></th><th style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px" class="hierarchy"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Minimum and Maximum # of times the element can appear in the instance">Card.</a></th><th style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px; width: 100px" class="hierarchy"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Reference to the type of the element">Type</a></th><th style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px" class="hierarchy"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Additional information about the element">Description &amp; Constraints</a><span style="float: right"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/></a></span></th></tr><tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="." style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <a href="StructureDefinition-mii-lm-person-definitions.html#Person" title="Logische Repräsentation des Basismoduls Person">Person</a><a name="Person"> </a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">*</span></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Element">Element</a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">-- Heading --<br/><br/>Elements defined in Ancestors:<a href="http://hl7.org/fhir/R4/datatypes.html#Element" title="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.">@id</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#Element" title="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.">extension</a></td></tr>
+    <status value="extensions"/><div xml:lang="en" lang="en"><hr/><p><b>English</b></p><hr/><p class="res-header-id"><b>Generated Narrative: StructureDefinition mii-lm-person</b></p><a name="mii-lm-person"> </a><a name="hcmii-lm-person"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/></div><table border="0" cellpadding="0" cellspacing="0" style="border: 0px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;"><tr style="border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top"><th style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px" class="hierarchy"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="The logical name of the element">Name</a></th><th style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px" class="hierarchy"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Information about the use of the element">Flags</a></th><th style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px" class="hierarchy"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Minimum and Maximum # of times the element can appear in the instance">Card.</a></th><th style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px; width: 100px" class="hierarchy"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Reference to the type of the element">Type</a></th><th style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px" class="hierarchy"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Additional information about the element">Description &amp; Constraints</a><span style="float: right"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/></a></span></th></tr><tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="." style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <a href="StructureDefinition-mii-lm-person-definitions.html#Person" title="Logische Repräsentation des Basismoduls Person">Person</a><a name="Person"> </a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">*</span></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Element">Element</a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">-- Heading --<br/><br/>Elements defined in Ancestors:<a href="http://hl7.org/fhir/R4/datatypes.html#Element" title="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.">@id</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#Element" title="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.">extension</a></td></tr>
 <tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck11.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <a href="StructureDefinition-mii-lm-person-definitions.html#Person.Name" title="Vollständiger Name einer Person.">Name</a><a name="Person.Name"> </a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#BackboneElement">BackboneElement</a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Full name of a person<br/></td></tr>
 <tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="." style="background-color: white; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <a href="StructureDefinition-mii-lm-person-definitions.html#Person.Name.Vorname" title="Vollständiger Vorname einer Person.">Vorname</a><a name="Person.Name.Vorname"> </a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Full given name of a person<br/></td></tr>
 <tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <a href="StructureDefinition-mii-lm-person-definitions.html#Person.Name.Nachname" title="Nachname einer Person ohne Vor- und Zusätze. Dient z.B. der alphabetischen Einordnung des Namens.">Nachname</a><a name="Person.Name.Nachname"> </a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Last name of a person without prefixes and suffixes. Serves e.g. the alphabetical classification of the name.</td></tr>
@@ -55,21 +66,19 @@
 <tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck000.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="." style="background-color: white; background-color: inherit" title="Data Type" class="hierarchy"/> <a href="StructureDefinition-mii-lm-person-definitions.html#Person.PatientInPseudonym.Pseudonym" title="Neu generierte Identifikation der PatientIn mit Bezug zum Original-Identifikator in einer Treuhandstelle.">Pseudonym</a><a name="Person.PatientInPseudonym.Pseudonym"> </a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Identifier">Identifier</a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Newly generated identification of the patient with reference to the original identifier in a trust center.<br/></td></tr>
 <tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
-  <extension url="https://www.medizininformatik-initiative.de/fhir/modul-meta/StructureDefinition/mii-ex-meta-license-codeable">
-    <valueCodeableConcept>
-      <coding>
-        <system value="http://hl7.org/fhir/spdx-license"/>
-        <code value="CC-BY-4.0"/>
-        <display value="Creative Commons Attribution 4.0 International"/>
-      </coding>
-    </valueCodeableConcept>
+  <extension url="http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm">
+    <valueCoding>
+      <system value="http://hl7.org/fhir/version-algorithm"/>
+      <code value="semver"/>
+      <display value="SemVer"/>
+    </valueCoding>
   </extension>
   <url value="https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/LogicalModel/Person"/>
   <version value="2026.0.0"/>
   <name value="MII_LM_Person"/>
   <title value="MII LM Person"/>
   <status value="active"/>
-  <date value="2024-12-04"/>
+  <date value="2026-05-12"/>
   <publisher value="Medical Informatics Initiative (MII)"/>
   <contact>
     <name value="Medical Informatics Initiative (MII)"/>
@@ -88,9 +97,9 @@
   </jurisdiction>
   <fhirVersion value="4.0.1"/>
   <mapping>
-    <identity value="rim"/>
-    <uri value="http://hl7.org/v3"/>
-    <name value="RIM Mapping"/>
+    <identity value="FHIR"/>
+    <uri value="http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"/>
+    <name value="Person LogicalModel FHIR Mapping"/>
   </mapping>
   <kind value="logical"/>
   <abstract value="false"/>
@@ -222,6 +231,10 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.name"/>
+      </mapping>
     </element>
     <element id="Person.Name.id">
       <path value="Person.Name.id"/>
@@ -353,6 +366,10 @@
       <type>
         <code value="string"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.name.given"/>
+      </mapping>
     </element>
     <element id="Person.Name.Nachname">
       <path value="Person.Name.Nachname"/>
@@ -368,6 +385,10 @@
       <type>
         <code value="string"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.name.family.extension.nachname"/>
+      </mapping>
     </element>
     <element id="Person.Name.Familienname">
       <path value="Person.Name.Familienname"/>
@@ -383,6 +404,10 @@
       <type>
         <code value="string"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.name.family"/>
+      </mapping>
     </element>
     <element id="Person.Name.Vorsatzwort">
       <path value="Person.Name.Vorsatzwort"/>
@@ -398,6 +423,10 @@
       <type>
         <code value="string"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.name.family.extension.vorsatzwort"/>
+      </mapping>
     </element>
     <element id="Person.Name.Namenszusatz">
       <path value="Person.Name.Namenszusatz"/>
@@ -413,6 +442,10 @@
       <type>
         <code value="string"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.name.family.extension.namenszusatz"/>
+      </mapping>
     </element>
     <element id="Person.Name.Praefix">
       <path value="Person.Name.Praefix"/>
@@ -436,6 +469,10 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.name.prefix"/>
+      </mapping>
     </element>
     <element id="Person.Name.Praefix.id">
       <path value="Person.Name.Praefix.id"/>
@@ -533,6 +570,10 @@
       <type>
         <code value="code"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.name.prefix.extension-prefix-qualifier"/>
+      </mapping>
     </element>
     <element id="Person.Name.Geburtsname">
       <path value="Person.Name.Geburtsname"/>
@@ -548,6 +589,10 @@
       <type>
         <code value="string"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.name.use"/>
+      </mapping>
     </element>
     <element id="Person.Demographie">
       <path value="Person.Demographie"/>
@@ -702,6 +747,10 @@
       <type>
         <code value="code"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.gender"/>
+      </mapping>
     </element>
     <element id="Person.Demographie.Geburtsdatum">
       <path value="Person.Demographie.Geburtsdatum"/>
@@ -717,6 +766,10 @@
       <type>
         <code value="date"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.birthDate"/>
+      </mapping>
     </element>
     <element id="Person.Demographie.Adresse">
       <path value="Person.Demographie.Adresse"/>
@@ -740,6 +793,10 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.address"/>
+      </mapping>
     </element>
     <element id="Person.Demographie.Adresse.id">
       <path value="Person.Demographie.Adresse.id"/>
@@ -1010,6 +1067,10 @@
       <type>
         <code value="string"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.address.country"/>
+      </mapping>
     </element>
     <element id="Person.Demographie.Adresse.Strassenanschrift.PLZ">
       <path value="Person.Demographie.Adresse.Strassenanschrift.PLZ"/>
@@ -1025,6 +1086,10 @@
       <type>
         <code value="string"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.address.postalCode"/>
+      </mapping>
     </element>
     <element id="Person.Demographie.Adresse.Strassenanschrift.Wohnort">
       <path value="Person.Demographie.Adresse.Strassenanschrift.Wohnort"/>
@@ -1040,6 +1105,10 @@
       <type>
         <code value="string"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.address.city + Patient.address.extension.Stadtteil"/>
+      </mapping>
     </element>
     <element id="Person.Demographie.Adresse.Strassenanschrift.Strasse">
       <path value="Person.Demographie.Adresse.Strassenanschrift.Strasse"/>
@@ -1055,6 +1124,10 @@
       <type>
         <code value="string"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.address.line"/>
+      </mapping>
     </element>
     <element id="Person.Demographie.Adresse.Postfach">
       <path value="Person.Demographie.Adresse.Postfach"/>
@@ -1209,6 +1282,10 @@
       <type>
         <code value="string"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.address.country"/>
+      </mapping>
     </element>
     <element id="Person.Demographie.Adresse.Postfach.PLZ">
       <path value="Person.Demographie.Adresse.Postfach.PLZ"/>
@@ -1224,6 +1301,10 @@
       <type>
         <code value="string"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.address.postalCode"/>
+      </mapping>
     </element>
     <element id="Person.Demographie.Adresse.Postfach.Wohnort">
       <path value="Person.Demographie.Adresse.Postfach.Wohnort"/>
@@ -1239,6 +1320,10 @@
       <type>
         <code value="string"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.address.city + Patient.address.extension.Stadtteil"/>
+      </mapping>
     </element>
     <element id="Person.Demographie.Adresse.Postfach.Strasse">
       <path value="Person.Demographie.Adresse.Postfach.Strasse"/>
@@ -1254,6 +1339,10 @@
       <type>
         <code value="string"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.address.line"/>
+      </mapping>
     </element>
     <element id="Person.Demographie.Vitalstatus">
       <path value="Person.Demographie.Vitalstatus"/>
@@ -1408,6 +1497,10 @@
       <type>
         <code value="boolean"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.deceased[x]"/>
+      </mapping>
     </element>
     <element id="Person.Demographie.Vitalstatus.Todeszeitpunkt">
       <path value="Person.Demographie.Vitalstatus.Todeszeitpunkt"/>
@@ -1423,6 +1516,10 @@
       <type>
         <code value="dateTime"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.deceased[x]"/>
+      </mapping>
     </element>
     <element id="Person.Demographie.Vitalstatus.Informationsquelle">
       <path value="Person.Demographie.Vitalstatus.Informationsquelle"/>
@@ -1761,6 +1858,10 @@
       <type>
         <code value="Identifier"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.identifier:pid"/>
+      </mapping>
     </element>
     <element id="Person.PatientIn.PatientenIdentifikator.PatientenIdentifikatorKontext">
       <path value="Person.PatientIn.PatientenIdentifikator.PatientenIdentifikatorKontext"/>
@@ -1799,6 +1900,10 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.identifier:default"/>
+      </mapping>
     </element>
     <element id="Person.PatientIn.Versicherung.id">
       <path value="Person.PatientIn.Versicherung.id"/>
@@ -2100,6 +2205,10 @@
       <type>
         <code value="string"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.identifier:versichertenId_GKV"/>
+      </mapping>
     </element>
     <element id="Person.PatientIn.Versicherung.Versichertennummer.VersichertennummerPKV">
       <path value="Person.PatientIn.Versicherung.Versichertennummer.VersichertennummerPKV"/>
@@ -2115,6 +2224,10 @@
       <type>
         <code value="string"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.identifier:versicherungsnummer_pkv"/>
+      </mapping>
     </element>
     <element id="Person.ProbandIn">
       <path value="Person.ProbandIn"/>
@@ -2499,6 +2612,10 @@
       <type>
         <code value="Identifier"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.identifier:PseudonymisierterIdentifier"/>
+      </mapping>
     </element>
   </snapshot>
   <differential>
@@ -2516,6 +2633,10 @@
       <type>
         <code value="BackboneElement"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.name"/>
+      </mapping>
     </element>
     <element id="Person.Name.Vorname">
       <path value="Person.Name.Vorname"/>
@@ -2526,6 +2647,10 @@
       <type>
         <code value="string"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.name.given"/>
+      </mapping>
     </element>
     <element id="Person.Name.Nachname">
       <path value="Person.Name.Nachname"/>
@@ -2536,6 +2661,10 @@
       <type>
         <code value="string"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.name.family.extension.nachname"/>
+      </mapping>
     </element>
     <element id="Person.Name.Familienname">
       <path value="Person.Name.Familienname"/>
@@ -2546,6 +2675,10 @@
       <type>
         <code value="string"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.name.family"/>
+      </mapping>
     </element>
     <element id="Person.Name.Vorsatzwort">
       <path value="Person.Name.Vorsatzwort"/>
@@ -2556,6 +2689,10 @@
       <type>
         <code value="string"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.name.family.extension.vorsatzwort"/>
+      </mapping>
     </element>
     <element id="Person.Name.Namenszusatz">
       <path value="Person.Name.Namenszusatz"/>
@@ -2566,6 +2703,10 @@
       <type>
         <code value="string"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.name.family.extension.namenszusatz"/>
+      </mapping>
     </element>
     <element id="Person.Name.Praefix">
       <path value="Person.Name.Praefix"/>
@@ -2576,6 +2717,10 @@
       <type>
         <code value="string"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.name.prefix"/>
+      </mapping>
     </element>
     <element id="Person.Name.Praefix.ArtdesPraefixes">
       <path value="Person.Name.Praefix.ArtdesPraefixes"/>
@@ -2586,6 +2731,10 @@
       <type>
         <code value="code"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.name.prefix.extension-prefix-qualifier"/>
+      </mapping>
     </element>
     <element id="Person.Name.Geburtsname">
       <path value="Person.Name.Geburtsname"/>
@@ -2596,6 +2745,10 @@
       <type>
         <code value="string"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.name.use"/>
+      </mapping>
     </element>
     <element id="Person.Demographie">
       <path value="Person.Demographie"/>
@@ -2616,6 +2769,10 @@
       <type>
         <code value="code"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.gender"/>
+      </mapping>
     </element>
     <element id="Person.Demographie.Geburtsdatum">
       <path value="Person.Demographie.Geburtsdatum"/>
@@ -2626,6 +2783,10 @@
       <type>
         <code value="date"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.birthDate"/>
+      </mapping>
     </element>
     <element id="Person.Demographie.Adresse">
       <path value="Person.Demographie.Adresse"/>
@@ -2636,6 +2797,10 @@
       <type>
         <code value="BackboneElement"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.address"/>
+      </mapping>
     </element>
     <element id="Person.Demographie.Adresse.Strassenanschrift">
       <path value="Person.Demographie.Adresse.Strassenanschrift"/>
@@ -2656,6 +2821,10 @@
       <type>
         <code value="string"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.address.country"/>
+      </mapping>
     </element>
     <element id="Person.Demographie.Adresse.Strassenanschrift.PLZ">
       <path value="Person.Demographie.Adresse.Strassenanschrift.PLZ"/>
@@ -2666,6 +2835,10 @@
       <type>
         <code value="string"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.address.postalCode"/>
+      </mapping>
     </element>
     <element id="Person.Demographie.Adresse.Strassenanschrift.Wohnort">
       <path value="Person.Demographie.Adresse.Strassenanschrift.Wohnort"/>
@@ -2676,6 +2849,10 @@
       <type>
         <code value="string"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.address.city + Patient.address.extension.Stadtteil"/>
+      </mapping>
     </element>
     <element id="Person.Demographie.Adresse.Strassenanschrift.Strasse">
       <path value="Person.Demographie.Adresse.Strassenanschrift.Strasse"/>
@@ -2686,6 +2863,10 @@
       <type>
         <code value="string"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.address.line"/>
+      </mapping>
     </element>
     <element id="Person.Demographie.Adresse.Postfach">
       <path value="Person.Demographie.Adresse.Postfach"/>
@@ -2706,6 +2887,10 @@
       <type>
         <code value="string"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.address.country"/>
+      </mapping>
     </element>
     <element id="Person.Demographie.Adresse.Postfach.PLZ">
       <path value="Person.Demographie.Adresse.Postfach.PLZ"/>
@@ -2716,6 +2901,10 @@
       <type>
         <code value="string"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.address.postalCode"/>
+      </mapping>
     </element>
     <element id="Person.Demographie.Adresse.Postfach.Wohnort">
       <path value="Person.Demographie.Adresse.Postfach.Wohnort"/>
@@ -2726,6 +2915,10 @@
       <type>
         <code value="string"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.address.city + Patient.address.extension.Stadtteil"/>
+      </mapping>
     </element>
     <element id="Person.Demographie.Adresse.Postfach.Strasse">
       <path value="Person.Demographie.Adresse.Postfach.Strasse"/>
@@ -2736,6 +2929,10 @@
       <type>
         <code value="string"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.address.line"/>
+      </mapping>
     </element>
     <element id="Person.Demographie.Vitalstatus">
       <path value="Person.Demographie.Vitalstatus"/>
@@ -2756,6 +2953,10 @@
       <type>
         <code value="boolean"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.deceased[x]"/>
+      </mapping>
     </element>
     <element id="Person.Demographie.Vitalstatus.Todeszeitpunkt">
       <path value="Person.Demographie.Vitalstatus.Todeszeitpunkt"/>
@@ -2766,6 +2967,10 @@
       <type>
         <code value="dateTime"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.deceased[x]"/>
+      </mapping>
     </element>
     <element id="Person.Demographie.Vitalstatus.Informationsquelle">
       <path value="Person.Demographie.Vitalstatus.Informationsquelle"/>
@@ -2826,6 +3031,10 @@
       <type>
         <code value="Identifier"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.identifier:pid"/>
+      </mapping>
     </element>
     <element id="Person.PatientIn.PatientenIdentifikator.PatientenIdentifikatorKontext">
       <path value="Person.PatientIn.PatientenIdentifikator.PatientenIdentifikatorKontext"/>
@@ -2846,6 +3055,10 @@
       <type>
         <code value="BackboneElement"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.identifier:default"/>
+      </mapping>
     </element>
     <element id="Person.PatientIn.Versicherung.InstitutionskennzeichenDerKrankenkasse">
       <path value="Person.PatientIn.Versicherung.InstitutionskennzeichenDerKrankenkasse"/>
@@ -2887,6 +3100,10 @@
       <type>
         <code value="string"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.identifier:versichertenId_GKV"/>
+      </mapping>
     </element>
     <element id="Person.PatientIn.Versicherung.Versichertennummer.VersichertennummerPKV">
       <path value="Person.PatientIn.Versicherung.Versichertennummer.VersichertennummerPKV"/>
@@ -2897,6 +3114,10 @@
       <type>
         <code value="string"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.identifier:versicherungsnummer_pkv"/>
+      </mapping>
     </element>
     <element id="Person.ProbandIn">
       <path value="Person.ProbandIn"/>
@@ -2988,6 +3209,10 @@
       <type>
         <code value="Identifier"/>
       </type>
+      <mapping>
+        <identity value="FHIR"/>
+        <map value="Patient.identifier:PseudonymisierterIdentifier"/>
+      </mapping>
     </element>
   </differential>
 </StructureDefinition>

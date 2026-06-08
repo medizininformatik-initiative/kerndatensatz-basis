@@ -7,9 +7,9 @@ Logische Repräsentation des Basismoduls Prozedur
 
 **Usages:**
 
-* This Logical Model is not used by any profiles in this Implementation Guide
+* This Logical Model is not used by any profiles in this Specification
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/mii-lm-prozedur)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/StructureDefinition-mii-lm-prozedur.json)
 
 ### Formale Ansichten des Profilinhalts
 
@@ -48,6 +48,24 @@ Mandatory: 0 element(1 nested mandatory element)
 
 Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-prozedur.csv), [Excel](../StructureDefinition-mii-lm-prozedur.xlsx) 
 
+### Notizen:
+
+### Mapping LogicalModel Prozedur -> FHIR
+
+| | |
+| :--- | :--- |
+| MII LM Prozedur | FHIR |
+| Prozedur.Dokumentationsdatum | Procedure.extension('http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum').value |
+| Prozedur.Durchfuehrungsabsicht | Procedure.extension('https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Durchfuehrungsabsicht').value |
+| Prozedur.Durchfuehrungsdatum | Procedure.performedDateTime |
+| Prozedur.Freitextbeschreibung | Procedure.code.text |
+| Prozedur.Koerperstelle | Procedure.bodySite |
+| Prozedur.OPSProzedurKodiert | Procedure.code.coding.where(system='http://fhir.de/CodeSystem/bfarm/ops') |
+| Prozedur.OPSProzedurKodiert.Seitenlokalisation | Procedure.code.coding.where(system='http://fhir.de/CodeSystem/bfarm/ops').extension('http://fhir.de/StructureDefinition/seitenlokalisation').value |
+| Prozedur.OPSProzedurKodiert.VollstaendigerProzedurencode | Procedure.code.coding.where(system='http://fhir.de/CodeSystem/bfarm/ops') |
+| Prozedur.SNOMEDProzedurKodiert | Procedure.code.coding.where(system='http://snomed.info/sct') |
+| Prozedur.SNOMEDProzedurKodiert.VollstaendigerProzedurencode | Procedure.code.coding.where(system='http://snomed.info/sct') |
+
 
 
 ## Resource Content
@@ -56,14 +74,24 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-proze
 {
   "resourceType" : "StructureDefinition",
   "id" : "mii-lm-prozedur",
+  "meta" : {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-license",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/spdx-license",
+          "code" : "CC-BY-4.0",
+          "display" : "Creative Commons Attribution 4.0 International"
+        }]
+      }
+    }]
+  },
   "extension" : [{
-    "url" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/StructureDefinition/mii-ex-meta-license-codeable",
-    "valueCodeableConcept" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/spdx-license",
-        "code" : "CC-BY-4.0",
-        "display" : "Creative Commons Attribution 4.0 International"
-      }]
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm",
+    "valueCoding" : {
+      "system" : "http://hl7.org/fhir/version-algorithm",
+      "code" : "semver",
+      "display" : "SemVer"
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/LogicalModel/Prozedur",
@@ -71,7 +99,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-proze
   "name" : "MII_LM_Prozedur",
   "title" : "MII LM Prozedur",
   "status" : "active",
-  "date" : "2024-12-09",
+  "date" : "2026-05-12",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [{
@@ -104,12 +132,8 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-proze
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "FHIR",
+    "uri" : "http://hl7.org/fhir/StructureDefinition/Procedure|4.0.1",
     "name" : "Prozedur LogicalModel FHIR Mapping"
-  },
-  {
-    "identity" : "rim",
-    "uri" : "http://hl7.org/v3",
-    "name" : "RIM Mapping"
   }],
   "kind" : "logical",
   "abstract" : false,

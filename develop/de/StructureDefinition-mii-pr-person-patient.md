@@ -85,7 +85,7 @@ Adressdetails folgen dem [Basisprofil - Adresse]:
 * Examples for this Profile: [Patient/mii-exa-person-patient-1](Patient-mii-exa-person-patient-1.md)
 * CapabilityStatements using this Profile: [MII CPS Person CapabilityStatement](CapabilityStatement-mii-cps-person-capabilitystatement.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/mii-pr-person-patient)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/StructureDefinition-mii-pr-person-patient.json)
 
 ### Formale Ansichten des Profilinhalts
 
@@ -114,7 +114,7 @@ Diese Struktur ist abgeleitet von [Patient](http://hl7.org/fhir/R4/patient.html)
 ** Summary **
 
 Mandatory: 0 element(18 nested mandatory elements)
- Must-Support: 66 elements
+ Must-Support: 93 elements
  Prohibited: 6 elements
 
 **Structures**
@@ -132,7 +132,7 @@ This structure refers to these other structures:
 This structure refers to these extensions:
 
 * [http://fhir.de/StructureDefinition/gender-amtlich-de](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.de/StructureDefinition/gender-amtlich-de)
-* [http://hl7.org/fhir/StructureDefinition/data-absent-reason](http://hl7.org/fhir/extensions/5.2.0/StructureDefinition-data-absent-reason.html)
+* [http://hl7.org/fhir/StructureDefinition/data-absent-reason](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-data-absent-reason.html)
 * [http://fhir.de/StructureDefinition/destatis/ags](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.de/StructureDefinition/destatis/ags)
 
 **Slices**
@@ -141,6 +141,7 @@ This structure defines the following [Slices](http://hl7.org/fhir/R4/profiling.h
 
 * The element 1 is sliced based on the value of Patient.identifier
 * The element 1 is sliced based on the value of Patient.name
+* The element 1 is sliced based on the value of Patient.deceased[x]
 * The element 1 is sliced based on the value of Patient.address
 
  **Schlüsselelemente-Ansicht** 
@@ -166,7 +167,7 @@ Diese Struktur ist abgeleitet von [Patient](http://hl7.org/fhir/R4/patient.html)
 ** Summary **
 
 Mandatory: 0 element(18 nested mandatory elements)
- Must-Support: 66 elements
+ Must-Support: 93 elements
  Prohibited: 6 elements
 
 **Structures**
@@ -184,7 +185,7 @@ This structure refers to these other structures:
 This structure refers to these extensions:
 
 * [http://fhir.de/StructureDefinition/gender-amtlich-de](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.de/StructureDefinition/gender-amtlich-de)
-* [http://hl7.org/fhir/StructureDefinition/data-absent-reason](http://hl7.org/fhir/extensions/5.2.0/StructureDefinition-data-absent-reason.html)
+* [http://hl7.org/fhir/StructureDefinition/data-absent-reason](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-data-absent-reason.html)
 * [http://fhir.de/StructureDefinition/destatis/ags](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.de/StructureDefinition/destatis/ags)
 
 **Slices**
@@ -193,6 +194,7 @@ This structure defines the following [Slices](http://hl7.org/fhir/R4/profiling.h
 
 * The element 1 is sliced based on the value of Patient.identifier
 * The element 1 is sliced based on the value of Patient.name
+* The element 1 is sliced based on the value of Patient.deceased[x]
 * The element 1 is sliced based on the value of Patient.address
 
  
@@ -207,14 +209,24 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-perso
 {
   "resourceType" : "StructureDefinition",
   "id" : "mii-pr-person-patient",
+  "meta" : {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-license",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/spdx-license",
+          "code" : "CC-BY-4.0",
+          "display" : "Creative Commons Attribution 4.0 International"
+        }]
+      }
+    }]
+  },
   "extension" : [{
-    "url" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/StructureDefinition/mii-ex-meta-license-codeable",
-    "valueCodeableConcept" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/spdx-license",
-        "code" : "CC-BY-4.0",
-        "display" : "Creative Commons Attribution 4.0 International"
-      }]
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm",
+    "valueCoding" : {
+      "system" : "http://hl7.org/fhir/version-algorithm",
+      "code" : "semver",
+      "display" : "SemVer"
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient",
@@ -246,7 +258,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-perso
     }]
   },
   "status" : "active",
-  "date" : "2024-12-04",
+  "date" : "2026-06-03",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [{
@@ -302,16 +314,6 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-perso
   }],
   "fhirVersion" : "4.0.1",
   "mapping" : [{
-    "identity" : "rim",
-    "uri" : "http://hl7.org/v3",
-    "name" : "RIM Mapping"
-  },
-  {
-    "identity" : "cda",
-    "uri" : "http://hl7.org/v3/cda",
-    "name" : "CDA (R2)"
-  },
-  {
     "identity" : "w5",
     "uri" : "http://hl7.org/fhir/fivews",
     "name" : "FiveWs Pattern Mapping"
@@ -497,6 +499,21 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-perso
       "mustSupport" : true
     },
     {
+      "id" : "Patient.identifier:versichertenId.type.coding",
+      "path" : "Patient.identifier.type.coding",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.identifier:versichertenId.type.coding.system",
+      "path" : "Patient.identifier.type.coding.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.identifier:versichertenId.type.coding.code",
+      "path" : "Patient.identifier.type.coding.code",
+      "mustSupport" : true
+    },
+    {
       "id" : "Patient.identifier:versichertenId.system",
       "path" : "Patient.identifier.system",
       "mustSupport" : true
@@ -525,6 +542,21 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-perso
     {
       "id" : "Patient.identifier:versichertenId.assigner.identifier.type",
       "path" : "Patient.identifier.assigner.identifier.type",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.identifier:versichertenId.assigner.identifier.type.coding",
+      "path" : "Patient.identifier.assigner.identifier.type.coding",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.identifier:versichertenId.assigner.identifier.type.coding.system",
+      "path" : "Patient.identifier.assigner.identifier.type.coding.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.identifier:versichertenId.assigner.identifier.type.coding.code",
+      "path" : "Patient.identifier.assigner.identifier.type.coding.code",
       "mustSupport" : true
     },
     {
@@ -613,6 +645,21 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-perso
       "mustSupport" : true
     },
     {
+      "id" : "Patient.identifier:pid.type.coding",
+      "path" : "Patient.identifier.type.coding",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.identifier:pid.type.coding.system",
+      "path" : "Patient.identifier.type.coding.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.identifier:pid.type.coding.code",
+      "path" : "Patient.identifier.type.coding.code",
+      "mustSupport" : true
+    },
+    {
       "id" : "Patient.identifier:pid.system",
       "path" : "Patient.identifier.system",
       "mustSupport" : true
@@ -628,6 +675,11 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-perso
       "mustSupport" : true
     },
     {
+      "id" : "Patient.identifier:pid.assigner.identifier",
+      "path" : "Patient.identifier.assigner.identifier",
+      "mustSupport" : true
+    },
+    {
       "id" : "Patient.identifier:pid.assigner.identifier.type",
       "path" : "Patient.identifier.assigner.identifier.type",
       "patternCodeableConcept" : {
@@ -636,6 +688,21 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-perso
           "code" : "XX"
         }]
       },
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.identifier:pid.assigner.identifier.type.coding",
+      "path" : "Patient.identifier.assigner.identifier.type.coding",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.identifier:pid.assigner.identifier.type.coding.system",
+      "path" : "Patient.identifier.assigner.identifier.type.coding.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.identifier:pid.assigner.identifier.type.coding.code",
+      "path" : "Patient.identifier.assigner.identifier.type.coding.code",
       "mustSupport" : true
     },
     {
@@ -1064,6 +1131,26 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-perso
       "mustSupport" : true
     },
     {
+      "id" : "Patient.gender.extension:other-amtlich.url",
+      "path" : "Patient.gender.extension.url",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.gender.extension:other-amtlich.value[x]",
+      "path" : "Patient.gender.extension.value[x]",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.gender.extension:other-amtlich.value[x].system",
+      "path" : "Patient.gender.extension.value[x].system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.gender.extension:other-amtlich.value[x].code",
+      "path" : "Patient.gender.extension.value[x].code",
+      "mustSupport" : true
+    },
+    {
       "id" : "Patient.birthDate",
       "path" : "Patient.birthDate",
       "short" : "Geburtsdatum",
@@ -1145,6 +1232,14 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-perso
     {
       "id" : "Patient.deceased[x]",
       "path" : "Patient.deceased[x]",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "type",
+          "path" : "$this"
+        }],
+        "ordered" : false,
+        "rules" : "open"
+      },
       "short" : "Verstorben",
       "_short" : {
         "extension" : [{
@@ -1195,6 +1290,28 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-perso
           "url" : "http://hl7.org/fhir/StructureDefinition/translation"
         }]
       },
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.deceased[x]:deceasedBoolean",
+      "path" : "Patient.deceased[x]",
+      "sliceName" : "deceasedBoolean",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "boolean"
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.deceased[x]:deceasedDateTime",
+      "path" : "Patient.deceased[x]",
+      "sliceName" : "deceasedDateTime",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "dateTime"
+      }],
       "mustSupport" : true
     },
     {
@@ -1405,6 +1522,26 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-perso
       "mustSupport" : true
     },
     {
+      "id" : "Patient.address:Strassenanschrift.city.extension:gemeindeschluessel.url",
+      "path" : "Patient.address.city.extension.url",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.address:Strassenanschrift.city.extension:gemeindeschluessel.value[x]",
+      "path" : "Patient.address.city.extension.value[x]",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.address:Strassenanschrift.city.extension:gemeindeschluessel.value[x].system",
+      "path" : "Patient.address.city.extension.value[x].system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.address:Strassenanschrift.city.extension:gemeindeschluessel.value[x].code",
+      "path" : "Patient.address.city.extension.value[x].code",
+      "mustSupport" : true
+    },
+    {
       "id" : "Patient.address:Strassenanschrift.postalCode",
       "path" : "Patient.address.postalCode",
       "min" : 1,
@@ -1558,6 +1695,26 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-perso
         "code" : "Extension",
         "profile" : ["http://fhir.de/StructureDefinition/destatis/ags"]
       }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.address:Postfach.city.extension:gemeindeschluessel.url",
+      "path" : "Patient.address.city.extension.url",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.address:Postfach.city.extension:gemeindeschluessel.value[x]",
+      "path" : "Patient.address.city.extension.value[x]",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.address:Postfach.city.extension:gemeindeschluessel.value[x].system",
+      "path" : "Patient.address.city.extension.value[x].system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.address:Postfach.city.extension:gemeindeschluessel.value[x].code",
+      "path" : "Patient.address.city.extension.value[x].code",
       "mustSupport" : true
     },
     {

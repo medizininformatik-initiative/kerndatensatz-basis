@@ -30,6 +30,8 @@ Das pseudonymisierte Patientenprofil verwendet spezialisierte Identifier-Typen:
 * **MUSS** entsprechend typisiert werden, falls der Identifier ein abgeleitetes Pseudonym ist
 * Zu verwenden, wenn der Identifier durch einen kontrollierten Prozess mit den originalen Patientendaten verknüpft werden kann
 * Typischerweise in Forschungsszenarien verwendet, in denen eine De-Pseudonymisierung für spezifische Zwecke notwendig sein kann
+* **`identifier.type.coding:pseuded`** (`PSEUDED`, Pflicht): Gibt an, dass der Wert ein Pseudonym ist
+* **`identifier.type.coding:mr`** (`MR`, optional): SOLL zusätzlich gesetzt werden, wenn das Pseudonym einen organisationsinternen Patienten-Identifier (Medical Record Number) ersetzt. Dies ermöglicht es Konsumenten, die pseudonymisierte Patientennummer standortübergreifend aufzufinden, ohne das standortspezifische `identifier.system` zu kennen. Siehe [Best Practice - Pseudonymisierter MR-Identifier](#best-practice---pseudonymisierter-mr-identifier) für Details.
  
 * **`Patient.identifier:anonymisierterIdentifier`**: Anonymisierter Identifier für die PatientIn 
 * **SOLLTE** nur verwendet werden, wenn keinerlei Rückschlüsse auf den originalen Datensatz möglich sind
@@ -39,6 +41,35 @@ Das pseudonymisierte Patientenprofil verwendet spezialisierte Identifier-Typen:
 * Für krankenkassenbasierte Analysen ohne Offenlegung der tatsächlichen Versicherten-ID verwendet
 * Siehe [Best Practice - Maskierte Versicherten-ID mit IK-Nummer](#best-practice---maskierte-versicherten-id-mit-ik-nummer) für Implementierungsdetails
  
+
+##### Best Practice - Pseudonymisierter organisationsinterner Patienten-Identifier
+
+Wenn ein Pseudonym einen organisationsinternen Patienten-Identifier (Medical Record Number, MR) ersetzt, SOLL `identifier.type` beide Codings enthalten:
+
+* `http://terminology.hl7.org/CodeSystem/v3-ObservationValue|PSEUDED` — Pflicht, signalisiert, dass der Wert ein Pseudonym ist
+* `http://terminology.hl7.org/CodeSystem/v2-0203|MR` — optional, signalisiert die funktionale Rolle des ursprünglichen Identifiers
+
+Das Setzen des `MR`-Codes wird empfohlen, da es Abfragen ermöglicht, pseudonymisierte Patientennummern standortübergreifend über einen stabilen, standortunabhängigen Typcode zu finden, ohne das proprietäre `identifier.system` des jeweiligen Standorts kennen zu müssen.
+
+Hinweis: `MR` beschreibt hier die funktionale Rolle des Identifiers (d.h. was er repräsentiert), nicht die Art des pseudonymen Wertes selbst. Pseudonyme, die keine Medical Record Number ersetzen (z.B. studiespezifische Pseudonyme), SOLLTEN NICHT den `MR`-Code tragen.
+
+```
+{
+  "type": {
+    "coding": [{
+      "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+      "code": "PSEUDED"
+    },
+    {
+      "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+      "code": "MR"
+    }]
+  },
+  "system": "https://ttp.example.org/pseudonyme",
+  "value": "a3f2c1d9-pseudonym"
+}
+
+```
 
 ##### Best Practice - Maskierte Versicherten-ID mit IK-Nummer
 
@@ -57,7 +88,7 @@ Ein Beispiel für diese Modellierung findet sich in der Beispielressource.
 * Examples for this Profile: [Patient/mii-exa-person-patient-pseudonymisiert](Patient-mii-exa-person-patient-pseudonymisiert.md)
 * CapabilityStatements using this Profile: [MII CPS Person CapabilityStatement](CapabilityStatement-mii-cps-person-capabilitystatement.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/mii-pr-person-patient-pseudonymisiert)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/StructureDefinition-mii-pr-person-patient-pseudonymisiert.json)
 
 ### Formale Ansichten des Profilinhalts
 
@@ -85,8 +116,8 @@ Diese Struktur ist abgeleitet von [Patient](http://hl7.org/fhir/R4/patient.html)
 
 ** Summary **
 
-Mandatory: 1 element(6 nested mandatory elements)
- Must-Support: 26 elements
+Mandatory: 1 element(9 nested mandatory elements)
+ Must-Support: 28 elements
 
 **Structures**
 
@@ -100,7 +131,7 @@ This structure refers to these other structures:
 
 This structure refers to these extensions:
 
-* [http://hl7.org/fhir/StructureDefinition/data-absent-reason](http://hl7.org/fhir/extensions/5.2.0/StructureDefinition-data-absent-reason.html)
+* [http://hl7.org/fhir/StructureDefinition/data-absent-reason](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-data-absent-reason.html)
 * [http://fhir.de/StructureDefinition/gender-amtlich-de](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.de/StructureDefinition/gender-amtlich-de)
 * [http://fhir.de/StructureDefinition/destatis/ags](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.de/StructureDefinition/destatis/ags)
 
@@ -109,6 +140,7 @@ This structure refers to these extensions:
 This structure defines the following [Slices](http://hl7.org/fhir/R4/profiling.html#slices):
 
 * The element 1 is sliced based on the value of Patient.identifier
+* The element 1 is sliced based on the value of Patient.identifier.type.coding
 * The element 1 is sliced based on the value of Patient.address
 
  **Schlüsselelemente-Ansicht** 
@@ -133,8 +165,8 @@ Diese Struktur ist abgeleitet von [Patient](http://hl7.org/fhir/R4/patient.html)
 
 ** Summary **
 
-Mandatory: 1 element(6 nested mandatory elements)
- Must-Support: 26 elements
+Mandatory: 1 element(9 nested mandatory elements)
+ Must-Support: 28 elements
 
 **Structures**
 
@@ -148,7 +180,7 @@ This structure refers to these other structures:
 
 This structure refers to these extensions:
 
-* [http://hl7.org/fhir/StructureDefinition/data-absent-reason](http://hl7.org/fhir/extensions/5.2.0/StructureDefinition-data-absent-reason.html)
+* [http://hl7.org/fhir/StructureDefinition/data-absent-reason](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-data-absent-reason.html)
 * [http://fhir.de/StructureDefinition/gender-amtlich-de](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.de/StructureDefinition/gender-amtlich-de)
 * [http://fhir.de/StructureDefinition/destatis/ags](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.de/StructureDefinition/destatis/ags)
 
@@ -157,6 +189,7 @@ This structure refers to these extensions:
 This structure defines the following [Slices](http://hl7.org/fhir/R4/profiling.html#slices):
 
 * The element 1 is sliced based on the value of Patient.identifier
+* The element 1 is sliced based on the value of Patient.identifier.type.coding
 * The element 1 is sliced based on the value of Patient.address
 
  
@@ -171,14 +204,24 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-perso
 {
   "resourceType" : "StructureDefinition",
   "id" : "mii-pr-person-patient-pseudonymisiert",
+  "meta" : {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-license",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/spdx-license",
+          "code" : "CC-BY-4.0",
+          "display" : "Creative Commons Attribution 4.0 International"
+        }]
+      }
+    }]
+  },
   "extension" : [{
-    "url" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/StructureDefinition/mii-ex-meta-license-codeable",
-    "valueCodeableConcept" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/spdx-license",
-        "code" : "CC-BY-4.0",
-        "display" : "Creative Commons Attribution 4.0 International"
-      }]
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm",
+    "valueCoding" : {
+      "system" : "http://hl7.org/fhir/version-algorithm",
+      "code" : "semver",
+      "display" : "SemVer"
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert",
@@ -210,7 +253,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-perso
     }]
   },
   "status" : "active",
-  "date" : "2025-07-22",
+  "date" : "2026-06-02",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [{
@@ -266,16 +309,6 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-perso
   }],
   "fhirVersion" : "4.0.1",
   "mapping" : [{
-    "identity" : "rim",
-    "uri" : "http://hl7.org/v3",
-    "name" : "RIM Mapping"
-  },
-  {
-    "identity" : "cda",
-    "uri" : "http://hl7.org/v3/cda",
-    "name" : "CDA (R2)"
-  },
-  {
     "identity" : "w5",
     "uri" : "http://hl7.org/fhir/fivews",
     "name" : "FiveWs Pattern Mapping"
@@ -402,6 +435,49 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-perso
         }
       },
       "mustSupport" : true
+    },
+    {
+      "id" : "Patient.identifier:PseudonymisierterIdentifier.type",
+      "path" : "Patient.identifier.type",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.identifier:PseudonymisierterIdentifier.type.coding",
+      "path" : "Patient.identifier.type.coding",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "pattern",
+          "path" : "$this"
+        }],
+        "rules" : "open"
+      },
+      "min" : 1
+    },
+    {
+      "id" : "Patient.identifier:PseudonymisierterIdentifier.type.coding:pseuded",
+      "path" : "Patient.identifier.type.coding",
+      "sliceName" : "pseuded",
+      "min" : 1,
+      "max" : "1",
+      "patternCoding" : {
+        "system" : "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+        "code" : "PSEUDED"
+      },
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.identifier:PseudonymisierterIdentifier.type.coding:mr",
+      "path" : "Patient.identifier.type.coding",
+      "sliceName" : "mr",
+      "short" : "Medical Record Number",
+      "definition" : "Wenn dieses Pseudonym einen pseudonymisierten organisationsinternen Patienten-Identifier (Medical Record Number) ersetzt,\nSOLL dieser Code zusätzlich gesetzt werden, um die funktionale Rolle des Identifiers\nunabhängig vom Standort-spezifischen system auffindbar zu machen.",
+      "min" : 0,
+      "max" : "1",
+      "patternCoding" : {
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code" : "MR"
+      }
     },
     {
       "id" : "Patient.identifier:AnonymisierterIdentifier",

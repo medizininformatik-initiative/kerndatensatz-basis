@@ -2,6 +2,7 @@
 <!DOCTYPE HTML>
 
 
+
 <html xml:lang="de" xmlns="http://www.w3.org/1999/xhtml" lang="de" dir="ltr">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
@@ -282,9 +283,32 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p><strong>Datum:</strong> 2026-XX-XX</p>
 
+<h4 id="dokumentation">Dokumentation</h4>
+
+<ul>
+  <li><strong>Added:</strong> Eine Liste der Konformitätsanforderungen ist in der englischen Version der <a href="conformance.html">Conformance Seite</a> verfügbar</li>
+  <li><strong>Added:</strong> CapabilityStatements dokumentieren nun Beispiel-FHIR-Suchanfragen für unterstützte SearchParameters</li>
+  <li><strong>Added:</strong> LogicalModel-Seiten enthalten nun Mapping-Tabellen zu den entsprechenden FHIR-Zielstrukturen</li>
+  <li><strong>Changed:</strong> Must Support-Flags werden nun einheitlich auf relevante Unterelemente in allen Profilen angewendet, und die Dokumentation zu <a href="must-support.html">Must Support</a> beschreibt, wie komplexe Elemente und ihre markierten Unterelemente konkrete Erwartungen an die Server- und Client-Unterstützung definieren.</li>
+</ul>
+
+<h4 id="terminologie-updates">Terminologie-Updates</h4>
+
+<ul>
+  <li><strong>Added:</strong> ICD-10-GM 2026, OPS 2026 und Alpha-ID 2026 Versionen zu den jeweiligen ValueSet-Definitionen für die Module Diagnose und Prozedur hinzugefügt <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/67">#67</a>, <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/66">#66</a></li>
+</ul>
+
+<h4 id="modul-person">Modul Person</h4>
+
+<ul>
+  <li><strong>Added:</strong> Profil <a href="StructureDefinition-mii-pr-person-patient-pseudonymisiert.html">Patient Pseudonymisiert</a>: Optionaler <code class="language-plaintext highlighter-rouge">type.coding</code>-Slice <code class="language-plaintext highlighter-rouge">mr</code> (<code class="language-plaintext highlighter-rouge">http://terminology.hl7.org/CodeSystem/v2-0203|MR</code>) zu <code class="language-plaintext highlighter-rouge">PseudonymisierterIdentifier</code> hinzugefügt. Wenn das Pseudonym eine Medical Record Number ersetzt, SOLL dieser Code gesetzt werden, um die standortunabhängige Auffindbarkeit des Identifiers zu ermöglichen. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/63">#63</a></li>
+</ul>
+
 <h4 id="modul-fall">Modul Fall</h4>
 
 <ul>
+  <li><strong>Added:</strong> Verwendung von <code class="language-plaintext highlighter-rouge">Encounter.location</code> in der Dokumentation erläutert. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-fall/issues/62">#62</a></li>
+  <li><strong>Added:</strong> Dokumentiert, dass Server den Modifier <code class="language-plaintext highlighter-rouge">account:identifier</code> unterstützen SOLLTEN, um die Suche aller zu einem Abrechnungsfall gehörenden Encounter anhand der Fallnummer zu ermöglichen. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/68">#68</a></li>
   <li><strong>Removed:</strong> Selbst veröffentlichte R5-Backport-Extensions für geplante Encounter-Start- und Enddaten (zuvor <code class="language-plaintext highlighter-rouge">mii-ex-fall-planned-start-date</code> und <code class="language-plaintext highlighter-rouge">mii-ex-fall-planned-end-date</code>). Diese Extensions werden nun durch die offizielle <code class="language-plaintext highlighter-rouge">hl7.fhir.uv.xver-r5.r4</code>-Dependency bereitgestellt</li>
 </ul>
 
@@ -301,7 +325,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Package-ID:</strong> <code class="language-plaintext highlighter-rouge">de.medizininformatikinitiative.kerndatensatz.base</code></li>
 </ul>
 
-<h4 id="terminologie-updates">Terminologie-Updates</h4>
+<h4 id="terminologie-updates-1">Terminologie-Updates</h4>
 
 <ul>
   <li><strong>Changed:</strong> Ressourcen verwenden SNOMED CT-Version <code class="language-plaintext highlighter-rouge">http://snomed.info/sct/900000000000207008/version/20250701</code> (Juli 2025) modulübergreifend, um stabile <a href="http://hl7.org/fhir/R4/valueset.html#expansion">ValueSet-Expansion</a> zu gewährleisten</li>
@@ -337,7 +361,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Changed:</strong> Anleitung hinzugefügt mit Empfehlung zur Verwendung von <code class="language-plaintext highlighter-rouge">Procedure.encounter</code> zur Etablierung des Kontaktkontexts, abgestimmt mit den Empfehlungen des Diagnose-Moduls</li>
 </ul>
 
-<h4 id="modul-person">Modul Person</h4>
+<h4 id="modul-person-1">Modul Person</h4>
 
 <ul>
   <li><strong>Added:</strong> ValueSet MII VS Person ICD-10-WHO veröffentlicht unter MII-Canonical URL für Todesursachen-Codierung</li>
@@ -347,12 +371,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="version-202501">Version 2025.0.1</h3>
 
-<h4 id="modul-person-1">Modul Person</h4>
+<h4 id="modul-person-2">Modul Person</h4>
 <p><strong>Datum:</strong> 08.10.2025</p>
 
 <ul>
   <li><strong>Added</strong>: Profil <a href="StructureDefinition-mii-pr-person-patient-pseudonymisiert.html">Patient Pseudonymisiert</a> enthält nun einen optionalen Identifikator für maskierte Krankenversicherungsnummer unter <code class="language-plaintext highlighter-rouge">Patient.identifier</code></li>
-  <li><strong>Changed</strong>: ValueSet MII_VS_Person_ICD10WHO wurde als redundant <a href="http://hl7.org/fhir/R4/codesystem-publication-status.html#publication-status-retired">zurückgezogen</a>. Das ICD-10-WHO CodeSystem referenziert bereits ein implizites ICD-10-WHO ValueSet über <code class="language-plaintext highlighter-rouge">CodeSystem.valueSet</code>. Siehe: https://github.com/medizininformatik-initiative/kerndatensatzmodul-person/issues/86</li>
+  <li><strong>Changed</strong>: ValueSet MII_VS_Person_ICD10WHO wurde als redundant <a href="http://hl7.org/fhir/R4/codesystem-publication-status.html#publication-status-retired">zurückgezogen</a>. Das ICD-10-WHO CodeSystem referenziert bereits ein implizites ICD-10-WHO ValueSet über <code class="language-plaintext highlighter-rouge">CodeSystem.valueSet</code>. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-person/issues/86">#86</a></li>
   <li><strong>Changed</strong>: Abhängigkeit aktualisiert auf <a href="https://simplifier.net/packages/de.basisprofil.r4/1.5.4">de.basisprofil.r4 1.5.4</a>. Diese Version der FHIR-Basisprofile enthält eine Korrektur für die kvid-2-Invariante, die auf <code class="language-plaintext highlighter-rouge">Patient.identifier:versichertenId.type</code> im Patient-Profil angewendet wird</li>
 </ul>
 
@@ -360,15 +384,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p><strong>Datum:</strong> 28.10.2025</p>
 
 <ul>
-  <li><strong>Changed</strong>: <code class="language-plaintext highlighter-rouge">Encounter.location</code> erlaubt nun die Angabe früherer Behandlungsorte. Siehe: https://github.com/medizininformatik-initiative/kerndatensatzmodul-fall/issues/79</li>
+  <li><strong>Changed</strong>: <code class="language-plaintext highlighter-rouge">Encounter.location</code> erlaubt nun die Angabe früherer Behandlungsorte. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-fall/issues/79">#79</a></li>
 </ul>
 
 <h4 id="modul-diagnose-1">Modul Diagnose</h4>
 <p><strong>Datum:</strong> 20.10.2025</p>
 
 <ul>
-  <li><strong>Added</strong>: <code class="language-plaintext highlighter-rouge">Condition.onsetAge</code> - Der Datentyp <code class="language-plaintext highlighter-rouge">Age</code> kann nun unter <code class="language-plaintext highlighter-rouge">Condition.onset[x]</code> verwendet werden. Siehe: https://github.com/medizininformatik-initiative/kerndatensatzmodul-diagnose/issues/78</li>
-  <li><strong>Changed</strong>: <code class="language-plaintext highlighter-rouge">Condition.bodySite</code> - Kardinalität des SNOMED-Coding-Slices von 1..1 auf 0..1 geändert. Siehe: https://github.com/medizininformatik-initiative/kerndatensatzmodul-diagnose/issues/75</li>
+  <li><strong>Added</strong>: <code class="language-plaintext highlighter-rouge">Condition.onsetAge</code> - Der Datentyp <code class="language-plaintext highlighter-rouge">Age</code> kann nun unter <code class="language-plaintext highlighter-rouge">Condition.onset[x]</code> verwendet werden. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-diagnose/issues/78">#78</a></li>
+  <li><strong>Changed</strong>: <code class="language-plaintext highlighter-rouge">Condition.bodySite</code> - Kardinalität des SNOMED-Coding-Slices von 1..1 auf 0..1 geändert. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-diagnose/issues/75">#75</a></li>
   <li><strong>Added</strong>: Neue ValueSets und Bindings für ICD-10-GM (Canonical URL: <code class="language-plaintext highlighter-rouge">https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-icd10gm</code>) und AlphaID (Canonical URL: <code class="language-plaintext highlighter-rouge">https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-alphaid</code>), die über den MII-Terminologieserver (https://www.ontoserver.mii-termserv.de/) expandiert werden können, was erweiterte Validierung ermöglicht</li>
   <li><strong>Changed</strong>: CapabilityStatement enthält nun Anforderungsdokumentation für Suchparameter <code class="language-plaintext highlighter-rouge">_count</code> und <code class="language-plaintext highlighter-rouge">_summary</code></li>
 </ul>
@@ -386,7 +410,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="version-202500">Version 2025.0.0</h3>
 
-<h4 id="modul-person-2">Modul Person</h4>
+<h4 id="modul-person-3">Modul Person</h4>
 <p><strong>Datum:</strong> 06.12.2024</p>
 
 <ul>
@@ -408,7 +432,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Changed</strong>: Abhängigkeit von de.basisprofil.r4 auf Version 1.5.0 aktualisiert. Diese Änderung hat keine Auswirkungen auf Implementierungen dieses Moduls</li>
   <li><strong>Changed</strong>: Profile enthalten zusätzliche Beschreibungen und Übersetzungen für Implementierer und das Forschungsdatenportal Gesundheit (FDPG)</li>
   <li><strong>Removed</strong>: Suchparameter aus diesem Modul entfernt. SearchParameter-Ressourcen werden nun zentral im Meta-Modul verwaltet</li>
-  <li><strong>Changed</strong>: Kardinalität von <code class="language-plaintext highlighter-rouge">Encounter.period</code> im <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">Encounter</a>-Profil von 1..1 auf 0..1, um geplante Behandlungsfälle darzustellen, bei denen der tatsächliche Zeitraum noch unbekannt ist. Siehe: https://github.com/medizininformatik-initiative/kerndatensatzmodul-fall/issues/56</li>
+  <li><strong>Changed</strong>: Kardinalität von <code class="language-plaintext highlighter-rouge">Encounter.period</code> im <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">Encounter</a>-Profil von 1..1 auf 0..1, um geplante Behandlungsfälle darzustellen, bei denen der tatsächliche Zeitraum noch unbekannt ist. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-fall/issues/56">#56</a></li>
   <li><strong>Added</strong>: Constraints prüfen nun das Vorhandensein von Start- und Endzeiten (<code class="language-plaintext highlighter-rouge">Encounter.period</code>) abhängig vom Status eines Falls</li>
   <li><strong>Added</strong>: Erweiterung des Encounter-Profils mit zwei Extensions für geplante Start- und Enddaten in <code class="language-plaintext highlighter-rouge">Encounter.extension</code></li>
   <li><strong>Fixed</strong>: Korrektur des ValueSet-Bindings auf Element <code class="language-plaintext highlighter-rouge">Encounter.serviceType.coding:ErweiterterFachabteilungsschluessel</code> zu <a href="https://simplifier.net/packages/de.basisprofil.r4/1.4.0/files/656779">http://fhir.de/ValueSet/dkgev/Fachabteilungsschluessel-erweitert</a></li>
@@ -427,7 +451,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Changed</strong>: Profile enthalten zusätzliche Beschreibungen und Übersetzungen für Implementierer und das Forschungsdatenportal Gesundheit (FDPG)</li>
   <li><strong>Removed</strong>: Suchparameter aus diesem Modul entfernt. SearchParameter-Ressourcen werden nun zentral im Meta-Modul verwaltet</li>
   <li><strong>Changed</strong>: Ressourcen verwenden SNOMED CT-Version <code class="language-plaintext highlighter-rouge">http://snomed.info/sct/900000000000207008/version/20240701</code> modulübergreifend, um stabile <a href="http://hl7.org/fhir/R4/valueset.html#expansion">ValueSet-Expansion</a> zu gewährleisten</li>
-  <li><strong>Added</strong>: <code class="language-plaintext highlighter-rouge">Condition.verificationStatus</code> hat nun MustSupport-Label. Siehe: https://github.com/medizininformatik-initiative/kerndatensatzmodul-diagnose/issues/64</li>
+  <li><strong>Added</strong>: <code class="language-plaintext highlighter-rouge">Condition.verificationStatus</code> hat nun MustSupport-Label. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-diagnose/issues/64">#64</a></li>
 </ul>
 
 <h4 id="modul-prozedur-2">Modul Prozedur</h4>
@@ -449,7 +473,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p><strong>Datum:</strong> 17.04.2024</p>
 
 <ul>
-  <li><strong>Fixed</strong>: Korrektur der Versionsparameter in Konformitätsressourcen. Im zuvor veröffentlichten Paket stimmte <code class="language-plaintext highlighter-rouge">StructureDefinition.version</code> nicht einheitlich mit der Paketversion überein. Siehe: https://github.com/medizininformatik-initiative/kerndatensatzmodul-fall/issues/51</li>
+  <li><strong>Fixed</strong>: Korrektur der Versionsparameter in Konformitätsressourcen. Im zuvor veröffentlichten Paket stimmte <code class="language-plaintext highlighter-rouge">StructureDefinition.version</code> nicht einheitlich mit der Paketversion überein. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-fall/issues/51">#51</a></li>
 </ul>
 
 <hr />
@@ -458,7 +482,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Alle Module haben <a href="https://calver.org/">Calendar Versioning (CalVer)</a> mit dem Schema YYYY.MINOR.PATCH übernommen und damit einen jährlichen Release-Zyklus etabliert.</p>
 
-<h4 id="modul-person-3">Modul Person</h4>
+<h4 id="modul-person-4">Modul Person</h4>
 <p><strong>Datum:</strong> 16.04.2024</p>
 
 <ul>
@@ -577,8 +601,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.base#2026.0.0 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Erstellt 
-  <span title="2026-04-30 09:42:00 +0000">
-    2026-04-30
+  <span title="2026-06-08 07:31:00 +0000">
+    2026-06-08
   </span>
 
           <br/>

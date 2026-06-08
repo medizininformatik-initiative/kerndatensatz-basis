@@ -13,7 +13,7 @@ Intention der Prozedur
 * Use this Extension: [MII PR Prozedur Procedure](StructureDefinition-mii-pr-prozedur-procedure.md)
 * Examples for this Extension: [Bundle/mii-exa-base-test-data-bundle-1](Bundle-mii-exa-base-test-data-bundle-1.md), [Procedure/mii-exa-prozedur-imaging](Procedure-mii-exa-prozedur-imaging.md), [Procedure/mii-exa-prozedur-procedure-2](Procedure-mii-exa-prozedur-procedure-2.md) and [Procedure/mii-exa-prozedur-procedure](Procedure-mii-exa-prozedur-procedure.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/mii-ex-prozedur-durchfuehrungsabsicht)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/StructureDefinition-mii-ex-prozedur-durchfuehrungsabsicht.json)
 
 ### Formal Views of Extension Content
 
@@ -31,14 +31,24 @@ Other representations of profile: [CSV](../StructureDefinition-mii-ex-prozedur-d
 {
   "resourceType" : "StructureDefinition",
   "id" : "mii-ex-prozedur-durchfuehrungsabsicht",
+  "meta" : {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-license",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/spdx-license",
+          "code" : "CC-BY-4.0",
+          "display" : "Creative Commons Attribution 4.0 International"
+        }]
+      }
+    }]
+  },
   "extension" : [{
-    "url" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/StructureDefinition/mii-ex-meta-license-codeable",
-    "valueCodeableConcept" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/spdx-license",
-        "code" : "CC-BY-4.0",
-        "display" : "Creative Commons Attribution 4.0 International"
-      }]
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm",
+    "valueCoding" : {
+      "system" : "http://hl7.org/fhir/version-algorithm",
+      "code" : "semver",
+      "display" : "SemVer"
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Durchfuehrungsabsicht",
@@ -77,11 +87,6 @@ Other representations of profile: [CSV](../StructureDefinition-mii-ex-prozedur-d
     }]
   }],
   "fhirVersion" : "4.0.1",
-  "mapping" : [{
-    "identity" : "rim",
-    "uri" : "http://hl7.org/v3",
-    "name" : "RIM Mapping"
-  }],
   "kind" : "complex-type",
   "abstract" : false,
   "context" : [{

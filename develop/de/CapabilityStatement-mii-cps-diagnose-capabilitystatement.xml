@@ -2,18 +2,144 @@
 
 <CapabilityStatement xmlns="http://hl7.org/fhir">
   <id value="mii-cps-diagnose-capabilitystatement"/>
+  <meta>
+    <extension url="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-license">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://hl7.org/fhir/spdx-license"/>
+          <code value="CC-BY-4.0"/>
+          <display value="Creative Commons Attribution 4.0 International"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+  </meta>
   <language value="de"/>
   <text>
-    <status value="extensions"/><div xml:lang="de" lang="de"><hr/><p><b>German</b></p><hr/><p class="res-header-id"><b>Generated Narrative: CapabilityStatement mii-cps-diagnose-capabilitystatement</b></p><a name="de-mii-cps-diagnose-capabilitystatement"> </a><a name="de-hcmii-cps-diagnose-capabilitystatement"> </a><h2 id="de-title">MII CPS Diagnose CapabilityStatement</h2><ul><li>Implementation Guide Version: 2026.0.0 </li><li>FHIR Version: 4.0.1 </li><li>Supported Formats: <code>xml</code>, <code>json</code></li><li>Published on: 2025-03-31 </li><li>Published by: Medical Informatics Initiative (MII) </li></ul><blockquote class="impl-note"><p><strong>Note to Implementers: FHIR Capabilities</strong></p><p>Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.</p></blockquote><h2 id="de-rest">FHIR RESTful Capabilities</h2><div class="panel panel-default"><div class="panel-heading"><h3 id="de-mode1" class="panel-title">Mode: <code>server</code></h3></div><div class="panel-body"/></div><h3 id="de-resourcesCap1">Capabilities by Resource/Profile</h3><h4 id="de-resourcesSummary1">Summary</h4><p>The summary table lists the resources that are part of this configuration, and for each resource it lists:</p><ul><li>The relevant profiles (if any)</li><li>The interactions supported by each resource (<b><span class="bg-info">R</span></b>ead, <b><span class="bg-info">S</span></b>earch, <b><span class="bg-info">U</span></b>pdate, and <b><span class="bg-info">C</span></b>reate, are always shown, while <b><span class="bg-info">VR</span></b>ead, <b><span class="bg-info">P</span></b>atch, <b><span class="bg-info">D</span></b>elete, <b><span class="bg-info">H</span></b>istory on <b><span class="bg-info">I</span></b>nstance, or <b><span class="bg-info">H</span></b>istory on <b><span class="bg-info">T</span></b>ype are only present if at least one of the resources has support for them.</li><li><span>The required, recommended, and some optional search parameters (if any). </span></li><li>The linked resources enabled for <code>_include</code></li><li>The other resources enabled for <code>_revinclude</code></li><li>The operations on the resource (if any)</li></ul><div class="table-responsive"><table class="table table-condensed table-hover"><thead><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th class="text-center"><b title="GET a resource (read interaction)">R</b></th><th class="text-center"><b title="GET all set of resources of the type (search interaction)">S</b></th><th class="text-center"><b title="PUT a new resource version (update interaction)">U</b></th><th class="text-center"><b title="POST a new resource (create interaction)">C</b></th><th><b title="Required and recommended search parameters">Searches</b></th><th><code><b>_include</b></code></th><th><code><b>_revinclude</b></code></th><th><b>Operations</b></th></tr></thead><tbody><tr><td><a href="#de-Condition1-1">Condition</a></td><td><a href="http://hl7.org/fhir/R4/condition.html">http://hl7.org/fhir/StructureDefinition/Condition</a><br/><em>Additional supported profiles:</em><br/>  <a href="StructureDefinition-mii-pr-diagnose-condition.html">MII PR Diagnose Conditionversion: 2026.0.0)</a></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"/><td class="text-center"/><td>_count, _summary, _id, _lastUpdated, _profile, abatement-age, abatement-date, abatement-string, body-site, category, clinical-status, code, encounter, evidence, evidence-detail, identifier, onset-age, onset-date, onset-info, patient, recorded-date, severity, stage, subject, verification-status, icd10gm-diagnosesicherheit, icd10gm-mehrfachcodierung, icd10gm-seitenlokalisation</td><td/><td/><td/></tr></tbody></table></div><hr/><div class="panel panel-default"><div class="panel-heading"><h4 id="de-Condition1-1" class="panel-title"><span style="float: right;">Resource Conformance: SHALL </span>Condition</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="http://hl7.org/fhir/R4/condition.html">Condition</a></div><div class="col-lg-3"><span class="lead">Profile Conformance</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-mii-pr-diagnose-condition.html">MII PR Diagnose Conditionversion: 2026.0.0)</a></p></div><div class="col-lg-6"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>read</code>, <code>search-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_count</td><td><code>special</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>_summary</td><td><code>special</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_id</a></td><td><code>token</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_lastUpdated</a></td><td><code>date</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_profile</a></td><td><code>uri</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">abatement-age</a></td><td><code>quantity</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">abatement-date</a></td><td><code>date</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">abatement-string</a></td><td><code>string</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">body-site</a></td><td><code>token</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">category</a></td><td><code>token</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">clinical-status</a></td><td><code>token</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">code</a></td><td><code>token</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">encounter</a></td><td><code>reference</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">evidence</a></td><td><code>token</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">evidence-detail</a></td><td><code>reference</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">identifier</a></td><td><code>token</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">onset-age</a></td><td><code>quantity</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">onset-date</a></td><td><code>date</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">onset-info</a></td><td><code>string</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">patient</a></td><td><code>reference</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">recorded-date</a></td><td><code>date</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">severity</a></td><td><code>token</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">stage</a></td><td><code>token</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">subject</a></td><td><code>reference</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">verification-status</a></td><td><code>token</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td><a href="https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.meta@2026.0.0&amp;canonical=https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-condition-icd10gm-diagnosesicherheit">icd10gm-diagnosesicherheit</a></td><td><code>token</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td><a href="https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.meta@2026.0.0&amp;canonical=https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-condition-icd10gm-mehrfachcodierung">icd10gm-mehrfachcodierung</a></td><td><code>token</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td><a href="https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.meta@2026.0.0&amp;canonical=https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-condition-icd10gm-seitenlokalisation">icd10gm-seitenlokalisation</a></td><td><code>token</code></td><td><div/></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div></div>
+    <status value="extensions"/><div xml:lang="de" lang="de"><hr/><p><b>German</b></p><hr/><p class="res-header-id"><b>Generated Narrative: CapabilityStatement mii-cps-diagnose-capabilitystatement</b></p><a name="de-mii-cps-diagnose-capabilitystatement"> </a><a name="de-hcmii-cps-diagnose-capabilitystatement"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/></div><h2 id="de-title">MII CPS Diagnose CapabilityStatement</h2><ul><li>Implementation Guide Version: 2026.0.0 </li><li>FHIR Version: 4.0.1 </li><li>Supported Formats: <code>xml</code>, <code>json</code></li><li>Published on: 2026-05-11 </li><li>Published by: Medical Informatics Initiative (MII) </li></ul><blockquote class="impl-note"><p><strong>Note to Implementers: FHIR Capabilities</strong></p><p>Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.</p></blockquote><h2 id="de-rest">FHIR RESTful Capabilities</h2><div class="panel panel-default"><div class="panel-heading"><h3 id="de-mode1" class="panel-title">Mode: <code>server</code></h3></div><div class="panel-body"/></div><h3 id="de-resourcesCap1">Capabilities by Resource/Profile</h3><h4 id="de-resourcesSummary1">Summary</h4><p>The summary table lists the resources that are part of this configuration, and for each resource it lists:</p><ul><li>The relevant profiles (if any)</li><li>The interactions supported by each resource (<b><span class="bg-info">R</span></b>ead, <b><span class="bg-info">S</span></b>earch, <b><span class="bg-info">U</span></b>pdate, and <b><span class="bg-info">C</span></b>reate, are always shown, while <b><span class="bg-info">VR</span></b>ead, <b><span class="bg-info">P</span></b>atch, <b><span class="bg-info">D</span></b>elete, <b><span class="bg-info">H</span></b>istory on <b><span class="bg-info">I</span></b>nstance, or <b><span class="bg-info">H</span></b>istory on <b><span class="bg-info">T</span></b>ype are only present if at least one of the resources has support for them.</li><li><span>The required, recommended, and some optional search parameters (if any). </span></li><li>The linked resources enabled for <code>_include</code></li><li>The other resources enabled for <code>_revinclude</code></li><li>The operations on the resource (if any)</li></ul><div class="table-responsive"><table class="table table-condensed table-hover"><thead><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th class="text-center"><b title="GET a resource (read interaction)">R</b></th><th class="text-center"><b title="GET all set of resources of the type (search interaction)">S</b></th><th class="text-center"><b title="PUT a new resource version (update interaction)">U</b></th><th class="text-center"><b title="POST a new resource (create interaction)">C</b></th><th><b title="Required and recommended search parameters">Searches</b></th><th><code><b>_include</b></code></th><th><code><b>_revinclude</b></code></th><th><b>Operations</b></th></tr></thead><tbody><tr><td><a href="#de-Condition1-1">Condition</a></td><td><a href="http://hl7.org/fhir/R4/condition.html">http://hl7.org/fhir/StructureDefinition/Condition</a><br/><em>Additional supported profiles:</em><br/>  <a href="StructureDefinition-mii-pr-diagnose-condition.html">MII PR Diagnose Conditionversion: 2026.0.0)</a></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"/><td class="text-center"/><td>_count, _summary, _id, _lastUpdated, _profile, abatement-age, abatement-date, abatement-string, body-site, category, clinical-status, code, encounter, evidence, evidence-detail, identifier, onset-age, onset-date, onset-info, patient, recorded-date, severity, stage, subject, verification-status, icd10gm-diagnosesicherheit, icd10gm-mehrfachcodierung, icd10gm-seitenlokalisation</td><td/><td/><td/></tr></tbody></table></div><hr/><div class="panel panel-default"><div class="panel-heading"><h4 id="de-Condition1-1" class="panel-title"><span style="float: right;">Resource Conformance: SHALL </span>Condition</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="http://hl7.org/fhir/R4/condition.html">Condition</a></div><div class="col-lg-3"><span class="lead">Profile Conformance</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-mii-pr-diagnose-condition.html">MII PR Diagnose Conditionversion: 2026.0.0)</a></p></div><div class="col-lg-6"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>read</code>, <code>search-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_count</td><td><code>special</code></td><td><div><p><strong>Example:</strong>
+<code>GET [base]/Condition?_count=10</code></p>
+<p><strong>Notes:</strong>
+For further details see FHIR core specification, section <a href="https://www.hl7.org/fhir/R4/search.html#count">Page Count</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_summary</td><td><code>special</code></td><td><div><p><strong>Example:</strong>
+<code>GET [base]/Condition?_summary=count</code></p>
+<p><strong>Notes:</strong>
+For further details see FHIR core specification, section <a href="https://www.hl7.org/fhir/R4/search.html#summary">Summary</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_id</a></td><td><code>token</code></td><td><div><p><strong>Example:</strong>
+<code>GET [base]/Condition?_id=mii-exa-diagnose-appendicitis</code></p>
+<p><strong>Notes:</strong>
+For further details see FHIR core specification, section <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_lastUpdated</a></td><td><code>date</code></td><td><div><p><strong>Example:</strong>
+<code>GET [base]/Condition?_lastUpdated=ge2026-01-01</code></p>
+<p><strong>Notes:</strong>
+Searches on <code>Condition.meta.lastUpdated</code>. For further details see <a href="https://hl7.org/fhir/R4/search.html#_lastUpdated">FHIR core specification</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_profile</a></td><td><code>uri</code></td><td><div><p><strong>Example:</strong>
+<code>GET [base]/Condition?_profile=https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0</code></p>
+<p><strong>Notes:</strong>
+Searches on <code>Condition.meta.profile</code>. For further details see FHIR core specification, section <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">abatement-age</a></td><td><code>quantity</code></td><td><div><p><strong>Example:</strong>
+<code>GET [base]/Condition?abatement-age=20|http://unitsofmeasure.org|a</code></p>
+<p><strong>Notes:</strong>
+Searches on <code>Condition.abatement.ofType(Age)</code>. For further details see <a href="https://hl7.org/fhir/R4/search.html#quantity">FHIR core specification</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">abatement-date</a></td><td><code>date</code></td><td><div><p><strong>Example:</strong>
+<code>GET [base]/Condition?abatement-date=2020-01-08</code></p>
+<p><strong>Notes:</strong>
+Searches on <code>Condition.abatement.ofType(dateTime)</code>. For further details see <a href="https://hl7.org/fhir/R4/search.html#date">FHIR core specification</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">abatement-string</a></td><td><code>string</code></td><td><div><p><strong>Example:</strong>
+<code>GET [base]/Condition?abatement-string=resolved</code></p>
+<p><strong>Notes:</strong>
+Searches on <code>Condition.abatement.ofType(string)</code>. For further details see <a href="https://hl7.org/fhir/R4/search.html#string">FHIR core specification</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">body-site</a></td><td><code>token</code></td><td><div><p><strong>Example:</strong>
+<code>GET [base]/Condition?body-site=elbow</code></p>
+<p><strong>Notes:</strong>
+Searches on <code>Condition.bodySite</code>. For further details see <a href="https://hl7.org/fhir/R4/search.html#token">FHIR core specification</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">category</a></td><td><code>token</code></td><td><div><p><strong>Example:</strong>
+<code>GET [base]/Condition?category=problem-list-item</code></p>
+<p><strong>Notes:</strong>
+Searches on <code>Condition.category</code>. For further details see <a href="https://hl7.org/fhir/R4/search.html#token">FHIR core specification</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">clinical-status</a></td><td><code>token</code></td><td><div><p><strong>Example:</strong>
+<code>GET [base]/Condition?clinical-status=active</code></p>
+<p><strong>Notes:</strong>
+Searches on <code>Condition.clinicalStatus</code>. For further details see <a href="https://hl7.org/fhir/R4/search.html#token">FHIR core specification</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">code</a></td><td><code>token</code></td><td><div><p><strong>Example:</strong>
+<code>GET [base]/Condition?code=http://fhir.de/CodeSystem/bfarm/icd-10-gm|K35.8</code>
+<code>GET [base]/Condition?code=K35.8</code></p>
+<p><strong>Notes:</strong>
+Searches on <code>Condition.code</code>. For further details see <a href="https://hl7.org/fhir/R4/search.html#token">FHIR core specification</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">encounter</a></td><td><code>reference</code></td><td><div><p><strong>Example:</strong>
+<code>GET [base]/Condition?encounter=Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2</code>
+<code>GET [base]/Condition?encounter=mii-exa-fall-kontakt-gesundheitseinrichtung-2</code></p>
+<p><strong>Notes:</strong>
+Searches on <code>Condition.encounter</code>. For further details see <a href="https://hl7.org/fhir/R4/search.html#reference">FHIR core specification</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">evidence</a></td><td><code>token</code></td><td><div><p><strong>Example:</strong>
+<code>GET [base]/Condition?evidence=manifestation</code></p>
+<p><strong>Notes:</strong>
+Searches on <code>Condition.evidence</code>. For further details see <a href="https://hl7.org/fhir/R4/search.html#token">FHIR core specification</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">evidence-detail</a></td><td><code>reference</code></td><td><div><p><strong>Example:</strong>
+<code>GET [base]/Condition?evidence-detail=Observation/mii-exa-person-observation-vitalstatus</code>
+<code>GET [base]/Condition?evidence-detail=mii-exa-person-observation-vitalstatus</code></p>
+<p><strong>Notes:</strong>
+Searches on <code>Condition.evidence.detail</code>. For further details see <a href="https://hl7.org/fhir/R4/search.html#reference">FHIR core specification</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">identifier</a></td><td><code>token</code></td><td><div><p><strong>Example:</strong>
+<code>GET [base]/Condition?identifier=diagnose-1</code></p>
+<p><strong>Notes:</strong>
+Searches on <code>Condition.identifier</code>. For further details see <a href="https://hl7.org/fhir/R4/search.html#token">FHIR core specification</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">onset-age</a></td><td><code>quantity</code></td><td><div><p><strong>Example:</strong>
+<code>GET [base]/Condition?onset-age=20|http://unitsofmeasure.org|a</code></p>
+<p><strong>Notes:</strong>
+Searches on <code>Condition.onset.ofType(Age)</code>. For further details see <a href="https://hl7.org/fhir/R4/search.html#quantity">FHIR core specification</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">onset-date</a></td><td><code>date</code></td><td><div><p><strong>Example:</strong>
+<code>GET [base]/Condition?onset-date=2020-01-08</code></p>
+<p><strong>Notes:</strong>
+Searches on <code>Condition.onset.ofType(dateTime)</code>. For further details see <a href="https://hl7.org/fhir/R4/search.html#date">FHIR core specification</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">onset-info</a></td><td><code>string</code></td><td><div><p><strong>Example:</strong>
+<code>GET [base]/Condition?onset-info=2019-09-26</code></p>
+<p><strong>Notes:</strong>
+Searches on <code>Condition.onset.ofType(string)</code>. For further details see <a href="https://hl7.org/fhir/R4/search.html#string">FHIR core specification</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">patient</a></td><td><code>reference</code></td><td><div><p><strong>Example:</strong>
+<code>GET [base]/Condition?patient=Patient/mii-exa-person-patient-1</code>
+<code>GET [base]/Condition?patient=mii-exa-person-patient-1</code></p>
+<p><strong>Notes:</strong>
+Searches on <code>Condition.subject</code> where the subject is a Patient. For further details see <a href="https://hl7.org/fhir/R4/search.html#reference">FHIR core specification</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">recorded-date</a></td><td><code>date</code></td><td><div><p><strong>Example:</strong>
+<code>GET [base]/Condition?recorded-date=2020-01-08</code></p>
+<p><strong>Notes:</strong>
+Searches on <code>Condition.recordedDate</code>. For further details see <a href="https://hl7.org/fhir/R4/search.html#date">FHIR core specification</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">severity</a></td><td><code>token</code></td><td><div><p><strong>Example:</strong>
+<code>GET [base]/Condition?severity=moderate</code></p>
+<p><strong>Notes:</strong>
+Searches on <code>Condition.severity</code>. For further details see <a href="https://hl7.org/fhir/R4/search.html#token">FHIR core specification</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">stage</a></td><td><code>token</code></td><td><div><p><strong>Example:</strong>
+<code>GET [base]/Condition?stage=initial</code></p>
+<p><strong>Notes:</strong>
+Searches on <code>Condition.stage</code>. For further details see <a href="https://hl7.org/fhir/R4/search.html#token">FHIR core specification</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">subject</a></td><td><code>reference</code></td><td><div><p><strong>Example:</strong>
+<code>GET [base]/Condition?subject=Patient/mii-exa-person-patient-1</code>
+<code>GET [base]/Condition?subject=mii-exa-person-patient-1</code></p>
+<p><strong>Notes:</strong>
+Searches on <code>Condition.subject</code>. For further details see <a href="https://hl7.org/fhir/R4/search.html#reference">FHIR core specification</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">verification-status</a></td><td><code>token</code></td><td><div><p><strong>Example:</strong>
+<code>GET [base]/Condition?verification-status=confirmed</code></p>
+<p><strong>Notes:</strong>
+Searches on <code>Condition.verificationStatus</code>. For further details see <a href="https://hl7.org/fhir/R4/search.html#token">FHIR core specification</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.meta@2026.0.0&amp;canonical=https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-condition-icd10gm-diagnosesicherheit">icd10gm-diagnosesicherheit</a></td><td><code>token</code></td><td><div><p><strong>Example:</strong>
+<code>GET [base]/Condition?icd10gm-diagnosesicherheit=https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ICD_DIAGNOSESICHERHEIT|G</code></p>
+<p><strong>Notes:</strong>
+Searches on <code>Condition.code.coding.extension.where(url='http://fhir.de/StructureDefinition/icd-10-gm-diagnosesicherheit').value</code>. For further details see <a href="https://hl7.org/fhir/R4/search.html#token">FHIR core specification</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.meta@2026.0.0&amp;canonical=https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-condition-icd10gm-mehrfachcodierung">icd10gm-mehrfachcodierung</a></td><td><code>token</code></td><td><div><p><strong>Example:</strong>
+<code>GET [base]/Condition?icd10gm-mehrfachcodierung=http://fhir.de/CodeSystem/icd-10-gm-mehrfachcodierungs-kennzeichen|†</code></p>
+<p><strong>Notes:</strong>
+Searches on <code>Condition.code.coding.extension.where(url='http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen').value</code>. For further details see <a href="https://hl7.org/fhir/R4/search.html#token">FHIR core specification</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.meta@2026.0.0&amp;canonical=https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-condition-icd10gm-seitenlokalisation">icd10gm-seitenlokalisation</a></td><td><code>token</code></td><td><div><p><strong>Example:</strong>
+<code>GET [base]/Condition?icd10gm-seitenlokalisation=https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ICD_SEITENLOKALISATION|L</code></p>
+<p><strong>Notes:</strong>
+Searches on <code>Condition.code.coding.extension.where(url='http://fhir.de/StructureDefinition/seitenlokalisation').value</code>. For further details see <a href="https://hl7.org/fhir/R4/search.html#token">FHIR core specification</a>.</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div></div>
   </text>
-  <extension url="https://www.medizininformatik-initiative.de/fhir/modul-meta/StructureDefinition/mii-ex-meta-license-codeable">
-    <valueCodeableConcept>
-      <coding>
-        <system value="http://hl7.org/fhir/spdx-license"/>
-        <code value="CC-BY-4.0"/>
-        <display value="Creative Commons Attribution 4.0 International"/>
-      </coding>
-    </valueCodeableConcept>
+  <extension url="http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm">
+    <valueCoding>
+      <system value="http://hl7.org/fhir/version-algorithm"/>
+      <code value="semver"/>
+      <display value="SemVer"/>
+    </valueCoding>
   </extension>
   <url value="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/CapabilityStatement/metadata"/>
   <version value="2026.0.0"/>
@@ -21,7 +147,7 @@
   <title value="MII CPS Diagnose CapabilityStatement"/>
   <status value="active"/>
   <experimental value="false"/>
-  <date value="2025-03-31"/>
+  <date value="2026-05-11"/>
   <publisher value="Medizininformatik-Initiative (MII)"/>
   <contact>
     <name value="Medical Informatics Initiative (MII)"/>
@@ -73,6 +199,7 @@
         </extension>
         <name value="_count"/>
         <type value="special"/>
+        <documentation value="**Example:**&#xA;`GET [base]/Condition?_count=10`&#xA;&#xA;**Notes:**&#xA;For further details see FHIR core specification, section [Page Count](https://www.hl7.org/fhir/R4/search.html#count)."/>
       </searchParam>
       <searchParam>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
@@ -80,6 +207,7 @@
         </extension>
         <name value="_summary"/>
         <type value="special"/>
+        <documentation value="**Example:**&#xA;`GET [base]/Condition?_summary=count`&#xA;&#xA;**Notes:**&#xA;For further details see FHIR core specification, section [Summary](https://www.hl7.org/fhir/R4/search.html#summary)."/>
       </searchParam>
       <searchParam>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
@@ -88,6 +216,7 @@
         <name value="_id"/>
         <definition value="http://hl7.org/fhir/SearchParameter/Resource-id"/>
         <type value="token"/>
+        <documentation value="**Example:**&#xA;`GET [base]/Condition?_id=mii-exa-diagnose-appendicitis`&#xA;&#xA;**Notes:**&#xA;For further details see FHIR core specification, section [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)."/>
       </searchParam>
       <searchParam>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
@@ -96,6 +225,7 @@
         <name value="_lastUpdated"/>
         <definition value="http://hl7.org/fhir/SearchParameter/Resource-lastUpdated"/>
         <type value="date"/>
+        <documentation value="**Example:**&#xA;`GET [base]/Condition?_lastUpdated=ge2026-01-01`&#xA;&#xA;**Notes:**&#xA;Searches on `Condition.meta.lastUpdated`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#_lastUpdated)."/>
       </searchParam>
       <searchParam>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
@@ -104,6 +234,7 @@
         <name value="_profile"/>
         <definition value="http://hl7.org/fhir/SearchParameter/Resource-profile"/>
         <type value="uri"/>
+        <documentation value="**Example:**&#xA;`GET [base]/Condition?_profile=https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0`&#xA;&#xA;**Notes:**&#xA;Searches on `Condition.meta.profile`. For further details see FHIR core specification, section [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)."/>
       </searchParam>
       <searchParam>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
@@ -112,6 +243,7 @@
         <name value="abatement-age"/>
         <definition value="http://hl7.org/fhir/SearchParameter/Condition-abatement-age"/>
         <type value="quantity"/>
+        <documentation value="**Example:**&#xA;`GET [base]/Condition?abatement-age=20|http://unitsofmeasure.org|a`&#xA;&#xA;**Notes:**&#xA;Searches on `Condition.abatement.ofType(Age)`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#quantity)."/>
       </searchParam>
       <searchParam>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
@@ -120,6 +252,7 @@
         <name value="abatement-date"/>
         <definition value="http://hl7.org/fhir/SearchParameter/Condition-abatement-date"/>
         <type value="date"/>
+        <documentation value="**Example:**&#xA;`GET [base]/Condition?abatement-date=2020-01-08`&#xA;&#xA;**Notes:**&#xA;Searches on `Condition.abatement.ofType(dateTime)`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#date)."/>
       </searchParam>
       <searchParam>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
@@ -128,6 +261,7 @@
         <name value="abatement-string"/>
         <definition value="http://hl7.org/fhir/SearchParameter/Condition-abatement-string"/>
         <type value="string"/>
+        <documentation value="**Example:**&#xA;`GET [base]/Condition?abatement-string=resolved`&#xA;&#xA;**Notes:**&#xA;Searches on `Condition.abatement.ofType(string)`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#string)."/>
       </searchParam>
       <searchParam>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
@@ -136,6 +270,7 @@
         <name value="body-site"/>
         <definition value="http://hl7.org/fhir/SearchParameter/Condition-body-site"/>
         <type value="token"/>
+        <documentation value="**Example:**&#xA;`GET [base]/Condition?body-site=elbow`&#xA;&#xA;**Notes:**&#xA;Searches on `Condition.bodySite`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."/>
       </searchParam>
       <searchParam>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
@@ -144,6 +279,7 @@
         <name value="category"/>
         <definition value="http://hl7.org/fhir/SearchParameter/Condition-category"/>
         <type value="token"/>
+        <documentation value="**Example:**&#xA;`GET [base]/Condition?category=problem-list-item`&#xA;&#xA;**Notes:**&#xA;Searches on `Condition.category`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."/>
       </searchParam>
       <searchParam>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
@@ -152,6 +288,7 @@
         <name value="clinical-status"/>
         <definition value="http://hl7.org/fhir/SearchParameter/Condition-clinical-status"/>
         <type value="token"/>
+        <documentation value="**Example:**&#xA;`GET [base]/Condition?clinical-status=active`&#xA;&#xA;**Notes:**&#xA;Searches on `Condition.clinicalStatus`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."/>
       </searchParam>
       <searchParam>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
@@ -160,6 +297,7 @@
         <name value="code"/>
         <definition value="http://hl7.org/fhir/SearchParameter/clinical-code"/>
         <type value="token"/>
+        <documentation value="**Example:**&#xA;`GET [base]/Condition?code=http://fhir.de/CodeSystem/bfarm/icd-10-gm|K35.8`&#xA;`GET [base]/Condition?code=K35.8`&#xA;&#xA;**Notes:**&#xA;Searches on `Condition.code`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."/>
       </searchParam>
       <searchParam>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
@@ -168,6 +306,7 @@
         <name value="encounter"/>
         <definition value="http://hl7.org/fhir/SearchParameter/Condition-encounter"/>
         <type value="reference"/>
+        <documentation value="**Example:**&#xA;`GET [base]/Condition?encounter=Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2`&#xA;`GET [base]/Condition?encounter=mii-exa-fall-kontakt-gesundheitseinrichtung-2`&#xA;&#xA;**Notes:**&#xA;Searches on `Condition.encounter`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#reference)."/>
       </searchParam>
       <searchParam>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
@@ -176,6 +315,7 @@
         <name value="evidence"/>
         <definition value="http://hl7.org/fhir/SearchParameter/Condition-evidence"/>
         <type value="token"/>
+        <documentation value="**Example:**&#xA;`GET [base]/Condition?evidence=manifestation`&#xA;&#xA;**Notes:**&#xA;Searches on `Condition.evidence`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."/>
       </searchParam>
       <searchParam>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
@@ -184,6 +324,7 @@
         <name value="evidence-detail"/>
         <definition value="http://hl7.org/fhir/SearchParameter/Condition-evidence-detail"/>
         <type value="reference"/>
+        <documentation value="**Example:**&#xA;`GET [base]/Condition?evidence-detail=Observation/mii-exa-person-observation-vitalstatus`&#xA;`GET [base]/Condition?evidence-detail=mii-exa-person-observation-vitalstatus`&#xA;&#xA;**Notes:**&#xA;Searches on `Condition.evidence.detail`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#reference)."/>
       </searchParam>
       <searchParam>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
@@ -192,6 +333,7 @@
         <name value="identifier"/>
         <definition value="http://hl7.org/fhir/SearchParameter/clinical-identifier"/>
         <type value="token"/>
+        <documentation value="**Example:**&#xA;`GET [base]/Condition?identifier=diagnose-1`&#xA;&#xA;**Notes:**&#xA;Searches on `Condition.identifier`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."/>
       </searchParam>
       <searchParam>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
@@ -200,6 +342,7 @@
         <name value="onset-age"/>
         <definition value="http://hl7.org/fhir/SearchParameter/Condition-onset-age"/>
         <type value="quantity"/>
+        <documentation value="**Example:**&#xA;`GET [base]/Condition?onset-age=20|http://unitsofmeasure.org|a`&#xA;&#xA;**Notes:**&#xA;Searches on `Condition.onset.ofType(Age)`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#quantity)."/>
       </searchParam>
       <searchParam>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
@@ -208,6 +351,7 @@
         <name value="onset-date"/>
         <definition value="http://hl7.org/fhir/SearchParameter/Condition-onset-date"/>
         <type value="date"/>
+        <documentation value="**Example:**&#xA;`GET [base]/Condition?onset-date=2020-01-08`&#xA;&#xA;**Notes:**&#xA;Searches on `Condition.onset.ofType(dateTime)`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#date)."/>
       </searchParam>
       <searchParam>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
@@ -216,6 +360,7 @@
         <name value="onset-info"/>
         <definition value="http://hl7.org/fhir/SearchParameter/Condition-onset-info"/>
         <type value="string"/>
+        <documentation value="**Example:**&#xA;`GET [base]/Condition?onset-info=2019-09-26`&#xA;&#xA;**Notes:**&#xA;Searches on `Condition.onset.ofType(string)`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#string)."/>
       </searchParam>
       <searchParam>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
@@ -224,6 +369,7 @@
         <name value="patient"/>
         <definition value="http://hl7.org/fhir/SearchParameter/clinical-patient"/>
         <type value="reference"/>
+        <documentation value="**Example:**&#xA;`GET [base]/Condition?patient=Patient/mii-exa-person-patient-1`&#xA;`GET [base]/Condition?patient=mii-exa-person-patient-1`&#xA;&#xA;**Notes:**&#xA;Searches on `Condition.subject` where the subject is a Patient. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#reference)."/>
       </searchParam>
       <searchParam>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
@@ -232,6 +378,7 @@
         <name value="recorded-date"/>
         <definition value="http://hl7.org/fhir/SearchParameter/Condition-recorded-date"/>
         <type value="date"/>
+        <documentation value="**Example:**&#xA;`GET [base]/Condition?recorded-date=2020-01-08`&#xA;&#xA;**Notes:**&#xA;Searches on `Condition.recordedDate`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#date)."/>
       </searchParam>
       <searchParam>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
@@ -240,6 +387,7 @@
         <name value="severity"/>
         <definition value="http://hl7.org/fhir/SearchParameter/Condition-severity"/>
         <type value="token"/>
+        <documentation value="**Example:**&#xA;`GET [base]/Condition?severity=moderate`&#xA;&#xA;**Notes:**&#xA;Searches on `Condition.severity`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."/>
       </searchParam>
       <searchParam>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
@@ -248,6 +396,7 @@
         <name value="stage"/>
         <definition value="http://hl7.org/fhir/SearchParameter/Condition-stage"/>
         <type value="token"/>
+        <documentation value="**Example:**&#xA;`GET [base]/Condition?stage=initial`&#xA;&#xA;**Notes:**&#xA;Searches on `Condition.stage`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."/>
       </searchParam>
       <searchParam>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
@@ -256,6 +405,7 @@
         <name value="subject"/>
         <definition value="http://hl7.org/fhir/SearchParameter/Condition-subject"/>
         <type value="reference"/>
+        <documentation value="**Example:**&#xA;`GET [base]/Condition?subject=Patient/mii-exa-person-patient-1`&#xA;`GET [base]/Condition?subject=mii-exa-person-patient-1`&#xA;&#xA;**Notes:**&#xA;Searches on `Condition.subject`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#reference)."/>
       </searchParam>
       <searchParam>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
@@ -264,6 +414,7 @@
         <name value="verification-status"/>
         <definition value="http://hl7.org/fhir/SearchParameter/Condition-verification-status"/>
         <type value="token"/>
+        <documentation value="**Example:**&#xA;`GET [base]/Condition?verification-status=confirmed`&#xA;&#xA;**Notes:**&#xA;Searches on `Condition.verificationStatus`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."/>
       </searchParam>
       <searchParam>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
@@ -272,6 +423,7 @@
         <name value="icd10gm-diagnosesicherheit"/>
         <definition value="https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-condition-icd10gm-diagnosesicherheit"/>
         <type value="token"/>
+        <documentation value="**Example:**&#xA;`GET [base]/Condition?icd10gm-diagnosesicherheit=https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ICD_DIAGNOSESICHERHEIT|G`&#xA;&#xA;**Notes:**&#xA;Searches on `Condition.code.coding.extension.where(url='http://fhir.de/StructureDefinition/icd-10-gm-diagnosesicherheit').value`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."/>
       </searchParam>
       <searchParam>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
@@ -280,6 +432,7 @@
         <name value="icd10gm-mehrfachcodierung"/>
         <definition value="https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-condition-icd10gm-mehrfachcodierung"/>
         <type value="token"/>
+        <documentation value="**Example:**&#xA;`GET [base]/Condition?icd10gm-mehrfachcodierung=http://fhir.de/CodeSystem/icd-10-gm-mehrfachcodierungs-kennzeichen|†`&#xA;&#xA;**Notes:**&#xA;Searches on `Condition.code.coding.extension.where(url='http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen').value`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."/>
       </searchParam>
       <searchParam>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
@@ -288,6 +441,7 @@
         <name value="icd10gm-seitenlokalisation"/>
         <definition value="https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-condition-icd10gm-seitenlokalisation"/>
         <type value="token"/>
+        <documentation value="**Example:**&#xA;`GET [base]/Condition?icd10gm-seitenlokalisation=https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ICD_SEITENLOKALISATION|L`&#xA;&#xA;**Notes:**&#xA;Searches on `Condition.code.coding.extension.where(url='http://fhir.de/StructureDefinition/seitenlokalisation').value`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."/>
       </searchParam>
     </resource>
   </rest>

@@ -55,7 +55,7 @@ This section provides detailed implementation guidance for the MII Cause of Deat
 * Examples for this Profile: [Condition/mii-exa-person-condition-todesursache](Condition-mii-exa-person-condition-todesursache.md)
 * CapabilityStatements using this Profile: [MII CPS Person CapabilityStatement](CapabilityStatement-mii-cps-person-capabilitystatement.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/mii-pr-person-todesursache)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/StructureDefinition-mii-pr-person-todesursache.json)
 
 ### Formal Views of Profile Content
 
@@ -73,14 +73,24 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-person-tod
 {
   "resourceType" : "StructureDefinition",
   "id" : "mii-pr-person-todesursache",
+  "meta" : {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-license",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/spdx-license",
+          "code" : "CC-BY-4.0",
+          "display" : "Creative Commons Attribution 4.0 International"
+        }]
+      }
+    }]
+  },
   "extension" : [{
-    "url" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/StructureDefinition/mii-ex-meta-license-codeable",
-    "valueCodeableConcept" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/spdx-license",
-        "code" : "CC-BY-4.0",
-        "display" : "Creative Commons Attribution 4.0 International"
-      }]
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm",
+    "valueCoding" : {
+      "system" : "http://hl7.org/fhir/version-algorithm",
+      "code" : "semver",
+      "display" : "SemVer"
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Todesursache",
@@ -112,7 +122,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-person-tod
     }]
   },
   "status" : "active",
-  "date" : "2025-12-12",
+  "date" : "2026-06-03",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [{
@@ -181,11 +191,6 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-person-tod
     "identity" : "v2",
     "uri" : "http://hl7.org/v2",
     "name" : "HL7 v2 Mapping"
-  },
-  {
-    "identity" : "rim",
-    "uri" : "http://hl7.org/v3",
-    "name" : "RIM Mapping"
   },
   {
     "identity" : "w5",
@@ -278,6 +283,21 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-person-tod
       "mustSupport" : true
     },
     {
+      "id" : "Condition.clinicalStatus.coding",
+      "path" : "Condition.clinicalStatus.coding",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.clinicalStatus.coding.system",
+      "path" : "Condition.clinicalStatus.coding.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.clinicalStatus.coding.code",
+      "path" : "Condition.clinicalStatus.coding.code",
+      "mustSupport" : true
+    },
+    {
       "id" : "Condition.verificationStatus",
       "path" : "Condition.verificationStatus",
       "short" : "Verifizierungsstatus",
@@ -330,6 +350,21 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-person-tod
           "url" : "http://hl7.org/fhir/StructureDefinition/translation"
         }]
       },
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.verificationStatus.coding",
+      "path" : "Condition.verificationStatus.coding",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.verificationStatus.coding.system",
+      "path" : "Condition.verificationStatus.coding.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.verificationStatus.coding.code",
+      "path" : "Condition.verificationStatus.coding.code",
       "mustSupport" : true
     },
     {
@@ -439,6 +474,16 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-person-tod
       "mustSupport" : true
     },
     {
+      "id" : "Condition.category:todesDiagnose.coding:snomed.system",
+      "path" : "Condition.category.coding.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.category:todesDiagnose.coding:snomed.code",
+      "path" : "Condition.category.coding.code",
+      "mustSupport" : true
+    },
+    {
       "id" : "Condition.category:todesDiagnose.coding:loinc",
       "path" : "Condition.category.coding",
       "sliceName" : "loinc",
@@ -448,6 +493,16 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-person-tod
         "system" : "http://loinc.org",
         "code" : "79378-6"
       },
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.category:todesDiagnose.coding:loinc.system",
+      "path" : "Condition.category.coding.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.category:todesDiagnose.coding:loinc.code",
+      "path" : "Condition.category.coding.code",
       "mustSupport" : true
     },
     {
@@ -565,6 +620,11 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-person-tod
       "mustSupport" : true
     },
     {
+      "id" : "Condition.subject.reference",
+      "path" : "Condition.subject.reference",
+      "mustSupport" : true
+    },
+    {
       "id" : "Condition.encounter",
       "path" : "Condition.encounter",
       "short" : "Kontakt (Aufenthaltsbezug)",
@@ -617,6 +677,11 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-person-tod
           "url" : "http://hl7.org/fhir/StructureDefinition/translation"
         }]
       },
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.encounter.reference",
+      "path" : "Condition.encounter.reference",
       "mustSupport" : true
     },
     {

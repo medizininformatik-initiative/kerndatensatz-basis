@@ -2,6 +2,16 @@
   "resourceType" : "CodeSystem",
   "id" : "mii-cs-person-vitalstatus",
   "meta" : {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-license",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/spdx-license",
+          "code" : "CC-BY-4.0",
+          "display" : "Creative Commons Attribution 4.0 International"
+        }]
+      }
+    }],
     "profile" : ["http://hl7.org/fhir/StructureDefinition/shareablecodesystem"]
   },
   "language" : "de",
@@ -10,13 +20,11 @@
     "div" : "<div xml:lang=\"de\" lang=\"de\"><hr/><p><b>German</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem mii-cs-person-vitalstatus</b></p><a name=\"de-mii-cs-person-vitalstatus\"> </a><a name=\"de-hcmii-cs-person-vitalstatus\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://hl7.org/fhir/R4/shareablecodesystem.html\">Shareable CodeSystem</a></p></div><p>This case-sensitive code system <code>https://www.medizininformatik-initiative.de/fhir/core/modul-person/CodeSystem/Vitalstatus</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">L<a name=\"de-mii-cs-person-vitalstatus-L\"> </a></td><td>Patient lebt</td></tr><tr><td style=\"white-space:nowrap\">T<a name=\"de-mii-cs-person-vitalstatus-T\"> </a></td><td>Patient verstorben</td></tr><tr><td style=\"white-space:nowrap\">A<a name=\"de-mii-cs-person-vitalstatus-A\"> </a></td><td>unbekannt, Patient nicht mehr auffindbar (lost to follow-up)</td></tr><tr><td style=\"white-space:nowrap\">N<a name=\"de-mii-cs-person-vitalstatus-N\"> </a></td><td>unbekannt, Betreuung/Nachsorge nicht mehr nötig</td></tr><tr><td style=\"white-space:nowrap\">B<a name=\"de-mii-cs-person-vitalstatus-B\"> </a></td><td>unbekannt, Patient ist anderenorts in Betreuung</td></tr><tr><td style=\"white-space:nowrap\">V<a name=\"de-mii-cs-person-vitalstatus-V\"> </a></td><td>unbekannt, Patient verweigert weitere Betreuung</td></tr><tr><td style=\"white-space:nowrap\">X<a name=\"de-mii-cs-person-vitalstatus-X\"> </a></td><td>unbekannt</td></tr></table></div>"
   },
   "extension" : [{
-    "url" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/StructureDefinition/mii-ex-meta-license-codeable",
-    "valueCodeableConcept" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/spdx-license",
-        "code" : "CC-BY-4.0",
-        "display" : "Creative Commons Attribution 4.0 International"
-      }]
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm",
+    "valueCoding" : {
+      "system" : "http://hl7.org/fhir/version-algorithm",
+      "code" : "semver",
+      "display" : "SemVer"
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/CodeSystem/Vitalstatus",

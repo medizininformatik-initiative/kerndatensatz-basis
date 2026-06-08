@@ -7,9 +7,9 @@ Logische Repräsentation des Basismoduls Fall
 
 **Usages:**
 
-* This Logical Model is not used by any profiles in this Implementation Guide
+* This Logical Model is not used by any profiles in this Specification
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/mii-lm-fall)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/StructureDefinition-mii-lm-fall.json)
 
 ### Formal Views of Profile Content
 
@@ -19,6 +19,35 @@ You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir
 
 Other representations of profile: [CSV](../StructureDefinition-mii-lm-fall.csv), [Excel](../StructureDefinition-mii-lm-fall.xlsx) 
 
+### Notes:
+
+### Mapping LogicalModel Fall -> FHIR
+
+| | |
+| :--- | :--- |
+| MII LM Fall | FHIR |
+| Fall.Abteilungskontakt.Aufnahmenummer | Encounter.identifier |
+| Fall.Abteilungskontakt.Beginndatum | Encounter.period.start |
+| Fall.Abteilungskontakt.Enddatum | Encounter.period.end |
+| Fall.Abteilungskontakt.KontaktArt | Encounter.type |
+| Fall.Abteilungskontakt.KontaktEbene | Encounter.type |
+| Fall.Abteilungskontakt.PatientenIdentifikator | Encounter.subject |
+| Fall.Einrichtungskontakt.Aufnahmeanlass | Encounter.hospitalization.admitSource |
+| Fall.Einrichtungskontakt.Aufnahmegrund | Encounter.extension('http://fhir.de/StructureDefinition/Aufnahmegrund') |
+| Fall.Einrichtungskontakt.Aufnahmenummer | Encounter.identifier |
+| Fall.Einrichtungskontakt.Beginndatum | Encounter.period.start |
+| Fall.Einrichtungskontakt.Enddatum | Encounter.period.end |
+| Fall.Einrichtungskontakt.Entlassungsgrund | Encounter.hospitalization.dischargeDisposition |
+| Fall.Einrichtungskontakt.KontaktArt | Encounter.type |
+| Fall.Einrichtungskontakt.KontaktEbene | Encounter.type |
+| Fall.Einrichtungskontakt.PatientenIdentifikator | Encounter.subject |
+| Fall.Versorgungsstellenkontakt.Aufnahmenummer | Encounter.identifier |
+| Fall.Versorgungsstellenkontakt.Beginndatum | Encounter.period.start |
+| Fall.Versorgungsstellenkontakt.Enddatum | Encounter.period.end |
+| Fall.Versorgungsstellenkontakt.KontaktArt | Encounter.type |
+| Fall.Versorgungsstellenkontakt.KontaktEbene | Encounter.type |
+| Fall.Versorgungsstellenkontakt.PatientenIdentifikator | Encounter.subject |
+
 
 
 ## Resource Content
@@ -27,14 +56,24 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-fall.csv),
 {
   "resourceType" : "StructureDefinition",
   "id" : "mii-lm-fall",
+  "meta" : {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-license",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/spdx-license",
+          "code" : "CC-BY-4.0",
+          "display" : "Creative Commons Attribution 4.0 International"
+        }]
+      }
+    }]
+  },
   "extension" : [{
-    "url" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/StructureDefinition/mii-ex-meta-license-codeable",
-    "valueCodeableConcept" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/spdx-license",
-        "code" : "CC-BY-4.0",
-        "display" : "Creative Commons Attribution 4.0 International"
-      }]
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm",
+    "valueCoding" : {
+      "system" : "http://hl7.org/fhir/version-algorithm",
+      "code" : "semver",
+      "display" : "SemVer"
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/LogicalModel/Fall",
@@ -42,7 +81,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-fall.csv),
   "name" : "MII_LM_Fall",
   "title" : "MII LM Fall",
   "status" : "active",
-  "date" : "2025-11-07",
+  "date" : "2026-05-12",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [{
@@ -74,9 +113,9 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-fall.csv),
   }],
   "fhirVersion" : "4.0.1",
   "mapping" : [{
-    "identity" : "rim",
-    "uri" : "http://hl7.org/v3",
-    "name" : "RIM Mapping"
+    "identity" : "FHIR",
+    "uri" : "http://hl7.org/fhir/StructureDefinition/Encounter|4.0.1",
+    "name" : "Fall LogicalModel FHIR Mapping"
   }],
   "kind" : "logical",
   "abstract" : false,
@@ -110,6 +149,10 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-fall.csv),
       "max" : "*",
       "type" : [{
         "code" : "CodeableConcept"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Encounter.type"
       }]
     },
     {
@@ -132,6 +175,10 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-fall.csv),
       "max" : "*",
       "type" : [{
         "code" : "CodeableConcept"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Encounter.type"
       }]
     },
     {
@@ -143,6 +190,10 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-fall.csv),
       "max" : "*",
       "type" : [{
         "code" : "Identifier"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Encounter.subject"
       }]
     },
     {
@@ -154,6 +205,10 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-fall.csv),
       "max" : "*",
       "type" : [{
         "code" : "Identifier"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Encounter.identifier"
       }]
     },
     {
@@ -165,6 +220,10 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-fall.csv),
       "max" : "*",
       "type" : [{
         "code" : "CodeableConcept"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Encounter.hospitalization.admitSource"
       }]
     },
     {
@@ -176,6 +235,10 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-fall.csv),
       "max" : "*",
       "type" : [{
         "code" : "CodeableConcept"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Encounter.extension('http://fhir.de/StructureDefinition/Aufnahmegrund')"
       }]
     },
     {
@@ -187,6 +250,10 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-fall.csv),
       "max" : "*",
       "type" : [{
         "code" : "dateTime"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Encounter.period.start"
       }]
     },
     {
@@ -198,6 +265,10 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-fall.csv),
       "max" : "*",
       "type" : [{
         "code" : "dateTime"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Encounter.period.end"
       }]
     },
     {
@@ -209,6 +280,10 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-fall.csv),
       "max" : "*",
       "type" : [{
         "code" : "code"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Encounter.hospitalization.dischargeDisposition"
       }]
     },
     {
@@ -231,6 +306,10 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-fall.csv),
       "max" : "*",
       "type" : [{
         "code" : "CodeableConcept"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Encounter.type"
       }]
     },
     {
@@ -242,6 +321,10 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-fall.csv),
       "max" : "*",
       "type" : [{
         "code" : "CodeableConcept"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Encounter.type"
       }]
     },
     {
@@ -253,6 +336,10 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-fall.csv),
       "max" : "*",
       "type" : [{
         "code" : "Identifier"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Encounter.subject"
       }]
     },
     {
@@ -264,6 +351,10 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-fall.csv),
       "max" : "*",
       "type" : [{
         "code" : "Identifier"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Encounter.identifier"
       }]
     },
     {
@@ -275,6 +366,10 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-fall.csv),
       "max" : "*",
       "type" : [{
         "code" : "dateTime"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Encounter.period.start"
       }]
     },
     {
@@ -286,6 +381,10 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-fall.csv),
       "max" : "*",
       "type" : [{
         "code" : "dateTime"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Encounter.period.end"
       }]
     },
     {
@@ -319,6 +418,10 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-fall.csv),
       "max" : "*",
       "type" : [{
         "code" : "CodeableConcept"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Encounter.type"
       }]
     },
     {
@@ -330,6 +433,10 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-fall.csv),
       "max" : "*",
       "type" : [{
         "code" : "CodeableConcept"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Encounter.type"
       }]
     },
     {
@@ -341,6 +448,10 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-fall.csv),
       "max" : "*",
       "type" : [{
         "code" : "Identifier"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Encounter.subject"
       }]
     },
     {
@@ -352,6 +463,10 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-fall.csv),
       "max" : "*",
       "type" : [{
         "code" : "Identifier"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Encounter.identifier"
       }]
     },
     {
@@ -363,6 +478,10 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-fall.csv),
       "max" : "*",
       "type" : [{
         "code" : "dateTime"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Encounter.period.start"
       }]
     },
     {
@@ -374,6 +493,10 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-fall.csv),
       "max" : "*",
       "type" : [{
         "code" : "dateTime"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Encounter.period.end"
       }]
     }]
   }

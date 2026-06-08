@@ -10,7 +10,7 @@
 
 Profile: [MII PR Person Patient](StructureDefinition-mii-pr-person-patient.md) version: 2026.0.0
 
-Security Label: test health data (Details: ActReason code HTEST = 'test health data')
+Security Label: [test health data (Details: v3 Code System ActReason code HTEST = 'test health data')](http://hl7.org/fhir/R4/v3/ActReason/cs.html)
 
 Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))
 

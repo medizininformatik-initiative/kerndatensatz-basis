@@ -10,7 +10,7 @@
 
 Profile: [MII PR Person Vitalstatus](StructureDefinition-mii-pr-person-vitalstatus.md) version: 2026.0.0
 
-Security Label: test health data (Details: ActReason code HTEST = 'test health data')
+Security Label: [test health data (Details: v3 Code System ActReason code HTEST = 'test health data')](http://hl7.org/fhir/R4/v3/ActReason/cs.html)
 
 **status**: Final
 
@@ -20,7 +20,7 @@ Security Label: test health data (Details: ActReason code HTEST = 'test health d
 
 **subject**: [Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))](Patient-mii-exa-person-patient-1.md)
 
-**encounter**: [Encounter: extension = ; identifier = Visit number; status = finished; class = ambulatory (ActCode#AMB); type = Abteilungskontakt; priority = emergency; period = 2020-01-08 07:00:00+0100 --> 2020-01-08 09:00:00+0100](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-9.md)
+**encounter**: [Encounter: extension = ; identifier = Visit number; status = finished; class = ambulatory (v3 Code System ActCode#AMB); type = Abteilungskontakt; priority = emergency; period = 2020-01-08 07:00:00+0100 --> 2020-01-08 09:00:00+0100](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-9.md)
 
 **effective**: 2020-01-08 07:00:00+0100
 

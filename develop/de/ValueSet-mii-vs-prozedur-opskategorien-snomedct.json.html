@@ -6,6 +6,7 @@
 <!DOCTYPE HTML>
 
 
+
 <html xml:lang="de" xmlns="http://www.w3.org/1999/xhtml" lang="de" dir="ltr">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
@@ -310,22 +311,34 @@
   <pre class="json" data-fhir="generated" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-json" style="white-space: pre; text-wrap: nowrap;">{
   "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet">resourceType</a>" : "ValueSet",
   "<a href="http://hl7.org/fhir/R4/resource.html#ValueSet.id">id</a>" : "mii-vs-prozedur-opskategorien-snomedct",
+  "<a href="http://hl7.org/fhir/R4/resource.html#ValueSet.meta">meta</a>" : {
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>" : [
+      {
+        "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-license",
+        "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueCodeableConcept</a>" : {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://hl7.org/fhir/spdx-license",
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "CC-BY-4.0",
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Creative Commons Attribution 4.0 International"
+            }
+          ]
+        }
+      }
+    ]
+  },
   "<a href="http://hl7.org/fhir/R4/resource.html#ValueSet.language">language</a>" : "de",
   "<a href="http://hl7.org/fhir/R4/domainresource.html#ValueSet.text">text</a>" : {
     "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
-    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xml:lang=\&quot;de\&quot; lang=\&quot;de\&quot;&gt;&lt;hr/&gt;&lt;p&gt;&lt;b&gt;German&lt;/b&gt;&lt;/p&gt;&lt;hr/&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: ValueSet mii-vs-prozedur-opskategorien-snomedct&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;de-mii-vs-prozedur-opskategorien-snomedct\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;de-hcmii-vs-prozedur-opskategorien-snomedct\&quot;&gt; &lt;/a&gt;&lt;ul&gt;&lt;li&gt;Include these codes as defined in &lt;a href=\&quot;http://www.snomed.org/\&quot;&gt;&lt;code&gt;http://snomed.info/sct&lt;/code&gt;&lt;/a&gt;&lt;span title=\&quot;Version is explicitly stated to be http://snomed.info/sct/900000000000207008/version/20250701\&quot;&gt; version &amp;#x1F4CD;http://snomed.info/sct/900000000000207008/version/20250701&lt;/span&gt;&lt;table class=\&quot;none\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Display&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;http://snomed.info/id/165197003\&quot;&gt;165197003&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Diagnostic assessment&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;http://snomed.info/id/363679005\&quot;&gt;363679005&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Imaging&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;http://snomed.info/id/387713003\&quot;&gt;387713003&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Surgical procedure&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;http://snomed.info/id/18629005\&quot;&gt;18629005&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Administration of drug or medicament&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;http://snomed.info/id/277132007\&quot;&gt;277132007&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Therapeutic procedure&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;http://snomed.info/id/394841004\&quot;&gt;394841004&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Other category&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;"
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xml:lang=\&quot;de\&quot; lang=\&quot;de\&quot;&gt;&lt;hr/&gt;&lt;p&gt;&lt;b&gt;German&lt;/b&gt;&lt;/p&gt;&lt;hr/&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: ValueSet mii-vs-prozedur-opskategorien-snomedct&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;de-mii-vs-prozedur-opskategorien-snomedct\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;de-hcmii-vs-prozedur-opskategorien-snomedct\&quot;&gt; &lt;/a&gt;&lt;div style=\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\&quot;&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;/&gt;&lt;/div&gt;&lt;ul&gt;&lt;li&gt;Include these codes as defined in &lt;a href=\&quot;http://www.snomed.org/\&quot;&gt;&lt;code&gt;http://snomed.info/sct&lt;/code&gt;&lt;/a&gt;&lt;span title=\&quot;Version is explicitly stated to be http://snomed.info/sct/900000000000207008/version/20250701\&quot;&gt; version &amp;#x1F4CD;http://snomed.info/sct/900000000000207008/version/20250701&lt;/span&gt;&lt;table class=\&quot;none\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Display&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;http://snomed.info/id/165197003\&quot;&gt;165197003&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Diagnostic assessment&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;http://snomed.info/id/363679005\&quot;&gt;363679005&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Imaging&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;http://snomed.info/id/387713003\&quot;&gt;387713003&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Surgical procedure&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;http://snomed.info/id/18629005\&quot;&gt;18629005&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Administration of drug or medicament&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;http://snomed.info/id/277132007\&quot;&gt;277132007&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Therapeutic procedure&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;http://snomed.info/id/394841004\&quot;&gt;394841004&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Other category&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;"
   },
   "<a href="http://hl7.org/fhir/R4/domainresource.html#ValueSet.extension">extension</a>" : [
     {
-      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/StructureDefinition/mii-ex-meta-license-codeable",
-      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueCodeableConcept</a>" : {
-        "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
-          {
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://hl7.org/fhir/spdx-license",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "CC-BY-4.0",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Creative Commons Attribution 4.0 International"
-          }
-        ]
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm",
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueCoding</a>" : {
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://hl7.org/fhir/version-algorithm",
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "semver",
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "SemVer"
       }
     }
   ],
@@ -428,8 +441,8 @@
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.base#2026.0.0 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Erstellt 
-  <span title="2026-04-30 09:42:00 +0000">
-    2026-04-30
+  <span title="2026-06-08 07:31:00 +0000">
+    2026-06-08
   </span>
 
           <br/>

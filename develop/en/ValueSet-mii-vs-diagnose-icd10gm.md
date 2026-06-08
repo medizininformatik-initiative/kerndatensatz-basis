@@ -28,16 +28,24 @@ Enthaelt ICD-10-GM-Codes der Versionen 2009 bis 2025
   "resourceType" : "ValueSet",
   "id" : "mii-vs-diagnose-icd10gm",
   "meta" : {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-license",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/spdx-license",
+          "code" : "CC-BY-4.0",
+          "display" : "Creative Commons Attribution 4.0 International"
+        }]
+      }
+    }],
     "profile" : ["http://hl7.org/fhir/StructureDefinition/shareablevalueset"]
   },
   "extension" : [{
-    "url" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/StructureDefinition/mii-ex-meta-license-codeable",
-    "valueCodeableConcept" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/spdx-license",
-        "code" : "CC-BY-4.0",
-        "display" : "Creative Commons Attribution 4.0 International"
-      }]
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm",
+    "valueCoding" : {
+      "system" : "http://hl7.org/fhir/version-algorithm",
+      "code" : "semver",
+      "display" : "SemVer"
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-icd10gm",
@@ -46,7 +54,7 @@ Enthaelt ICD-10-GM-Codes der Versionen 2009 bis 2025
   "title" : "MII VS Diagnose ICD-10-GM",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-03-04",
+  "date" : "2026-05-08",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [{
@@ -79,6 +87,10 @@ Enthaelt ICD-10-GM-Codes der Versionen 2009 bis 2025
   "copyright" : "WHO, BfArM 1994 - 2025 - Die Erstellung erfolgt unter Verwendung der maschinenlesbaren Fassung des Bundesinstituts für Arzneimittel und Medizinprodukte (BfArM).",
   "compose" : {
     "include" : [{
+      "system" : "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+      "version" : "2026"
+    },
+    {
       "system" : "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
       "version" : "2025"
     },

@@ -6,6 +6,7 @@
 <!DOCTYPE HTML>
 
 
+
 <html xml:lang="de" xmlns="http://www.w3.org/1999/xhtml" lang="de" dir="ltr">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
@@ -290,7 +291,7 @@
           
 
             Stand: 
-2025-10-21
+2026-05-11
 
           
         
@@ -307,23 +308,100 @@
 
 
 
-  <pre class="xml" data-fhir="generated" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-xml" style="white-space: pre; text-wrap: nowrap;">
+  <pre class="xml" data-fhir="generated" style="white-space: pre; text-wrap: nowrap; width: auto;"><code style="white-space: pre; text-wrap: nowrap;">
 &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement">CapabilityStatement</a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
   &lt;<a href="http://hl7.org/fhir/R4/resource.html#CapabilityStatement.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;mii-cps-prozedur-capabilitystatement&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/resource.html#CapabilityStatement.meta">meta</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>
+               <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-license&quot;&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueCodeableConcept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/spdx-license&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;CC-BY-4.0&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Creative Commons Attribution 4.0 International&quot;/&gt;
+        &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueCodeableConcept</a>&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/resource.html#CapabilityStatement.meta">meta</a>&gt;
   &lt;<a href="http://hl7.org/fhir/R4/resource.html#CapabilityStatement.language">language</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;de&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#CapabilityStatement.text">text</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;extensions&quot;/&gt;
-    &lt;div xml:lang=&quot;de&quot; lang=&quot;de&quot;&gt;&lt;hr/&gt;&lt;p&gt;&lt;b&gt;German&lt;/b&gt;&lt;/p&gt;&lt;hr/&gt;&lt;p class=&quot;res-header-id&quot;&gt;&lt;b&gt;Generated Narrative: CapabilityStatement mii-cps-prozedur-capabilitystatement&lt;/b&gt;&lt;/p&gt;&lt;a name=&quot;de-mii-cps-prozedur-capabilitystatement&quot;&gt; &lt;/a&gt;&lt;a name=&quot;de-hcmii-cps-prozedur-capabilitystatement&quot;&gt; &lt;/a&gt;&lt;h2 id=&quot;de-title&quot;&gt;MII CPS Prozedur CapabilityStatement&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;Implementation Guide Version: 2026.0.0 &lt;/li&gt;&lt;li&gt;FHIR Version: 4.0.1 &lt;/li&gt;&lt;li&gt;Supported Formats: &lt;code&gt;xml&lt;/code&gt;, &lt;code&gt;json&lt;/code&gt;&lt;/li&gt;&lt;li&gt;Published on: 2025-10-21 &lt;/li&gt;&lt;li&gt;Published by: Medical Informatics Initiative (MII) &lt;/li&gt;&lt;/ul&gt;&lt;blockquote class=&quot;impl-note&quot;&gt;&lt;p&gt;&lt;strong&gt;Note to Implementers: FHIR Capabilities&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.&lt;/p&gt;&lt;/blockquote&gt;&lt;h2 id=&quot;de-rest&quot;&gt;FHIR RESTful Capabilities&lt;/h2&gt;&lt;div class=&quot;panel panel-default&quot;&gt;&lt;div class=&quot;panel-heading&quot;&gt;&lt;h3 id=&quot;de-mode1&quot; class=&quot;panel-title&quot;&gt;Mode: &lt;code&gt;server&lt;/code&gt;&lt;/h3&gt;&lt;/div&gt;&lt;div class=&quot;panel-body&quot;/&gt;&lt;/div&gt;&lt;h3 id=&quot;de-resourcesCap1&quot;&gt;Capabilities by Resource/Profile&lt;/h3&gt;&lt;h4 id=&quot;de-resourcesSummary1&quot;&gt;Summary&lt;/h4&gt;&lt;p&gt;The summary table lists the resources that are part of this configuration, and for each resource it lists:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;The relevant profiles (if any)&lt;/li&gt;&lt;li&gt;The interactions supported by each resource (&lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;R&lt;/span&gt;&lt;/b&gt;ead, &lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;S&lt;/span&gt;&lt;/b&gt;earch, &lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;U&lt;/span&gt;&lt;/b&gt;pdate, and &lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;C&lt;/span&gt;&lt;/b&gt;reate, are always shown, while &lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;VR&lt;/span&gt;&lt;/b&gt;ead, &lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;P&lt;/span&gt;&lt;/b&gt;atch, &lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;D&lt;/span&gt;&lt;/b&gt;elete, &lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;H&lt;/span&gt;&lt;/b&gt;istory on &lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;I&lt;/span&gt;&lt;/b&gt;nstance, or &lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;H&lt;/span&gt;&lt;/b&gt;istory on &lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;T&lt;/span&gt;&lt;/b&gt;ype are only present if at least one of the resources has support for them.&lt;/li&gt;&lt;li&gt;&lt;span&gt;The required, recommended, and some optional search parameters (if any). &lt;/span&gt;&lt;/li&gt;&lt;li&gt;The linked resources enabled for &lt;code&gt;_include&lt;/code&gt;&lt;/li&gt;&lt;li&gt;The other resources enabled for &lt;code&gt;_revinclude&lt;/code&gt;&lt;/li&gt;&lt;li&gt;The operations on the resource (if any)&lt;/li&gt;&lt;/ul&gt;&lt;div class=&quot;table-responsive&quot;&gt;&lt;table class=&quot;table table-condensed table-hover&quot;&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;&lt;b&gt;Resource Type&lt;/b&gt;&lt;/th&gt;&lt;th&gt;&lt;b&gt;Profile&lt;/b&gt;&lt;/th&gt;&lt;th class=&quot;text-center&quot;&gt;&lt;b title=&quot;GET a resource (read interaction)&quot;&gt;R&lt;/b&gt;&lt;/th&gt;&lt;th class=&quot;text-center&quot;&gt;&lt;b title=&quot;GET all set of resources of the type (search interaction)&quot;&gt;S&lt;/b&gt;&lt;/th&gt;&lt;th class=&quot;text-center&quot;&gt;&lt;b title=&quot;PUT a new resource version (update interaction)&quot;&gt;U&lt;/b&gt;&lt;/th&gt;&lt;th class=&quot;text-center&quot;&gt;&lt;b title=&quot;POST a new resource (create interaction)&quot;&gt;C&lt;/b&gt;&lt;/th&gt;&lt;th&gt;&lt;b title=&quot;Required and recommended search parameters&quot;&gt;Searches&lt;/b&gt;&lt;/th&gt;&lt;th&gt;&lt;code&gt;&lt;b&gt;_include&lt;/b&gt;&lt;/code&gt;&lt;/th&gt;&lt;th&gt;&lt;code&gt;&lt;b&gt;_revinclude&lt;/b&gt;&lt;/code&gt;&lt;/th&gt;&lt;th&gt;&lt;b&gt;Operations&lt;/b&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;#de-Procedure1-1&quot;&gt;Procedure&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/procedure.html&quot;&gt;http://hl7.org/fhir/StructureDefinition/Procedure&lt;/a&gt;&lt;br/&gt;&lt;em&gt;Additional supported profiles:&lt;/em&gt;&lt;br/&gt;  &lt;a href=&quot;StructureDefinition-mii-pr-prozedur-procedure.html&quot;&gt;MII PR Prozedur Procedureversion: 2026.0.0)&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;text-center&quot;&gt;&lt;span title=&quot;SHALL&quot;&gt;&lt;b&gt;Y&lt;/b&gt;&lt;/span&gt;&lt;/td&gt;&lt;td class=&quot;text-center&quot;&gt;&lt;span title=&quot;SHALL&quot;&gt;&lt;b&gt;Y&lt;/b&gt;&lt;/span&gt;&lt;/td&gt;&lt;td class=&quot;text-center&quot;/&gt;&lt;td class=&quot;text-center&quot;/&gt;&lt;td&gt;_count, _summary, _id, _lastUpdated, _profile, status, category, code, date, patient, subject, bodySite, dokumentationsdatum, durchfuehrungsabsicht, ops-seitenlokalisation&lt;/td&gt;&lt;td/&gt;&lt;td/&gt;&lt;td/&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;hr/&gt;&lt;div class=&quot;panel panel-default&quot;&gt;&lt;div class=&quot;panel-heading&quot;&gt;&lt;h4 id=&quot;de-Procedure1-1&quot; class=&quot;panel-title&quot;&gt;&lt;span style=&quot;float: right;&quot;&gt;Resource Conformance: SHALL &lt;/span&gt;Procedure&lt;/h4&gt;&lt;/div&gt;&lt;div class=&quot;panel-body&quot;&gt;&lt;div class=&quot;container&quot;&gt;&lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;col-lg-6&quot;&gt;&lt;span class=&quot;lead&quot;&gt;Base System Profile&lt;/span&gt;&lt;br/&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/procedure.html&quot;&gt;Procedure&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;col-lg-3&quot;&gt;&lt;span class=&quot;lead&quot;&gt;Profile Conformance&lt;/span&gt;&lt;br/&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/div&gt;&lt;div class=&quot;col-lg-3&quot;&gt;&lt;span class=&quot;lead&quot;&gt;Reference Policy&lt;/span&gt;&lt;br/&gt;&lt;/div&gt;&lt;/div&gt;&lt;p/&gt;&lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;col-6&quot;&gt;&lt;span class=&quot;lead&quot;&gt;Supported Profiles&lt;/span&gt;&lt;p&gt;&lt;a href=&quot;StructureDefinition-mii-pr-prozedur-procedure.html&quot;&gt;MII PR Prozedur Procedureversion: 2026.0.0)&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;div class=&quot;col-lg-6&quot;&gt;&lt;span class=&quot;lead&quot;&gt;Interaction summary&lt;/span&gt;&lt;br/&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;SHALL&lt;/strong&gt; support &lt;code&gt;read&lt;/code&gt;, &lt;code&gt;search-type&lt;/code&gt;.&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;&lt;p/&gt;&lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;col-lg-7&quot;&gt;&lt;span class=&quot;lead&quot;&gt;Search Parameters&lt;/span&gt;&lt;table class=&quot;table table-condensed table-hover&quot;&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Conformance&lt;/th&gt;&lt;th&gt;Parameter&lt;/th&gt;&lt;th&gt;Type&lt;/th&gt;&lt;th&gt;Documentation&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/td&gt;&lt;td&gt;_count&lt;/td&gt;&lt;td&gt;&lt;code&gt;special&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/td&gt;&lt;td&gt;_summary&lt;/td&gt;&lt;td&gt;&lt;code&gt;special&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/resource.html#search&quot;&gt;_id&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;token&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/resource.html#search&quot;&gt;_lastUpdated&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;date&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/resource.html#search&quot;&gt;_profile&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;uri&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/procedure.html#search&quot;&gt;status&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;token&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/procedure.html#search&quot;&gt;category&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;token&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/procedure.html#search&quot;&gt;code&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;token&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/procedure.html#search&quot;&gt;date&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;date&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/procedure.html#search&quot;&gt;patient&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;reference&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/procedure.html#search&quot;&gt;subject&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;reference&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.meta@2026.0.0&amp;amp;canonical=https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-procedure-bodysite&quot;&gt;bodySite&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;token&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.meta@2026.0.0&amp;amp;canonical=https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-procedure-dokumentationsdatum&quot;&gt;dokumentationsdatum&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;date&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.meta@2026.0.0&amp;amp;canonical=https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-procedure-durchfuehrungsabsicht&quot;&gt;durchfuehrungsabsicht&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;token&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.meta@2026.0.0&amp;amp;canonical=https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-procedure-ops-seitenlokalisation&quot;&gt;ops-seitenlokalisation&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;token&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;div class=&quot;col-lg-5&quot;&gt; &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;<a name="end-xhtml"></a>
+    &lt;div xml:lang=&quot;de&quot; lang=&quot;de&quot;&gt;&lt;hr/&gt;&lt;p&gt;&lt;b&gt;German&lt;/b&gt;&lt;/p&gt;&lt;hr/&gt;&lt;p class=&quot;res-header-id&quot;&gt;&lt;b&gt;Generated Narrative: CapabilityStatement mii-cps-prozedur-capabilitystatement&lt;/b&gt;&lt;/p&gt;&lt;a name=&quot;de-mii-cps-prozedur-capabilitystatement&quot;&gt; &lt;/a&gt;&lt;a name=&quot;de-hcmii-cps-prozedur-capabilitystatement&quot;&gt; &lt;/a&gt;&lt;div style=&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%&quot;&gt;&lt;p style=&quot;margin-bottom: 0px&quot;/&gt;&lt;/div&gt;&lt;h2 id=&quot;de-title&quot;&gt;MII CPS Prozedur CapabilityStatement&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;Implementation Guide Version: 2026.0.0 &lt;/li&gt;&lt;li&gt;FHIR Version: 4.0.1 &lt;/li&gt;&lt;li&gt;Supported Formats: &lt;code&gt;xml&lt;/code&gt;, &lt;code&gt;json&lt;/code&gt;&lt;/li&gt;&lt;li&gt;Published on: 2026-05-11 &lt;/li&gt;&lt;li&gt;Published by: Medical Informatics Initiative (MII) &lt;/li&gt;&lt;/ul&gt;&lt;blockquote class=&quot;impl-note&quot;&gt;&lt;p&gt;&lt;strong&gt;Note to Implementers: FHIR Capabilities&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.&lt;/p&gt;&lt;/blockquote&gt;&lt;h2 id=&quot;de-rest&quot;&gt;FHIR RESTful Capabilities&lt;/h2&gt;&lt;div class=&quot;panel panel-default&quot;&gt;&lt;div class=&quot;panel-heading&quot;&gt;&lt;h3 id=&quot;de-mode1&quot; class=&quot;panel-title&quot;&gt;Mode: &lt;code&gt;server&lt;/code&gt;&lt;/h3&gt;&lt;/div&gt;&lt;div class=&quot;panel-body&quot;/&gt;&lt;/div&gt;&lt;h3 id=&quot;de-resourcesCap1&quot;&gt;Capabilities by Resource/Profile&lt;/h3&gt;&lt;h4 id=&quot;de-resourcesSummary1&quot;&gt;Summary&lt;/h4&gt;&lt;p&gt;The summary table lists the resources that are part of this configuration, and for each resource it lists:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;The relevant profiles (if any)&lt;/li&gt;&lt;li&gt;The interactions supported by each resource (&lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;R&lt;/span&gt;&lt;/b&gt;ead, &lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;S&lt;/span&gt;&lt;/b&gt;earch, &lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;U&lt;/span&gt;&lt;/b&gt;pdate, and &lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;C&lt;/span&gt;&lt;/b&gt;reate, are always shown, while &lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;VR&lt;/span&gt;&lt;/b&gt;ead, &lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;P&lt;/span&gt;&lt;/b&gt;atch, &lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;D&lt;/span&gt;&lt;/b&gt;elete, &lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;H&lt;/span&gt;&lt;/b&gt;istory on &lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;I&lt;/span&gt;&lt;/b&gt;nstance, or &lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;H&lt;/span&gt;&lt;/b&gt;istory on &lt;b&gt;&lt;span class=&quot;bg-info&quot;&gt;T&lt;/span&gt;&lt;/b&gt;ype are only present if at least one of the resources has support for them.&lt;/li&gt;&lt;li&gt;&lt;span&gt;The required, recommended, and some optional search parameters (if any). &lt;/span&gt;&lt;/li&gt;&lt;li&gt;The linked resources enabled for &lt;code&gt;_include&lt;/code&gt;&lt;/li&gt;&lt;li&gt;The other resources enabled for &lt;code&gt;_revinclude&lt;/code&gt;&lt;/li&gt;&lt;li&gt;The operations on the resource (if any)&lt;/li&gt;&lt;/ul&gt;&lt;div class=&quot;table-responsive&quot;&gt;&lt;table class=&quot;table table-condensed table-hover&quot;&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;&lt;b&gt;Resource Type&lt;/b&gt;&lt;/th&gt;&lt;th&gt;&lt;b&gt;Profile&lt;/b&gt;&lt;/th&gt;&lt;th class=&quot;text-center&quot;&gt;&lt;b title=&quot;GET a resource (read interaction)&quot;&gt;R&lt;/b&gt;&lt;/th&gt;&lt;th class=&quot;text-center&quot;&gt;&lt;b title=&quot;GET all set of resources of the type (search interaction)&quot;&gt;S&lt;/b&gt;&lt;/th&gt;&lt;th class=&quot;text-center&quot;&gt;&lt;b title=&quot;PUT a new resource version (update interaction)&quot;&gt;U&lt;/b&gt;&lt;/th&gt;&lt;th class=&quot;text-center&quot;&gt;&lt;b title=&quot;POST a new resource (create interaction)&quot;&gt;C&lt;/b&gt;&lt;/th&gt;&lt;th&gt;&lt;b title=&quot;Required and recommended search parameters&quot;&gt;Searches&lt;/b&gt;&lt;/th&gt;&lt;th&gt;&lt;code&gt;&lt;b&gt;_include&lt;/b&gt;&lt;/code&gt;&lt;/th&gt;&lt;th&gt;&lt;code&gt;&lt;b&gt;_revinclude&lt;/b&gt;&lt;/code&gt;&lt;/th&gt;&lt;th&gt;&lt;b&gt;Operations&lt;/b&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;#de-Procedure1-1&quot;&gt;Procedure&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/procedure.html&quot;&gt;http://hl7.org/fhir/StructureDefinition/Procedure&lt;/a&gt;&lt;br/&gt;&lt;em&gt;Additional supported profiles:&lt;/em&gt;&lt;br/&gt;  &lt;a href=&quot;StructureDefinition-mii-pr-prozedur-procedure.html&quot;&gt;MII PR Prozedur Procedureversion: 2026.0.0)&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;text-center&quot;&gt;&lt;span title=&quot;SHALL&quot;&gt;&lt;b&gt;Y&lt;/b&gt;&lt;/span&gt;&lt;/td&gt;&lt;td class=&quot;text-center&quot;&gt;&lt;span title=&quot;SHALL&quot;&gt;&lt;b&gt;Y&lt;/b&gt;&lt;/span&gt;&lt;/td&gt;&lt;td class=&quot;text-center&quot;/&gt;&lt;td class=&quot;text-center&quot;/&gt;&lt;td&gt;_count, _summary, _id, _lastUpdated, _profile, status, category, code, date, patient, subject, bodySite, dokumentationsdatum, durchfuehrungsabsicht, ops-seitenlokalisation&lt;/td&gt;&lt;td/&gt;&lt;td/&gt;&lt;td/&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;hr/&gt;&lt;div class=&quot;panel panel-default&quot;&gt;&lt;div class=&quot;panel-heading&quot;&gt;&lt;h4 id=&quot;de-Procedure1-1&quot; class=&quot;panel-title&quot;&gt;&lt;span style=&quot;float: right;&quot;&gt;Resource Conformance: SHALL &lt;/span&gt;Procedure&lt;/h4&gt;&lt;/div&gt;&lt;div class=&quot;panel-body&quot;&gt;&lt;div class=&quot;container&quot;&gt;&lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;col-lg-6&quot;&gt;&lt;span class=&quot;lead&quot;&gt;Base System Profile&lt;/span&gt;&lt;br/&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/procedure.html&quot;&gt;Procedure&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;col-lg-3&quot;&gt;&lt;span class=&quot;lead&quot;&gt;Profile Conformance&lt;/span&gt;&lt;br/&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/div&gt;&lt;div class=&quot;col-lg-3&quot;&gt;&lt;span class=&quot;lead&quot;&gt;Reference Policy&lt;/span&gt;&lt;br/&gt;&lt;/div&gt;&lt;/div&gt;&lt;p/&gt;&lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;col-6&quot;&gt;&lt;span class=&quot;lead&quot;&gt;Supported Profiles&lt;/span&gt;&lt;p&gt;&lt;a href=&quot;StructureDefinition-mii-pr-prozedur-procedure.html&quot;&gt;MII PR Prozedur Procedureversion: 2026.0.0)&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;div class=&quot;col-lg-6&quot;&gt;&lt;span class=&quot;lead&quot;&gt;Interaction summary&lt;/span&gt;&lt;br/&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;SHALL&lt;/strong&gt; support &lt;code&gt;read&lt;/code&gt;, &lt;code&gt;search-type&lt;/code&gt;.&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;&lt;p/&gt;&lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;col-lg-7&quot;&gt;&lt;span class=&quot;lead&quot;&gt;Search Parameters&lt;/span&gt;&lt;table class=&quot;table table-condensed table-hover&quot;&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Conformance&lt;/th&gt;&lt;th&gt;Parameter&lt;/th&gt;&lt;th&gt;Type&lt;/th&gt;&lt;th&gt;Documentation&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/td&gt;&lt;td&gt;_count&lt;/td&gt;&lt;td&gt;&lt;code&gt;special&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;
+&lt;code&gt;GET [base]/Procedure?_count=10&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Notes:&lt;/strong&gt;
+For further details see FHIR core specification, section &lt;a href=&quot;https://hl7.org/fhir/R4/search.html#count&quot;&gt;Page Count&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/td&gt;&lt;td&gt;_summary&lt;/td&gt;&lt;td&gt;&lt;code&gt;special&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;
+&lt;code&gt;GET [base]/Procedure?_summary=count&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Notes:&lt;/strong&gt;
+For further details see FHIR core specification, section &lt;a href=&quot;https://hl7.org/fhir/R4/search.html#summary&quot;&gt;Summary&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/resource.html#search&quot;&gt;_id&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;token&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;
+&lt;code&gt;GET [base]/Procedure?_id=mii-exa-prozedur-procedure&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Notes:&lt;/strong&gt;
+For further details see FHIR core specification, section &lt;a href=&quot;https://hl7.org/fhir/R4/search.html#all&quot;&gt;Parameters for all resources&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/resource.html#search&quot;&gt;_lastUpdated&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;date&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;
+&lt;code&gt;GET [base]/Procedure?_lastUpdated=ge2020-01-01&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Notes:&lt;/strong&gt;
+Searches on &lt;code&gt;Procedure.meta.lastUpdated&lt;/code&gt;. For further details see &lt;a href=&quot;https://hl7.org/fhir/R4/search.html#_lastUpdated&quot;&gt;FHIR core specification&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/resource.html#search&quot;&gt;_profile&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;uri&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;
+&lt;code&gt;GET [base]/Procedure?_profile=https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.0&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Notes:&lt;/strong&gt;
+Searches on &lt;code&gt;Procedure.meta.profile&lt;/code&gt;. For further details see FHIR core specification, section &lt;a href=&quot;https://hl7.org/fhir/R4/search.html#all&quot;&gt;Parameters for all resources&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/procedure.html#search&quot;&gt;status&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;token&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;
+&lt;code&gt;GET [base]/Procedure?status=completed&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Notes:&lt;/strong&gt;
+Searches on &lt;code&gt;Procedure.status&lt;/code&gt;. For further details see &lt;a href=&quot;https://hl7.org/fhir/R4/search.html#token&quot;&gt;FHIR core specification&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/procedure.html#search&quot;&gt;category&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;token&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;
+&lt;code&gt;GET [base]/Procedure?category=http://snomed.info/sct|277132007&lt;/code&gt;
+&lt;code&gt;GET [base]/Procedure?category=277132007&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Notes:&lt;/strong&gt;
+Searches on &lt;code&gt;Procedure.category&lt;/code&gt;. For further details see &lt;a href=&quot;https://hl7.org/fhir/R4/search.html#token&quot;&gt;FHIR core specification&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/procedure.html#search&quot;&gt;code&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;token&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;
+&lt;code&gt;GET [base]/Procedure?code=http://fhir.de/CodeSystem/bfarm/ops|5-470&lt;/code&gt;
+&lt;code&gt;GET [base]/Procedure?code=5-470&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Notes:&lt;/strong&gt;
+Searches on &lt;code&gt;Procedure.code&lt;/code&gt;. For further details see &lt;a href=&quot;https://hl7.org/fhir/R4/search.html#token&quot;&gt;FHIR core specification&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/procedure.html#search&quot;&gt;date&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;date&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;
+&lt;code&gt;GET [base]/Procedure?date=2020-01-08&lt;/code&gt;
+&lt;code&gt;GET [base]/Procedure?date=ge2020-01-08&amp;amp;date=lt2020-01-09&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Notes:&lt;/strong&gt;
+Searches on &lt;code&gt;Procedure.performed[x]&lt;/code&gt;. For further details see &lt;a href=&quot;https://hl7.org/fhir/R4/search.html#date&quot;&gt;FHIR core specification&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/procedure.html#search&quot;&gt;patient&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;reference&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;
+&lt;code&gt;GET [base]/Procedure?patient=Patient/mii-exa-person-patient-1&lt;/code&gt;
+&lt;code&gt;GET [base]/Procedure?patient=mii-exa-person-patient-1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Notes:&lt;/strong&gt;
+Searches on &lt;code&gt;Procedure.subject&lt;/code&gt; where the subject is a Patient. For further details see &lt;a href=&quot;https://hl7.org/fhir/R4/search.html#reference&quot;&gt;FHIR core specification&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/procedure.html#search&quot;&gt;subject&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;reference&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;
+&lt;code&gt;GET [base]/Procedure?subject=Patient/mii-exa-person-patient-1&lt;/code&gt;
+&lt;code&gt;GET [base]/Procedure?subject=mii-exa-person-patient-1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Notes:&lt;/strong&gt;
+Searches on &lt;code&gt;Procedure.subject&lt;/code&gt;. For further details see &lt;a href=&quot;https://hl7.org/fhir/R4/search.html#reference&quot;&gt;FHIR core specification&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.meta@2026.0.0&amp;amp;canonical=https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-procedure-bodysite&quot;&gt;bodySite&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;token&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;
+&lt;code&gt;GET [base]/Procedure?bodySite=http://snomed.info/sct|181255000&lt;/code&gt;
+&lt;code&gt;GET [base]/Procedure?bodySite=181255000&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Notes:&lt;/strong&gt;
+Searches on &lt;code&gt;Procedure.bodySite&lt;/code&gt;. For further details see &lt;a href=&quot;https://hl7.org/fhir/R4/search.html#token&quot;&gt;FHIR core specification&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.meta@2026.0.0&amp;amp;canonical=https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-procedure-dokumentationsdatum&quot;&gt;dokumentationsdatum&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;date&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;
+&lt;code&gt;GET [base]/Procedure?dokumentationsdatum=2020-01-08&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Notes:&lt;/strong&gt;
+Searches on &lt;code&gt;Procedure.extension('http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum').value&lt;/code&gt;. For further details see &lt;a href=&quot;https://hl7.org/fhir/R4/search.html#date&quot;&gt;FHIR core specification&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.meta@2026.0.0&amp;amp;canonical=https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-procedure-durchfuehrungsabsicht&quot;&gt;durchfuehrungsabsicht&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;token&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;
+&lt;code&gt;GET [base]/Procedure?durchfuehrungsabsicht=http://snomed.info/sct|262202000&lt;/code&gt;
+&lt;code&gt;GET [base]/Procedure?durchfuehrungsabsicht=262202000&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Notes:&lt;/strong&gt;
+Searches on &lt;code&gt;Procedure.extension('https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Durchfuehrungsabsicht').value&lt;/code&gt;. For further details see &lt;a href=&quot;https://hl7.org/fhir/R4/search.html#token&quot;&gt;FHIR core specification&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;SHALL&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.meta@2026.0.0&amp;amp;canonical=https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-procedure-ops-seitenlokalisation&quot;&gt;ops-seitenlokalisation&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;token&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;
+&lt;code&gt;GET [base]/Procedure?ops-seitenlokalisation=https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ICD_SEITENLOKALISATION|L&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Notes:&lt;/strong&gt;
+Searches on &lt;code&gt;Procedure.code.coding.where(system='http://fhir.de/CodeSystem/bfarm/ops').extension('http://fhir.de/StructureDefinition/seitenlokalisation').valueCoding.code&lt;/code&gt;. For further details see &lt;a href=&quot;https://hl7.org/fhir/R4/search.html#token&quot;&gt;FHIR core specification&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;div class=&quot;col-lg-5&quot;&gt; &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;<a name="end-xhtml"></a>
   &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#CapabilityStatement.text">text</a>&gt;
   &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#CapabilityStatement.extension">extension</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;https://www.medizininformatik-initiative.de/fhir/modul-meta/StructureDefinition/mii-ex-meta-license-codeable&quot;&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueCodeableConcept</a>&gt;
-      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/spdx-license&quot;/&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;CC-BY-4.0&quot;/&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Creative Commons Attribution 4.0 International&quot;/&gt;
-      &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
-    &lt;/<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueCodeableConcept</a>&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm&quot;&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueCoding</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/version-algorithm&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;semver&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;SemVer&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueCoding</a>&gt;
   &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#CapabilityStatement.extension">extension</a>&gt;
   &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.url">url</a>
        <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/CapabilityStatement/metadata&quot;/&gt;
@@ -332,7 +410,7 @@
   &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.title">title</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;MII CPS Prozedur CapabilityStatement&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;active&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.experimental">experimental</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>=&quot;false&quot;/&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.date">date</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2025-10-21&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.date">date</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2026-05-11&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.publisher">publisher</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Medizininformatik-Initiative (MII)&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.contact">contact</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Medical Informatics Initiative (MII)&quot;/&gt;
@@ -391,6 +469,12 @@
         &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#CapabilityStatement.rest.resource.searchParam.extension">extension</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;_count&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;special&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;**Example:**
+`GET [base]/Procedure?_count=10`
+
+**Notes:**
+For further details see FHIR core specification, section [Page Count](https://hl7.org/fhir/R4/search.html#count).&quot;/&gt;
       &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#CapabilityStatement.rest.resource.searchParam.extension">extension</a>
@@ -399,6 +483,12 @@
         &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#CapabilityStatement.rest.resource.searchParam.extension">extension</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;_summary&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;special&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;**Example:**
+`GET [base]/Procedure?_summary=count`
+
+**Notes:**
+For further details see FHIR core specification, section [Summary](https://hl7.org/fhir/R4/search.html#summary).&quot;/&gt;
       &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#CapabilityStatement.rest.resource.searchParam.extension">extension</a>
@@ -408,6 +498,12 @@
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;_id&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a> <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hl7.org/fhir/SearchParameter/Resource-id&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;token&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;**Example:**
+`GET [base]/Procedure?_id=mii-exa-prozedur-procedure`
+
+**Notes:**
+For further details see FHIR core specification, section [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all).&quot;/&gt;
       &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#CapabilityStatement.rest.resource.searchParam.extension">extension</a>
@@ -418,6 +514,12 @@
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a>
                     <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hl7.org/fhir/SearchParameter/Resource-lastUpdated&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;date&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;**Example:**
+`GET [base]/Procedure?_lastUpdated=ge2020-01-01`
+
+**Notes:**
+Searches on `Procedure.meta.lastUpdated`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#_lastUpdated).&quot;/&gt;
       &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#CapabilityStatement.rest.resource.searchParam.extension">extension</a>
@@ -428,6 +530,12 @@
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a>
                     <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hl7.org/fhir/SearchParameter/Resource-profile&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;uri&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;**Example:**
+`GET [base]/Procedure?_profile=https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.0`
+
+**Notes:**
+Searches on `Procedure.meta.profile`. For further details see FHIR core specification, section [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all).&quot;/&gt;
       &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#CapabilityStatement.rest.resource.searchParam.extension">extension</a>
@@ -438,6 +546,12 @@
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a>
                     <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hl7.org/fhir/SearchParameter/Procedure-status&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;token&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;**Example:**
+`GET [base]/Procedure?status=completed`
+
+**Notes:**
+Searches on `Procedure.status`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token).&quot;/&gt;
       &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#CapabilityStatement.rest.resource.searchParam.extension">extension</a>
@@ -448,6 +562,13 @@
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a>
                     <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hl7.org/fhir/SearchParameter/Procedure-category&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;token&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;**Example:**
+`GET [base]/Procedure?category=http://snomed.info/sct|277132007`
+`GET [base]/Procedure?category=277132007`
+
+**Notes:**
+Searches on `Procedure.category`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token).&quot;/&gt;
       &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#CapabilityStatement.rest.resource.searchParam.extension">extension</a>
@@ -458,6 +579,13 @@
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a>
                     <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hl7.org/fhir/SearchParameter/clinical-code&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;token&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;**Example:**
+`GET [base]/Procedure?code=http://fhir.de/CodeSystem/bfarm/ops|5-470`
+`GET [base]/Procedure?code=5-470`
+
+**Notes:**
+Searches on `Procedure.code`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token).&quot;/&gt;
       &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#CapabilityStatement.rest.resource.searchParam.extension">extension</a>
@@ -468,6 +596,13 @@
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a>
                     <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hl7.org/fhir/SearchParameter/clinical-date&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;date&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;**Example:**
+`GET [base]/Procedure?date=2020-01-08`
+`GET [base]/Procedure?date=ge2020-01-08&amp;amp;date=lt2020-01-09`
+
+**Notes:**
+Searches on `Procedure.performed[x]`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#date).&quot;/&gt;
       &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#CapabilityStatement.rest.resource.searchParam.extension">extension</a>
@@ -478,6 +613,13 @@
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a>
                     <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hl7.org/fhir/SearchParameter/clinical-patient&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;reference&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;**Example:**
+`GET [base]/Procedure?patient=Patient/mii-exa-person-patient-1`
+`GET [base]/Procedure?patient=mii-exa-person-patient-1`
+
+**Notes:**
+Searches on `Procedure.subject` where the subject is a Patient. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#reference).&quot;/&gt;
       &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#CapabilityStatement.rest.resource.searchParam.extension">extension</a>
@@ -488,6 +630,13 @@
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a>
                     <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hl7.org/fhir/SearchParameter/Procedure-subject&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;reference&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;**Example:**
+`GET [base]/Procedure?subject=Patient/mii-exa-person-patient-1`
+`GET [base]/Procedure?subject=mii-exa-person-patient-1`
+
+**Notes:**
+Searches on `Procedure.subject`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#reference).&quot;/&gt;
       &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#CapabilityStatement.rest.resource.searchParam.extension">extension</a>
@@ -498,6 +647,13 @@
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a>
                     <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-procedure-bodysite&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;token&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;**Example:**
+`GET [base]/Procedure?bodySite=http://snomed.info/sct|181255000`
+`GET [base]/Procedure?bodySite=181255000`
+
+**Notes:**
+Searches on `Procedure.bodySite`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token).&quot;/&gt;
       &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#CapabilityStatement.rest.resource.searchParam.extension">extension</a>
@@ -508,6 +664,12 @@
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a>
                     <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-procedure-dokumentationsdatum&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;date&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;**Example:**
+`GET [base]/Procedure?dokumentationsdatum=2020-01-08`
+
+**Notes:**
+Searches on `Procedure.extension('http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum').value`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#date).&quot;/&gt;
       &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#CapabilityStatement.rest.resource.searchParam.extension">extension</a>
@@ -518,6 +680,13 @@
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a>
                     <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-procedure-durchfuehrungsabsicht&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;token&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;**Example:**
+`GET [base]/Procedure?durchfuehrungsabsicht=http://snomed.info/sct|262202000`
+`GET [base]/Procedure?durchfuehrungsabsicht=262202000`
+
+**Notes:**
+Searches on `Procedure.extension('https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Durchfuehrungsabsicht').value`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token).&quot;/&gt;
       &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#CapabilityStatement.rest.resource.searchParam.extension">extension</a>
@@ -528,6 +697,12 @@
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a>
                     <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-procedure-ops-seitenlokalisation&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;token&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;**Example:**
+`GET [base]/Procedure?ops-seitenlokalisation=https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ICD_SEITENLOKALISATION|L`
+
+**Notes:**
+Searches on `Procedure.code.coding.where(system='http://fhir.de/CodeSystem/bfarm/ops').extension('http://fhir.de/StructureDefinition/seitenlokalisation').valueCoding.code`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token).&quot;/&gt;
       &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
     &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource">resource</a>&gt;
   &lt;/<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest">rest</a>&gt;
@@ -564,8 +739,8 @@
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.base#2026.0.0 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Erstellt 
-  <span title="2026-04-30 09:42:00 +0000">
-    2026-04-30
+  <span title="2026-06-08 07:31:00 +0000">
+    2026-06-08
   </span>
 
           <br/>

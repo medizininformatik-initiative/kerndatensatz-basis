@@ -7,9 +7,9 @@ Logische Repräsentation des Basismoduls Diagnose
 
 **Usages:**
 
-* This Logical Model is not used by any profiles in this Implementation Guide
+* This Logical Model is not used by any profiles in this Specification
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/mii-lm-diagnose)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/StructureDefinition-mii-lm-diagnose.json)
 
 ### Formal Views of Profile Content
 
@@ -19,6 +19,39 @@ You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir
 
 Other representations of profile: [CSV](../StructureDefinition-mii-lm-diagnose.csv), [Excel](../StructureDefinition-mii-lm-diagnose.xlsx) 
 
+### Notes:
+
+### Mapping LogicalModel Diagnose -> FHIR
+
+| | |
+| :--- | :--- |
+| MII LM Diagnose | FHIR |
+| Diagnose.ALPHAIDKodiert | Condition.code.coding.where(system='http://fhir.de/CodeSystem/bfarm/alpha-id') |
+| Diagnose.ALPHAIDKodiert.Diagnosecode | Condition.code.coding.where(system='http://fhir.de/CodeSystem/bfarm/alpha-id').code |
+| Diagnose.Diagnoseerlaeuterung | Condition.note |
+| Diagnose.Dokumentationsdatum | Condition.recordedDate |
+| Diagnose.Feststellungsdatum | Condition.extension('http://hl7.org/fhir/StructureDefinition/condition-assertedDate').valueDateTime |
+| Diagnose.Freitextbeschreibung | Condition.code.text |
+| Diagnose.ICD10GMDiagnoseKodiert | Condition.code.coding.where(system='http://fhir.de/CodeSystem/bfarm/icd-10-gm') |
+| Diagnose.ICD10GMDiagnoseKodiert.Diagnosecode | Condition.code.coding.where(system='http://fhir.de/CodeSystem/bfarm/icd-10-gm').code |
+| Diagnose.ICD10GMDiagnoseKodiert.Diagnosesicherheit | Condition.code.coding.where(system='http://fhir.de/CodeSystem/bfarm/icd-10-gm').extension('http://fhir.de/StructureDefinition/icd-10-gm-diagnosesicherheit').valueCoding.code |
+| Diagnose.ICD10GMDiagnoseKodiert.Mehrfachkodierungskennzeichen | Condition.code.coding.where(system='http://fhir.de/CodeSystem/bfarm/icd-10-gm').extension('http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen').valueCoding.code |
+| Diagnose.ICD10GMDiagnoseKodiert.Seitenlokalisation | Condition.code.coding.where(system='http://fhir.de/CodeSystem/bfarm/icd-10-gm').extension('http://fhir.de/StructureDefinition/seitenlokalisation').valueCoding.code |
+| Diagnose.KlinischRelevanterZeitraum | Condition.onset[x] |
+| Diagnose.KlinischRelevanterZeitraum.Lebensphase.bis | Condition.onsetPeriod.end.extension('http://fhir.de/StructureDefinition/lebensphase').valueCodeableConcept |
+| Diagnose.KlinischRelevanterZeitraum.Lebensphase.von | Condition.onsetPeriod.start.extension('http://fhir.de/StructureDefinition/lebensphase').valueCodeableConcept |
+| Diagnose.KlinischRelevanterZeitraum.Zeitraum | Condition.onsetPeriod |
+| Diagnose.KlinischRelevanterZeitraum.Zeitraum.bis | Condition.onsetPeriod.end |
+| Diagnose.KlinischRelevanterZeitraum.Zeitraum.von | Condition.onsetPeriod.start |
+| Diagnose.KlinischerStatus | Condition.clinicalStatus |
+| Diagnose.Koerperstelle | Condition.bodySite |
+| Diagnose.ORPHANETDiagnoseKodiert | Condition.code.coding.where(system='http://www.orpha.net') |
+| Diagnose.ORPHANETDiagnoseKodiert.Diagnosecode | Condition.code.coding.where(system='http://www.orpha.net').code |
+| Diagnose.SNOMEDDiagnoseKodiert | Condition.code.coding.where(system='http://snomed.info/sct') |
+| Diagnose.SNOMEDDiagnoseKodiert.Diagnosecode | Condition.code.coding.where(system='http://snomed.info/sct').code |
+| Diagnose.WeitereKodiersysteme | Condition.code.coding |
+| Diagnose.WeitereKodiersysteme.Diagnosecode | Condition.code.coding.code |
+
 
 
 ## Resource Content
@@ -27,14 +60,24 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-diagnose.c
 {
   "resourceType" : "StructureDefinition",
   "id" : "mii-lm-diagnose",
+  "meta" : {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-license",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/spdx-license",
+          "code" : "CC-BY-4.0",
+          "display" : "Creative Commons Attribution 4.0 International"
+        }]
+      }
+    }]
+  },
   "extension" : [{
-    "url" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/StructureDefinition/mii-ex-meta-license-codeable",
-    "valueCodeableConcept" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/spdx-license",
-        "code" : "CC-BY-4.0",
-        "display" : "Creative Commons Attribution 4.0 International"
-      }]
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm",
+    "valueCoding" : {
+      "system" : "http://hl7.org/fhir/version-algorithm",
+      "code" : "semver",
+      "display" : "SemVer"
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/LogicalModel/Diagnose",
@@ -42,7 +85,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-diagnose.c
   "name" : "MII_LM_Diagnose",
   "title" : "MII LM Diagnose",
   "status" : "active",
-  "date" : "2024-12-09",
+  "date" : "2026-05-12",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [{
@@ -75,12 +118,8 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-diagnose.c
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "FHIR",
+    "uri" : "http://hl7.org/fhir/StructureDefinition/Condition|4.0.1",
     "name" : "Diagnose LogicalModel FHIR Mapping"
-  },
-  {
-    "identity" : "rim",
-    "uri" : "http://hl7.org/v3",
-    "name" : "RIM Mapping"
   }],
   "kind" : "logical",
   "abstract" : false,

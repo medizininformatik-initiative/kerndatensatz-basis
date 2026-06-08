@@ -7,9 +7,9 @@ Logische Repräsentation des Basismoduls Person
 
 **Usages:**
 
-* This Logical Model is not used by any profiles in this Implementation Guide
+* This Logical Model is not used by any profiles in this Specification
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/mii-lm-person)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/StructureDefinition-mii-lm-person.json)
 
 ### Formale Ansichten des Profilinhalts
 
@@ -48,6 +48,41 @@ Mandatory: 0 element(13 nested mandatory elements)
 
 Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-person.csv), [Excel](../StructureDefinition-mii-lm-person.xlsx) 
 
+### Notizen:
+
+### Mapping LogicalModel Person -> FHIR
+
+| | |
+| :--- | :--- |
+| MII LM Person | FHIR |
+| Person.Demographie.AdministrativesGeschlecht | Patient.gender |
+| Person.Demographie.Adresse | Patient.address |
+| Person.Demographie.Adresse.Postfach.Land | Patient.address.country |
+| Person.Demographie.Adresse.Postfach.PLZ | Patient.address.postalCode |
+| Person.Demographie.Adresse.Postfach.Strasse | Patient.address.line |
+| Person.Demographie.Adresse.Postfach.Wohnort | Patient.address.city + Patient.address.extension.Stadtteil |
+| Person.Demographie.Adresse.Strassenanschrift.Land | Patient.address.country |
+| Person.Demographie.Adresse.Strassenanschrift.PLZ | Patient.address.postalCode |
+| Person.Demographie.Adresse.Strassenanschrift.Strasse | Patient.address.line |
+| Person.Demographie.Adresse.Strassenanschrift.Wohnort | Patient.address.city + Patient.address.extension.Stadtteil |
+| Person.Demographie.Geburtsdatum | Patient.birthDate |
+| Person.Demographie.Vitalstatus.PatientVerstorben | Patient.deceased[x] |
+| Person.Demographie.Vitalstatus.Todeszeitpunkt | Patient.deceased[x] |
+| Person.Name | Patient.name |
+| Person.Name.Familienname | Patient.name.family |
+| Person.Name.Geburtsname | Patient.name.use |
+| Person.Name.Nachname | Patient.name.family.extension.nachname |
+| Person.Name.Namenszusatz | Patient.name.family.extension.namenszusatz |
+| Person.Name.Praefix | Patient.name.prefix |
+| Person.Name.Praefix.ArtdesPraefixes | Patient.name.prefix.extension-prefix-qualifier |
+| Person.Name.Vorname | Patient.name.given |
+| Person.Name.Vorsatzwort | Patient.name.family.extension.vorsatzwort |
+| Person.PatientIn.PatientenIdentifikator.PatientenIdentifikator | Patient.identifier:pid |
+| Person.PatientIn.Versicherung | Patient.identifier:default |
+| Person.PatientIn.Versicherung.Versichertennummer.VersichertenIDGKV | Patient.identifier:versichertenId_GKV |
+| Person.PatientIn.Versicherung.Versichertennummer.VersichertennummerPKV | Patient.identifier:versicherungsnummer_pkv |
+| Person.PatientInPseudonym.Pseudonym | Patient.identifier:PseudonymisierterIdentifier |
+
 
 
 ## Resource Content
@@ -56,14 +91,24 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-perso
 {
   "resourceType" : "StructureDefinition",
   "id" : "mii-lm-person",
+  "meta" : {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-license",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/spdx-license",
+          "code" : "CC-BY-4.0",
+          "display" : "Creative Commons Attribution 4.0 International"
+        }]
+      }
+    }]
+  },
   "extension" : [{
-    "url" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/StructureDefinition/mii-ex-meta-license-codeable",
-    "valueCodeableConcept" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/spdx-license",
-        "code" : "CC-BY-4.0",
-        "display" : "Creative Commons Attribution 4.0 International"
-      }]
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm",
+    "valueCoding" : {
+      "system" : "http://hl7.org/fhir/version-algorithm",
+      "code" : "semver",
+      "display" : "SemVer"
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/LogicalModel/Person",
@@ -71,7 +116,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-perso
   "name" : "MII_LM_Person",
   "title" : "MII LM Person",
   "status" : "active",
-  "date" : "2024-12-04",
+  "date" : "2026-05-12",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [{
@@ -103,9 +148,9 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-perso
   }],
   "fhirVersion" : "4.0.1",
   "mapping" : [{
-    "identity" : "rim",
-    "uri" : "http://hl7.org/v3",
-    "name" : "RIM Mapping"
+    "identity" : "FHIR",
+    "uri" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1",
+    "name" : "Person LogicalModel FHIR Mapping"
   }],
   "kind" : "logical",
   "abstract" : false,
@@ -154,6 +199,10 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-perso
       "max" : "*",
       "type" : [{
         "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Patient.name"
       }]
     },
     {
@@ -178,6 +227,10 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-perso
       "max" : "*",
       "type" : [{
         "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Patient.name.given"
       }]
     },
     {
@@ -202,6 +255,10 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-perso
       "max" : "1",
       "type" : [{
         "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Patient.name.family.extension.nachname"
       }]
     },
     {
@@ -226,6 +283,10 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-perso
       "max" : "1",
       "type" : [{
         "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Patient.name.family"
       }]
     },
     {
@@ -250,6 +311,10 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-perso
       "max" : "1",
       "type" : [{
         "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Patient.name.family.extension.vorsatzwort"
       }]
     },
     {
@@ -274,6 +339,10 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-perso
       "max" : "1",
       "type" : [{
         "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Patient.name.family.extension.namenszusatz"
       }]
     },
     {
@@ -298,6 +367,10 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-perso
       "max" : "*",
       "type" : [{
         "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Patient.name.prefix"
       }]
     },
     {
@@ -322,6 +395,10 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-perso
       "max" : "1",
       "type" : [{
         "code" : "code"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Patient.name.prefix.extension-prefix-qualifier"
       }]
     },
     {
@@ -346,6 +423,10 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-perso
       "max" : "1",
       "type" : [{
         "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Patient.name.use"
       }]
     },
     {
@@ -394,6 +475,10 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-perso
       "max" : "1",
       "type" : [{
         "code" : "code"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Patient.gender"
       }]
     },
     {
@@ -418,6 +503,10 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-perso
       "max" : "1",
       "type" : [{
         "code" : "date"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Patient.birthDate"
       }]
     },
     {
@@ -442,6 +531,10 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-perso
       "max" : "*",
       "type" : [{
         "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Patient.address"
       }]
     },
     {
@@ -490,6 +583,10 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-perso
       "max" : "1",
       "type" : [{
         "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Patient.address.country"
       }]
     },
     {
@@ -514,6 +611,10 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-perso
       "max" : "1",
       "type" : [{
         "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Patient.address.postalCode"
       }]
     },
     {
@@ -538,6 +639,10 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-perso
       "max" : "1",
       "type" : [{
         "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Patient.address.city + Patient.address.extension.Stadtteil"
       }]
     },
     {
@@ -562,6 +667,10 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-perso
       "max" : "1",
       "type" : [{
         "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Patient.address.line"
       }]
     },
     {
@@ -610,6 +719,10 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-perso
       "max" : "1",
       "type" : [{
         "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Patient.address.country"
       }]
     },
     {
@@ -634,6 +747,10 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-perso
       "max" : "1",
       "type" : [{
         "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Patient.address.postalCode"
       }]
     },
     {
@@ -658,6 +775,10 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-perso
       "max" : "1",
       "type" : [{
         "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Patient.address.city + Patient.address.extension.Stadtteil"
       }]
     },
     {
@@ -682,6 +803,10 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-perso
       "max" : "1",
       "type" : [{
         "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Patient.address.line"
       }]
     },
     {
@@ -730,6 +855,10 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-perso
       "max" : "1",
       "type" : [{
         "code" : "boolean"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Patient.deceased[x]"
       }]
     },
     {
@@ -754,6 +883,10 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-perso
       "max" : "1",
       "type" : [{
         "code" : "dateTime"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Patient.deceased[x]"
       }]
     },
     {
@@ -885,6 +1018,10 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-perso
       "max" : "*",
       "type" : [{
         "code" : "Identifier"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Patient.identifier:pid"
       }]
     },
     {
@@ -933,6 +1070,10 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-perso
       "max" : "*",
       "type" : [{
         "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Patient.identifier:default"
       }]
     },
     {
@@ -1030,6 +1171,10 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-perso
       "max" : "1",
       "type" : [{
         "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Patient.identifier:versichertenId_GKV"
       }]
     },
     {
@@ -1054,6 +1199,10 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-perso
       "max" : "1",
       "type" : [{
         "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Patient.identifier:versicherungsnummer_pkv"
       }]
     },
     {
@@ -1271,6 +1420,10 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-perso
       "max" : "*",
       "type" : [{
         "code" : "Identifier"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Patient.identifier:PseudonymisierterIdentifier"
       }]
     }]
   }

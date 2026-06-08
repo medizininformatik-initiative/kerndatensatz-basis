@@ -105,7 +105,7 @@ Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Dia
 * Examples for this Profile: [Condition/mii-exa-diagnose-appendicitis](Condition-mii-exa-diagnose-appendicitis.md), [Condition/mii-exa-diagnose-condition-elbow-contusion](Condition-mii-exa-diagnose-condition-elbow-contusion.md), [Condition/mii-exa-diagnose-condition-multiple-codings](Condition-mii-exa-diagnose-condition-multiple-codings.md), [Condition/mii-exa-diagnose-mehrfachcodierung-primaercode](Condition-mii-exa-diagnose-mehrfachcodierung-primaercode.md) and [Condition/mii-exa-diagnose-mehrfachcodierung-sekundaercode](Condition-mii-exa-diagnose-mehrfachcodierung-sekundaercode.md)
 * CapabilityStatements using this Profile: [MII CPS Diagnose CapabilityStatement](CapabilityStatement-mii-cps-diagnose-capabilitystatement.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/mii-pr-diagnose-condition)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/StructureDefinition-mii-pr-diagnose-condition.json)
 
 ### Formale Ansichten des Profilinhalts
 
@@ -134,7 +134,7 @@ Diese Struktur ist abgeleitet von [Condition](http://hl7.org/fhir/R4/condition.h
 ** Summary **
 
 Mandatory: 3 elements(6 nested mandatory elements)
- Must-Support: 42 elements
+ Must-Support: 85 elements
 
 **Structures**
 
@@ -147,8 +147,8 @@ This structure refers to these other structures:
 
 This structure refers to these extensions:
 
-* [http://hl7.org/fhir/StructureDefinition/condition-related](http://hl7.org/fhir/extensions/5.2.0/StructureDefinition-condition-related.html)
-* [http://hl7.org/fhir/StructureDefinition/condition-assertedDate](http://hl7.org/fhir/extensions/5.2.0/StructureDefinition-condition-assertedDate.html)
+* [http://hl7.org/fhir/StructureDefinition/condition-related](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-condition-related.html)
+* [http://hl7.org/fhir/StructureDefinition/condition-assertedDate](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-condition-assertedDate.html)
 * [http://fhir.de/StructureDefinition/lebensphase](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.de/StructureDefinition/lebensphase)
 
 **Slices**
@@ -182,7 +182,7 @@ Diese Struktur ist abgeleitet von [Condition](http://hl7.org/fhir/R4/condition.h
 ** Summary **
 
 Mandatory: 3 elements(6 nested mandatory elements)
- Must-Support: 42 elements
+ Must-Support: 85 elements
 
 **Structures**
 
@@ -195,8 +195,8 @@ This structure refers to these other structures:
 
 This structure refers to these extensions:
 
-* [http://hl7.org/fhir/StructureDefinition/condition-related](http://hl7.org/fhir/extensions/5.2.0/StructureDefinition-condition-related.html)
-* [http://hl7.org/fhir/StructureDefinition/condition-assertedDate](http://hl7.org/fhir/extensions/5.2.0/StructureDefinition-condition-assertedDate.html)
+* [http://hl7.org/fhir/StructureDefinition/condition-related](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-condition-related.html)
+* [http://hl7.org/fhir/StructureDefinition/condition-assertedDate](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-condition-assertedDate.html)
 * [http://fhir.de/StructureDefinition/lebensphase](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.de/StructureDefinition/lebensphase)
 
 **Slices**
@@ -219,14 +219,24 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-diagn
 {
   "resourceType" : "StructureDefinition",
   "id" : "mii-pr-diagnose-condition",
+  "meta" : {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-license",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/spdx-license",
+          "code" : "CC-BY-4.0",
+          "display" : "Creative Commons Attribution 4.0 International"
+        }]
+      }
+    }]
+  },
   "extension" : [{
-    "url" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/StructureDefinition/mii-ex-meta-license-codeable",
-    "valueCodeableConcept" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/spdx-license",
-        "code" : "CC-BY-4.0",
-        "display" : "Creative Commons Attribution 4.0 International"
-      }]
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm",
+    "valueCoding" : {
+      "system" : "http://hl7.org/fhir/version-algorithm",
+      "code" : "semver",
+      "display" : "SemVer"
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose",
@@ -333,11 +343,6 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-diagn
     "name" : "HL7 v2 Mapping"
   },
   {
-    "identity" : "rim",
-    "uri" : "http://hl7.org/v3",
-    "name" : "RIM Mapping"
-  },
-  {
     "identity" : "w5",
     "uri" : "http://hl7.org/fhir/fivews",
     "name" : "FiveWs Pattern Mapping"
@@ -399,6 +404,16 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-diagn
         "code" : "Extension",
         "profile" : ["http://hl7.org/fhir/StructureDefinition/condition-related"]
       }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.extension:ReferenzPrimaerdiagnose.url",
+      "path" : "Condition.extension.url",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.extension:ReferenzPrimaerdiagnose.value[x]",
+      "path" : "Condition.extension.value[x]",
       "mustSupport" : true
     },
     {
@@ -468,6 +483,16 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-diagn
       }]
     },
     {
+      "id" : "Condition.extension:Feststellungsdatum.url",
+      "path" : "Condition.extension.url",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.extension:Feststellungsdatum.value[x]",
+      "path" : "Condition.extension.value[x]",
+      "mustSupport" : true
+    },
+    {
       "id" : "Condition.clinicalStatus",
       "path" : "Condition.clinicalStatus",
       "short" : "Klinischer Status",
@@ -527,6 +552,21 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-diagn
       }]
     },
     {
+      "id" : "Condition.clinicalStatus.coding",
+      "path" : "Condition.clinicalStatus.coding",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.clinicalStatus.coding.system",
+      "path" : "Condition.clinicalStatus.coding.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.clinicalStatus.coding.code",
+      "path" : "Condition.clinicalStatus.coding.code",
+      "mustSupport" : true
+    },
+    {
       "id" : "Condition.verificationStatus",
       "path" : "Condition.verificationStatus",
       "short" : "Verifizierungsstatus",
@@ -579,6 +619,21 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-diagn
           "url" : "http://hl7.org/fhir/StructureDefinition/translation"
         }]
       },
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.verificationStatus.coding",
+      "path" : "Condition.verificationStatus.coding",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.verificationStatus.coding.system",
+      "path" : "Condition.verificationStatus.coding.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.verificationStatus.coding.code",
+      "path" : "Condition.verificationStatus.coding.code",
       "mustSupport" : true
     },
     {
@@ -736,6 +791,84 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-diagn
       }]
     },
     {
+      "id" : "Condition.code.coding:icd10-gm.extension:Mehrfachcodierungs-Kennzeichen",
+      "path" : "Condition.code.coding.extension",
+      "sliceName" : "Mehrfachcodierungs-Kennzeichen",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.code.coding:icd10-gm.extension:Mehrfachcodierungs-Kennzeichen.url",
+      "path" : "Condition.code.coding.extension.url",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.code.coding:icd10-gm.extension:Mehrfachcodierungs-Kennzeichen.value[x]",
+      "path" : "Condition.code.coding.extension.value[x]",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.code.coding:icd10-gm.extension:Mehrfachcodierungs-Kennzeichen.value[x].system",
+      "path" : "Condition.code.coding.extension.value[x].system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.code.coding:icd10-gm.extension:Mehrfachcodierungs-Kennzeichen.value[x].code",
+      "path" : "Condition.code.coding.extension.value[x].code",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.code.coding:icd10-gm.extension:Seitenlokalisation",
+      "path" : "Condition.code.coding.extension",
+      "sliceName" : "Seitenlokalisation",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.code.coding:icd10-gm.extension:Seitenlokalisation.url",
+      "path" : "Condition.code.coding.extension.url",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.code.coding:icd10-gm.extension:Seitenlokalisation.value[x]",
+      "path" : "Condition.code.coding.extension.value[x]",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.code.coding:icd10-gm.extension:Seitenlokalisation.value[x].system",
+      "path" : "Condition.code.coding.extension.value[x].system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.code.coding:icd10-gm.extension:Seitenlokalisation.value[x].code",
+      "path" : "Condition.code.coding.extension.value[x].code",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.code.coding:icd10-gm.extension:Diagnosesicherheit",
+      "path" : "Condition.code.coding.extension",
+      "sliceName" : "Diagnosesicherheit",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.code.coding:icd10-gm.extension:Diagnosesicherheit.url",
+      "path" : "Condition.code.coding.extension.url",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.code.coding:icd10-gm.extension:Diagnosesicherheit.value[x]",
+      "path" : "Condition.code.coding.extension.value[x]",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.code.coding:icd10-gm.extension:Diagnosesicherheit.value[x].system",
+      "path" : "Condition.code.coding.extension.value[x].system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.code.coding:icd10-gm.extension:Diagnosesicherheit.value[x].code",
+      "path" : "Condition.code.coding.extension.value[x].code",
+      "mustSupport" : true
+    },
+    {
       "id" : "Condition.code.coding:icd10-gm.system",
       "path" : "Condition.code.coding.system",
       "mustSupport" : true
@@ -830,6 +963,11 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-diagn
     {
       "id" : "Condition.code.coding:alpha-id.system",
       "path" : "Condition.code.coding.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.code.coding:alpha-id.version",
+      "path" : "Condition.code.coding.version",
       "mustSupport" : true
     },
     {
@@ -1181,6 +1319,11 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-diagn
       "mustSupport" : true
     },
     {
+      "id" : "Condition.subject.reference",
+      "path" : "Condition.subject.reference",
+      "mustSupport" : true
+    },
+    {
       "id" : "Condition.encounter",
       "path" : "Condition.encounter",
       "short" : "Kontakt (Aufenthaltsbezug)",
@@ -1233,6 +1376,11 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-diagn
           "url" : "http://hl7.org/fhir/StructureDefinition/translation"
         }]
       },
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.encounter.reference",
+      "path" : "Condition.encounter.reference",
       "mustSupport" : true
     },
     {
@@ -1362,12 +1510,33 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-diagn
       "mustSupport" : true
     },
     {
+      "id" : "Condition.onset[x]:onsetPeriod.start.extension:lebensphase-von.url",
+      "path" : "Condition.onset[x].start.extension.url",
+      "mustSupport" : true
+    },
+    {
       "id" : "Condition.onset[x]:onsetPeriod.start.extension:lebensphase-von.value[x]",
       "path" : "Condition.onset[x].start.extension.value[x]",
+      "mustSupport" : true,
       "mapping" : [{
         "identity" : "LogicalModel",
         "map" : "KlinischRelevanterZeitraum.Lebensphase.von"
       }]
+    },
+    {
+      "id" : "Condition.onset[x]:onsetPeriod.start.extension:lebensphase-von.value[x].coding",
+      "path" : "Condition.onset[x].start.extension.value[x].coding",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.onset[x]:onsetPeriod.start.extension:lebensphase-von.value[x].coding.system",
+      "path" : "Condition.onset[x].start.extension.value[x].coding.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.onset[x]:onsetPeriod.start.extension:lebensphase-von.value[x].coding.code",
+      "path" : "Condition.onset[x].start.extension.value[x].coding.code",
+      "mustSupport" : true
     },
     {
       "id" : "Condition.onset[x]:onsetPeriod.end",
@@ -1403,12 +1572,33 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-diagn
       "mustSupport" : true
     },
     {
+      "id" : "Condition.onset[x]:onsetPeriod.end.extension:lebensphase-bis.url",
+      "path" : "Condition.onset[x].end.extension.url",
+      "mustSupport" : true
+    },
+    {
       "id" : "Condition.onset[x]:onsetPeriod.end.extension:lebensphase-bis.value[x]",
       "path" : "Condition.onset[x].end.extension.value[x]",
+      "mustSupport" : true,
       "mapping" : [{
         "identity" : "LogicalModel",
         "map" : "KlinischRelevanterZeitraum.Lebensphase.bis"
       }]
+    },
+    {
+      "id" : "Condition.onset[x]:onsetPeriod.end.extension:lebensphase-bis.value[x].coding",
+      "path" : "Condition.onset[x].end.extension.value[x].coding",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.onset[x]:onsetPeriod.end.extension:lebensphase-bis.value[x].coding.system",
+      "path" : "Condition.onset[x].end.extension.value[x].coding.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.onset[x]:onsetPeriod.end.extension:lebensphase-bis.value[x].coding.code",
+      "path" : "Condition.onset[x].end.extension.value[x].coding.code",
+      "mustSupport" : true
     },
     {
       "id" : "Condition.onset[x]:onsetDateTime",
@@ -1447,6 +1637,31 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-diagn
         "code" : "Extension",
         "profile" : ["http://fhir.de/StructureDefinition/lebensphase"]
       }]
+    },
+    {
+      "id" : "Condition.onset[x]:onsetAge.extension:Lebensphase-Beginn.url",
+      "path" : "Condition.onset[x].extension.url",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.onset[x]:onsetAge.extension:Lebensphase-Beginn.value[x]",
+      "path" : "Condition.onset[x].extension.value[x]",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.onset[x]:onsetAge.extension:Lebensphase-Beginn.value[x].coding",
+      "path" : "Condition.onset[x].extension.value[x].coding",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.onset[x]:onsetAge.extension:Lebensphase-Beginn.value[x].coding.system",
+      "path" : "Condition.onset[x].extension.value[x].coding.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.onset[x]:onsetAge.extension:Lebensphase-Beginn.value[x].coding.code",
+      "path" : "Condition.onset[x].extension.value[x].coding.code",
+      "mustSupport" : true
     },
     {
       "id" : "Condition.recordedDate",

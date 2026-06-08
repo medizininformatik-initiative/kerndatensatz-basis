@@ -261,6 +261,20 @@ The `Encounter.diagnosis` element establishes the relationship between encounter
 - The physical type **SHOULD** use the MII-specific ValueSet for location physical types.
 - Location details are primarily relevant for Versorgungsstellenkontakt (care unit contacts).
 
+**Location Slicing**
+
+`Encounter.location` uses an **unordered, open** slicing discriminated by `physicalType` and `status`. The profile defines three named slices:
+
+| Slice | physicalType | status | Cardinality |
+|---|---|---|---|
+| `Zimmer` (Room) | `ro` | `active` | 0..1 |
+| `Bett` (Bed) | `bd` | `active` | 0..1 |
+| `Station` (Ward) | `wa` | `active` | 0..1 |
+
+Each slice constrains `status = active` with cardinality 0..1. A conformant implementation SHALL NOT populate more than one active room, one active bed, or one active ward simultaneously within a single encounter.
+
+Because the slicing is **open**, implementations MAY include additional `Encounter.location` entries beyond these three named slices. To record movement history during an encounter (e.g., previous wards, rooms, or beds the patient passed through), implementations SHOULD use `status = completed` for those entries. This keeps the historical record separate from the active-location slices without conflicting with them.
+
 #### Planned Encounters
 
 Planned encounters are represented with `Encounter.status = planned` and **SHOULD** include:
@@ -314,6 +328,11 @@ Previously, it was recommended that the Aufnahmenummer (admission number) should
   <li>Individual users lack viewing permissions for billing data</li>
   <li>Users in the care context need to search for Encounters using the associated Fallnummer</li>
 </ul>
+
+<p>Servers <strong>SHOULD</strong> support the <code>account:identifier</code> search modifier to allow clients to retrieve all Encounters belonging to a billing case by Fallnummer. This modifier enables token-based searching on the logical reference stored in <code>Encounter.account.identifier</code>, without requiring the Account resource itself to be present or accessible.</p>
+
+<p><strong>Example query</strong> to retrieve all Encounters associated with a specific Fallnummer:</p>
+<pre><code>GET [base]/Encounter?account:identifier=https://www.charite.de/fhir/sid/fallnummer|F-2020-000123</code></pre>
 </div>
 
 {% include link-list.md %}

@@ -133,7 +133,7 @@ Verwenden von `Procedure.encounter`, um von der Prozedur auf den Encounter vom T
 * Examples for this Profile: [Procedure/mii-exa-prozedur-imaging](Procedure-mii-exa-prozedur-imaging.md), [Procedure/mii-exa-prozedur-procedure-2](Procedure-mii-exa-prozedur-procedure-2.md) and [Procedure/mii-exa-prozedur-procedure](Procedure-mii-exa-prozedur-procedure.md)
 * CapabilityStatements using this Profile: [MII CPS Prozedur CapabilityStatement](CapabilityStatement-mii-cps-prozedur-capabilitystatement.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/mii-pr-prozedur-procedure)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/StructureDefinition-mii-pr-prozedur-procedure.json)
 
 ### Formale Ansichten des Profilinhalts
 
@@ -164,7 +164,7 @@ Diese Struktur ist abgeleitet von [Procedure](http://hl7.org/fhir/R4/procedure.h
 ** Summary **
 
 Mandatory: 3 elements(6 nested mandatory elements)
- Must-Support: 32 elements
+ Must-Support: 47 elements
 
 **Structures**
 
@@ -213,7 +213,7 @@ Diese Struktur ist abgeleitet von [Procedure](http://hl7.org/fhir/R4/procedure.h
 ** Summary **
 
 Mandatory: 3 elements(6 nested mandatory elements)
- Must-Support: 32 elements
+ Must-Support: 47 elements
 
 **Structures**
 
@@ -249,14 +249,24 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-proze
 {
   "resourceType" : "StructureDefinition",
   "id" : "mii-pr-prozedur-procedure",
+  "meta" : {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-license",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/spdx-license",
+          "code" : "CC-BY-4.0",
+          "display" : "Creative Commons Attribution 4.0 International"
+        }]
+      }
+    }]
+  },
   "extension" : [{
-    "url" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/StructureDefinition/mii-ex-meta-license-codeable",
-    "valueCodeableConcept" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/spdx-license",
-        "code" : "CC-BY-4.0",
-        "display" : "Creative Commons Attribution 4.0 International"
-      }]
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm",
+    "valueCoding" : {
+      "system" : "http://hl7.org/fhir/version-algorithm",
+      "code" : "semver",
+      "display" : "SemVer"
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure",
@@ -288,7 +298,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-proze
     }]
   },
   "status" : "active",
-  "date" : "2025-12-12",
+  "date" : "2026-06-03",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [{
@@ -347,11 +357,6 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-proze
     "identity" : "workflow",
     "uri" : "http://hl7.org/fhir/workflow",
     "name" : "Workflow Pattern"
-  },
-  {
-    "identity" : "rim",
-    "uri" : "http://hl7.org/v3",
-    "name" : "RIM Mapping"
   },
   {
     "identity" : "w5",
@@ -475,6 +480,16 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-proze
       "mustSupport" : true
     },
     {
+      "id" : "Procedure.extension:Dokumentationsdatum.url",
+      "path" : "Procedure.extension.url",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Procedure.extension:Dokumentationsdatum.value[x]",
+      "path" : "Procedure.extension.value[x]",
+      "mustSupport" : true
+    },
+    {
       "id" : "Procedure.extension:durchfuehrungsabsicht",
       "path" : "Procedure.extension",
       "sliceName" : "durchfuehrungsabsicht",
@@ -534,6 +549,26 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-proze
         "code" : "Extension",
         "profile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Durchfuehrungsabsicht"]
       }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Procedure.extension:durchfuehrungsabsicht.url",
+      "path" : "Procedure.extension.url",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Procedure.extension:durchfuehrungsabsicht.value[x]",
+      "path" : "Procedure.extension.value[x]",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Procedure.extension:durchfuehrungsabsicht.value[x].system",
+      "path" : "Procedure.extension.value[x].system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Procedure.extension:durchfuehrungsabsicht.value[x].code",
+      "path" : "Procedure.extension.value[x].code",
       "mustSupport" : true
     },
     {
@@ -655,7 +690,8 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-proze
           "path" : "$this"
         }],
         "rules" : "open"
-      }
+      },
+      "mustSupport" : true
     },
     {
       "id" : "Procedure.category.coding:sct",
@@ -886,6 +922,26 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-proze
       "mustSupport" : true
     },
     {
+      "id" : "Procedure.code.coding:ops.extension:Seitenlokalisation.url",
+      "path" : "Procedure.code.coding.extension.url",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Procedure.code.coding:ops.extension:Seitenlokalisation.value[x]",
+      "path" : "Procedure.code.coding.extension.value[x]",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Procedure.code.coding:ops.extension:Seitenlokalisation.value[x].system",
+      "path" : "Procedure.code.coding.extension.value[x].system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Procedure.code.coding:ops.extension:Seitenlokalisation.value[x].code",
+      "path" : "Procedure.code.coding.extension.value[x].code",
+      "mustSupport" : true
+    },
+    {
       "id" : "Procedure.code.coding:ops.system",
       "path" : "Procedure.code.coding.system",
       "mustSupport" : true
@@ -983,6 +1039,11 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-proze
       "mustSupport" : true
     },
     {
+      "id" : "Procedure.subject.reference",
+      "path" : "Procedure.subject.reference",
+      "mustSupport" : true
+    },
+    {
       "id" : "Procedure.encounter",
       "path" : "Procedure.encounter",
       "short" : "Kontakt (Aufenthaltsbezug)",
@@ -1035,6 +1096,11 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-proze
           "url" : "http://hl7.org/fhir/StructureDefinition/translation"
         }]
       },
+      "mustSupport" : true
+    },
+    {
+      "id" : "Procedure.encounter.reference",
+      "path" : "Procedure.encounter.reference",
       "mustSupport" : true
     },
     {
@@ -1140,7 +1206,8 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-proze
       "max" : "1",
       "type" : [{
         "code" : "dateTime"
-      }]
+      }],
+      "mustSupport" : true
     },
     {
       "id" : "Procedure.performed[x]:performedPeriod",
@@ -1200,7 +1267,8 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-proze
       "max" : "1",
       "type" : [{
         "code" : "Period"
-      }]
+      }],
+      "mustSupport" : true
     },
     {
       "id" : "Procedure.bodySite",

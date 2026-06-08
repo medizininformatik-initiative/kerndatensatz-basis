@@ -2,6 +2,7 @@
 <!DOCTYPE HTML>
 
 
+
 <html xml:lang="de" xmlns="http://www.w3.org/1999/xhtml" lang="de" dir="ltr">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
@@ -330,7 +331,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="must-support---komplexe-elemente">Must Support - Komplexe Elemente</h4>
 
-<p>Komplexe Elemente setzen sich aus primitiven und anderen komplexen Elementen zusammen. Für jedes komplexe Element, das als <em>Must Support</em> gekennzeichnet ist, <strong>MUSS</strong> der Server in der Lage sein, mindestens einen der Unterelementwerte bereitzustellen. Wenn ein Unterelement als <em>Must Support</em> gekennzeichnet ist, muss es ebenfalls die Must Support Anforderungen erfüllen und die Must Support Anforderungen für das übergeordnete Element erfüllen.</p>
+<p>Komplexe Elemente setzen sich aus primitiven und anderen komplexen Elementen zusammen. Für jedes komplexe Element, das als <em>Must Support</em> gekennzeichnet ist, <strong>MUSS</strong> der Server in der Lage sein, Werte für die Unterelemente bereitzustellen, die als <em>Must Support</em> gekennzeichnet sind. Wenn keine Unterelemente als <em>Must Support</em> gekennzeichnet sind, <strong>MUSS</strong> der Server in der Lage sein, mindestens einen Unterelementwert bereitzustellen. Für jedes komplexe Element, das als <em>Must Support</em> gekennzeichnet ist, <strong>MUSS</strong> der Client in der Lage sein, Werte für die Unterelemente zu verarbeiten, die als <em>Must Support</em> gekennzeichnet sind. Wenn Unterelemente eines komplexen Elements als <em>Must Support</em> gekennzeichnet sind, wird die Erwartung für das übergeordnete Element durch die Unterstützung dieser gekennzeichneten Unterelemente erfüllt.</p>
 
 <p>Beispielsweise, wenn <code class="language-plaintext highlighter-rouge">Patient.name</code> als <em>Must Support</em> gekennzeichnet ist und die <em>Must Support</em> Unterelemente "family" und "given" hat:</p>
 <ul>
@@ -410,8 +411,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.base#2026.0.0 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Erstellt 
-  <span title="2026-04-30 09:42:00 +0000">
-    2026-04-30
+  <span title="2026-06-08 07:31:00 +0000">
+    2026-06-08
   </span>
 
           <br/>

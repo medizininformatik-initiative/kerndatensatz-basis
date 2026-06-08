@@ -101,7 +101,7 @@
     }],
     "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
     "packageId" : "hl7.fhir.uv.extensions.r4",
-    "version" : "5.2.0"
+    "version" : "5.3.0"
   },
   {
     "id" : "de_basisprofil_r4",
@@ -120,6 +120,12 @@
     "uri" : "http://hl7.org/fhir/uv/xver/ImplementationGuide/hl7.fhir.uv.xver-r5.r4",
     "packageId" : "hl7.fhir.uv.xver-r5.r4",
     "version" : "0.1.0"
+  },
+  {
+    "id" : "hl7_fhir_uv_crmi",
+    "uri" : "http://hl7.org/fhir/uv/crmi/ImplementationGuide/hl7.fhir.uv.crmi",
+    "packageId" : "hl7.fhir.uv.crmi",
+    "version" : "2.0.0-ballot"
   }],
   "definition" : {
     "extension" : [{
@@ -306,6 +312,28 @@
       {
         "url" : "value",
         "valueString" : "manifest"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "suppress-mappings"
+      },
+      {
+        "url" : "value",
+        "valueString" : "http://hl7.org/v3"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "suppress-mappings"
+      },
+      {
+        "url" : "value",
+        "valueString" : "http://hl7.org/v3/cda"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -713,6 +741,17 @@
       {
         "url" : "value",
         "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/mii-vs-person-icd10who"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "profile-test-cases"
+      },
+      {
+        "url" : "value",
+        "valueString" : "tests/profiles/profiles.json"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -1191,6 +1230,28 @@
     {
       "extension" : [{
         "url" : "code",
+        "valueCode" : "suppress-mappings"
+      },
+      {
+        "url" : "value",
+        "valueString" : "http://hl7.org/v3"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "suppress-mappings"
+      },
+      {
+        "url" : "value",
+        "valueString" : "http://hl7.org/v3/cda"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
         "valueCode" : "special-url"
       },
       {
@@ -1592,6 +1653,17 @@
       {
         "url" : "value",
         "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/mii-vs-person-icd10who"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "profile-test-cases"
+      },
+      {
+        "url" : "value",
+        "valueString" : "tests/profiles/profiles.json"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },

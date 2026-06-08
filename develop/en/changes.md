@@ -10,8 +10,25 @@ This page documents the changes and updates across versions of the MII Implement
 
 **Date:** 2026-XX-XX
 
+#### Documentation
+
+* **Added:** A list of conformance statements is available via the [List of Conformance Statements](conformance.md#list-of-conformance-statements)
+* **Added:** CapabilityStatements now document example FHIR search queries for supported SearchParameters
+* **Added:** Logical model pages now include mapping tables to the corresponding FHIR target structures
+* **Changed:** Must Support flags are applied consistently to relevant sub-elements across profiles, and the [Must Support](must-support.md) documentation now clarifies how complex elements and their marked sub-elements define concrete Server and Client support expectations.
+
+#### Terminology Updates
+
+* **Added:** ICD-10-GM 2026, OPS 2026, and Alpha-ID 2026 versions to respective ValueSet definitions [#67](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/67), [#66](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/66)
+
+#### Person Module
+
+* **Added:** Profile [Patient Pseudonymized](StructureDefinition-mii-pr-person-patient-pseudonymisiert.md): Added optional `type.coding` sub-slice `mr` (`http://terminology.hl7.org/CodeSystem/v2-0203|MR`) to `PseudonymisierterIdentifier`. When the pseudonym replaces a Medical Record Number, this code SHOULD be set to allow site-independent discovery of the pseudonymized identifier. See: [#63](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/63)
+
 #### Treatment Case Module
 
+* **Added:** Clarified `Encounter.location` slicing and semantics in the documentation. See: [#62](https://github.com/medizininformatik-initiative/kerndatensatzmodul-fall/issues/62)
+* **Added:** Documented that servers SHOULD support the `account:identifier` search modifier to enable searching all Encounters belonging to a billing case by Fallnummer. See: [#68](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/68)
 * **Removed:** Self-published R5 backport extensions for planned encounter start and end dates (previously `mii-ex-fall-planned-start-date` and `mii-ex-fall-planned-end-date`). These extensions are now provided by the official `hl7.fhir.uv.xver-r5.r4` dependency
 
 -------
@@ -64,21 +81,21 @@ This page documents the changes and updates across versions of the MII Implement
 **Date:** 2025-10-08
 
 * **Added**: Profile [Patient Pseudonymized](StructureDefinition-mii-pr-person-patient-pseudonymisiert.md) now contains an optional identifier for masked health insurance ID under `Patient.identifier`
-* **Changed**: ValueSet MII_VS_Person_ICD10WHO was [retired](http://hl7.org/fhir/R4/codesystem-publication-status.html#publication-status-retired) as redundant. The ICD-10-WHO CodeSystem already references an implicit ICD-10-WHO ValueSet via `CodeSystem.valueSet`. See: https://github.com/medizininformatik-initiative/kerndatensatzmodul-person/issues/86
+* **Changed**: ValueSet MII_VS_Person_ICD10WHO was [retired](http://hl7.org/fhir/R4/codesystem-publication-status.html#publication-status-retired) as redundant. The ICD-10-WHO CodeSystem already references an implicit ICD-10-WHO ValueSet via `CodeSystem.valueSet`. See: [#86](https://github.com/medizininformatik-initiative/kerndatensatzmodul-person/issues/86)
 * **Changed**: Dependency updated to [de.basisprofil.r4 1.5.4](https://simplifier.net/packages/de.basisprofil.r4/1.5.4). This release of the FHIR Base Profiles contains a fix for the kvid-2 invariant applied to `Patient.identifier:versichertenId.type` in the Patient profile
 
 #### Treatment Case Module
 
 **Date:** 2025-10-28
 
-* **Changed**: `Encounter.location` now allows specification of former encounter locations. See: https://github.com/medizininformatik-initiative/kerndatensatzmodul-fall/issues/79
+* **Changed**: `Encounter.location` now allows specification of former encounter locations. See: [#79](https://github.com/medizininformatik-initiative/kerndatensatzmodul-fall/issues/79)
 
 #### Diagnosis Module
 
 **Date:** 2025-10-20
 
-* **Added**: `Condition.onsetAge` - The data type `Age` can now be used under `Condition.onset[x]`. See: https://github.com/medizininformatik-initiative/kerndatensatzmodul-diagnose/issues/78
-* **Changed**: `Condition.bodySite` - Cardinality of the SNOMED-Coding slice changed from 1..1 to 0..1. See: https://github.com/medizininformatik-initiative/kerndatensatzmodul-diagnose/issues/75
+* **Added**: `Condition.onsetAge` - The data type `Age` can now be used under `Condition.onset[x]`. See: [#78](https://github.com/medizininformatik-initiative/kerndatensatzmodul-diagnose/issues/78)
+* **Changed**: `Condition.bodySite` - Cardinality of the SNOMED-Coding slice changed from 1..1 to 0..1. See: [#75](https://github.com/medizininformatik-initiative/kerndatensatzmodul-diagnose/issues/75)
 * **Added**: New ValueSets and bindings for ICD-10-GM (Canonical URL: `https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-icd10gm`) and AlphaID (Canonical URL: `https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-alphaid`), which can be expanded using the MII terminology server (https://www.ontoserver.mii-termserv.de/) enabling enhanced validation
 * **Updated**: CapabilityStatement now contains requirement documentation for search parameters `_count` and `_summary`
 
@@ -113,7 +130,7 @@ This page documents the changes and updates across versions of the MII Implement
 * **Updated**: Dependency on de.basisprofil.r4 updated to version 1.5.0. This change has no impact on implementations of this module
 * **Enhanced**: Profiles contain additional descriptions and translations for implementers and the Research Data Portal for Health (FDPG)
 * **Removed**: Search parameters from this module removed. SearchParameter resources are now centrally managed in the Meta module
-* **Changed**: Cardinality of `Encounter.period` in the [Encounter](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.md) profile from 1..1 to 0..1 to represent planned encounters where the actual time period is still unknown. See: https://github.com/medizininformatik-initiative/kerndatensatzmodul-fall/issues/56
+* **Changed**: Cardinality of `Encounter.period` in the [Encounter](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.md) profile from 1..1 to 0..1 to represent planned encounters where the actual time period is still unknown. See: [#56](https://github.com/medizininformatik-initiative/kerndatensatzmodul-fall/issues/56)
 * **Added**: Constraints now check the presence of start and end times (`Encounter.period`) depending on the status of an encounter
 * **Added**: Extension of the Encounter profile with two extensions for planned start and end dates in `Encounter.extension`
 * **Fixed**: Correction of ValueSet binding on element `Encounter.serviceType.coding:ErweiterterFachabteilungsschluessel` to [http://fhir.de/ValueSet/dkgev/Fachabteilungsschluessel-erweitert](https://simplifier.net/packages/de.basisprofil.r4/1.4.0/files/656779)
@@ -131,7 +148,7 @@ This page documents the changes and updates across versions of the MII Implement
 * **Enhanced**: Profiles contain additional descriptions and translations for implementers and the Research Data Portal for Health (FDPG)
 * **Removed**: Search parameters from this module removed. SearchParameter resources are now centrally managed in the Meta module
 * **Updated**: Resources use SNOMED CT version `http://snomed.info/sct/900000000000207008/version/20240701` across modules to ensure stable [ValueSet expansion](http://hl7.org/fhir/R4/valueset.html#expansion)
-* **Added**: `Condition.verificationStatus` now has MustSupport label. See: https://github.com/medizininformatik-initiative/kerndatensatzmodul-diagnose/issues/64
+* **Added**: `Condition.verificationStatus` now has MustSupport label. See: [#64](https://github.com/medizininformatik-initiative/kerndatensatzmodul-diagnose/issues/64)
 
 #### Procedure Module
 
@@ -151,7 +168,7 @@ This page documents the changes and updates across versions of the MII Implement
 
 **Date:** 2024-04-17
 
-* **Fixed**: Correction of version parameters in conformance resources. In the previously published package, `StructureDefinition.version` did not uniformly match the package version. See: https://github.com/medizininformatik-initiative/kerndatensatzmodul-fall/issues/51
+* **Fixed**: Correction of version parameters in conformance resources. In the previously published package, `StructureDefinition.version` did not uniformly match the package version. See: [#51](https://github.com/medizininformatik-initiative/kerndatensatzmodul-fall/issues/51)
 
 -------
 

@@ -157,6 +157,20 @@ Since `Encounter.diagnosis.use` has cardinality 1..1, a diagnosis with multiple 
 * The physical type **SHOULD** use the MII-specific ValueSet for location physical types.
 * Location details are primarily relevant for Versorgungsstellenkontakt (care unit contacts).
 
+**Location Slicing**
+
+`Encounter.location` uses an **unordered, open** slicing discriminated by `physicalType` and `status`. The profile defines three named slices:
+
+| | | | |
+| :--- | :--- | :--- | :--- |
+| `Zimmer`(Room) | `ro` | `active` | 0..1 |
+| `Bett`(Bed) | `bd` | `active` | 0..1 |
+| `Station`(Ward) | `wa` | `active` | 0..1 |
+
+Each slice constrains `status = active` with cardinality 0..1. A conformant implementation SHALL NOT populate more than one active room, one active bed, or one active ward simultaneously within a single encounter.
+
+Because the slicing is **open**, implementations MAY include additional `Encounter.location` entries beyond these three named slices. To record movement history during an encounter (e.g., previous wards, rooms, or beds the patient passed through), implementations SHOULD use `status = completed` for those entries. This keeps the historical record separate from the active-location slices without conflicting with them.
+
 #### Planned Encounters
 
 Planned encounters are represented with `Encounter.status = planned` and **SHOULD** include:
@@ -212,12 +226,20 @@ Since the Fallnummer is a frequently used search criterion, it **SHOULD** be pro
 * Individual users lack viewing permissions for billing data
 * Users in the care context need to search for Encounters using the associated Fallnummer
 
+Servers **SHOULD** support the `account:identifier` search modifier to allow clients to retrieve all Encounters belonging to a billing case by Fallnummer. This modifier enables token-based searching on the logical reference stored in `Encounter.account.identifier`, without requiring the Account resource itself to be present or accessible.
+
+**Example query** to retrieve all Encounters associated with a specific Fallnummer:
+
+```
+GET [base]/Encounter?account:identifier=https://www.charite.de/fhir/sid/fallnummer|F-2020-000123
+```
+
 **Usages:**
 
 * Examples for this Profile: [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-10.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-11](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-11.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.md)... Show 10 more, [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-3](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-3.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-4.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-5.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-6.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-8](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-8.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-9](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-9.md), [Encounter/mii-exa-fall-kontakt-in-progress-status](Encounter-mii-exa-fall-kontakt-in-progress-status.md), [Encounter/mii-exa-fall-kontakt-onleave-status](Encounter-mii-exa-fall-kontakt-onleave-status.md) and [Encounter/mii-exa-fall-kontakt-unknown-status](Encounter-mii-exa-fall-kontakt-unknown-status.md)
 * CapabilityStatements using this Profile: [MII CPS Fall CapabilityStatement](CapabilityStatement-mii-cps-fall-capabilitystatement.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/mii-pr-fall-kontakt-gesundheitseinrichtung)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.json)
 
 ### Formal Views of Profile Content
 
@@ -235,14 +257,24 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-fall-konta
 {
   "resourceType" : "StructureDefinition",
   "id" : "mii-pr-fall-kontakt-gesundheitseinrichtung",
+  "meta" : {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-license",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/spdx-license",
+          "code" : "CC-BY-4.0",
+          "display" : "Creative Commons Attribution 4.0 International"
+        }]
+      }
+    }]
+  },
   "extension" : [{
-    "url" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/StructureDefinition/mii-ex-meta-license-codeable",
-    "valueCodeableConcept" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/spdx-license",
-        "code" : "CC-BY-4.0",
-        "display" : "Creative Commons Attribution 4.0 International"
-      }]
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm",
+    "valueCoding" : {
+      "system" : "http://hl7.org/fhir/version-algorithm",
+      "code" : "semver",
+      "display" : "SemVer"
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung",
@@ -274,7 +306,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-fall-konta
     }]
   },
   "status" : "active",
-  "date" : "2025-12-12",
+  "date" : "2026-06-03",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [{
@@ -311,11 +343,6 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-fall-konta
     "name" : "Workflow Pattern"
   },
   {
-    "identity" : "rim",
-    "uri" : "http://hl7.org/v3",
-    "name" : "RIM Mapping"
-  },
-  {
     "identity" : "w5",
     "uri" : "http://hl7.org/fhir/fivews",
     "name" : "FiveWs Pattern Mapping"
@@ -345,7 +372,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-fall-konta
         "key" : "mii-enc-2",
         "severity" : "error",
         "human" : "Abgeschlossene, stationäre Kontakte MÜSSEN einen Start- und End-Zeitpunkt angeben",
-        "expression" : "status = 'finished' and class = 'IMP' implies period.start.exists() and period.end.exists()",
+        "expression" : "status = 'finished' and class.code = 'IMP' implies period.start.exists() and period.end.exists()",
         "source" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung"
       },
       {
@@ -537,6 +564,16 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-fall-konta
       "mustSupport" : true
     },
     {
+      "id" : "Encounter.extension:Aufnahmegrund.extension:ErsteUndZweiteStelle.url",
+      "path" : "Encounter.extension.extension.url",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Encounter.extension:Aufnahmegrund.extension:ErsteUndZweiteStelle.value[x]",
+      "path" : "Encounter.extension.extension.value[x]",
+      "mustSupport" : true
+    },
+    {
       "id" : "Encounter.extension:Aufnahmegrund.extension:DritteStelle",
       "path" : "Encounter.extension.extension",
       "sliceName" : "DritteStelle",
@@ -593,6 +630,16 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-fall-konta
       "mustSupport" : true
     },
     {
+      "id" : "Encounter.extension:Aufnahmegrund.extension:DritteStelle.url",
+      "path" : "Encounter.extension.extension.url",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Encounter.extension:Aufnahmegrund.extension:DritteStelle.value[x]",
+      "path" : "Encounter.extension.extension.value[x]",
+      "mustSupport" : true
+    },
+    {
       "id" : "Encounter.extension:Aufnahmegrund.extension:VierteStelle",
       "path" : "Encounter.extension.extension",
       "sliceName" : "VierteStelle",
@@ -646,6 +693,16 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-fall-konta
           "url" : "http://hl7.org/fhir/StructureDefinition/translation"
         }]
       },
+      "mustSupport" : true
+    },
+    {
+      "id" : "Encounter.extension:Aufnahmegrund.extension:VierteStelle.url",
+      "path" : "Encounter.extension.extension.url",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Encounter.extension:Aufnahmegrund.extension:VierteStelle.value[x]",
+      "path" : "Encounter.extension.extension.value[x]",
       "mustSupport" : true
     },
     {
@@ -824,7 +881,8 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-fall-konta
         }],
         "rules" : "open"
       },
-      "min" : 1
+      "min" : 1,
+      "mustSupport" : true
     },
     {
       "id" : "Encounter.identifier:Aufnahmenummer.type.coding:vn-type",
@@ -981,6 +1039,16 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-fall-konta
       }
     },
     {
+      "id" : "Encounter.class.system",
+      "path" : "Encounter.class.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Encounter.class.code",
+      "path" : "Encounter.class.code",
+      "mustSupport" : true
+    },
+    {
       "id" : "Encounter.type",
       "path" : "Encounter.type",
       "slicing" : {
@@ -1111,6 +1179,16 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-fall-konta
       }
     },
     {
+      "id" : "Encounter.type:Kontaktebene.coding.system",
+      "path" : "Encounter.type.coding.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Encounter.type:Kontaktebene.coding.code",
+      "path" : "Encounter.type.coding.code",
+      "mustSupport" : true
+    },
+    {
       "id" : "Encounter.type:KontaktArt",
       "path" : "Encounter.type",
       "sliceName" : "KontaktArt",
@@ -1176,6 +1254,16 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-fall-konta
         "strength" : "required",
         "valueSet" : "http://fhir.de/ValueSet/kontaktart-de"
       }
+    },
+    {
+      "id" : "Encounter.type:KontaktArt.coding.system",
+      "path" : "Encounter.type.coding.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Encounter.type:KontaktArt.coding.code",
+      "path" : "Encounter.type.coding.code",
+      "mustSupport" : true
     },
     {
       "id" : "Encounter.serviceType",
@@ -1407,6 +1495,11 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-fall-konta
       "mustSupport" : true
     },
     {
+      "id" : "Encounter.subject.reference",
+      "path" : "Encounter.subject.reference",
+      "mustSupport" : true
+    },
+    {
       "id" : "Encounter.period",
       "path" : "Encounter.period",
       "short" : "Zeitraum des Kontaktes",
@@ -1577,6 +1670,16 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-fall-konta
       }
     },
     {
+      "id" : "Encounter.diagnosis.use.coding:Diagnosetyp.system",
+      "path" : "Encounter.diagnosis.use.coding.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Encounter.diagnosis.use.coding:Diagnosetyp.code",
+      "path" : "Encounter.diagnosis.use.coding.code",
+      "mustSupport" : true
+    },
+    {
       "id" : "Encounter.diagnosis.use.coding:DiagnosesubTyp",
       "path" : "Encounter.diagnosis.use.coding",
       "sliceName" : "DiagnosesubTyp",
@@ -1589,6 +1692,16 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-fall-konta
         "strength" : "required",
         "valueSet" : "http://fhir.de/ValueSet/Diagnosesubtyp"
       }
+    },
+    {
+      "id" : "Encounter.diagnosis.use.coding:DiagnosesubTyp.system",
+      "path" : "Encounter.diagnosis.use.coding.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Encounter.diagnosis.use.coding:DiagnosesubTyp.code",
+      "path" : "Encounter.diagnosis.use.coding.code",
+      "mustSupport" : true
     },
     {
       "id" : "Encounter.diagnosis.rank",
@@ -1650,6 +1763,21 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-fall-konta
           "url" : "http://hl7.org/fhir/StructureDefinition/translation"
         }]
       },
+      "mustSupport" : true
+    },
+    {
+      "id" : "Encounter.account.identifier",
+      "path" : "Encounter.account.identifier",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Encounter.account.identifier.system",
+      "path" : "Encounter.account.identifier.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Encounter.account.identifier.value",
+      "path" : "Encounter.account.identifier.value",
       "mustSupport" : true
     },
     {
@@ -1742,6 +1870,21 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-fall-konta
       }
     },
     {
+      "id" : "Encounter.hospitalization.admitSource.coding",
+      "path" : "Encounter.hospitalization.admitSource.coding",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Encounter.hospitalization.admitSource.coding.system",
+      "path" : "Encounter.hospitalization.admitSource.coding.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Encounter.hospitalization.admitSource.coding.code",
+      "path" : "Encounter.hospitalization.admitSource.coding.code",
+      "mustSupport" : true
+    },
+    {
       "id" : "Encounter.hospitalization.dischargeDisposition",
       "path" : "Encounter.hospitalization.dischargeDisposition",
       "short" : "Entlassung",
@@ -1760,6 +1903,43 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-fall-konta
         "code" : "Extension",
         "profile" : ["http://fhir.de/StructureDefinition/Entlassungsgrund"]
       }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Encounter.hospitalization.dischargeDisposition.extension:Entlassungsgrund.extension:ErsteUndZweiteStelle",
+      "path" : "Encounter.hospitalization.dischargeDisposition.extension.extension",
+      "sliceName" : "ErsteUndZweiteStelle",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Encounter.hospitalization.dischargeDisposition.extension:Entlassungsgrund.extension:ErsteUndZweiteStelle.url",
+      "path" : "Encounter.hospitalization.dischargeDisposition.extension.extension.url",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Encounter.hospitalization.dischargeDisposition.extension:Entlassungsgrund.extension:ErsteUndZweiteStelle.value[x]",
+      "path" : "Encounter.hospitalization.dischargeDisposition.extension.extension.value[x]",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Encounter.hospitalization.dischargeDisposition.extension:Entlassungsgrund.extension:DritteStelle",
+      "path" : "Encounter.hospitalization.dischargeDisposition.extension.extension",
+      "sliceName" : "DritteStelle",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Encounter.hospitalization.dischargeDisposition.extension:Entlassungsgrund.extension:DritteStelle.url",
+      "path" : "Encounter.hospitalization.dischargeDisposition.extension.extension.url",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Encounter.hospitalization.dischargeDisposition.extension:Entlassungsgrund.extension:DritteStelle.value[x]",
+      "path" : "Encounter.hospitalization.dischargeDisposition.extension.extension.value[x]",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Encounter.hospitalization.dischargeDisposition.extension:Entlassungsgrund.url",
+      "path" : "Encounter.hospitalization.dischargeDisposition.extension.url",
       "mustSupport" : true
     },
     {
@@ -1825,7 +2005,8 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-fall-konta
           }],
           "url" : "http://hl7.org/fhir/StructureDefinition/translation"
         }]
-      }
+      },
+      "mustSupport" : true
     },
     {
       "id" : "Encounter.location.physicalType",
@@ -1844,7 +2025,8 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-fall-konta
       "short" : "Zimmer",
       "definition" : "Von Patient oder Patientin während des Kontaktes belegtes Zimmer auf einer Station.",
       "min" : 0,
-      "max" : "1"
+      "max" : "1",
+      "mustSupport" : true
     },
     {
       "id" : "Encounter.location:Zimmer.status",
@@ -1862,7 +2044,23 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-fall-konta
           "system" : "http://terminology.hl7.org/CodeSystem/location-physical-type",
           "code" : "ro"
         }]
-      }
+      },
+      "mustSupport" : true
+    },
+    {
+      "id" : "Encounter.location:Zimmer.physicalType.coding",
+      "path" : "Encounter.location.physicalType.coding",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Encounter.location:Zimmer.physicalType.coding.system",
+      "path" : "Encounter.location.physicalType.coding.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Encounter.location:Zimmer.physicalType.coding.code",
+      "path" : "Encounter.location.physicalType.coding.code",
+      "mustSupport" : true
     },
     {
       "id" : "Encounter.location:Bett",
@@ -1871,7 +2069,8 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-fall-konta
       "short" : "Bett",
       "definition" : "Von Patient oder Patientin während des Kontaktes belegter Bettenstellplatz.",
       "min" : 0,
-      "max" : "1"
+      "max" : "1",
+      "mustSupport" : true
     },
     {
       "id" : "Encounter.location:Bett.status",
@@ -1889,7 +2088,23 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-fall-konta
           "system" : "http://terminology.hl7.org/CodeSystem/location-physical-type",
           "code" : "bd"
         }]
-      }
+      },
+      "mustSupport" : true
+    },
+    {
+      "id" : "Encounter.location:Bett.physicalType.coding",
+      "path" : "Encounter.location.physicalType.coding",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Encounter.location:Bett.physicalType.coding.system",
+      "path" : "Encounter.location.physicalType.coding.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Encounter.location:Bett.physicalType.coding.code",
+      "path" : "Encounter.location.physicalType.coding.code",
+      "mustSupport" : true
     },
     {
       "id" : "Encounter.location:Station",
@@ -1898,7 +2113,8 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-fall-konta
       "short" : "Station",
       "definition" : "Die Station, auf welcher der Patient oder die Patientin während des Kontaktes behandelt wurde.",
       "min" : 0,
-      "max" : "1"
+      "max" : "1",
+      "mustSupport" : true
     },
     {
       "id" : "Encounter.location:Station.status",
@@ -1916,7 +2132,23 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-fall-konta
           "system" : "http://terminology.hl7.org/CodeSystem/location-physical-type",
           "code" : "wa"
         }]
-      }
+      },
+      "mustSupport" : true
+    },
+    {
+      "id" : "Encounter.location:Station.physicalType.coding",
+      "path" : "Encounter.location.physicalType.coding",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Encounter.location:Station.physicalType.coding.system",
+      "path" : "Encounter.location.physicalType.coding.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Encounter.location:Station.physicalType.coding.code",
+      "path" : "Encounter.location.physicalType.coding.code",
+      "mustSupport" : true
     },
     {
       "id" : "Encounter.serviceProvider",
@@ -2025,6 +2257,11 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-fall-konta
           "url" : "http://hl7.org/fhir/StructureDefinition/translation"
         }]
       },
+      "mustSupport" : true
+    },
+    {
+      "id" : "Encounter.partOf.reference",
+      "path" : "Encounter.partOf.reference",
       "mustSupport" : true
     }]
   }

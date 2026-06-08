@@ -15,14 +15,24 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
 {
   "resourceType" : "CapabilityStatement",
   "id" : "mii-cps-diagnose-capabilitystatement",
+  "meta" : {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-license",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/spdx-license",
+          "code" : "CC-BY-4.0",
+          "display" : "Creative Commons Attribution 4.0 International"
+        }]
+      }
+    }]
+  },
   "extension" : [{
-    "url" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/StructureDefinition/mii-ex-meta-license-codeable",
-    "valueCodeableConcept" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/spdx-license",
-        "code" : "CC-BY-4.0",
-        "display" : "Creative Commons Attribution 4.0 International"
-      }]
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm",
+    "valueCoding" : {
+      "system" : "http://hl7.org/fhir/version-algorithm",
+      "code" : "semver",
+      "display" : "SemVer"
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/CapabilityStatement/metadata",
@@ -31,7 +41,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
   "title" : "MII CPS Diagnose CapabilityStatement",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-03-31",
+  "date" : "2026-05-11",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [{
@@ -100,7 +110,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
           "valueCode" : "SHALL"
         }],
         "name" : "_count",
-        "type" : "special"
+        "type" : "special",
+        "documentation" : "**Example:**\n`GET [base]/Condition?_count=10`\n\n**Notes:**\nFor further details see FHIR core specification, section [Page Count](https://www.hl7.org/fhir/R4/search.html#count)."
       },
       {
         "extension" : [{
@@ -108,7 +119,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
           "valueCode" : "SHALL"
         }],
         "name" : "_summary",
-        "type" : "special"
+        "type" : "special",
+        "documentation" : "**Example:**\n`GET [base]/Condition?_summary=count`\n\n**Notes:**\nFor further details see FHIR core specification, section [Summary](https://www.hl7.org/fhir/R4/search.html#summary)."
       },
       {
         "extension" : [{
@@ -117,7 +129,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         }],
         "name" : "_id",
         "definition" : "http://hl7.org/fhir/SearchParameter/Resource-id",
-        "type" : "token"
+        "type" : "token",
+        "documentation" : "**Example:**\n`GET [base]/Condition?_id=mii-exa-diagnose-appendicitis`\n\n**Notes:**\nFor further details see FHIR core specification, section [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)."
       },
       {
         "extension" : [{
@@ -126,7 +139,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         }],
         "name" : "_lastUpdated",
         "definition" : "http://hl7.org/fhir/SearchParameter/Resource-lastUpdated",
-        "type" : "date"
+        "type" : "date",
+        "documentation" : "**Example:**\n`GET [base]/Condition?_lastUpdated=ge2026-01-01`\n\n**Notes:**\nSearches on `Condition.meta.lastUpdated`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#_lastUpdated)."
       },
       {
         "extension" : [{
@@ -135,7 +149,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         }],
         "name" : "_profile",
         "definition" : "http://hl7.org/fhir/SearchParameter/Resource-profile",
-        "type" : "uri"
+        "type" : "uri",
+        "documentation" : "**Example:**\n`GET [base]/Condition?_profile=https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0`\n\n**Notes:**\nSearches on `Condition.meta.profile`. For further details see FHIR core specification, section [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)."
       },
       {
         "extension" : [{
@@ -144,7 +159,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         }],
         "name" : "abatement-age",
         "definition" : "http://hl7.org/fhir/SearchParameter/Condition-abatement-age",
-        "type" : "quantity"
+        "type" : "quantity",
+        "documentation" : "**Example:**\n`GET [base]/Condition?abatement-age=20|http://unitsofmeasure.org|a`\n\n**Notes:**\nSearches on `Condition.abatement.ofType(Age)`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#quantity)."
       },
       {
         "extension" : [{
@@ -153,7 +169,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         }],
         "name" : "abatement-date",
         "definition" : "http://hl7.org/fhir/SearchParameter/Condition-abatement-date",
-        "type" : "date"
+        "type" : "date",
+        "documentation" : "**Example:**\n`GET [base]/Condition?abatement-date=2020-01-08`\n\n**Notes:**\nSearches on `Condition.abatement.ofType(dateTime)`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#date)."
       },
       {
         "extension" : [{
@@ -162,7 +179,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         }],
         "name" : "abatement-string",
         "definition" : "http://hl7.org/fhir/SearchParameter/Condition-abatement-string",
-        "type" : "string"
+        "type" : "string",
+        "documentation" : "**Example:**\n`GET [base]/Condition?abatement-string=resolved`\n\n**Notes:**\nSearches on `Condition.abatement.ofType(string)`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#string)."
       },
       {
         "extension" : [{
@@ -171,7 +189,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         }],
         "name" : "body-site",
         "definition" : "http://hl7.org/fhir/SearchParameter/Condition-body-site",
-        "type" : "token"
+        "type" : "token",
+        "documentation" : "**Example:**\n`GET [base]/Condition?body-site=elbow`\n\n**Notes:**\nSearches on `Condition.bodySite`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."
       },
       {
         "extension" : [{
@@ -180,7 +199,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         }],
         "name" : "category",
         "definition" : "http://hl7.org/fhir/SearchParameter/Condition-category",
-        "type" : "token"
+        "type" : "token",
+        "documentation" : "**Example:**\n`GET [base]/Condition?category=problem-list-item`\n\n**Notes:**\nSearches on `Condition.category`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."
       },
       {
         "extension" : [{
@@ -189,7 +209,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         }],
         "name" : "clinical-status",
         "definition" : "http://hl7.org/fhir/SearchParameter/Condition-clinical-status",
-        "type" : "token"
+        "type" : "token",
+        "documentation" : "**Example:**\n`GET [base]/Condition?clinical-status=active`\n\n**Notes:**\nSearches on `Condition.clinicalStatus`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."
       },
       {
         "extension" : [{
@@ -198,7 +219,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         }],
         "name" : "code",
         "definition" : "http://hl7.org/fhir/SearchParameter/clinical-code",
-        "type" : "token"
+        "type" : "token",
+        "documentation" : "**Example:**\n`GET [base]/Condition?code=http://fhir.de/CodeSystem/bfarm/icd-10-gm|K35.8`\n`GET [base]/Condition?code=K35.8`\n\n**Notes:**\nSearches on `Condition.code`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."
       },
       {
         "extension" : [{
@@ -207,7 +229,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         }],
         "name" : "encounter",
         "definition" : "http://hl7.org/fhir/SearchParameter/Condition-encounter",
-        "type" : "reference"
+        "type" : "reference",
+        "documentation" : "**Example:**\n`GET [base]/Condition?encounter=Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2`\n`GET [base]/Condition?encounter=mii-exa-fall-kontakt-gesundheitseinrichtung-2`\n\n**Notes:**\nSearches on `Condition.encounter`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#reference)."
       },
       {
         "extension" : [{
@@ -216,7 +239,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         }],
         "name" : "evidence",
         "definition" : "http://hl7.org/fhir/SearchParameter/Condition-evidence",
-        "type" : "token"
+        "type" : "token",
+        "documentation" : "**Example:**\n`GET [base]/Condition?evidence=manifestation`\n\n**Notes:**\nSearches on `Condition.evidence`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."
       },
       {
         "extension" : [{
@@ -225,7 +249,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         }],
         "name" : "evidence-detail",
         "definition" : "http://hl7.org/fhir/SearchParameter/Condition-evidence-detail",
-        "type" : "reference"
+        "type" : "reference",
+        "documentation" : "**Example:**\n`GET [base]/Condition?evidence-detail=Observation/mii-exa-person-observation-vitalstatus`\n`GET [base]/Condition?evidence-detail=mii-exa-person-observation-vitalstatus`\n\n**Notes:**\nSearches on `Condition.evidence.detail`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#reference)."
       },
       {
         "extension" : [{
@@ -234,7 +259,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         }],
         "name" : "identifier",
         "definition" : "http://hl7.org/fhir/SearchParameter/clinical-identifier",
-        "type" : "token"
+        "type" : "token",
+        "documentation" : "**Example:**\n`GET [base]/Condition?identifier=diagnose-1`\n\n**Notes:**\nSearches on `Condition.identifier`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."
       },
       {
         "extension" : [{
@@ -243,7 +269,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         }],
         "name" : "onset-age",
         "definition" : "http://hl7.org/fhir/SearchParameter/Condition-onset-age",
-        "type" : "quantity"
+        "type" : "quantity",
+        "documentation" : "**Example:**\n`GET [base]/Condition?onset-age=20|http://unitsofmeasure.org|a`\n\n**Notes:**\nSearches on `Condition.onset.ofType(Age)`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#quantity)."
       },
       {
         "extension" : [{
@@ -252,7 +279,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         }],
         "name" : "onset-date",
         "definition" : "http://hl7.org/fhir/SearchParameter/Condition-onset-date",
-        "type" : "date"
+        "type" : "date",
+        "documentation" : "**Example:**\n`GET [base]/Condition?onset-date=2020-01-08`\n\n**Notes:**\nSearches on `Condition.onset.ofType(dateTime)`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#date)."
       },
       {
         "extension" : [{
@@ -261,7 +289,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         }],
         "name" : "onset-info",
         "definition" : "http://hl7.org/fhir/SearchParameter/Condition-onset-info",
-        "type" : "string"
+        "type" : "string",
+        "documentation" : "**Example:**\n`GET [base]/Condition?onset-info=2019-09-26`\n\n**Notes:**\nSearches on `Condition.onset.ofType(string)`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#string)."
       },
       {
         "extension" : [{
@@ -270,7 +299,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         }],
         "name" : "patient",
         "definition" : "http://hl7.org/fhir/SearchParameter/clinical-patient",
-        "type" : "reference"
+        "type" : "reference",
+        "documentation" : "**Example:**\n`GET [base]/Condition?patient=Patient/mii-exa-person-patient-1`\n`GET [base]/Condition?patient=mii-exa-person-patient-1`\n\n**Notes:**\nSearches on `Condition.subject` where the subject is a Patient. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#reference)."
       },
       {
         "extension" : [{
@@ -279,7 +309,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         }],
         "name" : "recorded-date",
         "definition" : "http://hl7.org/fhir/SearchParameter/Condition-recorded-date",
-        "type" : "date"
+        "type" : "date",
+        "documentation" : "**Example:**\n`GET [base]/Condition?recorded-date=2020-01-08`\n\n**Notes:**\nSearches on `Condition.recordedDate`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#date)."
       },
       {
         "extension" : [{
@@ -288,7 +319,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         }],
         "name" : "severity",
         "definition" : "http://hl7.org/fhir/SearchParameter/Condition-severity",
-        "type" : "token"
+        "type" : "token",
+        "documentation" : "**Example:**\n`GET [base]/Condition?severity=moderate`\n\n**Notes:**\nSearches on `Condition.severity`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."
       },
       {
         "extension" : [{
@@ -297,7 +329,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         }],
         "name" : "stage",
         "definition" : "http://hl7.org/fhir/SearchParameter/Condition-stage",
-        "type" : "token"
+        "type" : "token",
+        "documentation" : "**Example:**\n`GET [base]/Condition?stage=initial`\n\n**Notes:**\nSearches on `Condition.stage`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."
       },
       {
         "extension" : [{
@@ -306,7 +339,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         }],
         "name" : "subject",
         "definition" : "http://hl7.org/fhir/SearchParameter/Condition-subject",
-        "type" : "reference"
+        "type" : "reference",
+        "documentation" : "**Example:**\n`GET [base]/Condition?subject=Patient/mii-exa-person-patient-1`\n`GET [base]/Condition?subject=mii-exa-person-patient-1`\n\n**Notes:**\nSearches on `Condition.subject`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#reference)."
       },
       {
         "extension" : [{
@@ -315,7 +349,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         }],
         "name" : "verification-status",
         "definition" : "http://hl7.org/fhir/SearchParameter/Condition-verification-status",
-        "type" : "token"
+        "type" : "token",
+        "documentation" : "**Example:**\n`GET [base]/Condition?verification-status=confirmed`\n\n**Notes:**\nSearches on `Condition.verificationStatus`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."
       },
       {
         "extension" : [{
@@ -324,7 +359,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         }],
         "name" : "icd10gm-diagnosesicherheit",
         "definition" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-condition-icd10gm-diagnosesicherheit",
-        "type" : "token"
+        "type" : "token",
+        "documentation" : "**Example:**\n`GET [base]/Condition?icd10gm-diagnosesicherheit=https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ICD_DIAGNOSESICHERHEIT|G`\n\n**Notes:**\nSearches on `Condition.code.coding.extension.where(url='http://fhir.de/StructureDefinition/icd-10-gm-diagnosesicherheit').value`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."
       },
       {
         "extension" : [{
@@ -333,7 +369,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         }],
         "name" : "icd10gm-mehrfachcodierung",
         "definition" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-condition-icd10gm-mehrfachcodierung",
-        "type" : "token"
+        "type" : "token",
+        "documentation" : "**Example:**\n`GET [base]/Condition?icd10gm-mehrfachcodierung=http://fhir.de/CodeSystem/icd-10-gm-mehrfachcodierungs-kennzeichen|†`\n\n**Notes:**\nSearches on `Condition.code.coding.extension.where(url='http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen').value`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."
       },
       {
         "extension" : [{
@@ -342,7 +379,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         }],
         "name" : "icd10gm-seitenlokalisation",
         "definition" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-condition-icd10gm-seitenlokalisation",
-        "type" : "token"
+        "type" : "token",
+        "documentation" : "**Example:**\n`GET [base]/Condition?icd10gm-seitenlokalisation=https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ICD_SEITENLOKALISATION|L`\n\n**Notes:**\nSearches on `Condition.code.coding.extension.where(url='http://fhir.de/StructureDefinition/seitenlokalisation').value`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."
       }]
     }]
   }]

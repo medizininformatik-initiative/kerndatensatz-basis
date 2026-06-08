@@ -87,7 +87,7 @@ Siehe [Formal Views](#profile) für das vollständige ValueSet-Binding.
 * Examples for this Profile: [Observation/mii-exa-person-observation-vitalstatus-discharge](Observation-mii-exa-person-observation-vitalstatus-discharge.md) and [Observation/mii-exa-person-observation-vitalstatus](Observation-mii-exa-person-observation-vitalstatus.md)
 * CapabilityStatements using this Profile: [MII CPS Person CapabilityStatement](CapabilityStatement-mii-cps-person-capabilitystatement.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/mii-pr-person-vitalstatus)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/StructureDefinition-mii-pr-person-vitalstatus.json)
 
 ### Formale Ansichten des Profilinhalts
 
@@ -116,7 +116,7 @@ Diese Struktur ist abgeleitet von [Observation](http://hl7.org/fhir/R4/observati
 ** Summary **
 
 Mandatory: 13 elements
- Must-Support: 20 elements
+ Must-Support: 25 elements
  Fixed: 1 element
  Prohibited: 4 elements
 
@@ -151,7 +151,7 @@ Diese Struktur ist abgeleitet von [Observation](http://hl7.org/fhir/R4/observati
 ** Summary **
 
 Mandatory: 13 elements
- Must-Support: 20 elements
+ Must-Support: 25 elements
  Fixed: 1 element
  Prohibited: 4 elements
 
@@ -175,14 +175,24 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-perso
 {
   "resourceType" : "StructureDefinition",
   "id" : "mii-pr-person-vitalstatus",
+  "meta" : {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-license",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/spdx-license",
+          "code" : "CC-BY-4.0",
+          "display" : "Creative Commons Attribution 4.0 International"
+        }]
+      }
+    }]
+  },
   "extension" : [{
-    "url" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/StructureDefinition/mii-ex-meta-license-codeable",
-    "valueCodeableConcept" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/spdx-license",
-        "code" : "CC-BY-4.0",
-        "display" : "Creative Commons Attribution 4.0 International"
-      }]
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm",
+    "valueCoding" : {
+      "system" : "http://hl7.org/fhir/version-algorithm",
+      "code" : "semver",
+      "display" : "SemVer"
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus",
@@ -214,7 +224,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-perso
     }]
   },
   "status" : "active",
-  "date" : "2025-12-12",
+  "date" : "2026-06-03",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [{
@@ -283,11 +293,6 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-perso
     "identity" : "v2",
     "uri" : "http://hl7.org/v2",
     "name" : "HL7 v2 Mapping"
-  },
-  {
-    "identity" : "rim",
-    "uri" : "http://hl7.org/v3",
-    "name" : "RIM Mapping"
   },
   {
     "identity" : "w5",
@@ -458,6 +463,21 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-perso
       "mustSupport" : true
     },
     {
+      "id" : "Observation.category:survey.coding",
+      "path" : "Observation.category.coding",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.category:survey.coding.system",
+      "path" : "Observation.category.coding.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.category:survey.coding.code",
+      "path" : "Observation.category.coding.code",
+      "mustSupport" : true
+    },
+    {
       "id" : "Observation.code",
       "path" : "Observation.code",
       "short" : "Code",
@@ -563,6 +583,11 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-perso
       "mustSupport" : true
     },
     {
+      "id" : "Observation.subject.reference",
+      "path" : "Observation.subject.reference",
+      "mustSupport" : true
+    },
+    {
       "id" : "Observation.encounter",
       "path" : "Observation.encounter",
       "short" : "Kontakt (Aufenthaltsbezug)",
@@ -615,6 +640,11 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-perso
           "url" : "http://hl7.org/fhir/StructureDefinition/translation"
         }]
       },
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.encounter.reference",
+      "path" : "Observation.encounter.reference",
       "mustSupport" : true
     },
     {

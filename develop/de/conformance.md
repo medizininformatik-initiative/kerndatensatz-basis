@@ -19,3 +19,7 @@ Für Implementierungshinweise siehe den Abschnitt [Hinweise](guidance.md).
 
 Für technische Artefakte siehe den Abschnitt [FHIR-Artefakte](artifacts.md).
 
+-------
+
+**Hinweis:** Eine Liste der Konformitätsanforderungen ist in der englischen Version dieses Implementierungsleitfadens verfügbar.
+
