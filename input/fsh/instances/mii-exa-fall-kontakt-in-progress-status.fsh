@@ -4,6 +4,7 @@ Usage: #example
 Title: "MII EXA Fall Kontakt Gesundheitseinrichtung (Status in-progress)"
 Description: "Encounter: Status 'in-progress'"
 * insert TestDataLabel
+* insert CRMIPackageSource
 * insert MetaProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)
 * status = #in-progress
 * class = $v3-ActCode#IMP "inpatient encounter"

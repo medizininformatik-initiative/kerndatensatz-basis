@@ -7,9 +7,23 @@ Description: "Kontakt zu einer Einrichtung, Abteilung oder Versorgungsstelle"
 * insert Translation(^title, de-DE, Fall - Kontakt mit einer Gesundheitseinrichtung)
 * insert Translation(^title, en-US, Treatment case - Encounter with Health Care Facility)
 * insert PR_CS_VS_Version
+* insert Publisher
 * insert LicenseCodeableCCBY40
+* insert CRMIShareableStructureDefinition
+* insert CRMIPublishableStructureDefinition
+* insert CRMIKnowledgeCapabilitiesStructureDefinition
+* insert CRMIVersionPolicyStrict
+* insert CRMIPackageSourceDefinitionalResource
+* insert CRMIArtifactUsageProfile
+* insert CRMIApprovalDate(2024-03-07)
+* insert CRMIResourceEffectivePeriod
+* insert CRMIArtifactTopic(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C154624)
+* insert CRMIArtifactContributors
 * obeys mii-enc-1 and mii-enc-2 and mii-enc-3 and mii-enc-4 and mii-enc-5 and mii-enc-6 and mii-enc-7
-* ^date = "2026-06-03"
+* ^status = #active
+* ^experimental = false
+* ^date = "2026-06-15"
+* ^purpose = "Constrain the FHIR Encounter resource for consistent exchange of contacts with healthcare institutions in the MII Treatment Case module."
 * id MS
 * id ^definition = "Angabe OPTIONAL, vom Server automatisch vergebene system-abhängige ID"
 * meta MS

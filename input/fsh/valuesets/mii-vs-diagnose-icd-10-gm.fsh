@@ -8,9 +8,19 @@ Description: "Enthaelt ICD-10-GM-Codes der Versionen 2009 bis 2025"
 * insert PR_CS_VS_Version
 * insert Publisher
 * insert LicenseCodeableCCBY40
+* insert CRMIShareableValueSet
+* insert CRMIPublishableValueSet
+* insert CRMIKnowledgeCapabilitiesValueSet
+* insert CRMIVersionPolicyStrict
+* insert CRMIPackageSourceDefinitionalResource
+* insert CRMIResourceEffectivePeriod
+* insert CRMIArtifactTopic(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C15607)
+* insert CRMIArtifactContributors
+* insert CRMIApprovalDate(2024-03-07)
 * ^status = #active
 * ^experimental = false
-* ^date = "2026-05-08"
+* ^date = "2026-06-15"
+* ^purpose = "Define ICD-10-GM codes allowed for diagnosis coding."
 * include codes from system http://fhir.de/CodeSystem/bfarm/icd-10-gm|2026
 * include codes from system http://fhir.de/CodeSystem/bfarm/icd-10-gm|2025
 * include codes from system http://fhir.de/CodeSystem/bfarm/icd-10-gm|2024

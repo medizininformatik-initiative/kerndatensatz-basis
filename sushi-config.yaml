@@ -15,12 +15,130 @@ fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2019+
 releaseLabel: Release
 license: CC-BY-4.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
-date: 2025-12-10
+date: 2026-06-15
 jurisdiction: urn:iso:std:iso:3166#DE "Germany" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:
   name: Medical Informatics Initiative (MII)
   url: https://www.medizininformatik-initiative.de/en
   # email: test@example.org
+meta:
+  profile:
+    - http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareableimplementationguide
+    - http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishableimplementationguide
+    - http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-implementationguide
+experimental: false
+extension:
+  - url: http://hl7.org/fhir/StructureDefinition/resource-approvalDate
+    valueDate: "2024-03-07"
+  - url: http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability
+    valueCode: shareable
+  - url: http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability
+    valueCode: publishable
+  - url: http://hl7.org/fhir/StructureDefinition/artifact-versionPolicy
+    valueCodeableConcept:
+      coding:
+        - system: http://terminology.hl7.org/CodeSystem/artifact-version-policy-codes
+          code: strict
+          display: Strict
+  - url: http://hl7.org/fhir/StructureDefinition/package-source
+    extension:
+      - url: packageId
+        valueId: de.medizininformatikinitiative.kerndatensatz.base
+      - url: version
+        valueString: "2026.0.0"
+      - url: uri
+        valueUri: https://www.medizininformatik-initiative.de/fhir/modul-base
+  - url: http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod
+    valuePeriod:
+      start: "2026"
+  - url: http://hl7.org/fhir/StructureDefinition/artifact-author
+    valueContactDetail:
+      telecom:
+        - system: email
+          value: julian.sass@charite.de
+  - url: http://hl7.org/fhir/StructureDefinition/artifact-editor
+    valueContactDetail:
+      name: Taskforce Core Data Set
+  - url: http://hl7.org/fhir/StructureDefinition/artifact-reviewer
+    valueContactDetail:
+      name: Interoperability Working Group
+      telecom:
+        - system: url
+          value: https://www.medizininformatik-initiative.de/en/collaboration/interoperability-working-group
+  - url: http://hl7.org/fhir/StructureDefinition/artifact-reviewer
+    valueContactDetail:
+      name: National Steering Committee
+      telecom:
+        - system: url
+          value: https://www.medizininformatik-initiative.de/en/collaboration/national-steering-committee
+  - url: http://hl7.org/fhir/StructureDefinition/artifact-endorser
+    valueContactDetail:
+      name: Interoperability Working Group
+      telecom:
+        - system: url
+          value: https://www.medizininformatik-initiative.de/en/collaboration/interoperability-working-group
+  - url: http://hl7.org/fhir/StructureDefinition/artifact-endorser
+    valueContactDetail:
+      name: National Steering Committee
+      telecom:
+        - system: url
+          value: https://www.medizininformatik-initiative.de/en/collaboration/national-steering-committee
+  - url: http://hl7.org/fhir/StructureDefinition/artifact-relatedArtifact
+    valueRelatedArtifact:
+      type: citation
+      citation: "Ammon, D., Kurscheidt, M., Buckow, K. et al. Arbeitsgruppe Interoperabilität: Kerndatensatz und Informationssysteme für Integration und Austausch von Daten in der Medizininformatik-Initiative. Bundesgesundheitsbl 67, 656–667 (2024). https://doi.org/10.1007/s00103-024-03888-4"
+      url: "https://doi.org/10.1007/s00103-024-03888-4"
+      extension:
+        - url: http://hl7.org/fhir/StructureDefinition/cqf-publicationDate
+          valueDate: "2024-05-16"
+        - url: http://hl7.org/fhir/StructureDefinition/cqf-publicationStatus
+          valueCode: active
+  - url: http://hl7.org/fhir/StructureDefinition/cqf-expansionParameters
+    valueReference:
+      reference: Parameters/mii-param-base-manifest
+  - url: http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm
+    valueCoding:
+      system: http://hl7.org/fhir/version-algorithm
+      code: semver
+  - url: http://hl7.org/fhir/StructureDefinition/artifact-usage
+    valueMarkdown: "Use this ImplementationGuide resource as a computable definition of all the parts of the corresponding modules of the Medical Informatics Initiative core data set."
+  - url: http://hl7.org/fhir/StructureDefinition/artifact-purpose
+    valueMarkdown: "Provide the computable publication unit for the MII Core Dataset base modules, enabling implementers to discover, validate, version, and apply the specifications consistently."
+  - url: http://hl7.org/fhir/StructureDefinition/artifact-topic
+    valueCodeableConcept:
+      coding:
+        - system: http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+          code: C15607
+  - url: http://hl7.org/fhir/StructureDefinition/artifact-topic
+    valueCodeableConcept:
+      coding:
+        - system: http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+          code: C154624
+  - url: http://hl7.org/fhir/StructureDefinition/artifact-topic
+    valueCodeableConcept:
+      coding:
+        - system: http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+          code: C25218
+  - url: http://hl7.org/fhir/StructureDefinition/artifact-topic
+    valueCodeableConcept:
+      coding:
+        - system: http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+          code: C16960
+  - url: http://hl7.org/fhir/StructureDefinition/artifact-topic
+    valueCodeableConcept:
+      coding:
+        - system: http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+          code: C25190
+  - url: http://hl7.org/fhir/StructureDefinition/artifact-topic
+    valueCodeableConcept:
+      coding:
+        - system: http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+          code: C81239
+  - url: http://hl7.org/fhir/StructureDefinition/artifact-topic
+    valueCodeableConcept:
+      coding:
+        - system: http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+          code: C25717
 
 # The dependencies property corresponds to IG.dependsOn. The key is the
 # package id and the value is the version (or dev/current). For advanced
@@ -99,6 +217,9 @@ pages:
   translationinfo.md:
     title: Translation Information
 
+  metadata.md:
+    title: Metadata Overview
+
 #
 #
 # The parameters property represents IG.definition.parameter. Rather
@@ -134,8 +255,8 @@ parameters:
     - html
     - tx
   pin-canonicals: pin-all
-  path-expansion-params: '../../input/resources/Parameters-manifest.json'
-  pin-manifest: 'manifest'
+  path-expansion-params: '../../input/resources/Parameters-mii-param-base-manifest.json'
+  pin-manifest: 'mii-param-base-manifest'
   suppress-mappings:
     - http://hl7.org/v3
     - http://hl7.org/v3/cda
@@ -215,6 +336,8 @@ menu:
   Versioning:
     Versioning: version-history.html
     Changelog: changes.html
+  Metadata:
+    Metadata Overview: metadata.html
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
 # │  Uncomment the properties below to configure additional properties on the ImplementationGuide  │

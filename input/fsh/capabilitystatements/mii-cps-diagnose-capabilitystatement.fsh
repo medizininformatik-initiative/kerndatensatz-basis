@@ -5,13 +5,24 @@ Usage: #definition
 * insert Version
 * insert SP_Publisher
 * insert LicenseCodeableCCBY40Instance
+* insert CRMIShareableCapabilityStatement
+* insert CRMIPublishableCapabilityStatement
+* insert CRMIKnowledgeCapabilitiesCapabilityStatement
+* insert CRMIVersionPolicyStrictInstance
+* insert CRMIPackageSource
+* insert CRMIArtifactUsageCapabilityStatement
+* insert CRMIApprovalDateInstance(2024-03-07)
+* insert CRMIResourceEffectivePeriodInstance
+* insert CRMIArtifactTopicInstance(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C15607)
+* insert CRMIArtifactContributorsInstance
 * name = "MII_CPS_Diagnose_CapabilityStatement"
 * title = "MII CPS Diagnose CapabilityStatement"
 * status = #active
 * experimental = false
-* date = "2026-05-11"
+* date = "2026-06-15"
 * description = "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein konformes System unterstützen muss, um das Modul Diagnose der Medizininformatik Initiative zu implementieren."
 * jurisdiction = urn:iso:std:iso:3166#DE "Germany"
+* purpose = "Define the minimum capabilities a system must support to implement and claim conformance to the MII Diagnosis module."
 * kind = #requirements
 * fhirVersion = #4.0.1
 * format[0] = #xml

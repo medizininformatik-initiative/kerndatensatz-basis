@@ -4,6 +4,7 @@ Usage: #example
 Title: "MII EXA Person Patient Pseudonymisiert"
 Description: "Patient: with pseudonym and masked insurance identifier (maskierter Versichertenidentifer)"
 * insert TestDataLabel
+* insert CRMIPackageSource
 * insert MetaProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert)
 * identifier[PseudonymisierterIdentifier].type = $v3-ObservationValue#PSEUDED
 * identifier[PseudonymisierterIdentifier].system = "https://www.medizininformatik-initiative.de/fhir/sid/pseudonym"

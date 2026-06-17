@@ -4,16 +4,30 @@ Usage: #definition
 * url = "https://www.medizininformatik-initiative.de/fhir/core/modul-person/CapabilityStatement/metadata"
 * insert Version
 * insert LicenseCodeableCCBY40Instance
+* insert CRMIShareableCapabilityStatement
+* insert CRMIPublishableCapabilityStatement
+* insert CRMIKnowledgeCapabilitiesCapabilityStatement
+* insert CRMIVersionPolicyStrictInstance
+* insert CRMIPackageSource
+* insert CRMIArtifactUsageCapabilityStatement
+* insert CRMIApprovalDateInstance(2024-03-07)
+* insert CRMIResourceEffectivePeriodInstance
+* insert CRMIArtifactTopicInstance(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C16960)
+* insert CRMIArtifactTopicInstance(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C25190)
+* insert CRMIArtifactTopicInstance(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C81239)
+* insert CRMIArtifactTopicInstance(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C25717)
+* insert CRMIArtifactContributorsInstance
 * name = "MII_CPS_Person_CapabilityStatement"
 * title = "MII CPS Person CapabilityStatement"
 * status = #active
 * experimental = false
-* date = "2026-05-11"
+* date = "2026-06-09"
 * publisher = "Medizininformatik Initiative"
 * contact.telecom.system = #url
 * contact.telecom.value = "https://www.medizininformatik-initiative.de"
 * description = "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein konformes System unterstützen muss um das Modul Person der Medizininformatik Initiative zu implementieren."
 * jurisdiction = urn:iso:std:iso:3166#DE "Germany"
+* purpose = "Define the minimum capabilities a system must support to implement and claim conformance to the MII Person module."
 * kind = #requirements
 * fhirVersion = #4.0.1
 * format[0] = #xml

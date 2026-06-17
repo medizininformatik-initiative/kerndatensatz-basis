@@ -11,7 +11,20 @@ Description: "Dieses Profil beschreibt eine Patient*in in der Medizininformatik-
 * insert PR_CS_VS_Version
 * insert Publisher
 * insert LicenseCodeableCCBY40
-* ^date = "2026-06-03"
+* insert CRMIShareableStructureDefinition
+* insert CRMIPublishableStructureDefinition
+* insert CRMIKnowledgeCapabilitiesStructureDefinition
+* insert CRMIVersionPolicyStrict
+* insert CRMIPackageSourceDefinitionalResource
+* insert CRMIArtifactUsageProfile
+* insert CRMIApprovalDate(2024-03-07)
+* insert CRMIResourceEffectivePeriod
+* insert CRMIArtifactTopic(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C16960)
+* insert CRMIArtifactContributors
+* ^status = #active
+* ^experimental = false
+* ^date = "2026-06-09"
+* ^purpose = "Constrain the FHIR Patient resource for consistent exchange of patient information in the MII Person module."
 * obeys mii-pat-1
 * id MS
 * meta MS

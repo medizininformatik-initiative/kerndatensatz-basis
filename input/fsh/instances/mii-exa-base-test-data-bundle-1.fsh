@@ -13,8 +13,11 @@ Usage: #example
 Title: "MII EXA Base Test Data Bundle 1"
 Description: "Bundle: collection of example scenario resources as transaction bundle"
 * insert TestDataLabel
+* insert CRMIPackageSource
 * type = #transaction
-* timestamp = "2025-11-28T09:38:00+01:00"
+* timestamp = "2026-06-17T14:56:00+02:00"
+* identifier[+].system = "https://www.medizininformatik-initiative.de/fhir/modul-base/sid/example-bundles"
+* identifier[=].value = "mii-exa-base-test-data-bundle-1"
 // Patient
 * insert AddBundleEntry(mii-exa-person-patient-1, Patient)
 // Encounters - 2019 Pre-hospital

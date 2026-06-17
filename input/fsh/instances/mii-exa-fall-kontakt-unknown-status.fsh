@@ -4,6 +4,7 @@ Usage: #example
 Title: "MII EXA Fall Kontakt Gesundheitseinrichtung (Status unknown)"
 Description: "Encounter: Status 'unknown'"
 * insert TestDataLabel
+* insert CRMIPackageSource
 * insert MetaProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)
 * status = #unknown
 * class = $v3-ActCode#IMP "inpatient encounter"

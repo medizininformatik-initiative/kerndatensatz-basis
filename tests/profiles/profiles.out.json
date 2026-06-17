@@ -26,7 +26,7 @@
           },
           {
             "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
-            "valueString" : "http://hl7.org/fhir/StructureDefinition/Parameters|4.0.1"
+            "valueString" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-manifestparameters|2.0.0-ballot"
           }],
           "severity" : "information",
           "code" : "informational",
@@ -1179,30 +1179,6 @@
         "issue" : [{
           "extension" : [{
             "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
-            "valueInteger" : 10
-          },
-          {
-            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
-            "valueInteger" : 4
-          },
-          {
-            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
-            "valueString" : "TerminologyEngine"
-          },
-          {
-            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
-            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"
-          }],
-          "severity" : "information",
-          "code" : "business-rule",
-          "details" : {
-            "text" : "Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/v3-ActCode|2018-08-12"
-          },
-          "expression" : ["Encounter.class"]
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
             "valueInteger" : 9
           },
           {
@@ -1347,30 +1323,6 @@
             "text" : "Unable to resolve resource with reference 'Patient/example'"
           },
           "expression" : ["Encounter.subject"]
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
-            "valueInteger" : 10
-          },
-          {
-            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
-            "valueInteger" : 4
-          },
-          {
-            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
-            "valueString" : "TerminologyEngine"
-          },
-          {
-            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
-            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"
-          }],
-          "severity" : "information",
-          "code" : "business-rule",
-          "details" : {
-            "text" : "Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/v3-ActCode|2018-08-12"
-          },
-          "expression" : ["Encounter.class"]
         },
         {
           "extension" : [{
@@ -1523,30 +1475,6 @@
         {
           "extension" : [{
             "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
-            "valueInteger" : 10
-          },
-          {
-            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
-            "valueInteger" : 4
-          },
-          {
-            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
-            "valueString" : "TerminologyEngine"
-          },
-          {
-            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
-            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"
-          }],
-          "severity" : "information",
-          "code" : "business-rule",
-          "details" : {
-            "text" : "Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/v3-ActCode|2018-08-12"
-          },
-          "expression" : ["Encounter.class"]
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
             "valueInteger" : 9
           },
           {
@@ -1691,30 +1619,6 @@
             "text" : "Unable to resolve resource with reference 'Patient/example'"
           },
           "expression" : ["Encounter.subject"]
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
-            "valueInteger" : 10
-          },
-          {
-            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
-            "valueInteger" : 4
-          },
-          {
-            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
-            "valueString" : "TerminologyEngine"
-          },
-          {
-            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
-            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"
-          }],
-          "severity" : "information",
-          "code" : "business-rule",
-          "details" : {
-            "text" : "Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/v3-ActCode|2018-08-12"
-          },
-          "expression" : ["Encounter.class"]
         },
         {
           "extension" : [{
@@ -1895,30 +1799,6 @@
         {
           "extension" : [{
             "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
-            "valueInteger" : 10
-          },
-          {
-            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
-            "valueInteger" : 4
-          },
-          {
-            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
-            "valueString" : "TerminologyEngine"
-          },
-          {
-            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
-            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"
-          }],
-          "severity" : "information",
-          "code" : "business-rule",
-          "details" : {
-            "text" : "Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/v3-ActCode|2018-08-12"
-          },
-          "expression" : ["Encounter.class"]
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
             "valueInteger" : 9
           },
           {
@@ -2063,30 +1943,6 @@
             "text" : "Unable to resolve resource with reference 'Patient/example'"
           },
           "expression" : ["Encounter.subject"]
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
-            "valueInteger" : 10
-          },
-          {
-            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
-            "valueInteger" : 4
-          },
-          {
-            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
-            "valueString" : "TerminologyEngine"
-          },
-          {
-            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
-            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"
-          }],
-          "severity" : "information",
-          "code" : "business-rule",
-          "details" : {
-            "text" : "Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/v3-ActCode|2018-08-12"
-          },
-          "expression" : ["Encounter.class"]
         },
         {
           "extension" : [{

@@ -7,7 +7,20 @@ Description: "Logische Repräsentation des Basismoduls Prozedur"
 * insert PR_CS_VS_Version
 * insert Publisher
 * insert LicenseCodeableCCBY40
-* ^date = "2026-05-12"
+* insert CRMIShareableStructureDefinition
+* insert CRMIPublishableStructureDefinition
+* insert CRMIKnowledgeCapabilitiesStructureDefinition
+* insert CRMIVersionPolicyStrict
+* insert CRMIPackageSourceDefinitionalResource
+* insert CRMIArtifactUsageLogicalModel
+* insert CRMIApprovalDate(2024-03-07)
+* insert CRMIResourceEffectivePeriod
+* insert CRMIArtifactTopic(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C25218)
+* insert CRMIArtifactContributors
+* ^status = #active
+* ^experimental = false
+* ^date = "2026-06-15"
+* ^purpose = "Define the information model for procedures independently of a concrete FHIR resource representation."
 * . ^short = "Das Basismodul Prozeduren umfasst die Beschreibung diagnostischer oder therapeutischer Maßnahmen, die als Leistungskomplexe auch für die Abrechnung dokumentiert und kodiert werden, z.B. Operationen."
 * OPSProzedurKodiert 0..1 BackboneElement "Kodierung der durchgeführten Prozedur mittels OPS." "Kodierung der durchgeführten Prozedur mittels OPS."
   * VollstaendigerProzedurencode 0..1 Coding "Vollständiger Prozedurencode" "Der vollständige Prozedurencode: Tripel aus OPS-Code, Codesystem (inkl. Version!) und Katalogtext."

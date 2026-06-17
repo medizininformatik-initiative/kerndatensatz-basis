@@ -11,8 +11,20 @@ Description: "Dieses Profil beschreibt den Todesursache der Patient*in als Eleme
 * insert PR_CS_VS_Version
 * insert Publisher
 * insert LicenseCodeableCCBY40
+* insert CRMIShareableStructureDefinition
+* insert CRMIPublishableStructureDefinition
+* insert CRMIKnowledgeCapabilitiesStructureDefinition
+* insert CRMIVersionPolicyStrict
+* insert CRMIPackageSourceDefinitionalResource
+* insert CRMIArtifactUsageProfile
+* insert CRMIApprovalDate(2024-03-07)
+* insert CRMIResourceEffectivePeriod
+* insert CRMIArtifactTopic(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C81239)
+* insert CRMIArtifactContributors
 * ^status = #active
-* ^date = "2026-06-03"
+* ^experimental = false
+* ^date = "2026-06-15"
+* ^purpose = "Constrain the FHIR Condition resource to represent cause of death information consistently as part of the MII Person module."
 * id MS
 * meta MS
 //* meta.source MS

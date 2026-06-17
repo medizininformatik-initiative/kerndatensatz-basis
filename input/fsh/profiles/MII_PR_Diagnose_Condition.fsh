@@ -11,8 +11,20 @@ Description: "Dieses Profil beschreibt eine Diagnose der Medizininformatik Initi
 * insert PR_CS_VS_Version
 * insert Publisher
 * insert LicenseCodeableCCBY40
+* insert CRMIShareableStructureDefinition
+* insert CRMIPublishableStructureDefinition
+* insert CRMIKnowledgeCapabilitiesStructureDefinition
+* insert CRMIVersionPolicyStrict
+* insert CRMIPackageSourceDefinitionalResource
+* insert CRMIArtifactUsageProfile
+* insert CRMIApprovalDate(2024-03-07)
+* insert CRMIResourceEffectivePeriod
+* insert CRMIArtifactTopic(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C15607)
+* insert CRMIArtifactContributors
 * ^status = #active
-* ^date = "2025-12-12"
+* ^experimental = false
+* ^date = "2026-06-15"
+* ^purpose = "Constrain the FHIR Condition resource for consistent exchange of diagnoses in the MII Core Data Set."
 * id MS
 * meta MS
 * meta.source MS

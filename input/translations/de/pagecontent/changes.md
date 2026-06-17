@@ -11,7 +11,10 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 - **Added:** Eine Liste der Konformitätsanforderungen ist in der englischen Version der [Conformance Seite](conformance.html) verfügbar
 - **Added:** CapabilityStatements dokumentieren nun Beispiel-FHIR-Suchanfragen für unterstützte SearchParameters
 - **Added:** LogicalModel-Seiten enthalten nun Mapping-Tabellen zu den entsprechenden FHIR-Zielstrukturen
+- **Added:** Metadaten-Dokumentation zu CRMI-basierten Artefaktmetadaten, Versionierung und Package-Provenance, Manifest-Parametern und zum Bezug zu FAIR Data Maturity Indicators ergänzt
+- **Added:** Die ImplementationGuide-Dokumentation beschreibt nun IG-Parametereinstellungen und Expansionsparameter
 - **Changed:** Must Support-Flags werden nun einheitlich auf relevante Unterelemente in allen Profilen angewendet, und die Dokumentation zu [Must Support](must-support.html) beschreibt, wie komplexe Elemente und ihre markierten Unterelemente konkrete Erwartungen an die Server- und Client-Unterstützung definieren.
+- **Changed:** Die Versionierungsdokumentation erläutert das Calendar-Versioning-Schema nun als SemVer-kompatibles Format `YYYY.MINOR.PATCH[-label]` und dokumentiert, dass veröffentlichte Artefakte dieselbe Version wie das IG-Package verwenden
 
 #### Terminologie-Updates
 

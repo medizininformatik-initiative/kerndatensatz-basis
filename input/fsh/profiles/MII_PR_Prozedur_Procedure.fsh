@@ -11,8 +11,20 @@ Description: "Dieses Profil beschreibt eine Prozedur in der Medizininformatik-In
 * insert PR_CS_VS_Version
 * insert Publisher
 * insert LicenseCodeableCCBY40
+* insert CRMIShareableStructureDefinition
+* insert CRMIPublishableStructureDefinition
+* insert CRMIKnowledgeCapabilitiesStructureDefinition
+* insert CRMIVersionPolicyStrict
+* insert CRMIPackageSourceDefinitionalResource
+* insert CRMIArtifactUsageProfile
+* insert CRMIApprovalDate(2024-03-07)
+* insert CRMIResourceEffectivePeriod
+* insert CRMIArtifactTopic(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C25218)
+* insert CRMIArtifactContributors
 * ^status = #active
-* ^date = "2026-06-03"
+* ^experimental = false
+* ^date = "2026-06-09"
+* ^purpose = "Constrain the FHIR Procedure resource for consistent exchange of procedures in the MII Procedure module."
 * obeys proc-mii-1
 * id MS
 * meta MS

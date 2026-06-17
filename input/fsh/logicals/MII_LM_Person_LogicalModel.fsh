@@ -7,7 +7,23 @@ Description: "Logische Repräsentation des Basismoduls Person"
 * insert PR_CS_VS_Version
 * insert Publisher
 * insert LicenseCodeableCCBY40
-* ^date = "2026-05-12"
+* insert CRMIShareableStructureDefinition
+* insert CRMIPublishableStructureDefinition
+* insert CRMIKnowledgeCapabilitiesStructureDefinition
+* insert CRMIVersionPolicyStrict
+* insert CRMIPackageSourceDefinitionalResource
+* insert CRMIArtifactUsageLogicalModel
+* insert CRMIApprovalDate(2024-03-07)
+* insert CRMIResourceEffectivePeriod
+* insert CRMIArtifactTopic(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C16960)
+* insert CRMIArtifactTopic(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C25190)
+* insert CRMIArtifactTopic(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C81239)
+* insert CRMIArtifactTopic(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C25717)
+* insert CRMIArtifactContributors
+* ^status = #active
+* ^experimental = false
+* ^date = "2026-06-09"
+* ^purpose = "Define the person-related information model independently of a concrete FHIR resource representation."
 * . ^short = "-- Überschrift --"
 * . insert Translation(^short, en, -- Heading --)
 * Name 0..* BackboneElement "Vollständiger Name einer Person." "Vollständiger Name einer Person."

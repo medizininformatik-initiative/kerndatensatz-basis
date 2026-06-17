@@ -6,10 +6,20 @@ Description: "A coded type for the physical type of the location."
 * ^url = "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/location-physical-type"
 * insert PR_CS_VS_Version
 * insert LicenseCodeableCCBY40
+* insert CRMIShareableValueSet
+* insert CRMIPublishableValueSet
+* insert CRMIKnowledgeCapabilitiesValueSet
+* insert CRMIVersionPolicyStrict
+* insert CRMIPackageSourceDefinitionalResource
+* insert CRMIResourceEffectivePeriod
+* insert CRMIArtifactContributors
+* insert CRMIApprovalDate(2024-03-07)
+* insert CRMIArtifactTopic(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C154624)
 * ^experimental = false
-* ^date = "2024-12-10"
+* ^date = "2026-06-09"
 * insert Publisher
 * ^experimental = false
+* ^purpose = "Define physical location type codes used for encounter locations."
 * LocationType#bd "Bed"
 * LocationType#ro "Room"
 * LocationType#wa "Ward"

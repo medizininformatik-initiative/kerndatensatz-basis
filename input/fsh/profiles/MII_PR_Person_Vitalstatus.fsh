@@ -11,7 +11,20 @@ Description: "Dieses Profil beschreibt den Vitalstatus der Patient*in in der Med
 * insert PR_CS_VS_Version
 * insert Publisher
 * insert LicenseCodeableCCBY40
-* ^date = "2026-06-03"
+* insert CRMIShareableStructureDefinition
+* insert CRMIPublishableStructureDefinition
+* insert CRMIKnowledgeCapabilitiesStructureDefinition
+* insert CRMIVersionPolicyStrict
+* insert CRMIPackageSourceDefinitionalResource
+* insert CRMIArtifactUsageProfile
+* insert CRMIApprovalDate(2024-03-07)
+* insert CRMIResourceEffectivePeriod
+* insert CRMIArtifactTopic(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C25717)
+* insert CRMIArtifactContributors
+* ^status = #active
+* ^experimental = false
+* ^date = "2026-06-09"
+* ^purpose = "Constrain the FHIR Observation resource to represent vital status information consistently as part of the MII Person module."
 * id MS
 * meta MS
 //* meta.source MS
