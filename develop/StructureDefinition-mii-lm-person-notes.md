@@ -1,3 +1,3 @@
 ### Mapping LogicalModel Person -> FHIR
 
-{% include sql-20-fragment.xhtml %}
+{% include sql-17-fragment.xhtml %}

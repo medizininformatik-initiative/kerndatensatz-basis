@@ -10,7 +10,7 @@
 
 Profile: [MII PR Person Patient](StructureDefinition-mii-pr-person-patient.md) version: 2026.0.0
 
-Security Label: [test health data (Details: v3 Code System ActReason code HTEST = 'test health data')](http://hl7.org/fhir/R4/v3/ActReason/cs.html)
+Security Label: [test health data (Details: ActReason code HTEST = 'test health data')](http://terminology.hl7.org/7.2.0/CodeSystem-v3-ActReason.html)
 
 Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))
 
@@ -32,6 +32,21 @@ Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record nu
   "resourceType" : "Patient",
   "id" : "mii-exa-person-patient-1",
   "meta" : {
+    "extension" : [{
+      "extension" : [{
+        "url" : "packageId",
+        "valueId" : "de.medizininformatikinitiative.kerndatensatz.base"
+      },
+      {
+        "url" : "version",
+        "valueString" : "2026.0.0"
+      },
+      {
+        "url" : "uri",
+        "valueUri" : "https://www.medizininformatik-initiative.de/fhir/modul-base"
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/package-source"
+    }],
     "profile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient|2026.0.0"],
     "security" : [{
       "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",

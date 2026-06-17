@@ -3,6 +3,17 @@
 <Bundle xmlns="http://hl7.org/fhir">
   <id value="mii-exa-base-test-data-bundle-1"/>
   <meta>
+    <extension url="http://hl7.org/fhir/StructureDefinition/package-source">
+      <extension url="packageId">
+        <valueId value="de.medizininformatikinitiative.kerndatensatz.base"/>
+      </extension>
+      <extension url="version">
+        <valueString value="2026.0.0"/>
+      </extension>
+      <extension url="uri">
+        <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-base"/>
+      </extension>
+    </extension>
     <security>
       <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
       <code value="HTEST"/>
@@ -10,14 +21,29 @@
     </security>
   </meta>
   <language value="de"/>
+  <identifier>
+    <system value="https://www.medizininformatik-initiative.de/fhir/modul-base/sid/example-bundles"/>
+    <value value="mii-exa-base-test-data-bundle-1"/>
+  </identifier>
   <type value="transaction"/>
-  <timestamp value="2025-11-28T09:38:00+01:00"/>
+  <timestamp value="2026-06-17T14:56:00+02:00"/>
   <entry>
     <fullUrl value="https://www.medizininformatik-initiative.de/Patient/mii-exa-person-patient-1"/>
     <resource>
       <Patient>
         <id value="mii-exa-person-patient-1"/>
         <meta>
+          <extension url="http://hl7.org/fhir/StructureDefinition/package-source">
+            <extension url="packageId">
+              <valueId value="de.medizininformatikinitiative.kerndatensatz.base"/>
+            </extension>
+            <extension url="version">
+              <valueString value="2026.0.0"/>
+            </extension>
+            <extension url="uri">
+              <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-base"/>
+            </extension>
+          </extension>
           <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient|2026.0.0"/>
           <security>
             <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
@@ -115,6 +141,17 @@
       <Encounter>
         <id value="mii-exa-fall-kontakt-gesundheitseinrichtung-8"/>
         <meta>
+          <extension url="http://hl7.org/fhir/StructureDefinition/package-source">
+            <extension url="packageId">
+              <valueId value="de.medizininformatikinitiative.kerndatensatz.base"/>
+            </extension>
+            <extension url="version">
+              <valueString value="2026.0.0"/>
+            </extension>
+            <extension url="uri">
+              <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-base"/>
+            </extension>
+          </extension>
           <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"/>
           <security>
             <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
@@ -167,6 +204,17 @@
       <Encounter>
         <id value="mii-exa-fall-kontakt-gesundheitseinrichtung-1"/>
         <meta>
+          <extension url="http://hl7.org/fhir/StructureDefinition/package-source">
+            <extension url="packageId">
+              <valueId value="de.medizininformatikinitiative.kerndatensatz.base"/>
+            </extension>
+            <extension url="version">
+              <valueString value="2026.0.0"/>
+            </extension>
+            <extension url="uri">
+              <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-base"/>
+            </extension>
+          </extension>
           <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"/>
           <security>
             <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
@@ -259,6 +307,17 @@
       <Encounter>
         <id value="mii-exa-fall-kontakt-gesundheitseinrichtung-9"/>
         <meta>
+          <extension url="http://hl7.org/fhir/StructureDefinition/package-source">
+            <extension url="packageId">
+              <valueId value="de.medizininformatikinitiative.kerndatensatz.base"/>
+            </extension>
+            <extension url="version">
+              <valueString value="2026.0.0"/>
+            </extension>
+            <extension url="uri">
+              <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-base"/>
+            </extension>
+          </extension>
           <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"/>
           <security>
             <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
@@ -342,6 +401,17 @@
       <Encounter>
         <id value="mii-exa-fall-kontakt-gesundheitseinrichtung-11"/>
         <meta>
+          <extension url="http://hl7.org/fhir/StructureDefinition/package-source">
+            <extension url="packageId">
+              <valueId value="de.medizininformatikinitiative.kerndatensatz.base"/>
+            </extension>
+            <extension url="version">
+              <valueString value="2026.0.0"/>
+            </extension>
+            <extension url="uri">
+              <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-base"/>
+            </extension>
+          </extension>
           <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"/>
           <security>
             <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
@@ -422,6 +492,17 @@
       <Encounter>
         <id value="mii-exa-fall-kontakt-gesundheitseinrichtung-2"/>
         <meta>
+          <extension url="http://hl7.org/fhir/StructureDefinition/package-source">
+            <extension url="packageId">
+              <valueId value="de.medizininformatikinitiative.kerndatensatz.base"/>
+            </extension>
+            <extension url="version">
+              <valueString value="2026.0.0"/>
+            </extension>
+            <extension url="uri">
+              <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-base"/>
+            </extension>
+          </extension>
           <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"/>
           <security>
             <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
@@ -531,6 +612,17 @@
       <Encounter>
         <id value="mii-exa-fall-kontakt-gesundheitseinrichtung-4"/>
         <meta>
+          <extension url="http://hl7.org/fhir/StructureDefinition/package-source">
+            <extension url="packageId">
+              <valueId value="de.medizininformatikinitiative.kerndatensatz.base"/>
+            </extension>
+            <extension url="version">
+              <valueString value="2026.0.0"/>
+            </extension>
+            <extension url="uri">
+              <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-base"/>
+            </extension>
+          </extension>
           <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"/>
           <security>
             <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
@@ -612,6 +704,17 @@
       <Encounter>
         <id value="mii-exa-fall-kontakt-gesundheitseinrichtung-5"/>
         <meta>
+          <extension url="http://hl7.org/fhir/StructureDefinition/package-source">
+            <extension url="packageId">
+              <valueId value="de.medizininformatikinitiative.kerndatensatz.base"/>
+            </extension>
+            <extension url="version">
+              <valueString value="2026.0.0"/>
+            </extension>
+            <extension url="uri">
+              <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-base"/>
+            </extension>
+          </extension>
           <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"/>
           <security>
             <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
@@ -699,6 +802,17 @@
       <Encounter>
         <id value="mii-exa-fall-kontakt-gesundheitseinrichtung-6"/>
         <meta>
+          <extension url="http://hl7.org/fhir/StructureDefinition/package-source">
+            <extension url="packageId">
+              <valueId value="de.medizininformatikinitiative.kerndatensatz.base"/>
+            </extension>
+            <extension url="version">
+              <valueString value="2026.0.0"/>
+            </extension>
+            <extension url="uri">
+              <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-base"/>
+            </extension>
+          </extension>
           <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"/>
           <security>
             <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
@@ -780,6 +894,17 @@
       <Encounter>
         <id value="mii-exa-fall-kontakt-gesundheitseinrichtung-10"/>
         <meta>
+          <extension url="http://hl7.org/fhir/StructureDefinition/package-source">
+            <extension url="packageId">
+              <valueId value="de.medizininformatikinitiative.kerndatensatz.base"/>
+            </extension>
+            <extension url="version">
+              <valueString value="2026.0.0"/>
+            </extension>
+            <extension url="uri">
+              <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-base"/>
+            </extension>
+          </extension>
           <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"/>
           <security>
             <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
@@ -861,6 +986,17 @@
       <Encounter>
         <id value="mii-exa-fall-kontakt-gesundheitseinrichtung-7"/>
         <meta>
+          <extension url="http://hl7.org/fhir/StructureDefinition/package-source">
+            <extension url="packageId">
+              <valueId value="de.medizininformatikinitiative.kerndatensatz.base"/>
+            </extension>
+            <extension url="version">
+              <valueString value="2026.0.0"/>
+            </extension>
+            <extension url="uri">
+              <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-base"/>
+            </extension>
+          </extension>
           <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"/>
           <security>
             <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
@@ -971,6 +1107,17 @@
       <Condition>
         <id value="mii-exa-diagnose-mehrfachcodierung-primaercode"/>
         <meta>
+          <extension url="http://hl7.org/fhir/StructureDefinition/package-source">
+            <extension url="packageId">
+              <valueId value="de.medizininformatikinitiative.kerndatensatz.base"/>
+            </extension>
+            <extension url="version">
+              <valueString value="2026.0.0"/>
+            </extension>
+            <extension url="uri">
+              <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-base"/>
+            </extension>
+          </extension>
           <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0"/>
           <security>
             <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
@@ -1048,6 +1195,17 @@
       <Condition>
         <id value="mii-exa-diagnose-mehrfachcodierung-sekundaercode"/>
         <meta>
+          <extension url="http://hl7.org/fhir/StructureDefinition/package-source">
+            <extension url="packageId">
+              <valueId value="de.medizininformatikinitiative.kerndatensatz.base"/>
+            </extension>
+            <extension url="version">
+              <valueString value="2026.0.0"/>
+            </extension>
+            <extension url="uri">
+              <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-base"/>
+            </extension>
+          </extension>
           <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0"/>
           <security>
             <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
@@ -1111,6 +1269,17 @@
       <Condition>
         <id value="mii-exa-diagnose-appendicitis"/>
         <meta>
+          <extension url="http://hl7.org/fhir/StructureDefinition/package-source">
+            <extension url="packageId">
+              <valueId value="de.medizininformatikinitiative.kerndatensatz.base"/>
+            </extension>
+            <extension url="version">
+              <valueString value="2026.0.0"/>
+            </extension>
+            <extension url="uri">
+              <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-base"/>
+            </extension>
+          </extension>
           <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0"/>
           <security>
             <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
@@ -1171,6 +1340,17 @@
       <Condition>
         <id value="mii-exa-diagnose-condition-elbow-contusion"/>
         <meta>
+          <extension url="http://hl7.org/fhir/StructureDefinition/package-source">
+            <extension url="packageId">
+              <valueId value="de.medizininformatikinitiative.kerndatensatz.base"/>
+            </extension>
+            <extension url="version">
+              <valueString value="2026.0.0"/>
+            </extension>
+            <extension url="uri">
+              <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-base"/>
+            </extension>
+          </extension>
           <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0"/>
           <security>
             <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
@@ -1231,6 +1411,17 @@
       <Condition>
         <id value="mii-exa-diagnose-condition-multiple-codings"/>
         <meta>
+          <extension url="http://hl7.org/fhir/StructureDefinition/package-source">
+            <extension url="packageId">
+              <valueId value="de.medizininformatikinitiative.kerndatensatz.base"/>
+            </extension>
+            <extension url="version">
+              <valueString value="2026.0.0"/>
+            </extension>
+            <extension url="uri">
+              <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-base"/>
+            </extension>
+          </extension>
           <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0"/>
           <security>
             <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
@@ -1296,6 +1487,17 @@
       <Procedure>
         <id value="mii-exa-prozedur-procedure"/>
         <meta>
+          <extension url="http://hl7.org/fhir/StructureDefinition/package-source">
+            <extension url="packageId">
+              <valueId value="de.medizininformatikinitiative.kerndatensatz.base"/>
+            </extension>
+            <extension url="version">
+              <valueString value="2026.0.0"/>
+            </extension>
+            <extension url="uri">
+              <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-base"/>
+            </extension>
+          </extension>
           <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.0"/>
           <security>
             <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
@@ -1365,6 +1567,17 @@
       <Procedure>
         <id value="mii-exa-prozedur-procedure-2"/>
         <meta>
+          <extension url="http://hl7.org/fhir/StructureDefinition/package-source">
+            <extension url="packageId">
+              <valueId value="de.medizininformatikinitiative.kerndatensatz.base"/>
+            </extension>
+            <extension url="version">
+              <valueString value="2026.0.0"/>
+            </extension>
+            <extension url="uri">
+              <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-base"/>
+            </extension>
+          </extension>
           <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.0"/>
           <security>
             <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
@@ -1430,6 +1643,17 @@
       <Procedure>
         <id value="mii-exa-prozedur-imaging"/>
         <meta>
+          <extension url="http://hl7.org/fhir/StructureDefinition/package-source">
+            <extension url="packageId">
+              <valueId value="de.medizininformatikinitiative.kerndatensatz.base"/>
+            </extension>
+            <extension url="version">
+              <valueString value="2026.0.0"/>
+            </extension>
+            <extension url="uri">
+              <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-base"/>
+            </extension>
+          </extension>
           <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.0"/>
           <security>
             <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
@@ -1496,6 +1720,17 @@
       <Observation>
         <id value="mii-exa-person-observation-vitalstatus"/>
         <meta>
+          <extension url="http://hl7.org/fhir/StructureDefinition/package-source">
+            <extension url="packageId">
+              <valueId value="de.medizininformatikinitiative.kerndatensatz.base"/>
+            </extension>
+            <extension url="version">
+              <valueString value="2026.0.0"/>
+            </extension>
+            <extension url="uri">
+              <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-base"/>
+            </extension>
+          </extension>
           <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus|2026.0.0"/>
           <security>
             <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
@@ -1547,6 +1782,17 @@
       <Observation>
         <id value="mii-exa-person-observation-vitalstatus-discharge"/>
         <meta>
+          <extension url="http://hl7.org/fhir/StructureDefinition/package-source">
+            <extension url="packageId">
+              <valueId value="de.medizininformatikinitiative.kerndatensatz.base"/>
+            </extension>
+            <extension url="version">
+              <valueString value="2026.0.0"/>
+            </extension>
+            <extension url="uri">
+              <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-base"/>
+            </extension>
+          </extension>
           <profile value="https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus|2026.0.0"/>
           <security>
             <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>

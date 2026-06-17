@@ -51,8 +51,8 @@
 	  <script type="text/javascript" src="assets/js/prism-cql.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"14.35"}
-    h3,h4,h5,h6{--heading-prefix:"14.35"}</style>
+    <style type="text/css">h2{--heading-prefix:"15.35"}
+    h3,h4,h5,h6{--heading-prefix:"15.35"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -193,6 +193,16 @@
       </li>
     </ul>
   </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Metadata
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="metadata.html">Metadata Overview</a>
+      </li>
+    </ul>
+  </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
 
@@ -294,6 +304,25 @@
   "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle">resourceType</a>" : "Bundle",
   "<a href="http://hl7.org/fhir/R4/resource.html#Bundle.id">id</a>" : "mii-exa-base-test-data-bundle-1",
   "<a href="http://hl7.org/fhir/R4/resource.html#Bundle.meta">meta</a>" : {
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>" : [
+      {
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "packageId",
+            "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>" : "de.medizininformatikinitiative.kerndatensatz.base"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "version",
+            "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "2026.0.0"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "uri",
+            "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>" : "https://www.medizininformatik-initiative.de/fhir/modul-base"
+          }
+        ],
+        "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/package-source"
+      }
+    ],
     "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.security">security</a>" : [
       {
         "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
@@ -303,8 +332,12 @@
     ]
   },
   "<a href="http://hl7.org/fhir/R4/resource.html#Bundle.language">language</a>" : "de",
+  "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.identifier">identifier</a>" : {
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "https://www.medizininformatik-initiative.de/fhir/modul-base/sid/example-bundles",
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "mii-exa-base-test-data-bundle-1"
+  },
   "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.type">type</a>" : "transaction",
-  "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.timestamp">timestamp</a>" : "2025-11-28T09:38:00+01:00",
+  "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.timestamp">timestamp</a>" : "2026-06-17T14:56:00+02:00",
   "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry">entry</a>" : [
     {
       "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.fullUrl">fullUrl</a>" : "https://www.medizininformatik-initiative.de/Patient/mii-exa-person-patient-1",
@@ -312,6 +345,25 @@
         "<a href="http://hl7.org/fhir/R4/patient.html">resourceType</a>" : "Patient",
         "<a href="http://hl7.org/fhir/R4/resource.html#Patient.id">id</a>" : "mii-exa-person-patient-1",
         "<a href="http://hl7.org/fhir/R4/resource.html#Patient.meta">meta</a>" : {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "packageId",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>" : "de.medizininformatikinitiative.kerndatensatz.base"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "version",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "2026.0.0"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "uri",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>" : "https://www.medizininformatik-initiative.de/fhir/modul-base"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/package-source"
+            }
+          ],
           "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
             <a href="StructureDefinition-mii-pr-person-patient.html" style="color: Maroon">&#x1F517;</a> "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient|2026.0.0"
           ],
@@ -442,6 +494,25 @@
         "<a href="http://hl7.org/fhir/R4/encounter.html">resourceType</a>" : "Encounter",
         "<a href="http://hl7.org/fhir/R4/resource.html#Encounter.id">id</a>" : "mii-exa-fall-kontakt-gesundheitseinrichtung-8",
         "<a href="http://hl7.org/fhir/R4/resource.html#Encounter.meta">meta</a>" : {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "packageId",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>" : "de.medizininformatikinitiative.kerndatensatz.base"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "version",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "2026.0.0"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "uri",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>" : "https://www.medizininformatik-initiative.de/fhir/modul-base"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/package-source"
+            }
+          ],
           "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
             <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" style="color: Maroon">&#x1F517;</a> "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"
           ],
@@ -501,6 +572,25 @@
         "<a href="http://hl7.org/fhir/R4/encounter.html">resourceType</a>" : "Encounter",
         "<a href="http://hl7.org/fhir/R4/resource.html#Encounter.id">id</a>" : "mii-exa-fall-kontakt-gesundheitseinrichtung-1",
         "<a href="http://hl7.org/fhir/R4/resource.html#Encounter.meta">meta</a>" : {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "packageId",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>" : "de.medizininformatikinitiative.kerndatensatz.base"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "version",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "2026.0.0"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "uri",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>" : "https://www.medizininformatik-initiative.de/fhir/modul-base"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/package-source"
+            }
+          ],
           "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
             <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" style="color: Maroon">&#x1F517;</a> "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"
           ],
@@ -615,6 +705,25 @@
         "<a href="http://hl7.org/fhir/R4/encounter.html">resourceType</a>" : "Encounter",
         "<a href="http://hl7.org/fhir/R4/resource.html#Encounter.id">id</a>" : "mii-exa-fall-kontakt-gesundheitseinrichtung-9",
         "<a href="http://hl7.org/fhir/R4/resource.html#Encounter.meta">meta</a>" : {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "packageId",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>" : "de.medizininformatikinitiative.kerndatensatz.base"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "version",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "2026.0.0"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "uri",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>" : "https://www.medizininformatik-initiative.de/fhir/modul-base"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/package-source"
+            }
+          ],
           "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
             <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" style="color: Maroon">&#x1F517;</a> "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"
           ],
@@ -719,6 +828,25 @@
         "<a href="http://hl7.org/fhir/R4/encounter.html">resourceType</a>" : "Encounter",
         "<a href="http://hl7.org/fhir/R4/resource.html#Encounter.id">id</a>" : "mii-exa-fall-kontakt-gesundheitseinrichtung-11",
         "<a href="http://hl7.org/fhir/R4/resource.html#Encounter.meta">meta</a>" : {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "packageId",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>" : "de.medizininformatikinitiative.kerndatensatz.base"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "version",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "2026.0.0"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "uri",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>" : "https://www.medizininformatik-initiative.de/fhir/modul-base"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/package-source"
+            }
+          ],
           "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
             <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" style="color: Maroon">&#x1F517;</a> "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"
           ],
@@ -816,6 +944,25 @@
         "<a href="http://hl7.org/fhir/R4/encounter.html">resourceType</a>" : "Encounter",
         "<a href="http://hl7.org/fhir/R4/resource.html#Encounter.id">id</a>" : "mii-exa-fall-kontakt-gesundheitseinrichtung-2",
         "<a href="http://hl7.org/fhir/R4/resource.html#Encounter.meta">meta</a>" : {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "packageId",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>" : "de.medizininformatikinitiative.kerndatensatz.base"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "version",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "2026.0.0"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "uri",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>" : "https://www.medizininformatik-initiative.de/fhir/modul-base"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/package-source"
+            }
+          ],
           "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
             <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" style="color: Maroon">&#x1F517;</a> "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"
           ],
@@ -948,6 +1095,25 @@
         "<a href="http://hl7.org/fhir/R4/encounter.html">resourceType</a>" : "Encounter",
         "<a href="http://hl7.org/fhir/R4/resource.html#Encounter.id">id</a>" : "mii-exa-fall-kontakt-gesundheitseinrichtung-4",
         "<a href="http://hl7.org/fhir/R4/resource.html#Encounter.meta">meta</a>" : {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "packageId",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>" : "de.medizininformatikinitiative.kerndatensatz.base"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "version",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "2026.0.0"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "uri",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>" : "https://www.medizininformatik-initiative.de/fhir/modul-base"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/package-source"
+            }
+          ],
           "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
             <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" style="color: Maroon">&#x1F517;</a> "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"
           ],
@@ -1046,6 +1212,25 @@
         "<a href="http://hl7.org/fhir/R4/encounter.html">resourceType</a>" : "Encounter",
         "<a href="http://hl7.org/fhir/R4/resource.html#Encounter.id">id</a>" : "mii-exa-fall-kontakt-gesundheitseinrichtung-5",
         "<a href="http://hl7.org/fhir/R4/resource.html#Encounter.meta">meta</a>" : {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "packageId",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>" : "de.medizininformatikinitiative.kerndatensatz.base"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "version",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "2026.0.0"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "uri",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>" : "https://www.medizininformatik-initiative.de/fhir/modul-base"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/package-source"
+            }
+          ],
           "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
             <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" style="color: Maroon">&#x1F517;</a> "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"
           ],
@@ -1152,6 +1337,25 @@
         "<a href="http://hl7.org/fhir/R4/encounter.html">resourceType</a>" : "Encounter",
         "<a href="http://hl7.org/fhir/R4/resource.html#Encounter.id">id</a>" : "mii-exa-fall-kontakt-gesundheitseinrichtung-6",
         "<a href="http://hl7.org/fhir/R4/resource.html#Encounter.meta">meta</a>" : {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "packageId",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>" : "de.medizininformatikinitiative.kerndatensatz.base"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "version",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "2026.0.0"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "uri",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>" : "https://www.medizininformatik-initiative.de/fhir/modul-base"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/package-source"
+            }
+          ],
           "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
             <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" style="color: Maroon">&#x1F517;</a> "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"
           ],
@@ -1250,6 +1454,25 @@
         "<a href="http://hl7.org/fhir/R4/encounter.html">resourceType</a>" : "Encounter",
         "<a href="http://hl7.org/fhir/R4/resource.html#Encounter.id">id</a>" : "mii-exa-fall-kontakt-gesundheitseinrichtung-10",
         "<a href="http://hl7.org/fhir/R4/resource.html#Encounter.meta">meta</a>" : {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "packageId",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>" : "de.medizininformatikinitiative.kerndatensatz.base"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "version",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "2026.0.0"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "uri",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>" : "https://www.medizininformatik-initiative.de/fhir/modul-base"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/package-source"
+            }
+          ],
           "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
             <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" style="color: Maroon">&#x1F517;</a> "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"
           ],
@@ -1348,6 +1571,25 @@
         "<a href="http://hl7.org/fhir/R4/encounter.html">resourceType</a>" : "Encounter",
         "<a href="http://hl7.org/fhir/R4/resource.html#Encounter.id">id</a>" : "mii-exa-fall-kontakt-gesundheitseinrichtung-7",
         "<a href="http://hl7.org/fhir/R4/resource.html#Encounter.meta">meta</a>" : {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "packageId",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>" : "de.medizininformatikinitiative.kerndatensatz.base"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "version",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "2026.0.0"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "uri",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>" : "https://www.medizininformatik-initiative.de/fhir/modul-base"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/package-source"
+            }
+          ],
           "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
             <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" style="color: Maroon">&#x1F517;</a> "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"
           ],
@@ -1481,6 +1723,25 @@
         "<a href="http://hl7.org/fhir/R4/condition.html">resourceType</a>" : "Condition",
         "<a href="http://hl7.org/fhir/R4/resource.html#Condition.id">id</a>" : "mii-exa-diagnose-mehrfachcodierung-primaercode",
         "<a href="http://hl7.org/fhir/R4/resource.html#Condition.meta">meta</a>" : {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "packageId",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>" : "de.medizininformatikinitiative.kerndatensatz.base"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "version",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "2026.0.0"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "uri",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>" : "https://www.medizininformatik-initiative.de/fhir/modul-base"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/package-source"
+            }
+          ],
           "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
             <a href="StructureDefinition-mii-pr-diagnose-condition.html" style="color: Maroon">&#x1F517;</a> "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0"
           ],
@@ -1572,6 +1833,25 @@
         "<a href="http://hl7.org/fhir/R4/condition.html">resourceType</a>" : "Condition",
         "<a href="http://hl7.org/fhir/R4/resource.html#Condition.id">id</a>" : "mii-exa-diagnose-mehrfachcodierung-sekundaercode",
         "<a href="http://hl7.org/fhir/R4/resource.html#Condition.meta">meta</a>" : {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "packageId",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>" : "de.medizininformatikinitiative.kerndatensatz.base"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "version",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "2026.0.0"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "uri",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>" : "https://www.medizininformatik-initiative.de/fhir/modul-base"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/package-source"
+            }
+          ],
           "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
             <a href="StructureDefinition-mii-pr-diagnose-condition.html" style="color: Maroon">&#x1F517;</a> "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0"
           ],
@@ -1650,6 +1930,25 @@
         "<a href="http://hl7.org/fhir/R4/condition.html">resourceType</a>" : "Condition",
         "<a href="http://hl7.org/fhir/R4/resource.html#Condition.id">id</a>" : "mii-exa-diagnose-appendicitis",
         "<a href="http://hl7.org/fhir/R4/resource.html#Condition.meta">meta</a>" : {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "packageId",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>" : "de.medizininformatikinitiative.kerndatensatz.base"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "version",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "2026.0.0"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "uri",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>" : "https://www.medizininformatik-initiative.de/fhir/modul-base"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/package-source"
+            }
+          ],
           "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
             <a href="StructureDefinition-mii-pr-diagnose-condition.html" style="color: Maroon">&#x1F517;</a> "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0"
           ],
@@ -1722,6 +2021,25 @@
         "<a href="http://hl7.org/fhir/R4/condition.html">resourceType</a>" : "Condition",
         "<a href="http://hl7.org/fhir/R4/resource.html#Condition.id">id</a>" : "mii-exa-diagnose-condition-elbow-contusion",
         "<a href="http://hl7.org/fhir/R4/resource.html#Condition.meta">meta</a>" : {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "packageId",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>" : "de.medizininformatikinitiative.kerndatensatz.base"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "version",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "2026.0.0"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "uri",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>" : "https://www.medizininformatik-initiative.de/fhir/modul-base"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/package-source"
+            }
+          ],
           "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
             <a href="StructureDefinition-mii-pr-diagnose-condition.html" style="color: Maroon">&#x1F517;</a> "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0"
           ],
@@ -1794,6 +2112,25 @@
         "<a href="http://hl7.org/fhir/R4/condition.html">resourceType</a>" : "Condition",
         "<a href="http://hl7.org/fhir/R4/resource.html#Condition.id">id</a>" : "mii-exa-diagnose-condition-multiple-codings",
         "<a href="http://hl7.org/fhir/R4/resource.html#Condition.meta">meta</a>" : {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "packageId",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>" : "de.medizininformatikinitiative.kerndatensatz.base"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "version",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "2026.0.0"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "uri",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>" : "https://www.medizininformatik-initiative.de/fhir/modul-base"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/package-source"
+            }
+          ],
           "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
             <a href="StructureDefinition-mii-pr-diagnose-condition.html" style="color: Maroon">&#x1F517;</a> "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0"
           ],
@@ -1871,6 +2208,25 @@
         "<a href="http://hl7.org/fhir/R4/procedure.html">resourceType</a>" : "Procedure",
         "<a href="http://hl7.org/fhir/R4/resource.html#Procedure.id">id</a>" : "mii-exa-prozedur-procedure",
         "<a href="http://hl7.org/fhir/R4/resource.html#Procedure.meta">meta</a>" : {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "packageId",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>" : "de.medizininformatikinitiative.kerndatensatz.base"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "version",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "2026.0.0"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "uri",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>" : "https://www.medizininformatik-initiative.de/fhir/modul-base"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/package-source"
+            }
+          ],
           "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
             <a href="StructureDefinition-mii-pr-prozedur-procedure.html" style="color: Maroon">&#x1F517;</a> "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.0"
           ],
@@ -1955,6 +2311,25 @@
         "<a href="http://hl7.org/fhir/R4/procedure.html">resourceType</a>" : "Procedure",
         "<a href="http://hl7.org/fhir/R4/resource.html#Procedure.id">id</a>" : "mii-exa-prozedur-procedure-2",
         "<a href="http://hl7.org/fhir/R4/resource.html#Procedure.meta">meta</a>" : {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "packageId",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>" : "de.medizininformatikinitiative.kerndatensatz.base"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "version",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "2026.0.0"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "uri",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>" : "https://www.medizininformatik-initiative.de/fhir/modul-base"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/package-source"
+            }
+          ],
           "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
             <a href="StructureDefinition-mii-pr-prozedur-procedure.html" style="color: Maroon">&#x1F517;</a> "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.0"
           ],
@@ -2035,6 +2410,25 @@
         "<a href="http://hl7.org/fhir/R4/procedure.html">resourceType</a>" : "Procedure",
         "<a href="http://hl7.org/fhir/R4/resource.html#Procedure.id">id</a>" : "mii-exa-prozedur-imaging",
         "<a href="http://hl7.org/fhir/R4/resource.html#Procedure.meta">meta</a>" : {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "packageId",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>" : "de.medizininformatikinitiative.kerndatensatz.base"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "version",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "2026.0.0"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "uri",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>" : "https://www.medizininformatik-initiative.de/fhir/modul-base"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/package-source"
+            }
+          ],
           "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
             <a href="StructureDefinition-mii-pr-prozedur-procedure.html" style="color: Maroon">&#x1F517;</a> "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.0"
           ],
@@ -2116,6 +2510,25 @@
         "<a href="http://hl7.org/fhir/R4/observation.html">resourceType</a>" : "Observation",
         "<a href="http://hl7.org/fhir/R4/resource.html#Observation.id">id</a>" : "mii-exa-person-observation-vitalstatus",
         "<a href="http://hl7.org/fhir/R4/resource.html#Observation.meta">meta</a>" : {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "packageId",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>" : "de.medizininformatikinitiative.kerndatensatz.base"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "version",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "2026.0.0"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "uri",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>" : "https://www.medizininformatik-initiative.de/fhir/modul-base"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/package-source"
+            }
+          ],
           "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
             <a href="StructureDefinition-mii-pr-person-vitalstatus.html" style="color: Maroon">&#x1F517;</a> "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus|2026.0.0"
           ],
@@ -2178,6 +2591,25 @@
         "<a href="http://hl7.org/fhir/R4/observation.html">resourceType</a>" : "Observation",
         "<a href="http://hl7.org/fhir/R4/resource.html#Observation.id">id</a>" : "mii-exa-person-observation-vitalstatus-discharge",
         "<a href="http://hl7.org/fhir/R4/resource.html#Observation.meta">meta</a>" : {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "packageId",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>" : "de.medizininformatikinitiative.kerndatensatz.base"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "version",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "2026.0.0"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "uri",
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>" : "https://www.medizininformatik-initiative.de/fhir/modul-base"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/package-source"
+            }
+          ],
           "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
             <a href="StructureDefinition-mii-pr-person-vitalstatus.html" style="color: Maroon">&#x1F517;</a> "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus|2026.0.0"
           ],
@@ -2270,8 +2702,8 @@
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.base#2026.0.0 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Erstellt 
-  <span title="2026-06-08 07:31:00 +0000">
-    2026-06-08
+  <span title="2026-06-17 14:18:00 +0000">
+    2026-06-17
   </span>
 
           <br/>

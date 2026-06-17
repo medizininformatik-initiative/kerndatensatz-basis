@@ -189,6 +189,16 @@
       </li>
     </ul>
   </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Metadata
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="metadata.html">Metadata Overview</a>
+      </li>
+    </ul>
+  </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
 
@@ -265,14 +275,21 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </div>
 <h3 id="versioning-scheme">Versioning Scheme</h3>
 
-<p>Starting with version 2024.0.0, the MII Kerndatensatz follows a <strong>Calendar Versioning (CalVer)</strong> scheme:</p>
+<p>Starting with version 2024.0.0, the MII Kerndatensatz follows a <strong>Calendar Versioning (CalVer)</strong> scheme in a SemVer-compatible numeric form:</p>
 
 <ul>
-  <li><strong>YYYY.MINOR.PATCH</strong> format</li>
-  <li><strong>YYYY</strong> = Year the IG is applicable and intended to be used</li>
-  <li><strong>MINOR</strong> = Minor version number (incremented for feature additions)</li>
-  <li><strong>PATCH</strong> = Patch version number (incremented for bug fixes)</li>
+  <li><strong>YYYY.MINOR.PATCH[-label]</strong> format</li>
+  <li><strong>YYYY</strong> = Year the IG is applicable and intended to be used; this is the major version component</li>
+  <li><strong>MINOR</strong> = Minor version number, incremented for non-breaking feature additions or refinements</li>
+  <li><strong>PATCH</strong> = Patch version number, incremented for corrections and bug fixes</li>
+  <li><strong>label</strong> = Optional pre-release or build label, for example <code class="language-plaintext highlighter-rouge">draft</code>, <code class="language-plaintext highlighter-rouge">ballot</code>, or <code class="language-plaintext highlighter-rouge">cibuild</code></li>
 </ul>
+
+<p>Stable releases can be compared by treating the numeric components as SemVer-style <code class="language-plaintext highlighter-rouge">&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</code> values, with the calendar year used as the major version. For example, <code class="language-plaintext highlighter-rouge">2026.1.0</code> is newer than <code class="language-plaintext highlighter-rouge">2026.0.3</code>. Labels indicate pre-release or build status; no ordering is inferred among labels.</p>
+
+<p>All released FHIR artifacts in the package use the same version as the overall IG/package. As a result, an artifact may receive a new version when the IG is released even if that individual artifact did not change.</p>
+
+<p>The computable CRMI metadata used to declare version algorithm, versioning policy, package source, and manifest parameters is described on the <a href="metadata.html">Metadata Overview</a> page.</p>
 
 <h3 id="version-history-and-changes">Version History and Changes</h3>
 
@@ -308,8 +325,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.base#2026.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-06-08 07:31:00 +0000">
-    2026-06-08
+  <span title="2026-06-17 14:18:00 +0000">
+    2026-06-17
   </span>
 
           <br/>

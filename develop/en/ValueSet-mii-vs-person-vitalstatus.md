@@ -30,15 +30,26 @@ Enthält alle Werte, die den Vitalstatus einer Person beschreiben.
   "meta" : {
     "extension" : [{
       "url" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-license",
-      "valueCodeableConcept" : {
-        "coding" : [{
-          "system" : "http://hl7.org/fhir/spdx-license",
-          "code" : "CC-BY-4.0",
-          "display" : "Creative Commons Attribution 4.0 International"
-        }]
-      }
+      "valueCode" : "CC-BY-4.0"
+    },
+    {
+      "extension" : [{
+        "url" : "packageId",
+        "valueId" : "de.medizininformatikinitiative.kerndatensatz.base"
+      },
+      {
+        "url" : "version",
+        "valueString" : "2026.0.0"
+      },
+      {
+        "url" : "uri",
+        "valueUri" : "https://www.medizininformatik-initiative.de/fhir/modul-base"
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/package-source"
     }],
-    "profile" : ["http://hl7.org/fhir/StructureDefinition/shareablevalueset"]
+    "profile" : ["http://hl7.org/fhir/StructureDefinition/shareablevalueset",
+    "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablevalueset",
+    "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset"]
   },
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm",
@@ -47,6 +58,111 @@ Enthält alle Werte, die den Vitalstatus einer Person beschreiben.
       "code" : "semver",
       "display" : "SemVer"
     }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability",
+    "valueCode" : "shareable"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability",
+    "valueCode" : "publishable"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability",
+    "valueCode" : "computable"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-versionPolicy",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/artifact-version-policy-codes",
+        "code" : "strict",
+        "display" : "Strict"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod",
+    "valuePeriod" : {
+      "start" : "2026"
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-author",
+    "valueContactDetail" : {
+      "telecom" : [{
+        "system" : "email",
+        "value" : "julian.sass@charite.de"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-editor",
+    "valueContactDetail" : {
+      "name" : "Taskforce Core Data Set"
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-reviewer",
+    "valueContactDetail" : {
+      "name" : "Interoperability Working Group",
+      "telecom" : [{
+        "system" : "url",
+        "value" : "https://www.medizininformatik-initiative.de/en/collaboration/interoperability-working-group"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-reviewer",
+    "valueContactDetail" : {
+      "name" : "National Steering Committee",
+      "telecom" : [{
+        "system" : "url",
+        "value" : "https://www.medizininformatik-initiative.de/en/collaboration/national-steering-committee"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-endorser",
+    "valueContactDetail" : {
+      "name" : "Interoperability Working Group",
+      "telecom" : [{
+        "system" : "url",
+        "value" : "https://www.medizininformatik-initiative.de/en/collaboration/interoperability-working-group"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-endorser",
+    "valueContactDetail" : {
+      "name" : "National Steering Committee",
+      "telecom" : [{
+        "system" : "url",
+        "value" : "https://www.medizininformatik-initiative.de/en/collaboration/national-steering-committee"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/resource-approvalDate",
+    "valueDate" : "2024-03-07"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-topic",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+        "code" : "C16960"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-topic",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+        "code" : "C25717"
+      }]
+    }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/Vitalstatus",
   "version" : "2026.0.0",
@@ -54,7 +170,7 @@ Enthält alle Werte, die den Vitalstatus einer Person beschreiben.
   "title" : "MII VS Person Vitalstatus",
   "status" : "active",
   "experimental" : false,
-  "date" : "2024-12-04",
+  "date" : "2026-06-15",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [{
@@ -84,6 +200,7 @@ Enthält alle Werte, die den Vitalstatus einer Person beschreiben.
       "display" : "Germany"
     }]
   }],
+  "purpose" : "Define codes allowed for representing a person's vital status.",
   "compose" : {
     "include" : [{
       "system" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/CodeSystem/Vitalstatus"

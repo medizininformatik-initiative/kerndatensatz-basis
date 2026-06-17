@@ -102,9 +102,63 @@
     "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate": [
       "Encounter"
     ],
+    "http://hl7.org/fhir/StructureDefinition/artifact-author": [
+      "CapabilityStatement",
+      "CodeSystem",
+      "ImplementationGuide",
+      "StructureDefinition",
+      "ValueSet"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/artifact-editor": [
+      "CapabilityStatement",
+      "CodeSystem",
+      "ImplementationGuide",
+      "StructureDefinition",
+      "ValueSet"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/artifact-endorser": [
+      "CapabilityStatement",
+      "CodeSystem",
+      "ImplementationGuide",
+      "StructureDefinition",
+      "ValueSet"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/artifact-purpose": [
+      "ImplementationGuide"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/artifact-relatedArtifact": [
+      "ImplementationGuide"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/artifact-reviewer": [
+      "CapabilityStatement",
+      "CodeSystem",
+      "ImplementationGuide",
+      "StructureDefinition",
+      "ValueSet"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/artifact-topic": [
+      "CapabilityStatement",
+      "CodeSystem",
+      "ImplementationGuide",
+      "StructureDefinition",
+      "ValueSet"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/artifact-usage": [
+      "CapabilityStatement",
+      "ImplementationGuide",
+      "StructureDefinition"
+    ],
     "http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm": [
       "CapabilityStatement",
       "CodeSystem",
+      "ImplementationGuide",
+      "StructureDefinition",
+      "ValueSet"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/artifact-versionPolicy": [
+      "CapabilityStatement",
+      "CodeSystem",
+      "ImplementationGuide",
       "StructureDefinition",
       "ValueSet"
     ],
@@ -121,6 +175,16 @@
     "http://hl7.org/fhir/StructureDefinition/condition-related": [
       "Bundle.entry.resource",
       "Condition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/cqf-expansionParameters": [
+      "ImplementationGuide"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability": [
+      "CapabilityStatement",
+      "CodeSystem",
+      "ImplementationGuide",
+      "StructureDefinition",
+      "ValueSet"
     ],
     "http://hl7.org/fhir/StructureDefinition/data-absent-reason": [
       "Patient.birthDate",
@@ -169,8 +233,36 @@
       "Bundle.entry.resource.name.prefix",
       "Patient.name.prefix"
     ],
+    "http://hl7.org/fhir/StructureDefinition/package-source": [
+      "Bundle.entry.resource.meta",
+      "Bundle.meta",
+      "CapabilityStatement.meta",
+      "CodeSystem.meta",
+      "Condition.meta",
+      "Encounter.meta",
+      "ImplementationGuide",
+      "Observation.meta",
+      "Patient.meta",
+      "Procedure.meta",
+      "StructureDefinition.meta",
+      "ValueSet.meta"
+    ],
     "http://hl7.org/fhir/StructureDefinition/regex": [
       "StructureDefinition.snapshot.element.type"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/resource-approvalDate": [
+      "CapabilityStatement",
+      "CodeSystem",
+      "ImplementationGuide",
+      "StructureDefinition",
+      "ValueSet"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod": [
+      "CapabilityStatement",
+      "CodeSystem",
+      "ImplementationGuide",
+      "StructureDefinition",
+      "ValueSet"
     ],
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-display-hint": [
       "StructureDefinition.snapshot.element"

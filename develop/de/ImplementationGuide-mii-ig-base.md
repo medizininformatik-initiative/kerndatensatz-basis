@@ -66,10 +66,29 @@ This publication includes IP covered under the following statements.
 * [SNOMED Clinical Terms&reg; (SNOMED CT&reg;)](http://hl7.org/fhir/R4/codesystem-snomedct.html): [Bundle/mii-exa-base-test-data-bundle-1](Bundle-mii-exa-base-test-data-bundle-1.md), [Condition/mii-exa-diagnose-appendicitis](Condition-mii-exa-diagnose-appendicitis.md)... Show 15 more, [Condition/mii-exa-diagnose-condition-elbow-contusion](Condition-mii-exa-diagnose-condition-elbow-contusion.md), [Condition/mii-exa-person-condition-todesursache](Condition-mii-exa-person-condition-todesursache.md), [MII_CS_Diagnose_Lebensphase_Supplement_SNOMED](CodeSystem-mii-cs-diagnose-lebensphase-supplement-snomed.md), [MII_EX_Prozedur_Durchfuehrungsabsicht](StructureDefinition-mii-ex-prozedur-durchfuehrungsabsicht.md), [MII_PR_Diagnose_Condition](StructureDefinition-mii-pr-diagnose-condition.md), [MII_PR_Person_Todesursache](StructureDefinition-mii-pr-person-todesursache.md), [MII_PR_Prozedur_Procedure](StructureDefinition-mii-pr-prozedur-procedure.md), [MII_VS_Diagnose_BodyStructure_SNOMED](ValueSet-mii-vs-diagnose-bodystructure-snomed.md), [MII_VS_Diagnose_DiagnoseCodes_SNOMED](ValueSet-mii-vs-diagnose-diagnosecodes-snomed.md), [MII_VS_Prozedur_Durchfuehrungsabsicht_SNOMEDCT](ValueSet-mii-vs-prozedur-durchfuehrungsabsicht-snomedct.md), [MII_VS_Prozedur_OpsKategorien_SNOMEDCT](ValueSet-mii-vs-prozedur-opskategorien-snomedct.md), [MII_VS_Prozedur_Prozeduren_SNOMEDCT](ValueSet-mii-vs-prozedur-prozeduren-snomedct.md), [Procedure/mii-exa-prozedur-imaging](Procedure-mii-exa-prozedur-imaging.md), [Procedure/mii-exa-prozedur-procedure](Procedure-mii-exa-prozedur-procedure.md) and [Procedure/mii-exa-prozedur-procedure-2](Procedure-mii-exa-prozedur-procedure-2.md)
 
 
+* This material derives from the HL7 Terminology (THO). THO is copyright ©1989+ Health Level Seven International and is made available under the CC0 designation. For more licensing information see: [https://terminology.hl7.org/license.html](https://terminology.hl7.org/license.html)
+
+* [Condition Clinical Status Codes](http://terminology.hl7.org/7.2.0/CodeSystem-condition-clinical.html): [Bundle/mii-exa-base-test-data-bundle-1](Bundle-mii-exa-base-test-data-bundle-1.md), [Condition/mii-exa-diagnose-appendicitis](Condition-mii-exa-diagnose-appendicitis.md)... Show 4 more, [Condition/mii-exa-diagnose-condition-elbow-contusion](Condition-mii-exa-diagnose-condition-elbow-contusion.md), [Condition/mii-exa-diagnose-condition-multiple-codings](Condition-mii-exa-diagnose-condition-multiple-codings.md), [Condition/mii-exa-diagnose-mehrfachcodierung-primaercode](Condition-mii-exa-diagnose-mehrfachcodierung-primaercode.md) and [Condition/mii-exa-diagnose-mehrfachcodierung-sekundaercode](Condition-mii-exa-diagnose-mehrfachcodierung-sekundaercode.md)
+* [ConditionVerificationStatus](http://terminology.hl7.org/7.2.0/CodeSystem-condition-ver-status.html): [Bundle/mii-exa-base-test-data-bundle-1](Bundle-mii-exa-base-test-data-bundle-1.md), [Condition/mii-exa-diagnose-appendicitis](Condition-mii-exa-diagnose-appendicitis.md)... Show 4 more, [Condition/mii-exa-diagnose-condition-elbow-contusion](Condition-mii-exa-diagnose-condition-elbow-contusion.md), [Condition/mii-exa-diagnose-condition-multiple-codings](Condition-mii-exa-diagnose-condition-multiple-codings.md), [Condition/mii-exa-diagnose-mehrfachcodierung-primaercode](Condition-mii-exa-diagnose-mehrfachcodierung-primaercode.md) and [Condition/mii-exa-diagnose-mehrfachcodierung-sekundaercode](Condition-mii-exa-diagnose-mehrfachcodierung-sekundaercode.md)
+* [Diagnosis Role](http://terminology.hl7.org/7.2.0/CodeSystem-diagnosis-role.html): [Bundle/mii-exa-base-test-data-bundle-1](Bundle-mii-exa-base-test-data-bundle-1.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.md) and [MII_PR_Fall_KontaktGesundheitseinrichtung](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.md)
+* [Location type](http://terminology.hl7.org/7.2.0/CodeSystem-location-physical-type.html): [Bundle/mii-exa-base-test-data-bundle-1](Bundle-mii-exa-base-test-data-bundle-1.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-10.md)... Show 6 more, [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-11](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-11.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-4.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-5.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-6.md), [MII_PR_Fall_KontaktGesundheitseinrichtung](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.md) and [MII_VS_Fall_LocationPhysicalType](ValueSet-mii-vs-fall-location-physical-type.md)
+* [Observation Category Codes](http://terminology.hl7.org/7.2.0/CodeSystem-observation-category.html): [Bundle/mii-exa-base-test-data-bundle-1](Bundle-mii-exa-base-test-data-bundle-1.md), [MII_PR_Person_Vitalstatus](StructureDefinition-mii-pr-person-vitalstatus.md), [Observation/mii-exa-person-observation-vitalstatus](Observation-mii-exa-person-observation-vitalstatus.md) and [Observation/mii-exa-person-observation-vitalstatus-discharge](Observation-mii-exa-person-observation-vitalstatus-discharge.md)
+* [patientClass](http://terminology.hl7.org/7.2.0/CodeSystem-v2-0004.html): [MII_CS_Fall_SupplementPatientClass](CodeSystem-mii-cs-fall-supplement-patient-class.md)
+* [identifierType](http://terminology.hl7.org/7.2.0/CodeSystem-v2-0203.html): [Bundle/mii-exa-base-test-data-bundle-1](Bundle-mii-exa-base-test-data-bundle-1.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.md)... Show 15 more, [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-10.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-11](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-11.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-3](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-3.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-4.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-5.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-6.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-8](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-8.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-9](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-9.md), [MII_PR_Fall_KontaktGesundheitseinrichtung](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.md), [MII_PR_Person_Patient](StructureDefinition-mii-pr-person-patient.md), [MII_PR_Person_PatientPseudonymisiert](StructureDefinition-mii-pr-person-patient-pseudonymisiert.md), [MII_VS_Fall_IdentifierTypeCodes](ValueSet-mii-vs-fall-identifier-type-codes.md) and [Patient/mii-exa-person-patient-1](Patient-mii-exa-person-patient-1.md)
+* [ActCode](http://terminology.hl7.org/7.2.0/CodeSystem-v3-ActCode.html): [Bundle/mii-exa-base-test-data-bundle-1](Bundle-mii-exa-base-test-data-bundle-1.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.md)... Show 15 more, [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-10.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-11](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-11.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-3](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-3.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-4.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-5.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-6.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-8](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-8.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-9](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-9.md), [Encounter/mii-exa-fall-kontakt-in-progress-status](Encounter-mii-exa-fall-kontakt-in-progress-status.md), [Encounter/mii-exa-fall-kontakt-onleave-status](Encounter-mii-exa-fall-kontakt-onleave-status.md), [Encounter/mii-exa-fall-kontakt-unknown-status](Encounter-mii-exa-fall-kontakt-unknown-status.md), [MII_CS_Fall_SupplementActEncounterCode](CodeSystem-mii-cs-fall-supplement-act-encounter-code.md) and [MII_PR_Fall_KontaktGesundheitseinrichtung](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.md)
+* [ActPriority](http://terminology.hl7.org/7.2.0/CodeSystem-v3-ActPriority.html): [Bundle/mii-exa-base-test-data-bundle-1](Bundle-mii-exa-base-test-data-bundle-1.md) and [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-9](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-9.md)
+* [ActReason](http://terminology.hl7.org/7.2.0/CodeSystem-v3-ActReason.html): [Bundle/mii-exa-base-test-data-bundle-1](Bundle-mii-exa-base-test-data-bundle-1.md), [Condition/mii-exa-diagnose-appendicitis](Condition-mii-exa-diagnose-appendicitis.md)... Show 26 more, [Condition/mii-exa-diagnose-condition-elbow-contusion](Condition-mii-exa-diagnose-condition-elbow-contusion.md), [Condition/mii-exa-diagnose-condition-multiple-codings](Condition-mii-exa-diagnose-condition-multiple-codings.md), [Condition/mii-exa-diagnose-mehrfachcodierung-primaercode](Condition-mii-exa-diagnose-mehrfachcodierung-primaercode.md), [Condition/mii-exa-diagnose-mehrfachcodierung-sekundaercode](Condition-mii-exa-diagnose-mehrfachcodierung-sekundaercode.md), [Condition/mii-exa-person-condition-todesursache](Condition-mii-exa-person-condition-todesursache.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-10.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-11](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-11.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-3](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-3.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-4.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-5.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-6.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-8](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-8.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-9](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-9.md), [Encounter/mii-exa-fall-kontakt-in-progress-status](Encounter-mii-exa-fall-kontakt-in-progress-status.md), [Encounter/mii-exa-fall-kontakt-onleave-status](Encounter-mii-exa-fall-kontakt-onleave-status.md), [Encounter/mii-exa-fall-kontakt-unknown-status](Encounter-mii-exa-fall-kontakt-unknown-status.md), [Observation/mii-exa-person-observation-vitalstatus](Observation-mii-exa-person-observation-vitalstatus.md), [Observation/mii-exa-person-observation-vitalstatus-discharge](Observation-mii-exa-person-observation-vitalstatus-discharge.md), [Patient/mii-exa-person-patient-1](Patient-mii-exa-person-patient-1.md), [Patient/mii-exa-person-patient-pseudonymisiert](Patient-mii-exa-person-patient-pseudonymisiert.md), [Procedure/mii-exa-prozedur-imaging](Procedure-mii-exa-prozedur-imaging.md), [Procedure/mii-exa-prozedur-procedure](Procedure-mii-exa-prozedur-procedure.md) and [Procedure/mii-exa-prozedur-procedure-2](Procedure-mii-exa-prozedur-procedure-2.md)
+* [ObservationValue](http://terminology.hl7.org/7.2.0/CodeSystem-v3-ObservationValue.html): [MII_PR_Person_PatientPseudonymisiert](StructureDefinition-mii-pr-person-patient-pseudonymisiert.md) and [Patient/mii-exa-person-patient-pseudonymisiert](Patient-mii-exa-person-patient-pseudonymisiert.md)
+
+
 * WHO, BfArM 1994 - 2024 - Die Erstellung erfolgt unter Verwendung der maschinenlesbaren Fassung des Bundesinstituts für Arzneimittel und Medizinprodukte (BfArM)
 
 * [ICD-10-GM](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.de/CodeSystem/bfarm/icd-10-gm): [Bundle/mii-exa-base-test-data-bundle-1](Bundle-mii-exa-base-test-data-bundle-1.md), [Condition/mii-exa-diagnose-appendicitis](Condition-mii-exa-diagnose-appendicitis.md)... Show 6 more, [Condition/mii-exa-diagnose-condition-elbow-contusion](Condition-mii-exa-diagnose-condition-elbow-contusion.md), [Condition/mii-exa-diagnose-condition-multiple-codings](Condition-mii-exa-diagnose-condition-multiple-codings.md), [Condition/mii-exa-diagnose-mehrfachcodierung-primaercode](Condition-mii-exa-diagnose-mehrfachcodierung-primaercode.md), [Condition/mii-exa-diagnose-mehrfachcodierung-sekundaercode](Condition-mii-exa-diagnose-mehrfachcodierung-sekundaercode.md), [MII_PR_Diagnose_Condition](StructureDefinition-mii-pr-diagnose-condition.md) and [MII_VS_Diagnose_ICD10GM](ValueSet-mii-vs-diagnose-icd10gm.md)
 
+
+### IG-Parametereinstellungen und Expansionsparameter
+
+Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Operation übergeben werden können, um zu steuern, wie das `ValueSet` expandiert wird, d.h. wie die vollständige Liste der Codes aus der `ValueSet`-Definition erzeugt wird. Die für diesen IG verwendeten [IG-Parameter](https://hl7.org/fhir/tools/en/CodeSystem-ig-parameters.html) sind im [Parameters Manifest](Parameters-mii-param-base-manifest.md) definiert.
 
 
 
@@ -79,7 +98,213 @@ This publication includes IP covered under the following statements.
 {
   "resourceType" : "ImplementationGuide",
   "id" : "mii-ig-base",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareableimplementationguide",
+    "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishableimplementationguide",
+    "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-implementationguide"]
+  },
   "language" : "en",
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/resource-approvalDate",
+    "valueDate" : "2024-03-07"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability",
+    "valueCode" : "shareable"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability",
+    "valueCode" : "publishable"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-versionPolicy",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/artifact-version-policy-codes",
+        "code" : "strict",
+        "display" : "Strict"
+      }]
+    }
+  },
+  {
+    "extension" : [{
+      "url" : "packageId",
+      "valueId" : "de.medizininformatikinitiative.kerndatensatz.base"
+    },
+    {
+      "url" : "version",
+      "valueString" : "2026.0.0"
+    },
+    {
+      "url" : "uri",
+      "valueUri" : "https://www.medizininformatik-initiative.de/fhir/modul-base"
+    }],
+    "url" : "http://hl7.org/fhir/StructureDefinition/package-source"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod",
+    "valuePeriod" : {
+      "start" : "2026"
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-author",
+    "valueContactDetail" : {
+      "telecom" : [{
+        "system" : "email",
+        "value" : "julian.sass@charite.de"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-editor",
+    "valueContactDetail" : {
+      "name" : "Taskforce Core Data Set"
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-reviewer",
+    "valueContactDetail" : {
+      "name" : "Interoperability Working Group",
+      "telecom" : [{
+        "system" : "url",
+        "value" : "https://www.medizininformatik-initiative.de/en/collaboration/interoperability-working-group"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-reviewer",
+    "valueContactDetail" : {
+      "name" : "National Steering Committee",
+      "telecom" : [{
+        "system" : "url",
+        "value" : "https://www.medizininformatik-initiative.de/en/collaboration/national-steering-committee"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-endorser",
+    "valueContactDetail" : {
+      "name" : "Interoperability Working Group",
+      "telecom" : [{
+        "system" : "url",
+        "value" : "https://www.medizininformatik-initiative.de/en/collaboration/interoperability-working-group"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-endorser",
+    "valueContactDetail" : {
+      "name" : "National Steering Committee",
+      "telecom" : [{
+        "system" : "url",
+        "value" : "https://www.medizininformatik-initiative.de/en/collaboration/national-steering-committee"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-relatedArtifact",
+    "valueRelatedArtifact" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/cqf-publicationDate",
+        "valueDate" : "2024-05-16"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/cqf-publicationStatus",
+        "valueCode" : "active"
+      }],
+      "type" : "citation",
+      "citation" : "Ammon, D., Kurscheidt, M., Buckow, K. et al. Arbeitsgruppe Interoperabilität: Kerndatensatz und Informationssysteme für Integration und Austausch von Daten in der Medizininformatik-Initiative. Bundesgesundheitsbl 67, 656–667 (2024). https://doi.org/10.1007/s00103-024-03888-4",
+      "url" : "https://doi.org/10.1007/s00103-024-03888-4",
+      "document" : {
+        "url" : "https://doi.org/10.1007/s00103-024-03888-4"
+      }
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/cqf-expansionParameters",
+    "valueReference" : {
+      "reference" : "Parameters/mii-param-base-manifest"
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm",
+    "valueCoding" : {
+      "system" : "http://hl7.org/fhir/version-algorithm",
+      "code" : "semver"
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-usage",
+    "valueMarkdown" : "Use this ImplementationGuide resource as a computable definition of all the parts of the corresponding modules of the Medical Informatics Initiative core data set."
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-purpose",
+    "valueMarkdown" : "Provide the computable publication unit for the MII Core Dataset base modules, enabling implementers to discover, validate, version, and apply the specifications consistently."
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-topic",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+        "code" : "C15607"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-topic",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+        "code" : "C154624"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-topic",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+        "code" : "C25218"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-topic",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+        "code" : "C16960"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-topic",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+        "code" : "C25190"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-topic",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+        "code" : "C81239"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-topic",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+        "code" : "C25717"
+      }]
+    }
+  }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/modul-base/ImplementationGuide/mii-ig-base",
   "version" : "2026.0.0",
   "name" : "MII_IG_Base",
@@ -111,7 +336,8 @@ This publication includes IP covered under the following statements.
     }]
   },
   "status" : "active",
-  "date" : "2025-12-10",
+  "experimental" : false,
+  "date" : "2026-06-15",
   "publisher" : "Medical Informatics Initiative (MII)",
   "_publisher" : {
     "extension" : [{
@@ -165,7 +391,7 @@ This publication includes IP covered under the following statements.
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
-    "version" : "7.1.0"
+    "version" : "7.2.0"
   },
   {
     "id" : "hl7ext",
@@ -374,7 +600,7 @@ This publication includes IP covered under the following statements.
       },
       {
         "url" : "value",
-        "valueString" : "../../input/resources/Parameters-manifest.json"
+        "valueString" : "../../input/resources/Parameters-mii-param-base-manifest.json"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -385,7 +611,7 @@ This publication includes IP covered under the following statements.
       },
       {
         "url" : "value",
-        "valueString" : "manifest"
+        "valueString" : "mii-param-base-manifest"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -1286,7 +1512,7 @@ This publication includes IP covered under the following statements.
       },
       {
         "url" : "value",
-        "valueString" : "../../input/resources/Parameters-manifest.json"
+        "valueString" : "../../input/resources/Parameters-mii-param-base-manifest.json"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -1297,7 +1523,7 @@ This publication includes IP covered under the following statements.
       },
       {
         "url" : "value",
-        "valueString" : "manifest"
+        "valueString" : "mii-param-base-manifest"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -2017,17 +2243,6 @@ This publication includes IP covered under the following statements.
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     }],
     "resource" : [{
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Parameters"
-      }],
-      "reference" : {
-        "reference" : "Parameters/manifest"
-      },
-      "name" : "manifest",
-      "exampleBoolean" : false
-    },
-    {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CapabilityStatement"
@@ -2874,6 +3089,17 @@ This publication includes IP covered under the following statements.
       "name" : "MII VS Prozedur Prozeduren [SNOMED CT]",
       "description" : "Enthaelt alle SNOMED CT Procedure Codes",
       "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      }],
+      "reference" : {
+        "reference" : "Parameters/mii-param-base-manifest"
+      },
+      "name" : "mii-param-base-manifest",
+      "exampleBoolean" : false
     }],
     "page" : {
       "extension" : [{
@@ -3330,6 +3556,15 @@ This publication includes IP covered under the following statements.
         }],
         "nameUrl" : "translationinfo.html",
         "title" : "Translation Information",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "metadata.html"
+        }],
+        "nameUrl" : "metadata.html",
+        "title" : "Metadata Overview",
         "generation" : "markdown"
       }]
     },

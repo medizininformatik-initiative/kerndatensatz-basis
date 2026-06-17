@@ -1,6 +1,6 @@
-# manifest - MII Implementation Guide Core Dataset Base v2026.0.0
+# mii-param-base-manifest - MII Implementation Guide Core Dataset Base v2026.0.0
 
-## Parameters: manifest
+## Parameters: mii-param-base-manifest
 
 
 
@@ -9,30 +9,53 @@
 ```json
 {
   "resourceType" : "Parameters",
-  "id" : "manifest",
+  "id" : "mii-param-base-manifest",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-manifestparameters"]
+  },
   "parameter" : [{
     "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20250701"
+    "valueCanonical" : "http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20250701"
   },
   {
     "name" : "system-version",
-    "valueUri" : "http://hl7.org/fhir/encounter-status|4.0.1"
+    "valueCanonical" : "http://hl7.org/fhir/encounter-status|4.0.1"
   },
   {
     "name" : "default-canonical-version",
     "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/shareablecodesystem|4.0.1"
   },
   {
-    "name" : "system-version",
-    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/v3-ActCode|2018-08-12"
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecodesystem|2.0.0-ballot"
   },
   {
     "name" : "system-version",
-    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/v2-0004|2.9"
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/v3-ActCode|10.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/v2-0004|3.0.0"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablecodesystem|2.0.0-ballot"
   },
   {
     "name" : "default-canonical-version",
     "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/shareablevalueset|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablevalueset|2.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-computablevalueset|2.0.0-ballot"
   },
   {
     "name" : "default-valueset-version",
@@ -48,15 +71,23 @@
   },
   {
     "name" : "system-version",
-    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/v2-0203|2.9"
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/v2-0203|5.0.0"
   },
   {
     "name" : "system-version",
-    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/location-physical-type|4.0.1"
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/location-physical-type|2.0.1"
   },
   {
     "name" : "system-version",
     "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/CodeSystem/Vitalstatus|2026.0.0"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablecapabilitystatement|2.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecapabilitystatement|2.0.0-ballot"
   },
   {
     "name" : "default-canonical-version",
@@ -368,6 +399,18 @@
   },
   {
     "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareableimplementationguide|2.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishableimplementationguide|2.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-implementationguide|2.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
     "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0"
   },
   {
@@ -393,6 +436,14 @@
   {
     "name" : "default-canonical-version",
     "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.0"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition|2.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0-ballot"
   },
   {
     "name" : "default-canonical-version",
@@ -516,7 +567,7 @@
   },
   {
     "name" : "default-valueset-version",
-    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v3-ActEncounterCode|2014-03-26"
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v3-ActEncounterCode|3.0.0"
   },
   {
     "name" : "default-valueset-version",
@@ -536,7 +587,7 @@
   },
   {
     "name" : "default-valueset-version",
-    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v3-ActPriority|2018-08-12"
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v3-ActPriority|3.0.0"
   },
   {
     "name" : "default-valueset-version",
@@ -548,7 +599,7 @@
   },
   {
     "name" : "default-valueset-version",
-    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v2-0092|2.9"
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v2-0092|3.0.0"
   },
   {
     "name" : "default-canonical-version",

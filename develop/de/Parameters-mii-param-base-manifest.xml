@@ -1,30 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Parameters xmlns="http://hl7.org/fhir">
-  <id value="manifest"/>
+  <id value="mii-param-base-manifest"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-manifestparameters"/>
+  </meta>
+  <language value="de"/>
   <parameter>
     <name value="system-version"/>
-    <valueUri value="http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20250701"/>
+    <valueCanonical value="http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20250701"/>
   </parameter>
   <parameter>
     <name value="system-version"/>
-    <valueUri value="http://hl7.org/fhir/encounter-status|4.0.1"/>
+    <valueCanonical value="http://hl7.org/fhir/encounter-status|4.0.1"/>
   </parameter>
   <parameter>
     <name value="default-canonical-version"/>
     <valueCanonical value="http://hl7.org/fhir/StructureDefinition/shareablecodesystem|4.0.1"/>
   </parameter>
   <parameter>
-    <name value="system-version"/>
-    <valueCanonical value="http://terminology.hl7.org/CodeSystem/v3-ActCode|2018-08-12"/>
+    <name value="default-canonical-version"/>
+    <valueCanonical value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecodesystem|2.0.0-ballot"/>
   </parameter>
   <parameter>
     <name value="system-version"/>
-    <valueCanonical value="http://terminology.hl7.org/CodeSystem/v2-0004|2.9"/>
+    <valueCanonical value="http://terminology.hl7.org/CodeSystem/v3-ActCode|10.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="system-version"/>
+    <valueCanonical value="http://terminology.hl7.org/CodeSystem/v2-0004|3.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueCanonical value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablecodesystem|2.0.0-ballot"/>
   </parameter>
   <parameter>
     <name value="default-canonical-version"/>
     <valueCanonical value="http://hl7.org/fhir/StructureDefinition/shareablevalueset|4.0.1"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueCanonical value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablevalueset|2.0.0-ballot"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueCanonical value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0-ballot"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueCanonical value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-computablevalueset|2.0.0-ballot"/>
   </parameter>
   <parameter>
     <name value="default-valueset-version"/>
@@ -40,15 +64,23 @@
   </parameter>
   <parameter>
     <name value="system-version"/>
-    <valueCanonical value="http://terminology.hl7.org/CodeSystem/v2-0203|2.9"/>
+    <valueCanonical value="http://terminology.hl7.org/CodeSystem/v2-0203|5.0.0"/>
   </parameter>
   <parameter>
     <name value="system-version"/>
-    <valueCanonical value="http://terminology.hl7.org/CodeSystem/location-physical-type|4.0.1"/>
+    <valueCanonical value="http://terminology.hl7.org/CodeSystem/location-physical-type|2.0.1"/>
   </parameter>
   <parameter>
     <name value="system-version"/>
     <valueCanonical value="https://www.medizininformatik-initiative.de/fhir/core/modul-person/CodeSystem/Vitalstatus|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueCanonical value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablecapabilitystatement|2.0.0-ballot"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueCanonical value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecapabilitystatement|2.0.0-ballot"/>
   </parameter>
   <parameter>
     <name value="default-canonical-version"/>
@@ -360,6 +392,18 @@
   </parameter>
   <parameter>
     <name value="default-canonical-version"/>
+    <valueCanonical value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareableimplementationguide|2.0.0-ballot"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueCanonical value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishableimplementationguide|2.0.0-ballot"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueCanonical value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-implementationguide|2.0.0-ballot"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
     <valueCanonical value="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0"/>
   </parameter>
   <parameter>
@@ -385,6 +429,14 @@
   <parameter>
     <name value="default-canonical-version"/>
     <valueCanonical value="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.0"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueCanonical value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition|2.0.0-ballot"/>
+  </parameter>
+  <parameter>
+    <name value="default-canonical-version"/>
+    <valueCanonical value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0-ballot"/>
   </parameter>
   <parameter>
     <name value="default-canonical-version"/>
@@ -508,7 +560,7 @@
   </parameter>
   <parameter>
     <name value="default-valueset-version"/>
-    <valueCanonical value="http://terminology.hl7.org/ValueSet/v3-ActEncounterCode|2014-03-26"/>
+    <valueCanonical value="http://terminology.hl7.org/ValueSet/v3-ActEncounterCode|3.0.0"/>
   </parameter>
   <parameter>
     <name value="default-valueset-version"/>
@@ -528,7 +580,7 @@
   </parameter>
   <parameter>
     <name value="default-valueset-version"/>
-    <valueCanonical value="http://terminology.hl7.org/ValueSet/v3-ActPriority|2018-08-12"/>
+    <valueCanonical value="http://terminology.hl7.org/ValueSet/v3-ActPriority|3.0.0"/>
   </parameter>
   <parameter>
     <name value="default-valueset-version"/>
@@ -540,7 +592,7 @@
   </parameter>
   <parameter>
     <name value="default-valueset-version"/>
-    <valueCanonical value="http://terminology.hl7.org/ValueSet/v2-0092|2.9"/>
+    <valueCanonical value="http://terminology.hl7.org/ValueSet/v2-0092|3.0.0"/>
   </parameter>
   <parameter>
     <name value="default-canonical-version"/>

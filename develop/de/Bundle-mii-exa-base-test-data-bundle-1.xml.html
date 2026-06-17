@@ -51,8 +51,8 @@
 	  <script type="text/javascript" src="assets/js/prism-cql.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"14.35"}
-    h3,h4,h5,h6{--heading-prefix:"14.35"}</style>
+    <style type="text/css">h2{--heading-prefix:"15.35"}
+    h3,h4,h5,h6{--heading-prefix:"15.35"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -193,6 +193,16 @@
       </li>
     </ul>
   </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Metadata
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="metadata.html">Metadata Overview</a>
+      </li>
+    </ul>
+  </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
 
@@ -294,6 +304,18 @@
 &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle">Bundle</a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
   &lt;<a href="http://hl7.org/fhir/R4/resource.html#Bundle.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;mii-exa-base-test-data-bundle-1&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/resource.html#Bundle.meta">meta</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/package-source&quot;&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;packageId&quot;&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;de.medizininformatikinitiative.kerndatensatz.base&quot;/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;version&quot;&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;2026.0.0&quot;/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;uri&quot;&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>
+                  <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/modul-base&quot;/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.security">security</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://terminology.hl7.org/CodeSystem/v3-ActReason&quot;/&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;HTEST&quot;/&gt;
@@ -301,8 +323,13 @@
     &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.security">security</a>&gt;
   &lt;/<a href="http://hl7.org/fhir/R4/resource.html#Bundle.meta">meta</a>&gt;
   &lt;<a href="http://hl7.org/fhir/R4/resource.html#Bundle.language">language</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;de&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.identifier">identifier</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>
+            <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/modul-base/sid/example-bundles&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;mii-exa-base-test-data-bundle-1&quot;/&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.identifier">identifier</a>&gt;
   &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;transaction&quot;/&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.timestamp">timestamp</a> <a href="http://hl7.org/fhir/R4/datatypes.html#instant">value</a>=&quot;2025-11-28T09:38:00+01:00&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.timestamp">timestamp</a> <a href="http://hl7.org/fhir/R4/datatypes.html#instant">value</a>=&quot;2026-06-17T14:56:00+02:00&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry">entry</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.fullUrl">fullUrl</a>
              <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://www.medizininformatik-initiative.de/Patient/mii-exa-person-patient-1&quot;/&gt;
@@ -310,6 +337,20 @@
       &lt;<a href="http://hl7.org/fhir/R4/patient.html#Patient">Patient</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Patient.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;mii-exa-person-patient-1&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Patient.meta">meta</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>
+                     <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/package-source&quot;&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;packageId&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;de.medizininformatikinitiative.kerndatensatz.base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;version&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;2026.0.0&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;uri&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>
+                        <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/modul-base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+          &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
                    <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient|2026.0.0&quot;/&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.security">security</a>&gt;
@@ -414,6 +455,20 @@
       &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter">Encounter</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Encounter.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;mii-exa-fall-kontakt-gesundheitseinrichtung-8&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Encounter.meta">meta</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>
+                     <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/package-source&quot;&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;packageId&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;de.medizininformatikinitiative.kerndatensatz.base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;version&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;2026.0.0&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;uri&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>
+                        <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/modul-base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+          &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
                    <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0&quot;/&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.security">security</a>&gt;
@@ -469,6 +524,20 @@
       &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter">Encounter</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Encounter.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;mii-exa-fall-kontakt-gesundheitseinrichtung-1&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Encounter.meta">meta</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>
+                     <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/package-source&quot;&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;packageId&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;de.medizininformatikinitiative.kerndatensatz.base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;version&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;2026.0.0&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;uri&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>
+                        <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/modul-base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+          &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
                    <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0&quot;/&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.security">security</a>&gt;
@@ -568,6 +637,20 @@
       &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter">Encounter</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Encounter.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;mii-exa-fall-kontakt-gesundheitseinrichtung-9&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Encounter.meta">meta</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>
+                     <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/package-source&quot;&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;packageId&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;de.medizininformatikinitiative.kerndatensatz.base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;version&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;2026.0.0&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;uri&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>
+                        <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/modul-base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+          &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
                    <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0&quot;/&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.security">security</a>&gt;
@@ -658,6 +741,20 @@
       &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter">Encounter</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Encounter.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;mii-exa-fall-kontakt-gesundheitseinrichtung-11&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Encounter.meta">meta</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>
+                     <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/package-source&quot;&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;packageId&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;de.medizininformatikinitiative.kerndatensatz.base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;version&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;2026.0.0&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;uri&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>
+                        <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/modul-base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+          &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
                    <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0&quot;/&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.security">security</a>&gt;
@@ -744,6 +841,20 @@
       &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter">Encounter</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Encounter.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;mii-exa-fall-kontakt-gesundheitseinrichtung-2&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Encounter.meta">meta</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>
+                     <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/package-source&quot;&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;packageId&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;de.medizininformatikinitiative.kerndatensatz.base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;version&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;2026.0.0&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;uri&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>
+                        <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/modul-base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+          &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
                    <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0&quot;/&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.security">security</a>&gt;
@@ -863,6 +974,20 @@
       &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter">Encounter</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Encounter.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;mii-exa-fall-kontakt-gesundheitseinrichtung-4&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Encounter.meta">meta</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>
+                     <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/package-source&quot;&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;packageId&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;de.medizininformatikinitiative.kerndatensatz.base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;version&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;2026.0.0&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;uri&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>
+                        <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/modul-base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+          &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
                    <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0&quot;/&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.security">security</a>&gt;
@@ -950,6 +1075,20 @@
       &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter">Encounter</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Encounter.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;mii-exa-fall-kontakt-gesundheitseinrichtung-5&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Encounter.meta">meta</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>
+                     <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/package-source&quot;&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;packageId&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;de.medizininformatikinitiative.kerndatensatz.base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;version&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;2026.0.0&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;uri&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>
+                        <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/modul-base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+          &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
                    <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0&quot;/&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.security">security</a>&gt;
@@ -1043,6 +1182,20 @@
       &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter">Encounter</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Encounter.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;mii-exa-fall-kontakt-gesundheitseinrichtung-6&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Encounter.meta">meta</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>
+                     <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/package-source&quot;&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;packageId&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;de.medizininformatikinitiative.kerndatensatz.base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;version&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;2026.0.0&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;uri&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>
+                        <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/modul-base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+          &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
                    <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0&quot;/&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.security">security</a>&gt;
@@ -1130,6 +1283,20 @@
       &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter">Encounter</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Encounter.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;mii-exa-fall-kontakt-gesundheitseinrichtung-10&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Encounter.meta">meta</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>
+                     <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/package-source&quot;&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;packageId&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;de.medizininformatikinitiative.kerndatensatz.base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;version&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;2026.0.0&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;uri&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>
+                        <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/modul-base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+          &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
                    <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0&quot;/&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.security">security</a>&gt;
@@ -1217,6 +1384,20 @@
       &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter">Encounter</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Encounter.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;mii-exa-fall-kontakt-gesundheitseinrichtung-7&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Encounter.meta">meta</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>
+                     <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/package-source&quot;&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;packageId&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;de.medizininformatikinitiative.kerndatensatz.base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;version&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;2026.0.0&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;uri&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>
+                        <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/modul-base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+          &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
                    <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0&quot;/&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.security">security</a>&gt;
@@ -1339,6 +1520,20 @@
       &lt;<a href="http://hl7.org/fhir/R4/condition.html#Condition">Condition</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Condition.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;mii-exa-diagnose-mehrfachcodierung-primaercode&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Condition.meta">meta</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>
+                     <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/package-source&quot;&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;packageId&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;de.medizininformatikinitiative.kerndatensatz.base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;version&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;2026.0.0&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;uri&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>
+                        <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/modul-base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+          &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
                    <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0&quot;/&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.security">security</a>&gt;
@@ -1428,6 +1623,20 @@
       &lt;<a href="http://hl7.org/fhir/R4/condition.html#Condition">Condition</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Condition.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;mii-exa-diagnose-mehrfachcodierung-sekundaercode&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Condition.meta">meta</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>
+                     <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/package-source&quot;&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;packageId&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;de.medizininformatikinitiative.kerndatensatz.base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;version&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;2026.0.0&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;uri&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>
+                        <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/modul-base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+          &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
                    <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0&quot;/&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.security">security</a>&gt;
@@ -1501,6 +1710,20 @@
       &lt;<a href="http://hl7.org/fhir/R4/condition.html#Condition">Condition</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Condition.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;mii-exa-diagnose-appendicitis&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Condition.meta">meta</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>
+                     <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/package-source&quot;&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;packageId&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;de.medizininformatikinitiative.kerndatensatz.base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;version&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;2026.0.0&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;uri&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>
+                        <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/modul-base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+          &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
                    <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0&quot;/&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.security">security</a>&gt;
@@ -1568,6 +1791,20 @@
       &lt;<a href="http://hl7.org/fhir/R4/condition.html#Condition">Condition</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Condition.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;mii-exa-diagnose-condition-elbow-contusion&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Condition.meta">meta</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>
+                     <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/package-source&quot;&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;packageId&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;de.medizininformatikinitiative.kerndatensatz.base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;version&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;2026.0.0&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;uri&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>
+                        <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/modul-base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+          &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
                    <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0&quot;/&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.security">security</a>&gt;
@@ -1635,6 +1872,20 @@
       &lt;<a href="http://hl7.org/fhir/R4/condition.html#Condition">Condition</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Condition.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;mii-exa-diagnose-condition-multiple-codings&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Condition.meta">meta</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>
+                     <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/package-source&quot;&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;packageId&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;de.medizininformatikinitiative.kerndatensatz.base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;version&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;2026.0.0&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;uri&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>
+                        <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/modul-base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+          &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
                    <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.0&quot;/&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.security">security</a>&gt;
@@ -1708,6 +1959,20 @@
       &lt;<a href="http://hl7.org/fhir/R4/procedure.html#Procedure">Procedure</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Procedure.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;mii-exa-prozedur-procedure&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Procedure.meta">meta</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>
+                     <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/package-source&quot;&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;packageId&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;de.medizininformatikinitiative.kerndatensatz.base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;version&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;2026.0.0&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;uri&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>
+                        <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/modul-base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+          &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
                    <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.0&quot;/&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.security">security</a>&gt;
@@ -1783,6 +2048,20 @@
       &lt;<a href="http://hl7.org/fhir/R4/procedure.html#Procedure">Procedure</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Procedure.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;mii-exa-prozedur-procedure-2&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Procedure.meta">meta</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>
+                     <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/package-source&quot;&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;packageId&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;de.medizininformatikinitiative.kerndatensatz.base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;version&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;2026.0.0&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;uri&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>
+                        <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/modul-base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+          &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
                    <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.0&quot;/&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.security">security</a>&gt;
@@ -1854,6 +2133,20 @@
       &lt;<a href="http://hl7.org/fhir/R4/procedure.html#Procedure">Procedure</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Procedure.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;mii-exa-prozedur-imaging&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Procedure.meta">meta</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>
+                     <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/package-source&quot;&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;packageId&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;de.medizininformatikinitiative.kerndatensatz.base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;version&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;2026.0.0&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;uri&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>
+                        <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/modul-base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+          &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
                    <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.0&quot;/&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.security">security</a>&gt;
@@ -1926,6 +2219,20 @@
       &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation">Observation</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Observation.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;mii-exa-person-observation-vitalstatus&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Observation.meta">meta</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>
+                     <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/package-source&quot;&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;packageId&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;de.medizininformatikinitiative.kerndatensatz.base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;version&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;2026.0.0&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;uri&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>
+                        <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/modul-base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+          &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
                    <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus|2026.0.0&quot;/&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.security">security</a>&gt;
@@ -1983,6 +2290,20 @@
       &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation">Observation</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Observation.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;mii-exa-person-observation-vitalstatus-discharge&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/resource.html#Observation.meta">meta</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>
+                     <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/package-source&quot;&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;packageId&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;de.medizininformatikinitiative.kerndatensatz.base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;version&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;2026.0.0&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;uri&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>
+                        <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/modul-base&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+          &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
                    <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus|2026.0.0&quot;/&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.security">security</a>&gt;
@@ -2068,8 +2389,8 @@
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.base#2026.0.0 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Erstellt 
-  <span title="2026-06-08 07:31:00 +0000">
-    2026-06-08
+  <span title="2026-06-17 14:18:00 +0000">
+    2026-06-17
   </span>
 
           <br/>

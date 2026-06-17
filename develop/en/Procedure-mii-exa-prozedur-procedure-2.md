@@ -10,7 +10,7 @@
 
 Profile: [MII PR Prozedur Procedure](StructureDefinition-mii-pr-prozedur-procedure.md) version: 2026.0.0
 
-Security Label: [test health data (Details: v3 Code System ActReason code HTEST = 'test health data')](http://hl7.org/fhir/R4/v3/ActReason/cs.html)
+Security Label: [test health data (Details: ActReason code HTEST = 'test health data')](http://terminology.hl7.org/7.2.0/CodeSystem-v3-ActReason.html)
 
 **ExtensionProzedurDokumentationsdatum**: 2020-01-17 00:00:00+0100
 
@@ -24,7 +24,7 @@ Security Label: [test health data (Details: v3 Code System ActReason code HTEST 
 
 **subject**: [Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))](Patient-mii-exa-person-patient-1.md)
 
-**encounter**: [Encounter: identifier = Visit number; status = finished; class = inpatient encounter (v3 Code System ActCode#IMP); type = Abteilungskontakt; serviceType = Innere Medizin; period = 2020-01-12 00:00:00+0100 --> 2020-01-17 18:00:00+0100](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.md)
+**encounter**: [Encounter: identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Abteilungskontakt; serviceType = Innere Medizin; period = 2020-01-12 00:00:00+0100 --> 2020-01-17 18:00:00+0100](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.md)
 
 **performed**: 2020-01-13 00:00:00+0100 --> 2020-01-16 00:00:00+0100
 
@@ -39,6 +39,21 @@ Security Label: [test health data (Details: v3 Code System ActReason code HTEST 
   "resourceType" : "Procedure",
   "id" : "mii-exa-prozedur-procedure-2",
   "meta" : {
+    "extension" : [{
+      "extension" : [{
+        "url" : "packageId",
+        "valueId" : "de.medizininformatikinitiative.kerndatensatz.base"
+      },
+      {
+        "url" : "version",
+        "valueString" : "2026.0.0"
+      },
+      {
+        "url" : "uri",
+        "valueUri" : "https://www.medizininformatik-initiative.de/fhir/modul-base"
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/package-source"
+    }],
     "profile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.0"],
     "security" : [{
       "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",

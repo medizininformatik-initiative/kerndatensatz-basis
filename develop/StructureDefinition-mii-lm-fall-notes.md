@@ -1,3 +1,3 @@
 ### Mapping LogicalModel Fall -> FHIR
 
-{% include sql-23-fragment.xhtml %}
+{% include sql-20-fragment.xhtml %}

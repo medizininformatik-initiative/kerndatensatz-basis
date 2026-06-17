@@ -10,7 +10,7 @@
 
 Profile: [MII PR Fall Kontakt mit einer Gesundheitseinrichtung](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.md) version: 2026.0.0
 
-Security Label: [test health data (Details: v3 Code System ActReason code HTEST = 'test health data')](http://hl7.org/fhir/R4/v3/ActReason/cs.html)
+Security Label: [test health data (Details: ActReason code HTEST = 'test health data')](http://terminology.hl7.org/7.2.0/CodeSystem-v3-ActReason.html)
 
 > **ExtensionAufnahmegrund**
 * VierteStelle: [AufnahmegrundVierteStelle: 7](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.de/CodeSystem/dkgev/AufnahmegrundVierteStelle#AufnahmegrundVierteStelle-7) (Notfall)
@@ -19,7 +19,7 @@ Security Label: [test health data (Details: v3 Code System ActReason code HTEST 
 
 **status**: Finished
 
-**class**: [v3 Code System ActCode: AMB](http://hl7.org/fhir/R4/v3/ActCode/cs.html#v3-ActCode-AMB) (ambulatory)
+**class**: [ActCode: AMB](http://terminology.hl7.org/7.2.0/CodeSystem-v3-ActCode.html#v3-ActCode-AMB) (ambulatory)
 
 **type**: Abteilungskontakt
 
@@ -33,7 +33,7 @@ Security Label: [test health data (Details: v3 Code System ActReason code HTEST 
 
 **serviceProvider**: Identifier: `http://fhir.de/sid/dkgev/iknr`/260950472
 
-**partOf**: [Encounter: identifier = Fallnummer; status = finished; class = inpatient encounter (v3 Code System ActCode#IMP); type = Einrichtungskontakt; period = 2020-01-08 07:00:00+0100 --> 2020-01-17 18:00:00+0100](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.md)
+**partOf**: [Encounter: identifier = Fallnummer; status = finished; class = inpatient encounter (ActCode#IMP); type = Einrichtungskontakt; period = 2020-01-08 07:00:00+0100 --> 2020-01-17 18:00:00+0100](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.md)
 
 
 
@@ -44,6 +44,21 @@ Security Label: [test health data (Details: v3 Code System ActReason code HTEST 
   "resourceType" : "Encounter",
   "id" : "mii-exa-fall-kontakt-gesundheitseinrichtung-9",
   "meta" : {
+    "extension" : [{
+      "extension" : [{
+        "url" : "packageId",
+        "valueId" : "de.medizininformatikinitiative.kerndatensatz.base"
+      },
+      {
+        "url" : "version",
+        "valueString" : "2026.0.0"
+      },
+      {
+        "url" : "uri",
+        "valueUri" : "https://www.medizininformatik-initiative.de/fhir/modul-base"
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/package-source"
+    }],
     "profile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.0"],
     "security" : [{
       "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",

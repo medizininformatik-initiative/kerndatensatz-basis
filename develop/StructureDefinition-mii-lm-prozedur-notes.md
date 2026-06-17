@@ -1,3 +1,3 @@
 ### Mapping LogicalModel Prozedur -> FHIR
 
-{% include sql-17-fragment.xhtml %}
+{% include sql-23-fragment.xhtml %}

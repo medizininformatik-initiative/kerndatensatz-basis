@@ -1,17 +1,224 @@
 {
   "resourceType" : "ImplementationGuide",
   "id" : "mii-ig-base",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareableimplementationguide",
+    "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishableimplementationguide",
+    "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-implementationguide"]
+  },
   "language" : "en",
   "text" : {
     "status" : "generated",
-    "div" : "<div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide mii-ig-base</b></p><a name=\"mii-ig-base\"> </a><a name=\"hcmii-ig-base\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: en</p></div><h2>MII_IG_Base</h2><p>The official URL for this implementation guide is: </p><pre>https://www.medizininformatik-initiative.de/fhir/modul-base/ImplementationGuide/mii-ig-base</pre><div><p>Implementation Guide for the Core Dataset Base Modules Person, Diagnosis, Procedure, and Treatment Case</p>\n</div></div>"
+    "div" : "<div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide mii-ig-base</b></p><a name=\"mii-ig-base\"> </a><a name=\"hcmii-ig-base\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: en</p><p style=\"margin-bottom: 0px\">Profiles: <a href=\"http://hl7.org/fhir/uv/crmi/2025Sep/StructureDefinition-crmi-shareableimplementationguide.html\">CRMI Shareable ImplementationGuide</a>, <a href=\"http://hl7.org/fhir/uv/crmi/2025Sep/StructureDefinition-crmi-publishableimplementationguide.html\">CRMI Publishable ImplementationGuide</a>, <a href=\"http://hl7.org/fhir/uv/crmi/2025Sep/StructureDefinition-crmi-implementationguide.html\">CRMI ImplementationGuide</a></p></div><h2>MII_IG_Base</h2><p>The official URL for this implementation guide is: </p><pre>https://www.medizininformatik-initiative.de/fhir/modul-base/ImplementationGuide/mii-ig-base</pre><div><p>Implementation Guide for the Core Dataset Base Modules Person, Diagnosis, Procedure, and Treatment Case</p>\n</div></div>"
   },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/resource-approvalDate",
+    "valueDate" : "2024-03-07"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability",
+    "valueCode" : "shareable"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability",
+    "valueCode" : "publishable"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-versionPolicy",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/artifact-version-policy-codes",
+        "code" : "strict",
+        "display" : "Strict"
+      }]
+    }
+  },
+  {
+    "extension" : [{
+      "url" : "packageId",
+      "valueId" : "de.medizininformatikinitiative.kerndatensatz.base"
+    },
+    {
+      "url" : "version",
+      "valueString" : "2026.0.0"
+    },
+    {
+      "url" : "uri",
+      "valueUri" : "https://www.medizininformatik-initiative.de/fhir/modul-base"
+    }],
+    "url" : "http://hl7.org/fhir/StructureDefinition/package-source"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod",
+    "valuePeriod" : {
+      "start" : "2026"
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-author",
+    "valueContactDetail" : {
+      "telecom" : [{
+        "system" : "email",
+        "value" : "julian.sass@charite.de"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-editor",
+    "valueContactDetail" : {
+      "name" : "Taskforce Core Data Set"
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-reviewer",
+    "valueContactDetail" : {
+      "name" : "Interoperability Working Group",
+      "telecom" : [{
+        "system" : "url",
+        "value" : "https://www.medizininformatik-initiative.de/en/collaboration/interoperability-working-group"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-reviewer",
+    "valueContactDetail" : {
+      "name" : "National Steering Committee",
+      "telecom" : [{
+        "system" : "url",
+        "value" : "https://www.medizininformatik-initiative.de/en/collaboration/national-steering-committee"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-endorser",
+    "valueContactDetail" : {
+      "name" : "Interoperability Working Group",
+      "telecom" : [{
+        "system" : "url",
+        "value" : "https://www.medizininformatik-initiative.de/en/collaboration/interoperability-working-group"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-endorser",
+    "valueContactDetail" : {
+      "name" : "National Steering Committee",
+      "telecom" : [{
+        "system" : "url",
+        "value" : "https://www.medizininformatik-initiative.de/en/collaboration/national-steering-committee"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-relatedArtifact",
+    "valueRelatedArtifact" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/cqf-publicationDate",
+        "valueDate" : "2024-05-16"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/cqf-publicationStatus",
+        "valueCode" : "active"
+      }],
+      "type" : "citation",
+      "citation" : "Ammon, D., Kurscheidt, M., Buckow, K. et al. Arbeitsgruppe Interoperabilität: Kerndatensatz und Informationssysteme für Integration und Austausch von Daten in der Medizininformatik-Initiative. Bundesgesundheitsbl 67, 656–667 (2024). https://doi.org/10.1007/s00103-024-03888-4",
+      "url" : "https://doi.org/10.1007/s00103-024-03888-4",
+      "document" : {
+        "url" : "https://doi.org/10.1007/s00103-024-03888-4"
+      }
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/cqf-expansionParameters",
+    "valueReference" : {
+      "reference" : "Parameters/mii-param-base-manifest"
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm",
+    "valueCoding" : {
+      "system" : "http://hl7.org/fhir/version-algorithm",
+      "code" : "semver"
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-usage",
+    "valueMarkdown" : "Use this ImplementationGuide resource as a computable definition of all the parts of the corresponding modules of the Medical Informatics Initiative core data set."
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-purpose",
+    "valueMarkdown" : "Provide the computable publication unit for the MII Core Dataset base modules, enabling implementers to discover, validate, version, and apply the specifications consistently."
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-topic",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+        "code" : "C15607"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-topic",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+        "code" : "C154624"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-topic",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+        "code" : "C25218"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-topic",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+        "code" : "C16960"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-topic",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+        "code" : "C25190"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-topic",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+        "code" : "C81239"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-topic",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+        "code" : "C25717"
+      }]
+    }
+  }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/modul-base/ImplementationGuide/mii-ig-base",
   "version" : "2026.0.0",
   "name" : "MII_IG_Base",
   "title" : "MII Implementation Guide Core Dataset Base",
   "status" : "active",
-  "date" : "2025-12-10",
+  "experimental" : false,
+  "date" : "2026-06-15",
   "publisher" : "Medical Informatics Initiative (MII)",
   "contact" : [{
     "name" : "Medical Informatics Initiative (MII)",
@@ -39,7 +246,7 @@
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
-    "version" : "7.1.0"
+    "version" : "7.2.0"
   },
   {
     "id" : "hl7ext",
@@ -248,7 +455,7 @@
       },
       {
         "url" : "value",
-        "valueString" : "../../input/resources/Parameters-manifest.json"
+        "valueString" : "../../input/resources/Parameters-mii-param-base-manifest.json"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -259,7 +466,7 @@
       },
       {
         "url" : "value",
-        "valueString" : "manifest"
+        "valueString" : "mii-param-base-manifest"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -1160,7 +1367,7 @@
       },
       {
         "url" : "value",
-        "valueString" : "../../input/resources/Parameters-manifest.json"
+        "valueString" : "../../input/resources/Parameters-mii-param-base-manifest.json"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -1171,7 +1378,7 @@
       },
       {
         "url" : "value",
-        "valueString" : "manifest"
+        "valueString" : "mii-param-base-manifest"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -1891,17 +2098,6 @@
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     }],
     "resource" : [{
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Parameters"
-      }],
-      "reference" : {
-        "reference" : "Parameters/manifest"
-      },
-      "name" : "manifest",
-      "exampleBoolean" : false
-    },
-    {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CapabilityStatement"
@@ -2644,6 +2840,17 @@
       "name" : "MII VS Prozedur Prozeduren [SNOMED CT]",
       "description" : "Enthaelt alle SNOMED CT Procedure Codes",
       "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      }],
+      "reference" : {
+        "reference" : "Parameters/mii-param-base-manifest"
+      },
+      "name" : "mii-param-base-manifest",
+      "exampleBoolean" : false
     }],
     "page" : {
       "extension" : [{
@@ -2840,6 +3047,15 @@
         }],
         "nameUrl" : "translationinfo.html",
         "title" : "Translation Information",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "metadata.html"
+        }],
+        "nameUrl" : "metadata.html",
+        "title" : "Metadata Overview",
         "generation" : "markdown"
       }]
     },

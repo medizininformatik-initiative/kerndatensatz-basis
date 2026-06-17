@@ -189,6 +189,16 @@
       </li>
     </ul>
   </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Metadata
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="metadata.html">Metadata Overview</a>
+      </li>
+    </ul>
+  </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
 
@@ -272,14 +282,21 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </div>
 <h3 id="versionierungsschema">Versionierungsschema</h3>
 
-<p>Ab Version 2024.0.0 folgt der MII-Kerndatensatz einem <strong>Calendar Versioning (CalVer)</strong>-Schema:</p>
+<p>Ab Version 2024.0.0 folgt der MII-Kerndatensatz einem <strong>Calendar Versioning (CalVer)</strong>-Schema in einer SemVer-kompatiblen numerischen Form:</p>
 
 <ul>
-  <li><strong>YYYY.MINOR.PATCH</strong>-Format</li>
-  <li><strong>YYYY</strong> = Jahr, für das der IG anwendbar und zur Nutzung vorgesehen ist</li>
-  <li><strong>MINOR</strong> = Minor-Versionsnummer (wird für Feature-Ergänzungen erhöht)</li>
-  <li><strong>PATCH</strong> = Patch-Versionsnummer (wird für Fehlerbehebungen erhöht)</li>
+  <li><strong>YYYY.MINOR.PATCH[-label]</strong>-Format</li>
+  <li><strong>YYYY</strong> = Jahr, für das der IG anwendbar und zur Nutzung vorgesehen ist; dies ist die Major-Versionskomponente</li>
+  <li><strong>MINOR</strong> = Minor-Versionsnummer, erhöht für nicht-brechende Funktionserweiterungen oder Präzisierungen</li>
+  <li><strong>PATCH</strong> = Patch-Versionsnummer, erhöht für Korrekturen und Fehlerbehebungen</li>
+  <li><strong>label</strong> = Optionales Pre-Release- oder Build-Label, zum Beispiel <code class="language-plaintext highlighter-rouge">draft</code>, <code class="language-plaintext highlighter-rouge">ballot</code> oder <code class="language-plaintext highlighter-rouge">cibuild</code></li>
 </ul>
+
+<p>Stabile Releases können verglichen werden, indem die numerischen Komponenten als SemVer-artige <code class="language-plaintext highlighter-rouge">&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</code>-Werte behandelt werden, wobei das Kalenderjahr als Major-Version verwendet wird. Zum Beispiel ist <code class="language-plaintext highlighter-rouge">2026.1.0</code> neuer als <code class="language-plaintext highlighter-rouge">2026.0.3</code>. Labels kennzeichnen Pre-Release- oder Build-Status; aus Labels wird keine Reihenfolge abgeleitet.</p>
+
+<p>Alle veröffentlichten FHIR-Artefakte im Package verwenden dieselbe Version wie der gesamte IG bzw. das Package. Dadurch kann ein Artefakt bei einem IG-Release eine neue Version erhalten, auch wenn sich dieses einzelne Artefakt nicht geändert hat.</p>
+
+<p>Die computable CRMI-Metadaten zur Deklaration von Versionsalgorithmus, Versionierungspolicy, Package-Quelle und Manifest-Parametern werden auf der Seite <a href="metadata.html">Metadatenübersicht</a> beschrieben.</p>
 
 <h3 id="versionshistorie-und-änderungen">Versionshistorie und Änderungen</h3>
 
@@ -315,8 +332,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.base#2026.0.0 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Erstellt 
-  <span title="2026-06-08 07:31:00 +0000">
-    2026-06-08
+  <span title="2026-06-17 14:18:00 +0000">
+    2026-06-17
   </span>
 
           <br/>
