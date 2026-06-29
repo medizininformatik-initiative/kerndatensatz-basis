@@ -474,7 +474,7 @@ table th {
       <td>Artefaktlebenszyklus; Versionierung</td>
       <td><code class="language-plaintext highlighter-rouge">DomainResource.extension</code></td>
       <td><code class="language-plaintext highlighter-rouge">ImplementationGuide</code>, <code class="language-plaintext highlighter-rouge">StructureDefinition</code>, <code class="language-plaintext highlighter-rouge">CapabilityStatement</code>, <code class="language-plaintext highlighter-rouge">CodeSystem</code>, <code class="language-plaintext highlighter-rouge">ValueSet</code></td>
-      <td>Stellt die Versionierungspolicy des Artefakts bereit; in diesem IG bedeutet strikte Versionierung, dass relevante Metadatenänderungen Teil des versionierten Artefaktzustands sind.</td>
+      <td>Stellt die Versionierungspolicy des Artefakts bereit; in diesem IG bedeutet <code class="language-plaintext highlighter-rouge">package</code>, dass Artefaktversionen über die Version des IG-Packages verwaltet werden. Dadurch kann ein Release eine neue Artefaktversion vergeben, auch wenn sich der Inhalt eines einzelnen Artefakts nicht geändert hat.</td>
     </tr>
     <tr>
       <td><a href="http://hl7.org/fhir/extensions/5.2.0/StructureDefinition-package-source.html">Package Source</a></td>
@@ -552,7 +552,7 @@ table th {
     </tr>
     <tr>
       <td><a href="https://hl7.org/fhir/uv/crmi/2025Sep/artifact-lifecycle.html#conformance-requirement-3-4">Conformance Requirement 3.4: Artifact Versioning Policy</a></td>
-      <td><code class="language-plaintext highlighter-rouge">artifact-versionPolicy</code> ist auf <code class="language-plaintext highlighter-rouge">strict</code> gesetzt. CRMI Strict Versioning verlangt, dass Änderungen an Artefaktelementen von einer Versionsinkrementierung begleitet werden, die dem Änderungsumfang entspricht, wobei Änderungen an <code class="language-plaintext highlighter-rouge">id</code>, <code class="language-plaintext highlighter-rouge">meta</code>, <code class="language-plaintext highlighter-rouge">status</code> und <code class="language-plaintext highlighter-rouge">lastReviewDate</code> ausdrücklich ausgenommen sind. Dieser IG verwaltet Artefakte zusätzlich als Teil eines versionierten IG-/Package-Releases.</td>
+      <td><code class="language-plaintext highlighter-rouge">artifact-versionPolicy</code> ist auf <code class="language-plaintext highlighter-rouge">package</code> gesetzt. Artefaktversionen werden als Version des Packages verwaltet, in dem das Artefakt erscheint. Dies entspricht der Veröffentlichung der Artefakte als Teil des IG-Packages und macht deutlich, dass sich die Version eines Artefakts mit einem Package-Release ändern kann, auch ohne individuelle Inhaltsänderung.</td>
     </tr>
     <tr>
       <td><a href="https://hl7.org/fhir/uv/crmi/2025Sep/artifact-lifecycle.html#conformance-requirement-3-5">Conformance Requirement 3.5: Artifact Collection Versioning</a></td>
@@ -927,8 +927,8 @@ table th {
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.base#2026.0.0 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Erstellt 
-  <span title="2026-06-17 14:18:00 +0000">
-    2026-06-17
+  <span title="2026-06-29 10:59:00 +0000">
+    2026-06-29
   </span>
 
           <br/>

@@ -100,8 +100,8 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-fall.csv),
     "valueCodeableConcept" : {
       "coding" : [{
         "system" : "http://terminology.hl7.org/CodeSystem/artifact-version-policy-codes",
-        "code" : "strict",
-        "display" : "Strict"
+        "code" : "package",
+        "display" : "Package"
       }]
     }
   },

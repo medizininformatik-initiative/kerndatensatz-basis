@@ -75,8 +75,8 @@ Enthaelt alle SNOMED CT Codes für ein Mapping der OPS Klassentitel
     "valueCodeableConcept" : {
       "coding" : [{
         "system" : "http://terminology.hl7.org/CodeSystem/artifact-version-policy-codes",
-        "code" : "strict",
-        "display" : "Strict"
+        "code" : "package",
+        "display" : "Package"
       }]
     }
   },

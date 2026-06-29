@@ -1,19 +1,19 @@
 MII_IG_Base : Validation Results
 =========================================
 
-err = 1765, warn = 551, info = 2740
+err = 1765, warn = 569, info = 2757
 $--
 Generated $--. FHIR version $-- for de.medizininformatikinitiative.kerndatensatz.base#$-- (canonical = https://www.medizininformatik-initiative.de/fhir/modul-base)
  Build Errors : 0 / 4 / 2
  /workspace/fsh-generated/resources/Bundle-mii-exa-base-test-data-bundle-1 : 0 / 57 / 67
- /workspace/fsh-generated/resources/CapabilityStatement-mii-cps-diagnose-capabilitystatement : 2 / 2 / 48
- /workspace/fsh-generated/resources/CapabilityStatement-mii-cps-fall-capabilitystatement : 2 / 2 / 41
- /workspace/fsh-generated/resources/CapabilityStatement-mii-cps-person-capabilitystatement : 2 / 2 / 67
- /workspace/fsh-generated/resources/CapabilityStatement-mii-cps-prozedur-capabilitystatement : 2 / 2 / 35
- /workspace/fsh-generated/resources/CodeSystem-mii-cs-diagnose-lebensphase-supplement-snomed : 2 / 2 / 11
- /workspace/fsh-generated/resources/CodeSystem-mii-cs-fall-supplement-act-encounter-code : 2 / 5 / 12
- /workspace/fsh-generated/resources/CodeSystem-mii-cs-fall-supplement-patient-class : 2 / 4 / 12
- /workspace/fsh-generated/resources/CodeSystem-mii-cs-person-vitalstatus : 2 / 2 / 25
+ /workspace/fsh-generated/resources/CapabilityStatement-mii-cps-diagnose-capabilitystatement : 2 / 2 / 49
+ /workspace/fsh-generated/resources/CapabilityStatement-mii-cps-fall-capabilitystatement : 2 / 2 / 42
+ /workspace/fsh-generated/resources/CapabilityStatement-mii-cps-person-capabilitystatement : 2 / 2 / 68
+ /workspace/fsh-generated/resources/CapabilityStatement-mii-cps-prozedur-capabilitystatement : 2 / 2 / 36
+ /workspace/fsh-generated/resources/CodeSystem-mii-cs-diagnose-lebensphase-supplement-snomed : 2 / 3 / 11
+ /workspace/fsh-generated/resources/CodeSystem-mii-cs-fall-supplement-act-encounter-code : 2 / 6 / 12
+ /workspace/fsh-generated/resources/CodeSystem-mii-cs-fall-supplement-patient-class : 2 / 5 / 12
+ /workspace/fsh-generated/resources/CodeSystem-mii-cs-person-vitalstatus : 2 / 3 / 25
  /workspace/fsh-generated/resources/Condition-mii-exa-diagnose-appendicitis : 0 / 1 / 3
  /workspace/fsh-generated/resources/Condition-mii-exa-diagnose-condition-elbow-contusion : 0 / 1 / 3
  /workspace/fsh-generated/resources/Condition-mii-exa-diagnose-condition-multiple-codings : 0 / 1 / 3
@@ -34,7 +34,7 @@ Generated $--. FHIR version $-- for de.medizininformatikinitiative.kerndatensatz
  /workspace/fsh-generated/resources/Encounter-mii-exa-fall-kontakt-in-progress-status : 0 / 1 / 3
  /workspace/fsh-generated/resources/Encounter-mii-exa-fall-kontakt-onleave-status : 0 / 1 / 3
  /workspace/fsh-generated/resources/Encounter-mii-exa-fall-kontakt-unknown-status : 0 / 1 / 3
- /workspace/fsh-generated/resources/ImplementationGuide-mii-ig-base : 64 / 7 / 132
+ /workspace/fsh-generated/resources/ImplementationGuide-mii-ig-base : 64 / 7 / 133
  /workspace/fsh-generated/resources/Observation-mii-exa-person-observation-vitalstatus : 0 / 2 / 2
  /workspace/fsh-generated/resources/Observation-mii-exa-person-observation-vitalstatus-discharge : 0 / 2 / 2
  /workspace/fsh-generated/resources/Patient-mii-exa-person-patient-1 : 0 / 4 / 3
@@ -42,32 +42,32 @@ Generated $--. FHIR version $-- for de.medizininformatikinitiative.kerndatensatz
  /workspace/fsh-generated/resources/Procedure-mii-exa-prozedur-imaging : 0 / 1 / 2
  /workspace/fsh-generated/resources/Procedure-mii-exa-prozedur-procedure : 0 / 1 / 2
  /workspace/fsh-generated/resources/Procedure-mii-exa-prozedur-procedure-2 : 0 / 1 / 2
- /workspace/fsh-generated/resources/StructureDefinition-mii-ex-prozedur-durchfuehrungsabsicht : 2 / 2 / 38
- /workspace/fsh-generated/resources/StructureDefinition-mii-lm-diagnose : 2 / 78 / 65
- /workspace/fsh-generated/resources/StructureDefinition-mii-lm-fall : 2 / 63 / 40
- /workspace/fsh-generated/resources/StructureDefinition-mii-lm-person : 194 / 137 / 97
- /workspace/fsh-generated/resources/StructureDefinition-mii-lm-prozedur : 2 / 28 / 35
- /workspace/fsh-generated/resources/StructureDefinition-mii-pr-diagnose-condition : 234 / 12 / 322
- /workspace/fsh-generated/resources/StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung : 350 / 7 / 417
- /workspace/fsh-generated/resources/StructureDefinition-mii-pr-person-patient : 234 / 20 / 393
- /workspace/fsh-generated/resources/StructureDefinition-mii-pr-person-patient-pseudonymisiert : 138 / 9 / 206
- /workspace/fsh-generated/resources/StructureDefinition-mii-pr-person-todesursache : 122 / 4 / 154
- /workspace/fsh-generated/resources/StructureDefinition-mii-pr-person-vitalstatus : 122 / 2 / 150
- /workspace/fsh-generated/resources/StructureDefinition-mii-pr-prozedur-procedure : 242 / 2 / 197
- /workspace/fsh-generated/resources/ValueSet-mii-vs-diagnose-alphaid : 2 / 2 / 27
- /workspace/fsh-generated/resources/ValueSet-mii-vs-diagnose-bodystructure-snomed : 2 / 2 / 24
- /workspace/fsh-generated/resources/ValueSet-mii-vs-diagnose-diagnosecodes-snomed : 2 / 2 / 38
- /workspace/fsh-generated/resources/ValueSet-mii-vs-diagnose-icd10gm : 2 / 2 / 27
- /workspace/fsh-generated/resources/ValueSet-mii-vs-diagnose-orphanet : 2 / 3 / 27
- /workspace/fsh-generated/resources/ValueSet-mii-vs-fall-diagnosis-use : 2 / 2 / 27
- /workspace/fsh-generated/resources/ValueSet-mii-vs-fall-identifier-type-codes : 2 / 3 / 26
- /workspace/fsh-generated/resources/ValueSet-mii-vs-fall-location-physical-type : 2 / 3 / 26
- /workspace/fsh-generated/resources/ValueSet-mii-vs-person-icd10who : 2 / 2 / 29
- /workspace/fsh-generated/resources/ValueSet-mii-vs-person-vitalstatus : 2 / 2 / 28
- /workspace/fsh-generated/resources/ValueSet-mii-vs-prozedur-durchfuehrungsabsicht-snomedct : 10 / 2 / 23
- /workspace/fsh-generated/resources/ValueSet-mii-vs-prozedur-ops : 2 / 2 / 27
- /workspace/fsh-generated/resources/ValueSet-mii-vs-prozedur-opskategorien-snomedct : 7 / 2 / 21
- /workspace/fsh-generated/resources/ValueSet-mii-vs-prozedur-prozeduren-snomedct : 2 / 2 / 21
+ /workspace/fsh-generated/resources/StructureDefinition-mii-ex-prozedur-durchfuehrungsabsicht : 2 / 2 / 39
+ /workspace/fsh-generated/resources/StructureDefinition-mii-lm-diagnose : 2 / 78 / 66
+ /workspace/fsh-generated/resources/StructureDefinition-mii-lm-fall : 2 / 63 / 41
+ /workspace/fsh-generated/resources/StructureDefinition-mii-lm-person : 194 / 137 / 98
+ /workspace/fsh-generated/resources/StructureDefinition-mii-lm-prozedur : 2 / 28 / 36
+ /workspace/fsh-generated/resources/StructureDefinition-mii-pr-diagnose-condition : 234 / 12 / 323
+ /workspace/fsh-generated/resources/StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung : 350 / 7 / 418
+ /workspace/fsh-generated/resources/StructureDefinition-mii-pr-person-patient : 234 / 20 / 394
+ /workspace/fsh-generated/resources/StructureDefinition-mii-pr-person-patient-pseudonymisiert : 138 / 9 / 207
+ /workspace/fsh-generated/resources/StructureDefinition-mii-pr-person-todesursache : 122 / 4 / 155
+ /workspace/fsh-generated/resources/StructureDefinition-mii-pr-person-vitalstatus : 122 / 2 / 151
+ /workspace/fsh-generated/resources/StructureDefinition-mii-pr-prozedur-procedure : 242 / 2 / 198
+ /workspace/fsh-generated/resources/ValueSet-mii-vs-diagnose-alphaid : 2 / 3 / 27
+ /workspace/fsh-generated/resources/ValueSet-mii-vs-diagnose-bodystructure-snomed : 2 / 3 / 24
+ /workspace/fsh-generated/resources/ValueSet-mii-vs-diagnose-diagnosecodes-snomed : 2 / 3 / 38
+ /workspace/fsh-generated/resources/ValueSet-mii-vs-diagnose-icd10gm : 2 / 3 / 27
+ /workspace/fsh-generated/resources/ValueSet-mii-vs-diagnose-orphanet : 2 / 4 / 27
+ /workspace/fsh-generated/resources/ValueSet-mii-vs-fall-diagnosis-use : 2 / 3 / 27
+ /workspace/fsh-generated/resources/ValueSet-mii-vs-fall-identifier-type-codes : 2 / 4 / 26
+ /workspace/fsh-generated/resources/ValueSet-mii-vs-fall-location-physical-type : 2 / 4 / 26
+ /workspace/fsh-generated/resources/ValueSet-mii-vs-person-icd10who : 2 / 3 / 29
+ /workspace/fsh-generated/resources/ValueSet-mii-vs-person-vitalstatus : 2 / 3 / 28
+ /workspace/fsh-generated/resources/ValueSet-mii-vs-prozedur-durchfuehrungsabsicht-snomedct : 10 / 3 / 23
+ /workspace/fsh-generated/resources/ValueSet-mii-vs-prozedur-ops : 2 / 3 / 27
+ /workspace/fsh-generated/resources/ValueSet-mii-vs-prozedur-opskategorien-snomedct : 7 / 3 / 21
+ /workspace/fsh-generated/resources/ValueSet-mii-vs-prozedur-prozeduren-snomedct : 2 / 3 / 21
  /workspace/input/resources/Parameters-mii-param-base-manifest : 0 / 0 / 1
 </table>
 == n/a ==
@@ -208,6 +208,7 @@ INFORMATION: CapabilityStatement/mii-cps-diagnose-capabilitystatement: Capabilit
 INFORMATION: CapabilityStatement/mii-cps-diagnose-capabilitystatement: CapabilityStatement.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecapabilitystatement|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: CapabilityStatement/mii-cps-diagnose-capabilitystatement: CapabilityStatement.extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecapabilitystatement|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: CapabilityStatement/mii-cps-diagnose-capabilitystatement: CapabilityStatement.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecapabilitystatement|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Resource: The resource CapabilityStatement/mii-cps-diagnose-capabilitystatement could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated/resources/CapabilityStatement-mii-cps-fall-capabilitystatement.json ==
 INFORMATION: CapabilityStatement.meta.profile[0]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablecapabilitystatement to 2.0.0-ballot
 INFORMATION: CapabilityStatement.meta.profile[1]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecapabilitystatement to 2.0.0-ballot
@@ -250,6 +251,7 @@ INFORMATION: CapabilityStatement/mii-cps-fall-capabilitystatement: CapabilitySta
 INFORMATION: CapabilityStatement/mii-cps-fall-capabilitystatement: CapabilityStatement.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecapabilitystatement|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: CapabilityStatement/mii-cps-fall-capabilitystatement: CapabilityStatement.extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecapabilitystatement|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: CapabilityStatement/mii-cps-fall-capabilitystatement: CapabilityStatement.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecapabilitystatement|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Resource: The resource CapabilityStatement/mii-cps-fall-capabilitystatement could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated/resources/CapabilityStatement-mii-cps-person-capabilitystatement.json ==
 INFORMATION: CapabilityStatement.meta.profile[0]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablecapabilitystatement to 2.0.0-ballot
 INFORMATION: CapabilityStatement.meta.profile[1]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecapabilitystatement to 2.0.0-ballot
@@ -318,6 +320,7 @@ INFORMATION: CapabilityStatement/mii-cps-person-capabilitystatement: CapabilityS
 INFORMATION: CapabilityStatement/mii-cps-person-capabilitystatement: CapabilityStatement.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecapabilitystatement|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: CapabilityStatement/mii-cps-person-capabilitystatement: CapabilityStatement.extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecapabilitystatement|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: CapabilityStatement/mii-cps-person-capabilitystatement: CapabilityStatement.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecapabilitystatement|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Resource: The resource CapabilityStatement/mii-cps-person-capabilitystatement could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated/resources/CapabilityStatement-mii-cps-prozedur-capabilitystatement.json ==
 INFORMATION: CapabilityStatement.meta.profile[0]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablecapabilitystatement to 2.0.0-ballot
 INFORMATION: CapabilityStatement.meta.profile[1]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecapabilitystatement to 2.0.0-ballot
@@ -354,6 +357,7 @@ INFORMATION: CapabilityStatement/mii-cps-prozedur-capabilitystatement: Capabilit
 INFORMATION: CapabilityStatement/mii-cps-prozedur-capabilitystatement: CapabilityStatement.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecapabilitystatement|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: CapabilityStatement/mii-cps-prozedur-capabilitystatement: CapabilityStatement.extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecapabilitystatement|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: CapabilityStatement/mii-cps-prozedur-capabilitystatement: CapabilityStatement.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecapabilitystatement|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Resource: The resource CapabilityStatement/mii-cps-prozedur-capabilitystatement could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated/resources/CodeSystem-mii-cs-diagnose-lebensphase-supplement-snomed.json ==
 INFORMATION: CodeSystem.meta.profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/shareablecodesystem to 4.0.1
 INFORMATION: CodeSystem.meta.profile[1]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecodesystem to 2.0.0-ballot
@@ -366,6 +370,7 @@ INFORMATION: CodeSystem/mii-cs-diagnose-lebensphase-supplement-snomed: CodeSyste
 INFORMATION: CodeSystem/mii-cs-diagnose-lebensphase-supplement-snomed: CodeSystem.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecodesystem|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: CodeSystem/mii-cs-diagnose-lebensphase-supplement-snomed: CodeSystem.extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecodesystem|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: CodeSystem/mii-cs-diagnose-lebensphase-supplement-snomed: CodeSystem.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecodesystem|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
+WARNING: Resource: The resource CodeSystem/mii-cs-diagnose-lebensphase-supplement-snomed should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated/resources/CodeSystem-mii-cs-fall-supplement-act-encounter-code.json ==
 INFORMATION: CodeSystem.meta.profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/shareablecodesystem to 4.0.1
 INFORMATION: CodeSystem.meta.profile[1]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecodesystem to 2.0.0-ballot
@@ -382,6 +387,7 @@ INFORMATION: CodeSystem/mii-cs-fall-supplement-act-encounter-code: CodeSystem.ex
 INFORMATION: CodeSystem/mii-cs-fall-supplement-act-encounter-code: CodeSystem.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecodesystem|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: CodeSystem/mii-cs-fall-supplement-act-encounter-code: CodeSystem.extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecodesystem|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: CodeSystem/mii-cs-fall-supplement-act-encounter-code: CodeSystem.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecodesystem|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
+WARNING: Resource: The resource CodeSystem/mii-cs-fall-supplement-act-encounter-code should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated/resources/CodeSystem-mii-cs-fall-supplement-patient-class.json ==
 INFORMATION: CodeSystem.meta.profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/shareablecodesystem to 4.0.1
 INFORMATION: CodeSystem.meta.profile[1]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecodesystem to 2.0.0-ballot
@@ -397,6 +403,7 @@ INFORMATION: CodeSystem/mii-cs-fall-supplement-patient-class: CodeSystem.extensi
 INFORMATION: CodeSystem/mii-cs-fall-supplement-patient-class: CodeSystem.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecodesystem|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: CodeSystem/mii-cs-fall-supplement-patient-class: CodeSystem.extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecodesystem|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: CodeSystem/mii-cs-fall-supplement-patient-class: CodeSystem.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecodesystem|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
+WARNING: Resource: The resource CodeSystem/mii-cs-fall-supplement-patient-class should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated/resources/CodeSystem-mii-cs-person-vitalstatus.json ==
 INFORMATION: CodeSystem.meta.profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/shareablecodesystem to 4.0.1
 INFORMATION: CodeSystem.meta.profile[1]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablecodesystem to 2.0.0-ballot
@@ -421,6 +428,7 @@ INFORMATION: CodeSystem/mii-cs-person-vitalstatus: CodeSystem.extension[0]: This
 INFORMATION: CodeSystem/mii-cs-person-vitalstatus: CodeSystem.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecodesystem|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: CodeSystem/mii-cs-person-vitalstatus: CodeSystem.extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecodesystem|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: CodeSystem/mii-cs-person-vitalstatus: CodeSystem.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecodesystem|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
+WARNING: Resource: The resource CodeSystem/mii-cs-person-vitalstatus should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated/resources/Condition-mii-exa-diagnose-appendicitis.json ==
 WARNING: Condition/mii-exa-diagnose-appendicitis: Condition.meta.extension[0].extension[2].value.ofType(uri): No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/modul-base'
 INFORMATION: Condition/mii-exa-diagnose-appendicitis: Condition.code.coding[1]: Reference to experimental ValueSet https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/diagnoses-sct|2026.0.0
@@ -716,6 +724,7 @@ INFORMATION: ImplementationGuide/mii-ig-base: ImplementationGuide.extension[20]:
 INFORMATION: ImplementationGuide/mii-ig-base: ImplementationGuide.extension[21]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-implementationguide|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: ImplementationGuide/mii-ig-base: ImplementationGuide.extension[22]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-implementationguide|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: ImplementationGuide/mii-ig-base: ImplementationGuide.extension[23]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-implementationguide|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Resource: The resource ImplementationGuide/mii-ig-base could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated/resources/Observation-mii-exa-person-observation-vitalstatus.json ==
 WARNING: Observation/mii-exa-person-observation-vitalstatus: Observation.meta.extension[0].extension[2].value.ofType(uri): No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/modul-base'
 WARNING: Observation/mii-exa-person-observation-vitalstatus: Observation: Best Practice Recommendation: In general, all observations should have a performer
@@ -779,6 +788,7 @@ INFORMATION: StructureDefinition/mii-ex-prozedur-durchfuehrungsabsicht: Structur
 INFORMATION: StructureDefinition/mii-ex-prozedur-durchfuehrungsabsicht: StructureDefinition.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-ex-prozedur-durchfuehrungsabsicht: StructureDefinition.extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-ex-prozedur-durchfuehrungsabsicht: StructureDefinition.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Resource: The resource StructureDefinition/mii-ex-prozedur-durchfuehrungsabsicht could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated/resources/StructureDefinition-mii-lm-diagnose.json ==
 INFORMATION: StructureDefinition.meta.profile[0]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition to 2.0.0-ballot
 INFORMATION: StructureDefinition.meta.profile[1]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition to 2.0.0-ballot
@@ -921,6 +931,7 @@ INFORMATION: StructureDefinition/mii-lm-diagnose: StructureDefinition.extension[
 INFORMATION: StructureDefinition/mii-lm-diagnose: StructureDefinition.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-lm-diagnose: StructureDefinition.extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-lm-diagnose: StructureDefinition.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Resource: The resource StructureDefinition/mii-lm-diagnose could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated/resources/StructureDefinition-mii-lm-fall.json ==
 INFORMATION: StructureDefinition.meta.profile[0]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition to 2.0.0-ballot
 INFORMATION: StructureDefinition.meta.profile[1]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition to 2.0.0-ballot
@@ -1023,6 +1034,7 @@ INFORMATION: StructureDefinition/mii-lm-fall: StructureDefinition.extension[0]: 
 INFORMATION: StructureDefinition/mii-lm-fall: StructureDefinition.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-lm-fall: StructureDefinition.extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-lm-fall: StructureDefinition.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Resource: The resource StructureDefinition/mii-lm-fall could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated/resources/StructureDefinition-mii-lm-person.json ==
 INFORMATION: StructureDefinition.meta.profile[0]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition to 2.0.0-ballot
 INFORMATION: StructureDefinition.meta.profile[1]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition to 2.0.0-ballot
@@ -1448,6 +1460,7 @@ INFORMATION: StructureDefinition/mii-lm-person: StructureDefinition.extension[0]
 INFORMATION: StructureDefinition/mii-lm-person: StructureDefinition.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-lm-person: StructureDefinition.extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-lm-person: StructureDefinition.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Resource: The resource StructureDefinition/mii-lm-person could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated/resources/StructureDefinition-mii-lm-prozedur.json ==
 INFORMATION: StructureDefinition.meta.profile[0]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition to 2.0.0-ballot
 INFORMATION: StructureDefinition.meta.profile[1]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition to 2.0.0-ballot
@@ -1510,6 +1523,7 @@ INFORMATION: StructureDefinition/mii-lm-prozedur: StructureDefinition.extension[
 INFORMATION: StructureDefinition/mii-lm-prozedur: StructureDefinition.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-lm-prozedur: StructureDefinition.extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-lm-prozedur: StructureDefinition.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Resource: The resource StructureDefinition/mii-lm-prozedur could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated/resources/StructureDefinition-mii-pr-diagnose-condition.json ==
 INFORMATION: StructureDefinition.meta.profile[0]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition to 2.0.0-ballot
 INFORMATION: StructureDefinition.meta.profile[1]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition to 2.0.0-ballot
@@ -2075,6 +2089,7 @@ INFORMATION: StructureDefinition/mii-pr-diagnose-condition: StructureDefinition.
 INFORMATION: StructureDefinition/mii-pr-diagnose-condition: StructureDefinition.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-pr-diagnose-condition: StructureDefinition.extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-pr-diagnose-condition: StructureDefinition.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Resource: The resource StructureDefinition/mii-pr-diagnose-condition could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated/resources/StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.json ==
 INFORMATION: StructureDefinition.meta.profile[0]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition to 2.0.0-ballot
 INFORMATION: StructureDefinition.meta.profile[1]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition to 2.0.0-ballot
@@ -2844,6 +2859,7 @@ INFORMATION: StructureDefinition/mii-pr-fall-kontakt-gesundheitseinrichtung: Str
 INFORMATION: StructureDefinition/mii-pr-fall-kontakt-gesundheitseinrichtung: StructureDefinition.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-pr-fall-kontakt-gesundheitseinrichtung: StructureDefinition.extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-pr-fall-kontakt-gesundheitseinrichtung: StructureDefinition.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Resource: The resource StructureDefinition/mii-pr-fall-kontakt-gesundheitseinrichtung could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated/resources/StructureDefinition-mii-pr-person-patient.json ==
 INFORMATION: StructureDefinition.meta.profile[0]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition to 2.0.0-ballot
 INFORMATION: StructureDefinition.meta.profile[1]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition to 2.0.0-ballot
@@ -3488,6 +3504,7 @@ INFORMATION: StructureDefinition/mii-pr-person-patient: StructureDefinition.exte
 INFORMATION: StructureDefinition/mii-pr-person-patient: StructureDefinition.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-pr-person-patient: StructureDefinition.extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-pr-person-patient: StructureDefinition.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Resource: The resource StructureDefinition/mii-pr-person-patient could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated/resources/StructureDefinition-mii-pr-person-patient-pseudonymisiert.json ==
 INFORMATION: StructureDefinition.meta.profile[0]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition to 2.0.0-ballot
 INFORMATION: StructureDefinition.meta.profile[1]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition to 2.0.0-ballot
@@ -3838,6 +3855,7 @@ INFORMATION: StructureDefinition/mii-pr-person-patient-pseudonymisiert: Structur
 INFORMATION: StructureDefinition/mii-pr-person-patient-pseudonymisiert: StructureDefinition.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-pr-person-patient-pseudonymisiert: StructureDefinition.extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-pr-person-patient-pseudonymisiert: StructureDefinition.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Resource: The resource StructureDefinition/mii-pr-person-patient-pseudonymisiert could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated/resources/StructureDefinition-mii-pr-person-todesursache.json ==
 INFORMATION: StructureDefinition.meta.profile[0]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition to 2.0.0-ballot
 INFORMATION: StructureDefinition.meta.profile[1]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition to 2.0.0-ballot
@@ -4115,6 +4133,7 @@ INFORMATION: StructureDefinition/mii-pr-person-todesursache: StructureDefinition
 INFORMATION: StructureDefinition/mii-pr-person-todesursache: StructureDefinition.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-pr-person-todesursache: StructureDefinition.extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-pr-person-todesursache: StructureDefinition.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Resource: The resource StructureDefinition/mii-pr-person-todesursache could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated/resources/StructureDefinition-mii-pr-person-vitalstatus.json ==
 INFORMATION: StructureDefinition.meta.profile[0]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition to 2.0.0-ballot
 INFORMATION: StructureDefinition.meta.profile[1]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition to 2.0.0-ballot
@@ -4386,6 +4405,7 @@ INFORMATION: StructureDefinition/mii-pr-person-vitalstatus: StructureDefinition.
 INFORMATION: StructureDefinition/mii-pr-person-vitalstatus: StructureDefinition.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-pr-person-vitalstatus: StructureDefinition.extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-pr-person-vitalstatus: StructureDefinition.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Resource: The resource StructureDefinition/mii-pr-person-vitalstatus could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated/resources/StructureDefinition-mii-pr-prozedur-procedure.json ==
 INFORMATION: StructureDefinition.meta.profile[0]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition to 2.0.0-ballot
 INFORMATION: StructureDefinition.meta.profile[1]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition to 2.0.0-ballot
@@ -4824,6 +4844,7 @@ INFORMATION: StructureDefinition/mii-pr-prozedur-procedure: StructureDefinition.
 INFORMATION: StructureDefinition/mii-pr-prozedur-procedure: StructureDefinition.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-pr-prozedur-procedure: StructureDefinition.extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-pr-prozedur-procedure: StructureDefinition.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Resource: The resource StructureDefinition/mii-pr-prozedur-procedure could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated/resources/ValueSet-mii-vs-diagnose-alphaid.json ==
 INFORMATION: ValueSet.meta.profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/shareablevalueset to 4.0.1
 INFORMATION: ValueSet.meta.profile[1]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablevalueset to 2.0.0-ballot
@@ -4847,6 +4868,7 @@ INFORMATION: ValueSet/mii-vs-diagnose-alphaid: ValueSet.extension[1]: This eleme
 INFORMATION: ValueSet/mii-vs-diagnose-alphaid: ValueSet.extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: ValueSet/mii-vs-diagnose-alphaid: ValueSet.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: ValueSet/mii-vs-diagnose-alphaid: ValueSet.extension[4]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
+WARNING: Resource: The resource ValueSet/mii-vs-diagnose-alphaid should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 INFORMATION: ValueSet.where(id = 'mii-vs-diagnose-alphaid'): The value set expansion is too large, and only a subset has been displayed
 == fsh-generated/resources/ValueSet-mii-vs-diagnose-bodystructure-snomed.json ==
 INFORMATION: ValueSet.meta.profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/shareablevalueset to 4.0.1
@@ -4871,6 +4893,7 @@ INFORMATION: ValueSet/mii-vs-diagnose-bodystructure-snomed: ValueSet.extension[1
 INFORMATION: ValueSet/mii-vs-diagnose-bodystructure-snomed: ValueSet.extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: ValueSet/mii-vs-diagnose-bodystructure-snomed: ValueSet.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: ValueSet/mii-vs-diagnose-bodystructure-snomed: ValueSet.extension[4]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
+WARNING: Resource: The resource ValueSet/mii-vs-diagnose-bodystructure-snomed should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated/resources/ValueSet-mii-vs-diagnose-diagnosecodes-snomed.json ==
 INFORMATION: ValueSet.meta.profile[0]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablevalueset to 2.0.0-ballot
 INFORMATION: ValueSet.meta.profile[1]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset to 2.0.0-ballot
@@ -4908,6 +4931,7 @@ INFORMATION: ValueSet/mii-vs-diagnose-diagnosecodes-snomed: ValueSet.extension[1
 INFORMATION: ValueSet/mii-vs-diagnose-diagnosecodes-snomed: ValueSet.extension[11]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-computablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: ValueSet/mii-vs-diagnose-diagnosecodes-snomed: ValueSet.extension[12]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-computablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: ValueSet/mii-vs-diagnose-diagnosecodes-snomed: ValueSet.extension[13]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-computablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
+WARNING: Resource: The resource ValueSet/mii-vs-diagnose-diagnosecodes-snomed should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated/resources/ValueSet-mii-vs-diagnose-icd10gm.json ==
 INFORMATION: ValueSet.meta.profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/shareablevalueset to 4.0.1
 INFORMATION: ValueSet.meta.profile[1]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablevalueset to 2.0.0-ballot
@@ -4931,6 +4955,7 @@ INFORMATION: ValueSet/mii-vs-diagnose-icd10gm: ValueSet.extension[1]: This eleme
 INFORMATION: ValueSet/mii-vs-diagnose-icd10gm: ValueSet.extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: ValueSet/mii-vs-diagnose-icd10gm: ValueSet.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: ValueSet/mii-vs-diagnose-icd10gm: ValueSet.extension[4]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
+WARNING: Resource: The resource ValueSet/mii-vs-diagnose-icd10gm should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 INFORMATION: ValueSet.where(id = 'mii-vs-diagnose-icd10gm'): The value set expansion is too large, and only a subset has been displayed
 == fsh-generated/resources/ValueSet-mii-vs-diagnose-orphanet.json ==
 INFORMATION: ValueSet.meta.profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/shareablevalueset to 4.0.1
@@ -4956,6 +4981,7 @@ INFORMATION: ValueSet/mii-vs-diagnose-orphanet: ValueSet.extension[1]: This elem
 INFORMATION: ValueSet/mii-vs-diagnose-orphanet: ValueSet.extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: ValueSet/mii-vs-diagnose-orphanet: ValueSet.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: ValueSet/mii-vs-diagnose-orphanet: ValueSet.extension[4]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
+WARNING: Resource: The resource ValueSet/mii-vs-diagnose-orphanet should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 INFORMATION: ValueSet.where(id = 'mii-vs-diagnose-orphanet'): The value set expansion is too large, and only a subset has been displayed
 == fsh-generated/resources/ValueSet-mii-vs-fall-diagnosis-use.json ==
 INFORMATION: ValueSet.meta.profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/shareablevalueset to 4.0.1
@@ -4983,6 +5009,7 @@ INFORMATION: ValueSet/mii-vs-fall-diagnosis-use: ValueSet.extension[1]: This ele
 INFORMATION: ValueSet/mii-vs-fall-diagnosis-use: ValueSet.extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: ValueSet/mii-vs-fall-diagnosis-use: ValueSet.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: ValueSet/mii-vs-fall-diagnosis-use: ValueSet.extension[4]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
+WARNING: Resource: The resource ValueSet/mii-vs-fall-diagnosis-use should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated/resources/ValueSet-mii-vs-fall-identifier-type-codes.json ==
 INFORMATION: ValueSet.compose.include[0]: Pinned the version of http://terminology.hl7.org/CodeSystem/v2-0203 to 5.0.0
 INFORMATION: ValueSet.meta.profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/shareablevalueset to 4.0.1
@@ -5008,6 +5035,7 @@ INFORMATION: ValueSet/mii-vs-fall-identifier-type-codes: ValueSet.extension[1]: 
 INFORMATION: ValueSet/mii-vs-fall-identifier-type-codes: ValueSet.extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: ValueSet/mii-vs-fall-identifier-type-codes: ValueSet.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: ValueSet/mii-vs-fall-identifier-type-codes: ValueSet.extension[4]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
+WARNING: Resource: The resource ValueSet/mii-vs-fall-identifier-type-codes should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated/resources/ValueSet-mii-vs-fall-location-physical-type.json ==
 INFORMATION: ValueSet.compose.include[0]: Pinned the version of http://terminology.hl7.org/CodeSystem/location-physical-type to 2.0.1
 INFORMATION: ValueSet.meta.profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/shareablevalueset to 4.0.1
@@ -5033,6 +5061,7 @@ INFORMATION: ValueSet/mii-vs-fall-location-physical-type: ValueSet.extension[1]:
 INFORMATION: ValueSet/mii-vs-fall-location-physical-type: ValueSet.extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: ValueSet/mii-vs-fall-location-physical-type: ValueSet.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: ValueSet/mii-vs-fall-location-physical-type: ValueSet.extension[4]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
+WARNING: Resource: The resource ValueSet/mii-vs-fall-location-physical-type should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated/resources/ValueSet-mii-vs-person-icd10who.json ==
 INFORMATION: ValueSet.meta.profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/shareablevalueset to 4.0.1
 INFORMATION: ValueSet.meta.profile[1]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablevalueset to 2.0.0-ballot
@@ -5058,6 +5087,7 @@ INFORMATION: ValueSet/mii-vs-person-icd10who: ValueSet.extension[1]: This elemen
 INFORMATION: ValueSet/mii-vs-person-icd10who: ValueSet.extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: ValueSet/mii-vs-person-icd10who: ValueSet.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: ValueSet/mii-vs-person-icd10who: ValueSet.extension[4]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
+WARNING: Resource: The resource ValueSet/mii-vs-person-icd10who should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 INFORMATION: ValueSet.where(id = 'mii-vs-person-icd10who'): The value set expansion is too large, and only a subset has been displayed
 == fsh-generated/resources/ValueSet-mii-vs-person-vitalstatus.json ==
 INFORMATION: ValueSet.compose.include[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/CodeSystem/Vitalstatus to 2026.0.0
@@ -5085,6 +5115,7 @@ INFORMATION: ValueSet/mii-vs-person-vitalstatus: ValueSet.extension[1]: This ele
 INFORMATION: ValueSet/mii-vs-person-vitalstatus: ValueSet.extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: ValueSet/mii-vs-person-vitalstatus: ValueSet.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: ValueSet/mii-vs-person-vitalstatus: ValueSet.extension[4]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
+WARNING: Resource: The resource ValueSet/mii-vs-person-vitalstatus should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated/resources/ValueSet-mii-vs-prozedur-durchfuehrungsabsicht-snomedct.json ==
 INFORMATION: ValueSet.meta.profile[0]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablevalueset to 2.0.0-ballot
 INFORMATION: ValueSet.meta.profile[1]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset to 2.0.0-ballot
@@ -5117,6 +5148,7 @@ INFORMATION: ValueSet/mii-vs-prozedur-durchfuehrungsabsicht-snomedct: ValueSet.e
 INFORMATION: ValueSet/mii-vs-prozedur-durchfuehrungsabsicht-snomedct: ValueSet.extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: ValueSet/mii-vs-prozedur-durchfuehrungsabsicht-snomedct: ValueSet.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: ValueSet/mii-vs-prozedur-durchfuehrungsabsicht-snomedct: ValueSet.extension[4]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
+WARNING: Resource: The resource ValueSet/mii-vs-prozedur-durchfuehrungsabsicht-snomedct should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated/resources/ValueSet-mii-vs-prozedur-ops.json ==
 INFORMATION: ValueSet.meta.profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/shareablevalueset to 4.0.1
 INFORMATION: ValueSet.meta.profile[1]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablevalueset to 2.0.0-ballot
@@ -5140,6 +5172,7 @@ INFORMATION: ValueSet/mii-vs-prozedur-ops: ValueSet.extension[1]: This element d
 INFORMATION: ValueSet/mii-vs-prozedur-ops: ValueSet.extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: ValueSet/mii-vs-prozedur-ops: ValueSet.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: ValueSet/mii-vs-prozedur-ops: ValueSet.extension[4]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
+WARNING: Resource: The resource ValueSet/mii-vs-prozedur-ops should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 INFORMATION: ValueSet.where(id = 'mii-vs-prozedur-ops'): The value set expansion is too large, and only a subset has been displayed
 == fsh-generated/resources/ValueSet-mii-vs-prozedur-opskategorien-snomedct.json ==
 INFORMATION: ValueSet.meta.profile[0]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablevalueset to 2.0.0-ballot
@@ -5168,6 +5201,7 @@ INFORMATION: ValueSet/mii-vs-prozedur-opskategorien-snomedct: ValueSet.extension
 INFORMATION: ValueSet/mii-vs-prozedur-opskategorien-snomedct: ValueSet.extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: ValueSet/mii-vs-prozedur-opskategorien-snomedct: ValueSet.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: ValueSet/mii-vs-prozedur-opskategorien-snomedct: ValueSet.extension[4]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
+WARNING: Resource: The resource ValueSet/mii-vs-prozedur-opskategorien-snomedct should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated/resources/ValueSet-mii-vs-prozedur-prozeduren-snomedct.json ==
 INFORMATION: ValueSet.meta.profile[0]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablevalueset to 2.0.0-ballot
 INFORMATION: ValueSet.meta.profile[1]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset to 2.0.0-ballot
@@ -5190,4 +5224,5 @@ INFORMATION: ValueSet/mii-vs-prozedur-prozeduren-snomedct: ValueSet.extension[1]
 INFORMATION: ValueSet/mii-vs-prozedur-prozeduren-snomedct: ValueSet.extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: ValueSet/mii-vs-prozedur-prozeduren-snomedct: ValueSet.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: ValueSet/mii-vs-prozedur-prozeduren-snomedct: ValueSet.extension[4]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
+WARNING: Resource: The resource ValueSet/mii-vs-prozedur-prozeduren-snomedct should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == input/resources/Parameters-mii-param-base-manifest.json ==

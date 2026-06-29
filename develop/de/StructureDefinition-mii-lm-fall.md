@@ -125,8 +125,8 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-fall.
     "valueCodeableConcept" : {
       "coding" : [{
         "system" : "http://terminology.hl7.org/CodeSystem/artifact-version-policy-codes",
-        "code" : "strict",
-        "display" : "Strict"
+        "code" : "package",
+        "display" : "Package"
       }]
     }
   },
