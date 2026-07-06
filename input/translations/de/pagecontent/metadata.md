@@ -75,7 +75,7 @@ Die folgenden CRMI-bezogenen Metadaten werden derzeit in diesem IG verwendet.
 
 #### CodeSystem-Supplements
 
-CodeSystem-Supplements werden mit CRMI-Publishable-Metadaten veröffentlicht, aber derzeit nicht als CRMI ShareableCodeSystem deklariert. Das CRMI ShareableCodeSystem-Profil verlangt `CodeSystem.caseSensitive`, während die FHIR-Validierung warnt, dass Supplements `caseSensitive` nicht erneut angeben sollten, da dies dem supplementierten CodeSystem widersprechen könnte. Aus diesem Grund verwenden Supplement-CodeSystems in diesem IG das publishable CRMI-Profil und lassen das shareable CRMI-Profil aus.
+CodeSystem-Supplements werden mit CRMI-Publishable-Metadaten veröffentlicht, aber derzeit nicht als CRMI ShareableCodeSystem deklariert. Das CRMI ShareableCodeSystem-Profil verlangt `CodeSystem.caseSensitive`, während die FHIR-Validierung warnt, dass Supplements `caseSensitive` nicht erneut angeben sollen, da dies dem supplementierten CodeSystem widersprechen könnte. Aus diesem Grund verwenden Supplement-CodeSystems in diesem IG das publishable CRMI-Profil und lassen das shareable CRMI-Profil aus.
 
 ### Versionierung und Package-Provenance
 

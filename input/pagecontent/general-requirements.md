@@ -49,12 +49,12 @@ Requirements in this specification are indicated by the following keywords writt
       <td style="border: 1px solid #ddd; padding: 8px;">Required by specification</td>
     </tr>
     <tr style="background-color: #f9f9f9;">
-      <td style="border: 1px solid #ddd; padding: 8px;">SOLLTE / SOLLTEN</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">SOLL / SOLLEN</td>
       <td style="border: 1px solid #ddd; padding: 8px;">SHOULD</td>
       <td style="border: 1px solid #ddd; padding: 8px;">Recommended</td>
     </tr>
     <tr>
-      <td style="border: 1px solid #ddd; padding: 8px;">SOLLTE NICHT / SOLLTEN NICHT</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">SOLL NICHT / SOLLEN NICHT</td>
       <td style="border: 1px solid #ddd; padding: 8px;">SHOULD NOT</td>
       <td style="border: 1px solid #ddd; padding: 8px;">Not recommended</td>
     </tr>

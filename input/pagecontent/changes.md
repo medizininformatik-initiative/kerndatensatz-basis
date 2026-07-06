@@ -14,6 +14,7 @@ This page documents the changes and updates across versions of the MII Implement
 - **Added:** Metadata documentation describing the CRMI-based artifact metadata, versioning and package provenance, manifest parameters, and relationship to FAIR Data Maturity Indicators
 - **Added:** ImplementationGuide documentation now describes IG parameter settings and expansion parameters
 - **Changed:** Must Support flags are applied consistently to relevant sub-elements across profiles, and the [Must Support](must-support.html) documentation now clarifies how complex elements and their marked sub-elements define concrete Server and Client support expectations.
+- **Changed:** Improved German wording for conformance verbs and aligned English and German pages for consistent use of RFC 2119 conformance keywords.
 - **Changed:** Versioning documentation now clarifies the Calendar Versioning scheme as a SemVer-compatible `YYYY.MINOR.PATCH[-label]` format and documents that published artifacts use the same version as the IG package
 
 #### Terminology Updates
