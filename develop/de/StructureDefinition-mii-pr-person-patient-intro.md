@@ -17,7 +17,7 @@ Die Patienten-Identifikation verwendet je nach Kontext verschiedene Identifier-T
   - **WICHTIG**: Das Assigner-Element MUSS die IKNR (Institutionskennzeichen) der ausgebenden Institution enthalten
   - Repräsentiert stets die aktuelle Versicherungsnummer der PatientIn
   - Verwenden Sie als `Identifier.type` den Code `KVZ10` aus `http://fhir.de/CodeSystem/identifier-type-de-basis`
-  - Die Codes `GKV` und `PKV` haben den Status `retired` und sollten nicht verwendet werden
+  - Die Codes `GKV` und `PKV` haben den Status `retired` und **SOLLEN NICHT** verwendet werden
 
 - **`Patient.identifier:pid`**: Organisationsinterner Patienten-Identifier - die führende (MPI) ID der PatientIn
   - Eine Referenz auf die ausgebende Organization in `Patient.identifier:pid.assigner` ist EMPFOHLEN
@@ -38,7 +38,7 @@ Die Patienten-Identifikation verwendet je nach Kontext verschiedene Identifier-T
 
 Patientennamen folgen dem [Deutschen FHIR-Basis-Profil für den Datentyp HumanName]:
 
-- **Namensbestandteile**: Die Aufteilung des vollständigen Namens in seine Bestandteile (z.B. Vorsatzwort, Namenszusatz, Nachname) SOLLTE nur durchgeführt werden, falls diese Informationen explizit in dieser Granularität zur Verfügung stehen (z.B. durch einen direkten Import auf Basis eines VSDM-Datensatzes)
+- **Namensbestandteile**: Die Aufteilung des vollständigen Namens in seine Bestandteile (z.B. Vorsatzwort, Namenszusatz, Nachname) SOLL nur durchgeführt werden, falls diese Informationen explizit in dieser Granularität zur Verfügung stehen (z.B. durch einen direkten Import auf Basis eines VSDM-Datensatzes)
 - **Geburtsname**: Per allgemeiner Konvention enthält der Geburtsname (`name.use = maiden`) nur den Familiennamen
 - **Mehrere Namen**: Mehrere Namenseinträge sind für verschiedene Anwendungsfälle erlaubt (official, maiden, etc.)
 
@@ -53,14 +53,14 @@ Die Geschlechtsdokumentation folgt den Vorgaben der [Deutschen FHIR-Basis-Profil
 
 - **`Patient.birthDate`**: Vollständiges Geburtsdatum, wenn verfügbar. Siehe [Basisprofil - Geburtsdatum]
 - **`Patient.deceased[x]`**: 
-  - `deceasedBoolean` SOLLTE, wo möglich, durch `deceasedDateTime` ersetzt werden, wenn die PatientIn verstorben ist und der Zeitpunkt bekannt ist
+  - `deceasedBoolean` SOLL, wo möglich, durch `deceasedDateTime` ersetzt werden, wenn die PatientIn verstorben ist und der Zeitpunkt bekannt ist
 
 #### Adressinformationen
 
 Adressdetails folgen dem [Basisprofil - Adresse]:
 
 - **Mehrere Adressen**: Mehrere Adressen sind erlaubt
-- **Adressverlauf**: Systeme SOLLTEN ehemalige Adressen als solche kennzeichnen, sodass die aktuelle Adresse der PatientIn erkennbar ist
+- **Adressverlauf**: Systeme SOLLEN ehemalige Adressen als solche kennzeichnen, sodass die aktuelle Adresse der PatientIn erkennbar ist
 - **Adressbestandteile**: 
   - `address.line` mit Extensions für Straße, Hausnummer, Adresszusatz, Postfach
   - `address.city` mit Extension für Gemeindeschlüssel und Stadtteil (bei Stadtstaaten)

@@ -3,7 +3,7 @@ MII_IG_Base : Validation Results
 
 err = 1765, warn = 569, info = 2757
 IG Publisher Version: 2.2.10
-Generated Mon Jun 29 11:07:34 UTC 2026. FHIR version 4.0.1 for de.medizininformatikinitiative.kerndatensatz.base#2026.0.0 (canonical = https://www.medizininformatik-initiative.de/fhir/modul-base)
+Generated Mon Jul 06 14:33:30 UTC 2026. FHIR version 4.0.1 for de.medizininformatikinitiative.kerndatensatz.base#2026.0.0 (canonical = https://www.medizininformatik-initiative.de/fhir/modul-base)
  Build Errors : 0 / 4 / 2
  /workspace/fsh-generated/resources/Bundle-mii-exa-base-test-data-bundle-1 : 0 / 57 / 67
  /workspace/fsh-generated/resources/CapabilityStatement-mii-cps-diagnose-capabilitystatement : 2 / 2 / 49
@@ -674,7 +674,7 @@ ERROR: ImplementationGuide/mii-ig-base: ImplementationGuide.definition.page.page
 ERROR: ImplementationGuide/mii-ig-base: ImplementationGuide.definition.page.page[11].title.extension[0].extension[0].value.ofType(code): The System URI could not be determined for the code 'de' in the ValueSet 'http://hl7.org/fhir/ValueSet/all-languages|4.0.1'
 ERROR: ImplementationGuide/mii-ig-base: ImplementationGuide.definition.page.page[11].title.extension[0].extension[0].value.ofType(code): The value provided ('de') was not found in the value set 'All Languages' (http://hl7.org/fhir/ValueSet/all-languages|4.0.1), and a code is required from this value set  (error message = The System URI could not be determined for the code 'de' in the ValueSet 'http://hl7.org/fhir/ValueSet/all-languages|4.0.1'; The provided code '#de' was not found in the value set 'http://hl7.org/fhir/ValueSet/all-languages|4.0.1')
 WARNING: ImplementationGuide/mii-ig-base: ImplementationGuide.dependsOn[2]: The canonical URL http://fhir.org/packages/de.basisprofil.r4/ImplementationGuide/de.basisprofil.r4 doesn't point to an actual ImplementationGuide resource
-WARNING: ImplementationGuide/mii-ig-base: ImplementationGuide.dependsOn[5]: The ImplementationGuide uses package hl7.fhir.uv.crmi#2.0.0-ballot released on 2025-08-01, but the most recent appropriate version is 1.0.0. This reference is getting old and the more recent version should be considered
+WARNING: ImplementationGuide/mii-ig-base: ImplementationGuide.dependsOn[5]: The ImplementationGuide uses package hl7.fhir.uv.crmi#2.0.0-ballot released on 2025-08-01, but the most recent appropriate version is 2.0.0. This reference is getting old and the more recent version should be considered
 INFORMATION: ImplementationGuide/mii-ig-base: ImplementationGuide.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareableimplementationguide|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: ImplementationGuide/mii-ig-base: ImplementationGuide.extension[4]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareableimplementationguide|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: ImplementationGuide/mii-ig-base: ImplementationGuide.extension[5]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareableimplementationguide|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)

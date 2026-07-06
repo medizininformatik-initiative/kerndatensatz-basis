@@ -39,7 +39,7 @@ Das datenanfordernde System (Empfänger/Client) **MUSS** in der Lage sein:
 
 * Wenn Informationen zu einem bestimmten Datenelement nicht vorhanden sind und der Grund für das Fehlen unbekannt ist, **DÜRFEN** MII-Server das Datenelement **NICHT** in die als Teil der Abfrageergebnisse zurückgegebene Ressourceninstanz aufnehmen
 * Beim Abfragen von MII-Servern **MÜSSEN** MII-Clients fehlende Datenelemente innerhalb von Ressourceninstanzen als im System des MII-Servers nicht vorhandene Daten interpretieren
-* Wenn Informationen zu einem bestimmten Datenelement fehlen und der MII-Server den genauen Grund für das Fehlen der Daten kennt, **SOLLTEN** MII-Server den Grund für die fehlenden Informationen gemäß den Leitlinien im Abschnitt [Fehlende Daten](missing-data.md) senden
+* Wenn Informationen zu einem bestimmten Datenelement fehlen und der MII-Server den genauen Grund für das Fehlen der Daten kennt, **SOLLEN** MII-Server den Grund für die fehlenden Informationen gemäß den Leitlinien im Abschnitt [Fehlende Daten](missing-data.md) senden
 
 ### Darstellung von Must Support und verpflichtenden Elementen
 

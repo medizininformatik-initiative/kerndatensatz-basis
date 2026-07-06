@@ -29,7 +29,7 @@ Das pseudonymisierte Patientenprofil verwendet spezialisierte Identifier-Typen:
   - **`identifier.type.coding:mr`** (`MR`, optional): SOLL zusätzlich gesetzt werden, wenn das Pseudonym einen organisationsinternen Patienten-Identifier (Medical Record Number) ersetzt. Dies ermöglicht es Konsumenten, die pseudonymisierte Patientennummer standortübergreifend aufzufinden, ohne das standortspezifische `identifier.system` zu kennen. Siehe [Best Practice - Pseudonymisierter MR-Identifier](#best-practice---pseudonymisierter-mr-identifier) für Details.
 
 - **`Patient.identifier:anonymisierterIdentifier`**: Anonymisierter Identifier für die PatientIn
-  - **SOLLTE** nur verwendet werden, wenn keinerlei Rückschlüsse auf den originalen Datensatz möglich sind
+  - **SOLL** nur verwendet werden, wenn keinerlei Rückschlüsse auf den originalen Datensatz möglich sind
   - Repräsentiert irreversible Anonymisierung, bei der eine Re-Identifikation nicht möglich ist
 
 - **`Patient.identifier:maskierterVersichertenIdentifier`**: Maskierter Krankenversicherten-Identifier
@@ -48,7 +48,7 @@ Das pseudonymisierte Patientenprofil verwendet spezialisierte Identifier-Typen:
 
 <p>Das Setzen des <code>MR</code>-Codes wird empfohlen, da es Abfragen ermöglicht, pseudonymisierte Patientennummern standortübergreifend über einen stabilen, standortunabhängigen Typcode zu finden, ohne das proprietäre <code>identifier.system</code> des jeweiligen Standorts kennen zu müssen.</p>
 
-<p>Hinweis: <code>MR</code> beschreibt hier die funktionale Rolle des Identifiers (d.h. was er repräsentiert), nicht die Art des pseudonymen Wertes selbst. Pseudonyme, die keine Medical Record Number ersetzen (z.B. studiespezifische Pseudonyme), SOLLTEN NICHT den <code>MR</code>-Code tragen.</p>
+<p>Hinweis: <code>MR</code> beschreibt hier die funktionale Rolle des Identifiers (d.h. was er repräsentiert), nicht die Art des pseudonymen Wertes selbst. Pseudonyme, die keine Medical Record Number ersetzen (z.B. studiespezifische Pseudonyme), SOLLEN NICHT den <code>MR</code>-Code tragen.</p>
 
 <pre><code class="language-json">{
   "type": {

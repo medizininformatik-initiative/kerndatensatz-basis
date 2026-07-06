@@ -637,7 +637,7 @@ graph BT
 <div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
 <h5 style="color: #406A99; margin-top: 0;">Best Practice - Diagnose-Kontakt-Beziehungen</h5>
 
-<p>Die Referenz von <code>Encounter.diagnosis</code> zu <code>Condition</code> sollte verwendet werden, wenn die Condition eine spezifische Rolle während des Encounters hat (z.B. Hauptdiagnose, Nebendiagnose).</p>
+<p>Die Referenz von <code>Encounter.diagnosis</code> zu <code>Condition</code> <strong>SOLL</strong> verwendet werden, wenn die Condition eine spezifische Rolle während des Encounters hat (z.B. Hauptdiagnose, Nebendiagnose).</p>
 
 <p><strong>Empfohlene Implementierung:</strong></p>
 <p>Verwenden Sie <code>Condition.encounter</code>, um von der Condition auf den Encounter vom Typ <strong>Abteilungskontakt</strong> zu referenzieren. Dieser Ansatz etabliert den allgemeinen Kontaktkontext für die Diagnose, während <code>Encounter.diagnosis</code> verwendet werden kann, um bei Bedarf spezifische Diagnoserollen anzugeben.</p>
@@ -650,7 +650,7 @@ graph BT
 
 <p><strong>Beispiel:</strong> Wenn eine Condition sowohl als Diagnosetyp als auch als Diagnosesubtyp (oder zusätzliche Rollen wie CC/CM) dient, erstellen Sie separate <code>Encounter.diagnosis</code>-Referenzen für jede Rolle, die alle auf dieselbe Condition-Ressource verweisen. Eine einzelne Condition kann mehrfach mit unterschiedlichen <code>use</code>-Werten referenziert werden.</p>
 
-<p><strong>Hinweis zur CC/CM-Klassifikation:</strong> Wenn Sie eine Diagnose als CC (Komplikation oder Komorbidität) oder CM (Komorbidität) klassifizieren möchten, handelt es sich hierbei typischerweise um abrechnungsrelevante Informationen, die in der Account-Ressource und nicht in <code>Encounter.diagnosis</code> platziert werden sollten. Die Account-Ressource ist der geeignete Ort für Abrechnungsfallkontext und DRG-relevante Klassifikationen.</p>
+<p><strong>Hinweis zur CC/CM-Klassifikation:</strong> Wenn Sie eine Diagnose als CC (Komplikation oder Komorbidität) oder CM (Komorbidität) klassifizieren möchten, handelt es sich hierbei typischerweise um abrechnungsrelevante Informationen, die in der Account-Ressource und nicht in <code>Encounter.diagnosis</code> platziert werden <strong>SOLLEN</strong>. Die Account-Ressource ist der geeignete Ort für Abrechnungsfallkontext und DRG-relevante Klassifikationen.</p>
 </div>
 
 <h4 id="kontaktort">Kontaktort</h4>
@@ -698,11 +698,11 @@ graph BT
 
 <p>Jeder Slice schränkt <code class="language-plaintext highlighter-rouge">status = active</code> mit Kardinalität 0..1 ein. Eine konforme Implementierung DARF NICHT mehr als ein aktives Zimmer, ein aktives Bett oder eine aktive Station gleichzeitig innerhalb eines einzelnen Encounters befüllen.</p>
 
-<p>Da das Slicing <strong>offen</strong> ist, KÖNNEN Implementierungen zusätzliche <code class="language-plaintext highlighter-rouge">Encounter.location</code>-Einträge über diese drei benannten Slices hinaus aufnehmen. Um die Bewegungshistorie während eines Kontakts zu erfassen (z.B. frühere Stationen, Zimmer oder Betten, durch die der Patient verlegt wurde), SOLLTEN Implementierungen für diese Einträge <code class="language-plaintext highlighter-rouge">status = completed</code> verwenden. Damit wird die Verlaufshistorie klar von den Slices für aktive Orte getrennt, ohne mit diesen zu kollidieren.</p>
+<p>Da das Slicing <strong>offen</strong> ist, KÖNNEN Implementierungen zusätzliche <code class="language-plaintext highlighter-rouge">Encounter.location</code>-Einträge über diese drei benannten Slices hinaus aufnehmen. Um die Bewegungshistorie während eines Kontakts zu erfassen (z.B. frühere Stationen, Zimmer oder Betten, durch die der Patient verlegt wurde), SOLLEN Implementierungen für diese Einträge <code class="language-plaintext highlighter-rouge">status = completed</code> verwenden. Damit wird die Verlaufshistorie klar von den Slices für aktive Orte getrennt, ohne mit diesen zu kollidieren.</p>
 
 <h4 id="geplante-kontakte">Geplante Kontakte</h4>
 
-<p>Geplante Kontakte werden mit <code class="language-plaintext highlighter-rouge">Encounter.status = planned</code> abgebildet und SOLLTEN zusätzlich angeben:</p>
+<p>Geplante Kontakte werden mit <code class="language-plaintext highlighter-rouge">Encounter.status = planned</code> abgebildet und SOLLEN zusätzlich angeben:</p>
 <ul>
   <li><code class="language-plaintext highlighter-rouge">Encounter.extension:plannedStartDate</code> für das geplante Startdatum</li>
   <li><code class="language-plaintext highlighter-rouge">Encounter.extension:plannedEndDate</code> für das geplante Enddatum</li>
@@ -718,21 +718,21 @@ graph BT
 
 <h4 id="identifikation-von-kontakten">Identifikation von Kontakten</h4>
 
-<p>Jeder Encounter SOLLTE einen eindeutigen Identifier haben. Wenn Encounters in einer Hierarchie organisiert sind:</p>
+<p>Jeder Encounter SOLL einen eindeutigen Identifier haben. Wenn Encounters in einer Hierarchie organisiert sind:</p>
 <ul>
   <li>Stellen Sie die korrekte Encounter-Verlinkung über <code class="language-plaintext highlighter-rouge">Encounter.partOf</code> sicher</li>
-  <li>Jeder Encounter SOLLTE einen eigenständigen Identifier mit unterschiedlichen Systemen oder Werten enthalten</li>
+  <li>Jeder Encounter SOLL einen eigenständigen Identifier mit unterschiedlichen Systemen oder Werten enthalten</li>
 </ul>
 
 <p><strong>Abbildung der Fallnummer:</strong></p>
 
 <p>Die "Fallnummer" wird in der stationären Versorgung häufig verwendet, um den Fallkontext für die medizinische Dokumentation zu etablieren, insbesondere in der HL7 V2-Kommunikation.</p>
 
-<p>In den meisten Fällen ist die "Fallnummer" ein eindeutiger Identifier für den Abrechnungsfall (Account). Daher sollte die Fallnummer als Identifier des Accounts gesehen werden und ist nicht geeignet, um einen Encounter eindeutig zu identifizieren. Um den korrekten Encounter zu finden, müssen zusätzliche Kriterien wie Zeitraum (<code class="language-plaintext highlighter-rouge">Encounter.period</code>), Klasse (<code class="language-plaintext highlighter-rouge">Encounter.class</code>) oder Status (<code class="language-plaintext highlighter-rouge">Encounter.status</code>) berücksichtigt werden.</p>
+<p>In den meisten Fällen ist die "Fallnummer" ein eindeutiger Identifier für den Abrechnungsfall (Account). Daher soll die Fallnummer als Identifier des Accounts gesehen werden und ist nicht geeignet, um einen Encounter eindeutig zu identifizieren. Um den korrekten Encounter zu finden, müssen zusätzliche Kriterien wie Zeitraum (<code class="language-plaintext highlighter-rouge">Encounter.period</code>), Klasse (<code class="language-plaintext highlighter-rouge">Encounter.class</code>) oder Status (<code class="language-plaintext highlighter-rouge">Encounter.status</code>) berücksichtigt werden.</p>
 
 <p><strong>Frühere Empfehlung:</strong></p>
 
-<p>Früher wurde empfohlen, dass die Aufnahmenummer in allen Encounter-Ressourcen unabhängig von Kontaktebene und Kontakttyp angegeben werden sollte. Diese Empfehlung unterschied jedoch nicht klar zwischen Aufnahmenummer und Fallnummer.</p>
+<p>Früher wurde empfohlen, dass die Aufnahmenummer in allen Encounter-Ressourcen unabhängig von Kontaktebene und Kontakttyp angegeben werden soll. Diese Empfehlung unterschied jedoch nicht klar zwischen Aufnahmenummer und Fallnummer.</p>
 
 <div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
 <h5 style="color: #406A99; margin-top: 0;">Best Practice - Aufnahmenummer vs. Fallnummer</h5>
@@ -741,7 +741,7 @@ graph BT
 
 <p>Es ist wichtig zu unterscheiden zwischen:</p>
 <ul>
-  <li><strong>Aufnahmenummer:</strong> Ein eindeutiger Identifier, der einem Patienten bei der Aufnahmeplanung oder bei der Aufnahme selbst zugewiesen wird. Jeder Encounter <strong>SOLLTE</strong> seine eigene eindeutige Aufnahmenummer in <code>Encounter.identifier:Aufnahmenummer</code> haben, wo anwendbar.</li>
+  <li><strong>Aufnahmenummer:</strong> Ein eindeutiger Identifier, der einem Patienten bei der Aufnahmeplanung oder bei der Aufnahme selbst zugewiesen wird. Jeder Encounter <strong>SOLL</strong> seine eigene eindeutige Aufnahmenummer in <code>Encounter.identifier:Aufnahmenummer</code> haben, wo anwendbar.</li>
   <li><strong>Fallnummer:</strong> Identifiziert typischerweise den Abrechnungsfall (Account), nicht einzelne Encounters.</li>
 </ul>
 
@@ -760,7 +760,7 @@ graph BT
   <li>Benutzer im Versorgungskontext dennoch Encounter anhand der assoziierten Fallnummer suchen möchten</li>
 </ul>
 
-<p>Server <strong>SOLLTEN</strong> den Modifier <code>account:identifier</code> unterstützen, damit Clients alle zu einem Abrechnungsfall gehörenden Encounter anhand der Fallnummer abrufen können. Dieser Modifier ermöglicht eine tokenbasierte Suche auf der logischen Referenz in <code>Encounter.account.identifier</code>, ohne dass die Account-Ressource selbst vorhanden oder zugänglich sein muss.</p>
+<p>Server <strong>SOLLEN</strong> den Modifier <code>account:identifier</code> unterstützen, damit Clients alle zu einem Abrechnungsfall gehörenden Encounter anhand der Fallnummer abrufen können. Dieser Modifier ermöglicht eine tokenbasierte Suche auf der logischen Referenz in <code>Encounter.account.identifier</code>, ohne dass die Account-Ressource selbst vorhanden oder zugänglich sein muss.</p>
 
 <p><strong>Beispielanfrage</strong> zur Suche aller Encounter einer bestimmten Fallnummer:</p>
 <pre><code>GET [base]/Encounter?account:identifier=https://www.charite.de/fhir/sid/fallnummer|F-2020-000123</code></pre>
@@ -1857,7 +1857,7 @@ oder ein Abteilungskontakt Teil eines Einrichtungskontaktes ist." data-no-extern
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Literal reference, Relative, internal or absolute URL</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4acb4bb0-6524-4dc8-bd10-0980261fea59
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // cf768a05-b770-4b90-ab1f-764aeaf8bac0
 document.getElementById('cbmii-pr-fall-kontakt-gesundheitseinrichtungK-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-fall-kontakt-gesundheitseinrichtungK'), 'binding', document.getElementById('cbmii-pr-fall-kontakt-gesundheitseinrichtungK-binding').checked, document.getElementById('ppmii-pr-fall-kontakt-gesundheitseinrichtungK'));
 document.getElementById('cbmii-pr-fall-kontakt-gesundheitseinrichtungK-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -3024,7 +3024,7 @@ oder ein Abteilungskontakt Teil eines Einrichtungskontaktes ist." data-no-extern
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">1</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5; opacity: 0.5" href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">Literal reference, Relative, internal or absolute URL</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4acb4bb0-6524-4dc8-bd10-0980261fea59
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // cf768a05-b770-4b90-ab1f-764aeaf8bac0
 document.getElementById('cbmii-pr-fall-kontakt-gesundheitseinrichtungD-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-fall-kontakt-gesundheitseinrichtungD'), 'binding', document.getElementById('cbmii-pr-fall-kontakt-gesundheitseinrichtungD-binding').checked, document.getElementById('ppmii-pr-fall-kontakt-gesundheitseinrichtungD'));
 document.getElementById('cbmii-pr-fall-kontakt-gesundheitseinrichtungD-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -4972,7 +4972,7 @@ The type is the Canonical URL of Resource Definition that is the type this refer
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Text alternative for the resource</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4acb4bb0-6524-4dc8-bd10-0980261fea59
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // cf768a05-b770-4b90-ab1f-764aeaf8bac0
 document.getElementById('cbmii-pr-fall-kontakt-gesundheitseinrichtungS-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-fall-kontakt-gesundheitseinrichtungS'), 'binding', document.getElementById('cbmii-pr-fall-kontakt-gesundheitseinrichtungS-binding').checked, document.getElementById('ppmii-pr-fall-kontakt-gesundheitseinrichtungS'));
 document.getElementById('cbmii-pr-fall-kontakt-gesundheitseinrichtungS-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -7254,7 +7254,7 @@ oder ein Abteilungskontakt Teil eines Einrichtungskontaktes ist." data-no-extern
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Literal reference, Relative, internal or absolute URL</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4acb4bb0-6524-4dc8-bd10-0980261fea59
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // cf768a05-b770-4b90-ab1f-764aeaf8bac0
 document.getElementById('cbmii-pr-fall-kontakt-gesundheitseinrichtungKA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-fall-kontakt-gesundheitseinrichtungKA'), 'binding', document.getElementById('cbmii-pr-fall-kontakt-gesundheitseinrichtungKA-binding').checked, document.getElementById('ppmii-pr-fall-kontakt-gesundheitseinrichtungKA'));
 document.getElementById('cbmii-pr-fall-kontakt-gesundheitseinrichtungKA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -8420,7 +8420,7 @@ oder ein Abteilungskontakt Teil eines Einrichtungskontaktes ist." data-no-extern
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">1</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5; opacity: 0.5" href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">Literal reference, Relative, internal or absolute URL</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4acb4bb0-6524-4dc8-bd10-0980261fea59
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // cf768a05-b770-4b90-ab1f-764aeaf8bac0
 document.getElementById('cbmii-pr-fall-kontakt-gesundheitseinrichtungDA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-fall-kontakt-gesundheitseinrichtungDA'), 'binding', document.getElementById('cbmii-pr-fall-kontakt-gesundheitseinrichtungDA-binding').checked, document.getElementById('ppmii-pr-fall-kontakt-gesundheitseinrichtungDA'));
 document.getElementById('cbmii-pr-fall-kontakt-gesundheitseinrichtungDA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -10365,7 +10365,7 @@ The type is the Canonical URL of Resource Definition that is the type this refer
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Text alternative for the resource</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4acb4bb0-6524-4dc8-bd10-0980261fea59
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // cf768a05-b770-4b90-ab1f-764aeaf8bac0
 document.getElementById('cbmii-pr-fall-kontakt-gesundheitseinrichtungSA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-fall-kontakt-gesundheitseinrichtungSA'), 'binding', document.getElementById('cbmii-pr-fall-kontakt-gesundheitseinrichtungSA-binding').checked, document.getElementById('ppmii-pr-fall-kontakt-gesundheitseinrichtungSA'));
 document.getElementById('cbmii-pr-fall-kontakt-gesundheitseinrichtungSA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -11643,8 +11643,8 @@ Summary
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.base#2026.0.0 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Erstellt 
-  <span title="2026-06-29 10:59:00 +0000">
-    2026-06-29
+  <span title="2026-07-06 14:24:00 +0000">
+    2026-07-06
   </span>
 
           <br/>

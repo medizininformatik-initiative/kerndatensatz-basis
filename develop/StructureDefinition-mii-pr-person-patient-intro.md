@@ -17,7 +17,7 @@ Patient identification uses multiple identifier types depending on the context:
   - **IMPORTANT**: The Assigner element **MUST** contain the IKNR (Institutionskennzeichen) of the issuing institution
   - Always represents the current insurance number of the patient
   - Use `Identifier.type` code `KVZ10` from `http://fhir.de/CodeSystem/identifier-type-de-basis`
-  - Codes `GKV` and `PKV` have status `retired` and should not be used
+  - Codes `GKV` and `PKV` have status `retired` and **SHOULD NOT** be used
 
 - **`Patient.identifier:pid`**: Organisationsinterner Patienten-Identifier - the leading (MPI) ID of the patient
   - A reference to the issuing Organization in `Patient.identifier:pid.assigner` is **RECOMMENDED**

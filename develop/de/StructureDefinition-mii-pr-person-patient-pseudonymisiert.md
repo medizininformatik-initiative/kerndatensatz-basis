@@ -34,7 +34,7 @@ Das pseudonymisierte Patientenprofil verwendet spezialisierte Identifier-Typen:
 * **`identifier.type.coding:mr`** (`MR`, optional): SOLL zusätzlich gesetzt werden, wenn das Pseudonym einen organisationsinternen Patienten-Identifier (Medical Record Number) ersetzt. Dies ermöglicht es Konsumenten, die pseudonymisierte Patientennummer standortübergreifend aufzufinden, ohne das standortspezifische `identifier.system` zu kennen. Siehe [Best Practice - Pseudonymisierter MR-Identifier](#best-practice---pseudonymisierter-mr-identifier) für Details.
  
 * **`Patient.identifier:anonymisierterIdentifier`**: Anonymisierter Identifier für die PatientIn 
-* **SOLLTE** nur verwendet werden, wenn keinerlei Rückschlüsse auf den originalen Datensatz möglich sind
+* **SOLL** nur verwendet werden, wenn keinerlei Rückschlüsse auf den originalen Datensatz möglich sind
 * Repräsentiert irreversible Anonymisierung, bei der eine Re-Identifikation nicht möglich ist
  
 * **`Patient.identifier:maskierterVersichertenIdentifier`**: Maskierter Krankenversicherten-Identifier 
@@ -51,7 +51,7 @@ Wenn ein Pseudonym einen organisationsinternen Patienten-Identifier (Medical Rec
 
 Das Setzen des `MR`-Codes wird empfohlen, da es Abfragen ermöglicht, pseudonymisierte Patientennummern standortübergreifend über einen stabilen, standortunabhängigen Typcode zu finden, ohne das proprietäre `identifier.system` des jeweiligen Standorts kennen zu müssen.
 
-Hinweis: `MR` beschreibt hier die funktionale Rolle des Identifiers (d.h. was er repräsentiert), nicht die Art des pseudonymen Wertes selbst. Pseudonyme, die keine Medical Record Number ersetzen (z.B. studiespezifische Pseudonyme), SOLLTEN NICHT den `MR`-Code tragen.
+Hinweis: `MR` beschreibt hier die funktionale Rolle des Identifiers (d.h. was er repräsentiert), nicht die Art des pseudonymen Wertes selbst. Pseudonyme, die keine Medical Record Number ersetzen (z.B. studiespezifische Pseudonyme), SOLLEN NICHT den `MR`-Code tragen.
 
 ```
 {

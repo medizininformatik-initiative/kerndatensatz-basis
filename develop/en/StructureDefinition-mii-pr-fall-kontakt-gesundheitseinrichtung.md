@@ -137,7 +137,7 @@ The `Encounter.diagnosis` element establishes the relationship between encounter
 
 ##### Best Practice - Diagnosis-Encounter Relationships
 
-The reference from `Encounter.diagnosis` to `Condition` should be used when the Condition has a specific role during the Encounter (e.g., primary diagnosis, secondary diagnosis).
+The reference from `Encounter.diagnosis` to `Condition` **SHOULD** be used when the Condition has a specific role during the Encounter (e.g., primary diagnosis, secondary diagnosis).
 
 **Recommended Implementation:**
 
@@ -149,7 +149,7 @@ Since `Encounter.diagnosis.use` has cardinality 1..1, a diagnosis with multiple 
 
 **Example:** If a Condition serves as both a Diagnosetyp and a Diagnosesubtyp (or additional roles such as CC/CM), create separate `Encounter.diagnosis` references for each role, all pointing to the same Condition resource. A single Condition can be referenced multiple times with different `use` values.
 
-**Note on CC/CM Classification:** If you want to classify a diagnosis as CC (Complication or Comorbidity) or CM (Comorbidity), this is typically billing-related information and should be placed in the Account resource rather than in `Encounter.diagnosis`. The Account resource is the appropriate location for billing case context and DRG-relevant classifications.
+**Note on CC/CM Classification:** If you want to classify a diagnosis as CC (Complication or Comorbidity) or CM (Comorbidity), this is typically billing-related information and **SHOULD** be placed in the Account resource rather than in `Encounter.diagnosis`. The Account resource is the appropriate location for billing case context and DRG-relevant classifications.
 
 #### Encounter Location
 

@@ -35,7 +35,7 @@ This section provides detailed implementation guidance for the MII Vital Status 
 
 **Administrative Discharge:** Administrative discharge of a patient due to death **SHOULD** be documented (see Fall module - Entlassungsgrund/discharge disposition) and **CAN** serve as a useful data source for vital status.
 
-**Integration:** Systems should establish workflows to automatically create vital status observations when discharge disposition indicates death, ensuring consistency between administrative and clinical documentation.
+**Integration:** Systems **SHOULD** establish workflows to automatically create vital status observations when discharge disposition indicates death, ensuring consistency between administrative and clinical documentation.
 
 **Manual Research:** In cases where vital status is unclear, manual research may be necessary (contact attempts, public records). Document the information source appropriately in associated metadata (Provenance resource).
 

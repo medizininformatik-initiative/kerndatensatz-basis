@@ -637,7 +637,7 @@ graph BT
 <div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
 <h5 style="color: #406A99; margin-top: 0;">Best Practice - Diagnosis-Encounter Relationships</h5>
 
-<p>The reference from <code>Encounter.diagnosis</code> to <code>Condition</code> should be used when the Condition has a specific role during the Encounter (e.g., primary diagnosis, secondary diagnosis).</p>
+<p>The reference from <code>Encounter.diagnosis</code> to <code>Condition</code> <strong>SHOULD</strong> be used when the Condition has a specific role during the Encounter (e.g., primary diagnosis, secondary diagnosis).</p>
 
 <p><strong>Recommended Implementation:</strong></p>
 <p>Use <code>Condition.encounter</code> to reference from the Condition to the Encounter of type <strong>Abteilungskontakt (Department Contact)</strong>. This approach establishes the general encounter context for the diagnosis, while <code>Encounter.diagnosis</code> can be used to specify particular diagnosis roles when needed.</p>
@@ -650,7 +650,7 @@ graph BT
 
 <p><strong>Example:</strong> If a Condition serves as both a Diagnosetyp and a Diagnosesubtyp (or additional roles such as CC/CM), create separate <code>Encounter.diagnosis</code> references for each role, all pointing to the same Condition resource. A single Condition can be referenced multiple times with different <code>use</code> values.</p>
 
-<p><strong>Note on CC/CM Classification:</strong> If you want to classify a diagnosis as CC (Complication or Comorbidity) or CM (Comorbidity), this is typically billing-related information and should be placed in the Account resource rather than in <code>Encounter.diagnosis</code>. The Account resource is the appropriate location for billing case context and DRG-relevant classifications.</p>
+<p><strong>Note on CC/CM Classification:</strong> If you want to classify a diagnosis as CC (Complication or Comorbidity) or CM (Comorbidity), this is typically billing-related information and <strong>SHOULD</strong> be placed in the Account resource rather than in <code>Encounter.diagnosis</code>. The Account resource is the appropriate location for billing case context and DRG-relevant classifications.</p>
 </div>
 
 <h4 id="encounter-location">Encounter Location</h4>
@@ -1857,7 +1857,7 @@ oder ein Abteilungskontakt Teil eines Einrichtungskontaktes ist." data-no-extern
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Literal reference, Relative, internal or absolute URL</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4acb4bb0-6524-4dc8-bd10-0980261fea59
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // cf768a05-b770-4b90-ab1f-764aeaf8bac0
 document.getElementById('cbmii-pr-fall-kontakt-gesundheitseinrichtungK-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-fall-kontakt-gesundheitseinrichtungK'), 'binding', document.getElementById('cbmii-pr-fall-kontakt-gesundheitseinrichtungK-binding').checked, document.getElementById('ppmii-pr-fall-kontakt-gesundheitseinrichtungK'));
 document.getElementById('cbmii-pr-fall-kontakt-gesundheitseinrichtungK-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -3022,7 +3022,7 @@ oder ein Abteilungskontakt Teil eines Einrichtungskontaktes ist." data-no-extern
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">1</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5; opacity: 0.5" href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">Literal reference, Relative, internal or absolute URL</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4acb4bb0-6524-4dc8-bd10-0980261fea59
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // cf768a05-b770-4b90-ab1f-764aeaf8bac0
 document.getElementById('cbmii-pr-fall-kontakt-gesundheitseinrichtungD-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-fall-kontakt-gesundheitseinrichtungD'), 'binding', document.getElementById('cbmii-pr-fall-kontakt-gesundheitseinrichtungD-binding').checked, document.getElementById('ppmii-pr-fall-kontakt-gesundheitseinrichtungD'));
 document.getElementById('cbmii-pr-fall-kontakt-gesundheitseinrichtungD-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -4970,7 +4970,7 @@ The type is the Canonical URL of Resource Definition that is the type this refer
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Text alternative for the resource</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4acb4bb0-6524-4dc8-bd10-0980261fea59
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // cf768a05-b770-4b90-ab1f-764aeaf8bac0
 document.getElementById('cbmii-pr-fall-kontakt-gesundheitseinrichtungS-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-fall-kontakt-gesundheitseinrichtungS'), 'binding', document.getElementById('cbmii-pr-fall-kontakt-gesundheitseinrichtungS-binding').checked, document.getElementById('ppmii-pr-fall-kontakt-gesundheitseinrichtungS'));
 document.getElementById('cbmii-pr-fall-kontakt-gesundheitseinrichtungS-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -7250,7 +7250,7 @@ oder ein Abteilungskontakt Teil eines Einrichtungskontaktes ist." data-no-extern
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Literal reference, Relative, internal or absolute URL</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4acb4bb0-6524-4dc8-bd10-0980261fea59
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // cf768a05-b770-4b90-ab1f-764aeaf8bac0
 document.getElementById('cbmii-pr-fall-kontakt-gesundheitseinrichtungKA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-fall-kontakt-gesundheitseinrichtungKA'), 'binding', document.getElementById('cbmii-pr-fall-kontakt-gesundheitseinrichtungKA-binding').checked, document.getElementById('ppmii-pr-fall-kontakt-gesundheitseinrichtungKA'));
 document.getElementById('cbmii-pr-fall-kontakt-gesundheitseinrichtungKA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -8414,7 +8414,7 @@ oder ein Abteilungskontakt Teil eines Einrichtungskontaktes ist." data-no-extern
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">1</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5; opacity: 0.5" href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">Literal reference, Relative, internal or absolute URL</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4acb4bb0-6524-4dc8-bd10-0980261fea59
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // cf768a05-b770-4b90-ab1f-764aeaf8bac0
 document.getElementById('cbmii-pr-fall-kontakt-gesundheitseinrichtungDA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-fall-kontakt-gesundheitseinrichtungDA'), 'binding', document.getElementById('cbmii-pr-fall-kontakt-gesundheitseinrichtungDA-binding').checked, document.getElementById('ppmii-pr-fall-kontakt-gesundheitseinrichtungDA'));
 document.getElementById('cbmii-pr-fall-kontakt-gesundheitseinrichtungDA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -10359,7 +10359,7 @@ The type is the Canonical URL of Resource Definition that is the type this refer
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Text alternative for the resource</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4acb4bb0-6524-4dc8-bd10-0980261fea59
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // cf768a05-b770-4b90-ab1f-764aeaf8bac0
 document.getElementById('cbmii-pr-fall-kontakt-gesundheitseinrichtungSA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-fall-kontakt-gesundheitseinrichtungSA'), 'binding', document.getElementById('cbmii-pr-fall-kontakt-gesundheitseinrichtungSA-binding').checked, document.getElementById('ppmii-pr-fall-kontakt-gesundheitseinrichtungSA'));
 document.getElementById('cbmii-pr-fall-kontakt-gesundheitseinrichtungSA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -11635,8 +11635,8 @@ Summary
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.base#2026.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-06-29 10:59:00 +0000">
-    2026-06-29
+  <span title="2026-07-06 14:24:00 +0000">
+    2026-07-06
   </span>
 
           <br/>

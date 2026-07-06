@@ -302,6 +302,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Added:</strong> Metadaten-Dokumentation zu CRMI-basierten Artefaktmetadaten, Versionierung und Package-Provenance, Manifest-Parametern und zum Bezug zu FAIR Data Maturity Indicators ergänzt</li>
   <li><strong>Added:</strong> Die ImplementationGuide-Dokumentation beschreibt nun IG-Parametereinstellungen und Expansionsparameter</li>
   <li><strong>Changed:</strong> Must Support-Flags werden nun einheitlich auf relevante Unterelemente in allen Profilen angewendet, und die Dokumentation zu <a href="must-support.html">Must Support</a> beschreibt, wie komplexe Elemente und ihre markierten Unterelemente konkrete Erwartungen an die Server- und Client-Unterstützung definieren.</li>
+  <li><strong>Changed:</strong> Deutsche Formulierungen der Konformitätsverben verbessert und englische sowie deutsche Seiten für eine konsistente Verwendung der RFC-2119-Konformitätsverben abgeglichen.</li>
   <li><strong>Changed:</strong> Die Versionierungsdokumentation erläutert das Calendar-Versioning-Schema nun als SemVer-kompatibles Format <code class="language-plaintext highlighter-rouge">YYYY.MINOR.PATCH[-label]</code> und dokumentiert, dass veröffentlichte Artefakte dieselbe Version wie das IG-Package verwenden</li>
 </ul>
 
@@ -321,7 +322,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <ul>
   <li><strong>Added:</strong> Verwendung von <code class="language-plaintext highlighter-rouge">Encounter.location</code> in der Dokumentation erläutert. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-fall/issues/62">#62</a></li>
-  <li><strong>Added:</strong> Dokumentiert, dass Server den Modifier <code class="language-plaintext highlighter-rouge">account:identifier</code> unterstützen SOLLTEN, um die Suche aller zu einem Abrechnungsfall gehörenden Encounter anhand der Fallnummer zu ermöglichen. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/68">#68</a></li>
+  <li><strong>Added:</strong> Dokumentiert, dass Server den Modifier <code class="language-plaintext highlighter-rouge">account:identifier</code> unterstützen SOLLEN, um die Suche aller zu einem Abrechnungsfall gehörenden Encounter anhand der Fallnummer zu ermöglichen. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/68">#68</a></li>
   <li><strong>Removed:</strong> Selbst veröffentlichte R5-Backport-Extensions für geplante Encounter-Start- und Enddaten (zuvor <code class="language-plaintext highlighter-rouge">mii-ex-fall-planned-start-date</code> und <code class="language-plaintext highlighter-rouge">mii-ex-fall-planned-end-date</code>). Diese Extensions werden nun durch die offizielle <code class="language-plaintext highlighter-rouge">hl7.fhir.uv.xver-r5.r4</code>-Dependency bereitgestellt</li>
 </ul>
 
@@ -355,7 +356,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <ul>
   <li><strong>Changed:</strong> Aktualisierte Anleitung zur Verwendung von Condition.encounter zur Ausrichtung an gematik ISiK-Empfehlungen (Informationstechnische Systeme in Krankenhäusern)</li>
-  <li><strong>Changed:</strong> Condition.encounter SOLLTE nun auf einen Encounter der Ebene "Abteilungskontakt" referenzieren</li>
+  <li><strong>Changed:</strong> Condition.encounter SOLL nun auf einen Encounter der Ebene "Abteilungskontakt" referenzieren</li>
   <li><strong>Hinweis:</strong> Dies stellt eine Änderung gegenüber vorherigen Versionen dar, in denen Encounter.diagnosis die primäre Verknüpfungsmethode war</li>
 </ul>
 
@@ -364,8 +365,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ul>
   <li><strong>Changed:</strong> Aktualisierte Anleitung zum Abrechnungsfallkontext und Account-Referenzen basierend auf der gematik ISiK-Spezifikation</li>
   <li><strong>Changed:</strong> Erweiterte Dokumentation zur Unterscheidung zwischen Aufnahmenummer und Fallnummer</li>
-  <li><strong>Changed:</strong> Klargestellt, dass die Fallnummer den Abrechnungsfall (Account) identifiziert und als logische Referenz in <code class="language-plaintext highlighter-rouge">Encounter.account.identifier</code> angegeben werden sollte</li>
-  <li><strong>Changed:</strong> Jeder Encounter SOLLTE seine eigene eindeutige Aufnahmenummer in <code class="language-plaintext highlighter-rouge">Encounter.identifier:Aufnahmenummer</code> haben</li>
+  <li><strong>Changed:</strong> Klargestellt, dass die Fallnummer den Abrechnungsfall (Account) identifiziert und als logische Referenz in <code class="language-plaintext highlighter-rouge">Encounter.account.identifier</code> angegeben werden soll</li>
+  <li><strong>Changed:</strong> Jeder Encounter SOLL seine eigene eindeutige Aufnahmenummer in <code class="language-plaintext highlighter-rouge">Encounter.identifier:Aufnahmenummer</code> haben</li>
 </ul>
 
 <h4 id="modul-prozedur">Modul Prozedur</h4>
@@ -429,10 +430,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ul>
   <li><strong>Changed</strong>: Abhängigkeit von de.basisprofil.r4 auf Version 1.5.0 aktualisiert
     <ul>
-      <li>Dies ändert das <a href="StructureDefinition-mii-pr-person-patient.html">Patient</a>-Profil im Element <code class="language-plaintext highlighter-rouge">Patient.identifier</code>: Gesetzliche und private Krankenversicherungsnummern verwenden nun ein einheitliches Identifikatorprofil <a href="https://simplifier.net/packages/de.basisprofil.r4/1.5.0/files/2461154">IdentifierKvid10</a>. <code class="language-plaintext highlighter-rouge">Patient.identifier.type</code> MUSS für Krankenversicherungsnummern auf <code class="language-plaintext highlighter-rouge">KVZ10</code> geändert werden. Die zuvor verwendeten Codes <code class="language-plaintext highlighter-rouge">GKV</code> und <code class="language-plaintext highlighter-rouge">PKV</code> für <code class="language-plaintext highlighter-rouge">Patient.identifier.type</code> haben den Status <code class="language-plaintext highlighter-rouge">retired</code> (siehe <a href="https://simplifier.net/packages/de.basisprofil.r4/1.5.0/files/2461165">CodeSystem IdentifierTypeDeBasis</a>). Patient-Ressourcen aus Version 2024 bleiben gültig, SOLLTEN aber auf den neuen Identifikator umstellen</li>
+      <li>Dies ändert das <a href="StructureDefinition-mii-pr-person-patient.html">Patient</a>-Profil im Element <code class="language-plaintext highlighter-rouge">Patient.identifier</code>: Gesetzliche und private Krankenversicherungsnummern verwenden nun ein einheitliches Identifikatorprofil <a href="https://simplifier.net/packages/de.basisprofil.r4/1.5.0/files/2461154">IdentifierKvid10</a>. <code class="language-plaintext highlighter-rouge">Patient.identifier.type</code> MUSS für Krankenversicherungsnummern auf <code class="language-plaintext highlighter-rouge">KVZ10</code> geändert werden. Die zuvor verwendeten Codes <code class="language-plaintext highlighter-rouge">GKV</code> und <code class="language-plaintext highlighter-rouge">PKV</code> für <code class="language-plaintext highlighter-rouge">Patient.identifier.type</code> haben den Status <code class="language-plaintext highlighter-rouge">retired</code> (siehe <a href="https://simplifier.net/packages/de.basisprofil.r4/1.5.0/files/2461165">CodeSystem IdentifierTypeDeBasis</a>). Patient-Ressourcen aus Version 2024 bleiben gültig, SOLLEN aber auf den neuen Identifikator umstellen</li>
     </ul>
   </li>
-  <li><strong>Removed</strong>: Das ResearchSubject-Profil wurde <a href="http://hl7.org/fhir/R4/codesystem-publication-status.html#publication-status-retired">zurückgezogen</a>. Ab Version 2025.0.0 wird dieses Profil im Studien-Modul veröffentlicht und entwickelt. Implementierungen SOLLTEN auf die Modellierung aus dem Studien-Modul umstellen</li>
+  <li><strong>Removed</strong>: Das ResearchSubject-Profil wurde <a href="http://hl7.org/fhir/R4/codesystem-publication-status.html#publication-status-retired">zurückgezogen</a>. Ab Version 2025.0.0 wird dieses Profil im Studien-Modul veröffentlicht und entwickelt. Implementierungen SOLLEN auf die Modellierung aus dem Studien-Modul umstellen</li>
   <li><strong>Removed</strong>: CodeSystem ICD-10-WHO v2019 und v2016 wurden entfernt. Diese können nun über den MII-Terminologieservice (SU-TermServ) bezogen werden: https://www.ontoserver.mii-termserv.de/</li>
   <li><strong>Removed</strong>: Suchparameter aus diesem Modul wurden entfernt. SearchParameter-Ressourcen werden nun zentral im Meta-Modul verwaltet</li>
   <li><strong>Changed</strong>: Profile enthalten zusätzliche Beschreibungen und Übersetzungen für Implementierer und das Forschungsdatenportal Gesundheit (FDPG)</li>
@@ -615,8 +616,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.base#2026.0.0 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Erstellt 
-  <span title="2026-06-29 10:59:00 +0000">
-    2026-06-29
+  <span title="2026-07-06 14:24:00 +0000">
+    2026-07-06
   </span>
 
           <br/>

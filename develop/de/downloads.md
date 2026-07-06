@@ -11,7 +11,7 @@ Diese Seite bietet Links zu herunterladbaren Artefakten aus diesem Implementieru
 
 #### Paketdatei
 
-Die folgende Paketdatei enthält ein NPM-Paket, das von vielen FHIR-Tools verwendet wird. Sie enthält alle ValueSets, Profile, Extensions, Seiten und URLs im IG usw., die als Teil dieser Version des Implementierungsleitfadens definiert sind. Diese Datei **SOLLTE** die erste Wahl sein, wenn Implementierungsartefakte generiert werden, da sie alle Regeln enthält, die die Profile gültig machen. Implementierer müssen dennoch mit dem Spezifikationsinhalt und den anzuwendenden Profilen vertraut sein, um eine konforme Implementierung zu erstellen. Weitere Informationen finden Sie in der FHIR-Dokumentation zur [Validierung von Profilen und Ressourcen](http://hl7.org/fhir/R4/validation.html).
+Die folgende Paketdatei enthält ein NPM-Paket, das von vielen FHIR-Tools verwendet wird. Sie enthält alle ValueSets, Profile, Extensions, Seiten und URLs im IG usw., die als Teil dieser Version des Implementierungsleitfadens definiert sind. Diese Datei **SOLL** die erste Wahl sein, wenn Implementierungsartefakte generiert werden, da sie alle Regeln enthält, die die Profile gültig machen. Implementierer müssen dennoch mit dem Spezifikationsinhalt und den anzuwendenden Profilen vertraut sein, um eine konforme Implementierung zu erstellen. Weitere Informationen finden Sie in der FHIR-Dokumentation zur [Validierung von Profilen und Ressourcen](http://hl7.org/fhir/R4/validation.html).
 
 * [Paket (komprimierter Ordner)](../package.tgz)
 

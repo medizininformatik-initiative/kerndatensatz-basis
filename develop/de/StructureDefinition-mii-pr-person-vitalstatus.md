@@ -27,15 +27,15 @@ Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Vit
 
 **Häufigkeit der Dokumentation:**
 
-* Der Vitalstatus ("letzter bekannter Lebenszeitpunkt") **SOLLTE** mindestens bei jeder Aufnahme/Entlassung anlassbezogen als Observation erstellt werden
+* Der Vitalstatus ("letzter bekannter Lebenszeitpunkt") **SOLL** mindestens bei jeder Aufnahme/Entlassung anlassbezogen als Observation erstellt werden
 * Die Häufigkeit der Erhebung ist ansonsten nicht weiter geregelt und kann variieren
 * Die Quelldaten sind oft nur schwer zu erschließen und erfordern möglicherweise manuelle Recherche (z.B. Kontaktaufnahme, öffentliche Informationen wie Todesanzeigen)
 
 ##### Best Practice - Datenquellen für Vitalstatus
 
-**Administrative Entlassung:** Die administrative Entlassung der PatientIn aufgrund des Todes **SOLLTE** dokumentiert werden (siehe Modul Fall - Entlassungsgrund) und **KANN** als nützliche Datenquelle für den Vitalstatus dienen.
+**Administrative Entlassung:** Die administrative Entlassung der PatientIn aufgrund des Todes **SOLL** dokumentiert werden (siehe Modul Fall - Entlassungsgrund) und **KANN** als nützliche Datenquelle für den Vitalstatus dienen.
 
-**Integration:** Systeme sollten Workflows etablieren, um automatisch Vitalstatus-Observationen zu erstellen, wenn der Entlassungsgrund auf Tod hinweist, um Konsistenz zwischen administrativer und klinischer Dokumentation zu gewährleisten.
+**Integration:** Systeme **SOLLEN** Workflows etablieren, um automatisch Vitalstatus-Observationen zu erstellen, wenn der Entlassungsgrund auf Tod hinweist, um Konsistenz zwischen administrativer und klinischer Dokumentation zu gewährleisten.
 
 **Manuelle Recherche:** In Fällen, in denen der Vitalstatus unklar ist, kann manuelle Recherche notwendig sein (Kontaktversuche, öffentliche Aufzeichnungen). Dokumentieren Sie die Informationsquelle angemessen in zugehörigen Metadaten (Provenance-Ressource).
 

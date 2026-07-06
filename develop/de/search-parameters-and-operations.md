@@ -15,7 +15,7 @@ Der MII-Kerndatensatz nutzt sowohl Standard-FHIR-Suchparameter als auch benutzer
 
 **Standard-FHIR-Suchparameter**
 
-Alle in der FHIR R4-Spezifikation definierten Basis-FHIR-Suchparameter SOLLTEN von Implementierungen unterstützt werden. Details sind zu finden in der [FHIR Search-Spezifikation](http://hl7.org/fhir/R4/search.html).
+Alle in der FHIR R4-Spezifikation definierten Basis-FHIR-Suchparameter SOLLEN von Implementierungen unterstützt werden. Details sind zu finden in der [FHIR Search-Spezifikation](http://hl7.org/fhir/R4/search.html).
 
 **Modulspezifische Suchanforderungen**
 
@@ -33,7 +33,7 @@ Benutzerdefinierte SearchParameter-Ressourcen, die spezifisch für den MII-Kernd
 * **Simplifier-Projekt:** [MedizininformatikInitiative-Kerndatensatz](https://simplifier.net/MedizininformatikInitiative-Kerndatensatz)
 * **Zweck:** Spezialisierte Abfragen ermöglichen, die für Forschungsanwendungsfälle relevant sind
 
-Implementierer sollten das Meta-Modul auf benutzerdefinierte SearchParameter-Definitionen prüfen, die die Standard-FHIR-Suchfunktionen erweitern.
+Implementierer sollen das Meta-Modul auf benutzerdefinierte SearchParameter-Definitionen prüfen, die die Standard-FHIR-Suchfunktionen erweitern.
 
 #### Operationen
 

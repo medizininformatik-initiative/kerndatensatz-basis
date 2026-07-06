@@ -33,8 +33,8 @@ Requirements in this specification are indicated by the following keywords writt
 | MUSS / MÜSSEN | MUST / SHALL | Required, mandatory |
 | DARF NICHT / DÜRFEN NICHT | MUST NOT / SHALL NOT | Prohibited |
 | VERPFLICHTEND | REQUIRED | Required by specification |
-| SOLLTE / SOLLTEN | SHOULD | Recommended |
-| SOLLTE NICHT / SOLLTEN NICHT | SHOULD NOT | Not recommended |
+| SOLL / SOLLEN | SHOULD | Recommended |
+| SOLL NICHT / SOLLEN NICHT | SHOULD NOT | Not recommended |
 | EMPFOHLEN | RECOMMENDED | Recommended |
 | KANN / OPTIONAL | MAY | Optional |
 

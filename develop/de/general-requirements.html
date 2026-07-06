@@ -286,7 +286,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </ul>
 
 </div>
-<p>Diese Seite dokumentiert Anforderungen, die für alle MII-Akteure in diesem Leitfaden gelten. Die verwendeten Konformitätsverben - <strong>MUSS</strong>, <strong>SOLLTE</strong>, <strong>KANN</strong> - sind in den <a href="http://hl7.org/fhir/R4/conformance-rules.html#conflang">FHIR Conformance Rules</a> definiert.</p>
+<p>Diese Seite dokumentiert Anforderungen, die für alle MII-Akteure in diesem Leitfaden gelten. Die verwendeten Konformitätsverben - <strong>MUSS</strong>, <strong>SOLL</strong>, <strong>KANN</strong> - sind in den <a href="http://hl7.org/fhir/R4/conformance-rules.html#conflang">FHIR Conformance Rules</a> definiert.</p>
 
 <h3 id="mii-konformitätsartefakte">MII-Konformitätsartefakte</h3>
 
@@ -339,12 +339,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <td style="border: 1px solid #ddd; padding: 8px;">Durch Spezifikation erforderlich</td>
     </tr>
     <tr style="background-color: #f9f9f9;">
-      <td style="border: 1px solid #ddd; padding: 8px;">SOLLTE / SOLLTEN</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">SOLL / SOLLEN</td>
       <td style="border: 1px solid #ddd; padding: 8px;">SHOULD</td>
       <td style="border: 1px solid #ddd; padding: 8px;">Empfohlen</td>
     </tr>
     <tr>
-      <td style="border: 1px solid #ddd; padding: 8px;">SOLLTE NICHT / SOLLTEN NICHT</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">SOLL NICHT / SOLLEN NICHT</td>
       <td style="border: 1px solid #ddd; padding: 8px;">SHOULD NOT</td>
       <td style="border: 1px solid #ddd; padding: 8px;">Nicht empfohlen</td>
     </tr>
@@ -371,7 +371,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <ul>
   <li>Ein Server <strong>MUSS</strong> in der Lage sein, alle Profildatenelemente zu befüllen, die verpflichtend sind und als Must Support gekennzeichnet sind, wie in der StructureDefinition dieses Profils definiert</li>
-  <li>Ein Server <strong>SOLLTE</strong> die Unterstützung für ein MII-Profil deklarieren, indem er dessen offizielle URL im Element <code class="language-plaintext highlighter-rouge">CapabilityStatement.rest.resource.supportedProfile</code> des Servers einschließt
+  <li>Ein Server <strong>SOLL</strong> die Unterstützung für ein MII-Profil deklarieren, indem er dessen offizielle URL im Element <code class="language-plaintext highlighter-rouge">CapabilityStatement.rest.resource.supportedProfile</code> des Servers einschließt
     <ul>
       <li>Die offizielle oder "kanonische" URL des MII-Profils befindet sich auf jeder MII-Profilseite</li>
     </ul>
@@ -386,7 +386,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <ul>
   <li><strong>MUSS</strong> in der Lage sein, alle Profildatenelemente zu befüllen, die verpflichtend sind und/oder als Must Support gekennzeichnet sind, wie in der StructureDefinition dieses Profils definiert</li>
-  <li><strong>SOLLTE</strong> Konformität mit dem entsprechenden MII-CapabilityStatement deklarieren, indem er dessen offizielle URL im Element <code class="language-plaintext highlighter-rouge">CapabilityStatement.instantiates</code> des Servers einschließt</li>
+  <li><strong>SOLL</strong> Konformität mit dem entsprechenden MII-CapabilityStatement deklarieren, indem er dessen offizielle URL im Element <code class="language-plaintext highlighter-rouge">CapabilityStatement.instantiates</code> des Servers einschließt</li>
   <li><strong>MUSS</strong> die vollständigen Fähigkeitsdetails aus dem MII-CapabilityStatement spezifizieren, das er zu implementieren behauptet
     <ul>
       <li>Deklarieren Sie die Unterstützung für das MII-Profil, indem Sie dessen offizielle URL im Element <code class="language-plaintext highlighter-rouge">CapabilityStatement.rest.resource.supportedProfile</code> des Servers einschließen</li>
@@ -499,7 +499,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><code class="language-plaintext highlighter-rouge">Patient.active</code></li>
 </ul>
 
-<p>Implementierer <strong>SOLLTEN</strong> die Profilseiten sorgfältig überprüfen, um zu verstehen, welche Elemente Modifier sind und wie sie die Interpretation der Ressource beeinflussen.</p>
+<p>Implementierer <strong>SOLLEN</strong> die Profilseiten sorgfältig überprüfen, um zu verstehen, welche Elemente Modifier sind und wie sie die Interpretation der Ressource beeinflussen.</p>
 
 <hr />
 
@@ -510,6 +510,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><a href="missing-data.html">Fehlende Daten</a> - Leitfaden für den Umgang mit fehlenden Daten</li>
   <li><a href="capability-statements.html">CapabilityStatements</a> - Server- und Client-Fähigkeitsanforderungen</li>
 </ul>
+
 
 
 
@@ -538,8 +539,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.base#2026.0.0 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Erstellt 
-  <span title="2026-06-29 10:59:00 +0000">
-    2026-06-29
+  <span title="2026-07-06 14:24:00 +0000">
+    2026-07-06
   </span>
 
           <br/>

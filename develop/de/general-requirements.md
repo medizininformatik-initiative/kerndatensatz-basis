@@ -5,7 +5,7 @@
  
 Diese Seite enthält Übersetzungen aus der Originalsprache, in der der Leitfaden verfasst wurde. Informationen zu diesen Übersetzungen und Anweisungen zum Abgeben von Feedback zu den Übersetzungen finden Sie [hier](translationinfo.md). 
 
-Diese Seite dokumentiert Anforderungen, die für alle MII-Akteure in diesem Leitfaden gelten. Die verwendeten Konformitätsverben - **MUSS**, **SOLLTE**, **KANN** - sind in den [FHIR Conformance Rules](http://hl7.org/fhir/R4/conformance-rules.html#conflang) definiert.
+Diese Seite dokumentiert Anforderungen, die für alle MII-Akteure in diesem Leitfaden gelten. Die verwendeten Konformitätsverben - **MUSS**, **SOLL**, **KANN** - sind in den [FHIR Conformance Rules](http://hl7.org/fhir/R4/conformance-rules.html#conflang) definiert.
 
 ### MII-Konformitätsartefakte
 
@@ -36,8 +36,8 @@ Anforderungen in dieser Spezifikation werden durch die folgenden Schlüsselwört
 | MUSS / MÜSSEN | MUST / SHALL | Erforderlich, verpflichtend |
 | DARF NICHT / DÜRFEN NICHT | MUST NOT / SHALL NOT | Verboten |
 | VERPFLICHTEND | REQUIRED | Durch Spezifikation erforderlich |
-| SOLLTE / SOLLTEN | SHOULD | Empfohlen |
-| SOLLTE NICHT / SOLLTEN NICHT | SHOULD NOT | Nicht empfohlen |
+| SOLL / SOLLEN | SHOULD | Empfohlen |
+| SOLL NICHT / SOLLEN NICHT | SHOULD NOT | Nicht empfohlen |
 | EMPFOHLEN | RECOMMENDED | Empfohlen |
 | KANN / OPTIONAL | MAY | Optional |
 
@@ -50,7 +50,7 @@ Systeme können ein oder mehrere MII-Profile zur Repräsentation klinischer Info
 Um ein MII-Profil zu unterstützen:
 
 * Ein Server **MUSS** in der Lage sein, alle Profildatenelemente zu befüllen, die verpflichtend sind und als Must Support gekennzeichnet sind, wie in der StructureDefinition dieses Profils definiert
-* Ein Server **SOLLTE** die Unterstützung für ein MII-Profil deklarieren, indem er dessen offizielle URL im Element `CapabilityStatement.rest.resource.supportedProfile` des Servers einschließt 
+* Ein Server **SOLL** die Unterstützung für ein MII-Profil deklarieren, indem er dessen offizielle URL im Element `CapabilityStatement.rest.resource.supportedProfile` des Servers einschließt 
 * Die offizielle oder "kanonische" URL des MII-Profils befindet sich auf jeder MII-Profilseite
  
 
@@ -61,7 +61,7 @@ Systeme können ein oder mehrere MII-Profile zur Darstellung klinischer Informat
 Ein konformer Server:
 
 * **MUSS** in der Lage sein, alle Profildatenelemente zu befüllen, die verpflichtend sind und/oder als Must Support gekennzeichnet sind, wie in der StructureDefinition dieses Profils definiert
-* **SOLLTE** Konformität mit dem entsprechenden MII-CapabilityStatement deklarieren, indem er dessen offizielle URL im Element `CapabilityStatement.instantiates` des Servers einschließt
+* **SOLL** Konformität mit dem entsprechenden MII-CapabilityStatement deklarieren, indem er dessen offizielle URL im Element `CapabilityStatement.instantiates` des Servers einschließt
 * **MUSS** die vollständigen Fähigkeitsdetails aus dem MII-CapabilityStatement spezifizieren, das er zu implementieren behauptet 
 * Deklarieren Sie die Unterstützung für das MII-Profil, indem Sie dessen offizielle URL im Element `CapabilityStatement.rest.resource.supportedProfile` des Servers einschließen
 * Deklarieren Sie die Unterstützung für die FHIR-RESTful-Transaktionen des MII-Profils
@@ -155,7 +155,7 @@ Einige Beispiele für Modifier, die in MII-Profilen möglicherweise keine Must S
 * `Observation.valueQuantity.comparator`
 * `Patient.active`
 
-Implementierer **SOLLTEN** die Profilseiten sorgfältig überprüfen, um zu verstehen, welche Elemente Modifier sind und wie sie die Interpretation der Ressource beeinflussen.
+Implementierer **SOLLEN** die Profilseiten sorgfältig überprüfen, um zu verstehen, welche Elemente Modifier sind und wie sie die Interpretation der Ressource beeinflussen.
 
 -------
 

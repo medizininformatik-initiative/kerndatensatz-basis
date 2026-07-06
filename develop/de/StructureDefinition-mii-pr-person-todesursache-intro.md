@@ -39,6 +39,6 @@ Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Tod
 **Patientenbezug:**
 - **`Condition.subject`**: Referenz auf Patient **MUSS** stets gegeben sein
 - Die Todesursache ist inhärent patientenspezifisch und kann ohne diese Referenz nicht existieren
-- Die referenzierte PatientIn **SOLLTE** `Patient.deceased[x]` ausgefüllt haben, um den Tod anzuzeigen
+- Die referenzierte PatientIn **SOLL** `Patient.deceased[x]` ausgefüllt haben, um den Tod anzuzeigen
 
 {% include link-list.md %}

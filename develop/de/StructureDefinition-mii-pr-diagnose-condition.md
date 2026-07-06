@@ -34,7 +34,7 @@ Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Dia
 
 ##### Best Practice - ICD-10-GM-Extensions und Sonderzeichen
 
-**Trennung von Sonderzeichen:** Das Element `Condition.code.coding.where(system='http://fhir.de/CodeSystem/bfarm/icd-10-gm').code` **SOLLTE NICHT** ein Mehrfachkodierungskennzeichen oder Zusatzkennzeichen (z.B. Seitenlokalisation oder Diagnosesicherheit) enthalten.
+**Trennung von Sonderzeichen:** Das Element `Condition.code.coding.where(system='http://fhir.de/CodeSystem/bfarm/icd-10-gm').code` **SOLL NICHT** ein Mehrfachkodierungskennzeichen oder Zusatzkennzeichen (z.B. Seitenlokalisation oder Diagnosesicherheit) enthalten.
 
 **Verwendung von Extensions:**
 
@@ -84,7 +84,7 @@ Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Dia
 
 **Aktuelle Empfehlung - Condition.encounter:**
 
-* **Ebene Abteilungskontakt:** Die Zuordnung **SOLLTE** auf einen Encounter der Ebene "Abteilungskontakt" erfolgen
+* **Ebene Abteilungskontakt:** Die Zuordnung **SOLL** auf einen Encounter der Ebene "Abteilungskontakt" erfolgen
 * Bei der Auswahl des Encounters ist zu beachten, dass unter einer (Abrechnungs-)"Fallnummer" (hier: `Encounter.account`) unter Umständen mehrere Encounter gruppiert sein können (z.B. stationärer Besuch mit mehreren vor- und nachstationären Aufenthalten)
 
 #### Zeitliche Informationen

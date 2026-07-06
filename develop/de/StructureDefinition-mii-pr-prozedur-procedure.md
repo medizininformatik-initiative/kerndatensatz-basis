@@ -48,7 +48,7 @@ Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Pro
 
 **Verpflichtende Kategorisierung:** `Procedure.category` SNOMED-CT-Kategorisierung auf Basis des Prozedurenkodes.
 
-**Mapping von OPS-Klassentiteln:** Wenn die Prozedur per OPS kodiert wird, **SOLLTE** die Kategorie durch Mapping von OPS-Kapitel-/Klassentiteln auf SNOMED-CT-Konzepte abgeleitet werden. Siehe Abschnitt Terminologien in diesem IG für OPS-zu-SNOMED-CT-Kategorie-Mappings.
+**Mapping von OPS-Klassentiteln:** Wenn die Prozedur per OPS kodiert wird, **SOLL** die Kategorie durch Mapping von OPS-Kapitel-/Klassentiteln auf SNOMED-CT-Konzepte abgeleitet werden. Siehe Abschnitt Terminologien in diesem IG für OPS-zu-SNOMED-CT-Kategorie-Mappings.
 
 **Constraint proc-mii-1:** Diese Anforderung ist nur relevant, wenn die Prozedur per OPS kodiert wird.
 
@@ -80,7 +80,7 @@ Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Pro
 
 **Zweck von bodySite:** `Procedure.bodySite` bietet detaillierte Kodierung der anatomischen Lokalisation für die Prozedur mittels SNOMED CT.
 
-**NICHT für Seitenlokalisation:** `Procedure.bodySite` **SOLLTE NICHT** verwendet werden, um die Seitenlokalisation (links/rechts/beidseitig) abzubilden. Die Seitenlokalisation ist eine Eigenschaft des Prozedurenkodes selbst.
+**NICHT für Seitenlokalisation:** `Procedure.bodySite` **SOLL NICHT** verwendet werden, um die Seitenlokalisation (links/rechts/beidseitig) abzubilden. Die Seitenlokalisation ist eine Eigenschaft des Prozedurenkodes selbst.
 
 **Darstellung der Seitenlokalisation:**
 

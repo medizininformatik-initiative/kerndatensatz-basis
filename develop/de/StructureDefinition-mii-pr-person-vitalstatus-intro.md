@@ -18,16 +18,16 @@ Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Vit
 - Jede Instanz repräsentiert eine zeitpunktbezogene Aussage über den Vitalstatus der PatientIn
 
 **Häufigkeit der Dokumentation:**
-- Der Vitalstatus ("letzter bekannter Lebenszeitpunkt") **SOLLTE** mindestens bei jeder Aufnahme/Entlassung anlassbezogen als Observation erstellt werden
+- Der Vitalstatus ("letzter bekannter Lebenszeitpunkt") **SOLL** mindestens bei jeder Aufnahme/Entlassung anlassbezogen als Observation erstellt werden
 - Die Häufigkeit der Erhebung ist ansonsten nicht weiter geregelt und kann variieren
 - Die Quelldaten sind oft nur schwer zu erschließen und erfordern möglicherweise manuelle Recherche (z.B. Kontaktaufnahme, öffentliche Informationen wie Todesanzeigen)
 
 <div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
 <h5 style="color: #406A99; margin-top: 0;">Best Practice - Datenquellen für Vitalstatus</h5>
 
-<p><strong>Administrative Entlassung:</strong> Die administrative Entlassung der PatientIn aufgrund des Todes <strong>SOLLTE</strong> dokumentiert werden (siehe Modul Fall - Entlassungsgrund) und <strong>KANN</strong> als nützliche Datenquelle für den Vitalstatus dienen.</p>
+<p><strong>Administrative Entlassung:</strong> Die administrative Entlassung der PatientIn aufgrund des Todes <strong>SOLL</strong> dokumentiert werden (siehe Modul Fall - Entlassungsgrund) und <strong>KANN</strong> als nützliche Datenquelle für den Vitalstatus dienen.</p>
 
-<p><strong>Integration:</strong> Systeme sollten Workflows etablieren, um automatisch Vitalstatus-Observationen zu erstellen, wenn der Entlassungsgrund auf Tod hinweist, um Konsistenz zwischen administrativer und klinischer Dokumentation zu gewährleisten.</p>
+<p><strong>Integration:</strong> Systeme <strong>SOLLEN</strong> Workflows etablieren, um automatisch Vitalstatus-Observationen zu erstellen, wenn der Entlassungsgrund auf Tod hinweist, um Konsistenz zwischen administrativer und klinischer Dokumentation zu gewährleisten.</p>
 
 <p><strong>Manuelle Recherche:</strong> In Fällen, in denen der Vitalstatus unklar ist, kann manuelle Recherche notwendig sein (Kontaktversuche, öffentliche Aufzeichnungen). Dokumentieren Sie die Informationsquelle angemessen in zugehörigen Metadaten (Provenance-Ressource).</p>
 </div>

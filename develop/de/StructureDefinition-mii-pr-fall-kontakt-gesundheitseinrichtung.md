@@ -137,7 +137,7 @@ Das Element `Encounter.diagnosis` stellt die Beziehung zwischen Kontakten und Di
 
 ##### Best Practice - Diagnose-Kontakt-Beziehungen
 
-Die Referenz von `Encounter.diagnosis` zu `Condition` sollte verwendet werden, wenn die Condition eine spezifische Rolle während des Encounters hat (z.B. Hauptdiagnose, Nebendiagnose).
+Die Referenz von `Encounter.diagnosis` zu `Condition` **SOLL** verwendet werden, wenn die Condition eine spezifische Rolle während des Encounters hat (z.B. Hauptdiagnose, Nebendiagnose).
 
 **Empfohlene Implementierung:**
 
@@ -149,7 +149,7 @@ Da `Encounter.diagnosis.use` die Kardinalität 1..1 hat, benötigt eine Diagnose
 
 **Beispiel:** Wenn eine Condition sowohl als Diagnosetyp als auch als Diagnosesubtyp (oder zusätzliche Rollen wie CC/CM) dient, erstellen Sie separate `Encounter.diagnosis`-Referenzen für jede Rolle, die alle auf dieselbe Condition-Ressource verweisen. Eine einzelne Condition kann mehrfach mit unterschiedlichen `use`-Werten referenziert werden.
 
-**Hinweis zur CC/CM-Klassifikation:** Wenn Sie eine Diagnose als CC (Komplikation oder Komorbidität) oder CM (Komorbidität) klassifizieren möchten, handelt es sich hierbei typischerweise um abrechnungsrelevante Informationen, die in der Account-Ressource und nicht in `Encounter.diagnosis` platziert werden sollten. Die Account-Ressource ist der geeignete Ort für Abrechnungsfallkontext und DRG-relevante Klassifikationen.
+**Hinweis zur CC/CM-Klassifikation:** Wenn Sie eine Diagnose als CC (Komplikation oder Komorbidität) oder CM (Komorbidität) klassifizieren möchten, handelt es sich hierbei typischerweise um abrechnungsrelevante Informationen, die in der Account-Ressource und nicht in `Encounter.diagnosis` platziert werden **SOLLEN**. Die Account-Ressource ist der geeignete Ort für Abrechnungsfallkontext und DRG-relevante Klassifikationen.
 
 #### Kontaktort
 
@@ -169,11 +169,11 @@ Da `Encounter.diagnosis.use` die Kardinalität 1..1 hat, benötigt eine Diagnose
 
 Jeder Slice schränkt `status = active` mit Kardinalität 0..1 ein. Eine konforme Implementierung DARF NICHT mehr als ein aktives Zimmer, ein aktives Bett oder eine aktive Station gleichzeitig innerhalb eines einzelnen Encounters befüllen.
 
-Da das Slicing **offen** ist, KÖNNEN Implementierungen zusätzliche `Encounter.location`-Einträge über diese drei benannten Slices hinaus aufnehmen. Um die Bewegungshistorie während eines Kontakts zu erfassen (z.B. frühere Stationen, Zimmer oder Betten, durch die der Patient verlegt wurde), SOLLTEN Implementierungen für diese Einträge `status = completed` verwenden. Damit wird die Verlaufshistorie klar von den Slices für aktive Orte getrennt, ohne mit diesen zu kollidieren.
+Da das Slicing **offen** ist, KÖNNEN Implementierungen zusätzliche `Encounter.location`-Einträge über diese drei benannten Slices hinaus aufnehmen. Um die Bewegungshistorie während eines Kontakts zu erfassen (z.B. frühere Stationen, Zimmer oder Betten, durch die der Patient verlegt wurde), SOLLEN Implementierungen für diese Einträge `status = completed` verwenden. Damit wird die Verlaufshistorie klar von den Slices für aktive Orte getrennt, ohne mit diesen zu kollidieren.
 
 #### Geplante Kontakte
 
-Geplante Kontakte werden mit `Encounter.status = planned` abgebildet und SOLLTEN zusätzlich angeben:
+Geplante Kontakte werden mit `Encounter.status = planned` abgebildet und SOLLEN zusätzlich angeben:
 
 * `Encounter.extension:plannedStartDate` für das geplante Startdatum
 * `Encounter.extension:plannedEndDate` für das geplante Enddatum
@@ -186,20 +186,20 @@ Geplante Kontakte werden mit `Encounter.status = planned` abgebildet und SOLLTEN
 
 #### Identifikation von Kontakten
 
-Jeder Encounter SOLLTE einen eindeutigen Identifier haben. Wenn Encounters in einer Hierarchie organisiert sind:
+Jeder Encounter SOLL einen eindeutigen Identifier haben. Wenn Encounters in einer Hierarchie organisiert sind:
 
 * Stellen Sie die korrekte Encounter-Verlinkung über `Encounter.partOf` sicher
-* Jeder Encounter SOLLTE einen eigenständigen Identifier mit unterschiedlichen Systemen oder Werten enthalten
+* Jeder Encounter SOLL einen eigenständigen Identifier mit unterschiedlichen Systemen oder Werten enthalten
 
 **Abbildung der Fallnummer:**
 
 Die "Fallnummer" wird in der stationären Versorgung häufig verwendet, um den Fallkontext für die medizinische Dokumentation zu etablieren, insbesondere in der HL7 V2-Kommunikation.
 
-In den meisten Fällen ist die "Fallnummer" ein eindeutiger Identifier für den Abrechnungsfall (Account). Daher sollte die Fallnummer als Identifier des Accounts gesehen werden und ist nicht geeignet, um einen Encounter eindeutig zu identifizieren. Um den korrekten Encounter zu finden, müssen zusätzliche Kriterien wie Zeitraum (`Encounter.period`), Klasse (`Encounter.class`) oder Status (`Encounter.status`) berücksichtigt werden.
+In den meisten Fällen ist die "Fallnummer" ein eindeutiger Identifier für den Abrechnungsfall (Account). Daher soll die Fallnummer als Identifier des Accounts gesehen werden und ist nicht geeignet, um einen Encounter eindeutig zu identifizieren. Um den korrekten Encounter zu finden, müssen zusätzliche Kriterien wie Zeitraum (`Encounter.period`), Klasse (`Encounter.class`) oder Status (`Encounter.status`) berücksichtigt werden.
 
 **Frühere Empfehlung:**
 
-Früher wurde empfohlen, dass die Aufnahmenummer in allen Encounter-Ressourcen unabhängig von Kontaktebene und Kontakttyp angegeben werden sollte. Diese Empfehlung unterschied jedoch nicht klar zwischen Aufnahmenummer und Fallnummer.
+Früher wurde empfohlen, dass die Aufnahmenummer in allen Encounter-Ressourcen unabhängig von Kontaktebene und Kontakttyp angegeben werden soll. Diese Empfehlung unterschied jedoch nicht klar zwischen Aufnahmenummer und Fallnummer.
 
 ##### Best Practice - Aufnahmenummer vs. Fallnummer
 
@@ -207,7 +207,7 @@ Früher wurde empfohlen, dass die Aufnahmenummer in allen Encounter-Ressourcen u
 
 Es ist wichtig zu unterscheiden zwischen:
 
-* **Aufnahmenummer:** Ein eindeutiger Identifier, der einem Patienten bei der Aufnahmeplanung oder bei der Aufnahme selbst zugewiesen wird. Jeder Encounter **SOLLTE** seine eigene eindeutige Aufnahmenummer in `Encounter.identifier:Aufnahmenummer` haben, wo anwendbar.
+* **Aufnahmenummer:** Ein eindeutiger Identifier, der einem Patienten bei der Aufnahmeplanung oder bei der Aufnahme selbst zugewiesen wird. Jeder Encounter **SOLL** seine eigene eindeutige Aufnahmenummer in `Encounter.identifier:Aufnahmenummer` haben, wo anwendbar.
 * **Fallnummer:** Identifiziert typischerweise den Abrechnungsfall (Account), nicht einzelne Encounters.
 
 **Account-Referenzen und Abrechnungskontext:**
@@ -226,7 +226,7 @@ Da die Fallnummer ein häufig verwendetes Suchkriterium darstellt, ist diese als
 * Einzelne Benutzer keine Sichtberechtigung auf Abrechnungsdaten haben
 * Benutzer im Versorgungskontext dennoch Encounter anhand der assoziierten Fallnummer suchen möchten
 
-Server **SOLLTEN** den Modifier `account:identifier` unterstützen, damit Clients alle zu einem Abrechnungsfall gehörenden Encounter anhand der Fallnummer abrufen können. Dieser Modifier ermöglicht eine tokenbasierte Suche auf der logischen Referenz in `Encounter.account.identifier`, ohne dass die Account-Ressource selbst vorhanden oder zugänglich sein muss.
+Server **SOLLEN** den Modifier `account:identifier` unterstützen, damit Clients alle zu einem Abrechnungsfall gehörenden Encounter anhand der Fallnummer abrufen können. Dieser Modifier ermöglicht eine tokenbasierte Suche auf der logischen Referenz in `Encounter.account.identifier`, ohne dass die Account-Ressource selbst vorhanden oder zugänglich sein muss.
 
 **Beispielanfrage** zur Suche aller Encounter einer bestimmten Fallnummer:
 

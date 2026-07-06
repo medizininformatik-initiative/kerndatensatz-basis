@@ -21,6 +21,7 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 * **Added:** Metadaten-Dokumentation zu CRMI-basierten Artefaktmetadaten, Versionierung und Package-Provenance, Manifest-Parametern und zum Bezug zu FAIR Data Maturity Indicators ergänzt
 * **Added:** Die ImplementationGuide-Dokumentation beschreibt nun IG-Parametereinstellungen und Expansionsparameter
 * **Changed:** Must Support-Flags werden nun einheitlich auf relevante Unterelemente in allen Profilen angewendet, und die Dokumentation zu [Must Support](must-support.md) beschreibt, wie komplexe Elemente und ihre markierten Unterelemente konkrete Erwartungen an die Server- und Client-Unterstützung definieren.
+* **Changed:** Deutsche Formulierungen der Konformitätsverben verbessert und englische sowie deutsche Seiten für eine konsistente Verwendung der RFC-2119-Konformitätsverben abgeglichen.
 * **Changed:** Die Versionierungsdokumentation erläutert das Calendar-Versioning-Schema nun als SemVer-kompatibles Format `YYYY.MINOR.PATCH[-label]` und dokumentiert, dass veröffentlichte Artefakte dieselbe Version wie das IG-Package verwenden
 
 #### Terminologie-Updates
@@ -34,7 +35,7 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 #### Modul Fall
 
 * **Added:** Verwendung von `Encounter.location` in der Dokumentation erläutert. Siehe: [#62](https://github.com/medizininformatik-initiative/kerndatensatzmodul-fall/issues/62)
-* **Added:** Dokumentiert, dass Server den Modifier `account:identifier` unterstützen SOLLTEN, um die Suche aller zu einem Abrechnungsfall gehörenden Encounter anhand der Fallnummer zu ermöglichen. Siehe: [#68](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/68)
+* **Added:** Dokumentiert, dass Server den Modifier `account:identifier` unterstützen SOLLEN, um die Suche aller zu einem Abrechnungsfall gehörenden Encounter anhand der Fallnummer zu ermöglichen. Siehe: [#68](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/68)
 * **Removed:** Selbst veröffentlichte R5-Backport-Extensions für geplante Encounter-Start- und Enddaten (zuvor `mii-ex-fall-planned-start-date` und `mii-ex-fall-planned-end-date`). Diese Extensions werden nun durch die offizielle `hl7.fhir.uv.xver-r5.r4`-Dependency bereitgestellt
 
 -------
@@ -60,15 +61,15 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 #### Modul Diagnose
 
 * **Changed:** Aktualisierte Anleitung zur Verwendung von Condition.encounter zur Ausrichtung an gematik ISiK-Empfehlungen (Informationstechnische Systeme in Krankenhäusern)
-* **Changed:** Condition.encounter SOLLTE nun auf einen Encounter der Ebene "Abteilungskontakt" referenzieren
+* **Changed:** Condition.encounter SOLL nun auf einen Encounter der Ebene "Abteilungskontakt" referenzieren
 * **Hinweis:** Dies stellt eine Änderung gegenüber vorherigen Versionen dar, in denen Encounter.diagnosis die primäre Verknüpfungsmethode war
 
 #### Modul Fall
 
 * **Changed:** Aktualisierte Anleitung zum Abrechnungsfallkontext und Account-Referenzen basierend auf der gematik ISiK-Spezifikation
 * **Changed:** Erweiterte Dokumentation zur Unterscheidung zwischen Aufnahmenummer und Fallnummer
-* **Changed:** Klargestellt, dass die Fallnummer den Abrechnungsfall (Account) identifiziert und als logische Referenz in `Encounter.account.identifier` angegeben werden sollte
-* **Changed:** Jeder Encounter SOLLTE seine eigene eindeutige Aufnahmenummer in `Encounter.identifier:Aufnahmenummer` haben
+* **Changed:** Klargestellt, dass die Fallnummer den Abrechnungsfall (Account) identifiziert und als logische Referenz in `Encounter.account.identifier` angegeben werden soll
+* **Changed:** Jeder Encounter SOLL seine eigene eindeutige Aufnahmenummer in `Encounter.identifier:Aufnahmenummer` haben
 
 #### Modul Prozedur
 
@@ -122,9 +123,9 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 **Datum:** 06.12.2024
 
 * **Changed**: Abhängigkeit von de.basisprofil.r4 auf Version 1.5.0 aktualisiert 
-* Dies ändert das [Patient](StructureDefinition-mii-pr-person-patient.md)-Profil im Element `Patient.identifier`: Gesetzliche und private Krankenversicherungsnummern verwenden nun ein einheitliches Identifikatorprofil [IdentifierKvid10](https://simplifier.net/packages/de.basisprofil.r4/1.5.0/files/2461154). `Patient.identifier.type` MUSS für Krankenversicherungsnummern auf `KVZ10` geändert werden. Die zuvor verwendeten Codes `GKV` und `PKV` für `Patient.identifier.type` haben den Status `retired` (siehe [CodeSystem IdentifierTypeDeBasis](https://simplifier.net/packages/de.basisprofil.r4/1.5.0/files/2461165)). Patient-Ressourcen aus Version 2024 bleiben gültig, SOLLTEN aber auf den neuen Identifikator umstellen
+* Dies ändert das [Patient](StructureDefinition-mii-pr-person-patient.md)-Profil im Element `Patient.identifier`: Gesetzliche und private Krankenversicherungsnummern verwenden nun ein einheitliches Identifikatorprofil [IdentifierKvid10](https://simplifier.net/packages/de.basisprofil.r4/1.5.0/files/2461154). `Patient.identifier.type` MUSS für Krankenversicherungsnummern auf `KVZ10` geändert werden. Die zuvor verwendeten Codes `GKV` und `PKV` für `Patient.identifier.type` haben den Status `retired` (siehe [CodeSystem IdentifierTypeDeBasis](https://simplifier.net/packages/de.basisprofil.r4/1.5.0/files/2461165)). Patient-Ressourcen aus Version 2024 bleiben gültig, SOLLEN aber auf den neuen Identifikator umstellen
  
-* **Removed**: Das ResearchSubject-Profil wurde [zurückgezogen](http://hl7.org/fhir/R4/codesystem-publication-status.html#publication-status-retired). Ab Version 2025.0.0 wird dieses Profil im Studien-Modul veröffentlicht und entwickelt. Implementierungen SOLLTEN auf die Modellierung aus dem Studien-Modul umstellen
+* **Removed**: Das ResearchSubject-Profil wurde [zurückgezogen](http://hl7.org/fhir/R4/codesystem-publication-status.html#publication-status-retired). Ab Version 2025.0.0 wird dieses Profil im Studien-Modul veröffentlicht und entwickelt. Implementierungen SOLLEN auf die Modellierung aus dem Studien-Modul umstellen
 * **Removed**: CodeSystem ICD-10-WHO v2019 und v2016 wurden entfernt. Diese können nun über den MII-Terminologieservice (SU-TermServ) bezogen werden: https://www.ontoserver.mii-termserv.de/
 * **Removed**: Suchparameter aus diesem Modul wurden entfernt. SearchParameter-Ressourcen werden nun zentral im Meta-Modul verwaltet
 * **Changed**: Profile enthalten zusätzliche Beschreibungen und Übersetzungen für Implementierer und das Forschungsdatenportal Gesundheit (FDPG)
