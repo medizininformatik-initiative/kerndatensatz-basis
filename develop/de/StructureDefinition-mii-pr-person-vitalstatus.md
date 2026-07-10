@@ -43,17 +43,17 @@ Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Vit
 
 **Feste Werte:**
 
-* **`Observation.category`**: Fester Wert `survey` **MUSS** vorhanden sein; weitere Codings sind OPTIONAL
-* **`Observation.code`**: Fester LOINC-Code `67162-8` (Vitalstatus [Minimum Data Set]) **MUSS** vorhanden sein; weitere Codings sind OPTIONAL
+* **`Observation.category`**: Fester Wert `survey` **MUSS** vorhanden sein; weitere Codings sind **OPTIONAL**
+* **`Observation.code`**: Fester LOINC-Code `67162-8` **MUSS** vorhanden sein; weitere Codings sind **OPTIONAL**
 
 **Patientenbezug:**
 
-* **`Observation.subject`**: Referenz auf Patient **MUSS** stets gegeben sein
+* **`Observation.subject`**: Referenz auf Patient **MUSS** gegeben sein
 * Der Vitalstatus ist inhärent patientenspezifisch und kann ohne diese Referenz nicht existieren
 
 **Effective DateTime:**
 
-* **`Observation.effectiveDateTime`**: VERPFLICHTEND genaue Angabe des letzten Lebendzeitpunktes 
+* **`Observation.effectiveDateTime`**: **VERPFLICHTEND** genaue Angabe des letzten Lebendzeitpunktes 
 * **KANN** partielle Datumsangaben enthalten (Jahr, Jahr-Monat), wenn das genaue Datum unbekannt ist
 * Enthält **nicht** den Todeszeitpunkt (siehe `Patient.deceased[x]` für die Dokumentation des Todes)
 * Repräsentiert den Zeitpunkt, zu dem die PatientIn bekanntermaßen im dokumentierten Vitalstatus war
@@ -334,19 +334,6 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-perso
   "experimental" : false,
   "date" : "2026-06-09",
   "publisher" : "Medical Informatics Initiative (MII)",
-  "_publisher" : {
-    "extension" : [{
-      "extension" : [{
-        "url" : "lang",
-        "valueCode" : "de"
-      },
-      {
-        "url" : "content",
-        "valueString" : "Medizininformatik-Initiative (MII)"
-      }],
-      "url" : "http://hl7.org/fhir/StructureDefinition/translation"
-    }]
-  },
   "contact" : [{
     "name" : "Medical Informatics Initiative (MII)",
     "telecom" : [{

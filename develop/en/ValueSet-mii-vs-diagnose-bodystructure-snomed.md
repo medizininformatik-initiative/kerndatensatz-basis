@@ -163,19 +163,6 @@ Enthaelt alle SNOMED Body structure codes
   "experimental" : true,
   "date" : "2026-06-15",
   "publisher" : "Medical Informatics Initiative (MII)",
-  "_publisher" : {
-    "extension" : [{
-      "extension" : [{
-        "url" : "lang",
-        "valueCode" : "de"
-      },
-      {
-        "url" : "content",
-        "valueString" : "Medizininformatik-Initiative (MII)"
-      }],
-      "url" : "http://hl7.org/fhir/StructureDefinition/translation"
-    }]
-  },
   "contact" : [{
     "name" : "Medical Informatics Initiative (MII)",
     "telecom" : [{

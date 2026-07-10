@@ -305,19 +305,6 @@ Expansion parameters are query parameters that can be passed to a `ValueSet` `$e
   "url" : "https://www.medizininformatik-initiative.de/fhir/modul-base/ImplementationGuide/mii-ig-base",
   "version" : "2026.0.0",
   "name" : "MII_IG_Base",
-  "_name" : {
-    "extension" : [{
-      "extension" : [{
-        "url" : "lang",
-        "valueCode" : "de"
-      },
-      {
-        "url" : "content",
-        "valueString" : "MII_IG_Base"
-      }],
-      "url" : "http://hl7.org/fhir/StructureDefinition/translation"
-    }]
-  },
   "title" : "MII Implementation Guide Core Dataset Base",
   "_title" : {
     "extension" : [{
@@ -336,19 +323,6 @@ Expansion parameters are query parameters that can be passed to a `ValueSet` `$e
   "experimental" : false,
   "date" : "2026-06-15",
   "publisher" : "Medical Informatics Initiative (MII)",
-  "_publisher" : {
-    "extension" : [{
-      "extension" : [{
-        "url" : "lang",
-        "valueCode" : "de"
-      },
-      {
-        "url" : "content",
-        "valueString" : "Medizininformatik-Initiative (MII)"
-      }],
-      "url" : "http://hl7.org/fhir/StructureDefinition/translation"
-    }]
-  },
   "contact" : [{
     "name" : "Medical Informatics Initiative (MII)",
     "telecom" : [{
@@ -2248,33 +2222,7 @@ Expansion parameters are query parameters that can be passed to a `ValueSet` `$e
         "reference" : "CapabilityStatement/mii-cps-diagnose-capabilitystatement"
       },
       "name" : "MII CPS Diagnose CapabilityStatement",
-      "_name" : {
-        "extension" : [{
-          "extension" : [{
-            "url" : "lang",
-            "valueCode" : "de"
-          },
-          {
-            "url" : "content",
-            "valueString" : "MII CPS Diagnose CapabilityStatement"
-          }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
-        }]
-      },
       "description" : "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein konformes System unterstützen muss, um das Modul Diagnose der Medizininformatik Initiative zu implementieren.",
-      "_description" : {
-        "extension" : [{
-          "extension" : [{
-            "url" : "lang",
-            "valueCode" : "de"
-          },
-          {
-            "url" : "content",
-            "valueString" : "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein konformes System unterstützen muss, um das Modul Diagnose der Medizininformatik Initiative zu implementieren."
-          }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
-        }]
-      },
       "exampleBoolean" : false
     },
     {
@@ -2286,33 +2234,7 @@ Expansion parameters are query parameters that can be passed to a `ValueSet` `$e
         "reference" : "CapabilityStatement/mii-cps-fall-capabilitystatement"
       },
       "name" : "MII CPS Fall CapabilityStatement",
-      "_name" : {
-        "extension" : [{
-          "extension" : [{
-            "url" : "lang",
-            "valueCode" : "de"
-          },
-          {
-            "url" : "content",
-            "valueString" : "MII CPS Fall CapabilityStatement"
-          }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
-        }]
-      },
       "description" : "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein konformes System unterstützen muss, um das Modul Fall der Medizininformatik Initiative zu implementieren.",
-      "_description" : {
-        "extension" : [{
-          "extension" : [{
-            "url" : "lang",
-            "valueCode" : "de"
-          },
-          {
-            "url" : "content",
-            "valueString" : "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein konformes System unterstützen muss, um das Modul Fall der Medizininformatik Initiative zu implementieren."
-          }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
-        }]
-      },
       "exampleBoolean" : false
     },
     {
@@ -2324,33 +2246,7 @@ Expansion parameters are query parameters that can be passed to a `ValueSet` `$e
         "reference" : "CapabilityStatement/mii-cps-person-capabilitystatement"
       },
       "name" : "MII CPS Person CapabilityStatement",
-      "_name" : {
-        "extension" : [{
-          "extension" : [{
-            "url" : "lang",
-            "valueCode" : "de"
-          },
-          {
-            "url" : "content",
-            "valueString" : "MII CPS Person CapabilityStatement"
-          }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
-        }]
-      },
       "description" : "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein konformes System unterstützen muss um das Modul Person der Medizininformatik Initiative zu implementieren.",
-      "_description" : {
-        "extension" : [{
-          "extension" : [{
-            "url" : "lang",
-            "valueCode" : "de"
-          },
-          {
-            "url" : "content",
-            "valueString" : "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein konformes System unterstützen muss um das Modul Person der Medizininformatik Initiative zu implementieren."
-          }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
-        }]
-      },
       "exampleBoolean" : false
     },
     {
@@ -2362,33 +2258,7 @@ Expansion parameters are query parameters that can be passed to a `ValueSet` `$e
         "reference" : "CapabilityStatement/mii-cps-prozedur-capabilitystatement"
       },
       "name" : "MII CPS Prozedur CapabilityStatement",
-      "_name" : {
-        "extension" : [{
-          "extension" : [{
-            "url" : "lang",
-            "valueCode" : "de"
-          },
-          {
-            "url" : "content",
-            "valueString" : "MII CPS Prozedur CapabilityStatement"
-          }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
-        }]
-      },
       "description" : "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein konformes System unterstützen muss um das Modul Prozedur der Medizininformatik Initiative zu implementieren.",
-      "_description" : {
-        "extension" : [{
-          "extension" : [{
-            "url" : "lang",
-            "valueCode" : "de"
-          },
-          {
-            "url" : "content",
-            "valueString" : "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein konformes System unterstützen muss um das Modul Prozedur der Medizininformatik Initiative zu implementieren."
-          }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
-        }]
-      },
       "exampleBoolean" : false
     },
     {
@@ -3301,19 +3171,6 @@ Expansion parameters are query parameters that can be passed to a `ValueSet` `$e
           }],
           "nameUrl" : "must-support.html",
           "title" : "Must Support",
-          "_title" : {
-            "extension" : [{
-              "extension" : [{
-                "url" : "lang",
-                "valueCode" : "de"
-              },
-              {
-                "url" : "content",
-                "valueString" : "Must Support"
-              }],
-              "url" : "http://hl7.org/fhir/StructureDefinition/translation"
-            }]
-          },
           "generation" : "markdown"
         },
         {
@@ -3412,19 +3269,6 @@ Expansion parameters are query parameters that can be passed to a `ValueSet` `$e
         }],
         "nameUrl" : "capability-statements.html",
         "title" : "Capability Statements",
-        "_title" : {
-          "extension" : [{
-            "extension" : [{
-              "url" : "lang",
-              "valueCode" : "de"
-            },
-            {
-              "url" : "content",
-              "valueString" : "Capability Statements"
-            }],
-            "url" : "http://hl7.org/fhir/StructureDefinition/translation"
-          }]
-        },
         "generation" : "markdown"
       },
       {
@@ -3478,19 +3322,6 @@ Expansion parameters are query parameters that can be passed to a `ValueSet` `$e
         }],
         "nameUrl" : "downloads.html",
         "title" : "Downloads",
-        "_title" : {
-          "extension" : [{
-            "extension" : [{
-              "url" : "lang",
-              "valueCode" : "de"
-            },
-            {
-              "url" : "content",
-              "valueString" : "Downloads"
-            }],
-            "url" : "http://hl7.org/fhir/StructureDefinition/translation"
-          }]
-        },
         "generation" : "markdown"
       },
       {
@@ -3500,6 +3331,19 @@ Expansion parameters are query parameters that can be passed to a `ValueSet` `$e
         }],
         "nameUrl" : "version-history.html",
         "title" : "Versioning",
+        "_title" : {
+          "extension" : [{
+            "extension" : [{
+              "url" : "lang",
+              "valueCode" : "de"
+            },
+            {
+              "url" : "content",
+              "valueString" : "Versionierung"
+            }],
+            "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+          }]
+        },
         "generation" : "markdown",
         "page" : [{
           "extension" : [{
@@ -3508,19 +3352,6 @@ Expansion parameters are query parameters that can be passed to a `ValueSet` `$e
           }],
           "nameUrl" : "changes.html",
           "title" : "Changelog",
-          "_title" : {
-            "extension" : [{
-              "extension" : [{
-                "url" : "lang",
-                "valueCode" : "de"
-              },
-              {
-                "url" : "content",
-                "valueString" : "Changelog"
-              }],
-              "url" : "http://hl7.org/fhir/StructureDefinition/translation"
-            }]
-          },
           "generation" : "markdown"
         }]
       },
@@ -3553,6 +3384,19 @@ Expansion parameters are query parameters that can be passed to a `ValueSet` `$e
         }],
         "nameUrl" : "translationinfo.html",
         "title" : "Translation Information",
+        "_title" : {
+          "extension" : [{
+            "extension" : [{
+              "url" : "lang",
+              "valueCode" : "de"
+            },
+            {
+              "url" : "content",
+              "valueString" : "Übersetzungsinformationen"
+            }],
+            "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+          }]
+        },
         "generation" : "markdown"
       },
       {
@@ -3562,6 +3406,19 @@ Expansion parameters are query parameters that can be passed to a `ValueSet` `$e
         }],
         "nameUrl" : "metadata.html",
         "title" : "Metadata Overview",
+        "_title" : {
+          "extension" : [{
+            "extension" : [{
+              "url" : "lang",
+              "valueCode" : "de"
+            },
+            {
+              "url" : "content",
+              "valueString" : "Metadatenübersicht"
+            }],
+            "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+          }]
+        },
         "generation" : "markdown"
       }]
     },

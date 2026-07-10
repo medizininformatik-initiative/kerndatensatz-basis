@@ -35,15 +35,15 @@ This section provides detailed implementation guidance for the MII Vital Status 
 #### Required Elements
 
 **Fixed Values:**
-- **`Observation.category`**: Fixed value `survey` **MUST** be present; additional codings are OPTIONAL
-- **`Observation.code`**: Fixed LOINC code `67162-8` (Vitalstatus [Minimum Data Set]) **MUST** be present; additional codings are OPTIONAL
+- **`Observation.category`**: Fixed value `survey` **MUST** be present; additional codings are **OPTIONAL**
+- **`Observation.code`**: Fixed LOINC code `67162-8` **MUST** be present; additional codings are **OPTIONAL**
 
 **Patient Reference:**
 - **`Observation.subject`**: Reference to Patient **MUST** always be provided
 - Vital status is inherently patient-specific and cannot exist without this reference
 
 **Effective DateTime:**
-- **`Observation.effectiveDateTime`**: [Mandatory] precise specification of the last known alive timepoint
+- **`Observation.effectiveDateTime`**: **Required** precise specification of the last known alive timepoint
   - **MAY** contain partial date specifications (year, year-month) when exact date is unknown
   - **Does NOT** represent the time of death (see `Patient.deceased[x]` for death documentation)
   - Represents the point in time when the patient was known to be in the documented vital status
