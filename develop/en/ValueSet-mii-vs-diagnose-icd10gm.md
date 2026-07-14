@@ -15,6 +15,8 @@ Enthaelt ICD-10-GM-Codes der Versionen 2009 bis 2025
 
 ### Expansion
 
+No Expansion for this valueset (Unknown Code System)
+
 -------
 
  [Description of the above table(s)](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#terminology). 
