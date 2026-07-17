@@ -17,12 +17,11 @@
         <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-base"/>
       </extension>
     </extension>
-    <profile value="http://hl7.org/fhir/StructureDefinition/shareablecodesystem"/>
     <profile value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecodesystem"/>
   </meta>
   <language value="de"/>
   <text>
-    <status value="generated"/><div xml:lang="de" lang="de"><hr/><p><b>German</b></p><hr/><p class="res-header-id"><b>Generated Narrative: CodeSystem mii-cs-fall-supplement-act-encounter-code</b></p><a name="de-mii-cs-fall-supplement-act-encounter-code"> </a><a name="de-hcmii-cs-fall-supplement-act-encounter-code"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profiles: <a href="http://hl7.org/fhir/R4/shareablecodesystem.html">Shareable CodeSystem</a>, <a href="http://hl7.org/fhir/uv/crmi/2025Sep/StructureDefinition-crmi-publishablecodesystem.html">CRMI Publishable CodeSystem</a></p></div><p>This code system supplement <code>https://www.medizininformatik-initiative.de/fhir/core/modul-fall/CodeSystem/SupplementActEncounterCode</code> defines displays on the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (Deutschland) (German (Germany), de)</b></td></tr><tr><td><a style="white-space:nowrap" href="http://terminology.hl7.org/7.2.0/CodeSystem-v3-ActCode.html#v3-ActCode-AMB">AMB</a><a name="de-mii-cs-fall-supplement-act-encounter-code-AMB"> </a></td><td>ambulatory</td><td>Umfasst ambulante Operationen nach § 115b SGB V und eine ambulante spezialfachärztliche Versorgung nach § 116b SGB V</td><td>teilstationäre Behandlung</td></tr><tr><td><a style="white-space:nowrap" href="http://terminology.hl7.org/7.2.0/CodeSystem-v3-ActCode.html#v3-ActCode-EMER">EMER</a><a name="de-mii-cs-fall-supplement-act-encounter-code-EMER"> </a></td><td>emergency</td><td/><td>Notfall</td></tr><tr><td><a style="white-space:nowrap" href="http://terminology.hl7.org/7.2.0/CodeSystem-v3-ActCode.html#v3-ActCode-IMP">IMP</a><a name="de-mii-cs-fall-supplement-act-encounter-code-IMP"> </a></td><td>inpatient encounter</td><td/><td>stationär</td></tr></table></div>
+    <status value="generated"/><div xml:lang="de" lang="de"><hr/><p><b>German</b></p><hr/><p class="res-header-id"><b>Generated Narrative: CodeSystem mii-cs-fall-supplement-act-encounter-code</b></p><a name="de-mii-cs-fall-supplement-act-encounter-code"> </a><a name="de-hcmii-cs-fall-supplement-act-encounter-code"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="http://hl7.org/fhir/uv/crmi/STU2/StructureDefinition-crmi-publishablecodesystem.html">CRMI Publishable CodeSystem</a></p></div><p>This code system supplement <code>https://www.medizininformatik-initiative.de/fhir/core/modul-fall/CodeSystem/SupplementActEncounterCode</code> defines displays on the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (Deutschland) (German (Germany), de)</b></td></tr><tr><td><a style="white-space:nowrap" href="http://terminology.hl7.org/7.2.0/CodeSystem-v3-ActCode.html#v3-ActCode-AMB">AMB</a><a name="de-mii-cs-fall-supplement-act-encounter-code-AMB"> </a></td><td>ambulatory</td><td>Umfasst ambulante Operationen nach § 115b SGB V und eine ambulante spezialfachärztliche Versorgung nach § 116b SGB V</td><td>teilstationäre Behandlung</td></tr><tr><td><a style="white-space:nowrap" href="http://terminology.hl7.org/7.2.0/CodeSystem-v3-ActCode.html#v3-ActCode-EMER">EMER</a><a name="de-mii-cs-fall-supplement-act-encounter-code-EMER"> </a></td><td>emergency</td><td/><td>Notfall</td></tr><tr><td><a style="white-space:nowrap" href="http://terminology.hl7.org/7.2.0/CodeSystem-v3-ActCode.html#v3-ActCode-IMP">IMP</a><a name="de-mii-cs-fall-supplement-act-encounter-code-IMP"> </a></td><td>inpatient encounter</td><td/><td>stationär</td></tr></table></div>
   </text>
   <extension url="http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm">
     <valueCoding>
@@ -30,9 +29,6 @@
       <code value="semver"/>
       <display value="SemVer"/>
     </valueCoding>
-  </extension>
-  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability">
-    <valueCode value="shareable"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability">
     <valueCode value="publishable"/>
@@ -117,7 +113,7 @@
   <title value="MII CS Fall Supplement ActEncounterCode"/>
   <status value="active"/>
   <experimental value="false"/>
-  <date value="2026-06-15"/>
+  <date value="2026-07-17"/>
   <publisher value="Medical Informatics Initiative (MII)"/>
   <contact>
     <name value="Medical Informatics Initiative (MII)"/>

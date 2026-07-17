@@ -332,30 +332,6 @@
     "http://hl7.org/fhir/R4/valueset-resource-types.html" : "ResourceType"
   },
   {
-    "url" : "http://hl7.org/fhir/sid/icd-10",
-    "version" : "2.1.1",
-    "status" : "retired",
-    "name" : "Icd10",
-    "title" : "ICD-10",
-    "description" : "International Classification of Diseases revision 10 (ICD 10)",
-    "oids" : ["2.16.840.1.113883.6.3"],
-    "uses" : {
-    },
-    "ValueSet-mii-vs-person-icd10who.html" : "MII VS Person ICD-10-WHO"
-  },
-  {
-    "url" : "http://loinc.org",
-    "version" : "3.1.0",
-    "status" : "active",
-    "name" : "LOINC",
-    "title" : "Logical Observation Identifiers, Names and Codes (LOINC)",
-    "description" : "LOINC provides a set of universal names and ID codes for identifying laboratory and clinical test results.1,2 LOINC facilitates the exchange and pooling of results, such as blood hemoglobin, serum potassium, or vital signs, for clinical care, outcomes management, and research. LOINC's universal identifiers (names and codes) can be used in the context of order and observation exchanges between information systems that use syntax standards such as HL73, CEN TC251, ISO TC215, ASTM4, and DICOM. Specifically, the identifier can be used as the coded value for an observation in any other standard that uses the observation/observation value paradigm, whether messages, documents, application programming interface (API), etc. For example, LOINC codes are used widely in the OBX segment Observation Identifier field (OBX-3) of an ORU HL7 (HL7 version 2.x or ASTM 1238-9410) message that may be sent between a Clinical Laboratory Information Management Systems (LIMS) and Electronic Health Record Systems (EHR).5, 6 In this way, LOINC codes provide universal identifiers that allow the exchange of clinical data between heterogeneous computing environments.",
-    "oids" : ["2.16.840.1.113883.6.1"],
-    "uses" : {
-    },
-    "http://hl7.org/fhir/R4/valueset-observation-codes.html" : "LOINC Codes"
-  },
-  {
     "url" : "http://snomed.info/sct",
     "version" : null,
     "status" : "active",
@@ -365,29 +341,29 @@
     "oids" : ["2.16.840.1.113883.6.96"],
     "uses" : {
     },
-    "http://hl7.org/fhir/R4/valueset-procedure-outcome.html" : "Procedure Outcome Codes (SNOMED CT)",
-    "ValueSet-mii-vs-diagnose-diagnosecodes-snomed.html" : "MII VS Diagnose Diagnose-Codes SNOMED",
-    "http://hl7.org/fhir/R4/valueset-condition-stage-type.html" : "Condition Stage Type",
-    "ValueSet-mii-vs-diagnose-bodystructure-snomed.html" : "MII VS Diagnose BodyStructure SNOMED",
-    "ValueSet-mii-vs-prozedur-durchfuehrungsabsicht-snomedct.html" : "MII VS Prozedur Durchführungsabsicht [SNOMED CT]",
-    "ValueSet-mii-vs-prozedur-prozeduren-snomedct.html" : "MII VS Prozedur Prozeduren [SNOMED CT]",
-    "http://hl7.org/fhir/R4/valueset-condition-severity.html" : "Condition/Diagnosis Severity",
-    "https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.de/ValueSet/lebensphase-de" : "LebensphaseDe ValueSet",
-    "http://hl7.org/fhir/R4/valueset-encounter-reason.html" : "Encounter Reason Codes",
-    "http://hl7.org/fhir/R4/valueset-procedure-category.html" : "Procedure Category Codes (SNOMED CT)",
-    "http://hl7.org/fhir/R4/valueset-manifestation-or-symptom.html" : "Manifestation and Symptom Codes",
-    "http://hl7.org/fhir/R4/valueset-procedure-reason.html" : "Procedure Reason Codes",
-    "http://hl7.org/fhir/R4/valueset-condition-code.html" : "Condition/Problem/Diagnosis Codes",
-    "http://hl7.org/fhir/R4/valueset-procedure-code.html" : "Procedure Codes (SNOMED CT)",
-    "http://hl7.org/fhir/R4/valueset-referencerange-appliesto.html" : "Observation Reference Range Applies To Codes",
-    "http://hl7.org/fhir/R4/valueset-performer-role.html" : "Procedure Performer Role Codes",
-    "http://hl7.org/fhir/R4/valueset-procedure-followup.html" : "Procedure Follow up Codes (SNOMED CT)",
-    "http://hl7.org/fhir/R4/valueset-device-kind.html" : "FHIR Device Types",
-    "http://hl7.org/fhir/R4/valueset-observation-methods.html" : "Observation Methods",
-    "http://hl7.org/fhir/R4/valueset-body-site.html" : "SNOMED CT Body Structures",
-    "http://hl7.org/fhir/R4/valueset-condition-stage.html" : "Condition Stage",
     "ValueSet-mii-vs-prozedur-opskategorien-snomedct.html" : "MII VS Prozedur OPS Kategorien [SNOMED CT]",
+    "ValueSet-mii-vs-prozedur-prozeduren-snomedct.html" : "MII VS Prozedur Prozeduren [SNOMED CT]",
+    "http://hl7.org/fhir/R4/valueset-condition-stage-type.html" : "Condition Stage Type",
+    "http://hl7.org/fhir/R4/valueset-procedure-followup.html" : "Procedure Follow up Codes (SNOMED CT)",
+    "https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.de/ValueSet/lebensphase-de" : "LebensphaseDe ValueSet",
+    "http://hl7.org/fhir/R4/valueset-performer-role.html" : "Procedure Performer Role Codes",
+    "http://hl7.org/fhir/R4/valueset-condition-code.html" : "Condition/Problem/Diagnosis Codes",
+    "http://hl7.org/fhir/R4/valueset-encounter-reason.html" : "Encounter Reason Codes",
+    "http://hl7.org/fhir/R4/valueset-observation-methods.html" : "Observation Methods",
+    "ValueSet-mii-vs-diagnose-bodystructure-snomed.html" : "MII VS Diagnose BodyStructure SNOMED",
+    "http://hl7.org/fhir/R4/valueset-procedure-reason.html" : "Procedure Reason Codes",
+    "ValueSet-mii-vs-prozedur-durchfuehrungsabsicht-snomedct.html" : "MII VS Prozedur Durchführungsabsicht [SNOMED CT]",
+    "ValueSet-mii-vs-diagnose-diagnosecodes-snomed.html" : "MII VS Diagnose Diagnose-Codes SNOMED",
+    "http://hl7.org/fhir/R4/valueset-procedure-outcome.html" : "Procedure Outcome Codes (SNOMED CT)",
+    "http://hl7.org/fhir/R4/valueset-referencerange-appliesto.html" : "Observation Reference Range Applies To Codes",
     "http://hl7.org/fhir/R4/valueset-procedure-not-performed-reason.html" : "Procedure Not Performed Reason (SNOMED-CT)",
+    "http://hl7.org/fhir/R4/valueset-manifestation-or-symptom.html" : "Manifestation and Symptom Codes",
+    "http://hl7.org/fhir/R4/valueset-procedure-code.html" : "Procedure Codes (SNOMED CT)",
+    "http://hl7.org/fhir/R4/valueset-device-kind.html" : "FHIR Device Types",
+    "http://hl7.org/fhir/R4/valueset-body-site.html" : "SNOMED CT Body Structures",
+    "http://hl7.org/fhir/R4/valueset-procedure-category.html" : "Procedure Category Codes (SNOMED CT)",
+    "http://hl7.org/fhir/R4/valueset-condition-severity.html" : "Condition/Diagnosis Severity",
+    "http://hl7.org/fhir/R4/valueset-condition-stage.html" : "Condition Stage",
     "http://hl7.org/fhir/R4/valueset-device-action.html" : "Procedure Device Action Codes"
   },
   {
@@ -605,8 +581,8 @@
     "uses" : {
     },
     "ValueSet-mii-vs-fall-identifier-type-codes.html" : "MII VS Fall Identifier Type Codes",
-    "https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.de/ValueSet/identifier-type-de-basis" : "Identifier Type DeBasis ValueSet",
-    "http://hl7.org/fhir/R4/valueset-identifier-type.html" : "IdentifierType"
+    "http://hl7.org/fhir/R4/valueset-identifier-type.html" : "IdentifierType",
+    "https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.de/ValueSet/identifier-type-de-basis" : "Identifier Type DeBasis ValueSet"
   },
   {
     "url" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
@@ -715,18 +691,6 @@
     "uses" : {
     },
     "http://hl7.org/fhir/R4/valueset-languages.html" : "Common Languages"
-  },
-  {
-    "url" : "urn:iso:std:iso:3166",
-    "version" : "1.0.1",
-    "status" : "active",
-    "name" : "ISO3166Part1",
-    "title" : "ISO 3166-1 Codes for the representation of names of countries and their subdivisions — Part 1: Country code",
-    "description" : "ISO 3166-1 establishes codes that represent the current names of countries, dependencies, and other areas of particular geopolitical interest, on the basis of country names obtained from the United Nations.",
-    "oids" : ["1.0.3166.1"],
-    "uses" : {
-    },
-    "http://hl7.org/fhir/R4/valueset-iso3166-1-2.html" : "Iso 3166 Part 1: 2 Letter Codes"
   },
   {
     "url" : "urn:iso:std:iso:3166-2:de",

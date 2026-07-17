@@ -51,14 +51,9 @@ This publication includes IP covered under the following statements.
 * [Identifier Type De Basis](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.de/CodeSystem/identifier-type-de-basis): [Bundle/mii-exa-base-test-data-bundle-1](Bundle-mii-exa-base-test-data-bundle-1.md), [MII_PR_Person_Patient](StructureDefinition-mii-pr-person-patient.md), [MII_PR_Person_PatientPseudonymisiert](StructureDefinition-mii-pr-person-patient-pseudonymisiert.md), [Patient/mii-exa-person-patient-1](Patient-mii-exa-person-patient-1.md) and [Patient/mii-exa-person-patient-pseudonymisiert](Patient-mii-exa-person-patient-pseudonymisiert.md)
 
 
-* ISO maintains the copyright on the country codes, and controls its use carefully. For further details see the ISO 3166 web page: [https://www.iso.org/iso-3166-country-codes.html](https://www.iso.org/iso-3166-country-codes.html)
-
-* [ISO 3166-1 Codes for the representation of names of countries and their subdivisions — Part 1: Country code](http://terminology.hl7.org/6.5.0/CodeSystem-ISO3166Part1.html): [MII_CPS_Diagnose_CapabilityStatement](CapabilityStatement-mii-cps-diagnose-capabilitystatement.md), [MII_CPS_Fall_CapabilityStatement](CapabilityStatement-mii-cps-fall-capabilitystatement.md)... Show 33 more, [MII_CPS_Person_CapabilityStatement](CapabilityStatement-mii-cps-person-capabilitystatement.md), [MII_CPS_Prozedur_CapabilityStatement](CapabilityStatement-mii-cps-prozedur-capabilitystatement.md), [MII_CS_Diagnose_Lebensphase_Supplement_SNOMED](CodeSystem-mii-cs-diagnose-lebensphase-supplement-snomed.md), [MII_CS_Fall_SupplementActEncounterCode](CodeSystem-mii-cs-fall-supplement-act-encounter-code.md), [MII_CS_Fall_SupplementPatientClass](CodeSystem-mii-cs-fall-supplement-patient-class.md), [MII_CS_Person_Vitalstatus](CodeSystem-mii-cs-person-vitalstatus.md), [MII_EX_Prozedur_Durchfuehrungsabsicht](StructureDefinition-mii-ex-prozedur-durchfuehrungsabsicht.md), [MII_IG_Base](index.md), [MII_LM_Diagnose](StructureDefinition-mii-lm-diagnose.md), [MII_LM_Fall](StructureDefinition-mii-lm-fall.md), [MII_LM_Person](StructureDefinition-mii-lm-person.md), [MII_LM_Prozedur](StructureDefinition-mii-lm-prozedur.md), [MII_PR_Diagnose_Condition](StructureDefinition-mii-pr-diagnose-condition.md), [MII_PR_Fall_KontaktGesundheitseinrichtung](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.md), [MII_PR_Person_Patient](StructureDefinition-mii-pr-person-patient.md), [MII_PR_Person_PatientPseudonymisiert](StructureDefinition-mii-pr-person-patient-pseudonymisiert.md), [MII_PR_Person_Todesursache](StructureDefinition-mii-pr-person-todesursache.md), [MII_PR_Person_Vitalstatus](StructureDefinition-mii-pr-person-vitalstatus.md), [MII_PR_Prozedur_Procedure](StructureDefinition-mii-pr-prozedur-procedure.md), [MII_VS_Diagnose_AlphaID](ValueSet-mii-vs-diagnose-alphaid.md), [MII_VS_Diagnose_BodyStructure_SNOMED](ValueSet-mii-vs-diagnose-bodystructure-snomed.md), [MII_VS_Diagnose_DiagnoseCodes_SNOMED](ValueSet-mii-vs-diagnose-diagnosecodes-snomed.md), [MII_VS_Diagnose_ICD10GM](ValueSet-mii-vs-diagnose-icd10gm.md), [MII_VS_Diagnose_Orphanet](ValueSet-mii-vs-diagnose-orphanet.md), [MII_VS_Fall_Diagnosis_Use](ValueSet-mii-vs-fall-diagnosis-use.md), [MII_VS_Fall_IdentifierTypeCodes](ValueSet-mii-vs-fall-identifier-type-codes.md), [MII_VS_Fall_LocationPhysicalType](ValueSet-mii-vs-fall-location-physical-type.md), [MII_VS_Person_ICD10WHO](ValueSet-mii-vs-person-icd10who.md), [MII_VS_Person_Vitalstatus](ValueSet-mii-vs-person-vitalstatus.md), [MII_VS_Prozedur_Durchfuehrungsabsicht_SNOMEDCT](ValueSet-mii-vs-prozedur-durchfuehrungsabsicht-snomedct.md), [MII_VS_Prozedur_OPS](ValueSet-mii-vs-prozedur-ops.md), [MII_VS_Prozedur_OpsKategorien_SNOMEDCT](ValueSet-mii-vs-prozedur-opskategorien-snomedct.md) and [MII_VS_Prozedur_Prozeduren_SNOMEDCT](ValueSet-mii-vs-prozedur-prozeduren-snomedct.md)
-
-
 * This material contains content from [LOINC](http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the [license](http://loinc.org/license). LOINC® is a registered United States trademark of Regenstrief Institute, Inc.
 
-* [LOINC](http://terminology.hl7.org/6.5.0/CodeSystem-v3-loinc.html): [Bundle/mii-exa-base-test-data-bundle-1](Bundle-mii-exa-base-test-data-bundle-1.md), [Condition/mii-exa-person-condition-todesursache](Condition-mii-exa-person-condition-todesursache.md)... Show 4 more, [MII_PR_Person_Todesursache](StructureDefinition-mii-pr-person-todesursache.md), [MII_PR_Person_Vitalstatus](StructureDefinition-mii-pr-person-vitalstatus.md), [Observation/mii-exa-person-observation-vitalstatus](Observation-mii-exa-person-observation-vitalstatus.md) and [Observation/mii-exa-person-observation-vitalstatus-discharge](Observation-mii-exa-person-observation-vitalstatus-discharge.md)
+* LOINC: [Bundle/mii-exa-base-test-data-bundle-1](Bundle-mii-exa-base-test-data-bundle-1.md), [Condition/mii-exa-person-condition-todesursache](Condition-mii-exa-person-condition-todesursache.md)... Show 4 more, [MII_PR_Person_Todesursache](StructureDefinition-mii-pr-person-todesursache.md), [MII_PR_Person_Vitalstatus](StructureDefinition-mii-pr-person-vitalstatus.md), [Observation/mii-exa-person-observation-vitalstatus](Observation-mii-exa-person-observation-vitalstatus.md) and [Observation/mii-exa-person-observation-vitalstatus-discharge](Observation-mii-exa-person-observation-vitalstatus-discharge.md)
 
 
 * This material contains content that is copyright of SNOMED International. Implementers of these specifications must have the appropriate SNOMED CT Affiliate license - for more information contact [https://www.snomed.org/get-snomed](https://www.snomed.org/get-snomed) or [info@snomed.org](mailto:info@snomed.org).
@@ -121,8 +116,8 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
     "valueCodeableConcept" : {
       "coding" : [{
         "system" : "http://terminology.hl7.org/CodeSystem/artifact-version-policy-codes",
-        "code" : "strict",
-        "display" : "Strict"
+        "code" : "package",
+        "display" : "Package"
       }]
     }
   },
@@ -399,7 +394,7 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
     "id" : "hl7_fhir_uv_crmi",
     "uri" : "http://hl7.org/fhir/uv/crmi/ImplementationGuide/hl7.fhir.uv.crmi",
     "packageId" : "hl7.fhir.uv.crmi",
-    "version" : "2.0.0-ballot"
+    "version" : "2.0.0"
   }],
   "definition" : {
     "extension" : [{
@@ -2220,6 +2215,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CapabilityStatement"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CapabilityStatement-mii-cps-diagnose-capabilitystatement.html"
       }],
       "reference" : {
         "reference" : "CapabilityStatement/mii-cps-diagnose-capabilitystatement"
@@ -2232,6 +2231,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CapabilityStatement"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CapabilityStatement-mii-cps-fall-capabilitystatement.html"
       }],
       "reference" : {
         "reference" : "CapabilityStatement/mii-cps-fall-capabilitystatement"
@@ -2244,6 +2247,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CapabilityStatement"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CapabilityStatement-mii-cps-person-capabilitystatement.html"
       }],
       "reference" : {
         "reference" : "CapabilityStatement/mii-cps-person-capabilitystatement"
@@ -2256,6 +2263,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CapabilityStatement"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CapabilityStatement-mii-cps-prozedur-capabilitystatement.html"
       }],
       "reference" : {
         "reference" : "CapabilityStatement/mii-cps-prozedur-capabilitystatement"
@@ -2268,6 +2279,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-mii-cs-diagnose-lebensphase-supplement-snomed.html"
       }],
       "reference" : {
         "reference" : "CodeSystem/mii-cs-diagnose-lebensphase-supplement-snomed"
@@ -2280,6 +2295,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-mii-cs-fall-supplement-act-encounter-code.html"
       }],
       "reference" : {
         "reference" : "CodeSystem/mii-cs-fall-supplement-act-encounter-code"
@@ -2292,6 +2311,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-mii-cs-fall-supplement-patient-class.html"
       }],
       "reference" : {
         "reference" : "CodeSystem/mii-cs-fall-supplement-patient-class"
@@ -2304,6 +2327,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-mii-cs-person-vitalstatus.html"
       }],
       "reference" : {
         "reference" : "CodeSystem/mii-cs-person-vitalstatus"
@@ -2316,6 +2343,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-ex-prozedur-durchfuehrungsabsicht.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/mii-ex-prozedur-durchfuehrungsabsicht"
@@ -2328,6 +2359,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-mii-exa-base-test-data-bundle-1.html"
       }],
       "reference" : {
         "reference" : "Bundle/mii-exa-base-test-data-bundle-1"
@@ -2340,6 +2375,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-mii-exa-diagnose-appendicitis.html"
       }],
       "reference" : {
         "reference" : "Condition/mii-exa-diagnose-appendicitis"
@@ -2352,6 +2391,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-mii-exa-diagnose-condition-elbow-contusion.html"
       }],
       "reference" : {
         "reference" : "Condition/mii-exa-diagnose-condition-elbow-contusion"
@@ -2364,6 +2407,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-mii-exa-diagnose-mehrfachcodierung-primaercode.html"
       }],
       "reference" : {
         "reference" : "Condition/mii-exa-diagnose-mehrfachcodierung-primaercode"
@@ -2376,6 +2423,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-mii-exa-diagnose-mehrfachcodierung-sekundaercode.html"
       }],
       "reference" : {
         "reference" : "Condition/mii-exa-diagnose-mehrfachcodierung-sekundaercode"
@@ -2388,6 +2439,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-mii-exa-diagnose-condition-multiple-codings.html"
       }],
       "reference" : {
         "reference" : "Condition/mii-exa-diagnose-condition-multiple-codings"
@@ -2400,6 +2455,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Encounter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html"
       }],
       "reference" : {
         "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2"
@@ -2412,6 +2471,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Encounter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.html"
       }],
       "reference" : {
         "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7"
@@ -2424,6 +2487,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Encounter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-9.html"
       }],
       "reference" : {
         "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-9"
@@ -2436,6 +2503,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Encounter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-8.html"
       }],
       "reference" : {
         "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-8"
@@ -2448,6 +2519,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Encounter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.html"
       }],
       "reference" : {
         "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1"
@@ -2460,6 +2535,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Encounter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-3.html"
       }],
       "reference" : {
         "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-3"
@@ -2472,6 +2551,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Encounter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Encounter-mii-exa-fall-kontakt-in-progress-status.html"
       }],
       "reference" : {
         "reference" : "Encounter/mii-exa-fall-kontakt-in-progress-status"
@@ -2484,6 +2567,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Encounter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Encounter-mii-exa-fall-kontakt-onleave-status.html"
       }],
       "reference" : {
         "reference" : "Encounter/mii-exa-fall-kontakt-onleave-status"
@@ -2496,6 +2583,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Encounter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Encounter-mii-exa-fall-kontakt-unknown-status.html"
       }],
       "reference" : {
         "reference" : "Encounter/mii-exa-fall-kontakt-unknown-status"
@@ -2508,6 +2599,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Encounter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-11.html"
       }],
       "reference" : {
         "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-11"
@@ -2520,6 +2615,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Encounter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-5.html"
       }],
       "reference" : {
         "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5"
@@ -2532,6 +2631,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Encounter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-6.html"
       }],
       "reference" : {
         "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6"
@@ -2544,6 +2647,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Encounter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-4.html"
       }],
       "reference" : {
         "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4"
@@ -2556,6 +2663,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Encounter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-10.html"
       }],
       "reference" : {
         "reference" : "Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10"
@@ -2568,6 +2679,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-mii-exa-person-condition-todesursache.html"
       }],
       "reference" : {
         "reference" : "Condition/mii-exa-person-condition-todesursache"
@@ -2580,6 +2695,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-mii-exa-person-observation-vitalstatus.html"
       }],
       "reference" : {
         "reference" : "Observation/mii-exa-person-observation-vitalstatus"
@@ -2592,6 +2711,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-mii-exa-person-observation-vitalstatus-discharge.html"
       }],
       "reference" : {
         "reference" : "Observation/mii-exa-person-observation-vitalstatus-discharge"
@@ -2604,6 +2727,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-mii-exa-person-patient-1.html"
       }],
       "reference" : {
         "reference" : "Patient/mii-exa-person-patient-1"
@@ -2616,6 +2743,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-mii-exa-person-patient-pseudonymisiert.html"
       }],
       "reference" : {
         "reference" : "Patient/mii-exa-person-patient-pseudonymisiert"
@@ -2628,6 +2759,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Procedure"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Procedure-mii-exa-prozedur-procedure.html"
       }],
       "reference" : {
         "reference" : "Procedure/mii-exa-prozedur-procedure"
@@ -2640,6 +2775,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Procedure"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Procedure-mii-exa-prozedur-imaging.html"
       }],
       "reference" : {
         "reference" : "Procedure/mii-exa-prozedur-imaging"
@@ -2652,6 +2791,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Procedure"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Procedure-mii-exa-prozedur-procedure-2.html"
       }],
       "reference" : {
         "reference" : "Procedure/mii-exa-prozedur-procedure-2"
@@ -2664,6 +2807,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:logical"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-lm-diagnose.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/mii-lm-diagnose"
@@ -2676,6 +2823,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:logical"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-lm-fall.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/mii-lm-fall"
@@ -2688,6 +2839,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:logical"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-lm-person.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/mii-lm-person"
@@ -2700,6 +2855,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:logical"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-lm-prozedur.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/mii-lm-prozedur"
@@ -2712,6 +2871,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-pr-diagnose-condition.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/mii-pr-diagnose-condition"
@@ -2724,6 +2887,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/mii-pr-fall-kontakt-gesundheitseinrichtung"
@@ -2736,6 +2903,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-pr-person-patient.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/mii-pr-person-patient"
@@ -2748,6 +2919,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/mii-pr-person-patient-pseudonymisiert"
@@ -2760,6 +2935,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-pr-person-todesursache.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/mii-pr-person-todesursache"
@@ -2772,6 +2951,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-pr-person-vitalstatus.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/mii-pr-person-vitalstatus"
@@ -2784,6 +2967,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-pr-prozedur-procedure.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/mii-pr-prozedur-procedure"
@@ -2796,6 +2983,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-diagnose-alphaid.html"
       }],
       "reference" : {
         "reference" : "ValueSet/mii-vs-diagnose-alphaid"
@@ -2808,6 +2999,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-diagnose-bodystructure-snomed.html"
       }],
       "reference" : {
         "reference" : "ValueSet/mii-vs-diagnose-bodystructure-snomed"
@@ -2820,6 +3015,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-diagnose-diagnosecodes-snomed.html"
       }],
       "reference" : {
         "reference" : "ValueSet/mii-vs-diagnose-diagnosecodes-snomed"
@@ -2832,6 +3031,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-diagnose-icd10gm.html"
       }],
       "reference" : {
         "reference" : "ValueSet/mii-vs-diagnose-icd10gm"
@@ -2844,6 +3047,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-diagnose-orphanet.html"
       }],
       "reference" : {
         "reference" : "ValueSet/mii-vs-diagnose-orphanet"
@@ -2856,6 +3063,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-fall-diagnosis-use.html"
       }],
       "reference" : {
         "reference" : "ValueSet/mii-vs-fall-diagnosis-use"
@@ -2868,6 +3079,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-fall-identifier-type-codes.html"
       }],
       "reference" : {
         "reference" : "ValueSet/mii-vs-fall-identifier-type-codes"
@@ -2880,6 +3095,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-fall-location-physical-type.html"
       }],
       "reference" : {
         "reference" : "ValueSet/mii-vs-fall-location-physical-type"
@@ -2892,6 +3111,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-person-icd10who.html"
       }],
       "reference" : {
         "reference" : "ValueSet/mii-vs-person-icd10who"
@@ -2904,6 +3127,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-person-vitalstatus.html"
       }],
       "reference" : {
         "reference" : "ValueSet/mii-vs-person-vitalstatus"
@@ -2916,6 +3143,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-prozedur-durchfuehrungsabsicht-snomedct.html"
       }],
       "reference" : {
         "reference" : "ValueSet/mii-vs-prozedur-durchfuehrungsabsicht-snomedct"
@@ -2928,6 +3159,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-prozedur-ops.html"
       }],
       "reference" : {
         "reference" : "ValueSet/mii-vs-prozedur-ops"
@@ -2940,6 +3175,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-prozedur-opskategorien-snomedct.html"
       }],
       "reference" : {
         "reference" : "ValueSet/mii-vs-prozedur-opskategorien-snomedct"
@@ -2952,6 +3191,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-prozedur-prozeduren-snomedct.html"
       }],
       "reference" : {
         "reference" : "ValueSet/mii-vs-prozedur-prozeduren-snomedct"
@@ -2964,6 +3207,10 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Parameters"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Parameters-mii-param-base-manifest.html"
       }],
       "reference" : {
         "reference" : "Parameters/mii-param-base-manifest"

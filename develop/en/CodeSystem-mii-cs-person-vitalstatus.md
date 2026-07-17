@@ -160,7 +160,7 @@ This Code system is referenced in the definition of the following value sets:
   "title" : "MII CS Person Vitalstatus",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-15",
+  "date" : "2026-07-17",
   "publisher" : "Medical Informatics Initiative (MII)",
   "contact" : [{
     "name" : "Medical Informatics Initiative (MII)",

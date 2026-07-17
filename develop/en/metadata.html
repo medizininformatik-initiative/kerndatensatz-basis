@@ -297,7 +297,7 @@ table th {
 
 <p>This page documents the computable metadata used in this implementation guide. The metadata is intended to make the artifacts easier to discover, evaluate, validate, cite, govern, and reuse by humans and software.</p>
 
-<p>The metadata model is based on the <a href="https://hl7.org/fhir/uv/crmi/2025Sep/">Canonical Resource Management Infrastructure Implementation Guide</a> (CRMI). This IG currently references the September 2025 publication of CRMI until the final CRMI 2.0 release is available.</p>
+<p>The metadata model is based on the <a href="https://hl7.org/fhir/uv/crmi/STU2/en/index.html">Canonical Resource Management Infrastructure Implementation Guide</a> (CRMI).</p>
 
 <p>CRMI focuses on facilitating consistent exchange of knowledge artifacts throughout the artifact management lifecycle, from authoring through publishing and distribution to implementation. This IG applies selected CRMI profiles, extensions, and manifest mechanisms to make the MII artifacts more discoverable, version-aware, governable, packageable, and reusable.</p>
 
@@ -323,37 +323,37 @@ table th {
   </thead>
   <tbody>
     <tr>
-      <td><a href="https://hl7.org/fhir/uv/crmi/2025Sep/artifact-lifecycle.html">Artifact lifecycle</a></td>
+      <td><a href="https://hl7.org/fhir/uv/crmi/STU2/en/artifact-lifecycle.html">Artifact lifecycle</a></td>
       <td>Shareable, computable, and publishable profiles; <code class="language-plaintext highlighter-rouge">status</code>; <code class="language-plaintext highlighter-rouge">version</code>; <code class="language-plaintext highlighter-rouge">resource-approvalDate</code>; <code class="language-plaintext highlighter-rouge">resource-effectivePeriod</code>; contributor extensions</td>
       <td>Positions artifacts in authoring, release, publication, and maintenance workflows.</td>
     </tr>
     <tr>
-      <td><a href="https://hl7.org/fhir/uv/crmi/2025Sep/version-manifest.html">Version Manifest</a></td>
+      <td><a href="https://hl7.org/fhir/uv/crmi/STU2/en/version-manifest.html">Version Manifest</a></td>
       <td><code class="language-plaintext highlighter-rouge">CRMIManifestParameters</code>; <code class="language-plaintext highlighter-rouge">cqf-expansionParameters</code>; <code class="language-plaintext highlighter-rouge">package-source</code>; canonical version pinning</td>
       <td>Supports reproducible terminology expansion and stable canonical version resolution.</td>
     </tr>
     <tr>
-      <td><a href="https://hl7.org/fhir/uv/crmi/2025Sep/artifact-conventions.html">Artifact Conventions</a></td>
+      <td><a href="https://hl7.org/fhir/uv/crmi/STU2/en/artifact-conventions.html">Artifact Conventions</a></td>
       <td>Canonical URLs; package/resource version alignment; <code class="language-plaintext highlighter-rouge">artifact-versionAlgorithm</code>; <code class="language-plaintext highlighter-rouge">artifact-versionPolicy</code></td>
       <td>Aligns the IG with canonical-resource authoring and versioning conventions.</td>
     </tr>
     <tr>
-      <td><a href="https://hl7.org/fhir/uv/crmi/2025Sep/packaging.html">Packaging</a></td>
+      <td><a href="https://hl7.org/fhir/uv/crmi/STU2/en/packaging.html">Packaging</a></td>
       <td>FHIR package; <code class="language-plaintext highlighter-rouge">ImplementationGuide.packageId</code>; package version; <code class="language-plaintext highlighter-rouge">package-source</code></td>
       <td>Connects artifacts to the package context in which they are authored, tested, released, and distributed.</td>
     </tr>
     <tr>
-      <td><a href="https://hl7.org/fhir/uv/crmi/2025Sep/publishing.html">Publishing</a></td>
+      <td><a href="https://hl7.org/fhir/uv/crmi/STU2/en/publishing.html">Publishing</a></td>
       <td>Publishable profiles; contributor extensions; <code class="language-plaintext highlighter-rouge">resource-approvalDate</code>; <code class="language-plaintext highlighter-rouge">resource-effectivePeriod</code>; <code class="language-plaintext highlighter-rouge">artifact-relatedArtifact</code>; <code class="language-plaintext highlighter-rouge">artifact-purpose</code>; <code class="language-plaintext highlighter-rouge">artifact-usage</code></td>
       <td>Adds trust, governance, publication context, and human-readable intent to canonical artifacts.</td>
     </tr>
     <tr>
-      <td><a href="https://hl7.org/fhir/uv/crmi/2025Sep/distribution.html">Distribution</a></td>
+      <td><a href="https://hl7.org/fhir/uv/crmi/STU2/en/distribution.html">Distribution</a></td>
       <td>Published IG pages; JSON/XML resources; package download; manifest parameters</td>
       <td>Supports downstream retrieval and tooling use through the FHIR publishing ecosystem. CRMI repository operations are not implemented.</td>
     </tr>
     <tr>
-      <td><a href="https://hl7.org/fhir/uv/crmi/2025Sep/artifact-signing.html">Signing</a></td>
+      <td><a href="https://hl7.org/fhir/uv/crmi/STU2/en/artifact-signing.html">Signing</a></td>
       <td>Not currently implemented</td>
       <td>Candidate future enhancement for integrity, authenticity, and non-repudiation of released artifacts.</td>
     </tr>
@@ -378,140 +378,140 @@ table th {
   </thead>
   <tbody>
     <tr>
-      <td><a href="https://hl7.org/fhir/uv/crmi/2025Sep/StructureDefinition-crmi-shareableimplementationguide.html">CRMI Shareable ImplementationGuide</a><br /><a href="https://hl7.org/fhir/uv/crmi/2025Sep/StructureDefinition-crmi-publishableimplementationguide.html">CRMI Publishable ImplementationGuide</a><br /><a href="https://hl7.org/fhir/uv/crmi/2025Sep/StructureDefinition-crmi-implementationguide.html">CRMI ImplementationGuide</a></td>
+      <td><a href="https://hl7.org/fhir/uv/crmi/STU2/en/StructureDefinition-crmi-shareableimplementationguide.html">CRMI Shareable ImplementationGuide</a><br /><a href="https://hl7.org/fhir/uv/crmi/STU2/en/StructureDefinition-crmi-publishableimplementationguide.html">CRMI Publishable ImplementationGuide</a><br /><a href="https://hl7.org/fhir/uv/crmi/STU2/en/StructureDefinition-crmi-implementationguide.html">CRMI ImplementationGuide</a></td>
       <td>Artifact lifecycle; publishing; packaging</td>
       <td><code class="language-plaintext highlighter-rouge">ImplementationGuide.meta.profile</code></td>
       <td><code class="language-plaintext highlighter-rouge">ImplementationGuide</code></td>
       <td>Enforces the minimum ImplementationGuide metadata set, adds post-publication metadata for distribution, repository inclusion, consumption, and implementation, and declares expansion parameters for the IG.</td>
     </tr>
     <tr>
-      <td><a href="https://hl7.org/fhir/uv/crmi/2025Sep/StructureDefinition-crmi-shareablestructuredefinition.html">CRMI Shareable StructureDefinition</a><br /><a href="https://hl7.org/fhir/uv/crmi/2025Sep/StructureDefinition-crmi-publishablestructuredefinition.html">CRMI Publishable StructureDefinition</a></td>
+      <td><a href="https://hl7.org/fhir/uv/crmi/STU2/en/StructureDefinition-crmi-shareablestructuredefinition.html">CRMI Shareable StructureDefinition</a><br /><a href="https://hl7.org/fhir/uv/crmi/STU2/en/StructureDefinition-crmi-publishablestructuredefinition.html">CRMI Publishable StructureDefinition</a></td>
       <td>Artifact lifecycle; publishing</td>
       <td><code class="language-plaintext highlighter-rouge">StructureDefinition.meta.profile</code></td>
       <td><code class="language-plaintext highlighter-rouge">StructureDefinition</code></td>
       <td>Enforces the minimum StructureDefinition metadata set and adds post-publication metadata for distribution, repository inclusion, consumption, and implementation.</td>
     </tr>
     <tr>
-      <td><a href="https://hl7.org/fhir/uv/crmi/2025Sep/StructureDefinition-crmi-shareablecapabilitystatement.html">CRMI Shareable CapabilityStatement</a><br /><a href="https://hl7.org/fhir/uv/crmi/2025Sep/StructureDefinition-crmi-publishablecapabilitystatement.html">CRMI Publishable CapabilityStatement</a></td>
+      <td><a href="https://hl7.org/fhir/uv/crmi/STU2/en/StructureDefinition-crmi-shareablecapabilitystatement.html">CRMI Shareable CapabilityStatement</a><br /><a href="https://hl7.org/fhir/uv/crmi/STU2/en/StructureDefinition-crmi-publishablecapabilitystatement.html">CRMI Publishable CapabilityStatement</a></td>
       <td>Artifact lifecycle; publishing; distribution</td>
       <td><code class="language-plaintext highlighter-rouge">CapabilityStatement.meta.profile</code></td>
       <td><code class="language-plaintext highlighter-rouge">CapabilityStatement</code></td>
       <td>Enforces the minimum CapabilityStatement metadata set and adds post-publication metadata for distribution, repository inclusion, consumption, and implementation.</td>
     </tr>
     <tr>
-      <td><a href="https://hl7.org/fhir/uv/crmi/2025Sep/StructureDefinition-crmi-shareablecodesystem.html">CRMI Shareable CodeSystem</a></td>
+      <td><a href="https://hl7.org/fhir/uv/crmi/STU2/en/StructureDefinition-crmi-shareablecodesystem.html">CRMI Shareable CodeSystem</a></td>
       <td>Artifact lifecycle; artifact conventions</td>
       <td><code class="language-plaintext highlighter-rouge">CodeSystem.meta.profile</code></td>
       <td><code class="language-plaintext highlighter-rouge">CodeSystem</code> excluding supplements</td>
       <td>Enforces the minimum CodeSystem metadata set required for shared and published code systems.</td>
     </tr>
     <tr>
-      <td><a href="https://hl7.org/fhir/uv/crmi/2025Sep/StructureDefinition-crmi-publishablecodesystem.html">CRMI Publishable CodeSystem</a></td>
+      <td><a href="https://hl7.org/fhir/uv/crmi/STU2/en/StructureDefinition-crmi-publishablecodesystem.html">CRMI Publishable CodeSystem</a></td>
       <td>Publishing; distribution</td>
       <td><code class="language-plaintext highlighter-rouge">CodeSystem.meta.profile</code></td>
       <td><code class="language-plaintext highlighter-rouge">CodeSystem</code> including supplements</td>
       <td>Defines and enforces minimum expectations for CodeSystem publication and distribution, including as part of an artifact repository or IG publication, while allowing supplements to avoid restating inherited CodeSystem properties.</td>
     </tr>
     <tr>
-      <td><a href="https://hl7.org/fhir/uv/crmi/2025Sep/StructureDefinition-crmi-shareablevalueset.html">CRMI Shareable ValueSet</a><br /><a href="https://hl7.org/fhir/uv/crmi/2025Sep/StructureDefinition-crmi-publishablevalueset.html">CRMI Publishable ValueSet</a></td>
+      <td><a href="https://hl7.org/fhir/uv/crmi/STU2/en/StructureDefinition-crmi-shareablevalueset.html">CRMI Shareable ValueSet</a><br /><a href="https://hl7.org/fhir/uv/crmi/STU2/en/StructureDefinition-crmi-publishablevalueset.html">CRMI Publishable ValueSet</a></td>
       <td>Artifact lifecycle; publishing; distribution</td>
       <td><code class="language-plaintext highlighter-rouge">ValueSet.meta.profile</code></td>
       <td><code class="language-plaintext highlighter-rouge">ValueSet</code></td>
       <td>Enforces the minimum ValueSet metadata set and the minimum expectations for ValueSet publication and distribution, including as part of an artifact repository or IG publication.</td>
     </tr>
     <tr>
-      <td><a href="https://hl7.org/fhir/uv/crmi/2025Sep/StructureDefinition-crmi-computablevalueset.html">CRMI Computable ValueSet</a></td>
+      <td><a href="https://hl7.org/fhir/uv/crmi/STU2/en/StructureDefinition-crmi-computablevalueset.html">CRMI Computable ValueSet</a></td>
       <td>Artifact lifecycle; authoring; packaging</td>
       <td><code class="language-plaintext highlighter-rouge">ValueSet.meta.profile</code></td>
       <td><code class="language-plaintext highlighter-rouge">ValueSet</code> resources with computable definitions</td>
       <td>Declares that a ValueSet has a computable expression-based definition, represented through compose, expression, or rules-text content, with an optional expansion.</td>
     </tr>
     <tr>
-      <td><a href="http://hl7.org/fhir/extensions/5.2.0/StructureDefinition-cqf-knowledgeCapability.html">CQF Knowledge Capability</a></td>
+      <td><a href="http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-cqf-knowledgeCapability.html">CQF Knowledge Capability</a></td>
       <td>Artifact lifecycle; artifact conventions</td>
       <td><code class="language-plaintext highlighter-rouge">DomainResource.extension</code></td>
       <td><code class="language-plaintext highlighter-rouge">ImplementationGuide</code>, <code class="language-plaintext highlighter-rouge">StructureDefinition</code>, <code class="language-plaintext highlighter-rouge">CapabilityStatement</code>, <code class="language-plaintext highlighter-rouge">CodeSystem</code>, <code class="language-plaintext highlighter-rouge">ValueSet</code></td>
       <td>Declares the knowledge capability afforded by an artifact, using CRMI lifecycle categories such as shareable, publishable, and computable on resources without a native <code class="language-plaintext highlighter-rouge">knowledgeCapability</code> element.</td>
     </tr>
     <tr>
-      <td><a href="http://hl7.org/fhir/extensions/5.2.0/StructureDefinition-artifact-purpose.html">Artifact Purpose</a></td>
+      <td><a href="http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-artifact-purpose.html">Artifact Purpose</a></td>
       <td>Publishing; distribution</td>
       <td><code class="language-plaintext highlighter-rouge">ImplementationGuide.extension</code>; native <code class="language-plaintext highlighter-rouge">purpose</code> element on canonical resources where available</td>
       <td><code class="language-plaintext highlighter-rouge">ImplementationGuide</code> and definitional artifacts with purpose metadata</td>
       <td>Explains why a definitional artifact is needed and why it was designed as it is, especially where the resource does not have a native <code class="language-plaintext highlighter-rouge">purpose</code> element.</td>
     </tr>
     <tr>
-      <td><a href="http://hl7.org/fhir/extensions/5.2.0/StructureDefinition-artifact-usage.html">Artifact Usage</a></td>
+      <td><a href="http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-artifact-usage.html">Artifact Usage</a></td>
       <td>Publishing; implementation</td>
       <td><code class="language-plaintext highlighter-rouge">DomainResource.extension</code></td>
       <td><code class="language-plaintext highlighter-rouge">ImplementationGuide</code>, <code class="language-plaintext highlighter-rouge">StructureDefinition</code>, <code class="language-plaintext highlighter-rouge">CapabilityStatement</code></td>
       <td>Provides usage guidance for the artifact; in this IG, describes how the artifact should be used within the MII core dataset specification.</td>
     </tr>
     <tr>
-      <td><a href="http://hl7.org/fhir/extensions/5.2.0/StructureDefinition-artifact-topic.html">Artifact Topic</a></td>
+      <td><a href="http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-artifact-topic.html">Artifact Topic</a></td>
       <td>Publishing; distribution</td>
       <td><code class="language-plaintext highlighter-rouge">DomainResource.extension</code></td>
       <td><code class="language-plaintext highlighter-rouge">ImplementationGuide</code>, <code class="language-plaintext highlighter-rouge">StructureDefinition</code>, <code class="language-plaintext highlighter-rouge">CapabilityStatement</code>, <code class="language-plaintext highlighter-rouge">CodeSystem</code>, <code class="language-plaintext highlighter-rouge">ValueSet</code></td>
       <td>Adds high-level descriptive topics related to artifact content for filtering, searching, and grouping.</td>
     </tr>
     <tr>
-      <td><a href="http://hl7.org/fhir/extensions/5.2.0/StructureDefinition-artifact-versionAlgorithm.html">Artifact Version Algorithm</a></td>
+      <td><a href="http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-artifact-versionAlgorithm.html">Artifact Version Algorithm</a></td>
       <td>Artifact conventions; versioning</td>
       <td><code class="language-plaintext highlighter-rouge">DomainResource.extension</code></td>
       <td><code class="language-plaintext highlighter-rouge">ImplementationGuide</code>, <code class="language-plaintext highlighter-rouge">StructureDefinition</code>, <code class="language-plaintext highlighter-rouge">CapabilityStatement</code>, <code class="language-plaintext highlighter-rouge">CodeSystem</code>, <code class="language-plaintext highlighter-rouge">ValueSet</code></td>
       <td>Declares the mechanism used to compare versions and determine which version is more current.</td>
     </tr>
     <tr>
-      <td><a href="http://hl7.org/fhir/extensions/5.2.0/StructureDefinition-artifact-versionPolicy.html">Artifact Version Policy</a></td>
+      <td><a href="http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-artifact-versionPolicy.html">Artifact Version Policy</a></td>
       <td>Artifact lifecycle; versioning</td>
       <td><code class="language-plaintext highlighter-rouge">DomainResource.extension</code></td>
       <td><code class="language-plaintext highlighter-rouge">ImplementationGuide</code>, <code class="language-plaintext highlighter-rouge">StructureDefinition</code>, <code class="language-plaintext highlighter-rouge">CapabilityStatement</code>, <code class="language-plaintext highlighter-rouge">CodeSystem</code>, <code class="language-plaintext highlighter-rouge">ValueSet</code></td>
       <td>Provides the artifact versioning policy; in this IG, <code class="language-plaintext highlighter-rouge">package</code> means artifact versions are managed with the IG package version, so a release can update an artifact version even when the individual artifact content did not change.</td>
     </tr>
     <tr>
-      <td><a href="http://hl7.org/fhir/extensions/5.2.0/StructureDefinition-package-source.html">Package Source</a></td>
+      <td><a href="http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-package-source.html">Package Source</a></td>
       <td>Version manifest; packaging; distribution</td>
       <td><code class="language-plaintext highlighter-rouge">Resource.meta.extension</code></td>
       <td>Definitional resources and example resources</td>
       <td>Declares the package in which an artifact is defined or included so evaluation environments can resolve namespaces and dependencies in the intended IG or package scope.</td>
     </tr>
     <tr>
-      <td><a href="http://hl7.org/fhir/extensions/5.2.0/StructureDefinition-resource-approvalDate.html">Resource Approval Date</a></td>
+      <td><a href="http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-resource-approvalDate.html">Resource Approval Date</a></td>
       <td>Artifact lifecycle; publishing; governance</td>
       <td><code class="language-plaintext highlighter-rouge">DomainResource.extension</code></td>
       <td><code class="language-plaintext highlighter-rouge">ImplementationGuide</code>, <code class="language-plaintext highlighter-rouge">StructureDefinition</code>, <code class="language-plaintext highlighter-rouge">CapabilityStatement</code>, <code class="language-plaintext highlighter-rouge">CodeSystem</code>, <code class="language-plaintext highlighter-rouge">ValueSet</code></td>
       <td>Records the date on which the publisher officially approved the artifact content for use.</td>
     </tr>
     <tr>
-      <td><a href="http://hl7.org/fhir/extensions/5.2.0/StructureDefinition-resource-effectivePeriod.html">Resource Effective Period</a></td>
+      <td><a href="http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-resource-effectivePeriod.html">Resource Effective Period</a></td>
       <td>Artifact lifecycle; publishing; implementation</td>
       <td><code class="language-plaintext highlighter-rouge">DomainResource.extension</code></td>
       <td><code class="language-plaintext highlighter-rouge">ImplementationGuide</code>, <code class="language-plaintext highlighter-rouge">StructureDefinition</code>, <code class="language-plaintext highlighter-rouge">CapabilityStatement</code>, <code class="language-plaintext highlighter-rouge">CodeSystem</code>, <code class="language-plaintext highlighter-rouge">ValueSet</code></td>
       <td>Records the period during which the resource content is planned to be or has been effective.</td>
     </tr>
     <tr>
-      <td><a href="http://hl7.org/fhir/extensions/5.2.0/StructureDefinition-artifact-author.html">Artifact Author</a><br /><a href="http://hl7.org/fhir/extensions/5.2.0/StructureDefinition-artifact-editor.html">Artifact Editor</a><br /><a href="http://hl7.org/fhir/extensions/5.2.0/StructureDefinition-artifact-reviewer.html">Artifact Reviewer</a><br /><a href="http://hl7.org/fhir/extensions/5.2.0/StructureDefinition-artifact-endorser.html">Artifact Endorser</a></td>
+      <td><a href="http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-artifact-author.html">Artifact Author</a><br /><a href="http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-artifact-editor.html">Artifact Editor</a><br /><a href="http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-artifact-reviewer.html">Artifact Reviewer</a><br /><a href="http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-artifact-endorser.html">Artifact Endorser</a></td>
       <td>Publishing; governance; provenance</td>
       <td><code class="language-plaintext highlighter-rouge">DomainResource.extension</code></td>
       <td><code class="language-plaintext highlighter-rouge">ImplementationGuide</code>, <code class="language-plaintext highlighter-rouge">StructureDefinition</code>, <code class="language-plaintext highlighter-rouge">CapabilityStatement</code>, <code class="language-plaintext highlighter-rouge">CodeSystem</code>, <code class="language-plaintext highlighter-rouge">ValueSet</code></td>
       <td>Records the author involved in creation and maintenance, the editor responsible for internal coherence, reviewers responsible for artifact review, and endorsers responsible for official endorsement for use.</td>
     </tr>
     <tr>
-      <td><a href="http://hl7.org/fhir/extensions/5.2.0/StructureDefinition-artifact-relatedArtifact.html">Artifact Related Artifact</a></td>
+      <td><a href="http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-artifact-relatedArtifact.html">Artifact Related Artifact</a></td>
       <td>Publishing; provenance</td>
       <td><code class="language-plaintext highlighter-rouge">DomainResource.extension</code></td>
       <td><code class="language-plaintext highlighter-rouge">ImplementationGuide</code></td>
       <td>Links related artifacts such as additional documentation, justification, dependencies, bibliographic references, and predecessor or successor artifacts.</td>
     </tr>
     <tr>
-      <td><a href="http://hl7.org/fhir/extensions/5.2.0/StructureDefinition-cqf-expansionParameters.html">CQF Expansion Parameters</a></td>
+      <td><a href="http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-cqf-expansionParameters.html">CQF Expansion Parameters</a></td>
       <td>Version manifest; publishing; distribution</td>
       <td><code class="language-plaintext highlighter-rouge">ImplementationGuide.extension</code></td>
       <td><code class="language-plaintext highlighter-rouge">ImplementationGuide</code></td>
       <td>Specifies the expansion parameters to use when expanding ValueSets referenced from the ImplementationGuide.</td>
     </tr>
     <tr>
-      <td><a href="https://hl7.org/fhir/uv/crmi/2025Sep/StructureDefinition-crmi-manifestparameters.html">CRMI Manifest Parameters</a></td>
+      <td><a href="https://hl7.org/fhir/uv/crmi/STU2/en/StructureDefinition-crmi-manifestparameters.html">CRMI Manifest Parameters</a></td>
       <td>Version manifest; packaging; distribution</td>
       <td><code class="language-plaintext highlighter-rouge">Parameters.meta.profile</code>; referenced from <code class="language-plaintext highlighter-rouge">ImplementationGuide.extension:cqf-expansionParameters</code></td>
       <td><code class="language-plaintext highlighter-rouge">Parameters</code></td>
@@ -539,19 +539,19 @@ table th {
   </thead>
   <tbody>
     <tr>
-      <td><a href="https://hl7.org/fhir/uv/crmi/2025Sep/artifact-lifecycle.html#conformance-requirement-3-3">Conformance Requirement 3.3: Artifact Versioning</a></td>
+      <td><a href="https://hl7.org/fhir/uv/crmi/STU2/en/artifact-lifecycle.html#conformance-requirement-3-3">Conformance Requirement 3.3: Artifact Versioning</a></td>
       <td>Artifacts specify a <code class="language-plaintext highlighter-rouge">version</code>. The version follows the CRMI convention <code class="language-plaintext highlighter-rouge">&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;[-&lt;label&gt;]</code>, with the year used as the major component. <code class="language-plaintext highlighter-rouge">artifact-versionAlgorithm</code> declares SemVer-compatible comparison using <code class="language-plaintext highlighter-rouge">semver</code>.</td>
     </tr>
     <tr>
-      <td><a href="https://hl7.org/fhir/uv/crmi/2025Sep/artifact-lifecycle.html#conformance-requirement-3-4">Conformance Requirement 3.4: Artifact Versioning Policy</a></td>
+      <td><a href="https://hl7.org/fhir/uv/crmi/STU2/en/artifact-lifecycle.html#conformance-requirement-3-4">Conformance Requirement 3.4: Artifact Versioning Policy</a></td>
       <td><code class="language-plaintext highlighter-rouge">artifact-versionPolicy</code> is set to <code class="language-plaintext highlighter-rouge">package</code>. Artifact versions are managed as the version of the package in which the artifact appears. This reflects that artifacts are released as part of the IG package and may receive a new version when the package is released, even without a content change to that specific artifact.</td>
     </tr>
     <tr>
-      <td><a href="https://hl7.org/fhir/uv/crmi/2025Sep/artifact-lifecycle.html#conformance-requirement-3-5">Conformance Requirement 3.5: Artifact Collection Versioning</a></td>
+      <td><a href="https://hl7.org/fhir/uv/crmi/STU2/en/artifact-lifecycle.html#conformance-requirement-3-5">Conformance Requirement 3.5: Artifact Collection Versioning</a></td>
       <td>Artifacts are authored as part of the IG/package collection and use the same version as the overall package. A package release may therefore assign a new version to artifacts that did not individually change. The IG uses manifest parameters to establish dependency and terminology version context.</td>
     </tr>
     <tr>
-      <td><a href="https://hl7.org/fhir/uv/crmi/2025Sep/artifact-lifecycle.html#conformance-requirement-3-6">Conformance Requirement 3.6: Artifact Package Source</a></td>
+      <td><a href="https://hl7.org/fhir/uv/crmi/STU2/en/artifact-lifecycle.html#conformance-requirement-3-6">Conformance Requirement 3.6: Artifact Package Source</a></td>
       <td>Artifacts indicate their package source using <code class="language-plaintext highlighter-rouge">package-source</code>, including the package id <code class="language-plaintext highlighter-rouge">de.medizininformatikinitiative.kerndatensatz.base</code>, package version, and package source URI.</td>
     </tr>
   </tbody>
@@ -919,8 +919,8 @@ table th {
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.base#2026.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-07-14 09:30:00 +0000">
-    2026-07-14
+  <span title="2026-07-17 12:08:00 +0000">
+    2026-07-17
   </span>
 
           <br/>

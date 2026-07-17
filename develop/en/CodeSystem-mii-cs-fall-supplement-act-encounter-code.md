@@ -41,8 +41,7 @@ This Code system is referenced in the definition of the following value sets:
       }],
       "url" : "http://hl7.org/fhir/StructureDefinition/package-source"
     }],
-    "profile" : ["http://hl7.org/fhir/StructureDefinition/shareablecodesystem",
-    "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecodesystem"]
+    "profile" : ["http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecodesystem"]
   },
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm",
@@ -51,10 +50,6 @@ This Code system is referenced in the definition of the following value sets:
       "code" : "semver",
       "display" : "SemVer"
     }
-  },
-  {
-    "url" : "http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability",
-    "valueCode" : "shareable"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability",
@@ -150,7 +145,7 @@ This Code system is referenced in the definition of the following value sets:
   "title" : "MII CS Fall Supplement ActEncounterCode",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-15",
+  "date" : "2026-07-17",
   "publisher" : "Medical Informatics Initiative (MII)",
   "contact" : [{
     "name" : "Medical Informatics Initiative (MII)",

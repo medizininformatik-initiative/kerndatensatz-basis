@@ -15,8 +15,6 @@ Enthaelt alle Orpha-Kennnummern (ORPHAcodes)
 
 ### Expansion
 
-No Expansion for this valueset (Unknown Code System)
-
 -------
 
  [Description of the above table(s)](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#terminology). 

@@ -18,6 +18,7 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 * **Added:** Eine Liste der Konformitätsanforderungen ist in der englischen Version der [Conformance Seite](conformance.md) verfügbar
 * **Added:** CapabilityStatements dokumentieren nun Beispiel-FHIR-Suchanfragen für unterstützte SearchParameters
 * **Added:** LogicalModel-Seiten enthalten nun Mapping-Tabellen zu den entsprechenden FHIR-Zielstrukturen
+* **Added:** CRMI-Abhängigkeit auf STU-2-Release 2.0.0
 * **Added:** Metadaten-Dokumentation zu CRMI-basierten Artefaktmetadaten, Versionierung und Package-Provenance, Manifest-Parametern und zum Bezug zu FAIR Data Maturity Indicators ergänzt
 * **Added:** Die ImplementationGuide-Dokumentation beschreibt nun IG-Parametereinstellungen und Expansionsparameter
 * **Changed:** Must Support-Flags werden nun einheitlich auf relevante Unterelemente in allen Profilen angewendet, und die Dokumentation zu [Must Support](must-support.md) beschreibt, wie komplexe Elemente und ihre markierten Unterelemente konkrete Erwartungen an die Server- und Client-Unterstützung definieren.

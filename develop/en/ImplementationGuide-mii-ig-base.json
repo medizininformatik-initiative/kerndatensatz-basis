@@ -9,7 +9,7 @@
   "language" : "en",
   "text" : {
     "status" : "generated",
-    "div" : "<div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide mii-ig-base</b></p><a name=\"mii-ig-base\"> </a><a name=\"hcmii-ig-base\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: en</p><p style=\"margin-bottom: 0px\">Profiles: <a href=\"http://hl7.org/fhir/uv/crmi/2025Sep/StructureDefinition-crmi-shareableimplementationguide.html\">CRMI Shareable ImplementationGuide</a>, <a href=\"http://hl7.org/fhir/uv/crmi/2025Sep/StructureDefinition-crmi-publishableimplementationguide.html\">CRMI Publishable ImplementationGuide</a>, <a href=\"http://hl7.org/fhir/uv/crmi/2025Sep/StructureDefinition-crmi-implementationguide.html\">CRMI ImplementationGuide</a></p></div><h2>MII_IG_Base</h2><p>The official URL for this implementation guide is: </p><pre>https://www.medizininformatik-initiative.de/fhir/modul-base/ImplementationGuide/mii-ig-base</pre><div><p>Implementation Guide for the Core Dataset Base Modules Person, Diagnosis, Procedure, and Treatment Case</p>\n</div></div>"
+    "div" : "<div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide mii-ig-base</b></p><a name=\"mii-ig-base\"> </a><a name=\"hcmii-ig-base\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: en</p><p style=\"margin-bottom: 0px\">Profiles: <a href=\"http://hl7.org/fhir/uv/crmi/STU2/StructureDefinition-crmi-shareableimplementationguide.html\">CRMI Shareable ImplementationGuide</a>, <a href=\"http://hl7.org/fhir/uv/crmi/STU2/StructureDefinition-crmi-publishableimplementationguide.html\">CRMI Publishable ImplementationGuide</a>, <a href=\"http://hl7.org/fhir/uv/crmi/STU2/StructureDefinition-crmi-implementationguide.html\">CRMI ImplementationGuide</a></p></div><h2>MII_IG_Base</h2><p>The official URL for this implementation guide is: </p><pre>https://www.medizininformatik-initiative.de/fhir/modul-base/ImplementationGuide/mii-ig-base</pre><div><p>Implementation Guide for the Core Dataset Base Modules Person, Diagnosis, Procedure, and Treatment Case</p>\n</div></div>"
   },
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/resource-approvalDate",
@@ -28,8 +28,8 @@
     "valueCodeableConcept" : {
       "coding" : [{
         "system" : "http://terminology.hl7.org/CodeSystem/artifact-version-policy-codes",
-        "code" : "strict",
-        "display" : "Strict"
+        "code" : "package",
+        "display" : "Package"
       }]
     }
   },
@@ -280,7 +280,7 @@
     "id" : "hl7_fhir_uv_crmi",
     "uri" : "http://hl7.org/fhir/uv/crmi/ImplementationGuide/hl7.fhir.uv.crmi",
     "packageId" : "hl7.fhir.uv.crmi",
-    "version" : "2.0.0-ballot"
+    "version" : "2.0.0"
   }],
   "definition" : {
     "extension" : [{
