@@ -149,6 +149,10 @@ RuleSet: CRMIKnowledgeCapabilitiesCodeSystem
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability"
 * ^extension[=].valueCode = #publishable
 
+RuleSet: CRMIKnowledgeCapabilitiesCodeSystemPublishable
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability"
+* ^extension[=].valueCode = #publishable
+
 // ValueSet
 
 RuleSet: CRMIShareableValueSet

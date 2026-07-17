@@ -7,7 +7,7 @@ Description: "CodeSystem Supplement für v2-0004"
 * insert PR_CS_VS_Version
 * ^status = #active
 * ^experimental = false
-* ^date = "2026-06-15"
+* ^date = "2026-07-17"
 * ^purpose = "Provide German language designations for PatientClass codes used in the MII Treatment Case module."
 /*
 CRMI ShareableCodeSystem requires CodeSystem.caseSensitive (1..1), but IG publisher QA says:
@@ -18,7 +18,7 @@ CodeSystems SHOULD NOT have a stated value for the caseSensitive element when th
 * insert Publisher
 * insert LicenseCodeableCCBY40
 * insert CRMIPublishableCodeSystem
-* insert CRMIKnowledgeCapabilitiesCodeSystem
+* insert CRMIKnowledgeCapabilitiesCodeSystemPublishable
 * insert CRMIVersionPolicyStrict
 * insert CRMIPackageSourceDefinitionalResource
 * insert CRMIApprovalDate(2024-03-07)

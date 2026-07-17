@@ -3,7 +3,7 @@ Id: mii-cs-person-vitalstatus
 Title: "MII CS Person Vitalstatus"
 Description: "Vitalstatus des Patienten"
 * ^url = "https://www.medizininformatik-initiative.de/fhir/core/modul-person/CodeSystem/Vitalstatus"
-//* ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
+* ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
 * insert PR_CS_VS_Version
 * ^status = #active
 * insert Publisher
@@ -19,7 +19,7 @@ Description: "Vitalstatus des Patienten"
 * insert CRMIArtifactTopic(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C16960)
 * insert CRMIArtifactTopic(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C25717)
 * ^experimental = false
-* ^date = "2026-06-15"
+* ^date = "2026-07-17"
 * ^purpose = "Provide a code system for representing the vital status of a patient in the MII Person module."
 * ^caseSensitive = true
 * ^valueSet = "https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/Vitalstatus"
