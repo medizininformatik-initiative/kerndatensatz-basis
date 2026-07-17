@@ -3,7 +3,7 @@ Id: mii-cs-person-vitalstatus
 Title: "MII CS Person Vitalstatus"
 Description: "Vitalstatus des Patienten"
 * ^url = "https://www.medizininformatik-initiative.de/fhir/core/modul-person/CodeSystem/Vitalstatus"
-* ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
+//* ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
 * insert PR_CS_VS_Version
 * ^status = #active
 * insert Publisher

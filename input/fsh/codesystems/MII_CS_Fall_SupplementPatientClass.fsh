@@ -3,7 +3,7 @@ Id: mii-cs-fall-supplement-patient-class
 Title: "MII CS Fall Supplement PatientClass"
 Description: "CodeSystem Supplement für v2-0004"
 * ^url = "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/CodeSystem/SupplementPatientClass"
-* ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
+//* ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
 * insert PR_CS_VS_Version
 * ^status = #active
 * ^experimental = false
