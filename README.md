@@ -7,9 +7,7 @@ Kerndatensatzmodule Person, Diagnose, Prozedur, Fall
 ### Build versions
 
 - **Current deployment**: https://medizininformatik-initiative.github.io/kerndatensatz-basis/
-- **Branch previews**: `https://medizininformatik-initiative.github.io/kerndatensatz-basis/branches/<branch-name>/`
-
-Feature branches are automatically published below `branches/`.
+- **Development build (`develop`)**: https://medizininformatik-initiative.github.io/kerndatensatz-basis/branches/develop/
 
 ### Stable Releases
 
