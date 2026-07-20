@@ -1,26 +1,195 @@
 {
   "resourceType": "StructureDefinition",
   "id": "mii-lm-person",
+  "meta": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-license",
+        "valueCode": "CC-BY-4.0"
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/package-source",
+        "extension": [
+          {
+            "url": "packageId",
+            "valueId": "de.medizininformatikinitiative.kerndatensatz.base"
+          },
+          {
+            "url": "version",
+            "valueString": "2026.0.1"
+          },
+          {
+            "url": "uri",
+            "valueUri": "https://www.medizininformatik-initiative.de/fhir/modul-base"
+          }
+        ]
+      }
+    ],
+    "profile": [
+      "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition",
+      "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition"
+    ]
+  },
   "extension": [
     {
-      "url": "https://www.medizininformatik-initiative.de/fhir/modul-meta/StructureDefinition/mii-ex-meta-license-codeable",
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm",
+      "valueCoding": {
+        "code": "semver",
+        "system": "http://hl7.org/fhir/version-algorithm",
+        "display": "SemVer"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability",
+      "valueCode": "shareable"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability",
+      "valueCode": "publishable"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-versionPolicy",
       "valueCodeableConcept": {
         "coding": [
           {
-            "code": "CC-BY-4.0",
-            "system": "http://hl7.org/fhir/spdx-license",
-            "display": "Creative Commons Attribution 4.0 International"
+            "code": "package",
+            "system": "http://terminology.hl7.org/CodeSystem/artifact-version-policy-codes",
+            "display": "Package"
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-usage",
+      "valueMarkdown": "Use this logical model as the module-specific information model for the Medical Informatics Initiative core dataset. The model describes clinically or administratively relevant information in a domain-oriented form and provides a bridge between the conceptual content specification and the corresponding technical FHIR profiles. It is a pattern for describing the intended content model and is not intended to be exchanged as a concrete FHIR resource instance. Implementers should use it to understand the scope, semantics, and structure of the module before applying the related FHIR profiles and mappings."
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/resource-approvalDate",
+      "valueDate": "2024-03-07"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod",
+      "valuePeriod": {
+        "start": "2026"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-topic",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "C16960",
+            "system": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl"
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-topic",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "C25190",
+            "system": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl"
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-topic",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "C81239",
+            "system": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl"
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-topic",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "C25717",
+            "system": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl"
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-author",
+      "valueContactDetail": {
+        "telecom": [
+          {
+            "system": "email",
+            "value": "julian.sass@charite.de"
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-editor",
+      "valueContactDetail": {
+        "name": "Taskforce Core Data Set"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-reviewer",
+      "valueContactDetail": {
+        "name": "Interoperability Working Group",
+        "telecom": [
+          {
+            "system": "url",
+            "value": "https://www.medizininformatik-initiative.de/en/collaboration/interoperability-working-group"
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-reviewer",
+      "valueContactDetail": {
+        "name": "National Steering Committee",
+        "telecom": [
+          {
+            "system": "url",
+            "value": "https://www.medizininformatik-initiative.de/en/collaboration/national-steering-committee"
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-endorser",
+      "valueContactDetail": {
+        "name": "Interoperability Working Group",
+        "telecom": [
+          {
+            "system": "url",
+            "value": "https://www.medizininformatik-initiative.de/en/collaboration/interoperability-working-group"
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-endorser",
+      "valueContactDetail": {
+        "name": "National Steering Committee",
+        "telecom": [
+          {
+            "system": "url",
+            "value": "https://www.medizininformatik-initiative.de/en/collaboration/national-steering-committee"
           }
         ]
       }
     }
   ],
   "url": "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/LogicalModel/Person",
-  "version": "2026.0.0",
+  "version": "2026.0.1",
   "name": "MII_LM_Person",
   "title": "MII LM Person",
   "status": "active",
-  "date": "2024-12-04",
+  "experimental": false,
+  "date": "2026-06-09",
   "publisher": "Medizininformatik Initiative",
   "contact": [
     {
@@ -33,7 +202,15 @@
     }
   ],
   "description": "Logische Repräsentation des Basismoduls Person",
+  "purpose": "Define the person-related information model independently of a concrete FHIR resource representation.",
   "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "FHIR",
+      "name": "Person LogicalModel FHIR Mapping",
+      "uri": "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }
+  ],
   "kind": "logical",
   "abstract": false,
   "type": "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/LogicalModel/Person",
@@ -92,6 +269,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "FHIR",
+            "map": "Patient.name"
+          }
         ]
       },
       {
@@ -121,6 +304,12 @@
         "type": [
           {
             "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "FHIR",
+            "map": "Patient.name.given"
           }
         ]
       },
@@ -152,6 +341,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "FHIR",
+            "map": "Patient.name.family.extension.nachname"
+          }
         ]
       },
       {
@@ -181,6 +376,12 @@
         "type": [
           {
             "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "FHIR",
+            "map": "Patient.name.family"
           }
         ]
       },
@@ -212,6 +413,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "FHIR",
+            "map": "Patient.name.family.extension.vorsatzwort"
+          }
         ]
       },
       {
@@ -241,6 +448,12 @@
         "type": [
           {
             "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "FHIR",
+            "map": "Patient.name.family.extension.namenszusatz"
           }
         ]
       },
@@ -272,6 +485,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "FHIR",
+            "map": "Patient.name.prefix"
+          }
         ]
       },
       {
@@ -302,6 +521,12 @@
           {
             "code": "code"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "FHIR",
+            "map": "Patient.name.prefix.extension-prefix-qualifier"
+          }
         ]
       },
       {
@@ -331,6 +556,12 @@
         "type": [
           {
             "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "FHIR",
+            "map": "Patient.name.use"
           }
         ]
       },
@@ -392,6 +623,12 @@
           {
             "code": "code"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "FHIR",
+            "map": "Patient.gender"
+          }
         ]
       },
       {
@@ -422,6 +659,12 @@
           {
             "code": "date"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "FHIR",
+            "map": "Patient.birthDate"
+          }
         ]
       },
       {
@@ -451,6 +694,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "FHIR",
+            "map": "Patient.address"
           }
         ]
       },
@@ -512,6 +761,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "FHIR",
+            "map": "Patient.address.country"
+          }
         ]
       },
       {
@@ -541,6 +796,12 @@
         "type": [
           {
             "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "FHIR",
+            "map": "Patient.address.postalCode"
           }
         ]
       },
@@ -572,6 +833,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "FHIR",
+            "map": "Patient.address.city + Patient.address.extension.Stadtteil"
+          }
         ]
       },
       {
@@ -601,6 +868,12 @@
         "type": [
           {
             "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "FHIR",
+            "map": "Patient.address.line"
           }
         ]
       },
@@ -662,6 +935,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "FHIR",
+            "map": "Patient.address.country"
+          }
         ]
       },
       {
@@ -691,6 +970,12 @@
         "type": [
           {
             "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "FHIR",
+            "map": "Patient.address.postalCode"
           }
         ]
       },
@@ -722,6 +1007,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "FHIR",
+            "map": "Patient.address.city + Patient.address.extension.Stadtteil"
+          }
         ]
       },
       {
@@ -751,6 +1042,12 @@
         "type": [
           {
             "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "FHIR",
+            "map": "Patient.address.line"
           }
         ]
       },
@@ -812,6 +1109,12 @@
           {
             "code": "boolean"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "FHIR",
+            "map": "Patient.deceased[x]"
+          }
         ]
       },
       {
@@ -841,6 +1144,12 @@
         "type": [
           {
             "code": "dateTime"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "FHIR",
+            "map": "Patient.deceased[x]"
           }
         ]
       },
@@ -1005,6 +1314,12 @@
           {
             "code": "Identifier"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "FHIR",
+            "map": "Patient.identifier:pid"
+          }
         ]
       },
       {
@@ -1064,6 +1379,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "FHIR",
+            "map": "Patient.identifier:default"
           }
         ]
       },
@@ -1186,6 +1507,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "FHIR",
+            "map": "Patient.identifier:versichertenId_GKV"
+          }
         ]
       },
       {
@@ -1215,6 +1542,12 @@
         "type": [
           {
             "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "FHIR",
+            "map": "Patient.identifier:versicherungsnummer_pkv"
           }
         ]
       },
@@ -1488,6 +1821,12 @@
         "type": [
           {
             "code": "Identifier"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "FHIR",
+            "map": "Patient.identifier:PseudonymisierterIdentifier"
           }
         ]
       }

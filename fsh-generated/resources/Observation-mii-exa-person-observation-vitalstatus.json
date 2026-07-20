@@ -9,8 +9,27 @@
         "display": "test health data"
       }
     ],
+    "extension": [
+      {
+        "extension": [
+          {
+            "url": "packageId",
+            "valueId": "de.medizininformatikinitiative.kerndatensatz.base"
+          },
+          {
+            "url": "version",
+            "valueString": "2026.0.1"
+          },
+          {
+            "url": "uri",
+            "valueUri": "https://www.medizininformatik-initiative.de/fhir/modul-base"
+          }
+        ],
+        "url": "http://hl7.org/fhir/StructureDefinition/package-source"
+      }
+    ],
     "profile": [
-      "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus|2026.0.0"
+      "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus|2026.0.1"
     ]
   },
   "category": [

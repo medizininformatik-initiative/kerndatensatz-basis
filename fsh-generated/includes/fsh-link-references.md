@@ -6,8 +6,6 @@
 [MII_CS_Fall_SupplementActEncounterCode]: CodeSystem-mii-cs-fall-supplement-act-encounter-code.html
 [MII_CS_Fall_SupplementPatientClass]: CodeSystem-mii-cs-fall-supplement-patient-class.html
 [MII_CS_Person_Vitalstatus]: CodeSystem-mii-cs-person-vitalstatus.html
-[MII_EX_Fall_Planned_End_Date]: StructureDefinition-mii-ex-fall-planned-end-date.html
-[MII_EX_Fall_Planned_Start_Date]: StructureDefinition-mii-ex-fall-planned-start-date.html
 [MII_EX_Prozedur_Durchfuehrungsabsicht]: StructureDefinition-mii-ex-prozedur-durchfuehrungsabsicht.html
 [mii-exa-base-test-data-bundle-1]: Bundle-mii-exa-base-test-data-bundle-1.html
 [mii-exa-diagnose-appendicitis]: Condition-mii-exa-diagnose-appendicitis.html
@@ -62,3 +60,4 @@
 [MII_VS_Prozedur_OPS]: ValueSet-mii-vs-prozedur-ops.html
 [MII_VS_Prozedur_OpsKategorien_SNOMEDCT]: ValueSet-mii-vs-prozedur-opskategorien-snomedct.html
 [MII_VS_Prozedur_Prozeduren_SNOMEDCT]: ValueSet-mii-vs-prozedur-prozeduren-snomedct.html
+[mii-param-base-manifest]: Parameters-mii-param-base-manifest.html

@@ -1,22 +1,157 @@
 {
   "resourceType": "StructureDefinition",
   "id": "mii-pr-person-patient",
+  "meta": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-license",
+        "valueCode": "CC-BY-4.0"
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/package-source",
+        "extension": [
+          {
+            "url": "packageId",
+            "valueId": "de.medizininformatikinitiative.kerndatensatz.base"
+          },
+          {
+            "url": "version",
+            "valueString": "2026.0.1"
+          },
+          {
+            "url": "uri",
+            "valueUri": "https://www.medizininformatik-initiative.de/fhir/modul-base"
+          }
+        ]
+      }
+    ],
+    "profile": [
+      "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition",
+      "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition"
+    ]
+  },
   "extension": [
     {
-      "url": "https://www.medizininformatik-initiative.de/fhir/modul-meta/StructureDefinition/mii-ex-meta-license-codeable",
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm",
+      "valueCoding": {
+        "code": "semver",
+        "system": "http://hl7.org/fhir/version-algorithm",
+        "display": "SemVer"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability",
+      "valueCode": "shareable"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability",
+      "valueCode": "publishable"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-versionPolicy",
       "valueCodeableConcept": {
         "coding": [
           {
-            "code": "CC-BY-4.0",
-            "system": "http://hl7.org/fhir/spdx-license",
-            "display": "Creative Commons Attribution 4.0 International"
+            "code": "package",
+            "system": "http://terminology.hl7.org/CodeSystem/artifact-version-policy-codes",
+            "display": "Package"
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-usage",
+      "valueMarkdown": "Use this profile as the technical FHIR representation of the corresponding Medical Informatics Initiative logical model. The profile constrains a base FHIR resource for the MII module context by specifying how elements are used, which elements are required or not used, which extensions and terminology bindings apply, and how the resource maps to the module-specific content model. Implementers should produce and consume resource instances that conform to this profile when exchanging data for the corresponding MII module."
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/resource-approvalDate",
+      "valueDate": "2024-03-07"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod",
+      "valuePeriod": {
+        "start": "2026"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-topic",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "C16960",
+            "system": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl"
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-author",
+      "valueContactDetail": {
+        "telecom": [
+          {
+            "system": "email",
+            "value": "julian.sass@charite.de"
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-editor",
+      "valueContactDetail": {
+        "name": "Taskforce Core Data Set"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-reviewer",
+      "valueContactDetail": {
+        "name": "Interoperability Working Group",
+        "telecom": [
+          {
+            "system": "url",
+            "value": "https://www.medizininformatik-initiative.de/en/collaboration/interoperability-working-group"
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-reviewer",
+      "valueContactDetail": {
+        "name": "National Steering Committee",
+        "telecom": [
+          {
+            "system": "url",
+            "value": "https://www.medizininformatik-initiative.de/en/collaboration/national-steering-committee"
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-endorser",
+      "valueContactDetail": {
+        "name": "Interoperability Working Group",
+        "telecom": [
+          {
+            "system": "url",
+            "value": "https://www.medizininformatik-initiative.de/en/collaboration/interoperability-working-group"
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-endorser",
+      "valueContactDetail": {
+        "name": "National Steering Committee",
+        "telecom": [
+          {
+            "system": "url",
+            "value": "https://www.medizininformatik-initiative.de/en/collaboration/national-steering-committee"
           }
         ]
       }
     }
   ],
   "url": "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient",
-  "version": "2026.0.0",
+  "version": "2026.0.1",
   "name": "MII_PR_Person_Patient",
   "title": "MII PR Person Patient",
   "_title": {
@@ -50,7 +185,8 @@
     ]
   },
   "status": "active",
-  "date": "2024-12-04",
+  "experimental": false,
+  "date": "2026-06-09",
   "publisher": "Medizininformatik Initiative",
   "contact": [
     {
@@ -93,6 +229,7 @@
       }
     ]
   },
+  "purpose": "Constrain the FHIR Patient resource for consistent exchange of patient information in the MII Person module.",
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
@@ -300,6 +437,21 @@
         "mustSupport": true
       },
       {
+        "id": "Patient.identifier:versichertenId.type.coding",
+        "path": "Patient.identifier.type.coding",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.identifier:versichertenId.type.coding.system",
+        "path": "Patient.identifier.type.coding.system",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.identifier:versichertenId.type.coding.code",
+        "path": "Patient.identifier.type.coding.code",
+        "mustSupport": true
+      },
+      {
         "id": "Patient.identifier:versichertenId.system",
         "path": "Patient.identifier.system",
         "mustSupport": true
@@ -332,6 +484,21 @@
       {
         "id": "Patient.identifier:versichertenId.assigner.identifier.type",
         "path": "Patient.identifier.assigner.identifier.type",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.identifier:versichertenId.assigner.identifier.type.coding",
+        "path": "Patient.identifier.assigner.identifier.type.coding",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.identifier:versichertenId.assigner.identifier.type.coding.system",
+        "path": "Patient.identifier.assigner.identifier.type.coding.system",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.identifier:versichertenId.assigner.identifier.type.coding.code",
+        "path": "Patient.identifier.assigner.identifier.type.coding.code",
         "mustSupport": true
       },
       {
@@ -438,6 +605,21 @@
         "mustSupport": true
       },
       {
+        "id": "Patient.identifier:pid.type.coding",
+        "path": "Patient.identifier.type.coding",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.identifier:pid.type.coding.system",
+        "path": "Patient.identifier.type.coding.system",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.identifier:pid.type.coding.code",
+        "path": "Patient.identifier.type.coding.code",
+        "mustSupport": true
+      },
+      {
         "id": "Patient.identifier:pid.system",
         "path": "Patient.identifier.system",
         "mustSupport": true
@@ -453,6 +635,11 @@
         "mustSupport": true
       },
       {
+        "id": "Patient.identifier:pid.assigner.identifier",
+        "path": "Patient.identifier.assigner.identifier",
+        "mustSupport": true
+      },
+      {
         "id": "Patient.identifier:pid.assigner.identifier.type",
         "path": "Patient.identifier.assigner.identifier.type",
         "patternCodeableConcept": {
@@ -463,6 +650,21 @@
             }
           ]
         },
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.identifier:pid.assigner.identifier.type.coding",
+        "path": "Patient.identifier.assigner.identifier.type.coding",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.identifier:pid.assigner.identifier.type.coding.system",
+        "path": "Patient.identifier.assigner.identifier.type.coding.system",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.identifier:pid.assigner.identifier.type.coding.code",
+        "path": "Patient.identifier.assigner.identifier.type.coding.code",
         "mustSupport": true
       },
       {
@@ -969,6 +1171,26 @@
         "mustSupport": true
       },
       {
+        "id": "Patient.gender.extension:other-amtlich.url",
+        "path": "Patient.gender.extension.url",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.gender.extension:other-amtlich.value[x]",
+        "path": "Patient.gender.extension.value[x]",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.gender.extension:other-amtlich.value[x].system",
+        "path": "Patient.gender.extension.value[x].system",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.gender.extension:other-amtlich.value[x].code",
+        "path": "Patient.gender.extension.value[x].code",
+        "mustSupport": true
+      },
+      {
         "id": "Patient.birthDate",
         "path": "Patient.birthDate",
         "short": "Geburtsdatum",
@@ -1068,6 +1290,16 @@
       {
         "id": "Patient.deceased[x]",
         "path": "Patient.deceased[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
         "short": "Verstorben",
         "_short": {
           "extension": [
@@ -1130,6 +1362,32 @@
             }
           ]
         },
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.deceased[x]:deceasedBoolean",
+        "path": "Patient.deceased[x]",
+        "sliceName": "deceasedBoolean",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.deceased[x]:deceasedDateTime",
+        "path": "Patient.deceased[x]",
+        "sliceName": "deceasedDateTime",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ],
         "mustSupport": true
       },
       {
@@ -1378,6 +1636,26 @@
         "mustSupport": true
       },
       {
+        "id": "Patient.address:Strassenanschrift.city.extension:gemeindeschluessel.url",
+        "path": "Patient.address.city.extension.url",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.address:Strassenanschrift.city.extension:gemeindeschluessel.value[x]",
+        "path": "Patient.address.city.extension.value[x]",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.address:Strassenanschrift.city.extension:gemeindeschluessel.value[x].system",
+        "path": "Patient.address.city.extension.value[x].system",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.address:Strassenanschrift.city.extension:gemeindeschluessel.value[x].code",
+        "path": "Patient.address.city.extension.value[x].code",
+        "mustSupport": true
+      },
+      {
         "id": "Patient.address:Strassenanschrift.postalCode",
         "path": "Patient.address.postalCode",
         "min": 1,
@@ -1555,6 +1833,26 @@
             ]
           }
         ],
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.address:Postfach.city.extension:gemeindeschluessel.url",
+        "path": "Patient.address.city.extension.url",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.address:Postfach.city.extension:gemeindeschluessel.value[x]",
+        "path": "Patient.address.city.extension.value[x]",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.address:Postfach.city.extension:gemeindeschluessel.value[x].system",
+        "path": "Patient.address.city.extension.value[x].system",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.address:Postfach.city.extension:gemeindeschluessel.value[x].code",
+        "path": "Patient.address.city.extension.value[x].code",
         "mustSupport": true
       },
       {

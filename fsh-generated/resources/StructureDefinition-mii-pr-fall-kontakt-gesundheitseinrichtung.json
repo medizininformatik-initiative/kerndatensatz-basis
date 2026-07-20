@@ -1,22 +1,157 @@
 {
   "resourceType": "StructureDefinition",
   "id": "mii-pr-fall-kontakt-gesundheitseinrichtung",
+  "meta": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-license",
+        "valueCode": "CC-BY-4.0"
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/package-source",
+        "extension": [
+          {
+            "url": "packageId",
+            "valueId": "de.medizininformatikinitiative.kerndatensatz.base"
+          },
+          {
+            "url": "version",
+            "valueString": "2026.0.1"
+          },
+          {
+            "url": "uri",
+            "valueUri": "https://www.medizininformatik-initiative.de/fhir/modul-base"
+          }
+        ]
+      }
+    ],
+    "profile": [
+      "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition",
+      "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition"
+    ]
+  },
   "extension": [
     {
-      "url": "https://www.medizininformatik-initiative.de/fhir/modul-meta/StructureDefinition/mii-ex-meta-license-codeable",
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm",
+      "valueCoding": {
+        "code": "semver",
+        "system": "http://hl7.org/fhir/version-algorithm",
+        "display": "SemVer"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability",
+      "valueCode": "shareable"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability",
+      "valueCode": "publishable"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-versionPolicy",
       "valueCodeableConcept": {
         "coding": [
           {
-            "code": "CC-BY-4.0",
-            "system": "http://hl7.org/fhir/spdx-license",
-            "display": "Creative Commons Attribution 4.0 International"
+            "code": "package",
+            "system": "http://terminology.hl7.org/CodeSystem/artifact-version-policy-codes",
+            "display": "Package"
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-usage",
+      "valueMarkdown": "Use this profile as the technical FHIR representation of the corresponding Medical Informatics Initiative logical model. The profile constrains a base FHIR resource for the MII module context by specifying how elements are used, which elements are required or not used, which extensions and terminology bindings apply, and how the resource maps to the module-specific content model. Implementers should produce and consume resource instances that conform to this profile when exchanging data for the corresponding MII module."
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/resource-approvalDate",
+      "valueDate": "2024-03-07"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod",
+      "valuePeriod": {
+        "start": "2026"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-topic",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "C154624",
+            "system": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl"
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-author",
+      "valueContactDetail": {
+        "telecom": [
+          {
+            "system": "email",
+            "value": "julian.sass@charite.de"
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-editor",
+      "valueContactDetail": {
+        "name": "Taskforce Core Data Set"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-reviewer",
+      "valueContactDetail": {
+        "name": "Interoperability Working Group",
+        "telecom": [
+          {
+            "system": "url",
+            "value": "https://www.medizininformatik-initiative.de/en/collaboration/interoperability-working-group"
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-reviewer",
+      "valueContactDetail": {
+        "name": "National Steering Committee",
+        "telecom": [
+          {
+            "system": "url",
+            "value": "https://www.medizininformatik-initiative.de/en/collaboration/national-steering-committee"
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-endorser",
+      "valueContactDetail": {
+        "name": "Interoperability Working Group",
+        "telecom": [
+          {
+            "system": "url",
+            "value": "https://www.medizininformatik-initiative.de/en/collaboration/interoperability-working-group"
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-endorser",
+      "valueContactDetail": {
+        "name": "National Steering Committee",
+        "telecom": [
+          {
+            "system": "url",
+            "value": "https://www.medizininformatik-initiative.de/en/collaboration/national-steering-committee"
           }
         ]
       }
     }
   ],
   "url": "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung",
-  "version": "2026.0.0",
+  "version": "2026.0.1",
   "name": "MII_PR_Fall_KontaktGesundheitseinrichtung",
   "title": "MII PR Fall Kontakt mit einer Gesundheitseinrichtung",
   "_title": {
@@ -50,8 +185,21 @@
     ]
   },
   "status": "active",
-  "date": "2025-12-12",
+  "experimental": false,
+  "date": "2026-06-15",
+  "publisher": "Medizininformatik Initiative",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de"
+        }
+      ]
+    }
+  ],
   "description": "Kontakt zu einer Einrichtung, Abteilung oder Versorgungsstelle",
+  "purpose": "Constrain the FHIR Encounter resource for consistent exchange of contacts with healthcare institutions in the MII Treatment Case module.",
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
@@ -75,7 +223,7 @@
             "key": "mii-enc-2",
             "severity": "error",
             "human": "Abgeschlossene, stationäre Kontakte MÜSSEN einen Start- und End-Zeitpunkt angeben",
-            "expression": "status = 'finished' and class = 'IMP' implies period.start.exists() and period.end.exists()",
+            "expression": "status = 'finished' and class.code = 'IMP' implies period.start.exists() and period.end.exists()",
             "source": "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung"
           },
           {
@@ -298,6 +446,16 @@
         "mustSupport": true
       },
       {
+        "id": "Encounter.extension:Aufnahmegrund.extension:ErsteUndZweiteStelle.url",
+        "path": "Encounter.extension.extension.url",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.extension:Aufnahmegrund.extension:ErsteUndZweiteStelle.value[x]",
+        "path": "Encounter.extension.extension.value[x]",
+        "mustSupport": true
+      },
+      {
         "id": "Encounter.extension:Aufnahmegrund.extension:DritteStelle",
         "path": "Encounter.extension.extension",
         "sliceName": "DritteStelle",
@@ -366,6 +524,16 @@
         "mustSupport": true
       },
       {
+        "id": "Encounter.extension:Aufnahmegrund.extension:DritteStelle.url",
+        "path": "Encounter.extension.extension.url",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.extension:Aufnahmegrund.extension:DritteStelle.value[x]",
+        "path": "Encounter.extension.extension.value[x]",
+        "mustSupport": true
+      },
+      {
         "id": "Encounter.extension:Aufnahmegrund.extension:VierteStelle",
         "path": "Encounter.extension.extension",
         "sliceName": "VierteStelle",
@@ -431,6 +599,16 @@
             }
           ]
         },
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.extension:Aufnahmegrund.extension:VierteStelle.url",
+        "path": "Encounter.extension.extension.url",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.extension:Aufnahmegrund.extension:VierteStelle.value[x]",
+        "path": "Encounter.extension.extension.value[x]",
         "mustSupport": true
       },
       {
@@ -649,7 +827,8 @@
           ],
           "rules": "open"
         },
-        "min": 1
+        "min": 1,
+        "mustSupport": true
       },
       {
         "id": "Encounter.identifier:Aufnahmenummer.type.coding:vn-type",
@@ -830,6 +1009,16 @@
         }
       },
       {
+        "id": "Encounter.class.system",
+        "path": "Encounter.class.system",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.class.code",
+        "path": "Encounter.class.code",
+        "mustSupport": true
+      },
+      {
         "id": "Encounter.type",
         "path": "Encounter.type",
         "slicing": {
@@ -988,6 +1177,16 @@
         }
       },
       {
+        "id": "Encounter.type:Kontaktebene.coding.system",
+        "path": "Encounter.type.coding.system",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.type:Kontaktebene.coding.code",
+        "path": "Encounter.type.coding.code",
+        "mustSupport": true
+      },
+      {
         "id": "Encounter.type:KontaktArt",
         "path": "Encounter.type",
         "sliceName": "KontaktArt",
@@ -1067,6 +1266,16 @@
           "strength": "required",
           "valueSet": "http://fhir.de/ValueSet/kontaktart-de"
         }
+      },
+      {
+        "id": "Encounter.type:KontaktArt.coding.system",
+        "path": "Encounter.type.coding.system",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.type:KontaktArt.coding.code",
+        "path": "Encounter.type.coding.code",
+        "mustSupport": true
       },
       {
         "id": "Encounter.serviceType",
@@ -1336,6 +1545,11 @@
         "mustSupport": true
       },
       {
+        "id": "Encounter.subject.reference",
+        "path": "Encounter.subject.reference",
+        "mustSupport": true
+      },
+      {
         "id": "Encounter.period",
         "path": "Encounter.period",
         "short": "Zeitraum des Kontaktes",
@@ -1532,6 +1746,16 @@
         }
       },
       {
+        "id": "Encounter.diagnosis.use.coding:Diagnosetyp.system",
+        "path": "Encounter.diagnosis.use.coding.system",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.diagnosis.use.coding:Diagnosetyp.code",
+        "path": "Encounter.diagnosis.use.coding.code",
+        "mustSupport": true
+      },
+      {
         "id": "Encounter.diagnosis.use.coding:DiagnosesubTyp",
         "path": "Encounter.diagnosis.use.coding",
         "sliceName": "DiagnosesubTyp",
@@ -1544,6 +1768,16 @@
           "strength": "required",
           "valueSet": "http://fhir.de/ValueSet/Diagnosesubtyp"
         }
+      },
+      {
+        "id": "Encounter.diagnosis.use.coding:DiagnosesubTyp.system",
+        "path": "Encounter.diagnosis.use.coding.system",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.diagnosis.use.coding:DiagnosesubTyp.code",
+        "path": "Encounter.diagnosis.use.coding.code",
+        "mustSupport": true
       },
       {
         "id": "Encounter.diagnosis.rank",
@@ -1617,6 +1851,21 @@
             }
           ]
         },
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.account.identifier",
+        "path": "Encounter.account.identifier",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.account.identifier.system",
+        "path": "Encounter.account.identifier.system",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.account.identifier.value",
+        "path": "Encounter.account.identifier.value",
         "mustSupport": true
       },
       {
@@ -1725,6 +1974,21 @@
         }
       },
       {
+        "id": "Encounter.hospitalization.admitSource.coding",
+        "path": "Encounter.hospitalization.admitSource.coding",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.hospitalization.admitSource.coding.system",
+        "path": "Encounter.hospitalization.admitSource.coding.system",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.hospitalization.admitSource.coding.code",
+        "path": "Encounter.hospitalization.admitSource.coding.code",
+        "mustSupport": true
+      },
+      {
         "id": "Encounter.hospitalization.dischargeDisposition",
         "path": "Encounter.hospitalization.dischargeDisposition",
         "short": "Entlassung",
@@ -1747,6 +2011,43 @@
             ]
           }
         ],
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.hospitalization.dischargeDisposition.extension:Entlassungsgrund.extension:ErsteUndZweiteStelle",
+        "path": "Encounter.hospitalization.dischargeDisposition.extension.extension",
+        "sliceName": "ErsteUndZweiteStelle",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.hospitalization.dischargeDisposition.extension:Entlassungsgrund.extension:ErsteUndZweiteStelle.url",
+        "path": "Encounter.hospitalization.dischargeDisposition.extension.extension.url",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.hospitalization.dischargeDisposition.extension:Entlassungsgrund.extension:ErsteUndZweiteStelle.value[x]",
+        "path": "Encounter.hospitalization.dischargeDisposition.extension.extension.value[x]",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.hospitalization.dischargeDisposition.extension:Entlassungsgrund.extension:DritteStelle",
+        "path": "Encounter.hospitalization.dischargeDisposition.extension.extension",
+        "sliceName": "DritteStelle",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.hospitalization.dischargeDisposition.extension:Entlassungsgrund.extension:DritteStelle.url",
+        "path": "Encounter.hospitalization.dischargeDisposition.extension.extension.url",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.hospitalization.dischargeDisposition.extension:Entlassungsgrund.extension:DritteStelle.value[x]",
+        "path": "Encounter.hospitalization.dischargeDisposition.extension.extension.value[x]",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.hospitalization.dischargeDisposition.extension:Entlassungsgrund.url",
+        "path": "Encounter.hospitalization.dischargeDisposition.extension.url",
         "mustSupport": true
       },
       {
@@ -1826,7 +2127,8 @@
               ]
             }
           ]
-        }
+        },
+        "mustSupport": true
       },
       {
         "id": "Encounter.location.physicalType",
@@ -1845,7 +2147,8 @@
         "short": "Zimmer",
         "definition": "Von Patient oder Patientin während des Kontaktes belegtes Zimmer auf einer Station.",
         "min": 0,
-        "max": "1"
+        "max": "1",
+        "mustSupport": true
       },
       {
         "id": "Encounter.location:Zimmer.status",
@@ -1865,7 +2168,23 @@
               "system": "http://terminology.hl7.org/CodeSystem/location-physical-type"
             }
           ]
-        }
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location:Zimmer.physicalType.coding",
+        "path": "Encounter.location.physicalType.coding",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location:Zimmer.physicalType.coding.system",
+        "path": "Encounter.location.physicalType.coding.system",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location:Zimmer.physicalType.coding.code",
+        "path": "Encounter.location.physicalType.coding.code",
+        "mustSupport": true
       },
       {
         "id": "Encounter.location:Bett",
@@ -1874,7 +2193,8 @@
         "short": "Bett",
         "definition": "Von Patient oder Patientin während des Kontaktes belegter Bettenstellplatz.",
         "min": 0,
-        "max": "1"
+        "max": "1",
+        "mustSupport": true
       },
       {
         "id": "Encounter.location:Bett.status",
@@ -1894,7 +2214,23 @@
               "system": "http://terminology.hl7.org/CodeSystem/location-physical-type"
             }
           ]
-        }
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location:Bett.physicalType.coding",
+        "path": "Encounter.location.physicalType.coding",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location:Bett.physicalType.coding.system",
+        "path": "Encounter.location.physicalType.coding.system",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location:Bett.physicalType.coding.code",
+        "path": "Encounter.location.physicalType.coding.code",
+        "mustSupport": true
       },
       {
         "id": "Encounter.location:Station",
@@ -1903,7 +2239,8 @@
         "short": "Station",
         "definition": "Die Station, auf welcher der Patient oder die Patientin während des Kontaktes behandelt wurde.",
         "min": 0,
-        "max": "1"
+        "max": "1",
+        "mustSupport": true
       },
       {
         "id": "Encounter.location:Station.status",
@@ -1923,7 +2260,23 @@
               "system": "http://terminology.hl7.org/CodeSystem/location-physical-type"
             }
           ]
-        }
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location:Station.physicalType.coding",
+        "path": "Encounter.location.physicalType.coding",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location:Station.physicalType.coding.system",
+        "path": "Encounter.location.physicalType.coding.system",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location:Station.physicalType.coding.code",
+        "path": "Encounter.location.physicalType.coding.code",
+        "mustSupport": true
       },
       {
         "id": "Encounter.serviceProvider",
@@ -2056,6 +2409,11 @@
             }
           ]
         },
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.partOf.reference",
+        "path": "Encounter.partOf.reference",
         "mustSupport": true
       }
     ]

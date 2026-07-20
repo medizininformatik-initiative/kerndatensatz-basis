@@ -1,22 +1,157 @@
 {
   "resourceType": "StructureDefinition",
   "id": "mii-pr-prozedur-procedure",
+  "meta": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-license",
+        "valueCode": "CC-BY-4.0"
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/package-source",
+        "extension": [
+          {
+            "url": "packageId",
+            "valueId": "de.medizininformatikinitiative.kerndatensatz.base"
+          },
+          {
+            "url": "version",
+            "valueString": "2026.0.1"
+          },
+          {
+            "url": "uri",
+            "valueUri": "https://www.medizininformatik-initiative.de/fhir/modul-base"
+          }
+        ]
+      }
+    ],
+    "profile": [
+      "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition",
+      "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition"
+    ]
+  },
   "extension": [
     {
-      "url": "https://www.medizininformatik-initiative.de/fhir/modul-meta/StructureDefinition/mii-ex-meta-license-codeable",
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm",
+      "valueCoding": {
+        "code": "semver",
+        "system": "http://hl7.org/fhir/version-algorithm",
+        "display": "SemVer"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability",
+      "valueCode": "shareable"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability",
+      "valueCode": "publishable"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-versionPolicy",
       "valueCodeableConcept": {
         "coding": [
           {
-            "code": "CC-BY-4.0",
-            "system": "http://hl7.org/fhir/spdx-license",
-            "display": "Creative Commons Attribution 4.0 International"
+            "code": "package",
+            "system": "http://terminology.hl7.org/CodeSystem/artifact-version-policy-codes",
+            "display": "Package"
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-usage",
+      "valueMarkdown": "Use this profile as the technical FHIR representation of the corresponding Medical Informatics Initiative logical model. The profile constrains a base FHIR resource for the MII module context by specifying how elements are used, which elements are required or not used, which extensions and terminology bindings apply, and how the resource maps to the module-specific content model. Implementers should produce and consume resource instances that conform to this profile when exchanging data for the corresponding MII module."
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/resource-approvalDate",
+      "valueDate": "2024-03-07"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod",
+      "valuePeriod": {
+        "start": "2026"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-topic",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "C25218",
+            "system": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl"
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-author",
+      "valueContactDetail": {
+        "telecom": [
+          {
+            "system": "email",
+            "value": "julian.sass@charite.de"
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-editor",
+      "valueContactDetail": {
+        "name": "Taskforce Core Data Set"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-reviewer",
+      "valueContactDetail": {
+        "name": "Interoperability Working Group",
+        "telecom": [
+          {
+            "system": "url",
+            "value": "https://www.medizininformatik-initiative.de/en/collaboration/interoperability-working-group"
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-reviewer",
+      "valueContactDetail": {
+        "name": "National Steering Committee",
+        "telecom": [
+          {
+            "system": "url",
+            "value": "https://www.medizininformatik-initiative.de/en/collaboration/national-steering-committee"
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-endorser",
+      "valueContactDetail": {
+        "name": "Interoperability Working Group",
+        "telecom": [
+          {
+            "system": "url",
+            "value": "https://www.medizininformatik-initiative.de/en/collaboration/interoperability-working-group"
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-endorser",
+      "valueContactDetail": {
+        "name": "National Steering Committee",
+        "telecom": [
+          {
+            "system": "url",
+            "value": "https://www.medizininformatik-initiative.de/en/collaboration/national-steering-committee"
           }
         ]
       }
     }
   ],
   "url": "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure",
-  "version": "2026.0.0",
+  "version": "2026.0.1",
   "name": "MII_PR_Prozedur_Procedure",
   "title": "MII PR Prozedur Procedure",
   "_title": {
@@ -50,7 +185,8 @@
     ]
   },
   "status": "active",
-  "date": "2025-12-12",
+  "experimental": false,
+  "date": "2026-06-09",
   "publisher": "Medizininformatik Initiative",
   "contact": [
     {
@@ -93,6 +229,7 @@
       }
     ]
   },
+  "purpose": "Constrain the FHIR Procedure resource for consistent exchange of procedures in the MII Procedure module.",
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
@@ -227,6 +364,16 @@
         "mustSupport": true
       },
       {
+        "id": "Procedure.extension:Dokumentationsdatum.url",
+        "path": "Procedure.extension.url",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.extension:Dokumentationsdatum.value[x]",
+        "path": "Procedure.extension.value[x]",
+        "mustSupport": true
+      },
+      {
         "id": "Procedure.extension:durchfuehrungsabsicht",
         "path": "Procedure.extension",
         "sliceName": "durchfuehrungsabsicht",
@@ -302,6 +449,26 @@
             ]
           }
         ],
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.extension:durchfuehrungsabsicht.url",
+        "path": "Procedure.extension.url",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.extension:durchfuehrungsabsicht.value[x]",
+        "path": "Procedure.extension.value[x]",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.extension:durchfuehrungsabsicht.value[x].system",
+        "path": "Procedure.extension.value[x].system",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.extension:durchfuehrungsabsicht.value[x].code",
+        "path": "Procedure.extension.value[x].code",
         "mustSupport": true
       },
       {
@@ -449,7 +616,8 @@
             }
           ],
           "rules": "open"
-        }
+        },
+        "mustSupport": true
       },
       {
         "id": "Procedure.category.coding:sct",
@@ -724,6 +892,26 @@
         "mustSupport": true
       },
       {
+        "id": "Procedure.code.coding:ops.extension:Seitenlokalisation.url",
+        "path": "Procedure.code.coding.extension.url",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.code.coding:ops.extension:Seitenlokalisation.value[x]",
+        "path": "Procedure.code.coding.extension.value[x]",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.code.coding:ops.extension:Seitenlokalisation.value[x].system",
+        "path": "Procedure.code.coding.extension.value[x].system",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.code.coding:ops.extension:Seitenlokalisation.value[x].code",
+        "path": "Procedure.code.coding.extension.value[x].code",
+        "mustSupport": true
+      },
+      {
         "id": "Procedure.code.coding:ops.system",
         "path": "Procedure.code.coding.system",
         "mustSupport": true
@@ -833,6 +1021,11 @@
         "mustSupport": true
       },
       {
+        "id": "Procedure.subject.reference",
+        "path": "Procedure.subject.reference",
+        "mustSupport": true
+      },
+      {
         "id": "Procedure.encounter",
         "path": "Procedure.encounter",
         "short": "Kontakt (Aufenthaltsbezug)",
@@ -897,6 +1090,11 @@
             }
           ]
         },
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.encounter.reference",
+        "path": "Procedure.encounter.reference",
         "mustSupport": true
       },
       {
@@ -1026,7 +1224,8 @@
           {
             "code": "dateTime"
           }
-        ]
+        ],
+        "mustSupport": true
       },
       {
         "id": "Procedure.performed[x]:performedPeriod",
@@ -1100,7 +1299,8 @@
           {
             "code": "Period"
           }
-        ]
+        ],
+        "mustSupport": true
       },
       {
         "id": "Procedure.bodySite",
