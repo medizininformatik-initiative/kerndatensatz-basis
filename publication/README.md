@@ -17,8 +17,10 @@ The formal Publisher-managed tree owns the root of `gh-pages`, including
 `package-list.json`, `history.html`, the feeds, canonical redirect directories,
 and permanent version directories such as `2026.0.0/`.
 
-Continuous builds own only `branches/<branch-name>/`. Older preview directories
-that predate this namespace are preserved while their source branch exists. The
+Continuous builds own only `branches/<branch-name>/`. The advertised CI build is
+`branches/develop/`; `main` builds are validated and retained as Actions
+artifacts but do not write a second Pages preview. Older preview directories that
+predate this namespace are preserved while their source branch exists. The
 cleanup workflow deletes a directory only when it contains a `.branch-name`
 marker and that exact branch no longer exists; it does not infer previews from
 directory names. Root-level semantic-version paths are additionally retained
@@ -152,8 +154,8 @@ GitHub Pages' officially supported 1 GB maximum.
    `sushi-config.yaml`.
 3. Review the QA report, `-go-publish` log, source patch, registry patch, and
    exact staged-site artifact. The workflow requires zero QA errors.
-4. Confirm that the main-branch preview workflow has populated
-   `gh-pages/branches/main/index.html`. Production publication deliberately
+4. Confirm that the develop-branch continuous build has populated
+   `gh-pages/branches/develop/index.html`. Production publication deliberately
    fails when the advertised CI build is absent.
 5. After reviewing the candidate size, completing the package-feed prerequisite,
    configuring the canonical mapping, switching

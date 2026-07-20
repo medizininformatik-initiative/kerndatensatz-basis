@@ -608,8 +608,8 @@ jobs:
           validate_package_manifest "site/${LABEL}/package.tgz" "${VERSION}"
 
           if [[ "${PUBLISH}" == "true" ]] &&
-            [[ ! -s site/branches/main/index.html ]]; then
-            echo "::error::The advertised CI build is missing at branches/main/. Let the main-branch preview workflow finish before production publication."
+            [[ ! -s site/branches/develop/index.html ]]; then
+            echo "::error::The advertised CI build is missing at branches/develop/. Let the develop-branch preview workflow finish before production publication."
             exit 1
           fi
 
