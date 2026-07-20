@@ -4,7 +4,7 @@ This page documents the changes and updates across versions of the MII Implement
 
 ### Version 2026.0.1
 
-**Date:** 2026-XX-XX
+**Date:** 2026-07-20
 
 #### Documentation
 
@@ -36,7 +36,7 @@ This page documents the changes and updates across versions of the MII Implement
 
 ### Version 2026.0.0
 
-**Date:** 2026-12-11
+**Date:** 2025-12-13
 
 #### Module Consolidation
 

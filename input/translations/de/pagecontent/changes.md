@@ -4,7 +4,7 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 
 ### Version 2026.0.1
 
-**Datum:** 2026-XX-XX
+**Datum:** 2026-07-20
 
 #### Dokumentation
 
@@ -36,7 +36,7 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 
 ### Version 2026.0.0
 
-**Datum:** 11.12.2026
+**Datum:** 13.12.2025
 
 #### Modulkonsolidierung
 

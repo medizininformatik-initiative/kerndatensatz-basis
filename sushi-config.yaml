@@ -9,13 +9,13 @@ name: MII_IG_Base
 title: MII Implementation Guide Core Dataset Base
 description: Implementation Guide for the Core Dataset Base Modules Person, Diagnosis, Procedure, and Treatment Case
 status: active # draft | active | retired | unknown
-version: 2026.0.0
+version: 2026.0.1
 packageId: de.medizininformatikinitiative.kerndatensatz.base
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2019+
 releaseLabel: Release
 license: CC-BY-4.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
-date: 2026-06-15
+date: 2026-07-20
 jurisdiction: urn:iso:std:iso:3166#DE "Germany" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:
   name: Medical Informatics Initiative (MII)
@@ -45,7 +45,7 @@ extension:
       - url: packageId
         valueId: de.medizininformatikinitiative.kerndatensatz.base
       - url: version
-        valueString: "2026.0.0"
+        valueString: "2026.0.1"
       - url: uri
         valueUri: https://www.medizininformatik-initiative.de/fhir/modul-base
   - url: http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod
@@ -145,8 +145,8 @@ extension:
 # use cases, the value can be an object with keys for id, uri, and version.
 #
 dependencies:
-  de.basisprofil.r4: 1.5.x
-  de.medizininformatikinitiative.kerndatensatz.meta: 2026.0.x
+  de.basisprofil.r4: 1.5.4
+  de.medizininformatikinitiative.kerndatensatz.meta: 2026.0.0
   hl7.fhir.uv.xver-r5.r4: 0.1.0
   hl7.fhir.uv.crmi: 2.0.0
 #   hl7.fhir.us.mcode:

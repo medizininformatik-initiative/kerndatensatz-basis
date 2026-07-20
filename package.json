@@ -1,6 +1,6 @@
 {
   "name": "de.medizininformatikinitiative.kerndatensatz.base",
-  "version": "2026.0.0",
+  "version": "2026.0.1",
   "description": "Implementation Guide for the Core Dataset Base Modules Person, Diagnosis, Procedure, and Treatment Case",
   "author": "juliansass",
   "fhirVersions": [
@@ -30,12 +30,13 @@
       "url" : "https://www.medizininformatik-initiative.de/"
     }
   ],
-  "canonicals": "https://www.medizininformatik-initiative.de/fhir/modul-base/ImplementationGuide/mii-ig-base",
-  "jurisdiction": "http://unstats.un.org/unsd/methods/m49/m49.htm#276",
+  "canonical": "https://www.medizininformatik-initiative.de/fhir/modul-base",
+  "jurisdiction": "urn:iso:std:iso:3166#DE",
   "dependencies": {
     "hl7.fhir.r4.core": "4.0.1",
-    "de.basisprofil.r4": "1.5.x",
-    "de.medizininformatikinitiative.kerndatensatz.meta": "2026.0.x",
-    "hl7.fhir.uv.xver-r5.r4": "0.1.0"
+    "de.basisprofil.r4": "1.5.4",
+    "de.medizininformatikinitiative.kerndatensatz.meta": "2026.0.0",
+    "hl7.fhir.uv.xver-r5.r4": "0.1.0",
+    "hl7.fhir.uv.crmi": "2.0.0"
   }
 }
