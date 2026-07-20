@@ -36,7 +36,9 @@ jobs:
             ## MII IG Basis Release ${{ steps.prep-version.outputs.version }}
             
             <!-- DELETE START -->
-            Download the FHIR package and manually attach it to this release.
+            After formal publication, attach the Publisher-generated `package.tgz`
+            to this GitHub Release as a convenience asset. FHIR package-registry
+            publication is handled by the canonical package feed.
             <!-- DELETE END -->
             
             ### Changes

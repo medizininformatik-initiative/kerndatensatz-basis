@@ -1,251 +1,196 @@
-name: Cleanup stale GitHub Pages deployments
+name: Cleanup stale GitHub Pages previews
 
 on:
   schedule:
-    # Run weekly on Sunday at midnight UTC
-    - cron: '0 0 * * 0'
+    - cron: "0 0 * * 0"
   workflow_dispatch:
     inputs:
       dry_run:
-        description: 'Dry run (show what would be deleted without deleting)'
+        description: "Show stale previews without deleting them"
         required: false
         default: false
         type: boolean
 
 permissions:
   contents: write
+  id-token: write
+  pages: write
+
+concurrency:
+  group: ${{ inputs.dry_run && format('cleanup-dry-run-{0}', github.run_id) || 'gh-pages-writes' }}
+  queue: max
 
 jobs:
   cleanup:
     runs-on: ubuntu-latest
-    
+    outputs:
+      changed: ${{ steps.cleanup.outputs.changed }}
+
     steps:
       - name: Checkout gh-pages branch
         uses: actions/checkout@v4
         with:
           ref: gh-pages
           fetch-depth: 1
-      
-      - name: Fetch all branches
-        run: |
-          git fetch --all
-      
-      - name: Cleanup stale branch deployments
+
+      - name: Remove only marker-backed stale previews
+        id: cleanup
+        shell: bash
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
+          DRY_RUN: ${{ inputs.dry_run || false }}
+          PAGES_ACTIONS_ENABLED: ${{ vars.PAGES_ACTIONS_ENABLED }}
         run: |
           set -euo pipefail
-          
-          echo "DRY_RUN mode: $DRY_RUN"
-          echo ""
-          
-          # Get list of all active branches (excluding gh-pages)
-          active_branches=$(git ls-remote --heads origin | awk '{print $2}' | sed 's|refs/heads/||')
-          if [[ -n "$active_branches" ]]; then
-            active_branches=$(printf '%s\n' "$active_branches" | grep -v '^gh-pages$' || true)
-          fi
-          
-          # Get all deployed paths including nested deployments (e.g., release/v2026.0.0)
-          # Explicitly exclude .git and .github directories themselves and their contents
-          # maxdepth 2 matches the IG publisher's deployment pattern: ${GITHUB_REF_NAME}
-          # (e.g., main, feature-branch, release/v2026.0.0)
-          mapfile -t deployed_paths < <(find . -mindepth 1 -maxdepth 2 -type d \
-            ! -name '.git' ! -name '.github' \
-            ! -path './.git/*' ! -path './.github/*' \
-            -printf '%P\n')
-          
-          echo "=== Active branches ==="
-          echo "$active_branches"
-          echo ""
-          echo "=== Deployed paths (all levels) ==="
-          printf '%s\n' "${deployed_paths[@]}"
-          echo ""
-          echo "Note: Root-level files and IG output directories won't be touched"
-          echo ""
-          
-          # Configure git
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          
+
+          remote_refs="$(git ls-remote --heads origin)"
+          mapfile -t active_branches < <(
+            awk '
+              {
+                sub("refs/heads/", "", $2)
+                if ($2 != "gh-pages") {
+                  print $2
+                }
+              }
+            ' <<< "${remote_refs}"
+          )
+          mapfile -d '' -t markers < <(
+            find . \
+              -path './.git' -prune -o \
+              -type f \
+              -name '.branch-name' \
+              -print0
+          )
+
+          printf 'Active branches: %s\n' "${#active_branches[@]}"
+          printf 'Marked preview deployments: %s\n' "${#markers[@]}"
+
           stale_count=0
           preserved_count=0
-          to_delete=()
-          
-          # Directories that are part of the IG output and should never be cleaned up
-          ig_output_dirs=("assets" "de" "en")
-          
-          # Track which parent directories contain preserved deployments
-          declare -A preserved_parents
-          
-          # First pass: identify which parent directories contain preserved content
-          for path in "${deployed_paths[@]}"; do
-            # Check if this is a preserved deployment
-            is_preserved=false
-            
-            # Check for release branches
-            if [[ "$path" == release/* ]] || [[ "$path" =~ ^release- ]]; then
-              is_preserved=true
+          branch_is_active() {
+            local candidate="$1"
+            local active
+            for active in "${active_branches[@]}"; do
+              if [[ "${active}" == "${candidate}" ]]; then
+                return 0
+              fi
+            done
+            return 1
+          }
+
+          for marker in "${markers[@]}"; do
+            # An earlier stale ancestor may already have removed this marker.
+            [[ -f "${marker}" ]] || continue
+            deployment="$(dirname "${marker}")"
+            branch="$(tr -d '\r\n' < "${marker}")"
+
+            # A historical marker exists at the site root. The root belongs to
+            # formal publications and is never a cleanup candidate.
+            if [[ "${deployment}" == "." ]]; then
+              echo "Preserving formal publication root"
+              preserved_count=$((preserved_count + 1))
+              continue
             fi
-            
-            # Check for version numbers
-            if [[ "$path" =~ ^[0-9]{4}\.[0-9]+\.[0-9]+(-[a-zA-Z0-9\.]+)?$ ]]; then
-              is_preserved=true
+            relative_deployment="${deployment#./}"
+            if [[ "${relative_deployment}" =~ ^[0-9]+\.[0-9]+\.[0-9]+([-.][0-9A-Za-z.-]+)?$ ]]; then
+              echo "Preserving version-like permanent path ${relative_deployment}/"
+              preserved_count=$((preserved_count + 1))
+              continue
             fi
-            
-            # Check for active branches
-            if echo "$active_branches" | grep -Fxq "$path"; then
-              is_preserved=true
+            if [[ -z "${branch}" ]]; then
+              echo "::warning::Ignoring empty preview marker at ${marker}"
+              preserved_count=$((preserved_count + 1))
+              continue
             fi
-            
-            # If preserved and has a parent, mark the parent
-            if [[ "$is_preserved" == "true" ]] && [[ "$path" == */* ]]; then
-              parent="${path%%/*}"
-              preserved_parents["$parent"]=1
+
+            if branch_is_active "${branch}"; then
+              echo "Preserving ${deployment#./}/ (${branch})"
+              preserved_count=$((preserved_count + 1))
+              continue
             fi
-          done
-          
-          # Second pass: determine what to delete
-          for path in "${deployed_paths[@]}"; do
-            # Skip IG output directories (part of any deployment, not just main)
-            skip=false
-            for ig_dir in "${ig_output_dirs[@]}"; do
-              # Match root-level IG dirs: "en", "de", "assets"
-              # Match nested IG dirs: "*/en", "*/de", "*/assets"
-              if [[ "$path" == "$ig_dir" ]] || [[ "$path" == "$ig_dir/"* ]] || [[ "$path" == */"$ig_dir" ]] || [[ "$path" == */"$ig_dir/"* ]]; then
-                echo "⊘ Skipping IG output directory: $path (part of branch deployment)"
-                skip=true
+
+            # Branch names may contain slashes, so a stale preview can be an
+            # ancestor of another preview. Never recursively delete an active
+            # descendant deployment.
+            has_active_descendant=false
+            for descendant_marker in "${markers[@]}"; do
+              if [[ "${descendant_marker}" == "${marker}" ]] ||
+                [[ "${descendant_marker}" != "${deployment}/"* ]] ||
+                [[ ! -f "${descendant_marker}" ]]; then
+                continue
+              fi
+              descendant_branch="$(tr -d '\r\n' < "${descendant_marker}")"
+              if branch_is_active "${descendant_branch}"; then
+                echo "::warning::Preserving stale ancestor ${deployment#./}/ (${branch}) because it contains active preview ${descendant_branch}."
+                has_active_descendant=true
                 break
               fi
             done
-            if [[ "$skip" == "true" ]]; then
-              continue
-            fi
-            
-            # Always preserve main and master (even if they don't exist as branches)
-            if [[ "$path" == "main" ]] || [[ "$path" == "master" ]]; then
-              echo "✓ Preserving main/master deployment: $path"
+            if [[ "${has_active_descendant}" == "true" ]]; then
               preserved_count=$((preserved_count + 1))
               continue
             fi
-            
-            # Always preserve release branches (release/*)
-            if [[ "$path" == release/* ]] || [[ "$path" =~ ^release- ]]; then
-              echo "✓ Preserving release branch deployment: $path"
-              preserved_count=$((preserved_count + 1))
-              # Mark parent directory as containing preserved content
-              if [[ "$path" == */* ]]; then
-                parent="${path%%/*}"
-                preserved_parents["$parent"]=1
-              fi
-              continue
-            fi
-            
-            # Always preserve version number branches (e.g., 2026.0.0, 2025.0.1, 2026.0.0-rc.1, 2026.0.0-ballot)
-            if [[ "$path" =~ ^[0-9]{4}\.[0-9]+\.[0-9]+(-[a-zA-Z0-9\.]+)?$ ]]; then
-              echo "✓ Preserving version deployment: $path"
-              preserved_count=$((preserved_count + 1))
-              continue
-            fi
-            
-            # Check if this path corresponds to an active branch
-            if echo "$active_branches" | grep -Fxq "$path"; then
-              echo "✓ Preserving active branch deployment: $path"
-              preserved_count=$((preserved_count + 1))
-              # Mark parent directory as containing preserved content
-              if [[ "$path" == */* ]]; then
-                parent="${path%%/*}"
-                preserved_parents["$parent"]=1
-              fi
+
+            stale_count=$((stale_count + 1))
+            if [[ "${DRY_RUN}" == "true" ]]; then
+              echo "[dry run] Would remove ${deployment#./}/ (${branch})"
             else
-              # Check if this is a parent directory containing preserved deployments
-              if [[ -n "${preserved_parents[$path]:-}" ]]; then
-                echo "✓ Preserving parent directory: $path (contains preserved deployments)"
-                preserved_count=$((preserved_count + 1))
-              else
-                echo "✗ Stale deployment found: $path (branch no longer exists)"
-                stale_count=$((stale_count + 1))
-                to_delete+=("$path")
-              fi
+              echo "Removing ${deployment#./}/ (${branch})"
+              rm -rf -- "${deployment}"
             fi
           done
-          
-          # Filter out parent directories that contain preserved deployments
-          if [[ ${#to_delete[@]} -gt 0 ]]; then
-            filtered_to_delete=()
-            for path in "${to_delete[@]}"; do
-              if [[ -n "${preserved_parents[$path]:-}" ]]; then
-                echo "⟳ Not deleting parent directory: $path (contains preserved deployments)"
-                preserved_count=$((preserved_count + 1))
-                continue
+
+          changed=false
+          if [[ "${DRY_RUN}" != "true" ]]; then
+            if [[ "${PAGES_ACTIONS_ENABLED}" == "true" ]]; then
+              bytes="$(du --bytes --summarize --exclude=.git . | cut -f1)"
+              supported_max_bytes="1000000000"
+              if (( bytes > supported_max_bytes )); then
+                echo "::warning::The cleaned Pages site is ${bytes} bytes, above GitHub Pages' ${supported_max_bytes}-byte officially supported maximum. The cleanup and deployment will continue, but Pages does not guarantee deployments above 1 GB."
               fi
-              filtered_to_delete+=("$path")
-            done
-            to_delete=("${filtered_to_delete[@]}")
+            fi
+            git add --all
+            if ! git diff --cached --quiet; then
+              git config user.name "github-actions[bot]"
+              git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+              git commit -m "chore: remove ${stale_count} stale Pages preview(s)"
+              git push origin gh-pages
+              changed=true
+            fi
           fi
-          
-          # Now delete the stale deployments
-          # Only delete top-level directories - git rm -rf will handle nested content
-          if [[ ${#to_delete[@]} -gt 0 ]]; then
-            # Get unique top-level directories from paths to delete
-            declare -A top_level_dirs
-            for path in "${to_delete[@]}"; do
-              if [[ "$path" == */* ]]; then
-                # Nested path - extract top-level directory
-                top_dir="${path%%/*}"
-                top_level_dirs["$top_dir"]=1
-              else
-                # Already top-level
-                top_level_dirs["$path"]=1
-              fi
-            done
-            
-            # Delete each top-level directory once
-            for dir in "${!top_level_dirs[@]}"; do
-              if [[ "$DRY_RUN" == "true" ]]; then
-                echo "  [DRY RUN] Would delete: $dir (and all nested deployments)"
-              else
-                echo "  Deleting: $dir (and all nested deployments)"
-                rm -rf "$dir"
-                git add -A
-              fi
-            done
-          fi
-          
-          echo ""
-          echo "=== Summary ==="
-          echo "Preserved deployments: $preserved_count"
-          echo "Stale deployments: $stale_count"
-          
-          if [[ "$DRY_RUN" == "true" ]]; then
-            echo ""
-            echo "DRY RUN MODE - No changes were made"
-            exit 0
-          fi
-          
-          # Commit and push if there are changes
-          if git diff --cached --quiet && git diff --quiet; then
-            echo ""
-            echo "No stale deployments to remove"
-          else
-            echo ""
-            echo "Committing cleanup..."
-            git commit -m "chore: cleanup stale branch deployments" \
-              -m "Removed $stale_count stale deployment(s)" \
-              -m "Preserved $preserved_count active deployment(s)"
-            git push origin gh-pages
-            echo "✓ Cleanup complete"
-          fi
-      
-      - name: Create summary
-        if: always()
-        run: |
-          echo "### GitHub Pages Cleanup Summary" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          if [[ "${{ github.event.inputs.dry_run }}" == "true" ]]; then
-            echo "**Mode:** Dry Run (no changes made)" >> $GITHUB_STEP_SUMMARY
-          else
-            echo "**Mode:** Active cleanup" >> $GITHUB_STEP_SUMMARY
-          fi
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "Check the job logs for details on preserved and removed deployments." >> $GITHUB_STEP_SUMMARY
+          echo "changed=${changed}" >> "${GITHUB_OUTPUT}"
+
+          {
+            echo "### GitHub Pages preview cleanup"
+            echo
+            echo "- Dry run: ${DRY_RUN}"
+            echo "- Preserved: ${preserved_count}"
+            echo "- Stale: ${stale_count}"
+            echo "- Changed: ${changed}"
+          } >> "${GITHUB_STEP_SUMMARY}"
+
+      - name: Configure GitHub Pages
+        if: steps.cleanup.outputs.changed == 'true' && vars.PAGES_ACTIONS_ENABLED == 'true'
+        uses: actions/configure-pages@v5
+
+      - name: Upload GitHub Pages artifact
+        if: steps.cleanup.outputs.changed == 'true' && vars.PAGES_ACTIONS_ENABLED == 'true'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: .
+
+  deploy:
+    name: Deploy cleaned Pages tree
+    if: needs.cleanup.outputs.changed == 'true' && vars.PAGES_ACTIONS_ENABLED == 'true'
+    needs: cleanup
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      contents: read
+      id-token: write
+      pages: write
+    steps:
+      - name: Deploy Pages artifact
+        id: deployment
+        uses: actions/deploy-pages@v4

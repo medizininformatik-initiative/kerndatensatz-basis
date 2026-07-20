@@ -1,5 +1,5 @@
-# This workflow publishes the SUSHI-generated FHIR resources to a separate branch.
-# NOTE: This is only needed as long as Simplifier requires the generated FHIR files to publish the package.
+# This workflow publishes the SUSHI-generated FHIR resources to a separate branch
+# so they can be inspected in Simplifier. It does not publish an NPM package.
 
 name: Publish FSH Generated Resources
 
@@ -27,7 +27,7 @@ jobs:
           node-version: '20'
       
       - name: Install SUSHI
-        run: npm install -g fsh-sushi
+        run: npm install -g fsh-sushi@3.20.0
       
       - name: Run SUSHI
         run: sushi .
