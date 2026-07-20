@@ -239,7 +239,7 @@ Das Element `Encounter.diagnosis` stellt die Beziehung zwischen Kontakten und Di
 <div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
 <h5 style="color: #406A99; margin-top: 0;">Best Practice - Diagnose-Kontakt-Beziehungen</h5>
 
-<p>Die Referenz von <code>Encounter.diagnosis</code> zu <code>Condition</code> sollte verwendet werden, wenn die Condition eine spezifische Rolle während des Encounters hat (z.B. Hauptdiagnose, Nebendiagnose).</p>
+<p>Die Referenz von <code>Encounter.diagnosis</code> zu <code>Condition</code> <strong>SOLL</strong> verwendet werden, wenn die Condition eine spezifische Rolle während des Encounters hat (z.B. Hauptdiagnose, Nebendiagnose).</p>
 
 <p><strong>Empfohlene Implementierung:</strong></p>
 <p>Verwenden Sie <code>Condition.encounter</code>, um von der Condition auf den Encounter vom Typ <strong>Abteilungskontakt</strong> zu referenzieren. Dieser Ansatz etabliert den allgemeinen Kontaktkontext für die Diagnose, während <code>Encounter.diagnosis</code> verwendet werden kann, um bei Bedarf spezifische Diagnoserollen anzugeben.</p>
@@ -252,7 +252,7 @@ Das Element `Encounter.diagnosis` stellt die Beziehung zwischen Kontakten und Di
 
 <p><strong>Beispiel:</strong> Wenn eine Condition sowohl als Diagnosetyp als auch als Diagnosesubtyp (oder zusätzliche Rollen wie CC/CM) dient, erstellen Sie separate <code>Encounter.diagnosis</code>-Referenzen für jede Rolle, die alle auf dieselbe Condition-Ressource verweisen. Eine einzelne Condition kann mehrfach mit unterschiedlichen <code>use</code>-Werten referenziert werden.</p>
 
-<p><strong>Hinweis zur CC/CM-Klassifikation:</strong> Wenn Sie eine Diagnose als CC (Komplikation oder Komorbidität) oder CM (Komorbidität) klassifizieren möchten, handelt es sich hierbei typischerweise um abrechnungsrelevante Informationen, die in der Account-Ressource und nicht in <code>Encounter.diagnosis</code> platziert werden sollten. Die Account-Ressource ist der geeignete Ort für Abrechnungsfallkontext und DRG-relevante Klassifikationen.</p>
+<p><strong>Hinweis zur CC/CM-Klassifikation:</strong> Wenn Sie eine Diagnose als CC (Komplikation oder Komorbidität) oder CM (Komorbidität) klassifizieren möchten, handelt es sich hierbei typischerweise um abrechnungsrelevante Informationen, die in der Account-Ressource und nicht in <code>Encounter.diagnosis</code> platziert werden <strong>SOLLEN</strong>. Die Account-Ressource ist der geeignete Ort für Abrechnungsfallkontext und DRG-relevante Klassifikationen.</p>
 </div>
 
 #### Kontaktort
@@ -261,9 +261,23 @@ Das Element `Encounter.diagnosis` stellt die Beziehung zwischen Kontakten und Di
 - Der physische Typ SOLL das MII-spezifische ValueSet für location physical types verwenden.
 - Angaben zum Kontaktort sind primär relevant für Versorgungsstellenkontakte.
 
+**Slicing von Encounter.location**
+
+`Encounter.location` verwendet ein **ungeordnetes, offenes** Slicing, das durch `physicalType` und `status` diskriminiert wird. Das Profil definiert drei benannte Slices:
+
+| Slice | physicalType | status | Kardinalität |
+|---|---|---|---|
+| `Zimmer` | `ro` | `active` | 0..1 |
+| `Bett` | `bd` | `active` | 0..1 |
+| `Station` | `wa` | `active` | 0..1 |
+
+Jeder Slice schränkt `status = active` mit Kardinalität 0..1 ein. Eine konforme Implementierung DARF NICHT mehr als ein aktives Zimmer, ein aktives Bett oder eine aktive Station gleichzeitig innerhalb eines einzelnen Encounters befüllen.
+
+Da das Slicing **offen** ist, KÖNNEN Implementierungen zusätzliche `Encounter.location`-Einträge über diese drei benannten Slices hinaus aufnehmen. Um die Bewegungshistorie während eines Kontakts zu erfassen (z.B. frühere Stationen, Zimmer oder Betten, durch die der Patient verlegt wurde), SOLLEN Implementierungen für diese Einträge `status = completed` verwenden. Damit wird die Verlaufshistorie klar von den Slices für aktive Orte getrennt, ohne mit diesen zu kollidieren.
+
 #### Geplante Kontakte
 
-Geplante Kontakte werden mit `Encounter.status = planned` abgebildet und SOLLTEN zusätzlich angeben:
+Geplante Kontakte werden mit `Encounter.status = planned` abgebildet und SOLLEN zusätzlich angeben:
 - `Encounter.extension:plannedStartDate` für das geplante Startdatum
 - `Encounter.extension:plannedEndDate` für das geplante Enddatum
 
@@ -275,19 +289,19 @@ Geplante Kontakte werden mit `Encounter.status = planned` abgebildet und SOLLTEN
 
 #### Identifikation von Kontakten
 
-Jeder Encounter SOLLTE einen eindeutigen Identifier haben. Wenn Encounters in einer Hierarchie organisiert sind:
+Jeder Encounter SOLL einen eindeutigen Identifier haben. Wenn Encounters in einer Hierarchie organisiert sind:
 - Stellen Sie die korrekte Encounter-Verlinkung über `Encounter.partOf` sicher
-- Jeder Encounter SOLLTE einen eigenständigen Identifier mit unterschiedlichen Systemen oder Werten enthalten
+- Jeder Encounter SOLL einen eigenständigen Identifier mit unterschiedlichen Systemen oder Werten enthalten
 
 **Abbildung der Fallnummer:**
 
 Die "Fallnummer" wird in der stationären Versorgung häufig verwendet, um den Fallkontext für die medizinische Dokumentation zu etablieren, insbesondere in der HL7 V2-Kommunikation.
 
-In den meisten Fällen ist die "Fallnummer" ein eindeutiger Identifier für den Abrechnungsfall (Account). Daher sollte die Fallnummer als Identifier des Accounts gesehen werden und ist nicht geeignet, um einen Encounter eindeutig zu identifizieren. Um den korrekten Encounter zu finden, müssen zusätzliche Kriterien wie Zeitraum (`Encounter.period`), Klasse (`Encounter.class`) oder Status (`Encounter.status`) berücksichtigt werden.
+In den meisten Fällen ist die "Fallnummer" ein eindeutiger Identifier für den Abrechnungsfall (Account). Daher soll die Fallnummer als Identifier des Accounts gesehen werden und ist nicht geeignet, um einen Encounter eindeutig zu identifizieren. Um den korrekten Encounter zu finden, müssen zusätzliche Kriterien wie Zeitraum (`Encounter.period`), Klasse (`Encounter.class`) oder Status (`Encounter.status`) berücksichtigt werden.
 
 **Frühere Empfehlung:**
 
-Früher wurde empfohlen, dass die Aufnahmenummer in allen Encounter-Ressourcen unabhängig von Kontaktebene und Kontakttyp angegeben werden sollte. Diese Empfehlung unterschied jedoch nicht klar zwischen Aufnahmenummer und Fallnummer.
+Früher wurde empfohlen, dass die Aufnahmenummer in allen Encounter-Ressourcen unabhängig von Kontaktebene und Kontakttyp angegeben werden soll. Diese Empfehlung unterschied jedoch nicht klar zwischen Aufnahmenummer und Fallnummer.
 
 <div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
 <h5 style="color: #406A99; margin-top: 0;">Best Practice - Aufnahmenummer vs. Fallnummer</h5>
@@ -296,7 +310,7 @@ Früher wurde empfohlen, dass die Aufnahmenummer in allen Encounter-Ressourcen u
 
 <p>Es ist wichtig zu unterscheiden zwischen:</p>
 <ul>
-  <li><strong>Aufnahmenummer:</strong> Ein eindeutiger Identifier, der einem Patienten bei der Aufnahmeplanung oder bei der Aufnahme selbst zugewiesen wird. Jeder Encounter <strong>SOLLTE</strong> seine eigene eindeutige Aufnahmenummer in <code>Encounter.identifier:Aufnahmenummer</code> haben, wo anwendbar.</li>
+  <li><strong>Aufnahmenummer:</strong> Ein eindeutiger Identifier, der einem Patienten bei der Aufnahmeplanung oder bei der Aufnahme selbst zugewiesen wird. Jeder Encounter <strong>SOLL</strong> seine eigene eindeutige Aufnahmenummer in <code>Encounter.identifier:Aufnahmenummer</code> haben, wo anwendbar.</li>
   <li><strong>Fallnummer:</strong> Identifiziert typischerweise den Abrechnungsfall (Account), nicht einzelne Encounters.</li>
 </ul>
 
@@ -314,6 +328,11 @@ Früher wurde empfohlen, dass die Aufnahmenummer in allen Encounter-Ressourcen u
   <li>Einzelne Benutzer keine Sichtberechtigung auf Abrechnungsdaten haben</li>
   <li>Benutzer im Versorgungskontext dennoch Encounter anhand der assoziierten Fallnummer suchen möchten</li>
 </ul>
+
+<p>Server <strong>SOLLEN</strong> den Modifier <code>account:identifier</code> unterstützen, damit Clients alle zu einem Abrechnungsfall gehörenden Encounter anhand der Fallnummer abrufen können. Dieser Modifier ermöglicht eine tokenbasierte Suche auf der logischen Referenz in <code>Encounter.account.identifier</code>, ohne dass die Account-Ressource selbst vorhanden oder zugänglich sein muss.</p>
+
+<p><strong>Beispielanfrage</strong> zur Suche aller Encounter einer bestimmten Fallnummer:</p>
+<pre><code>GET [base]/Encounter?account:identifier=https://www.charite.de/fhir/sid/fallnummer|F-2020-000123</code></pre>
 </div>
 
 {% include link-list.md %}

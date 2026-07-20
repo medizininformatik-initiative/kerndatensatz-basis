@@ -7,6 +7,7 @@ Usage: #example
 Title: "MII EXA Person Patient"
 Description: "Patient: with insurance identifier, name and address"
 * insert TestDataLabel
+* insert CRMIPackageSource
 * insert MetaProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient)
 * identifier[0].use = #usual
 * identifier[=].type = $v2-0203#MR
@@ -66,6 +67,7 @@ Usage: #example
 Title: "MII EXA Fall Kontakt Gesundheitseinrichtung (Ambulanter Kontakt)"
 Description: "Encounter: Example demonstrating an outpatient rheumatology encounter for initial bursitis diagnosis"
 * insert TestDataLabel
+* insert CRMIPackageSource
 * insert MetaProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)
 * identifier.type = $v2-0203#VN
 * identifier.system = "https://www.charite.de/fhir/sid/aufnahmenummer"
@@ -87,6 +89,7 @@ Usage: #example
 Title: "MII EXA Diagnose Mehrfachcodierung Primaercode"
 Description: "Condition: Primary code (†) - gonococcal bursitis etiology"
 * insert TestDataLabel
+* insert CRMIPackageSource
 * insert MetaProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose)
 * clinicalStatus = $condition-clinical#active
 * verificationStatus = $condition-ver-status#confirmed
@@ -113,6 +116,7 @@ Usage: #example
 Title: "MII EXA Diagnose Mehrfachcodierung Sekundaercode"
 Description: "Condition: Secondary code (*) - bursitis manifestation"
 * insert TestDataLabel
+* insert CRMIPackageSource
 * insert MetaProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose)
 * extension.url = "http://hl7.org/fhir/StructureDefinition/condition-related"
 * extension.valueReference = Reference(mii-exa-diagnose-mehrfachcodierung-primaercode)
@@ -142,6 +146,7 @@ Usage: #example
 Title: "MII EXA Fall Kontakt Gesundheitseinrichtung (Einrichtungskontakt E0)"
 Description: "Encounter: Facility-level encounter (Einrichtungskontakt) for entire hospital stay"
 * insert TestDataLabel
+* insert CRMIPackageSource
 * insert MetaProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)
 * identifier.type = $v2-0203#VN
 * identifier.system = "https://www.charite.de/fhir/sid/aufnahmenummer"
@@ -168,6 +173,7 @@ Usage: #example
 Title: "MII EXA Fall Kontakt Gesundheitseinrichtung (Abteilungskontakt Notaufnahme A1E)"
 Description: "Encounter: Emergency department encounter as entry point for hospital admission"
 * insert TestDataLabel
+* insert CRMIPackageSource
 * insert MetaProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)
 * extension[Aufnahmegrund].extension[VierteStelle].valueCoding = $AufnahmegrundVierteStelle#7 "Notfall"
 * identifier.type = $v2-0203#VN
@@ -194,6 +200,7 @@ Usage: #example
 Title: "MII EXA Fall Kontakt Gesundheitseinrichtung (Versorgungsstellenkontakt ED Treatment Room VS1)"
 Description: "Encounter: Care unit encounter (Versorgungsstellenkontakt) for ED treatment room"
 * insert TestDataLabel
+* insert CRMIPackageSource
 * insert MetaProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)
 * identifier.type = $v2-0203#VN
 * identifier.system = "https://www.charite.de/fhir/sid/aufnahmenummer"
@@ -221,6 +228,7 @@ Usage: #example
 Title: "MII EXA Person Observation Vitalstatus"
 Description: "Observation: Vital status at hospital admission"
 * insert TestDataLabel
+* insert CRMIPackageSource
 * insert MetaProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus)
 * status = #final
 * category[survey] = $observation-category#survey
@@ -237,6 +245,7 @@ Usage: #example
 Title: "MII EXA Fall Kontakt Gesundheitseinrichtung (Abteilungskontakt Chirurgie A2E)"
 Description: "Encounter: Department-level encounter (Abteilungskontakt) for surgical care"
 * insert TestDataLabel
+* insert CRMIPackageSource
 * insert MetaProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)
 * identifier.type = $v2-0203#VN
 * identifier.system = "https://www.charite.de/fhir/sid/aufnahmenummer"
@@ -268,6 +277,7 @@ Usage: #example
 Title: "MII EXA Diagnose Condition Appendicitis"
 Description: "Condition: Acute appendicitis diagnosis as admission diagnosis"
 * insert TestDataLabel
+* insert CRMIPackageSource
 * insert MetaProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose)
 * extension[Feststellungsdatum].valueDateTime = "2020-01-08T07:30:00+01:00"
 * clinicalStatus = $condition-clinical#resolved
@@ -288,6 +298,7 @@ Usage: #example
 Title: "MII EXA Diagnose Condition Contusion Elbow"
 Description: "Condition: Elbow contusion diagnosis"
 * insert TestDataLabel
+* insert CRMIPackageSource
 * insert MetaProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose)
 * extension[Feststellungsdatum].valueDateTime = "2020-01-08T08:00:00+01:00"
 * clinicalStatus = $condition-clinical#resolved
@@ -307,6 +318,7 @@ Usage: #example
 Title: "MII EXA Fall Kontakt Gesundheitseinrichtung (Versorgungsstellenkontakt Radiology VS2)"
 Description: "Encounter: Care unit encounter (Versorgungsstellenkontakt) for radiology CT procedure"
 * insert TestDataLabel
+* insert CRMIPackageSource
 * insert MetaProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)
 * identifier.type = $v2-0203#VN
 * identifier.system = "https://www.charite.de/fhir/sid/aufnahmenummer"
@@ -334,6 +346,7 @@ Usage: #example
 Title: "MII EXA Prozedur Procedure Imaging CT Abdomen"
 Description: "Procedure: Diagnostic imaging procedure (CT abdomen) for appendicitis workup"
 * insert TestDataLabel
+* insert CRMIPackageSource
 * insert MetaProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure)
 * extension[Dokumentationsdatum].valueDateTime = "2020-01-08T10:30:00+01:00"
 * extension[durchfuehrungsabsicht].valueCoding = $sct-no-ver#261004008
@@ -356,6 +369,7 @@ Usage: #example
 Title: "MII EXA Fall Kontakt Gesundheitseinrichtung (Versorgungsstellenkontakt OR VS3)"
 Description: "Encounter: Care unit encounter (Versorgungsstellenkontakt) for operating room"
 * insert TestDataLabel
+* insert CRMIPackageSource
 * insert MetaProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)
 * identifier.type = $v2-0203#VN
 * identifier.system = "https://www.charite.de/fhir/sid/aufnahmenummer"
@@ -384,6 +398,7 @@ Usage: #example
 Title: "MII EXA Prozedur Procedure Appendectomy"
 Description: "Procedure: Surgical procedure (appendectomy)"
 * insert TestDataLabel
+* insert CRMIPackageSource
 * insert MetaProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure)
 * extension[Dokumentationsdatum].valueDateTime = "2020-01-08T23:00:00+01:00"
 * extension[durchfuehrungsabsicht].valueCoding = $sct-no-ver#262202000
@@ -407,6 +422,7 @@ Usage: #example
 Title: "MII EXA Fall Kontakt Gesundheitseinrichtung (Versorgungsstellenkontakt PACU VS4)"
 Description: "Encounter: Care unit encounter (Versorgungsstellenkontakt) for post-anesthesia care unit"
 * insert TestDataLabel
+* insert CRMIPackageSource
 * insert MetaProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)
 * identifier.type = $v2-0203#VN
 * identifier.system = "https://www.charite.de/fhir/sid/aufnahmenummer"
@@ -434,6 +450,7 @@ Usage: #example
 Title: "MII EXA Fall Kontakt Gesundheitseinrichtung (Versorgungsstellenkontakt Surgical Ward VS5)"
 Description: "Encounter: Care unit encounter (Versorgungsstellenkontakt) for surgical ward post-operative care"
 * insert TestDataLabel
+* insert CRMIPackageSource
 * insert MetaProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)
 * identifier.type = $v2-0203#VN
 * identifier.system = "https://www.charite.de/fhir/sid/aufnahmenummer"
@@ -461,6 +478,7 @@ Usage: #example
 Title: "MII EXA Fall Kontakt Gesundheitseinrichtung (Abteilungskontakt Innere Medizin)"
 Description: "Encounter: Department-level encounter (Abteilungskontakt) for Internal Medicine ward care"
 * insert TestDataLabel
+* insert CRMIPackageSource
 * insert MetaProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)
 * identifier.type = $v2-0203#VN
 * identifier.system = "https://www.charite.de/fhir/sid/aufnahmenummer"
@@ -492,6 +510,7 @@ Usage: #example
 Title: "MII EXA Diagnose Multiple Codings"
 Description: "Condition: Multiple coding systems - ICD-10-GM, Alpha-ID, and Orphanet"
 * insert TestDataLabel
+* insert CRMIPackageSource
 * insert MetaProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose)
 * extension[Feststellungsdatum].valueDateTime = "2020-01-13T14:00:00+01:00"
 * clinicalStatus = $condition-clinical#active
@@ -516,6 +535,7 @@ Usage: #example
 Title: "MII EXA Prozedur Procedure Physiotherapy"
 Description: "Procedure: Physiotherapy procedure for bursitis treatment"
 * insert TestDataLabel
+* insert CRMIPackageSource
 * insert MetaProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure)
 * extension[Dokumentationsdatum].valueDateTime = "2020-01-17T00:00:00+01:00"
 * extension[durchfuehrungsabsicht].valueCoding = $sct-no-ver#262202000
@@ -537,6 +557,7 @@ Usage: #example
 Title: "MII EXA Person Observation Vitalstatus Discharge"
 Description: "Observation: Vital status observation at hospital discharge"
 * insert TestDataLabel
+* insert CRMIPackageSource
 * insert MetaProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus)
 * status = #final
 * category[survey] = $observation-category#survey
@@ -562,6 +583,7 @@ Usage: #example
 Title: "MII EXA Fall Kontakt Gesundheitseinrichtung (Planned Encounter)"
 Description: "Encounter: Planned encounter with future dates"
 * insert TestDataLabel
+* insert CRMIPackageSource
 * insert MetaProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)
 * identifier.type = $v2-0203#VN
 * identifier.system = "https://www.charite.de/fhir/sid/aufnahmenummer"

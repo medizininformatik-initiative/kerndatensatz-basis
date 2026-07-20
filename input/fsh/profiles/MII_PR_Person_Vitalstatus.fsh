@@ -11,7 +11,20 @@ Description: "Dieses Profil beschreibt den Vitalstatus der Patient*in in der Med
 * insert PR_CS_VS_Version
 * insert Publisher
 * insert LicenseCodeableCCBY40
-* ^date = "2025-12-12"
+* insert CRMIShareableStructureDefinition
+* insert CRMIPublishableStructureDefinition
+* insert CRMIKnowledgeCapabilitiesStructureDefinition
+* insert CRMIVersionPolicyStrict
+* insert CRMIPackageSourceDefinitionalResource
+* insert CRMIArtifactUsageProfile
+* insert CRMIApprovalDate(2024-03-07)
+* insert CRMIResourceEffectivePeriod
+* insert CRMIArtifactTopic(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C25717)
+* insert CRMIArtifactContributors
+* ^status = #active
+* ^experimental = false
+* ^date = "2026-06-09"
+* ^purpose = "Constrain the FHIR Observation resource to represent vital status information consistently as part of the MII Person module."
 * id MS
 * meta MS
 //* meta.source MS
@@ -36,6 +49,9 @@ Description: "Dieses Profil beschreibt den Vitalstatus der Patient*in in der Med
 * category ^slicing.rules = #open
 * category contains survey 1..1 MS
 * category[survey] = $observation-category#survey
+* category[survey].coding MS
+* category[survey].coding.system MS
+* category[survey].coding.code MS
 * code MS
 * code ^short = "Code"
 * code ^definition = "Ein LOINC Code, der die Vitalstatus Beobachtung identifiziert."
@@ -54,9 +70,11 @@ Description: "Dieses Profil beschreibt den Vitalstatus der Patient*in in der Med
 * code.coding[loinc] ^short = "LOINC Code"
 * code.coding[loinc] ^definition = "LOINC Code für Vitalstatus"
 * subject 1.. MS
+* subject.reference MS
 * subject only Reference(Patient or Group)
 //* subject only $MII-Reference
 * encounter MS
+* encounter.reference MS
 * encounter ^short = "Kontakt (Aufenthaltsbezug)"
 * encounter ^definition = "Kontakt, bei dem der Vitalstatus festgestellt wurde."
 * insert Translation(encounter ^short, de-DE, Kontakt)
@@ -67,6 +85,7 @@ Description: "Dieses Profil beschreibt den Vitalstatus der Patient*in in der Med
 * effective[x] ^short = "Zeitpunkt"
 * effective[x] ^definition = "Der Zeitpunkt, zu dem der beobachtete Vitalstatus als wahr festgestellt wird."
 * effective[x] only dateTime
+* effectiveDateTime MS
 * effectiveDateTime ^short = "Zeitpunkt"
 * effectiveDateTime ^definition = "Der Zeitpunkt, zu dem der beobachtete Vitalstatus als wahr festgestellt wird."
 * insert Translation(effectiveDateTime ^short, de-DE, Zeitpunkt)

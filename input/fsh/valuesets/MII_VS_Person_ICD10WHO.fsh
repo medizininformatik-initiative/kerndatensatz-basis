@@ -27,11 +27,22 @@ Description: "MII VS Person ICD-10-WHO"
 * ^url = "https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/mii-vs-person-icd10who"
 * ^status = #active
 * ^experimental = true
-* ^date = "2025-12-08"
+* ^date = "2026-06-15"
 * insert PR_CS_VS_Version
 * insert Publisher
 * insert LicenseCodeableCCBY40
+* insert CRMIShareableValueSet
+* insert CRMIPublishableValueSet
+* insert CRMIKnowledgeCapabilitiesValueSet
+* insert CRMIVersionPolicyStrict
+* insert CRMIPackageSourceDefinitionalResource
+* insert CRMIResourceEffectivePeriod
+* insert CRMIArtifactContributors
+* insert CRMIApprovalDate(2024-03-07)
+* insert CRMIArtifactTopic(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C16960)
+* insert CRMIArtifactTopic(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C15607)
 * ^copyright = "BfArM - Bundesinstitut für Arzneimittel und Medizinprodukte"
+* ^purpose = "Define ICD-10-WHO codes allowed for cause of death representation."
 * include codes from system http://hl7.org/fhir/sid/icd-10|2011
 * include codes from system http://hl7.org/fhir/sid/icd-10|2013
 * include codes from system http://hl7.org/fhir/sid/icd-10|2016

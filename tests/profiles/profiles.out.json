@@ -1,0 +1,2839 @@
+{
+  "profiles" : [{
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient",
+    "tests" : [{
+      "source" : "valid/patient-valid-pid.json",
+      "description" : "Valid patient with PID using MII core-location-identifier assigner (mii-pat-2 satisfied)",
+      "valid" : true,
+      "outcome" : {
+        "resourceType" : "OperationOutcome",
+        "issue" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-manifestparameters|2.0.0"
+          }],
+          "severity" : "information",
+          "code" : "informational",
+          "details" : {
+            "text" : "Validate resource against profile https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient|2026.0.1"
+          },
+          "expression" : ["Patient"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 20
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 60
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "Type_Specific_Checks_DT_URL_Resolve"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient|2026.0.1"
+          }],
+          "severity" : "warning",
+          "code" : "invalid",
+          "details" : {
+            "text" : "No definition could be found for URL value 'https://www.charite.de/fhir/sid/patienten'"
+          },
+          "expression" : ["Patient.identifier[0].system"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient|2026.0.1"
+          }],
+          "severity" : "warning",
+          "code" : "invariant",
+          "details" : {
+            "text" : "Constraint failed: dom-6: 'A resource should have narrative for robust management (text.`div`.exists())' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"
+          },
+          "expression" : ["Patient"]
+        }]
+      }
+    },
+    {
+      "source" : "valid/patient-valid-gender-other.json",
+      "description" : "Valid patient with gender=other and gender-amtlich-de extension present (mii-pat-1 satisfied)",
+      "valid" : true,
+      "outcome" : {
+        "resourceType" : "OperationOutcome",
+        "issue" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient|2026.0.1"
+          }],
+          "severity" : "information",
+          "code" : "informational",
+          "details" : {
+            "text" : "Validate resource against profile https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient|2026.0.1"
+          },
+          "expression" : ["Patient"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient|2026.0.1"
+          }],
+          "severity" : "warning",
+          "code" : "invariant",
+          "details" : {
+            "text" : "Constraint failed: dom-6: 'A resource should have narrative for robust management (text.`div`.exists())' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"
+          },
+          "expression" : ["Patient"]
+        }]
+      }
+    },
+    {
+      "source" : "invalid/patient-invalid-mii-pat-1.json",
+      "description" : "Invalid: gender=other without gender-amtlich-de extension (violates mii-pat-1)",
+      "valid" : false,
+      "outcome" : {
+        "resourceType" : "OperationOutcome",
+        "issue" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient#mii-pat-1"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient|2026.0.1"
+          }],
+          "severity" : "error",
+          "code" : "invariant",
+          "details" : {
+            "text" : "Constraint failed: mii-pat-1: 'Falls die Geschlechtsangabe 'other' gewählt wird, muss die amtliche Differenzierung per Extension angegeben werden (gender.exists() and gender='other' implies gender.extension('http://fhir.de/StructureDefinition/gender-amtlich-de').exists())' (defined in https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient)"
+          },
+          "expression" : ["Patient"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient|2026.0.1"
+          }],
+          "severity" : "information",
+          "code" : "informational",
+          "details" : {
+            "text" : "Validate resource against profile https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient|2026.0.1"
+          },
+          "expression" : ["Patient"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient|2026.0.1"
+          }],
+          "severity" : "warning",
+          "code" : "invariant",
+          "details" : {
+            "text" : "Constraint failed: dom-6: 'A resource should have narrative for robust management (text.`div`.exists())' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"
+          },
+          "expression" : ["Patient"]
+        }]
+      }
+    },
+    {
+      "source" : "invalid/patient-invalid-mii-pat-2.json",
+      "description" : "Invalid: pid.assigner.identifier.system is neither IKNR nor MII core-location-identifier (violates mii-pat-2)",
+      "valid" : false,
+      "outcome" : {
+        "resourceType" : "OperationOutcome",
+        "issue" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 32
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 65
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient#mii-pat-2"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient|2026.0.1"
+          }],
+          "severity" : "error",
+          "code" : "invariant",
+          "details" : {
+            "text" : "Constraint failed: mii-pat-2: 'Entweder IKNR oder MII Core Location Identifier muss verwendet werden ($this = 'http://fhir.de/sid/arge-ik/iknr' or $this = 'https://www.medizininformatik-initiative.de/fhir/core/CodeSystem/core-location-identifier')' (defined in https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient)"
+          },
+          "expression" : ["Patient.identifier[0].assigner.identifier.system"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient|2026.0.1"
+          }],
+          "severity" : "information",
+          "code" : "informational",
+          "details" : {
+            "text" : "Validate resource against profile https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient|2026.0.1"
+          },
+          "expression" : ["Patient"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 20
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 69
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "Type_Specific_Checks_DT_URL_Resolve"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient|2026.0.1"
+          }],
+          "severity" : "warning",
+          "code" : "invalid",
+          "details" : {
+            "text" : "No definition could be found for URL value 'https://www.example-hospital.de/fhir/sid/patienten'"
+          },
+          "expression" : ["Patient.identifier[0].system"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient|2026.0.1"
+          }],
+          "severity" : "warning",
+          "code" : "invariant",
+          "details" : {
+            "text" : "Constraint failed: dom-6: 'A resource should have narrative for robust management (text.`div`.exists())' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"
+          },
+          "expression" : ["Patient"]
+        }]
+      }
+    }]
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose",
+    "tests" : [{
+      "source" : "valid/diagnose-valid-icd10.json",
+      "description" : "Valid Condition with ICD-10-GM code, subject, and recordedDate (all mandatory elements present)",
+      "valid" : true,
+      "outcome" : {
+        "resourceType" : "OperationOutcome",
+        "issue" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient|2026.0.1"
+          }],
+          "severity" : "information",
+          "code" : "informational",
+          "details" : {
+            "text" : "Validate resource against profile https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.1"
+          },
+          "expression" : ["Condition"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 9
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 4
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "TerminologyEngine"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "NO_VALID_DISPLAY_FOUND_LANG_NONE"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.1"
+          }],
+          "severity" : "information",
+          "code" : "invalid",
+          "details" : {
+            "text" : "'Akute Infektion der oberen Atemwege, nicht näher bezeichnet' is the default display; the code system http://fhir.de/CodeSystem/bfarm/icd-10-gm has no Display Names for the language en"
+          },
+          "expression" : ["Condition.code.coding[0].display"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.1"
+          }],
+          "severity" : "warning",
+          "code" : "invariant",
+          "details" : {
+            "text" : "Constraint failed: dom-6: 'A resource should have narrative for robust management (text.`div`.exists())' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"
+          },
+          "expression" : ["Condition"]
+        }]
+      }
+    },
+    {
+      "source" : "invalid/diagnose-invalid-missing-code.json",
+      "description" : "Invalid: Condition.code is absent (violates code 1..)",
+      "valid" : false,
+      "outcome" : {
+        "resourceType" : "OperationOutcome",
+        "issue" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "Validation_VAL_Profile_Minimum"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.1"
+          }],
+          "severity" : "error",
+          "code" : "structure",
+          "details" : {
+            "text" : "Condition.code: minimum required = 1, but only found 0 (from https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.1)"
+          },
+          "expression" : ["Condition"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 9
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 4
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "Reference_REF_CantResolve"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.1"
+          }],
+          "severity" : "error",
+          "code" : "structure",
+          "details" : {
+            "text" : "Unable to resolve resource with reference 'Patient/example'"
+          },
+          "expression" : ["Condition.subject"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.1"
+          }],
+          "severity" : "information",
+          "code" : "informational",
+          "details" : {
+            "text" : "Validate resource against profile https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.1"
+          },
+          "expression" : ["Condition"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.1"
+          }],
+          "severity" : "warning",
+          "code" : "invariant",
+          "details" : {
+            "text" : "Constraint failed: dom-6: 'A resource should have narrative for robust management (text.`div`.exists())' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"
+          },
+          "expression" : ["Condition"]
+        }]
+      }
+    },
+    {
+      "source" : "invalid/diagnose-invalid-missing-recordeddate.json",
+      "description" : "Invalid: Condition.recordedDate is absent (violates recordedDate 1..)",
+      "valid" : false,
+      "outcome" : {
+        "resourceType" : "OperationOutcome",
+        "issue" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "Validation_VAL_Profile_Minimum"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.1"
+          }],
+          "severity" : "error",
+          "code" : "structure",
+          "details" : {
+            "text" : "Condition.recordedDate: minimum required = 1, but only found 0 (from https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.1)"
+          },
+          "expression" : ["Condition"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 18
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 4
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "Reference_REF_CantResolve"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.1"
+          }],
+          "severity" : "error",
+          "code" : "structure",
+          "details" : {
+            "text" : "Unable to resolve resource with reference 'Patient/example'"
+          },
+          "expression" : ["Condition.subject"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.1"
+          }],
+          "severity" : "information",
+          "code" : "informational",
+          "details" : {
+            "text" : "Validate resource against profile https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.1"
+          },
+          "expression" : ["Condition"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.1"
+          }],
+          "severity" : "warning",
+          "code" : "invariant",
+          "details" : {
+            "text" : "Constraint failed: dom-6: 'A resource should have narrative for robust management (text.`div`.exists())' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"
+          },
+          "expression" : ["Condition"]
+        }]
+      }
+    }]
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert",
+    "tests" : [{
+      "source" : "valid/patient-pseudonymisiert-valid-pseudonym.json",
+      "description" : "Valid pseudonymised patient with pseudonym identifier and gender female (mii-pat-1 not triggered)",
+      "valid" : true,
+      "outcome" : {
+        "resourceType" : "OperationOutcome",
+        "issue" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2026.0.1"
+          }],
+          "severity" : "information",
+          "code" : "informational",
+          "details" : {
+            "text" : "Validate resource against profile https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert|2026.0.1"
+          },
+          "expression" : ["Patient"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 19
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 81
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "Type_Specific_Checks_DT_URL_Resolve"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert|2026.0.1"
+          }],
+          "severity" : "warning",
+          "code" : "invalid",
+          "details" : {
+            "text" : "No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/sid/pseudonym'"
+          },
+          "expression" : ["Patient.identifier[0].system"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert|2026.0.1"
+          }],
+          "severity" : "warning",
+          "code" : "invariant",
+          "details" : {
+            "text" : "Constraint failed: dom-6: 'A resource should have narrative for robust management (text.`div`.exists())' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"
+          },
+          "expression" : ["Patient"]
+        }]
+      }
+    },
+    {
+      "source" : "valid/patient-pseudonymisiert-valid-gender-other.json",
+      "description" : "Valid pseudonymised patient with gender=other and gender-amtlich-de extension present (mii-pat-1 satisfied)",
+      "valid" : true,
+      "outcome" : {
+        "resourceType" : "OperationOutcome",
+        "issue" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert|2026.0.1"
+          }],
+          "severity" : "information",
+          "code" : "informational",
+          "details" : {
+            "text" : "Validate resource against profile https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert|2026.0.1"
+          },
+          "expression" : ["Patient"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 19
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 81
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "Type_Specific_Checks_DT_URL_Resolve"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert|2026.0.1"
+          }],
+          "severity" : "warning",
+          "code" : "invalid",
+          "details" : {
+            "text" : "No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/sid/pseudonym'"
+          },
+          "expression" : ["Patient.identifier[0].system"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert|2026.0.1"
+          }],
+          "severity" : "warning",
+          "code" : "invariant",
+          "details" : {
+            "text" : "Constraint failed: dom-6: 'A resource should have narrative for robust management (text.`div`.exists())' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"
+          },
+          "expression" : ["Patient"]
+        }]
+      }
+    },
+    {
+      "source" : "invalid/patient-pseudonymisiert-invalid-mii-pat-1.json",
+      "description" : "Invalid: gender=other without gender-amtlich-de extension (violates mii-pat-1)",
+      "valid" : false,
+      "outcome" : {
+        "resourceType" : "OperationOutcome",
+        "issue" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert#mii-pat-1"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert|2026.0.1"
+          }],
+          "severity" : "error",
+          "code" : "invariant",
+          "details" : {
+            "text" : "Constraint failed: mii-pat-1: 'Falls die Geschlechtsangabe 'other' gewählt wird, muss die amtliche Differenzierung per Extension angegeben werden (gender.exists() and gender='other' implies gender.extension('http://fhir.de/StructureDefinition/gender-amtlich-de').exists())' (defined in https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert)"
+          },
+          "expression" : ["Patient"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert|2026.0.1"
+          }],
+          "severity" : "information",
+          "code" : "informational",
+          "details" : {
+            "text" : "Validate resource against profile https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert|2026.0.1"
+          },
+          "expression" : ["Patient"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 19
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 81
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "Type_Specific_Checks_DT_URL_Resolve"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert|2026.0.1"
+          }],
+          "severity" : "warning",
+          "code" : "invalid",
+          "details" : {
+            "text" : "No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/sid/pseudonym'"
+          },
+          "expression" : ["Patient.identifier[0].system"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert|2026.0.1"
+          }],
+          "severity" : "warning",
+          "code" : "invariant",
+          "details" : {
+            "text" : "Constraint failed: dom-6: 'A resource should have narrative for robust management (text.`div`.exists())' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"
+          },
+          "expression" : ["Patient"]
+        }]
+      }
+    },
+    {
+      "source" : "valid/patient-pseudonymisiert-valid-pseudonym-mr.json",
+      "description" : "Valid pseudonymised patient with both PSEUDED and MR codings on PseudonymisierterIdentifier (new MR use case)",
+      "valid" : true,
+      "outcome" : {
+        "resourceType" : "OperationOutcome",
+        "issue" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert|2026.0.1"
+          }],
+          "severity" : "information",
+          "code" : "informational",
+          "details" : {
+            "text" : "Validate resource against profile https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert|2026.0.1"
+          },
+          "expression" : ["Patient"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert|2026.0.1"
+          }],
+          "severity" : "warning",
+          "code" : "invariant",
+          "details" : {
+            "text" : "Constraint failed: dom-6: 'A resource should have narrative for robust management (text.`div`.exists())' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"
+          },
+          "expression" : ["Patient"]
+        }]
+      }
+    },
+    {
+      "source" : "invalid/patient-pseudonymisiert-invalid-mr-duplicate.json",
+      "description" : "Invalid: PseudonymisierterIdentifier.type.coding contains two MR codings (violates type.coding:mr 0..1)",
+      "valid" : false,
+      "outcome" : {
+        "resourceType" : "OperationOutcome",
+        "issue" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 11
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 8
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "Validation_VAL_Profile_Maximum"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert|2026.0.1"
+          }],
+          "severity" : "error",
+          "code" : "structure",
+          "details" : {
+            "text" : "Patient.identifier:PseudonymisierterIdentifier.type.coding:mr: max allowed = 1, but found 2 (from https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert|2026.0.1)"
+          },
+          "expression" : ["Patient.identifier[0].type"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert|2026.0.1"
+          }],
+          "severity" : "information",
+          "code" : "informational",
+          "details" : {
+            "text" : "Validate resource against profile https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert|2026.0.1"
+          },
+          "expression" : ["Patient"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert|2026.0.1"
+          }],
+          "severity" : "warning",
+          "code" : "invariant",
+          "details" : {
+            "text" : "Constraint failed: dom-6: 'A resource should have narrative for robust management (text.`div`.exists())' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"
+          },
+          "expression" : ["Patient"]
+        }]
+      }
+    }]
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung",
+    "tests" : [{
+      "source" : "valid/kontakt-valid-finished-inpatient.json",
+      "description" : "Valid finished inpatient encounter with period.start and period.end (mii-enc-1 and mii-enc-2 satisfied)",
+      "valid" : true,
+      "outcome" : {
+        "resourceType" : "OperationOutcome",
+        "issue" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 9
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 23
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "TerminologyEngine"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "MSG_DRAFT"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1"
+          }],
+          "severity" : "information",
+          "code" : "business-rule",
+          "details" : {
+            "text" : "Reference to draft CodeSystem http://hl7.org/fhir/encounter-status|4.0.1"
+          },
+          "expression" : ["Encounter.status"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert|2026.0.1"
+          }],
+          "severity" : "information",
+          "code" : "informational",
+          "details" : {
+            "text" : "Validate resource against profile https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1"
+          },
+          "expression" : ["Encounter"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1"
+          }],
+          "severity" : "warning",
+          "code" : "invariant",
+          "details" : {
+            "text" : "Constraint failed: dom-6: 'A resource should have narrative for robust management (text.`div`.exists())' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"
+          },
+          "expression" : ["Encounter"]
+        }]
+      }
+    },
+    {
+      "source" : "invalid/kontakt-invalid-mii-enc-1.json",
+      "description" : "Invalid: status=finished without period.end (violates mii-enc-1)",
+      "valid" : false,
+      "outcome" : {
+        "resourceType" : "OperationOutcome",
+        "issue" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung#mii-enc-1"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1"
+          }],
+          "severity" : "error",
+          "code" : "invariant",
+          "details" : {
+            "text" : "Constraint failed: mii-enc-1: 'Falls der Encounter abgeschlossen wurde, MUSS ein Enddatum bekannt sein (status = 'finished' implies period.end.exists())' (defined in https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)"
+          },
+          "expression" : ["Encounter"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 14
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 4
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "Reference_REF_CantResolve"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1"
+          }],
+          "severity" : "error",
+          "code" : "structure",
+          "details" : {
+            "text" : "Unable to resolve resource with reference 'Patient/example'"
+          },
+          "expression" : ["Encounter.subject"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 9
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 23
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "TerminologyEngine"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "MSG_DRAFT"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1"
+          }],
+          "severity" : "information",
+          "code" : "business-rule",
+          "details" : {
+            "text" : "Reference to draft CodeSystem http://hl7.org/fhir/encounter-status|4.0.1"
+          },
+          "expression" : ["Encounter.status"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1"
+          }],
+          "severity" : "information",
+          "code" : "informational",
+          "details" : {
+            "text" : "Validate resource against profile https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1"
+          },
+          "expression" : ["Encounter"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1"
+          }],
+          "severity" : "warning",
+          "code" : "invariant",
+          "details" : {
+            "text" : "Constraint failed: dom-6: 'A resource should have narrative for robust management (text.`div`.exists())' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"
+          },
+          "expression" : ["Encounter"]
+        }]
+      }
+    },
+    {
+      "source" : "invalid/kontakt-invalid-mii-enc-2.json",
+      "description" : "Invalid: status=finished, class=IMP without period.start (violates mii-enc-2)",
+      "valid" : false,
+      "outcome" : {
+        "resourceType" : "OperationOutcome",
+        "issue" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung#mii-enc-2"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1"
+          }],
+          "severity" : "error",
+          "code" : "invariant",
+          "details" : {
+            "text" : "Constraint failed: mii-enc-2: 'Abgeschlossene, stationäre Kontakte MÜSSEN einen Start- und End-Zeitpunkt angeben (status = 'finished' and class.code = 'IMP' implies period.start.exists() and period.end.exists())' (defined in https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)"
+          },
+          "expression" : ["Encounter"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 14
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 4
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "Reference_REF_CantResolve"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1"
+          }],
+          "severity" : "error",
+          "code" : "structure",
+          "details" : {
+            "text" : "Unable to resolve resource with reference 'Patient/example'"
+          },
+          "expression" : ["Encounter.subject"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 9
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 23
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "TerminologyEngine"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "MSG_DRAFT"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1"
+          }],
+          "severity" : "information",
+          "code" : "business-rule",
+          "details" : {
+            "text" : "Reference to draft CodeSystem http://hl7.org/fhir/encounter-status|4.0.1"
+          },
+          "expression" : ["Encounter.status"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1"
+          }],
+          "severity" : "information",
+          "code" : "informational",
+          "details" : {
+            "text" : "Validate resource against profile https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1"
+          },
+          "expression" : ["Encounter"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1"
+          }],
+          "severity" : "warning",
+          "code" : "invariant",
+          "details" : {
+            "text" : "Constraint failed: dom-6: 'A resource should have narrative for robust management (text.`div`.exists())' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"
+          },
+          "expression" : ["Encounter"]
+        }]
+      }
+    },
+    {
+      "source" : "invalid/kontakt-invalid-mii-enc-3.json",
+      "description" : "Invalid: status=planned with a period present (violates mii-enc-3)",
+      "valid" : false,
+      "outcome" : {
+        "resourceType" : "OperationOutcome",
+        "issue" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung#mii-enc-3"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1"
+          }],
+          "severity" : "error",
+          "code" : "invariant",
+          "details" : {
+            "text" : "Constraint failed: mii-enc-3: 'Geplante Kontakte DÜRFEN NICHT einen Start- oder End-Zeitpunkt angeben (status = 'planned' implies period.exists().not())' (defined in https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)"
+          },
+          "expression" : ["Encounter"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 14
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 4
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "Reference_REF_CantResolve"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1"
+          }],
+          "severity" : "error",
+          "code" : "structure",
+          "details" : {
+            "text" : "Unable to resolve resource with reference 'Patient/example'"
+          },
+          "expression" : ["Encounter.subject"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 9
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 22
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "TerminologyEngine"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "MSG_DRAFT"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1"
+          }],
+          "severity" : "information",
+          "code" : "business-rule",
+          "details" : {
+            "text" : "Reference to draft CodeSystem http://hl7.org/fhir/encounter-status|4.0.1"
+          },
+          "expression" : ["Encounter.status"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1"
+          }],
+          "severity" : "information",
+          "code" : "informational",
+          "details" : {
+            "text" : "Validate resource against profile https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1"
+          },
+          "expression" : ["Encounter"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1"
+          }],
+          "severity" : "warning",
+          "code" : "invariant",
+          "details" : {
+            "text" : "Constraint failed: dom-6: 'A resource should have narrative for robust management (text.`div`.exists())' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"
+          },
+          "expression" : ["Encounter"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung#mii-enc-4"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1"
+          }],
+          "severity" : "warning",
+          "code" : "invariant",
+          "details" : {
+            "text" : "Constraint failed: mii-enc-4: 'Geplante Kontakte SOLLTEN die Extensions für den geplanten Start- oder End-Zeitpunkt verwenden (status = 'planned' implies extension.where(url = 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate').exists())' (defined in https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)"
+          },
+          "expression" : ["Encounter"]
+        }]
+      }
+    },
+    {
+      "source" : "invalid/kontakt-invalid-mii-enc-5.json",
+      "description" : "Invalid: status=in-progress without period.start (violates mii-enc-5)",
+      "valid" : false,
+      "outcome" : {
+        "resourceType" : "OperationOutcome",
+        "issue" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung#mii-enc-5"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1"
+          }],
+          "severity" : "error",
+          "code" : "invariant",
+          "details" : {
+            "text" : "Constraint failed: mii-enc-5: 'In-Durchführung befindliche Kontakte MÜSSEN einen Start-Zeitpunkt angeben (status = 'in-progress' implies period.start.exists())' (defined in https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)"
+          },
+          "expression" : ["Encounter"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 14
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 4
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "Reference_REF_CantResolve"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1"
+          }],
+          "severity" : "error",
+          "code" : "structure",
+          "details" : {
+            "text" : "Unable to resolve resource with reference 'Patient/example'"
+          },
+          "expression" : ["Encounter.subject"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 9
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 26
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "TerminologyEngine"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "MSG_DRAFT"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1"
+          }],
+          "severity" : "information",
+          "code" : "business-rule",
+          "details" : {
+            "text" : "Reference to draft CodeSystem http://hl7.org/fhir/encounter-status|4.0.1"
+          },
+          "expression" : ["Encounter.status"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1"
+          }],
+          "severity" : "information",
+          "code" : "informational",
+          "details" : {
+            "text" : "Validate resource against profile https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1"
+          },
+          "expression" : ["Encounter"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1"
+          }],
+          "severity" : "warning",
+          "code" : "invariant",
+          "details" : {
+            "text" : "Constraint failed: dom-6: 'A resource should have narrative for robust management (text.`div`.exists())' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"
+          },
+          "expression" : ["Encounter"]
+        }]
+      }
+    },
+    {
+      "source" : "invalid/kontakt-invalid-mii-enc-6.json",
+      "description" : "Invalid: status=onleave without period.start (violates mii-enc-6)",
+      "valid" : false,
+      "outcome" : {
+        "resourceType" : "OperationOutcome",
+        "issue" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung#mii-enc-6"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1"
+          }],
+          "severity" : "error",
+          "code" : "invariant",
+          "details" : {
+            "text" : "Constraint failed: mii-enc-6: 'Kontakte mit Abwesenheitsstatus MÜSSEN einen Start-Zeitpunkt angeben (status = 'onleave' implies period.start.exists())' (defined in https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)"
+          },
+          "expression" : ["Encounter"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 14
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 4
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "Reference_REF_CantResolve"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1"
+          }],
+          "severity" : "error",
+          "code" : "structure",
+          "details" : {
+            "text" : "Unable to resolve resource with reference 'Patient/example'"
+          },
+          "expression" : ["Encounter.subject"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 9
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 22
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "TerminologyEngine"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "MSG_DRAFT"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1"
+          }],
+          "severity" : "information",
+          "code" : "business-rule",
+          "details" : {
+            "text" : "Reference to draft CodeSystem http://hl7.org/fhir/encounter-status|4.0.1"
+          },
+          "expression" : ["Encounter.status"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1"
+          }],
+          "severity" : "information",
+          "code" : "informational",
+          "details" : {
+            "text" : "Validate resource against profile https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1"
+          },
+          "expression" : ["Encounter"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1"
+          }],
+          "severity" : "warning",
+          "code" : "invariant",
+          "details" : {
+            "text" : "Constraint failed: dom-6: 'A resource should have narrative for robust management (text.`div`.exists())' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"
+          },
+          "expression" : ["Encounter"]
+        }]
+      }
+    }]
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure",
+    "tests" : [{
+      "source" : "valid/procedure-valid-snomed.json",
+      "description" : "Valid Procedure with SNOMED CT code only (sct-ops-1 satisfied, proc-mii-1 not triggered)",
+      "valid" : true,
+      "outcome" : {
+        "resourceType" : "OperationOutcome",
+        "issue" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1"
+          }],
+          "severity" : "information",
+          "code" : "informational",
+          "details" : {
+            "text" : "Validate resource against profile https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.1"
+          },
+          "expression" : ["Procedure"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.1"
+          }],
+          "severity" : "warning",
+          "code" : "invariant",
+          "details" : {
+            "text" : "Constraint failed: dom-6: 'A resource should have narrative for robust management (text.`div`.exists())' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"
+          },
+          "expression" : ["Procedure"]
+        }]
+      }
+    },
+    {
+      "source" : "invalid/procedure-invalid-proc-mii-1.json",
+      "description" : "Invalid: OPS code present but no SNOMED CT category (violates proc-mii-1)",
+      "valid" : false,
+      "outcome" : {
+        "resourceType" : "OperationOutcome",
+        "issue" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure#proc-mii-1"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.1"
+          }],
+          "severity" : "error",
+          "code" : "invariant",
+          "details" : {
+            "text" : "Constraint failed: proc-mii-1: 'Falls die Prozedur per OPS kodiert wird, MUSS eine SNOMED-CT kodierte Category abgebildet werden (code.coding.where(system = 'http://fhir.de/CodeSystem/bfarm/ops').exists() implies category.coding.where(system = 'http://snomed.info/sct').exists())' (defined in https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure)"
+          },
+          "expression" : ["Procedure"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 19
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 4
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "Reference_REF_CantResolve"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.1"
+          }],
+          "severity" : "error",
+          "code" : "structure",
+          "details" : {
+            "text" : "Unable to resolve resource with reference 'Patient/example'"
+          },
+          "expression" : ["Procedure.subject"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.1"
+          }],
+          "severity" : "information",
+          "code" : "informational",
+          "details" : {
+            "text" : "Validate resource against profile https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.1"
+          },
+          "expression" : ["Procedure"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.1"
+          }],
+          "severity" : "warning",
+          "code" : "invariant",
+          "details" : {
+            "text" : "Constraint failed: dom-6: 'A resource should have narrative for robust management (text.`div`.exists())' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"
+          },
+          "expression" : ["Procedure"]
+        }]
+      }
+    },
+    {
+      "source" : "invalid/procedure-invalid-sct-ops-1.json",
+      "description" : "Invalid: code.coding uses neither OPS nor SNOMED CT system (violates sct-ops-1)",
+      "valid" : false,
+      "outcome" : {
+        "resourceType" : "OperationOutcome",
+        "issue" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 10
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 4
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure#sct-ops-1"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.1"
+          }],
+          "severity" : "error",
+          "code" : "invariant",
+          "details" : {
+            "text" : "Constraint failed: sct-ops-1: 'Eine Prozedur MUSS mit OPS oder SNOMED-CT kodiert werden. (coding.where(system = 'http://snomed.info/sct').exists() or coding.where(system = 'http://fhir.de/CodeSystem/bfarm/ops').exists())' (defined in https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure)"
+          },
+          "expression" : ["Procedure.code"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 18
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 4
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "Reference_REF_CantResolve"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.1"
+          }],
+          "severity" : "error",
+          "code" : "structure",
+          "details" : {
+            "text" : "Unable to resolve resource with reference 'Patient/example'"
+          },
+          "expression" : ["Procedure.subject"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.1"
+          }],
+          "severity" : "information",
+          "code" : "informational",
+          "details" : {
+            "text" : "Validate resource against profile https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.1"
+          },
+          "expression" : ["Procedure"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 12
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 8
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "Details_for__matching_against_Profile_"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.1"
+          }],
+          "severity" : "information",
+          "code" : "informational",
+          "details" : {
+            "text" : "This element does not match any known slice defined in the profile https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)"
+          },
+          "expression" : ["Procedure.code.coding[0]"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.1"
+          }],
+          "severity" : "warning",
+          "code" : "invariant",
+          "details" : {
+            "text" : "Constraint failed: dom-6: 'A resource should have narrative for robust management (text.`div`.exists())' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"
+          },
+          "expression" : ["Procedure"]
+        }]
+      }
+    }]
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus",
+    "tests" : [{
+      "source" : "valid/vitalstatus-valid-lebt.json",
+      "description" : "Valid Vitalstatus Observation with all mandatory elements (status, category[survey], code[loinc], subject, effectiveDateTime, valueCodeableConcept[Vitalstatus])",
+      "valid" : true,
+      "outcome" : {
+        "resourceType" : "OperationOutcome",
+        "issue" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.1"
+          }],
+          "severity" : "information",
+          "code" : "informational",
+          "details" : {
+            "text" : "Validate resource against profile https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus|2026.0.1"
+          },
+          "expression" : ["Observation"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "All_observations_should_have_a_performer"
+          }],
+          "severity" : "warning",
+          "code" : "invalid",
+          "details" : {
+            "text" : "Best Practice Recommendation: In general, all observations should have a performer"
+          },
+          "expression" : ["Observation"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus|2026.0.1"
+          }],
+          "severity" : "warning",
+          "code" : "invariant",
+          "details" : {
+            "text" : "Constraint failed: dom-6: 'A resource should have narrative for robust management (text.`div`.exists())' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"
+          },
+          "expression" : ["Observation"]
+        }]
+      }
+    },
+    {
+      "source" : "invalid/vitalstatus-invalid-missing-effective.json",
+      "description" : "Invalid: effective[x] is absent (violates effective[x] 1..)",
+      "valid" : false,
+      "outcome" : {
+        "resourceType" : "OperationOutcome",
+        "issue" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "Validation_VAL_Profile_Minimum"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus|2026.0.1"
+          }],
+          "severity" : "error",
+          "code" : "structure",
+          "details" : {
+            "text" : "Observation.effective[x]: minimum required = 1, but only found 0 (from https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus|2026.0.1)"
+          },
+          "expression" : ["Observation"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 28
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 4
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "Reference_REF_CantResolve"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus|2026.0.1"
+          }],
+          "severity" : "error",
+          "code" : "structure",
+          "details" : {
+            "text" : "Unable to resolve resource with reference 'Patient/example'"
+          },
+          "expression" : ["Observation.subject"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus|2026.0.1"
+          }],
+          "severity" : "information",
+          "code" : "informational",
+          "details" : {
+            "text" : "Validate resource against profile https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus|2026.0.1"
+          },
+          "expression" : ["Observation"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "All_observations_should_have_a_performer"
+          }],
+          "severity" : "warning",
+          "code" : "invalid",
+          "details" : {
+            "text" : "Best Practice Recommendation: In general, all observations should have a performer"
+          },
+          "expression" : ["Observation"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "All_observations_should_have_an_effectiveDateTime_or_an_effectivePeriod"
+          }],
+          "severity" : "warning",
+          "code" : "invalid",
+          "details" : {
+            "text" : "Best Practice Recommendation: In general, all observations should have an effective[x] ()"
+          },
+          "expression" : ["Observation"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus|2026.0.1"
+          }],
+          "severity" : "warning",
+          "code" : "invariant",
+          "details" : {
+            "text" : "Constraint failed: dom-6: 'A resource should have narrative for robust management (text.`div`.exists())' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"
+          },
+          "expression" : ["Observation"]
+        }]
+      }
+    }]
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Todesursache",
+    "tests" : [{
+      "source" : "valid/todesursache-valid-icd10.json",
+      "description" : "Valid: minimal Todesursache with ICD-10-WHO code and required category",
+      "valid" : true,
+      "outcome" : {
+        "resourceType" : "OperationOutcome",
+        "issue" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 25
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 8
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "TerminologyEngine"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Todesursache|2026.0.1"
+          }],
+          "severity" : "information",
+          "code" : "business-rule",
+          "details" : {
+            "text" : "Reference to experimental ValueSet https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/mii-vs-person-icd10who|2026.0.1"
+          },
+          "expression" : ["Condition.code.coding[0]"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus|2026.0.1"
+          }],
+          "severity" : "information",
+          "code" : "informational",
+          "details" : {
+            "text" : "Validate resource against profile https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Todesursache|2026.0.1"
+          },
+          "expression" : ["Condition"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Todesursache|2026.0.1"
+          }],
+          "severity" : "warning",
+          "code" : "invariant",
+          "details" : {
+            "text" : "Constraint failed: dom-6: 'A resource should have narrative for robust management (text.`div`.exists())' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"
+          },
+          "expression" : ["Condition"]
+        }]
+      }
+    },
+    {
+      "source" : "invalid/todesursache-invalid-missing-code.json",
+      "description" : "Invalid: code is absent (violates code 1..)",
+      "valid" : false,
+      "outcome" : {
+        "resourceType" : "OperationOutcome",
+        "issue" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "Validation_VAL_Profile_Minimum"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Todesursache|2026.0.1"
+          }],
+          "severity" : "error",
+          "code" : "structure",
+          "details" : {
+            "text" : "Condition.code: minimum required = 1, but only found 0 (from https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Todesursache|2026.0.1)"
+          },
+          "expression" : ["Condition"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 23
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 4
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "Reference_REF_CantResolve"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Todesursache|2026.0.1"
+          }],
+          "severity" : "error",
+          "code" : "structure",
+          "details" : {
+            "text" : "Unable to resolve resource with reference 'Patient/example'"
+          },
+          "expression" : ["Condition.subject"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Todesursache|2026.0.1"
+          }],
+          "severity" : "information",
+          "code" : "informational",
+          "details" : {
+            "text" : "Validate resource against profile https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Todesursache|2026.0.1"
+          },
+          "expression" : ["Condition"]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+            "valueInteger" : 1
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+            "valueInteger" : 2
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+            "valueString" : "InstanceValidator"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+            "valueCode" : "http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+            "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Todesursache|2026.0.1"
+          }],
+          "severity" : "warning",
+          "code" : "invariant",
+          "details" : {
+            "text" : "Constraint failed: dom-6: 'A resource should have narrative for robust management (text.`div`.exists())' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"
+          },
+          "expression" : ["Condition"]
+        }]
+      }
+    }]
+  }]
+}

@@ -1,0 +1,211 @@
+name: Deploy current gh-pages tree
+
+on:
+  workflow_dispatch:
+    inputs:
+      expected_sha:
+        description: "Full SHA of the current gh-pages commit to deploy"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: gh-pages-writes
+  queue: max
+
+jobs:
+  prepare:
+    name: Validate and package gh-pages
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment: publication
+    outputs:
+      artifact_sha256: ${{ steps.package.outputs.artifact_sha256 }}
+      site_sha: ${{ steps.validate.outputs.site_sha }}
+    permissions:
+      contents: read
+
+    steps:
+      - name: Confirm Pages Actions migration
+        env:
+          PAGES_ACTIONS_ENABLED: ${{ vars.PAGES_ACTIONS_ENABLED }}
+        run: |
+          set -euo pipefail
+          if [[ "${PAGES_ACTIONS_ENABLED}" != "true" ]]; then
+            echo "::error::Set PAGES_ACTIONS_ENABLED=true only after Settings → Pages uses GitHub Actions."
+            exit 1
+          fi
+
+      - name: Checkout current gh-pages branch
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          fetch-depth: 1
+          path: site
+          persist-credentials: false
+
+      - name: Validate exact Pages tree
+        id: validate
+        shell: bash
+        env:
+          EXPECTED_SHA: ${{ inputs.expected_sha }}
+        run: |
+          set -euo pipefail
+
+          expected_sha="${EXPECTED_SHA,,}"
+          if [[ ! "${expected_sha}" =~ ^([0-9a-f]{40}|[0-9a-f]{64})$ ]]; then
+            echo "::error::expected_sha must be a full Git commit SHA."
+            exit 1
+          fi
+
+          site_sha="$(git -C site rev-parse HEAD)"
+          remote_sha="$(git -C site ls-remote --exit-code origin refs/heads/gh-pages |
+            awk 'NR == 1 { print $1 }')"
+          if [[ "${expected_sha}" != "${site_sha}" ]] ||
+            [[ "${expected_sha}" != "${remote_sha}" ]]; then
+            echo "::error::gh-pages is not at the requested commit ${expected_sha} (checkout ${site_sha}, remote ${remote_sha})."
+            exit 1
+          fi
+
+          if [[ -n "$(git -C site status --porcelain=v1 --untracked-files=all)" ]]; then
+            echo "::error::The gh-pages checkout is not clean."
+            exit 1
+          fi
+          test -s site/index.html
+          test -f site/.nojekyll
+          if git -C site ls-files --stage |
+            awk '$1 == "160000" { found=1 } END { exit !found }'; then
+            echo "::error::GitHub Pages artifacts must not contain submodules."
+            exit 1
+          fi
+          if find site -path site/.git -prune -o -type l -print -quit |
+            grep -q .; then
+            echo "::error::GitHub Pages artifacts must not contain symbolic links."
+            find site -path site/.git -prune -o -type l -print
+            exit 1
+          fi
+
+          bytes="$(du --bytes --summarize --exclude=.git site | cut -f1)"
+          supported_max_bytes="1000000000"
+          if (( bytes > supported_max_bytes )); then
+            echo "::warning::The Pages tree is ${bytes} bytes, above GitHub Pages' ${supported_max_bytes}-byte officially supported maximum. Deployment will continue, but Pages does not guarantee deployments above 1 GB."
+          fi
+
+          echo "site_sha=${site_sha}" >> "${GITHUB_OUTPUT}"
+          {
+            echo "### Pages tree selected for deployment"
+            echo
+            echo "- Commit: \`${site_sha}\`"
+            echo "- Size: ${bytes} bytes"
+          } >> "${GITHUB_STEP_SUMMARY}"
+
+      - name: Package exact Pages artifact
+        id: package
+        shell: bash
+        run: |
+          set -euo pipefail
+          tar \
+            --dereference \
+            --hard-dereference \
+            --exclude='.git' \
+            -cf "${RUNNER_TEMP}/artifact.tar" \
+            -C site \
+            .
+
+          artifact_bytes="$(stat --format=%s "${RUNNER_TEMP}/artifact.tar")"
+          absolute_max_bytes="10000000000"
+          if (( artifact_bytes >= absolute_max_bytes )); then
+            echo "::error::The Pages artifact is ${artifact_bytes} bytes; it must be smaller than ${absolute_max_bytes} bytes."
+            exit 1
+          fi
+
+          artifact_sha256="$(sha256sum "${RUNNER_TEMP}/artifact.tar" | cut -d ' ' -f1)"
+          tar -tf "${RUNNER_TEMP}/artifact.tar" > "${RUNNER_TEMP}/artifact.list"
+          grep -Fxq './index.html' "${RUNNER_TEMP}/artifact.list"
+          grep -Fxq './.nojekyll' "${RUNNER_TEMP}/artifact.list"
+          if grep -Eq '(^|/)\.git(/|$)' "${RUNNER_TEMP}/artifact.list"; then
+            echo "::error::The Pages artifact contains Git metadata."
+            exit 1
+          fi
+          echo "artifact_sha256=${artifact_sha256}" >> "${GITHUB_OUTPUT}"
+          {
+            echo "- Artifact: ${artifact_bytes} bytes"
+            echo "- Artifact SHA-256: \`${artifact_sha256}\`"
+          } >> "${GITHUB_STEP_SUMMARY}"
+
+      - name: Upload exact Pages artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: github-pages
+          path: ${{ runner.temp }}/artifact.tar
+          if-no-files-found: error
+          retention-days: 7
+
+  deploy:
+    name: Deploy current gh-pages
+    needs: prepare
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      contents: read
+      id-token: write
+      pages: write
+
+    steps:
+      - name: Recheck current gh-pages commit
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          fetch-depth: 1
+          path: head
+          persist-credentials: false
+
+      - name: Refuse a superseded deployment
+        env:
+          EXPECTED_SHA: ${{ needs.prepare.outputs.site_sha }}
+        run: |
+          set -euo pipefail
+          actual_sha="$(git -C head rev-parse HEAD)"
+          if [[ "${actual_sha}" != "${EXPECTED_SHA}" ]]; then
+            echo "::error::gh-pages advanced to ${actual_sha}; rerun for the intended current commit."
+            exit 1
+          fi
+
+      - name: Download exact Pages artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: github-pages
+          path: candidate
+
+      - name: Verify exact Pages artifact
+        env:
+          ARTIFACT_SHA256: ${{ needs.prepare.outputs.artifact_sha256 }}
+        run: |
+          set -euo pipefail
+          echo "${ARTIFACT_SHA256}  candidate/artifact.tar" | sha256sum --check
+          tar -tf candidate/artifact.tar >/dev/null
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Deploy exact Pages artifact
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Record deployed revision
+        env:
+          ARTIFACT_SHA256: ${{ needs.prepare.outputs.artifact_sha256 }}
+          SITE_SHA: ${{ needs.prepare.outputs.site_sha }}
+        run: |
+          {
+            echo "### Pages deployment completed"
+            echo
+            echo "- gh-pages commit: \`${SITE_SHA}\`"
+            echo "- Artifact SHA-256: \`${ARTIFACT_SHA256}\`"
+            echo "- URL: ${{ steps.deployment.outputs.page_url }}"
+          } >> "${GITHUB_STEP_SUMMARY}"

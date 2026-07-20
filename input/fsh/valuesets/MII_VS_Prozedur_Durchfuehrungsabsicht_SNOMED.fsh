@@ -7,9 +7,20 @@ Description: "Durchführungsabsicht / Intention mit der Prozedur ausgeführt wir
 * insert Publisher
 * insert SnomedLicense
 * insert LicenseCodeableCCBY40
+* insert CRMIShareableValueSet
+* insert CRMIPublishableValueSet
+* insert CRMIKnowledgeCapabilitiesValueSet
+* insert CRMIVersionPolicyStrict
+* insert CRMIPackageSourceDefinitionalResource
+* insert CRMIResourceEffectivePeriod
+* insert CRMIArtifactContributors
+* insert CRMIApprovalDate(2024-03-07)
+* insert CRMIArtifactTopic(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C25218)
+* insert CRMIArtifactTopic(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C192500)
 * ^status = #active
 * ^experimental = false
-* ^date = "2025-12-12"
+* ^date = "2026-06-15"
+* ^purpose = "Define SNOMED CT concepts allowed for representing procedure intent."
 * $sct#262202000 "Therapeutic"
 * $sct#363676003 "Palliative intent"
 * $sct#261004008 "Diagnostic intent"

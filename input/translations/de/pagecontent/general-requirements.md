@@ -1,4 +1,4 @@
-Diese Seite dokumentiert Anforderungen, die für alle MII-Akteure in diesem Leitfaden gelten. Die verwendeten Konformitätsverben - **MUSS**, **SOLLTE**, **KANN** - sind in den [FHIR Conformance Rules](http://hl7.org/fhir/R4/conformance-rules.html#conflang) definiert.
+Diese Seite dokumentiert Anforderungen, die für alle MII-Akteure in diesem Leitfaden gelten. Die verwendeten Konformitätsverben - **MUSS**, **SOLL**, **KANN** - sind in den [FHIR Conformance Rules](http://hl7.org/fhir/R4/conformance-rules.html#conflang) definiert.
 
 ### MII-Konformitätsartefakte
 
@@ -49,12 +49,12 @@ Anforderungen in dieser Spezifikation werden durch die folgenden Schlüsselwört
       <td style="border: 1px solid #ddd; padding: 8px;">Durch Spezifikation erforderlich</td>
     </tr>
     <tr style="background-color: #f9f9f9;">
-      <td style="border: 1px solid #ddd; padding: 8px;">SOLLTE / SOLLTEN</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">SOLL / SOLLEN</td>
       <td style="border: 1px solid #ddd; padding: 8px;">SHOULD</td>
       <td style="border: 1px solid #ddd; padding: 8px;">Empfohlen</td>
     </tr>
     <tr>
-      <td style="border: 1px solid #ddd; padding: 8px;">SOLLTE NICHT / SOLLTEN NICHT</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">SOLL NICHT / SOLLEN NICHT</td>
       <td style="border: 1px solid #ddd; padding: 8px;">SHOULD NOT</td>
       <td style="border: 1px solid #ddd; padding: 8px;">Nicht empfohlen</td>
     </tr>
@@ -77,10 +77,10 @@ Anforderungen in dieser Spezifikation werden durch die folgenden Schlüsselwört
 
 Systeme können ein oder mehrere MII-Profile zur Repräsentation klinischer Informationen bereitstellen und unterstützen. Sie verwenden das Inhaltsmodell des Profils ohne Erwartung, die MII-Interaktionen zu implementieren.
 
-Um ein MII-Profil zu unterstützen, **MUSS** ein Server:
+Um ein MII-Profil zu unterstützen:
 
-* **in der Lage sein**, alle Profildatenelemente zu befüllen, die verpflichtend sind und als Must Support gekennzeichnet sind, wie in der StructureDefinition dieses Profils definiert
-* **SOLLTE** die Unterstützung für ein MII-Profil deklarieren, indem er dessen offizielle URL im Element `CapabilityStatement.rest.resource.supportedProfile` des Servers einschließt
+* Ein Server **MUSS** in der Lage sein, alle Profildatenelemente zu befüllen, die verpflichtend sind und als Must Support gekennzeichnet sind, wie in der StructureDefinition dieses Profils definiert
+* Ein Server **SOLL** die Unterstützung für ein MII-Profil deklarieren, indem er dessen offizielle URL im Element `CapabilityStatement.rest.resource.supportedProfile` des Servers einschließt
   * Die offizielle oder "kanonische" URL des MII-Profils befindet sich auf jeder MII-Profilseite
 
 #### Profilunterstützung + Interaktionsunterstützung
@@ -90,7 +90,7 @@ Systeme können ein oder mehrere MII-Profile zur Darstellung klinischer Informat
 Ein konformer Server:
 
 * **MUSS** in der Lage sein, alle Profildatenelemente zu befüllen, die verpflichtend sind und/oder als Must Support gekennzeichnet sind, wie in der StructureDefinition dieses Profils definiert
-* **SOLLTE** Konformität mit dem entsprechenden MII-CapabilityStatement deklarieren, indem er dessen offizielle URL im Element `CapabilityStatement.instantiates` des Servers einschließt
+* **SOLL** Konformität mit dem entsprechenden MII-CapabilityStatement deklarieren, indem er dessen offizielle URL im Element `CapabilityStatement.instantiates` des Servers einschließt
 * **MUSS** die vollständigen Fähigkeitsdetails aus dem MII-CapabilityStatement spezifizieren, das er zu implementieren behauptet
   * Deklarieren Sie die Unterstützung für das MII-Profil, indem Sie dessen offizielle URL im Element `CapabilityStatement.rest.resource.supportedProfile` des Servers einschließen
   * Deklarieren Sie die Unterstützung für die FHIR-RESTful-Transaktionen des MII-Profils
@@ -178,7 +178,7 @@ Einige Beispiele für Modifier, die in MII-Profilen möglicherweise keine Must S
 * `Observation.valueQuantity.comparator`
 * `Patient.active`
 
-Implementierer **SOLLTEN** die Profilseiten sorgfältig überprüfen, um zu verstehen, welche Elemente Modifier sind und wie sie die Interpretation der Ressource beeinflussen.
+Implementierer **SOLLEN** die Profilseiten sorgfältig überprüfen, um zu verstehen, welche Elemente Modifier sind und wie sie die Interpretation der Ressource beeinflussen.
 
 ---
 

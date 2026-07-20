@@ -8,9 +8,20 @@ Description: "Enthaelt OPS-Codes der Versionen 2010 bis 2025"
 * insert PR_CS_VS_Version
 * insert Publisher
 * insert LicenseCodeableCCBY40
+* insert CRMIShareableValueSet
+* insert CRMIPublishableValueSet
+* insert CRMIKnowledgeCapabilitiesValueSet
+* insert CRMIVersionPolicyStrict
+* insert CRMIPackageSourceDefinitionalResource
+* insert CRMIResourceEffectivePeriod
+* insert CRMIArtifactContributors
+* insert CRMIApprovalDate(2024-03-07)
+* insert CRMIArtifactTopic(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C25218)
 * ^status = #active
 * ^experimental = false
-* ^date = "2025-03-17"
+* ^date = "2026-06-15"
+* ^purpose = "Define OPS codes allowed for procedure coding."
+* include codes from system $ops|2026
 * include codes from system $ops|2025
 * include codes from system $ops|2024
 * include codes from system $ops|2023

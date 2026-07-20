@@ -1,0 +1,36 @@
+{
+  "resourceType": "Patient",
+  "id": "patient-pseudonymisiert-valid-gender-other",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+            "code": "PSEUDED"
+          }
+        ]
+      },
+      "system": "https://www.medizininformatik-initiative.de/fhir/sid/pseudonym",
+      "value": "abc-99999"
+    }
+  ],
+  "gender": "other",
+  "_gender": {
+    "extension": [
+      {
+        "url": "http://fhir.de/StructureDefinition/gender-amtlich-de",
+        "valueCoding": {
+          "system": "http://fhir.de/CodeSystem/gender-amtlich-de",
+          "code": "D",
+          "display": "divers"
+        }
+      }
+    ]
+  }
+}

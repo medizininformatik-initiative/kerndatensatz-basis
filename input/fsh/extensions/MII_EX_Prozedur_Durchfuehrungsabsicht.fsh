@@ -6,13 +6,25 @@ Description: "Intention der Prozedur"
 * insert PR_CS_VS_Version
 * insert Publisher
 * insert LicenseCodeableCCBY40
-* ^date = "2024-12-09"
+* insert CRMIShareableStructureDefinition
+* insert CRMIPublishableStructureDefinition
+* insert CRMIKnowledgeCapabilitiesStructureDefinition
+* insert CRMIVersionPolicyStrict
+* insert CRMIPackageSourceDefinitionalResource
+* insert CRMIResourceEffectivePeriod
+* insert CRMIArtifactContributors
+* insert CRMIApprovalDate(2024-03-07)
+* insert CRMIArtifactUsageExtension
+* insert CRMIArtifactTopic(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C25218)
+* insert CRMIArtifactTopic(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C192500)
+* ^status = #active
+* ^experimental = false
+* ^date = "2026-06-15"
+* ^jurisdiction = urn:iso:std:iso:3166#DE "Germany"
+* ^purpose = "Represent the intended purpose of a procedure."
 * ^context.type = #element
 * ^context.expression = "Procedure"
-* url only uri
 * url = "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Durchfuehrungsabsicht" (exactly)
-* url ^type.extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type"
-* url ^type.extension.valueUrl = "uri"
 * value[x] 1..
 * value[x] only Coding
 * value[x] from MII_VS_Prozedur_Durchfuehrungsabsicht_SNOMEDCT (required)

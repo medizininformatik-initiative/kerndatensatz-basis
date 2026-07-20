@@ -1,0 +1,868 @@
+name: Publish release with IG Publisher
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_ref:
+        description: "Immutable release tag to publish"
+        required: true
+        default: "v2026.0.1"
+        type: string
+      publication_date:
+        description: "Publication date (YYYY-MM-DD, must match sushi-config.yaml); blank uses the tagged commit date"
+        required: false
+        default: ""
+        type: string
+      publish:
+        description: "Commit gh-pages and deploy (false performs a complete dry run)"
+        required: true
+        default: false
+        type: boolean
+      canonical_mapping_confirmed:
+        description: "Confirm the canonical URL is mapped to this Pages site"
+        required: true
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ inputs.publish && 'gh-pages-writes' || format('go-publish-dry-run-{0}', github.run_id) }}
+  queue: max
+
+env:
+  PUBLISHER_VERSION: "2.2.11"
+  PUBLISHER_SHA256: "a981af86bca3f3a22ee15b9d4ee3c97d63219b7a14e49d0a525e10bbfc71a911"
+  SUSHI_VERSION: "3.20.0"
+  JEKYLL_VERSION: "4.4.1"
+  HISTORY_REF: "8a90b35a2d839cc463eaf3d1c04a02ea60abb998"
+  WEB_TEMPLATES_REF: "8991c4afe5cb8f1e439c4280863c3d0513430df1"
+  IG_REGISTRY_REF: "8d85b7b204963c0e0bffd03c8f7628b91640c5b0"
+  NGINX_CONFIG_REF: "1db2e534704d92e5ee0cde663ce3e7ccd8825fa7"
+
+jobs:
+  authorize:
+    name: Authorize production publication
+    if: inputs.publish
+    runs-on: ubuntu-latest
+    environment: publication
+    steps:
+      - name: Confirm Pages Actions migration
+        env:
+          PAGES_ACTIONS_ENABLED: ${{ vars.PAGES_ACTIONS_ENABLED }}
+        run: |
+          set -euo pipefail
+          if [[ "${PAGES_ACTIONS_ENABLED}" != "true" ]]; then
+            echo "::error::Set the repository variable PAGES_ACTIONS_ENABLED=true only after Settings → Pages uses GitHub Actions."
+            exit 1
+          fi
+          echo "Production publication authorized."
+
+  prepare:
+    name: Build and stage publication
+    needs: authorize
+    if: ${{ always() && (needs.authorize.result == 'success' || needs.authorize.result == 'skipped') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    outputs:
+      artifact_sha256: ${{ steps.candidate.outputs.artifact_sha256 }}
+      canonical: ${{ steps.release.outputs.canonical }}
+      bootstrap: ${{ steps.release.outputs.bootstrap }}
+      historical_package_sha256: ${{ steps.release.outputs.historical_package_sha256 }}
+      label: ${{ steps.release.outputs.label }}
+      publication_date: ${{ steps.release.outputs.publication_date }}
+      site_sha: ${{ steps.release.outputs.site_sha }}
+      version: ${{ steps.release.outputs.version }}
+
+    steps:
+      - name: Checkout publication automation
+        uses: actions/checkout@v4
+        with:
+          path: automation
+          persist-credentials: false
+
+      - name: Checkout tagged IG source
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.release_ref }}
+          fetch-depth: 0
+          path: source
+          persist-credentials: false
+
+      - name: Checkout existing Pages tree
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          fetch-depth: 1
+          path: site
+          persist-credentials: false
+
+      - name: Checkout pinned history templates
+        uses: actions/checkout@v4
+        with:
+          repository: HL7/fhir-ig-history-template
+          ref: ${{ env.HISTORY_REF }}
+          path: publication/history
+          persist-credentials: false
+
+      - name: Checkout pinned web templates
+        uses: actions/checkout@v4
+        with:
+          repository: HL7/fhir-web-templates
+          ref: ${{ env.WEB_TEMPLATES_REF }}
+          path: publication/web-templates
+          persist-credentials: false
+
+      - name: Checkout pinned FHIR IG registry
+        uses: actions/checkout@v4
+        with:
+          repository: FHIR/ig-registry
+          ref: ${{ env.IG_REGISTRY_REF }}
+          path: publication/ig-registry
+          persist-credentials: false
+
+      - name: Validate release input and publication request
+        id: release
+        shell: bash
+        env:
+          RELEASE_REF: ${{ inputs.release_ref }}
+          REQUESTED_DATE: ${{ inputs.publication_date }}
+        run: |
+          set -euo pipefail
+
+          git check-ref-format "refs/tags/${RELEASE_REF}" >/dev/null
+          tag_sha="$(git -C source rev-parse "refs/tags/${RELEASE_REF}^{commit}")"
+          source_sha="$(git -C source rev-parse HEAD)"
+          if [[ "${tag_sha}" != "${source_sha}" ]]; then
+            echo "::error::release_ref must identify an immutable tag, not a branch."
+            exit 1
+          fi
+
+          jq empty source/publication-request.json
+          first="$(jq -r '.first // false' source/publication-request.json)"
+          if [[ "${first}" != "false" ]]; then
+            echo "::error::2026.0.0 is imported history. New publication requests must use first:false."
+            exit 1
+          fi
+
+          if grep -Eq '^template[[:space:]]*=.*#(dev|cibuild)[[:space:]]*$' source/ig.ini; then
+            echo "::error::Formal publication does not allow a development or CI-build IG template."
+            exit 1
+          fi
+
+          version="$(jq -er '."version"' source/publication-request.json)"
+          package_id="$(jq -er '."package-id"' source/publication-request.json)"
+          publication_path="$(jq -er '.path' source/publication-request.json)"
+          label="${publication_path##*/}"
+          canonical="${publication_path%/*}"
+          publication_date="${REQUESTED_DATE}"
+          if [[ -z "${publication_date}" ]]; then
+            publication_date="$(git -C source show -s --format=%cs HEAD)"
+          fi
+          ig_date="$(sed -nE \
+            's/^date:[[:space:]]*"?([0-9]{4}-[0-9]{2}-[0-9]{2})"?([[:space:]]*#.*)?$/\1/p' \
+            source/sushi-config.yaml)"
+
+          if [[ ! "${version}" =~ ^[0-9]+\.[0-9]+\.[0-9]+([-.][0-9A-Za-z.-]+)?$ ]]; then
+            echo "::error::Invalid publication version: ${version}"
+            exit 1
+          fi
+          if [[ ! "${publication_date}" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
+            echo "::error::Invalid publication date: ${publication_date}"
+            exit 1
+          fi
+          if [[ ! "${ig_date}" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
+            echo "::error::sushi-config.yaml must contain one top-level ISO publication date."
+            exit 1
+          fi
+          if [[ "${ig_date}" != "${publication_date}" ]]; then
+            echo "::error::Publication date ${publication_date} does not match sushi-config.yaml date ${ig_date}."
+            exit 1
+          fi
+          if [[ -z "${label}" ]] || [[ "${canonical}/${label}" != "${publication_path}" ]]; then
+            echo "::error::Invalid publication path: ${publication_path}"
+            exit 1
+          fi
+
+          expected_id="de.medizininformatikinitiative.kerndatensatz.base"
+          expected_canonical="https://www.medizininformatik-initiative.de/fhir/modul-base"
+          historical_package_sha256="$(jq -er \
+            '.packages["de.medizininformatikinitiative.kerndatensatz.base#2026.0.0"].sha256' \
+            automation/publication/existing-packages.json)"
+          if [[ ! "${historical_package_sha256}" =~ ^[0-9a-f]{64}$ ]]; then
+            echo "::error::Invalid pinned 2026.0.0 package SHA-256."
+            exit 1
+          fi
+          if [[ "${package_id}" != "${expected_id}" ]]; then
+            echo "::error::Unexpected package id: ${package_id}"
+            exit 1
+          fi
+          if [[ "${canonical}" != "${expected_canonical}" ]]; then
+            echo "::error::Unexpected canonical: ${canonical}"
+            exit 1
+          fi
+
+          bootstrap=false
+          if [[ ! -e site/package-list.json ]]; then
+            bootstrap=true
+            if [[ "${RELEASE_REF}" != "v2026.0.1" ]] ||
+              [[ "${version}" != "2026.0.1" ]] ||
+              [[ "${label}" != "2026.0.1" ]]; then
+              echo "::error::The one-time history bootstrap is restricted to v2026.0.1 / 2026.0.1."
+              exit 1
+            fi
+            jq -e \
+              --arg canonical "${canonical}" \
+              --arg package_id "${package_id}" \
+              '.canonical == $canonical
+                and ."package-id" == $package_id
+                and any(.list[]; .version == "current" and .status == "ci-build")
+                and any(.list[]; .version == "2026.0.0" and .current == true)' \
+              automation/publication/webroot/package-list.json >/dev/null
+          else
+            jq -e \
+              --arg canonical "${canonical}" \
+              --arg package_id "${package_id}" \
+              --arg version "${version}" \
+              '.canonical == $canonical
+                and ."package-id" == $package_id
+                and any(.list[]; .version == "current" and .status == "ci-build")
+                and any(.list[]; .version == "2026.0.0")
+                and all(.list[]; .version != $version)' \
+              site/package-list.json >/dev/null || {
+              echo "::error::Existing formal history is missing 2026.0.0, mismatched, or already contains ${version}."
+              exit 1
+            }
+          fi
+
+          {
+            echo "bootstrap=${bootstrap}"
+            echo "canonical=${canonical}"
+            echo "historical_package_sha256=${historical_package_sha256}"
+            echo "label=${label}"
+            echo "publication_date=${publication_date}"
+            echo "site_sha=$(git -C site rev-parse HEAD)"
+            echo "version=${version}"
+          } >> "${GITHUB_OUTPUT}"
+
+          {
+            echo "### Publication input"
+            echo
+            echo "- Tag: \`${RELEASE_REF}\` (\`${source_sha}\`)"
+            echo "- Package: \`${package_id}#${version}\`"
+            echo "- Permanent path: ${publication_path}"
+            echo "- Date: ${publication_date}"
+            echo "- Import 2026.0.0 history first: ${bootstrap}"
+          } >> "${GITHUB_STEP_SUMMARY}"
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Test publication automation
+        shell: bash
+        run: node --test automation/scripts/*.test.mjs
+
+      - name: Snapshot existing preview deployments
+        shell: bash
+        run: |
+          set -euo pipefail
+          node automation/scripts/verify-preview-preservation.mjs \
+            snapshot \
+            "${GITHUB_WORKSPACE}/site" \
+            "${RUNNER_TEMP}/preview-preservation.json" \
+            "2026.0.0"
+
+      - name: Install pinned build tools
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y graphviz libxml2-utils unzip
+          sudo gem install jekyll -v "${JEKYLL_VERSION}" --no-document
+          npm install --global "fsh-sushi@${SUSHI_VERSION}"
+
+          publisher_url="https://github.com/HL7/fhir-ig-publisher/releases/download/${PUBLISHER_VERSION}/publisher.jar"
+          curl --fail --location --silent --show-error \
+            "${publisher_url}" \
+            --output "${RUNNER_TEMP}/publisher.jar"
+          echo "${PUBLISHER_SHA256}  ${RUNNER_TEMP}/publisher.jar" | sha256sum --check
+
+          sushi --version
+          jekyll --version
+
+      - name: Configure terminology proxy
+        id: terminology
+        shell: bash
+        env:
+          CDS_DEV_CLIENT_CERT: ${{ secrets.CDS_DEV_CLIENT_CERT }}
+          CDS_DEV_CLIENT_KEY: ${{ secrets.CDS_DEV_CLIENT_KEY }}
+          CDS_DEV_CLIENT_CERT_PASSWORD: ${{ secrets.CDS_DEV_CLIENT_CERT_PASSWORD }}
+        run: |
+          set -euo pipefail
+          if [[ -z "${CDS_DEV_CLIENT_CERT}" ]] || [[ -z "${CDS_DEV_CLIENT_KEY}" ]] || [[ -z "${CDS_DEV_CLIENT_CERT_PASSWORD}" ]]; then
+            echo "::error::The CDS terminology client certificate secrets are required."
+            exit 1
+          fi
+
+          nginx_dir="${RUNNER_TEMP}/nginx"
+          mkdir -p "${nginx_dir}/certs"
+          curl --fail --location --silent --show-error \
+            "https://raw.githubusercontent.com/medizininformatik-initiative/kerndatensatz-meta/${NGINX_CONFIG_REF}/.github/workflows/nginx.conf" \
+            --output "${nginx_dir}/nginx.conf"
+          printf '%s' "${CDS_DEV_CLIENT_CERT}" | base64 --decode > "${nginx_dir}/certs/client-cert.pem"
+          printf '%s' "${CDS_DEV_CLIENT_KEY}" | base64 --decode > "${nginx_dir}/certs/client-key-encrypted.key"
+          openssl rsa \
+            -in "${nginx_dir}/certs/client-key-encrypted.key" \
+            -out "${nginx_dir}/certs/client-key.key" \
+            -passin env:CDS_DEV_CLIENT_CERT_PASSWORD
+          chmod 600 "${nginx_dir}/certs/"*
+
+          docker run --detach --name publication-nginx \
+            --volume "${nginx_dir}/nginx.conf:/etc/nginx/nginx.conf:ro" \
+            --volume "${nginx_dir}/certs:/etc/nginx/certs:ro" \
+            --publish 8090:80 \
+            nginx:alpine
+
+          for attempt in {1..15}; do
+            if curl --head --silent --fail http://127.0.0.1:8090 >/dev/null; then
+              exit 0
+            fi
+            sleep 2
+          done
+          docker logs publication-nginx
+          exit 1
+
+      - name: Run clean release build
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf source/fsh-generated source/output source/temp source/template
+          (
+            cd source
+            sushi .
+            java -Xmx6g -jar "${RUNNER_TEMP}/publisher.jar" \
+              -ig ig.ini \
+              -tx http://127.0.0.1:8090/fhir
+          )
+
+          jq empty source/output/qa.json
+          errors="$(jq -er '.errs' source/output/qa.json)"
+          if [[ "${errors}" != "0" ]]; then
+            echo "::error::Release QA contains ${errors} error(s)."
+            exit 1
+          fi
+          test -s source/output/package.tgz
+
+      - name: Restore localized table backgrounds in the release build
+        shell: bash
+        run: |
+          set -euo pipefail
+          bash automation/scripts/copy-localized-table-backgrounds.sh \
+            source/output
+
+      - name: Import the existing 2026.0.0 publication history
+        if: steps.release.outputs.bootstrap == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          package_key="de.medizininformatikinitiative.kerndatensatz.base#2026.0.0"
+          package_url="$(jq -er --arg key "${package_key}" '.packages[$key].url' automation/publication/existing-packages.json)"
+          package_sha="$(jq -er --arg key "${package_key}" '.packages[$key].sha256' automation/publication/existing-packages.json)"
+          archive_url="$(jq -er --arg key "${package_key}" '.packages[$key]."site-archive-url"' automation/publication/existing-packages.json)"
+          archive_sha="$(jq -er --arg key "${package_key}" '.packages[$key]."site-archive-sha256"' automation/publication/existing-packages.json)"
+          site_package_sha="$(jq -er --arg key "${package_key}" '.packages[$key]."site-package-sha256"' automation/publication/existing-packages.json)"
+
+          archive="${RUNNER_TEMP}/2026.0.0-full-ig.zip"
+          published_package="${RUNNER_TEMP}/2026.0.0-simplifier.tgz"
+          curl --fail --location --silent --show-error "${package_url}" --output "${published_package}"
+          echo "${package_sha}  ${published_package}" | sha256sum --check
+
+          bootstrap="${RUNNER_TEMP}/publication-bootstrap"
+          mkdir -p "${bootstrap}/2026.0.0"
+          historical_source="existing gh-pages/2026.0.0 deployment"
+
+          if [[ -s site/2026.0.0/index.html ]] &&
+            [[ -s site/2026.0.0/package.tgz ]] &&
+            [[ -s site/2026.0.0/full-ig.zip ]]; then
+            echo "${archive_sha}  site/2026.0.0/full-ig.zip" | sha256sum --check
+            existing_package_sha="$(sha256sum site/2026.0.0/package.tgz | cut -d ' ' -f1)"
+            if [[ "${existing_package_sha}" != "${site_package_sha}" ]] &&
+              [[ "${existing_package_sha}" != "${package_sha}" ]]; then
+              echo "::error::The existing 2026.0.0 deployment does not match the pinned public release."
+              exit 1
+            fi
+            cp -a site/2026.0.0/. "${bootstrap}/2026.0.0/"
+          else
+            historical_source="pinned public full-site archive"
+            curl --fail --location --silent --show-error "${archive_url}" --output "${archive}"
+            echo "${archive_sha}  ${archive}" | sha256sum --check
+
+            while IFS= read -r member; do
+              if [[ "${member}" == /* ]] ||
+                [[ "${member}" == ../* ]] ||
+                [[ "${member}" == */../* ]] ||
+                [[ "${member}" == */.. ]]; then
+                echo "::error::Unsafe path in historical site archive: ${member}"
+                exit 1
+              fi
+              case "${member}" in
+                site/*|index.html) ;;
+                *)
+                  echo "::error::Unexpected path in historical site archive: ${member}"
+                  exit 1
+                  ;;
+              esac
+            done < <(unzip -Z1 "${archive}")
+
+            extracted="${RUNNER_TEMP}/2026.0.0-extracted"
+            mkdir -p "${extracted}"
+            unzip -q "${archive}" -d "${extracted}"
+            if find "${extracted}" -type l -print -quit | grep -q .; then
+              echo "::error::The historical site archive contains a symbolic link."
+              exit 1
+            fi
+            test -s "${extracted}/site/index.html"
+            cp -a "${extracted}/site/." "${bootstrap}/2026.0.0/"
+            cp "${archive}" "${bootstrap}/2026.0.0/full-ig.zip"
+          fi
+
+          cp -a automation/publication/webroot/. "${bootstrap}/"
+          node automation/scripts/install-history-template.mjs \
+            "${GITHUB_WORKSPACE}/publication/history" \
+            "${bootstrap}"
+          rm -f "${bootstrap}/2026.0.0/.branch-name"
+          rm -f "${bootstrap}/2026.0.0/package.tgz"
+          cp "${published_package}" "${bootstrap}/2026.0.0/package.tgz"
+          cp automation/publication/2026.0.0-history.html \
+            "${bootstrap}/2026.0.0/history.html"
+
+          node automation/scripts/merge-publication-webroot.mjs \
+            "${bootstrap}" \
+            "${GITHUB_WORKSPACE}/site" \
+            "2026.0.0"
+
+          echo "${package_sha}  site/2026.0.0/package.tgz" | sha256sum --check
+          {
+            echo "### Imported historical publication"
+            echo
+            echo "- Website: \`2026.0.0/\` from ${historical_source}"
+            echo "- Package: existing Simplifier package, SHA-256 \`${package_sha}\`"
+            echo "- Rebuilt with current tools: no"
+          } >> "${GITHUB_STEP_SUMMARY}"
+
+      - name: Prepare publication workspace
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p publication/templates "${RUNNER_TEMP}/publication-zips"
+          find publication/web-templates \
+            -maxdepth 1 \
+            -type f \
+            -name '*template*' \
+            -exec cp '{}' publication/templates/ ';'
+          test -s publication/templates/header.template
+          test -s publication/templates/preamble.template
+          test -s publication/templates/postamble.template
+
+          test -s site/publish-setup.json
+          test -s site/package-registry.json
+          test -s site/package-list.json
+          test -s site/2026.0.0/index.html
+          test -s site/2026.0.0/package.tgz
+          test -s site/history.css
+          test -s site/assets-hist/js/jquery.js
+          test -s site/dist-hist/js/bootstrap.min.js
+
+      - name: Run Publisher -go-publish
+        shell: bash
+        env:
+          PUBLICATION_DATE: ${{ steps.release.outputs.publication_date }}
+        run: |
+          set -euo pipefail
+          java -Xmx6g -jar "${RUNNER_TEMP}/publisher.jar" -go-publish \
+            -source "${GITHUB_WORKSPACE}/source" \
+            -web "${GITHUB_WORKSPACE}/site" \
+            -history "${GITHUB_WORKSPACE}/publication/history" \
+            -registry "${GITHUB_WORKSPACE}/publication/ig-registry/fhir-ig-list.json" \
+            -temp "${RUNNER_TEMP}/publication-temp" \
+            -templates "${GITHUB_WORKSPACE}/publication/templates" \
+            -zips "${RUNNER_TEMP}/publication-zips" \
+            -date "${PUBLICATION_DATE}" \
+            -tx http://127.0.0.1:8090/fhir \
+            2>&1 | tee "${RUNNER_TEMP}/go-publish.log"
+
+      - name: Verify localized table backgrounds in the staged publication
+        shell: bash
+        env:
+          LABEL: ${{ steps.release.outputs.label }}
+        run: |
+          set -euo pipefail
+          bash automation/scripts/copy-localized-table-backgrounds.sh \
+            site \
+            --check
+          bash automation/scripts/copy-localized-table-backgrounds.sh \
+            "site/${LABEL}" \
+            --check
+
+      - name: Apply static-host redirect compatibility fix
+        shell: bash
+        run: |
+          set -euo pipefail
+          node automation/scripts/fix-cloud-redirects.mjs "${GITHUB_WORKSPACE}/site"
+
+      - name: Verify preview deployments were preserved
+        shell: bash
+        run: |
+          set -euo pipefail
+          node automation/scripts/verify-preview-preservation.mjs \
+            verify \
+            "${GITHUB_WORKSPACE}/site" \
+            "${RUNNER_TEMP}/preview-preservation.json"
+
+      - name: Validate staged publication
+        shell: bash
+        env:
+          CANONICAL: ${{ steps.release.outputs.canonical }}
+          LABEL: ${{ steps.release.outputs.label }}
+          PUBLISH: ${{ inputs.publish }}
+          VERSION: ${{ steps.release.outputs.version }}
+        run: |
+          set -euo pipefail
+
+          test -s site/index.html
+          test -s site/history.html
+          test -s site/history.css
+          test -s site/assets-hist/js/jquery.js
+          test -s site/dist-hist/js/bootstrap.min.js
+          test -s site/package-list.json
+          test -s site/package-registry.json
+          test -s site/package-feed.xml
+          test -s site/publication-feed.xml
+          test -s site/2026.0.0/index.html
+          test -s site/2026.0.0/history.html
+          test -s site/2026.0.0/package.tgz
+          test -s site/2026.0.0/full-ig.zip
+          test -s "site/${LABEL}/index.html"
+          test -s "site/${LABEL}/package.tgz"
+
+          jq -e \
+            --arg canonical "${CANONICAL}" \
+            --arg path_2026_0_0 "${CANONICAL}/2026.0.0" \
+            --arg publication_path "${CANONICAL}/${LABEL}" \
+            --arg version "${VERSION}" \
+            '.canonical == $canonical
+              and any(.list[];
+                .version == "2026.0.0"
+                and .path == $path_2026_0_0
+                and (.current // false) == false)
+              and any(.list[];
+                .version == $version
+                and .path == $publication_path
+                and .current == true)' \
+            site/package-list.json >/dev/null
+          jq empty site/package-registry.json
+          xmllint --noout site/package-feed.xml site/publication-feed.xml
+          grep -Fq 'id="history-data"' site/history.html
+          grep -Fq 'var pageJSON =' site/history.html
+          grep -Fq "2026.0.0" site/history.html
+          grep -Fq "${VERSION}" site/history.html
+          grep -Fq 'url=../history.html' site/2026.0.0/history.html
+          grep -Fq 'href="../history.html"' site/2026.0.0/history.html
+
+          historical_sha="$(jq -er \
+            '.packages["de.medizininformatikinitiative.kerndatensatz.base#2026.0.0"].sha256' \
+            automation/publication/existing-packages.json)"
+          echo "${historical_sha}  site/2026.0.0/package.tgz" | sha256sum --check
+
+          validate_package_manifest() {
+            local archive="$1"
+            local expected_version="$2"
+            local manifest
+            manifest="$(tar -xOzf "${archive}" package/package.json)"
+            jq -e \
+              --arg package_id "de.medizininformatikinitiative.kerndatensatz.base" \
+              --arg canonical "${CANONICAL}" \
+              --arg version "${expected_version}" \
+              '.name == $package_id
+                and .version == $version
+                and ((.canonical // $canonical) == $canonical)
+                and ((.notForPublication // false) == false)' \
+              <<< "${manifest}" >/dev/null || {
+              echo "::error::Invalid publishable package metadata in ${archive}."
+              jq '{name, version, canonical, notForPublication}' \
+                <<< "${manifest}"
+              exit 1
+            }
+          }
+          validate_package_manifest site/2026.0.0/package.tgz "2026.0.0"
+          validate_package_manifest "site/${LABEL}/package.tgz" "${VERSION}"
+
+          if [[ "${PUBLISH}" == "true" ]] &&
+            [[ ! -s site/branches/main/index.html ]]; then
+            echo "::error::The advertised CI build is missing at branches/main/. Let the main-branch preview workflow finish before production publication."
+            exit 1
+          fi
+
+          if find site -type l -print -quit | grep -q .; then
+            echo "::error::GitHub Pages artifacts must not contain symbolic links."
+            find site -type l -print
+            exit 1
+          fi
+          if find site -type f -name '*.php' -print -quit | grep -q .; then
+            echo "::error::Static publication still contains PHP files."
+            find site -type f -name '*.php' -print
+            exit 1
+          fi
+
+          bytes="$(du --bytes --summarize --exclude=.git site | cut -f1)"
+          supported_max_bytes="1000000000"
+          within_supported_limit=true
+          if (( bytes > supported_max_bytes )); then
+            within_supported_limit=false
+            message="Publication webroot is ${bytes} bytes, above GitHub Pages' 1 GB officially supported maximum (${supported_max_bytes} bytes)."
+            echo "::warning::${message} Publication will continue, but Pages does not guarantee deployments above 1 GB."
+          fi
+          {
+            echo "### Staged webroot"
+            echo
+            echo "- Size: ${bytes} bytes"
+            echo "- GitHub Pages supported maximum: ${supported_max_bytes} bytes"
+            echo "- Within supported maximum: ${within_supported_limit}"
+          } >> "${GITHUB_STEP_SUMMARY}"
+
+      - name: Stop terminology proxy
+        if: always()
+        shell: bash
+        run: |
+          docker rm --force publication-nginx >/dev/null 2>&1 || true
+
+      - name: Package exact publication candidate
+        id: candidate
+        shell: bash
+        run: |
+          set -euo pipefail
+          # deploy-pages expects one uncompressed tar named artifact.tar inside
+          # the Actions artifact. upload-artifact compresses it for transport.
+          tar \
+            --dereference \
+            --hard-dereference \
+            --exclude='.git' \
+            -cf "${RUNNER_TEMP}/artifact.tar" \
+            -C site \
+            .
+          artifact_sha256="$(sha256sum "${RUNNER_TEMP}/artifact.tar" | cut -d ' ' -f1)"
+          echo "${artifact_sha256}  artifact.tar" \
+            > "${RUNNER_TEMP}/artifact.tar.sha256"
+          echo "artifact_sha256=${artifact_sha256}" >> "${GITHUB_OUTPUT}"
+
+          git -C publication/ig-registry diff -- fhir-ig-list.json \
+            > "${RUNNER_TEMP}/ig-registry.patch"
+          git -C source diff \
+            > "${RUNNER_TEMP}/source-publication.patch"
+          cp "${RUNNER_TEMP}/go-publish.log" "${RUNNER_TEMP}/publication-process.log"
+
+      - name: Upload exact publication candidate
+        uses: actions/upload-artifact@v4
+        with:
+          name: github-pages
+          path: ${{ runner.temp }}/artifact.tar
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Upload publication review material
+        uses: actions/upload-artifact@v4
+        with:
+          name: publication-review
+          path: |
+            ${{ runner.temp }}/ig-registry.patch
+            ${{ runner.temp }}/source-publication.patch
+            ${{ runner.temp }}/publication-process.log
+            ${{ runner.temp }}/artifact.tar.sha256
+            site/${{ steps.release.outputs.label }}/package.tgz
+            source/output/qa.html
+            source/output/qa.json
+          if-no-files-found: error
+          retention-days: 7
+
+  publish:
+    name: Commit publication and prepare Pages artifact
+    if: inputs.publish
+    needs: prepare
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+    outputs:
+      commit_sha: ${{ steps.commit.outputs.commit_sha }}
+
+    steps:
+      - name: Require canonical mapping acknowledgement
+        shell: bash
+        env:
+          CANONICAL: ${{ needs.prepare.outputs.canonical }}
+          CONFIRMED: ${{ inputs.canonical_mapping_confirmed }}
+        run: |
+          set -euo pipefail
+          if [[ "${CONFIRMED}" != "true" ]]; then
+            echo "::error::Refusing to publish until canonical_mapping_confirmed is true."
+            exit 1
+          fi
+          curl --fail --location --silent --show-error \
+            --max-time 30 \
+            "${CANONICAL}/" \
+            >/dev/null
+
+      - name: Download publication candidate
+        uses: actions/download-artifact@v4
+        with:
+          name: github-pages
+          path: candidate
+
+      - name: Verify publication candidate
+        shell: bash
+        env:
+          ARTIFACT_SHA256: ${{ needs.prepare.outputs.artifact_sha256 }}
+        run: |
+          set -euo pipefail
+          echo "${ARTIFACT_SHA256}  candidate/artifact.tar" | sha256sum --check
+
+      - name: Checkout current gh-pages branch
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          fetch-depth: 1
+          path: site
+
+      - name: Commit exact candidate to gh-pages
+        id: commit
+        shell: bash
+        env:
+          BASE_SHA: ${{ needs.prepare.outputs.site_sha }}
+          LABEL: ${{ needs.prepare.outputs.label }}
+          VERSION: ${{ needs.prepare.outputs.version }}
+        run: |
+          set -euo pipefail
+          current_sha="$(git -C site rev-parse HEAD)"
+          if [[ "${current_sha}" != "${BASE_SHA}" ]]; then
+            echo "::error::gh-pages changed after the publication candidate was built; rerun the workflow."
+            exit 1
+          fi
+
+          find site \
+            -mindepth 1 \
+            -maxdepth 1 \
+            ! -name '.git' \
+            -exec rm -rf '{}' +
+          tar -xf candidate/artifact.tar -C site
+
+          git -C site config user.name "github-actions[bot]"
+          git -C site config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git -C site add --all
+          if git -C site diff --cached --quiet; then
+            echo "::error::The publication candidate contains no gh-pages changes."
+            exit 1
+          fi
+          git -C site commit -m "publish: ${VERSION} (${LABEL})"
+
+          git -C site fetch origin gh-pages --depth=1
+          remote_sha="$(git -C site rev-parse origin/gh-pages)"
+          if [[ "${remote_sha}" != "${BASE_SHA}" ]]; then
+            echo "::error::gh-pages advanced before push; rerun the workflow."
+            exit 1
+          fi
+          git -C site push origin HEAD:gh-pages
+          echo "commit_sha=$(git -C site rev-parse HEAD)" >> "${GITHUB_OUTPUT}"
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+  deploy:
+    name: Deploy GitHub Pages
+    if: inputs.publish
+    needs:
+      - prepare
+      - publish
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Deploy exact Pages artifact
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Verify canonical publication
+        shell: bash
+        env:
+          CANONICAL: ${{ needs.prepare.outputs.canonical }}
+          HISTORICAL_PACKAGE_SHA256: ${{ needs.prepare.outputs.historical_package_sha256 }}
+          LABEL: ${{ needs.prepare.outputs.label }}
+          PAGES_URL: ${{ steps.deployment.outputs.page_url }}
+          VERSION: ${{ needs.prepare.outputs.version }}
+        run: |
+          set -euo pipefail
+          pages_base="${PAGES_URL%/}"
+          historical_package="${RUNNER_TEMP}/2026.0.0-package.tgz"
+          for attempt in {1..18}; do
+            if package_list="$(curl --fail --location --silent --show-error \
+              --max-time 30 "${CANONICAL}/package-list.json")" &&
+              jq -e --arg version "${VERSION}" \
+                'any(.list[]; .version == "2026.0.0")
+                  and any(.list[]; .version == $version and .current == true)' \
+                <<< "${package_list}" >/dev/null &&
+              history="$(curl --fail --location --silent --show-error \
+                --max-time 30 "${CANONICAL}/history.html")" &&
+              grep -Fq "2026.0.0" <<< "${history}" &&
+              grep -Fq "${VERSION}" <<< "${history}" &&
+              pages_history="$(curl --fail --location --silent --show-error \
+                --max-time 30 "${pages_base}/history.html")" &&
+              grep -Fq "2026.0.0" <<< "${pages_history}" &&
+              grep -Fq "${VERSION}" <<< "${pages_history}" &&
+              historical_history="$(curl --fail --location --silent --show-error \
+                --max-time 30 "${pages_base}/2026.0.0/history.html")" &&
+              grep -Fq 'url=../history.html' <<< "${historical_history}" &&
+              grep -Fq 'href="../history.html"' <<< "${historical_history}" &&
+              curl --fail --location --silent --show-error \
+                --max-time 30 "${CANONICAL}/2026.0.0/index.html" \
+                --output /dev/null &&
+              curl --fail --location --silent --show-error \
+                --max-time 30 "${CANONICAL}/2026.0.0/package.tgz" \
+                --output "${historical_package}" &&
+              echo "${HISTORICAL_PACKAGE_SHA256}  ${historical_package}" |
+                sha256sum --check &&
+              curl --fail --location --silent --show-error \
+                --max-time 30 "${CANONICAL}/${LABEL}/package.tgz" \
+                --output /dev/null; then
+              {
+                echo "### Publication deployed"
+                echo
+                echo "- Canonical: ${CANONICAL}/"
+                echo "- Version: ${CANONICAL}/${LABEL}/"
+                echo "- Pages mirror: ${{ steps.deployment.outputs.page_url }}"
+                echo "- gh-pages commit: \`${{ needs.publish.outputs.commit_sha }}\`"
+              } >> "${GITHUB_STEP_SUMMARY}"
+              exit 0
+            fi
+            sleep 10
+          done
+
+          echo "::error::Pages deployed, but the canonical mapping did not expose the publication."
+          exit 1

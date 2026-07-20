@@ -4,6 +4,7 @@ Usage: #example
 Title: "MII EXA Person Condition (Todesursache)"
 Description: "Condition: Cause of Death (Todesursache)"
 * insert TestDataLabel
+* insert CRMIPackageSource
 * insert MetaProfile(https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Todesursache)
 //* category[todesDiagnose].coding[snomed].display = "Death diagnosis (contextual qualifier) (qualifier value)"
 //* category[todesDiagnose].coding[loinc].display = "Cause of death"

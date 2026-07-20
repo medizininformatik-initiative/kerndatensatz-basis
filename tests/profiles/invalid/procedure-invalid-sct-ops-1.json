@@ -1,0 +1,22 @@
+{
+  "resourceType": "Procedure",
+  "id": "procedure-invalid-sct-ops-1",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure"
+    ]
+  },
+  "status": "completed",
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "24627-2"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/example"
+  },
+  "performedDateTime": "2024-03-01"
+}

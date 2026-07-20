@@ -11,13 +11,28 @@ Description: "Dieses Profil beschreibt den Todesursache der Patient*in als Eleme
 * insert PR_CS_VS_Version
 * insert Publisher
 * insert LicenseCodeableCCBY40
+* insert CRMIShareableStructureDefinition
+* insert CRMIPublishableStructureDefinition
+* insert CRMIKnowledgeCapabilitiesStructureDefinition
+* insert CRMIVersionPolicyStrict
+* insert CRMIPackageSourceDefinitionalResource
+* insert CRMIArtifactUsageProfile
+* insert CRMIApprovalDate(2024-03-07)
+* insert CRMIResourceEffectivePeriod
+* insert CRMIArtifactTopic(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C81239)
+* insert CRMIArtifactContributors
 * ^status = #active
-* ^date = "2025-12-12"
+* ^experimental = false
+* ^date = "2026-06-15"
+* ^purpose = "Constrain the FHIR Condition resource to represent cause of death information consistently as part of the MII Person module."
 * id MS
 * meta MS
 //* meta.source MS
 * meta.profile MS
 * clinicalStatus MS
+* clinicalStatus.coding MS
+* clinicalStatus.coding.system MS
+* clinicalStatus.coding.code MS
 * clinicalStatus ^short = "Klinischer Status"
 * clinicalStatus ^definition = "aktiv | Rezidiv | Rückfall | inaktiv | Remission | abgeklungen"
 * insert Translation(clinicalStatus ^short, de-DE, Klinischer Status)
@@ -25,6 +40,9 @@ Description: "Dieses Profil beschreibt den Todesursache der Patient*in als Eleme
 * insert Translation(clinicalStatus ^definition, de-DE, aktiv | Rezidiv | Rückfall | inaktiv | Remission | abgeklungen)
 * insert Translation(clinicalStatus ^definition, en-US, active | recurrence | relapse | inactive | remission | resolved)
 * verificationStatus MS
+* verificationStatus.coding MS
+* verificationStatus.coding.system MS
+* verificationStatus.coding.code MS
 * verificationStatus ^short = "Verifizierungsstatus"
 * verificationStatus ^definition = "unbestätigt | vorläufig | differential | bestätigt | widerlegt | fehlerhafte Eingabe"
 * insert Translation(verificationStatus ^short, de-DE, Verifizierungsstatus)
@@ -52,7 +70,11 @@ Description: "Dieses Profil beschreibt den Todesursache der Patient*in als Eleme
     snomed 1..1 MS and
     loinc 1..1 MS
 * category[todesDiagnose].coding[snomed] = $sct-no-ver#16100001
+* category[todesDiagnose].coding[snomed].system MS
+* category[todesDiagnose].coding[snomed].code MS
 * category[todesDiagnose].coding[loinc] = $loinc#79378-6
+* category[todesDiagnose].coding[loinc].system MS
+* category[todesDiagnose].coding[loinc].code MS
 * code 1.. MS
 * code ^short = "Code"
 * code ^definition = "Ein ICD-10-WHO Code, der die Todesursache identifiziert."
@@ -74,7 +96,9 @@ Description: "Dieses Profil beschreibt den Todesursache der Patient*in als Eleme
 * code.coding[icd10-who] ^definition = "Ein ICD-10-WHO Code, der die Todesursache identifiziert."
 * code.text MS
 * subject MS
+* subject.reference MS
 * encounter MS
+* encounter.reference MS
 * encounter ^short = "Kontakt (Aufenthaltsbezug)"
 * encounter ^definition = "Kontakt, während dem die Todesursache festgestellt wurde."
 * insert Translation(encounter ^short, de-DE, Kontakt)

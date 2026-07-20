@@ -11,8 +11,20 @@ Description: "Dieses Profil beschreibt eine Diagnose der Medizininformatik Initi
 * insert PR_CS_VS_Version
 * insert Publisher
 * insert LicenseCodeableCCBY40
+* insert CRMIShareableStructureDefinition
+* insert CRMIPublishableStructureDefinition
+* insert CRMIKnowledgeCapabilitiesStructureDefinition
+* insert CRMIVersionPolicyStrict
+* insert CRMIPackageSourceDefinitionalResource
+* insert CRMIArtifactUsageProfile
+* insert CRMIApprovalDate(2024-03-07)
+* insert CRMIResourceEffectivePeriod
+* insert CRMIArtifactTopic(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C15607)
+* insert CRMIArtifactContributors
 * ^status = #active
-* ^date = "2025-12-12"
+* ^experimental = false
+* ^date = "2026-06-15"
+* ^purpose = "Constrain the FHIR Condition resource for consistent exchange of diagnoses in the MII Core Data Set."
 * id MS
 * meta MS
 * meta.source MS
@@ -26,6 +38,10 @@ Description: "Dieses Profil beschreibt eine Diagnose der Medizininformatik Initi
 * extension[Feststellungsdatum] ^definition = "Datum, an dem die Diagnose erstmals festgestellt wurde"
 * insert Translation(extension[Feststellungsdatum] ^definition, de-DE, Datum\, an dem die Diagnose erstmals festgestellt wurde)
 * insert Translation(extension[Feststellungsdatum] ^definition, en-US, Date the condition was first asserted)
+* extension[Feststellungsdatum].url MS
+* extension[Feststellungsdatum].valueDateTime MS
+* extension[ReferenzPrimaerdiagnose].url MS
+* extension[ReferenzPrimaerdiagnose].valueReference MS
 * clinicalStatus MS
 * clinicalStatus ^short = "Klinischer Status"
 * insert Translation(clinicalStatus ^short, de-DE, Klinischer Status)
@@ -33,6 +49,9 @@ Description: "Dieses Profil beschreibt eine Diagnose der Medizininformatik Initi
 * clinicalStatus ^definition = "aktiv | Rezidiv | Rückfall | inaktiv | Remission | abgeklungen"
 * insert Translation(clinicalStatus ^definition, de-DE, aktiv | Rezidiv | Rückfall | inaktiv | Remission | abgeklungen)
 * insert Translation(clinicalStatus ^definition, en-US, active | recurrence | relapse | inactive | remission | resolved)
+* clinicalStatus.coding MS
+* clinicalStatus.coding.system MS
+* clinicalStatus.coding.code MS
 * verificationStatus MS
 * verificationStatus ^short = "Verifizierungsstatus"
 * insert Translation(verificationStatus ^short, de-DE, Verifizierungsstatus)
@@ -40,6 +59,9 @@ Description: "Dieses Profil beschreibt eine Diagnose der Medizininformatik Initi
 * verificationStatus ^definition = "unbestätigt | vorläufig | differential | bestätigt | widerlegt | fehlerhafte Eingabe"
 * insert Translation(verificationStatus ^definition, de-DE, unbestätigt | vorläufig | differential | bestätigt | widerlegt | fehlerhafte Eingabe)
 * insert Translation(verificationStatus ^definition, en-US, unconfirmed | provisional | differential | confirmed | refuted | entered-in-error)
+* verificationStatus.coding MS
+* verificationStatus.coding.system MS
+* verificationStatus.coding.code MS
 * code 1.. MS
 * code ^short = "Code"
 * insert Translation(code ^short, de-DE, Code)
@@ -64,12 +86,28 @@ Description: "Dieses Profil beschreibt eine Diagnose der Medizininformatik Initi
 * code.coding[icd10-gm].system 1.. MS
 * code.coding[icd10-gm].version 1.. MS
 * code.coding[icd10-gm].code 1.. MS
+* code.coding[icd10-gm].extension[Mehrfachcodierungs-Kennzeichen] MS
+* code.coding[icd10-gm].extension[Mehrfachcodierungs-Kennzeichen].url MS
+* code.coding[icd10-gm].extension[Mehrfachcodierungs-Kennzeichen].valueCoding MS
+* code.coding[icd10-gm].extension[Mehrfachcodierungs-Kennzeichen].valueCoding.system MS
+* code.coding[icd10-gm].extension[Mehrfachcodierungs-Kennzeichen].valueCoding.code MS
+* code.coding[icd10-gm].extension[Seitenlokalisation] MS
+* code.coding[icd10-gm].extension[Seitenlokalisation].url MS
+* code.coding[icd10-gm].extension[Seitenlokalisation].valueCoding MS
+* code.coding[icd10-gm].extension[Seitenlokalisation].valueCoding.system MS
+* code.coding[icd10-gm].extension[Seitenlokalisation].valueCoding.code MS
+* code.coding[icd10-gm].extension[Diagnosesicherheit] MS
+* code.coding[icd10-gm].extension[Diagnosesicherheit].url MS
+* code.coding[icd10-gm].extension[Diagnosesicherheit].valueCoding MS
+* code.coding[icd10-gm].extension[Diagnosesicherheit].valueCoding.system MS
+* code.coding[icd10-gm].extension[Diagnosesicherheit].valueCoding.code MS
 * insert AddAlphaIdCodingTranslation(code.coding[alpha-id])
 * code.coding[alpha-id] only CodingAlphaID
 * code.coding[alpha-id] from mii-vs-diagnose-alphaid (required)
 * code.coding[alpha-id] ^patternCoding.system = "http://fhir.de/CodeSystem/bfarm/alpha-id"
 * code.coding[alpha-id].system 1.. MS
 * code.coding[alpha-id].code 1.. MS
+* code.coding[alpha-id].version MS
 * insert AddSnomedCodingTranslation(code.coding[sct])
 * code.coding[sct] from MII_VS_Diagnose_DiagnoseCodes_SNOMED (required)
 * code.coding[sct] ^patternCoding.system = "http://snomed.info/sct"
@@ -111,6 +149,7 @@ Description: "Dieses Profil beschreibt eine Diagnose der Medizininformatik Initi
 //* bodySite.coding[icd-o-3].system = "http://terminology.hl7.org/CodeSystem/icd-o-3"
 //* bodySite.coding[icd-o-3].code 1.. MS 
 * subject 1.. MS
+* subject.reference MS
 //* subject only $MII-Reference
 //* encounter only $MII-Reference
 * encounter MS
@@ -120,6 +159,7 @@ Description: "Dieses Profil beschreibt eine Diagnose der Medizininformatik Initi
 * encounter ^definition = "Kontakt, während dem die Diagnose erstellt wurde oder mit dem die Diagnose in Zusammenhang steht."
 * insert Translation(encounter ^definition, de-DE, Kontakt\, während dem die Diagnose erstellt wurde oder mit dem die Diagnose in Zusammenhang steht.)
 * insert Translation(encounter ^definition, en-US, The Encounter during which this Condition was created or to which the creation of this record is tightly associated.)
+* encounter.reference MS
 * onset[x] only dateTime or Period or Age
 * onset[x] MS
 * onset[x] ^short = "Beginn"
@@ -133,8 +173,18 @@ Description: "Dieses Profil beschreibt eine Diagnose der Medizininformatik Initi
 * onsetPeriod ^definition = "Der Zeitraum, in dem die Erkrankung begonnen hat, nach Meinung des Klinikers."
 * onsetPeriod.start MS
 * onsetPeriod.start.extension contains ExtensionLebensphase named lebensphase-von 0..1 MS
+* onsetPeriod.start.extension[lebensphase-von].url MS
+* onsetPeriod.start.extension[lebensphase-von].valueCodeableConcept MS
+* onsetPeriod.start.extension[lebensphase-von].valueCodeableConcept.coding MS
+* onsetPeriod.start.extension[lebensphase-von].valueCodeableConcept.coding.system MS
+* onsetPeriod.start.extension[lebensphase-von].valueCodeableConcept.coding.code MS
 * onsetPeriod.end MS
 * onsetPeriod.end.extension contains ExtensionLebensphase named lebensphase-bis 0..1 MS
+* onsetPeriod.end.extension[lebensphase-bis].url MS
+* onsetPeriod.end.extension[lebensphase-bis].valueCodeableConcept MS
+* onsetPeriod.end.extension[lebensphase-bis].valueCodeableConcept.coding MS
+* onsetPeriod.end.extension[lebensphase-bis].valueCodeableConcept.coding.system MS
+* onsetPeriod.end.extension[lebensphase-bis].valueCodeableConcept.coding.code MS
 * onsetDateTime MS
 * onsetDateTime ^short = "Beginn Datum"
 * onsetDateTime ^definition = "Das Datum, an dem die Erkrankung begonnen hat, nach Meinung des Klinikers."
@@ -143,6 +193,11 @@ Description: "Dieses Profil beschreibt eine Diagnose der Medizininformatik Initi
 * onsetAge.extension contains ExtensionLebensphase named Lebensphase-Beginn 0..1
 * onsetAge.extension[Lebensphase-Beginn] ^short = "Lebensphase des Erkrankungsbeginns"
 * onsetAge.extension[Lebensphase-Beginn] ^comment = "Alternative Angabe, wenn genauere Eingrenzungen des Zeitraums nicht möglich sind, insbesondere im Kontext anamnestischer Diagnosen"
+* onsetAge.extension[Lebensphase-Beginn].url MS
+* onsetAge.extension[Lebensphase-Beginn].valueCodeableConcept MS
+* onsetAge.extension[Lebensphase-Beginn].valueCodeableConcept.coding MS
+* onsetAge.extension[Lebensphase-Beginn].valueCodeableConcept.coding.system MS
+* onsetAge.extension[Lebensphase-Beginn].valueCodeableConcept.coding.code MS
 * recordedDate 1.. MS
 * recordedDate ^short = "Aufzeichnungsdatum"
 * insert Translation(recordedDate ^short, de-DE, Aufzeichnungsdatum)

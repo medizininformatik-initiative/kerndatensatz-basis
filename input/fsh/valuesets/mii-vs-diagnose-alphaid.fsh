@@ -8,9 +8,20 @@ Description: "Enthaelt Alpha-ID-Codes der Versionen 2018 bis 2025"
 * insert PR_CS_VS_Version
 * insert Publisher
 * insert LicenseCodeableCCBY40
+* insert CRMIShareableValueSet
+* insert CRMIPublishableValueSet
+* insert CRMIKnowledgeCapabilitiesValueSet
+* insert CRMIVersionPolicyStrict
+* insert CRMIPackageSourceDefinitionalResource
+* insert CRMIResourceEffectivePeriod
+* insert CRMIArtifactTopic(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C15607)
+* insert CRMIArtifactContributors
+* insert CRMIApprovalDate(2024-03-07)
 * ^status = #active
 * ^experimental = false
-* ^date = "2025-03-17"
+* ^date = "2026-06-15"
+* ^purpose = "Define Alpha-ID codes allowed for diagnosis coding in the MII Diagnosis module."
+* include codes from system $alpha-id|2026
 * include codes from system $alpha-id|2025
 * include codes from system $alpha-id|2024
 * include codes from system $alpha-id|2023

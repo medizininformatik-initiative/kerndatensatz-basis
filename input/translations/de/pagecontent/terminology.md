@@ -1,7 +1,7 @@
 Diese Seite listet alle ValueSets und CodeSystems auf, die als Teil des MII-Implementierungsleitfadens Kerndatensatz Basis definiert sind. Weitere Informationen zur Verwendung von Codes in diesem Leitfaden finden Sie im Abschnitt [FHIR Terminology](http://hl7.org/fhir/R4/terminologies.html) der FHIR-Spezifikation.
 
 {:.bg-info}
-**Wichtiger Hinweis:** CodeSystem-Ressourcen für externe Terminologien (ICD-10-GM, OPS) werden in diesem Modul nicht veröffentlicht, sondern sollten vom MII-Terminologieservice (SU-TermServ) bezogen werden: [https://www.ontoserver.mii-termserv.de/](https://www.ontoserver.mii-termserv.de/)
+**Wichtiger Hinweis:** CodeSystem-Ressourcen für externe Terminologien (ICD-10-GM, OPS) werden in diesem Modul nicht veröffentlicht, sondern sollen vom MII-Terminologieservice (SU-TermServ) bezogen werden: [https://www.ontoserver.mii-termserv.de/](https://www.ontoserver.mii-termserv.de/)
 
 ### ValueSets
 
@@ -94,7 +94,7 @@ Die Medizininformatik-Initiative betreibt einen zentralen Terminologieservice (S
 
 **Zugriff:** [https://www.ontoserver.mii-termserv.de/](https://www.ontoserver.mii-termserv.de/)
 
-Dieser Service sollte verwendet werden, um Expansionen von ValueSets zu erhalten und auf externe Codesysteme wie ICD-10-GM und OPS zuzugreifen.
+Dieser Service soll verwendet werden, um Expansionen von ValueSets zu erhalten und auf externe Codesysteme wie ICD-10-GM und OPS zuzugreifen.
 
 ---
 

@@ -1,0 +1,23 @@
+{
+  "resourceType": "Procedure",
+  "id": "procedure-invalid-proc-mii-1",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure"
+    ]
+  },
+  "status": "completed",
+  "code": {
+    "coding": [
+      {
+        "system": "http://fhir.de/CodeSystem/bfarm/ops",
+        "version": "2024",
+        "code": "5-470"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/example"
+  },
+  "performedDateTime": "2024-03-01"
+}

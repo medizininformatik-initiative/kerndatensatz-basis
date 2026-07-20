@@ -6,8 +6,18 @@ Description: "A coded type for an identifier that can be used to determine which
 * ^url = "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/identifier-type-codes"
 * insert PR_CS_VS_Version
 * insert LicenseCodeableCCBY40
+* insert CRMIShareableValueSet
+* insert CRMIPublishableValueSet
+* insert CRMIKnowledgeCapabilitiesValueSet
+* insert CRMIVersionPolicyStrict
+* insert CRMIPackageSourceDefinitionalResource
+* insert CRMIResourceEffectivePeriod
+* insert CRMIArtifactContributors
+* insert CRMIApprovalDate(2024-03-07)
+* insert CRMIArtifactTopic(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C154624)
 * ^experimental = false
-* ^date = "2024-12-10"
+* ^date = "2026-06-15"
+* ^purpose = "Define identifier type codes used for encounter identifiers."
 * insert Publisher
 * $v2-0203#DL
 * $v2-0203#PPN

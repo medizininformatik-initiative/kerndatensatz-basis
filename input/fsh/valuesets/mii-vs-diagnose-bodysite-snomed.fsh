@@ -8,7 +8,17 @@ Description: "Enthaelt alle SNOMED Body structure codes"
 * insert PR_CS_VS_Version
 * insert Publisher
 * insert LicenseCodeableCCBY40
+* insert CRMIShareableValueSet
+* insert CRMIPublishableValueSet
+* insert CRMIKnowledgeCapabilitiesValueSet
+* insert CRMIVersionPolicyStrict
+* insert CRMIPackageSourceDefinitionalResource
+* insert CRMIResourceEffectivePeriod
+* insert CRMIArtifactContributors
+* insert CRMIApprovalDate(2024-03-07)
+* insert CRMIArtifactTopic(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C15607)
 * ^status = #active
 * ^experimental = true
-* ^date = "2025-12-12"
+* ^date = "2026-06-15"
+* ^purpose = "Define SNOMED CT body structure concepts allowed for diagnosis body site representation."
 * include codes from system $sct where concept descendent-of #123037004

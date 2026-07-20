@@ -1,0 +1,23 @@
+{
+  "resourceType": "Condition",
+  "id": "diagnose-valid-icd10",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose"
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+        "version": "2024",
+        "code": "J06.9",
+        "display": "Akute Infektion der oberen Atemwege, nicht näher bezeichnet"
+      }
+    ]
+  },
+  "subject": {
+    "display": "Test Patient"
+  },
+  "recordedDate": "2024-01-15"
+}

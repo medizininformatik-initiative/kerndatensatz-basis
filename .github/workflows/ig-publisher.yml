@@ -7,13 +7,21 @@ on:
   push:
     branches:
       - '**'
+      - '!gh-pages'
+      - '!fsh-generated'
   pull_request:
 
 permissions:
   actions: write
   contents: write
+  id-token: write
   issues: write
+  pages: write
   pull-requests: write
+
+concurrency:
+  group: ${{ github.event_name == 'push' && 'gh-pages-writes' || format('ig-readonly-{0}', github.run_id) }}
+  queue: max
 
 jobs:
 
@@ -75,19 +83,16 @@ jobs:
 
       # Run SUSHI (FSH -> FHIR conversion)
       - name: Run SUSHI
-        run: docker run --rm --network host -v $PWD:/workspace -v /usr/bin/dot:/usr/local/bin/dot:ro -v /usr/lib/x86_64-linux-gnu:/usr/host/lib:ro -e LD_LIBRARY_PATH="/usr/host/lib:$LD_LIBRARY_PATH" -w /workspace ghcr.io/gefyra/ig-publisher-with-snapshot-support:latest sushi .
+        run: docker run --rm --network host -v $PWD:/workspace -v /usr/bin/dot:/usr/local/bin/dot:ro -v /usr/lib/x86_64-linux-gnu:/usr/host/lib:ro -e LD_LIBRARY_PATH=/usr/host/lib -w /workspace ghcr.io/gefyra/ig-publisher-with-snapshot-support:latest sushi .
       
       # Run the HL7 FHIR IG Publisher
       - name: Build IG
         run: |
-          docker run --rm --network host -v $PWD:/workspace -v /usr/bin/dot:/usr/local/bin/dot:ro -v /usr/lib/x86_64-linux-gnu:/usr/host/lib:ro -e LD_LIBRARY_PATH="/usr/host/lib:$LD_LIBRARY_PATH" -w /workspace ghcr.io/gefyra/ig-publisher-with-snapshot-support:latest sh -c "igpublisher -ig ig.ini -tx http://127.0.0.1:8090/fhir || true"
-          if [ -d "output" ] && [ "$(ls -A output)" ]; then
-            echo "IG build produced output (Jekyll may have failed but core content exists)"
-            exit 0
-          else
-            echo "IG build failed to produce output"
-            exit 1
-          fi
+          set -euo pipefail
+          docker run --rm --network host -v $PWD:/workspace -v /usr/bin/dot:/usr/local/bin/dot:ro -v /usr/lib/x86_64-linux-gnu:/usr/host/lib:ro -e LD_LIBRARY_PATH=/usr/host/lib -w /workspace ghcr.io/gefyra/ig-publisher-with-snapshot-support:latest sh -c "igpublisher -ig ig.ini -tx http://127.0.0.1:8090/fhir"
+          test -s output/index.html
+          test -s output/qa.json
+          jq empty output/qa.json
       
       - name: Cleanup NGINX
         if: always()
@@ -97,6 +102,10 @@ jobs:
 
       - name: Fix output directory permissions
         run: sudo chown -R $USER:$USER output
+
+      - name: Restore localized table backgrounds
+        shell: bash
+        run: bash scripts/copy-localized-table-backgrounds.sh output
 
       - name: Record branch metadata for Pages cleanup
         if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/')
@@ -121,6 +130,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GIT_AUTHOR_NAME: github-actions[bot]
           GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+          PAGES_ACTIONS_ENABLED: ${{ vars.PAGES_ACTIONS_ENABLED }}
         run: |
           set -euo pipefail
 
@@ -144,25 +154,22 @@ jobs:
             cd ..
           fi
 
-          # Publish main/master branch to root, other branches to subdirectories
-          if [[ "${GITHUB_REF_NAME}" == "main" ]] || [[ "${GITHUB_REF_NAME}" == "master" ]]; then
-            # Main branch: publish to root
-            cd gh-pages
-            # Remove all files except branch subdirectories and .nojekyll
-            find . -maxdepth 1 ! -name '.' ! -name '.git' ! -name '.nojekyll' ! -path './[a-zA-Z0-9_-]*' -exec rm -rf {} + 2>/dev/null || true
-            cd ..
-            cp -R "output/." "gh-pages/"
-            echo "Published ${GITHUB_REF_NAME} to root"
-          else
-            # Feature branches: publish to subdirectory
-            branch_dir="gh-pages/${GITHUB_REF_NAME}"
-            rm -rf "${branch_dir}"
-            mkdir -p "${branch_dir}"
-            cp -R "output/." "${branch_dir}/"
-            echo "Published ${GITHUB_REF_NAME} to ${GITHUB_REF_NAME}/ subdirectory"
-          fi
+          # The root and version-like paths are reserved for formal -go-publish
+          # output. All CI previews live below a collision-free namespace.
+          branch_dir="gh-pages/branches/${GITHUB_REF_NAME}"
+          rm -rf "${branch_dir}"
+          mkdir -p "${branch_dir}"
+          cp -R "output/." "${branch_dir}/"
+          echo "Published ${GITHUB_REF_NAME} to branches/${GITHUB_REF_NAME}/"
 
           cd gh-pages
+          if [[ "${PAGES_ACTIONS_ENABLED}" == "true" ]]; then
+            bytes="$(du --bytes --summarize --exclude=.git . | cut -f1)"
+            supported_max_bytes="1000000000"
+            if (( bytes > supported_max_bytes )); then
+              echo "::warning::The staged Pages site is ${bytes} bytes, above GitHub Pages' ${supported_max_bytes}-byte officially supported maximum. Publication will continue, but Pages does not guarantee deployments above 1 GB."
+            fi
+          fi
           git config user.name "${GIT_AUTHOR_NAME}"
           git config user.email "${GIT_AUTHOR_EMAIL}"
           git add --all
@@ -173,9 +180,19 @@ jobs:
           git commit -m "chore: update ${GITHUB_REF_NAME} pages"
           git push origin gh-pages
 
+      - name: Configure GitHub Pages
+        if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/') && vars.PAGES_ACTIONS_ENABLED == 'true'
+        uses: actions/configure-pages@v5
+
+      - name: Upload GitHub Pages artifact
+        if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/') && vars.PAGES_ACTIONS_ENABLED == 'true'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: gh-pages
+
       - name: Announce published URL
         id: announce_url
-        if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/')
+        if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/') && vars.PAGES_ACTIONS_ENABLED == 'true'
         shell: bash
         run: |
           set -eu
@@ -183,19 +200,14 @@ jobs:
           repo_name="${GITHUB_REPOSITORY#*/}"
           branch="${GITHUB_REF_NAME}"
           
-          # Main/master branch published to root, others to subdirectory
-          if [[ "${branch}" == "main" ]] || [[ "${branch}" == "master" ]]; then
-            url="https://${repo_owner}.github.io/${repo_name}/"
-          else
-            url="https://${repo_owner}.github.io/${repo_name}/${branch}/"
-          fi
+          url="https://${repo_owner}.github.io/${repo_name}/branches/${branch}/"
           
           echo "Published to ${url}"
           printf '### Deployment\n[Open published IG for branch `%s`](%s)\n' "${branch}" "${url}" >> "${GITHUB_STEP_SUMMARY}"
           echo "published_url=${url}" >> "${GITHUB_OUTPUT}"
 
       - name: Upsert PR comment with published URL
-        if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/')
+        if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/') && vars.PAGES_ACTIONS_ENABLED == 'true'
         uses: actions/github-script@v7
         env:
           BRANCH_NAME: ${{ github.ref_name }}
@@ -239,3 +251,20 @@ jobs:
               });
               core.info(`Created IG publish URL comment on PR #${pr.number}`);
             }
+
+  deploy:
+    name: Deploy GitHub Pages
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/') && vars.PAGES_ACTIONS_ENABLED == 'true'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      contents: read
+      id-token: write
+      pages: write
+    steps:
+      - name: Deploy Pages artifact
+        id: deployment
+        uses: actions/deploy-pages@v4
