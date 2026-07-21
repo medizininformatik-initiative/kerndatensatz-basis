@@ -107,6 +107,19 @@ jobs:
         shell: bash
         run: bash scripts/copy-localized-table-backgrounds.sh output
 
+      - name: Point publication history links to GitHub Pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          canonical="$(jq -er '.canonical' package.json)"
+          repo_owner="${GITHUB_REPOSITORY_OWNER}"
+          repo_name="${GITHUB_REPOSITORY#*/}"
+          publication_base="https://${repo_owner}.github.io/${repo_name}"
+          node scripts/fix-publication-history-links.mjs \
+            output \
+            "${canonical}" \
+            "${publication_base}"
+
       - name: Record branch metadata for Pages cleanup
         if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/') && github.ref_name != 'main'
         run: |

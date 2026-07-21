@@ -27,7 +27,7 @@ jobs:
           node-version: '20'
       
       - name: Install SUSHI
-        run: npm install -g fsh-sushi@3.20.0
+        run: npm install -g fsh-sushi@latest
       
       - name: Run SUSHI
         run: sushi .
