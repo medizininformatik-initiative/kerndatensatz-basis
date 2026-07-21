@@ -60,9 +60,7 @@ jobs:
       bootstrap: ${{ steps.release.outputs.bootstrap }}
       historical_package_sha256: ${{ steps.release.outputs.historical_package_sha256 }}
       label: ${{ steps.release.outputs.label }}
-      publication_base: ${{ steps.release.outputs.publication_base }}
       publication_date: ${{ steps.release.outputs.publication_date }}
-      publication_path: ${{ steps.release.outputs.publication_path }}
       site_sha: ${{ steps.release.outputs.site_sha }}
       version: ${{ steps.release.outputs.version }}
 
@@ -626,18 +624,19 @@ jobs:
             echo "- Entry metadata and placeholders: validated"
           } >> "${GITHUB_STEP_SUMMARY}"
 
-      - name: Verify localized table backgrounds in the staged publication
+      - name: Restore and verify localized table backgrounds in the staged publication
         shell: bash
         env:
           LABEL: ${{ steps.release.outputs.label }}
         run: |
           set -euo pipefail
-          bash automation/scripts/copy-localized-table-backgrounds.sh \
-            site \
-            --check
-          bash automation/scripts/copy-localized-table-backgrounds.sh \
-            "site/${LABEL}" \
-            --check
+          for publication_directory in site "site/${LABEL}"; do
+            bash automation/scripts/copy-localized-table-backgrounds.sh \
+              "${publication_directory}"
+            bash automation/scripts/copy-localized-table-backgrounds.sh \
+              "${publication_directory}" \
+              --check
+          done
 
       - name: Apply static-host redirect compatibility fix
         shell: bash
@@ -998,25 +997,26 @@ jobs:
         env:
           CANONICAL: ${{ needs.prepare.outputs.canonical }}
           HISTORICAL_PACKAGE_SHA256: ${{ needs.prepare.outputs.historical_package_sha256 }}
+          LABEL: ${{ needs.prepare.outputs.label }}
           PAGES_URL: ${{ steps.deployment.outputs.page_url }}
-          PUBLICATION_BASE: ${{ needs.prepare.outputs.publication_base }}
-          PUBLICATION_PATH: ${{ needs.prepare.outputs.publication_path }}
           VERSION: ${{ needs.prepare.outputs.version }}
         run: |
           set -euo pipefail
           pages_base="${PAGES_URL%/}"
-          if [[ "${pages_base}" != "${PUBLICATION_BASE}" ]]; then
-            echo "::error::Pages deployed at ${pages_base}, expected ${PUBLICATION_BASE}."
+          publication_base="${EXPECTED_PUBLICATION_BASE%/}"
+          publication_path="${publication_base}/${LABEL}"
+          if [[ "${pages_base}" != "${publication_base}" ]]; then
+            echo "::error::Pages deployed at ${pages_base}, expected ${publication_base}."
             exit 1
           fi
           historical_package="${RUNNER_TEMP}/2026.0.0-package.tgz"
           for attempt in {1..18}; do
             if package_list="$(curl --fail --location --silent --show-error \
-              --max-time 30 "${PUBLICATION_BASE}/package-list.json")" &&
+              --max-time 30 "${publication_base}/package-list.json")" &&
               jq -e \
                 --arg canonical "${CANONICAL}" \
-                --arg historical_path "${PUBLICATION_BASE}/2026.0.0" \
-                --arg publication_path "${PUBLICATION_PATH}" \
+                --arg historical_path "${publication_base}/2026.0.0" \
+                --arg publication_path "${publication_path}" \
                 --arg version "${VERSION}" \
                 '.canonical == $canonical
                   and any(.list[];
@@ -1029,32 +1029,32 @@ jobs:
                     and .current == true)' \
                 <<< "${package_list}" >/dev/null &&
               history="$(curl --fail --location --silent --show-error \
-                --max-time 30 "${PUBLICATION_BASE}/history.html")" &&
+                --max-time 30 "${publication_base}/history.html")" &&
               grep -Fq "2026.0.0" <<< "${history}" &&
               grep -Fq "${VERSION}" <<< "${history}" &&
               historical_history="$(curl --fail --location --silent --show-error \
-                --max-time 30 "${PUBLICATION_BASE}/2026.0.0/history.html")" &&
+                --max-time 30 "${publication_base}/2026.0.0/history.html")" &&
               grep -Fq 'url=../history.html' <<< "${historical_history}" &&
               grep -Fq 'href="../history.html"' <<< "${historical_history}" &&
               curl --fail --location --silent --show-error \
-                --max-time 30 "${PUBLICATION_BASE}/2026.0.0/index.html" \
+                --max-time 30 "${publication_base}/2026.0.0/index.html" \
                 --output /dev/null &&
               curl --fail --location --silent --show-error \
-                --max-time 30 "${PUBLICATION_BASE}/2026.0.0/package.tgz" \
+                --max-time 30 "${publication_base}/2026.0.0/package.tgz" \
                 --output "${historical_package}" &&
               echo "${HISTORICAL_PACKAGE_SHA256}  ${historical_package}" |
                 sha256sum --check &&
               curl --fail --location --silent --show-error \
-                --max-time 30 "${PUBLICATION_PATH}/index.html" \
+                --max-time 30 "${publication_path}/index.html" \
                 --output /dev/null &&
               curl --fail --location --silent --show-error \
-                --max-time 30 "${PUBLICATION_PATH}/package.tgz" \
+                --max-time 30 "${publication_path}/package.tgz" \
                 --output /dev/null; then
               {
                 echo "### Publication deployed"
                 echo
-                echo "- Publication root: ${PUBLICATION_BASE}/"
-                echo "- Version: ${PUBLICATION_PATH}/"
+                echo "- Publication root: ${publication_base}/"
+                echo "- Version: ${publication_path}/"
                 echo "- FHIR canonical: ${CANONICAL}"
                 echo "- gh-pages commit: \`${{ needs.publish.outputs.commit_sha }}\`"
               } >> "${GITHUB_STEP_SUMMARY}"
@@ -1063,5 +1063,5 @@ jobs:
             sleep 10
           done
 
-          echo "::error::Pages deployed, but the publication files were not available at ${PUBLICATION_BASE}."
+          echo "::error::Pages deployed, but the publication files were not available at ${publication_base}."
           exit 1
