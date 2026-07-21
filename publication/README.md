@@ -1,245 +1,173 @@
-# IG publication environment
+# Publishing a release
 
-This directory is the checked-in seed for the Core Dataset Base publication
-website. The `Publish release with IG Publisher` workflow performs a clean build
-and runs IG Publisher `-go-publish`; it is manual and is a full dry run unless
-`publish` is explicitly selected.
+Formal releases use the manual
+[`go-publish.yml`](../.github/workflows/go-publish.yml) workflow. A run with
+`publish: false` performs a complete dry run. A run with `publish: true`
+rebuilds the candidate, commits it to `gh-pages`, and deploys it through GitHub
+Pages.
 
-The design follows the publication workspace and command described in:
+Each run resolves the latest published IG Publisher, SUSHI, and Jekyll, plus
+the current default branches of the HL7 publication templates and FHIR IG
+Registry and the MII terminology-proxy configuration. The exact versions and
+commit revisions used by the run are recorded in the job summary and
+`publication-review` artifact; no workflow pins need to be refreshed for a
+release.
 
-- [Setting up the Publication Environment](https://www.argentixinfo.com/ig/howtopub/setup.html)
-- [Using IG Publisher -go-publish](https://www.argentixinfo.com/ig/howtopub/publication.html)
-- [Maintaining a FHIR IG Publication](https://confluence.hl7.org/spaces/FHIR/pages/81027536/Maintaining+a+FHIR+IG+Publication)
+This setup follows the
+[IG Publisher publication guide](https://www.argentixinfo.com/ig/howtopub/publication.html).
 
-## Directory ownership
+## Fixed URLs
 
-The formal Publisher-managed tree owns the root of `gh-pages`, including
-`package-list.json`, `history.html`, the feeds, canonical redirect directories,
-and permanent version directories such as `2026.0.0/`.
+- Publication website:
+  `https://medizininformatik-initiative.github.io/kerndatensatz-basis`
+- FHIR canonical:
+  `https://www.medizininformatik-initiative.de/fhir/modul-base`
+- Development build:
+  `https://medizininformatik-initiative.github.io/kerndatensatz-basis/branches/develop/`
 
-Continuous builds own only `branches/<branch-name>/`. The advertised CI build is
-`branches/develop/`; `main` builds are validated and retained as Actions
-artifacts but do not write a second Pages preview. Older preview directories that
-predate this namespace are preserved while their source branch exists. The
-cleanup workflow deletes a directory only when it contains a `.branch-name`
-marker and that exact branch no longer exists; it does not infer previews from
-directory names. Root-level semantic-version paths are additionally retained
-because they may already be permanent release URLs.
+The website and canonical intentionally differ. Keep the MII canonical in the
+IG and package metadata. `publication/webroot/publish-setup.json` uses the Pages
+URL with `"server": "cloud"` and `"canonical-mismatch": true`.
 
-## Importing the existing 2026.0.0 release
+The formal workflow owns the root and version directories on `gh-pages`.
+Continuous builds own only `branches/<branch-name>/`. Do not copy the complete
+`publication/webroot` directory to `gh-pages`; it is workflow input.
 
-`2026.0.0` is existing history, not a `-go-publish` target. The July 2026
-migration baseline was:
+## One-time setup
 
-- the package was published on Simplifier on 2025-12-13 and is already indexed
-  by the FHIR package registry;
-- the public website exists at
-  `https://www.medizininformatik-initiative.de/Kerndatensatz/KDS_Basis_2026/`;
-- neither that site nor the current Pages root contains `package-list.json` or
-  `history.html`, and both still identify themselves as local-development
-  builds.
+Skip items that are already complete.
 
-The first formal workflow run is therefore `2026.0.1` with `"first": false`.
-When no formal `package-list.json` exists yet, the workflow performs a one-time
-bootstrap before invoking Publisher:
+1. In **Settings → Pages → Build and deployment**, select **GitHub Actions**.
+2. Set the Actions variable `PAGES_ACTIONS_ENABLED=true`.
+3. Create or protect the `publication` environment and configure any required
+   reviewers.
+4. Configure the repository secrets `CDS_DEV_CLIENT_CERT`,
+   `CDS_DEV_CLIENT_KEY`, and `CDS_DEV_CLIENT_CERT_PASSWORD`.
+5. Ensure the `develop` preview exists at `gh-pages/branches/develop/`.
 
-1. it uses the existing `gh-pages/2026.0.0` deployment after verifying its
-   embedded public full-site archive, or downloads that pinned archive as a
-   fallback;
-2. it keeps that site at the permanent `2026.0.0/` path without rebuilding it,
-   including the existing QA pages when they are present;
-3. it replaces the archive's direct `package.tgz` with the byte-identical,
-   pinned Simplifier package, so the website and registry expose one package
-   identity;
-4. it seeds `package-list.json` and `package-registry.json` with the existing
-   release and a CI-build entry;
-5. it installs the root history support files according to the manifest in the
-   pinned HL7 history template, reproducing the initial-history setup that
-   Publisher skips for a `first: false` publication;
-6. it preserves every marker-backed Pages preview except a preview occupying the
-   permanent `2026.0.0/` path, which the verified historical release replaces; and
-7. it runs `-go-publish` only for `2026.0.1`.
+### First formal release only: 2026.0.1
 
-Publisher then makes `2026.0.1` current and generates the root history page from
-both version entries. A checked-in `2026.0.0/history.html` redirect ensures the
-old site's “Directory of published versions” link reaches the new root history
-even before or independently of Publisher rewriting its publication banner.
-Once the first publication is committed, later runs use the established formal
-tree directly and never repeat the import.
+`2026.0.0` was already published through Simplifier and must not be
+republished. Keep `"first": false` in `publication-request.json`. If the Pages
+root does not yet contain `package-list.json`, the workflow automatically
+imports the pinned `2026.0.0` site and package and creates its history entry.
+Only those historical artifact hashes stay fixed: they prove that the imported
+release is the one already published and are not build-tool pins.
 
-The history page is a static Pages artifact: `.nojekyll` keeps GitHub Pages from
-transforming the Publisher output, `history.html` embeds the generated
-`package-list.json` data, and its supporting files are copied from the pinned
-HL7 history template. Before committing, the workflow requires both
-`2026.0.0` and `2026.0.1` in the generated history and verifies the relative
-redirect at `2026.0.0/history.html`. After deployment it fetches and checks the
-root and historical history URLs through the GitHub Pages mirror as well as the
-root history through the canonical mapping. Before the one-time `2026.0.1`
-publication is deployed, those history URLs are expected to return 404.
+Before running `2026.0.1` with `publish: true`:
 
-## One-time prerequisites
+1. Ensure `publication/webroot/package-feed.xml` is committed as
+   `/package-feed.xml` on `gh-pages`.
+2. Submit and merge the one-time
+   [`package-feeds.json`](https://github.com/FHIR/ig-registry/blob/master/package-feeds.json)
+   change using this feed URL:
 
-The multilingual build requires `fhir2.base.template#current`; the formal
-workflow therefore permits `#current` while continuing to reject `#dev` and
-`#cibuild` template references. Before tagging, set the top-level
-`sushi-config.yaml` date to the intended publication date.
+   `https://raw.githubusercontent.com/medizininformatik-initiative/kerndatensatz-basis/gh-pages/package-feed.xml`
 
-Then tag the prepared `2026.0.1` source and run the formal workflow with
-`publish: false`. This does not change the live branch. It imports the pinned
-historical site in its temporary checkout, performs the full publication, and
-reports the size of the exact merged candidate. The workflow uses the explicit
-`publication_date` input when supplied and otherwise the tagged commit date; in
-either case it requires that date to match `sushi-config.yaml`.
+3. Add an exact package restriction for
+   `de.medizininformatikinitiative.kerndatensatz.base`.
 
-GitHub documents 1 GB as the officially supported maximum for a published Pages
-site. When this migration was prepared in July 2026, the pre-migration tree with
-all preview deployments was already larger than that. The Pages artifact format
-accepts a tar file below 10 GB, but GitHub does not guarantee that a deployment
-above 1 GB will succeed, particularly within the 10-minute deployment timeout.
-The formal dry run always reports the exact candidate size and emits a warning
-above 1,000,000,000 bytes without blocking publication. Preview and cleanup
-workflows emit the same warning when Actions deployment is enabled and the tree
-is above that threshold. Use the dry run to review the candidate size and retire
-or archive-move old previews where practical.
+This package-feed registration is separate from the new-IG or new-edition
+`fhir-ig-list.json` change generated during publication.
 
-After reviewing the dry-run candidate and accepting any deployment-size risk:
+## Steps for every release
 
-1. In repository **Settings → Pages → Build and deployment**, select
-   **GitHub Actions** as the source. Every workflow that mutates `gh-pages`
-   uploads and deploys the complete tree when `PAGES_ACTIONS_ENABLED=true`, so
-   preview, cleanup, and formal publication changes continue to reach the same
-   Pages site.
-2. Set the repository Actions variable `PAGES_ACTIONS_ENABLED` to `true`.
-   Preview and cleanup workflows continue to update `gh-pages` before this
-   switch, but deliberately do not invoke an Actions Pages deployment. This
-   separates the source migration from ordinary branch builds and keeps the
-   current deployment intact if the candidate is too large.
-3. Create or protect the `publication` environment and add required reviewers
-   if publication needs a second-person approval.
-4. Configure the web infrastructure for
-   `https://www.medizininformatik-initiative.de/fhir/modul-base/` to reverse
-   proxy or equivalently map, with every suffix preserved, to
-   `https://medizininformatik-initiative.github.io/kerndatensatz-basis/`.
-   GitHub Pages custom domains operate at hostname level and do not create this
-   path mapping. `publish-setup.json` controls generated files; it does not
-   configure DNS or the MII web server. The workflow checks the canonical root
-   before committing and verifies canonical `package-list.json` and
-   `package.tgz` after deployment.
-5. Keep the existing `CDS_DEV_CLIENT_CERT`,
-   `CDS_DEV_CLIENT_KEY`, and `CDS_DEV_CLIENT_CERT_PASSWORD` repository secrets.
-   The workflow creates the terminology proxy material only in the runner's
-   temporary directory.
-6. Before the first production publication, commit the seed
-   `publication/webroot/package-feed.xml` as `/package-feed.xml` on `gh-pages`
-   and complete the upstream package-feed registration described below. Do not
-   copy the entire `publication/webroot` directory to `gh-pages`: the formal
-   workflow consumes its other files as bootstrap inputs and commits the
-   Publisher-managed result.
+### 1. Prepare `develop`
 
-The workflow uses the custom GitHub Pages artifact/deployment path, rejects
-symbolic links, reports the exact size, and warns when the candidate is above
-GitHub Pages' officially supported 1 GB maximum.
+1. Update the release version, date, status, release label, changelog, package
+   metadata, and FHIR package dependencies.
+2. Update `publication-request.json` with the same version and the permanent
+   Pages version URL. Keep the MII canonical in `sushi-config.yaml` and
+   `package.json`.
+3. Keep `fhir2.base.template#current`; it is required for the multilingual
+   pages. Pin other FHIR package dependencies.
+4. Commit and push `develop`, then wait for its Pages preview workflow to
+   finish successfully.
 
-## Running a publication
+The publication date in `sushi-config.yaml` is authoritative.
 
-1. Prepare and tag the exact `2026.0.1` release source. Its version, package id,
-   canonical, status, release label, date, dependencies, and
-   `publication-request.json` must describe the intended release, and the
-   request must have `"first": false`. Keep
-   `fhir2.base.template#current` for the multilingual build. Do not run the
-   formal workflow for `2026.0.0`.
-2. Run **Publish release with IG Publisher** with the immutable tag and
-   `publish: false`. Supply `publication_date` when the intended date differs
-   from the tagged commit date; the selected date must match
-   `sushi-config.yaml`.
-3. Review the QA report, `-go-publish` log, source patch, registry patch, and
-   exact staged-site artifact. The workflow requires zero QA errors.
-4. Confirm that the develop-branch continuous build has populated
-   `gh-pages/branches/develop/index.html`. Production publication deliberately
-   fails when the advertised CI build is absent.
-5. After reviewing the candidate size, completing the package-feed prerequisite,
-   configuring the canonical mapping, switching
-   the Pages source, set `PAGES_ACTIONS_ENABLED=true`, and rerun the same tag
-   with `publish: true` and `canonical_mapping_confirmed: true`. A candidate
-   above 1 GB produces a warning because GitHub does not guarantee that it will
-   deploy successfully. The `publication` environment is the approval gate.
-6. Review and submit the generated `ig-registry.patch` separately to
-   [FHIR/ig-registry](https://github.com/FHIR/ig-registry). This workflow never
-   writes to the upstream registry. The package registry that already indexes
-   `2026.0.0` and the FHIR IG Registry are separate catalogs; the pinned IG
-   Registry snapshot does not yet contain this guide.
+### 2. Merge and tag
 
-The `publish-fsh-generated.yml` Simplifier bridge remains intentionally active
-so the generated FHIR resources can be inspected there when the existing
-Simplifier project connection is active. It updates only the `fsh-generated`
-branch and does not publish an NPM package or package feed. For imported
-`2026.0.0`, both the staged package and the canonical site's direct package
-download are verified against the exact package previously published through
-Simplifier.
+1. Merge `develop` into `main`.
+2. Create and push an immutable `v<version>` tag on the release commit.
+3. Wait for the tag workflow to create the draft GitHub Release.
 
-Tagging a release also creates a draft GitHub Release through `main.yml`.
-The exact versioned `package.tgz` is included in the formal workflow's
-`publication-review` artifact and may be attached to that release as a
-convenience download asset. This does not publish it to a FHIR package feed or
-registry. Starting with `2026.0.1`, `-go-publish` and the canonical package feed
-are the package-registry publication channel.
+### 3. Run the publication dry run
 
-Before the first production publication, register the feed in
-[`FHIR/ig-registry/package-feeds.json`](https://github.com/FHIR/ig-registry/blob/master/package-feeds.json).
-The registry URL must point to the Publisher-managed feed committed on the
-`gh-pages` branch:
+From the `main` version of **Publish release with IG Publisher**, enter:
 
-`https://raw.githubusercontent.com/medizininformatik-initiative/kerndatensatz-basis/gh-pages/package-feed.xml`
+- `release_ref`: the immutable release tag;
+- `publication_date`: blank only when the tagged commit date equals the date in
+  `sushi-config.yaml`;
+- `publish`: `false`.
 
-Do not register `publication/webroot/package-feed.xml` from the source branch.
-That file is only the one-time bootstrap seed. Copy only that file to the root
-of `gh-pages` so the raw GitHub URL resolves, submit the upstream feed change,
-and wait for it to merge before running `2026.0.1` with `publish: true`. An
-exact `package-restrictions` entry for
-`de.medizininformatikinitiative.kerndatensatz.base` can restrict future versions
-to this feed. The formal publication updates the same committed
-`gh-pages/package-feed.xml`; its other seed files are merged by the workflow and
-must not be copied manually.
+Download and review the `publication-review` and `github-pages` artifacts:
 
-## Static hosting compatibility
+- `qa.html`, `qa.json`, and `publication-process.log`;
+- `source-publication.patch` and `ig-registry.patch`;
+- `publication-toolchain.txt`, containing the resolved tool versions and
+  publication-support repository commits;
+- the staged Pages site and reported size; and
+- the versioned `package.tgz`.
 
-`"server": "cloud"` is the right Publisher setting for GitHub Pages because the
-host cannot execute PHP or ASP redirects. However, Publisher 2.2.11 still has
-the two cloud redirect defects tracked in
-[HL7/fhir-ig-publisher#1327](https://github.com/HL7/fhir-ig-publisher/pull/1327):
-the `-go-publish` path selects Apache redirects, and the cloud HTML template is
-PHP text.
+QA errors are allowed. The workflow requires valid `qa.json` and a nonempty
+`package.tgz`, reports the QA counts, and lets Publisher `-go-publish` perform
+its publication comparison. Expected messages are documented in
+`input/ignoreWarnings.txt`.
 
-The workflow pins Publisher 2.2.11 by SHA-256 and then applies a narrow
-compatibility conversion equivalent to that upstream fix. It recognizes only
-the Publisher redirect template and emits static HTML redirects. The converter
-does not alter marker-backed previews; staged validation rejects remaining PHP
-files and Publisher PHP-in-HTML redirects. Remove the compatibility script only
-after the pinned official Publisher release contains the upstream fix.
+Do not continue if the candidate, metadata, history, feeds, package, registry
+patch, or deployment size is not acceptable.
 
-Publisher can also omit `tbl_bck*.png` table backgrounds from the generated
-`en/` and `de/` directories. Preview builds copy only missing files after
-Publisher finishes. Formal builds do the same before `-go-publish`, so the
-publication process receives the repaired output, and then verify the current
-and versioned staged Pages roots. Existing localized files are preserved.
+### 4. Publish
 
-Static hosting cannot perform HTTP `Accept` content negotiation. The generated
-redirect pages send browsers to HTML and expose direct JSON/XML links.
+Rerun **Publish release with IG Publisher** from `main` with the same tag and
+publication date, and set `publish: true`.
+
+The workflow rebuilds the candidate, preserves branch previews and existing
+releases, commits it to `gh-pages`, deploys it, and verifies the history page,
+version pages, and package downloads.
+
+Confirm:
+
+- `https://medizininformatik-initiative.github.io/kerndatensatz-basis/<version>/`
+- `https://medizininformatik-initiative.github.io/kerndatensatz-basis/history.html`
+
+### 5. Update the FHIR IG Registry
+
+After the Pages deployment is live:
+
+1. Download `ig-registry.patch` from the successful production run's
+   `publication-review` artifact.
+2. Apply it to the latest `FHIR/ig-registry` `fhir-ig-list.json`.
+3. Review the resulting IG entry and open an upstream pull request.
+
+Publisher supplies the entry metadata from `publication-request.json`. Before
+creating the patch, the workflow corrects the generated `history` and
+`language` values and validates:
+
+- description, authority, and country;
+- `history` as
+  `https://medizininformatik-initiative.github.io/kerndatensatz-basis/history.html`;
+- `language` as `["en", "de"]`;
+- canonical, CI-build URL, edition version, package, and publication URL; and
+- absence of `??` placeholders.
+
+The workflow never commits or opens the upstream registry pull request.
+
+### 6. Finish the release
+
+1. Optionally attach the generated `package.tgz` to the draft GitHub Release.
+   It is a convenience asset; the Pages package feed is the formal package
+   channel.
+2. Complete the release notes and publish the GitHub Release.
+3. Synchronize `develop` with `main` and prepare the next development version.
+
+`publish-fsh-generated.yml` remains independent. It sends generated resources
+to Simplifier for inspection and does not publish an NPM package.
 
 ## Rollback
 
-Formal publication is committed to `gh-pages` before the exact same tree is
-deployed. To roll it back:
-
 1. Revert the publication commit on `gh-pages` with a normal revert commit and
-   push; do not force-push.
-2. Record the full SHA of the new revert commit at the resulting `gh-pages`
-   head.
+   push it. Do not force-push.
+2. Record the full SHA of the resulting `gh-pages` head.
 3. Run **Deploy current gh-pages tree** with that SHA as `expected_sha`.
-
-The deployment workflow shares the `gh-pages-writes` concurrency group, refuses
-to deploy when the branch has advanced beyond the requested SHA, validates and
-packages the complete tree, and deploys that exact artifact through the
-`publication` and `github-pages` environments. Do not make another manual
-`gh-pages` change while it is running. The repeated SHA check prevents an
-intervening preview or cleanup update from being silently lost.

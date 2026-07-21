@@ -93,12 +93,12 @@ function walk(root, visit, { skipMarkedDirectories = false } = {}) {
 }
 
 /**
- * Convert the two broken redirect forms emitted by Publisher 2.2.11:
- * Apache-style index.php files and PHP accidentally written to index.html.
+ * Convert the two static-host-incompatible redirect forms when Publisher
+ * emits them: Apache-style index.php files and PHP accidentally written to
+ * index.html.
  *
- * This is intentionally limited to the exact Publisher template signature.
- * Remove it after https://github.com/HL7/fhir-ig-publisher/pull/1327 is
- * included in the pinned Publisher release.
+ * This is intentionally limited to the exact Publisher template signature and
+ * remains an idempotent compatibility guard across Publisher updates.
  */
 export function fixCloudRedirects(rootDirectory) {
   const root = resolve(rootDirectory);
