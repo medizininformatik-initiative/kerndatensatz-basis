@@ -138,3 +138,42 @@ test("corrects and validates the generated FHIR IG Registry handoff", () => {
   assert.match(workflow, /diff --check -- fhir-ig-list\.json/);
   assert.match(workflow, /test -s "\$\{RUNNER_TEMP\}\/ig-registry\.patch"/);
 });
+
+test("restores localized table backgrounds after go-publish", () => {
+  const workflow = read(".github/workflows/go-publish.yml");
+  const goPublish = workflow.indexOf("- name: Run Publisher -go-publish");
+  const stagedRestore = workflow.indexOf(
+    "Restore and verify localized table backgrounds in the staged publication",
+  );
+
+  assert.ok(goPublish >= 0);
+  assert.ok(stagedRestore > goPublish);
+
+  const stagedRestoreBlock = workflow.slice(
+    stagedRestore,
+    workflow.indexOf("- name:", stagedRestore),
+  );
+  assert.match(
+    stagedRestoreBlock,
+    /for publication_directory in site "site\/\$\{LABEL\}"/,
+  );
+  assert.match(
+    stagedRestoreBlock,
+    /"\$\{publication_directory\}"\n\s+bash[\s\S]*"\$\{publication_directory\}" \\\n\s+--check/,
+  );
+});
+
+test("does not pass publication URLs through cross-job outputs", () => {
+  const workflow = read(".github/workflows/go-publish.yml");
+
+  assert.doesNotMatch(
+    workflow,
+    /needs\.prepare\.outputs\.publication_(?:base|path)/,
+  );
+  assert.doesNotMatch(workflow, /^\s{6}publication_(?:base|path):/m);
+  assert.match(workflow, /publication_base="\$\{EXPECTED_PUBLICATION_BASE%\/\}"/);
+  assert.match(
+    workflow,
+    /publication_path="\$\{publication_base\}\/\$\{LABEL\}"/,
+  );
+});
