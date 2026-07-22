@@ -11,4 +11,5 @@ Kerndatensatzmodule Person, Diagnose, Prozedur, Fall
 
 ### Stable Releases
 
+- **Release 2026.0.1**: https://medizininformatik-initiative.github.io/kerndatensatz-basis/2026.0.1/
 - **Release 2026.0.0**: https://medizininformatik-initiative.github.io/kerndatensatz-basis/2026.0.0/

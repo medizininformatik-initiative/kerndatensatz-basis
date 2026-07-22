@@ -28,22 +28,68 @@ This setup follows the
 The website and canonical intentionally differ. Keep the MII canonical in the
 IG and package metadata. `publication/webroot/publish-setup.json` uses the Pages
 URL with `"server": "cloud"` and `"canonical-mismatch": true`.
+After publication, the workflow sets the history renderer's supported `altloc`
+field so the Current Versions date links to the permanent Pages release rather
+than to the canonical.
 
 The formal workflow owns the root and version directories on `gh-pages`.
 Continuous builds own only `branches/<branch-name>/`. Do not copy the complete
 `publication/webroot` directory to `gh-pages`; it is workflow input.
 
+The `gh-pages` branch remains the durable, version-controlled publication tree,
+but it is not the Pages publishing source. After updating that branch, the
+workflows upload its complete contents as a Pages artifact and deploy the
+artifact with GitHub Actions. Keep the branch and its existing releases when
+changing the Pages source.
+
 ## One-time setup
 
 Skip items that are already complete.
 
-1. In **Settings → Pages → Build and deployment**, select **GitHub Actions**.
-2. Set the Actions variable `PAGES_ACTIONS_ENABLED=true`.
-3. Create or protect the `publication` environment and configure any required
-   reviewers.
-4. Configure the repository secrets `CDS_DEV_CLIENT_CERT`,
+1. In **Settings → Pages → Build and deployment → Source**, select **GitHub
+   Actions**, not **Deploy from a branch**.
+2. After selecting the Pages source, open **Settings → Environments →
+   github-pages** and set **Deployment branches and tags** to **No
+   restriction**. GitHub can create or reset this environment when the Pages
+   source changes, so configure it after step 1. The setting is required because
+   preview deployments run from non-`main` branches while formal deployments
+   run from `main`. Leave this environment without required reviewers or wait
+   timers so previews deploy automatically; production authorization belongs to
+   the separate `publication` environment.
+3. In **Settings → Secrets and variables → Actions → Variables**, set the
+   repository variable `PAGES_ACTIONS_ENABLED=true`. Enable it only after steps
+   1 and 2 are complete.
+4. Create or protect the `publication` environment and configure the required
+   reviewers and self-review policy for production publication. If its
+   deployment branches and tags are restricted, allow `main`, and run the
+   manual publication workflows from the `main` version. Do not put the
+   terminology secrets in either environment; builds read them before the
+   separate deployment job starts.
+5. In **Settings → Secrets and variables → Actions → Secrets**, configure the
+   repository secrets `CDS_DEV_CLIENT_CERT`,
    `CDS_DEV_CLIENT_KEY`, and `CDS_DEV_CLIENT_CERT_PASSWORD`.
-5. Ensure the `develop` preview exists at `gh-pages/branches/develop/`.
+   Store the certificate and encrypted private key as base64 and the password
+   used to decrypt that key as plain secret text. These must be repository or
+   organization secrets because the consuming build jobs do not reference an
+   environment.
+6. Keep the `gh-pages` branch and its `.nojekyll` file. Any branch protection
+   rule or ruleset on `gh-pages` must permit GitHub Actions to push directly.
+   Push `develop` and wait for **Build and Publish IG** to populate
+   `gh-pages/branches/develop/`, deploy the complete branch tree, and publish the
+   development URL.
+
+The workflows use GitHub's built-in, job-scoped `GITHUB_TOKEN`; do not create a
+repository secret named `GITHUB_TOKEN` or a personal access token. Repository
+and organization policy must allow the explicit `contents: write`,
+`pages: write`, `id-token: write`, and `pull-requests: write` permissions used
+by the relevant jobs. The **Allow GitHub Actions to create and approve pull
+requests** setting is not required for commenting on an existing PR. Failure to
+update the convenience PR comment is warning-only because the job summary
+remains the authoritative deployment report.
+
+Pull requests from forks do not receive the terminology repository secrets, so
+their Publisher build cannot use the authenticated terminology proxy without a
+separate, explicitly reviewed fork workflow.
 
 ### First formal release only: 2026.0.1
 
@@ -115,6 +161,10 @@ QA errors are allowed. The workflow requires valid `qa.json` and a nonempty
 its publication comparison. Expected messages are documented in
 `input/ignoreWarnings.txt`.
 
+Public package identifiers and URLs are reported by separate jobs that do not
+consume the terminology secrets. This prevents GitHub's per-job secret masking
+from replacing matching parts of otherwise public links with `***`.
+
 Do not continue if the candidate, metadata, history, feeds, package, registry
 patch, or deployment size is not acceptable.
 
@@ -131,14 +181,29 @@ Confirm:
 
 - `https://medizininformatik-initiative.github.io/kerndatensatz-basis/<version>/`
 - `https://medizininformatik-initiative.github.io/kerndatensatz-basis/history.html`
+- the date under **Current Versions** links to that permanent version URL.
 
-### 5. Update the FHIR IG Registry
+### 5. Finish the release
 
-After the Pages deployment is live:
+1. Optionally attach the generated `package.tgz` to the draft GitHub Release.
+   It is a convenience asset; the Pages package feed is the formal package
+   channel.
+2. Complete the release notes and publish the GitHub Release.
+3. Synchronize `develop` with `main` and prepare the next development version.
 
-1. Download `ig-registry.patch` from the successful production run's
-   `publication-review` artifact.
-2. Apply it to the latest `FHIR/ig-registry` `fhir-ig-list.json`.
+### 6. Optional: add the IG to the public FHIR guide directory
+
+This step updates the source for
+[`fhir.org/guides/registry`](https://www.fhir.org/guides/registry/). It is
+independent of package-feed crawling and can be postponed until after the
+release:
+
+1. Within the seven-day artifact retention period, download
+   `ig-registry.patch` from the successful production run's
+   `publication-review` artifact. If it has expired, recreate the equivalent
+   entry directly against the latest `FHIR/ig-registry` `fhir-ig-list.json`;
+   do not rerun or retag the release.
+2. Apply the patch to the latest `fhir-ig-list.json`, if using it.
 3. Review the resulting IG entry and open an upstream pull request.
 
 Publisher supplies the entry metadata from `publication-request.json`. Before
@@ -153,14 +218,6 @@ creating the patch, the workflow corrects the generated `history` and
 - absence of `??` placeholders.
 
 The workflow never commits or opens the upstream registry pull request.
-
-### 6. Finish the release
-
-1. Optionally attach the generated `package.tgz` to the draft GitHub Release.
-   It is a convenience asset; the Pages package feed is the formal package
-   channel.
-2. Complete the release notes and publish the GitHub Release.
-3. Synchronize `develop` with `main` and prepare the next development version.
 
 `publish-fsh-generated.yml` remains independent. It sends generated resources
 to Simplifier for inspection and does not publish an NPM package.

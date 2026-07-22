@@ -139,6 +139,36 @@ test("corrects and validates the generated FHIR IG Registry handoff", () => {
   assert.match(workflow, /test -s "\$\{RUNNER_TEMP\}\/ig-registry\.patch"/);
 });
 
+test("keeps history links on the Pages publication", () => {
+  const workflow = read(".github/workflows/go-publish.yml");
+  const previewWorkflow = read(".github/workflows/ig-publisher.yml");
+  const goPublish = workflow.indexOf("- name: Run Publisher -go-publish");
+  const historyFix = workflow.indexOf(
+    "- name: Point publication history links to GitHub Pages",
+  );
+
+  assert.ok(goPublish >= 0);
+  assert.ok(historyFix > goPublish);
+  assert.match(
+    workflow,
+    /node automation\/scripts\/fix-publication-history-links\.mjs/,
+  );
+  assert.doesNotMatch(workflow, /fix-publication-history-links\.mjs \\\n\s+--headers-only/);
+  assert.match(
+    previewWorkflow,
+    /fix-publication-history-links\.mjs \\\n\s+--headers-only \\\n\s+output/,
+  );
+  assert.match(workflow, /\.altloc == \$publication_path/);
+  assert.match(
+    workflow,
+    /grep -Fq "\\"altloc\\":\\"\$\{PUBLICATION_PATH\}\\"" site\/history\.html/,
+  );
+  assert.match(
+    workflow,
+    /grep -Fq "\\"altloc\\":\\"\$\{publication_path\}\\"" <<< "\$\{history\}"/,
+  );
+});
+
 test("restores localized table backgrounds after go-publish", () => {
   const workflow = read(".github/workflows/go-publish.yml");
   const goPublish = workflow.indexOf("- name: Run Publisher -go-publish");
@@ -176,4 +206,98 @@ test("does not pass publication URLs through cross-job outputs", () => {
     workflow,
     /publication_path="\$\{publication_base\}\/\$\{LABEL\}"/,
   );
+});
+
+test("reports public links from jobs that do not receive terminology secrets", () => {
+  const goPublish = read(".github/workflows/go-publish.yml");
+  const preview = read(".github/workflows/ig-publisher.yml");
+  const redeploy = read(".github/workflows/deploy-gh-pages.yml");
+
+  const prepareStart = goPublish.indexOf("\n  prepare:\n") + 1;
+  const reportStart = goPublish.indexOf("\n  report:\n") + 1;
+  const publishStart = goPublish.indexOf("\n  publish:\n") + 1;
+  const productionDeployStart = goPublish.indexOf("\n  deploy:\n") + 1;
+  const prepareJob = goPublish.slice(prepareStart, reportStart);
+  const reportJob = goPublish.slice(reportStart, publishStart);
+  const productionDeployJob = goPublish.slice(productionDeployStart);
+
+  assert.ok(prepareStart > 0);
+  assert.ok(reportStart > prepareStart);
+  assert.ok(publishStart > reportStart);
+  assert.ok(productionDeployStart > publishStart);
+  assert.match(prepareJob, /CDS_DEV_CLIENT_CERT_PASSWORD/);
+  assert.doesNotMatch(prepareJob, /### Publication input/);
+  assert.doesNotMatch(prepareJob, /### FHIR IG Registry handoff/);
+  assert.doesNotMatch(reportJob, /secrets\.|CDS_DEV_CLIENT_/);
+  assert.match(reportJob, /### Publication input/);
+  assert.match(reportJob, /\[\$\{publication_path\}\]\(\$\{publication_path\}\)/);
+  assert.match(reportJob, /### FHIR IG Registry handoff/);
+  assert.match(reportJob, /\[\$\{history_url\}\]\(\$\{history_url\}\)/);
+  assert.doesNotMatch(productionDeployJob, /secrets\.CDS_|CDS_DEV_CLIENT_/);
+  assert.match(productionDeployJob, /### Publication deployed/);
+
+  const buildStart = preview.indexOf("\n  build:\n") + 1;
+  const deployStart = preview.indexOf("\n  deploy:\n") + 1;
+  const announceStart = preview.indexOf("\n  announce:\n") + 1;
+  const buildJob = preview.slice(buildStart, deployStart);
+  const announceJob = preview.slice(announceStart);
+
+  assert.ok(buildStart > 0);
+  assert.ok(deployStart > buildStart);
+  assert.ok(announceStart > deployStart);
+  assert.match(buildJob, /CDS_DEV_CLIENT_CERT_PASSWORD/);
+  assert.doesNotMatch(buildJob, /### Deployment/);
+  assert.doesNotMatch(announceJob, /secrets\.|CDS_DEV_CLIENT_/);
+  assert.match(announceJob, /### Deployment/);
+  assert.match(announceJob, /issues: write/);
+  assert.match(announceJob, /pull-requests: write/);
+  assert.match(announceJob, /id: preview_comment/);
+  assert.match(announceJob, /continue-on-error: true/);
+  assert.match(
+    announceJob,
+    /if: steps\.preview_comment\.outcome == 'failure'/,
+  );
+  assert.match(
+    announceJob,
+    /::warning::The preview was deployed successfully/,
+  );
+  assert.match(
+    announceJob,
+    /https:\/\/\$\{repo_owner\}\.github\.io\/\$\{repo_name\}\/branches\/\$\{branch\}\//,
+  );
+
+  const redeployPrepareStart = redeploy.indexOf("\n  prepare:\n") + 1;
+  const redeployDeployStart = redeploy.indexOf("\n  deploy:\n") + 1;
+  const redeployPrepareJob = redeploy.slice(
+    redeployPrepareStart,
+    redeployDeployStart,
+  );
+  const redeployDeployJob = redeploy.slice(redeployDeployStart);
+
+  assert.ok(redeployPrepareStart > 0);
+  assert.ok(redeployDeployStart > redeployPrepareStart);
+  assert.doesNotMatch(redeployPrepareJob, /### Pages deployment completed/);
+  assert.doesNotMatch(redeployDeployJob, /secrets\.|CDS_DEV_CLIENT_/);
+  assert.match(redeployDeployJob, /### Pages deployment completed/);
+});
+
+test("documents the reproducible GitHub Pages repository settings", () => {
+  const documentation = read("publication/README.md");
+
+  assert.match(
+    documentation,
+    /Settings → Pages → Build and deployment → Source/,
+  );
+  assert.match(
+    documentation,
+    /select \*\*GitHub\s+Actions\*\*, not \*\*Deploy from a branch\*\*/,
+  );
+  assert.match(
+    documentation,
+    /Settings → Environments →\n\s+github-pages/,
+  );
+  assert.match(documentation, /Deployment branches and tags/);
+  assert.match(documentation, /No\n\s+restriction/);
+  assert.match(documentation, /PAGES_ACTIONS_ENABLED=true/);
+  assert.match(documentation, /not the Pages publishing source/);
 });

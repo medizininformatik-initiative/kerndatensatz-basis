@@ -116,6 +116,7 @@ jobs:
           repo_name="${GITHUB_REPOSITORY#*/}"
           publication_base="https://${repo_owner}.github.io/${repo_name}"
           node scripts/fix-publication-history-links.mjs \
+            --headers-only \
             output \
             "${canonical}" \
             "${publication_base}"
@@ -203,34 +204,63 @@ jobs:
         with:
           path: gh-pages
 
+  deploy:
+    name: Deploy GitHub Pages
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/') && github.ref_name != 'main' && vars.PAGES_ACTIONS_ENABLED == 'true'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      contents: read
+      id-token: write
+      pages: write
+    steps:
+      - name: Deploy Pages artifact
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  # Report from a job that does not consume the terminology secrets used by the
+  # build. This preserves literal repository URLs in summaries and PR comments.
+  announce:
+    name: Report preview deployment
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/') && github.ref_name != 'main' && vars.PAGES_ACTIONS_ENABLED == 'true'
+    needs: deploy
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: write
+
+    steps:
       - name: Announce published URL
-        id: announce_url
-        if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/') && github.ref_name != 'main' && vars.PAGES_ACTIONS_ENABLED == 'true'
         shell: bash
         run: |
-          set -eu
+          set -euo pipefail
           repo_owner="${GITHUB_REPOSITORY_OWNER}"
           repo_name="${GITHUB_REPOSITORY#*/}"
           branch="${GITHUB_REF_NAME}"
-          
           url="https://${repo_owner}.github.io/${repo_name}/branches/${branch}/"
-          
+
           echo "Published to ${url}"
-          printf '### Deployment\n[Open published IG for branch `%s`](%s)\n' "${branch}" "${url}" >> "${GITHUB_STEP_SUMMARY}"
-          echo "published_url=${url}" >> "${GITHUB_OUTPUT}"
+          printf '### Deployment\n[Open published IG for branch `%s`](%s)\n' \
+            "${branch}" \
+            "${url}" \
+            >> "${GITHUB_STEP_SUMMARY}"
 
       - name: Upsert PR comment with published URL
-        if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/') && github.ref_name != 'main' && vars.PAGES_ACTIONS_ENABLED == 'true'
+        id: preview_comment
+        continue-on-error: true
         uses: actions/github-script@v7
         env:
           BRANCH_NAME: ${{ github.ref_name }}
-          PUBLISHED_URL: ${{ steps.announce_url.outputs.published_url }}
         with:
           script: |
             const { owner, repo } = context.repo;
             const branch = process.env.BRANCH_NAME;
             const marker = '<!-- ig-publish-url -->';
-            const url = process.env.PUBLISHED_URL;
+            const url = `https://${owner}.github.io/${repo}/branches/${branch}/`;
             const body = `${marker}
             ### Deployment
             [Open published IG for branch \`${branch}\`](${url})`;
@@ -265,19 +295,8 @@ jobs:
               core.info(`Created IG publish URL comment on PR #${pr.number}`);
             }
 
-  deploy:
-    name: Deploy GitHub Pages
-    if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/') && github.ref_name != 'main' && vars.PAGES_ACTIONS_ENABLED == 'true'
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    permissions:
-      contents: read
-      id-token: write
-      pages: write
-    steps:
-      - name: Deploy Pages artifact
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Warn when the PR comment could not be updated
+        if: steps.preview_comment.outcome == 'failure'
+        shell: bash
+        run: |
+          echo "::warning::The preview was deployed successfully, but the workflow could not update the PR comment. The deployment URL remains available in this job's summary."
