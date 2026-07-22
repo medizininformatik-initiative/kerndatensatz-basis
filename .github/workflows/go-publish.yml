@@ -722,6 +722,7 @@ jobs:
               and any(.list[];
                 .version == $version
                 and .path == $publication_path
+                and .altloc == $publication_path
                 and .current == true)' \
             site/package-list.json >/dev/null
           jq -e \
@@ -765,6 +766,7 @@ jobs:
           grep -Fq 'var pageJSON =' site/history.html
           grep -Fq "2026.0.0" site/history.html
           grep -Fq "${VERSION}" site/history.html
+          grep -Fq "\"altloc\":\"${PUBLICATION_PATH}\"" site/history.html
           grep -Fq "${PUBLICATION_BASE}/history.html" site/index.html
           grep -Fq "${PUBLICATION_BASE}/history.html" site/2026.0.0/index.html
           grep -Fq "${PUBLICATION_BASE}/history.html" "site/${LABEL}/index.html"
@@ -1026,12 +1028,14 @@ jobs:
                   and any(.list[];
                     .version == $version
                     and .path == $publication_path
+                    and .altloc == $publication_path
                     and .current == true)' \
                 <<< "${package_list}" >/dev/null &&
               history="$(curl --fail --location --silent --show-error \
                 --max-time 30 "${publication_base}/history.html")" &&
               grep -Fq "2026.0.0" <<< "${history}" &&
               grep -Fq "${VERSION}" <<< "${history}" &&
+              grep -Fq "\"altloc\":\"${publication_path}\"" <<< "${history}" &&
               historical_history="$(curl --fail --location --silent --show-error \
                 --max-time 30 "${publication_base}/2026.0.0/history.html")" &&
               grep -Fq 'url=../history.html' <<< "${historical_history}" &&

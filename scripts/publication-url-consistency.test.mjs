@@ -139,6 +139,30 @@ test("corrects and validates the generated FHIR IG Registry handoff", () => {
   assert.match(workflow, /test -s "\$\{RUNNER_TEMP\}\/ig-registry\.patch"/);
 });
 
+test("keeps history links on the Pages publication", () => {
+  const workflow = read(".github/workflows/go-publish.yml");
+  const goPublish = workflow.indexOf("- name: Run Publisher -go-publish");
+  const historyFix = workflow.indexOf(
+    "- name: Point publication history links to GitHub Pages",
+  );
+
+  assert.ok(goPublish >= 0);
+  assert.ok(historyFix > goPublish);
+  assert.match(
+    workflow,
+    /node automation\/scripts\/fix-publication-history-links\.mjs/,
+  );
+  assert.match(workflow, /\.altloc == \$publication_path/);
+  assert.match(
+    workflow,
+    /grep -Fq "\\"altloc\\":\\"\$\{PUBLICATION_PATH\}\\"" site\/history\.html/,
+  );
+  assert.match(
+    workflow,
+    /grep -Fq "\\"altloc\\":\\"\$\{publication_path\}\\"" <<< "\$\{history\}"/,
+  );
+});
+
 test("restores localized table backgrounds after go-publish", () => {
   const workflow = read(".github/workflows/go-publish.yml");
   const goPublish = workflow.indexOf("- name: Run Publisher -go-publish");

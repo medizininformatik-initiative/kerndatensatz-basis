@@ -28,6 +28,9 @@ This setup follows the
 The website and canonical intentionally differ. Keep the MII canonical in the
 IG and package metadata. `publication/webroot/publish-setup.json` uses the Pages
 URL with `"server": "cloud"` and `"canonical-mismatch": true`.
+After publication, the workflow sets the history renderer's supported `altloc`
+field so the Current Versions date links to the permanent Pages release rather
+than to the canonical.
 
 The formal workflow owns the root and version directories on `gh-pages`.
 Continuous builds own only `branches/<branch-name>/`. Do not copy the complete
@@ -131,14 +134,29 @@ Confirm:
 
 - `https://medizininformatik-initiative.github.io/kerndatensatz-basis/<version>/`
 - `https://medizininformatik-initiative.github.io/kerndatensatz-basis/history.html`
+- the date under **Current Versions** links to that permanent version URL.
 
-### 5. Update the FHIR IG Registry
+### 5. Finish the release
 
-After the Pages deployment is live:
+1. Optionally attach the generated `package.tgz` to the draft GitHub Release.
+   It is a convenience asset; the Pages package feed is the formal package
+   channel.
+2. Complete the release notes and publish the GitHub Release.
+3. Synchronize `develop` with `main` and prepare the next development version.
 
-1. Download `ig-registry.patch` from the successful production run's
-   `publication-review` artifact.
-2. Apply it to the latest `FHIR/ig-registry` `fhir-ig-list.json`.
+### 6. Optional: add the IG to the public FHIR guide directory
+
+This step updates the source for
+[`fhir.org/guides/registry`](https://www.fhir.org/guides/registry/). It is
+independent of package-feed crawling and can be postponed until after the
+release:
+
+1. Within the seven-day artifact retention period, download
+   `ig-registry.patch` from the successful production run's
+   `publication-review` artifact. If it has expired, recreate the equivalent
+   entry directly against the latest `FHIR/ig-registry` `fhir-ig-list.json`;
+   do not rerun or retag the release.
+2. Apply the patch to the latest `fhir-ig-list.json`, if using it.
 3. Review the resulting IG entry and open an upstream pull request.
 
 Publisher supplies the entry metadata from `publication-request.json`. Before
@@ -153,14 +171,6 @@ creating the patch, the workflow corrects the generated `history` and
 - absence of `??` placeholders.
 
 The workflow never commits or opens the upstream registry pull request.
-
-### 6. Finish the release
-
-1. Optionally attach the generated `package.tgz` to the draft GitHub Release.
-   It is a convenience asset; the Pages package feed is the formal package
-   channel.
-2. Complete the release notes and publish the GitHub Release.
-3. Synchronize `develop` with `main` and prepare the next development version.
 
 `publish-fsh-generated.yml` remains independent. It sends generated resources
 to Simplifier for inspection and does not publish an NPM package.
