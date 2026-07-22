@@ -156,15 +156,17 @@ function setCurrentReleaseLocation(root, canonical, publicationBase) {
  * when canonical-mismatch permits releases to live on a different website.
  * Rewrite only that exact URL inside Publisher release-header markers. The
  * history renderer separately uses the canonical for the Current Versions date
- * unless the supported `altloc` property is present, so set it to the current
- * release's Pages path in both package-list.json and the generated history page.
- * Branch previews are skipped so publication does not modify independent
- * deployments.
+ * unless the supported `altloc` property is present. Formal publication mode
+ * therefore sets `altloc` in package-list.json and the generated history page.
+ * Standalone Publisher builds can opt into headers-only mode because they do
+ * not contain those publication-index files. Branch previews are skipped so
+ * formal publication does not modify independent deployments.
  */
 export function fixPublicationHistoryLinks(
   rootDirectory,
   canonicalUrl,
   publicationBaseUrl,
+  { headersOnly = false } = {},
 ) {
   const root = resolve(rootDirectory);
   if (!existsSync(root) || !statSync(root).isDirectory()) {
@@ -182,11 +184,9 @@ export function fixPublicationHistoryLinks(
 
   const oldUrl = `${canonical}/history.html`;
   const newUrl = `${publicationBase}/history.html`;
-  const currentReleasePath = setCurrentReleaseLocation(
-    root,
-    canonical,
-    publicationBase,
-  );
+  const currentReleasePath = headersOnly
+    ? null
+    : setCurrentReleaseLocation(root, canonical, publicationBase);
   let files = 0;
   let replacements = 0;
 
@@ -230,19 +230,27 @@ export function fixPublicationHistoryLinks(
 }
 
 if (import.meta.url === pathToFileURL(process.argv[1] ?? "").href) {
-  if (process.argv.length !== 5) {
+  const arguments_ = process.argv.slice(2);
+  const headersOnly = arguments_[0] === "--headers-only";
+  const positionalArguments = headersOnly ? arguments_.slice(1) : arguments_;
+
+  if (positionalArguments.length !== 3) {
     console.error(
-      "Usage: node scripts/fix-publication-history-links.mjs <webroot> <canonical> <publication-base>",
+      "Usage: node scripts/fix-publication-history-links.mjs [--headers-only] <webroot> <canonical> <publication-base>",
     );
     process.exit(2);
   }
 
   const result = fixPublicationHistoryLinks(
-    process.argv[2],
-    process.argv[3],
-    process.argv[4],
+    positionalArguments[0],
+    positionalArguments[1],
+    positionalArguments[2],
+    { headersOnly },
   );
+  const detail = headersOnly
+    ? "the publication index was not modified"
+    : `Current Versions points to ${result.currentReleasePath}`;
   console.log(
-    `Updated ${result.replacements} publication history link(s) in ${result.files} file(s); Current Versions points to ${result.currentReleasePath}.`,
+    `Updated ${result.replacements} publication history link(s) in ${result.files} file(s); ${detail}.`,
   );
 }

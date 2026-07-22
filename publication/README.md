@@ -118,6 +118,10 @@ QA errors are allowed. The workflow requires valid `qa.json` and a nonempty
 its publication comparison. Expected messages are documented in
 `input/ignoreWarnings.txt`.
 
+Public package identifiers and URLs are reported by separate jobs that do not
+consume the terminology secrets. This prevents GitHub's per-job secret masking
+from replacing matching parts of otherwise public links with `***`.
+
 Do not continue if the candidate, metadata, history, feeds, package, registry
 patch, or deployment size is not acceptable.
 

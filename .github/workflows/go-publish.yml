@@ -28,6 +28,7 @@ concurrency:
 
 env:
   EXPECTED_CANONICAL: "https://www.medizininformatik-initiative.de/fhir/modul-base"
+  EXPECTED_PACKAGE_ID: "de.medizininformatikinitiative.kerndatensatz.base"
   EXPECTED_PUBLICATION_BASE: "https://medizininformatik-initiative.github.io/kerndatensatz-basis"
 
 jobs:
@@ -62,6 +63,7 @@ jobs:
       label: ${{ steps.release.outputs.label }}
       publication_date: ${{ steps.release.outputs.publication_date }}
       site_sha: ${{ steps.release.outputs.site_sha }}
+      source_sha: ${{ steps.release.outputs.source_sha }}
       version: ${{ steps.release.outputs.version }}
 
     steps:
@@ -206,7 +208,7 @@ jobs:
             exit 1
           fi
 
-          expected_id="de.medizininformatikinitiative.kerndatensatz.base"
+          expected_id="${EXPECTED_PACKAGE_ID}"
           historical_package_sha256="$(jq -er \
             '.packages["de.medizininformatikinitiative.kerndatensatz.base#2026.0.0"].sha256' \
             automation/publication/existing-packages.json)"
@@ -299,18 +301,9 @@ jobs:
             echo "publication_date=${publication_date}"
             echo "publication_path=${publication_path}"
             echo "site_sha=$(git -C site rev-parse HEAD)"
+            echo "source_sha=${source_sha}"
             echo "version=${version}"
           } >> "${GITHUB_OUTPUT}"
-
-          {
-            echo "### Publication input"
-            echo
-            echo "- Tag: \`${RELEASE_REF}\` (\`${source_sha}\`)"
-            echo "- Package: \`${package_id}#${version}\`"
-            echo "- Permanent path: ${publication_path}"
-            echo "- Date: ${publication_date}"
-            echo "- Import 2026.0.0 history first: ${bootstrap}"
-          } >> "${GITHUB_STEP_SUMMARY}"
 
       - name: Set up Java
         uses: actions/setup-java@v4
@@ -616,14 +609,6 @@ jobs:
             en \
             de
 
-          {
-            echo "### FHIR IG Registry handoff"
-            echo
-            echo "- History: ${PUBLICATION_BASE}/history.html"
-            echo "- Languages: en, de"
-            echo "- Entry metadata and placeholders: validated"
-          } >> "${GITHUB_STEP_SUMMARY}"
-
       - name: Restore and verify localized table backgrounds in the staged publication
         shell: bash
         env:
@@ -894,6 +879,50 @@ jobs:
             source/output/qa.json
           if-no-files-found: error
           retention-days: 7
+
+  # Keep public identifiers and links out of the build job that consumes
+  # terminology secrets. GitHub's runner masks secrets per job, so this job can
+  # report the real package ID and URLs without redacting matching public text.
+  report:
+    name: Report publication input
+    needs: prepare
+    if: ${{ always() && needs.prepare.result == 'success' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Summarize publication input and registry handoff
+        shell: bash
+        env:
+          BOOTSTRAP: ${{ needs.prepare.outputs.bootstrap }}
+          LABEL: ${{ needs.prepare.outputs.label }}
+          PUBLICATION_DATE: ${{ needs.prepare.outputs.publication_date }}
+          RELEASE_REF: ${{ inputs.release_ref }}
+          SOURCE_SHA: ${{ needs.prepare.outputs.source_sha }}
+          VERSION: ${{ needs.prepare.outputs.version }}
+        run: |
+          set -euo pipefail
+          package_id="${EXPECTED_PACKAGE_ID}"
+          publication_base="${EXPECTED_PUBLICATION_BASE%/}"
+          publication_path="${publication_base}/${LABEL}"
+          history_url="${publication_base}/history.html"
+
+          {
+            echo "### Publication input"
+            echo
+            echo "- Tag: \`${RELEASE_REF}\` (\`${SOURCE_SHA}\`)"
+            echo "- Package: \`${package_id}#${VERSION}\`"
+            echo "- Permanent path: [${publication_path}](${publication_path})"
+            echo "- Date: ${PUBLICATION_DATE}"
+            echo "- Import 2026.0.0 history first: ${BOOTSTRAP}"
+            echo
+            echo "### FHIR IG Registry handoff"
+            echo
+            echo "- History: [${history_url}](${history_url})"
+            echo "- Languages: en, de"
+            echo "- Entry metadata and placeholders: validated"
+          } >> "${GITHUB_STEP_SUMMARY}"
 
   publish:
     name: Commit publication and prepare Pages artifact
