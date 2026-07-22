@@ -1,0 +1,957 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+
+
+
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Metadata Overview - MII Implementation Guide Core Dataset Base v2026.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link href="assets/css/project.css" rel="stylesheet"/>
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script type="text/javascript" src="assets/js/direction-management.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script type="text/javascript" src="assets/js/prism.js"></script>
+	  <script type="text/javascript" src="assets/js/prism-fhirpath.js"></script>
+	  <script type="text/javascript" src="assets/js/prism-cql.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"14"}
+    h3,h4,h5,h6{--heading-prefix:"14"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <div id="family-nav">
+  <a id="family-logo" no-external="true" href="http://hl7.org/fhir">
+    <img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/>
+  </a>
+</div>
+<div id="hl7-nav"> 
+  <a id="hl7-logo" no-external="true" href="https://www.medizininformatik-initiative.de">
+    
+    <img height="50" alt="Visit MII" src="MII_Logo_engl_rgb.jpg"/>
+    
+  </a>
+</div>
+
+
+        <div id="ig-status" data-fhir="generated">
+          <p><span style="font-size:12pt;font-weight:bold">MII Implementation Guide Core Dataset Base</span>
+            <br/>
+            <span style="display:inline-block;">2026.0.1 - Release
+
+
+
+  Germany
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment" data-fhir="generated">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="guidance.html" class="dropdown-toggle">Guidance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="guidance.html">Guidance</a>
+      </li>
+      <li>
+        <a href="researcher-guidance.html">Guidance for Researchers</a>
+      </li>
+      <li>
+        <a href="implementer-guidance.html">Guidance for Implementers</a>
+      </li>
+      <li>
+        <a href="datasets-and-descriptions.html">Datasets and Descriptions</a>
+      </li>
+      <li>
+        <a href="uml-diagrams.html">UML Diagrams</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="conformance.html" class="dropdown-toggle">Conformance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="conformance.html">Conformance</a>
+      </li>
+      <li>
+        <a href="general-requirements.html">General Requirements</a>
+      </li>
+      <li>
+        <a href="must-support.html">Must Support</a>
+      </li>
+      <li>
+        <a href="missing-data.html">Handling Missing Data</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="artifacts.html" class="dropdown-toggle">Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">Artifacts Summary</a>
+      </li>
+      <li>
+        <a href="profiles-and-extensions.html">Profiles and Extensions</a>
+      </li>
+      <li>
+        <a href="terminology.html">Terminology</a>
+      </li>
+      <li>
+        <a href="capability-statements.html">Capability Statements</a>
+      </li>
+      <li>
+        <a href="search-parameters-and-operations.html">Search Parameters and Operations</a>
+      </li>
+      <li>
+        <a href="logical-models.html">Logical Models</a>
+      </li>
+      <li>
+        <a href="examples.html">Examples</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="version-history.html" class="dropdown-toggle">Versioning
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="version-history.html">Versioning</a>
+      </li>
+      <li>
+        <a href="changes.html">Changelog</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="metadata.html" class="dropdown-toggle">Metadata
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="metadata.html">Metadata Overview</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+            </div>  <!-- /.nav-collapse -->
+
+              
+
+
+<div style="float: var(--ig-right);padding: 8px 0px;" id="language">
+  <div id="select_flg" class="flaglist" style="background-image: url(assets/images/icon_arrow_down.png);background-position: 133px 3px;">
+    <div><img class="flag" alt="flag en" src="assets/images/lang-en.png"/>English</div>
+  </div>
+  <div style="float: var(--ig-right); margin: 2px 0px; padding: 1px 0;color: var(--btn-text-color);font-size:12px">Language:</div>
+ 	<div id="flaglist" class="flaglist" style="display: none;position: absolute;right: 0;z-index: 100;background-image: url(assets/images/icon_arrow_up.png);background-position: 133px 3px;">
+    <div><img class="flag" alt="flag en" src="assets/images/lang-en.png"/>English</div>
+
+    <div><a href="../de/metadata.html"><img class="flag" src="assets/images/lang-de.png" alt="flag de"/>Deutsch</a></div>
+
+  </div>
+</div>
+
+
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment" data-fhir="generated">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Metadata Overview</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the MII Implementation Guide Core Dataset Base (v2026.0.1: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version in its permanent home (it will always be available at this URL).  For a full list of available versions, see the <a data-no-external="true" href="https://medizininformatik-initiative.github.io/kerndatensatz-basis/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Metadata Overview</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#scope" id="markdown-toc-scope">Scope</a></li>
+  <li><a href="#crmi-artifact-management-coverage" id="markdown-toc-crmi-artifact-management-coverage">CRMI Artifact Management Coverage</a></li>
+  <li><a href="#implemented-crmi-metadata" id="markdown-toc-implemented-crmi-metadata">Implemented CRMI Metadata</a></li>
+  <li><a href="#versioning-and-package-provenance" id="markdown-toc-versioning-and-package-provenance">Versioning and Package Provenance</a></li>
+  <li><a href="#manifest-and-reproducibility" id="markdown-toc-manifest-and-reproducibility">Manifest and Reproducibility</a></li>
+  <li><a href="#relationship-to-fair" id="markdown-toc-relationship-to-fair">Relationship to FAIR</a></li>
+  <li><a href="#practical-use" id="markdown-toc-practical-use">Practical Use</a></li>
+</ul>
+
+</div>
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table th,
+table td {
+  border: 1px solid #999;
+  padding: 6px;
+  vertical-align: top;
+}
+
+table th {
+  background-color: #eeeeee;
+}
+</style>
+
+<p>This page documents the computable metadata used in this implementation guide. The metadata is intended to make the artifacts easier to discover, evaluate, validate, cite, govern, and reuse by humans and software.</p>
+
+<p>The metadata model is based on the <a href="https://hl7.org/fhir/uv/crmi/STU2/en/index.html">Canonical Resource Management Infrastructure Implementation Guide</a> (CRMI).</p>
+
+<p>CRMI focuses on facilitating consistent exchange of knowledge artifacts throughout the artifact management lifecycle, from authoring through publishing and distribution to implementation. This IG applies selected CRMI profiles, extensions, and manifest mechanisms to make the MII artifacts more discoverable, version-aware, governable, packageable, and reusable.</p>
+
+<p>The work described here is preliminary. It records the current CRMI-based metadata approach used in this IG and may be refined as CRMI matures, as the MII publication process evolves, and as FAIR assessment methods for FHIR implementation guides become more concrete.</p>
+
+<h3 id="scope">Scope</h3>
+
+<p>CRMI metadata is used in this IG to describe the FHIR specification artifacts themselves. Most CRMI metadata described here is descriptive and does not change the clinical or technical conformance requirements defined by the profiles, value sets, code systems, logical models, capability statements, or examples. The manifest parameters are different: they document and support the publication and validation context, such as terminology expansion and canonical version pinning, and can therefore influence generated output and validation results.</p>
+
+<p>The metadata can be inspected in the generated FHIR resources, especially in the JSON and XML representations linked from each artifact page and in the downloadable package.</p>
+
+<h3 id="crmi-artifact-management-coverage">CRMI Artifact Management Coverage</h3>
+
+<p>CRMI organizes artifact management into lifecycle phases and supporting concerns. This IG does not implement every CRMI capability; it applies the parts that are directly useful for publishing the MII core dataset as a versioned FHIR implementation guide.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>CRMI Area</th>
+      <th>Used in this IG</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://hl7.org/fhir/uv/crmi/STU2/en/artifact-lifecycle.html">Artifact lifecycle</a></td>
+      <td>Shareable, computable, and publishable profiles; <code class="language-plaintext highlighter-rouge">status</code>; <code class="language-plaintext highlighter-rouge">version</code>; <code class="language-plaintext highlighter-rouge">resource-approvalDate</code>; <code class="language-plaintext highlighter-rouge">resource-effectivePeriod</code>; contributor extensions</td>
+      <td>Positions artifacts in authoring, release, publication, and maintenance workflows.</td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7.org/fhir/uv/crmi/STU2/en/version-manifest.html">Version Manifest</a></td>
+      <td><code class="language-plaintext highlighter-rouge">CRMIManifestParameters</code>; <code class="language-plaintext highlighter-rouge">cqf-expansionParameters</code>; <code class="language-plaintext highlighter-rouge">package-source</code>; canonical version pinning</td>
+      <td>Supports reproducible terminology expansion and stable canonical version resolution.</td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7.org/fhir/uv/crmi/STU2/en/artifact-conventions.html">Artifact Conventions</a></td>
+      <td>Canonical URLs; package/resource version alignment; <code class="language-plaintext highlighter-rouge">artifact-versionAlgorithm</code>; <code class="language-plaintext highlighter-rouge">artifact-versionPolicy</code></td>
+      <td>Aligns the IG with canonical-resource authoring and versioning conventions.</td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7.org/fhir/uv/crmi/STU2/en/packaging.html">Packaging</a></td>
+      <td>FHIR package; <code class="language-plaintext highlighter-rouge">ImplementationGuide.packageId</code>; package version; <code class="language-plaintext highlighter-rouge">package-source</code></td>
+      <td>Connects artifacts to the package context in which they are authored, tested, released, and distributed.</td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7.org/fhir/uv/crmi/STU2/en/publishing.html">Publishing</a></td>
+      <td>Publishable profiles; contributor extensions; <code class="language-plaintext highlighter-rouge">resource-approvalDate</code>; <code class="language-plaintext highlighter-rouge">resource-effectivePeriod</code>; <code class="language-plaintext highlighter-rouge">artifact-relatedArtifact</code>; <code class="language-plaintext highlighter-rouge">artifact-purpose</code>; <code class="language-plaintext highlighter-rouge">artifact-usage</code></td>
+      <td>Adds trust, governance, publication context, and human-readable intent to canonical artifacts.</td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7.org/fhir/uv/crmi/STU2/en/distribution.html">Distribution</a></td>
+      <td>Published IG pages; JSON/XML resources; package download; manifest parameters</td>
+      <td>Supports downstream retrieval and tooling use through the FHIR publishing ecosystem. CRMI repository operations are not implemented.</td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7.org/fhir/uv/crmi/STU2/en/artifact-signing.html">Signing</a></td>
+      <td>Not currently implemented</td>
+      <td>Candidate future enhancement for integrity, authenticity, and non-repudiation of released artifacts.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This IG does not currently define a <code class="language-plaintext highlighter-rouge">CRMIManifestLibrary</code>, CRMI artifact repository operations such as <code class="language-plaintext highlighter-rouge">$package</code> and <code class="language-plaintext highlighter-rouge">$data-requirements</code>, CRMI publishing through a Knowledge Artifact Repository, syndication feeds, or artifact signing. These may be considered in future publication and release workflow work.</p>
+
+<h3 id="implemented-crmi-metadata">Implemented CRMI Metadata</h3>
+
+<p>The following CRMI-related metadata is currently used in this IG.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Metadata Artifact</th>
+      <th>CRMI Area</th>
+      <th>FHIR Location in this IG</th>
+      <th>Applied Resource Types</th>
+      <th>Artifact Management Role</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://hl7.org/fhir/uv/crmi/STU2/en/StructureDefinition-crmi-shareableimplementationguide.html">CRMI Shareable ImplementationGuide</a><br /><a href="https://hl7.org/fhir/uv/crmi/STU2/en/StructureDefinition-crmi-publishableimplementationguide.html">CRMI Publishable ImplementationGuide</a><br /><a href="https://hl7.org/fhir/uv/crmi/STU2/en/StructureDefinition-crmi-implementationguide.html">CRMI ImplementationGuide</a></td>
+      <td>Artifact lifecycle; publishing; packaging</td>
+      <td><code class="language-plaintext highlighter-rouge">ImplementationGuide.meta.profile</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ImplementationGuide</code></td>
+      <td>Enforces the minimum ImplementationGuide metadata set, adds post-publication metadata for distribution, repository inclusion, consumption, and implementation, and declares expansion parameters for the IG.</td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7.org/fhir/uv/crmi/STU2/en/StructureDefinition-crmi-shareablestructuredefinition.html">CRMI Shareable StructureDefinition</a><br /><a href="https://hl7.org/fhir/uv/crmi/STU2/en/StructureDefinition-crmi-publishablestructuredefinition.html">CRMI Publishable StructureDefinition</a></td>
+      <td>Artifact lifecycle; publishing</td>
+      <td><code class="language-plaintext highlighter-rouge">StructureDefinition.meta.profile</code></td>
+      <td><code class="language-plaintext highlighter-rouge">StructureDefinition</code></td>
+      <td>Enforces the minimum StructureDefinition metadata set and adds post-publication metadata for distribution, repository inclusion, consumption, and implementation.</td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7.org/fhir/uv/crmi/STU2/en/StructureDefinition-crmi-shareablecapabilitystatement.html">CRMI Shareable CapabilityStatement</a><br /><a href="https://hl7.org/fhir/uv/crmi/STU2/en/StructureDefinition-crmi-publishablecapabilitystatement.html">CRMI Publishable CapabilityStatement</a></td>
+      <td>Artifact lifecycle; publishing; distribution</td>
+      <td><code class="language-plaintext highlighter-rouge">CapabilityStatement.meta.profile</code></td>
+      <td><code class="language-plaintext highlighter-rouge">CapabilityStatement</code></td>
+      <td>Enforces the minimum CapabilityStatement metadata set and adds post-publication metadata for distribution, repository inclusion, consumption, and implementation.</td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7.org/fhir/uv/crmi/STU2/en/StructureDefinition-crmi-shareablecodesystem.html">CRMI Shareable CodeSystem</a></td>
+      <td>Artifact lifecycle; artifact conventions</td>
+      <td><code class="language-plaintext highlighter-rouge">CodeSystem.meta.profile</code></td>
+      <td><code class="language-plaintext highlighter-rouge">CodeSystem</code> excluding supplements</td>
+      <td>Enforces the minimum CodeSystem metadata set required for shared and published code systems.</td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7.org/fhir/uv/crmi/STU2/en/StructureDefinition-crmi-publishablecodesystem.html">CRMI Publishable CodeSystem</a></td>
+      <td>Publishing; distribution</td>
+      <td><code class="language-plaintext highlighter-rouge">CodeSystem.meta.profile</code></td>
+      <td><code class="language-plaintext highlighter-rouge">CodeSystem</code> including supplements</td>
+      <td>Defines and enforces minimum expectations for CodeSystem publication and distribution, including as part of an artifact repository or IG publication, while allowing supplements to avoid restating inherited CodeSystem properties.</td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7.org/fhir/uv/crmi/STU2/en/StructureDefinition-crmi-shareablevalueset.html">CRMI Shareable ValueSet</a><br /><a href="https://hl7.org/fhir/uv/crmi/STU2/en/StructureDefinition-crmi-publishablevalueset.html">CRMI Publishable ValueSet</a></td>
+      <td>Artifact lifecycle; publishing; distribution</td>
+      <td><code class="language-plaintext highlighter-rouge">ValueSet.meta.profile</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ValueSet</code></td>
+      <td>Enforces the minimum ValueSet metadata set and the minimum expectations for ValueSet publication and distribution, including as part of an artifact repository or IG publication.</td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7.org/fhir/uv/crmi/STU2/en/StructureDefinition-crmi-computablevalueset.html">CRMI Computable ValueSet</a></td>
+      <td>Artifact lifecycle; authoring; packaging</td>
+      <td><code class="language-plaintext highlighter-rouge">ValueSet.meta.profile</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ValueSet</code> resources with computable definitions</td>
+      <td>Declares that a ValueSet has a computable expression-based definition, represented through compose, expression, or rules-text content, with an optional expansion.</td>
+    </tr>
+    <tr>
+      <td><a href="http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-cqf-knowledgeCapability.html">CQF Knowledge Capability</a></td>
+      <td>Artifact lifecycle; artifact conventions</td>
+      <td><code class="language-plaintext highlighter-rouge">DomainResource.extension</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ImplementationGuide</code>, <code class="language-plaintext highlighter-rouge">StructureDefinition</code>, <code class="language-plaintext highlighter-rouge">CapabilityStatement</code>, <code class="language-plaintext highlighter-rouge">CodeSystem</code>, <code class="language-plaintext highlighter-rouge">ValueSet</code></td>
+      <td>Declares the knowledge capability afforded by an artifact, using CRMI lifecycle categories such as shareable, publishable, and computable on resources without a native <code class="language-plaintext highlighter-rouge">knowledgeCapability</code> element.</td>
+    </tr>
+    <tr>
+      <td><a href="http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-artifact-purpose.html">Artifact Purpose</a></td>
+      <td>Publishing; distribution</td>
+      <td><code class="language-plaintext highlighter-rouge">ImplementationGuide.extension</code>; native <code class="language-plaintext highlighter-rouge">purpose</code> element on canonical resources where available</td>
+      <td><code class="language-plaintext highlighter-rouge">ImplementationGuide</code> and definitional artifacts with purpose metadata</td>
+      <td>Explains why a definitional artifact is needed and why it was designed as it is, especially where the resource does not have a native <code class="language-plaintext highlighter-rouge">purpose</code> element.</td>
+    </tr>
+    <tr>
+      <td><a href="http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-artifact-usage.html">Artifact Usage</a></td>
+      <td>Publishing; implementation</td>
+      <td><code class="language-plaintext highlighter-rouge">DomainResource.extension</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ImplementationGuide</code>, <code class="language-plaintext highlighter-rouge">StructureDefinition</code>, <code class="language-plaintext highlighter-rouge">CapabilityStatement</code></td>
+      <td>Provides usage guidance for the artifact; in this IG, describes how the artifact should be used within the MII core dataset specification.</td>
+    </tr>
+    <tr>
+      <td><a href="http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-artifact-topic.html">Artifact Topic</a></td>
+      <td>Publishing; distribution</td>
+      <td><code class="language-plaintext highlighter-rouge">DomainResource.extension</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ImplementationGuide</code>, <code class="language-plaintext highlighter-rouge">StructureDefinition</code>, <code class="language-plaintext highlighter-rouge">CapabilityStatement</code>, <code class="language-plaintext highlighter-rouge">CodeSystem</code>, <code class="language-plaintext highlighter-rouge">ValueSet</code></td>
+      <td>Adds high-level descriptive topics related to artifact content for filtering, searching, and grouping.</td>
+    </tr>
+    <tr>
+      <td><a href="http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-artifact-versionAlgorithm.html">Artifact Version Algorithm</a></td>
+      <td>Artifact conventions; versioning</td>
+      <td><code class="language-plaintext highlighter-rouge">DomainResource.extension</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ImplementationGuide</code>, <code class="language-plaintext highlighter-rouge">StructureDefinition</code>, <code class="language-plaintext highlighter-rouge">CapabilityStatement</code>, <code class="language-plaintext highlighter-rouge">CodeSystem</code>, <code class="language-plaintext highlighter-rouge">ValueSet</code></td>
+      <td>Declares the mechanism used to compare versions and determine which version is more current.</td>
+    </tr>
+    <tr>
+      <td><a href="http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-artifact-versionPolicy.html">Artifact Version Policy</a></td>
+      <td>Artifact lifecycle; versioning</td>
+      <td><code class="language-plaintext highlighter-rouge">DomainResource.extension</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ImplementationGuide</code>, <code class="language-plaintext highlighter-rouge">StructureDefinition</code>, <code class="language-plaintext highlighter-rouge">CapabilityStatement</code>, <code class="language-plaintext highlighter-rouge">CodeSystem</code>, <code class="language-plaintext highlighter-rouge">ValueSet</code></td>
+      <td>Provides the artifact versioning policy; in this IG, <code class="language-plaintext highlighter-rouge">package</code> means artifact versions are managed with the IG package version, so a release can update an artifact version even when the individual artifact content did not change.</td>
+    </tr>
+    <tr>
+      <td><a href="http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-package-source.html">Package Source</a></td>
+      <td>Version manifest; packaging; distribution</td>
+      <td><code class="language-plaintext highlighter-rouge">Resource.meta.extension</code></td>
+      <td>Definitional resources and example resources</td>
+      <td>Declares the package in which an artifact is defined or included so evaluation environments can resolve namespaces and dependencies in the intended IG or package scope.</td>
+    </tr>
+    <tr>
+      <td><a href="http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-resource-approvalDate.html">Resource Approval Date</a></td>
+      <td>Artifact lifecycle; publishing; governance</td>
+      <td><code class="language-plaintext highlighter-rouge">DomainResource.extension</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ImplementationGuide</code>, <code class="language-plaintext highlighter-rouge">StructureDefinition</code>, <code class="language-plaintext highlighter-rouge">CapabilityStatement</code>, <code class="language-plaintext highlighter-rouge">CodeSystem</code>, <code class="language-plaintext highlighter-rouge">ValueSet</code></td>
+      <td>Records the date on which the publisher officially approved the artifact content for use.</td>
+    </tr>
+    <tr>
+      <td><a href="http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-resource-effectivePeriod.html">Resource Effective Period</a></td>
+      <td>Artifact lifecycle; publishing; implementation</td>
+      <td><code class="language-plaintext highlighter-rouge">DomainResource.extension</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ImplementationGuide</code>, <code class="language-plaintext highlighter-rouge">StructureDefinition</code>, <code class="language-plaintext highlighter-rouge">CapabilityStatement</code>, <code class="language-plaintext highlighter-rouge">CodeSystem</code>, <code class="language-plaintext highlighter-rouge">ValueSet</code></td>
+      <td>Records the period during which the resource content is planned to be or has been effective.</td>
+    </tr>
+    <tr>
+      <td><a href="http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-artifact-author.html">Artifact Author</a><br /><a href="http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-artifact-editor.html">Artifact Editor</a><br /><a href="http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-artifact-reviewer.html">Artifact Reviewer</a><br /><a href="http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-artifact-endorser.html">Artifact Endorser</a></td>
+      <td>Publishing; governance; provenance</td>
+      <td><code class="language-plaintext highlighter-rouge">DomainResource.extension</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ImplementationGuide</code>, <code class="language-plaintext highlighter-rouge">StructureDefinition</code>, <code class="language-plaintext highlighter-rouge">CapabilityStatement</code>, <code class="language-plaintext highlighter-rouge">CodeSystem</code>, <code class="language-plaintext highlighter-rouge">ValueSet</code></td>
+      <td>Records the author involved in creation and maintenance, the editor responsible for internal coherence, reviewers responsible for artifact review, and endorsers responsible for official endorsement for use.</td>
+    </tr>
+    <tr>
+      <td><a href="http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-artifact-relatedArtifact.html">Artifact Related Artifact</a></td>
+      <td>Publishing; provenance</td>
+      <td><code class="language-plaintext highlighter-rouge">DomainResource.extension</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ImplementationGuide</code></td>
+      <td>Links related artifacts such as additional documentation, justification, dependencies, bibliographic references, and predecessor or successor artifacts.</td>
+    </tr>
+    <tr>
+      <td><a href="http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-cqf-expansionParameters.html">CQF Expansion Parameters</a></td>
+      <td>Version manifest; publishing; distribution</td>
+      <td><code class="language-plaintext highlighter-rouge">ImplementationGuide.extension</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ImplementationGuide</code></td>
+      <td>Specifies the expansion parameters to use when expanding ValueSets referenced from the ImplementationGuide.</td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7.org/fhir/uv/crmi/STU2/en/StructureDefinition-crmi-manifestparameters.html">CRMI Manifest Parameters</a></td>
+      <td>Version manifest; packaging; distribution</td>
+      <td><code class="language-plaintext highlighter-rouge">Parameters.meta.profile</code>; referenced from <code class="language-plaintext highlighter-rouge">ImplementationGuide.extension:cqf-expansionParameters</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Parameters</code></td>
+      <td>Defines the expected Parameters resource for version pinning; in this IG, the same manifest is referenced from <code class="language-plaintext highlighter-rouge">cqf-expansionParameters</code> and used by the Publisher.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="codesystem-supplements">CodeSystem Supplements</h4>
+
+<p>CodeSystem supplements are published with CRMI publishable metadata, but they are not currently asserted as CRMI ShareableCodeSystem. The CRMI ShareableCodeSystem profile requires <code class="language-plaintext highlighter-rouge">CodeSystem.caseSensitive</code>, while FHIR validation warns that supplements should not restate <code class="language-plaintext highlighter-rouge">caseSensitive</code> because this could contradict the supplemented code system. For this reason, supplement CodeSystems in this IG use the publishable CRMI profile and omit the shareable CRMI profile.</p>
+
+<h3 id="versioning-and-package-provenance">Versioning and Package Provenance</h3>
+
+<p>The human-readable versioning scheme is documented on the <a href="version-history.html">Versioning</a> page. This section describes how the versioning policy is expressed as CRMI metadata.</p>
+
+<p>This IG uses Calendar Versioning in the SemVer-compatible numeric form <code class="language-plaintext highlighter-rouge">YYYY.MINOR.PATCH[-label]</code>, for example <code class="language-plaintext highlighter-rouge">2026.0.0</code>. The calendar year is used as the CRMI <code class="language-plaintext highlighter-rouge">&lt;major&gt;</code> component, while <code class="language-plaintext highlighter-rouge">MINOR</code> and <code class="language-plaintext highlighter-rouge">PATCH</code> follow the usual additive and corrective versioning semantics. Stable versions can therefore be compared using the declared <code class="language-plaintext highlighter-rouge">semver</code> version algorithm. Labels support pre-release content and build metadata; following CRMI/FHIR versioning conventions, no ordering is inferred among labels.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>CRMI Conformance Requirement</th>
+      <th>How this IG conforms</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://hl7.org/fhir/uv/crmi/STU2/en/artifact-lifecycle.html#conformance-requirement-3-3">Conformance Requirement 3.3: Artifact Versioning</a></td>
+      <td>Artifacts specify a <code class="language-plaintext highlighter-rouge">version</code>. The version follows the CRMI convention <code class="language-plaintext highlighter-rouge">&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;[-&lt;label&gt;]</code>, with the year used as the major component. <code class="language-plaintext highlighter-rouge">artifact-versionAlgorithm</code> declares SemVer-compatible comparison using <code class="language-plaintext highlighter-rouge">semver</code>.</td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7.org/fhir/uv/crmi/STU2/en/artifact-lifecycle.html#conformance-requirement-3-4">Conformance Requirement 3.4: Artifact Versioning Policy</a></td>
+      <td><code class="language-plaintext highlighter-rouge">artifact-versionPolicy</code> is set to <code class="language-plaintext highlighter-rouge">package</code>. Artifact versions are managed as the version of the package in which the artifact appears. This reflects that artifacts are released as part of the IG package and may receive a new version when the package is released, even without a content change to that specific artifact.</td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7.org/fhir/uv/crmi/STU2/en/artifact-lifecycle.html#conformance-requirement-3-5">Conformance Requirement 3.5: Artifact Collection Versioning</a></td>
+      <td>Artifacts are authored as part of the IG/package collection and use the same version as the overall package. A package release may therefore assign a new version to artifacts that did not individually change. The IG uses manifest parameters to establish dependency and terminology version context.</td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7.org/fhir/uv/crmi/STU2/en/artifact-lifecycle.html#conformance-requirement-3-6">Conformance Requirement 3.6: Artifact Package Source</a></td>
+      <td>Artifacts indicate their package source using <code class="language-plaintext highlighter-rouge">package-source</code>, including the package id <code class="language-plaintext highlighter-rouge">de.medizininformatikinitiative.kerndatensatz.base</code>, package version, and package source URI.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Additional release metadata complements this versioning approach. <code class="language-plaintext highlighter-rouge">resource-effectivePeriod</code> records the intended period of applicability for the version. Together, version, version algorithm, version policy, package source, and effective period help users and tooling determine whether an artifact belongs to the expected release package and whether its metadata is consistent with the version being implemented.</p>
+
+<h3 id="manifest-and-reproducibility">Manifest and Reproducibility</h3>
+
+<p>The IG uses a <a href="Parameters-mii-param-base-manifest.html">CRMI Manifest Parameters resource</a> together with IG Publisher parameters for canonical pinning and terminology expansion. The manifest records version-related parameters that help make generated output and validation more reproducible.</p>
+
+<p>The manifest is linked from the <a href="ImplementationGuide-mii-ig-base.html"><code class="language-plaintext highlighter-rouge">ImplementationGuide</code> resource</a> using <code class="language-plaintext highlighter-rouge">cqf-expansionParameters</code>. The IG Publisher also uses the same manifest through the publication configuration. This gives both readers and tooling a stable place to inspect the parameters used for expansion and package pinning. This IG does not currently define a <code class="language-plaintext highlighter-rouge">CRMIManifestLibrary</code>; the current mechanism is the manifest Parameters resource used by the publisher and exposed through the IG metadata.</p>
+
+<h3 id="relationship-to-fair">Relationship to FAIR</h3>
+
+<p>The <a href="https://www.go-fair.org/fair-principles/">FAIR principles</a> describe goals for making digital objects Findable, Accessible, Interoperable, and Reusable. This section provides an informative self-assessment of how selected CRMI-based metadata in this IG supports FAIR-aligned publication of FHIR specification artifacts.</p>
+
+<p>The following table reuses the indicator structure from the HL7 FHIR-for-FAIR page <a href="https://hl7.org/fhir/uv/fhir-for-fair/RDAMetrics.html">FAIR Data Maturity Indicators and priority</a>, which is based on the RDA FAIR Data Maturity Model. The mapping is adapted for implementation guide artifacts and published FHIR conformance resources.</p>
+
+<p><a href="https://hl7.org/fhir/uv/fhir-for-fair/metadata.html">FHIR-for-FAIR Metadata and Data</a> emphasizes that the FAIR digital object can have different levels of granularity and that the boundary between metadata and data is contextual. This table therefore distinguishes between metadata for this IG and its conformance artifacts, example/test data included in the IG, and production clinical data exchanged by implementations. The IG can directly address FAIR indicators for its own specification artifacts and examples. Indicators for production data are supported by the IG, but must be fulfilled by implementing systems, repositories, and governance processes.</p>
+
+<p>The example instances and example transaction <code class="language-plaintext highlighter-rouge">Bundle</code> demonstrate FAIR-relevant FHIR structures for test data. They do not represent production clinical data and are not asserted as a persistently identified FAIR dataset.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Principle</th>
+      <th>Indicator ID</th>
+      <th>FAIR Data Maturity Indicator</th>
+      <th>Priority</th>
+      <th>Addressed in this IG by</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>F1</td>
+      <td>RDA-F1-01M</td>
+      <td>Metadata is identified by a persistent identifier</td>
+      <td>Essential</td>
+      <td>For IG metadata and conformance artifacts: canonical <code class="language-plaintext highlighter-rouge">url</code> values, package id <code class="language-plaintext highlighter-rouge">de.medizininformatikinitiative.kerndatensatz.base</code>, package version, and <code class="language-plaintext highlighter-rouge">package-source</code>. Persistence depends on publication governance.</td>
+    </tr>
+    <tr>
+      <td>F1</td>
+      <td>RDA-F1-01D</td>
+      <td>Data is identified by a persistent identifier</td>
+      <td>Essential</td>
+      <td>For example/test data in this IG: <code class="language-plaintext highlighter-rouge">Resource.id</code>, <code class="language-plaintext highlighter-rouge">Bundle.identifier</code>, resource-specific <code class="language-plaintext highlighter-rouge">identifier</code> elements, and <code class="language-plaintext highlighter-rouge">Bundle.entry.fullUrl</code> demonstrate identification patterns but are not asserted as persistent data PIDs. For production data in implementations: persistent business identifiers or maintained resolvable URLs must be assigned by implementing systems.</td>
+    </tr>
+    <tr>
+      <td>F1</td>
+      <td>RDA-F1-02M</td>
+      <td>Metadata is identified by a globally unique identifier</td>
+      <td>Essential</td>
+      <td>For IG metadata and conformance artifacts: globally scoped canonical <code class="language-plaintext highlighter-rouge">url</code> values and the package id identify artifacts within controlled MII namespaces.</td>
+    </tr>
+    <tr>
+      <td>F1</td>
+      <td>RDA-F1-02D</td>
+      <td>Data is identified by a globally unique identifier</td>
+      <td>Essential</td>
+      <td>For example/test data in this IG: <code class="language-plaintext highlighter-rouge">identifier.system</code> plus <code class="language-plaintext highlighter-rouge">identifier.value</code> patterns demonstrate globally scoped identification. For production data in implementations: global uniqueness depends on controlled identifier namespaces and implementation governance.</td>
+    </tr>
+    <tr>
+      <td>F2</td>
+      <td>RDA-F2-01M</td>
+      <td>Rich metadata is provided to allow discovery</td>
+      <td>Essential</td>
+      <td>For IG metadata and conformance artifacts: CRMI shareable/publishable profiles, <code class="language-plaintext highlighter-rouge">purpose</code>, <code class="language-plaintext highlighter-rouge">artifact-usage</code>, <code class="language-plaintext highlighter-rouge">artifact-topic</code>, <code class="language-plaintext highlighter-rouge">resource-approvalDate</code>, <code class="language-plaintext highlighter-rouge">resource-effectivePeriod</code>, contributors, <code class="language-plaintext highlighter-rouge">package-source</code>, and related artifacts.</td>
+    </tr>
+    <tr>
+      <td>F3</td>
+      <td>RDA-F3-01M</td>
+      <td>Metadata includes the identifier for the data</td>
+      <td>Essential</td>
+      <td>For IG metadata and conformance artifacts: artifact metadata and artifact identifiers are carried together in the same FHIR resources and package. For example/test data in this IG: the transaction <code class="language-plaintext highlighter-rouge">Bundle</code> has a <code class="language-plaintext highlighter-rouge">Bundle.identifier</code> and groups resources by <code class="language-plaintext highlighter-rouge">Bundle.entry.fullUrl</code>, but is not asserted as a persistent dataset metadata record.</td>
+    </tr>
+    <tr>
+      <td>F4</td>
+      <td>RDA-F4-01M</td>
+      <td>Metadata is offered in such a way that it can be harvested and indexed</td>
+      <td>Essential</td>
+      <td>For IG metadata and conformance artifacts: published artifact pages, canonical <code class="language-plaintext highlighter-rouge">url</code> values, JSON/XML representations, downloadable FHIR package, <code class="language-plaintext highlighter-rouge">artifact-topic</code>, and package metadata. Harvesting and indexing depend on the publication site, package registry, or consuming repository.</td>
+    </tr>
+    <tr>
+      <td>A1</td>
+      <td>RDA-A1-01M</td>
+      <td>Metadata contains information to enable the user to get access to the data</td>
+      <td>Important</td>
+      <td>For IG metadata and conformance artifacts: artifact pages, canonical <code class="language-plaintext highlighter-rouge">url</code> values, <code class="language-plaintext highlighter-rouge">package-source</code>, downloads, and <code class="language-plaintext highlighter-rouge">CapabilityStatement</code> resources describe access to the specification artifacts. For production data in implementations: endpoint availability and access processes are implementation-specific.</td>
+    </tr>
+    <tr>
+      <td>A1</td>
+      <td>RDA-A1-02M</td>
+      <td>Metadata can be accessed manually, i.e. with human intervention</td>
+      <td>Essential</td>
+      <td>For IG metadata and conformance artifacts: human-readable IG pages and artifact pages.</td>
+    </tr>
+    <tr>
+      <td>A1</td>
+      <td>RDA-A1-02D</td>
+      <td>Data can be accessed manually, i.e. with human intervention</td>
+      <td>Essential</td>
+      <td>For example/test data in this IG: example resource pages and generated JSON/XML are available through the IG. For production data in implementations: manual access depends on implementing systems and local access policies.</td>
+    </tr>
+    <tr>
+      <td>A1</td>
+      <td>RDA-A1-03M</td>
+      <td>Metadata identifier resolves to a metadata record</td>
+      <td>Essential</td>
+      <td>For IG metadata and conformance artifacts: canonical artifact <code class="language-plaintext highlighter-rouge">url</code> values resolve to published artifact pages with links to computable JSON and XML resources, subject to publication governance.</td>
+    </tr>
+    <tr>
+      <td>A1</td>
+      <td>RDA-A1-03D</td>
+      <td>Data identifier resolves to a digital object</td>
+      <td>Essential</td>
+      <td>For example/test data in this IG: example pages and downloadable JSON/XML provide access to the published example objects, but example identifiers are not asserted as persistent resolving data PIDs. For production data in implementations: identifier resolution depends on implementing systems or external PID services.</td>
+    </tr>
+    <tr>
+      <td>A1</td>
+      <td>RDA-A1-04M</td>
+      <td>Metadata is accessed through standardised protocol</td>
+      <td>Essential</td>
+      <td>For IG metadata and conformance artifacts: the IG and artifact pages are published over HTTPS, generated resources are available as FHIR JSON/XML, and the IG is distributed as a FHIR package using the NPM package format.</td>
+    </tr>
+    <tr>
+      <td>A1</td>
+      <td>RDA-A1-04D</td>
+      <td>Data is accessible through standardised protocol</td>
+      <td>Essential</td>
+      <td>For example/test data in this IG: example resources and the example transaction <code class="language-plaintext highlighter-rouge">Bundle</code> are downloadable from the IG as FHIR JSON/XML over HTTPS and through the FHIR package. For production data in implementations: access depends on conforming FHIR REST servers and local access policies.</td>
+    </tr>
+    <tr>
+      <td>A1</td>
+      <td>RDA-A1-05D</td>
+      <td>Data can be accessed automatically, i.e. by a computer program</td>
+      <td>Important</td>
+      <td>For example/test data in this IG: downloadable JSON/XML resources and the example transaction <code class="language-plaintext highlighter-rouge">Bundle</code> support automated tooling. For production data in implementations: automated access depends on FHIR server implementation, supported searches, operations, and authorization.</td>
+    </tr>
+    <tr>
+      <td>A1.1</td>
+      <td>RDA-A1.1-01M</td>
+      <td>Metadata is accessible through a free access protocol</td>
+      <td>Essential</td>
+      <td>For IG metadata and conformance artifacts: public HTTPS access to IG pages, generated artifacts, and downloadable FHIR package.</td>
+    </tr>
+    <tr>
+      <td>A1.1</td>
+      <td>RDA-A1.1-01D</td>
+      <td>Data is accessible through a free access protocol</td>
+      <td>Important</td>
+      <td>For example/test data in this IG: examples are accessible over HTTPS and through the FHIR package. For production data in implementations: FHIR REST uses an openly specified protocol, while actual access may be restricted by local authorization and governance.</td>
+    </tr>
+    <tr>
+      <td>A1.2</td>
+      <td>RDA-A1.2-01D</td>
+      <td>Data is accessible through an access protocol that supports authentication and authorisation</td>
+      <td>Useful</td>
+      <td>Not fulfilled by the IG publication itself. For production data in implementations: systems can use FHIR REST with appropriate authentication and authorization; this is outside the metadata layer.</td>
+    </tr>
+    <tr>
+      <td>A2</td>
+      <td>RDA-A2-01M</td>
+      <td>Metadata is guaranteed to remain available after data is no longer available</td>
+      <td>Essential</td>
+      <td>For IG metadata and conformance artifacts: versioned IG publication, downloadable FHIR package, version history, and canonical artifacts support long-term availability. Long-term guarantees depend on publication governance. The example <code class="language-plaintext highlighter-rouge">Bundle</code> is not a durable dataset metadata registry.</td>
+    </tr>
+    <tr>
+      <td>I1</td>
+      <td>RDA-I1-01M</td>
+      <td>Metadata uses knowledge representation expressed in standardised format</td>
+      <td>Important</td>
+      <td>For IG metadata and conformance artifacts: FHIR R4 resources, CRMI profiles, standard FHIR extensions, JSON, XML, and FHIR package metadata.</td>
+    </tr>
+    <tr>
+      <td>I1</td>
+      <td>RDA-I1-01D</td>
+      <td>Data uses knowledge representation expressed in standardised format</td>
+      <td>Important</td>
+      <td>For example/test data in this IG: published examples are FHIR R4 resources. For production data in implementations: conforming data is expected to follow the MII FHIR R4 profiles and terminology bindings.</td>
+    </tr>
+    <tr>
+      <td>I1</td>
+      <td>RDA-I1-02M</td>
+      <td>Metadata uses machine-understandable knowledge representation</td>
+      <td>Important</td>
+      <td>For IG metadata and conformance artifacts: computable FHIR resources, CRMI profiles, coded extensions, canonical <code class="language-plaintext highlighter-rouge">url</code> values, and manifest <code class="language-plaintext highlighter-rouge">Parameters</code>.</td>
+    </tr>
+    <tr>
+      <td>I1</td>
+      <td>RDA-I1-02D</td>
+      <td>Data uses machine-understandable knowledge representation</td>
+      <td>Important</td>
+      <td>For example/test data in this IG: examples demonstrate coded elements, references, identifiers, and declared profiles. For production data in implementations: machine-understandable representation depends on conforming resources, coded data, and consistent references.</td>
+    </tr>
+    <tr>
+      <td>I2</td>
+      <td>RDA-I2-01M</td>
+      <td>Metadata uses FAIR-compliant vocabularies</td>
+      <td>Important</td>
+      <td>For IG metadata and conformance artifacts: CRMI, FHIR terminology, NCI Thesaurus artifact topics, SPDX license code, and coded package/version metadata. The IG can identify and use these vocabularies, but their own persistence, versioning, licensing, and availability are governed by the vocabulary maintainers.</td>
+    </tr>
+    <tr>
+      <td>I2</td>
+      <td>RDA-I2-01D</td>
+      <td>Data uses FAIR-compliant vocabularies</td>
+      <td>Useful</td>
+      <td>For example/test data in this IG and production data in implementations: terminology bindings and examples use SNOMED CT, ICD-10-GM, OPS, Alpha-ID, Orphanet, and other code systems where applicable. Actual vocabulary use, versioning, and licensing depend on implementation context.</td>
+    </tr>
+    <tr>
+      <td>I3</td>
+      <td>RDA-I3-01M</td>
+      <td>Metadata includes references to other metadata</td>
+      <td>Important</td>
+      <td>For IG metadata and conformance artifacts: IG dependencies, <code class="language-plaintext highlighter-rouge">package-source</code>, manifest <code class="language-plaintext highlighter-rouge">Parameters</code>, <code class="language-plaintext highlighter-rouge">artifact-relatedArtifact</code>, canonical references, and <code class="language-plaintext highlighter-rouge">meta.profile</code> declarations.</td>
+    </tr>
+    <tr>
+      <td>I3</td>
+      <td>RDA-I3-01D</td>
+      <td>Data includes references to other data</td>
+      <td>Useful</td>
+      <td>For example/test data in this IG: examples demonstrate FHIR <code class="language-plaintext highlighter-rouge">Reference</code> elements between resources. For production data in implementations: profiles define expected reference patterns, but actual data linkage depends on implementation.</td>
+    </tr>
+    <tr>
+      <td>I3</td>
+      <td>RDA-I3-02M</td>
+      <td>Metadata includes references to other data</td>
+      <td>Useful</td>
+      <td>For IG metadata: primarily references specification artifacts rather than production data. For example/test data in this IG: the example transaction <code class="language-plaintext highlighter-rouge">Bundle</code> groups resources using <code class="language-plaintext highlighter-rouge">Bundle.entry.fullUrl</code>, but is not asserted as a separate persistent dataset metadata object.</td>
+    </tr>
+    <tr>
+      <td>I3</td>
+      <td>RDA-I3-02D</td>
+      <td>Data includes qualified references to other data</td>
+      <td>Useful</td>
+      <td>For example/test data in this IG: typed FHIR elements demonstrate qualified references. For production data in implementations: profiles constrain references and implementations must populate them consistently.</td>
+    </tr>
+    <tr>
+      <td>I3</td>
+      <td>RDA-I3-03M</td>
+      <td>Metadata includes qualified references to other metadata</td>
+      <td>Important</td>
+      <td>For IG metadata and conformance artifacts: <code class="language-plaintext highlighter-rouge">artifact-relatedArtifact</code>, IG dependencies, canonical profile references, <code class="language-plaintext highlighter-rouge">package-source</code>, and manifest parameters provide qualified metadata links.</td>
+    </tr>
+    <tr>
+      <td>I3</td>
+      <td>RDA-I3-04M</td>
+      <td>Metadata includes qualified references to other data</td>
+      <td>Useful</td>
+      <td>Partially addressed through example <code class="language-plaintext highlighter-rouge">Bundle</code> resources, <code class="language-plaintext highlighter-rouge">CapabilityStatement</code> resources, and profile-defined references. Production data references and any separate dataset metadata resource are implementation-specific.</td>
+    </tr>
+    <tr>
+      <td>R1</td>
+      <td>RDA-R1-01M</td>
+      <td>Plurality of accurate and relevant attributes are provided to allow reuse</td>
+      <td>Essential</td>
+      <td>For IG metadata and conformance artifacts: CRMI profiles, <code class="language-plaintext highlighter-rouge">purpose</code>, <code class="language-plaintext highlighter-rouge">artifact-usage</code>, <code class="language-plaintext highlighter-rouge">artifact-topic</code>, <code class="language-plaintext highlighter-rouge">resource-approvalDate</code>, <code class="language-plaintext highlighter-rouge">resource-effectivePeriod</code>, <code class="language-plaintext highlighter-rouge">artifact-versionPolicy</code>, <code class="language-plaintext highlighter-rouge">package-source</code>, contributors, and related artifacts. For production data: additional dataset-specific context may be required.</td>
+    </tr>
+    <tr>
+      <td>R1.1</td>
+      <td>RDA-R1.1-01M</td>
+      <td>Metadata includes information about the licence under which the data can be reused</td>
+      <td>Essential</td>
+      <td>For IG metadata and conformance artifacts: IG-level <code class="language-plaintext highlighter-rouge">license: CC-BY-4.0</code>, copyright notice, package metadata, and resource-specific copyright statements for terminology artifacts. For production clinical data: reuse licence and access conditions must be supplied by data providers.</td>
+    </tr>
+    <tr>
+      <td>R1.1</td>
+      <td>RDA-R1.1-02M</td>
+      <td>Metadata refers to a standard reuse licence</td>
+      <td>Important</td>
+      <td>For IG metadata and conformance artifacts: SPDX license code <code class="language-plaintext highlighter-rouge">CC-BY-4.0</code> in IG metadata. For production data: standard licence or data-use terms are implementation-specific.</td>
+    </tr>
+    <tr>
+      <td>R1.1</td>
+      <td>RDA-R1.1-03M</td>
+      <td>Metadata refers to a machine-understandable reuse licence</td>
+      <td>Important</td>
+      <td>For IG metadata and conformance artifacts: machine-readable IG <code class="language-plaintext highlighter-rouge">license</code> element and package metadata. For production data: machine-understandable licence metadata is implementation-specific.</td>
+    </tr>
+    <tr>
+      <td>R1.2</td>
+      <td>RDA-R1.2-01M</td>
+      <td>Metadata includes provenance information according to community-specific standards</td>
+      <td>Important</td>
+      <td>For IG metadata and conformance artifacts: contributor, reviewer, endorser, approval date, <code class="language-plaintext highlighter-rouge">artifact-relatedArtifact</code>, <code class="language-plaintext highlighter-rouge">package-source</code>, version, and MII governance metadata provide publication provenance. Full dataset or resource provenance would require FHIR <code class="language-plaintext highlighter-rouge">Provenance</code> or an equivalent implementation profile.</td>
+    </tr>
+    <tr>
+      <td>R1.2</td>
+      <td>RDA-R1.2-02M</td>
+      <td>Metadata includes provenance information according to a cross-community language</td>
+      <td>Useful</td>
+      <td>For IG metadata and conformance artifacts: FHIR and CRMI metadata structures provide cross-community computable publication metadata. For production data: FHIR <code class="language-plaintext highlighter-rouge">Provenance</code> is the stronger cross-community mechanism.</td>
+    </tr>
+    <tr>
+      <td>R1.3</td>
+      <td>RDA-R1.3-01M</td>
+      <td>Metadata complies with a community standard</td>
+      <td>Essential</td>
+      <td>For IG metadata and conformance artifacts: FHIR R4, CRMI profiles, MII publication conventions, and canonical resource metadata.</td>
+    </tr>
+    <tr>
+      <td>R1.3</td>
+      <td>RDA-R1.3-01D</td>
+      <td>Data complies with a community standard</td>
+      <td>Essential</td>
+      <td>For example/test data in this IG: examples declare MII profiles and demonstrate conformance expectations. For production data in implementations: compliance must be validated against the MII FHIR profiles, terminology bindings, and <code class="language-plaintext highlighter-rouge">CapabilityStatement</code> expectations.</td>
+    </tr>
+    <tr>
+      <td>R1.3</td>
+      <td>RDA-R1.3-02M</td>
+      <td>Metadata is expressed in compliance with a machine-understandable community standard</td>
+      <td>Essential</td>
+      <td>For IG metadata and conformance artifacts: CRMI-conformant FHIR metadata in JSON/XML and FHIR package form; the FHIR package format follows the NPM package convention used by the IG Publisher ecosystem.</td>
+    </tr>
+    <tr>
+      <td>R1.3</td>
+      <td>RDA-R1.3-02D</td>
+      <td>Data is expressed in compliance with a machine-understandable community standard</td>
+      <td>Important</td>
+      <td>For example/test data in this IG: FHIR R4 examples, declared profiles, terminology resources, and <code class="language-plaintext highlighter-rouge">CapabilityStatement</code> resources demonstrate the machine-understandable community standard. For production data in implementations: fulfillment depends on validation against the computable MII profiles and bindings.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="practical-use">Practical Use</h3>
+
+<p>Implementers can use the metadata in several ways:</p>
+
+<ul>
+  <li>Validate that an artifact belongs to the expected package and version.</li>
+  <li>Identify the governance state of an artifact through approval date, contributor, reviewer, and endorser metadata.</li>
+  <li>Understand intended usage through <code class="language-plaintext highlighter-rouge">purpose</code> and <code class="language-plaintext highlighter-rouge">artifact-usage</code>.</li>
+  <li>Discover artifacts by topic and resource category.</li>
+  <li>Reproduce terminology expansion and canonical pinning decisions using the <a href="Parameters-mii-param-base-manifest.html">Manifest Parameters</a> resource.</li>
+  <li>Integrate the package into tooling that consumes FHIR canonical resources.</li>
+</ul>
+
+<p>For most users, the human-readable artifact pages are the easiest entry point. For automated processing, the downloadable package and the JSON representations of the generated resources provide the complete computable metadata.</p>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script type="text/javascript" src="assets/js/flags.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <script type="text/javascript" src="assets/js/togglechanges.js"> </script>
+  <script type="text/javascript" src="assets/js/requirements-table.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container" data-fhir="generated">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+
+
+
+          IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
+          Package de.medizininformatikinitiative.kerndatensatz.base#2026.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Generated 
+  <span title="2026-07-22 07:42:00 +0000">
+    2026-07-22
+  </span>
+
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

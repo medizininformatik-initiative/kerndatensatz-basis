@@ -3,10 +3,11 @@
 <!DOCTYPE HTML>
 
 
+
 <html xml:lang="de" xmlns="http://www.w3.org/1999/xhtml" lang="de" dir="ltr">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>MII VS Fall Location Physical Type - MII Implementation Guide Core Dataset Base v2026.0.0</title>
+    <title>MII VS Fall Location Physical Type - MII Implementation Guide Core Dataset Base v2026.0.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -42,11 +43,13 @@
   </head>
   <body onload="document.body.style.opacity='1'">
 
-	  <script src="assets/js/prism.js"></script>
+	  <script type="text/javascript" src="assets/js/prism.js"></script>
+	  <script type="text/javascript" src="assets/js/prism-fhirpath.js"></script>
+	  <script type="text/javascript" src="assets/js/prism-cql.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"14.26"}
-    h3,h4,h5,h6{--heading-prefix:"14.26"}</style>
+    <style type="text/css">h2{--heading-prefix:"15.24"}
+    h3,h4,h5,h6{--heading-prefix:"15.24"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -67,7 +70,7 @@
         <div id="ig-status" data-fhir="generated">
           <p><span style="font-size:12pt;font-weight:bold">MII Implementierungsleitfaden Kerndatensatz Basis</span>
             <br/>
-            <span style="display:inline-block;">2026.0.0 - Release
+            <span style="display:inline-block;">2026.0.1 - Release
 
 
 
@@ -96,78 +99,76 @@
             </button>
             <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
             <div class="nav-collapse collapse navbar-inverse-collapse">
-              <!-- menu.xml  -->
-
-<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+              <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
   <li>
-    <a href="index.html">Home</a>
+    <a href="index.html">Start</a>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Guidance
+    <a data-toggle="dropdown" href="guidance.html" class="dropdown-toggle">Hinweise
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="guidance.html">Guidance</a>
+        <a href="guidance.html">Hinweise</a>
       </li>
       <li>
-        <a href="researcher-guidance.html">Guidance for Researchers</a>
+        <a href="researcher-guidance.html">Orientierungshilfe für Forschende</a>
       </li>
       <li>
-        <a href="implementer-guidance.html">Guidance for Implementers</a>
+        <a href="implementer-guidance.html">Anleitung für Implementierende</a>
       </li>
       <li>
-        <a href="datasets-and-descriptions.html">Datasets and Descriptions</a>
+        <a href="datasets-and-descriptions.html">Datensätze und Beschreibungen</a>
       </li>
       <li>
-        <a href="uml-diagrams.html">UML Diagrams</a>
+        <a href="uml-diagrams.html">UML-Diagramme</a>
       </li>
     </ul>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Conformance
+    <a data-toggle="dropdown" href="conformance.html" class="dropdown-toggle">Konformität
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="conformance.html">Conformance</a>
+        <a href="conformance.html">Konformität</a>
       </li>
       <li>
-        <a href="general-requirements.html">General Requirements</a>
+        <a href="general-requirements.html">Allgemeine Anforderungen</a>
       </li>
       <li>
         <a href="must-support.html">Must Support</a>
       </li>
       <li>
-        <a href="missing-data.html">Handling Missing Data</a>
+        <a href="missing-data.html">Umgang mit fehlenden Daten</a>
       </li>
     </ul>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Artifacts
+    <a data-toggle="dropdown" href="artifacts.html" class="dropdown-toggle">Artefakte
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="artifacts.html">Artifacts Summary</a>
+        <a href="artifacts.html">Artefaktübersicht</a>
       </li>
       <li>
-        <a href="profiles-and-extensions.html">Profiles and Extensions</a>
+        <a href="profiles-and-extensions.html">Profile und Extensions</a>
       </li>
       <li>
-        <a href="terminology.html">Terminology</a>
+        <a href="terminology.html">Terminologie</a>
       </li>
       <li>
         <a href="capability-statements.html">Capability Statements</a>
       </li>
       <li>
-        <a href="search-parameters-and-operations.html">Search Parameters and Operations</a>
+        <a href="search-parameters-and-operations.html">Suchparameter und Operationen</a>
       </li>
       <li>
-        <a href="logical-models.html">Logical Models</a>
+        <a href="logical-models.html">Logische Modelle</a>
       </li>
       <li>
-        <a href="examples.html">Examples</a>
+        <a href="examples.html">Beispiele</a>
       </li>
     </ul>
   </li>
@@ -175,19 +176,30 @@
     <a href="downloads.html">Downloads</a>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Versioning
+    <a data-toggle="dropdown" href="version-history.html" class="dropdown-toggle">Versionierung
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="version-history.html">Versioning</a>
+        <a href="version-history.html">Versionierung</a>
       </li>
       <li>
         <a href="changes.html">Changelog</a>
       </li>
     </ul>
   </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="metadata.html" class="dropdown-toggle">Metadaten
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="metadata.html">Metadatenübersicht</a>
+      </li>
+    </ul>
+  </li>
 </ul>
+
             </div>  <!-- /.nav-collapse -->
 
               
@@ -231,7 +243,7 @@
 
 <!-- layouts\layout-valueset -->
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MII Implementation Guide Core Dataset Base - Local Development build (v2026.0.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://www.medizininformatik-initiative.de/fhir/modul-base/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the MII Implementation Guide Core Dataset Base (v2026.0.1: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="https://medizininformatik-initiative.github.io/kerndatensatz-basis/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -279,8 +291,14 @@
       <td colspan="4"><i>Offizielle URL</i>: <span class="copy-text">https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/location-physical-type<button title="Klicken zum Kopieren der URL" class="btn-copy" data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/location-physical-type"/></span>
       </td>
       <td><i>Version</i>:
-
-      <span class="copy-text">2026.0.0<button title="Klicken zum Kopieren der versionierten URL" class="btn-copy" data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/location-physical-type|2026.0.0"/></span>
+      <span class="copy-text">2026.0.1<button title="Klicken zum Kopieren der versionierten URL" class="btn-copy" data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/location-physical-type|2026.0.1"/></span>
+      </td>
+      <td style="text-align: right;border-left-style: hidden" title="Enable this to see changes since the last official release">
+        <span id="toggle-change-display"><label style="margin:0;font-weight:normal" for="showChanges">Highlight text changes?</label>
+  
+        <input style="margin:0" type="checkbox" id="showChanges" onchange="toggleChanges()"/>
+  
+      </span>
       </td>
     </tr>
 
@@ -292,7 +310,15 @@
 
 
 
-      <td colspan="4">
+      <td colspan="5">
+        
+          Active
+          
+
+            Stand: 
+2026-06-09
+
+          
         
       </td>
 
@@ -308,6 +334,11 @@
 
 <p>
 <p>A coded type for the physical type of the location.</p>
+
+</p>
+
+<p>
+
 
 </p>
 
@@ -331,14 +362,14 @@
 <!-- Content Logical Definition heading in the fragment -->
   <h3>Logical Definition (CLD)</h3>
 <div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated"><p class="res-header-id"></p><a name="mii-vs-fall-location-physical-type"> </a><a name="hcmii-vs-fall-location-physical-type"> </a>
-<div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"></p><p style="margin-bottom: 0px">Profile: <a href="http://hl7.org/fhir/R4/shareablevalueset.html">Shareable ValueSet</a></p></div>
-<ul><li>Include these codes as defined in <a href="http://terminology.hl7.org/7.0.1/CodeSystem-location-physical-type.html"><code>http://terminology.hl7.org/CodeSystem/location-physical-type</code></a><span title="Version is not explicitly stated, which means it is fixed to 2.0.1, the version found through the package references"> version &#x1F4E6;2.0.1</span><table class="none" data-fhir="generated"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href="http://terminology.hl7.org/7.0.1/CodeSystem-location-physical-type.html#location-physical-type-bd">bd</a></td><td>Bed</td><td>A space that is allocated for sleeping/laying on. This is not the physical bed/trolley that may be moved about, but the space it may occupy.</td></tr><tr><td><a href="http://terminology.hl7.org/7.0.1/CodeSystem-location-physical-type.html#location-physical-type-ro">ro</a></td><td>Room</td><td>A space that is allocated as a room, it may have walls/roof etc., but does not require these.</td></tr><tr><td><a href="http://terminology.hl7.org/7.0.1/CodeSystem-location-physical-type.html#location-physical-type-wa">wa</a></td><td>Ward</td><td>A Ward is a section of a medical facility that may contain rooms and other types of location.</td></tr></table></li></ul></div>
+<div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"></p><p style="margin-bottom: 0px">Profiles: <a href="http://hl7.org/fhir/uv/crmi/STU2/StructureDefinition-shareablevalueset.html">Shareable ValueSet</a>, <a href="http://hl7.org/fhir/uv/crmi/STU2/StructureDefinition-crmi-shareablevalueset.html">CRMI Shareable ValueSet</a>, <a href="http://hl7.org/fhir/uv/crmi/STU2/StructureDefinition-crmi-publishablevalueset.html">CRMI Publishable ValueSet</a></p></div>
+<ul><li>Include these codes as defined in <a href="http://terminology.hl7.org/7.2.0/CodeSystem-location-physical-type.html"><code>http://terminology.hl7.org/CodeSystem/location-physical-type</code></a><span title="Version is not explicitly stated, which means it is fixed to 2.0.1, the version found through the package references"> version &#x1F4E6;2.0.1</span><table class="none" data-fhir="generated"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href="http://terminology.hl7.org/7.2.0/CodeSystem-location-physical-type.html#location-physical-type-bd">bd</a></td><td>Bed</td><td>A space that is allocated for sleeping/laying on. This is not the physical bed/trolley that may be moved about, but the space it may occupy.</td></tr><tr><td><a href="http://terminology.hl7.org/7.2.0/CodeSystem-location-physical-type.html#location-physical-type-ro">ro</a></td><td>Room</td><td>A space that is allocated as a room, it may have walls/roof etc., but does not require these.</td></tr><tr><td><a href="http://terminology.hl7.org/7.2.0/CodeSystem-location-physical-type.html#location-physical-type-wa">wa</a></td><td>Ward</td><td>A Ward is a section of a medical facility that may contain rooms and other types of location.</td></tr></table></li></ul></div>
 
   <p>&#160;</p>
   <a name="expansion"> </a>
   <h3 id="expansion">Expansion</h3>
 
-  <div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated"><p class="res-header-id"/><p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion performed internally based on <a href="http://terminology.hl7.org/7.0.1/CodeSystem-location-physical-type.html">codesystem Location type v2.0.1 (CodeSystem)</a><span class="copy-text-inline"><button data-clipboard-text="http://terminology.hl7.org/CodeSystem/location-physical-type|2.0.1" title="Click to Copy URL" class="btn-copy"> </button></span></p><p>This value set contains 3 concepts</p><table class="codes" data-fhir="generated"><tr><td><b>System</b></td><td style="white-space:nowrap"><b>Code</b></td><td><b>Display (de)</b></td><td><b>Definition</b></td><td><b>JSON</b></td><td><b>XML</b></td></tr><tr><td><a name="x-http://terminology.hl7.org/CodeSystem/location-physical-type-bd"> </a><code>http://terminology.hl7.org/CodeSystem/location-physical-type</code></td><td style="white-space:nowrap">  <a href="http://terminology.hl7.org/7.0.1/CodeSystem-location-physical-type.html#location-physical-type-bd">bd</a></td><td/><td>A space that is allocated for sleeping/laying on. This is not the physical bed/trolley that may be moved about, but the space it may occupy.</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/location-physical-type&quot;, &quot;version&quot;: &quot;2.0.1&quot;, &quot;code&quot;: &quot;bd&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://terminology.hl7.org/CodeSystem/location-physical-type&quot;&gt;&lt;version value=&quot;2.0.1&quot;&gt;&lt;code value=&quot;bd&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://terminology.hl7.org/CodeSystem/location-physical-type-ro"> </a><code>http://terminology.hl7.org/CodeSystem/location-physical-type</code></td><td style="white-space:nowrap">  <a href="http://terminology.hl7.org/7.0.1/CodeSystem-location-physical-type.html#location-physical-type-ro">ro</a></td><td/><td>A space that is allocated as a room, it may have walls/roof etc., but does not require these.</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/location-physical-type&quot;, &quot;version&quot;: &quot;2.0.1&quot;, &quot;code&quot;: &quot;ro&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://terminology.hl7.org/CodeSystem/location-physical-type&quot;&gt;&lt;version value=&quot;2.0.1&quot;&gt;&lt;code value=&quot;ro&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://terminology.hl7.org/CodeSystem/location-physical-type-wa"> </a><code>http://terminology.hl7.org/CodeSystem/location-physical-type</code></td><td style="white-space:nowrap">  <a href="http://terminology.hl7.org/7.0.1/CodeSystem-location-physical-type.html#location-physical-type-wa">wa</a></td><td/><td>A Ward is a section of a medical facility that may contain rooms and other types of location.</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/location-physical-type&quot;, &quot;version&quot;: &quot;2.0.1&quot;, &quot;code&quot;: &quot;wa&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://terminology.hl7.org/CodeSystem/location-physical-type&quot;&gt;&lt;version value=&quot;2.0.1&quot;&gt;&lt;code value=&quot;wa&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr></table></div>
+  <div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated"><p class="res-header-id"/><p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion performed internally based on <a href="http://terminology.hl7.org/7.2.0/CodeSystem-location-physical-type.html">codesystem Location type v2.0.1 (CodeSystem)</a><span class="copy-text-inline"><button data-clipboard-text="http://terminology.hl7.org/CodeSystem/location-physical-type|2.0.1" title="Click to Copy URL" class="btn-copy"> </button></span></p><p>This value set contains 3 concepts</p><table class="codes" data-fhir="generated"><tr><td><b>System</b></td><td style="white-space:nowrap"><b>Code</b></td><td><b>Display (de)</b></td><td><b>Definition</b></td><td><b>JSON</b></td><td><b>XML</b></td></tr><tr><td><a name="x-http://terminology.hl7.org/CodeSystem/location-physical-type-bd"> </a><code>http://terminology.hl7.org/CodeSystem/location-physical-type</code></td><td style="white-space:nowrap">  <a href="http://terminology.hl7.org/7.2.0/CodeSystem-location-physical-type.html#location-physical-type-bd">bd</a></td><td/><td>A space that is allocated for sleeping/laying on. This is not the physical bed/trolley that may be moved about, but the space it may occupy.</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/location-physical-type&quot;, &quot;version&quot;: &quot;2.0.1&quot;, &quot;code&quot;: &quot;bd&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://terminology.hl7.org/CodeSystem/location-physical-type&quot;&gt;&lt;version value=&quot;2.0.1&quot;&gt;&lt;code value=&quot;bd&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://terminology.hl7.org/CodeSystem/location-physical-type-ro"> </a><code>http://terminology.hl7.org/CodeSystem/location-physical-type</code></td><td style="white-space:nowrap">  <a href="http://terminology.hl7.org/7.2.0/CodeSystem-location-physical-type.html#location-physical-type-ro">ro</a></td><td/><td>A space that is allocated as a room, it may have walls/roof etc., but does not require these.</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/location-physical-type&quot;, &quot;version&quot;: &quot;2.0.1&quot;, &quot;code&quot;: &quot;ro&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://terminology.hl7.org/CodeSystem/location-physical-type&quot;&gt;&lt;version value=&quot;2.0.1&quot;&gt;&lt;code value=&quot;ro&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://terminology.hl7.org/CodeSystem/location-physical-type-wa"> </a><code>http://terminology.hl7.org/CodeSystem/location-physical-type</code></td><td style="white-space:nowrap">  <a href="http://terminology.hl7.org/7.2.0/CodeSystem-location-physical-type.html#location-physical-type-wa">wa</a></td><td/><td>A Ward is a section of a medical facility that may contain rooms and other types of location.</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/location-physical-type&quot;, &quot;version&quot;: &quot;2.0.1&quot;, &quot;code&quot;: &quot;wa&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://terminology.hl7.org/CodeSystem/location-physical-type&quot;&gt;&lt;version value=&quot;2.0.1&quot;&gt;&lt;code value=&quot;wa&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr></table></div>
 
   <hr/>
   <p>
@@ -365,7 +396,8 @@
   <script type="text/javascript" src="assets/js/flags.js"> </script>
 
   <script type="text/javascript" src="assets/js/window-hash.js"> </script>
-
+  <script type="text/javascript" src="assets/js/togglechanges.js"> </script>
+  <script type="text/javascript" src="assets/js/requirements-table.js"> </script>
   <a name="bottom"> </a>
   <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
     <div class="container" data-fhir="generated">  <!-- container -->
@@ -376,10 +408,10 @@
 
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
-          Package de.medizininformatikinitiative.kerndatensatz.base#2026.0.0 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Package de.medizininformatikinitiative.kerndatensatz.base#2026.0.1 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Erstellt 
-  <span title="2025-12-13 18:24:00 +0000">
-    2025-12-13
+  <span title="2026-07-22 07:51:00 +0000">
+    2026-07-22
   </span>
 
           <br/>

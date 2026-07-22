@@ -3,7 +3,7 @@
 <html xml:lang="de" xmlns="http://www.w3.org/1999/xhtml" lang="de" dir="ltr">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>MII CS Fall Supplement ActEncounterCode - JSON Representation - MII Implementation Guide Core Dataset Base v2026.0.0</title>
+    <title>MII CS Fall Supplement ActEncounterCode - JSON Representation - MII Implementation Guide Core Dataset Base v2026.0.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -39,11 +39,13 @@
   </head>
   <body onload="document.body.style.opacity='1'">
 
-	  <script src="assets/js/prism.js"></script>
+	  <script src="assets/js/prism.js" type="text/javascript"></script>
+	  <script src="assets/js/prism-fhirpath.js" type="text/javascript"></script>
+	  <script src="assets/js/prism-cql.js" type="text/javascript"></script>
     <script src="assets/js/mermaid.js" type="text/javascript"></script>
     <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
-    <style type="text/css">h2{--heading-prefix:"14.34"}
-    h3,h4,h5,h6{--heading-prefix:"14.34"}</style>
+    <style type="text/css">h2{--heading-prefix:"15.32"}
+    h3,h4,h5,h6{--heading-prefix:"15.32"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
 
@@ -64,7 +66,7 @@
         <div id="ig-status" data-fhir="generated">
           <p><span style="font-size:12pt;font-weight:bold">MII Implementierungsleitfaden Kerndatensatz Basis</span>
             <br/>
-            <span style="display:inline-block;">2026.0.0 - Release
+            <span style="display:inline-block;">2026.0.1 - Release
 
 
 
@@ -93,78 +95,76 @@
             </button>
             <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR</a>
             <div class="nav-collapse collapse navbar-inverse-collapse">
-                <!-- menu.xml -->
-
-<ul class="nav navbar-nav">
+              <ul class="nav navbar-nav">
   <li>
-    <a href="index.html">Home</a>
+    <a href="index.html">Start</a>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Guidance
+    <a data-toggle="dropdown" href="guidance.html" class="dropdown-toggle">Hinweise
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="guidance.html">Guidance</a>
+        <a href="guidance.html">Hinweise</a>
       </li>
       <li>
-        <a href="researcher-guidance.html">Guidance for Researchers</a>
+        <a href="researcher-guidance.html">Orientierungshilfe für Forschende</a>
       </li>
       <li>
-        <a href="implementer-guidance.html">Guidance for Implementers</a>
+        <a href="implementer-guidance.html">Anleitung für Implementierende</a>
       </li>
       <li>
-        <a href="datasets-and-descriptions.html">Datasets and Descriptions</a>
+        <a href="datasets-and-descriptions.html">Datensätze und Beschreibungen</a>
       </li>
       <li>
-        <a href="uml-diagrams.html">UML Diagrams</a>
+        <a href="uml-diagrams.html">UML-Diagramme</a>
       </li>
     </ul>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Conformance
+    <a data-toggle="dropdown" href="conformance.html" class="dropdown-toggle">Konformität
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="conformance.html">Conformance</a>
+        <a href="conformance.html">Konformität</a>
       </li>
       <li>
-        <a href="general-requirements.html">General Requirements</a>
+        <a href="general-requirements.html">Allgemeine Anforderungen</a>
       </li>
       <li>
         <a href="must-support.html">Must Support</a>
       </li>
       <li>
-        <a href="missing-data.html">Handling Missing Data</a>
+        <a href="missing-data.html">Umgang mit fehlenden Daten</a>
       </li>
     </ul>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Artifacts
+    <a data-toggle="dropdown" href="artifacts.html" class="dropdown-toggle">Artefakte
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="artifacts.html">Artifacts Summary</a>
+        <a href="artifacts.html">Artefaktübersicht</a>
       </li>
       <li>
-        <a href="profiles-and-extensions.html">Profiles and Extensions</a>
+        <a href="profiles-and-extensions.html">Profile und Extensions</a>
       </li>
       <li>
-        <a href="terminology.html">Terminology</a>
+        <a href="terminology.html">Terminologie</a>
       </li>
       <li>
         <a href="capability-statements.html">Capability Statements</a>
       </li>
       <li>
-        <a href="search-parameters-and-operations.html">Search Parameters and Operations</a>
+        <a href="search-parameters-and-operations.html">Suchparameter und Operationen</a>
       </li>
       <li>
-        <a href="logical-models.html">Logical Models</a>
+        <a href="logical-models.html">Logische Modelle</a>
       </li>
       <li>
-        <a href="examples.html">Examples</a>
+        <a href="examples.html">Beispiele</a>
       </li>
     </ul>
   </li>
@@ -172,19 +172,30 @@
     <a href="downloads.html">Downloads</a>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Versioning
+    <a data-toggle="dropdown" href="version-history.html" class="dropdown-toggle">Versionierung
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="version-history.html">Versioning</a>
+        <a href="version-history.html">Versionierung</a>
       </li>
       <li>
         <a href="changes.html">Changelog</a>
       </li>
     </ul>
   </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="metadata.html" class="dropdown-toggle">Metadaten
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="metadata.html">Metadatenübersicht</a>
+      </li>
+    </ul>
+  </li>
 </ul>
+
             </div>    <!-- /.nav-collapse -->
 
               
@@ -228,7 +239,7 @@
 
   <!-- layouts\layout-instance-format -->
 <div style="counter-reset: section 8" class="col-12">
-  <!-- ReleaseHeader --><p id="publish-box">MII Implementation Guide Core Dataset Base - Local Development build (v2026.0.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="https://www.medizininformatik-initiative.de/fhir/modul-base/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+  <!-- ReleaseHeader --><p id="publish-box">This page is part of the MII Implementation Guide Core Dataset Base (v2026.0.1: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="https://www.medizininformatik-initiative.de/fhir/modul-base/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
 
 
 
@@ -282,7 +293,7 @@
           
 
             Stand: 
-2025-12-13
+2026-07-17
 
           
         
@@ -303,35 +314,156 @@
   "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem">resourceType</a>" : "CodeSystem",
   "<a href="http://hl7.org/fhir/R4/resource.html#CodeSystem.id">id</a>" : "mii-cs-fall-supplement-act-encounter-code",
   "<a href="http://hl7.org/fhir/R4/resource.html#CodeSystem.meta">meta</a>" : {
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Meta.extension">extension</a>" : [
+      {
+        "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-license",
+        "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueCode</a>" : "CC-BY-4.0"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "packageId",
+            "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueId</a>" : "de.medizininformatikinitiative.kerndatensatz.base"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "version",
+            "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "2026.0.1"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "uri",
+            "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>" : "https://www.medizininformatik-initiative.de/fhir/modul-base"
+          }
+        ],
+        "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/package-source"
+      }
+    ],
     "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
-      <a style="color: Maroon" href="http://hl7.org/fhir/R4/shareablecodesystem.html">&#x1F517;</a> "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
+      <a style="color: Maroon" href="http://hl7.org/fhir/uv/crmi/STU2/StructureDefinition-crmi-publishablecodesystem.html">&#x1F517;</a> "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecodesystem"
     ]
   },
   "<a href="http://hl7.org/fhir/R4/resource.html#CodeSystem.language">language</a>" : "de",
   "<a href="http://hl7.org/fhir/R4/domainresource.html#CodeSystem.text">text</a>" : {
     "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
-    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xml:lang=\"de\" lang=\"de\"&gt;&lt;hr/&gt;&lt;p&gt;&lt;b&gt;German&lt;/b&gt;&lt;/p&gt;&lt;hr/&gt;&lt;p class=\"res-header-id\"&gt;&lt;b&gt;Generated Narrative: CodeSystem mii-cs-fall-supplement-act-encounter-code&lt;/b&gt;&lt;/p&gt;&lt;a name=\"de-mii-cs-fall-supplement-act-encounter-code\"&gt; &lt;/a&gt;&lt;a name=\"de-hcmii-cs-fall-supplement-act-encounter-code\"&gt; &lt;/a&gt;&lt;div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"&gt;&lt;p style=\"margin-bottom: 0px\"/&gt;&lt;p style=\"margin-bottom: 0px\"&gt;Profile: &lt;a href=\"http://hl7.org/fhir/R4/shareablecodesystem.html\"&gt;Shareable CodeSystem&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;This code system supplement &lt;code&gt;https://www.medizininformatik-initiative.de/fhir/core/modul-fall/CodeSystem/SupplementActEncounterCode&lt;/code&gt; defines displays on the following codes:&lt;/p&gt;&lt;table class=\"codes\"&gt;&lt;tr&gt;&lt;td style=\"white-space:nowrap\"&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Display&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Definition&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Deutsch (Deutschland) (German (Germany), de)&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a style=\"white-space:nowrap\" href=\"http://terminology.hl7.org/7.0.1/CodeSystem-v3-ActCode.html#v3-ActCode-AMB\"&gt;AMB&lt;/a&gt;&lt;a name=\"de-mii-cs-fall-supplement-act-encounter-code-AMB\"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;ambulatory&lt;/td&gt;&lt;td&gt;Umfasst ambulante Operationen nach <span class="fhir-conformance"> 115b SGB V und eine ambulante spezialfachärztliche Versorgung nach </span><span class="fhir-conformance"> 115b SGB V und eine ambulante spezialfachärztliche Versorgung nach </span><a href="http://hl7.org/fhir/R4/domainresource.html#CodeSystem.extension">extension</a>" : [
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xml:lang=\"de\" lang=\"de\"&gt;&lt;hr/&gt;&lt;p&gt;&lt;b&gt;German&lt;/b&gt;&lt;/p&gt;&lt;hr/&gt;&lt;p class=\"res-header-id\"&gt;&lt;b&gt;Generated Narrative: CodeSystem mii-cs-fall-supplement-act-encounter-code&lt;/b&gt;&lt;/p&gt;&lt;a name=\"de-mii-cs-fall-supplement-act-encounter-code\"&gt; &lt;/a&gt;&lt;a name=\"de-hcmii-cs-fall-supplement-act-encounter-code\"&gt; &lt;/a&gt;&lt;div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"&gt;&lt;p style=\"margin-bottom: 0px\"/&gt;&lt;p style=\"margin-bottom: 0px\"&gt;Profile: &lt;a href=\"http://hl7.org/fhir/uv/crmi/STU2/StructureDefinition-crmi-publishablecodesystem.html\"&gt;CRMI Publishable CodeSystem&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;This code system supplement &lt;code&gt;https://www.medizininformatik-initiative.de/fhir/core/modul-fall/CodeSystem/SupplementActEncounterCode&lt;/code&gt; defines displays on the following codes:&lt;/p&gt;&lt;table class=\"codes\"&gt;&lt;tr&gt;&lt;td style=\"white-space:nowrap\"&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Display&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Definition&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Deutsch (Deutschland) (German (Germany), de)&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a style=\"white-space:nowrap\" href=\"http://terminology.hl7.org/7.2.0/CodeSystem-v3-ActCode.html#v3-ActCode-AMB\"&gt;AMB&lt;/a&gt;&lt;a name=\"de-mii-cs-fall-supplement-act-encounter-code-AMB\"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;ambulatory&lt;/td&gt;&lt;td&gt;Umfasst ambulante Operationen nach <span class="fhir-conformance"> 115b SGB V und eine ambulante spezialfachärztliche Versorgung nach </span><span class="fhir-conformance"> 115b SGB V und eine ambulante spezialfachärztliche Versorgung nach </span><a href="http://hl7.org/fhir/R4/domainresource.html#CodeSystem.extension">extension</a>" : [
     {
-      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/StructureDefinition/mii-ex-meta-license-codeable",
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm",
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueCoding</a>" : {
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://hl7.org/fhir/version-algorithm",
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "semver",
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "SemVer"
+      }
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability",
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueCode</a>" : "publishable"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/artifact-versionPolicy",
       "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueCodeableConcept</a>" : {
         "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
           {
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://hl7.org/fhir/spdx-license",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "CC-BY-4.0",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Creative Commons Attribution 4.0 International"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://terminology.hl7.org/CodeSystem/artifact-version-policy-codes",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "package",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Package"
+          }
+        ]
+      }
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/resource-approvalDate",
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueDate</a>" : "2024-03-07"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod",
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valuePeriod</a>" : {
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a>" : "2026"
+      }
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/artifact-author",
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueContactDetail</a>" : {
+        "<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">telecom</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">system</a>" : "email",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">value</a>" : "julian.sass@charite.de"
+          }
+        ]
+      }
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/artifact-editor",
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueContactDetail</a>" : {
+        "<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.name">name</a>" : "Taskforce Core Data Set"
+      }
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/artifact-reviewer",
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueContactDetail</a>" : {
+        "<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.name">name</a>" : "Interoperability Working Group",
+        "<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">telecom</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">system</a>" : "url",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">value</a>" : "https://www.medizininformatik-initiative.de/en/collaboration/interoperability-working-group"
+          }
+        ]
+      }
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/artifact-reviewer",
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueContactDetail</a>" : {
+        "<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.name">name</a>" : "National Steering Committee",
+        "<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">telecom</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">system</a>" : "url",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">value</a>" : "https://www.medizininformatik-initiative.de/en/collaboration/national-steering-committee"
+          }
+        ]
+      }
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/artifact-endorser",
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueContactDetail</a>" : {
+        "<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.name">name</a>" : "Interoperability Working Group",
+        "<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">telecom</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">system</a>" : "url",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">value</a>" : "https://www.medizininformatik-initiative.de/en/collaboration/interoperability-working-group"
+          }
+        ]
+      }
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/artifact-endorser",
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueContactDetail</a>" : {
+        "<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.name">name</a>" : "National Steering Committee",
+        "<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">telecom</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">system</a>" : "url",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">value</a>" : "https://www.medizininformatik-initiative.de/en/collaboration/national-steering-committee"
+          }
+        ]
+      }
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/artifact-topic",
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueCodeableConcept</a>" : {
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "C154624"
           }
         ]
       }
     }
   ],
   "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.url">url</a>" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/CodeSystem/SupplementActEncounterCode",
-  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.version">version</a>" : "2026.0.0",
+  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.version">version</a>" : "2026.0.1",
   "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.name">name</a>" : "MII_CS_Fall_SupplementActEncounterCode",
   "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.title">title</a>" : "MII CS Fall Supplement ActEncounterCode",
   "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.status">status</a>" : "active",
   "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.experimental">experimental</a>" : false,
-  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.date">date</a>" : "2025-12-13T18:24:37+00:00",
-  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.publisher">publisher</a>" : "Medizininformatik-Initiative (MII)",
+  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.date">date</a>" : "2026-07-17",
+  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.publisher">publisher</a>" : "Medical Informatics Initiative (MII)",
   "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.contact">contact</a>" : [
     {
       "<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.name">name</a>" : "Medical Informatics Initiative (MII)",
@@ -355,6 +487,7 @@
       ]
     }
   ],
+  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.purpose">purpose</a>" : "Provide German language designations for ActEncounterCode codes used in the MII Treatment Case module.",
   "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.content">content</a>" : "supplement",
   "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.supplements">supplements</a>" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
   "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>" : [
@@ -408,7 +541,8 @@
   <script src="assets/js/flags.js" type="text/javascript"> </script>
 
   <script src="assets/js/window-hash.js" type="text/javascript"> </script>
-
+  <script src="assets/js/togglechanges.js" type="text/javascript"> </script>
+  <script src="assets/js/requirements-table.js" type="text/javascript"> </script>
   <a name="bottom"> </a>
   <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
     <div class="container" data-fhir="generated">    <!-- container -->
@@ -419,10 +553,10 @@
 
 
           IG &copy; 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
-          Package de.medizininformatikinitiative.kerndatensatz.base#2026.0.0 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Package de.medizininformatikinitiative.kerndatensatz.base#2026.0.1 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Erstellt 
-  <span title="2025-12-13 18:24:00 +0000">
-    2025-12-13
+  <span title="2026-07-22 07:51:00 +0000">
+    2026-07-22
   </span>
 
           <br/>

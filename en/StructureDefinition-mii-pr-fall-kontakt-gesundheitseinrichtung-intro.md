@@ -239,7 +239,7 @@ The `Encounter.diagnosis` element establishes the relationship between encounter
 <div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
 <h5 style="color: #406A99; margin-top: 0;">Best Practice - Diagnosis-Encounter Relationships</h5>
 
-<p>The reference from <code>Encounter.diagnosis</code> to <code>Condition</code> should be used when the Condition has a specific role during the Encounter (e.g., primary diagnosis, secondary diagnosis).</p>
+<p>The reference from <code>Encounter.diagnosis</code> to <code>Condition</code> <strong>SHOULD</strong> be used when the Condition has a specific role during the Encounter (e.g., primary diagnosis, secondary diagnosis).</p>
 
 <p><strong>Recommended Implementation:</strong></p>
 <p>Use <code>Condition.encounter</code> to reference from the Condition to the Encounter of type <strong>Abteilungskontakt (Department Contact)</strong>. This approach establishes the general encounter context for the diagnosis, while <code>Encounter.diagnosis</code> can be used to specify particular diagnosis roles when needed.</p>
@@ -252,7 +252,7 @@ The `Encounter.diagnosis` element establishes the relationship between encounter
 
 <p><strong>Example:</strong> If a Condition serves as both a Diagnosetyp and a Diagnosesubtyp (or additional roles such as CC/CM), create separate <code>Encounter.diagnosis</code> references for each role, all pointing to the same Condition resource. A single Condition can be referenced multiple times with different <code>use</code> values.</p>
 
-<p><strong>Note on CC/CM Classification:</strong> If you want to classify a diagnosis as CC (Complication or Comorbidity) or CM (Comorbidity), this is typically billing-related information and should be placed in the Account resource rather than in <code>Encounter.diagnosis</code>. The Account resource is the appropriate location for billing case context and DRG-relevant classifications.</p>
+<p><strong>Note on CC/CM Classification:</strong> If you want to classify a diagnosis as CC (Complication or Comorbidity) or CM (Comorbidity), this is typically billing-related information and <strong>SHOULD</strong> be placed in the Account resource rather than in <code>Encounter.diagnosis</code>. The Account resource is the appropriate location for billing case context and DRG-relevant classifications.</p>
 </div>
 
 #### Encounter Location
@@ -260,6 +260,20 @@ The `Encounter.diagnosis` element establishes the relationship between encounter
 - Location details (room, bed, ward) can be specified using `Encounter.location`.
 - The physical type **SHOULD** use the MII-specific ValueSet for location physical types.
 - Location details are primarily relevant for Versorgungsstellenkontakt (care unit contacts).
+
+**Location Slicing**
+
+`Encounter.location` uses an **unordered, open** slicing discriminated by `physicalType` and `status`. The profile defines three named slices:
+
+| Slice | physicalType | status | Cardinality |
+|---|---|---|---|
+| `Zimmer` (Room) | `ro` | `active` | 0..1 |
+| `Bett` (Bed) | `bd` | `active` | 0..1 |
+| `Station` (Ward) | `wa` | `active` | 0..1 |
+
+Each slice constrains `status = active` with cardinality 0..1. A conformant implementation SHALL NOT populate more than one active room, one active bed, or one active ward simultaneously within a single encounter.
+
+Because the slicing is **open**, implementations MAY include additional `Encounter.location` entries beyond these three named slices. To record movement history during an encounter (e.g., previous wards, rooms, or beds the patient passed through), implementations SHOULD use `status = completed` for those entries. This keeps the historical record separate from the active-location slices without conflicting with them.
 
 #### Planned Encounters
 
@@ -314,6 +328,11 @@ Previously, it was recommended that the Aufnahmenummer (admission number) should
   <li>Individual users lack viewing permissions for billing data</li>
   <li>Users in the care context need to search for Encounters using the associated Fallnummer</li>
 </ul>
+
+<p>Servers <strong>SHOULD</strong> support the <code>account:identifier</code> search modifier to allow clients to retrieve all Encounters belonging to a billing case by Fallnummer. This modifier enables token-based searching on the logical reference stored in <code>Encounter.account.identifier</code>, without requiring the Account resource itself to be present or accessible.</p>
+
+<p><strong>Example query</strong> to retrieve all Encounters associated with a specific Fallnummer:</p>
+<pre><code>GET [base]/Encounter?account:identifier=https://www.charite.de/fhir/sid/fallnummer|F-2020-000123</code></pre>
 </div>
 
 {% include link-list.md %}

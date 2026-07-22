@@ -2,10 +2,11 @@
 <!DOCTYPE HTML>
 
 
+
 <html xml:lang="de" xmlns="http://www.w3.org/1999/xhtml" lang="de" dir="ltr">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Downloads - MII Implementation Guide Core Dataset Base v2026.0.0</title>
+    <title>Downloads - MII Implementation Guide Core Dataset Base v2026.0.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -41,7 +42,9 @@
   </head>
   <body onload="document.body.style.opacity='1'">
 
-	  <script src="assets/js/prism.js"></script>
+	  <script type="text/javascript" src="assets/js/prism.js"></script>
+	  <script type="text/javascript" src="assets/js/prism-fhirpath.js"></script>
+	  <script type="text/javascript" src="assets/js/prism-cql.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
     <style type="text/css">h2{--heading-prefix:"10"}
@@ -66,7 +69,7 @@
         <div id="ig-status" data-fhir="generated">
           <p><span style="font-size:12pt;font-weight:bold">MII Implementierungsleitfaden Kerndatensatz Basis</span>
             <br/>
-            <span style="display:inline-block;">2026.0.0 - Release
+            <span style="display:inline-block;">2026.0.1 - Release
 
 
 
@@ -95,78 +98,76 @@
             </button>
             <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
             <div class="nav-collapse collapse navbar-inverse-collapse">
-              <!-- menu.xml  -->
-
-<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+              <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
   <li>
-    <a href="index.html">Home</a>
+    <a href="index.html">Start</a>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Guidance
+    <a data-toggle="dropdown" href="guidance.html" class="dropdown-toggle">Hinweise
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="guidance.html">Guidance</a>
+        <a href="guidance.html">Hinweise</a>
       </li>
       <li>
-        <a href="researcher-guidance.html">Guidance for Researchers</a>
+        <a href="researcher-guidance.html">Orientierungshilfe für Forschende</a>
       </li>
       <li>
-        <a href="implementer-guidance.html">Guidance for Implementers</a>
+        <a href="implementer-guidance.html">Anleitung für Implementierende</a>
       </li>
       <li>
-        <a href="datasets-and-descriptions.html">Datasets and Descriptions</a>
+        <a href="datasets-and-descriptions.html">Datensätze und Beschreibungen</a>
       </li>
       <li>
-        <a href="uml-diagrams.html">UML Diagrams</a>
+        <a href="uml-diagrams.html">UML-Diagramme</a>
       </li>
     </ul>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Conformance
+    <a data-toggle="dropdown" href="conformance.html" class="dropdown-toggle">Konformität
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="conformance.html">Conformance</a>
+        <a href="conformance.html">Konformität</a>
       </li>
       <li>
-        <a href="general-requirements.html">General Requirements</a>
+        <a href="general-requirements.html">Allgemeine Anforderungen</a>
       </li>
       <li>
         <a href="must-support.html">Must Support</a>
       </li>
       <li>
-        <a href="missing-data.html">Handling Missing Data</a>
+        <a href="missing-data.html">Umgang mit fehlenden Daten</a>
       </li>
     </ul>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Artifacts
+    <a data-toggle="dropdown" href="artifacts.html" class="dropdown-toggle">Artefakte
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="artifacts.html">Artifacts Summary</a>
+        <a href="artifacts.html">Artefaktübersicht</a>
       </li>
       <li>
-        <a href="profiles-and-extensions.html">Profiles and Extensions</a>
+        <a href="profiles-and-extensions.html">Profile und Extensions</a>
       </li>
       <li>
-        <a href="terminology.html">Terminology</a>
+        <a href="terminology.html">Terminologie</a>
       </li>
       <li>
         <a href="capability-statements.html">Capability Statements</a>
       </li>
       <li>
-        <a href="search-parameters-and-operations.html">Search Parameters and Operations</a>
+        <a href="search-parameters-and-operations.html">Suchparameter und Operationen</a>
       </li>
       <li>
-        <a href="logical-models.html">Logical Models</a>
+        <a href="logical-models.html">Logische Modelle</a>
       </li>
       <li>
-        <a href="examples.html">Examples</a>
+        <a href="examples.html">Beispiele</a>
       </li>
     </ul>
   </li>
@@ -174,19 +175,30 @@
     <a href="downloads.html">Downloads</a>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Versioning
+    <a data-toggle="dropdown" href="version-history.html" class="dropdown-toggle">Versionierung
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="version-history.html">Versioning</a>
+        <a href="version-history.html">Versionierung</a>
       </li>
       <li>
         <a href="changes.html">Changelog</a>
       </li>
     </ul>
   </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="metadata.html" class="dropdown-toggle">Metadaten
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="metadata.html">Metadatenübersicht</a>
+      </li>
+    </ul>
+  </li>
 </ul>
+
             </div>  <!-- /.nav-collapse -->
 
               
@@ -236,7 +248,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MII Implementation Guide Core Dataset Base - Local Development build (v2026.0.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://www.medizininformatik-initiative.de/fhir/modul-base/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the MII Implementation Guide Core Dataset Base (v2026.0.1: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="https://medizininformatik-initiative.github.io/kerndatensatz-basis/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Downloads</h2>
   
 
@@ -269,7 +281,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="paketdatei">Paketdatei</h4>
 
-<p>Die folgende Paketdatei enthält ein NPM-Paket, das von vielen FHIR-Tools verwendet wird. Sie enthält alle ValueSets, Profile, Extensions, Seiten und URLs im IG usw., die als Teil dieser Version des Implementierungsleitfadens definiert sind. Diese Datei <strong>SOLLTE</strong> die erste Wahl sein, wenn Implementierungsartefakte generiert werden, da sie alle Regeln enthält, die die Profile gültig machen. Implementierer müssen dennoch mit dem Spezifikationsinhalt und den anzuwendenden Profilen vertraut sein, um eine konforme Implementierung zu erstellen. Weitere Informationen finden Sie in der FHIR-Dokumentation zur <a href="http://hl7.org/fhir/R4/validation.html">Validierung von Profilen und Ressourcen</a>.</p>
+<p>Die folgende Paketdatei enthält ein NPM-Paket, das von vielen FHIR-Tools verwendet wird. Sie enthält alle ValueSets, Profile, Extensions, Seiten und URLs im IG usw., die als Teil dieser Version des Implementierungsleitfadens definiert sind. Diese Datei <strong>SOLL</strong> die erste Wahl sein, wenn Implementierungsartefakte generiert werden, da sie alle Regeln enthält, die die Profile gültig machen. Implementierer müssen dennoch mit dem Spezifikationsinhalt und den anzuwendenden Profilen vertraut sein, um eine konforme Implementierung zu erstellen. Weitere Informationen finden Sie in der FHIR-Dokumentation zur <a href="http://hl7.org/fhir/R4/validation.html">Validierung von Profilen und Ressourcen</a>.</p>
 
 <ul>
   <li><a href="../package.tgz">Paket (komprimierter Ordner)</a></li>
@@ -335,7 +347,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <script type="text/javascript" src="assets/js/flags.js"> </script>
 
   <script type="text/javascript" src="assets/js/window-hash.js"> </script>
-
+  <script type="text/javascript" src="assets/js/togglechanges.js"> </script>
+  <script type="text/javascript" src="assets/js/requirements-table.js"> </script>
   <a name="bottom"> </a>
   <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
     <div class="container" data-fhir="generated">  <!-- container -->
@@ -346,10 +359,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
-          Package de.medizininformatikinitiative.kerndatensatz.base#2026.0.0 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Package de.medizininformatikinitiative.kerndatensatz.base#2026.0.1 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Erstellt 
-  <span title="2025-12-13 18:24:00 +0000">
-    2025-12-13
+  <span title="2026-07-22 07:51:00 +0000">
+    2026-07-22
   </span>
 
           <br/>
