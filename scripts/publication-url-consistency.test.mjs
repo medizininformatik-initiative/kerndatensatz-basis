@@ -249,6 +249,18 @@ test("reports public links from jobs that do not receive terminology secrets", (
   assert.doesNotMatch(buildJob, /### Deployment/);
   assert.doesNotMatch(announceJob, /secrets\.|CDS_DEV_CLIENT_/);
   assert.match(announceJob, /### Deployment/);
+  assert.match(announceJob, /issues: write/);
+  assert.match(announceJob, /pull-requests: write/);
+  assert.match(announceJob, /id: preview_comment/);
+  assert.match(announceJob, /continue-on-error: true/);
+  assert.match(
+    announceJob,
+    /if: steps\.preview_comment\.outcome == 'failure'/,
+  );
+  assert.match(
+    announceJob,
+    /::warning::The preview was deployed successfully/,
+  );
   assert.match(
     announceJob,
     /https:\/\/\$\{repo_owner\}\.github\.io\/\$\{repo_name\}\/branches\/\$\{branch\}\//,
@@ -267,4 +279,25 @@ test("reports public links from jobs that do not receive terminology secrets", (
   assert.doesNotMatch(redeployPrepareJob, /### Pages deployment completed/);
   assert.doesNotMatch(redeployDeployJob, /secrets\.|CDS_DEV_CLIENT_/);
   assert.match(redeployDeployJob, /### Pages deployment completed/);
+});
+
+test("documents the reproducible GitHub Pages repository settings", () => {
+  const documentation = read("publication/README.md");
+
+  assert.match(
+    documentation,
+    /Settings → Pages → Build and deployment → Source/,
+  );
+  assert.match(
+    documentation,
+    /select \*\*GitHub\s+Actions\*\*, not \*\*Deploy from a branch\*\*/,
+  );
+  assert.match(
+    documentation,
+    /Settings → Environments →\n\s+github-pages/,
+  );
+  assert.match(documentation, /Deployment branches and tags/);
+  assert.match(documentation, /No\n\s+restriction/);
+  assert.match(documentation, /PAGES_ACTIONS_ENABLED=true/);
+  assert.match(documentation, /not the Pages publishing source/);
 });
