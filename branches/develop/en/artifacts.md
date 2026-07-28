@@ -1,4 +1,4 @@
-# Artifacts Summary - MII Implementation Guide Core Dataset Base v2026.0.1
+# Artifacts Summary - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
 ## Artifacts Summary
 

@@ -1,4 +1,4 @@
-# MII LM Diagnose - MII Implementation Guide Core Dataset Base v2026.0.1
+# MII LM Diagnose - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
 ## Logisches Modell: MII LM Diagnose 
 
@@ -101,7 +101,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-diagn
       },
       {
         "url" : "version",
-        "valueString" : "2026.0.1"
+        "valueString" : "2027.0.0-dev"
       },
       {
         "url" : "uri",
@@ -149,7 +149,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-diagn
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod",
     "valuePeriod" : {
-      "start" : "2026"
+      "start" : "2027"
     }
   },
   {
@@ -217,7 +217,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-diagn
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/LogicalModel/Diagnose",
-  "version" : "2026.0.1",
+  "version" : "2027.0.0-dev",
   "name" : "MII_LM_Diagnose",
   "title" : "MII LM Diagnose",
   "status" : "active",

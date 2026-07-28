@@ -1,4 +1,4 @@
-# MII CPS Fall CapabilityStatement - MII Implementation Guide Core Dataset Base v2026.0.1
+# MII CPS Fall CapabilityStatement - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
 ## CapabilityStatement: MII CPS Fall CapabilityStatement 
 
@@ -27,7 +27,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
       },
       {
         "url" : "version",
-        "valueString" : "2026.0.1"
+        "valueString" : "2027.0.0-dev"
       },
       {
         "url" : "uri",
@@ -75,7 +75,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod",
     "valuePeriod" : {
-      "start" : "2026"
+      "start" : "2027"
     }
   },
   {
@@ -143,7 +143,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/CapabilityStatement/metadata",
-  "version" : "2026.0.1",
+  "version" : "2027.0.0-dev",
   "name" : "MII_CPS_Fall_CapabilityStatement",
   "title" : "MII CPS Fall CapabilityStatement",
   "status" : "active",
@@ -178,7 +178,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
       }],
       "type" : "Encounter",
       "profile" : "http://hl7.org/fhir/StructureDefinition/Encounter",
-      "supportedProfile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1"],
+      "supportedProfile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2027.0.0-dev"],
       "_supportedProfile" : [{
         "extension" : [{
           "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",

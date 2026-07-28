@@ -1,4 +1,4 @@
-# MII VS Prozedur Durchführungsabsicht [SNOMED CT] - MII Implementation Guide Core Dataset Base v2026.0.1
+# MII VS Prozedur Durchführungsabsicht [SNOMED CT] - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
 ## ValueSet: MII VS Prozedur Durchführungsabsicht [SNOMED CT] 
 
@@ -39,7 +39,7 @@ Durchführungsabsicht / Intention mit der Prozedur ausgeführt wird
       },
       {
         "url" : "version",
-        "valueString" : "2026.0.1"
+        "valueString" : "2027.0.0-dev"
       },
       {
         "url" : "uri",
@@ -83,7 +83,7 @@ Durchführungsabsicht / Intention mit der Prozedur ausgeführt wird
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod",
     "valuePeriod" : {
-      "start" : "2026"
+      "start" : "2027"
     }
   },
   {
@@ -164,7 +164,7 @@ Durchführungsabsicht / Intention mit der Prozedur ausgeführt wird
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-intend",
-  "version" : "2026.0.1",
+  "version" : "2027.0.0-dev",
   "name" : "MII_VS_Prozedur_Durchfuehrungsabsicht_SNOMEDCT",
   "title" : "MII VS Prozedur Durchführungsabsicht [SNOMED CT]",
   "status" : "active",

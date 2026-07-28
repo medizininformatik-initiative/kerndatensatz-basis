@@ -1,7 +1,7 @@
 MII_IG_Base : Validation Results
 =========================================
 
-err = 1675, warn = 567, info = 2761
+err = 1680, warn = 567, info = 2761
 $--
 Generated $--. FHIR version $-- for de.medizininformatikinitiative.kerndatensatz.base#$-- (canonical = https://www.medizininformatik-initiative.de/fhir/modul-base)
  Build Errors : 0 / 4 / 2
@@ -47,12 +47,12 @@ Generated $--. FHIR version $-- for de.medizininformatikinitiative.kerndatensatz
  /workspace/fsh-generated/resources/StructureDefinition-mii-lm-fall : 0 / 63 / 40
  /workspace/fsh-generated/resources/StructureDefinition-mii-lm-person : 192 / 137 / 97
  /workspace/fsh-generated/resources/StructureDefinition-mii-lm-prozedur : 0 / 28 / 35
- /workspace/fsh-generated/resources/StructureDefinition-mii-pr-diagnose-condition : 232 / 12 / 322
+ /workspace/fsh-generated/resources/StructureDefinition-mii-pr-diagnose-condition : 234 / 12 / 322
  /workspace/fsh-generated/resources/StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung : 348 / 6 / 417
  /workspace/fsh-generated/resources/StructureDefinition-mii-pr-person-patient : 232 / 20 / 393
- /workspace/fsh-generated/resources/StructureDefinition-mii-pr-person-patient-pseudonymisiert : 136 / 9 / 206
- /workspace/fsh-generated/resources/StructureDefinition-mii-pr-person-todesursache : 120 / 4 / 154
- /workspace/fsh-generated/resources/StructureDefinition-mii-pr-person-vitalstatus : 120 / 2 / 150
+ /workspace/fsh-generated/resources/StructureDefinition-mii-pr-person-patient-pseudonymisiert : 137 / 9 / 206
+ /workspace/fsh-generated/resources/StructureDefinition-mii-pr-person-todesursache : 121 / 4 / 154
+ /workspace/fsh-generated/resources/StructureDefinition-mii-pr-person-vitalstatus : 121 / 2 / 150
  /workspace/fsh-generated/resources/StructureDefinition-mii-pr-prozedur-procedure : 240 / 2 / 197
  /workspace/fsh-generated/resources/ValueSet-mii-vs-diagnose-alphaid : 0 / 3 / 34
  /workspace/fsh-generated/resources/ValueSet-mii-vs-diagnose-bodystructure-snomed : 0 / 3 / 31
@@ -104,7 +104,7 @@ WARNING: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[4].resource/*Encou
 WARNING: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[4].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-11*/.identifier[0].system: No definition could be found for URL value 'https://www.charite.de/fhir/sid/aufnahmenummer'
 WARNING: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[4].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-11*/.account[0].identifier.system: No definition could be found for URL value 'https://www.charite.de/fhir/sid/fallnummer'
 WARNING: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[4].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-11*/.serviceProvider.identifier.system: No definition could be found for URL value 'http://fhir.de/sid/dkgev/iknr'
-INFORMATION: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[4].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-11*/.location[0]: This element does not match any known slice defined in the profile https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[4].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-11*/.location[0]: This element does not match any known slice defined in the profile https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2027.0.0-dev (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[4].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-11*/.status: Reference to draft CodeSystem http://hl7.org/fhir/encounter-status|4.0.1
 WARNING: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[5].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2*/.meta.extension[0].extension[2].value.ofType(uri): No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/modul-base'
 WARNING: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[5].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2*/.identifier[0].system: No definition could be found for URL value 'https://www.charite.de/fhir/sid/aufnahmenummer'
@@ -117,25 +117,25 @@ WARNING: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[6].resource/*Encou
 WARNING: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[6].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4*/.identifier[0].system: No definition could be found for URL value 'https://www.charite.de/fhir/sid/aufnahmenummer'
 WARNING: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[6].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4*/.account[0].identifier.system: No definition could be found for URL value 'https://www.charite.de/fhir/sid/fallnummer'
 WARNING: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[6].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4*/.serviceProvider.identifier.system: No definition could be found for URL value 'http://fhir.de/sid/dkgev/iknr'
-INFORMATION: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[6].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4*/.location[0]: This element does not match any known slice defined in the profile https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[6].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4*/.location[0]: This element does not match any known slice defined in the profile https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2027.0.0-dev (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[6].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4*/.status: Reference to draft CodeSystem http://hl7.org/fhir/encounter-status|4.0.1
 WARNING: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[7].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5*/.meta.extension[0].extension[2].value.ofType(uri): No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/modul-base'
 WARNING: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[7].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5*/.identifier[0].system: No definition could be found for URL value 'https://www.charite.de/fhir/sid/aufnahmenummer'
 WARNING: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[7].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5*/.account[0].identifier.system: No definition could be found for URL value 'https://www.charite.de/fhir/sid/fallnummer'
 WARNING: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[7].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5*/.serviceProvider.identifier.system: No definition could be found for URL value 'http://fhir.de/sid/dkgev/iknr'
-INFORMATION: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[7].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5*/.location[0]: This element does not match any known slice defined in the profile https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[7].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5*/.location[0]: This element does not match any known slice defined in the profile https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2027.0.0-dev (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[7].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5*/.status: Reference to draft CodeSystem http://hl7.org/fhir/encounter-status|4.0.1
 WARNING: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[8].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6*/.meta.extension[0].extension[2].value.ofType(uri): No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/modul-base'
 WARNING: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[8].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6*/.identifier[0].system: No definition could be found for URL value 'https://www.charite.de/fhir/sid/aufnahmenummer'
 WARNING: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[8].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6*/.account[0].identifier.system: No definition could be found for URL value 'https://www.charite.de/fhir/sid/fallnummer'
 WARNING: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[8].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6*/.serviceProvider.identifier.system: No definition could be found for URL value 'http://fhir.de/sid/dkgev/iknr'
-INFORMATION: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[8].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6*/.location[0]: This element does not match any known slice defined in the profile https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[8].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6*/.location[0]: This element does not match any known slice defined in the profile https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2027.0.0-dev (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[8].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6*/.status: Reference to draft CodeSystem http://hl7.org/fhir/encounter-status|4.0.1
 WARNING: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[9].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10*/.meta.extension[0].extension[2].value.ofType(uri): No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/modul-base'
 WARNING: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[9].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10*/.identifier[0].system: No definition could be found for URL value 'https://www.charite.de/fhir/sid/aufnahmenummer'
 WARNING: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[9].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10*/.account[0].identifier.system: No definition could be found for URL value 'https://www.charite.de/fhir/sid/fallnummer'
 WARNING: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[9].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10*/.serviceProvider.identifier.system: No definition could be found for URL value 'http://fhir.de/sid/dkgev/iknr'
-INFORMATION: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[9].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10*/.location[0]: This element does not match any known slice defined in the profile https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[9].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10*/.location[0]: This element does not match any known slice defined in the profile https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2027.0.0-dev (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[9].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10*/.status: Reference to draft CodeSystem http://hl7.org/fhir/encounter-status|4.0.1
 WARNING: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[10].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7*/.meta.extension[0].extension[2].value.ofType(uri): No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/modul-base'
 WARNING: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[10].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7*/.identifier[0].system: No definition could be found for URL value 'https://www.charite.de/fhir/sid/aufnahmenummer'
@@ -143,13 +143,13 @@ INFORMATION: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[10].resource/*
 WARNING: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[10].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7*/.account[0].identifier.system: No definition could be found for URL value 'https://www.charite.de/fhir/sid/fallnummer'
 WARNING: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[10].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7*/.serviceProvider.identifier.system: No definition could be found for URL value 'http://fhir.de/sid/dkgev/iknr'
 INFORMATION: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[10].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7*/.status: Reference to draft CodeSystem http://hl7.org/fhir/encounter-status|4.0.1
-INFORMATION: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[10].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7*/.diagnosis[0].use.coding[0]: This element does not match any known slice defined in the profile https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[10].resource/*Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7*/.diagnosis[0].use.coding[0]: This element does not match any known slice defined in the profile https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2027.0.0-dev (this may not be a problem, but you should check that it's not intended to match a slice)
 WARNING: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[11].resource/*Condition/mii-exa-diagnose-mehrfachcodierung-primaercode*/.meta.extension[0].extension[2].value.ofType(uri): No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/modul-base'
 WARNING: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[12].resource/*Condition/mii-exa-diagnose-mehrfachcodierung-sekundaercode*/.meta.extension[0].extension[2].value.ofType(uri): No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/modul-base'
 WARNING: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[13].resource/*Condition/mii-exa-diagnose-appendicitis*/.meta.extension[0].extension[2].value.ofType(uri): No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/modul-base'
-INFORMATION: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[13].resource/*Condition/mii-exa-diagnose-appendicitis*/.code.coding[1]: Reference to experimental ValueSet https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/diagnoses-sct|2026.0.1
+INFORMATION: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[13].resource/*Condition/mii-exa-diagnose-appendicitis*/.code.coding[1]: Reference to experimental ValueSet https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/diagnoses-sct|2027.0.0-dev
 WARNING: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[14].resource/*Condition/mii-exa-diagnose-condition-elbow-contusion*/.meta.extension[0].extension[2].value.ofType(uri): No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/modul-base'
-INFORMATION: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[14].resource/*Condition/mii-exa-diagnose-condition-elbow-contusion*/.code.coding[1]: Reference to experimental ValueSet https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/diagnoses-sct|2026.0.1
+INFORMATION: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[14].resource/*Condition/mii-exa-diagnose-condition-elbow-contusion*/.code.coding[1]: Reference to experimental ValueSet https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/diagnoses-sct|2027.0.0-dev
 WARNING: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[15].resource/*Condition/mii-exa-diagnose-condition-multiple-codings*/.meta.extension[0].extension[2].value.ofType(uri): No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/modul-base'
 INFORMATION: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[15].resource/*Condition/mii-exa-diagnose-condition-multiple-codings*/.code.coding[2]: Reference to experimental ValueSet https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-orphanet|2026.0.1
 WARNING: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[16].resource/*Procedure/mii-exa-prozedur-procedure*/.meta.extension[0].extension[2].value.ofType(uri): No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/modul-base'
@@ -414,10 +414,10 @@ INFORMATION: CodeSystem/mii-cs-person-vitalstatus: CodeSystem.meta.extension[0]:
 WARNING: Resource: The resource CodeSystem/mii-cs-person-vitalstatus should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated/resources/Condition-mii-exa-diagnose-appendicitis.json ==
 WARNING: Condition/mii-exa-diagnose-appendicitis: Condition.meta.extension[0].extension[2].value.ofType(uri): No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/modul-base'
-INFORMATION: Condition/mii-exa-diagnose-appendicitis: Condition.code.coding[1]: Reference to experimental ValueSet https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/diagnoses-sct|2026.0.1
+INFORMATION: Condition/mii-exa-diagnose-appendicitis: Condition.code.coding[1]: Reference to experimental ValueSet https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/diagnoses-sct|2027.0.0-dev
 == fsh-generated/resources/Condition-mii-exa-diagnose-condition-elbow-contusion.json ==
 WARNING: Condition/mii-exa-diagnose-condition-elbow-contusion: Condition.meta.extension[0].extension[2].value.ofType(uri): No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/modul-base'
-INFORMATION: Condition/mii-exa-diagnose-condition-elbow-contusion: Condition.code.coding[1]: Reference to experimental ValueSet https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/diagnoses-sct|2026.0.1
+INFORMATION: Condition/mii-exa-diagnose-condition-elbow-contusion: Condition.code.coding[1]: Reference to experimental ValueSet https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/diagnoses-sct|2027.0.0-dev
 == fsh-generated/resources/Condition-mii-exa-diagnose-condition-multiple-codings.json ==
 WARNING: Condition/mii-exa-diagnose-condition-multiple-codings: Condition.meta.extension[0].extension[2].value.ofType(uri): No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/modul-base'
 INFORMATION: Condition/mii-exa-diagnose-condition-multiple-codings: Condition.code.coding[2]: Reference to experimental ValueSet https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-orphanet|2026.0.1
@@ -435,14 +435,14 @@ INFORMATION: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1: Encounter.
 WARNING: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1: Encounter.account[0].identifier.system: No definition could be found for URL value 'https://www.charite.de/fhir/sid/fallnummer'
 WARNING: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1: Encounter.serviceProvider.identifier.system: No definition could be found for URL value 'http://fhir.de/sid/dkgev/iknr'
 == fsh-generated/resources/Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-10.json ==
-INFORMATION: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10: Encounter.location[0]: This element does not match any known slice defined in the profile https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10: Encounter.location[0]: This element does not match any known slice defined in the profile https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2027.0.0-dev (this may not be a problem, but you should check that it's not intended to match a slice)
 WARNING: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10: Encounter.meta.extension[0].extension[2].value.ofType(uri): No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/modul-base'
 WARNING: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10: Encounter.identifier[0].system: No definition could be found for URL value 'https://www.charite.de/fhir/sid/aufnahmenummer'
 INFORMATION: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10: Encounter.status: Reference to draft CodeSystem http://hl7.org/fhir/encounter-status|4.0.1
 WARNING: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10: Encounter.account[0].identifier.system: No definition could be found for URL value 'https://www.charite.de/fhir/sid/fallnummer'
 WARNING: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10: Encounter.serviceProvider.identifier.system: No definition could be found for URL value 'http://fhir.de/sid/dkgev/iknr'
 == fsh-generated/resources/Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-11.json ==
-INFORMATION: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-11: Encounter.location[0]: This element does not match any known slice defined in the profile https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-11: Encounter.location[0]: This element does not match any known slice defined in the profile https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2027.0.0-dev (this may not be a problem, but you should check that it's not intended to match a slice)
 WARNING: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-11: Encounter.meta.extension[0].extension[2].value.ofType(uri): No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/modul-base'
 WARNING: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-11: Encounter.identifier[0].system: No definition could be found for URL value 'https://www.charite.de/fhir/sid/aufnahmenummer'
 INFORMATION: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-11: Encounter.status: Reference to draft CodeSystem http://hl7.org/fhir/encounter-status|4.0.1
@@ -460,21 +460,21 @@ WARNING: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-3: Encounter.iden
 INFORMATION: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-3: Encounter.status: Reference to draft CodeSystem http://hl7.org/fhir/encounter-status|4.0.1
 WARNING: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-3: Encounter.serviceProvider.identifier.system: No definition could be found for URL value 'http://fhir.de/sid/dkgev/iknr'
 == fsh-generated/resources/Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-4.json ==
-INFORMATION: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4: Encounter.location[0]: This element does not match any known slice defined in the profile https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4: Encounter.location[0]: This element does not match any known slice defined in the profile https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2027.0.0-dev (this may not be a problem, but you should check that it's not intended to match a slice)
 WARNING: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4: Encounter.meta.extension[0].extension[2].value.ofType(uri): No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/modul-base'
 WARNING: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4: Encounter.identifier[0].system: No definition could be found for URL value 'https://www.charite.de/fhir/sid/aufnahmenummer'
 INFORMATION: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4: Encounter.status: Reference to draft CodeSystem http://hl7.org/fhir/encounter-status|4.0.1
 WARNING: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4: Encounter.account[0].identifier.system: No definition could be found for URL value 'https://www.charite.de/fhir/sid/fallnummer'
 WARNING: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4: Encounter.serviceProvider.identifier.system: No definition could be found for URL value 'http://fhir.de/sid/dkgev/iknr'
 == fsh-generated/resources/Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-5.json ==
-INFORMATION: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5: Encounter.location[0]: This element does not match any known slice defined in the profile https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5: Encounter.location[0]: This element does not match any known slice defined in the profile https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2027.0.0-dev (this may not be a problem, but you should check that it's not intended to match a slice)
 WARNING: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5: Encounter.meta.extension[0].extension[2].value.ofType(uri): No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/modul-base'
 WARNING: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5: Encounter.identifier[0].system: No definition could be found for URL value 'https://www.charite.de/fhir/sid/aufnahmenummer'
 INFORMATION: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5: Encounter.status: Reference to draft CodeSystem http://hl7.org/fhir/encounter-status|4.0.1
 WARNING: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5: Encounter.account[0].identifier.system: No definition could be found for URL value 'https://www.charite.de/fhir/sid/fallnummer'
 WARNING: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5: Encounter.serviceProvider.identifier.system: No definition could be found for URL value 'http://fhir.de/sid/dkgev/iknr'
 == fsh-generated/resources/Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-6.json ==
-INFORMATION: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6: Encounter.location[0]: This element does not match any known slice defined in the profile https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6: Encounter.location[0]: This element does not match any known slice defined in the profile https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2027.0.0-dev (this may not be a problem, but you should check that it's not intended to match a slice)
 WARNING: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6: Encounter.meta.extension[0].extension[2].value.ofType(uri): No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/modul-base'
 WARNING: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6: Encounter.identifier[0].system: No definition could be found for URL value 'https://www.charite.de/fhir/sid/aufnahmenummer'
 INFORMATION: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6: Encounter.status: Reference to draft CodeSystem http://hl7.org/fhir/encounter-status|4.0.1
@@ -484,7 +484,7 @@ WARNING: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6: Encounter.serv
 WARNING: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7: Encounter.meta.extension[0].extension[2].value.ofType(uri): No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/modul-base'
 WARNING: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7: Encounter.identifier[0].system: No definition could be found for URL value 'https://www.charite.de/fhir/sid/aufnahmenummer'
 INFORMATION: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7: Encounter.status: Reference to draft CodeSystem http://hl7.org/fhir/encounter-status|4.0.1
-INFORMATION: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7: Encounter.diagnosis[0].use.coding[0]: This element does not match any known slice defined in the profile https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2026.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7: Encounter.diagnosis[0].use.coding[0]: This element does not match any known slice defined in the profile https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2027.0.0-dev (this may not be a problem, but you should check that it's not intended to match a slice)
 WARNING: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7: Encounter.account[0].identifier.system: No definition could be found for URL value 'https://www.charite.de/fhir/sid/fallnummer'
 WARNING: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7: Encounter.serviceProvider.identifier.system: No definition could be found for URL value 'http://fhir.de/sid/dkgev/iknr'
 == fsh-generated/resources/Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-8.json ==
@@ -511,33 +511,33 @@ INFORMATION: Encounter/mii-exa-fall-kontakt-unknown-status: Encounter.status: Re
 INFORMATION: ImplementationGuide.meta.profile[0]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareableimplementationguide to 2.0.0
 INFORMATION: ImplementationGuide.meta.profile[1]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishableimplementationguide to 2.0.0
 INFORMATION: ImplementationGuide.meta.profile[2]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-implementationguide to 2.0.0
-INFORMATION: ImplementationGuide.definition.resource[10].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose to 2026.0.1
-INFORMATION: ImplementationGuide.definition.resource[11].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose to 2026.0.1
-INFORMATION: ImplementationGuide.definition.resource[12].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose to 2026.0.1
-INFORMATION: ImplementationGuide.definition.resource[13].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose to 2026.0.1
-INFORMATION: ImplementationGuide.definition.resource[14].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose to 2026.0.1
-INFORMATION: ImplementationGuide.definition.resource[15].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2026.0.1
-INFORMATION: ImplementationGuide.definition.resource[16].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2026.0.1
-INFORMATION: ImplementationGuide.definition.resource[17].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2026.0.1
-INFORMATION: ImplementationGuide.definition.resource[18].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2026.0.1
-INFORMATION: ImplementationGuide.definition.resource[19].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2026.0.1
-INFORMATION: ImplementationGuide.definition.resource[20].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2026.0.1
-INFORMATION: ImplementationGuide.definition.resource[21].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2026.0.1
-INFORMATION: ImplementationGuide.definition.resource[22].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2026.0.1
-INFORMATION: ImplementationGuide.definition.resource[23].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2026.0.1
-INFORMATION: ImplementationGuide.definition.resource[24].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2026.0.1
-INFORMATION: ImplementationGuide.definition.resource[25].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2026.0.1
-INFORMATION: ImplementationGuide.definition.resource[26].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2026.0.1
-INFORMATION: ImplementationGuide.definition.resource[27].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2026.0.1
-INFORMATION: ImplementationGuide.definition.resource[28].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2026.0.1
-INFORMATION: ImplementationGuide.definition.resource[29].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Todesursache to 2026.0.1
-INFORMATION: ImplementationGuide.definition.resource[30].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus to 2026.0.1
-INFORMATION: ImplementationGuide.definition.resource[31].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus to 2026.0.1
-INFORMATION: ImplementationGuide.definition.resource[32].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient to 2026.0.1
-INFORMATION: ImplementationGuide.definition.resource[33].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert to 2026.0.1
-INFORMATION: ImplementationGuide.definition.resource[34].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure to 2026.0.1
-INFORMATION: ImplementationGuide.definition.resource[35].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure to 2026.0.1
-INFORMATION: ImplementationGuide.definition.resource[36].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure to 2026.0.1
+INFORMATION: ImplementationGuide.definition.resource[10].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose to 2027.0.0-dev
+INFORMATION: ImplementationGuide.definition.resource[11].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose to 2027.0.0-dev
+INFORMATION: ImplementationGuide.definition.resource[12].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose to 2027.0.0-dev
+INFORMATION: ImplementationGuide.definition.resource[13].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose to 2027.0.0-dev
+INFORMATION: ImplementationGuide.definition.resource[14].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose to 2027.0.0-dev
+INFORMATION: ImplementationGuide.definition.resource[15].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2027.0.0-dev
+INFORMATION: ImplementationGuide.definition.resource[16].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2027.0.0-dev
+INFORMATION: ImplementationGuide.definition.resource[17].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2027.0.0-dev
+INFORMATION: ImplementationGuide.definition.resource[18].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2027.0.0-dev
+INFORMATION: ImplementationGuide.definition.resource[19].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2027.0.0-dev
+INFORMATION: ImplementationGuide.definition.resource[20].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2027.0.0-dev
+INFORMATION: ImplementationGuide.definition.resource[21].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2027.0.0-dev
+INFORMATION: ImplementationGuide.definition.resource[22].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2027.0.0-dev
+INFORMATION: ImplementationGuide.definition.resource[23].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2027.0.0-dev
+INFORMATION: ImplementationGuide.definition.resource[24].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2027.0.0-dev
+INFORMATION: ImplementationGuide.definition.resource[25].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2027.0.0-dev
+INFORMATION: ImplementationGuide.definition.resource[26].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2027.0.0-dev
+INFORMATION: ImplementationGuide.definition.resource[27].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2027.0.0-dev
+INFORMATION: ImplementationGuide.definition.resource[28].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2027.0.0-dev
+INFORMATION: ImplementationGuide.definition.resource[29].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Todesursache to 2027.0.0-dev
+INFORMATION: ImplementationGuide.definition.resource[30].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus to 2027.0.0-dev
+INFORMATION: ImplementationGuide.definition.resource[31].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus to 2027.0.0-dev
+INFORMATION: ImplementationGuide.definition.resource[32].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient to 2027.0.0-dev
+INFORMATION: ImplementationGuide.definition.resource[33].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert to 2027.0.0-dev
+INFORMATION: ImplementationGuide.definition.resource[34].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure to 2027.0.0-dev
+INFORMATION: ImplementationGuide.definition.resource[35].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure to 2027.0.0-dev
+INFORMATION: ImplementationGuide.definition.resource[36].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure to 2027.0.0-dev
 WARNING: ImplementationGuide/mii-ig-base: ImplementationGuide.language: A definition for CodeSystem 'null' could not be found, so the code cannot be validated
 WARNING: ImplementationGuide/mii-ig-base: ImplementationGuide.extension[4].extension[2].value.ofType(uri): No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/modul-base'
 WARNING: ImplementationGuide/mii-ig-base: ImplementationGuide.extension[12].value.ofType(RelatedArtifact).url: No definition could be found for URL value 'https://doi.org/10.1007/s00103-024-03888-4'
@@ -674,7 +674,7 @@ INFORMATION: StructureDefinition.snapshot.element[0].constraint[1].source: Pinne
 INFORMATION: StructureDefinition.snapshot.element[2].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[2].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[4].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[4].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-intend to 2026.0.1
+INFORMATION: StructureDefinition.snapshot.element[4].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-intend to 2027.0.0-dev
 INFORMATION: StructureDefinition.snapshot.element[6].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[6].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[7].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
@@ -682,7 +682,7 @@ INFORMATION: StructureDefinition.snapshot.element[8].constraint[0].source: Pinne
 INFORMATION: StructureDefinition.snapshot.element[9].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[10].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[11].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.differential.element[3].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-intend to 2026.0.1
+INFORMATION: StructureDefinition.differential.element[3].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-intend to 2027.0.0-dev
 INFORMATION: StructureDefinition/mii-ex-prozedur-durchfuehrungsabsicht: StructureDefinition.extension[4]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-ex-prozedur-durchfuehrungsabsicht: StructureDefinition.extension[5]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-ex-prozedur-durchfuehrungsabsicht: StructureDefinition.extension[6]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
@@ -1507,7 +1507,7 @@ INFORMATION: StructureDefinition.snapshot.element[63].constraint[0].source: Pinn
 INFORMATION: StructureDefinition.snapshot.element[64].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[65].type[0].profile[0]: Pinned the version of http://fhir.de/StructureDefinition/CodingICD10GM to 1.5.4
 INFORMATION: StructureDefinition.snapshot.element[65].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[65].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-icd10gm to 2026.0.1
+INFORMATION: StructureDefinition.snapshot.element[65].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-icd10gm to 2027.0.0-dev
 INFORMATION: StructureDefinition.snapshot.element[67].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[67].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[68].type[0].profile[0]: Pinned the version of http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen to 1.5.4
@@ -1562,7 +1562,7 @@ INFORMATION: StructureDefinition.snapshot.element[107].constraint[0].source: Pin
 INFORMATION: StructureDefinition.snapshot.element[108].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[109].type[0].profile[0]: Pinned the version of http://fhir.de/StructureDefinition/CodingAlphaID to 1.5.4
 INFORMATION: StructureDefinition.snapshot.element[109].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[109].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-alphaid to 2026.0.1
+INFORMATION: StructureDefinition.snapshot.element[109].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-alphaid to 2027.0.0-dev
 INFORMATION: StructureDefinition.snapshot.element[111].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[111].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[112].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
@@ -1571,7 +1571,7 @@ INFORMATION: StructureDefinition.snapshot.element[114].constraint[0].source: Pin
 INFORMATION: StructureDefinition.snapshot.element[115].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[116].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[117].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[117].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/diagnoses-sct to 2026.0.1
+INFORMATION: StructureDefinition.snapshot.element[117].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/diagnoses-sct to 2027.0.0-dev
 INFORMATION: StructureDefinition.snapshot.element[119].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[119].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[120].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
@@ -1580,7 +1580,7 @@ INFORMATION: StructureDefinition.snapshot.element[122].constraint[0].source: Pin
 INFORMATION: StructureDefinition.snapshot.element[123].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[124].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[125].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[125].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-orphanet to 2026.0.1
+INFORMATION: StructureDefinition.snapshot.element[125].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-orphanet to 2027.0.0-dev
 INFORMATION: StructureDefinition.snapshot.element[127].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[127].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[128].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
@@ -1594,7 +1594,7 @@ INFORMATION: StructureDefinition.snapshot.element[136].constraint[0].source: Pin
 INFORMATION: StructureDefinition.snapshot.element[136].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[137].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[138].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[138].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-bodystructure-snomed to 2026.0.1
+INFORMATION: StructureDefinition.snapshot.element[138].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-bodystructure-snomed to 2027.0.0-dev
 INFORMATION: StructureDefinition.snapshot.element[140].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[140].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[141].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
@@ -1715,12 +1715,12 @@ INFORMATION: StructureDefinition.snapshot.element[247].constraint[0].source: Pin
 INFORMATION: StructureDefinition.differential.element[6].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/condition-related to 5.3.0
 INFORMATION: StructureDefinition.differential.element[9].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/condition-assertedDate to 5.3.0
 INFORMATION: StructureDefinition.differential.element[23].type[0].profile[0]: Pinned the version of http://fhir.de/StructureDefinition/CodingICD10GM to 1.5.4
-INFORMATION: StructureDefinition.differential.element[23].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-icd10gm to 2026.0.1
+INFORMATION: StructureDefinition.differential.element[23].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-icd10gm to 2027.0.0-dev
 INFORMATION: StructureDefinition.differential.element[42].type[0].profile[0]: Pinned the version of http://fhir.de/StructureDefinition/CodingAlphaID to 1.5.4
-INFORMATION: StructureDefinition.differential.element[42].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-alphaid to 2026.0.1
-INFORMATION: StructureDefinition.differential.element[46].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/diagnoses-sct to 2026.0.1
-INFORMATION: StructureDefinition.differential.element[50].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-orphanet to 2026.0.1
-INFORMATION: StructureDefinition.differential.element[56].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-bodystructure-snomed to 2026.0.1
+INFORMATION: StructureDefinition.differential.element[42].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-alphaid to 2027.0.0-dev
+INFORMATION: StructureDefinition.differential.element[46].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/diagnoses-sct to 2027.0.0-dev
+INFORMATION: StructureDefinition.differential.element[50].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-orphanet to 2027.0.0-dev
+INFORMATION: StructureDefinition.differential.element[56].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-bodystructure-snomed to 2027.0.0-dev
 INFORMATION: StructureDefinition.differential.element[68].type[0].profile[0]: Pinned the version of http://fhir.de/StructureDefinition/lebensphase to 1.5.4
 INFORMATION: StructureDefinition.differential.element[76].type[0].profile[0]: Pinned the version of http://fhir.de/StructureDefinition/lebensphase to 1.5.4
 INFORMATION: StructureDefinition.differential.element[84].type[0].profile[0]: Pinned the version of http://fhir.de/StructureDefinition/lebensphase to 1.5.4
@@ -1988,6 +1988,8 @@ INFORMATION: StructureDefinition/mii-pr-diagnose-condition: StructureDefinition.
 INFORMATION: StructureDefinition/mii-pr-diagnose-condition: StructureDefinition.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-pr-diagnose-condition: StructureDefinition.meta.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Resource: The resource StructureDefinition/mii-pr-diagnose-condition could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+ERROR: StructureDefinition: Profile test case failed - test for invalid/diagnose-invalid-missing-code.json failed but it should have failed
+ERROR: StructureDefinition: Profile test case failed - test for invalid/diagnose-invalid-missing-recordeddate.json failed but it should have failed
 == fsh-generated/resources/StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.json ==
 INFORMATION: StructureDefinition.meta.profile[0]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition to 2.0.0
 INFORMATION: StructureDefinition.meta.profile[1]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition to 2.0.0
@@ -1997,13 +1999,13 @@ INFORMATION: StructureDefinition.snapshot.element[0].constraint[1].source: Pinne
 INFORMATION: StructureDefinition.snapshot.element[0].constraint[2].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/DomainResource to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[0].constraint[3].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/DomainResource to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[0].constraint[4].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/DomainResource to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[0].constraint[5].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2026.0.1
-INFORMATION: StructureDefinition.snapshot.element[0].constraint[6].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2026.0.1
-INFORMATION: StructureDefinition.snapshot.element[0].constraint[7].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2026.0.1
-INFORMATION: StructureDefinition.snapshot.element[0].constraint[8].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2026.0.1
-INFORMATION: StructureDefinition.snapshot.element[0].constraint[9].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2026.0.1
-INFORMATION: StructureDefinition.snapshot.element[0].constraint[10].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2026.0.1
-INFORMATION: StructureDefinition.snapshot.element[0].constraint[11].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2026.0.1
+INFORMATION: StructureDefinition.snapshot.element[0].constraint[5].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2027.0.0-dev
+INFORMATION: StructureDefinition.snapshot.element[0].constraint[6].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2027.0.0-dev
+INFORMATION: StructureDefinition.snapshot.element[0].constraint[7].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2027.0.0-dev
+INFORMATION: StructureDefinition.snapshot.element[0].constraint[8].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2027.0.0-dev
+INFORMATION: StructureDefinition.snapshot.element[0].constraint[9].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2027.0.0-dev
+INFORMATION: StructureDefinition.snapshot.element[0].constraint[10].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2027.0.0-dev
+INFORMATION: StructureDefinition.snapshot.element[0].constraint[11].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2027.0.0-dev
 INFORMATION: StructureDefinition.snapshot.element[2].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[4].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[4].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
@@ -2053,7 +2055,7 @@ INFORMATION: StructureDefinition.snapshot.element[42].constraint[0].source: Pinn
 INFORMATION: StructureDefinition.snapshot.element[42].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[43].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[44].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[44].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/identifier-type-codes to 2026.0.1
+INFORMATION: StructureDefinition.snapshot.element[44].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/identifier-type-codes to 2027.0.0-dev
 INFORMATION: StructureDefinition.snapshot.element[46].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[46].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[47].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
@@ -2181,7 +2183,7 @@ INFORMATION: StructureDefinition.snapshot.element[157].constraint[0].source: Pin
 INFORMATION: StructureDefinition.snapshot.element[157].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[158].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[159].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[159].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/mii-vs-fall-diagnosis-use to 2026.0.1
+INFORMATION: StructureDefinition.snapshot.element[159].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/mii-vs-fall-diagnosis-use to 2027.0.0-dev
 INFORMATION: StructureDefinition.snapshot.element[161].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[161].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[162].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
@@ -2277,7 +2279,7 @@ INFORMATION: StructureDefinition.snapshot.element[242].constraint[1].source: Pin
 INFORMATION: StructureDefinition.snapshot.element[243].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[244].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[245].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[245].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/location-physical-type to 2026.0.1
+INFORMATION: StructureDefinition.snapshot.element[245].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/location-physical-type to 2027.0.0-dev
 INFORMATION: StructureDefinition.snapshot.element[246].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[247].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[249].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
@@ -2287,7 +2289,7 @@ INFORMATION: StructureDefinition.snapshot.element[250].constraint[1].source: Pin
 INFORMATION: StructureDefinition.snapshot.element[251].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[252].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[253].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[253].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/location-physical-type to 2026.0.1
+INFORMATION: StructureDefinition.snapshot.element[253].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/location-physical-type to 2027.0.0-dev
 INFORMATION: StructureDefinition.snapshot.element[255].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[255].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[256].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
@@ -2308,7 +2310,7 @@ INFORMATION: StructureDefinition.snapshot.element[269].constraint[1].source: Pin
 INFORMATION: StructureDefinition.snapshot.element[270].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[271].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[272].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[272].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/location-physical-type to 2026.0.1
+INFORMATION: StructureDefinition.snapshot.element[272].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/location-physical-type to 2027.0.0-dev
 INFORMATION: StructureDefinition.snapshot.element[274].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[274].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[275].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
@@ -2329,7 +2331,7 @@ INFORMATION: StructureDefinition.snapshot.element[288].constraint[1].source: Pin
 INFORMATION: StructureDefinition.snapshot.element[289].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[290].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[291].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[291].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/location-physical-type to 2026.0.1
+INFORMATION: StructureDefinition.snapshot.element[291].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/location-physical-type to 2027.0.0-dev
 INFORMATION: StructureDefinition.snapshot.element[293].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[293].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[294].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
@@ -2350,29 +2352,29 @@ INFORMATION: StructureDefinition.snapshot.element[308].constraint[0].source: Pin
 INFORMATION: StructureDefinition.snapshot.element[309].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[310].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[311].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.differential.element[0].constraint[0].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2026.0.1
-INFORMATION: StructureDefinition.differential.element[0].constraint[1].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2026.0.1
-INFORMATION: StructureDefinition.differential.element[0].constraint[2].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2026.0.1
-INFORMATION: StructureDefinition.differential.element[0].constraint[3].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2026.0.1
-INFORMATION: StructureDefinition.differential.element[0].constraint[4].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2026.0.1
-INFORMATION: StructureDefinition.differential.element[0].constraint[5].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2026.0.1
-INFORMATION: StructureDefinition.differential.element[0].constraint[6].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2026.0.1
+INFORMATION: StructureDefinition.differential.element[0].constraint[0].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2027.0.0-dev
+INFORMATION: StructureDefinition.differential.element[0].constraint[1].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2027.0.0-dev
+INFORMATION: StructureDefinition.differential.element[0].constraint[2].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2027.0.0-dev
+INFORMATION: StructureDefinition.differential.element[0].constraint[3].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2027.0.0-dev
+INFORMATION: StructureDefinition.differential.element[0].constraint[4].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2027.0.0-dev
+INFORMATION: StructureDefinition.differential.element[0].constraint[5].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2027.0.0-dev
+INFORMATION: StructureDefinition.differential.element[0].constraint[6].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2027.0.0-dev
 INFORMATION: StructureDefinition.differential.element[6].type[0].profile[0]: Pinned the version of http://fhir.de/StructureDefinition/Aufnahmegrund to 1.5.4
 INFORMATION: StructureDefinition.differential.element[16].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate to 0.1.0
 INFORMATION: StructureDefinition.differential.element[17].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedEndDate to 0.1.0
-INFORMATION: StructureDefinition.differential.element[20].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/identifier-type-codes to 2026.0.1
+INFORMATION: StructureDefinition.differential.element[20].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/identifier-type-codes to 2027.0.0-dev
 INFORMATION: StructureDefinition.differential.element[27].binding.valueSet: Pinned the version of http://fhir.de/ValueSet/EncounterStatusDe to 1.5.4
 INFORMATION: StructureDefinition.differential.element[28].binding.valueSet: Pinned the version of http://fhir.de/ValueSet/EncounterClassDE to 1.5.4
 INFORMATION: StructureDefinition.differential.element[32].binding.valueSet: Pinned the version of http://fhir.de/ValueSet/kontaktebene-de to 1.5.4
 INFORMATION: StructureDefinition.differential.element[35].binding.valueSet: Pinned the version of http://fhir.de/ValueSet/kontaktart-de to 1.5.4
 INFORMATION: StructureDefinition.differential.element[40].binding.valueSet: Pinned the version of http://fhir.de/ValueSet/dkgev/Fachabteilungsschluessel to 1.5.4
 INFORMATION: StructureDefinition.differential.element[43].binding.valueSet: Pinned the version of http://fhir.de/ValueSet/dkgev/Fachabteilungsschluessel-erweitert to 1.5.4
-INFORMATION: StructureDefinition.differential.element[53].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/mii-vs-fall-diagnosis-use to 2026.0.1
+INFORMATION: StructureDefinition.differential.element[53].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/mii-vs-fall-diagnosis-use to 2027.0.0-dev
 INFORMATION: StructureDefinition.differential.element[55].binding.valueSet: Pinned the version of http://fhir.de/ValueSet/DiagnoseTyp to 1.5.4
 INFORMATION: StructureDefinition.differential.element[58].binding.valueSet: Pinned the version of http://fhir.de/ValueSet/Diagnosesubtyp to 1.5.4
 INFORMATION: StructureDefinition.differential.element[67].binding.valueSet: Pinned the version of http://fhir.de/ValueSet/dgkev/Aufnahmeanlass to 1.5.4
 INFORMATION: StructureDefinition.differential.element[72].type[0].profile[0]: Pinned the version of http://fhir.de/StructureDefinition/Entlassungsgrund to 1.5.4
-INFORMATION: StructureDefinition.differential.element[81].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/location-physical-type to 2026.0.1
+INFORMATION: StructureDefinition.differential.element[81].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/location-physical-type to 2027.0.0-dev
 INFORMATION: StructureDefinition/mii-pr-fall-kontakt-gesundheitseinrichtung: StructureDefinition.extension[4]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-pr-fall-kontakt-gesundheitseinrichtung: StructureDefinition.extension[5]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-pr-fall-kontakt-gesundheitseinrichtung: StructureDefinition.extension[6]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
@@ -2763,7 +2765,7 @@ INFORMATION: StructureDefinition.snapshot.element[0].constraint[1].source: Pinne
 INFORMATION: StructureDefinition.snapshot.element[0].constraint[2].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/DomainResource to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[0].constraint[3].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/DomainResource to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[0].constraint[4].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/DomainResource to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[0].constraint[5].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient to 2026.0.1
+INFORMATION: StructureDefinition.snapshot.element[0].constraint[5].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient to 2027.0.0-dev
 INFORMATION: StructureDefinition.snapshot.element[2].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[4].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[4].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
@@ -2880,7 +2882,7 @@ INFORMATION: StructureDefinition.snapshot.element[100].constraint[0].source: Pin
 INFORMATION: StructureDefinition.snapshot.element[101].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[102].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[103].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[103].constraint[1].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient to 2026.0.1
+INFORMATION: StructureDefinition.snapshot.element[103].constraint[1].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient to 2027.0.0-dev
 INFORMATION: StructureDefinition.snapshot.element[104].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[105].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[106].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
@@ -2972,7 +2974,7 @@ INFORMATION: StructureDefinition.snapshot.element[174].constraint[0].source: Pin
 INFORMATION: StructureDefinition.snapshot.element[175].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[176].type[0].profile[0]: Pinned the version of http://fhir.de/StructureDefinition/address-de-basis to 1.5.4
 INFORMATION: StructureDefinition.snapshot.element[176].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[176].constraint[1].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient to 2026.0.1
+INFORMATION: StructureDefinition.snapshot.element[176].constraint[1].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient to 2027.0.0-dev
 INFORMATION: StructureDefinition.snapshot.element[178].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[178].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[179].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-precinct to 5.3.0
@@ -3022,7 +3024,7 @@ INFORMATION: StructureDefinition.snapshot.element[210].binding.valueSet: Pinned 
 INFORMATION: StructureDefinition.snapshot.element[211].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[212].type[0].profile[0]: Pinned the version of http://fhir.de/StructureDefinition/address-de-basis to 1.5.4
 INFORMATION: StructureDefinition.snapshot.element[212].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[212].constraint[1].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient to 2026.0.1
+INFORMATION: StructureDefinition.snapshot.element[212].constraint[1].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient to 2027.0.0-dev
 INFORMATION: StructureDefinition.snapshot.element[214].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[214].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[215].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-precinct to 5.3.0
@@ -3103,20 +3105,20 @@ INFORMATION: StructureDefinition.snapshot.element[273].constraint[0].source: Pin
 INFORMATION: StructureDefinition.snapshot.element[273].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[274].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[275].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.differential.element[0].constraint[0].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient to 2026.0.1
+INFORMATION: StructureDefinition.differential.element[0].constraint[0].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient to 2027.0.0-dev
 INFORMATION: StructureDefinition.differential.element[5].type[0].profile[0]: Pinned the version of http://fhir.de/StructureDefinition/identifier-kvid-10 to 1.5.4
 INFORMATION: StructureDefinition.differential.element[13].type[0].profile[0]: Pinned the version of http://fhir.de/StructureDefinition/identifier-iknr to 1.5.4
 INFORMATION: StructureDefinition.differential.element[20].type[0].profile[0]: Pinned the version of http://fhir.de/StructureDefinition/identifier-pid to 1.5.4
-INFORMATION: StructureDefinition.differential.element[33].constraint[0].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient to 2026.0.1
+INFORMATION: StructureDefinition.differential.element[33].constraint[0].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient to 2027.0.0-dev
 INFORMATION: StructureDefinition.differential.element[35].type[0].profile[0]: Pinned the version of http://fhir.de/StructureDefinition/humanname-de-basis to 1.5.4
 INFORMATION: StructureDefinition.differential.element[44].type[0].profile[0]: Pinned the version of http://fhir.de/StructureDefinition/humanname-de-basis to 1.5.4
 INFORMATION: StructureDefinition.differential.element[55].type[0].profile[0]: Pinned the version of http://fhir.de/StructureDefinition/gender-amtlich-de to 1.5.4
 INFORMATION: StructureDefinition.differential.element[62].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/data-absent-reason to 5.3.0
 INFORMATION: StructureDefinition.differential.element[67].type[0].profile[0]: Pinned the version of http://fhir.de/StructureDefinition/address-de-basis to 1.5.4
-INFORMATION: StructureDefinition.differential.element[67].constraint[0].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient to 2026.0.1
+INFORMATION: StructureDefinition.differential.element[67].constraint[0].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient to 2027.0.0-dev
 INFORMATION: StructureDefinition.differential.element[77].type[0].profile[0]: Pinned the version of http://fhir.de/StructureDefinition/destatis/ags to 1.5.4
 INFORMATION: StructureDefinition.differential.element[84].type[0].profile[0]: Pinned the version of http://fhir.de/StructureDefinition/address-de-basis to 1.5.4
-INFORMATION: StructureDefinition.differential.element[84].constraint[0].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient to 2026.0.1
+INFORMATION: StructureDefinition.differential.element[84].constraint[0].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient to 2027.0.0-dev
 INFORMATION: StructureDefinition.differential.element[94].type[0].profile[0]: Pinned the version of http://fhir.de/StructureDefinition/destatis/ags to 1.5.4
 INFORMATION: StructureDefinition/mii-pr-person-patient: StructureDefinition.extension[4]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-pr-person-patient: StructureDefinition.extension[5]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
@@ -3405,7 +3407,7 @@ INFORMATION: StructureDefinition.snapshot.element[0].constraint[1].source: Pinne
 INFORMATION: StructureDefinition.snapshot.element[0].constraint[2].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/DomainResource to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[0].constraint[3].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/DomainResource to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[0].constraint[4].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/DomainResource to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[0].constraint[5].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert to 2026.0.1
+INFORMATION: StructureDefinition.snapshot.element[0].constraint[5].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert to 2027.0.0-dev
 INFORMATION: StructureDefinition.snapshot.element[2].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[4].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[4].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
@@ -3442,7 +3444,7 @@ INFORMATION: StructureDefinition.snapshot.element[32].constraint[0].source: Pinn
 INFORMATION: StructureDefinition.snapshot.element[33].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[34].type[0].profile[0]: Pinned the version of http://fhir.de/StructureDefinition/identifier-kvid-10 to 1.5.4
 INFORMATION: StructureDefinition.snapshot.element[34].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[34].constraint[1].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert to 2026.0.1
+INFORMATION: StructureDefinition.snapshot.element[34].constraint[1].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert to 2027.0.0-dev
 INFORMATION: StructureDefinition.snapshot.element[36].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[36].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[37].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
@@ -3496,7 +3498,7 @@ INFORMATION: StructureDefinition.snapshot.element[74].constraint[0].source: Pinn
 INFORMATION: StructureDefinition.snapshot.element[75].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[76].type[0].profile[0]: Pinned the version of http://fhir.de/StructureDefinition/address-de-basis to 1.5.4
 INFORMATION: StructureDefinition.snapshot.element[76].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[76].constraint[1].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert to 2026.0.1
+INFORMATION: StructureDefinition.snapshot.element[76].constraint[1].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert to 2027.0.0-dev
 INFORMATION: StructureDefinition.snapshot.element[78].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[78].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[79].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-precinct to 5.3.0
@@ -3566,14 +3568,14 @@ INFORMATION: StructureDefinition.snapshot.element[126].constraint[0].source: Pin
 INFORMATION: StructureDefinition.snapshot.element[126].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[127].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[128].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.differential.element[0].constraint[0].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert to 2026.0.1
+INFORMATION: StructureDefinition.differential.element[0].constraint[0].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert to 2027.0.0-dev
 INFORMATION: StructureDefinition.differential.element[11].type[0].profile[0]: Pinned the version of http://fhir.de/StructureDefinition/identifier-kvid-10 to 1.5.4
-INFORMATION: StructureDefinition.differential.element[11].constraint[0].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert to 2026.0.1
+INFORMATION: StructureDefinition.differential.element[11].constraint[0].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert to 2027.0.0-dev
 INFORMATION: StructureDefinition.differential.element[16].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/data-absent-reason to 5.3.0
 INFORMATION: StructureDefinition.differential.element[19].type[0].profile[0]: Pinned the version of http://fhir.de/StructureDefinition/identifier-iknr to 1.5.4
 INFORMATION: StructureDefinition.differential.element[26].type[0].profile[0]: Pinned the version of http://fhir.de/StructureDefinition/gender-amtlich-de to 1.5.4
 INFORMATION: StructureDefinition.differential.element[29].type[0].profile[0]: Pinned the version of http://fhir.de/StructureDefinition/address-de-basis to 1.5.4
-INFORMATION: StructureDefinition.differential.element[29].constraint[0].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert to 2026.0.1
+INFORMATION: StructureDefinition.differential.element[29].constraint[0].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert to 2027.0.0-dev
 INFORMATION: StructureDefinition.differential.element[32].type[0].profile[0]: Pinned the version of http://fhir.de/StructureDefinition/destatis/ags to 1.5.4
 INFORMATION: StructureDefinition/mii-pr-person-patient-pseudonymisiert: StructureDefinition.extension[4]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-pr-person-patient-pseudonymisiert: StructureDefinition.extension[5]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
@@ -3744,6 +3746,7 @@ INFORMATION: StructureDefinition/mii-pr-person-patient-pseudonymisiert: Structur
 INFORMATION: StructureDefinition/mii-pr-person-patient-pseudonymisiert: StructureDefinition.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-pr-person-patient-pseudonymisiert: StructureDefinition.meta.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Resource: The resource StructureDefinition/mii-pr-person-patient-pseudonymisiert could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+ERROR: StructureDefinition: Profile test case failed - test for invalid/patient-pseudonymisiert-invalid-mr-duplicate.json failed but it should have failed
 == fsh-generated/resources/StructureDefinition-mii-pr-person-todesursache.json ==
 INFORMATION: StructureDefinition.meta.profile[0]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition to 2.0.0
 INFORMATION: StructureDefinition.meta.profile[1]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition to 2.0.0
@@ -3826,7 +3829,7 @@ INFORMATION: StructureDefinition.snapshot.element[67].constraint[0].source: Pinn
 INFORMATION: StructureDefinition.snapshot.element[67].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[68].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[69].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[69].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/mii-vs-person-icd10who to 2026.0.1
+INFORMATION: StructureDefinition.snapshot.element[69].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/mii-vs-person-icd10who to 2027.0.0-dev
 INFORMATION: StructureDefinition.snapshot.element[71].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[71].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[72].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
@@ -3873,7 +3876,7 @@ INFORMATION: StructureDefinition.snapshot.element[108].constraint[1].source: Pin
 INFORMATION: StructureDefinition.snapshot.element[109].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[110].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[111].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.differential.element[23].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/mii-vs-person-icd10who to 2026.0.1
+INFORMATION: StructureDefinition.differential.element[23].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/mii-vs-person-icd10who to 2027.0.0-dev
 INFORMATION: StructureDefinition/mii-pr-person-todesursache: StructureDefinition.extension[4]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-pr-person-todesursache: StructureDefinition.extension[5]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-pr-person-todesursache: StructureDefinition.extension[6]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
@@ -4019,6 +4022,7 @@ INFORMATION: StructureDefinition/mii-pr-person-todesursache: StructureDefinition
 INFORMATION: StructureDefinition/mii-pr-person-todesursache: StructureDefinition.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-pr-person-todesursache: StructureDefinition.meta.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Resource: The resource StructureDefinition/mii-pr-person-todesursache could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+ERROR: StructureDefinition: Profile test case failed - test for invalid/todesursache-invalid-missing-code.json failed but it should have failed
 == fsh-generated/resources/StructureDefinition-mii-pr-person-vitalstatus.json ==
 INFORMATION: StructureDefinition.meta.profile[0]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition to 2.0.0
 INFORMATION: StructureDefinition.meta.profile[1]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition to 2.0.0
@@ -4102,7 +4106,7 @@ INFORMATION: StructureDefinition.snapshot.element[67].constraint[0].source: Pinn
 INFORMATION: StructureDefinition.snapshot.element[67].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[68].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[69].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[69].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/Vitalstatus to 2026.0.1
+INFORMATION: StructureDefinition.snapshot.element[69].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/Vitalstatus to 2027.0.0-dev
 INFORMATION: StructureDefinition.snapshot.element[71].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[71].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[72].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
@@ -4144,7 +4148,7 @@ INFORMATION: StructureDefinition.snapshot.element[104].constraint[0].source: Pin
 INFORMATION: StructureDefinition.snapshot.element[105].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.differential.element[15].type[0].targetProfile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/Patient to 4.0.1
 INFORMATION: StructureDefinition.differential.element[15].type[0].targetProfile[1]: Pinned the version of http://hl7.org/fhir/StructureDefinition/Group to 4.0.1
-INFORMATION: StructureDefinition.differential.element[22].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/Vitalstatus to 2026.0.1
+INFORMATION: StructureDefinition.differential.element[22].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/Vitalstatus to 2027.0.0-dev
 INFORMATION: StructureDefinition/mii-pr-person-vitalstatus: StructureDefinition.extension[4]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-pr-person-vitalstatus: StructureDefinition.extension[5]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-pr-person-vitalstatus: StructureDefinition.extension[6]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
@@ -4288,6 +4292,7 @@ INFORMATION: StructureDefinition/mii-pr-person-vitalstatus: StructureDefinition.
 INFORMATION: StructureDefinition/mii-pr-person-vitalstatus: StructureDefinition.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-pr-person-vitalstatus: StructureDefinition.meta.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Resource: The resource StructureDefinition/mii-pr-person-vitalstatus could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+ERROR: StructureDefinition: Profile test case failed - test for invalid/vitalstatus-invalid-missing-effective.json failed but it should have failed
 == fsh-generated/resources/StructureDefinition-mii-pr-prozedur-procedure.json ==
 INFORMATION: StructureDefinition.meta.profile[0]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition to 2.0.0
 INFORMATION: StructureDefinition.meta.profile[1]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition to 2.0.0
@@ -4297,7 +4302,7 @@ INFORMATION: StructureDefinition.snapshot.element[0].constraint[1].source: Pinne
 INFORMATION: StructureDefinition.snapshot.element[0].constraint[2].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/DomainResource to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[0].constraint[3].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/DomainResource to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[0].constraint[4].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/DomainResource to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[0].constraint[5].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure to 2026.0.1
+INFORMATION: StructureDefinition.snapshot.element[0].constraint[5].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure to 2027.0.0-dev
 INFORMATION: StructureDefinition.snapshot.element[2].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[4].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[4].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
@@ -4319,13 +4324,13 @@ INFORMATION: StructureDefinition.snapshot.element[16].constraint[1].source: Pinn
 INFORMATION: StructureDefinition.snapshot.element[18].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[18].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[20].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[21].type[0].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Durchfuehrungsabsicht to 2026.0.1
+INFORMATION: StructureDefinition.snapshot.element[21].type[0].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Durchfuehrungsabsicht to 2027.0.0-dev
 INFORMATION: StructureDefinition.snapshot.element[21].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[21].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[23].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[23].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[25].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[25].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-intend to 2026.0.1
+INFORMATION: StructureDefinition.snapshot.element[25].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-intend to 2027.0.0-dev
 INFORMATION: StructureDefinition.snapshot.element[27].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[27].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[28].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
@@ -4347,7 +4352,7 @@ INFORMATION: StructureDefinition.snapshot.element[43].constraint[0].source: Pinn
 INFORMATION: StructureDefinition.snapshot.element[43].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[44].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[45].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[45].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-category-sct to 2026.0.1
+INFORMATION: StructureDefinition.snapshot.element[45].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-category-sct to 2027.0.0-dev
 INFORMATION: StructureDefinition.snapshot.element[47].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[47].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[48].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
@@ -4357,13 +4362,13 @@ INFORMATION: StructureDefinition.snapshot.element[51].constraint[0].source: Pinn
 INFORMATION: StructureDefinition.snapshot.element[52].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[53].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[54].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[54].constraint[1].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure to 2026.0.1
+INFORMATION: StructureDefinition.snapshot.element[54].constraint[1].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure to 2027.0.0-dev
 INFORMATION: StructureDefinition.snapshot.element[56].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[56].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[57].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[58].type[0].profile[0]: Pinned the version of http://fhir.de/StructureDefinition/CodingOPS to 1.5.4
 INFORMATION: StructureDefinition.snapshot.element[58].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[58].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/mii-vs-prozedur-ops to 2026.0.1
+INFORMATION: StructureDefinition.snapshot.element[58].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/mii-vs-prozedur-ops to 2027.0.0-dev
 INFORMATION: StructureDefinition.snapshot.element[60].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[60].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[61].type[0].profile[0]: Pinned the version of http://fhir.de/StructureDefinition/seitenlokalisation to 1.5.4
@@ -4386,7 +4391,7 @@ INFORMATION: StructureDefinition.snapshot.element[75].constraint[1].source: Pinn
 INFORMATION: StructureDefinition.snapshot.element[76].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[77].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[78].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[78].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-sct to 2026.0.1
+INFORMATION: StructureDefinition.snapshot.element[78].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-sct to 2027.0.0-dev
 INFORMATION: StructureDefinition.snapshot.element[80].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[80].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[81].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
@@ -4453,14 +4458,14 @@ INFORMATION: StructureDefinition.snapshot.element[139].constraint[0].source: Pin
 INFORMATION: StructureDefinition.snapshot.element[140].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[141].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[142].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.differential.element[0].constraint[0].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure to 2026.0.1
+INFORMATION: StructureDefinition.differential.element[0].constraint[0].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure to 2027.0.0-dev
 INFORMATION: StructureDefinition.differential.element[6].type[0].profile[0]: Pinned the version of http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum to 1.5.4
-INFORMATION: StructureDefinition.differential.element[9].type[0].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Durchfuehrungsabsicht to 2026.0.1
-INFORMATION: StructureDefinition.differential.element[17].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-category-sct to 2026.0.1
-INFORMATION: StructureDefinition.differential.element[20].constraint[0].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure to 2026.0.1
+INFORMATION: StructureDefinition.differential.element[9].type[0].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Durchfuehrungsabsicht to 2027.0.0-dev
+INFORMATION: StructureDefinition.differential.element[17].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-category-sct to 2027.0.0-dev
+INFORMATION: StructureDefinition.differential.element[20].constraint[0].source: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure to 2027.0.0-dev
 INFORMATION: StructureDefinition.differential.element[22].type[0].profile[0]: Pinned the version of http://fhir.de/StructureDefinition/CodingOPS to 1.5.4
-INFORMATION: StructureDefinition.differential.element[22].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/mii-vs-prozedur-ops to 2026.0.1
-INFORMATION: StructureDefinition.differential.element[31].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-sct to 2026.0.1
+INFORMATION: StructureDefinition.differential.element[22].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/mii-vs-prozedur-ops to 2027.0.0-dev
+INFORMATION: StructureDefinition.differential.element[31].binding.valueSet: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-sct to 2027.0.0-dev
 INFORMATION: StructureDefinition/mii-pr-prozedur-procedure: StructureDefinition.extension[4]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-pr-prozedur-procedure: StructureDefinition.extension[5]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-pr-prozedur-procedure: StructureDefinition.extension[6]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
@@ -5003,7 +5008,7 @@ INFORMATION: ValueSet/mii-vs-person-icd10who: ValueSet.meta.extension[0]: This e
 WARNING: Resource: The resource ValueSet/mii-vs-person-icd10who should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 INFORMATION: ValueSet.where(id = 'mii-vs-person-icd10who'): The value set expansion is too large, and only a subset has been displayed
 == fsh-generated/resources/ValueSet-mii-vs-person-vitalstatus.json ==
-INFORMATION: ValueSet.compose.include[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/CodeSystem/Vitalstatus to 2026.0.1
+INFORMATION: ValueSet.compose.include[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/CodeSystem/Vitalstatus to 2027.0.0-dev
 INFORMATION: ValueSet.meta.profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/shareablevalueset to 4.0.2
 INFORMATION: ValueSet.meta.profile[1]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablevalueset to 2.0.0
 INFORMATION: ValueSet.meta.profile[2]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset to 2.0.0

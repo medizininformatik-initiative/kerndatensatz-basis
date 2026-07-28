@@ -1,4 +1,4 @@
-# MII VS Diagnose BodyStructure SNOMED - MII Implementation Guide Core Dataset Base v2026.0.1
+# MII VS Diagnose BodyStructure SNOMED - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
 ## ValueSet: MII VS Diagnose BodyStructure SNOMED (Experimental) 
 
@@ -39,7 +39,7 @@ Enthaelt alle SNOMED Body structure codes
       },
       {
         "url" : "version",
-        "valueString" : "2026.0.1"
+        "valueString" : "2027.0.0-dev"
       },
       {
         "url" : "uri",
@@ -84,7 +84,7 @@ Enthaelt alle SNOMED Body structure codes
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod",
     "valuePeriod" : {
-      "start" : "2026"
+      "start" : "2027"
     }
   },
   {
@@ -156,7 +156,7 @@ Enthaelt alle SNOMED Body structure codes
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-bodystructure-snomed",
-  "version" : "2026.0.1",
+  "version" : "2027.0.0-dev",
   "name" : "MII_VS_Diagnose_BodyStructure_SNOMED",
   "title" : "MII VS Diagnose BodyStructure SNOMED",
   "status" : "active",

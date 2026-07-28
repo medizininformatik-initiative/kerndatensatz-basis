@@ -1,4 +1,4 @@
-# MII CPS Prozedur CapabilityStatement - MII Implementation Guide Core Dataset Base v2026.0.1
+# MII CPS Prozedur CapabilityStatement - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
 ## CapabilityStatement: MII CPS Prozedur CapabilityStatement 
 
@@ -27,7 +27,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
       },
       {
         "url" : "version",
-        "valueString" : "2026.0.1"
+        "valueString" : "2027.0.0-dev"
       },
       {
         "url" : "uri",
@@ -75,7 +75,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod",
     "valuePeriod" : {
-      "start" : "2026"
+      "start" : "2027"
     }
   },
   {
@@ -143,7 +143,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/CapabilityStatement/metadata",
-  "version" : "2026.0.1",
+  "version" : "2027.0.0-dev",
   "name" : "MII_CPS_Prozedur_CapabilityStatement",
   "title" : "MII CPS Prozedur CapabilityStatement",
   "status" : "active",
@@ -178,7 +178,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
       }],
       "type" : "Procedure",
       "profile" : "http://hl7.org/fhir/StructureDefinition/Procedure",
-      "supportedProfile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.1"],
+      "supportedProfile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2027.0.0-dev"],
       "_supportedProfile" : [{
         "extension" : [{
           "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
@@ -245,7 +245,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         "name" : "_profile",
         "definition" : "http://hl7.org/fhir/SearchParameter/Resource-profile",
         "type" : "uri",
-        "documentation" : "**Example:**\n`GET [base]/Procedure?_profile=https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.1`\n\n**Notes:**\nSearches on `Procedure.meta.profile`. For further details see FHIR core specification, section [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)."
+        "documentation" : "**Example:**\n`GET [base]/Procedure?_profile=https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2027.0.0-dev`\n\n**Notes:**\nSearches on `Procedure.meta.profile`. For further details see FHIR core specification, section [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)."
       },
       {
         "extension" : [{

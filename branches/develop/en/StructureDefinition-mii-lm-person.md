@@ -1,4 +1,4 @@
-# MII LM Person - MII Implementation Guide Core Dataset Base v2026.0.1
+# MII LM Person - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
 ## Logical Model: MII LM Person 
 
@@ -74,7 +74,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-person.csv
       },
       {
         "url" : "version",
-        "valueString" : "2026.0.1"
+        "valueString" : "2027.0.0-dev"
       },
       {
         "url" : "uri",
@@ -122,7 +122,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-person.csv
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod",
     "valuePeriod" : {
-      "start" : "2026"
+      "start" : "2027"
     }
   },
   {
@@ -217,7 +217,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-person.csv
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/LogicalModel/Person",
-  "version" : "2026.0.1",
+  "version" : "2027.0.0-dev",
   "name" : "MII_LM_Person",
   "title" : "MII LM Person",
   "status" : "active",

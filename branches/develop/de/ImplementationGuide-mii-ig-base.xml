@@ -35,7 +35,7 @@
       <valueId value="de.medizininformatikinitiative.kerndatensatz.base"/>
     </extension>
     <extension url="version">
-      <valueString value="2026.0.1"/>
+      <valueString value="2027.0.0-dev"/>
     </extension>
     <extension url="uri">
       <valueUri value="https://www.medizininformatik-initiative.de/fhir/modul-base"/>
@@ -43,7 +43,7 @@
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod">
     <valuePeriod>
-      <start value="2026"/>
+      <start value="2027"/>
     </valuePeriod>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/artifact-author">
@@ -185,12 +185,12 @@
     </valueCodeableConcept>
   </extension>
   <url value="https://www.medizininformatik-initiative.de/fhir/modul-base/ImplementationGuide/mii-ig-base"/>
-  <version value="2026.0.1"/>
+  <version value="2027.0.0-dev"/>
   <name value="MII_IG_Base"/>
   <title value="MII Implementierungsleitfaden Kerndatensatz Basis"/>
   <status value="active"/>
   <experimental value="false"/>
-  <date value="2026-07-20"/>
+  <date value="2026-07-28"/>
   <publisher value="Medical Informatics Initiative (MII)"/>
   <contact>
     <name value="Medical Informatics Initiative (MII)"/>
@@ -260,7 +260,7 @@
         <valueString value="releaselabel"/>
       </extension>
       <extension url="value">
-        <valueString value="Release"/>
+        <valueString value="ci-build"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -924,7 +924,7 @@
         <valueCode value="releaselabel"/>
       </extension>
       <extension url="value">
-        <valueString value="Release"/>
+        <valueString value="ci-build"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">

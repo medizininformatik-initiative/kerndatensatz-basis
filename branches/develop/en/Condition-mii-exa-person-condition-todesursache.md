@@ -1,4 +1,4 @@
-# MII EXA Person Condition (Todesursache) - MII Implementation Guide Core Dataset Base v2026.0.1
+# MII EXA Person Condition (Todesursache) - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
 ## Example Condition: MII EXA Person Condition (Todesursache)
 
@@ -8,7 +8,7 @@
 
 -------
 
-Profile: [MII PR Person Todesursache](StructureDefinition-mii-pr-person-todesursache.md) version: 2026.0.1
+Profile: [MII PR Person Todesursache](StructureDefinition-mii-pr-person-todesursache.md) version: 2027.0.0-dev
 
 Security Label: [test health data (Details: ActReason code HTEST = 'test health data')](http://terminology.hl7.org/7.3.0/CodeSystem-v3-ActReason.html)
 
@@ -34,7 +34,7 @@ Security Label: [test health data (Details: ActReason code HTEST = 'test health 
       },
       {
         "url" : "version",
-        "valueString" : "2026.0.1"
+        "valueString" : "2027.0.0-dev"
       },
       {
         "url" : "uri",
@@ -42,7 +42,7 @@ Security Label: [test health data (Details: ActReason code HTEST = 'test health 
       }],
       "url" : "http://hl7.org/fhir/StructureDefinition/package-source"
     }],
-    "profile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Todesursache|2026.0.1"],
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Todesursache|2027.0.0-dev"],
     "security" : [{
       "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
       "code" : "HTEST",

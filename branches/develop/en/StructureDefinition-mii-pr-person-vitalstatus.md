@@ -1,4 +1,4 @@
-# MII PR Person Vitalstatus - MII Implementation Guide Core Dataset Base v2026.0.1
+# MII PR Person Vitalstatus - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
 ## Resource Profile: MII PR Person Vitalstatus 
 
@@ -117,7 +117,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-person-vit
       },
       {
         "url" : "version",
-        "valueString" : "2026.0.1"
+        "valueString" : "2027.0.0-dev"
       },
       {
         "url" : "uri",
@@ -165,7 +165,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-person-vit
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod",
     "valuePeriod" : {
-      "start" : "2026"
+      "start" : "2027"
     }
   },
   {
@@ -233,7 +233,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-person-vit
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus",
-  "version" : "2026.0.1",
+  "version" : "2027.0.0-dev",
   "name" : "MII_PR_Person_Vitalstatus",
   "title" : "MII PR Person Vitalstatus",
   "_title" : {

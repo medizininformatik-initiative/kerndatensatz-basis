@@ -1,4 +1,4 @@
-# MII VS Prozedur OPS - MII Implementation Guide Core Dataset Base v2026.0.1
+# MII VS Prozedur OPS - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
 ## ValueSet: MII VS Prozedur OPS 
 
@@ -39,7 +39,7 @@ Enthaelt OPS-Codes der Versionen 2010 bis 2025
       },
       {
         "url" : "version",
-        "valueString" : "2026.0.1"
+        "valueString" : "2027.0.0-dev"
       },
       {
         "url" : "uri",
@@ -84,7 +84,7 @@ Enthaelt OPS-Codes der Versionen 2010 bis 2025
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod",
     "valuePeriod" : {
-      "start" : "2026"
+      "start" : "2027"
     }
   },
   {
@@ -156,7 +156,7 @@ Enthaelt OPS-Codes der Versionen 2010 bis 2025
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/mii-vs-prozedur-ops",
-  "version" : "2026.0.1",
+  "version" : "2027.0.0-dev",
   "name" : "MII_VS_Prozedur_OPS",
   "title" : "MII VS Prozedur OPS",
   "status" : "active",

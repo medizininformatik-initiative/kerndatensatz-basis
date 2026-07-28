@@ -1,4 +1,4 @@
-# MII CS Fall Supplement ActEncounterCode - MII Implementation Guide Core Dataset Base v2026.0.1
+# MII CS Fall Supplement ActEncounterCode - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
 ## CodeSystem: MII CS Fall Supplement ActEncounterCode 
 
@@ -33,7 +33,7 @@ This Code system is referenced in the definition of the following value sets:
       },
       {
         "url" : "version",
-        "valueString" : "2026.0.1"
+        "valueString" : "2027.0.0-dev"
       },
       {
         "url" : "uri",
@@ -72,7 +72,7 @@ This Code system is referenced in the definition of the following value sets:
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod",
     "valuePeriod" : {
-      "start" : "2026"
+      "start" : "2027"
     }
   },
   {
@@ -140,7 +140,7 @@ This Code system is referenced in the definition of the following value sets:
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/CodeSystem/SupplementActEncounterCode",
-  "version" : "2026.0.1",
+  "version" : "2027.0.0-dev",
   "name" : "MII_CS_Fall_SupplementActEncounterCode",
   "title" : "MII CS Fall Supplement ActEncounterCode",
   "status" : "active",

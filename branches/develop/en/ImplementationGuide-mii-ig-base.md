@@ -1,4 +1,4 @@
-# MII ImplementationGuide Resource - MII Implementation Guide Core Dataset Base v2026.0.1
+# MII ImplementationGuide Resource - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
 ## MII ImplementationGuide Resource
 
@@ -125,7 +125,7 @@ Expansion parameters are query parameters that can be passed to a `ValueSet` `$e
     },
     {
       "url" : "version",
-      "valueString" : "2026.0.1"
+      "valueString" : "2027.0.0-dev"
     },
     {
       "url" : "uri",
@@ -136,7 +136,7 @@ Expansion parameters are query parameters that can be passed to a `ValueSet` `$e
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod",
     "valuePeriod" : {
-      "start" : "2026"
+      "start" : "2027"
     }
   },
   {
@@ -298,7 +298,7 @@ Expansion parameters are query parameters that can be passed to a `ValueSet` `$e
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/modul-base/ImplementationGuide/mii-ig-base",
-  "version" : "2026.0.1",
+  "version" : "2027.0.0-dev",
   "name" : "MII_IG_Base",
   "title" : "MII Implementation Guide Core Dataset Base",
   "_title" : {
@@ -316,7 +316,7 @@ Expansion parameters are query parameters that can be passed to a `ValueSet` `$e
   },
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-07-20",
+  "date" : "2026-07-28",
   "publisher" : "Medical Informatics Initiative (MII)",
   "contact" : [{
     "name" : "Medical Informatics Initiative (MII)",
@@ -412,7 +412,7 @@ Expansion parameters are query parameters that can be passed to a `ValueSet` `$e
       },
       {
         "url" : "value",
-        "valueString" : "Release"
+        "valueString" : "ci-build"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -1324,7 +1324,7 @@ Expansion parameters are query parameters that can be passed to a `ValueSet` `$e
       },
       {
         "url" : "value",
-        "valueString" : "Release"
+        "valueString" : "ci-build"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
