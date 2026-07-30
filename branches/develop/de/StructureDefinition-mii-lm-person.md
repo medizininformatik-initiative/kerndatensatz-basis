@@ -50,6 +50,61 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-perso
 
 ### Notizen:
 
+### Tabellenansicht
+
+| | |
+| :--- | :--- |
+| Logischer Datensatz | Beschreibung |
+| Person | -- Überschrift -- |
+| Person.Name | Vollständiger Name einer Person. |
+| Person.Name.Vorname | Vollständiger Vorname einer Person. |
+| Person.Name.Nachname | Nachname einer Person ohne Vor- und Zusätze. Dient z.B. der alphabetischen Einordnung des Namens. |
+| Person.Name.Familienname | Der vollständige Familienname, einschließlich aller Vorsatz- und Zusatzwörter, mit Leerzeichen getrennt. |
+| Person.Name.Vorsatzwort | Vorsatzwort wie z.B.: von, van, zu Vgl. auch VSDM-Spezifikation der Gematik (Versichertenstammdatenmanagement, "eGK") |
+| Person.Name.Namenszusatz | Namenszusatz als Bestandteil das Nachnamens, wie in VSDM (Versichertenstammdatenmanagement, "eGK") definiert. Beispiele: Gräfin, Prinz oder Fürst |
+| Person.Name.Praefix | Namensteile vor dem Vornamen, z.B. akademischer Grad |
+| Person.Name.Praefix.ArtdesPraefixes | Art des Präfixes, z.B. "AC" für Akademische Titel |
+| Person.Name.Geburtsname | Familienname einer Person zum Zeitpunkt ihrer Geburt. Kann sich danach z.B. durch Heirat und Annahme eines anderen Familiennamens ändern. |
+| Person.Demographie | Das Basismodul Demographie enthält demographische Parameter (Alter, Geschlecht etc.). |
+| Person.Demographie.AdministrativesGeschlecht | Administratives Geschlecht der Person |
+| Person.Demographie.Geburtsdatum | Geburtsdatum des Person. |
+| Person.Demographie.Adresse | Vollständige Anschrift einer Person für die postlische Kommunikation. |
+| Person.Demographie.Adresse.Strassenanschrift | Eine Adresse für die Strassenanschrift gemäß postalischer Konventionen. Bei Stadtstaaten einschließlich Bezirken. |
+| Person.Demographie.Adresse.Strassenanschrift.Land | Ländercode nach ISO 3166. |
+| Person.Demographie.Adresse.Strassenanschrift.PLZ | Postleitzahl gemäß der im jeweiligen Land gültigen Konventionen. |
+| Person.Demographie.Adresse.Strassenanschrift.Wohnort | Bei Personen aus Stadtstaaten inklusive des Stadtteils. |
+| Person.Demographie.Adresse.Strassenanschrift.Strasse | Straßenname mit Hausnummer oder Postfach sowie weitere Angaben zur Zustellung. |
+| Person.Demographie.Adresse.Postfach | Eine Adresse für ein Postfach gemäß postalischer Konventionen. Bei Stadtstaaten einschließlich Bezirken. |
+| Person.Demographie.Adresse.Postfach.Land | Ländercode nach ISO 3166. |
+| Person.Demographie.Adresse.Postfach.PLZ | Postleitzahl gemäß der im jeweiligen Land gültigen Konventionen. |
+| Person.Demographie.Adresse.Postfach.Wohnort | Bei Personen aus Stadtstaaten inklusive des Stadtteils. |
+| Person.Demographie.Adresse.Postfach.Strasse | Straßenname mit Hausnummer oder Postfach sowie weitere Angaben zur Zustellung. |
+| Person.Demographie.Vitalstatus | Gibt an, ob ein Patient verstorben ist. Falls ja, zudem den Zeitpunkt. |
+| Person.Demographie.Vitalstatus.PatientVerstorben | Gibt an, ob der Patient am Leben oder verstorben ist. |
+| Person.Demographie.Vitalstatus.Todeszeitpunkt | Gibt den Todeszeitpunkt des Patienten an, falls dieser im KH verstorben ist. Ansonsten "Null Flavor". |
+| Person.Demographie.Vitalstatus.Informationsquelle | Quelle des Vitalstatus. |
+| Person.Demographie.Vitalstatus.ZeitpunktFeststellungDesVitalstatus | Letzter bekannter Zeitpunkt oder Zeitraum, zudem ein Vitalstatus festgestellt wurde |
+| Person.Demographie.Vitalstatus.Todesursache | Todesursache mit ICD-10-WHO kodiert. |
+| Person.PatientIn | Person, die in einer oder mehreren Gesundheitseinrichtungen behandelt wird |
+| Person.PatientIn.PatientenIdentifikator | Identifikation des Patienten in Verschiedenen Gesundheitseinrichtungen, Einrichtungskennzeichen kann als "Codesystem" gesehen werden, und Patienten-Identifikator als "Code" |
+| Person.PatientIn.PatientenIdentifikator.PatientenIdentifikator | Gesundheitseinrichtungs-eigene Identifikationsnummer für einen Patienten |
+| Person.PatientIn.PatientenIdentifikator.PatientenIdentifikatorKontext | Der Kontext des Patienten-Identifikators um den Patienten-Identifikator zu Beschreiben, da der Patient innerhalb einer Gesundheitseinrichtung möglicherweise pro System eine Nummer (Im Krankenhaus: Labor, Radiologie, Internistische Station etc.) bekommt. |
+| Person.PatientIn.Versicherung | Aktuell gültige Versicherung der Patient:in welcher zur Abrechnung der Behandlungsleistung verwendet wird. |
+| Person.PatientIn.Versicherung.InstitutionskennzeichenDerKrankenkasse | Die Institutionskennzeichen (kurz: IK) sind bundesweit eindeutige, neunstellige Zahlen, mit deren Hilfe Abrechnungen und Qualitätssicherungsmaßnahmen im Bereich der deutschen Sozialversicherung einrichtungsübergreifend abgewickelt werden können. |
+| Person.PatientIn.Versicherung.Versicherungstyp | Versicherungstyp des Patienten |
+| Person.PatientIn.Versicherung.Versichertennummer | Angaben zur Identifikation der versicherten Person |
+| Person.PatientIn.Versicherung.Versichertennummer.VersichertenIDGKV | Unveränderlicher Teil der Krankenversichertennummer (VersichertenID) bei GKV Patienten. Diese findet sich z.B. auf der Mitgliedskarte der Krankenkasse. |
+| Person.PatientIn.Versicherung.Versichertennummer.VersichertennummerPKV | Versichertennummer bei PKV Patienten. Vergabe erfolgt durch die jeweilige Private Krankenversicherung. |
+| Person.ProbandIn | Person, die an einer Studie teilnimmt (unter Umständen, während sie Patient:in in einer Gesundheitseinrichtung ist) |
+| Person.ProbandIn.SubjektIdentifizierungscode | Eindeutiger Identifikator eines Patienten im Kontext eines Forschungsprojekts (klinische Studie, Use Case) |
+| Person.ProbandIn.Rechtsgrundlage | Rechtsgrundlage (z.B. Einwilligung) aufgrund die PatientIn in die Studie eingeschlossen werden darf. |
+| Person.ProbandIn.BeginnTeilnahme | Beginn der Teilnahme der Person an der Studie. |
+| Person.ProbandIn.EndeTeilnahme | Ende der Teilnahme der Person an der Studie. |
+| Person.ProbandIn.StatusDerTeilnahme | Stand der Teilnahme einer Person an der Studie, z.B. eingeschlossen, widerrufen, abgeschlossen etc. |
+| Person.ProbandIn.BezeichnungDerStudie | Identifikator der Studie |
+| Person.PatientInPseudonym | Pseudonymisierte Repräsentation einer dazueghörigen Patient:in |
+| Person.PatientInPseudonym.Pseudonym | Neu generierte Identifikation der PatientIn mit Bezug zum Original-Identifikator in einer Treuhandstelle. |
+
 ### Mapping LogicalModel Person -> FHIR
 
 | | |

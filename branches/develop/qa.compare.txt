@@ -1,10 +1,10 @@
 MII_IG_Base : Validation Results
 =========================================
 
-err = 1680, warn = 567, info = 2761
+err = 1680, warn = 567, info = 2765
 $--
 Generated $--. FHIR version $-- for de.medizininformatikinitiative.kerndatensatz.base#$-- (canonical = https://www.medizininformatik-initiative.de/fhir/modul-base)
- Build Errors : 0 / 4 / 2
+ Build Errors : 0 / 4 / 6
  /workspace/fsh-generated/resources/Bundle-mii-exa-base-test-data-bundle-1 : 0 / 57 / 67
  /workspace/fsh-generated/resources/CapabilityStatement-mii-cps-diagnose-capabilitystatement : 0 / 2 / 48
  /workspace/fsh-generated/resources/CapabilityStatement-mii-cps-fall-capabilitystatement : 0 / 2 / 41
@@ -73,7 +73,11 @@ Generated $--. FHIR version $-- for de.medizininformatikinitiative.kerndatensatz
 == n/a ==
 WARNING: ImplementationGuide.id: The Implementation Guide Resource id should be de.medizininformatikinitiative.kerndatensatz.base
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Parameters/mii-param-base-manifest.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+INFORMATION: de/StructureDefinition-mii-lm-diagnose.html: No conformance term found in the text: 301 und 
+INFORMATION: de/StructureDefinition-mii-lm-fall.html: No conformance term found in the text:  301 SGB V und des Datensatzes gemäß 
 INFORMATION: de/terminology.html: No conformance term found in the text:  301 und 
+INFORMATION: en/StructureDefinition-mii-lm-diagnose.html: No conformance term found in the text: 301 und 
+INFORMATION: en/StructureDefinition-mii-lm-fall.html: No conformance term found in the text:  301 SGB V und des Datensatzes gemäß 
 INFORMATION: en/terminology.html: No conformance term found in the text:  301 and 
 WARNING: 2: An HTML fragment from the set [cross-version-analysis.xhtml, cross-version-analysis-inline.xhtml, cross-version-analysis.xhtml, cross-version-analysis-inline.xhtml] is not included anywhere in the produced implementation guide
 WARNING: 5: An HTML fragment from the set [expansion-params.xhtml, expansion-params.xhtml] is not included anywhere in the produced implementation guide
@@ -151,7 +155,7 @@ INFORMATION: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[13].resource/*
 WARNING: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[14].resource/*Condition/mii-exa-diagnose-condition-elbow-contusion*/.meta.extension[0].extension[2].value.ofType(uri): No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/modul-base'
 INFORMATION: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[14].resource/*Condition/mii-exa-diagnose-condition-elbow-contusion*/.code.coding[1]: Reference to experimental ValueSet https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/diagnoses-sct|2027.0.0-dev
 WARNING: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[15].resource/*Condition/mii-exa-diagnose-condition-multiple-codings*/.meta.extension[0].extension[2].value.ofType(uri): No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/modul-base'
-INFORMATION: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[15].resource/*Condition/mii-exa-diagnose-condition-multiple-codings*/.code.coding[2]: Reference to experimental ValueSet https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-orphanet|2026.0.1
+INFORMATION: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[15].resource/*Condition/mii-exa-diagnose-condition-multiple-codings*/.code.coding[2]: Reference to experimental ValueSet https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-orphanet|2027.0.0-dev
 WARNING: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[16].resource/*Procedure/mii-exa-prozedur-procedure*/.meta.extension[0].extension[2].value.ofType(uri): No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/modul-base'
 WARNING: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[17].resource/*Procedure/mii-exa-prozedur-procedure-2*/.meta.extension[0].extension[2].value.ofType(uri): No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/modul-base'
 WARNING: Bundle/mii-exa-base-test-data-bundle-1: Bundle.entry[18].resource/*Procedure/mii-exa-prozedur-imaging*/.meta.extension[0].extension[2].value.ofType(uri): No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/modul-base'
@@ -420,14 +424,14 @@ WARNING: Condition/mii-exa-diagnose-condition-elbow-contusion: Condition.meta.ex
 INFORMATION: Condition/mii-exa-diagnose-condition-elbow-contusion: Condition.code.coding[1]: Reference to experimental ValueSet https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/diagnoses-sct|2027.0.0-dev
 == fsh-generated/resources/Condition-mii-exa-diagnose-condition-multiple-codings.json ==
 WARNING: Condition/mii-exa-diagnose-condition-multiple-codings: Condition.meta.extension[0].extension[2].value.ofType(uri): No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/modul-base'
-INFORMATION: Condition/mii-exa-diagnose-condition-multiple-codings: Condition.code.coding[2]: Reference to experimental ValueSet https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-orphanet|2026.0.1
+INFORMATION: Condition/mii-exa-diagnose-condition-multiple-codings: Condition.code.coding[2]: Reference to experimental ValueSet https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-orphanet|2027.0.0-dev
 == fsh-generated/resources/Condition-mii-exa-diagnose-mehrfachcodierung-primaercode.json ==
 WARNING: Condition/mii-exa-diagnose-mehrfachcodierung-primaercode: Condition.meta.extension[0].extension[2].value.ofType(uri): No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/modul-base'
 == fsh-generated/resources/Condition-mii-exa-diagnose-mehrfachcodierung-sekundaercode.json ==
 WARNING: Condition/mii-exa-diagnose-mehrfachcodierung-sekundaercode: Condition.meta.extension[0].extension[2].value.ofType(uri): No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/modul-base'
 == fsh-generated/resources/Condition-mii-exa-person-condition-todesursache.json ==
 WARNING: Condition/mii-exa-person-condition-todesursache: Condition.meta.extension[0].extension[2].value.ofType(uri): No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/modul-base'
-INFORMATION: Condition/mii-exa-person-condition-todesursache: Condition.code.coding[0]: Reference to experimental ValueSet https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/mii-vs-person-icd10who|2026.0.1
+INFORMATION: Condition/mii-exa-person-condition-todesursache: Condition.code.coding[0]: Reference to experimental ValueSet https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/mii-vs-person-icd10who|2027.0.0-dev
 == fsh-generated/resources/Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.json ==
 WARNING: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1: Encounter.meta.extension[0].extension[2].value.ofType(uri): No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/modul-base'
 WARNING: Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1: Encounter.identifier[0].system: No definition could be found for URL value 'https://www.charite.de/fhir/sid/aufnahmenummer'

@@ -21,6 +21,39 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-fall.csv),
 
 ### Notes:
 
+### Table View
+
+| | |
+| :--- | :--- |
+| Logical dataset | Description |
+| Fall | MII LM Fall |
+| Fall.Einrichtungskontakt | Beschreibt den Kontakt zur Einrichtung, bestimmt durch den Behandlungsvertrag. |
+| Fall.Einrichtungskontakt.KontaktEbene | Für die Unterscheidung der Kontakt-Hierarchieebenen im Modul FALL werden folgende Ausprägungen unterschieden: 1. Einrichtungskontakt 2. Abteilungskontakt 3. Versorgungsstellenkontakt Diese Gliederung gilt zunächst für stationäre Kontakte (siehe Kontakt-Klasse). Die Übertragung auf ambulante und teilstationäre Kontakte muss noch abgestimmt werden. |
+| Fall.Einrichtungskontakt.KontaktKlasse | Auf Einrichtungsebene, also auf der Kontakt-Ebene Einrichtungskontakt, kann die Kontakt-Klasse stationär, ambulant oder teilstationär sein. |
+| Fall.Einrichtungskontakt.KontaktArt | Differenzierung zwischen verschiedenen Arten von Kontakten (z.B. vorstationär, nachstationär, intensivstationär) |
+| Fall.Einrichtungskontakt.PatientenIdentifikator | Bei der internen Nutzung dient die sogenannte Patientennummer als Identifikator. Diese wird bei der ersten Aufnahme in die Einrichtung parallel zur ersten Fallnummer (Aufnahmenummer) vergeben. Bei jeder Wiederaufnahme (oder korrigierend danach) erfolgt eine Zuordnung zu dieser konstanten Patientennummer und die Vergabe einer neuen wechselnden Fallnummer. |
+| Fall.Einrichtungskontakt.Aufnahmenummer | Jeder Patient erhält bei der Planung einer Aufnahme oder bei der Aufnahme selbst eine Aufnahmenummer (auch Fallnummer oder Krankenhausinternes Kennzeichen genannt). Im Prinzip gilt diese Aufnahmenummer von der Aufnahme bis zur Entlassung - und auch bei den zugehörigen vorstationären und nachstationären Kontakten. Sie dient bei allen digital unterstüzten Vorgängen der Zuordnung zu dem Aufenthalt des Patienten in der Einrichtung. |
+| Fall.Einrichtungskontakt.Aufnahmeanlass | Gemäß §21 KHEntgG |
+| Fall.Einrichtungskontakt.Aufnahmegrund | Gemäß §21 KHEntgG |
+| Fall.Einrichtungskontakt.Beginndatum | Start des Kontakt Zeitraums |
+| Fall.Einrichtungskontakt.Enddatum | Ende des Kontakt Zeitraums |
+| Fall.Einrichtungskontakt.Entlassungsgrund | Gemäß §21 KHEntgG |
+| Fall.Abteilungskontakt | Kontakte zur Abteilung |
+| Fall.Abteilungskontakt.KontaktEbene | Für die Unterscheidung der Kontakt-Hierarchieebenen im Modul FALL werden folgende Ausprägungen unterschieden: 1. Einrichtungskontakt 2. Abteilungskontakt 3. Versorgungsstellenkontakt Diese Gliederung gilt zunächst für stationäre Kontakte (siehe Kontakt-Klasse). Die Übertragung auf ambulante und teilstationäre Kontakte muss noch abgestimmt werden. |
+| Fall.Abteilungskontakt.KontaktArt | Differenzierung zwischen verschiedenen Arten von Kontakten (z.B. vorstationär, nachstationär, intensivstationär). |
+| Fall.Abteilungskontakt.PatientenIdentifikator | Bei der internen Nutzung dient die sogenannte Patientennummer als Identifikator. Diese wird bei der ersten Aufnahme in die Einrichtung parallel zur ersten Fallnummer (Aufnahmenummer) vergeben. Bei jeder Wiederaufnahme (oder korrigierend danach) erfolgt eine Zuordnung zu dieser konstanten Patientennummer und die Vergabe einer neuen wechselnden Fallnummer. |
+| Fall.Abteilungskontakt.Aufnahmenummer | Jeder Patient erhält bei der Planung einer Aufnahme oder bei der Aufnahme selbst eine Aufnahmenummer (auch Fallnummer oder Krankenhausinternes Kennzeichen genannt). Im Prinzip gilt diese Aufnahmenummer von der Aufnahme bis zur Entlassung - und auch bei den zugehörigen vorstationären und nachstationären Kontakten. Sie dient bei allen digital unterstüzten Vorgängen der Zuordnung zu dem Aufenthalt des Patienten in der Einrichtung. Im MII KDS dient sie als Identifikator bzw. Referenz zum Einrichtungskontakt. |
+| Fall.Abteilungskontakt.Beginndatum | Start des Kontakt Zeitraums |
+| Fall.Abteilungskontakt.Enddatum | Ende des Kontakt Zeitraums |
+| Fall.Abteilungskontakt.Fachabteilungsschluessel | Bis auf Weiteres wird der proprietäre deutsche Fachabteilungsschlüssel des § 301 SGB V und des Datensatzes gemäß § 21 KHentgG als Fachrichtungsschlüssel genutzt, weil dieser in jedem Krankenhaus als |Fachabteilungsschlüssel im Einsatz ist. Der Einsatz des IHE-Fachabteilungsschlüssel wird geprüft, sobald einschlägige Anforderungen formuliert werden. |
+| Fall.Versorgungsstellenkontakt | Kontakte zu Versorgungsstellen und den eigentlich Behandelnden |
+| Fall.Versorgungsstellenkontakt.KontaktEbene | Für die Unterscheidung der Kontakt-Hierarchieebenen im Modul FALL werden folgende Ausprägungen unterschieden: 1. Einrichtungskontakt 2. Abteilungskontakt 3. Versorgungsstellenkontakt Diese Gliederung gilt zunächst für stationäre Kontakte (siehe Kontakt-Klasse). Die Übertragung auf ambulante und teilstationäre Kontakte muss noch abgestimmt werden. |
+| Fall.Versorgungsstellenkontakt.KontaktArt | Differenzierung zwischen verschiedenen Arten von Kontakten (z.B. vorstationär, nachstationär, intensivstationär). |
+| Fall.Versorgungsstellenkontakt.PatientenIdentifikator | Bei der internen Nutzung dient die sogenannte Patientennummer als Identifikator. Diese wird bei der ersten Aufnahme in die Einrichtung parallel zur ersten Fallnummer (Aufnahmenummer) vergeben. Bei jeder Wiederaufnahme (oder korrigierend danach) erfolgt eine Zuordnung zu dieser konstanten Patientennummer und die Vergabe einer neuen wechselnden Fallnummer. |
+| Fall.Versorgungsstellenkontakt.Aufnahmenummer | Jeder Patient erhält bei der Planung einer Aufnahme oder bei der Aufnahme selbst eine Aufnahmenummer (auch Fallnummer oder Krankenhausinternes Kennzeichen genannt). Im Prinzip gilt diese Aufnahmenummer von der Aufnahme bis zur Entlassung - und auch bei den zugehörigen vorstationären und nachstationären Kontakten. Sie dient bei allen digital unterstüzten Vorgängen der Zuordnung zu dem Aufenthalt des Patienten in der Einrichtung. Im MII KDS dient sie als Identifikator bzw. Referenz zum Einrichtungskontakt. |
+| Fall.Versorgungsstellenkontakt.Beginndatum | Start des Kontakt Zeitraums |
+| Fall.Versorgungsstellenkontakt.Enddatum | Ende des Kontakt Zeitraums |
+
 ### Mapping LogicalModel Fall -> FHIR
 
 | | |

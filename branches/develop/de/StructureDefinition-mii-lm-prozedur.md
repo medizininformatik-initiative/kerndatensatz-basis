@@ -50,6 +50,23 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-proze
 
 ### Notizen:
 
+### Tabellenansicht
+
+| | |
+| :--- | :--- |
+| Logischer Datensatz | Beschreibung |
+| Prozedur | Das Basismodul Prozeduren umfasst die Beschreibung diagnostischer oder therapeutischer Maßnahmen, die als Leistungskomplexe auch für die Abrechnung dokumentiert und kodiert werden, z.B. Operationen. |
+| Prozedur.OPSProzedurKodiert | Kodierung der durchgeführten Prozedur mittels OPS. |
+| Prozedur.OPSProzedurKodiert.VollstaendigerProzedurencode | Vollständiger Prozedurencode |
+| Prozedur.OPSProzedurKodiert.Seitenlokalisation | Seitenlokalisation |
+| Prozedur.SNOMEDProzedurKodiert | Kodierung der durchgeführten Prozedur mittels SNOMED CT. |
+| Prozedur.SNOMEDProzedurKodiert.VollstaendigerProzedurencode | Vollständiger Prozedurencode |
+| Prozedur.Koerperstelle | Körperstelle |
+| Prozedur.Durchfuehrungsabsicht | Durchführungsabsicht |
+| Prozedur.Durchfuehrungsdatum | Durchführungsdatum |
+| Prozedur.Dokumentationsdatum | Dokumentationsdatum |
+| Prozedur.Freitextbeschreibung | Freitextbeschreibung |
+
 ### Mapping LogicalModel Prozedur -> FHIR
 
 | | |

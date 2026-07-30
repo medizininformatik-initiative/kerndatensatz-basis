@@ -1,3 +1,7 @@
+### Tabellenansicht
+
+{% include sql-44-fragment.xhtml %}
+
 ### Mapping LogicalModel Prozedur -> FHIR
 
-{% include sql-22-fragment.xhtml %}
+{% include sql-45-fragment.xhtml %}

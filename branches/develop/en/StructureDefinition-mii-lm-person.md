@@ -21,6 +21,61 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-person.csv
 
 ### Notes:
 
+### Table View
+
+| | |
+| :--- | :--- |
+| Logical dataset | Description |
+| Person | -- Heading -- |
+| Person.Name | Full name of a person |
+| Person.Name.Vorname | Full given name of a person |
+| Person.Name.Nachname | Last name of a person without prefixes and suffixes. Serves e.g. the alphabetical classification of the name. |
+| Person.Name.Familienname | The full family name, including all prefix and suffix words, separated by spaces. |
+| Person.Name.Vorsatzwort | Prefix word such as: "von", "van", "zu", cf. also VSDM specification of Gematik (Versichertenstammdatenmanagement, "eGK") |
+| Person.Name.Namenszusatz | Name suffix as part of the last name, as defined in VSDM (Versichertenstammdatenmanagement, "eGK"). Examples: Countess, Prince, or Prince |
+| Person.Name.Praefix | Parts of the name before the first name, e.g. academic degree |
+| Person.Name.Praefix.ArtdesPraefixes | Type of prefix, e.g. "AC" for Academic Titel |
+| Person.Name.Geburtsname | Family name of a person at the time of his or her birth. Can change afterwards, e.g. by marriage and adoption of another family name. |
+| Person.Demographie | The basic demography module contains demographic parameters (age, gender, etc.). |
+| Person.Demographie.AdministrativesGeschlecht | Administrative sex of the person |
+| Person.Demographie.Geburtsdatum | Date of birth of the patient |
+| Person.Demographie.Adresse | Full address of a person for postal communication. |
+| Person.Demographie.Adresse.Strassenanschrift | Postal code according to the conventions valid in the respective country. For persons from city states including the city district |
+| Person.Demographie.Adresse.Strassenanschrift.Land | Country code according to ISO 3166 |
+| Person.Demographie.Adresse.Strassenanschrift.PLZ | Postal code according to the conventions valid in the respective country |
+| Person.Demographie.Adresse.Strassenanschrift.Wohnort | For persons from city states including the city district |
+| Person.Demographie.Adresse.Strassenanschrift.Strasse | Street name with house number or P.O. Box and other delivery details |
+| Person.Demographie.Adresse.Postfach | Postal code according for a P.O box to the conventions valid in the respective country. For persons from city states including the city district. |
+| Person.Demographie.Adresse.Postfach.Land | Country code according to ISO 3166 |
+| Person.Demographie.Adresse.Postfach.PLZ | Postal code according to the conventions valid in the respective country |
+| Person.Demographie.Adresse.Postfach.Wohnort | For persons from city states including the city district |
+| Person.Demographie.Adresse.Postfach.Strasse | Street name with house number or P.O. Box and other delivery details |
+| Person.Demographie.Vitalstatus | Indicates whether a patient has died. If yes, also the time is recorded. |
+| Person.Demographie.Vitalstatus.PatientVerstorben | Indicates whether the patient is alive or deceased. |
+| Person.Demographie.Vitalstatus.Todeszeitpunkt | Indicates the time of death of the patient, if the patient died in the hospital. Otherwise "Null flavor". |
+| Person.Demographie.Vitalstatus.Informationsquelle | Source of vital status |
+| Person.Demographie.Vitalstatus.ZeitpunktFeststellungDesVitalstatus | Last known point in time at which a vital status was recorded |
+| Person.Demographie.Vitalstatus.Todesursache | Reason for patient's death. Coded per ICD-10-WHO. |
+| Person.PatientIn | Person receiving treatment in one or more health care facilities |
+| Person.PatientIn.PatientenIdentifikator | Identifikation des Patienten in Verschiedenen Gesundheitseinrichtungen, Einrichtungskennzeichen kann als "Codesystem" gesehen werden, und Patienten-Identifikator als "Code" |
+| Person.PatientIn.PatientenIdentifikator.PatientenIdentifikator | Health facility unique identification number for a patient. |
+| Person.PatientIn.PatientenIdentifikator.PatientenIdentifikatorKontext | The context of the patient identifier to describe the patient identifier, since the patient within a healthcare facility may be assigned a number per system (in the hospital: "laboratory", "radiology", "internal medicine ward", etc.). |
+| Person.PatientIn.Versicherung | Patient's current valid insurance which is used to bill the medical healthcare services. |
+| Person.PatientIn.Versicherung.InstitutionskennzeichenDerKrankenkasse | The institutional identifiers (IK for short) are nationwide unique nine-digit numbers that can be used to process billing and quality assurance measures across institutions in the German social insurance sector. |
+| Person.PatientIn.Versicherung.Versicherungstyp | Insurance type of the patient |
+| Person.PatientIn.Versicherung.Versichertennummer | Information for the identification of the insured person |
+| Person.PatientIn.Versicherung.Versichertennummer.VersichertenIDGKV | Unchangeable part of the health insurance number (insured ID) for SHI patients. This can be found, for example, on the health insurance compan's membership card. |
+| Person.PatientIn.Versicherung.Versichertennummer.VersichertennummerPKV | Insurance number for private health insurance patients. The number is assigned by the respective private health insurance company. |
+| Person.ProbandIn | Person participating in a study (in some circumstances, while being a patient in a health care facility) |
+| Person.ProbandIn.SubjektIdentifizierungscode | Unique identifier of a patient in the context of a research project (clinical study, use case) |
+| Person.ProbandIn.Rechtsgrundlage | Legal basis (e.g. consent) on the basis of which the patient may be included in the study. |
+| Person.ProbandIn.BeginnTeilnahme | Start of the person's participation in the study |
+| Person.ProbandIn.EndeTeilnahme | End of the person's participation in the study |
+| Person.ProbandIn.StatusDerTeilnahme | Status of a person's participation in the study, e.g., "included", "revoked", "completed", etc. |
+| Person.ProbandIn.BezeichnungDerStudie | Unique id of the study |
+| Person.PatientInPseudonym | Pseudonymised representation of a corresponding Patient |
+| Person.PatientInPseudonym.Pseudonym | Newly generated identification of the patient with reference to the original identifier in a trust center. |
+
 ### Mapping LogicalModel Person -> FHIR
 
 | | |

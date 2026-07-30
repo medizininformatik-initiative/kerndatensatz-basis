@@ -1,3 +1,7 @@
+### Table View
+
+{% include sql-34-fragment.xhtml %}
+
 ### Mapping LogicalModel Fall -> FHIR
 
-{% include sql-17-fragment.xhtml %}
+{% include sql-35-fragment.xhtml %}

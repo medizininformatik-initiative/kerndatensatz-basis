@@ -1,3 +1,7 @@
+### Table View
+
+{% include sql-36-fragment.xhtml %}
+
 ### Mapping LogicalModel Person -> FHIR
 
-{% include sql-18-fragment.xhtml %}
+{% include sql-37-fragment.xhtml %}

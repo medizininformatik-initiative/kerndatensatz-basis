@@ -1,3 +1,7 @@
+### Table View
+
+{% include sql-24-fragment.xhtml %}
+
 ### Mapping LogicalModel Diagnose -> FHIR
 
-{% include sql-12-fragment.xhtml %}
+{% include sql-25-fragment.xhtml %}

@@ -50,6 +50,39 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-diagn
 
 ### Notizen:
 
+### Tabellenansicht
+
+| | |
+| :--- | :--- |
+| Logischer Datensatz | Beschreibung |
+| Diagnose | Das Basismodul Diagnosen enthält Diagnosen als Behandlungsbegründungen und abrechnungsbasiertes Gliederungsmerkmal, z.B. als Hauptdiagnose, Nebendiagnose, Quartalsdiagnose etc. |
+| Diagnose.ICD10GMDiagnoseKodiert | Im Bereich der administrativen und statistischen Auswertung wird die Diagnose mit Hilfe von Codiersystemen verschlüsselt. So wird z.B. bei der Abrechnung nach §301 und §295 SGB V die Codierung von Diagnosen mittels ICD-10-GM gesetzlich vorgeschrieben. Weitere Codiersysteme sind z.B. die Alpha-ID oder SNOMED CT. Die Kodierung einer Diagnose mittels verschiedener Codesysteme sollte möglich sein. |
+| Diagnose.ICD10GMDiagnoseKodiert.Diagnosecode | Diagnosecode ICD-10-GM |
+| Diagnose.ICD10GMDiagnoseKodiert.Mehrfachkodierungskennzeichen | Mehrfachkodierungskennzeichen |
+| Diagnose.ICD10GMDiagnoseKodiert.Diagnosesicherheit | Zusatzkennzeichen für die Diagnosensicherhe |
+| Diagnose.ICD10GMDiagnoseKodiert.Seitenlokalisation | Zusatzkennzeichen Seite einer Erkrankung |
+| Diagnose.ALPHAIDKodiert | Kodierung einer Diagnose mit Alpha-ID |
+| Diagnose.ALPHAIDKodiert.Diagnosecode | Alpha-ID-Code |
+| Diagnose.ORPHANETDiagnoseKodiert | Für die Kodierung von Seltenen Krankheiten ist die Orpha-Kennnummer erforderlich. |
+| Diagnose.ORPHANETDiagnoseKodiert.Diagnosecode | Orpha-Kennnummer |
+| Diagnose.SNOMEDDiagnoseKodiert | Ermöglicht die Kodierung einer Diagnose mit SNOMED-CT |
+| Diagnose.SNOMEDDiagnoseKodiert.Diagnosecode | SNOMED-CT Code |
+| Diagnose.WeitereKodiersysteme | Bei Bedarf ist die Aufnahme weiterer Klassifikationen und Terminologien möglich. |
+| Diagnose.WeitereKodiersysteme.Diagnosecode | Code aus weiterem Kodiersystem |
+| Diagnose.Koerperstelle | Körperstelle |
+| Diagnose.Freitextbeschreibung | Diagnose im Klartext |
+| Diagnose.Diagnoseerlaeuterung | Diagnoseerläuterung |
+| Diagnose.KlinischerStatus | Klinischer Status |
+| Diagnose.KlinischRelevanterZeitraum | Klinisch relevanter Zeitraum |
+| Diagnose.KlinischRelevanterZeitraum.Zeitraum | klinisch relevanter Zeitraum |
+| Diagnose.KlinischRelevanterZeitraum.Zeitraum.von | Startdatum |
+| Diagnose.KlinischRelevanterZeitraum.Zeitraum.bis | Enddatum |
+| Diagnose.KlinischRelevanterZeitraum.Lebensphase | Lebensphase |
+| Diagnose.KlinischRelevanterZeitraum.Lebensphase.von | In welcher Lebensphase die Krankheit began |
+| Diagnose.KlinischRelevanterZeitraum.Lebensphase.bis | In welcher Lebensphase die Krankheit endete |
+| Diagnose.Feststellungsdatum | Feststellungsdatum / Diagnosedatum |
+| Diagnose.Dokumentationsdatum | Dokumentationsdatum |
+
 ### Mapping LogicalModel Diagnose -> FHIR
 
 | | |
