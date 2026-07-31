@@ -1,12 +1,17 @@
 ### Table View
 
 {% sql {
-  "query" : "SELECT json_extract(element.value, '$.id') AS logical_model_id, COALESCE( NULLIF( ( SELECT json_extract(content.value, '$.valueString') FROM json_each( json_extract(element.value, '$._short.extension') ) AS translation, json_each( json_extract(translation.value, '$.extension') ) AS lang, json_each( json_extract(translation.value, '$.extension') ) AS content WHERE json_extract(translation.value, '$.url') = 'http://hl7.org/fhir/StructureDefinition/translation' AND json_extract(lang.value, '$.url') = 'lang' AND ( lower(json_extract(lang.value, '$.valueCode')) = 'en' OR lower(json_extract(lang.value, '$.valueCode')) LIKE 'en-%' ) AND json_extract(content.value, '$.url') = 'content' AND NULLIF(json_extract(content.value, '$.valueString'), '') IS NOT NULL ORDER BY CASE WHEN lower(json_extract(lang.value, '$.valueCode')) = 'en' THEN 0 ELSE 1 END, CAST(translation.key AS INTEGER) LIMIT 1 ), '' ), json_extract(element.value, '$.short') ) AS description FROM Resources AS resource, json_each( json_extract(CAST(resource.Json AS TEXT), '$.differential.element') ) AS element WHERE resource.Type = 'StructureDefinition' AND resource.Url = 'https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/LogicalModel/Person' ORDER BY CAST(element.key AS INTEGER)",
+  "query" : "SELECT json_extract(element.value, '$.id') AS logical_model_id, ( SELECT group_concat(type_code, ' | ') FROM ( SELECT json_extract(element_type.value, '$.code') AS type_code FROM json_each(json_extract(element.value, '$.type')) AS element_type WHERE NULLIF(json_extract(element_type.value, '$.code'), '') IS NOT NULL ORDER BY CAST(element_type.key AS INTEGER) ) ) AS data_type, COALESCE( NULLIF( ( SELECT json_extract(content.value, '$.valueString') FROM json_each( json_extract(element.value, '$._short.extension') ) AS translation, json_each( json_extract(translation.value, '$.extension') ) AS lang, json_each( json_extract(translation.value, '$.extension') ) AS content WHERE json_extract(translation.value, '$.url') = 'http://hl7.org/fhir/StructureDefinition/translation' AND json_extract(lang.value, '$.url') = 'lang' AND ( lower(json_extract(lang.value, '$.valueCode')) = 'en' OR lower(json_extract(lang.value, '$.valueCode')) LIKE 'en-%' ) AND json_extract(content.value, '$.url') = 'content' AND NULLIF(json_extract(content.value, '$.valueString'), '') IS NOT NULL ORDER BY CASE WHEN lower(json_extract(lang.value, '$.valueCode')) = 'en' THEN 0 ELSE 1 END, CAST(translation.key AS INTEGER) LIMIT 1 ), '' ), json_extract(element.value, '$.short') ) AS description FROM Resources AS resource, json_each( json_extract(CAST(resource.Json AS TEXT), '$.differential.element') ) AS element WHERE resource.Type = 'StructureDefinition' AND resource.Url = 'https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/LogicalModel/Person' ORDER BY CAST(element.key AS INTEGER)",
   "class" : "grid",
   "columns" : [
     {
       "source" : "logical_model_id",
       "title" : "Logical dataset",
+      "type" : "text"
+    },
+    {
+      "source" : "data_type",
+      "title" : "Data type",
       "type" : "text"
     },
     {
@@ -27,3 +32,4 @@
 		{ "source" : "map",  "title" : "FHIR", "type" : "text" }
 	]
 } %}
+*** Delete File: input/intro-notes/StructureDefinition-mii-lm-diagnose-notes.md

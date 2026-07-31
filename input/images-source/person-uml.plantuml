@@ -29,6 +29,16 @@ package "Modul Person" {
     +Geburtsdatum: dateTime
   }
 
+  class DokumentiertesGeschlecht {
+    +Wert: CodeableConcept
+    +Typ: CodeableConcept
+    +Gültigkeitszeitraum: Period
+    +Erfassungszeitpunkt: dateTime
+    +Quelle[x]: CodeableConcept | Reference
+    +Quelldokument[x]: CodeableConcept | Reference
+    +Zuständiger Rechtsraum: CodeableConcept
+  }
+
   class Adresse {
     +Land: string
     +PLZ: string
@@ -42,6 +52,25 @@ package "Modul Person" {
     +Zeitpunkt Feststellung Vitalstatus: dateTime
     +Informationsquelle: string
     +Todesursache: CodeableConcept
+  }
+
+  class AllergieOderUnvertraeglichkeit {
+    +Klinischer Status: CodeableConcept
+    +Verifikationsstatus: CodeableConcept
+    +Art: code
+    +Kategorie: code
+    +Kritikalität: code
+    +Allergie oder Unverträglichkeit gegen: CodeableConcept
+    +Patient: Reference
+    +Kontakt: Reference
+    +Beginn[x]: dateTime | Age | Period | Range | string
+    +Dokumentationsdatum: dateTime
+  }
+
+  class UnerwuenschteReaktion {
+    +Manifestation: CodeableConcept
+    +Schweregrad: code
+    +Expositionsweg: CodeableConcept
   }
 
   class Rolle
@@ -80,8 +109,12 @@ package "Modul Studie" {
 
 Person "1..*" -down- "0..1" Name
 Person "0..*" -down- "0..1" Demographie
+Demographie "0..1" -down- "0..*" DokumentiertesGeschlecht
 Person "0..*" -down- "0..*" Adresse
 Person "1..*" -down- "0..1" Vitalstatus
+Person "1" -down- "0..*" AllergieOderUnvertraeglichkeit
+Demographie -[hidden]left- AllergieOderUnvertraeglichkeit
+AllergieOderUnvertraeglichkeit "1" *-- "0..*" UnerwuenschteReaktion
 Person "1..*" -down- "0..*" Rolle
 Rolle <|-- PatientIn
 Rolle <|-- ProbandIn

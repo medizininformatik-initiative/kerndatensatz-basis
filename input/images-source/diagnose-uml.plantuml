@@ -41,6 +41,7 @@ package "Modul Diagnose" {
 
     class Diagnose {
       +Körperstelle: CodeableConcept
+      +Detaillierte anatomische Struktur: Reference
       +Freitextbeschreibung: string
       +Diagnoseart: string
       +KlinischerStatus: CodeableConcept
