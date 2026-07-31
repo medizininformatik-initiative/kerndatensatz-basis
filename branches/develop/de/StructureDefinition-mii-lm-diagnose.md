@@ -52,36 +52,37 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-diagn
 
 ### Tabellenansicht
 
-| | |
-| :--- | :--- |
-| Logischer Datensatz | Beschreibung |
-| Diagnose | Das Basismodul Diagnosen enthält Diagnosen als Behandlungsbegründungen und abrechnungsbasiertes Gliederungsmerkmal, z.B. als Hauptdiagnose, Nebendiagnose, Quartalsdiagnose etc. |
-| Diagnose.ICD10GMDiagnoseKodiert | Im Bereich der administrativen und statistischen Auswertung wird die Diagnose mit Hilfe von Codiersystemen verschlüsselt. So wird z.B. bei der Abrechnung nach §301 und §295 SGB V die Codierung von Diagnosen mittels ICD-10-GM gesetzlich vorgeschrieben. Weitere Codiersysteme sind z.B. die Alpha-ID oder SNOMED CT. Die Kodierung einer Diagnose mittels verschiedener Codesysteme sollte möglich sein. |
-| Diagnose.ICD10GMDiagnoseKodiert.Diagnosecode | Diagnosecode ICD-10-GM |
-| Diagnose.ICD10GMDiagnoseKodiert.Mehrfachkodierungskennzeichen | Mehrfachkodierungskennzeichen |
-| Diagnose.ICD10GMDiagnoseKodiert.Diagnosesicherheit | Zusatzkennzeichen für die Diagnosensicherhe |
-| Diagnose.ICD10GMDiagnoseKodiert.Seitenlokalisation | Zusatzkennzeichen Seite einer Erkrankung |
-| Diagnose.ALPHAIDKodiert | Kodierung einer Diagnose mit Alpha-ID |
-| Diagnose.ALPHAIDKodiert.Diagnosecode | Alpha-ID-Code |
-| Diagnose.ORPHANETDiagnoseKodiert | Für die Kodierung von Seltenen Krankheiten ist die Orpha-Kennnummer erforderlich. |
-| Diagnose.ORPHANETDiagnoseKodiert.Diagnosecode | Orpha-Kennnummer |
-| Diagnose.SNOMEDDiagnoseKodiert | Ermöglicht die Kodierung einer Diagnose mit SNOMED-CT |
-| Diagnose.SNOMEDDiagnoseKodiert.Diagnosecode | SNOMED-CT Code |
-| Diagnose.WeitereKodiersysteme | Bei Bedarf ist die Aufnahme weiterer Klassifikationen und Terminologien möglich. |
-| Diagnose.WeitereKodiersysteme.Diagnosecode | Code aus weiterem Kodiersystem |
-| Diagnose.Koerperstelle | Körperstelle |
-| Diagnose.Freitextbeschreibung | Diagnose im Klartext |
-| Diagnose.Diagnoseerlaeuterung | Diagnoseerläuterung |
-| Diagnose.KlinischerStatus | Klinischer Status |
-| Diagnose.KlinischRelevanterZeitraum | Klinisch relevanter Zeitraum |
-| Diagnose.KlinischRelevanterZeitraum.Zeitraum | klinisch relevanter Zeitraum |
-| Diagnose.KlinischRelevanterZeitraum.Zeitraum.von | Startdatum |
-| Diagnose.KlinischRelevanterZeitraum.Zeitraum.bis | Enddatum |
-| Diagnose.KlinischRelevanterZeitraum.Lebensphase | Lebensphase |
-| Diagnose.KlinischRelevanterZeitraum.Lebensphase.von | In welcher Lebensphase die Krankheit began |
-| Diagnose.KlinischRelevanterZeitraum.Lebensphase.bis | In welcher Lebensphase die Krankheit endete |
-| Diagnose.Feststellungsdatum | Feststellungsdatum / Diagnosedatum |
-| Diagnose.Dokumentationsdatum | Dokumentationsdatum |
+| | | |
+| :--- | :--- | :--- |
+| Logischer Datensatz | Datentyp | Beschreibung |
+| Diagnose |  | Das Basismodul Diagnosen enthält Diagnosen als Behandlungsbegründungen und abrechnungsbasiertes Gliederungsmerkmal, z.B. als Hauptdiagnose, Nebendiagnose, Quartalsdiagnose etc. |
+| Diagnose.ICD10GMDiagnoseKodiert | BackboneElement | Im Bereich der administrativen und statistischen Auswertung wird die Diagnose mit Hilfe von Codiersystemen verschlüsselt. So wird z.B. bei der Abrechnung nach §301 und §295 SGB V die Codierung von Diagnosen mittels ICD-10-GM gesetzlich vorgeschrieben. Weitere Codiersysteme sind z.B. die Alpha-ID oder SNOMED CT. Die Kodierung einer Diagnose mittels verschiedener Codesysteme sollte möglich sein. |
+| Diagnose.ICD10GMDiagnoseKodiert.Diagnosecode | code | Diagnosecode ICD-10-GM |
+| Diagnose.ICD10GMDiagnoseKodiert.Mehrfachkodierungskennzeichen | code | Mehrfachkodierungskennzeichen |
+| Diagnose.ICD10GMDiagnoseKodiert.Diagnosesicherheit | code | Zusatzkennzeichen für die Diagnosensicherhe |
+| Diagnose.ICD10GMDiagnoseKodiert.Seitenlokalisation | code | Zusatzkennzeichen Seite einer Erkrankung |
+| Diagnose.ALPHAIDKodiert | BackboneElement | Kodierung einer Diagnose mit Alpha-ID |
+| Diagnose.ALPHAIDKodiert.Diagnosecode | code | Alpha-ID-Code |
+| Diagnose.ORPHANETDiagnoseKodiert | BackboneElement | Für die Kodierung von Seltenen Krankheiten ist die Orpha-Kennnummer erforderlich. |
+| Diagnose.ORPHANETDiagnoseKodiert.Diagnosecode | code | Orpha-Kennnummer |
+| Diagnose.SNOMEDDiagnoseKodiert | BackboneElement | Ermöglicht die Kodierung einer Diagnose mit SNOMED-CT |
+| Diagnose.SNOMEDDiagnoseKodiert.Diagnosecode | code | SNOMED-CT Code |
+| Diagnose.WeitereKodiersysteme | BackboneElement | Bei Bedarf ist die Aufnahme weiterer Klassifikationen und Terminologien möglich. |
+| Diagnose.WeitereKodiersysteme.Diagnosecode | code | Code aus weiterem Kodiersystem |
+| Diagnose.Koerperstelle | code | Körperstelle |
+| Diagnose.DetaillierteAnatomischeStruktur | Reference | Detaillierte anatomische Struktur |
+| Diagnose.Freitextbeschreibung | string | Diagnose im Klartext |
+| Diagnose.Diagnoseerlaeuterung | string | Diagnoseerläuterung |
+| Diagnose.KlinischerStatus | code | Klinischer Status |
+| Diagnose.KlinischRelevanterZeitraum | BackboneElement | Klinisch relevanter Zeitraum |
+| Diagnose.KlinischRelevanterZeitraum.Zeitraum | BackboneElement | klinisch relevanter Zeitraum |
+| Diagnose.KlinischRelevanterZeitraum.Zeitraum.von | dateTime | Startdatum |
+| Diagnose.KlinischRelevanterZeitraum.Zeitraum.bis | dateTime | Enddatum |
+| Diagnose.KlinischRelevanterZeitraum.Lebensphase | BackboneElement | Lebensphase |
+| Diagnose.KlinischRelevanterZeitraum.Lebensphase.von | code | In welcher Lebensphase die Krankheit began |
+| Diagnose.KlinischRelevanterZeitraum.Lebensphase.bis | code | In welcher Lebensphase die Krankheit endete |
+| Diagnose.Feststellungsdatum | date | Feststellungsdatum / Diagnosedatum |
+| Diagnose.Dokumentationsdatum | date | Dokumentationsdatum |
 
 ### Mapping LogicalModel Diagnose -> FHIR
 
@@ -90,6 +91,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-diagn
 | MII LM Diagnose | FHIR |
 | Diagnose.ALPHAIDKodiert | Condition.code.coding.where(system='http://fhir.de/CodeSystem/bfarm/alpha-id') |
 | Diagnose.ALPHAIDKodiert.Diagnosecode | Condition.code.coding.where(system='http://fhir.de/CodeSystem/bfarm/alpha-id').code |
+| Diagnose.DetaillierteAnatomischeStruktur | Condition.bodySite.extension('http://hl7.org/fhir/StructureDefinition/bodySite').valueReference |
 | Diagnose.Diagnoseerlaeuterung | Condition.note |
 | Diagnose.Dokumentationsdatum | Condition.recordedDate |
 | Diagnose.Feststellungsdatum | Condition.extension('http://hl7.org/fhir/StructureDefinition/condition-assertedDate').valueDateTime |
@@ -113,6 +115,8 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-diagn
 | Diagnose.SNOMEDDiagnoseKodiert.Diagnosecode | Condition.code.coding.where(system='http://snomed.info/sct').code |
 | Diagnose.WeitereKodiersysteme | Condition.code.coding |
 | Diagnose.WeitereKodiersysteme.Diagnosecode | Condition.code.coding.code |
+
+*** Delete File: input/translations/de/intro-notes/StructureDefinition-mii-lm-prozedur-notes.md
 
 
 
@@ -499,6 +503,22 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-diagn
       "mapping" : [{
         "identity" : "FHIR",
         "map" : "Condition.bodySite"
+      }]
+    },
+    {
+      "id" : "Diagnose.DetaillierteAnatomischeStruktur",
+      "path" : "Diagnose.DetaillierteAnatomischeStruktur",
+      "short" : "Detaillierte anatomische Struktur",
+      "definition" : "Detaillierte Angaben zu der patientenbezogenen anatomischen Struktur oder Lokalisation, auf die sich die Diagnose bezieht. Das Element kann verwendet werden, wenn die kodierte Angabe der Körperstelle allein nicht die für den Anwendungsfall erforderliche Genauigkeit bietet.",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/BodyStructure"]
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Condition.bodySite.extension('http://hl7.org/fhir/StructureDefinition/bodySite').valueReference"
       }]
     },
     {

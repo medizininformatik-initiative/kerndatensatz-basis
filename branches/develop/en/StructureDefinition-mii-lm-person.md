@@ -23,58 +23,81 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-person.csv
 
 ### Table View
 
-| | |
-| :--- | :--- |
-| Logical dataset | Description |
-| Person | -- Heading -- |
-| Person.Name | Full name of a person |
-| Person.Name.Vorname | Full given name of a person |
-| Person.Name.Nachname | Last name of a person without prefixes and suffixes. Serves e.g. the alphabetical classification of the name. |
-| Person.Name.Familienname | The full family name, including all prefix and suffix words, separated by spaces. |
-| Person.Name.Vorsatzwort | Prefix word such as: "von", "van", "zu", cf. also VSDM specification of Gematik (Versichertenstammdatenmanagement, "eGK") |
-| Person.Name.Namenszusatz | Name suffix as part of the last name, as defined in VSDM (Versichertenstammdatenmanagement, "eGK"). Examples: Countess, Prince, or Prince |
-| Person.Name.Praefix | Parts of the name before the first name, e.g. academic degree |
-| Person.Name.Praefix.ArtdesPraefixes | Type of prefix, e.g. "AC" for Academic Titel |
-| Person.Name.Geburtsname | Family name of a person at the time of his or her birth. Can change afterwards, e.g. by marriage and adoption of another family name. |
-| Person.Demographie | The basic demography module contains demographic parameters (age, gender, etc.). |
-| Person.Demographie.AdministrativesGeschlecht | Administrative sex of the person |
-| Person.Demographie.Geburtsdatum | Date of birth of the patient |
-| Person.Demographie.Adresse | Full address of a person for postal communication. |
-| Person.Demographie.Adresse.Strassenanschrift | Postal code according to the conventions valid in the respective country. For persons from city states including the city district |
-| Person.Demographie.Adresse.Strassenanschrift.Land | Country code according to ISO 3166 |
-| Person.Demographie.Adresse.Strassenanschrift.PLZ | Postal code according to the conventions valid in the respective country |
-| Person.Demographie.Adresse.Strassenanschrift.Wohnort | For persons from city states including the city district |
-| Person.Demographie.Adresse.Strassenanschrift.Strasse | Street name with house number or P.O. Box and other delivery details |
-| Person.Demographie.Adresse.Postfach | Postal code according for a P.O box to the conventions valid in the respective country. For persons from city states including the city district. |
-| Person.Demographie.Adresse.Postfach.Land | Country code according to ISO 3166 |
-| Person.Demographie.Adresse.Postfach.PLZ | Postal code according to the conventions valid in the respective country |
-| Person.Demographie.Adresse.Postfach.Wohnort | For persons from city states including the city district |
-| Person.Demographie.Adresse.Postfach.Strasse | Street name with house number or P.O. Box and other delivery details |
-| Person.Demographie.Vitalstatus | Indicates whether a patient has died. If yes, also the time is recorded. |
-| Person.Demographie.Vitalstatus.PatientVerstorben | Indicates whether the patient is alive or deceased. |
-| Person.Demographie.Vitalstatus.Todeszeitpunkt | Indicates the time of death of the patient, if the patient died in the hospital. Otherwise "Null flavor". |
-| Person.Demographie.Vitalstatus.Informationsquelle | Source of vital status |
-| Person.Demographie.Vitalstatus.ZeitpunktFeststellungDesVitalstatus | Last known point in time at which a vital status was recorded |
-| Person.Demographie.Vitalstatus.Todesursache | Reason for patient's death. Coded per ICD-10-WHO. |
-| Person.PatientIn | Person receiving treatment in one or more health care facilities |
-| Person.PatientIn.PatientenIdentifikator | Identifikation des Patienten in Verschiedenen Gesundheitseinrichtungen, Einrichtungskennzeichen kann als "Codesystem" gesehen werden, und Patienten-Identifikator als "Code" |
-| Person.PatientIn.PatientenIdentifikator.PatientenIdentifikator | Health facility unique identification number for a patient. |
-| Person.PatientIn.PatientenIdentifikator.PatientenIdentifikatorKontext | The context of the patient identifier to describe the patient identifier, since the patient within a healthcare facility may be assigned a number per system (in the hospital: "laboratory", "radiology", "internal medicine ward", etc.). |
-| Person.PatientIn.Versicherung | Patient's current valid insurance which is used to bill the medical healthcare services. |
-| Person.PatientIn.Versicherung.InstitutionskennzeichenDerKrankenkasse | The institutional identifiers (IK for short) are nationwide unique nine-digit numbers that can be used to process billing and quality assurance measures across institutions in the German social insurance sector. |
-| Person.PatientIn.Versicherung.Versicherungstyp | Insurance type of the patient |
-| Person.PatientIn.Versicherung.Versichertennummer | Information for the identification of the insured person |
-| Person.PatientIn.Versicherung.Versichertennummer.VersichertenIDGKV | Unchangeable part of the health insurance number (insured ID) for SHI patients. This can be found, for example, on the health insurance compan's membership card. |
-| Person.PatientIn.Versicherung.Versichertennummer.VersichertennummerPKV | Insurance number for private health insurance patients. The number is assigned by the respective private health insurance company. |
-| Person.ProbandIn | Person participating in a study (in some circumstances, while being a patient in a health care facility) |
-| Person.ProbandIn.SubjektIdentifizierungscode | Unique identifier of a patient in the context of a research project (clinical study, use case) |
-| Person.ProbandIn.Rechtsgrundlage | Legal basis (e.g. consent) on the basis of which the patient may be included in the study. |
-| Person.ProbandIn.BeginnTeilnahme | Start of the person's participation in the study |
-| Person.ProbandIn.EndeTeilnahme | End of the person's participation in the study |
-| Person.ProbandIn.StatusDerTeilnahme | Status of a person's participation in the study, e.g., "included", "revoked", "completed", etc. |
-| Person.ProbandIn.BezeichnungDerStudie | Unique id of the study |
-| Person.PatientInPseudonym | Pseudonymised representation of a corresponding Patient |
-| Person.PatientInPseudonym.Pseudonym | Newly generated identification of the patient with reference to the original identifier in a trust center. |
+| | | |
+| :--- | :--- | :--- |
+| Logical dataset | Data type | Description |
+| Person |  | -- Heading -- |
+| Person.Name | BackboneElement | Full name of a person |
+| Person.Name.Vorname | string | Full given name of a person |
+| Person.Name.Nachname | string | Last name of a person without prefixes and suffixes. Serves e.g. the alphabetical classification of the name. |
+| Person.Name.Familienname | string | The full family name, including all prefix and suffix words, separated by spaces. |
+| Person.Name.Vorsatzwort | string | Prefix word such as: "von", "van", "zu", cf. also VSDM specification of Gematik (Versichertenstammdatenmanagement, "eGK") |
+| Person.Name.Namenszusatz | string | Name suffix as part of the last name, as defined in VSDM (Versichertenstammdatenmanagement, "eGK"). Examples: Countess, Prince, or Prince |
+| Person.Name.Praefix | string | Parts of the name before the first name, e.g. academic degree |
+| Person.Name.Praefix.ArtdesPraefixes | code | Type of prefix, e.g. "AC" for Academic Titel |
+| Person.Name.Geburtsname | string | Family name of a person at the time of his or her birth. Can change afterwards, e.g. by marriage and adoption of another family name. |
+| Person.Demographie | BackboneElement | The basic demography module contains demographic parameters (age, gender, etc.). |
+| Person.Demographie.AdministrativesGeschlecht | code | Administrative sex of the person |
+| Person.Demographie.DokumentiertesGeschlecht | BackboneElement | Recorded sex or gender information for a person. |
+| Person.Demographie.DokumentiertesGeschlecht.Wert | CodeableConcept | The recorded sex or gender value for the person. |
+| Person.Demographie.DokumentiertesGeschlecht.Typ | CodeableConcept | Type of recorded sex or gender. |
+| Person.Demographie.DokumentiertesGeschlecht.Gueltigkeitszeitraum | Period | When the recorded sex or gender value applies. |
+| Person.Demographie.DokumentiertesGeschlecht.Erfassungszeitpunkt | dateTime | When the recorded sex or gender value was recorded. |
+| Person.Demographie.DokumentiertesGeschlecht.Quelle[x] | CodeableConcept | Reference | Source of the recorded sex or gender value. |
+| Person.Demographie.DokumentiertesGeschlecht.Quelldokument[x] | CodeableConcept | Reference | Document from which the recorded sex or gender value was acquired. |
+| Person.Demographie.DokumentiertesGeschlecht.ZustaendigerRechtsraum | CodeableConcept | Jurisdiction responsible for the source or source document. |
+| Person.Demographie.Geburtsdatum | date | Date of birth of the patient |
+| Person.Demographie.Adresse | BackboneElement | Full address of a person for postal communication. |
+| Person.Demographie.Adresse.Strassenanschrift | BackboneElement | Postal code according to the conventions valid in the respective country. For persons from city states including the city district |
+| Person.Demographie.Adresse.Strassenanschrift.Land | string | Country code according to ISO 3166 |
+| Person.Demographie.Adresse.Strassenanschrift.PLZ | string | Postal code according to the conventions valid in the respective country |
+| Person.Demographie.Adresse.Strassenanschrift.Wohnort | string | For persons from city states including the city district |
+| Person.Demographie.Adresse.Strassenanschrift.Strasse | string | Street name with house number or P.O. Box and other delivery details |
+| Person.Demographie.Adresse.Postfach | BackboneElement | Postal code according for a P.O box to the conventions valid in the respective country. For persons from city states including the city district. |
+| Person.Demographie.Adresse.Postfach.Land | string | Country code according to ISO 3166 |
+| Person.Demographie.Adresse.Postfach.PLZ | string | Postal code according to the conventions valid in the respective country |
+| Person.Demographie.Adresse.Postfach.Wohnort | string | For persons from city states including the city district |
+| Person.Demographie.Adresse.Postfach.Strasse | string | Street name with house number or P.O. Box and other delivery details |
+| Person.Demographie.Vitalstatus | BackboneElement | Indicates whether a patient has died. If yes, also the time is recorded. |
+| Person.Demographie.Vitalstatus.PatientVerstorben | boolean | Indicates whether the patient is alive or deceased. |
+| Person.Demographie.Vitalstatus.Todeszeitpunkt | dateTime | Indicates the time of death of the patient, if the patient died in the hospital. Otherwise "Null flavor". |
+| Person.Demographie.Vitalstatus.Informationsquelle | string | Source of vital status |
+| Person.Demographie.Vitalstatus.ZeitpunktFeststellungDesVitalstatus | dateTime | Last known point in time at which a vital status was recorded |
+| Person.Demographie.Vitalstatus.Todesursache | CodeableConcept | Reason for patient's death. Coded per ICD-10-WHO. |
+| Person.AllergieOderUnvertraeglichkeit | BackboneElement | Allergy or intolerance |
+| Person.AllergieOderUnvertraeglichkeit.KlinischerStatus | CodeableConcept | Clinical status |
+| Person.AllergieOderUnvertraeglichkeit.Verifikationsstatus | CodeableConcept | Verification status |
+| Person.AllergieOderUnvertraeglichkeit.Art | code | Type |
+| Person.AllergieOderUnvertraeglichkeit.Kategorie | code | Category |
+| Person.AllergieOderUnvertraeglichkeit.Kritikalitaet | code | Criticality |
+| Person.AllergieOderUnvertraeglichkeit.AllergieOderUnvertraeglichkeitGegen | CodeableConcept | Substance, product, class, or allergy or intolerance concept |
+| Person.AllergieOderUnvertraeglichkeit.Patient | Reference | Patient with the allergy or intolerance |
+| Person.AllergieOderUnvertraeglichkeit.Kontakt | Reference | Encounter associated with the allergy or intolerance |
+| Person.AllergieOderUnvertraeglichkeit.Beginn[x] | dateTime | Age | Period | Range | string | Onset of the allergy or intolerance |
+| Person.AllergieOderUnvertraeglichkeit.Dokumentationsdatum | dateTime | Date when the allergy or intolerance was first recorded |
+| Person.AllergieOderUnvertraeglichkeit.UnerwuenschteReaktion | BackboneElement | Observed adverse reaction |
+| Person.AllergieOderUnvertraeglichkeit.UnerwuenschteReaktion.Manifestation | CodeableConcept | Clinical manifestation of the adverse reaction |
+| Person.AllergieOderUnvertraeglichkeit.UnerwuenschteReaktion.Schweregrad | code | Severity of the observed reaction |
+| Person.AllergieOderUnvertraeglichkeit.UnerwuenschteReaktion.Expositionsweg | CodeableConcept | Route of exposure |
+| Person.PatientIn | BackboneElement | Person receiving treatment in one or more health care facilities |
+| Person.PatientIn.PatientenIdentifikator | BackboneElement | Identifikation des Patienten in Verschiedenen Gesundheitseinrichtungen, Einrichtungskennzeichen kann als "Codesystem" gesehen werden, und Patienten-Identifikator als "Code" |
+| Person.PatientIn.PatientenIdentifikator.PatientenIdentifikator | Identifier | Health facility unique identification number for a patient. |
+| Person.PatientIn.PatientenIdentifikator.PatientenIdentifikatorKontext | CodeableConcept | The context of the patient identifier to describe the patient identifier, since the patient within a healthcare facility may be assigned a number per system (in the hospital: "laboratory", "radiology", "internal medicine ward", etc.). |
+| Person.PatientIn.Versicherung | BackboneElement | Patient's current valid insurance which is used to bill the medical healthcare services. |
+| Person.PatientIn.Versicherung.InstitutionskennzeichenDerKrankenkasse | string | The institutional identifiers (IK for short) are nationwide unique nine-digit numbers that can be used to process billing and quality assurance measures across institutions in the German social insurance sector. |
+| Person.PatientIn.Versicherung.Versicherungstyp | CodeableConcept | Insurance type of the patient |
+| Person.PatientIn.Versicherung.Versichertennummer | BackboneElement | Information for the identification of the insured person |
+| Person.PatientIn.Versicherung.Versichertennummer.VersichertenIDGKV | string | Unchangeable part of the health insurance number (insured ID) for SHI patients. This can be found, for example, on the health insurance compan's membership card. |
+| Person.PatientIn.Versicherung.Versichertennummer.VersichertennummerPKV | string | Insurance number for private health insurance patients. The number is assigned by the respective private health insurance company. |
+| Person.ProbandIn | BackboneElement | Person participating in a study (in some circumstances, while being a patient in a health care facility) |
+| Person.ProbandIn.SubjektIdentifizierungscode | Identifier | Unique identifier of a patient in the context of a research project (clinical study, use case) |
+| Person.ProbandIn.Rechtsgrundlage | Reference | Legal basis (e.g. consent) on the basis of which the patient may be included in the study. |
+| Person.ProbandIn.BeginnTeilnahme | dateTime | Start of the person's participation in the study |
+| Person.ProbandIn.EndeTeilnahme | dateTime | End of the person's participation in the study |
+| Person.ProbandIn.StatusDerTeilnahme | code | Status of a person's participation in the study, e.g., "included", "revoked", "completed", etc. |
+| Person.ProbandIn.BezeichnungDerStudie | Identifier | Unique id of the study |
+| Person.PatientInPseudonym | BackboneElement | Pseudonymised representation of a corresponding Patient |
+| Person.PatientInPseudonym.Pseudonym | Identifier | Newly generated identification of the patient with reference to the original identifier in a trust center. |
 
 ### Mapping LogicalModel Person -> FHIR
 
@@ -91,6 +114,14 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-person.csv
 | Person.Demographie.Adresse.Strassenanschrift.PLZ | Patient.address.postalCode |
 | Person.Demographie.Adresse.Strassenanschrift.Strasse | Patient.address.line |
 | Person.Demographie.Adresse.Strassenanschrift.Wohnort | Patient.address.city + Patient.address.extension.Stadtteil |
+| Person.Demographie.DokumentiertesGeschlecht | Patient.extension:recordedSexOrGender |
+| Person.Demographie.DokumentiertesGeschlecht.Erfassungszeitpunkt | Patient.extension:recordedSexOrGender.extension:acquisitionDate.valueDateTime |
+| Person.Demographie.DokumentiertesGeschlecht.Gueltigkeitszeitraum | Patient.extension:recordedSexOrGender.extension:effectivePeriod.valuePeriod |
+| Person.Demographie.DokumentiertesGeschlecht.Quelldokument[x] | Patient.extension:recordedSexOrGender.extension:sourceDocument.value[x] |
+| Person.Demographie.DokumentiertesGeschlecht.Quelle[x] | Patient.extension:recordedSexOrGender.extension:source.value[x] |
+| Person.Demographie.DokumentiertesGeschlecht.Typ | Patient.extension:recordedSexOrGender.extension:type.valueCodeableConcept |
+| Person.Demographie.DokumentiertesGeschlecht.Wert | Patient.extension:recordedSexOrGender.extension:value.valueCodeableConcept |
+| Person.Demographie.DokumentiertesGeschlecht.ZustaendigerRechtsraum | Patient.extension:recordedSexOrGender.extension:jurisdiction.valueCodeableConcept |
 | Person.Demographie.Geburtsdatum | Patient.birthDate |
 | Person.Demographie.Vitalstatus.PatientVerstorben | Patient.deceased[x] |
 | Person.Demographie.Vitalstatus.Todeszeitpunkt | Patient.deceased[x] |
@@ -108,6 +139,8 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-person.csv
 | Person.PatientIn.Versicherung.Versichertennummer.VersichertenIDGKV | Patient.identifier:versichertenId_GKV |
 | Person.PatientIn.Versicherung.Versichertennummer.VersichertennummerPKV | Patient.identifier:versicherungsnummer_pkv |
 | Person.PatientInPseudonym.Pseudonym | Patient.identifier:PseudonymisierterIdentifier |
+
+*** Delete File: input/intro-notes/StructureDefinition-mii-lm-diagnose-notes.md
 
 
 
@@ -300,6 +333,11 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-person.csv
     "identity" : "FHIR",
     "uri" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1",
     "name" : "Person LogicalModel FHIR Mapping"
+  },
+  {
+    "identity" : "AllergyIntolerance",
+    "uri" : "http://hl7.org/fhir/StructureDefinition/AllergyIntolerance|4.0.1",
+    "name" : "Person LogicalModel AllergyIntolerance Mapping"
   }],
   "kind" : "logical",
   "abstract" : false,
@@ -628,6 +666,253 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-person.csv
       "mapping" : [{
         "identity" : "FHIR",
         "map" : "Patient.gender"
+      }]
+    },
+    {
+      "id" : "Person.Demographie.DokumentiertesGeschlecht",
+      "path" : "Person.Demographie.DokumentiertesGeschlecht",
+      "short" : "Dokumentierte Geschlechtsangabe einer Person.",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "en"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Recorded sex or gender information for a person."
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "definition" : "Geschlechtsangabe einer Person aus einem Dokument oder einem anderen Datensatz einschließlich optionaler Angaben zu Art, zeitlicher Gültigkeit und Provenienz. Sie repräsentiert weder eine Geschlechtsidentität noch einen klinisch relevanten Geschlechtsparameter oder Angaben zur Sexualität.",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Patient.extension:recordedSexOrGender"
+      }]
+    },
+    {
+      "id" : "Person.Demographie.DokumentiertesGeschlecht.Wert",
+      "path" : "Person.Demographie.DokumentiertesGeschlecht.Wert",
+      "short" : "Dokumentierte Geschlechtsangabe der Person.",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "en"
+          },
+          {
+            "url" : "content",
+            "valueString" : "The recorded sex or gender value for the person."
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "definition" : "Geschlechtsangabe der Person, wie sie in einem Dokument oder einem anderen Datensatz erfasst wurde.",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "CodeableConcept"
+      }],
+      "binding" : {
+        "strength" : "example",
+        "valueSet" : "http://hl7.org/fhir/ValueSet/administrative-gender"
+      },
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Patient.extension:recordedSexOrGender.extension:value.valueCodeableConcept"
+      }]
+    },
+    {
+      "id" : "Person.Demographie.DokumentiertesGeschlecht.Typ",
+      "path" : "Person.Demographie.DokumentiertesGeschlecht.Typ",
+      "short" : "Art der dokumentierten Geschlechtsangabe.",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "en"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Type of recorded sex or gender."
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "definition" : "Art oder Kategorie der dokumentierten Geschlechtsangabe, zum Beispiel administratives Geschlecht, administratives biologisches Geschlecht oder bei Geburt zugewiesenes Geschlecht.",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "CodeableConcept"
+      }],
+      "binding" : {
+        "strength" : "example",
+        "valueSet" : "http://terminology.hl7.org/ValueSet/recorded-sex-or-gender-type"
+      },
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Patient.extension:recordedSexOrGender.extension:type.valueCodeableConcept"
+      }]
+    },
+    {
+      "id" : "Person.Demographie.DokumentiertesGeschlecht.Gueltigkeitszeitraum",
+      "path" : "Person.Demographie.DokumentiertesGeschlecht.Gueltigkeitszeitraum",
+      "short" : "Gültigkeitszeitraum der dokumentierten Geschlechtsangabe.",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "en"
+          },
+          {
+            "url" : "content",
+            "valueString" : "When the recorded sex or gender value applies."
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "definition" : "Zeitraum, in dem die dokumentierte Geschlechtsangabe für die Person gilt.",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Period"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Patient.extension:recordedSexOrGender.extension:effectivePeriod.valuePeriod"
+      }]
+    },
+    {
+      "id" : "Person.Demographie.DokumentiertesGeschlecht.Erfassungszeitpunkt",
+      "path" : "Person.Demographie.DokumentiertesGeschlecht.Erfassungszeitpunkt",
+      "short" : "Zeitpunkt der Erfassung.",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "en"
+          },
+          {
+            "url" : "content",
+            "valueString" : "When the recorded sex or gender value was recorded."
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "definition" : "Zeitpunkt, zu dem die dokumentierte Geschlechtsangabe im System erfasst wurde.",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "dateTime"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Patient.extension:recordedSexOrGender.extension:acquisitionDate.valueDateTime"
+      }]
+    },
+    {
+      "id" : "Person.Demographie.DokumentiertesGeschlecht.Quelle[x]",
+      "path" : "Person.Demographie.DokumentiertesGeschlecht.Quelle[x]",
+      "short" : "Quelle der dokumentierten Geschlechtsangabe.",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "en"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Source of the recorded sex or gender value."
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "definition" : "Codierte Angabe oder Referenz auf die Quelle der dokumentierten Geschlechtsangabe.",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "CodeableConcept"
+      },
+      {
+        "code" : "Reference",
+        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Organization",
+        "http://hl7.org/fhir/StructureDefinition/Device",
+        "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
+        "http://hl7.org/fhir/StructureDefinition/Practitioner"]
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Patient.extension:recordedSexOrGender.extension:source.value[x]"
+      }]
+    },
+    {
+      "id" : "Person.Demographie.DokumentiertesGeschlecht.Quelldokument[x]",
+      "path" : "Person.Demographie.DokumentiertesGeschlecht.Quelldokument[x]",
+      "short" : "Quelldokument der dokumentierten Geschlechtsangabe.",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "en"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Document from which the recorded sex or gender value was acquired."
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "definition" : "Referenz auf das Quelldokument oder codierte Angabe der Dokumentart, in der die Geschlechtsangabe erstmalig erfasst wurde.",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "CodeableConcept"
+      },
+      {
+        "code" : "Reference",
+        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/DocumentReference"]
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Patient.extension:recordedSexOrGender.extension:sourceDocument.value[x]"
+      }]
+    },
+    {
+      "id" : "Person.Demographie.DokumentiertesGeschlecht.ZustaendigerRechtsraum",
+      "path" : "Person.Demographie.DokumentiertesGeschlecht.ZustaendigerRechtsraum",
+      "short" : "Zuständiger Rechtsraum der Quelle.",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "en"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Jurisdiction responsible for the source or source document."
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "definition" : "Rechtsraum, der für die Quelle oder das Quelldokument der erfassten Geschlechtsangabe zuständig ist.",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "CodeableConcept"
+      }],
+      "binding" : {
+        "strength" : "extensible",
+        "valueSet" : "http://terminology.hl7.org/ValueSet/jurisdiction"
+      },
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Patient.extension:recordedSexOrGender.extension:jurisdiction.valueCodeableConcept"
       }]
     },
     {
@@ -1089,7 +1374,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-person.csv
     {
       "id" : "Person.Demographie.Vitalstatus.Todesursache",
       "path" : "Person.Demographie.Vitalstatus.Todesursache",
-      "short" : "Todesursache mit ICD-10-WHO kodiert.",
+      "short" : "Todesursache mit ICD-10-WHO codiert.",
       "_short" : {
         "extension" : [{
           "extension" : [{
@@ -1103,11 +1388,481 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-person.csv
           "url" : "http://hl7.org/fhir/StructureDefinition/translation"
         }]
       },
-      "definition" : "Todesursache mit ICD-10-WHO kodiert.",
+      "definition" : "Todesursache mit ICD-10-WHO codiert.",
       "min" : 0,
       "max" : "1",
       "type" : [{
         "code" : "CodeableConcept"
+      }]
+    },
+    {
+      "id" : "Person.AllergieOderUnvertraeglichkeit",
+      "path" : "Person.AllergieOderUnvertraeglichkeit",
+      "short" : "Allergie oder Unverträglichkeit",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "en"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Allergy or intolerance"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "definition" : "Dokumentierte Einschätzung einer patientenbezogenen Allergie oder Unverträglichkeit, die mit dem Risiko einer schädlichen oder unerwünschten Reaktion bei Exposition gegenüber einem bestimmten Stoff, Produkt oder einer Stoffklasse verbunden ist.",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "AllergyIntolerance",
+        "map" : "AllergyIntolerance"
+      }]
+    },
+    {
+      "id" : "Person.AllergieOderUnvertraeglichkeit.KlinischerStatus",
+      "path" : "Person.AllergieOderUnvertraeglichkeit.KlinischerStatus",
+      "short" : "Klinischer Status",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "en"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Clinical status"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "definition" : "Klinischer Zustand der Allergie oder Unverträglichkeit, beispielsweise aktiv, inaktiv oder abgeklungen.",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "CodeableConcept"
+      }],
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "http://hl7.org/fhir/ValueSet/allergyintolerance-clinical"
+      },
+      "mapping" : [{
+        "identity" : "AllergyIntolerance",
+        "map" : "AllergyIntolerance.clinicalStatus"
+      }]
+    },
+    {
+      "id" : "Person.AllergieOderUnvertraeglichkeit.Verifikationsstatus",
+      "path" : "Person.AllergieOderUnvertraeglichkeit.Verifikationsstatus",
+      "short" : "Verifikationsstatus",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "en"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Verification status"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "definition" : "Grad der fachlichen Bestätigung der Allergie oder Unverträglichkeit, beispielsweise unbestätigt, bestätigt oder widerlegt.",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "CodeableConcept"
+      }],
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "http://hl7.org/fhir/ValueSet/allergyintolerance-verification"
+      },
+      "mapping" : [{
+        "identity" : "AllergyIntolerance",
+        "map" : "AllergyIntolerance.verificationStatus"
+      }]
+    },
+    {
+      "id" : "Person.AllergieOderUnvertraeglichkeit.Art",
+      "path" : "Person.AllergieOderUnvertraeglichkeit.Art",
+      "short" : "Art",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "en"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Type"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "definition" : "Einordnung als Allergie oder Unverträglichkeit, sofern der zugrunde liegende Mechanismus bekannt ist.",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "code"
+      }],
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "http://hl7.org/fhir/ValueSet/allergy-intolerance-type"
+      },
+      "mapping" : [{
+        "identity" : "AllergyIntolerance",
+        "map" : "AllergyIntolerance.type"
+      }]
+    },
+    {
+      "id" : "Person.AllergieOderUnvertraeglichkeit.Kategorie",
+      "path" : "Person.AllergieOderUnvertraeglichkeit.Kategorie",
+      "short" : "Kategorie",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "en"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Category"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "definition" : "Kategorie des auslösenden Stoffes, beispielsweise Arzneimittel, Lebensmittel, Umweltstoff oder biologischer Stoff.",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "code"
+      }],
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "http://hl7.org/fhir/ValueSet/allergy-intolerance-category"
+      },
+      "mapping" : [{
+        "identity" : "AllergyIntolerance",
+        "map" : "AllergyIntolerance.category"
+      }]
+    },
+    {
+      "id" : "Person.AllergieOderUnvertraeglichkeit.Kritikalitaet",
+      "path" : "Person.AllergieOderUnvertraeglichkeit.Kritikalitaet",
+      "short" : "Kritikalität",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "en"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Criticality"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "definition" : "Einschätzung des potenziellen klinischen Schadens bei einer zukünftigen Exposition.",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "code"
+      }],
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "http://hl7.org/fhir/ValueSet/allergy-intolerance-criticality"
+      },
+      "mapping" : [{
+        "identity" : "AllergyIntolerance",
+        "map" : "AllergyIntolerance.criticality"
+      }]
+    },
+    {
+      "id" : "Person.AllergieOderUnvertraeglichkeit.AllergieOderUnvertraeglichkeitGegen",
+      "path" : "Person.AllergieOderUnvertraeglichkeit.AllergieOderUnvertraeglichkeitGegen",
+      "short" : "Allergie oder Unverträglichkeit gegen",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "en"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Substance, product, class, or allergy or intolerance concept"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "definition" : "Stoff, Produkt, Stoffklasse oder Allergie-/Unverträglichkeitsbegriff, auf den sich die dokumentierte Gefährdung bezieht.",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "CodeableConcept"
+      }],
+      "binding" : {
+        "strength" : "example",
+        "valueSet" : "http://hl7.org/fhir/ValueSet/allergyintolerance-code"
+      },
+      "mapping" : [{
+        "identity" : "AllergyIntolerance",
+        "map" : "AllergyIntolerance.code"
+      }]
+    },
+    {
+      "id" : "Person.AllergieOderUnvertraeglichkeit.Patient",
+      "path" : "Person.AllergieOderUnvertraeglichkeit.Patient",
+      "short" : "Patient",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "en"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Patient with the allergy or intolerance"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "definition" : "Patient, bei dem die Allergie oder Unverträglichkeit besteht beziehungsweise dokumentiert wurde.",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Patient"]
+      }],
+      "mapping" : [{
+        "identity" : "AllergyIntolerance",
+        "map" : "AllergyIntolerance.patient"
+      }]
+    },
+    {
+      "id" : "Person.AllergieOderUnvertraeglichkeit.Kontakt",
+      "path" : "Person.AllergieOderUnvertraeglichkeit.Kontakt",
+      "short" : "Kontakt",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "en"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Encounter associated with the allergy or intolerance"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "definition" : "Kontakt, in dessen Zusammenhang die Allergie oder Unverträglichkeit dokumentiert wurde.",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Encounter"]
+      }],
+      "mapping" : [{
+        "identity" : "AllergyIntolerance",
+        "map" : "AllergyIntolerance.encounter"
+      }]
+    },
+    {
+      "id" : "Person.AllergieOderUnvertraeglichkeit.Beginn[x]",
+      "path" : "Person.AllergieOderUnvertraeglichkeit.Beginn[x]",
+      "short" : "Beginn",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "en"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Onset of the allergy or intolerance"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "definition" : "Zeitpunkt, Zeitraum, Lebensalter oder andere zeitliche Angabe zum erstmaligen Auftreten der Allergie oder Unverträglichkeit.",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "dateTime"
+      },
+      {
+        "code" : "Age"
+      },
+      {
+        "code" : "Period"
+      },
+      {
+        "code" : "Range"
+      },
+      {
+        "code" : "string"
+      }],
+      "mapping" : [{
+        "identity" : "AllergyIntolerance",
+        "map" : "AllergyIntolerance.onset[x]"
+      }]
+    },
+    {
+      "id" : "Person.AllergieOderUnvertraeglichkeit.Dokumentationsdatum",
+      "path" : "Person.AllergieOderUnvertraeglichkeit.Dokumentationsdatum",
+      "short" : "Dokumentationsdatum",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "en"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Date when the allergy or intolerance was first recorded"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "definition" : "Zeitpunkt, zu dem die Allergie oder Unverträglichkeit erstmals im dokumentierenden System erfasst wurde.",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "dateTime"
+      }],
+      "mapping" : [{
+        "identity" : "AllergyIntolerance",
+        "map" : "AllergyIntolerance.recordedDate"
+      }]
+    },
+    {
+      "id" : "Person.AllergieOderUnvertraeglichkeit.UnerwuenschteReaktion",
+      "path" : "Person.AllergieOderUnvertraeglichkeit.UnerwuenschteReaktion",
+      "short" : "Unerwünschte Reaktion",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "en"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Observed adverse reaction"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "definition" : "Angaben zu einer beobachteten unerwünschten Reaktion nach Exposition gegenüber dem betreffenden Stoff oder Produkt.",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "AllergyIntolerance",
+        "map" : "AllergyIntolerance.reaction"
+      }]
+    },
+    {
+      "id" : "Person.AllergieOderUnvertraeglichkeit.UnerwuenschteReaktion.Manifestation",
+      "path" : "Person.AllergieOderUnvertraeglichkeit.UnerwuenschteReaktion.Manifestation",
+      "short" : "Manifestation",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "en"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Clinical manifestation of the adverse reaction"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "definition" : "Klinische Symptome oder Befunde, die im Zusammenhang mit der unerwünschten Reaktion beobachtet wurden.",
+      "min" : 1,
+      "max" : "*",
+      "type" : [{
+        "code" : "CodeableConcept"
+      }],
+      "binding" : {
+        "strength" : "example",
+        "valueSet" : "http://hl7.org/fhir/ValueSet/clinical-findings"
+      },
+      "mapping" : [{
+        "identity" : "AllergyIntolerance",
+        "map" : "AllergyIntolerance.reaction.manifestation"
+      }]
+    },
+    {
+      "id" : "Person.AllergieOderUnvertraeglichkeit.UnerwuenschteReaktion.Schweregrad",
+      "path" : "Person.AllergieOderUnvertraeglichkeit.UnerwuenschteReaktion.Schweregrad",
+      "short" : "Schweregrad",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "en"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Severity of the observed reaction"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "definition" : "Schweregrad der tatsächlich aufgetretenen Reaktion.",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "code"
+      }],
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "http://hl7.org/fhir/ValueSet/reaction-event-severity"
+      },
+      "mapping" : [{
+        "identity" : "AllergyIntolerance",
+        "map" : "AllergyIntolerance.reaction.severity"
+      }]
+    },
+    {
+      "id" : "Person.AllergieOderUnvertraeglichkeit.UnerwuenschteReaktion.Expositionsweg",
+      "path" : "Person.AllergieOderUnvertraeglichkeit.UnerwuenschteReaktion.Expositionsweg",
+      "short" : "Expositionsweg",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "en"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Route of exposure"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "definition" : "Weg, über den der Patient dem auslösenden Stoff oder Produkt ausgesetzt war.",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "CodeableConcept"
+      }],
+      "binding" : {
+        "strength" : "example",
+        "valueSet" : "http://hl7.org/fhir/ValueSet/route-codes"
+      },
+      "mapping" : [{
+        "identity" : "AllergyIntolerance",
+        "map" : "AllergyIntolerance.reaction.exposureRoute"
       }]
     },
     {

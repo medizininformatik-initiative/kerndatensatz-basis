@@ -23,26 +23,28 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-prozedur.c
 
 ### Table View
 
-| | |
-| :--- | :--- |
-| Logical dataset | Description |
-| Prozedur | Das Basismodul Prozeduren umfasst die Beschreibung diagnostischer oder therapeutischer Maßnahmen, die als Leistungskomplexe auch für die Abrechnung dokumentiert und kodiert werden, z.B. Operationen. |
-| Prozedur.OPSProzedurKodiert | Kodierung der durchgeführten Prozedur mittels OPS. |
-| Prozedur.OPSProzedurKodiert.VollstaendigerProzedurencode | Vollständiger Prozedurencode |
-| Prozedur.OPSProzedurKodiert.Seitenlokalisation | Seitenlokalisation |
-| Prozedur.SNOMEDProzedurKodiert | Kodierung der durchgeführten Prozedur mittels SNOMED CT. |
-| Prozedur.SNOMEDProzedurKodiert.VollstaendigerProzedurencode | Vollständiger Prozedurencode |
-| Prozedur.Koerperstelle | Körperstelle |
-| Prozedur.Durchfuehrungsabsicht | Durchführungsabsicht |
-| Prozedur.Durchfuehrungsdatum | Durchführungsdatum |
-| Prozedur.Dokumentationsdatum | Dokumentationsdatum |
-| Prozedur.Freitextbeschreibung | Freitextbeschreibung |
+| | | |
+| :--- | :--- | :--- |
+| Logical dataset | Data type | Description |
+| Prozedur |  | Das Basismodul Prozeduren umfasst die Beschreibung diagnostischer oder therapeutischer Maßnahmen, die als Leistungskomplexe auch für die Abrechnung dokumentiert und kodiert werden, z.B. Operationen. |
+| Prozedur.OPSProzedurKodiert | BackboneElement | Kodierung der durchgeführten Prozedur mittels OPS. |
+| Prozedur.OPSProzedurKodiert.VollstaendigerProzedurencode | Coding | Vollständiger Prozedurencode |
+| Prozedur.OPSProzedurKodiert.Seitenlokalisation | Coding | Seitenlokalisation |
+| Prozedur.SNOMEDProzedurKodiert | BackboneElement | Kodierung der durchgeführten Prozedur mittels SNOMED CT. |
+| Prozedur.SNOMEDProzedurKodiert.VollstaendigerProzedurencode | Coding | Vollständiger Prozedurencode |
+| Prozedur.Koerperstelle | CodeableConcept | Körperstelle |
+| Prozedur.DetaillierteAnatomischeStruktur | Reference | Detaillierte anatomische Struktur |
+| Prozedur.Durchfuehrungsabsicht | Coding | Durchführungsabsicht |
+| Prozedur.Durchfuehrungsdatum | dateTime | Durchführungsdatum |
+| Prozedur.Dokumentationsdatum | dateTime | Dokumentationsdatum |
+| Prozedur.Freitextbeschreibung | string | Freitextbeschreibung |
 
 ### Mapping LogicalModel Prozedur -> FHIR
 
 | | |
 | :--- | :--- |
 | MII LM Prozedur | FHIR |
+| Prozedur.DetaillierteAnatomischeStruktur | Procedure.bodySite.extension('http://hl7.org/fhir/StructureDefinition/bodySite').valueReference |
 | Prozedur.Dokumentationsdatum | Procedure.extension('http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum').value |
 | Prozedur.Durchfuehrungsabsicht | Procedure.extension('https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Durchfuehrungsabsicht').value |
 | Prozedur.Durchfuehrungsdatum | Procedure.performedDateTime |
@@ -53,6 +55,8 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-prozedur.c
 | Prozedur.OPSProzedurKodiert.VollstaendigerProzedurencode | Procedure.code.coding.where(system='http://fhir.de/CodeSystem/bfarm/ops') |
 | Prozedur.SNOMEDProzedurKodiert | Procedure.code.coding.where(system='http://snomed.info/sct') |
 | Prozedur.SNOMEDProzedurKodiert.VollstaendigerProzedurencode | Procedure.code.coding.where(system='http://snomed.info/sct') |
+
+*** Delete File: input/intro-notes/StructureDefinition-mii-lm-fall-notes.md
 
 
 
@@ -319,6 +323,22 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-prozedur.c
       "mapping" : [{
         "identity" : "FHIR",
         "map" : "Procedure.bodySite"
+      }]
+    },
+    {
+      "id" : "Prozedur.DetaillierteAnatomischeStruktur",
+      "path" : "Prozedur.DetaillierteAnatomischeStruktur",
+      "short" : "Detaillierte anatomische Struktur",
+      "definition" : "Detaillierte Angaben zu der patientenbezogenen anatomischen Struktur oder Lokalisation, auf die sich die Prozedur bezieht. Das Element kann verwendet werden, wenn die kodierte Angabe der Körperstelle allein nicht die für den Anwendungsfall erforderliche Genauigkeit bietet.",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/BodyStructure"]
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Procedure.bodySite.extension('http://hl7.org/fhir/StructureDefinition/bodySite').valueReference"
       }]
     },
     {

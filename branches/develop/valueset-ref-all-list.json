@@ -276,7 +276,92 @@
     "uses" : {
     },
     "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient",
+    "StructureDefinition-mii-lm-person.html" : "MII LM Person",
     "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/allergy-intolerance-category",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "AllergyIntoleranceCategory",
+    "title" : "AllergyIntoleranceCategory",
+    "description" : "Category of an identified substance associated with allergies or intolerances.",
+    "systems" : ["http://hl7.org/fhir/allergy-intolerance-category"],
+    "oids" : ["2.16.840.1.113883.4.642.3.133"],
+    "sources" : ["2.16.840.1.113883.4.642.3.133"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-lm-person.html" : "MII LM Person"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/allergy-intolerance-criticality",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "AllergyIntoleranceCriticality",
+    "title" : "AllergyIntoleranceCriticality",
+    "description" : "Estimate of the potential clinical harm, or seriousness, of a reaction to an identified substance.",
+    "systems" : ["http://hl7.org/fhir/allergy-intolerance-criticality"],
+    "oids" : ["2.16.840.1.113883.4.642.3.129"],
+    "sources" : ["2.16.840.1.113883.4.642.3.129"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-lm-person.html" : "MII LM Person"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/allergy-intolerance-type",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "AllergyIntoleranceType",
+    "title" : "AllergyIntoleranceType",
+    "description" : "Identification of the underlying physiological mechanism for a Reaction Risk.",
+    "systems" : ["http://hl7.org/fhir/allergy-intolerance-type"],
+    "oids" : ["2.16.840.1.113883.4.642.3.131"],
+    "sources" : ["2.16.840.1.113883.4.642.3.131"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-lm-person.html" : "MII LM Person"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/allergyintolerance-clinical",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "AllergyIntoleranceClinicalStatusCodes",
+    "title" : "AllergyIntolerance Clinical Status Codes",
+    "description" : "Preferred value set for AllergyIntolerance Clinical Status.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"],
+    "oids" : ["2.16.840.1.113883.4.642.3.1372"],
+    "sources" : ["2.16.840.1.113883.4.642.3.1372"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-lm-person.html" : "MII LM Person"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/allergyintolerance-code",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "AllergyIntoleranceSubstance/Product,ConditionAndNegationCodes",
+    "title" : "AllergyIntolerance Substance/Product, Condition and Negation Codes",
+    "description" : "This value set includes concept codes for specific substances/pharmaceutical products, allergy or intolerance conditions, and negation/exclusion codes to specify the absence of specific types of allergies or intolerances.",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.137"],
+    "sources" : ["2.16.840.1.113883.4.642.3.137"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-lm-person.html" : "MII LM Person"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/allergyintolerance-verification",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "AllergyIntoleranceVerificationStatusCodes",
+    "title" : "AllergyIntolerance Verification Status Codes",
+    "description" : "Preferred value set for AllergyIntolerance Verification Status.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/allergyintolerance-verification"],
+    "oids" : ["2.16.840.1.113883.4.642.3.1370"],
+    "sources" : ["2.16.840.1.113883.4.642.3.1370"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-lm-person.html" : "MII LM Person"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/body-site",
@@ -294,6 +379,20 @@
     "StructureDefinition-mii-pr-prozedur-procedure.html" : "MII PR Prozedur Procedure",
     "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache",
     "StructureDefinition-mii-pr-person-vitalstatus.html" : "MII PR Person Vitalstatus"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/clinical-findings",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "SNOMEDCTClinicalFindings",
+    "title" : "SNOMED CT Clinical Findings",
+    "description" : "This value set includes all the \"Clinical finding\" [SNOMED CT](http://snomed.info/sct) codes - concepts where concept is-a 404684003 (Clinical finding (finding)).",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.232"],
+    "sources" : ["2.16.840.1.113883.4.642.3.232"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-lm-person.html" : "MII LM Person"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/common-tags",
@@ -943,6 +1042,20 @@
     "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition"
   },
   {
+    "url" : "http://hl7.org/fhir/ValueSet/reaction-event-severity",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "AllergyIntoleranceSeverity",
+    "title" : "AllergyIntoleranceSeverity",
+    "description" : "Clinical assessment of the severity of a reaction event as a whole, potentially considering multiple different manifestations.",
+    "systems" : ["http://hl7.org/fhir/reaction-event-severity"],
+    "oids" : ["2.16.840.1.113883.4.642.3.135"],
+    "sources" : ["2.16.840.1.113883.4.642.3.135"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-lm-person.html" : "MII LM Person"
+  },
+  {
     "url" : "http://hl7.org/fhir/ValueSet/referencerange-appliesto",
     "version" : "4.0.1",
     "status" : "draft",
@@ -992,6 +1105,20 @@
     "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)"
   },
   {
+    "url" : "http://hl7.org/fhir/ValueSet/route-codes",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "SNOMEDCTRouteCodes",
+    "title" : "SNOMED CT Route Codes",
+    "description" : "This value set includes all Route codes from SNOMED CT - provided as an exemplar.",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.98"],
+    "sources" : ["2.16.840.1.113883.4.642.3.98"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-lm-person.html" : "MII LM Person"
+  },
+  {
     "url" : "http://hl7.org/fhir/ValueSet/security-labels",
     "version" : "4.0.1",
     "status" : "active",
@@ -1028,6 +1155,36 @@
     "uses" : {
     },
     "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung"
+  },
+  {
+    "url" : "http://terminology.hl7.org/ValueSet/jurisdiction",
+    "version" : "1.0.0",
+    "status" : "active",
+    "name" : "JurisdictionValueSet",
+    "title" : "Jurisdiction ValueSet",
+    "description" : "This value set defines a base set of codes for country, country subdivision and region    for indicating where a resource is intended to be used.   \r\n   \r\n   Note: The codes for countries and country subdivisions are taken from    [ISO 3166](https://www.iso.org/iso-3166-country-codes.html)    while the codes for \"supra-national\" regions are from    [UN Standard country or area codes for statistical use (M49)](http://unstats.un.org/unsd/methods/m49/m49.htm).",
+    "systems" : ["http://unstats.un.org/unsd/methods/m49/m49.htm",
+    "urn:iso:std:iso:3166",
+    "urn:iso:std:iso:3166:-2"],
+    "oids" : ["2.16.840.1.113883.11.21029"],
+    "sources" : ["2.16.840.1.113883.11.21029"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-lm-person.html" : "MII LM Person"
+  },
+  {
+    "url" : "http://terminology.hl7.org/ValueSet/recorded-sex-or-gender-type",
+    "version" : "2.0.0",
+    "status" : "active",
+    "name" : "RecordedSexOrGenderType",
+    "title" : "Recorded Sex Or Gender Type",
+    "description" : "Codes that represent the type of the recorded sex and gender.",
+    "systems" : ["http://loinc.org"],
+    "oids" : ["2.16.840.1.113883.4.642.3.3289"],
+    "sources" : ["2.16.840.1.113883.4.642.3.3289"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-lm-person.html" : "MII LM Person"
   },
   {
     "url" : "http://terminology.hl7.org/ValueSet/v2-0092",
