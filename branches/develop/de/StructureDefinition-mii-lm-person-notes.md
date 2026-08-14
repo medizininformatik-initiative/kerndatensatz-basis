@@ -1,8 +1,8 @@
 ### Tabellenansicht
 
-{% include sql-38-fragment.xhtml %}
+{% include sql-26-fragment.xhtml %}
 
 ### Mapping LogicalModel Person -> FHIR
 
-{% include sql-39-fragment.xhtml %}
+{% include sql-27-fragment.xhtml %}
 *** Delete File: input/translations/de/intro-notes/StructureDefinition-mii-lm-diagnose-notes.md

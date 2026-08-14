@@ -274,6 +274,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><!-- white space is critical inside of capture --></p>
 <div class="markdown-toc">
 <ul id="markdown-toc">
+  <li><a href="#version-202700" id="markdown-toc-version-202700">Version 2027.0.0</a></li>
   <li><a href="#version-202601" id="markdown-toc-version-202601">Version 2026.0.1</a></li>
   <li><a href="#version-202600" id="markdown-toc-version-202600">Version 2026.0.0</a></li>
   <li><a href="#version-202501" id="markdown-toc-version-202501">Version 2025.0.1</a></li>
@@ -285,6 +286,25 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 </div>
 <p>Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Implementierungsleitfadens Kerndatensatz Basis hinweg. Dieses konsolidierte Änderungsprotokoll kombiniert Release Notes aus allen vier Basismodulen: Person, Fall, Diagnose und Prozedur.</p>
+
+<hr />
+
+<h3 id="version-202700">Version 2027.0.0</h3>
+
+<p><strong>Datum:</strong> 2026-XX-XX</p>
+
+<h4 id="modul-fall">Modul Fall</h4>
+
+<ul>
+  <li><strong>Changed:</strong> UML-Modell des Moduls Fall angepasst, sodass die organisatorische Zuordnung zwischen Versorgungsstellen und Abteilungen als optionale n:m-Beziehung dargestellt wird.</li>
+  <li><strong>Changed:</strong> Beziehungen zwischen Diagnosen und Kontakten in den UML-Diagrammen der Module Fall und Diagnose angepasst, sodass der Abteilungskontakt als derzeit empfohlene Kontaktebene dargestellt wird und andere Kontaktebenen weiterhin möglich bleiben.</li>
+</ul>
+
+<h4 id="modul-prozedur">Modul Prozedur</h4>
+
+<ul>
+  <li><strong>Changed:</strong> Beziehung zwischen Prozeduren und Kontakten im Prozedur-UML angepasst, sodass der Abteilungskontakt als derzeit empfohlener Kontaktkontext dargestellt wird und andere Kontaktebenen weiterhin möglich bleiben.</li>
+</ul>
 
 <hr />
 
@@ -318,7 +338,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Added:</strong> Profil <a href="StructureDefinition-mii-pr-person-patient-pseudonymisiert.html">Patient Pseudonymisiert</a>: Optionaler <code class="language-plaintext highlighter-rouge">type.coding</code>-Slice <code class="language-plaintext highlighter-rouge">mr</code> (<code class="language-plaintext highlighter-rouge">http://terminology.hl7.org/CodeSystem/v2-0203|MR</code>) zu <code class="language-plaintext highlighter-rouge">PseudonymisierterIdentifier</code> hinzugefügt. Wenn das Pseudonym eine Medical Record Number ersetzt, SOLL dieser Code gesetzt werden, um die standortunabhängige Auffindbarkeit des Identifiers zu ermöglichen. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/63">#63</a></li>
 </ul>
 
-<h4 id="modul-fall">Modul Fall</h4>
+<h4 id="modul-fall-1">Modul Fall</h4>
 
 <ul>
   <li><strong>Added:</strong> Verwendung von <code class="language-plaintext highlighter-rouge">Encounter.location</code> in der Dokumentation erläutert. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-fall/issues/62">#62</a></li>
@@ -360,7 +380,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Hinweis:</strong> Dies stellt eine Änderung gegenüber vorherigen Versionen dar, in denen Encounter.diagnosis die primäre Verknüpfungsmethode war</li>
 </ul>
 
-<h4 id="modul-fall-1">Modul Fall</h4>
+<h4 id="modul-fall-2">Modul Fall</h4>
 
 <ul>
   <li><strong>Changed:</strong> Aktualisierte Anleitung zum Abrechnungsfallkontext und Account-Referenzen basierend auf der gematik ISiK-Spezifikation</li>
@@ -369,7 +389,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Changed:</strong> Jeder Encounter SOLL seine eigene eindeutige Aufnahmenummer in <code class="language-plaintext highlighter-rouge">Encounter.identifier:Aufnahmenummer</code> haben</li>
 </ul>
 
-<h4 id="modul-prozedur">Modul Prozedur</h4>
+<h4 id="modul-prozedur-1">Modul Prozedur</h4>
 
 <ul>
   <li><strong>Changed:</strong> Anleitung hinzugefügt mit Empfehlung zur Verwendung von <code class="language-plaintext highlighter-rouge">Procedure.encounter</code> zur Etablierung des Kontaktkontexts, abgestimmt mit den Empfehlungen des Diagnose-Moduls</li>
@@ -394,7 +414,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Changed</strong>: Abhängigkeit aktualisiert auf <a href="https://simplifier.net/packages/de.basisprofil.r4/1.5.4">de.basisprofil.r4 1.5.4</a>. Diese Version der FHIR-Basisprofile enthält eine Korrektur für die kvid-2-Invariante, die auf <code class="language-plaintext highlighter-rouge">Patient.identifier:versichertenId.type</code> im Patient-Profil angewendet wird</li>
 </ul>
 
-<h4 id="modul-fall-2">Modul Fall</h4>
+<h4 id="modul-fall-3">Modul Fall</h4>
 <p><strong>Datum:</strong> 28.10.2025</p>
 
 <ul>
@@ -411,7 +431,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Changed</strong>: CapabilityStatement enthält nun Anforderungsdokumentation für Suchparameter <code class="language-plaintext highlighter-rouge">_count</code> und <code class="language-plaintext highlighter-rouge">_summary</code></li>
 </ul>
 
-<h4 id="modul-prozedur-1">Modul Prozedur</h4>
+<h4 id="modul-prozedur-2">Modul Prozedur</h4>
 <p><strong>Datum:</strong> 22.10.2025</p>
 
 <ul>
@@ -439,7 +459,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Changed</strong>: Profile enthalten zusätzliche Beschreibungen und Übersetzungen für Implementierer und das Forschungsdatenportal Gesundheit (FDPG)</li>
 </ul>
 
-<h4 id="modul-fall-3">Modul Fall</h4>
+<h4 id="modul-fall-4">Modul Fall</h4>
 <p><strong>Datum:</strong> 10.12.2024</p>
 
 <ul>
@@ -468,7 +488,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Added</strong>: <code class="language-plaintext highlighter-rouge">Condition.verificationStatus</code> hat nun MustSupport-Label. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-diagnose/issues/64">#64</a></li>
 </ul>
 
-<h4 id="modul-prozedur-2">Modul Prozedur</h4>
+<h4 id="modul-prozedur-3">Modul Prozedur</h4>
 <p><strong>Datum:</strong> 09.12.2024</p>
 
 <ul>
@@ -483,7 +503,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="version-202401">Version 2024.0.1</h3>
 
-<h4 id="modul-fall-4">Modul Fall</h4>
+<h4 id="modul-fall-5">Modul Fall</h4>
 <p><strong>Datum:</strong> 17.04.2024</p>
 
 <ul>
@@ -515,7 +535,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Changed</strong>: Datentypen im logischen Modell wurden angepasst, um den Datentypen der Elemente im FHIR-Profil zu entsprechen, auf die sie gemappt sind</li>
 </ul>
 
-<h4 id="modul-fall-5">Modul Fall</h4>
+<h4 id="modul-fall-6">Modul Fall</h4>
 <p><strong>Datum:</strong> 28.03.2024</p>
 
 <ul>
@@ -557,7 +577,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Added</strong>: Modul wurde um SearchParameter-Ressourcen erweitert, die die Suche nach ICD-10-GM-Codes in Kombination mit Mehrfachkodierungskennzeichen, Lateralität und diagnostischer Sicherheit ermöglichen</li>
 </ul>
 
-<h4 id="modul-prozedur-3">Modul Prozedur</h4>
+<h4 id="modul-prozedur-4">Modul Prozedur</h4>
 <p><strong>Datum:</strong> 16.04.2024</p>
 
 <ul>
@@ -616,8 +636,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-dev basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Erstellt 
-  <span title="2026-07-31 06:55:00 +0000">
-    2026-07-31
+  <span title="2026-08-14 15:34:00 +0000">
+    2026-08-14
   </span>
 
           <br/>

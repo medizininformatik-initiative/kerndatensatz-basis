@@ -7,7 +7,7 @@ Vitalstatus des Patienten
 
 This Code system is referenced in the definition of the following value sets:
 
-* [MII_VS_Person_Vitalstatus](ValueSet-mii-vs-person-vitalstatus.md)
+* [MII VS Person Vitalstatus](ValueSet-mii-vs-person-vitalstatus.md)
 
 -------
 

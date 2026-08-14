@@ -267,6 +267,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><!-- white space is critical inside of capture --></p>
 <div class="markdown-toc">
 <ul id="markdown-toc">
+  <li><a href="#version-202700" id="markdown-toc-version-202700">Version 2027.0.0</a></li>
   <li><a href="#version-202601" id="markdown-toc-version-202601">Version 2026.0.1</a></li>
   <li><a href="#version-202600" id="markdown-toc-version-202600">Version 2026.0.0</a></li>
   <li><a href="#version-202501" id="markdown-toc-version-202501">Version 2025.0.1</a></li>
@@ -278,6 +279,25 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 </div>
 <p>This page documents the changes and updates across versions of the MII Implementation Guide Kerndatensatz Basis. This consolidated changelog combines release notes from four base modules: Person, Treatment Case, Diagnosis, and Procedure.</p>
+
+<hr />
+
+<h3 id="version-202700">Version 2027.0.0</h3>
+
+<p><strong>Date:</strong> 2026-XX-XX</p>
+
+<h4 id="treatment-case-module">Treatment Case Module</h4>
+
+<ul>
+  <li><strong>Changed:</strong> Updated the Treatment Case UML model to represent the organizational assignment between care units and departments as an optional many-to-many association.</li>
+  <li><strong>Changed:</strong> Updated the relationships between diagnoses and contacts in the Treatment Case and Diagnosis UML diagrams to show the department contact as the currently recommended contact level while retaining the possibility of other contact levels.</li>
+</ul>
+
+<h4 id="procedure-module">Procedure Module</h4>
+
+<ul>
+  <li><strong>Changed:</strong> Updated the Procedure UML diagram to show the department contact as the currently recommended contact context while retaining the possibility of other contact levels.</li>
+</ul>
 
 <hr />
 
@@ -311,7 +331,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Added:</strong> Profile <a href="StructureDefinition-mii-pr-person-patient-pseudonymisiert.html">Patient Pseudonymized</a>: Added optional <code class="language-plaintext highlighter-rouge">type.coding</code> sub-slice <code class="language-plaintext highlighter-rouge">mr</code> (<code class="language-plaintext highlighter-rouge">http://terminology.hl7.org/CodeSystem/v2-0203|MR</code>) to <code class="language-plaintext highlighter-rouge">PseudonymisierterIdentifier</code>. When the pseudonym replaces a Medical Record Number, this code SHOULD be set to allow site-independent discovery of the pseudonymized identifier. See: <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/63">#63</a></li>
 </ul>
 
-<h4 id="treatment-case-module">Treatment Case Module</h4>
+<h4 id="treatment-case-module-1">Treatment Case Module</h4>
 
 <ul>
   <li><strong>Added:</strong> Clarified <code class="language-plaintext highlighter-rouge">Encounter.location</code> slicing and semantics in the documentation. See: <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-fall/issues/62">#62</a></li>
@@ -353,7 +373,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Note:</strong> This represents a change from previous versions where Encounter.diagnosis was the primary linkage method</li>
 </ul>
 
-<h4 id="treatment-case-module-1">Treatment Case Module</h4>
+<h4 id="treatment-case-module-2">Treatment Case Module</h4>
 
 <ul>
   <li><strong>Changed:</strong> Updated guidance on billing case context (Abrechnungsfallkontext) and Account references based on gematik ISiK specification</li>
@@ -362,7 +382,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Changed:</strong> Each Encounter SHOULD have its own unique Aufnahmenummer in <code class="language-plaintext highlighter-rouge">Encounter.identifier:Aufnahmenummer</code></li>
 </ul>
 
-<h4 id="procedure-module">Procedure Module</h4>
+<h4 id="procedure-module-1">Procedure Module</h4>
 
 <ul>
   <li><strong>Changed:</strong> Added guidance recommending use of <code class="language-plaintext highlighter-rouge">Procedure.encounter</code> to establish encounter context, aligned with Condition module recommendations</li>
@@ -387,7 +407,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Changed</strong>: Dependency updated to <a href="https://simplifier.net/packages/de.basisprofil.r4/1.5.4">de.basisprofil.r4 1.5.4</a>. This release of the FHIR Base Profiles contains a fix for the kvid-2 invariant applied to <code class="language-plaintext highlighter-rouge">Patient.identifier:versichertenId.type</code> in the Patient profile</li>
 </ul>
 
-<h4 id="treatment-case-module-2">Treatment Case Module</h4>
+<h4 id="treatment-case-module-3">Treatment Case Module</h4>
 <p><strong>Date:</strong> 2025-10-28</p>
 
 <ul>
@@ -404,7 +424,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Updated</strong>: CapabilityStatement now contains requirement documentation for search parameters <code class="language-plaintext highlighter-rouge">_count</code> and <code class="language-plaintext highlighter-rouge">_summary</code></li>
 </ul>
 
-<h4 id="procedure-module-1">Procedure Module</h4>
+<h4 id="procedure-module-2">Procedure Module</h4>
 <p><strong>Date:</strong> 2025-10-22</p>
 
 <ul>
@@ -432,7 +452,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Enhanced</strong>: Profiles contain additional descriptions and translations for implementers and the Research Data Portal for Health (FDPG)</li>
 </ul>
 
-<h4 id="treatment-case-module-3">Treatment Case Module</h4>
+<h4 id="treatment-case-module-4">Treatment Case Module</h4>
 <p><strong>Date:</strong> 2024-12-10</p>
 
 <ul>
@@ -461,7 +481,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Added</strong>: <code class="language-plaintext highlighter-rouge">Condition.verificationStatus</code> now has MustSupport label. See: <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-diagnose/issues/64">#64</a></li>
 </ul>
 
-<h4 id="procedure-module-2">Procedure Module</h4>
+<h4 id="procedure-module-3">Procedure Module</h4>
 <p><strong>Date:</strong> 2024-12-09</p>
 
 <ul>
@@ -476,7 +496,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="version-202401">Version 2024.0.1</h3>
 
-<h4 id="treatment-case-module-4">Treatment Case Module</h4>
+<h4 id="treatment-case-module-5">Treatment Case Module</h4>
 <p><strong>Date:</strong> 2024-04-17</p>
 
 <ul>
@@ -508,7 +528,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Changed</strong>: Data types in the logical model were adjusted to match the data types of elements in the FHIR profile to which they are mapped</li>
 </ul>
 
-<h4 id="treatment-case-module-5">Treatment Case Module</h4>
+<h4 id="treatment-case-module-6">Treatment Case Module</h4>
 <p><strong>Date:</strong> 2024-03-28</p>
 
 <ul>
@@ -550,7 +570,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Added</strong>: Module was extended with SearchParameter resources enabling search for ICD-10-GM codes in combination with multiple coding indicators, laterality and diagnostic certainty</li>
 </ul>
 
-<h4 id="procedure-module-3">Procedure Module</h4>
+<h4 id="procedure-module-4">Procedure Module</h4>
 <p><strong>Date:</strong> 2024-04-16</p>
 
 <ul>
@@ -609,8 +629,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-dev based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-07-31 06:55:00 +0000">
-    2026-07-31
+  <span title="2026-08-14 15:34:00 +0000">
+    2026-08-14
   </span>
 
           <br/>

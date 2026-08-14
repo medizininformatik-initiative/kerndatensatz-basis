@@ -1,16 +1,16 @@
 MII_IG_Base : Validation Results
 =========================================
 
-err = 1772, warn = 626, info = 2822
-IG Publisher Version: 2.2.11
-Generated Fri Jul 31 07:03:57 UTC 2026. FHIR version 4.0.1 for de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-dev (canonical = https://www.medizininformatik-initiative.de/fhir/modul-base)
+err = 1778, warn = 626, info = 2822
+IG Publisher Version: 2.3.2
+Generated Fri Aug 14 15:42:01 UTC 2026. FHIR version 4.0.1 for de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-dev (canonical = https://www.medizininformatik-initiative.de/fhir/modul-base)
  Build Errors : 0 / 4 / 6
  /workspace/fsh-generated/resources/Bundle-mii-exa-base-test-data-bundle-1 : 0 / 57 / 67
  /workspace/fsh-generated/resources/CapabilityStatement-mii-cps-diagnose-capabilitystatement : 0 / 2 / 48
  /workspace/fsh-generated/resources/CapabilityStatement-mii-cps-fall-capabilitystatement : 0 / 2 / 41
  /workspace/fsh-generated/resources/CapabilityStatement-mii-cps-person-capabilitystatement : 0 / 2 / 67
  /workspace/fsh-generated/resources/CapabilityStatement-mii-cps-prozedur-capabilitystatement : 0 / 2 / 35
- /workspace/fsh-generated/resources/CodeSystem-mii-cs-diagnose-lebensphase-supplement-snomed : 0 / 3 / 6
+ /workspace/fsh-generated/resources/CodeSystem-mii-cs-diagnose-lebensphase-supplement-snomed : 6 / 3 / 6
  /workspace/fsh-generated/resources/CodeSystem-mii-cs-fall-supplement-act-encounter-code : 0 / 6 / 7
  /workspace/fsh-generated/resources/CodeSystem-mii-cs-fall-supplement-patient-class : 0 / 5 / 7
  /workspace/fsh-generated/resources/CodeSystem-mii-cs-person-vitalstatus : 0 / 3 / 34
@@ -358,6 +358,12 @@ WARNING: CodeSystem/mii-cs-diagnose-lebensphase-supplement-snomed: CodeSystem.me
 INFORMATION: CodeSystem/mii-cs-diagnose-lebensphase-supplement-snomed: CodeSystem.meta.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecodesystem|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: CodeSystem/mii-cs-diagnose-lebensphase-supplement-snomed: CodeSystem.extension[11].value.ofType(CodeableConcept): Reference to experimental CodeSystem http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl|25.6.0-e
 WARNING: CodeSystem/mii-cs-diagnose-lebensphase-supplement-snomed: CodeSystem.jurisdiction[0].coding[0].system: A definition for CodeSystem 'urn:iso:std:iso:3166:-2' could not be found, so the code cannot be validated
+ERROR: CodeSystem/mii-cs-diagnose-lebensphase-supplement-snomed: CodeSystem.concept[1]: The code '41847000' is not declared in the base CodeSystem http://snomed.info/sct so is not valid in the supplement
+ERROR: CodeSystem/mii-cs-diagnose-lebensphase-supplement-snomed: CodeSystem.concept[2]: The code '263659003' is not declared in the base CodeSystem http://snomed.info/sct so is not valid in the supplement
+ERROR: CodeSystem/mii-cs-diagnose-lebensphase-supplement-snomed: CodeSystem.concept[3]: The code '255398004' is not declared in the base CodeSystem http://snomed.info/sct so is not valid in the supplement
+ERROR: CodeSystem/mii-cs-diagnose-lebensphase-supplement-snomed: CodeSystem.concept[4]: The code '713153009' is not declared in the base CodeSystem http://snomed.info/sct so is not valid in the supplement
+ERROR: CodeSystem/mii-cs-diagnose-lebensphase-supplement-snomed: CodeSystem.concept[5]: The code '3658006' is not declared in the base CodeSystem http://snomed.info/sct so is not valid in the supplement
+ERROR: CodeSystem/mii-cs-diagnose-lebensphase-supplement-snomed: CodeSystem.concept[6]: The code '255407002' is not declared in the base CodeSystem http://snomed.info/sct so is not valid in the supplement
 WARNING: Resource: The resource CodeSystem/mii-cs-diagnose-lebensphase-supplement-snomed should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated/resources/CodeSystem-mii-cs-fall-supplement-act-encounter-code.json ==
 INFORMATION: CodeSystem.meta.profile[0]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecodesystem to 2.0.0

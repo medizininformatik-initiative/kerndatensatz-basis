@@ -7,7 +7,7 @@ Vitalstatus des Patienten
 
 Dieses CodeSystem wird in der Definition der folgenden ValueSets referenziert:
 
-* [MII_VS_Person_Vitalstatus](ValueSet-mii-vs-person-vitalstatus.md)
+* [MII VS Person Vitalstatus](ValueSet-mii-vs-person-vitalstatus.md)
 
 -------
 
