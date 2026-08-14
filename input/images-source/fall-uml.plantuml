@@ -99,14 +99,18 @@ EinrichtungTemp       "1" -- "0..*" Einrichtungskontakt
 AbteilungTemp         "1" -- "0..*" Abteilungskontakt
 VersorgungsstelleTemp "1" -- "0..*" Versorgungsstellenkontakt
 
-VersorgungsstelleTemp "0..*" --* "1" AbteilungTemp
-AbteilungTemp         "0..*" --* "1" EinrichtungTemp
+EinrichtungTemp       "1"    -- "0..*" AbteilungTemp
+AbteilungTemp         "0..*" -- "0..*" VersorgungsstelleTemp
+EinrichtungTemp       "1"    -- "0..*" VersorgungsstelleTemp
+
+' Preserve the conceptual top-to-bottom order independently of association semantics.
+EinrichtungTemp -[hidden]down-> AbteilungTemp
+AbteilungTemp   -[hidden]down-> VersorgungsstelleTemp
 
 Einrichtungskontakt       "1" -- "0..*" Abteilungskontakt
 Abteilungskontakt         "1" -- "0..*" Versorgungsstellenkontakt
 
-Einrichtungskontakt       "0..*" --> "0..*" Diagnose
-Versorgungsstellenkontakt "0..1" <-- "0..*" Diagnose
+Abteilungskontakt "0..*" --> "0..*" Diagnose : Diagnoserolle
 
 Patient "1" --> "0..*" Diagnose
 @enduml

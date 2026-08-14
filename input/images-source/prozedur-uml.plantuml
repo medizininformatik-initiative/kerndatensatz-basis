@@ -49,20 +49,7 @@ package "Modul Person" {
 '        PACKAGE: MODUL FALL
 ' =============================
 package "Modul Fall" {
-
-  class Einrichtungskontakt {
-    +Kontakt-Ebene: CodeableConcept
-    +Kontakt-Klasse: CodeableConcept
-    +Patientenidentifikator: Reference
-    +Aufnahmenummer: Identifier
-    +Aufnahmeanlass: CodeableConcept
-    +Aufnahmegrund: CodeableConcept
-    +BeginnDatum: dateTime
-    +Enddatum: dateTime
-    +Entlassungsgrund: CodeableConcept
-  }
-
-  class Versorgungsstellenkontakt {
+  class Abteilungskontakt {
     +Kontakt-Ebene: CodeableConcept
     +Kontakt-Klasse: CodeableConcept
     +Patientenidentifikator: Reference
@@ -81,8 +68,7 @@ Person "1..*" -- "0..*" Prozedur
 Patient "0..1" --|> "1..*" Person
 
 ' ---- Contacts to Prozedur ----
-Einrichtungskontakt "0..1" --> "0..*" Prozedur
-Versorgungsstellenkontakt "0..1" <-- "0..1" Prozedur
+Prozedur "0..*" --> "0..1" Abteilungskontakt : Kontaktkontext
 
 ' ---- Coding systems relationships ----
 Prozedur "1" *-- "0..1" SNOMEDProzedurCodiert

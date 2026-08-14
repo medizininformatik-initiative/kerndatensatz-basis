@@ -2,6 +2,21 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 
 ---
 
+### Version 2027.0.0
+
+**Datum:** 2026-XX-XX
+
+#### Modul Fall
+
+- **Changed:** UML-Modell des Moduls Fall angepasst, sodass die organisatorische Zuordnung zwischen Versorgungsstellen und Abteilungen als optionale n:m-Beziehung dargestellt wird.
+- **Changed:** Beziehungen zwischen Diagnosen und Kontakten in den UML-Diagrammen der Module Fall und Diagnose angepasst, sodass der Abteilungskontakt als derzeit empfohlene Kontaktebene dargestellt wird und andere Kontaktebenen weiterhin möglich bleiben.
+
+#### Modul Prozedur
+
+- **Changed:** Beziehung zwischen Prozeduren und Kontakten im Prozedur-UML angepasst, sodass der Abteilungskontakt als derzeit empfohlener Kontaktkontext dargestellt wird und andere Kontaktebenen weiterhin möglich bleiben.
+
+---
+
 ### Version 2026.0.1
 
 **Datum:** 2026-07-20

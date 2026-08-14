@@ -2,6 +2,21 @@ This page documents the changes and updates across versions of the MII Implement
 
 ---
 
+### Version 2027.0.0
+
+**Date:** 2026-XX-XX
+
+#### Treatment Case Module
+
+- **Changed:** Updated the Treatment Case UML model to represent the organizational assignment between care units and departments as an optional many-to-many association.
+- **Changed:** Updated the relationships between diagnoses and contacts in the Treatment Case and Diagnosis UML diagrams to show the department contact as the currently recommended contact level while retaining the possibility of other contact levels.
+
+#### Procedure Module
+
+- **Changed:** Updated the Procedure UML diagram to show the department contact as the currently recommended contact context while retaining the possibility of other contact levels.
+
+---
+
 ### Version 2026.0.1
 
 **Date:** 2026-07-20

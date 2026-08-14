@@ -94,46 +94,29 @@ package "Modul Diagnose" {
 ' RIGHT COLUMN — MODUL FALL
 ' ======================================================
 package "Modul Fall" {
-
-    together {
-      class Einrichtungskontakt {
-        +Kontakt-Ebene: CodeableConcept
-        +Kontakt-Klasse: CodeableConcept
-        +Patientenidentifikator: Reference
-        +Aufnahmenummer: Identifier
-        +Aufnahmeanlass: CodeableConcept
-        +Aufnahmegrund: CodeableConcept
-        +BeginnDatum: dateTime
-        +Enddatum: dateTime
-        +Entlassungsgrund: CodeableConcept
-      }
-
-      class Versorgungsstellenkontakt {
-        +Kontakt-Ebene: CodeableConcept
-        +Kontakt-Klasse: CodeableConcept
-        +Patientenidentifikator: Reference
-        +Aufnahmenummer: Identifier
-        +BeginnDatum: dateTime
-        +Enddatum: dateTime
-      }
+    class Abteilungskontakt {
+      +Kontakt-Ebene: CodeableConcept
+      +Kontakt-Klasse: CodeableConcept
+      +Patientenidentifikator: Reference
+      +Aufnahmenummer: Identifier
+      +BeginnDatum: dateTime
+      +Enddatum: dateTime
     }
 }
 
 ' ======================================================
-' RELATIONSHIPS (unchanged)
+' RELATIONSHIPS
 ' ======================================================
 
 Person "1" -- "0..*" Diagnose
 Patient "0..1" --> "1..*" Person
 ProbandIn "0..1" --> "1..*" Person
-Patient "1" -- "0..*" Einrichtungskontakt
 
 Diagnose "1" *-- "0..*" KlinischRelevanterZeitraum
 KlinischRelevanterZeitraum <|-- Zeitraum
 KlinischRelevanterZeitraum <|-- Lebensphase
 
-Diagnose "0..*" <-- "0..*" Einrichtungskontakt
-Diagnose "0..*" --> "0..1" Versorgungsstellenkontakt
+Diagnose           "0..*" --> "0..1" Abteilungskontakt : Kontaktkontext
 
 Diagnose "1" *-- "0..1" SNOMED
 Diagnose "1" *-- "0..1" ALPHAID
