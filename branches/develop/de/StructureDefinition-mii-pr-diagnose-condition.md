@@ -79,6 +79,10 @@ Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Dia
 
 #### Dokumentation der Körperstelle
 
+##### Hinweis zu FHIR-Core-Extensions
+
+Das Profil enthält die FHIR-Core-Extension `http://hl7.org/fhir/StructureDefinition/bodySite` auf `Condition.bodySite`, um zusätzlich zu der codierten Körperstelle eine detaillierte anatomische Referenz, z.B. auf eine BodyStructure, abbilden zu können.
+
 **`Condition.bodySite`:**
 
 * OPTIONALES Element
@@ -158,6 +162,7 @@ This structure refers to these extensions:
 
 * [http://hl7.org/fhir/StructureDefinition/condition-related](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-condition-related.html)
 * [http://hl7.org/fhir/StructureDefinition/condition-assertedDate](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-condition-assertedDate.html)
+* [http://hl7.org/fhir/StructureDefinition/bodySite](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-bodySite.html)
 * [http://fhir.de/StructureDefinition/lebensphase](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/lebensphase)
 
 **Slices**
@@ -206,6 +211,7 @@ This structure refers to these extensions:
 
 * [http://hl7.org/fhir/StructureDefinition/condition-related](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-condition-related.html)
 * [http://hl7.org/fhir/StructureDefinition/condition-assertedDate](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-condition-assertedDate.html)
+* [http://hl7.org/fhir/StructureDefinition/bodySite](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-bodySite.html)
 * [http://fhir.de/StructureDefinition/lebensphase](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/lebensphase)
 
 **Slices**
@@ -1324,6 +1330,17 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-diagn
       "mapping" : [{
         "identity" : "LogicalModel",
         "map" : "Koerperstelle"
+      }]
+    },
+    {
+      "id" : "Condition.bodySite.extension:bodySite",
+      "path" : "Condition.bodySite.extension",
+      "sliceName" : "bodySite",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite"]
       }]
     },
     {

@@ -85,6 +85,10 @@ This section provides detailed implementation guidance for the MII Procedure (Pr
 
 #### Body Site Documentation
 
+##### FHIR Core Extension Note
+
+The profile includes the FHIR core extension `http://hl7.org/fhir/StructureDefinition/bodySite` on `Procedure.bodySite` to allow a detailed anatomic reference, such as a BodyStructure, in addition to the coded procedure site.
+
 ##### Best Practice - Body Site vs. Laterality
 
 **Body Site Purpose:** `Procedure.bodySite` provides detailed anatomical location coding for the procedure using SNOMED CT.
@@ -1331,6 +1335,17 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-prozedur-p
         }]
       },
       "mustSupport" : true
+    },
+    {
+      "id" : "Procedure.bodySite.extension:bodySite",
+      "path" : "Procedure.bodySite.extension",
+      "sliceName" : "bodySite",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite"]
+      }]
     },
     {
       "id" : "Procedure.bodySite.coding",

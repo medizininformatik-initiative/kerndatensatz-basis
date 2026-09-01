@@ -372,6 +372,18 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Added:</strong> Das Patient-Profil enthält nun die FHIR-Core-Extensions <code class="language-plaintext highlighter-rouge">patient-birthPlace</code>, <code class="language-plaintext highlighter-rouge">patient-citizenship</code> und <code class="language-plaintext highlighter-rouge">patient-nationality</code>, um Geburtsort, Staatsangehörigkeit und Nationalität im Modul Person abzubilden. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/86">#86</a></li>
 </ul>
 
+<h4 id="modul-diagnose">Modul Diagnose</h4>
+
+<ul>
+  <li><strong>Added:</strong> Das Element <code class="language-plaintext highlighter-rouge">Condition.bodySite</code> enthält nun die FHIR-Core-Extension <code class="language-plaintext highlighter-rouge">http://hl7.org/fhir/StructureDefinition/bodySite</code>, um eine detaillierte anatomische Referenz, z.B. auf eine <code class="language-plaintext highlighter-rouge">BodyStructure</code>, zusätzlich zur kodierten Körperstelle abzubilden. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/85">#85</a></li>
+</ul>
+
+<h4 id="modul-prozedur">Modul Prozedur</h4>
+
+<ul>
+  <li><strong>Added:</strong> Das Element <code class="language-plaintext highlighter-rouge">Procedure.bodySite</code> enthält nun die FHIR-Core-Extension <code class="language-plaintext highlighter-rouge">http://hl7.org/fhir/StructureDefinition/bodySite</code>, um eine detaillierte anatomische Referenz, z.B. auf eine <code class="language-plaintext highlighter-rouge">BodyStructure</code>, zusätzlich zur kodierten Körperstelle abzubilden. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/85">#85</a></li>
+</ul>
+
 <h4 id="modul-fall">Modul Fall</h4>
 
 <ul>
@@ -379,7 +391,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Changed:</strong> Beziehungen zwischen Diagnosen und Kontakten in den UML-Diagrammen der Module Fall und Diagnose angepasst, sodass der Abteilungskontakt als derzeit empfohlene Kontaktebene dargestellt wird und andere Kontaktebenen weiterhin möglich bleiben.</li>
 </ul>
 
-<h4 id="modul-prozedur">Modul Prozedur</h4>
+<h4 id="modul-prozedur-1">Modul Prozedur</h4>
 
 <ul>
   <li><strong>Changed:</strong> Beziehung zwischen Prozeduren und Kontakten im Prozedur-UML angepasst, sodass der Abteilungskontakt als derzeit empfohlener Kontaktkontext dargestellt wird und andere Kontaktebenen weiterhin möglich bleiben.</li>
@@ -451,7 +463,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Modulübergreifende Beispiele:</strong> Beispiele demonstrieren nun Beziehungen und Referenzen über alle vier Module hinweg</li>
 </ul>
 
-<h4 id="modul-diagnose">Modul Diagnose</h4>
+<h4 id="modul-diagnose-1">Modul Diagnose</h4>
 
 <ul>
   <li><strong>Changed:</strong> Aktualisierte Anleitung zur Verwendung von Condition.encounter zur Ausrichtung an gematik ISiK-Empfehlungen (Informationstechnische Systeme in Krankenhäusern)</li>
@@ -468,7 +480,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Changed:</strong> Jeder Encounter SOLL seine eigene eindeutige Aufnahmenummer in <code class="language-plaintext highlighter-rouge">Encounter.identifier:Aufnahmenummer</code> haben</li>
 </ul>
 
-<h4 id="modul-prozedur-1">Modul Prozedur</h4>
+<h4 id="modul-prozedur-2">Modul Prozedur</h4>
 
 <ul>
   <li><strong>Changed:</strong> Anleitung hinzugefügt mit Empfehlung zur Verwendung von <code class="language-plaintext highlighter-rouge">Procedure.encounter</code> zur Etablierung des Kontaktkontexts, abgestimmt mit den Empfehlungen des Diagnose-Moduls</li>
@@ -500,7 +512,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Changed</strong>: <code class="language-plaintext highlighter-rouge">Encounter.location</code> erlaubt nun die Angabe früherer Behandlungsorte. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-fall/issues/79">#79</a></li>
 </ul>
 
-<h4 id="modul-diagnose-1">Modul Diagnose</h4>
+<h4 id="modul-diagnose-2">Modul Diagnose</h4>
 <p><strong>Datum:</strong> 20.10.2025</p>
 
 <ul>
@@ -510,7 +522,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Changed</strong>: CapabilityStatement enthält nun Anforderungsdokumentation für Suchparameter <code class="language-plaintext highlighter-rouge">_count</code> und <code class="language-plaintext highlighter-rouge">_summary</code></li>
 </ul>
 
-<h4 id="modul-prozedur-2">Modul Prozedur</h4>
+<h4 id="modul-prozedur-3">Modul Prozedur</h4>
 <p><strong>Datum:</strong> 22.10.2025</p>
 
 <ul>
@@ -555,7 +567,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Removed</strong>: MustSupport-Labels von <code class="language-plaintext highlighter-rouge">Encounter.location</code> und <code class="language-plaintext highlighter-rouge">Encounter.serviceProvider</code> entfernt</li>
 </ul>
 
-<h4 id="modul-diagnose-2">Modul Diagnose</h4>
+<h4 id="modul-diagnose-3">Modul Diagnose</h4>
 <p><strong>Datum:</strong> 09.12.2024</p>
 
 <ul>
@@ -567,7 +579,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Added</strong>: <code class="language-plaintext highlighter-rouge">Condition.verificationStatus</code> hat nun MustSupport-Label. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-diagnose/issues/64">#64</a></li>
 </ul>
 
-<h4 id="modul-prozedur-3">Modul Prozedur</h4>
+<h4 id="modul-prozedur-4">Modul Prozedur</h4>
 <p><strong>Datum:</strong> 09.12.2024</p>
 
 <ul>
@@ -633,7 +645,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </li>
 </ul>
 
-<h4 id="modul-diagnose-3">Modul Diagnose</h4>
+<h4 id="modul-diagnose-4">Modul Diagnose</h4>
 <p><strong>Datum:</strong> 16.04.2024</p>
 
 <ul>
@@ -656,7 +668,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Added</strong>: Modul wurde um SearchParameter-Ressourcen erweitert, die die Suche nach ICD-10-GM-Codes in Kombination mit Mehrfachkodierungskennzeichen, Lateralität und diagnostischer Sicherheit ermöglichen</li>
 </ul>
 
-<h4 id="modul-prozedur-4">Modul Prozedur</h4>
+<h4 id="modul-prozedur-5">Modul Prozedur</h4>
 <p><strong>Datum:</strong> 16.04.2024</p>
 
 <ul>
@@ -712,7 +724,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-dev basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Erstellt <span title="Tue, Sep 1, 2026 12:46+0000">2026-09-01</span>
+          Erstellt <span title="Tue, Sep 1, 2026 13:02+0000">2026-09-01</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.

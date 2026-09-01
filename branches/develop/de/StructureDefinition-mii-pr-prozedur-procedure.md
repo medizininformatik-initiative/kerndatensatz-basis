@@ -85,6 +85,10 @@ Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Pro
 
 #### Dokumentation der Körperstelle
 
+##### Hinweis zu FHIR-Core-Extensions
+
+Das Profil enthält die FHIR-Core-Extension `http://hl7.org/fhir/StructureDefinition/bodySite` auf `Procedure.bodySite`, um zusätzlich zu der codierten Körperstelle eine detaillierte anatomische Referenz, z.B. auf eine BodyStructure, abbilden zu können.
+
 ##### Best Practice - Körperstelle vs. Seitenlokalisation
 
 **Zweck von bodySite:** `Procedure.bodySite` bietet detaillierte Kodierung der anatomischen Lokalisation für die Prozedur mittels SNOMED CT.
@@ -187,6 +191,7 @@ This structure refers to these extensions:
 
 * [http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum)
 * [https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Durchfuehrungsabsicht](StructureDefinition-mii-ex-prozedur-durchfuehrungsabsicht.md)
+* [http://hl7.org/fhir/StructureDefinition/bodySite](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-bodySite.html)
 
 **Slices**
 
@@ -236,6 +241,7 @@ This structure refers to these extensions:
 
 * [http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum)
 * [https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Durchfuehrungsabsicht](StructureDefinition-mii-ex-prozedur-durchfuehrungsabsicht.md)
+* [http://hl7.org/fhir/StructureDefinition/bodySite](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-bodySite.html)
 
 **Slices**
 
@@ -1429,6 +1435,17 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-proze
         }]
       },
       "mustSupport" : true
+    },
+    {
+      "id" : "Procedure.bodySite.extension:bodySite",
+      "path" : "Procedure.bodySite.extension",
+      "sliceName" : "bodySite",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite"]
+      }]
     },
     {
       "id" : "Procedure.bodySite.coding",

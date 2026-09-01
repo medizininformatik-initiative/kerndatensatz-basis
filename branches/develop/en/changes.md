@@ -22,6 +22,14 @@ This page documents the changes and updates across versions of the MII Implement
 
 * **Added:** The Patient profile now includes the FHIR core extensions `patient-birthPlace`, `patient-citizenship`, and `patient-nationality` to represent place of birth, legal citizenship, and nationality in the Person module. See: [#86](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/86)
 
+#### Diagnosis Module
+
+* **Added:** The `Condition.bodySite` element now includes the FHIR core extension `http://hl7.org/fhir/StructureDefinition/bodySite` to support a detailed anatomic reference such as a `BodyStructure`. See: [#85](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/85)
+
+#### Procedure Module
+
+* **Added:** The `Procedure.bodySite` element now includes the FHIR core extension `http://hl7.org/fhir/StructureDefinition/bodySite` to support a detailed anatomic reference such as a `BodyStructure`. See: [#85](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/85)
+
 #### Treatment Case Module
 
 * **Changed:** Updated the Treatment Case UML model to represent the organizational assignment between care units and departments as an optional many-to-many association.

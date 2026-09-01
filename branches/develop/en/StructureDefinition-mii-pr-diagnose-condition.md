@@ -79,6 +79,10 @@ This section provides detailed implementation guidance for the MII Diagnose (Dia
 
 #### Body Site Documentation
 
+##### FHIR Core Extension Note
+
+The profile includes the FHIR core extension `http://hl7.org/fhir/StructureDefinition/bodySite` on `Condition.bodySite` to allow a detailed anatomic reference, such as a BodyStructure, in addition to the coded body site.
+
 **`Condition.bodySite`:**
 
 * OPTIONAL element
@@ -1227,6 +1231,17 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-diagnose-c
       "mapping" : [{
         "identity" : "LogicalModel",
         "map" : "Koerperstelle"
+      }]
+    },
+    {
+      "id" : "Condition.bodySite.extension:bodySite",
+      "path" : "Condition.bodySite.extension",
+      "sliceName" : "bodySite",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite"]
       }]
     },
     {
