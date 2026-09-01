@@ -18,6 +18,10 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 
 * **Changed:** Abhängigkeiten auf `de.basisprofil.r4` 1.6.0, `de.medizininformatikinitiative.kerndatensatz.meta` 2027.0.0-ballot.rc3, `hl7.terminology.r4` 7.1.0 und `hl7.fhir.uv.extensions.r4` 5.2.0 aktualisiert.
 
+#### Modul Person
+
+* **Added:** Das Patient-Profil enthält nun die FHIR-Core-Extensions `patient-birthPlace`, `patient-citizenship` und `patient-nationality`, um Geburtsort, Staatsangehörigkeit und Nationalität im Modul Person abzubilden. Siehe: [#86](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/86)
+
 #### Modul Fall
 
 * **Changed:** UML-Modell des Moduls Fall angepasst, sodass die organisatorische Zuordnung zwischen Versorgungsstellen und Abteilungen als optionale n:m-Beziehung dargestellt wird.

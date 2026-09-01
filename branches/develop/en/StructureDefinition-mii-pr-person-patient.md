@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient | *Version*:2027.0.0-dev |
-| Active as of 2026-06-09 | *Computable Name*:MII_PR_Person_Patient |
+| Active as of 2026-09-01 | *Computable Name*:MII_PR_Person_Patient |
 
  
 Demographics and other administrative information about a patient. 
@@ -24,6 +24,10 @@ Demographics and other administrative information about a patient.
 ### Profile Specific Implementation Guidance
 
 This section provides detailed implementation guidance for the MII Patient Profile.
+
+##### FHIR Core Extension Note
+
+The profile includes the FHIR core Patient extensions `patient-birthPlace`, `patient-citizenship`, and `patient-nationality` to represent the patient's place of birth, legal citizenship, and nationality where needed.
 
 #### Patient Identification
 
@@ -269,7 +273,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-person-pat
   },
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-09",
+  "date" : "2026-09-01",
   "publisher" : "Medical Informatics Initiative (MII)",
   "contact" : [{
     "name" : "Medical Informatics Initiative (MII)",
@@ -358,6 +362,51 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-person-pat
       "id" : "Patient.meta.profile",
       "path" : "Patient.meta.profile",
       "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension",
+      "path" : "Patient.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "ordered" : false,
+        "rules" : "open"
+      }
+    },
+    {
+      "id" : "Patient.extension:birthPlace",
+      "path" : "Patient.extension",
+      "sliceName" : "birthPlace",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/patient-birthPlace"]
+      }]
+    },
+    {
+      "id" : "Patient.extension:patient-citizenship",
+      "path" : "Patient.extension",
+      "sliceName" : "patient-citizenship",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/patient-citizenship"]
+      }]
+    },
+    {
+      "id" : "Patient.extension:patient-nationality",
+      "path" : "Patient.extension",
+      "sliceName" : "patient-nationality",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/patient-nationality"]
+      }]
     },
     {
       "id" : "Patient.identifier",

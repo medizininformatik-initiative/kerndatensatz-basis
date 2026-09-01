@@ -366,6 +366,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Changed:</strong> Abhängigkeiten auf <code class="language-plaintext highlighter-rouge">de.basisprofil.r4</code> 1.6.0, <code class="language-plaintext highlighter-rouge">de.medizininformatikinitiative.kerndatensatz.meta</code> 2027.0.0-ballot.rc3, <code class="language-plaintext highlighter-rouge">hl7.terminology.r4</code> 7.1.0 und <code class="language-plaintext highlighter-rouge">hl7.fhir.uv.extensions.r4</code> 5.2.0 aktualisiert.</li>
 </ul>
 
+<h4 id="modul-person">Modul Person</h4>
+
+<ul>
+  <li><strong>Added:</strong> Das Patient-Profil enthält nun die FHIR-Core-Extensions <code class="language-plaintext highlighter-rouge">patient-birthPlace</code>, <code class="language-plaintext highlighter-rouge">patient-citizenship</code> und <code class="language-plaintext highlighter-rouge">patient-nationality</code>, um Geburtsort, Staatsangehörigkeit und Nationalität im Modul Person abzubilden. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/86">#86</a></li>
+</ul>
+
 <h4 id="modul-fall">Modul Fall</h4>
 
 <ul>
@@ -405,7 +411,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Added:</strong> ICD-10-GM 2026, OPS 2026 und Alpha-ID 2026 Versionen zu den jeweiligen ValueSet-Definitionen für die Module Diagnose und Prozedur hinzugefügt <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/67">#67</a>, <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/66">#66</a></li>
 </ul>
 
-<h4 id="modul-person">Modul Person</h4>
+<h4 id="modul-person-1">Modul Person</h4>
 
 <ul>
   <li><strong>Added:</strong> Profil <a href="StructureDefinition-mii-pr-person-patient-pseudonymisiert.html">Patient Pseudonymisiert</a>: Optionaler <code class="language-plaintext highlighter-rouge">type.coding</code>-Slice <code class="language-plaintext highlighter-rouge">mr</code> (<code class="language-plaintext highlighter-rouge">http://terminology.hl7.org/CodeSystem/v2-0203|MR</code>) zu <code class="language-plaintext highlighter-rouge">PseudonymisierterIdentifier</code> hinzugefügt. Wenn das Pseudonym eine Medical Record Number ersetzt, SOLL dieser Code gesetzt werden, um die standortunabhängige Auffindbarkeit des Identifiers zu ermöglichen. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/63">#63</a></li>
@@ -468,7 +474,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Changed:</strong> Anleitung hinzugefügt mit Empfehlung zur Verwendung von <code class="language-plaintext highlighter-rouge">Procedure.encounter</code> zur Etablierung des Kontaktkontexts, abgestimmt mit den Empfehlungen des Diagnose-Moduls</li>
 </ul>
 
-<h4 id="modul-person-1">Modul Person</h4>
+<h4 id="modul-person-2">Modul Person</h4>
 
 <ul>
   <li><strong>Added:</strong> ValueSet MII VS Person ICD-10-WHO veröffentlicht unter MII-Canonical URL für Todesursachen-Codierung</li>
@@ -478,7 +484,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="version-202501">Version 2025.0.1</h3>
 
-<h4 id="modul-person-2">Modul Person</h4>
+<h4 id="modul-person-3">Modul Person</h4>
 <p><strong>Datum:</strong> 08.10.2025</p>
 
 <ul>
@@ -517,7 +523,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="version-202500">Version 2025.0.0</h3>
 
-<h4 id="modul-person-3">Modul Person</h4>
+<h4 id="modul-person-4">Modul Person</h4>
 <p><strong>Datum:</strong> 06.12.2024</p>
 
 <ul>
@@ -589,7 +595,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Alle Module haben <a href="https://calver.org/">Calendar Versioning (CalVer)</a> mit dem Schema YYYY.MINOR.PATCH übernommen und damit einen jährlichen Release-Zyklus etabliert.</p>
 
-<h4 id="modul-person-4">Modul Person</h4>
+<h4 id="modul-person-5">Modul Person</h4>
 <p><strong>Datum:</strong> 16.04.2024</p>
 
 <ul>
@@ -706,7 +712,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-dev basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Erstellt <span title="Tue, Sep 1, 2026 12:19+0000">2026-09-01</span>
+          Erstellt <span title="Tue, Sep 1, 2026 12:46+0000">2026-09-01</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.

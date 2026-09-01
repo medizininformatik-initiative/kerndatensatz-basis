@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert | *Version*:2027.0.0-dev |
-| Active as of 2026-06-15 | *Computable Name*:MII_PR_Person_PatientPseudonymisiert |
+| Active as of 2026-09-01 | *Computable Name*:MII_PR_Person_PatientPseudonymisiert |
 
  
 Demographics and other administrative information about a patient. 
@@ -30,6 +30,10 @@ Pseudonymization requirements vary by project context and cannot be fully repres
 ### Profile Specific Implementation Guidance
 
 This section provides detailed implementation guidance for the MII Pseudonymized Patient Profile.
+
+##### FHIR Core Extension Note
+
+The pseudonymized Patient profile also carries the FHIR core Patient extensions `patient-birthPlace`, `patient-citizenship`, and `patient-nationality` to represent the patient's place of birth, legal citizenship, and nationality where available under the pseudonymized representation.
 
 #### Pseudonymization Identifiers
 
@@ -272,7 +276,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-person-pat
   },
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-15",
+  "date" : "2026-09-01",
   "publisher" : "Medical Informatics Initiative (MII)",
   "contact" : [{
     "name" : "Medical Informatics Initiative (MII)",
@@ -361,6 +365,51 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-person-pat
       "id" : "Patient.meta.profile",
       "path" : "Patient.meta.profile",
       "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension",
+      "path" : "Patient.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "ordered" : false,
+        "rules" : "open"
+      }
+    },
+    {
+      "id" : "Patient.extension:birthPlace",
+      "path" : "Patient.extension",
+      "sliceName" : "birthPlace",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/patient-birthPlace"]
+      }]
+    },
+    {
+      "id" : "Patient.extension:patient-citizenship",
+      "path" : "Patient.extension",
+      "sliceName" : "patient-citizenship",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/patient-citizenship"]
+      }]
+    },
+    {
+      "id" : "Patient.extension:patient-nationality",
+      "path" : "Patient.extension",
+      "sliceName" : "patient-nationality",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/patient-nationality"]
+      }]
     },
     {
       "id" : "Patient.identifier",

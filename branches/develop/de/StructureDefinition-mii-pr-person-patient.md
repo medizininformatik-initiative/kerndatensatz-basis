@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient | *Version*:2027.0.0-dev |
-| Active Stand: 2026-06-09 | *Maschinenlesbarer Name*:MII_PR_Person_Patient |
+| Active Stand: 2026-09-01 | *Maschinenlesbarer Name*:MII_PR_Person_Patient |
 
  
 Demografische und andere administrative Informationen über eine Patientin oder einen Patienten. 
@@ -24,6 +24,10 @@ Demografische und andere administrative Informationen über eine Patientin oder 
 ### Profilspezifische Implementierungshinweise
 
 Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Patient-Profil.
+
+##### Hinweis zu FHIR-Core-Extensions
+
+Das Profil enthält die HL7-Core-Extensions `patient-birthPlace`, `patient-citizenship` und `patient-nationality`, um Geburtsort, Staatsangehörigkeit und Nationalität dort abzubilden, wo sie benötigt werden.
 
 #### Patienten-Identifikation
 
@@ -140,6 +144,9 @@ This structure refers to these other structures:
 
 This structure refers to these extensions:
 
+* [http://hl7.org/fhir/StructureDefinition/patient-birthPlace](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-patient-birthPlace.html)
+* [http://hl7.org/fhir/StructureDefinition/patient-citizenship](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-patient-citizenship.html)
+* [http://hl7.org/fhir/StructureDefinition/patient-nationality](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-patient-nationality.html)
 * [http://fhir.de/StructureDefinition/gender-amtlich-de](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/gender-amtlich-de)
 * [http://hl7.org/fhir/StructureDefinition/data-absent-reason](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-data-absent-reason.html)
 * [http://fhir.de/StructureDefinition/destatis/ags](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/destatis/ags)
@@ -193,6 +200,9 @@ This structure refers to these other structures:
 
 This structure refers to these extensions:
 
+* [http://hl7.org/fhir/StructureDefinition/patient-birthPlace](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-patient-birthPlace.html)
+* [http://hl7.org/fhir/StructureDefinition/patient-citizenship](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-patient-citizenship.html)
+* [http://hl7.org/fhir/StructureDefinition/patient-nationality](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-patient-nationality.html)
 * [http://fhir.de/StructureDefinition/gender-amtlich-de](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/gender-amtlich-de)
 * [http://hl7.org/fhir/StructureDefinition/data-absent-reason](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-data-absent-reason.html)
 * [http://fhir.de/StructureDefinition/destatis/ags](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/destatis/ags)
@@ -375,7 +385,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-perso
   },
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-09",
+  "date" : "2026-09-01",
   "publisher" : "Medical Informatics Initiative (MII)",
   "contact" : [{
     "name" : "Medical Informatics Initiative (MII)",
@@ -464,6 +474,51 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-perso
       "id" : "Patient.meta.profile",
       "path" : "Patient.meta.profile",
       "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension",
+      "path" : "Patient.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "ordered" : false,
+        "rules" : "open"
+      }
+    },
+    {
+      "id" : "Patient.extension:birthPlace",
+      "path" : "Patient.extension",
+      "sliceName" : "birthPlace",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/patient-birthPlace"]
+      }]
+    },
+    {
+      "id" : "Patient.extension:patient-citizenship",
+      "path" : "Patient.extension",
+      "sliceName" : "patient-citizenship",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/patient-citizenship"]
+      }]
+    },
+    {
+      "id" : "Patient.extension:patient-nationality",
+      "path" : "Patient.extension",
+      "sliceName" : "patient-nationality",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/patient-nationality"]
+      }]
     },
     {
       "id" : "Patient.identifier",
