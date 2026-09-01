@@ -17,6 +17,12 @@
 
 Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Profil für pseudonymisierte Patientendaten.
 
+<div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
+<h5 style="color: #406A99; margin-top: 0;">Hinweis zu FHIR-Core-Extensions</h5>
+
+<p>Das pseudonymisierte Patientenprofil enthält ebenfalls die FHIR-Core-Extensions <code>patient-birthPlace</code>, <code>patient-citizenship</code> und <code>patient-nationality</code>, um Geburtsort, Staatsangehörigkeit und Nationalität dort abzubilden, wo sie in der pseudonymisierten Darstellung verfügbar sind.</p>
+</div>
+
 #### Pseudonymisierungs-Identifier
 
 Das pseudonymisierte Patientenprofil verwendet spezialisierte Identifier-Typen:

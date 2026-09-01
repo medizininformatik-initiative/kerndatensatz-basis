@@ -11,6 +11,9 @@ Alias: $observation-category = http://terminology.hl7.org/CodeSystem/observation
 Alias: $MII-Reference = https://www.medizininformatik-initiative.de/fhir/core/StructureDefinition/MII-Reference
 Alias: $data-absent-reason = http://hl7.org/fhir/StructureDefinition/data-absent-reason
 Alias: $Vitalstatus = https://www.medizininformatik-initiative.de/fhir/core/modul-person/CodeSystem/Vitalstatus
+Alias: $patient-birthPlace = http://hl7.org/fhir/StructureDefinition/patient-birthPlace
+Alias: $patient-nationality = http://hl7.org/fhir/StructureDefinition/patient-nationality
+Alias: $patient-citizenship = http://hl7.org/fhir/StructureDefinition/patient-citizenship
 
 // Diagnose
 Alias: $condition-clinical = http://terminology.hl7.org/CodeSystem/condition-clinical
