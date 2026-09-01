@@ -23,7 +23,7 @@ Description: "Dieses Profil beschreibt eine Diagnose der Medizininformatik Initi
 * insert CRMIArtifactContributors
 * ^status = #active
 * ^experimental = false
-* ^date = "2026-06-15"
+* ^date = "2026-09-01"
 * ^purpose = "Constrain the FHIR Condition resource for consistent exchange of diagnoses in the MII Core Data Set."
 * id MS
 * meta MS

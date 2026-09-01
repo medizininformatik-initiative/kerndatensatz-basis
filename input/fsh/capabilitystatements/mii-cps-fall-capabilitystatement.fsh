@@ -19,7 +19,7 @@ Usage: #definition
 * title = "MII CPS Fall CapabilityStatement"
 * status = #active
 * experimental = false
-* date = "2026-06-15"
+* date = "2026-09-01"
 * description = "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein konformes System unterstützen muss, um das Modul Fall der Medizininformatik Initiative zu implementieren."
 * jurisdiction = urn:iso:std:iso:3166#DE "Germany"
 * purpose = "Define the minimum capabilities a system must support to implement and claim conformance to the MII Encounter module."

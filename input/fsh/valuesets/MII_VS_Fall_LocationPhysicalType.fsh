@@ -16,7 +16,7 @@ Description: "A coded type for the physical type of the location."
 * insert CRMIApprovalDate(2024-03-07)
 * insert CRMIArtifactTopic(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C154624)
 * ^experimental = false
-* ^date = "2026-06-09"
+* ^date = "2026-09-01"
 * insert Publisher
 * ^experimental = false
 * ^purpose = "Define physical location type codes used for encounter locations."

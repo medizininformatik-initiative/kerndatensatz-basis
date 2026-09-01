@@ -22,7 +22,7 @@ Description: "Logische Repräsentation des Basismoduls Person"
 * insert CRMIArtifactContributors
 * ^status = #active
 * ^experimental = false
-* ^date = "2026-06-09"
+* ^date = "2026-09-01"
 * ^purpose = "Define the person-related information model independently of a concrete FHIR resource representation."
 * . ^short = "-- Überschrift --"
 * . insert Translation(^short, en, -- Heading --)

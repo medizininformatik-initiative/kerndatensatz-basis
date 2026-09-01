@@ -16,7 +16,7 @@ Description: "Diagnosetyp"
 * insert CRMIApprovalDate(2024-03-07)
 * insert CRMIArtifactTopic(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C154624)
 * ^experimental = false
-* ^date = "2026-06-15"
+* ^date = "2026-09-01"
 * ^purpose = "Define allowed diagnosis usage roles in relation to an encounter."
 * insert Publisher
 * include codes from valueset http://fhir.de/ValueSet/DiagnoseTyp

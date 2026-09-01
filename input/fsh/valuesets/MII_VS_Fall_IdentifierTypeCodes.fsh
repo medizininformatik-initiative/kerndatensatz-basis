@@ -16,7 +16,7 @@ Description: "A coded type for an identifier that can be used to determine which
 * insert CRMIApprovalDate(2024-03-07)
 * insert CRMIArtifactTopic(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C154624)
 * ^experimental = false
-* ^date = "2026-06-15"
+* ^date = "2026-09-01"
 * ^purpose = "Define identifier type codes used for encounter identifiers."
 * insert Publisher
 * $v2-0203#DL

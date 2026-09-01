@@ -18,7 +18,7 @@ Description: "Enthält alle Werte, die den Vitalstatus einer Person beschreiben.
 * insert CRMIArtifactTopic(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C16960)
 * insert CRMIArtifactTopic(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C25717)
 * ^status = #active
-* ^date = "2026-06-15"
+* ^date = "2026-09-01"
 * ^experimental = false
 * ^purpose = "Define codes allowed for representing a person's vital status."
 * include codes from system MII_CS_Person_Vitalstatus

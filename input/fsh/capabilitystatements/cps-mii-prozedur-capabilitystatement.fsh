@@ -19,7 +19,7 @@ Usage: #definition
 * title = "MII CPS Prozedur CapabilityStatement"
 * status = #active
 * experimental = false
-* date = "2026-06-15"
+* date = "2026-09-01"
 * description = "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein konformes System unterstützen muss um das Modul Prozedur der Medizininformatik Initiative zu implementieren."
 * jurisdiction = urn:iso:std:iso:3166#DE "Germany"
 * purpose = "Define the minimum capabilities a system must support to implement and claim conformance to the MII Procedure module."
@@ -61,7 +61,7 @@ For further details see FHIR core specification, section [Parameters for all res
 Searches on `Procedure.meta.lastUpdated`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#_lastUpdated)."""
 * insert SupportSearchParam(_profile, http://hl7.org/fhir/SearchParameter/Resource-profile, #uri, #SHALL)
 * rest.resource[=].searchParam[=].documentation = """**Example:**
-`GET [base]/Procedure?_profile=https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2027.0.0-dev`
+`GET [base]/Procedure?_profile=https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2027.0.0-ballot.rc1`
 
 **Notes:**
 Searches on `Procedure.meta.profile`. For further details see FHIR core specification, section [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)."""

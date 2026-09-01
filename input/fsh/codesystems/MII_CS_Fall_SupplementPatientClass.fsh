@@ -7,7 +7,7 @@ Description: "CodeSystem Supplement für v2-0004"
 * insert PR_CS_VS_Version
 * ^status = #active
 * ^experimental = false
-* ^date = "2026-07-17"
+* ^date = "2026-09-01"
 * ^purpose = "Provide German language designations for PatientClass codes used in the MII Treatment Case module."
 /*
 CRMI ShareableCodeSystem requires CodeSystem.caseSensitive (1..1), but IG publisher QA says:

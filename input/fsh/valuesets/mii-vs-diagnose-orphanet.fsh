@@ -19,6 +19,6 @@ Description: "Enthaelt alle Orpha-Kennnummern (ORPHAcodes)"
 * insert CRMIApprovalDate(2024-03-07)
 * ^status = #active
 * ^experimental = true
-* ^date = "2026-06-15"
+* ^date = "2026-09-01"
 * ^purpose = "Define ORPHAcode concepts allowed for rare disease coding."
 * include codes from system $orpha

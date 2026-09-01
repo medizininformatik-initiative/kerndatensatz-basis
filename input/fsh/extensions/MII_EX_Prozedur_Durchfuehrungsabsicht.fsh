@@ -19,7 +19,7 @@ Description: "Intention der Prozedur"
 * insert CRMIArtifactTopic(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C192500)
 * ^status = #active
 * ^experimental = false
-* ^date = "2026-06-15"
+* ^date = "2026-09-01"
 * ^jurisdiction = urn:iso:std:iso:3166#DE "Germany"
 * ^purpose = "Represent the intended purpose of a procedure."
 * ^context.type = #element

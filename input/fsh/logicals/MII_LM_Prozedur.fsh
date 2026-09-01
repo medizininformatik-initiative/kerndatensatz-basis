@@ -19,7 +19,7 @@ Description: "Logische Repräsentation des Basismoduls Prozedur"
 * insert CRMIArtifactContributors
 * ^status = #active
 * ^experimental = false
-* ^date = "2026-06-15"
+* ^date = "2026-09-01"
 * ^purpose = "Define the information model for procedures independently of a concrete FHIR resource representation."
 * . ^short = "Das Basismodul Prozeduren umfasst die Beschreibung diagnostischer oder therapeutischer Maßnahmen, die als Leistungskomplexe auch für die Abrechnung dokumentiert und kodiert werden, z.B. Operationen."
 * OPSProzedurKodiert 0..1 BackboneElement "Kodierung der durchgeführten Prozedur mittels OPS." "Kodierung der durchgeführten Prozedur mittels OPS."

@@ -19,7 +19,7 @@ Description: "Enthaelt alle SNOMED Clinical finding, Event und Situation with ex
 * insert CRMIApprovalDate(2024-03-07)
 * ^status = #active
 * ^experimental = true
-* ^date = "2026-06-15"
+* ^date = "2026-09-01"
 * ^purpose = "Define SNOMED CT concepts allowed for representing diagnoses."
 * include codes from system $sct where concept is-a #404684003
 * include codes from system $sct where concept is-a #272379006

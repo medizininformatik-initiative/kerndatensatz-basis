@@ -23,7 +23,7 @@ Description: "Dieses Profil beschreibt eine Prozedur in der Medizininformatik-In
 * insert CRMIArtifactContributors
 * ^status = #active
 * ^experimental = false
-* ^date = "2026-06-09"
+* ^date = "2026-09-01"
 * ^purpose = "Constrain the FHIR Procedure resource for consistent exchange of procedures in the MII Procedure module."
 * obeys proc-mii-1
 * id MS

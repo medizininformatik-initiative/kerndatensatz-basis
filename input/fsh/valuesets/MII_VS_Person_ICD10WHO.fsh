@@ -27,7 +27,7 @@ Description: "MII VS Person ICD-10-WHO"
 * ^url = "https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/mii-vs-person-icd10who"
 * ^status = #active
 * ^experimental = true
-* ^date = "2026-06-15"
+* ^date = "2026-09-01"
 * insert PR_CS_VS_Version
 * insert Publisher
 * insert LicenseCodeableCCBY40

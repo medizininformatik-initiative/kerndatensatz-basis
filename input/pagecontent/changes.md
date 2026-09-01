@@ -2,9 +2,9 @@ This page documents the changes and updates across versions of the MII Implement
 
 ---
 
-### Version 2027.0.0
+### Version 2027.0.0-ballot
 
-**Date:** 2026-XX-XX
+**Date:** 2026-09-01
 
 #### Documentation
 

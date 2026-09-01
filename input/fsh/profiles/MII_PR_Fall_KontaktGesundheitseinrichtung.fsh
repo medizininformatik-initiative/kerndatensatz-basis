@@ -22,7 +22,7 @@ Description: "Kontakt zu einer Einrichtung, Abteilung oder Versorgungsstelle"
 * obeys mii-enc-1 and mii-enc-2 and mii-enc-3 and mii-enc-4 and mii-enc-5 and mii-enc-6 and mii-enc-7
 * ^status = #active
 * ^experimental = false
-* ^date = "2026-06-15"
+* ^date = "2026-09-01"
 * ^purpose = "Constrain the FHIR Encounter resource for consistent exchange of contacts with healthcare institutions in the MII Treatment Case module."
 * id MS
 * id ^definition = "Angabe OPTIONAL, vom Server automatisch vergebene system-abhängige ID"

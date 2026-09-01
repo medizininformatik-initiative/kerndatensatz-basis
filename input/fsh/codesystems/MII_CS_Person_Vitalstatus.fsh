@@ -19,7 +19,7 @@ Description: "Vitalstatus des Patienten"
 * insert CRMIArtifactTopic(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C16960)
 * insert CRMIArtifactTopic(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C25717)
 * ^experimental = false
-* ^date = "2026-07-17"
+* ^date = "2026-09-01"
 * ^purpose = "Provide a code system for representing the vital status of a patient in the MII Person module."
 * ^caseSensitive = true
 * ^valueSet = "https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/Vitalstatus"
