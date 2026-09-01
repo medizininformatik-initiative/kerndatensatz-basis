@@ -6,6 +6,10 @@ This page documents the changes and updates across versions of the MII Implement
 
 **Date:** 2026-XX-XX
 
+#### Documentation
+
+- **Changed:** Dependency updates to `de.basisprofil.r4` 1.6.0, `de.medizininformatikinitiative.kerndatensatz.meta` 2027.0.0-ballot.rc3, `hl7.terminology.r4` 7.1.0, and `hl7.fhir.uv.extensions.r4` 5.2.0.
+
 #### Treatment Case Module
 
 - **Changed:** Updated the Treatment Case UML model to represent the organizational assignment between care units and departments as an optional many-to-many association.
