@@ -86,6 +86,7 @@ Enthaelt ICD-10-GM-Codes der Versionen 2009 bis 2025
     "valueCodeableConcept" : {
       "coding" : [{
         "system" : "http://terminology.hl7.org/CodeSystem/artifact-version-policy-codes",
+        "version" : "3.0.0",
         "code" : "package",
         "display" : "Package"
       }]

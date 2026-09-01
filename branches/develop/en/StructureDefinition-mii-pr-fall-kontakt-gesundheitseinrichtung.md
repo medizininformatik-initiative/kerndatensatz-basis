@@ -310,6 +310,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-fall-konta
     "valueCodeableConcept" : {
       "coding" : [{
         "system" : "http://terminology.hl7.org/CodeSystem/artifact-version-policy-codes",
+        "version" : "3.0.0",
         "code" : "package",
         "display" : "Package"
       }]
