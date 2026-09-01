@@ -1,0 +1,92 @@
+# MII EXA Fall Kontakt Gesundheitseinrichtung (Ambulanter Kontakt) - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1
+
+* [**Inhaltsverzeichnis**](toc.md)
+* [**Artefaktübersicht**](artifacts.md)
+* **MII EXA Fall Kontakt Gesundheitseinrichtung (Ambulanter Kontakt)**
+
+## Beispiel Encounter: MII EXA Fall Kontakt Gesundheitseinrichtung (Ambulanter Kontakt)
+
+-------
+
+**German**
+
+-------
+
+Profile: [MII PR Fall Kontakt mit einer Gesundheitseinrichtung](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.md) version: 2027.0.0-ballot.rc1
+
+Security Label: [test health data (Details: ActReason code HTEST = 'test health data')](http://terminology.hl7.org/7.2.0/CodeSystem-v3-ActReason.html)
+
+**identifier**: Fallnummer/F_20190926_001
+
+**status**: Finished
+
+**class**: [ActCode: AMB](http://terminology.hl7.org/7.2.0/CodeSystem-v3-ActCode.html#v3-ActCode-AMB) (ambulatory)
+
+**subject**: [Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Krankenaktennummer (use: usual, ))](Patient-mii-exa-person-patient-1.md)
+
+**period**: 2019-09-26 10:00:00+0200 --> 2019-09-26 12:00:00+0200
+
+**serviceProvider**: Identifier: `http://fhir.de/sid/dkgev/iknr`/260950472
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "Encounter",
+  "id" : "mii-exa-fall-kontakt-gesundheitseinrichtung-8",
+  "meta" : {
+    "extension" : [{
+      "extension" : [{
+        "url" : "packageId",
+        "valueId" : "de.medizininformatikinitiative.kerndatensatz.base"
+      },
+      {
+        "url" : "version",
+        "valueString" : "2027.0.0-ballot.rc1"
+      },
+      {
+        "url" : "uri",
+        "valueUri" : "https://www.medizininformatik-initiative.de/fhir/modul-base"
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/package-source"
+    }],
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2027.0.0-ballot.rc1"],
+    "security" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+      "code" : "HTEST",
+      "display" : "test health data"
+    }]
+  },
+  "identifier" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code" : "VN"
+      }]
+    },
+    "system" : "https://www.charite.de/fhir/sid/aufnahmenummer",
+    "value" : "F_20190926_001"
+  }],
+  "status" : "finished",
+  "class" : {
+    "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+    "code" : "AMB"
+  },
+  "subject" : {
+    "reference" : "Patient/mii-exa-person-patient-1"
+  },
+  "period" : {
+    "start" : "2019-09-26T10:00:00+02:00",
+    "end" : "2019-09-26T12:00:00+02:00"
+  },
+  "serviceProvider" : {
+    "identifier" : {
+      "system" : "http://fhir.de/sid/dkgev/iknr",
+      "value" : "260950472"
+    }
+  }
+}
+
+```

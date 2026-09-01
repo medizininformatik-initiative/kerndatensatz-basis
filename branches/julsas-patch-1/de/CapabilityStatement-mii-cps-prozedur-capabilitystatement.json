@@ -1,0 +1,345 @@
+{
+  "resourceType" : "CapabilityStatement",
+  "id" : "mii-cps-prozedur-capabilitystatement",
+  "meta" : {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-license",
+      "valueCode" : "CC-BY-4.0"
+    },
+    {
+      "extension" : [{
+        "url" : "packageId",
+        "valueId" : "de.medizininformatikinitiative.kerndatensatz.base"
+      },
+      {
+        "url" : "version",
+        "valueString" : "2027.0.0-ballot.rc1"
+      },
+      {
+        "url" : "uri",
+        "valueUri" : "https://www.medizininformatik-initiative.de/fhir/modul-base"
+      }],
+      "url" : "http://hl7.org/fhir/StructureDefinition/package-source"
+    }],
+    "profile" : ["http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablecapabilitystatement",
+    "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecapabilitystatement"]
+  },
+  "language" : "de",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xml:lang=\"de\" lang=\"de\"><hr/><p><b>German</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: CapabilityStatement mii-cps-prozedur-capabilitystatement</b></p><a name=\"de-mii-cps-prozedur-capabilitystatement\"> </a><a name=\"de-hcmii-cps-prozedur-capabilitystatement\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profiles: <a href=\"http://hl7.org/fhir/uv/crmi/STU2/StructureDefinition-crmi-shareablecapabilitystatement.html\">CRMI Shareable CapabilityStatement</a>, <a href=\"http://hl7.org/fhir/uv/crmi/STU2/StructureDefinition-crmi-publishablecapabilitystatement.html\">CRMI Publishable CapabilityStatement</a></p></div><h2 id=\"de-title\">MII CPS Prozedur CapabilityStatement</h2><ul><li>Implementation Guide Version: 2027.0.0-ballot.rc1 </li><li>FHIR Version: 4.0.1 </li><li>Supported Formats: <code>xml</code>, <code>json</code></li><li>Published on: 2026-09-01 </li><li>Published by: Medical Informatics Initiative (MII) </li></ul><blockquote class=\"impl-note\"><p><strong>Note to Implementers: FHIR Capabilities</strong></p><p>Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.</p></blockquote><h2 id=\"de-rest\">FHIR RESTful Capabilities</h2><div class=\"panel panel-default\"><div class=\"panel-heading\"><h3 id=\"de-mode1\" class=\"panel-title\">Mode: <code>server</code></h3></div><div class=\"panel-body\"/></div><h3 id=\"de-resourcesCap1\">Capabilities by Resource/Profile</h3><h4 id=\"de-resourcesSummary1\">Summary</h4><p>The summary table lists the resources that are part of this configuration, and for each resource it lists:</p><ul><li>The relevant profiles (if any)</li><li>The interactions supported by each resource (<b><span class=\"bg-info\">R</span></b>ead, <b><span class=\"bg-info\">S</span></b>earch, <b><span class=\"bg-info\">U</span></b>pdate, and <b><span class=\"bg-info\">C</span></b>reate, are always shown, while <b><span class=\"bg-info\">VR</span></b>ead, <b><span class=\"bg-info\">P</span></b>atch, <b><span class=\"bg-info\">D</span></b>elete, <b><span class=\"bg-info\">H</span></b>istory on <b><span class=\"bg-info\">I</span></b>nstance, or <b><span class=\"bg-info\">H</span></b>istory on <b><span class=\"bg-info\">T</span></b>ype are only present if at least one of the resources has support for them.</li><li><span>The required, recommended, and some optional search parameters (if any). </span></li><li>The linked resources enabled for <code>_include</code></li><li>The other resources enabled for <code>_revinclude</code></li><li>The operations on the resource (if any)</li></ul><div class=\"table-responsive\"><table class=\"table table-condensed table-hover\"><thead><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th class=\"text-center\"><b title=\"GET a resource (read interaction)\">R</b></th><th class=\"text-center\"><b title=\"GET all set of resources of the type (search interaction)\">S</b></th><th class=\"text-center\"><b title=\"PUT a new resource version (update interaction)\">U</b></th><th class=\"text-center\"><b title=\"POST a new resource (create interaction)\">C</b></th><th><b title=\"Required and recommended search parameters\">Searches</b></th><th><code><b>_include</b></code></th><th><code><b>_revinclude</b></code></th><th><b>Operations</b></th></tr></thead><tbody><tr><td><a href=\"#de-Procedure1-1\">Procedure</a></td><td><a href=\"http://hl7.org/fhir/R4/procedure.html\">http://hl7.org/fhir/StructureDefinition/Procedure</a><br/><em>Additional supported profiles:</em><br/>\u00a0\u00a0<a href=\"StructureDefinition-mii-pr-prozedur-procedure.html\">MII PR Prozedur Procedureversion: 2027.0.0-ballot.rc1)</a></td><td class=\"text-center\"><span title=\"SHALL\"><b>Y</b></span></td><td class=\"text-center\"><span title=\"SHALL\"><b>Y</b></span></td><td class=\"text-center\"/><td class=\"text-center\"/><td>_count, _summary, _id, _lastUpdated, _profile, status, category, code, date, patient, subject, bodySite, dokumentationsdatum, durchfuehrungsabsicht, ops-seitenlokalisation</td><td/><td/><td/></tr></tbody></table></div><hr/><div class=\"panel panel-default\"><div class=\"panel-heading\"><h4 id=\"de-Procedure1-1\" class=\"panel-title\"><span style=\"float: right;\">Resource Conformance: SHALL </span>Procedure</h4></div><div class=\"panel-body\"><div class=\"container\"><div class=\"row\"><div class=\"col-lg-6\"><span class=\"lead\">Base System Profile</span><br/><a href=\"http://hl7.org/fhir/R4/procedure.html\">Procedure</a></div><div class=\"col-lg-3\"><span class=\"lead\">Profile Conformance</span><br/><b>SHALL</b></div><div class=\"col-lg-3\"><span class=\"lead\">Reference Policy</span><br/></div></div><p/><div class=\"row\"><div class=\"col-6\"><span class=\"lead\">Supported Profiles</span><p><a href=\"StructureDefinition-mii-pr-prozedur-procedure.html\">MII PR Prozedur Procedureversion: 2027.0.0-ballot.rc1)</a></p></div><div class=\"col-lg-6\"><span class=\"lead\">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>read</code>, <code>search-type</code>.</li></ul></div></div><p/><div class=\"row\"><div class=\"col-lg-7\"><span class=\"lead\">Search Parameters</span><table class=\"table table-condensed table-hover\"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_count</td><td><code>special</code></td><td><div><p><strong>Example:</strong>\n<code>GET [base]/Procedure?_count=10</code></p>\n<p><strong>Notes:</strong>\nFor further details see FHIR core specification, section <a href=\"https://hl7.org/fhir/R4/search.html#count\">Page Count</a>.</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_summary</td><td><code>special</code></td><td><div><p><strong>Example:</strong>\n<code>GET [base]/Procedure?_summary=count</code></p>\n<p><strong>Notes:</strong>\nFor further details see FHIR core specification, section <a href=\"https://hl7.org/fhir/R4/search.html#summary\">Summary</a>.</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td><a href=\"http://hl7.org/fhir/R4/resource.html#search\">_id</a></td><td><code>token</code></td><td><div><p><strong>Example:</strong>\n<code>GET [base]/Procedure?_id=mii-exa-prozedur-procedure</code></p>\n<p><strong>Notes:</strong>\nFor further details see FHIR core specification, section <a href=\"https://hl7.org/fhir/R4/search.html#all\">Parameters for all resources</a>.</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td><a href=\"http://hl7.org/fhir/R4/resource.html#search\">_lastUpdated</a></td><td><code>date</code></td><td><div><p><strong>Example:</strong>\n<code>GET [base]/Procedure?_lastUpdated=ge2020-01-01</code></p>\n<p><strong>Notes:</strong>\nSearches on <code>Procedure.meta.lastUpdated</code>. For further details see <a href=\"https://hl7.org/fhir/R4/search.html#_lastUpdated\">FHIR core specification</a>.</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td><a href=\"http://hl7.org/fhir/R4/resource.html#search\">_profile</a></td><td><code>uri</code></td><td><div><p><strong>Example:</strong>\n<code>GET [base]/Procedure?_profile=https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2027.0.0-ballot.rc1</code></p>\n<p><strong>Notes:</strong>\nSearches on <code>Procedure.meta.profile</code>. For further details see FHIR core specification, section <a href=\"https://hl7.org/fhir/R4/search.html#all\">Parameters for all resources</a>.</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td><a href=\"http://hl7.org/fhir/R4/procedure.html#search\">status</a></td><td><code>token</code></td><td><div><p><strong>Example:</strong>\n<code>GET [base]/Procedure?status=completed</code></p>\n<p><strong>Notes:</strong>\nSearches on <code>Procedure.status</code>. For further details see <a href=\"https://hl7.org/fhir/R4/search.html#token\">FHIR core specification</a>.</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td><a href=\"http://hl7.org/fhir/R4/procedure.html#search\">category</a></td><td><code>token</code></td><td><div><p><strong>Example:</strong>\n<code>GET [base]/Procedure?category=http://snomed.info/sct|277132007</code>\n<code>GET [base]/Procedure?category=277132007</code></p>\n<p><strong>Notes:</strong>\nSearches on <code>Procedure.category</code>. For further details see <a href=\"https://hl7.org/fhir/R4/search.html#token\">FHIR core specification</a>.</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td><a href=\"http://hl7.org/fhir/R4/procedure.html#search\">code</a></td><td><code>token</code></td><td><div><p><strong>Example:</strong>\n<code>GET [base]/Procedure?code=http://fhir.de/CodeSystem/bfarm/ops|5-470</code>\n<code>GET [base]/Procedure?code=5-470</code></p>\n<p><strong>Notes:</strong>\nSearches on <code>Procedure.code</code>. For further details see <a href=\"https://hl7.org/fhir/R4/search.html#token\">FHIR core specification</a>.</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td><a href=\"http://hl7.org/fhir/R4/procedure.html#search\">date</a></td><td><code>date</code></td><td><div><p><strong>Example:</strong>\n<code>GET [base]/Procedure?date=2020-01-08</code>\n<code>GET [base]/Procedure?date=ge2020-01-08&amp;date=lt2020-01-09</code></p>\n<p><strong>Notes:</strong>\nSearches on <code>Procedure.performed[x]</code>. For further details see <a href=\"https://hl7.org/fhir/R4/search.html#date\">FHIR core specification</a>.</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td><a href=\"http://hl7.org/fhir/R4/procedure.html#search\">patient</a></td><td><code>reference</code></td><td><div><p><strong>Example:</strong>\n<code>GET [base]/Procedure?patient=Patient/mii-exa-person-patient-1</code>\n<code>GET [base]/Procedure?patient=mii-exa-person-patient-1</code></p>\n<p><strong>Notes:</strong>\nSearches on <code>Procedure.subject</code> where the subject is a Patient. For further details see <a href=\"https://hl7.org/fhir/R4/search.html#reference\">FHIR core specification</a>.</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td><a href=\"http://hl7.org/fhir/R4/procedure.html#search\">subject</a></td><td><code>reference</code></td><td><div><p><strong>Example:</strong>\n<code>GET [base]/Procedure?subject=Patient/mii-exa-person-patient-1</code>\n<code>GET [base]/Procedure?subject=mii-exa-person-patient-1</code></p>\n<p><strong>Notes:</strong>\nSearches on <code>Procedure.subject</code>. For further details see <a href=\"https://hl7.org/fhir/R4/search.html#reference\">FHIR core specification</a>.</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td><a href=\"https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.meta@2027.0.0-ballot.rc3&amp;canonical=https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-procedure-bodysite\">bodySite</a></td><td><code>token</code></td><td><div><p><strong>Example:</strong>\n<code>GET [base]/Procedure?bodySite=http://snomed.info/sct|181255000</code>\n<code>GET [base]/Procedure?bodySite=181255000</code></p>\n<p><strong>Notes:</strong>\nSearches on <code>Procedure.bodySite</code>. For further details see <a href=\"https://hl7.org/fhir/R4/search.html#token\">FHIR core specification</a>.</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td><a href=\"https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.meta@2027.0.0-ballot.rc3&amp;canonical=https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-procedure-dokumentationsdatum\">dokumentationsdatum</a></td><td><code>date</code></td><td><div><p><strong>Example:</strong>\n<code>GET [base]/Procedure?dokumentationsdatum=2020-01-08</code></p>\n<p><strong>Notes:</strong>\nSearches on <code>Procedure.extension('http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum').value</code>. For further details see <a href=\"https://hl7.org/fhir/R4/search.html#date\">FHIR core specification</a>.</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td><a href=\"https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.meta@2027.0.0-ballot.rc3&amp;canonical=https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-procedure-durchfuehrungsabsicht\">durchfuehrungsabsicht</a></td><td><code>token</code></td><td><div><p><strong>Example:</strong>\n<code>GET [base]/Procedure?durchfuehrungsabsicht=http://snomed.info/sct|262202000</code>\n<code>GET [base]/Procedure?durchfuehrungsabsicht=262202000</code></p>\n<p><strong>Notes:</strong>\nSearches on <code>Procedure.extension('https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Durchfuehrungsabsicht').value</code>. For further details see <a href=\"https://hl7.org/fhir/R4/search.html#token\">FHIR core specification</a>.</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td><a href=\"https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.meta@2027.0.0-ballot.rc3&amp;canonical=https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-procedure-ops-seitenlokalisation\">ops-seitenlokalisation</a></td><td><code>token</code></td><td><div><p><strong>Example:</strong>\n<code>GET [base]/Procedure?ops-seitenlokalisation=https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ICD_SEITENLOKALISATION|L</code></p>\n<p><strong>Notes:</strong>\nSearches on <code>Procedure.code.coding.where(system='http://fhir.de/CodeSystem/bfarm/ops').extension('http://fhir.de/StructureDefinition/seitenlokalisation').valueCoding.code</code>. For further details see <a href=\"https://hl7.org/fhir/R4/search.html#token\">FHIR core specification</a>.</p>\n</div></td></tr></tbody></table></div><div class=\"col-lg-5\">\u00a0</div></div></div></div></div></div>"
+  },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm",
+    "valueCoding" : {
+      "system" : "http://hl7.org/fhir/version-algorithm",
+      "code" : "semver",
+      "display" : "SemVer"
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability",
+    "valueCode" : "shareable"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability",
+    "valueCode" : "publishable"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-versionPolicy",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/artifact-version-policy-codes",
+        "version" : "3.0.0",
+        "code" : "package",
+        "display" : "Package"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-usage",
+    "valueMarkdown" : "Use this CapabilityStatement to determine the minimum RESTful server capabilities required for a system that implements the corresponding module of the Medical Informatics Initiative core dataset. It lists the FHIR resource types and MII profiles that SHALL be supported, together with required interactions, supported formats, and search parameters for read and search access. Systems claiming conformance to the module are expected to implement the listed capabilities according to the stated conformance expectations."
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/resource-approvalDate",
+    "valueDate" : "2024-03-07"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod",
+    "valuePeriod" : {
+      "start" : "2027"
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-topic",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+        "code" : "C25218"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-author",
+    "valueContactDetail" : {
+      "telecom" : [{
+        "system" : "email",
+        "value" : "julian.sass@charite.de"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-editor",
+    "valueContactDetail" : {
+      "name" : "Taskforce Core Data Set"
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-reviewer",
+    "valueContactDetail" : {
+      "name" : "Interoperability Working Group",
+      "telecom" : [{
+        "system" : "url",
+        "value" : "https://www.medizininformatik-initiative.de/en/collaboration/interoperability-working-group"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-reviewer",
+    "valueContactDetail" : {
+      "name" : "National Steering Committee",
+      "telecom" : [{
+        "system" : "url",
+        "value" : "https://www.medizininformatik-initiative.de/en/collaboration/national-steering-committee"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-endorser",
+    "valueContactDetail" : {
+      "name" : "Interoperability Working Group",
+      "telecom" : [{
+        "system" : "url",
+        "value" : "https://www.medizininformatik-initiative.de/en/collaboration/interoperability-working-group"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-endorser",
+    "valueContactDetail" : {
+      "name" : "National Steering Committee",
+      "telecom" : [{
+        "system" : "url",
+        "value" : "https://www.medizininformatik-initiative.de/en/collaboration/national-steering-committee"
+      }]
+    }
+  }],
+  "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/CapabilityStatement/metadata",
+  "version" : "2027.0.0-ballot.rc1",
+  "name" : "MII_CPS_Prozedur_CapabilityStatement",
+  "title" : "MII CPS Prozedur CapabilityStatement",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-09-01",
+  "publisher" : "Medical Informatics Initiative (MII)",
+  "contact" : [{
+    "name" : "Medical Informatics Initiative (MII)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.medizininformatik-initiative.de/en"
+    }]
+  }],
+  "description" : "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein konformes System unterstützen muss um das Modul Prozedur der Medizininformatik Initiative zu implementieren.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DE",
+      "display" : "Germany"
+    }]
+  }],
+  "purpose" : "Define the minimum capabilities a system must support to implement and claim conformance to the MII Procedure module.",
+  "kind" : "requirements",
+  "fhirVersion" : "4.0.1",
+  "format" : ["xml",
+  "json"],
+  "rest" : [{
+    "mode" : "server",
+    "resource" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "SHALL"
+      }],
+      "type" : "Procedure",
+      "profile" : "http://hl7.org/fhir/StructureDefinition/Procedure",
+      "supportedProfile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2027.0.0-ballot.rc1"],
+      "_supportedProfile" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }]
+      }],
+      "interaction" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "read"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "search-type"
+      }],
+      "searchParam" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "_count",
+        "type" : "special",
+        "documentation" : "**Example:**\n`GET [base]/Procedure?_count=10`\n\n**Notes:**\nFor further details see FHIR core specification, section [Page Count](https://hl7.org/fhir/R4/search.html#count)."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "_summary",
+        "type" : "special",
+        "documentation" : "**Example:**\n`GET [base]/Procedure?_summary=count`\n\n**Notes:**\nFor further details see FHIR core specification, section [Summary](https://hl7.org/fhir/R4/search.html#summary)."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "_id",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-id",
+        "type" : "token",
+        "documentation" : "**Example:**\n`GET [base]/Procedure?_id=mii-exa-prozedur-procedure`\n\n**Notes:**\nFor further details see FHIR core specification, section [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "_lastUpdated",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-lastUpdated",
+        "type" : "date",
+        "documentation" : "**Example:**\n`GET [base]/Procedure?_lastUpdated=ge2020-01-01`\n\n**Notes:**\nSearches on `Procedure.meta.lastUpdated`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#_lastUpdated)."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "_profile",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-profile",
+        "type" : "uri",
+        "documentation" : "**Example:**\n`GET [base]/Procedure?_profile=https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2027.0.0-ballot.rc1`\n\n**Notes:**\nSearches on `Procedure.meta.profile`. For further details see FHIR core specification, section [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "status",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Procedure-status",
+        "type" : "token",
+        "documentation" : "**Example:**\n`GET [base]/Procedure?status=completed`\n\n**Notes:**\nSearches on `Procedure.status`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "category",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Procedure-category",
+        "type" : "token",
+        "documentation" : "**Example:**\n`GET [base]/Procedure?category=http://snomed.info/sct|277132007`\n`GET [base]/Procedure?category=277132007`\n\n**Notes:**\nSearches on `Procedure.category`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "code",
+        "definition" : "http://hl7.org/fhir/SearchParameter/clinical-code",
+        "type" : "token",
+        "documentation" : "**Example:**\n`GET [base]/Procedure?code=http://fhir.de/CodeSystem/bfarm/ops|5-470`\n`GET [base]/Procedure?code=5-470`\n\n**Notes:**\nSearches on `Procedure.code`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "date",
+        "definition" : "http://hl7.org/fhir/SearchParameter/clinical-date",
+        "type" : "date",
+        "documentation" : "**Example:**\n`GET [base]/Procedure?date=2020-01-08`\n`GET [base]/Procedure?date=ge2020-01-08&date=lt2020-01-09`\n\n**Notes:**\nSearches on `Procedure.performed[x]`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#date)."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "patient",
+        "definition" : "http://hl7.org/fhir/SearchParameter/clinical-patient",
+        "type" : "reference",
+        "documentation" : "**Example:**\n`GET [base]/Procedure?patient=Patient/mii-exa-person-patient-1`\n`GET [base]/Procedure?patient=mii-exa-person-patient-1`\n\n**Notes:**\nSearches on `Procedure.subject` where the subject is a Patient. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#reference)."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "subject",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Procedure-subject",
+        "type" : "reference",
+        "documentation" : "**Example:**\n`GET [base]/Procedure?subject=Patient/mii-exa-person-patient-1`\n`GET [base]/Procedure?subject=mii-exa-person-patient-1`\n\n**Notes:**\nSearches on `Procedure.subject`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#reference)."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "bodySite",
+        "definition" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-procedure-bodysite",
+        "type" : "token",
+        "documentation" : "**Example:**\n`GET [base]/Procedure?bodySite=http://snomed.info/sct|181255000`\n`GET [base]/Procedure?bodySite=181255000`\n\n**Notes:**\nSearches on `Procedure.bodySite`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "dokumentationsdatum",
+        "definition" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-procedure-dokumentationsdatum",
+        "type" : "date",
+        "documentation" : "**Example:**\n`GET [base]/Procedure?dokumentationsdatum=2020-01-08`\n\n**Notes:**\nSearches on `Procedure.extension('http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum').value`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#date)."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "durchfuehrungsabsicht",
+        "definition" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-procedure-durchfuehrungsabsicht",
+        "type" : "token",
+        "documentation" : "**Example:**\n`GET [base]/Procedure?durchfuehrungsabsicht=http://snomed.info/sct|262202000`\n`GET [base]/Procedure?durchfuehrungsabsicht=262202000`\n\n**Notes:**\nSearches on `Procedure.extension('https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Durchfuehrungsabsicht').value`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "ops-seitenlokalisation",
+        "definition" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-procedure-ops-seitenlokalisation",
+        "type" : "token",
+        "documentation" : "**Example:**\n`GET [base]/Procedure?ops-seitenlokalisation=https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ICD_SEITENLOKALISATION|L`\n\n**Notes:**\nSearches on `Procedure.code.coding.where(system='http://fhir.de/CodeSystem/bfarm/ops').extension('http://fhir.de/StructureDefinition/seitenlokalisation').valueCoding.code`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."
+      }]
+    }]
+  }]
+}
