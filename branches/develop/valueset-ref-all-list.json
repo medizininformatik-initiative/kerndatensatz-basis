@@ -1,11 +1,11 @@
 {
   "codeSystems" : [{
     "url" : "http://fhir.de/ValueSet/DiagnoseTyp",
-    "version" : "1.5.4",
+    "version" : "1.6.0",
     "status" : "active",
     "name" : "DiagnoseTyp",
     "title" : "DiagnoseTyp ValueSet",
-    "description" : "DiagnoseTyp ValueSet",
+    "description" : "Dieses ValueSet enthält übergeordnete Typen diagnostischer Angaben, etwa Einweisungs- oder behandlungsrelevante Diagnosen. Es dient der fachlichen Einordnung, in welchem Versorgungskontext eine Diagnose erhoben oder verwendet wird.",
     "systems" : ["http://fhir.de/CodeSystem/KontaktDiagnoseProzedur"],
     "uses" : {
     },
@@ -14,11 +14,11 @@
   },
   {
     "url" : "http://fhir.de/ValueSet/Diagnosesubtyp",
-    "version" : "1.5.4",
+    "version" : "1.6.0",
     "status" : "active",
     "name" : "Diagnosesubtyp",
     "title" : "Diagnosesubtyp ValueSet",
-    "description" : "Diagnosesubtyp ValueSet",
+    "description" : "Dieses ValueSet bündelt spezielle Untertypen von Diagnosen mit definierter fachlicher Rolle, etwa Operationsdiagnosen, Todesursachen oder Aufnahmediagnosen. Es dient der semantischen Verfeinerung diagnostischer Angaben innerhalb eines Versorgungskontexts.",
     "systems" : ["http://terminology.hl7.org/CodeSystem/diagnosis-role",
     "http://fhir.de/CodeSystem/KontaktDiagnoseProzedur"],
     "uses" : {
@@ -28,11 +28,11 @@
   },
   {
     "url" : "http://fhir.de/ValueSet/EncounterClassDE",
-    "version" : "1.5.4",
+    "version" : "1.6.0",
     "status" : "active",
     "name" : "EncounterClassDE",
     "title" : "EncounterClassDE",
-    "description" : "Fallarten und Patientenstatus zur Codierung von Encounter.class",
+    "description" : "Dieses ValueSet beschränkt `Encounter.class` auf im deutschen Versorgungskontext gebräuchliche Fallarten. Es dient der interoperablen Kennzeichnung des organisatorischen Rahmens eines Kontakts.",
     "systems" : ["http://terminology.hl7.org/CodeSystem/v3-ActCode"],
     "uses" : {
     },
@@ -40,11 +40,11 @@
   },
   {
     "url" : "http://fhir.de/ValueSet/EncounterStatusDe",
-    "version" : "1.5.4",
+    "version" : "1.6.0",
     "status" : "active",
     "name" : "EncounterStatusDe",
     "title" : "Encounter Status ValueSet",
-    "description" : "Einschränkung von Encounter Status in Vorbereitung auf Änderungen in FHIR R5",
+    "description" : "Dieses ValueSet beschränkt die verwendbaren Encounter-Status auf die im Profilkontext vorgesehenen Codes. Es dient einer stabilen Nutzung des Statusmodells im Übergang zwischen FHIR-Versionen.",
     "systems" : ["http://hl7.org/fhir/encounter-status"],
     "uses" : {
     },
@@ -52,11 +52,11 @@
   },
   {
     "url" : "http://fhir.de/ValueSet/dgkev/Aufnahmeanlass",
-    "version" : "1.5.4",
+    "version" : "1.6.0",
     "status" : "active",
     "name" : "AufnahmeanlassVS",
     "title" : "Aufnahmeanlass ValueSet",
-    "description" : "Aufnahmeanlass, Datenübermittlung nach § 301 Abs. 3 SGB V",
+    "description" : "Dieses ValueSet enthält die zulässigen Codes für den Aufnahmeanlass nach § 301 Abs. 3 SGB V. Es dient der einheitlichen Codierung des administrativen Anlasses einer Krankenhausaufnahme.",
     "systems" : ["http://fhir.de/CodeSystem/dgkev/Aufnahmeanlass"],
     "uses" : {
     },
@@ -64,11 +64,11 @@
   },
   {
     "url" : "http://fhir.de/ValueSet/dkgev/AufnahmegrundDritteStelle",
-    "version" : "1.5.4",
+    "version" : "1.6.0",
     "status" : "active",
     "name" : "AufnahmegrundDritteStelleVS",
     "title" : "AufnahmegrundDritteStelle ValueSet",
-    "description" : "Aufnahmegrund (3. Stelle), Datenübermittlung nach § 301 Abs. 3 SGB V",
+    "description" : "Dieses ValueSet enthält die zulässigen Codes für die dritte Stelle des Aufnahmegrundes nach § 301 Abs. 3 SGB V. Es dient der differenzierten Spezifikation besonderer Aufnahmekonstellationen.",
     "systems" : ["http://fhir.de/CodeSystem/dkgev/AufnahmegrundDritteStelle"],
     "uses" : {
     },
@@ -76,11 +76,11 @@
   },
   {
     "url" : "http://fhir.de/ValueSet/dkgev/AufnahmegrundErsteUndZweiteStelle",
-    "version" : "1.5.4",
+    "version" : "1.6.0",
     "status" : "active",
     "name" : "AufnahmegrundErsteUndZweiteStelleVS",
     "title" : "Aufnahmegrund Erste und Zweite Stelle ValueSet",
-    "description" : "Aufnahmegrund (1. und 2. Stelle), Datenübermittlung nach § 301 Abs. 3 SGB V",
+    "description" : "Dieses ValueSet enthält die zulässigen Codes für die erste und zweite Stelle des Aufnahmegrundes nach § 301 Abs. 3 SGB V. Es dient der grundlegenden Klassifikation der Art einer Krankenhausaufnahme.",
     "systems" : ["http://fhir.de/CodeSystem/dkgev/AufnahmegrundErsteUndZweiteStelle"],
     "uses" : {
     },
@@ -88,11 +88,11 @@
   },
   {
     "url" : "http://fhir.de/ValueSet/dkgev/AufnahmegrundVierteStelle",
-    "version" : "1.5.4",
+    "version" : "1.6.0",
     "status" : "active",
     "name" : "AufnahmegrundVierteStelleVS",
     "title" : "Aufnahmegrund Vierte Stelle ValueSet",
-    "description" : "Aufnahmegrund (4. Stelle), Datenübermittlung nach § 301 Abs. 3 SGB V",
+    "description" : "Dieses ValueSet enthält die zulässigen Codes für die vierte Stelle des Aufnahmegrundes nach § 301 Abs. 3 SGB V. Es dient der zusätzlichen Spezifikation des Aufnahmekontexts, etwa bei Notfall- oder Unfallbezug.",
     "systems" : ["http://fhir.de/CodeSystem/dkgev/AufnahmegrundVierteStelle"],
     "uses" : {
     },
@@ -100,11 +100,11 @@
   },
   {
     "url" : "http://fhir.de/ValueSet/dkgev/EntlassungsgrundDritteStelle",
-    "version" : "1.5.4",
+    "version" : "1.6.0",
     "status" : "active",
     "name" : "EntlassungsgrundDritteStelleVS",
     "title" : "Entlassungsgrund Dritte Stelle ValueSet",
-    "description" : "Entlassungs-/Verlegungsgrund (3. Stelle), Datenübermittlung nach § 301 Abs. 3 SGB V",
+    "description" : "Dieses ValueSet enthält die zulässigen Codes für die dritte Stelle des Entlassungs- oder Verlegungsgrundes nach § 301 Abs. 3 SGB V. Es dient der ergänzenden fachlichen Differenzierung des Entlassungsergebnisses.",
     "systems" : ["http://fhir.de/CodeSystem/dkgev/EntlassungsgrundDritteStelle"],
     "uses" : {
     },
@@ -112,11 +112,11 @@
   },
   {
     "url" : "http://fhir.de/ValueSet/dkgev/EntlassungsgrundErsteUndZweiteStelle",
-    "version" : "1.5.4",
+    "version" : "1.6.0",
     "status" : "active",
     "name" : "EntlassungsgrundErsteUndZweiteStelleVS",
     "title" : "Entlassungsgrund Erste und Zweite Stelle ValueSet",
-    "description" : "Entlassungs-/Verlegungsgrund (1. und 2. Stelle), Datenübermittlung nach § 301 Abs. 3 SGB V",
+    "description" : "Dieses ValueSet enthält die zulässigen Codes für die erste und zweite Stelle des Entlassungs- oder Verlegungsgrundes nach § 301 Abs. 3 SGB V. Es dient der grundlegenden Klassifikation des Abschlusses eines Krankenhausaufenthalts.",
     "systems" : ["http://fhir.de/CodeSystem/dkgev/EntlassungsgrundErsteUndZweiteStelle"],
     "uses" : {
     },
@@ -124,11 +124,11 @@
   },
   {
     "url" : "http://fhir.de/ValueSet/dkgev/Fachabteilungsschluessel",
-    "version" : "1.5.4",
+    "version" : "1.6.0",
     "status" : "active",
     "name" : "FachabteilungsschluesselVS",
     "title" : "Fachabteilungsschlüssel ValueSet",
-    "description" : "Fachabteilungen gemäß Anhang 1 der BPflV in der am 31.12.2003 geltenden Fassung",
+    "description" : "Dieses ValueSet enthält die Fachabteilungsschlüssel gemäß Anhang 1 BPflV in der am 31.12.2003 geltenden Fassung. Es dient der Bindung von Angaben zur fachlichen Zuordnung von Krankenhausabteilungen.",
     "systems" : ["http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel"],
     "uses" : {
     },
@@ -136,11 +136,11 @@
   },
   {
     "url" : "http://fhir.de/ValueSet/dkgev/Fachabteilungsschluessel-erweitert",
-    "version" : "1.5.4",
+    "version" : "1.6.0",
     "status" : "active",
     "name" : "ValueSetFachabteilungsschluesselErweitert",
     "title" : "FachabteilungsschluesselErweitert ValueSet",
-    "description" : "Fachabteilungen gemäß Anhang 1 der BPflV in der am 31.12.2003 geltenden Fassung inkl. Spezialisierungen",
+    "description" : "Dieses ValueSet enthält die erweiterten Fachabteilungsschlüssel gemäß Anhang 1 BPflV einschließlich Spezialisierungen. Es dient der feineren Bindung fachlicher Zuordnungen von Krankenhausabteilungen.",
     "systems" : ["http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"],
     "uses" : {
     },
@@ -148,11 +148,11 @@
   },
   {
     "url" : "http://fhir.de/ValueSet/gender-other-de",
-    "version" : "1.5.4",
+    "version" : "1.6.0",
     "status" : "active",
     "name" : "GenderOtherDEVS",
     "title" : "GenderOtherDE ValueSet",
-    "description" : "Codes zur Erfassung des amtlichen Geschlechts auf Basis der Spezifikationen \"XPersonenstand - Elektronische Datenübermittlung im Personenstandswesen\" und \"Kassenärztliche Vereinigung-Datentransfer\" der KB",
+    "description" : "Dieses ValueSet enthält die nicht-binären beziehungsweise nicht eindeutig männlich oder weiblich codierten Ausprägungen des amtlichen Geschlechts. Es ist für Anwendungsfälle vorgesehen, in denen diese Differenzierung explizit benötigt wird.",
     "systems" : ["http://fhir.de/CodeSystem/gender-amtlich-de"],
     "uses" : {
     },
@@ -160,11 +160,11 @@
   },
   {
     "url" : "http://fhir.de/ValueSet/icd-10-gm-mehrfachcodierungs-kennzeichen",
-    "version" : "1.5.4",
+    "version" : "1.6.0",
     "status" : "active",
     "name" : "MehrfachkodierungsKennzeichenVS",
     "title" : "Mehrfachkodierungs-Kennzeichen ICD10GM ValueSet",
-    "description" : "Zusatzkennzeichen für postkoordinierte ICD-10-gm-Codes",
+    "description" : "Dieses ValueSet enthält die zulässigen Zusatzkennzeichen für postkoordinierte ICD-10-GM-Codes. Es dient der korrekten Kennzeichnung von Ätiologie-, Manifestations- und Zusatzinformationsbezügen.",
     "systems" : ["http://fhir.de/CodeSystem/icd-10-gm-mehrfachcodierungs-kennzeichen"],
     "uses" : {
     },
@@ -172,11 +172,11 @@
   },
   {
     "url" : "http://fhir.de/ValueSet/identifier-type-de-basis",
-    "version" : "1.5.4",
+    "version" : "1.6.0",
     "status" : "active",
     "name" : "IdentifierTypeDeBasisVS",
     "title" : "Identifier Type DeBasis ValueSet",
-    "description" : "ValueSet zur Codierung des Identifier-Typs",
+    "description" : "Dieses ValueSet bündelt die im deutschen Basisprofil zulässigen Identifier-Typen aus internationalen und nationalen Codesystemen. Es dient der präzisen Typisierung von Kennungen in FHIR-Ressourcen.",
     "systems" : ["http://fhir.de/CodeSystem/identifier-type-de-basis",
     "http://terminology.hl7.org/CodeSystem/v2-0203"],
     "uses" : {
@@ -185,12 +185,25 @@
     "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)"
   },
   {
+    "url" : "http://fhir.de/ValueSet/identifier-type-kvid-de-basis",
+    "version" : "1.6.0",
+    "status" : "active",
+    "name" : "IdentifierTypeKvidDeBasisVS",
+    "title" : "Identifier Type Kvid DeBasis ValueSet",
+    "description" : "Dieses ValueSet enthält die für KVID-bezogene Identifier zulässigen Typcodes. Es dient der eindeutigen Kennzeichnung von Versicherungs- und Krankenversichertennummern im deutschen Kontext.",
+    "systems" : ["http://fhir.de/CodeSystem/identifier-type-de-basis"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient",
+    "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)"
+  },
+  {
     "url" : "http://fhir.de/ValueSet/iso/bundeslaender",
-    "version" : "1.5.4",
+    "version" : "1.6.0",
     "status" : "active",
     "name" : "ValueSetISO31662DE",
     "title" : "ISO-3166-2:de-Laendercodes",
-    "description" : "Enthaelt die ISO-3166-2:DE Codes für die deutschen Bundeslaender.",
+    "description" : "Dieses ValueSet enthält die ISO-3166-2:DE-Codes der deutschen Bundesländer.",
     "systems" : ["urn:iso:std:iso:3166-2:de"],
     "uses" : {
     },
@@ -199,11 +212,11 @@
   },
   {
     "url" : "http://fhir.de/ValueSet/kontaktart-de",
-    "version" : "1.5.4",
+    "version" : "1.6.0",
     "status" : "active",
     "name" : "KontaktartDe",
     "title" : "KontaktartDe ValueSet",
-    "description" : "Kontaktarten für die Codierung von Encounter.type",
+    "description" : "Dieses ValueSet enthält die zulässigen Kontaktarten für `Encounter.type`. Es dient der fachlichen Differenzierung von Versorgungsformen und Kontaktanlässen innerhalb eines Encounters.",
     "systems" : ["http://fhir.de/CodeSystem/kontaktart-de"],
     "uses" : {
     },
@@ -211,11 +224,11 @@
   },
   {
     "url" : "http://fhir.de/ValueSet/kontaktebene-de",
-    "version" : "1.5.4",
+    "version" : "1.6.0",
     "status" : "active",
     "name" : "KontaktebeneDe",
     "title" : "KontaktebeneDe ValueSet",
-    "description" : "Kontaktebene für die Codierung von Encounter.type",
+    "description" : "Dieses ValueSet enthält die zulässigen Kontaktebenen zur Modellierung von Versorgungskontakten. Es dient der Abgrenzung, ob ein Kontakt auf Einrichtungs-, Abteilungs- oder Versorgungsstellenebene beschrieben wird.",
     "systems" : ["http://fhir.de/CodeSystem/Kontaktebene"],
     "uses" : {
     },
@@ -223,11 +236,11 @@
   },
   {
     "url" : "http://fhir.de/ValueSet/lebensphase-de",
-    "version" : "1.5.4",
+    "version" : "1.6.0",
     "status" : "active",
     "name" : "ValueSetLebensphaseDe",
     "title" : "LebensphaseDe ValueSet",
-    "description" : "Dieses Valueset enthält Snomedcodes zur Angabe der Lebensphase",
+    "description" : "Dieses ValueSet enthält SNOMED-CT-Konzepte zur Angabe von Lebensphasen. Es dient der semantisch präzisen Beschreibung alters- und entwicklungsbezogener Kontexte.",
     "systems" : ["http://snomed.info/sct"],
     "uses" : {
     },
@@ -275,8 +288,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.1"],
     "uses" : {
     },
-    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient",
     "StructureDefinition-mii-lm-person.html" : "MII LM Person",
+    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient",
     "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)"
   },
   {
@@ -376,9 +389,9 @@
     "uses" : {
     },
     "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition",
+    "StructureDefinition-mii-pr-prozedur-procedure.html" : "MII PR Prozedur Procedure",
     "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache",
-    "StructureDefinition-mii-pr-person-vitalstatus.html" : "MII PR Person Vitalstatus",
-    "StructureDefinition-mii-pr-prozedur-procedure.html" : "MII PR Prozedur Procedure"
+    "StructureDefinition-mii-pr-person-vitalstatus.html" : "MII PR Person Vitalstatus"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/clinical-findings",
@@ -407,12 +420,12 @@
     "uses" : {
     },
     "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition",
-    "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache",
-    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient",
-    "StructureDefinition-mii-pr-person-vitalstatus.html" : "MII PR Person Vitalstatus",
     "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung",
+    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient",
+    "StructureDefinition-mii-pr-prozedur-procedure.html" : "MII PR Prozedur Procedure",
     "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)",
-    "StructureDefinition-mii-pr-prozedur-procedure.html" : "MII PR Prozedur Procedure"
+    "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache",
+    "StructureDefinition-mii-pr-person-vitalstatus.html" : "MII PR Person Vitalstatus"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/condition-category",
@@ -457,8 +470,8 @@
     "uses" : {
     },
     "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition",
-    "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache",
-    "StructureDefinition-mii-pr-prozedur-procedure.html" : "MII PR Prozedur Procedure"
+    "StructureDefinition-mii-pr-prozedur-procedure.html" : "MII PR Prozedur Procedure",
+    "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/condition-severity",
@@ -532,8 +545,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.5"],
     "uses" : {
     },
-    "StructureDefinition-mii-pr-person-vitalstatus.html" : "MII PR Person Vitalstatus",
-    "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)"
+    "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)",
+    "StructureDefinition-mii-pr-person-vitalstatus.html" : "MII PR Person Vitalstatus"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/device-action",
@@ -731,8 +744,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.45"],
     "uses" : {
     },
-    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient",
     "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung",
+    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient",
     "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)"
   },
   {
@@ -747,8 +760,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.57"],
     "uses" : {
     },
-    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient",
     "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung",
+    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient",
     "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)"
   },
   {
@@ -777,12 +790,12 @@
     "uses" : {
     },
     "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition",
-    "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache",
-    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient",
-    "StructureDefinition-mii-pr-person-vitalstatus.html" : "MII PR Person Vitalstatus",
     "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung",
+    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient",
+    "StructureDefinition-mii-pr-prozedur-procedure.html" : "MII PR Prozedur Procedure",
     "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)",
-    "StructureDefinition-mii-pr-prozedur-procedure.html" : "MII PR Prozedur Procedure"
+    "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache",
+    "StructureDefinition-mii-pr-person-vitalstatus.html" : "MII PR Person Vitalstatus"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/link-type",
@@ -1097,12 +1110,12 @@
     "uses" : {
     },
     "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition",
-    "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache",
-    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient",
-    "StructureDefinition-mii-pr-person-vitalstatus.html" : "MII PR Person Vitalstatus",
     "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung",
+    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient",
+    "StructureDefinition-mii-pr-prozedur-procedure.html" : "MII PR Prozedur Procedure",
     "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)",
-    "StructureDefinition-mii-pr-prozedur-procedure.html" : "MII PR Prozedur Procedure"
+    "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache",
+    "StructureDefinition-mii-pr-person-vitalstatus.html" : "MII PR Person Vitalstatus"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/route-codes",
@@ -1135,12 +1148,12 @@
     "uses" : {
     },
     "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition",
-    "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache",
-    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient",
-    "StructureDefinition-mii-pr-person-vitalstatus.html" : "MII PR Person Vitalstatus",
     "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung",
+    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient",
+    "StructureDefinition-mii-pr-prozedur-procedure.html" : "MII PR Prozedur Procedure",
     "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)",
-    "StructureDefinition-mii-pr-prozedur-procedure.html" : "MII PR Prozedur Procedure"
+    "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache",
+    "StructureDefinition-mii-pr-person-vitalstatus.html" : "MII PR Person Vitalstatus"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/service-type",

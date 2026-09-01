@@ -71,21 +71,21 @@ Searches on <code>Procedure.subject</code> where the subject is a Patient. For f
 <code>GET [base]/Procedure?subject=mii-exa-person-patient-1</code></p>
 <p><strong>Notes:</strong>
 Searches on <code>Procedure.subject</code>. For further details see <a href="https://hl7.org/fhir/R4/search.html#reference">FHIR core specification</a>.</p>
-</div></td></tr><tr><td><b>SHALL</b></td><td><a href="https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.meta@2026.0.0&amp;canonical=https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-procedure-bodysite">bodySite</a></td><td><code>token</code></td><td><div><p><strong>Example:</strong>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.meta@2027.0.0-ballot.rc3&amp;canonical=https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-procedure-bodysite">bodySite</a></td><td><code>token</code></td><td><div><p><strong>Example:</strong>
 <code>GET [base]/Procedure?bodySite=http://snomed.info/sct|181255000</code>
 <code>GET [base]/Procedure?bodySite=181255000</code></p>
 <p><strong>Notes:</strong>
 Searches on <code>Procedure.bodySite</code>. For further details see <a href="https://hl7.org/fhir/R4/search.html#token">FHIR core specification</a>.</p>
-</div></td></tr><tr><td><b>SHALL</b></td><td><a href="https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.meta@2026.0.0&amp;canonical=https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-procedure-dokumentationsdatum">dokumentationsdatum</a></td><td><code>date</code></td><td><div><p><strong>Example:</strong>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.meta@2027.0.0-ballot.rc3&amp;canonical=https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-procedure-dokumentationsdatum">dokumentationsdatum</a></td><td><code>date</code></td><td><div><p><strong>Example:</strong>
 <code>GET [base]/Procedure?dokumentationsdatum=2020-01-08</code></p>
 <p><strong>Notes:</strong>
 Searches on <code>Procedure.extension('http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum').value</code>. For further details see <a href="https://hl7.org/fhir/R4/search.html#date">FHIR core specification</a>.</p>
-</div></td></tr><tr><td><b>SHALL</b></td><td><a href="https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.meta@2026.0.0&amp;canonical=https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-procedure-durchfuehrungsabsicht">durchfuehrungsabsicht</a></td><td><code>token</code></td><td><div><p><strong>Example:</strong>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.meta@2027.0.0-ballot.rc3&amp;canonical=https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-procedure-durchfuehrungsabsicht">durchfuehrungsabsicht</a></td><td><code>token</code></td><td><div><p><strong>Example:</strong>
 <code>GET [base]/Procedure?durchfuehrungsabsicht=http://snomed.info/sct|262202000</code>
 <code>GET [base]/Procedure?durchfuehrungsabsicht=262202000</code></p>
 <p><strong>Notes:</strong>
 Searches on <code>Procedure.extension('https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Durchfuehrungsabsicht').value</code>. For further details see <a href="https://hl7.org/fhir/R4/search.html#token">FHIR core specification</a>.</p>
-</div></td></tr><tr><td><b>SHALL</b></td><td><a href="https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.meta@2026.0.0&amp;canonical=https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-procedure-ops-seitenlokalisation">ops-seitenlokalisation</a></td><td><code>token</code></td><td><div><p><strong>Example:</strong>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.meta@2027.0.0-ballot.rc3&amp;canonical=https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-procedure-ops-seitenlokalisation">ops-seitenlokalisation</a></td><td><code>token</code></td><td><div><p><strong>Example:</strong>
 <code>GET [base]/Procedure?ops-seitenlokalisation=https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ICD_SEITENLOKALISATION|L</code></p>
 <p><strong>Notes:</strong>
 Searches on <code>Procedure.code.coding.where(system='http://fhir.de/CodeSystem/bfarm/ops').extension('http://fhir.de/StructureDefinition/seitenlokalisation').valueCoding.code</code>. For further details see <a href="https://hl7.org/fhir/R4/search.html#token">FHIR core specification</a>.</p>

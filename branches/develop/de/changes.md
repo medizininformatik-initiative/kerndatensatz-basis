@@ -14,6 +14,10 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 
 **Datum:** 2026-XX-XX
 
+#### Dokumentation
+
+* **Changed:** Abhängigkeiten auf `de.basisprofil.r4` 1.6.0, `de.medizininformatikinitiative.kerndatensatz.meta` 2027.0.0-ballot.rc3, `hl7.terminology.r4` 7.1.0 und `hl7.fhir.uv.extensions.r4` 5.2.0 aktualisiert.
+
 #### Modul Fall
 
 * **Changed:** UML-Modell des Moduls Fall angepasst, sodass die organisatorische Zuordnung zwischen Versorgungsstellen und Abteilungen als optionale n:m-Beziehung dargestellt wird.

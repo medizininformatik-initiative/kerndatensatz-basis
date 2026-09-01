@@ -285,10 +285,10 @@ Mandatory: 1 element(20 nested mandatory elements)
 
 This structure refers to these extensions:
 
-* [http://fhir.de/StructureDefinition/Aufnahmegrund](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.de/StructureDefinition/Aufnahmegrund)
+* [http://fhir.de/StructureDefinition/Aufnahmegrund](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/Aufnahmegrund)
 * [http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate](http://hl7.org/fhir/uv/xver-r5.r4/0.1.0/StructureDefinition-ext-R5-Encounter.plannedStartDate.html)
 * [http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedEndDate](http://hl7.org/fhir/uv/xver-r5.r4/0.1.0/StructureDefinition-ext-R5-Encounter.plannedEndDate.html)
-* [http://fhir.de/StructureDefinition/Entlassungsgrund](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.de/StructureDefinition/Entlassungsgrund)
+* [http://fhir.de/StructureDefinition/Entlassungsgrund](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/Entlassungsgrund)
 
 **Slices**
 
@@ -332,10 +332,10 @@ Mandatory: 1 element(20 nested mandatory elements)
 
 This structure refers to these extensions:
 
-* [http://fhir.de/StructureDefinition/Aufnahmegrund](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.de/StructureDefinition/Aufnahmegrund)
+* [http://fhir.de/StructureDefinition/Aufnahmegrund](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/Aufnahmegrund)
 * [http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate](http://hl7.org/fhir/uv/xver-r5.r4/0.1.0/StructureDefinition-ext-R5-Encounter.plannedStartDate.html)
 * [http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedEndDate](http://hl7.org/fhir/uv/xver-r5.r4/0.1.0/StructureDefinition-ext-R5-Encounter.plannedEndDate.html)
-* [http://fhir.de/StructureDefinition/Entlassungsgrund](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.de/StructureDefinition/Entlassungsgrund)
+* [http://fhir.de/StructureDefinition/Entlassungsgrund](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/Entlassungsgrund)
 
 **Slices**
 

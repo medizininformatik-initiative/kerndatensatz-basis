@@ -89,22 +89,22 @@ Searches on <code>Encounter.serviceProvider</code>. For further details see <a h
 <code>GET [base]/Encounter?part-of=DHPYT7SPS2RNMVLD</code></p>
 <p><strong>Notes:</strong>
 Searches on <code>Encounter.partOf</code>. For further details see <a href="https://hl7.org/fhir/R4/search.html#reference">FHIR core specification</a>.</p>
-</div></td></tr><tr><td><b>SHALL</b></td><td><a href="https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.meta@2026.0.0&amp;canonical=https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-encounter-servicetype">service-type</a></td><td><code>token</code></td><td><div><p><strong>Example:</strong>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.meta@2027.0.0-ballot.rc3&amp;canonical=https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-encounter-servicetype">service-type</a></td><td><code>token</code></td><td><div><p><strong>Example:</strong>
 <code>GET [base]/Encounter?service-type=http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel|1500</code>
 <code>GET [base]/Encounter?service-type=1500</code></p>
 <p><strong>Notes:</strong>
 Searches on <code>Encounter.serviceType</code>. For further details see <a href="https://hl7.org/fhir/R4/search.html#token">FHIR core specification</a>.</p>
-</div></td></tr><tr><td><b>SHALL</b></td><td><a href="https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.meta@2026.0.0&amp;canonical=https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-encounter-diagnosis-use">diagnosis-use</a></td><td><code>token</code></td><td><div><p><strong>Example:</strong>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.meta@2027.0.0-ballot.rc3&amp;canonical=https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-encounter-diagnosis-use">diagnosis-use</a></td><td><code>token</code></td><td><div><p><strong>Example:</strong>
 <code>GET [base]/Encounter?diagnosis-use=http://terminology.hl7.org/CodeSystem/diagnosis-role|AD</code>
 <code>GET [base]/Encounter?diagnosis-use=AD</code></p>
 <p><strong>Notes:</strong>
 Searches on <code>Encounter.diagnosis.use</code>. For further details see <a href="https://hl7.org/fhir/R4/search.html#token">FHIR core specification</a>.</p>
-</div></td></tr><tr><td><b>SHALL</b></td><td><a href="https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.meta@2026.0.0&amp;canonical=https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-encounter-hospitalization-admitsource">hospitalization-admitsource</a></td><td><code>token</code></td><td><div><p><strong>Example:</strong>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.meta@2027.0.0-ballot.rc3&amp;canonical=https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-encounter-hospitalization-admitsource">hospitalization-admitsource</a></td><td><code>token</code></td><td><div><p><strong>Example:</strong>
 <code>GET [base]/Encounter?hospitalization-admitsource=http://fhir.de/CodeSystem/dgkev/Aufnahmeanlass|N</code>
 <code>GET [base]/Encounter?hospitalization-admitsource=N</code></p>
 <p><strong>Notes:</strong>
 Searches on <code>Encounter.hospitalization.admitSource</code>. For further details see <a href="https://hl7.org/fhir/R4/search.html#token">FHIR core specification</a>.</p>
-</div></td></tr><tr><td><b>SHALL</b></td><td><a href="https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.meta@2026.0.0&amp;canonical=https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-encounter-location-physical-type">location-physical-type</a></td><td><code>token</code></td><td><div><p><strong>Example:</strong>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.meta@2027.0.0-ballot.rc3&amp;canonical=https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-encounter-location-physical-type">location-physical-type</a></td><td><code>token</code></td><td><div><p><strong>Example:</strong>
 <code>GET [base]/Encounter?location-physical-type=http://terminology.hl7.org/CodeSystem/location-physical-type|ro</code>
 <code>GET [base]/Encounter?location-physical-type=ro</code></p>
 <p><strong>Notes:</strong>

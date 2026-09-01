@@ -149,8 +149,8 @@ Mandatory: 3 elements(6 nested mandatory elements)
 
 This structure refers to these other structures:
 
-* [Coding-Profil für ICD-10-GM (http://fhir.de/StructureDefinition/CodingICD10GM)](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.de/StructureDefinition/CodingICD10GM)
-* [Coding-Profil für Alpha-ID (http://fhir.de/StructureDefinition/CodingAlphaID)](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.de/StructureDefinition/CodingAlphaID)
+* [Coding-Profil für ICD-10-GM (http://fhir.de/StructureDefinition/CodingICD10GM)](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/CodingICD10GM)
+* [Coding-Profil für Alpha-ID (http://fhir.de/StructureDefinition/CodingAlphaID)](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/CodingAlphaID)
 
 **Extensions**
 
@@ -158,7 +158,7 @@ This structure refers to these extensions:
 
 * [http://hl7.org/fhir/StructureDefinition/condition-related](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-condition-related.html)
 * [http://hl7.org/fhir/StructureDefinition/condition-assertedDate](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-condition-assertedDate.html)
-* [http://fhir.de/StructureDefinition/lebensphase](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.de/StructureDefinition/lebensphase)
+* [http://fhir.de/StructureDefinition/lebensphase](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/lebensphase)
 
 **Slices**
 
@@ -197,8 +197,8 @@ Mandatory: 3 elements(6 nested mandatory elements)
 
 This structure refers to these other structures:
 
-* [Coding-Profil für ICD-10-GM (http://fhir.de/StructureDefinition/CodingICD10GM)](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.de/StructureDefinition/CodingICD10GM)
-* [Coding-Profil für Alpha-ID (http://fhir.de/StructureDefinition/CodingAlphaID)](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.de/StructureDefinition/CodingAlphaID)
+* [Coding-Profil für ICD-10-GM (http://fhir.de/StructureDefinition/CodingICD10GM)](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/CodingICD10GM)
+* [Coding-Profil für Alpha-ID (http://fhir.de/StructureDefinition/CodingAlphaID)](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/CodingAlphaID)
 
 **Extensions**
 
@@ -206,7 +206,7 @@ This structure refers to these extensions:
 
 * [http://hl7.org/fhir/StructureDefinition/condition-related](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-condition-related.html)
 * [http://hl7.org/fhir/StructureDefinition/condition-assertedDate](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-condition-assertedDate.html)
-* [http://fhir.de/StructureDefinition/lebensphase](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.de/StructureDefinition/lebensphase)
+* [http://fhir.de/StructureDefinition/lebensphase](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/lebensphase)
 
 **Slices**
 

@@ -35,7 +35,7 @@
   },
   {
     "name" : "system-version",
-    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/v3-ActCode|11.0.0"
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/v3-ActCode|10.0.0"
   },
   {
     "name" : "system-version",
@@ -67,11 +67,11 @@
   },
   {
     "name" : "default-valueset-version",
-    "valueCanonical" : "http://fhir.de/ValueSet/DiagnoseTyp|1.5.4"
+    "valueCanonical" : "http://fhir.de/ValueSet/DiagnoseTyp|1.6.0"
   },
   {
     "name" : "default-valueset-version",
-    "valueCanonical" : "http://fhir.de/ValueSet/Diagnosesubtyp|1.5.4"
+    "valueCanonical" : "http://fhir.de/ValueSet/Diagnosesubtyp|1.6.0"
   },
   {
     "name" : "default-valueset-version",
@@ -195,15 +195,15 @@
   },
   {
     "name" : "default-canonical-version",
-    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-condition-icd10gm-diagnosesicherheit|2026.0.0"
+    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-condition-icd10gm-diagnosesicherheit|2027.0.0-ballot.rc3"
   },
   {
     "name" : "default-canonical-version",
-    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-condition-icd10gm-mehrfachcodierung|2026.0.0"
+    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-condition-icd10gm-mehrfachcodierung|2027.0.0-ballot.rc3"
   },
   {
     "name" : "default-canonical-version",
-    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-condition-icd10gm-seitenlokalisation|2026.0.0"
+    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-condition-icd10gm-seitenlokalisation|2027.0.0-ballot.rc3"
   },
   {
     "name" : "default-canonical-version",
@@ -247,19 +247,19 @@
   },
   {
     "name" : "default-canonical-version",
-    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-encounter-servicetype|2026.0.0"
+    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-encounter-servicetype|2027.0.0-ballot.rc3"
   },
   {
     "name" : "default-canonical-version",
-    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-encounter-diagnosis-use|2026.0.0"
+    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-encounter-diagnosis-use|2027.0.0-ballot.rc3"
   },
   {
     "name" : "default-canonical-version",
-    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-encounter-hospitalization-admitsource|2026.0.0"
+    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-encounter-hospitalization-admitsource|2027.0.0-ballot.rc3"
   },
   {
     "name" : "default-canonical-version",
-    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-encounter-location-physical-type|2026.0.0"
+    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-encounter-location-physical-type|2027.0.0-ballot.rc3"
   },
   {
     "name" : "default-canonical-version",
@@ -271,7 +271,7 @@
   },
   {
     "name" : "default-canonical-version",
-    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-patient-assignerpid|2026.0.0"
+    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-patient-assignerpid|2027.0.0-ballot.rc3"
   },
   {
     "name" : "default-canonical-version",
@@ -287,11 +287,11 @@
   },
   {
     "name" : "default-canonical-version",
-    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-patient-prefix|2026.0.0"
+    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-patient-prefix|2027.0.0-ballot.rc3"
   },
   {
     "name" : "default-canonical-version",
-    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-patient-prefixqualifier|2026.0.0"
+    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-patient-prefixqualifier|2027.0.0-ballot.rc3"
   },
   {
     "name" : "default-canonical-version",
@@ -299,7 +299,7 @@
   },
   {
     "name" : "default-canonical-version",
-    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-patient-otheramtlich|2026.0.0"
+    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-patient-otheramtlich|2027.0.0-ballot.rc3"
   },
   {
     "name" : "default-canonical-version",
@@ -331,27 +331,27 @@
   },
   {
     "name" : "default-canonical-version",
-    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-patient-gemeindeschluessel|2026.0.0"
+    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-patient-gemeindeschluessel|2027.0.0-ballot.rc3"
   },
   {
     "name" : "default-canonical-version",
-    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-patient-strasse|2026.0.0"
+    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-patient-strasse|2027.0.0-ballot.rc3"
   },
   {
     "name" : "default-canonical-version",
-    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-patient-hausnummer|2026.0.0"
+    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-patient-hausnummer|2027.0.0-ballot.rc3"
   },
   {
     "name" : "default-canonical-version",
-    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-patient-adresszusatz|2026.0.0"
+    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-patient-adresszusatz|2027.0.0-ballot.rc3"
   },
   {
     "name" : "default-canonical-version",
-    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-patient-postfach|2026.0.0"
+    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-patient-postfach|2027.0.0-ballot.rc3"
   },
   {
     "name" : "default-canonical-version",
-    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-patient-stadtteil|2026.0.0"
+    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-patient-stadtteil|2027.0.0-ballot.rc3"
   },
   {
     "name" : "default-canonical-version",
@@ -391,19 +391,19 @@
   },
   {
     "name" : "default-canonical-version",
-    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-procedure-bodysite|2026.0.0"
+    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-procedure-bodysite|2027.0.0-ballot.rc3"
   },
   {
     "name" : "default-canonical-version",
-    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-procedure-dokumentationsdatum|2026.0.0"
+    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-procedure-dokumentationsdatum|2027.0.0-ballot.rc3"
   },
   {
     "name" : "default-canonical-version",
-    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-procedure-durchfuehrungsabsicht|2026.0.0"
+    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-procedure-durchfuehrungsabsicht|2027.0.0-ballot.rc3"
   },
   {
     "name" : "default-canonical-version",
-    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-procedure-ops-seitenlokalisation|2026.0.0"
+    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/SearchParameter/mii-sp-meta-procedure-ops-seitenlokalisation|2027.0.0-ballot.rc3"
   },
   {
     "name" : "default-canonical-version",
@@ -563,7 +563,7 @@
   },
   {
     "name" : "default-canonical-version",
-    "valueCanonical" : "http://fhir.de/StructureDefinition/CodingICD10GM|1.5.4"
+    "valueCanonical" : "http://fhir.de/StructureDefinition/CodingICD10GM|1.6.0"
   },
   {
     "name" : "default-valueset-version",
@@ -571,23 +571,23 @@
   },
   {
     "name" : "default-canonical-version",
-    "valueCanonical" : "http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen|1.5.4"
+    "valueCanonical" : "http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen|1.6.0"
   },
   {
     "name" : "default-valueset-version",
-    "valueCanonical" : "http://fhir.de/ValueSet/icd-10-gm-mehrfachcodierungs-kennzeichen|1.5.4"
+    "valueCanonical" : "http://fhir.de/ValueSet/icd-10-gm-mehrfachcodierungs-kennzeichen|1.6.0"
   },
   {
     "name" : "default-canonical-version",
-    "valueCanonical" : "http://fhir.de/StructureDefinition/seitenlokalisation|1.5.4"
+    "valueCanonical" : "http://fhir.de/StructureDefinition/seitenlokalisation|1.6.0"
   },
   {
     "name" : "default-canonical-version",
-    "valueCanonical" : "http://fhir.de/StructureDefinition/icd-10-gm-diagnosesicherheit|1.5.4"
+    "valueCanonical" : "http://fhir.de/StructureDefinition/icd-10-gm-diagnosesicherheit|1.6.0"
   },
   {
     "name" : "default-canonical-version",
-    "valueCanonical" : "http://fhir.de/StructureDefinition/CodingAlphaID|1.5.4"
+    "valueCanonical" : "http://fhir.de/StructureDefinition/CodingAlphaID|1.6.0"
   },
   {
     "name" : "default-valueset-version",
@@ -607,27 +607,27 @@
   },
   {
     "name" : "default-canonical-version",
-    "valueCanonical" : "http://fhir.de/StructureDefinition/lebensphase|1.5.4"
+    "valueCanonical" : "http://fhir.de/StructureDefinition/lebensphase|1.6.0"
   },
   {
     "name" : "default-valueset-version",
-    "valueCanonical" : "http://fhir.de/ValueSet/lebensphase-de|1.5.4"
+    "valueCanonical" : "http://fhir.de/ValueSet/lebensphase-de|1.6.0"
   },
   {
     "name" : "default-canonical-version",
-    "valueCanonical" : "http://fhir.de/StructureDefinition/Aufnahmegrund|1.5.4"
+    "valueCanonical" : "http://fhir.de/StructureDefinition/Aufnahmegrund|1.6.0"
   },
   {
     "name" : "default-valueset-version",
-    "valueCanonical" : "http://fhir.de/ValueSet/dkgev/AufnahmegrundErsteUndZweiteStelle|1.5.4"
+    "valueCanonical" : "http://fhir.de/ValueSet/dkgev/AufnahmegrundErsteUndZweiteStelle|1.6.0"
   },
   {
     "name" : "default-valueset-version",
-    "valueCanonical" : "http://fhir.de/ValueSet/dkgev/AufnahmegrundDritteStelle|1.5.4"
+    "valueCanonical" : "http://fhir.de/ValueSet/dkgev/AufnahmegrundDritteStelle|1.6.0"
   },
   {
     "name" : "default-valueset-version",
-    "valueCanonical" : "http://fhir.de/ValueSet/dkgev/AufnahmegrundVierteStelle|1.5.4"
+    "valueCanonical" : "http://fhir.de/ValueSet/dkgev/AufnahmegrundVierteStelle|1.6.0"
   },
   {
     "name" : "default-canonical-version",
@@ -643,11 +643,11 @@
   },
   {
     "name" : "default-valueset-version",
-    "valueCanonical" : "http://fhir.de/ValueSet/EncounterStatusDe|1.5.4"
+    "valueCanonical" : "http://fhir.de/ValueSet/EncounterStatusDe|1.6.0"
   },
   {
     "name" : "default-valueset-version",
-    "valueCanonical" : "http://fhir.de/ValueSet/EncounterClassDE|1.5.4"
+    "valueCanonical" : "http://fhir.de/ValueSet/EncounterClassDE|1.6.0"
   },
   {
     "name" : "default-valueset-version",
@@ -655,19 +655,19 @@
   },
   {
     "name" : "default-valueset-version",
-    "valueCanonical" : "http://fhir.de/ValueSet/kontaktebene-de|1.5.4"
+    "valueCanonical" : "http://fhir.de/ValueSet/kontaktebene-de|1.6.0"
   },
   {
     "name" : "default-valueset-version",
-    "valueCanonical" : "http://fhir.de/ValueSet/kontaktart-de|1.5.4"
+    "valueCanonical" : "http://fhir.de/ValueSet/kontaktart-de|1.6.0"
   },
   {
     "name" : "default-valueset-version",
-    "valueCanonical" : "http://fhir.de/ValueSet/dkgev/Fachabteilungsschluessel|1.5.4"
+    "valueCanonical" : "http://fhir.de/ValueSet/dkgev/Fachabteilungsschluessel|1.6.0"
   },
   {
     "name" : "default-valueset-version",
-    "valueCanonical" : "http://fhir.de/ValueSet/dkgev/Fachabteilungsschluessel-erweitert|1.5.4"
+    "valueCanonical" : "http://fhir.de/ValueSet/dkgev/Fachabteilungsschluessel-erweitert|1.6.0"
   },
   {
     "name" : "default-valueset-version",
@@ -679,7 +679,7 @@
   },
   {
     "name" : "default-valueset-version",
-    "valueCanonical" : "http://fhir.de/ValueSet/dgkev/Aufnahmeanlass|1.5.4"
+    "valueCanonical" : "http://fhir.de/ValueSet/dgkev/Aufnahmeanlass|1.6.0"
   },
   {
     "name" : "default-valueset-version",
@@ -687,15 +687,15 @@
   },
   {
     "name" : "default-canonical-version",
-    "valueCanonical" : "http://fhir.de/StructureDefinition/Entlassungsgrund|1.5.4"
+    "valueCanonical" : "http://fhir.de/StructureDefinition/Entlassungsgrund|1.6.0"
   },
   {
     "name" : "default-valueset-version",
-    "valueCanonical" : "http://fhir.de/ValueSet/dkgev/EntlassungsgrundErsteUndZweiteStelle|1.5.4"
+    "valueCanonical" : "http://fhir.de/ValueSet/dkgev/EntlassungsgrundErsteUndZweiteStelle|1.6.0"
   },
   {
     "name" : "default-valueset-version",
-    "valueCanonical" : "http://fhir.de/ValueSet/dkgev/EntlassungsgrundDritteStelle|1.5.4"
+    "valueCanonical" : "http://fhir.de/ValueSet/dkgev/EntlassungsgrundDritteStelle|1.6.0"
   },
   {
     "name" : "default-valueset-version",
@@ -703,11 +703,11 @@
   },
   {
     "name" : "default-canonical-version",
-    "valueCanonical" : "http://fhir.de/StructureDefinition/identifier-kvid-10|1.5.4"
+    "valueCanonical" : "http://fhir.de/StructureDefinition/identifier-kvid-10|1.6.0"
   },
   {
     "name" : "default-valueset-version",
-    "valueCanonical" : "http://fhir.de/ValueSet/identifier-type-de-basis|1.5.4"
+    "valueCanonical" : "http://fhir.de/ValueSet/identifier-type-kvid-de-basis|1.6.0"
   },
   {
     "name" : "default-canonical-version",
@@ -719,15 +719,27 @@
   },
   {
     "name" : "default-canonical-version",
-    "valueCanonical" : "http://fhir.de/StructureDefinition/identifier-iknr|1.5.4"
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Period|4.0.1"
   },
   {
     "name" : "default-canonical-version",
-    "valueCanonical" : "http://fhir.de/StructureDefinition/gender-amtlich-de|1.5.4"
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Reference|4.0.1"
   },
   {
     "name" : "default-canonical-version",
-    "valueCanonical" : "http://fhir.de/StructureDefinition/address-de-basis|1.5.4"
+    "valueCanonical" : "http://fhir.de/StructureDefinition/identifier-iknr|1.6.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://fhir.de/ValueSet/identifier-type-de-basis|1.6.0"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://fhir.de/StructureDefinition/gender-amtlich-de|1.6.0"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://fhir.de/StructureDefinition/address-de-basis|1.6.0"
   },
   {
     "name" : "default-canonical-version",
@@ -751,27 +763,27 @@
   },
   {
     "name" : "default-canonical-version",
-    "valueCanonical" : "http://fhir.de/StructureDefinition/destatis/ags|1.5.4"
+    "valueCanonical" : "http://fhir.de/StructureDefinition/destatis/ags|1.6.0"
   },
   {
     "name" : "default-valueset-version",
-    "valueCanonical" : "http://fhir.de/ValueSet/iso/bundeslaender|1.5.4"
-  },
-  {
-    "name" : "default-valueset-version",
-    "valueCanonical" : "http://hl7.org/fhir/ValueSet/iso3166-1-2|4.0.1"
+    "valueCanonical" : "http://fhir.de/ValueSet/iso/bundeslaender|1.6.0"
   },
   {
     "name" : "default-canonical-version",
-    "valueCanonical" : "http://fhir.de/StructureDefinition/identifier-pid|1.5.4"
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/iso21090-codedString|5.3.0"
   },
   {
     "name" : "default-canonical-version",
-    "valueCanonical" : "http://fhir.de/StructureDefinition/humanname-de-basis|1.5.4"
+    "valueCanonical" : "http://fhir.de/StructureDefinition/identifier-pid|1.6.0"
   },
   {
     "name" : "default-canonical-version",
-    "valueCanonical" : "http://fhir.de/StructureDefinition/humanname-namenszusatz|1.5.4"
+    "valueCanonical" : "http://fhir.de/StructureDefinition/humanname-de-basis|1.6.0"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://fhir.de/StructureDefinition/humanname-namenszusatz|1.6.0"
   },
   {
     "name" : "default-canonical-version",
@@ -787,7 +799,7 @@
   },
   {
     "name" : "default-valueset-version",
-    "valueCanonical" : "http://fhir.de/ValueSet/gender-other-de|1.5.4"
+    "valueCanonical" : "http://fhir.de/ValueSet/gender-other-de|1.6.0"
   },
   {
     "name" : "default-valueset-version",
@@ -807,7 +819,7 @@
   },
   {
     "name" : "default-canonical-version",
-    "valueCanonical" : "http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum|1.5.4"
+    "valueCanonical" : "http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum|1.6.0"
   },
   {
     "name" : "default-canonical-version",
@@ -819,7 +831,7 @@
   },
   {
     "name" : "default-canonical-version",
-    "valueCanonical" : "http://fhir.de/StructureDefinition/CodingOPS|1.5.4"
+    "valueCanonical" : "http://fhir.de/StructureDefinition/CodingOPS|1.6.0"
   },
   {
     "name" : "default-valueset-version",

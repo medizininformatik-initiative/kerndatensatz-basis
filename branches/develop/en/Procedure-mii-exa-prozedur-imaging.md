@@ -14,7 +14,7 @@
 
 Profile: [MII PR Prozedur Procedure](StructureDefinition-mii-pr-prozedur-procedure.md) version: 2027.0.0-dev
 
-Security Label: [test health data (Details: ActReason code HTEST = 'test health data')](http://terminology.hl7.org/7.3.0/CodeSystem-v3-ActReason.html)
+Security Label: [test health data (Details: ActReason code HTEST = 'test health data')](http://terminology.hl7.org/7.2.0/CodeSystem-v3-ActReason.html)
 
 **ExtensionProzedurDokumentationsdatum**: 2020-01-08 10:30:00+0100
 

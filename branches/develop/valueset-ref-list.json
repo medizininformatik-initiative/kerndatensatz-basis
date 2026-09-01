@@ -1,11 +1,11 @@
 {
   "codeSystems" : [{
     "url" : "http://fhir.de/ValueSet/DiagnoseTyp",
-    "version" : "1.5.4",
+    "version" : "1.6.0",
     "status" : "active",
     "name" : "DiagnoseTyp",
     "title" : "DiagnoseTyp ValueSet",
-    "description" : "DiagnoseTyp ValueSet",
+    "description" : "Dieses ValueSet enthält übergeordnete Typen diagnostischer Angaben, etwa Einweisungs- oder behandlungsrelevante Diagnosen. Es dient der fachlichen Einordnung, in welchem Versorgungskontext eine Diagnose erhoben oder verwendet wird.",
     "systems" : ["http://fhir.de/CodeSystem/KontaktDiagnoseProzedur"],
     "uses" : {
     },
@@ -14,11 +14,11 @@
   },
   {
     "url" : "http://fhir.de/ValueSet/Diagnosesubtyp",
-    "version" : "1.5.4",
+    "version" : "1.6.0",
     "status" : "active",
     "name" : "Diagnosesubtyp",
     "title" : "Diagnosesubtyp ValueSet",
-    "description" : "Diagnosesubtyp ValueSet",
+    "description" : "Dieses ValueSet bündelt spezielle Untertypen von Diagnosen mit definierter fachlicher Rolle, etwa Operationsdiagnosen, Todesursachen oder Aufnahmediagnosen. Es dient der semantischen Verfeinerung diagnostischer Angaben innerhalb eines Versorgungskontexts.",
     "systems" : ["http://terminology.hl7.org/CodeSystem/diagnosis-role",
     "http://fhir.de/CodeSystem/KontaktDiagnoseProzedur"],
     "uses" : {
@@ -28,11 +28,11 @@
   },
   {
     "url" : "http://fhir.de/ValueSet/EncounterClassDE",
-    "version" : "1.5.4",
+    "version" : "1.6.0",
     "status" : "active",
     "name" : "EncounterClassDE",
     "title" : "EncounterClassDE",
-    "description" : "Fallarten und Patientenstatus zur Codierung von Encounter.class",
+    "description" : "Dieses ValueSet beschränkt `Encounter.class` auf im deutschen Versorgungskontext gebräuchliche Fallarten. Es dient der interoperablen Kennzeichnung des organisatorischen Rahmens eines Kontakts.",
     "systems" : ["http://terminology.hl7.org/CodeSystem/v3-ActCode"],
     "uses" : {
     },
@@ -40,11 +40,11 @@
   },
   {
     "url" : "http://fhir.de/ValueSet/EncounterStatusDe",
-    "version" : "1.5.4",
+    "version" : "1.6.0",
     "status" : "active",
     "name" : "EncounterStatusDe",
     "title" : "Encounter Status ValueSet",
-    "description" : "Einschränkung von Encounter Status in Vorbereitung auf Änderungen in FHIR R5",
+    "description" : "Dieses ValueSet beschränkt die verwendbaren Encounter-Status auf die im Profilkontext vorgesehenen Codes. Es dient einer stabilen Nutzung des Statusmodells im Übergang zwischen FHIR-Versionen.",
     "systems" : ["http://hl7.org/fhir/encounter-status"],
     "uses" : {
     },
@@ -52,11 +52,11 @@
   },
   {
     "url" : "http://fhir.de/ValueSet/dgkev/Aufnahmeanlass",
-    "version" : "1.5.4",
+    "version" : "1.6.0",
     "status" : "active",
     "name" : "AufnahmeanlassVS",
     "title" : "Aufnahmeanlass ValueSet",
-    "description" : "Aufnahmeanlass, Datenübermittlung nach § 301 Abs. 3 SGB V",
+    "description" : "Dieses ValueSet enthält die zulässigen Codes für den Aufnahmeanlass nach § 301 Abs. 3 SGB V. Es dient der einheitlichen Codierung des administrativen Anlasses einer Krankenhausaufnahme.",
     "systems" : ["http://fhir.de/CodeSystem/dgkev/Aufnahmeanlass"],
     "uses" : {
     },
@@ -64,11 +64,11 @@
   },
   {
     "url" : "http://fhir.de/ValueSet/dkgev/Fachabteilungsschluessel",
-    "version" : "1.5.4",
+    "version" : "1.6.0",
     "status" : "active",
     "name" : "FachabteilungsschluesselVS",
     "title" : "Fachabteilungsschlüssel ValueSet",
-    "description" : "Fachabteilungen gemäß Anhang 1 der BPflV in der am 31.12.2003 geltenden Fassung",
+    "description" : "Dieses ValueSet enthält die Fachabteilungsschlüssel gemäß Anhang 1 BPflV in der am 31.12.2003 geltenden Fassung. Es dient der Bindung von Angaben zur fachlichen Zuordnung von Krankenhausabteilungen.",
     "systems" : ["http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel"],
     "uses" : {
     },
@@ -76,11 +76,11 @@
   },
   {
     "url" : "http://fhir.de/ValueSet/dkgev/Fachabteilungsschluessel-erweitert",
-    "version" : "1.5.4",
+    "version" : "1.6.0",
     "status" : "active",
     "name" : "ValueSetFachabteilungsschluesselErweitert",
     "title" : "FachabteilungsschluesselErweitert ValueSet",
-    "description" : "Fachabteilungen gemäß Anhang 1 der BPflV in der am 31.12.2003 geltenden Fassung inkl. Spezialisierungen",
+    "description" : "Dieses ValueSet enthält die erweiterten Fachabteilungsschlüssel gemäß Anhang 1 BPflV einschließlich Spezialisierungen. Es dient der feineren Bindung fachlicher Zuordnungen von Krankenhausabteilungen.",
     "systems" : ["http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"],
     "uses" : {
     },
@@ -88,11 +88,11 @@
   },
   {
     "url" : "http://fhir.de/ValueSet/kontaktart-de",
-    "version" : "1.5.4",
+    "version" : "1.6.0",
     "status" : "active",
     "name" : "KontaktartDe",
     "title" : "KontaktartDe ValueSet",
-    "description" : "Kontaktarten für die Codierung von Encounter.type",
+    "description" : "Dieses ValueSet enthält die zulässigen Kontaktarten für `Encounter.type`. Es dient der fachlichen Differenzierung von Versorgungsformen und Kontaktanlässen innerhalb eines Encounters.",
     "systems" : ["http://fhir.de/CodeSystem/kontaktart-de"],
     "uses" : {
     },
@@ -100,11 +100,11 @@
   },
   {
     "url" : "http://fhir.de/ValueSet/kontaktebene-de",
-    "version" : "1.5.4",
+    "version" : "1.6.0",
     "status" : "active",
     "name" : "KontaktebeneDe",
     "title" : "KontaktebeneDe ValueSet",
-    "description" : "Kontaktebene für die Codierung von Encounter.type",
+    "description" : "Dieses ValueSet enthält die zulässigen Kontaktebenen zur Modellierung von Versorgungskontakten. Es dient der Abgrenzung, ob ein Kontakt auf Einrichtungs-, Abteilungs- oder Versorgungsstellenebene beschrieben wird.",
     "systems" : ["http://fhir.de/CodeSystem/Kontaktebene"],
     "uses" : {
     },
@@ -122,8 +122,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.1"],
     "uses" : {
     },
-    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient",
     "StructureDefinition-mii-lm-person.html" : "MII LM Person",
+    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient",
     "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)"
   },
   {

@@ -8,16 +8,16 @@
     <h2>Unattributed Code Systems</h2>
     <ul>
       <li>
-        <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">
-<code>http://fhir.de/CodeSystem/Kontaktebene</code>        </a>
+        <a href="StructureDefinition-mii-pr-diagnose-condition.html">
+<code>http://fhir.de/CodeSystem/bfarm/alpha-id</code>        </a>
       </li>
       <li>
-        <a href="Condition-mii-exa-diagnose-mehrfachcodierung-sekundaercode.html">
-<code>http://fhir.de/CodeSystem/icd-10-gm-mehrfachcodierungs-kennzeichen</code>        </a>
+        <a href="StructureDefinition-mii-pr-diagnose-condition.html">
+<code>http://fhir.de/CodeSystem/bfarm/icd-10-gm</code>        </a>
       </li>
       <li>
-        <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">
-<code>http://fhir.de/CodeSystem/kontaktart-de</code>        </a>
+        <a href="StructureDefinition-mii-pr-prozedur-procedure.html">
+<code>http://fhir.de/CodeSystem/bfarm/ops</code>        </a>
       </li>
       <li>
         <a href="StructureDefinition-mii-pr-person-patient.html">
@@ -62,7 +62,7 @@ This fragment is available on       <a href="en/ImplementationGuide-mii-ig-base.
       <ul>
 
         <li>
-BfArM 1994 - 2024 - Die Erstellung erfolgt unter Verwendung der maschinenlesbaren Fassung des  Bundesinstituts für Arzneimittel und Medizinprodukte (BfArM)          <div onClick="if (document.getElementById('ipp2_1').innerHTML != '') {document.getElementById('ipp_1').innerHTML = document.getElementById('ipp2_1').innerHTML; document.getElementById('ipp2_1').innerHTML = ''}" id="ipp_1" data-fhir="generated">
+Copyright der FHIR-technischen Aufbereitung und Zusammenstellung: HL7 Deutschland e.V. DRG-bezogene Begriffsbestimmungen basieren auf den Deutschen Kodierrichtlinien; Copyright und Nutzungsbedingungen der Deutschen Kodierrichtlinien liegen bei der InEK GmbH.          <div onClick="if (document.getElementById('ipp2_1').innerHTML != '') {document.getElementById('ipp_1').innerHTML = document.getElementById('ipp2_1').innerHTML; document.getElementById('ipp2_1').innerHTML = ''}" id="ipp_1" data-fhir="generated">
              <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show Usage</span>
           </div>
           <div style="display: none" id="ipp2_1">
@@ -70,22 +70,11 @@ BfArM 1994 - 2024 - Die Erstellung erfolgt unter Verwendung der maschinenlesbare
             <ul>
 
               <li>
-                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/bfarm/alpha-id">Alpha-ID</a>
+                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.de/CodeSystem/KontaktDiagnoseProzedur">KontaktDiagnoseProzedur</a>
 :                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
-,                 <a href="Condition-mii-exa-diagnose-condition-multiple-codings.html">Condition/mii-exa-diagnose-condition-multiple-codings</a>
-,                 <a href="Condition-mii-exa-diagnose-mehrfachcodierung-primaercode.html">Condition/mii-exa-diagnose-mehrfachcodierung-primaercode</a>
-,                 <a href="StructureDefinition-mii-pr-diagnose-condition.html">MII_PR_Diagnose_Condition</a>
- and                 <a href="ValueSet-mii-vs-diagnose-alphaid.html">MII_VS_Diagnose_AlphaID</a>
-              </li>
-
-              <li>
-                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/bfarm/ops">OPS</a>
-:                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
-,                 <a href="StructureDefinition-mii-pr-prozedur-procedure.html">MII_PR_Prozedur_Procedure</a>
-                <span onClick="document.getElementById('ips_2').innerHTML = document.getElementById('ips2_2').innerHTML" id="ips_2">
-... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 4 more</span>                </span>
-                <span style="display: none" id="ips2_2">
-, <a href="ValueSet-mii-vs-prozedur-ops.html">MII_VS_Prozedur_OPS</a>, <a href="Procedure-mii-exa-prozedur-imaging.html">Procedure/mii-exa-prozedur-imaging</a>, <a href="Procedure-mii-exa-prozedur-procedure.html">Procedure/mii-exa-prozedur-procedure</a> and <a href="Procedure-mii-exa-prozedur-procedure-2.html">Procedure/mii-exa-prozedur-procedure-2</a>                </span>
+,                 <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2</a>
+,                 <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7</a>
+ and                 <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">MII_PR_Fall_KontaktGesundheitseinrichtung</a>
               </li>
 
 
@@ -104,40 +93,42 @@ HL7 Deutschland e.V.          <div onClick="if (document.getElementById('ipp2_2'
             <ul>
 
               <li>
-                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/KontaktDiagnoseProzedur">KontaktDiagnoseProzedur</a>
+                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.de/CodeSystem/Kontaktebene">Kontaktebene</a>
 :                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
-,                 <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2</a>
-,                 <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7</a>
- and                 <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">MII_PR_Fall_KontaktGesundheitseinrichtung</a>
+,                 <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1</a>
+                <span onClick="document.getElementById('ips_2').innerHTML = document.getElementById('ips2_2').innerHTML" id="ips_2">
+... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 11 more</span>                </span>
+                <span style="display: none" id="ips2_2">
+, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-10.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-11.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-11</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-3.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-3</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-4.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-5.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-6.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-9.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-9</a>, <a href="Encounter-mii-exa-fall-kontakt-in-progress-status.html">Encounter/mii-exa-fall-kontakt-in-progress-status</a> and <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">MII_PR_Fall_KontaktGesundheitseinrichtung</a>                </span>
               </li>
 
               <li>
-                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/dgkev/Aufnahmeanlass">CodeSystemAufnahmeanlass</a>
+                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.de/CodeSystem/dgkev/Aufnahmeanlass">CodeSystemAufnahmeanlass</a>
 :                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
 ,                 <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1</a>
  and                 <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">MII_PR_Fall_KontaktGesundheitseinrichtung</a>
               </li>
 
               <li>
-                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/dkgev/AufnahmegrundVierteStelle">AufnahmegrundVierteStelle</a>
+                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.de/CodeSystem/dkgev/AufnahmegrundVierteStelle">AufnahmegrundVierteStelle</a>
 :                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
  and                 <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-9.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-9</a>
               </li>
 
               <li>
-                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/dkgev/EntlassungsgrundDritteStelle">EntlassungsgrundDritteStelle</a>
+                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.de/CodeSystem/dkgev/EntlassungsgrundDritteStelle">EntlassungsgrundDritteStelle</a>
 :                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
  and                 <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1</a>
               </li>
 
               <li>
-                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/dkgev/EntlassungsgrundErsteUndZweiteStelle">EntlassungsgrundErsteUndZweiteStelle</a>
+                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.de/CodeSystem/dkgev/EntlassungsgrundErsteUndZweiteStelle">EntlassungsgrundErsteUndZweiteStelle</a>
 :                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
  and                 <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1</a>
               </li>
 
               <li>
-                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel">Fachabteilungsschluessel</a>
+                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel">Fachabteilungsschluessel</a>
 :                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
 ,                 <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2</a>
 ,                 <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7</a>
@@ -145,18 +136,32 @@ HL7 Deutschland e.V.          <div onClick="if (document.getElementById('ipp2_2'
               </li>
 
               <li>
-                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert">Fachabteilungsschluessel Erweitert</a>
+                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert">Fachabteilungsschluessel Erweitert</a>
 :                 <a href="Encounter-mii-exa-fall-kontakt-in-progress-status.html">Encounter/mii-exa-fall-kontakt-in-progress-status</a>
  and                 <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">MII_PR_Fall_KontaktGesundheitseinrichtung</a>
               </li>
 
               <li>
-                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/identifier-type-de-basis">Identifier Type De Basis</a>
+                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.de/CodeSystem/icd-10-gm-mehrfachcodierungs-kennzeichen">Mehrfachkodierungs-Kennzeichen</a>
+:                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
+,                 <a href="Condition-mii-exa-diagnose-mehrfachcodierung-primaercode.html">Condition/mii-exa-diagnose-mehrfachcodierung-primaercode</a>
+ and                 <a href="Condition-mii-exa-diagnose-mehrfachcodierung-sekundaercode.html">Condition/mii-exa-diagnose-mehrfachcodierung-sekundaercode</a>
+              </li>
+
+              <li>
+                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.de/CodeSystem/identifier-type-de-basis">Identifier Type De Basis</a>
 :                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
 ,                 <a href="StructureDefinition-mii-pr-person-patient.html">MII_PR_Person_Patient</a>
 ,                 <a href="StructureDefinition-mii-pr-person-patient-pseudonymisiert.html">MII_PR_Person_PatientPseudonymisiert</a>
 ,                 <a href="Patient-mii-exa-person-patient-1.html">Patient/mii-exa-person-patient-1</a>
  and                 <a href="Patient-mii-exa-person-patient-pseudonymisiert.html">Patient/mii-exa-person-patient-pseudonymisiert</a>
+              </li>
+
+              <li>
+                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.de/CodeSystem/kontaktart-de">KontaktArtDe</a>
+:                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
+,                 <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-5.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5</a>
+ and                 <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">MII_PR_Fall_KontaktGesundheitseinrichtung</a>
               </li>
 
 
@@ -179,9 +184,9 @@ This material contains content from           <a href="http://loinc.org">LOINC</
               <li>
 LOINC:                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
 ,                 <a href="Condition-mii-exa-person-condition-todesursache.html">Condition/mii-exa-person-condition-todesursache</a>
-                <span onClick="document.getElementById('ips_11').innerHTML = document.getElementById('ips2_11').innerHTML" id="ips_11">
+                <span onClick="document.getElementById('ips_12').innerHTML = document.getElementById('ips2_12').innerHTML" id="ips_12">
 ... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 5 more</span>                </span>
-                <span style="display: none" id="ips2_11">
+                <span style="display: none" id="ips2_12">
 , <a href="StructureDefinition-mii-lm-person.html">MII_LM_Person</a>, <a href="StructureDefinition-mii-pr-person-todesursache.html">MII_PR_Person_Todesursache</a>, <a href="StructureDefinition-mii-pr-person-vitalstatus.html">MII_PR_Person_Vitalstatus</a>, <a href="Observation-mii-exa-person-observation-vitalstatus.html">Observation/mii-exa-person-observation-vitalstatus</a> and <a href="Observation-mii-exa-person-observation-vitalstatus-discharge.html">Observation/mii-exa-person-observation-vitalstatus-discharge</a>                </span>
               </li>
 
@@ -206,9 +211,9 @@ This material contains content that is copyright of SNOMED International. Implem
                 <a href="http://hl7.org/fhir/R4/codesystem-snomedct.html">SNOMED Clinical Terms&amp;reg; (SNOMED CT&amp;reg;)</a>
 :                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
 ,                 <a href="Condition-mii-exa-diagnose-appendicitis.html">Condition/mii-exa-diagnose-appendicitis</a>
-                <span onClick="document.getElementById('ips_12').innerHTML = document.getElementById('ips2_12').innerHTML" id="ips_12">
+                <span onClick="document.getElementById('ips_13').innerHTML = document.getElementById('ips2_13').innerHTML" id="ips_13">
 ... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 16 more</span>                </span>
-                <span style="display: none" id="ips2_12">
+                <span style="display: none" id="ips2_13">
 , <a href="Condition-mii-exa-diagnose-condition-elbow-contusion.html">Condition/mii-exa-diagnose-condition-elbow-contusion</a>, <a href="Condition-mii-exa-person-condition-todesursache.html">Condition/mii-exa-person-condition-todesursache</a>, <a href="CodeSystem-mii-cs-diagnose-lebensphase-supplement-snomed.html">MII_CS_Diagnose_Lebensphase_Supplement_SNOMED</a>, <a href="StructureDefinition-mii-ex-prozedur-durchfuehrungsabsicht.html">MII_EX_Prozedur_Durchfuehrungsabsicht</a>, <a href="StructureDefinition-mii-lm-person.html">MII_LM_Person</a>, <a href="StructureDefinition-mii-pr-diagnose-condition.html">MII_PR_Diagnose_Condition</a>, <a href="StructureDefinition-mii-pr-person-todesursache.html">MII_PR_Person_Todesursache</a>, <a href="StructureDefinition-mii-pr-prozedur-procedure.html">MII_PR_Prozedur_Procedure</a>, <a href="ValueSet-mii-vs-diagnose-bodystructure-snomed.html">MII_VS_Diagnose_BodyStructure_SNOMED</a>, <a href="ValueSet-mii-vs-diagnose-diagnosecodes-snomed.html">MII_VS_Diagnose_DiagnoseCodes_SNOMED</a>, <a href="ValueSet-mii-vs-prozedur-durchfuehrungsabsicht-snomedct.html">MII_VS_Prozedur_Durchfuehrungsabsicht_SNOMEDCT</a>, <a href="ValueSet-mii-vs-prozedur-opskategorien-snomedct.html">MII_VS_Prozedur_OpsKategorien_SNOMEDCT</a>, <a href="ValueSet-mii-vs-prozedur-prozeduren-snomedct.html">MII_VS_Prozedur_Prozeduren_SNOMEDCT</a>, <a href="Procedure-mii-exa-prozedur-imaging.html">Procedure/mii-exa-prozedur-imaging</a>, <a href="Procedure-mii-exa-prozedur-procedure.html">Procedure/mii-exa-prozedur-procedure</a> and <a href="Procedure-mii-exa-prozedur-procedure-2.html">Procedure/mii-exa-prozedur-procedure-2</a>                </span>
               </li>
 
@@ -229,27 +234,17 @@ This material derives from the HL7 Terminology (THO). THO is copyright &copy;198
             <ul>
 
               <li>
-                <a href="http://terminology.hl7.org/7.3.0/CodeSystem-allergyintolerance-clinical.html">AllergyIntolerance Clinical Status Codes</a>
+                <a href="http://terminology.hl7.org/7.2.0/CodeSystem-allergyintolerance-clinical.html">AllergyIntolerance Clinical Status Codes</a>
 :                 <a href="StructureDefinition-mii-lm-person.html">MII_LM_Person</a>
               </li>
 
               <li>
-                <a href="http://terminology.hl7.org/7.3.0/CodeSystem-allergyintolerance-verification.html">AllergyIntolerance Verification Status</a>
+                <a href="http://terminology.hl7.org/7.2.0/CodeSystem-allergyintolerance-verification.html">AllergyIntolerance Verification Status</a>
 :                 <a href="StructureDefinition-mii-lm-person.html">MII_LM_Person</a>
               </li>
 
               <li>
-                <a href="http://terminology.hl7.org/7.3.0/CodeSystem-condition-clinical.html">Condition Clinical Status Codes</a>
-:                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
-,                 <a href="Condition-mii-exa-diagnose-appendicitis.html">Condition/mii-exa-diagnose-appendicitis</a>
-                <span onClick="document.getElementById('ips_15').innerHTML = document.getElementById('ips2_15').innerHTML" id="ips_15">
-... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 4 more</span>                </span>
-                <span style="display: none" id="ips2_15">
-, <a href="Condition-mii-exa-diagnose-condition-elbow-contusion.html">Condition/mii-exa-diagnose-condition-elbow-contusion</a>, <a href="Condition-mii-exa-diagnose-condition-multiple-codings.html">Condition/mii-exa-diagnose-condition-multiple-codings</a>, <a href="Condition-mii-exa-diagnose-mehrfachcodierung-primaercode.html">Condition/mii-exa-diagnose-mehrfachcodierung-primaercode</a> and <a href="Condition-mii-exa-diagnose-mehrfachcodierung-sekundaercode.html">Condition/mii-exa-diagnose-mehrfachcodierung-sekundaercode</a>                </span>
-              </li>
-
-              <li>
-                <a href="http://terminology.hl7.org/7.3.0/CodeSystem-condition-ver-status.html">ConditionVerificationStatus</a>
+                <a href="http://terminology.hl7.org/7.2.0/CodeSystem-condition-clinical.html">Condition Clinical Status Codes</a>
 :                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
 ,                 <a href="Condition-mii-exa-diagnose-appendicitis.html">Condition/mii-exa-diagnose-appendicitis</a>
                 <span onClick="document.getElementById('ips_16').innerHTML = document.getElementById('ips2_16').innerHTML" id="ips_16">
@@ -259,7 +254,17 @@ This material derives from the HL7 Terminology (THO). THO is copyright &copy;198
               </li>
 
               <li>
-                <a href="http://terminology.hl7.org/7.3.0/CodeSystem-diagnosis-role.html">Diagnosis Role</a>
+                <a href="http://terminology.hl7.org/7.2.0/CodeSystem-condition-ver-status.html">ConditionVerificationStatus</a>
+:                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
+,                 <a href="Condition-mii-exa-diagnose-appendicitis.html">Condition/mii-exa-diagnose-appendicitis</a>
+                <span onClick="document.getElementById('ips_17').innerHTML = document.getElementById('ips2_17').innerHTML" id="ips_17">
+... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 4 more</span>                </span>
+                <span style="display: none" id="ips2_17">
+, <a href="Condition-mii-exa-diagnose-condition-elbow-contusion.html">Condition/mii-exa-diagnose-condition-elbow-contusion</a>, <a href="Condition-mii-exa-diagnose-condition-multiple-codings.html">Condition/mii-exa-diagnose-condition-multiple-codings</a>, <a href="Condition-mii-exa-diagnose-mehrfachcodierung-primaercode.html">Condition/mii-exa-diagnose-mehrfachcodierung-primaercode</a> and <a href="Condition-mii-exa-diagnose-mehrfachcodierung-sekundaercode.html">Condition/mii-exa-diagnose-mehrfachcodierung-sekundaercode</a>                </span>
+              </li>
+
+              <li>
+                <a href="http://terminology.hl7.org/7.2.0/CodeSystem-diagnosis-role.html">Diagnosis Role</a>
 :                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
 ,                 <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2</a>
 ,                 <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7</a>
@@ -267,17 +272,17 @@ This material derives from the HL7 Terminology (THO). THO is copyright &copy;198
               </li>
 
               <li>
-                <a href="http://terminology.hl7.org/7.3.0/CodeSystem-location-physical-type.html">Location type</a>
+                <a href="http://terminology.hl7.org/7.2.0/CodeSystem-location-physical-type.html">Location type</a>
 :                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
 ,                 <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-10.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10</a>
-                <span onClick="document.getElementById('ips_18').innerHTML = document.getElementById('ips2_18').innerHTML" id="ips_18">
+                <span onClick="document.getElementById('ips_19').innerHTML = document.getElementById('ips2_19').innerHTML" id="ips_19">
 ... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 6 more</span>                </span>
-                <span style="display: none" id="ips2_18">
+                <span style="display: none" id="ips2_19">
 , <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-11.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-11</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-4.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-5.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-6.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6</a>, <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">MII_PR_Fall_KontaktGesundheitseinrichtung</a> and <a href="ValueSet-mii-vs-fall-location-physical-type.html">MII_VS_Fall_LocationPhysicalType</a>                </span>
               </li>
 
               <li>
-                <a href="http://terminology.hl7.org/7.3.0/CodeSystem-observation-category.html">Observation Category Codes</a>
+                <a href="http://terminology.hl7.org/7.2.0/CodeSystem-observation-category.html">Observation Category Codes</a>
 :                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
 ,                 <a href="StructureDefinition-mii-pr-person-vitalstatus.html">MII_PR_Person_Vitalstatus</a>
 ,                 <a href="Observation-mii-exa-person-observation-vitalstatus.html">Observation/mii-exa-person-observation-vitalstatus</a>
@@ -285,75 +290,50 @@ This material derives from the HL7 Terminology (THO). THO is copyright &copy;198
               </li>
 
               <li>
-                <a href="http://terminology.hl7.org/7.3.0/CodeSystem-v2-0004.html">patientClass</a>
+                <a href="http://terminology.hl7.org/7.2.0/CodeSystem-v2-0004.html">patientClass</a>
 :                 <a href="CodeSystem-mii-cs-fall-supplement-patient-class.html">MII_CS_Fall_SupplementPatientClass</a>
               </li>
 
               <li>
-                <a href="http://terminology.hl7.org/7.3.0/CodeSystem-v2-0203.html">identifierType</a>
-:                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
-,                 <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1</a>
-                <span onClick="document.getElementById('ips_21').innerHTML = document.getElementById('ips2_21').innerHTML" id="ips_21">
-... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 15 more</span>                </span>
-                <span style="display: none" id="ips2_21">
-, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-10.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-11.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-11</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-3.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-3</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-4.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-5.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-6.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-8.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-8</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-9.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-9</a>, <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">MII_PR_Fall_KontaktGesundheitseinrichtung</a>, <a href="StructureDefinition-mii-pr-person-patient.html">MII_PR_Person_Patient</a>, <a href="StructureDefinition-mii-pr-person-patient-pseudonymisiert.html">MII_PR_Person_PatientPseudonymisiert</a>, <a href="ValueSet-mii-vs-fall-identifier-type-codes.html">MII_VS_Fall_IdentifierTypeCodes</a> and <a href="Patient-mii-exa-person-patient-1.html">Patient/mii-exa-person-patient-1</a>                </span>
-              </li>
-
-              <li>
-                <a href="http://terminology.hl7.org/7.3.0/CodeSystem-v3-ActCode.html">ActCode</a>
+                <a href="http://terminology.hl7.org/7.2.0/CodeSystem-v2-0203.html">identifierType</a>
 :                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
 ,                 <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1</a>
                 <span onClick="document.getElementById('ips_22').innerHTML = document.getElementById('ips2_22').innerHTML" id="ips_22">
 ... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 15 more</span>                </span>
                 <span style="display: none" id="ips2_22">
+, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-10.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-11.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-11</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-3.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-3</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-4.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-5.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-6.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-8.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-8</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-9.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-9</a>, <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">MII_PR_Fall_KontaktGesundheitseinrichtung</a>, <a href="StructureDefinition-mii-pr-person-patient.html">MII_PR_Person_Patient</a>, <a href="StructureDefinition-mii-pr-person-patient-pseudonymisiert.html">MII_PR_Person_PatientPseudonymisiert</a>, <a href="ValueSet-mii-vs-fall-identifier-type-codes.html">MII_VS_Fall_IdentifierTypeCodes</a> and <a href="Patient-mii-exa-person-patient-1.html">Patient/mii-exa-person-patient-1</a>                </span>
+              </li>
+
+              <li>
+                <a href="http://terminology.hl7.org/7.2.0/CodeSystem-v3-ActCode.html">ActCode</a>
+:                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
+,                 <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1</a>
+                <span onClick="document.getElementById('ips_23').innerHTML = document.getElementById('ips2_23').innerHTML" id="ips_23">
+... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 15 more</span>                </span>
+                <span style="display: none" id="ips2_23">
 , <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-10.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-11.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-11</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-3.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-3</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-4.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-5.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-6.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-8.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-8</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-9.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-9</a>, <a href="Encounter-mii-exa-fall-kontakt-in-progress-status.html">Encounter/mii-exa-fall-kontakt-in-progress-status</a>, <a href="Encounter-mii-exa-fall-kontakt-onleave-status.html">Encounter/mii-exa-fall-kontakt-onleave-status</a>, <a href="Encounter-mii-exa-fall-kontakt-unknown-status.html">Encounter/mii-exa-fall-kontakt-unknown-status</a>, <a href="CodeSystem-mii-cs-fall-supplement-act-encounter-code.html">MII_CS_Fall_SupplementActEncounterCode</a> and <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">MII_PR_Fall_KontaktGesundheitseinrichtung</a>                </span>
               </li>
 
               <li>
-                <a href="http://terminology.hl7.org/7.3.0/CodeSystem-v3-ActPriority.html">ActPriority</a>
+                <a href="http://terminology.hl7.org/7.2.0/CodeSystem-v3-ActPriority.html">ActPriority</a>
 :                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
  and                 <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-9.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-9</a>
               </li>
 
               <li>
-                <a href="http://terminology.hl7.org/7.3.0/CodeSystem-v3-ActReason.html">ActReason</a>
+                <a href="http://terminology.hl7.org/7.2.0/CodeSystem-v3-ActReason.html">ActReason</a>
 :                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
 ,                 <a href="Condition-mii-exa-diagnose-appendicitis.html">Condition/mii-exa-diagnose-appendicitis</a>
-                <span onClick="document.getElementById('ips_24').innerHTML = document.getElementById('ips2_24').innerHTML" id="ips_24">
+                <span onClick="document.getElementById('ips_25').innerHTML = document.getElementById('ips2_25').innerHTML" id="ips_25">
 ... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 26 more</span>                </span>
-                <span style="display: none" id="ips2_24">
+                <span style="display: none" id="ips2_25">
 , <a href="Condition-mii-exa-diagnose-condition-elbow-contusion.html">Condition/mii-exa-diagnose-condition-elbow-contusion</a>, <a href="Condition-mii-exa-diagnose-condition-multiple-codings.html">Condition/mii-exa-diagnose-condition-multiple-codings</a>, <a href="Condition-mii-exa-diagnose-mehrfachcodierung-primaercode.html">Condition/mii-exa-diagnose-mehrfachcodierung-primaercode</a>, <a href="Condition-mii-exa-diagnose-mehrfachcodierung-sekundaercode.html">Condition/mii-exa-diagnose-mehrfachcodierung-sekundaercode</a>, <a href="Condition-mii-exa-person-condition-todesursache.html">Condition/mii-exa-person-condition-todesursache</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-10.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-11.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-11</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-3.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-3</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-4.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-5.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-6.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-8.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-8</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-9.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-9</a>, <a href="Encounter-mii-exa-fall-kontakt-in-progress-status.html">Encounter/mii-exa-fall-kontakt-in-progress-status</a>, <a href="Encounter-mii-exa-fall-kontakt-onleave-status.html">Encounter/mii-exa-fall-kontakt-onleave-status</a>, <a href="Encounter-mii-exa-fall-kontakt-unknown-status.html">Encounter/mii-exa-fall-kontakt-unknown-status</a>, <a href="Observation-mii-exa-person-observation-vitalstatus.html">Observation/mii-exa-person-observation-vitalstatus</a>, <a href="Observation-mii-exa-person-observation-vitalstatus-discharge.html">Observation/mii-exa-person-observation-vitalstatus-discharge</a>, <a href="Patient-mii-exa-person-patient-1.html">Patient/mii-exa-person-patient-1</a>, <a href="Patient-mii-exa-person-patient-pseudonymisiert.html">Patient/mii-exa-person-patient-pseudonymisiert</a>, <a href="Procedure-mii-exa-prozedur-imaging.html">Procedure/mii-exa-prozedur-imaging</a>, <a href="Procedure-mii-exa-prozedur-procedure.html">Procedure/mii-exa-prozedur-procedure</a> and <a href="Procedure-mii-exa-prozedur-procedure-2.html">Procedure/mii-exa-prozedur-procedure-2</a>                </span>
               </li>
 
               <li>
-                <a href="http://terminology.hl7.org/7.3.0/CodeSystem-v3-ObservationValue.html">ObservationValue</a>
+                <a href="http://terminology.hl7.org/7.2.0/CodeSystem-v3-ObservationValue.html">ObservationValue</a>
 :                 <a href="StructureDefinition-mii-pr-person-patient-pseudonymisiert.html">MII_PR_Person_PatientPseudonymisiert</a>
  and                 <a href="Patient-mii-exa-person-patient-pseudonymisiert.html">Patient/mii-exa-person-patient-pseudonymisiert</a>
-              </li>
-
-
-            </ul>
-
-
-          </div>
-        </li>
-
-        <li>
-WHO, BfArM 1994 - 2024 - Die Erstellung erfolgt unter Verwendung der maschinenlesbaren Fassung des  Bundesinstituts für Arzneimittel und Medizinprodukte (BfArM)          <div onClick="if (document.getElementById('ipp2_6').innerHTML != '') {document.getElementById('ipp_6').innerHTML = document.getElementById('ipp2_6').innerHTML; document.getElementById('ipp2_6').innerHTML = ''}" id="ipp_6" data-fhir="generated">
-             <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show Usage</span>
-          </div>
-          <div style="display: none" id="ipp2_6">
-
-            <ul>
-
-              <li>
-                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/bfarm/icd-10-gm">ICD-10-GM</a>
-:                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
-,                 <a href="Condition-mii-exa-diagnose-appendicitis.html">Condition/mii-exa-diagnose-appendicitis</a>
-                <span onClick="document.getElementById('ips_26').innerHTML = document.getElementById('ips2_26').innerHTML" id="ips_26">
-... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 6 more</span>                </span>
-                <span style="display: none" id="ips2_26">
-, <a href="Condition-mii-exa-diagnose-condition-elbow-contusion.html">Condition/mii-exa-diagnose-condition-elbow-contusion</a>, <a href="Condition-mii-exa-diagnose-condition-multiple-codings.html">Condition/mii-exa-diagnose-condition-multiple-codings</a>, <a href="Condition-mii-exa-diagnose-mehrfachcodierung-primaercode.html">Condition/mii-exa-diagnose-mehrfachcodierung-primaercode</a>, <a href="Condition-mii-exa-diagnose-mehrfachcodierung-sekundaercode.html">Condition/mii-exa-diagnose-mehrfachcodierung-sekundaercode</a>, <a href="StructureDefinition-mii-pr-diagnose-condition.html">MII_PR_Diagnose_Condition</a> and <a href="ValueSet-mii-vs-diagnose-icd10gm.html">MII_VS_Diagnose_ICD10GM</a>                </span>
               </li>
 
 
@@ -873,7 +853,7 @@ Versehentliche(r) Schnitt, Punktion, Perforation oder Blutung: Bei sonstigen chi
 .  
           Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-dev basiert auf           <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>
 .
-          Erstellt           <span title="Tue, Sep 1, 2026 12:08+0000">2026-09-01</span>
+          Erstellt           <span title="Tue, Sep 1, 2026 12:19+0000">2026-09-01</span>
 
                     <br/>
 
@@ -34979,7 +34959,7 @@ Gemäß           <a href="https://www.sozialgesetzbuch-sgb.de/sgbv/301.html">&s
 .  
           Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-dev based on           <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>
 .
-          Generated           <span title="Tue, Sep 1, 2026 12:08+0000">2026-09-01</span>
+          Generated           <span title="Tue, Sep 1, 2026 12:19+0000">2026-09-01</span>
 
                     <br/>
 

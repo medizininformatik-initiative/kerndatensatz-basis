@@ -233,6 +233,9 @@
       "Bundle.entry.resource.name.prefix",
       "Patient.name.prefix"
     ],
+    "http://hl7.org/fhir/StructureDefinition/iso21090-codedString": [
+      "Patient.address.country"
+    ],
     "http://hl7.org/fhir/StructureDefinition/package-source": [
       "Bundle.entry.resource.meta",
       "Bundle.meta",
@@ -286,6 +289,9 @@
       "StructureDefinition.snapshot.element.short",
       "StructureDefinition.title"
     ],
+    "http://hl7.org/fhir/tools/StructureDefinition/binding-definition": [
+      "StructureDefinition.snapshot.element.binding"
+    ],
     "http://hl7.org/fhir/tools/StructureDefinition/expansion-parameters": [
       "ImplementationGuide.definition"
     ],
@@ -299,9 +305,6 @@
     ],
     "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter": [
       "ImplementationGuide.definition"
-    ],
-    "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment": [
-      "ImplementationGuide.dependsOn"
     ],
     "http://hl7.org/fhir/tools/StructureDefinition/resource-information": [
       "ImplementationGuide.definition.resource"

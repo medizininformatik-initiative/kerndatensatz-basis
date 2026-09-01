@@ -179,13 +179,13 @@ Mandatory: 3 elements(6 nested mandatory elements)
 
 This structure refers to these other structures:
 
-* [Coding-Profil für OPS (http://fhir.de/StructureDefinition/CodingOPS)](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.de/StructureDefinition/CodingOPS)
+* [Coding-Profil für OPS (http://fhir.de/StructureDefinition/CodingOPS)](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/CodingOPS)
 
 **Extensions**
 
 This structure refers to these extensions:
 
-* [http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum)
+* [http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum)
 * [https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Durchfuehrungsabsicht](StructureDefinition-mii-ex-prozedur-durchfuehrungsabsicht.md)
 
 **Slices**
@@ -228,13 +228,13 @@ Mandatory: 3 elements(6 nested mandatory elements)
 
 This structure refers to these other structures:
 
-* [Coding-Profil für OPS (http://fhir.de/StructureDefinition/CodingOPS)](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.de/StructureDefinition/CodingOPS)
+* [Coding-Profil für OPS (http://fhir.de/StructureDefinition/CodingOPS)](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/CodingOPS)
 
 **Extensions**
 
 This structure refers to these extensions:
 
-* [http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum)
+* [http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum)
 * [https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Durchfuehrungsabsicht](StructureDefinition-mii-ex-prozedur-durchfuehrungsabsicht.md)
 
 **Slices**
