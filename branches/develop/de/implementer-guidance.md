@@ -1,4 +1,4 @@
-# Anleitung für Implementierer - MII Implementation Guide Core Dataset Base v2027.0.0-dev
+# Anleitung für Implementierer - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Hinweise**](guidance.md)

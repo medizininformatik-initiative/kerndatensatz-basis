@@ -1,4 +1,4 @@
-# MII PR Prozedur Procedure - MII Implementation Guide Core Dataset Base v2027.0.0-dev
+# MII PR Prozedur Procedure - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Artefaktübersicht**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure | *Version*:2027.0.0-dev |
-| Active Stand: 2026-06-09 | *Maschinenlesbarer Name*:MII_PR_Prozedur_Procedure |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure | *Version*:2027.0.0-ballot.rc1 |
+| Active Stand: 2026-09-01 | *Maschinenlesbarer Name*:MII_PR_Prozedur_Procedure |
 
  
 Eine Prozedur, die an oder für einen Patienten durchgeführt wird oder wurde. 
@@ -276,7 +276,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-proze
       },
       {
         "url" : "version",
-        "valueString" : "2027.0.0-dev"
+        "valueString" : "2027.0.0-ballot.rc1"
       },
       {
         "url" : "uri",
@@ -393,7 +393,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-proze
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure",
-  "version" : "2027.0.0-dev",
+  "version" : "2027.0.0-ballot.rc1",
   "name" : "MII_PR_Prozedur_Procedure",
   "title" : "MII PR Prozedur Procedure",
   "_title" : {
@@ -422,7 +422,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-proze
   },
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-09",
+  "date" : "2026-09-01",
   "publisher" : "Medical Informatics Initiative (MII)",
   "contact" : [{
     "name" : "Medical Informatics Initiative (MII)",

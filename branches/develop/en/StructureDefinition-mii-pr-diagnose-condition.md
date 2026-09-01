@@ -1,4 +1,4 @@
-# MII PR Diagnose Condition - MII Implementation Guide Core Dataset Base v2027.0.0-dev
+# MII PR Diagnose Condition - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose | *Version*:2027.0.0-dev |
-| Active as of 2026-06-15 | *Computable Name*:MII_PR_Diagnose_Condition |
+| *Official URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose | *Version*:2027.0.0-ballot.rc1 |
+| Active as of 2026-09-01 | *Computable Name*:MII_PR_Diagnose_Condition |
 
  
 A clinical diagnosis of a patient. 
@@ -147,7 +147,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-diagnose-c
       },
       {
         "url" : "version",
-        "valueString" : "2027.0.0-dev"
+        "valueString" : "2027.0.0-ballot.rc1"
       },
       {
         "url" : "uri",
@@ -264,7 +264,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-diagnose-c
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose",
-  "version" : "2027.0.0-dev",
+  "version" : "2027.0.0-ballot.rc1",
   "name" : "MII_PR_Diagnose_Condition",
   "title" : "MII PR Diagnose Condition",
   "_title" : {
@@ -293,7 +293,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-diagnose-c
   },
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-15",
+  "date" : "2026-09-01",
   "publisher" : "Medical Informatics Initiative (MII)",
   "contact" : [{
     "name" : "Medical Informatics Initiative (MII)",

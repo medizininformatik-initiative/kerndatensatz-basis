@@ -1,4 +1,4 @@
-# MII EXA Person Patient - MII Implementation Guide Core Dataset Base v2027.0.0-dev
+# MII EXA Person Patient - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Artefaktübersicht**](artifacts.md)
@@ -12,7 +12,7 @@
 
 -------
 
-Profile: [MII PR Person Patient](StructureDefinition-mii-pr-person-patient.md) version: 2027.0.0-dev
+Profile: [MII PR Person Patient](StructureDefinition-mii-pr-person-patient.md) version: 2027.0.0-ballot.rc1
 
 Security Label: [test health data (Details: ActReason code HTEST = 'test health data')](http://terminology.hl7.org/7.2.0/CodeSystem-v3-ActReason.html)
 
@@ -43,7 +43,7 @@ Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Krankenaktennumme
       },
       {
         "url" : "version",
-        "valueString" : "2027.0.0-dev"
+        "valueString" : "2027.0.0-ballot.rc1"
       },
       {
         "url" : "uri",
@@ -51,7 +51,7 @@ Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Krankenaktennumme
       }],
       "url" : "http://hl7.org/fhir/StructureDefinition/package-source"
     }],
-    "profile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient|2027.0.0-dev"],
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient|2027.0.0-ballot.rc1"],
     "security" : [{
       "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
       "code" : "HTEST",

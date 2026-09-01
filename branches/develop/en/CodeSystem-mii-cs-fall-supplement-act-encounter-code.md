@@ -1,4 +1,4 @@
-# MII CS Fall Supplement ActEncounterCode - MII Implementation Guide Core Dataset Base v2027.0.0-dev
+# MII CS Fall Supplement ActEncounterCode - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-fall/CodeSystem/SupplementActEncounterCode | *Version*:2027.0.0-dev |
-| Active as of 2026-07-17 | *Computable Name*:MII_CS_Fall_SupplementActEncounterCode |
+| *Official URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-fall/CodeSystem/SupplementActEncounterCode | *Version*:2027.0.0-ballot.rc1 |
+| Active as of 2026-09-01 | *Computable Name*:MII_CS_Fall_SupplementActEncounterCode |
 
  
 CodeSystem Supplement für ActEncounterCode 
@@ -42,7 +42,7 @@ This Code system is referenced in the definition of the following value sets:
       },
       {
         "url" : "version",
-        "valueString" : "2027.0.0-dev"
+        "valueString" : "2027.0.0-ballot.rc1"
       },
       {
         "url" : "uri",
@@ -150,12 +150,12 @@ This Code system is referenced in the definition of the following value sets:
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/CodeSystem/SupplementActEncounterCode",
-  "version" : "2027.0.0-dev",
+  "version" : "2027.0.0-ballot.rc1",
   "name" : "MII_CS_Fall_SupplementActEncounterCode",
   "title" : "MII CS Fall Supplement ActEncounterCode",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-07-17",
+  "date" : "2026-09-01",
   "publisher" : "Medical Informatics Initiative (MII)",
   "contact" : [{
     "name" : "Medical Informatics Initiative (MII)",

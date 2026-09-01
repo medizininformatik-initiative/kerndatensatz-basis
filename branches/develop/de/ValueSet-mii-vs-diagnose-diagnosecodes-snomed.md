@@ -1,4 +1,4 @@
-# MII VS Diagnose Diagnose-Codes SNOMED - MII Implementation Guide Core Dataset Base v2027.0.0-dev
+# MII VS Diagnose Diagnose-Codes SNOMED - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Artefaktübersicht**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/diagnoses-sct | *Version*:2027.0.0-dev |
-| Active Stand: 2026-06-15 | *Maschinenlesbarer Name*:MII_VS_Diagnose_DiagnoseCodes_SNOMED |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/diagnoses-sct | *Version*:2027.0.0-ballot.rc1 |
+| Active Stand: 2026-09-01 | *Maschinenlesbarer Name*:MII_VS_Diagnose_DiagnoseCodes_SNOMED |
 | **Copyright/Rechtliches**: This material includes SNOMED Clinical Terms® (SNOMED CT®) which is used by permission of SNOMED International. All rights reserved. SNOMED CT®, was originally created by The College of American Pathologists. SNOMED and SNOMED CT are registered trademarks of SNOMED International. Implementers of these artefacts must have the appropriate SNOMED CT Affiliate license. | |
 
  
@@ -49,7 +49,7 @@ Enthaelt alle SNOMED Clinical finding, Event und Situation with explicit context
       },
       {
         "url" : "version",
-        "valueString" : "2027.0.0-dev"
+        "valueString" : "2027.0.0-ballot.rc1"
       },
       {
         "url" : "uri",
@@ -167,12 +167,12 @@ Enthaelt alle SNOMED Clinical finding, Event und Situation with explicit context
     "valueDate" : "2024-03-07"
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/diagnoses-sct",
-  "version" : "2027.0.0-dev",
+  "version" : "2027.0.0-ballot.rc1",
   "name" : "MII_VS_Diagnose_DiagnoseCodes_SNOMED",
   "title" : "MII VS Diagnose Diagnose-Codes SNOMED",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-06-15",
+  "date" : "2026-09-01",
   "publisher" : "Medical Informatics Initiative (MII)",
   "contact" : [{
     "name" : "Medical Informatics Initiative (MII)",

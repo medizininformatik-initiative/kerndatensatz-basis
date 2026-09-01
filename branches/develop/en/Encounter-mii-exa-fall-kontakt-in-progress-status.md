@@ -1,4 +1,4 @@
-# MII EXA Fall Kontakt Gesundheitseinrichtung (Status in-progress) - MII Implementation Guide Core Dataset Base v2027.0.0-dev
+# MII EXA Fall Kontakt Gesundheitseinrichtung (Status in-progress) - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@
 
 -------
 
-Profile: [MII PR Fall Kontakt mit einer Gesundheitseinrichtung](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.md) version: 2027.0.0-dev
+Profile: [MII PR Fall Kontakt mit einer Gesundheitseinrichtung](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.md) version: 2027.0.0-ballot.rc1
 
 Security Label: [test health data (Details: ActReason code HTEST = 'test health data')](http://terminology.hl7.org/7.2.0/CodeSystem-v3-ActReason.html)
 
@@ -44,7 +44,7 @@ Security Label: [test health data (Details: ActReason code HTEST = 'test health 
       },
       {
         "url" : "version",
-        "valueString" : "2027.0.0-dev"
+        "valueString" : "2027.0.0-ballot.rc1"
       },
       {
         "url" : "uri",
@@ -52,7 +52,7 @@ Security Label: [test health data (Details: ActReason code HTEST = 'test health 
       }],
       "url" : "http://hl7.org/fhir/StructureDefinition/package-source"
     }],
-    "profile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2027.0.0-dev"],
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung|2027.0.0-ballot.rc1"],
     "security" : [{
       "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
       "code" : "HTEST",

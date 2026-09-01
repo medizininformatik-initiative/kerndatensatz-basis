@@ -1,4 +1,4 @@
-# MII EX Prozedur Durchführungsabsicht - MII Implementation Guide Core Dataset Base v2027.0.0-dev
+# MII EX Prozedur Durchführungsabsicht - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Artefaktübersicht**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Durchfuehrungsabsicht | *Version*:2027.0.0-dev |
-| Active Stand: 2026-06-15 | *Maschinenlesbarer Name*:MII_EX_Prozedur_Durchfuehrungsabsicht |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Durchfuehrungsabsicht | *Version*:2027.0.0-ballot.rc1 |
+| Active Stand: 2026-09-01 | *Maschinenlesbarer Name*:MII_EX_Prozedur_Durchfuehrungsabsicht |
 
 Intention der Prozedur
 
@@ -89,7 +89,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-ex-proze
       },
       {
         "url" : "version",
-        "valueString" : "2027.0.0-dev"
+        "valueString" : "2027.0.0-ballot.rc1"
       },
       {
         "url" : "uri",
@@ -215,12 +215,12 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-ex-proze
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Durchfuehrungsabsicht",
-  "version" : "2027.0.0-dev",
+  "version" : "2027.0.0-ballot.rc1",
   "name" : "MII_EX_Prozedur_Durchfuehrungsabsicht",
   "title" : "MII EX Prozedur Durchführungsabsicht",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-15",
+  "date" : "2026-09-01",
   "publisher" : "Medical Informatics Initiative (MII)",
   "contact" : [{
     "name" : "Medical Informatics Initiative (MII)",

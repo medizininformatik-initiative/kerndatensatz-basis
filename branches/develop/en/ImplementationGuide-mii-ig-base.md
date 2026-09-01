@@ -1,4 +1,4 @@
-# MII ImplementationGuide Resource - MII Implementation Guide Core Dataset Base v2027.0.0-dev
+# MII ImplementationGuide Resource - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1
 
 * [**Table of Contents**](toc.md)
 * **MII ImplementationGuide Resource**
@@ -126,7 +126,7 @@ Expansion parameters are query parameters that can be passed to a `ValueSet` `$e
     },
     {
       "url" : "version",
-      "valueString" : "2027.0.0-dev"
+      "valueString" : "2027.0.0-ballot.rc1"
     },
     {
       "url" : "uri",
@@ -299,7 +299,7 @@ Expansion parameters are query parameters that can be passed to a `ValueSet` `$e
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/modul-base/ImplementationGuide/mii-ig-base",
-  "version" : "2027.0.0-dev",
+  "version" : "2027.0.0-ballot.rc1",
   "name" : "MII_IG_Base",
   "title" : "MII Implementation Guide Core Dataset Base",
   "_title" : {
@@ -317,7 +317,7 @@ Expansion parameters are query parameters that can be passed to a `ValueSet` `$e
   },
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-07-28",
+  "date" : "2026-09-01",
   "publisher" : "Medical Informatics Initiative (MII)",
   "contact" : [{
     "name" : "Medical Informatics Initiative (MII)",

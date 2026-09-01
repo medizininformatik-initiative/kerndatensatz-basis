@@ -1,4 +1,4 @@
-# MII CS Person Vitalstatus - MII Implementation Guide Core Dataset Base v2027.0.0-dev
+# MII CS Person Vitalstatus - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Artefaktübersicht**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-person/CodeSystem/Vitalstatus | *Version*:2027.0.0-dev |
-| Active Stand: 2026-07-17 | *Maschinenlesbarer Name*:MII_CS_Person_Vitalstatus |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-person/CodeSystem/Vitalstatus | *Version*:2027.0.0-ballot.rc1 |
+| Active Stand: 2026-09-01 | *Maschinenlesbarer Name*:MII_CS_Person_Vitalstatus |
 
  
 Vitalstatus des Patienten 
@@ -42,7 +42,7 @@ Dieses CodeSystem wird in der Definition der folgenden ValueSets referenziert:
       },
       {
         "url" : "version",
-        "valueString" : "2027.0.0-dev"
+        "valueString" : "2027.0.0-ballot.rc1"
       },
       {
         "url" : "uri",
@@ -165,12 +165,12 @@ Dieses CodeSystem wird in der Definition der folgenden ValueSets referenziert:
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/CodeSystem/Vitalstatus",
-  "version" : "2027.0.0-dev",
+  "version" : "2027.0.0-ballot.rc1",
   "name" : "MII_CS_Person_Vitalstatus",
   "title" : "MII CS Person Vitalstatus",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-07-17",
+  "date" : "2026-09-01",
   "publisher" : "Medical Informatics Initiative (MII)",
   "contact" : [{
     "name" : "Medical Informatics Initiative (MII)",

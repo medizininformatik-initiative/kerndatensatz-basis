@@ -1,4 +1,4 @@
-# Start - MII Implementation Guide Core Dataset Base v2027.0.0-dev
+# Start - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1
 
 * [**Inhaltsverzeichnis**](toc.md)
 * **Start**
@@ -7,8 +7,8 @@
 
 | | |
 | :--- | :--- |
-| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/modul-base/ImplementationGuide/mii-ig-base | *Version*:2027.0.0-dev |
-| Active Stand: 2026-07-28 | *Maschinenlesbarer Name*:MII_IG_Base |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/modul-base/ImplementationGuide/mii-ig-base | *Version*:2027.0.0-ballot.rc1 |
+| Active Stand: 2026-09-01 | *Maschinenlesbarer Name*:MII_IG_Base |
 
 ### Einführung
 

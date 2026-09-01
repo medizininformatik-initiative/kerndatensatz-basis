@@ -1,4 +1,4 @@
-# Changelog - MII Implementation Guide Core Dataset Base v2027.0.0-dev
+# Changelog - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1
 
 * [**Table of Contents**](toc.md)
 * [**Versioning**](version-history.md)
@@ -10,9 +10,9 @@ This page documents the changes and updates across versions of the MII Implement
 
 -------
 
-### Version 2027.0.0
+### Version 2027.0.0-ballot
 
-**Date:** 2026-XX-XX
+**Date:** 2026-09-01
 
 #### Documentation
 

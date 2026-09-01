@@ -1,4 +1,4 @@
-# Metadatenübersicht - MII Implementation Guide Core Dataset Base v2027.0.0-dev
+# Metadatenübersicht - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1
 
 * [**Inhaltsverzeichnis**](toc.md)
 * **Metadatenübersicht**

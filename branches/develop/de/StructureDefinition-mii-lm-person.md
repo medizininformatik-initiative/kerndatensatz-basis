@@ -1,4 +1,4 @@
-# MII LM Person - MII Implementation Guide Core Dataset Base v2027.0.0-dev
+# MII LM Person - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Artefaktübersicht**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/LogicalModel/Person | *Version*:2027.0.0-dev |
-| Active Stand: 2026-06-09 | *Maschinenlesbarer Name*:MII_LM_Person |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/LogicalModel/Person | *Version*:2027.0.0-ballot.rc1 |
+| Active Stand: 2026-09-01 | *Maschinenlesbarer Name*:MII_LM_Person |
 
  
 Logische Repräsentation des Basismoduls Person 
@@ -219,7 +219,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-perso
       },
       {
         "url" : "version",
-        "valueString" : "2027.0.0-dev"
+        "valueString" : "2027.0.0-ballot.rc1"
       },
       {
         "url" : "uri",
@@ -363,12 +363,12 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-perso
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/LogicalModel/Person",
-  "version" : "2027.0.0-dev",
+  "version" : "2027.0.0-ballot.rc1",
   "name" : "MII_LM_Person",
   "title" : "MII LM Person",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-09",
+  "date" : "2026-09-01",
   "publisher" : "Medical Informatics Initiative (MII)",
   "contact" : [{
     "name" : "Medical Informatics Initiative (MII)",

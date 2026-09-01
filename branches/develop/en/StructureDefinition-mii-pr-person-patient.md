@@ -1,4 +1,4 @@
-# MII PR Person Patient - MII Implementation Guide Core Dataset Base v2027.0.0-dev
+# MII PR Person Patient - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient | *Version*:2027.0.0-dev |
+| *Official URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient | *Version*:2027.0.0-ballot.rc1 |
 | Active as of 2026-09-01 | *Computable Name*:MII_PR_Person_Patient |
 
  
@@ -128,7 +128,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-person-pat
       },
       {
         "url" : "version",
-        "valueString" : "2027.0.0-dev"
+        "valueString" : "2027.0.0-ballot.rc1"
       },
       {
         "url" : "uri",
@@ -245,7 +245,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-person-pat
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient",
-  "version" : "2027.0.0-dev",
+  "version" : "2027.0.0-ballot.rc1",
   "name" : "MII_PR_Person_Patient",
   "title" : "MII PR Person Patient",
   "_title" : {

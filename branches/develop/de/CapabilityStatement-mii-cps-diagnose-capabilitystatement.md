@@ -1,4 +1,4 @@
-# MII CPS Diagnose CapabilityStatement - MII Implementation Guide Core Dataset Base v2027.0.0-dev
+# MII CPS Diagnose CapabilityStatement - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Artefaktübersicht**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/CapabilityStatement/metadata | *Version*:2027.0.0-dev |
-| Active Stand: 2026-06-15 | *Maschinenlesbarer Name*:MII_CPS_Diagnose_CapabilityStatement |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/CapabilityStatement/metadata | *Version*:2027.0.0-ballot.rc1 |
+| Active Stand: 2026-09-01 | *Maschinenlesbarer Name*:MII_CPS_Diagnose_CapabilityStatement |
 
  
 Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein konformes System unterstützen muss, um das Modul Diagnose der Medizininformatik Initiative zu implementieren. 
@@ -36,7 +36,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
       },
       {
         "url" : "version",
-        "valueString" : "2027.0.0-dev"
+        "valueString" : "2027.0.0-ballot.rc1"
       },
       {
         "url" : "uri",
@@ -153,12 +153,12 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/CapabilityStatement/metadata",
-  "version" : "2027.0.0-dev",
+  "version" : "2027.0.0-ballot.rc1",
   "name" : "MII_CPS_Diagnose_CapabilityStatement",
   "title" : "MII CPS Diagnose CapabilityStatement",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-15",
+  "date" : "2026-09-01",
   "publisher" : "Medical Informatics Initiative (MII)",
   "contact" : [{
     "name" : "Medical Informatics Initiative (MII)",
@@ -188,7 +188,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
       }],
       "type" : "Condition",
       "profile" : "http://hl7.org/fhir/StructureDefinition/Condition",
-      "supportedProfile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2027.0.0-dev"],
+      "supportedProfile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2027.0.0-ballot.rc1"],
       "_supportedProfile" : [{
         "extension" : [{
           "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
@@ -255,7 +255,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         "name" : "_profile",
         "definition" : "http://hl7.org/fhir/SearchParameter/Resource-profile",
         "type" : "uri",
-        "documentation" : "**Example:**\n`GET [base]/Condition?_profile=https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2027.0.0-dev`\n\n**Notes:**\nSearches on `Condition.meta.profile`. For further details see FHIR core specification, section [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)."
+        "documentation" : "**Example:**\n`GET [base]/Condition?_profile=https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2027.0.0-ballot.rc1`\n\n**Notes:**\nSearches on `Condition.meta.profile`. For further details see FHIR core specification, section [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)."
       },
       {
         "extension" : [{

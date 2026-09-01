@@ -1,4 +1,4 @@
-# MII VS Prozedur Durchführungsabsicht [SNOMED CT] - MII Implementation Guide Core Dataset Base v2027.0.0-dev
+# MII VS Prozedur Durchführungsabsicht [SNOMED CT] - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-intend | *Version*:2027.0.0-dev |
-| Active as of 2026-06-15 | *Computable Name*:MII_VS_Prozedur_Durchfuehrungsabsicht_SNOMEDCT |
+| *Official URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-intend | *Version*:2027.0.0-ballot.rc1 |
+| Active as of 2026-09-01 | *Computable Name*:MII_VS_Prozedur_Durchfuehrungsabsicht_SNOMEDCT |
 | **Copyright/Legal**: This material includes SNOMED Clinical Terms® (SNOMED CT®) which is used by permission of SNOMED International. All rights reserved. SNOMED CT®, was originally created by The College of American Pathologists. SNOMED and SNOMED CT are registered trademarks of SNOMED International. Implementers of these artefacts must have the appropriate SNOMED CT Affiliate license. | |
 
  
@@ -49,7 +49,7 @@ Durchführungsabsicht / Intention mit der Prozedur ausgeführt wird
       },
       {
         "url" : "version",
-        "valueString" : "2027.0.0-dev"
+        "valueString" : "2027.0.0-ballot.rc1"
       },
       {
         "url" : "uri",
@@ -175,12 +175,12 @@ Durchführungsabsicht / Intention mit der Prozedur ausgeführt wird
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-intend",
-  "version" : "2027.0.0-dev",
+  "version" : "2027.0.0-ballot.rc1",
   "name" : "MII_VS_Prozedur_Durchfuehrungsabsicht_SNOMEDCT",
   "title" : "MII VS Prozedur Durchführungsabsicht [SNOMED CT]",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-15",
+  "date" : "2026-09-01",
   "publisher" : "Medical Informatics Initiative (MII)",
   "contact" : [{
     "name" : "Medical Informatics Initiative (MII)",

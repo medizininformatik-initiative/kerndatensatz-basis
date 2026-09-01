@@ -1,4 +1,4 @@
-# MII VS Prozedur OPS - MII Implementation Guide Core Dataset Base v2027.0.0-dev
+# MII VS Prozedur OPS - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/mii-vs-prozedur-ops | *Version*:2027.0.0-dev |
-| Active as of 2026-06-15 | *Computable Name*:MII_VS_Prozedur_OPS |
+| *Official URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/mii-vs-prozedur-ops | *Version*:2027.0.0-ballot.rc1 |
+| Active as of 2026-09-01 | *Computable Name*:MII_VS_Prozedur_OPS |
 | **Copyright/Legal**: WHO, BfArM 1994 - 2025 - Die Erstellung erfolgt unter Verwendung der maschinenlesbaren Fassung des Bundesinstituts für Arzneimittel und Medizinprodukte (BfArM). | |
 
  
@@ -49,7 +49,7 @@ Enthaelt OPS-Codes der Versionen 2010 bis 2025
       },
       {
         "url" : "version",
-        "valueString" : "2027.0.0-dev"
+        "valueString" : "2027.0.0-ballot.rc1"
       },
       {
         "url" : "uri",
@@ -167,12 +167,12 @@ Enthaelt OPS-Codes der Versionen 2010 bis 2025
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/mii-vs-prozedur-ops",
-  "version" : "2027.0.0-dev",
+  "version" : "2027.0.0-ballot.rc1",
   "name" : "MII_VS_Prozedur_OPS",
   "title" : "MII VS Prozedur OPS",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-15",
+  "date" : "2026-09-01",
   "publisher" : "Medical Informatics Initiative (MII)",
   "contact" : [{
     "name" : "Medical Informatics Initiative (MII)",

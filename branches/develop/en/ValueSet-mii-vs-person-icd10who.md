@@ -1,4 +1,4 @@
-# MII VS Person ICD-10-WHO - MII Implementation Guide Core Dataset Base v2027.0.0-dev
+# MII VS Person ICD-10-WHO - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/mii-vs-person-icd10who | *Version*:2027.0.0-dev |
-| Active as of 2026-06-15 | *Computable Name*:MII_VS_Person_ICD10WHO |
+| *Official URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/mii-vs-person-icd10who | *Version*:2027.0.0-ballot.rc1 |
+| Active as of 2026-09-01 | *Computable Name*:MII_VS_Person_ICD10WHO |
 | **Copyright/Legal**: BfArM - Bundesinstitut für Arzneimittel und Medizinprodukte | |
 
  
@@ -49,7 +49,7 @@ MII VS Person ICD-10-WHO
       },
       {
         "url" : "version",
-        "valueString" : "2027.0.0-dev"
+        "valueString" : "2027.0.0-ballot.rc1"
       },
       {
         "url" : "uri",
@@ -176,12 +176,12 @@ MII VS Person ICD-10-WHO
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/mii-vs-person-icd10who",
-  "version" : "2027.0.0-dev",
+  "version" : "2027.0.0-ballot.rc1",
   "name" : "MII_VS_Person_ICD10WHO",
   "title" : "MII VS Person ICD-10-WHO",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-06-15",
+  "date" : "2026-09-01",
   "publisher" : "Medical Informatics Initiative (MII)",
   "contact" : [{
     "name" : "Medical Informatics Initiative (MII)",

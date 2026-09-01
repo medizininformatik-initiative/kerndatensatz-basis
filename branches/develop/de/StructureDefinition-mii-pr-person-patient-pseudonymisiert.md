@@ -1,4 +1,4 @@
-# MII PR Person Patient (Pseudonymisiert) - MII Implementation Guide Core Dataset Base v2027.0.0-dev
+# MII PR Person Patient (Pseudonymisiert) - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Artefaktübersicht**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert | *Version*:2027.0.0-dev |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert | *Version*:2027.0.0-ballot.rc1 |
 | Active Stand: 2026-09-01 | *Maschinenlesbarer Name*:MII_PR_Person_PatientPseudonymisiert |
 
  
@@ -235,7 +235,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-perso
       },
       {
         "url" : "version",
-        "valueString" : "2027.0.0-dev"
+        "valueString" : "2027.0.0-ballot.rc1"
       },
       {
         "url" : "uri",
@@ -352,7 +352,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-perso
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert",
-  "version" : "2027.0.0-dev",
+  "version" : "2027.0.0-ballot.rc1",
   "name" : "MII_PR_Person_PatientPseudonymisiert",
   "title" : "MII PR Person Patient (Pseudonymisiert)",
   "_title" : {

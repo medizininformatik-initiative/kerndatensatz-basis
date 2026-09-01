@@ -1,4 +1,4 @@
-# MII CS Diagnose Lebensphase Supplement SNOMED - MII Implementation Guide Core Dataset Base v2027.0.0-dev
+# MII CS Diagnose Lebensphase Supplement SNOMED - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Artefaktübersicht**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/CodeSystem/mii-cs-diagnose-lebensphase-supplement-snomed | *Version*:2027.0.0-dev |
-| Active Stand: 2026-07-17 | *Maschinenlesbarer Name*:MII_CS_Diagnose_Lebensphase_Supplement_SNOMED |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/CodeSystem/mii-cs-diagnose-lebensphase-supplement-snomed | *Version*:2027.0.0-ballot.rc1 |
+| Active Stand: 2026-09-01 | *Maschinenlesbarer Name*:MII_CS_Diagnose_Lebensphase_Supplement_SNOMED |
 | **Copyright/Rechtliches**: This material includes SNOMED Clinical Terms® (SNOMED CT®) which is used by permission of SNOMED International. All rights reserved. SNOMED CT®, was originally created by The College of American Pathologists. SNOMED and SNOMED CT are registered trademarks of SNOMED International. Implementers of these artefacts must have the appropriate SNOMED CT Affiliate license. | |
 
  
@@ -43,7 +43,7 @@ Dieses CodeSystem wird in der Definition der folgenden ValueSets referenziert:
       },
       {
         "url" : "version",
-        "valueString" : "2027.0.0-dev"
+        "valueString" : "2027.0.0-ballot.rc1"
       },
       {
         "url" : "uri",
@@ -151,12 +151,12 @@ Dieses CodeSystem wird in der Definition der folgenden ValueSets referenziert:
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/CodeSystem/mii-cs-diagnose-lebensphase-supplement-snomed",
-  "version" : "2027.0.0-dev",
+  "version" : "2027.0.0-ballot.rc1",
   "name" : "MII_CS_Diagnose_Lebensphase_Supplement_SNOMED",
   "title" : "MII CS Diagnose Lebensphase Supplement SNOMED",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-07-17",
+  "date" : "2026-09-01",
   "publisher" : "Medical Informatics Initiative (MII)",
   "contact" : [{
     "name" : "Medical Informatics Initiative (MII)",
