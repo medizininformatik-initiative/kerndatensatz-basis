@@ -67,6 +67,12 @@ Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Pro
 #### Dokumentation der Körperstelle
 
 <div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
+<h5 style="color: #406A99; margin-top: 0;">Hinweis zu FHIR-Core-Extensions</h5>
+
+<p>Das Profil enthält die FHIR-Core-Extension <code>http://hl7.org/fhir/StructureDefinition/bodySite</code> auf <code>Procedure.bodySite</code>, um zusätzlich zu der codierten Körperstelle eine detaillierte anatomische Referenz, z.B. auf eine BodyStructure, abbilden zu können.</p>
+</div>
+
+<div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
 <h5 style="color: #406A99; margin-top: 0;">Best Practice - Körperstelle vs. Seitenlokalisation</h5>
 
 <p><strong>Zweck von bodySite:</strong> <code>Procedure.bodySite</code> bietet detaillierte Kodierung der anatomischen Lokalisation für die Prozedur mittels SNOMED CT.</p>

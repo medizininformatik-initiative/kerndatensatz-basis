@@ -29,6 +29,7 @@ Alias: $sct = http://snomed.info/sct|http://snomed.info/sct/900000000000207008/v
 Alias: $condition-related = http://hl7.org/fhir/StructureDefinition/condition-related
 Alias: $icd-o-3 = http://terminology.hl7.org/CodeSystem/icd-o-3
 Alias: $condition-assertedDate = http://hl7.org/fhir/StructureDefinition/condition-assertedDate
+Alias: $bodySite-reference = http://hl7.org/fhir/StructureDefinition/bodySite
 
 // Prozedur
 Alias: $ops = http://fhir.de/CodeSystem/bfarm/ops

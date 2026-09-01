@@ -69,6 +69,12 @@ This section provides detailed implementation guidance for the MII Diagnose (Dia
 
 #### Body Site Documentation
 
+<div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
+<h5 style="color: #406A99; margin-top: 0;">FHIR Core Extension Note</h5>
+
+<p>The profile includes the FHIR core extension <code>http://hl7.org/fhir/StructureDefinition/bodySite</code> on <code>Condition.bodySite</code> to allow a detailed anatomic reference, such as a BodyStructure, in addition to the coded body site.</p>
+</div>
+
 **`Condition.bodySite`:**
 - OPTIONAL element
 - If used, body site **SHOULD** be coded with at least one SNOMED CT code

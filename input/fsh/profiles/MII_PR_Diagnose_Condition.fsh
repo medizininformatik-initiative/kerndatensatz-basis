@@ -125,6 +125,7 @@ Description: "Dieses Profil beschreibt eine Diagnose der Medizininformatik Initi
 //* code.coding[icd-o-3].version MS
 //* code.coding[icd-o-3].code 1.. MS
 * bodySite MS
+* bodySite.extension contains $bodySite-reference named bodySite 0..1
 * bodySite ^short = "Körperstelle"
 * insert Translation(bodySite ^short, de-DE, Körperstelle)
 * insert Translation(bodySite ^short, en-US, Body site)

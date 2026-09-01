@@ -145,6 +145,7 @@ Description: "Dieses Profil beschreibt eine Prozedur in der Medizininformatik-In
 * insert Translation(performedPeriod ^definition, de-DE, Zeitraum\, in dem die Prozedur durchgeführt wurde.)
 * insert Translation(performedPeriod ^definition, en-US, The period of time the procedure was performed.)
 * bodySite MS
+* bodySite.extension contains $bodySite-reference named bodySite 0..1
 * bodySite ^short = "Körperstelle"
 * insert Translation(bodySite ^short, de-DE, Körperstelle)
 * insert Translation(bodySite ^short, en-US, Body site)

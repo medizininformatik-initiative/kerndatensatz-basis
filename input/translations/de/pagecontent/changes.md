@@ -14,6 +14,14 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 
 - **Added:** Das Patient-Profil enthält nun die FHIR-Core-Extensions `patient-birthPlace`, `patient-citizenship` und `patient-nationality`, um Geburtsort, Staatsangehörigkeit und Nationalität im Modul Person abzubilden. Siehe: [#86](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/86)
 
+#### Modul Diagnose
+
+- **Added:** Das Element `Condition.bodySite` enthält nun die FHIR-Core-Extension `http://hl7.org/fhir/StructureDefinition/bodySite`, um eine detaillierte anatomische Referenz, z.B. auf eine `BodyStructure`, zusätzlich zur kodierten Körperstelle abzubilden. Siehe: [#85](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/85)
+
+#### Modul Prozedur
+
+- **Added:** Das Element `Procedure.bodySite` enthält nun die FHIR-Core-Extension `http://hl7.org/fhir/StructureDefinition/bodySite`, um eine detaillierte anatomische Referenz, z.B. auf eine `BodyStructure`, zusätzlich zur kodierten Körperstelle abzubilden. Siehe: [#85](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/85)
+
 #### Modul Fall
 
 - **Changed:** UML-Modell des Moduls Fall angepasst, sodass die organisatorische Zuordnung zwischen Versorgungsstellen und Abteilungen als optionale n:m-Beziehung dargestellt wird.
