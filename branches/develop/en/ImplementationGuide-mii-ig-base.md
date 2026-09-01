@@ -405,7 +405,7 @@ Expansion parameters are query parameters that can be passed to a `ValueSet` `$e
       },
       {
         "url" : "value",
-        "valueString" : "ci-build"
+        "valueString" : "ballot"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -1317,7 +1317,7 @@ Expansion parameters are query parameters that can be passed to a `ValueSet` `$e
       },
       {
         "url" : "value",
-        "valueString" : "ci-build"
+        "valueString" : "ballot"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },

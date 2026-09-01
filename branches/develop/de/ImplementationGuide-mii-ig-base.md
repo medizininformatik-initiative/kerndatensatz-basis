@@ -405,7 +405,7 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       },
       {
         "url" : "value",
-        "valueString" : "ci-build"
+        "valueString" : "ballot"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -1317,7 +1317,7 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       },
       {
         "url" : "value",
-        "valueString" : "ci-build"
+        "valueString" : "ballot"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },

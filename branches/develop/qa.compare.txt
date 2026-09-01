@@ -1,7 +1,7 @@
 MII_IG_Base : Validation Results
 =========================================
 
-err = 1781, warn = 644, info = 2903
+err = 1776, warn = 644, info = 2903
 $--
 Generated $--. FHIR version $-- for de.medizininformatikinitiative.kerndatensatz.base#$-- (canonical = https://www.medizininformatik-initiative.de/fhir/modul-base)
  Build Errors : 0 / 4 / 6
@@ -47,12 +47,12 @@ Generated $--. FHIR version $-- for de.medizininformatikinitiative.kerndatensatz
  /workspace/fsh-generated/resources/StructureDefinition-mii-lm-fall : 0 / 63 / 40
  /workspace/fsh-generated/resources/StructureDefinition-mii-lm-person : 284 / 192 / 150
  /workspace/fsh-generated/resources/StructureDefinition-mii-lm-prozedur : 0 / 30 / 37
- /workspace/fsh-generated/resources/StructureDefinition-mii-pr-diagnose-condition : 234 / 14 / 326
+ /workspace/fsh-generated/resources/StructureDefinition-mii-pr-diagnose-condition : 232 / 14 / 326
  /workspace/fsh-generated/resources/StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung : 348 / 6 / 417
  /workspace/fsh-generated/resources/StructureDefinition-mii-pr-person-patient : 234 / 28 / 438
- /workspace/fsh-generated/resources/StructureDefinition-mii-pr-person-patient-pseudonymisiert : 138 / 16 / 234
- /workspace/fsh-generated/resources/StructureDefinition-mii-pr-person-todesursache : 121 / 4 / 154
- /workspace/fsh-generated/resources/StructureDefinition-mii-pr-person-vitalstatus : 121 / 2 / 150
+ /workspace/fsh-generated/resources/StructureDefinition-mii-pr-person-patient-pseudonymisiert : 137 / 16 / 234
+ /workspace/fsh-generated/resources/StructureDefinition-mii-pr-person-todesursache : 120 / 4 / 154
+ /workspace/fsh-generated/resources/StructureDefinition-mii-pr-person-vitalstatus : 120 / 2 / 150
  /workspace/fsh-generated/resources/StructureDefinition-mii-pr-prozedur-procedure : 240 / 4 / 201
  /workspace/fsh-generated/resources/ValueSet-mii-vs-diagnose-alphaid : 0 / 3 / 34
  /workspace/fsh-generated/resources/ValueSet-mii-vs-diagnose-bodystructure-snomed : 0 / 3 / 31
@@ -2211,8 +2211,6 @@ INFORMATION: StructureDefinition/mii-pr-diagnose-condition: StructureDefinition.
 INFORMATION: StructureDefinition/mii-pr-diagnose-condition: StructureDefinition.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-pr-diagnose-condition: StructureDefinition.meta.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Resource: The resource StructureDefinition/mii-pr-diagnose-condition could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
-ERROR: StructureDefinition: Profile test case failed - test for invalid/diagnose-invalid-missing-code.json failed but it should have failed
-ERROR: StructureDefinition: Profile test case failed - test for invalid/diagnose-invalid-missing-recordeddate.json failed but it should have failed
 == fsh-generated/resources/StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.json ==
 INFORMATION: StructureDefinition.meta.profile[0]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition to 2.0.0
 INFORMATION: StructureDefinition.meta.profile[1]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition to 2.0.0
@@ -4060,7 +4058,6 @@ INFORMATION: StructureDefinition/mii-pr-person-patient-pseudonymisiert: Structur
 INFORMATION: StructureDefinition/mii-pr-person-patient-pseudonymisiert: StructureDefinition.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-pr-person-patient-pseudonymisiert: StructureDefinition.meta.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Resource: The resource StructureDefinition/mii-pr-person-patient-pseudonymisiert could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
-ERROR: StructureDefinition: Profile test case failed - test for invalid/patient-pseudonymisiert-invalid-mr-duplicate.json failed but it should have failed
 == fsh-generated/resources/StructureDefinition-mii-pr-person-todesursache.json ==
 INFORMATION: StructureDefinition.meta.profile[0]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition to 2.0.0
 INFORMATION: StructureDefinition.meta.profile[1]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition to 2.0.0
@@ -4336,7 +4333,6 @@ INFORMATION: StructureDefinition/mii-pr-person-todesursache: StructureDefinition
 INFORMATION: StructureDefinition/mii-pr-person-todesursache: StructureDefinition.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-pr-person-todesursache: StructureDefinition.meta.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Resource: The resource StructureDefinition/mii-pr-person-todesursache could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
-ERROR: StructureDefinition: Profile test case failed - test for invalid/todesursache-invalid-missing-code.json failed but it should have failed
 == fsh-generated/resources/StructureDefinition-mii-pr-person-vitalstatus.json ==
 INFORMATION: StructureDefinition.meta.profile[0]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition to 2.0.0
 INFORMATION: StructureDefinition.meta.profile[1]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition to 2.0.0
@@ -4606,7 +4602,6 @@ INFORMATION: StructureDefinition/mii-pr-person-vitalstatus: StructureDefinition.
 INFORMATION: StructureDefinition/mii-pr-person-vitalstatus: StructureDefinition.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-pr-person-vitalstatus: StructureDefinition.meta.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Resource: The resource StructureDefinition/mii-pr-person-vitalstatus could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
-ERROR: StructureDefinition: Profile test case failed - test for invalid/vitalstatus-invalid-missing-effective.json failed but it should have failed
 == fsh-generated/resources/StructureDefinition-mii-pr-prozedur-procedure.json ==
 INFORMATION: StructureDefinition.meta.profile[0]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition to 2.0.0
 INFORMATION: StructureDefinition.meta.profile[1]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition to 2.0.0
