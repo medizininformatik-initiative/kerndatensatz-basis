@@ -8,16 +8,16 @@
     <h2>Unattributed Code Systems</h2>
     <ul>
       <li>
-        <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">
-<code>http://fhir.de/CodeSystem/Kontaktebene</code>        </a>
+        <a href="StructureDefinition-mii-pr-diagnose-condition.html">
+<code>http://fhir.de/CodeSystem/bfarm/alpha-id</code>        </a>
       </li>
       <li>
-        <a href="Condition-mii-exa-diagnose-mehrfachcodierung-sekundaercode.html">
-<code>http://fhir.de/CodeSystem/icd-10-gm-mehrfachcodierungs-kennzeichen</code>        </a>
+        <a href="StructureDefinition-mii-pr-diagnose-condition.html">
+<code>http://fhir.de/CodeSystem/bfarm/icd-10-gm</code>        </a>
       </li>
       <li>
-        <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">
-<code>http://fhir.de/CodeSystem/kontaktart-de</code>        </a>
+        <a href="StructureDefinition-mii-pr-prozedur-procedure.html">
+<code>http://fhir.de/CodeSystem/bfarm/ops</code>        </a>
       </li>
       <li>
         <a href="StructureDefinition-mii-pr-person-patient.html">
@@ -62,7 +62,7 @@ This fragment is available on       <a href="en/ImplementationGuide-mii-ig-base.
       <ul>
 
         <li>
-BfArM 1994 - 2024 - Die Erstellung erfolgt unter Verwendung der maschinenlesbaren Fassung des  Bundesinstituts für Arzneimittel und Medizinprodukte (BfArM)          <div onClick="if (document.getElementById('ipp2_1').innerHTML != '') {document.getElementById('ipp_1').innerHTML = document.getElementById('ipp2_1').innerHTML; document.getElementById('ipp2_1').innerHTML = ''}" id="ipp_1" data-fhir="generated">
+Copyright der FHIR-technischen Aufbereitung und Zusammenstellung: HL7 Deutschland e.V. DRG-bezogene Begriffsbestimmungen basieren auf den Deutschen Kodierrichtlinien; Copyright und Nutzungsbedingungen der Deutschen Kodierrichtlinien liegen bei der InEK GmbH.          <div onClick="if (document.getElementById('ipp2_1').innerHTML != '') {document.getElementById('ipp_1').innerHTML = document.getElementById('ipp2_1').innerHTML; document.getElementById('ipp2_1').innerHTML = ''}" id="ipp_1" data-fhir="generated">
              <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show Usage</span>
           </div>
           <div style="display: none" id="ipp2_1">
@@ -70,22 +70,11 @@ BfArM 1994 - 2024 - Die Erstellung erfolgt unter Verwendung der maschinenlesbare
             <ul>
 
               <li>
-                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/bfarm/alpha-id">Alpha-ID</a>
+                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.de/CodeSystem/KontaktDiagnoseProzedur">KontaktDiagnoseProzedur</a>
 :                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
-,                 <a href="Condition-mii-exa-diagnose-condition-multiple-codings.html">Condition/mii-exa-diagnose-condition-multiple-codings</a>
-,                 <a href="Condition-mii-exa-diagnose-mehrfachcodierung-primaercode.html">Condition/mii-exa-diagnose-mehrfachcodierung-primaercode</a>
-,                 <a href="StructureDefinition-mii-pr-diagnose-condition.html">MII_PR_Diagnose_Condition</a>
- and                 <a href="ValueSet-mii-vs-diagnose-alphaid.html">MII_VS_Diagnose_AlphaID</a>
-              </li>
-
-              <li>
-                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/bfarm/ops">OPS</a>
-:                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
-,                 <a href="StructureDefinition-mii-pr-prozedur-procedure.html">MII_PR_Prozedur_Procedure</a>
-                <span onClick="document.getElementById('ips_2').innerHTML = document.getElementById('ips2_2').innerHTML" id="ips_2">
-... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 4 more</span>                </span>
-                <span style="display: none" id="ips2_2">
-, <a href="ValueSet-mii-vs-prozedur-ops.html">MII_VS_Prozedur_OPS</a>, <a href="Procedure-mii-exa-prozedur-imaging.html">Procedure/mii-exa-prozedur-imaging</a>, <a href="Procedure-mii-exa-prozedur-procedure.html">Procedure/mii-exa-prozedur-procedure</a> and <a href="Procedure-mii-exa-prozedur-procedure-2.html">Procedure/mii-exa-prozedur-procedure-2</a>                </span>
+,                 <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2</a>
+,                 <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7</a>
+ and                 <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">MII_PR_Fall_KontaktGesundheitseinrichtung</a>
               </li>
 
 
@@ -104,40 +93,42 @@ HL7 Deutschland e.V.          <div onClick="if (document.getElementById('ipp2_2'
             <ul>
 
               <li>
-                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/KontaktDiagnoseProzedur">KontaktDiagnoseProzedur</a>
+                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.de/CodeSystem/Kontaktebene">Kontaktebene</a>
 :                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
-,                 <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2</a>
-,                 <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7</a>
- and                 <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">MII_PR_Fall_KontaktGesundheitseinrichtung</a>
+,                 <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1</a>
+                <span onClick="document.getElementById('ips_2').innerHTML = document.getElementById('ips2_2').innerHTML" id="ips_2">
+... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 11 more</span>                </span>
+                <span style="display: none" id="ips2_2">
+, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-10.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-11.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-11</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-3.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-3</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-4.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-5.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-6.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-9.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-9</a>, <a href="Encounter-mii-exa-fall-kontakt-in-progress-status.html">Encounter/mii-exa-fall-kontakt-in-progress-status</a> and <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">MII_PR_Fall_KontaktGesundheitseinrichtung</a>                </span>
               </li>
 
               <li>
-                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/dgkev/Aufnahmeanlass">CodeSystemAufnahmeanlass</a>
+                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.de/CodeSystem/dgkev/Aufnahmeanlass">CodeSystemAufnahmeanlass</a>
 :                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
 ,                 <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1</a>
  and                 <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">MII_PR_Fall_KontaktGesundheitseinrichtung</a>
               </li>
 
               <li>
-                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/dkgev/AufnahmegrundVierteStelle">AufnahmegrundVierteStelle</a>
+                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.de/CodeSystem/dkgev/AufnahmegrundVierteStelle">AufnahmegrundVierteStelle</a>
 :                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
  and                 <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-9.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-9</a>
               </li>
 
               <li>
-                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/dkgev/EntlassungsgrundDritteStelle">EntlassungsgrundDritteStelle</a>
+                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.de/CodeSystem/dkgev/EntlassungsgrundDritteStelle">EntlassungsgrundDritteStelle</a>
 :                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
  and                 <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1</a>
               </li>
 
               <li>
-                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/dkgev/EntlassungsgrundErsteUndZweiteStelle">EntlassungsgrundErsteUndZweiteStelle</a>
+                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.de/CodeSystem/dkgev/EntlassungsgrundErsteUndZweiteStelle">EntlassungsgrundErsteUndZweiteStelle</a>
 :                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
  and                 <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1</a>
               </li>
 
               <li>
-                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel">Fachabteilungsschluessel</a>
+                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel">Fachabteilungsschluessel</a>
 :                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
 ,                 <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2</a>
 ,                 <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7</a>
@@ -145,18 +136,32 @@ HL7 Deutschland e.V.          <div onClick="if (document.getElementById('ipp2_2'
               </li>
 
               <li>
-                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert">Fachabteilungsschluessel Erweitert</a>
+                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert">Fachabteilungsschluessel Erweitert</a>
 :                 <a href="Encounter-mii-exa-fall-kontakt-in-progress-status.html">Encounter/mii-exa-fall-kontakt-in-progress-status</a>
  and                 <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">MII_PR_Fall_KontaktGesundheitseinrichtung</a>
               </li>
 
               <li>
-                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/identifier-type-de-basis">Identifier Type De Basis</a>
+                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.de/CodeSystem/icd-10-gm-mehrfachcodierungs-kennzeichen">Mehrfachkodierungs-Kennzeichen</a>
+:                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
+,                 <a href="Condition-mii-exa-diagnose-mehrfachcodierung-primaercode.html">Condition/mii-exa-diagnose-mehrfachcodierung-primaercode</a>
+ and                 <a href="Condition-mii-exa-diagnose-mehrfachcodierung-sekundaercode.html">Condition/mii-exa-diagnose-mehrfachcodierung-sekundaercode</a>
+              </li>
+
+              <li>
+                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.de/CodeSystem/identifier-type-de-basis">Identifier Type De Basis</a>
 :                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
 ,                 <a href="StructureDefinition-mii-pr-person-patient.html">MII_PR_Person_Patient</a>
 ,                 <a href="StructureDefinition-mii-pr-person-patient-pseudonymisiert.html">MII_PR_Person_PatientPseudonymisiert</a>
 ,                 <a href="Patient-mii-exa-person-patient-1.html">Patient/mii-exa-person-patient-1</a>
  and                 <a href="Patient-mii-exa-person-patient-pseudonymisiert.html">Patient/mii-exa-person-patient-pseudonymisiert</a>
+              </li>
+
+              <li>
+                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.de/CodeSystem/kontaktart-de">KontaktArtDe</a>
+:                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
+,                 <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-5.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5</a>
+ and                 <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">MII_PR_Fall_KontaktGesundheitseinrichtung</a>
               </li>
 
 
@@ -179,10 +184,10 @@ This material contains content from           <a href="http://loinc.org">LOINC</
               <li>
 LOINC:                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
 ,                 <a href="Condition-mii-exa-person-condition-todesursache.html">Condition/mii-exa-person-condition-todesursache</a>
-                <span onClick="document.getElementById('ips_11').innerHTML = document.getElementById('ips2_11').innerHTML" id="ips_11">
-... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 4 more</span>                </span>
-                <span style="display: none" id="ips2_11">
-, <a href="StructureDefinition-mii-pr-person-todesursache.html">MII_PR_Person_Todesursache</a>, <a href="StructureDefinition-mii-pr-person-vitalstatus.html">MII_PR_Person_Vitalstatus</a>, <a href="Observation-mii-exa-person-observation-vitalstatus.html">Observation/mii-exa-person-observation-vitalstatus</a> and <a href="Observation-mii-exa-person-observation-vitalstatus-discharge.html">Observation/mii-exa-person-observation-vitalstatus-discharge</a>                </span>
+                <span onClick="document.getElementById('ips_12').innerHTML = document.getElementById('ips2_12').innerHTML" id="ips_12">
+... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 5 more</span>                </span>
+                <span style="display: none" id="ips2_12">
+, <a href="StructureDefinition-mii-lm-person.html">MII_LM_Person</a>, <a href="StructureDefinition-mii-pr-person-todesursache.html">MII_PR_Person_Todesursache</a>, <a href="StructureDefinition-mii-pr-person-vitalstatus.html">MII_PR_Person_Vitalstatus</a>, <a href="Observation-mii-exa-person-observation-vitalstatus.html">Observation/mii-exa-person-observation-vitalstatus</a> and <a href="Observation-mii-exa-person-observation-vitalstatus-discharge.html">Observation/mii-exa-person-observation-vitalstatus-discharge</a>                </span>
               </li>
 
 
@@ -206,10 +211,10 @@ This material contains content that is copyright of SNOMED International. Implem
                 <a href="http://hl7.org/fhir/R4/codesystem-snomedct.html">SNOMED Clinical Terms&amp;reg; (SNOMED CT&amp;reg;)</a>
 :                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
 ,                 <a href="Condition-mii-exa-diagnose-appendicitis.html">Condition/mii-exa-diagnose-appendicitis</a>
-                <span onClick="document.getElementById('ips_12').innerHTML = document.getElementById('ips2_12').innerHTML" id="ips_12">
-... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 15 more</span>                </span>
-                <span style="display: none" id="ips2_12">
-, <a href="Condition-mii-exa-diagnose-condition-elbow-contusion.html">Condition/mii-exa-diagnose-condition-elbow-contusion</a>, <a href="Condition-mii-exa-person-condition-todesursache.html">Condition/mii-exa-person-condition-todesursache</a>, <a href="CodeSystem-mii-cs-diagnose-lebensphase-supplement-snomed.html">MII_CS_Diagnose_Lebensphase_Supplement_SNOMED</a>, <a href="StructureDefinition-mii-ex-prozedur-durchfuehrungsabsicht.html">MII_EX_Prozedur_Durchfuehrungsabsicht</a>, <a href="StructureDefinition-mii-pr-diagnose-condition.html">MII_PR_Diagnose_Condition</a>, <a href="StructureDefinition-mii-pr-person-todesursache.html">MII_PR_Person_Todesursache</a>, <a href="StructureDefinition-mii-pr-prozedur-procedure.html">MII_PR_Prozedur_Procedure</a>, <a href="ValueSet-mii-vs-diagnose-bodystructure-snomed.html">MII_VS_Diagnose_BodyStructure_SNOMED</a>, <a href="ValueSet-mii-vs-diagnose-diagnosecodes-snomed.html">MII_VS_Diagnose_DiagnoseCodes_SNOMED</a>, <a href="ValueSet-mii-vs-prozedur-durchfuehrungsabsicht-snomedct.html">MII_VS_Prozedur_Durchfuehrungsabsicht_SNOMEDCT</a>, <a href="ValueSet-mii-vs-prozedur-opskategorien-snomedct.html">MII_VS_Prozedur_OpsKategorien_SNOMEDCT</a>, <a href="ValueSet-mii-vs-prozedur-prozeduren-snomedct.html">MII_VS_Prozedur_Prozeduren_SNOMEDCT</a>, <a href="Procedure-mii-exa-prozedur-imaging.html">Procedure/mii-exa-prozedur-imaging</a>, <a href="Procedure-mii-exa-prozedur-procedure.html">Procedure/mii-exa-prozedur-procedure</a> and <a href="Procedure-mii-exa-prozedur-procedure-2.html">Procedure/mii-exa-prozedur-procedure-2</a>                </span>
+                <span onClick="document.getElementById('ips_13').innerHTML = document.getElementById('ips2_13').innerHTML" id="ips_13">
+... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 16 more</span>                </span>
+                <span style="display: none" id="ips2_13">
+, <a href="Condition-mii-exa-diagnose-condition-elbow-contusion.html">Condition/mii-exa-diagnose-condition-elbow-contusion</a>, <a href="Condition-mii-exa-person-condition-todesursache.html">Condition/mii-exa-person-condition-todesursache</a>, <a href="CodeSystem-mii-cs-diagnose-lebensphase-supplement-snomed.html">MII_CS_Diagnose_Lebensphase_Supplement_SNOMED</a>, <a href="StructureDefinition-mii-ex-prozedur-durchfuehrungsabsicht.html">MII_EX_Prozedur_Durchfuehrungsabsicht</a>, <a href="StructureDefinition-mii-lm-person.html">MII_LM_Person</a>, <a href="StructureDefinition-mii-pr-diagnose-condition.html">MII_PR_Diagnose_Condition</a>, <a href="StructureDefinition-mii-pr-person-todesursache.html">MII_PR_Person_Todesursache</a>, <a href="StructureDefinition-mii-pr-prozedur-procedure.html">MII_PR_Prozedur_Procedure</a>, <a href="ValueSet-mii-vs-diagnose-bodystructure-snomed.html">MII_VS_Diagnose_BodyStructure_SNOMED</a>, <a href="ValueSet-mii-vs-diagnose-diagnosecodes-snomed.html">MII_VS_Diagnose_DiagnoseCodes_SNOMED</a>, <a href="ValueSet-mii-vs-prozedur-durchfuehrungsabsicht-snomedct.html">MII_VS_Prozedur_Durchfuehrungsabsicht_SNOMEDCT</a>, <a href="ValueSet-mii-vs-prozedur-opskategorien-snomedct.html">MII_VS_Prozedur_OpsKategorien_SNOMEDCT</a>, <a href="ValueSet-mii-vs-prozedur-prozeduren-snomedct.html">MII_VS_Prozedur_Prozeduren_SNOMEDCT</a>, <a href="Procedure-mii-exa-prozedur-imaging.html">Procedure/mii-exa-prozedur-imaging</a>, <a href="Procedure-mii-exa-prozedur-procedure.html">Procedure/mii-exa-prozedur-procedure</a> and <a href="Procedure-mii-exa-prozedur-procedure-2.html">Procedure/mii-exa-prozedur-procedure-2</a>                </span>
               </li>
 
 
@@ -229,12 +234,22 @@ This material derives from the HL7 Terminology (THO). THO is copyright &copy;198
             <ul>
 
               <li>
+                <a href="http://terminology.hl7.org/7.2.0/CodeSystem-allergyintolerance-clinical.html">AllergyIntolerance Clinical Status Codes</a>
+:                 <a href="StructureDefinition-mii-lm-person.html">MII_LM_Person</a>
+              </li>
+
+              <li>
+                <a href="http://terminology.hl7.org/7.2.0/CodeSystem-allergyintolerance-verification.html">AllergyIntolerance Verification Status</a>
+:                 <a href="StructureDefinition-mii-lm-person.html">MII_LM_Person</a>
+              </li>
+
+              <li>
                 <a href="http://terminology.hl7.org/7.2.0/CodeSystem-condition-clinical.html">Condition Clinical Status Codes</a>
 :                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
 ,                 <a href="Condition-mii-exa-diagnose-appendicitis.html">Condition/mii-exa-diagnose-appendicitis</a>
-                <span onClick="document.getElementById('ips_13').innerHTML = document.getElementById('ips2_13').innerHTML" id="ips_13">
+                <span onClick="document.getElementById('ips_16').innerHTML = document.getElementById('ips2_16').innerHTML" id="ips_16">
 ... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 4 more</span>                </span>
-                <span style="display: none" id="ips2_13">
+                <span style="display: none" id="ips2_16">
 , <a href="Condition-mii-exa-diagnose-condition-elbow-contusion.html">Condition/mii-exa-diagnose-condition-elbow-contusion</a>, <a href="Condition-mii-exa-diagnose-condition-multiple-codings.html">Condition/mii-exa-diagnose-condition-multiple-codings</a>, <a href="Condition-mii-exa-diagnose-mehrfachcodierung-primaercode.html">Condition/mii-exa-diagnose-mehrfachcodierung-primaercode</a> and <a href="Condition-mii-exa-diagnose-mehrfachcodierung-sekundaercode.html">Condition/mii-exa-diagnose-mehrfachcodierung-sekundaercode</a>                </span>
               </li>
 
@@ -242,9 +257,9 @@ This material derives from the HL7 Terminology (THO). THO is copyright &copy;198
                 <a href="http://terminology.hl7.org/7.2.0/CodeSystem-condition-ver-status.html">ConditionVerificationStatus</a>
 :                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
 ,                 <a href="Condition-mii-exa-diagnose-appendicitis.html">Condition/mii-exa-diagnose-appendicitis</a>
-                <span onClick="document.getElementById('ips_14').innerHTML = document.getElementById('ips2_14').innerHTML" id="ips_14">
+                <span onClick="document.getElementById('ips_17').innerHTML = document.getElementById('ips2_17').innerHTML" id="ips_17">
 ... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 4 more</span>                </span>
-                <span style="display: none" id="ips2_14">
+                <span style="display: none" id="ips2_17">
 , <a href="Condition-mii-exa-diagnose-condition-elbow-contusion.html">Condition/mii-exa-diagnose-condition-elbow-contusion</a>, <a href="Condition-mii-exa-diagnose-condition-multiple-codings.html">Condition/mii-exa-diagnose-condition-multiple-codings</a>, <a href="Condition-mii-exa-diagnose-mehrfachcodierung-primaercode.html">Condition/mii-exa-diagnose-mehrfachcodierung-primaercode</a> and <a href="Condition-mii-exa-diagnose-mehrfachcodierung-sekundaercode.html">Condition/mii-exa-diagnose-mehrfachcodierung-sekundaercode</a>                </span>
               </li>
 
@@ -260,9 +275,9 @@ This material derives from the HL7 Terminology (THO). THO is copyright &copy;198
                 <a href="http://terminology.hl7.org/7.2.0/CodeSystem-location-physical-type.html">Location type</a>
 :                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
 ,                 <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-10.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10</a>
-                <span onClick="document.getElementById('ips_16').innerHTML = document.getElementById('ips2_16').innerHTML" id="ips_16">
+                <span onClick="document.getElementById('ips_19').innerHTML = document.getElementById('ips2_19').innerHTML" id="ips_19">
 ... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 6 more</span>                </span>
-                <span style="display: none" id="ips2_16">
+                <span style="display: none" id="ips2_19">
 , <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-11.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-11</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-4.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-5.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-6.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6</a>, <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">MII_PR_Fall_KontaktGesundheitseinrichtung</a> and <a href="ValueSet-mii-vs-fall-location-physical-type.html">MII_VS_Fall_LocationPhysicalType</a>                </span>
               </li>
 
@@ -283,9 +298,9 @@ This material derives from the HL7 Terminology (THO). THO is copyright &copy;198
                 <a href="http://terminology.hl7.org/7.2.0/CodeSystem-v2-0203.html">identifierType</a>
 :                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
 ,                 <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1</a>
-                <span onClick="document.getElementById('ips_19').innerHTML = document.getElementById('ips2_19').innerHTML" id="ips_19">
+                <span onClick="document.getElementById('ips_22').innerHTML = document.getElementById('ips2_22').innerHTML" id="ips_22">
 ... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 15 more</span>                </span>
-                <span style="display: none" id="ips2_19">
+                <span style="display: none" id="ips2_22">
 , <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-10.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-11.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-11</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-3.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-3</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-4.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-5.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-6.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-8.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-8</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-9.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-9</a>, <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">MII_PR_Fall_KontaktGesundheitseinrichtung</a>, <a href="StructureDefinition-mii-pr-person-patient.html">MII_PR_Person_Patient</a>, <a href="StructureDefinition-mii-pr-person-patient-pseudonymisiert.html">MII_PR_Person_PatientPseudonymisiert</a>, <a href="ValueSet-mii-vs-fall-identifier-type-codes.html">MII_VS_Fall_IdentifierTypeCodes</a> and <a href="Patient-mii-exa-person-patient-1.html">Patient/mii-exa-person-patient-1</a>                </span>
               </li>
 
@@ -293,9 +308,9 @@ This material derives from the HL7 Terminology (THO). THO is copyright &copy;198
                 <a href="http://terminology.hl7.org/7.2.0/CodeSystem-v3-ActCode.html">ActCode</a>
 :                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
 ,                 <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1</a>
-                <span onClick="document.getElementById('ips_20').innerHTML = document.getElementById('ips2_20').innerHTML" id="ips_20">
+                <span onClick="document.getElementById('ips_23').innerHTML = document.getElementById('ips2_23').innerHTML" id="ips_23">
 ... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 15 more</span>                </span>
-                <span style="display: none" id="ips2_20">
+                <span style="display: none" id="ips2_23">
 , <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-10.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-11.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-11</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-3.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-3</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-4.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-5.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-6.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-8.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-8</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-9.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-9</a>, <a href="Encounter-mii-exa-fall-kontakt-in-progress-status.html">Encounter/mii-exa-fall-kontakt-in-progress-status</a>, <a href="Encounter-mii-exa-fall-kontakt-onleave-status.html">Encounter/mii-exa-fall-kontakt-onleave-status</a>, <a href="Encounter-mii-exa-fall-kontakt-unknown-status.html">Encounter/mii-exa-fall-kontakt-unknown-status</a>, <a href="CodeSystem-mii-cs-fall-supplement-act-encounter-code.html">MII_CS_Fall_SupplementActEncounterCode</a> and <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">MII_PR_Fall_KontaktGesundheitseinrichtung</a>                </span>
               </li>
 
@@ -309,9 +324,9 @@ This material derives from the HL7 Terminology (THO). THO is copyright &copy;198
                 <a href="http://terminology.hl7.org/7.2.0/CodeSystem-v3-ActReason.html">ActReason</a>
 :                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
 ,                 <a href="Condition-mii-exa-diagnose-appendicitis.html">Condition/mii-exa-diagnose-appendicitis</a>
-                <span onClick="document.getElementById('ips_22').innerHTML = document.getElementById('ips2_22').innerHTML" id="ips_22">
+                <span onClick="document.getElementById('ips_25').innerHTML = document.getElementById('ips2_25').innerHTML" id="ips_25">
 ... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 26 more</span>                </span>
-                <span style="display: none" id="ips2_22">
+                <span style="display: none" id="ips2_25">
 , <a href="Condition-mii-exa-diagnose-condition-elbow-contusion.html">Condition/mii-exa-diagnose-condition-elbow-contusion</a>, <a href="Condition-mii-exa-diagnose-condition-multiple-codings.html">Condition/mii-exa-diagnose-condition-multiple-codings</a>, <a href="Condition-mii-exa-diagnose-mehrfachcodierung-primaercode.html">Condition/mii-exa-diagnose-mehrfachcodierung-primaercode</a>, <a href="Condition-mii-exa-diagnose-mehrfachcodierung-sekundaercode.html">Condition/mii-exa-diagnose-mehrfachcodierung-sekundaercode</a>, <a href="Condition-mii-exa-person-condition-todesursache.html">Condition/mii-exa-person-condition-todesursache</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-10.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-11.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-11</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-3.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-3</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-4.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-5.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-6.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-8.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-8</a>, <a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-9.html">Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-9</a>, <a href="Encounter-mii-exa-fall-kontakt-in-progress-status.html">Encounter/mii-exa-fall-kontakt-in-progress-status</a>, <a href="Encounter-mii-exa-fall-kontakt-onleave-status.html">Encounter/mii-exa-fall-kontakt-onleave-status</a>, <a href="Encounter-mii-exa-fall-kontakt-unknown-status.html">Encounter/mii-exa-fall-kontakt-unknown-status</a>, <a href="Observation-mii-exa-person-observation-vitalstatus.html">Observation/mii-exa-person-observation-vitalstatus</a>, <a href="Observation-mii-exa-person-observation-vitalstatus-discharge.html">Observation/mii-exa-person-observation-vitalstatus-discharge</a>, <a href="Patient-mii-exa-person-patient-1.html">Patient/mii-exa-person-patient-1</a>, <a href="Patient-mii-exa-person-patient-pseudonymisiert.html">Patient/mii-exa-person-patient-pseudonymisiert</a>, <a href="Procedure-mii-exa-prozedur-imaging.html">Procedure/mii-exa-prozedur-imaging</a>, <a href="Procedure-mii-exa-prozedur-procedure.html">Procedure/mii-exa-prozedur-procedure</a> and <a href="Procedure-mii-exa-prozedur-procedure-2.html">Procedure/mii-exa-prozedur-procedure-2</a>                </span>
               </li>
 
@@ -319,31 +334,6 @@ This material derives from the HL7 Terminology (THO). THO is copyright &copy;198
                 <a href="http://terminology.hl7.org/7.2.0/CodeSystem-v3-ObservationValue.html">ObservationValue</a>
 :                 <a href="StructureDefinition-mii-pr-person-patient-pseudonymisiert.html">MII_PR_Person_PatientPseudonymisiert</a>
  and                 <a href="Patient-mii-exa-person-patient-pseudonymisiert.html">Patient/mii-exa-person-patient-pseudonymisiert</a>
-              </li>
-
-
-            </ul>
-
-
-          </div>
-        </li>
-
-        <li>
-WHO, BfArM 1994 - 2024 - Die Erstellung erfolgt unter Verwendung der maschinenlesbaren Fassung des  Bundesinstituts für Arzneimittel und Medizinprodukte (BfArM)          <div onClick="if (document.getElementById('ipp2_6').innerHTML != '') {document.getElementById('ipp_6').innerHTML = document.getElementById('ipp2_6').innerHTML; document.getElementById('ipp2_6').innerHTML = ''}" id="ipp_6" data-fhir="generated">
-             <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show Usage</span>
-          </div>
-          <div style="display: none" id="ipp2_6">
-
-            <ul>
-
-              <li>
-                <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/bfarm/icd-10-gm">ICD-10-GM</a>
-:                 <a href="Bundle-mii-exa-base-test-data-bundle-1.html">Bundle/mii-exa-base-test-data-bundle-1</a>
-,                 <a href="Condition-mii-exa-diagnose-appendicitis.html">Condition/mii-exa-diagnose-appendicitis</a>
-                <span onClick="document.getElementById('ips_24').innerHTML = document.getElementById('ips2_24').innerHTML" id="ips_24">
-... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 6 more</span>                </span>
-                <span style="display: none" id="ips2_24">
-, <a href="Condition-mii-exa-diagnose-condition-elbow-contusion.html">Condition/mii-exa-diagnose-condition-elbow-contusion</a>, <a href="Condition-mii-exa-diagnose-condition-multiple-codings.html">Condition/mii-exa-diagnose-condition-multiple-codings</a>, <a href="Condition-mii-exa-diagnose-mehrfachcodierung-primaercode.html">Condition/mii-exa-diagnose-mehrfachcodierung-primaercode</a>, <a href="Condition-mii-exa-diagnose-mehrfachcodierung-sekundaercode.html">Condition/mii-exa-diagnose-mehrfachcodierung-sekundaercode</a>, <a href="StructureDefinition-mii-pr-diagnose-condition.html">MII_PR_Diagnose_Condition</a> and <a href="ValueSet-mii-vs-diagnose-icd10gm.html">MII_VS_Diagnose_ICD10GM</a>                </span>
               </li>
 
 
@@ -366,18 +356,22 @@ WHO, BfArM 1994 - 2024 - Die Erstellung erfolgt unter Verwendung der maschinenle
 
 
           IG &copy; 2019+ Medical Informatics Initiative (MII).  
-          Package de.medizininformatikinitiative.kerndatensatz.base#2026.0.1 based on FHIR 4.0.1.
-          Generated 
-  
-    2026-07-22
-  
+          Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-ballot.rc1 based on FHIR 4.0.1.
+          Generated 2026-09-01
+          
+          
+            
 
-          
-          
-                      Links: Table of Contents |
+          Links: Table of Contents |
                  QA Report
                  
-                
+                 | netzwerk-universitaetsmedizin.de
+                 | medizininformatik-initiative.de
+                 | Legal notice
+                 
+                 
+                 HL7&reg;, FHIR&reg; and the FHIR flame design are registered trademarks of Health Level Seven International. Their use does not constitute endorsement by HL7.
+
           
          (        <a href="en/version-history.html">src</a>
 )
@@ -388,18 +382,22 @@ WHO, BfArM 1994 - 2024 - Die Erstellung erfolgt unter Verwendung der maschinenle
 
 
           IG &copy; 2019+ Medical Informatics Initiative (MII).  
-          Package de.medizininformatikinitiative.kerndatensatz.base#2026.0.1 basiert auf FHIR 4.0.1.
-          Erstellt 
-  
-    2026-07-22
-  
+          Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-ballot.rc1 basiert auf FHIR 4.0.1.
+          Erstellt 2026-09-01
+          
+          
+            
 
-          
-          
-                      Links: Inhaltsverzeichnis |
+          Links: Inhaltsverzeichnis |
                  QA-Bericht
                  
-                
+                 | netzwerk-universitaetsmedizin.de
+                 | medizininformatik-initiative.de
+                 | Impressum
+                 
+                 
+                 HL7&reg;, FHIR&reg; and the FHIR flame design are registered trademarks of Health Level Seven International. Their use does not constitute endorsement by HL7.
+
           
          (        <a href="de/version-history.html">src</a>
 )
@@ -421,6 +419,10 @@ Copyright/Rechtliches: This material includes SNOMED Clinical Terms&reg; (SNOMED
 )
       </li>
       <li>
+HL7&reg;, FHIR&reg; and the FHIR flame design are registered trademarks of Health Level Seven International. Their use does not constitute endorsement by HL7. (        <a href="en/version-history.html">src</a>
+)
+      </li>
+      <li>
 Probleme mit Bezug auf: Institutionelle(r) Aufenthalt und Erziehung (        <a href="en/ValueSet-mii-vs-person-icd10who.html">src</a>
 )
       </li>
@@ -428,7 +430,7 @@ Probleme mit Bezug auf: Institutionelle(r) Aufenthalt und Erziehung (        <a 
 This material contains content from LOINC. LOINC is copyright &copy; 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license. LOINC&reg; is a registered United States trademark of Regenstrief Institute, Inc. Show Usage
 
 
-* LOINC: Bundle/mii-exa-base-test-data-bundle-1, Condition/mii-exa-person-condition-todesursache... Show 4 more, MII_PR_Person_Todesursache, MII_PR_Person_Vitalstatus, Observation/mii-exa-person-observation-vitalstatus and Observation/mii-exa-person-observation-vitalstatus-discharge
+* LOINC: Bundle/mii-exa-base-test-data-bundle-1, Condition/mii-exa-person-condition-todesursache... Show 5 more, MII_LM_Person, MII_PR_Person_Todesursache, MII_PR_Person_Vitalstatus, Observation/mii-exa-person-observation-vitalstatus and Observation/mii-exa-person-observation-vitalstatus-discharge
 
 
 
@@ -439,6 +441,10 @@ This material contains content from LOINC. LOINC is copyright &copy; 1995-2020, 
       <li>
 This material derives from the HL7 Terminology (THO). THO is copyright &copy;1989+ Health Level Seven International and is made available under the CC0 designation. For more licensing information see: https://terminology.hl7.org/license.html Show Usage
 
+
+* AllergyIntolerance Clinical Status Codes: MII_LM_Person
+
+* AllergyIntolerance Verification Status: MII_LM_Person
 
 * Condition Clinical Status Codes: Bundle/mii-exa-base-test-data-bundle-1, Condition/mii-exa-diagnose-appendicitis... Show 4 more, Condition/mii-exa-diagnose-condition-elbow-contusion, Condition/mii-exa-diagnose-condition-multiple-codings, Condition/mii-exa-diagnose-mehrfachcodierung-primaercode and Condition/mii-exa-diagnose-mehrfachcodierung-sekundaercode
 
@@ -810,17 +816,19 @@ Versehentliche(r) Schnitt, Punktion, Perforation oder Blutung: Bei sonstigen chi
           <a href="de/Bundle-mii-exa-base-test-data-bundle-1.change.history.html">web</a>
         </td>
         <td>
-          <a href="https://www.medizininformatik-initiative.de">www.medizininformatik-initiative.de</a>
+          <a href="https://www.netzwerk-universitaetsmedizin.de/forschung/num-diz">www.netzwerk-universitaetsmedizin.de</a>
         </td>
         <td>
- 
-            <a no-external="true" id="hl7-logo" href="https://www.medizininformatik-initiative.de">
 
-    
-    <img src="MII_Logo_rgb.jpg" alt="MII besuchen" height="50"/>
-    
+
+            <a no-external="true" id="project-logo" href="https://www.netzwerk-universitaetsmedizin.de/forschung/num-diz">
+
+
+    <img src="assets/images/logo-num-diz-de.svg" alt="NUM-DIZ (Netzwerk Universitätsmedizin — Datenintegrationszentrum)" height="50"/>
+
   
           </a>
+
 
 
         </td>
@@ -839,26 +847,225 @@ Versehentliche(r) Schnitt, Punktion, Perforation oder Blutung: Bei sonstigen chi
 
           IG &copy; 2019+           <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>
 .  
-          Package de.medizininformatikinitiative.kerndatensatz.base#2026.0.1 basiert auf           <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>
+          Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-ballot.rc1 basiert auf           <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>
 .
-          Erstellt 
-            <span title="2026-07-22 07:51:00 +0000">
-    2026-07-22
-  </span>
-
+          Erstellt           <span title="Tue, Sep 1, 2026 15:00+0000">2026-09-01</span>
 
                     <br/>
 
                     <span style="color: var(--footer-highlight-text-color)">
 
-                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Inhaltsverzeichnis</a> |
+                        <!-- Branding override for the fhir2.base.template footer fragment.
+     Unlike header/css, the base footer fragment is NOT an empty placeholder: it
+     renders "Links: Table of Contents | QA Report [| feedback dashboards]".
+     The base uses site.data.stringsBase[include.lang][...] for the labels. The
+     reason this override supplies its own is the Imprint label: the base ships no
+     stringsBase key for it and a child template cannot add one (docs/styleguide.md
+     section 6), and the same include.lang branch then has to carry the other
+     labels too. (The blank-label problem that first motivated this is separately
+     mitigated: this repo vendors the base's own German catalogs into
+     translations/ — see translations/README.md.) The override preserves the base
+     links (TOC, QA, feedback dashboards) and appends the project information links.
+     NUM-DIZ takes over IG development and maintenance when MII funding ends
+     (end-2026), so the NUM-DIZ website link renders BEFORE the MII website link —
+     in BOTH brand designs and both languages; the MII links stay because the
+     modules remain MII content. Both anchors are the SITE ROOTS with the bare
+     domain as anchor text (TF-KDS feedback 2026-08-14: aligned anchor style;
+     domains are language-neutral, styleguide §6).
+     Imprint: points at the NUM-DIZ website's legal pages since 2026-08-14
+     (TF-KDS: NUM-DIZ takes over from MII in 2027, so legal-aspect links use
+     the NUM-DIZ counterpart where one exists) - German /impressum and English
+     /en/legal-notice (both verified HTTP 200 on 2026-08-14). -->
+
+          Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Inhaltsverzeichnis</a> |
                  <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA-Bericht</a>
                  
-                
+                 | <a style="color: var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de/" target="_blank">netzwerk-universitaetsmedizin.de</a>
+                 | <a style="color: var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/" target="_blank">medizininformatik-initiative.de</a>
+                 | <a style="color: var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de/impressum" target="_blank">Impressum</a>
+                 <br/>
+                             <!-- HL7 trademark attribution (required wherever the FHIR flame
+                      renders - the header shows it on every page; see HL7's
+                      trademark guidelines; permission request tracked in issue #109). The sentence is
+                      HL7's prescribed formula and stays in English on every
+                      language's pages (legal wording, styleguide §6). -->
+                 <span>HL7&reg;, FHIR&reg; and the FHIR flame design are registered trademarks of Health Level Seven International. Their use does not constitute endorsement by HL7.</span>
+
           
           </span>
 
         
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/Bundle-mii-exa-base-test-data-bundle-1.change.history.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.netzwerk-universitaetsmedizin.de/">www.netzwerk-universitaetsmedizin.de</a>
+        </td>
+        <td>
+
+                      <!-- Branding override for the fhir2.base.template footer fragment.
+     Unlike header/css, the base footer fragment is NOT an empty placeholder: it
+     renders "Links: Table of Contents | QA Report [| feedback dashboards]".
+     The base uses site.data.stringsBase[include.lang][...] for the labels. The
+     reason this override supplies its own is the Imprint label: the base ships no
+     stringsBase key for it and a child template cannot add one (docs/styleguide.md
+     section 6), and the same include.lang branch then has to carry the other
+     labels too. (The blank-label problem that first motivated this is separately
+     mitigated: this repo vendors the base's own German catalogs into
+     translations/ — see translations/README.md.) The override preserves the base
+     links (TOC, QA, feedback dashboards) and appends the project information links.
+     NUM-DIZ takes over IG development and maintenance when MII funding ends
+     (end-2026), so the NUM-DIZ website link renders BEFORE the MII website link —
+     in BOTH brand designs and both languages; the MII links stay because the
+     modules remain MII content. Both anchors are the SITE ROOTS with the bare
+     domain as anchor text (TF-KDS feedback 2026-08-14: aligned anchor style;
+     domains are language-neutral, styleguide §6).
+     Imprint: points at the NUM-DIZ website's legal pages since 2026-08-14
+     (TF-KDS: NUM-DIZ takes over from MII in 2027, so legal-aspect links use
+     the NUM-DIZ counterpart where one exists) - German /impressum and English
+     /en/legal-notice (both verified HTTP 200 on 2026-08-14). -->
+
+
+          Links:           <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Inhaltsverzeichnis</a>
+ |
+                           <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA-Bericht</a>
+
+                 
+                 |           <a style="color: var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de/" target="_blank">netzwerk-universitaetsmedizin.de</a>
+
+                 |           <a style="color: var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/" target="_blank">medizininformatik-initiative.de</a>
+
+                 |           <a style="color: var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de/impressum" target="_blank">Impressum</a>
+
+                           <br/>
+
+                           <!-- HL7 trademark attribution (required wherever the FHIR flame
+                      renders - the header shows it on every page; see HL7's
+                      trademark guidelines; permission request tracked in issue #109). The sentence is
+                      HL7's prescribed formula and stays in English on every
+                      language's pages (legal wording, styleguide §6). -->
+
+                           <span>HL7&reg;, FHIR&reg; and the FHIR flame design are registered trademarks of Health Level Seven International. Their use does not constitute endorsement by HL7.</span>
+
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/Bundle-mii-exa-base-test-data-bundle-1.change.history.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.medizininformatik-initiative.de/">www.medizininformatik-initiative.de</a>
+        </td>
+        <td>
+
+                      <!-- Branding override for the fhir2.base.template footer fragment.
+     Unlike header/css, the base footer fragment is NOT an empty placeholder: it
+     renders "Links: Table of Contents | QA Report [| feedback dashboards]".
+     The base uses site.data.stringsBase[include.lang][...] for the labels. The
+     reason this override supplies its own is the Imprint label: the base ships no
+     stringsBase key for it and a child template cannot add one (docs/styleguide.md
+     section 6), and the same include.lang branch then has to carry the other
+     labels too. (The blank-label problem that first motivated this is separately
+     mitigated: this repo vendors the base's own German catalogs into
+     translations/ — see translations/README.md.) The override preserves the base
+     links (TOC, QA, feedback dashboards) and appends the project information links.
+     NUM-DIZ takes over IG development and maintenance when MII funding ends
+     (end-2026), so the NUM-DIZ website link renders BEFORE the MII website link —
+     in BOTH brand designs and both languages; the MII links stay because the
+     modules remain MII content. Both anchors are the SITE ROOTS with the bare
+     domain as anchor text (TF-KDS feedback 2026-08-14: aligned anchor style;
+     domains are language-neutral, styleguide §6).
+     Imprint: points at the NUM-DIZ website's legal pages since 2026-08-14
+     (TF-KDS: NUM-DIZ takes over from MII in 2027, so legal-aspect links use
+     the NUM-DIZ counterpart where one exists) - German /impressum and English
+     /en/legal-notice (both verified HTTP 200 on 2026-08-14). -->
+
+
+          Links:           <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Inhaltsverzeichnis</a>
+ |
+                           <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA-Bericht</a>
+
+                 
+                 |           <a style="color: var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de/" target="_blank">netzwerk-universitaetsmedizin.de</a>
+
+                 |           <a style="color: var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/" target="_blank">medizininformatik-initiative.de</a>
+
+                 |           <a style="color: var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de/impressum" target="_blank">Impressum</a>
+
+                           <br/>
+
+                           <!-- HL7 trademark attribution (required wherever the FHIR flame
+                      renders - the header shows it on every page; see HL7's
+                      trademark guidelines; permission request tracked in issue #109). The sentence is
+                      HL7's prescribed formula and stays in English on every
+                      language's pages (legal wording, styleguide §6). -->
+
+                           <span>HL7&reg;, FHIR&reg; and the FHIR flame design are registered trademarks of Health Level Seven International. Their use does not constitute endorsement by HL7.</span>
+
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/Bundle-mii-exa-base-test-data-bundle-1.change.history.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.netzwerk-universitaetsmedizin.de/impressum">www.netzwerk-universitaetsmedizin.de</a>
+        </td>
+        <td>
+
+                      <!-- Branding override for the fhir2.base.template footer fragment.
+     Unlike header/css, the base footer fragment is NOT an empty placeholder: it
+     renders "Links: Table of Contents | QA Report [| feedback dashboards]".
+     The base uses site.data.stringsBase[include.lang][...] for the labels. The
+     reason this override supplies its own is the Imprint label: the base ships no
+     stringsBase key for it and a child template cannot add one (docs/styleguide.md
+     section 6), and the same include.lang branch then has to carry the other
+     labels too. (The blank-label problem that first motivated this is separately
+     mitigated: this repo vendors the base's own German catalogs into
+     translations/ — see translations/README.md.) The override preserves the base
+     links (TOC, QA, feedback dashboards) and appends the project information links.
+     NUM-DIZ takes over IG development and maintenance when MII funding ends
+     (end-2026), so the NUM-DIZ website link renders BEFORE the MII website link —
+     in BOTH brand designs and both languages; the MII links stay because the
+     modules remain MII content. Both anchors are the SITE ROOTS with the bare
+     domain as anchor text (TF-KDS feedback 2026-08-14: aligned anchor style;
+     domains are language-neutral, styleguide §6).
+     Imprint: points at the NUM-DIZ website's legal pages since 2026-08-14
+     (TF-KDS: NUM-DIZ takes over from MII in 2027, so legal-aspect links use
+     the NUM-DIZ counterpart where one exists) - German /impressum and English
+     /en/legal-notice (both verified HTTP 200 on 2026-08-14). -->
+
+
+          Links:           <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Inhaltsverzeichnis</a>
+ |
+                           <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA-Bericht</a>
+
+                 
+                 |           <a style="color: var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de/" target="_blank">netzwerk-universitaetsmedizin.de</a>
+
+                 |           <a style="color: var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/" target="_blank">medizininformatik-initiative.de</a>
+
+                 |           <a style="color: var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de/impressum" target="_blank">Impressum</a>
+
+                           <br/>
+
+                           <!-- HL7 trademark attribution (required wherever the FHIR flame
+                      renders - the header shows it on every page; see HL7's
+                      trademark guidelines; permission request tracked in issue #109). The sentence is
+                      HL7's prescribed formula and stays in English on every
+                      language's pages (legal wording, styleguide §6). -->
+
+                           <span>HL7&reg;, FHIR&reg; and the FHIR flame design are registered trademarks of Health Level Seven International. Their use does not constitute endorsement by HL7.</span>
+
+
+          
         </td>
       </tr>
       <tr>
@@ -929,6 +1136,17 @@ KBV_VS_SFHIR_ICD_DIAGNOSESICHERHEIT <img src="external.png" alt="."/>          <
  to           <span class="copy-text-inline">
 <code>https://fhir.kbv.de/ValueSet/KBV_VS_SFHIR_ICD_DIAGNOSESICHERHEIT</code><button data-clipboard-text="https://fhir.kbv.de/ValueSet/KBV_VS_SFHIR_ICD_DIAGNOSESICHERHEIT" title="Click to Copy URL" class="btn-copy"></button>          </span>
 )
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/StructureDefinition-mii-pr-diagnose-condition-mappings.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/conceptdomain">snomed.info</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/conceptdomain" title="http://snomed.info/conceptdomain">SNOMED CT Concept Domain Binding</a>
         </td>
       </tr>
       <tr>
@@ -34284,6 +34502,51 @@ Weitere Informationen siehe           <a href="https://www.bfarm.de/DE/Kodiersys
           <a href="de/changes.html">web</a>
         </td>
         <td>
+          <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/86">github.com</a>
+        </td>
+        <td>
+          <strong>Added:</strong>
+ Das Patient-Profil enthält nun die FHIR-Core-Extensions           <code class="language-plaintext highlighter-rouge">patient-birthPlace</code>
+,           <code class="language-plaintext highlighter-rouge">patient-citizenship</code>
+ und           <code class="language-plaintext highlighter-rouge">patient-nationality</code>
+, um Geburtsort, Staatsangehörigkeit und Nationalität im Modul Person abzubilden. Siehe:           <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/86">#86</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/changes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/85">github.com</a>
+        </td>
+        <td>
+          <strong>Added:</strong>
+ Das Element           <code class="language-plaintext highlighter-rouge">Condition.bodySite</code>
+ enthält nun die FHIR-Core-Extension           <code class="language-plaintext highlighter-rouge">http://hl7.org/fhir/StructureDefinition/bodySite</code>
+, um eine detaillierte anatomische Referenz, z.B. auf eine           <code class="language-plaintext highlighter-rouge">BodyStructure</code>
+, zusätzlich zur kodierten Körperstelle abzubilden. Siehe:           <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/85">#85</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/changes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/85">github.com</a>
+        </td>
+        <td>
+          <strong>Added:</strong>
+ Das Element           <code class="language-plaintext highlighter-rouge">Procedure.bodySite</code>
+ enthält nun die FHIR-Core-Extension           <code class="language-plaintext highlighter-rouge">http://hl7.org/fhir/StructureDefinition/bodySite</code>
+, um eine detaillierte anatomische Referenz, z.B. auf eine           <code class="language-plaintext highlighter-rouge">BodyStructure</code>
+, zusätzlich zur kodierten Körperstelle abzubilden. Siehe:           <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/85">#85</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/changes.html">web</a>
+        </td>
+        <td>
           <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/67">github.com</a>
         </td>
         <td>
@@ -34704,17 +34967,19 @@ Gemäß           <a href="https://www.sozialgesetzbuch-sgb.de/sgbv/301.html">&s
           <a href="en/Bundle-mii-exa-base-test-data-bundle-1.change.history.html">web</a>
         </td>
         <td>
-          <a href="https://www.medizininformatik-initiative.de">www.medizininformatik-initiative.de</a>
+          <a href="https://www.netzwerk-universitaetsmedizin.de/forschung/num-diz">www.netzwerk-universitaetsmedizin.de</a>
         </td>
         <td>
- 
-            <a no-external="true" id="hl7-logo" href="https://www.medizininformatik-initiative.de">
 
-    
-    <img src="MII_Logo_engl_rgb.jpg" alt="Visit MII" height="50"/>
-    
+
+            <a no-external="true" id="project-logo" href="https://www.netzwerk-universitaetsmedizin.de/forschung/num-diz">
+
+
+    <img src="assets/images/logo-num-diz-en.svg" alt="NUM-DIZ (Network of University Medicine — Data Integration Center)" height="50"/>
+
   
           </a>
+
 
 
         </td>
@@ -34733,26 +34998,225 @@ Gemäß           <a href="https://www.sozialgesetzbuch-sgb.de/sgbv/301.html">&s
 
           IG &copy; 2019+           <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>
 .  
-          Package de.medizininformatikinitiative.kerndatensatz.base#2026.0.1 based on           <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>
+          Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-ballot.rc1 based on           <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>
 .
-          Generated 
-            <span title="2026-07-22 07:51:00 +0000">
-    2026-07-22
-  </span>
-
+          Generated           <span title="Tue, Sep 1, 2026 15:00+0000">2026-09-01</span>
 
                     <br/>
 
                     <span style="color: var(--footer-highlight-text-color)">
 
-                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                        <!-- Branding override for the fhir2.base.template footer fragment.
+     Unlike header/css, the base footer fragment is NOT an empty placeholder: it
+     renders "Links: Table of Contents | QA Report [| feedback dashboards]".
+     The base uses site.data.stringsBase[include.lang][...] for the labels. The
+     reason this override supplies its own is the Imprint label: the base ships no
+     stringsBase key for it and a child template cannot add one (docs/styleguide.md
+     section 6), and the same include.lang branch then has to carry the other
+     labels too. (The blank-label problem that first motivated this is separately
+     mitigated: this repo vendors the base's own German catalogs into
+     translations/ — see translations/README.md.) The override preserves the base
+     links (TOC, QA, feedback dashboards) and appends the project information links.
+     NUM-DIZ takes over IG development and maintenance when MII funding ends
+     (end-2026), so the NUM-DIZ website link renders BEFORE the MII website link —
+     in BOTH brand designs and both languages; the MII links stay because the
+     modules remain MII content. Both anchors are the SITE ROOTS with the bare
+     domain as anchor text (TF-KDS feedback 2026-08-14: aligned anchor style;
+     domains are language-neutral, styleguide §6).
+     Imprint: points at the NUM-DIZ website's legal pages since 2026-08-14
+     (TF-KDS: NUM-DIZ takes over from MII in 2027, so legal-aspect links use
+     the NUM-DIZ counterpart where one exists) - German /impressum and English
+     /en/legal-notice (both verified HTTP 200 on 2026-08-14). -->
+
+          Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
                  <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
                  
-                
+                 | <a style="color: var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de/" target="_blank">netzwerk-universitaetsmedizin.de</a>
+                 | <a style="color: var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/" target="_blank">medizininformatik-initiative.de</a>
+                 | <a style="color: var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de/en/legal-notice" target="_blank">Legal notice</a>
+                 <br/>
+                             <!-- HL7 trademark attribution (required wherever the FHIR flame
+                      renders - the header shows it on every page; see HL7's
+                      trademark guidelines; permission request tracked in issue #109). The sentence is
+                      HL7's prescribed formula and stays in English on every
+                      language's pages (legal wording, styleguide §6). -->
+                 <span>HL7&reg;, FHIR&reg; and the FHIR flame design are registered trademarks of Health Level Seven International. Their use does not constitute endorsement by HL7.</span>
+
           
           </span>
 
         
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/Bundle-mii-exa-base-test-data-bundle-1.change.history.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.netzwerk-universitaetsmedizin.de/">www.netzwerk-universitaetsmedizin.de</a>
+        </td>
+        <td>
+
+                      <!-- Branding override for the fhir2.base.template footer fragment.
+     Unlike header/css, the base footer fragment is NOT an empty placeholder: it
+     renders "Links: Table of Contents | QA Report [| feedback dashboards]".
+     The base uses site.data.stringsBase[include.lang][...] for the labels. The
+     reason this override supplies its own is the Imprint label: the base ships no
+     stringsBase key for it and a child template cannot add one (docs/styleguide.md
+     section 6), and the same include.lang branch then has to carry the other
+     labels too. (The blank-label problem that first motivated this is separately
+     mitigated: this repo vendors the base's own German catalogs into
+     translations/ — see translations/README.md.) The override preserves the base
+     links (TOC, QA, feedback dashboards) and appends the project information links.
+     NUM-DIZ takes over IG development and maintenance when MII funding ends
+     (end-2026), so the NUM-DIZ website link renders BEFORE the MII website link —
+     in BOTH brand designs and both languages; the MII links stay because the
+     modules remain MII content. Both anchors are the SITE ROOTS with the bare
+     domain as anchor text (TF-KDS feedback 2026-08-14: aligned anchor style;
+     domains are language-neutral, styleguide §6).
+     Imprint: points at the NUM-DIZ website's legal pages since 2026-08-14
+     (TF-KDS: NUM-DIZ takes over from MII in 2027, so legal-aspect links use
+     the NUM-DIZ counterpart where one exists) - German /impressum and English
+     /en/legal-notice (both verified HTTP 200 on 2026-08-14). -->
+
+
+          Links:           <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a>
+ |
+                           <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+
+                 
+                 |           <a style="color: var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de/" target="_blank">netzwerk-universitaetsmedizin.de</a>
+
+                 |           <a style="color: var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/" target="_blank">medizininformatik-initiative.de</a>
+
+                 |           <a style="color: var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de/en/legal-notice" target="_blank">Legal notice</a>
+
+                           <br/>
+
+                           <!-- HL7 trademark attribution (required wherever the FHIR flame
+                      renders - the header shows it on every page; see HL7's
+                      trademark guidelines; permission request tracked in issue #109). The sentence is
+                      HL7's prescribed formula and stays in English on every
+                      language's pages (legal wording, styleguide §6). -->
+
+                           <span>HL7&reg;, FHIR&reg; and the FHIR flame design are registered trademarks of Health Level Seven International. Their use does not constitute endorsement by HL7.</span>
+
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/Bundle-mii-exa-base-test-data-bundle-1.change.history.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.medizininformatik-initiative.de/">www.medizininformatik-initiative.de</a>
+        </td>
+        <td>
+
+                      <!-- Branding override for the fhir2.base.template footer fragment.
+     Unlike header/css, the base footer fragment is NOT an empty placeholder: it
+     renders "Links: Table of Contents | QA Report [| feedback dashboards]".
+     The base uses site.data.stringsBase[include.lang][...] for the labels. The
+     reason this override supplies its own is the Imprint label: the base ships no
+     stringsBase key for it and a child template cannot add one (docs/styleguide.md
+     section 6), and the same include.lang branch then has to carry the other
+     labels too. (The blank-label problem that first motivated this is separately
+     mitigated: this repo vendors the base's own German catalogs into
+     translations/ — see translations/README.md.) The override preserves the base
+     links (TOC, QA, feedback dashboards) and appends the project information links.
+     NUM-DIZ takes over IG development and maintenance when MII funding ends
+     (end-2026), so the NUM-DIZ website link renders BEFORE the MII website link —
+     in BOTH brand designs and both languages; the MII links stay because the
+     modules remain MII content. Both anchors are the SITE ROOTS with the bare
+     domain as anchor text (TF-KDS feedback 2026-08-14: aligned anchor style;
+     domains are language-neutral, styleguide §6).
+     Imprint: points at the NUM-DIZ website's legal pages since 2026-08-14
+     (TF-KDS: NUM-DIZ takes over from MII in 2027, so legal-aspect links use
+     the NUM-DIZ counterpart where one exists) - German /impressum and English
+     /en/legal-notice (both verified HTTP 200 on 2026-08-14). -->
+
+
+          Links:           <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a>
+ |
+                           <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+
+                 
+                 |           <a style="color: var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de/" target="_blank">netzwerk-universitaetsmedizin.de</a>
+
+                 |           <a style="color: var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/" target="_blank">medizininformatik-initiative.de</a>
+
+                 |           <a style="color: var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de/en/legal-notice" target="_blank">Legal notice</a>
+
+                           <br/>
+
+                           <!-- HL7 trademark attribution (required wherever the FHIR flame
+                      renders - the header shows it on every page; see HL7's
+                      trademark guidelines; permission request tracked in issue #109). The sentence is
+                      HL7's prescribed formula and stays in English on every
+                      language's pages (legal wording, styleguide §6). -->
+
+                           <span>HL7&reg;, FHIR&reg; and the FHIR flame design are registered trademarks of Health Level Seven International. Their use does not constitute endorsement by HL7.</span>
+
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/Bundle-mii-exa-base-test-data-bundle-1.change.history.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.netzwerk-universitaetsmedizin.de/en/legal-notice">www.netzwerk-universitaetsmedizin.de</a>
+        </td>
+        <td>
+
+                      <!-- Branding override for the fhir2.base.template footer fragment.
+     Unlike header/css, the base footer fragment is NOT an empty placeholder: it
+     renders "Links: Table of Contents | QA Report [| feedback dashboards]".
+     The base uses site.data.stringsBase[include.lang][...] for the labels. The
+     reason this override supplies its own is the Imprint label: the base ships no
+     stringsBase key for it and a child template cannot add one (docs/styleguide.md
+     section 6), and the same include.lang branch then has to carry the other
+     labels too. (The blank-label problem that first motivated this is separately
+     mitigated: this repo vendors the base's own German catalogs into
+     translations/ — see translations/README.md.) The override preserves the base
+     links (TOC, QA, feedback dashboards) and appends the project information links.
+     NUM-DIZ takes over IG development and maintenance when MII funding ends
+     (end-2026), so the NUM-DIZ website link renders BEFORE the MII website link —
+     in BOTH brand designs and both languages; the MII links stay because the
+     modules remain MII content. Both anchors are the SITE ROOTS with the bare
+     domain as anchor text (TF-KDS feedback 2026-08-14: aligned anchor style;
+     domains are language-neutral, styleguide §6).
+     Imprint: points at the NUM-DIZ website's legal pages since 2026-08-14
+     (TF-KDS: NUM-DIZ takes over from MII in 2027, so legal-aspect links use
+     the NUM-DIZ counterpart where one exists) - German /impressum and English
+     /en/legal-notice (both verified HTTP 200 on 2026-08-14). -->
+
+
+          Links:           <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a>
+ |
+                           <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+
+                 
+                 |           <a style="color: var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de/" target="_blank">netzwerk-universitaetsmedizin.de</a>
+
+                 |           <a style="color: var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/" target="_blank">medizininformatik-initiative.de</a>
+
+                 |           <a style="color: var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de/en/legal-notice" target="_blank">Legal notice</a>
+
+                           <br/>
+
+                           <!-- HL7 trademark attribution (required wherever the FHIR flame
+                      renders - the header shows it on every page; see HL7's
+                      trademark guidelines; permission request tracked in issue #109). The sentence is
+                      HL7's prescribed formula and stays in English on every
+                      language's pages (legal wording, styleguide §6). -->
+
+                           <span>HL7&reg;, FHIR&reg; and the FHIR flame design are registered trademarks of Health Level Seven International. Their use does not constitute endorsement by HL7.</span>
+
+
+          
         </td>
       </tr>
       <tr>
@@ -34904,6 +35368,51 @@ Refer to           <a href="https://www.bfarm.de/DE/Kodiersysteme/Klassifikation
         <td>
 See           <a href="https://ig.fhir.de/basisprofile-de/1.5.4/ig-markdown-Ressourcen-ProzedurenProcedure.html#ig-markdown-Ressourcen-Procedure-OPS">OPS Coding - German Base Profiles</a>
  for detailed OPS coding requirements
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/changes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/86">github.com</a>
+        </td>
+        <td>
+          <strong>Added:</strong>
+ The Patient profile now includes the FHIR core extensions           <code class="language-plaintext highlighter-rouge">patient-birthPlace</code>
+,           <code class="language-plaintext highlighter-rouge">patient-citizenship</code>
+, and           <code class="language-plaintext highlighter-rouge">patient-nationality</code>
+ to represent place of birth, legal citizenship, and nationality in the Person module. See:           <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/86">#86</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/changes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/85">github.com</a>
+        </td>
+        <td>
+          <strong>Added:</strong>
+ The           <code class="language-plaintext highlighter-rouge">Condition.bodySite</code>
+ element now includes the FHIR core extension           <code class="language-plaintext highlighter-rouge">http://hl7.org/fhir/StructureDefinition/bodySite</code>
+ to support a detailed anatomic reference such as a           <code class="language-plaintext highlighter-rouge">BodyStructure</code>
+. See:           <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/85">#85</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/changes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/85">github.com</a>
+        </td>
+        <td>
+          <strong>Added:</strong>
+ The           <code class="language-plaintext highlighter-rouge">Procedure.bodySite</code>
+ element now includes the FHIR core extension           <code class="language-plaintext highlighter-rouge">http://hl7.org/fhir/StructureDefinition/bodySite</code>
+ to support a detailed anatomic reference such as a           <code class="language-plaintext highlighter-rouge">BodyStructure</code>
+. See:           <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/85">#85</a>
         </td>
       </tr>
       <tr>
@@ -35295,18 +35804,6 @@ According to           <a href="https://www.sozialgesetzbuch-sgb.de/sgbv/301.htm
         <td>
 2025-06-12_en_KDS-Abb_1.png          <br/>
           <img src="2025-06-12_en_KDS-Abb_1.png" alt="2025-06-12_en_KDS-Abb_1.png" width="600px" height="auto"/>
-        </td>
-      </tr>
-      <tr>
-        <td>
-MII_Logo_engl_rgb.jpg          <br/>
-          <img src="MII_Logo_engl_rgb.jpg" alt="MII_Logo_engl_rgb.jpg" width="600px" height="auto"/>
-        </td>
-      </tr>
-      <tr>
-        <td>
-MII_Logo_rgb.jpg          <br/>
-          <img src="MII_Logo_rgb.jpg" alt="MII_Logo_rgb.jpg" width="600px" height="auto"/>
         </td>
       </tr>
       <tr>

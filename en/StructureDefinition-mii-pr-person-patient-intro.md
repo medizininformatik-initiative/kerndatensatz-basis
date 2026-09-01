@@ -9,6 +9,12 @@
 
 This section provides detailed implementation guidance for the MII Patient Profile.
 
+<div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
+<h5 style="color: #406A99; margin-top: 0;">FHIR Core Extension Note</h5>
+
+<p>The profile includes the FHIR core Patient extensions <code>patient-birthPlace</code>, <code>patient-citizenship</code>, and <code>patient-nationality</code> to represent the patient's place of birth, legal citizenship, and nationality where needed.</p>
+</div>
+
 #### Patient Identification
 
 Patient identification uses multiple identifier types depending on the context:
