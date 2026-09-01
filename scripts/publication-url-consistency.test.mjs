@@ -125,6 +125,36 @@ test("resolves current publication tools and support repositories at runtime", (
   );
 });
 
+test("allows Publisher to reach only the configured loopback terminology proxy", () => {
+  const settings = readJson(".github/fhir-settings.json");
+  const previewWorkflow = read(".github/workflows/ig-publisher.yml");
+  const publicationWorkflow = read(".github/workflows/go-publish.yml");
+  const publicationSettingsArgument =
+    '-fhir-settings "${GITHUB_WORKSPACE}/automation/.github/fhir-settings.json"';
+
+  assert.deepEqual(settings, {
+    servers: [
+      {
+        url: "http://127.0.0.1:8090/fhir",
+        type: "fhir",
+        authenticationType: "none",
+        allowHttp: true,
+        allowPrivateNetwork: true,
+      },
+    ],
+  });
+  assert.match(
+    previewWorkflow,
+    /-fhir-settings \/workspace\/\.github\/fhir-settings\.json/,
+  );
+  assert.equal(
+    publicationWorkflow.split(publicationSettingsArgument).length - 1,
+    2,
+  );
+  assert.doesNotMatch(previewWorkflow, /-ssrf-protection\s+false/);
+  assert.doesNotMatch(publicationWorkflow, /-ssrf-protection\s+false/);
+});
+
 test("corrects and validates the generated FHIR IG Registry handoff", () => {
   const workflow = read(".github/workflows/go-publish.yml");
 

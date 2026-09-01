@@ -1,0 +1,13 @@
+{% if include.type == 'StructureDefinition' %}
+  {% if site.data.structuredefinitions[include.id].type == 'Extension' %}
+    {% assign modelType = site.data.stringsBase[include.lang]['Extension'] %}
+  {% elsif site.data.structuredefinitions[include.id].kind == 'logical' %}
+    {% assign modelType = site.data.stringsBase[include.lang]['LogicalModel'] %}
+  {% elsif site.data.structuredefinitions[include.id].kind == 'resource' %}
+    {% assign modelType = site.data.stringsBase[include.lang]['ResourceProfile'] %}
+  {% else %}
+    {% assign modelType = site.data.stringsBase[include.lang]['DataTypeProfile'] %}
+  {% endif %}
+{% else %}
+  {% assign modelType = include.type %}
+{% endif %}

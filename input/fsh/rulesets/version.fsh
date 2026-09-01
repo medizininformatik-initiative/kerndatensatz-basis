@@ -1,11 +1,11 @@
 // switch version of all conformance resources here
 RuleSet: Version
-* version = "2026.0.1"
+* version = "2027.0.0-ballot.rc1"
 * extension[+].url = $artifact-versionAlgorithm
 * extension[=].valueCoding = $version-algorithm#semver "SemVer"
 
 RuleSet: PR_CS_VS_Version
-* ^version = "2026.0.1"
+* ^version = "2027.0.0-ballot.rc1"
 * ^extension[+].url = $artifact-versionAlgorithm
 * ^extension[=].valueCoding = $version-algorithm#semver "SemVer"
 
@@ -18,7 +18,7 @@ RuleSet: CRMIPackageSource
 * meta.extension[=].extension[+].url = "packageId"
 * meta.extension[=].extension[=].valueId = "de.medizininformatikinitiative.kerndatensatz.base"
 * meta.extension[=].extension[+].url = "version"
-* meta.extension[=].extension[=].valueString = "2026.0.1"
+* meta.extension[=].extension[=].valueString = "2027.0.0-ballot.rc1"
 * meta.extension[=].extension[+].url = "uri"
 * meta.extension[=].extension[=].valueUri = "https://www.medizininformatik-initiative.de/fhir/modul-base"
 
@@ -27,7 +27,7 @@ RuleSet: CRMIPackageSourceDefinitionalResource
 * ^meta.extension[=].extension[+].url = "packageId"
 * ^meta.extension[=].extension[=].valueId = "de.medizininformatikinitiative.kerndatensatz.base"
 * ^meta.extension[=].extension[+].url = "version"
-* ^meta.extension[=].extension[=].valueString = "2026.0.1"
+* ^meta.extension[=].extension[=].valueString = "2027.0.0-ballot.rc1"
 * ^meta.extension[=].extension[+].url = "uri"
 * ^meta.extension[=].extension[=].valueUri = "https://www.medizininformatik-initiative.de/fhir/modul-base"
 
@@ -35,8 +35,8 @@ RuleSet: CRMIPackageSourceDefinitionalResource
 // A release may remain the valid implemented version until a later release replaces it, so only express applicability start for now
 RuleSet: CRMIResourceEffectivePeriod
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod"
-* ^extension[=].valuePeriod.start = "2026"
+* ^extension[=].valuePeriod.start = "2027"
 
 RuleSet: CRMIResourceEffectivePeriodInstance
 * extension[+].url = "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod"
-* extension[=].valuePeriod.start = "2026"
+* extension[=].valuePeriod.start = "2027"

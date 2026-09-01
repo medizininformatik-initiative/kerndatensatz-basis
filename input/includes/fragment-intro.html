@@ -1,0 +1,15 @@
+{% assign intro = site.data.pages[localPage].intro %}
+{% if intro != null %}
+{% if site.data.pages[localPage].intro-type == 'xml' %}
+<div style="display:inline-block">
+{% include {{include.lang}}/{{intro}} type=include.type id=include.id %}
+</div>
+{% else %}
+{% capture intro-content %}
+{% include {{include.lang}}/{{intro}} type=include.type id=include.id %}
+{% endcapture %}
+<div style="display:inline-block" markdown="1">
+{{ intro-content | markdownify }}
+</div>
+{% endif %}
+{% endif %}

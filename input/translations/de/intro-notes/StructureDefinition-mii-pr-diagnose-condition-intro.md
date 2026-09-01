@@ -69,6 +69,12 @@ Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Dia
 
 #### Dokumentation der Körperstelle
 
+<div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
+<h5 style="color: #406A99; margin-top: 0;">Hinweis zu FHIR-Core-Extensions</h5>
+
+<p>Das Profil enthält die FHIR-Core-Extension <code>http://hl7.org/fhir/StructureDefinition/bodySite</code> auf <code>Condition.bodySite</code>, um zusätzlich zu der codierten Körperstelle eine detaillierte anatomische Referenz, z.B. auf eine BodyStructure, abbilden zu können.</p>
+</div>
+
 **`Condition.bodySite`:**
 - OPTIONALES Element
 - Falls dieses optionale Element verwendet wird, SOLL die Körperstelle mindestens mit einem SNOMED CT-Code codiert werden

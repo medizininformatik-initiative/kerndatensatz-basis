@@ -18,7 +18,7 @@ Description: "Logische Repräsentation des Basismoduls Fall"
 * insert CRMIArtifactContributors
 * ^status = #active
 * ^experimental = false
-* ^date = "2026-06-15"
+* ^date = "2026-09-01"
 * ^purpose = "Define the information model for treatment cases and encounters independently of a concrete FHIR resource representation."
 * Einrichtungskontakt 0..* BackboneElement "Beschreibt den Kontakt zur Einrichtung, bestimmt durch den Behandlungsvertrag."
 * Einrichtungskontakt.KontaktEbene 0..* http://hl7.org/fhir/StructureDefinition/CodeableConcept "Für die Unterscheidung der Kontakt-Hierarchieebenen im Modul FALL werden folgende Ausprägungen unterschieden:\r\n\r\n1. Einrichtungskontakt\r\n\r\n2. Abteilungskontakt\r\n\r\n3. Versorgungsstellenkontakt\r\n\r\nDiese Gliederung gilt zunächst für stationäre Kontakte (siehe Kontakt-Klasse). Die Übertragung auf ambulante und teilstationäre Kontakte muss noch abgestimmt werden."

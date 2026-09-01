@@ -23,7 +23,7 @@ Description: "Dieses Profil beschreibt den Todesursache der Patient*in als Eleme
 * insert CRMIArtifactContributors
 * ^status = #active
 * ^experimental = false
-* ^date = "2026-06-15"
+* ^date = "2026-09-01"
 * ^purpose = "Constrain the FHIR Condition resource to represent cause of death information consistently as part of the MII Person module."
 * id MS
 * meta MS

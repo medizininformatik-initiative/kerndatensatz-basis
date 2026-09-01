@@ -19,7 +19,7 @@ Description: "Enthaelt Alpha-ID-Codes der Versionen 2018 bis 2025"
 * insert CRMIApprovalDate(2024-03-07)
 * ^status = #active
 * ^experimental = false
-* ^date = "2026-06-15"
+* ^date = "2026-09-01"
 * ^purpose = "Define Alpha-ID codes allowed for diagnosis coding in the MII Diagnosis module."
 * include codes from system $alpha-id|2026
 * include codes from system $alpha-id|2025

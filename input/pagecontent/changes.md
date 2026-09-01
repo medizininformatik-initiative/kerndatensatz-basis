@@ -2,6 +2,38 @@ This page documents the changes and updates across versions of the MII Implement
 
 ---
 
+### Version 2027.0.0-ballot
+
+**Date:** 2026-09-01
+
+#### Documentation
+
+- **Changed:** Dependency updates to `de.basisprofil.r4` 1.6.0, `de.medizininformatikinitiative.kerndatensatz.meta` 2027.0.0-ballot.rc3, `hl7.terminology.r4` 7.1.0, and `hl7.fhir.uv.extensions.r4` 5.2.0.
+
+#### Person Module
+
+- **Added:** The Patient profile now includes the FHIR core extensions `patient-birthPlace`, `patient-citizenship`, and `patient-nationality` to represent place of birth, legal citizenship, and nationality in the Person module. See: [#86](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/86)
+
+#### Diagnosis Module
+
+- **Added:** The `Condition.bodySite` element now includes the FHIR core extension `http://hl7.org/fhir/StructureDefinition/bodySite` to support a detailed anatomic reference such as a `BodyStructure`. See: [#85](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/85)
+
+#### Treatment Case Module
+
+- **Changed:** Updated the Treatment Case UML model to represent the organizational assignment between care units and departments as an optional many-to-many association.
+- **Changed:** Updated the relationships between diagnoses and contacts in the Treatment Case and Diagnosis UML diagrams to show the department contact as the currently recommended contact level while retaining the possibility of other contact levels.
+
+#### Procedure Module
+
+- **Changed:** Updated the Procedure UML diagram to show the department contact as the currently recommended contact context while retaining the possibility of other contact levels.
+- **Added:** The `Procedure.bodySite` element now includes the FHIR core extension `http://hl7.org/fhir/StructureDefinition/bodySite` to support a detailed anatomic reference such as a `BodyStructure`. See: [#85](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/85)
+
+#### Terminology Updates
+
+- **Updated:** Resources use SNOMED CT version `http://snomed.info/sct/900000000000207008/version/20260701` (July 2026) across modules to ensure stable [ValueSet expansion](http://hl7.org/fhir/R4/valueset.html#expansion)
+
+---
+
 ### Version 2026.0.1
 
 **Date:** 2026-07-20

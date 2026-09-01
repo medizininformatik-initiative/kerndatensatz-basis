@@ -18,6 +18,6 @@ Description: "Enthaelt alle SNOMED CT Procedure Codes"
 * insert CRMIArtifactTopic(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C25218)
 * ^status = #active
 * ^experimental = false
-* ^date = "2026-06-15"
+* ^date = "2026-09-01"
 * ^purpose = "Define SNOMED CT procedure concepts allowed for procedure coding."
 * include codes from system $sct where concept descendent-of #71388002

@@ -22,7 +22,7 @@ Description: "Logische Repräsentation des Basismoduls Person"
 * insert CRMIArtifactContributors
 * ^status = #active
 * ^experimental = false
-* ^date = "2026-06-09"
+* ^date = "2026-09-01"
 * ^purpose = "Define the person-related information model independently of a concrete FHIR resource representation."
 * . ^short = "-- Überschrift --"
 * . insert Translation(^short, en, -- Heading --)
@@ -48,6 +48,25 @@ Description: "Logische Repräsentation des Basismoduls Person"
 * Demographie insert Translation(^short, en, [[The basic demography module contains demographic parameters (age, gender, etc.).]])
   * AdministrativesGeschlecht 0..1 code "Administratives Geschlecht der Person" "Administratives Geschlecht der Person"
   * AdministrativesGeschlecht insert Translation(^short, en, [[Administrative sex of the person]])
+  * DokumentiertesGeschlecht 0..* BackboneElement "Dokumentierte Geschlechtsangabe einer Person." "Geschlechtsangabe einer Person aus einem Dokument oder einem anderen Datensatz einschließlich optionaler Angaben zu Art, zeitlicher Gültigkeit und Provenienz. Sie repräsentiert weder eine Geschlechtsidentität noch einen klinisch relevanten Geschlechtsparameter oder Angaben zur Sexualität."
+  * DokumentiertesGeschlecht insert Translation(^short, en, [[Recorded sex or gender information for a person.]])
+    * Wert 1..1 CodeableConcept "Dokumentierte Geschlechtsangabe der Person." "Geschlechtsangabe der Person, wie sie in einem Dokument oder einem anderen Datensatz erfasst wurde."
+    * Wert insert Translation(^short, en, [[The recorded sex or gender value for the person.]])
+    * Wert from http://hl7.org/fhir/ValueSet/administrative-gender (example)
+    * Typ 0..1 CodeableConcept "Art der dokumentierten Geschlechtsangabe." "Art oder Kategorie der dokumentierten Geschlechtsangabe, zum Beispiel administratives Geschlecht, administratives biologisches Geschlecht oder bei Geburt zugewiesenes Geschlecht."
+    * Typ insert Translation(^short, en, [[Type of recorded sex or gender.]])
+    * Typ from http://terminology.hl7.org/ValueSet/recorded-sex-or-gender-type (example)
+    * Gueltigkeitszeitraum 0..1 Period "Gültigkeitszeitraum der dokumentierten Geschlechtsangabe." "Zeitraum, in dem die dokumentierte Geschlechtsangabe für die Person gilt."
+    * Gueltigkeitszeitraum insert Translation(^short, en, [[When the recorded sex or gender value applies.]])
+    * Erfassungszeitpunkt 0..1 dateTime "Zeitpunkt der Erfassung." "Zeitpunkt, zu dem die dokumentierte Geschlechtsangabe im System erfasst wurde."
+    * Erfassungszeitpunkt insert Translation(^short, en, [[When the recorded sex or gender value was recorded.]])
+    * Quelle[x] 0..1 CodeableConcept or Reference(Organization or Device or RelatedPerson or Practitioner) "Quelle der dokumentierten Geschlechtsangabe." "Codierte Angabe oder Referenz auf die Quelle der dokumentierten Geschlechtsangabe."
+    * Quelle[x] insert Translation(^short, en, [[Source of the recorded sex or gender value.]])
+    * Quelldokument[x] 0..1 CodeableConcept or Reference(DocumentReference) "Quelldokument der dokumentierten Geschlechtsangabe." "Referenz auf das Quelldokument oder codierte Angabe der Dokumentart, in der die Geschlechtsangabe erstmalig erfasst wurde."
+    * Quelldokument[x] insert Translation(^short, en, [[Document from which the recorded sex or gender value was acquired.]])
+    * ZustaendigerRechtsraum 0..1 CodeableConcept "Zuständiger Rechtsraum der Quelle." "Rechtsraum, der für die Quelle oder das Quelldokument der erfassten Geschlechtsangabe zuständig ist."
+    * ZustaendigerRechtsraum insert Translation(^short, en, [[Jurisdiction responsible for the source or source document.]])
+    * ZustaendigerRechtsraum from http://terminology.hl7.org/ValueSet/jurisdiction (extensible)
   * Geburtsdatum 0..1 date "Geburtsdatum des Person." "Geburtsdatum des Person."
   * Geburtsdatum insert Translation(^short, en, [[Date of birth of the patient]])
   * Adresse 0..* BackboneElement "Vollständige Anschrift einer Person für die postlische Kommunikation." "Vollständige Anschrift einer Person für die postlische Kommunikation."
@@ -82,8 +101,47 @@ Description: "Logische Repräsentation des Basismoduls Person"
     * Informationsquelle insert Translation(^short, en, [[Source of vital status]])
     * ZeitpunktFeststellungDesVitalstatus 1..1 dateTime "Letzter bekannter Zeitpunkt oder Zeitraum, zudem ein Vitalstatus festgestellt wurde" "Letzter bekannter Zeitpunkt oder Zeitraum, zudem ein Vitalstatus festgestellt wurde"
     * ZeitpunktFeststellungDesVitalstatus insert Translation(^short, en, [[Last known point in time at which a vital status was recorded]])
-    * Todesursache 0..1 CodeableConcept "Todesursache mit ICD-10-WHO kodiert."
+    * Todesursache 0..1 CodeableConcept "Todesursache mit ICD-10-WHO codiert."
     * Todesursache insert Translation(^short, en, [[Reason for patient's death. Coded per ICD-10-WHO.]])
+* AllergieOderUnvertraeglichkeit 0..* BackboneElement "Allergie oder Unverträglichkeit" "Dokumentierte Einschätzung einer patientenbezogenen Allergie oder Unverträglichkeit, die mit dem Risiko einer schädlichen oder unerwünschten Reaktion bei Exposition gegenüber einem bestimmten Stoff, Produkt oder einer Stoffklasse verbunden ist."
+* AllergieOderUnvertraeglichkeit insert Translation(^short, en, [[Allergy or intolerance]])
+  * KlinischerStatus 0..1 CodeableConcept "Klinischer Status" "Klinischer Zustand der Allergie oder Unverträglichkeit, beispielsweise aktiv, inaktiv oder abgeklungen."
+  * KlinischerStatus insert Translation(^short, en, [[Clinical status]])
+  * KlinischerStatus from http://hl7.org/fhir/ValueSet/allergyintolerance-clinical (required)
+  * Verifikationsstatus 0..1 CodeableConcept "Verifikationsstatus" "Grad der fachlichen Bestätigung der Allergie oder Unverträglichkeit, beispielsweise unbestätigt, bestätigt oder widerlegt."
+  * Verifikationsstatus insert Translation(^short, en, [[Verification status]])
+  * Verifikationsstatus from http://hl7.org/fhir/ValueSet/allergyintolerance-verification (required)
+  * Art 0..1 code "Art" "Einordnung als Allergie oder Unverträglichkeit, sofern der zugrunde liegende Mechanismus bekannt ist."
+  * Art insert Translation(^short, en, [[Type]])
+  * Art from http://hl7.org/fhir/ValueSet/allergy-intolerance-type (required)
+  * Kategorie 0..1 code "Kategorie" "Kategorie des auslösenden Stoffes, beispielsweise Arzneimittel, Lebensmittel, Umweltstoff oder biologischer Stoff."
+  * Kategorie insert Translation(^short, en, [[Category]])
+  * Kategorie from http://hl7.org/fhir/ValueSet/allergy-intolerance-category (required)
+  * Kritikalitaet 0..1 code "Kritikalität" "Einschätzung des potenziellen klinischen Schadens bei einer zukünftigen Exposition."
+  * Kritikalitaet insert Translation(^short, en, [[Criticality]])
+  * Kritikalitaet from http://hl7.org/fhir/ValueSet/allergy-intolerance-criticality (required)
+  * AllergieOderUnvertraeglichkeitGegen 1..1 CodeableConcept "Allergie oder Unverträglichkeit gegen" "Stoff, Produkt, Stoffklasse oder Allergie-/Unverträglichkeitsbegriff, auf den sich die dokumentierte Gefährdung bezieht."
+  * AllergieOderUnvertraeglichkeitGegen insert Translation(^short, en, [[Substance, product, class, or allergy or intolerance concept]])
+  * AllergieOderUnvertraeglichkeitGegen from http://hl7.org/fhir/ValueSet/allergyintolerance-code (example)
+  * Patient 1..1 Reference(Patient) "Patient" "Patient, bei dem die Allergie oder Unverträglichkeit besteht beziehungsweise dokumentiert wurde."
+  * Patient insert Translation(^short, en, [[Patient with the allergy or intolerance]])
+  * Kontakt 0..1 Reference(Encounter) "Kontakt" "Kontakt, in dessen Zusammenhang die Allergie oder Unverträglichkeit dokumentiert wurde."
+  * Kontakt insert Translation(^short, en, [[Encounter associated with the allergy or intolerance]])
+  * Beginn[x] 0..1 dateTime or Age or Period or Range or string "Beginn" "Zeitpunkt, Zeitraum, Lebensalter oder andere zeitliche Angabe zum erstmaligen Auftreten der Allergie oder Unverträglichkeit."
+  * Beginn[x] insert Translation(^short, en, [[Onset of the allergy or intolerance]])
+  * Dokumentationsdatum 0..1 dateTime "Dokumentationsdatum" "Zeitpunkt, zu dem die Allergie oder Unverträglichkeit erstmals im dokumentierenden System erfasst wurde."
+  * Dokumentationsdatum insert Translation(^short, en, [[Date when the allergy or intolerance was first recorded]])
+  * UnerwuenschteReaktion 0..* BackboneElement "Unerwünschte Reaktion" "Angaben zu einer beobachteten unerwünschten Reaktion nach Exposition gegenüber dem betreffenden Stoff oder Produkt."
+  * UnerwuenschteReaktion insert Translation(^short, en, [[Observed adverse reaction]])
+    * Manifestation 1..* CodeableConcept "Manifestation" "Klinische Symptome oder Befunde, die im Zusammenhang mit der unerwünschten Reaktion beobachtet wurden."
+    * Manifestation insert Translation(^short, en, [[Clinical manifestation of the adverse reaction]])
+    * Manifestation from http://hl7.org/fhir/ValueSet/clinical-findings (example)
+    * Schweregrad 0..1 code "Schweregrad" "Schweregrad der tatsächlich aufgetretenen Reaktion."
+    * Schweregrad insert Translation(^short, en, [[Severity of the observed reaction]])
+    * Schweregrad from http://hl7.org/fhir/ValueSet/reaction-event-severity (required)
+    * Expositionsweg 0..1 CodeableConcept "Expositionsweg" "Weg, über den der Patient dem auslösenden Stoff oder Produkt ausgesetzt war."
+    * Expositionsweg insert Translation(^short, en, [[Route of exposure]])
+    * Expositionsweg from http://hl7.org/fhir/ValueSet/route-codes (example)
 * PatientIn 0..* BackboneElement "Person, die in einer oder mehreren Gesundheitseinrichtungen behandelt wird" "Person, die in einer oder mehreren Gesundheitseinrichtungen behandelt wird"
 * PatientIn insert Translation(^short, en, [[Person receiving treatment in one or more health care facilities]])
   * PatientenIdentifikator 0..* BackboneElement "Identifikation des Patienten in Verschiedenen Gesundheitseinrichtungen, Einrichtungskennzeichen kann als \"Codesystem\" gesehen werden, und Patienten-Identifikator als \"Code\"" "Identifikation des Patienten in Verschiedenen Gesundheitseinrichtungen, Einrichtungskennzeichen kann als \"Codesystem\" gesehen werden, und Patienten-Identifikator als \"Code\""
@@ -148,6 +206,14 @@ Target: "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
     * ArtdesPraefixes -> "Patient.name.prefix.extension-prefix-qualifier"
   * Geburtsname -> "Patient.name.use"
 * Demographie.AdministrativesGeschlecht -> "Patient.gender"
+* Demographie.DokumentiertesGeschlecht -> "Patient.extension:recordedSexOrGender"
+  * Wert -> "Patient.extension:recordedSexOrGender.extension:value.valueCodeableConcept"
+  * Typ -> "Patient.extension:recordedSexOrGender.extension:type.valueCodeableConcept"
+  * Gueltigkeitszeitraum -> "Patient.extension:recordedSexOrGender.extension:effectivePeriod.valuePeriod"
+  * Erfassungszeitpunkt -> "Patient.extension:recordedSexOrGender.extension:acquisitionDate.valueDateTime"
+  * Quelle[x] -> "Patient.extension:recordedSexOrGender.extension:source.value[x]"
+  * Quelldokument[x] -> "Patient.extension:recordedSexOrGender.extension:sourceDocument.value[x]"
+  * ZustaendigerRechtsraum -> "Patient.extension:recordedSexOrGender.extension:jurisdiction.valueCodeableConcept"
 * Demographie.Geburtsdatum -> "Patient.birthDate"
 * Demographie.Vitalstatus.PatientVerstorben -> "Patient.deceased[x]"
 * Demographie.Vitalstatus.Todeszeitpunkt -> "Patient.deceased[x]"
@@ -162,3 +228,24 @@ Target: "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
   * Postfach.Strasse -> "Patient.address.line"
 * PatientInPseudonym
   * Pseudonym -> "Patient.identifier:PseudonymisierterIdentifier"
+
+Mapping: Person-AllergyIntolerance-LogicalModel
+Id: AllergyIntolerance
+Title: "Person LogicalModel AllergyIntolerance Mapping"
+Source: MII_LM_Person
+Target: "http://hl7.org/fhir/StructureDefinition/AllergyIntolerance|4.0.1"
+* AllergieOderUnvertraeglichkeit -> "AllergyIntolerance"
+  * KlinischerStatus -> "AllergyIntolerance.clinicalStatus"
+  * Verifikationsstatus -> "AllergyIntolerance.verificationStatus"
+  * Art -> "AllergyIntolerance.type"
+  * Kategorie -> "AllergyIntolerance.category"
+  * Kritikalitaet -> "AllergyIntolerance.criticality"
+  * AllergieOderUnvertraeglichkeitGegen -> "AllergyIntolerance.code"
+  * Patient -> "AllergyIntolerance.patient"
+  * Kontakt -> "AllergyIntolerance.encounter"
+  * Beginn[x] -> "AllergyIntolerance.onset[x]"
+  * Dokumentationsdatum -> "AllergyIntolerance.recordedDate"
+  * UnerwuenschteReaktion -> "AllergyIntolerance.reaction"
+    * Manifestation -> "AllergyIntolerance.reaction.manifestation"
+    * Schweregrad -> "AllergyIntolerance.reaction.severity"
+    * Expositionsweg -> "AllergyIntolerance.reaction.exposureRoute"

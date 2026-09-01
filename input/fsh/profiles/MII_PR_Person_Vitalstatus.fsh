@@ -23,7 +23,7 @@ Description: "Dieses Profil beschreibt den Vitalstatus der Patient*in in der Med
 * insert CRMIArtifactContributors
 * ^status = #active
 * ^experimental = false
-* ^date = "2026-06-09"
+* ^date = "2026-09-01"
 * ^purpose = "Constrain the FHIR Observation resource to represent vital status information consistently as part of the MII Person module."
 * id MS
 * meta MS

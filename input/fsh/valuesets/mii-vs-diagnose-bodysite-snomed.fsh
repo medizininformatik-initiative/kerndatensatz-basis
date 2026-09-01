@@ -19,6 +19,6 @@ Description: "Enthaelt alle SNOMED Body structure codes"
 * insert CRMIArtifactTopic(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C15607)
 * ^status = #active
 * ^experimental = true
-* ^date = "2026-06-15"
+* ^date = "2026-09-01"
 * ^purpose = "Define SNOMED CT body structure concepts allowed for diagnosis body site representation."
 * include codes from system $sct where concept descendent-of #123037004

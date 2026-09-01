@@ -23,13 +23,17 @@ Description: "Dieses Profil beschreibt eine*n pseudonymisierte*n Patient*in in d
 * insert CRMIArtifactContributors
 * ^status = #active
 * ^experimental = false
-* ^date = "2026-06-15"
+* ^date = "2026-09-01"
 * ^purpose = "Constrain the FHIR Patient resource for privacy-preserving exchange of patient information in the MII Person module."
 * obeys mii-pat-1
 * id MS
 * meta MS
 //* meta.source MS
 * meta.profile MS
+* extension contains
+    $patient-birthPlace named birthPlace 0..1 and
+    $patient-citizenship named patient-citizenship 0..* and
+    $patient-nationality named patient-nationality 0..* 
 * identifier 1.. MS
 * identifier ^short = "Patienten-Identifikator"
 * insert Translation(identifier ^short, de-DE, Identifikator)

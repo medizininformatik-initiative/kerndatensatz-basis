@@ -2,6 +2,38 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 
 ---
 
+### Version 2027.0.0-ballot
+
+**Datum:** 2026-09-01
+
+#### Dokumentation
+
+- **Changed:** Abhängigkeiten auf `de.basisprofil.r4` 1.6.0, `de.medizininformatikinitiative.kerndatensatz.meta` 2027.0.0-ballot.rc3, `hl7.terminology.r4` 7.1.0 und `hl7.fhir.uv.extensions.r4` 5.2.0 aktualisiert.
+
+#### Modul Person
+
+- **Added:** Das Patient-Profil enthält nun die FHIR-Core-Extensions `patient-birthPlace`, `patient-citizenship` und `patient-nationality`, um Geburtsort, Staatsangehörigkeit und Nationalität im Modul Person abzubilden. Siehe: [#86](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/86)
+
+#### Modul Diagnose
+
+- **Added:** Das Element `Condition.bodySite` enthält nun die FHIR-Core-Extension `http://hl7.org/fhir/StructureDefinition/bodySite`, um eine detaillierte anatomische Referenz, z.B. auf eine `BodyStructure`, zusätzlich zur kodierten Körperstelle abzubilden. Siehe: [#85](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/85)
+
+#### Modul Fall
+
+- **Changed:** UML-Modell des Moduls Fall angepasst, sodass die organisatorische Zuordnung zwischen Versorgungsstellen und Abteilungen als optionale n:m-Beziehung dargestellt wird.
+- **Changed:** Beziehungen zwischen Diagnosen und Kontakten in den UML-Diagrammen der Module Fall und Diagnose angepasst, sodass der Abteilungskontakt als derzeit empfohlene Kontaktebene dargestellt wird und andere Kontaktebenen weiterhin möglich bleiben.
+
+#### Modul Prozedur
+
+- **Changed:** Beziehung zwischen Prozeduren und Kontakten im Prozedur-UML angepasst, sodass der Abteilungskontakt als derzeit empfohlener Kontaktkontext dargestellt wird und andere Kontaktebenen weiterhin möglich bleiben.
+- **Added:** Das Element `Procedure.bodySite` enthält nun die FHIR-Core-Extension `http://hl7.org/fhir/StructureDefinition/bodySite`, um eine detaillierte anatomische Referenz, z.B. auf eine `BodyStructure`, zusätzlich zur kodierten Körperstelle abzubilden. Siehe: [#85](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/85)
+
+#### Terminologie-Updates
+
+- **Changed:** Ressourcen verwenden SNOMED CT-Version `http://snomed.info/sct/900000000000207008/version/20260701` (Juli 2026) modulübergreifend, um stabile [ValueSet-Expansion](http://hl7.org/fhir/R4/valueset.html#expansion) zu gewährleisten
+
+---
+
 ### Version 2026.0.1
 
 **Datum:** 2026-07-20

@@ -16,7 +16,7 @@ Description: "Enthaelt alle SNOMED CT Codes für ein Mapping der OPS Klassentite
 * insert CRMIArtifactContributors
 * insert CRMIApprovalDate(2024-03-07)
 * insert CRMIArtifactTopic(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C25218)
-* ^date = "2026-06-15"
+* ^date = "2026-09-01"
 * ^experimental = false
 * ^status = #active
 * ^purpose = "Define SNOMED CT concepts used to represent OPS category mappings."

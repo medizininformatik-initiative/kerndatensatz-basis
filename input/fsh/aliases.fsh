@@ -11,6 +11,9 @@ Alias: $observation-category = http://terminology.hl7.org/CodeSystem/observation
 Alias: $MII-Reference = https://www.medizininformatik-initiative.de/fhir/core/StructureDefinition/MII-Reference
 Alias: $data-absent-reason = http://hl7.org/fhir/StructureDefinition/data-absent-reason
 Alias: $Vitalstatus = https://www.medizininformatik-initiative.de/fhir/core/modul-person/CodeSystem/Vitalstatus
+Alias: $patient-birthPlace = http://hl7.org/fhir/StructureDefinition/patient-birthPlace
+Alias: $patient-nationality = http://hl7.org/fhir/StructureDefinition/patient-nationality
+Alias: $patient-citizenship = http://hl7.org/fhir/StructureDefinition/patient-citizenship
 
 // Diagnose
 Alias: $condition-clinical = http://terminology.hl7.org/CodeSystem/condition-clinical
@@ -26,6 +29,7 @@ Alias: $sct = http://snomed.info/sct|http://snomed.info/sct/900000000000207008/v
 Alias: $condition-related = http://hl7.org/fhir/StructureDefinition/condition-related
 Alias: $icd-o-3 = http://terminology.hl7.org/CodeSystem/icd-o-3
 Alias: $condition-assertedDate = http://hl7.org/fhir/StructureDefinition/condition-assertedDate
+Alias: $bodySite-reference = http://hl7.org/fhir/StructureDefinition/bodySite
 
 // Prozedur
 Alias: $ops = http://fhir.de/CodeSystem/bfarm/ops
