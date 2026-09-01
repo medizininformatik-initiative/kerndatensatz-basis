@@ -18,10 +18,6 @@ This page documents the changes and updates across versions of the MII Implement
 
 - **Added:** The `Condition.bodySite` element now includes the FHIR core extension `http://hl7.org/fhir/StructureDefinition/bodySite` to support a detailed anatomic reference such as a `BodyStructure`. See: [#85](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/85)
 
-#### Procedure Module
-
-- **Added:** The `Procedure.bodySite` element now includes the FHIR core extension `http://hl7.org/fhir/StructureDefinition/bodySite` to support a detailed anatomic reference such as a `BodyStructure`. See: [#85](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/85)
-
 #### Treatment Case Module
 
 - **Changed:** Updated the Treatment Case UML model to represent the organizational assignment between care units and departments as an optional many-to-many association.
@@ -30,6 +26,11 @@ This page documents the changes and updates across versions of the MII Implement
 #### Procedure Module
 
 - **Changed:** Updated the Procedure UML diagram to show the department contact as the currently recommended contact context while retaining the possibility of other contact levels.
+- **Added:** The `Procedure.bodySite` element now includes the FHIR core extension `http://hl7.org/fhir/StructureDefinition/bodySite` to support a detailed anatomic reference such as a `BodyStructure`. See: [#85](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/85)
+
+#### Terminology Updates
+
+- **Updated:** Resources use SNOMED CT version `http://snomed.info/sct/900000000000207008/version/20260701` (July 2026) across modules to ensure stable [ValueSet expansion](http://hl7.org/fhir/R4/valueset.html#expansion)
 
 ---
 

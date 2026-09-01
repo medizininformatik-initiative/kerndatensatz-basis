@@ -11,7 +11,7 @@ Die meisten in diesem Leitfaden verwendeten ValueSets verweisen auf externe Code
 **Hinweis:** Die ValueSet-Expansionen in diesem Implementierungsleitfaden wurden mit dem Terminologieserver der Service Unit Terminologische Dienste (SU-TermServ) generiert: [https://mii-termserv.de/](https://mii-termserv.de/). Für Validierungszwecke MÜSSEN Expansionen über einen FHIR-Terminologieserver erstellt werden.
 
 {:.bg-info}
-**SNOMED CT Version:** ValueSets, die SNOMED CT verwenden, nutzen für Expansionen die Version `http://snomed.info/sct/900000000000207008/version/20250701` (Juli 2025).
+**SNOMED CT Version:** ValueSets, die SNOMED CT verwenden, nutzen für Expansionen die Version `http://snomed.info/sct/900000000000207008/version/20260701` (Juli 2025).
 
 #### Modul Person ValueSets
 
