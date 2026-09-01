@@ -110,7 +110,7 @@ AbteilungTemp   -[hidden]down-> VersorgungsstelleTemp
 Einrichtungskontakt       "1" -- "0..*" Abteilungskontakt
 Abteilungskontakt         "1" -- "0..*" Versorgungsstellenkontakt
 
-Abteilungskontakt "0..*" --> "0..*" Diagnose : Diagnoserolle
+Einrichtungskontakt "0..*" --> "0..*" Diagnose : Diagnoserolle
 
 Patient "1" --> "0..*" Diagnose
 @enduml
