@@ -15,7 +15,7 @@ Most value sets used in this guide reference external code systems such as ICD-1
 
 **Note:** The ValueSet expansions in this Implementation Guide have been generated with the terminology server provided by Service Unit Terminologische Dienste (SU-TermServ): [https://mii-termserv.de/](https://mii-termserv.de/). For validation purposes, expansions MUST be created via a FHIR terminology server.
 
-**SNOMED CT Version:** ValueSets using SNOMED CT use version `http://snomed.info/sct/900000000000207008/version/20250701` (July 2025) for expansions.
+**SNOMED CT Version:** ValueSets using SNOMED CT use version `http://snomed.info/sct/900000000000207008/version/20260701` (July 2026) for expansions.
 
 #### Person Module Value Sets
 
