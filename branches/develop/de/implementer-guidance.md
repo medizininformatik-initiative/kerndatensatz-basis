@@ -1,9 +1,12 @@
 # Anleitung für Implementierer - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Inhaltsverzeichnis**](toc.md)
+* [**Hinweise**](guidance.md)
+* **Anleitung für Implementierer**
+
 ## Anleitung für Implementierer
 
- 
-Diese Seite enthält Übersetzungen aus der Originalsprache, in der der Leitfaden verfasst wurde. Informationen zu diesen Übersetzungen und Anweisungen zum Abgeben von Feedback zu den Übersetzungen finden Sie [hier](translationinfo.md). 
+ Diese Seite enthält Übersetzungen aus der Originalsprache, in der der Leitfaden verfasst wurde. Informationen zu diesen Übersetzungen und Anweisungen zum Abgeben von Feedback zu den Übersetzungen finden Sie [hier](translationinfo.md). 
 
 ### Leitfaden für Implementierer
 

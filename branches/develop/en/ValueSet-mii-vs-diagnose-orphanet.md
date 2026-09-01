@@ -1,6 +1,16 @@
 # MII VS Diagnose Orphanet - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **MII VS Diagnose Orphanet**
+
 ## ValueSet: MII VS Diagnose Orphanet (Experimental) 
+
+| | |
+| :--- | :--- |
+| *Official URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-orphanet | *Version*:2027.0.0-dev |
+| Active as of 2026-06-15 | *Computable Name*:MII_VS_Diagnose_Orphanet |
+| **Copyright/Legal**: INSERM US14 (Institut national de la santé et de la recherche médicale) | |
 
  
 Enthaelt alle Orpha-Kennnummern (ORPHAcodes) 

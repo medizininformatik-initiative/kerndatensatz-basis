@@ -1,5 +1,9 @@
 # Guidance for Researchers - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Table of Contents**](toc.md)
+* [**Guidance**](guidance.md)
+* **Guidance for Researchers**
+
 ## Guidance for Researchers
 
 ### Guidance for Researchers

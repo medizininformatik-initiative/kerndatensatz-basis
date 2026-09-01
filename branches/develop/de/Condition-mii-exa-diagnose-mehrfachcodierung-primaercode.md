@@ -1,5 +1,9 @@
 # MII EXA Diagnose Mehrfachcodierung Primaercode - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Inhaltsverzeichnis**](toc.md)
+* [**Artefaktübersicht**](artifacts.md)
+* **MII EXA Diagnose Mehrfachcodierung Primaercode**
+
 ## Beispiel Condition: MII EXA Diagnose Mehrfachcodierung Primaercode
 
 -------

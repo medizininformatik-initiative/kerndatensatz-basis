@@ -1,6 +1,16 @@
 # MII VS Diagnose Alpha-ID - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **MII VS Diagnose Alpha-ID**
+
 ## ValueSet: MII VS Diagnose Alpha-ID 
+
+| | |
+| :--- | :--- |
+| *Official URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-alphaid | *Version*:2027.0.0-dev |
+| Active as of 2026-06-15 | *Computable Name*:MII_VS_Diagnose_AlphaID |
+| **Copyright/Legal**: WHO, BfArM 1994 - 2025 - Die Erstellung erfolgt unter Verwendung der maschinenlesbaren Fassung des Bundesinstituts für Arzneimittel und Medizinprodukte (BfArM). | |
 
  
 Enthaelt Alpha-ID-Codes der Versionen 2018 bis 2025 

@@ -1,9 +1,9 @@
 # Metadatenübersicht - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
-## Metadatenübersicht
+* [**Inhaltsverzeichnis**](toc.md)
+* **Metadatenübersicht**
 
- 
-Diese Seite enthält Übersetzungen aus der Originalsprache, in der der Leitfaden verfasst wurde. Informationen zu diesen Übersetzungen und Anweisungen zum Abgeben von Feedback zu den Übersetzungen finden Sie [hier](translationinfo.md). 
+## Metadatenübersicht
 
 Diese Seite dokumentiert die in diesem Implementation Guide verwendeten computable Metadaten. Die Metadaten sollen die Artefakte für Menschen und Software besser auffindbar, bewertbar, validierbar, zitierbar, steuerbar und wiederverwendbar machen.
 

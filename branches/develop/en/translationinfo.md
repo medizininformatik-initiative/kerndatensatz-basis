@@ -1,5 +1,8 @@
 # Translation Information - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Table of Contents**](toc.md)
+* **Translation Information**
+
 ## Translation Information
 
 ### Translation Information

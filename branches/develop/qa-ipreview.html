@@ -377,17 +377,21 @@ WHO, BfArM 1994 - 2024 - Die Erstellung erfolgt unter Verwendung der maschinenle
 
           IG &copy; 2019+ Medical Informatics Initiative (MII).  
           Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-dev based on FHIR 4.0.1.
-          Generated 
-  
-    2026-08-14
-  
+          Generated 2026-09-01
+          
+          
+            
 
-          
-          
-                      Links: Table of Contents |
+          Links: Table of Contents |
                  QA Report
                  
-                
+                 | netzwerk-universitaetsmedizin.de
+                 | medizininformatik-initiative.de
+                 | Legal notice
+                 
+                 
+                 HL7&reg;, FHIR&reg; and the FHIR flame design are registered trademarks of Health Level Seven International. Their use does not constitute endorsement by HL7.
+
           
          (        <a href="en/version-history.html">src</a>
 )
@@ -399,17 +403,21 @@ WHO, BfArM 1994 - 2024 - Die Erstellung erfolgt unter Verwendung der maschinenle
 
           IG &copy; 2019+ Medical Informatics Initiative (MII).  
           Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-dev basiert auf FHIR 4.0.1.
-          Erstellt 
-  
-    2026-08-14
-  
+          Erstellt 2026-09-01
+          
+          
+            
 
-          
-          
-                      Links: Inhaltsverzeichnis |
+          Links: Inhaltsverzeichnis |
                  QA-Bericht
                  
-                
+                 | netzwerk-universitaetsmedizin.de
+                 | medizininformatik-initiative.de
+                 | Impressum
+                 
+                 
+                 HL7&reg;, FHIR&reg; and the FHIR flame design are registered trademarks of Health Level Seven International. Their use does not constitute endorsement by HL7.
+
           
          (        <a href="de/version-history.html">src</a>
 )
@@ -428,6 +436,10 @@ Copyright/Legal: This material includes SNOMED Clinical Terms&reg; (SNOMED CT&re
       </li>
       <li>
 Copyright/Rechtliches: This material includes SNOMED Clinical Terms&reg; (SNOMED CT&reg;) which is used by permission of SNOMED International. All rights reserved. SNOMED CT&reg;, was originally created by The College of American Pathologists. SNOMED and SNOMED CT are registered trademarks of SNOMED International. Implementers of these artefacts must have the appropriate SNOMED CT Affiliate license. (        <a href="de/ValueSet-mii-vs-prozedur-prozeduren-snomedct.html">src</a>
+)
+      </li>
+      <li>
+HL7&reg;, FHIR&reg; and the FHIR flame design are registered trademarks of Health Level Seven International. Their use does not constitute endorsement by HL7. (        <a href="en/version-history.html">src</a>
 )
       </li>
       <li>
@@ -828,17 +840,19 @@ Versehentliche(r) Schnitt, Punktion, Perforation oder Blutung: Bei sonstigen chi
           <a href="de/Bundle-mii-exa-base-test-data-bundle-1.change.history.html">web</a>
         </td>
         <td>
-          <a href="https://www.medizininformatik-initiative.de">www.medizininformatik-initiative.de</a>
+          <a href="https://www.netzwerk-universitaetsmedizin.de/forschung/num-diz">www.netzwerk-universitaetsmedizin.de</a>
         </td>
         <td>
- 
-            <a no-external="true" id="hl7-logo" href="https://www.medizininformatik-initiative.de">
 
-    
-    <img src="MII_Logo_rgb.jpg" alt="MII besuchen" height="50"/>
-    
+
+            <a no-external="true" id="project-logo" href="https://www.netzwerk-universitaetsmedizin.de/forschung/num-diz">
+
+
+    <img src="assets/images/logo-num-diz-de.svg" alt="NUM-DIZ (Netzwerk Universitätsmedizin — Datenintegrationszentrum)" height="50"/>
+
   
           </a>
+
 
 
         </td>
@@ -859,24 +873,223 @@ Versehentliche(r) Schnitt, Punktion, Perforation oder Blutung: Bei sonstigen chi
 .  
           Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-dev basiert auf           <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>
 .
-          Erstellt 
-            <span title="2026-08-14 15:34:00 +0000">
-    2026-08-14
-  </span>
-
+          Erstellt           <span title="Tue, Sep 1, 2026 12:08+0000">2026-09-01</span>
 
                     <br/>
 
                     <span style="color: var(--footer-highlight-text-color)">
 
-                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Inhaltsverzeichnis</a> |
+                        <!-- Branding override for the fhir2.base.template footer fragment.
+     Unlike header/css, the base footer fragment is NOT an empty placeholder: it
+     renders "Links: Table of Contents | QA Report [| feedback dashboards]".
+     The base uses site.data.stringsBase[include.lang][...] for the labels. The
+     reason this override supplies its own is the Imprint label: the base ships no
+     stringsBase key for it and a child template cannot add one (docs/styleguide.md
+     section 6), and the same include.lang branch then has to carry the other
+     labels too. (The blank-label problem that first motivated this is separately
+     mitigated: this repo vendors the base's own German catalogs into
+     translations/ — see translations/README.md.) The override preserves the base
+     links (TOC, QA, feedback dashboards) and appends the project information links.
+     NUM-DIZ takes over IG development and maintenance when MII funding ends
+     (end-2026), so the NUM-DIZ website link renders BEFORE the MII website link —
+     in BOTH brand designs and both languages; the MII links stay because the
+     modules remain MII content. Both anchors are the SITE ROOTS with the bare
+     domain as anchor text (TF-KDS feedback 2026-08-14: aligned anchor style;
+     domains are language-neutral, styleguide §6).
+     Imprint: points at the NUM-DIZ website's legal pages since 2026-08-14
+     (TF-KDS: NUM-DIZ takes over from MII in 2027, so legal-aspect links use
+     the NUM-DIZ counterpart where one exists) - German /impressum and English
+     /en/legal-notice (both verified HTTP 200 on 2026-08-14). -->
+
+          Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Inhaltsverzeichnis</a> |
                  <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA-Bericht</a>
                  
-                
+                 | <a style="color: var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de/" target="_blank">netzwerk-universitaetsmedizin.de</a>
+                 | <a style="color: var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/" target="_blank">medizininformatik-initiative.de</a>
+                 | <a style="color: var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de/impressum" target="_blank">Impressum</a>
+                 <br/>
+                             <!-- HL7 trademark attribution (required wherever the FHIR flame
+                      renders - the header shows it on every page; see HL7's
+                      trademark guidelines; permission request tracked in issue #109). The sentence is
+                      HL7's prescribed formula and stays in English on every
+                      language's pages (legal wording, styleguide §6). -->
+                 <span>HL7&reg;, FHIR&reg; and the FHIR flame design are registered trademarks of Health Level Seven International. Their use does not constitute endorsement by HL7.</span>
+
           
           </span>
 
         
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/Bundle-mii-exa-base-test-data-bundle-1.change.history.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.netzwerk-universitaetsmedizin.de/">www.netzwerk-universitaetsmedizin.de</a>
+        </td>
+        <td>
+
+                      <!-- Branding override for the fhir2.base.template footer fragment.
+     Unlike header/css, the base footer fragment is NOT an empty placeholder: it
+     renders "Links: Table of Contents | QA Report [| feedback dashboards]".
+     The base uses site.data.stringsBase[include.lang][...] for the labels. The
+     reason this override supplies its own is the Imprint label: the base ships no
+     stringsBase key for it and a child template cannot add one (docs/styleguide.md
+     section 6), and the same include.lang branch then has to carry the other
+     labels too. (The blank-label problem that first motivated this is separately
+     mitigated: this repo vendors the base's own German catalogs into
+     translations/ — see translations/README.md.) The override preserves the base
+     links (TOC, QA, feedback dashboards) and appends the project information links.
+     NUM-DIZ takes over IG development and maintenance when MII funding ends
+     (end-2026), so the NUM-DIZ website link renders BEFORE the MII website link —
+     in BOTH brand designs and both languages; the MII links stay because the
+     modules remain MII content. Both anchors are the SITE ROOTS with the bare
+     domain as anchor text (TF-KDS feedback 2026-08-14: aligned anchor style;
+     domains are language-neutral, styleguide §6).
+     Imprint: points at the NUM-DIZ website's legal pages since 2026-08-14
+     (TF-KDS: NUM-DIZ takes over from MII in 2027, so legal-aspect links use
+     the NUM-DIZ counterpart where one exists) - German /impressum and English
+     /en/legal-notice (both verified HTTP 200 on 2026-08-14). -->
+
+
+          Links:           <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Inhaltsverzeichnis</a>
+ |
+                           <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA-Bericht</a>
+
+                 
+                 |           <a style="color: var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de/" target="_blank">netzwerk-universitaetsmedizin.de</a>
+
+                 |           <a style="color: var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/" target="_blank">medizininformatik-initiative.de</a>
+
+                 |           <a style="color: var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de/impressum" target="_blank">Impressum</a>
+
+                           <br/>
+
+                           <!-- HL7 trademark attribution (required wherever the FHIR flame
+                      renders - the header shows it on every page; see HL7's
+                      trademark guidelines; permission request tracked in issue #109). The sentence is
+                      HL7's prescribed formula and stays in English on every
+                      language's pages (legal wording, styleguide §6). -->
+
+                           <span>HL7&reg;, FHIR&reg; and the FHIR flame design are registered trademarks of Health Level Seven International. Their use does not constitute endorsement by HL7.</span>
+
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/Bundle-mii-exa-base-test-data-bundle-1.change.history.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.medizininformatik-initiative.de/">www.medizininformatik-initiative.de</a>
+        </td>
+        <td>
+
+                      <!-- Branding override for the fhir2.base.template footer fragment.
+     Unlike header/css, the base footer fragment is NOT an empty placeholder: it
+     renders "Links: Table of Contents | QA Report [| feedback dashboards]".
+     The base uses site.data.stringsBase[include.lang][...] for the labels. The
+     reason this override supplies its own is the Imprint label: the base ships no
+     stringsBase key for it and a child template cannot add one (docs/styleguide.md
+     section 6), and the same include.lang branch then has to carry the other
+     labels too. (The blank-label problem that first motivated this is separately
+     mitigated: this repo vendors the base's own German catalogs into
+     translations/ — see translations/README.md.) The override preserves the base
+     links (TOC, QA, feedback dashboards) and appends the project information links.
+     NUM-DIZ takes over IG development and maintenance when MII funding ends
+     (end-2026), so the NUM-DIZ website link renders BEFORE the MII website link —
+     in BOTH brand designs and both languages; the MII links stay because the
+     modules remain MII content. Both anchors are the SITE ROOTS with the bare
+     domain as anchor text (TF-KDS feedback 2026-08-14: aligned anchor style;
+     domains are language-neutral, styleguide §6).
+     Imprint: points at the NUM-DIZ website's legal pages since 2026-08-14
+     (TF-KDS: NUM-DIZ takes over from MII in 2027, so legal-aspect links use
+     the NUM-DIZ counterpart where one exists) - German /impressum and English
+     /en/legal-notice (both verified HTTP 200 on 2026-08-14). -->
+
+
+          Links:           <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Inhaltsverzeichnis</a>
+ |
+                           <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA-Bericht</a>
+
+                 
+                 |           <a style="color: var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de/" target="_blank">netzwerk-universitaetsmedizin.de</a>
+
+                 |           <a style="color: var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/" target="_blank">medizininformatik-initiative.de</a>
+
+                 |           <a style="color: var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de/impressum" target="_blank">Impressum</a>
+
+                           <br/>
+
+                           <!-- HL7 trademark attribution (required wherever the FHIR flame
+                      renders - the header shows it on every page; see HL7's
+                      trademark guidelines; permission request tracked in issue #109). The sentence is
+                      HL7's prescribed formula and stays in English on every
+                      language's pages (legal wording, styleguide §6). -->
+
+                           <span>HL7&reg;, FHIR&reg; and the FHIR flame design are registered trademarks of Health Level Seven International. Their use does not constitute endorsement by HL7.</span>
+
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/Bundle-mii-exa-base-test-data-bundle-1.change.history.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.netzwerk-universitaetsmedizin.de/impressum">www.netzwerk-universitaetsmedizin.de</a>
+        </td>
+        <td>
+
+                      <!-- Branding override for the fhir2.base.template footer fragment.
+     Unlike header/css, the base footer fragment is NOT an empty placeholder: it
+     renders "Links: Table of Contents | QA Report [| feedback dashboards]".
+     The base uses site.data.stringsBase[include.lang][...] for the labels. The
+     reason this override supplies its own is the Imprint label: the base ships no
+     stringsBase key for it and a child template cannot add one (docs/styleguide.md
+     section 6), and the same include.lang branch then has to carry the other
+     labels too. (The blank-label problem that first motivated this is separately
+     mitigated: this repo vendors the base's own German catalogs into
+     translations/ — see translations/README.md.) The override preserves the base
+     links (TOC, QA, feedback dashboards) and appends the project information links.
+     NUM-DIZ takes over IG development and maintenance when MII funding ends
+     (end-2026), so the NUM-DIZ website link renders BEFORE the MII website link —
+     in BOTH brand designs and both languages; the MII links stay because the
+     modules remain MII content. Both anchors are the SITE ROOTS with the bare
+     domain as anchor text (TF-KDS feedback 2026-08-14: aligned anchor style;
+     domains are language-neutral, styleguide §6).
+     Imprint: points at the NUM-DIZ website's legal pages since 2026-08-14
+     (TF-KDS: NUM-DIZ takes over from MII in 2027, so legal-aspect links use
+     the NUM-DIZ counterpart where one exists) - German /impressum and English
+     /en/legal-notice (both verified HTTP 200 on 2026-08-14). -->
+
+
+          Links:           <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Inhaltsverzeichnis</a>
+ |
+                           <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA-Bericht</a>
+
+                 
+                 |           <a style="color: var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de/" target="_blank">netzwerk-universitaetsmedizin.de</a>
+
+                 |           <a style="color: var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/" target="_blank">medizininformatik-initiative.de</a>
+
+                 |           <a style="color: var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de/impressum" target="_blank">Impressum</a>
+
+                           <br/>
+
+                           <!-- HL7 trademark attribution (required wherever the FHIR flame
+                      renders - the header shows it on every page; see HL7's
+                      trademark guidelines; permission request tracked in issue #109). The sentence is
+                      HL7's prescribed formula and stays in English on every
+                      language's pages (legal wording, styleguide §6). -->
+
+                           <span>HL7&reg;, FHIR&reg; and the FHIR flame design are registered trademarks of Health Level Seven International. Their use does not constitute endorsement by HL7.</span>
+
+
+          
         </td>
       </tr>
       <tr>
@@ -34733,17 +34946,19 @@ Gemäß           <a href="https://www.sozialgesetzbuch-sgb.de/sgbv/301.html">&s
           <a href="en/Bundle-mii-exa-base-test-data-bundle-1.change.history.html">web</a>
         </td>
         <td>
-          <a href="https://www.medizininformatik-initiative.de">www.medizininformatik-initiative.de</a>
+          <a href="https://www.netzwerk-universitaetsmedizin.de/forschung/num-diz">www.netzwerk-universitaetsmedizin.de</a>
         </td>
         <td>
- 
-            <a no-external="true" id="hl7-logo" href="https://www.medizininformatik-initiative.de">
 
-    
-    <img src="MII_Logo_engl_rgb.jpg" alt="Visit MII" height="50"/>
-    
+
+            <a no-external="true" id="project-logo" href="https://www.netzwerk-universitaetsmedizin.de/forschung/num-diz">
+
+
+    <img src="assets/images/logo-num-diz-en.svg" alt="NUM-DIZ (Network of University Medicine — Data Integration Center)" height="50"/>
+
   
           </a>
+
 
 
         </td>
@@ -34764,24 +34979,223 @@ Gemäß           <a href="https://www.sozialgesetzbuch-sgb.de/sgbv/301.html">&s
 .  
           Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-dev based on           <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>
 .
-          Generated 
-            <span title="2026-08-14 15:34:00 +0000">
-    2026-08-14
-  </span>
-
+          Generated           <span title="Tue, Sep 1, 2026 12:08+0000">2026-09-01</span>
 
                     <br/>
 
                     <span style="color: var(--footer-highlight-text-color)">
 
-                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                        <!-- Branding override for the fhir2.base.template footer fragment.
+     Unlike header/css, the base footer fragment is NOT an empty placeholder: it
+     renders "Links: Table of Contents | QA Report [| feedback dashboards]".
+     The base uses site.data.stringsBase[include.lang][...] for the labels. The
+     reason this override supplies its own is the Imprint label: the base ships no
+     stringsBase key for it and a child template cannot add one (docs/styleguide.md
+     section 6), and the same include.lang branch then has to carry the other
+     labels too. (The blank-label problem that first motivated this is separately
+     mitigated: this repo vendors the base's own German catalogs into
+     translations/ — see translations/README.md.) The override preserves the base
+     links (TOC, QA, feedback dashboards) and appends the project information links.
+     NUM-DIZ takes over IG development and maintenance when MII funding ends
+     (end-2026), so the NUM-DIZ website link renders BEFORE the MII website link —
+     in BOTH brand designs and both languages; the MII links stay because the
+     modules remain MII content. Both anchors are the SITE ROOTS with the bare
+     domain as anchor text (TF-KDS feedback 2026-08-14: aligned anchor style;
+     domains are language-neutral, styleguide §6).
+     Imprint: points at the NUM-DIZ website's legal pages since 2026-08-14
+     (TF-KDS: NUM-DIZ takes over from MII in 2027, so legal-aspect links use
+     the NUM-DIZ counterpart where one exists) - German /impressum and English
+     /en/legal-notice (both verified HTTP 200 on 2026-08-14). -->
+
+          Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
                  <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
                  
-                
+                 | <a style="color: var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de/" target="_blank">netzwerk-universitaetsmedizin.de</a>
+                 | <a style="color: var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/" target="_blank">medizininformatik-initiative.de</a>
+                 | <a style="color: var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de/en/legal-notice" target="_blank">Legal notice</a>
+                 <br/>
+                             <!-- HL7 trademark attribution (required wherever the FHIR flame
+                      renders - the header shows it on every page; see HL7's
+                      trademark guidelines; permission request tracked in issue #109). The sentence is
+                      HL7's prescribed formula and stays in English on every
+                      language's pages (legal wording, styleguide §6). -->
+                 <span>HL7&reg;, FHIR&reg; and the FHIR flame design are registered trademarks of Health Level Seven International. Their use does not constitute endorsement by HL7.</span>
+
           
           </span>
 
         
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/Bundle-mii-exa-base-test-data-bundle-1.change.history.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.netzwerk-universitaetsmedizin.de/">www.netzwerk-universitaetsmedizin.de</a>
+        </td>
+        <td>
+
+                      <!-- Branding override for the fhir2.base.template footer fragment.
+     Unlike header/css, the base footer fragment is NOT an empty placeholder: it
+     renders "Links: Table of Contents | QA Report [| feedback dashboards]".
+     The base uses site.data.stringsBase[include.lang][...] for the labels. The
+     reason this override supplies its own is the Imprint label: the base ships no
+     stringsBase key for it and a child template cannot add one (docs/styleguide.md
+     section 6), and the same include.lang branch then has to carry the other
+     labels too. (The blank-label problem that first motivated this is separately
+     mitigated: this repo vendors the base's own German catalogs into
+     translations/ — see translations/README.md.) The override preserves the base
+     links (TOC, QA, feedback dashboards) and appends the project information links.
+     NUM-DIZ takes over IG development and maintenance when MII funding ends
+     (end-2026), so the NUM-DIZ website link renders BEFORE the MII website link —
+     in BOTH brand designs and both languages; the MII links stay because the
+     modules remain MII content. Both anchors are the SITE ROOTS with the bare
+     domain as anchor text (TF-KDS feedback 2026-08-14: aligned anchor style;
+     domains are language-neutral, styleguide §6).
+     Imprint: points at the NUM-DIZ website's legal pages since 2026-08-14
+     (TF-KDS: NUM-DIZ takes over from MII in 2027, so legal-aspect links use
+     the NUM-DIZ counterpart where one exists) - German /impressum and English
+     /en/legal-notice (both verified HTTP 200 on 2026-08-14). -->
+
+
+          Links:           <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a>
+ |
+                           <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+
+                 
+                 |           <a style="color: var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de/" target="_blank">netzwerk-universitaetsmedizin.de</a>
+
+                 |           <a style="color: var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/" target="_blank">medizininformatik-initiative.de</a>
+
+                 |           <a style="color: var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de/en/legal-notice" target="_blank">Legal notice</a>
+
+                           <br/>
+
+                           <!-- HL7 trademark attribution (required wherever the FHIR flame
+                      renders - the header shows it on every page; see HL7's
+                      trademark guidelines; permission request tracked in issue #109). The sentence is
+                      HL7's prescribed formula and stays in English on every
+                      language's pages (legal wording, styleguide §6). -->
+
+                           <span>HL7&reg;, FHIR&reg; and the FHIR flame design are registered trademarks of Health Level Seven International. Their use does not constitute endorsement by HL7.</span>
+
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/Bundle-mii-exa-base-test-data-bundle-1.change.history.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.medizininformatik-initiative.de/">www.medizininformatik-initiative.de</a>
+        </td>
+        <td>
+
+                      <!-- Branding override for the fhir2.base.template footer fragment.
+     Unlike header/css, the base footer fragment is NOT an empty placeholder: it
+     renders "Links: Table of Contents | QA Report [| feedback dashboards]".
+     The base uses site.data.stringsBase[include.lang][...] for the labels. The
+     reason this override supplies its own is the Imprint label: the base ships no
+     stringsBase key for it and a child template cannot add one (docs/styleguide.md
+     section 6), and the same include.lang branch then has to carry the other
+     labels too. (The blank-label problem that first motivated this is separately
+     mitigated: this repo vendors the base's own German catalogs into
+     translations/ — see translations/README.md.) The override preserves the base
+     links (TOC, QA, feedback dashboards) and appends the project information links.
+     NUM-DIZ takes over IG development and maintenance when MII funding ends
+     (end-2026), so the NUM-DIZ website link renders BEFORE the MII website link —
+     in BOTH brand designs and both languages; the MII links stay because the
+     modules remain MII content. Both anchors are the SITE ROOTS with the bare
+     domain as anchor text (TF-KDS feedback 2026-08-14: aligned anchor style;
+     domains are language-neutral, styleguide §6).
+     Imprint: points at the NUM-DIZ website's legal pages since 2026-08-14
+     (TF-KDS: NUM-DIZ takes over from MII in 2027, so legal-aspect links use
+     the NUM-DIZ counterpart where one exists) - German /impressum and English
+     /en/legal-notice (both verified HTTP 200 on 2026-08-14). -->
+
+
+          Links:           <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a>
+ |
+                           <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+
+                 
+                 |           <a style="color: var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de/" target="_blank">netzwerk-universitaetsmedizin.de</a>
+
+                 |           <a style="color: var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/" target="_blank">medizininformatik-initiative.de</a>
+
+                 |           <a style="color: var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de/en/legal-notice" target="_blank">Legal notice</a>
+
+                           <br/>
+
+                           <!-- HL7 trademark attribution (required wherever the FHIR flame
+                      renders - the header shows it on every page; see HL7's
+                      trademark guidelines; permission request tracked in issue #109). The sentence is
+                      HL7's prescribed formula and stays in English on every
+                      language's pages (legal wording, styleguide §6). -->
+
+                           <span>HL7&reg;, FHIR&reg; and the FHIR flame design are registered trademarks of Health Level Seven International. Their use does not constitute endorsement by HL7.</span>
+
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/Bundle-mii-exa-base-test-data-bundle-1.change.history.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.netzwerk-universitaetsmedizin.de/en/legal-notice">www.netzwerk-universitaetsmedizin.de</a>
+        </td>
+        <td>
+
+                      <!-- Branding override for the fhir2.base.template footer fragment.
+     Unlike header/css, the base footer fragment is NOT an empty placeholder: it
+     renders "Links: Table of Contents | QA Report [| feedback dashboards]".
+     The base uses site.data.stringsBase[include.lang][...] for the labels. The
+     reason this override supplies its own is the Imprint label: the base ships no
+     stringsBase key for it and a child template cannot add one (docs/styleguide.md
+     section 6), and the same include.lang branch then has to carry the other
+     labels too. (The blank-label problem that first motivated this is separately
+     mitigated: this repo vendors the base's own German catalogs into
+     translations/ — see translations/README.md.) The override preserves the base
+     links (TOC, QA, feedback dashboards) and appends the project information links.
+     NUM-DIZ takes over IG development and maintenance when MII funding ends
+     (end-2026), so the NUM-DIZ website link renders BEFORE the MII website link —
+     in BOTH brand designs and both languages; the MII links stay because the
+     modules remain MII content. Both anchors are the SITE ROOTS with the bare
+     domain as anchor text (TF-KDS feedback 2026-08-14: aligned anchor style;
+     domains are language-neutral, styleguide §6).
+     Imprint: points at the NUM-DIZ website's legal pages since 2026-08-14
+     (TF-KDS: NUM-DIZ takes over from MII in 2027, so legal-aspect links use
+     the NUM-DIZ counterpart where one exists) - German /impressum and English
+     /en/legal-notice (both verified HTTP 200 on 2026-08-14). -->
+
+
+          Links:           <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a>
+ |
+                           <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+
+                 
+                 |           <a style="color: var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de/" target="_blank">netzwerk-universitaetsmedizin.de</a>
+
+                 |           <a style="color: var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/" target="_blank">medizininformatik-initiative.de</a>
+
+                 |           <a style="color: var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de/en/legal-notice" target="_blank">Legal notice</a>
+
+                           <br/>
+
+                           <!-- HL7 trademark attribution (required wherever the FHIR flame
+                      renders - the header shows it on every page; see HL7's
+                      trademark guidelines; permission request tracked in issue #109). The sentence is
+                      HL7's prescribed formula and stays in English on every
+                      language's pages (legal wording, styleguide §6). -->
+
+                           <span>HL7&reg;, FHIR&reg; and the FHIR flame design are registered trademarks of Health Level Seven International. Their use does not constitute endorsement by HL7.</span>
+
+
+          
         </td>
       </tr>
       <tr>
@@ -35324,18 +35738,6 @@ According to           <a href="https://www.sozialgesetzbuch-sgb.de/sgbv/301.htm
         <td>
 2025-06-12_en_KDS-Abb_1.png          <br/>
           <img src="2025-06-12_en_KDS-Abb_1.png" alt="2025-06-12_en_KDS-Abb_1.png" width="600px" height="auto"/>
-        </td>
-      </tr>
-      <tr>
-        <td>
-MII_Logo_engl_rgb.jpg          <br/>
-          <img src="MII_Logo_engl_rgb.jpg" alt="MII_Logo_engl_rgb.jpg" width="600px" height="auto"/>
-        </td>
-      </tr>
-      <tr>
-        <td>
-MII_Logo_rgb.jpg          <br/>
-          <img src="MII_Logo_rgb.jpg" alt="MII_Logo_rgb.jpg" width="600px" height="auto"/>
         </td>
       </tr>
       <tr>

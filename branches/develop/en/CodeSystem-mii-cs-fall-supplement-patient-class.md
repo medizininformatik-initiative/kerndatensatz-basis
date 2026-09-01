@@ -1,6 +1,15 @@
 # MII CS Fall Supplement PatientClass - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **MII CS Fall Supplement PatientClass**
+
 ## CodeSystem: MII CS Fall Supplement PatientClass 
+
+| | |
+| :--- | :--- |
+| *Official URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-fall/CodeSystem/SupplementPatientClass | *Version*:2027.0.0-dev |
+| Active as of 2026-07-17 | *Computable Name*:MII_CS_Fall_SupplementPatientClass |
 
  
 CodeSystem Supplement für v2-0004 

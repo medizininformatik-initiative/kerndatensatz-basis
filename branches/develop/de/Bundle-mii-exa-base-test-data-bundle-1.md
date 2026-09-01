@@ -1,5 +1,9 @@
 # MII EXA Base Test Data Bundle 1 - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Inhaltsverzeichnis**](toc.md)
+* [**Artefaktübersicht**](artifacts.md)
+* **MII EXA Base Test Data Bundle 1**
+
 ## Beispiel Bundle: MII EXA Base Test Data Bundle 1
 
 

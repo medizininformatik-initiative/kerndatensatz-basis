@@ -1,6 +1,15 @@
 # MII VS Person Vitalstatus - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **MII VS Person Vitalstatus**
+
 ## ValueSet: MII VS Person Vitalstatus 
+
+| | |
+| :--- | :--- |
+| *Official URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/Vitalstatus | *Version*:2027.0.0-dev |
+| Active as of 2026-06-15 | *Computable Name*:MII_VS_Person_Vitalstatus |
 
  
 Enthält alle Werte, die den Vitalstatus einer Person beschreiben. 

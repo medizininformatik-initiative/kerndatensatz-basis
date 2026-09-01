@@ -1,6 +1,15 @@
 # MII PR Person Patient (Pseudonymisiert) - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **MII PR Person Patient (Pseudonymisiert)**
+
 ## Resource Profile: MII PR Person Patient (Pseudonymisiert) 
+
+| | |
+| :--- | :--- |
+| *Official URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert | *Version*:2027.0.0-dev |
+| Active as of 2026-06-15 | *Computable Name*:MII_PR_Person_PatientPseudonymisiert |
 
  
 Demographics and other administrative information about a patient. 
@@ -92,7 +101,7 @@ You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir
 
 ### Formal Views of Profile Content
 
- [Description Differentials, Snapshots, and other representations](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 
+ [Description of Profiles, Differentials, Snapshots, and their representations](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 
 
  
 

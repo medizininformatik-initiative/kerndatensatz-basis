@@ -1,5 +1,9 @@
 # MII EXA Diagnose Multiple Codings - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Inhaltsverzeichnis**](toc.md)
+* [**Artefaktübersicht**](artifacts.md)
+* **MII EXA Diagnose Multiple Codings**
+
 ## Beispiel Condition: MII EXA Diagnose Multiple Codings
 
 -------

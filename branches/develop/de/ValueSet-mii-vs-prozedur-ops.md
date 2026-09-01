@@ -1,6 +1,16 @@
 # MII VS Prozedur OPS - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Inhaltsverzeichnis**](toc.md)
+* [**Artefaktübersicht**](artifacts.md)
+* **MII VS Prozedur OPS**
+
 ## ValueSet: MII VS Prozedur OPS 
+
+| | |
+| :--- | :--- |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/mii-vs-prozedur-ops | *Version*:2027.0.0-dev |
+| Active Stand: 2026-06-15 | *Maschinenlesbarer Name*:MII_VS_Prozedur_OPS |
+| **Copyright/Rechtliches**: WHO, BfArM 1994 - 2025 - Die Erstellung erfolgt unter Verwendung der maschinenlesbaren Fassung des Bundesinstituts für Arzneimittel und Medizinprodukte (BfArM). | |
 
  
 Enthaelt OPS-Codes der Versionen 2010 bis 2025 

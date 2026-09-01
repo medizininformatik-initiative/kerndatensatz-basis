@@ -1,6 +1,15 @@
 # MII LM Prozedur - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Inhaltsverzeichnis**](toc.md)
+* [**Artefaktübersicht**](artifacts.md)
+* **MII LM Prozedur**
+
 ## Logisches Modell: MII LM Prozedur 
+
+| | |
+| :--- | :--- |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/LogicalModel/Prozedur | *Version*:2027.0.0-dev |
+| Active Stand: 2026-06-15 | *Maschinenlesbarer Name*:MII_LM_Prozedur |
 
  
 Logische Repräsentation des Basismoduls Prozedur 
@@ -15,10 +24,13 @@ You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir
 
  [Beschreibung von Profilen, Differentials, Snapshots und deren Repräsentationen](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 
 
+*  [Schlüsselelemente-Tabelle](#tabs-key) 
 *  [Differential-Tabelle](#tabs-diff) 
 *  [Snapshot-Tabelle](#tabs-snap) 
 *  [Statistiken/Referenzen](#tabs-summ) 
 *  [Alle](#tabs-all) 
+
+#### Constraints
 
 Diese Struktur ist abgeleitet von [Element](http://hl7.org/fhir/R4/datatypes.html#Element) 
 
@@ -29,6 +41,10 @@ Diese Struktur ist abgeleitet von [Element](http://hl7.org/fhir/R4/datatypes.htm
 ** Summary **
 
 Mandatory: 0 element(1 nested mandatory element)
+
+ **Schlüsselelemente-Ansicht** 
+
+#### Constraints
 
  **Differential-Ansicht** 
 

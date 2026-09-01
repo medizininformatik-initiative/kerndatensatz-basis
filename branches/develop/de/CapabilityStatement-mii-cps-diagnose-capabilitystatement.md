@@ -1,6 +1,15 @@
 # MII CPS Diagnose CapabilityStatement - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Inhaltsverzeichnis**](toc.md)
+* [**Artefaktübersicht**](artifacts.md)
+* **MII CPS Diagnose CapabilityStatement**
+
 ## CapabilityStatement: MII CPS Diagnose CapabilityStatement 
+
+| | |
+| :--- | :--- |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/CapabilityStatement/metadata | *Version*:2027.0.0-dev |
+| Active Stand: 2026-06-15 | *Maschinenlesbarer Name*:MII_CPS_Diagnose_CapabilityStatement |
 
  
 Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein konformes System unterstützen muss, um das Modul Diagnose der Medizininformatik Initiative zu implementieren. 

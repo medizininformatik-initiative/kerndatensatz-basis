@@ -1,9 +1,10 @@
 # Allgemeine Anforderungen - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
-## Allgemeine Anforderungen
+* [**Inhaltsverzeichnis**](toc.md)
+* [**Konformität**](conformance.md)
+* **Allgemeine Anforderungen**
 
- 
-Diese Seite enthält Übersetzungen aus der Originalsprache, in der der Leitfaden verfasst wurde. Informationen zu diesen Übersetzungen und Anweisungen zum Abgeben von Feedback zu den Übersetzungen finden Sie [hier](translationinfo.md). 
+## Allgemeine Anforderungen
 
 Diese Seite dokumentiert Anforderungen, die für alle MII-Akteure in diesem Leitfaden gelten. Die verwendeten Konformitätsverben - **MUSS**, **SOLL**, **KANN** - sind in den [FHIR Conformance Rules](http://hl7.org/fhir/R4/conformance-rules.html#conflang) definiert.
 

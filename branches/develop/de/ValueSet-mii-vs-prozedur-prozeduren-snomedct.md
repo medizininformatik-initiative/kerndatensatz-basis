@@ -1,6 +1,16 @@
 # MII VS Prozedur Prozeduren [SNOMED CT] - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Inhaltsverzeichnis**](toc.md)
+* [**Artefaktübersicht**](artifacts.md)
+* **MII VS Prozedur Prozeduren [SNOMED CT]**
+
 ## ValueSet: MII VS Prozedur Prozeduren [SNOMED CT] 
+
+| | |
+| :--- | :--- |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-sct | *Version*:2027.0.0-dev |
+| Active Stand: 2026-06-15 | *Maschinenlesbarer Name*:MII_VS_Prozedur_Prozeduren_SNOMEDCT |
+| **Copyright/Rechtliches**: This material includes SNOMED Clinical Terms® (SNOMED CT®) which is used by permission of SNOMED International. All rights reserved. SNOMED CT®, was originally created by The College of American Pathologists. SNOMED and SNOMED CT are registered trademarks of SNOMED International. Implementers of these artefacts must have the appropriate SNOMED CT Affiliate license. | |
 
  
 Enthaelt alle SNOMED CT Procedure Codes 

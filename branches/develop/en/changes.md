@@ -1,5 +1,9 @@
 # Changelog - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Table of Contents**](toc.md)
+* [**Versioning**](version-history.md)
+* **Changelog**
+
 ## Changelog
 
 This page documents the changes and updates across versions of the MII Implementation Guide Kerndatensatz Basis. This consolidated changelog combines release notes from four base modules: Person, Treatment Case, Diagnosis, and Procedure.

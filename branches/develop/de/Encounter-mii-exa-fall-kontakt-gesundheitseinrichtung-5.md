@@ -1,5 +1,9 @@
 # MII EXA Fall Kontakt Gesundheitseinrichtung (Versorgungsstellenkontakt OR VS3) - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Inhaltsverzeichnis**](toc.md)
+* [**Artefaktübersicht**](artifacts.md)
+* **MII EXA Fall Kontakt Gesundheitseinrichtung (Versorgungsstellenkontakt OR VS3)**
+
 ## Beispiel Encounter: MII EXA Fall Kontakt Gesundheitseinrichtung (Versorgungsstellenkontakt OR VS3)
 
 -------

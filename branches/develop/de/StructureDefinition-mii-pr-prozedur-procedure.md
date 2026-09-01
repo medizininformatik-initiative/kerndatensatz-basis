@@ -1,6 +1,15 @@
 # MII PR Prozedur Procedure - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Inhaltsverzeichnis**](toc.md)
+* [**Artefaktübersicht**](artifacts.md)
+* **MII PR Prozedur Procedure**
+
 ## Ressourcenprofil: MII PR Prozedur Procedure 
+
+| | |
+| :--- | :--- |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure | *Version*:2027.0.0-dev |
+| Active Stand: 2026-06-09 | *Maschinenlesbarer Name*:MII_PR_Prozedur_Procedure |
 
  
 Eine Prozedur, die an oder für einen Patienten durchgeführt wird oder wurde. 

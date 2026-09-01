@@ -1,6 +1,15 @@
 # MII PR Person Vitalstatus - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Inhaltsverzeichnis**](toc.md)
+* [**Artefaktübersicht**](artifacts.md)
+* **MII PR Person Vitalstatus**
+
 ## Ressourcenprofil: MII PR Person Vitalstatus 
+
+| | |
+| :--- | :--- |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus | *Version*:2027.0.0-dev |
+| Active Stand: 2026-06-09 | *Maschinenlesbarer Name*:MII_PR_Person_Vitalstatus |
 
  
 Vitalstatus einer Patientin oder eines Patienten. 

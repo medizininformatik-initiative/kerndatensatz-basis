@@ -1,6 +1,15 @@
 # MII PR Fall Kontakt mit einer Gesundheitseinrichtung - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **MII PR Fall Kontakt mit einer Gesundheitseinrichtung**
+
 ## Resource Profile: MII PR Fall Kontakt mit einer Gesundheitseinrichtung 
+
+| | |
+| :--- | :--- |
+| *Official URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung | *Version*:2027.0.0-dev |
+| Active as of 2026-06-15 | *Computable Name*:MII_PR_Fall_KontaktGesundheitseinrichtung |
 
  
 Kontakt zu einer Einrichtung, Abteilung oder Versorgungsstelle 
@@ -243,7 +252,7 @@ You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir
 
 ### Formal Views of Profile Content
 
- [Description Differentials, Snapshots, and other representations](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 
+ [Description of Profiles, Differentials, Snapshots, and their representations](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 
 
  
 

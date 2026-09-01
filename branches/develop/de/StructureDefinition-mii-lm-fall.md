@@ -1,6 +1,15 @@
 # MII LM Fall - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Inhaltsverzeichnis**](toc.md)
+* [**Artefaktübersicht**](artifacts.md)
+* **MII LM Fall**
+
 ## Logisches Modell: MII LM Fall 
+
+| | |
+| :--- | :--- |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/LogicalModel/Fall | *Version*:2027.0.0-dev |
+| Active Stand: 2026-06-15 | *Maschinenlesbarer Name*:MII_LM_Fall |
 
  
 Logische Repräsentation des Basismoduls Fall 
@@ -15,10 +24,13 @@ You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir
 
  [Beschreibung von Profilen, Differentials, Snapshots und deren Repräsentationen](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 
 
+*  [Schlüsselelemente-Tabelle](#tabs-key) 
 *  [Differential-Tabelle](#tabs-diff) 
 *  [Snapshot-Tabelle](#tabs-snap) 
 *  [Statistiken/Referenzen](#tabs-summ) 
 *  [Alle](#tabs-all) 
+
+#### Constraints
 
 Diese Struktur ist abgeleitet von [Element](http://hl7.org/fhir/R4/datatypes.html#Element) 
 
@@ -27,6 +39,10 @@ Diese Struktur ist abgeleitet von [Element](http://hl7.org/fhir/R4/datatypes.htm
 Diese Struktur ist abgeleitet von [Element](http://hl7.org/fhir/R4/datatypes.html#Element) 
 
 ** Summary **
+
+ **Schlüsselelemente-Ansicht** 
+
+#### Constraints
 
  **Differential-Ansicht** 
 

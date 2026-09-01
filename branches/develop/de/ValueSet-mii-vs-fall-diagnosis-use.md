@@ -1,6 +1,15 @@
 # MII VS Fall Diagnosis Use - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Inhaltsverzeichnis**](toc.md)
+* [**Artefaktübersicht**](artifacts.md)
+* **MII VS Fall Diagnosis Use**
+
 ## ValueSet: MII VS Fall Diagnosis Use 
+
+| | |
+| :--- | :--- |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/mii-vs-fall-diagnosis-use | *Version*:2027.0.0-dev |
+| Active Stand: 2026-06-15 | *Maschinenlesbarer Name*:MII_VS_Fall_Diagnosis_Use |
 
  
 Diagnosetyp 

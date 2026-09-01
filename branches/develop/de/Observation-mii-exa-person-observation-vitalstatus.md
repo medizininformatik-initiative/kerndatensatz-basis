@@ -1,5 +1,9 @@
 # MII EXA Person Observation Vitalstatus - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Inhaltsverzeichnis**](toc.md)
+* [**Artefaktübersicht**](artifacts.md)
+* **MII EXA Person Observation Vitalstatus**
+
 ## Beispiel Observation: MII EXA Person Observation Vitalstatus
 
 -------

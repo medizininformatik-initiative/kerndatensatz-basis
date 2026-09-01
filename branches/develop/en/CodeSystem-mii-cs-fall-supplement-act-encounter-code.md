@@ -1,6 +1,15 @@
 # MII CS Fall Supplement ActEncounterCode - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **MII CS Fall Supplement ActEncounterCode**
+
 ## CodeSystem: MII CS Fall Supplement ActEncounterCode 
+
+| | |
+| :--- | :--- |
+| *Official URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-fall/CodeSystem/SupplementActEncounterCode | *Version*:2027.0.0-dev |
+| Active as of 2026-07-17 | *Computable Name*:MII_CS_Fall_SupplementActEncounterCode |
 
  
 CodeSystem Supplement für ActEncounterCode 

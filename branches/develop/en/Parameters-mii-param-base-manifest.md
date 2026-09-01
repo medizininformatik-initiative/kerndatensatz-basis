@@ -1,5 +1,9 @@
 # mii-param-base-manifest - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **mii-param-base-manifest**
+
 ## Parameters: mii-param-base-manifest
 
 

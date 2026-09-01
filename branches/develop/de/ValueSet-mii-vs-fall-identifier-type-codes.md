@@ -1,6 +1,15 @@
 # MII VS Fall Identifier Type Codes - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Inhaltsverzeichnis**](toc.md)
+* [**Artefaktübersicht**](artifacts.md)
+* **MII VS Fall Identifier Type Codes**
+
 ## ValueSet: MII VS Fall Identifier Type Codes 
+
+| | |
+| :--- | :--- |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/identifier-type-codes | *Version*:2027.0.0-dev |
+| Active Stand: 2026-06-15 | *Maschinenlesbarer Name*:MII_VS_Fall_IdentifierTypeCodes |
 
  
 A coded type for an identifier that can be used to determine which identifier to use for a specific purpose. 

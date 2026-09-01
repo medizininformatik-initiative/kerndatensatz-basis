@@ -1,6 +1,14 @@
 # Home - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Table of Contents**](toc.md)
+* **Home**
+
 ## Home
+
+| | |
+| :--- | :--- |
+| *Official URL*:https://www.medizininformatik-initiative.de/fhir/modul-base/ImplementationGuide/mii-ig-base | *Version*:2027.0.0-dev |
+| Active as of 2026-07-28 | *Computable Name*:MII_IG_Base |
 
 ### Introduction
 

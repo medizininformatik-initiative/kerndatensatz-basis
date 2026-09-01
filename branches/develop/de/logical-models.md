@@ -1,9 +1,9 @@
 # Logische Modelle - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
-## Logische Modelle
+* [**Inhaltsverzeichnis**](toc.md)
+* **Logische Modelle**
 
- 
-Diese Seite enthält Übersetzungen aus der Originalsprache, in der der Leitfaden verfasst wurde. Informationen zu diesen Übersetzungen und Anweisungen zum Abgeben von Feedback zu den Übersetzungen finden Sie [hier](translationinfo.md). 
+## Logische Modelle
 
 Logische Modelle bieten eine konzeptionelle Ansicht der in diesem Implementierungsleitfaden definierten Datenstrukturen. Sie repräsentieren die Datenelemente und ihre Beziehungen unabhängig von der FHIR-Ressourcenstruktur.
 

@@ -1,6 +1,15 @@
 # MII LM Person - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Inhaltsverzeichnis**](toc.md)
+* [**Artefaktübersicht**](artifacts.md)
+* **MII LM Person**
+
 ## Logisches Modell: MII LM Person 
+
+| | |
+| :--- | :--- |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/LogicalModel/Person | *Version*:2027.0.0-dev |
+| Active Stand: 2026-06-09 | *Maschinenlesbarer Name*:MII_LM_Person |
 
  
 Logische Repräsentation des Basismoduls Person 
@@ -15,10 +24,15 @@ You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir
 
  [Beschreibung von Profilen, Differentials, Snapshots und deren Repräsentationen](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 
 
+*  [Schlüsselelemente-Tabelle](#tabs-key) 
 *  [Differential-Tabelle](#tabs-diff) 
 *  [Snapshot-Tabelle](#tabs-snap) 
 *  [Statistiken/Referenzen](#tabs-summ) 
 *  [Alle](#tabs-all) 
+
+#### Terminology Bindings
+
+#### Constraints
 
 Diese Struktur ist abgeleitet von [Element](http://hl7.org/fhir/R4/datatypes.html#Element) 
 
@@ -33,6 +47,12 @@ Diese Struktur ist abgeleitet von [Element](http://hl7.org/fhir/R4/datatypes.htm
 ** Summary **
 
 Mandatory: 0 element(17 nested mandatory elements)
+
+ **Schlüsselelemente-Ansicht** 
+
+#### Terminology Bindings
+
+#### Constraints
 
  **Differential-Ansicht** 
 

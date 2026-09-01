@@ -1,6 +1,15 @@
 # MII LM Diagnose - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **MII LM Diagnose**
+
 ## Logical Model: MII LM Diagnose 
+
+| | |
+| :--- | :--- |
+| *Official URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/LogicalModel/Diagnose | *Version*:2027.0.0-dev |
+| Active as of 2026-06-15 | *Computable Name*:MII_LM_Diagnose |
 
  
 Logische Repräsentation des Basismoduls Diagnose 
@@ -13,7 +22,7 @@ You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir
 
 ### Formal Views of Profile Content
 
- [Description Differentials, Snapshots, and other representations](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 
+ [Description of Profiles, Differentials, Snapshots, and their representations](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 
 
  
 

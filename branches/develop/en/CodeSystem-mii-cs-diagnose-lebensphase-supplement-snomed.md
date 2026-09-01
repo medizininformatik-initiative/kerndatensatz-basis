@@ -1,6 +1,16 @@
 # MII CS Diagnose Lebensphase Supplement SNOMED - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **MII CS Diagnose Lebensphase Supplement SNOMED**
+
 ## CodeSystem: MII CS Diagnose Lebensphase Supplement SNOMED (Experimental) 
+
+| | |
+| :--- | :--- |
+| *Official URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/CodeSystem/mii-cs-diagnose-lebensphase-supplement-snomed | *Version*:2027.0.0-dev |
+| Active as of 2026-07-17 | *Computable Name*:MII_CS_Diagnose_Lebensphase_Supplement_SNOMED |
+| **Copyright/Legal**: This material includes SNOMED Clinical Terms® (SNOMED CT®) which is used by permission of SNOMED International. All rights reserved. SNOMED CT®, was originally created by The College of American Pathologists. SNOMED and SNOMED CT are registered trademarks of SNOMED International. Implementers of these artefacts must have the appropriate SNOMED CT Affiliate license. | |
 
  
 CodeSystem Supplement mit Definitionen zu den SNOMED-Konzepten für Lebensphasen. 

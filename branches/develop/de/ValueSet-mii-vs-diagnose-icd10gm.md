@@ -1,6 +1,16 @@
 # MII VS Diagnose ICD-10-GM - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Inhaltsverzeichnis**](toc.md)
+* [**Artefaktübersicht**](artifacts.md)
+* **MII VS Diagnose ICD-10-GM**
+
 ## ValueSet: MII VS Diagnose ICD-10-GM 
+
+| | |
+| :--- | :--- |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-icd10gm | *Version*:2027.0.0-dev |
+| Active Stand: 2026-06-15 | *Maschinenlesbarer Name*:MII_VS_Diagnose_ICD10GM |
+| **Copyright/Rechtliches**: WHO, BfArM 1994 - 2025 - Die Erstellung erfolgt unter Verwendung der maschinenlesbaren Fassung des Bundesinstituts für Arzneimittel und Medizinprodukte (BfArM). | |
 
  
 Enthaelt ICD-10-GM-Codes der Versionen 2009 bis 2025 

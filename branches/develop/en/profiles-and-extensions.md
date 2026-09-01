@@ -1,5 +1,8 @@
 # Profiles and Extensions - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Table of Contents**](toc.md)
+* **Profiles and Extensions**
+
 ## Profiles and Extensions
 
 ### Profiles

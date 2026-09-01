@@ -1,5 +1,9 @@
 # MII EXA Fall Kontakt Gesundheitseinrichtung (Ambulanter Kontakt) - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Inhaltsverzeichnis**](toc.md)
+* [**Artefaktübersicht**](artifacts.md)
+* **MII EXA Fall Kontakt Gesundheitseinrichtung (Ambulanter Kontakt)**
+
 ## Beispiel Encounter: MII EXA Fall Kontakt Gesundheitseinrichtung (Ambulanter Kontakt)
 
 -------

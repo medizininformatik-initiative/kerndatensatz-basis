@@ -1,5 +1,9 @@
 # MII EXA Prozedur Procedure Appendectomy - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Inhaltsverzeichnis**](toc.md)
+* [**Artefaktübersicht**](artifacts.md)
+* **MII EXA Prozedur Procedure Appendectomy**
+
 ## Beispiel Procedure: MII EXA Prozedur Procedure Appendectomy
 
 -------

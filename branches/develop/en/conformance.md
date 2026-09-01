@@ -1,5 +1,8 @@
 # Conformance - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Table of Contents**](toc.md)
+* **Conformance**
+
 ## Conformance
 
 This section defines the conformance requirements for systems implementing the MII Kerndatensatz Basis profiles.

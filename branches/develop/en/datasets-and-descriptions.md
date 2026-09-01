@@ -1,5 +1,9 @@
 # Datasets and Descriptions - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Table of Contents**](toc.md)
+* [**Guidance**](guidance.md)
+* **Datasets and Descriptions**
+
 ## Datasets and Descriptions
 
 Logical models provide a conceptual view of the data structures defined in this implementation guide. They represent the data elements and their relationships independent of the FHIR resource structure, making them easier to understand for domain experts and researchers.

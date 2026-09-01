@@ -1,5 +1,9 @@
 # MII EXA Diagnose Mehrfachcodierung Sekundaercode - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **MII EXA Diagnose Mehrfachcodierung Sekundaercode**
+
 ## Example Condition: MII EXA Diagnose Mehrfachcodierung Sekundaercode
 
 -------

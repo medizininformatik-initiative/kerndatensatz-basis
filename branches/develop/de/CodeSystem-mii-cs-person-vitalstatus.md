@@ -1,6 +1,15 @@
 # MII CS Person Vitalstatus - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Inhaltsverzeichnis**](toc.md)
+* [**Artefaktübersicht**](artifacts.md)
+* **MII CS Person Vitalstatus**
+
 ## CodeSystem: MII CS Person Vitalstatus 
+
+| | |
+| :--- | :--- |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-person/CodeSystem/Vitalstatus | *Version*:2027.0.0-dev |
+| Active Stand: 2026-07-17 | *Maschinenlesbarer Name*:MII_CS_Person_Vitalstatus |
 
  
 Vitalstatus des Patienten 

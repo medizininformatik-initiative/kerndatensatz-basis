@@ -1,5 +1,9 @@
 # MII EXA Prozedur Procedure Imaging CT Abdomen - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **MII EXA Prozedur Procedure Imaging CT Abdomen**
+
 ## Example Procedure: MII EXA Prozedur Procedure Imaging CT Abdomen
 
 -------

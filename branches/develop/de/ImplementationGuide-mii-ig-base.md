@@ -1,9 +1,9 @@
 # MII ImplementationGuide Ressource - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
-## MII ImplementationGuide Ressource
+* [**Inhaltsverzeichnis**](toc.md)
+* **MII ImplementationGuide Ressource**
 
- 
-Diese Seite enthält Übersetzungen aus der Originalsprache, in der der Leitfaden verfasst wurde. Informationen zu diesen Übersetzungen und Anweisungen zum Abgeben von Feedback zu den Übersetzungen finden Sie [hier](translationinfo.md). 
+## MII ImplementationGuide Ressource
 
 Diese ImplementationGuide-Ressource definiert die technischen Details dieser Publikation, einschließlich Abhängigkeiten und Veröffentlichungsparametern.
 
@@ -1040,7 +1040,7 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "path-liquid-template"
+        "valueString" : "path-liquid"
       },
       {
         "url" : "value",
@@ -1051,7 +1051,7 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "path-liquid-template"
+        "valueString" : "path-liquid"
       },
       {
         "url" : "value",
@@ -1952,7 +1952,7 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
     {
       "extension" : [{
         "url" : "code",
-        "valueCode" : "path-liquid-template"
+        "valueCode" : "path-liquid"
       },
       {
         "url" : "value",
@@ -1963,7 +1963,7 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
     {
       "extension" : [{
         "url" : "code",
-        "valueCode" : "path-liquid-template"
+        "valueCode" : "path-liquid"
       },
       {
         "url" : "value",
@@ -3729,10 +3729,6 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
     {
       "code" : "path-pages",
       "value" : "template/config"
-    },
-    {
-      "code" : "path-pages",
-      "value" : "input/assets"
     },
     {
       "code" : "path-pages",

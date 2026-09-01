@@ -1,5 +1,9 @@
 # Guidance for Implementers - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Table of Contents**](toc.md)
+* [**Guidance**](guidance.md)
+* **Guidance for Implementers**
+
 ## Guidance for Implementers
 
 ### Guidance for Implementers

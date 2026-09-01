@@ -1,9 +1,9 @@
 # Terminologie - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
-## Terminologie
+* [**Inhaltsverzeichnis**](toc.md)
+* **Terminologie**
 
- 
-Diese Seite enthält Übersetzungen aus der Originalsprache, in der der Leitfaden verfasst wurde. Informationen zu diesen Übersetzungen und Anweisungen zum Abgeben von Feedback zu den Übersetzungen finden Sie [hier](translationinfo.md). 
+## Terminologie
 
 Diese Seite listet alle ValueSets und CodeSystems auf, die als Teil des MII-Implementierungsleitfadens Kerndatensatz Basis definiert sind. Weitere Informationen zur Verwendung von Codes in diesem Leitfaden finden Sie im Abschnitt [FHIR Terminology](http://hl7.org/fhir/R4/terminologies.html) der FHIR-Spezifikation.
 

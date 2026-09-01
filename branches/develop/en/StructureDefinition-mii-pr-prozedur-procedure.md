@@ -1,6 +1,15 @@
 # MII PR Prozedur Procedure - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **MII PR Prozedur Procedure**
+
 ## Resource Profile: MII PR Prozedur Procedure 
+
+| | |
+| :--- | :--- |
+| *Official URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure | *Version*:2027.0.0-dev |
+| Active as of 2026-06-09 | *Computable Name*:MII_PR_Prozedur_Procedure |
 
  
 A procedure that is or was performed on or for a patient. 
@@ -137,7 +146,7 @@ You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir
 
 ### Formal Views of Profile Content
 
- [Description Differentials, Snapshots, and other representations](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 
+ [Description of Profiles, Differentials, Snapshots, and their representations](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 
 
  
 

@@ -1,9 +1,14 @@
 # Start - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Inhaltsverzeichnis**](toc.md)
+* **Start**
+
 ## Start
 
- 
-Diese Seite enthält Übersetzungen aus der Originalsprache, in der der Leitfaden verfasst wurde. Informationen zu diesen Übersetzungen und Anweisungen zum Abgeben von Feedback zu den Übersetzungen finden Sie [hier](translationinfo.md). 
+| | |
+| :--- | :--- |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/modul-base/ImplementationGuide/mii-ig-base | *Version*:2027.0.0-dev |
+| Active Stand: 2026-07-28 | *Maschinenlesbarer Name*:MII_IG_Base |
 
 ### Einführung
 

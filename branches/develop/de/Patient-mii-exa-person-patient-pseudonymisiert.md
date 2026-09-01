@@ -1,5 +1,9 @@
 # MII EXA Person Patient Pseudonymisiert - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Inhaltsverzeichnis**](toc.md)
+* [**Artefaktübersicht**](artifacts.md)
+* **MII EXA Person Patient Pseudonymisiert**
+
 ## Beispiel Patient: MII EXA Person Patient Pseudonymisiert
 
 -------

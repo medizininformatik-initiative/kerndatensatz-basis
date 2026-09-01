@@ -1,6 +1,16 @@
 # MII VS Person ICD-10-WHO - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Inhaltsverzeichnis**](toc.md)
+* [**Artefaktübersicht**](artifacts.md)
+* **MII VS Person ICD-10-WHO**
+
 ## ValueSet: MII VS Person ICD-10-WHO (Experimentell) 
+
+| | |
+| :--- | :--- |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/mii-vs-person-icd10who | *Version*:2027.0.0-dev |
+| Active Stand: 2026-06-15 | *Maschinenlesbarer Name*:MII_VS_Person_ICD10WHO |
+| **Copyright/Rechtliches**: BfArM - Bundesinstitut für Arzneimittel und Medizinprodukte | |
 
  
 MII VS Person ICD-10-WHO 

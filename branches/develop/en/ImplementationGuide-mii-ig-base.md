@@ -1,5 +1,8 @@
 # MII ImplementationGuide Resource - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Table of Contents**](toc.md)
+* **MII ImplementationGuide Resource**
+
 ## MII ImplementationGuide Resource
 
 This ImplementationGuide resource defines the technical details of this publication, including dependencies and publishing parameters.
@@ -1037,7 +1040,7 @@ Expansion parameters are query parameters that can be passed to a `ValueSet` `$e
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "path-liquid-template"
+        "valueString" : "path-liquid"
       },
       {
         "url" : "value",
@@ -1048,7 +1051,7 @@ Expansion parameters are query parameters that can be passed to a `ValueSet` `$e
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "path-liquid-template"
+        "valueString" : "path-liquid"
       },
       {
         "url" : "value",
@@ -1949,7 +1952,7 @@ Expansion parameters are query parameters that can be passed to a `ValueSet` `$e
     {
       "extension" : [{
         "url" : "code",
-        "valueCode" : "path-liquid-template"
+        "valueCode" : "path-liquid"
       },
       {
         "url" : "value",
@@ -1960,7 +1963,7 @@ Expansion parameters are query parameters that can be passed to a `ValueSet` `$e
     {
       "extension" : [{
         "url" : "code",
-        "valueCode" : "path-liquid-template"
+        "valueCode" : "path-liquid"
       },
       {
         "url" : "value",
@@ -3726,10 +3729,6 @@ Expansion parameters are query parameters that can be passed to a `ValueSet` `$e
     {
       "code" : "path-pages",
       "value" : "template/config"
-    },
-    {
-      "code" : "path-pages",
-      "value" : "input/assets"
     },
     {
       "code" : "path-pages",

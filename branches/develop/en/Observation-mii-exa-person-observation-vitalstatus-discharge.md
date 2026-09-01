@@ -1,5 +1,9 @@
 # MII EXA Person Observation Vitalstatus Discharge - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **MII EXA Person Observation Vitalstatus Discharge**
+
 ## Example Observation: MII EXA Person Observation Vitalstatus Discharge
 
 -------

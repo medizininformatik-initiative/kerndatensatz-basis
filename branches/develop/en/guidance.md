@@ -1,5 +1,8 @@
 # Guidance - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Table of Contents**](toc.md)
+* **Guidance**
+
 ## Guidance
 
 This section provides guidance for different audiences implementing and using the MII Kerndatensatz Basis Implementation Guide.

@@ -1,6 +1,15 @@
 # MII EX Prozedur Durchführungsabsicht - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Inhaltsverzeichnis**](toc.md)
+* [**Artefaktübersicht**](artifacts.md)
+* **MII EX Prozedur Durchführungsabsicht**
+
 ## Extension: MII EX Prozedur Durchführungsabsicht 
+
+| | |
+| :--- | :--- |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Durchfuehrungsabsicht | *Version*:2027.0.0-dev |
+| Active Stand: 2026-06-15 | *Maschinenlesbarer Name*:MII_EX_Prozedur_Durchfuehrungsabsicht |
 
 Intention der Prozedur
 
@@ -22,7 +31,7 @@ You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir
 *  [Differential-Tabelle](#tabs-diff) 
 *  [Snapshot-Tabelle](#tabs-snap) 
 *  [Statistiken/Referenzen](#tabs-summ) 
-*  [Alle](#tabs-all) 
+*  [AlleAll](#tabs-all) 
 
 Diese Struktur ist abgeleitet von [Extension](http://hl7.org/fhir/R4/extensibility.html#Extension) 
 

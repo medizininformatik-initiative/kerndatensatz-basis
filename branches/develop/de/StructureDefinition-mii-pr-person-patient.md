@@ -1,6 +1,15 @@
 # MII PR Person Patient - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Inhaltsverzeichnis**](toc.md)
+* [**Artefaktübersicht**](artifacts.md)
+* **MII PR Person Patient**
+
 ## Ressourcenprofil: MII PR Person Patient 
+
+| | |
+| :--- | :--- |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient | *Version*:2027.0.0-dev |
+| Active Stand: 2026-06-09 | *Maschinenlesbarer Name*:MII_PR_Person_Patient |
 
  
 Demografische und andere administrative Informationen über eine Patientin oder einen Patienten. 

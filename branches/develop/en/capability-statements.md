@@ -1,5 +1,8 @@
 # Capability Statements - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Table of Contents**](toc.md)
+* **Capability Statements**
+
 ## Capability Statements
 
 The following CapabilityStatements define the expected FHIR capabilities of systems implementing this implementation guide. Each module defines the required FHIR RESTful interactions, search parameters, and supported profiles.

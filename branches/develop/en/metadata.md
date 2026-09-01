@@ -1,5 +1,8 @@
 # Metadata Overview - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Table of Contents**](toc.md)
+* **Metadata Overview**
+
 ## Metadata Overview
 
 This page documents the computable metadata used in this implementation guide. The metadata is intended to make the artifacts easier to discover, evaluate, validate, cite, govern, and reuse by humans and software.

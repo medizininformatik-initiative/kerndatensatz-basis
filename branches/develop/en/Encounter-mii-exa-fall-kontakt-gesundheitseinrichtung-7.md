@@ -1,5 +1,9 @@
 # MII EXA Fall Kontakt Gesundheitseinrichtung (Abteilungskontakt Innere Medizin) - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **MII EXA Fall Kontakt Gesundheitseinrichtung (Abteilungskontakt Innere Medizin)**
+
 ## Example Encounter: MII EXA Fall Kontakt Gesundheitseinrichtung (Abteilungskontakt Innere Medizin)
 
 -------

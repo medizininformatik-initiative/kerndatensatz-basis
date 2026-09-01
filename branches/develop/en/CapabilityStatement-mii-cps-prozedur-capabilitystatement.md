@@ -1,6 +1,15 @@
 # MII CPS Prozedur CapabilityStatement - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **MII CPS Prozedur CapabilityStatement**
+
 ## CapabilityStatement: MII CPS Prozedur CapabilityStatement 
+
+| | |
+| :--- | :--- |
+| *Official URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/CapabilityStatement/metadata | *Version*:2027.0.0-dev |
+| Active as of 2026-06-15 | *Computable Name*:MII_CPS_Prozedur_CapabilityStatement |
 
  
 Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein konformes System unterstützen muss um das Modul Prozedur der Medizininformatik Initiative zu implementieren. 

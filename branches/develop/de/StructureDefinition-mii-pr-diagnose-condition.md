@@ -1,6 +1,15 @@
 # MII PR Diagnose Condition - MII Implementation Guide Core Dataset Base v2027.0.0-dev
 
+* [**Inhaltsverzeichnis**](toc.md)
+* [**Artefaktübersicht**](artifacts.md)
+* **MII PR Diagnose Condition**
+
 ## Ressourcenprofil: MII PR Diagnose Condition 
+
+| | |
+| :--- | :--- |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose | *Version*:2027.0.0-dev |
+| Active Stand: 2026-06-15 | *Maschinenlesbarer Name*:MII_PR_Diagnose_Condition |
 
  
 Eine klinische Diagnose der Patientin oder des Patienten. 
