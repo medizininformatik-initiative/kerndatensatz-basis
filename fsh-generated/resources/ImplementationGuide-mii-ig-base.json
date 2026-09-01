@@ -42,7 +42,7 @@
         },
         {
           "url": "version",
-          "valueString": "2026.0.1"
+          "valueString": "2027.0.0-ballot.rc1"
         },
         {
           "url": "uri",
@@ -53,7 +53,7 @@
     {
       "url": "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod",
       "valuePeriod": {
-        "start": "2026"
+        "start": "2027"
       }
     },
     {
@@ -239,12 +239,12 @@
     }
   ],
   "url": "https://www.medizininformatik-initiative.de/fhir/modul-base/ImplementationGuide/mii-ig-base",
-  "version": "2026.0.1",
+  "version": "2027.0.0-ballot.rc1",
   "name": "MII_IG_Base",
   "title": "MII Implementation Guide Core Dataset Base",
   "status": "active",
   "experimental": false,
-  "date": "2026-07-20",
+  "date": "2026-09-01",
   "publisher": "Medical Informatics Initiative (MII)",
   "contact": [
     {
@@ -277,13 +277,13 @@
   "dependsOn": [
     {
       "packageId": "de.basisprofil.r4",
-      "version": "1.5.4",
+      "version": "1.6.0",
       "uri": "http://fhir.org/packages/de.basisprofil.r4/ImplementationGuide/de.basisprofil.r4",
       "id": "de_basisprofil_r4"
     },
     {
       "packageId": "de.medizininformatikinitiative.kerndatensatz.meta",
-      "version": "2026.0.0",
+      "version": "2027.0.0-ballot.rc3",
       "uri": "https://www.medizininformatik-initiative.de/fhir/modul-meta/ImplementationGuide/mii-ig-meta",
       "id": "de_medizininformatikinitiative_kerndatensatz_meta"
     },
@@ -298,6 +298,18 @@
       "version": "2.0.0",
       "uri": "http://hl7.org/fhir/uv/crmi/ImplementationGuide/hl7.fhir.uv.crmi",
       "id": "hl7_fhir_uv_crmi"
+    },
+    {
+      "packageId": "hl7.terminology.r4",
+      "version": "7.1.0",
+      "uri": "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
+      "id": "hl7_terminology_r4"
+    },
+    {
+      "packageId": "hl7.fhir.uv.extensions.r4",
+      "version": "5.2.0",
+      "uri": "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
+      "id": "hl7_fhir_uv_extensions_r4"
     }
   ],
   "definition": {
@@ -936,7 +948,7 @@
       },
       {
         "code": "releaselabel",
-        "value": "Release"
+        "value": "ballot"
       },
       {
         "code": "path-resource",

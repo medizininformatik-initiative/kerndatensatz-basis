@@ -15,7 +15,7 @@
           },
           {
             "url": "version",
-            "valueString": "2026.0.1"
+            "valueString": "2027.0.0-ballot.rc1"
           },
           {
             "url": "uri",
@@ -55,6 +55,7 @@
           {
             "code": "package",
             "system": "http://terminology.hl7.org/CodeSystem/artifact-version-policy-codes",
+            "version": "3.0.0",
             "display": "Package"
           }
         ]
@@ -70,7 +71,7 @@
     },
     {
       "valuePeriod": {
-        "start": "2026"
+        "start": "2027"
       },
       "url": "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod"
     },
@@ -187,7 +188,7 @@
             }
           ],
           "supportedProfile": [
-            "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.1"
+            "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2027.0.0-ballot.rc1"
           ],
           "_supportedProfile": [
             {
@@ -276,7 +277,7 @@
               "name": "_profile",
               "definition": "http://hl7.org/fhir/SearchParameter/Resource-profile",
               "type": "uri",
-              "documentation": "**Example:**\n`GET [base]/Procedure?_profile=https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2026.0.1`\n\n**Notes:**\nSearches on `Procedure.meta.profile`. For further details see FHIR core specification, section [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)."
+              "documentation": "**Example:**\n`GET [base]/Procedure?_profile=https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2027.0.0-ballot.rc1`\n\n**Notes:**\nSearches on `Procedure.meta.profile`. For further details see FHIR core specification, section [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)."
             },
             {
               "extension": [
@@ -406,13 +407,13 @@
       "mode": "server"
     }
   ],
-  "version": "2026.0.1",
+  "version": "2027.0.0-ballot.rc1",
   "publisher": "Medizininformatik Initiative",
   "name": "MII_CPS_Prozedur_CapabilityStatement",
   "title": "MII CPS Prozedur CapabilityStatement",
   "status": "active",
   "experimental": false,
-  "date": "2026-06-15",
+  "date": "2026-09-01",
   "description": "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein konformes System unterstützen muss um das Modul Prozedur der Medizininformatik Initiative zu implementieren.",
   "purpose": "Define the minimum capabilities a system must support to implement and claim conformance to the MII Procedure module.",
   "kind": "requirements",
