@@ -162,20 +162,20 @@ Description: "Logische Repräsentation des Basismoduls Person"
       * VersichertenIDGKV insert Translation(^short, en, [[Unchangeable part of the health insurance number (insured ID) for SHI patients. This can be found, for example, on the health insurance compan's membership card.]])
       * VersichertennummerPKV 0..1 string "Versichertennummer bei PKV Patienten. Vergabe erfolgt durch die jeweilige Private Krankenversicherung." "Versichertennummer bei PKV Patienten. Vergabe erfolgt durch die jeweilige Private Krankenversicherung."
       * VersichertennummerPKV insert Translation(^short, en, [[Insurance number for private health insurance patients. The number is assigned by the respective private health insurance company.]])
-* ProbandIn 0..* BackboneElement "Person, die an einer Studie teilnimmt (unter Umständen, während sie Patient:in in einer Gesundheitseinrichtung ist)" "Person, die an einer Studie teilnimmt (unter Umständen, während sie Patient:in in einer Gesundheitseinrichtung ist)"
-* ProbandIn insert Translation(^short, en, [[Person participating in a study (in some circumstances, while being a patient in a health care facility)]])
-  * SubjektIdentifizierungscode 0..* Identifier "Eindeutiger Identifikator eines Patienten im Kontext eines Forschungsprojekts (klinische Studie, Use Case)" "Eindeutiger Identifikator eines Patienten im Kontext eines Forschungsprojekts (klinische Studie, Use Case)"
-  * SubjektIdentifizierungscode insert Translation(^short, en, [[Unique identifier of a patient in the context of a research project (clinical study, use case)]])
-  * Rechtsgrundlage 0..* Reference(Consent) "Rechtsgrundlage (z.B. Einwilligung) aufgrund die PatientIn in die Studie eingeschlossen werden darf." "Rechtsgrundlage (z.B. Einwilligung) aufgrund die PatientIn in die Studie eingeschlossen werden darf."
-  * Rechtsgrundlage insert Translation(^short, en, [[Legal basis (e.g. consent) on the basis of which the patient may be included in the study.]])
-  * BeginnTeilnahme 1..1 dateTime "Beginn der Teilnahme der Person an der Studie." "Beginn der Teilnahme der Person an der Studie."
-  * BeginnTeilnahme insert Translation(^short, en, [[Start of the person's participation in the study]])
-  * EndeTeilnahme 0..1 dateTime "Ende der Teilnahme der Person an der Studie." "Ende der Teilnahme der Person an der Studie."
-  * EndeTeilnahme insert Translation(^short, en, [[End of the person's participation in the study]])
-  * StatusDerTeilnahme 1..1 code "Stand der Teilnahme einer Person an der Studie, z.B. eingeschlossen, widerrufen, abgeschlossen etc." "Stand der Teilnahme einer Person an der Studie, z.B. eingeschlossen, widerrufen, abgeschlossen etc."
-  * StatusDerTeilnahme insert Translation(^short, en, [[Status of a person's participation in the study, e.g., \"included\", \"revoked\", \"completed\", etc.]])
-  * BezeichnungDerStudie 0..* Identifier "Identifikator der Studie" "Identifikator der Studie"
-  * BezeichnungDerStudie insert Translation(^short, en, [[Unique id of the study]])
+//* ProbandIn 0..* BackboneElement "Person, die an einer Studie teilnimmt (unter Umständen, während sie Patient:in in einer Gesundheitseinrichtung ist)" "Person, die an einer Studie teilnimmt (unter Umständen, während sie Patient:in in einer Gesundheitseinrichtung ist)"
+//* ProbandIn insert Translation(^short, en, [[Person participating in a study (in some circumstances, while being a patient in a health care facility)]])
+//  * SubjektIdentifizierungscode 0..* Identifier "Eindeutiger Identifikator eines Patienten im Kontext eines Forschungsprojekts (klinische Studie, Use Case)" "Eindeutiger Identifikator eines Patienten im Kontext eines Forschungsprojekts (klinische Studie, Use Case)"
+//  * SubjektIdentifizierungscode insert Translation(^short, en, [[Unique identifier of a patient in the context of a research project (clinical study, use case)]])
+//  * Rechtsgrundlage 0..* Reference(Consent) "Rechtsgrundlage (z.B. Einwilligung) aufgrund die PatientIn in die Studie eingeschlossen werden darf." "Rechtsgrundlage (z.B. Einwilligung) aufgrund die PatientIn in die Studie eingeschlossen werden darf."
+//  * Rechtsgrundlage insert Translation(^short, en, [[Legal basis (e.g. consent) on the basis of which the patient may be included in the study.]])
+//  * BeginnTeilnahme 1..1 dateTime "Beginn der Teilnahme der Person an der Studie." "Beginn der Teilnahme der Person an der Studie."
+//  * BeginnTeilnahme insert Translation(^short, en, [[Start of the person's participation in the study]])
+//  * EndeTeilnahme 0..1 dateTime "Ende der Teilnahme der Person an der Studie." "Ende der Teilnahme der Person an der Studie."
+//  * EndeTeilnahme insert Translation(^short, en, [[End of the person's participation in the study]])
+//  * StatusDerTeilnahme 1..1 code "Stand der Teilnahme einer Person an der Studie, z.B. eingeschlossen, widerrufen, abgeschlossen etc." "Stand der Teilnahme einer Person an der Studie, z.B. eingeschlossen, widerrufen, abgeschlossen etc."
+//  * StatusDerTeilnahme insert Translation(^short, en, [[Status of a person's participation in the study, e.g., \"included\", \"revoked\", \"completed\", etc.]])
+//  * BezeichnungDerStudie 0..* Identifier "Identifikator der Studie" "Identifikator der Studie"
+//  * BezeichnungDerStudie insert Translation(^short, en, [[Unique id of the study]])
 * PatientInPseudonym 0..* BackboneElement "Pseudonymisierte Repräsentation einer dazueghörigen Patient:in" "Pseudonymisierte Repräsentation einer dazueghörigen Patient:in"
 * PatientInPseudonym insert Translation(^short, en, [[Pseudonymised representation of a corresponding Patient]])
   * Pseudonym 0..* Identifier "Neu generierte Identifikation der PatientIn mit Bezug zum Original-Identifikator in einer Treuhandstelle." "Neu generierte Identifikation der PatientIn mit Bezug zum Original-Identifikator in einer Treuhandstelle."
