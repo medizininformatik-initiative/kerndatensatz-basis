@@ -18,6 +18,7 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 #### Modul Diagnose
 
 - **Added:** Das Element `Condition.bodySite` enthält nun die FHIR-Core-Extension `http://hl7.org/fhir/StructureDefinition/bodySite`, um eine detaillierte anatomische Referenz, z.B. auf eine `BodyStructure`, zusätzlich zur kodierten Körperstelle abzubilden. Siehe: [#85](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/85)
+- **Changed:** Die Mappings für `Condition.onset[x]` und `Condition.abatement[x]` wurden klargestellt; Erkrankungsbeginn und Erkrankungsende werden nun getrennt abgebildet und mit ISiK harmonisiert. `Period` bleibt aus Gründen der Rückwärtskompatibilität zulässig, SOLLTE aber NICHT verwendet werden. Siehe: [#83](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/83)
 
 #### Modul Fall
 

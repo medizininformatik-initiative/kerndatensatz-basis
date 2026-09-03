@@ -97,10 +97,25 @@ Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Dia
 
 #### Zeitliche Informationen
 
+<div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
+<h5 style="color: #406A99; margin-top: 0;">Best Practice - Erkrankungsbeginn und Erkrankungsende</h5>
+
+<p>Die Modellierung von Erkrankungsbeginn und Erkrankungsende wurde mit <a href="https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKDiagnose.html">gematik ISiK</a> harmonisiert. Implementierende <strong>SOLLTEN</strong> <code>onsetDateTime</code>/<code>abatementDateTime</code> für Datumsangaben und <code>onsetAge</code>/<code>abatementAge</code> mit der Lebensphasen-Extension verwenden, wenn nur eine Lebensphase bekannt ist. <code>onsetPeriod</code> und <code>abatementPeriod</code> bleiben ausschließlich aus Gründen der Rückwärtskompatibilität zulässig und <strong>SOLLTEN NICHT</strong> in neuen Implementierungen verwendet werden.</p>
+
+<p><strong>EHDS-Ausblick:</strong> Das veröffentlichte Trial-Use-Profil <a href="https://hl7.eu/fhir/base/2.0.0/StructureDefinition-condition-eu-core.html">HL7 Europe Condition (EU core) 2.0.0</a>, das in kommende EHDS-Spezifikationen einfließt, profiliert für Erkrankungsbeginn und Erkrankungsende ausdrücklich die <code>dateTime</code>-Varianten. Um die zukünftige EHDS-Konformität zu erleichtern, <strong>SOLLTEN</strong> neue Implementierungen daher <code>onsetDateTime</code> und <code>abatementDateTime</code> verwenden, sofern ein Datum verfügbar ist.</p>
+</div>
+
 **`Condition.onset[x]`:**
-- **KANN** als Period oder dateTime erfasst werden
-- OPTIONAL zusätzlich Angabe von Lebensphase als Code mittels Extension, falls genaue Zeitpunkte nicht bekannt sind
+- **SOLLTE** als `dateTime` oder `Age` erfasst werden
+- Bei Verwendung von `Age` **KANN** die Lebensphasen-Extension eine Lebensphase als Code angeben, wenn das genaue Datum unbekannt ist
+- `Period` bleibt aus Gründen der Rückwärtskompatibilität zulässig, aber **SOLLTE NICHT** verwendet werden
 - Repräsentiert, wann die Erkrankung begann oder erstmals bemerkt wurde
+
+**`Condition.abatement[x]`:**
+- **SOLLTE** als `dateTime` oder `Age` erfasst werden
+- Bei Verwendung von `Age` **KANN** die Lebensphasen-Extension eine Lebensphase als Code angeben, wenn das genaue Datum unbekannt ist
+- `Period` bleibt aus Gründen der Rückwärtskompatibilität zulässig, aber **SOLLTE NICHT** verwendet werden
+- Repräsentiert, wann die Erkrankung endete, abklang oder in Remission überging
 
 **`Condition.recordedDate`:**
 - Repräsentiert, wann die Diagnose im System erfasst wurde

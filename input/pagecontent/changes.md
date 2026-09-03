@@ -18,6 +18,7 @@ This page documents the changes and updates across versions of the MII Implement
 #### Diagnosis Module
 
 - **Added:** The `Condition.bodySite` element now includes the FHIR core extension `http://hl7.org/fhir/StructureDefinition/bodySite` to support a detailed anatomic reference such as a `BodyStructure`. See: [#85](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/85)
+- **Changed:** Clarified the mappings for `Condition.onset[x]` and `Condition.abatement[x]`; onset and abatement are now mapped separately and harmonized with ISiK. `Period` remains allowed for backwards compatibility but SHOULD NOT be used. See: [#83](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/83)
 
 #### Treatment Case Module
 

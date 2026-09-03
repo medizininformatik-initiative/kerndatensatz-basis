@@ -73,12 +73,12 @@ Target: "http://hl7.org/fhir/StructureDefinition/Condition|4.0.1"
 * Freitextbeschreibung -> "Condition.code.text"
 * Diagnoseerlaeuterung -> "Condition.note"
 * KlinischerStatus -> "Condition.clinicalStatus"
-* KlinischRelevanterZeitraum -> "Condition.onset[x]"
-  * Zeitraum -> "Condition.onsetPeriod"
-    * von -> "Condition.onsetPeriod.start"
-    * bis -> "Condition.onsetPeriod.end"
+* KlinischRelevanterZeitraum
+  * Zeitraum
+    * von -> "Condition.onsetDateTime"
+    * bis -> "Condition.abatementDateTime"
   * Lebensphase
-    * von -> "Condition.onsetPeriod.start.extension('http://fhir.de/StructureDefinition/lebensphase').valueCodeableConcept"
-    * bis -> "Condition.onsetPeriod.end.extension('http://fhir.de/StructureDefinition/lebensphase').valueCodeableConcept"
+    * von -> "Condition.onsetAge.extension('http://fhir.de/StructureDefinition/lebensphase').valueCodeableConcept"
+    * bis -> "Condition.abatementAge.extension('http://fhir.de/StructureDefinition/lebensphase').valueCodeableConcept"
 * Feststellungsdatum -> "Condition.extension('http://hl7.org/fhir/StructureDefinition/condition-assertedDate').valueDateTime"
 * Dokumentationsdatum -> "Condition.recordedDate"
