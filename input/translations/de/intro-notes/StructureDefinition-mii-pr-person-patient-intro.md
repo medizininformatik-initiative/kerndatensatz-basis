@@ -9,12 +9,6 @@
 
 Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Patient-Profil.
 
-<div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
-<h5 style="color: #406A99; margin-top: 0;">Hinweis zu FHIR-Core-Extensions</h5>
-
-<p>Das Profil enthält die HL7-Core-Extensions <code>patient-birthPlace</code>, <code>patient-citizenship</code> und <code>patient-nationality</code>, um Geburtsort, Staatsangehörigkeit und Nationalität dort abzubilden, wo sie benötigt werden.</p>
-</div>
-
 #### Patienten-Identifikation
 
 Die Patienten-Identifikation verwendet je nach Kontext verschiedene Identifier-Typen:
@@ -61,9 +55,17 @@ Die Geschlechtsdokumentation folgt den Vorgaben der [Deutschen FHIR-Basis-Profil
 
 `Indeterminate sex` bezeichnet ein nicht bestimmbares Geschlecht, während `Unknown` bedeutet, dass die Angabe nicht bekannt ist oder nicht dokumentiert wurde. Implementierungen SOLLEN diese Unterscheidung beibehalten.
 
-#### Geburtsdatum und Vitalstatus
+#### Staatsbürgerschaft und Nationalität
+
+- **`Patient.extension:patient-citizenship`**: Rechtlicher Status des Patienten als Staatsbürger eines Landes. Mehrere Staatsbürgerschaften und ihre jeweiligen Gültigkeitszeiträume können abgebildet werden.
+- **`Patient.extension:patient-nationality`**: Nationalität des Patienten. Mehrere Nationalitäten und ihre jeweiligen Gültigkeitszeiträume können abgebildet werden.
+
+**Offener Klärungsbedarf:** Die vorgesehene Verwendung und Abgrenzung von `patient-citizenship` und `patient-nationality` muss noch geklärt werden. Insbesondere ist offen, ob der deutsche Begriff „Staatsangehörigkeit“ spezifisch die rechtliche Staatsbürgerschaft oder Nationalität in einem weiter gefassten rechtlichen, kulturellen oder ethnischen Sinn bezeichnet. Siehe [#86](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/86).
+
+#### Geburtsdatum, Geburtsort und Vitalstatus
 
 - **`Patient.birthDate`**: Vollständiges Geburtsdatum, wenn verfügbar. Siehe [Basisprofil - Geburtsdatum]
+- **`Patient.extension:birthPlace`**: Registrierter Geburtsort der PatientIn. Zur Abbildung des Geburtslandes ist `valueAddress.country` zu verwenden; die Extension `countryCode` unterstützt die Kodierung mit ISO-3166-1-Alpha-2-Codes über ein `preferred` Binding.
 - **`Patient.deceased[x]`**: 
   - `deceasedBoolean` SOLL, wo möglich, durch `deceasedDateTime` ersetzt werden, wenn die PatientIn verstorben ist und der Zeitpunkt bekannt ist
 

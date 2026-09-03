@@ -9,12 +9,6 @@
 
 This section provides detailed implementation guidance for the MII Patient Profile.
 
-<div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
-<h5 style="color: #406A99; margin-top: 0;">FHIR Core Extension Note</h5>
-
-<p>The profile includes the FHIR core Patient extensions <code>patient-birthPlace</code>, <code>patient-citizenship</code>, and <code>patient-nationality</code> to represent the patient's place of birth, legal citizenship, and nationality where needed.</p>
-</div>
-
 #### Patient Identification
 
 Patient identification uses multiple identifier types depending on the context:
@@ -61,9 +55,17 @@ Gender documentation follows the [German Base Profile for Gender]:
 
 `Indeterminate sex` describes a sex that could not be determined, whereas `Unknown` indicates that the value is not known or was not recorded. Implementations SHOULD preserve this distinction.
 
-#### Birth Date and Vital Status
+#### Citizenship and Nationality
+
+- **`Patient.extension:patient-citizenship`**: The patient's legal status as a citizen of a country. Multiple citizenships and their respective periods can be represented.
+- **`Patient.extension:patient-nationality`**: The patient's nationality. Multiple nationalities and their respective periods can be represented.
+
+**Open clarification:** The intended use and boundary between `patient-citizenship` and `patient-nationality` still need to be clarified. In particular, it remains unresolved whether the German concept “Staatsangehörigkeit” refers specifically to legal citizenship or to nationality in a broader legal, cultural, or ethnic sense. See [#86](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/86).
+
+#### Birth Date, Place of Birth, and Vital Status
 
 - **`Patient.birthDate`**: Full birth date when available. See [German Base Profile - Geburtsdatum]
+- **`Patient.extension:birthPlace`**: The patient's registered place of birth. To represent the country of birth, use `valueAddress.country`; the `countryCode` extension supports coding with ISO 3166-1 alpha-2 codes using a `preferred` binding.
 - **`Patient.deceased[x]`**: 
   - `deceasedBoolean` **SHOULD** be replaced by `deceasedDateTime` when the patient is deceased and the datetime is known
 
