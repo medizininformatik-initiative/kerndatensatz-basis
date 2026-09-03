@@ -2,7 +2,7 @@ ValueSet: MII_VS_Person_recordedSexOrGender_SNOMED
 Id: mii-vs-person-recordedsexorgender-snomed
 Title: "MII VS Person Recorded Sex or Gender SNOMED"
 Description: "Enthaelt SNOMED CT Codes für das dokumentierte Geschlecht"
-* ^url = "https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/recordedSexOrGender-sct"
+* ^url = "https://www.medizininformatik-initiative.de/fhir/modul-person/ValueSet/mii-vs-person-recordedsexorgender-snomed"
 * ^copyright = "This material includes SNOMED Clinical Terms® (SNOMED CT®) which is used by permission of SNOMED International. All rights reserved. SNOMED CT®, was originally created by The College of American Pathologists. SNOMED and SNOMED CT are registered trademarks of SNOMED International. Implementers of these artefacts must have the appropriate SNOMED CT Affiliate license."
 * insert PR_CS_VS_Version
 * insert Publisher
