@@ -71,6 +71,7 @@ graph BT
 
   A1E -->|partOf| E0
   A2E -->|partOf| E0
+  A2E -->|account| A1
 
   %% CARE UNIT LEVEL
   VS1["`**Encounter VS1**
@@ -96,8 +97,11 @@ graph BT
   VS3 -->|partOf| A2E
   VS4 -->|partOf| A2E
   VS5 -->|partOf| A2E
+  VS5 -->|account| A1
 
 ```
+
+**Account linkage:** The `account` references shown for selected Encounters illustrate how Encounters at each level of the hierarchy can be linked to the same Account, thereby assigning multiple Encounters to a shared billing context. To keep the diagram readable, Account references are shown only for selected Encounters; the other Encounters in the hierarchy can reference the same Account in the same way. For implementation guidance, including the recommended use of the logical reference `Encounter.account.identifier`, see [Best Practice - Aufnahmenummer vs. Fallnummer](#best-practice-aufnahmenummer-vs-fallnummer).
 
 In this example:
 
@@ -106,13 +110,11 @@ In this example:
 * **A2E** is the department contact (Abteilungskontakt) for General Surgery (Allgemeinchirurgie)
 * **VS1-VS5** are care unit contacts (Versorgungsstellenkontakte) for specific locations: Emergency treatment room 3, Radiology CT, OR 4 (laparoscopic appendectomy), PACU, and Surgical Ward C3
 * The hierarchy is established through `partOf` references pointing upward from care units to departments to facility
-* **EP1** (EpisodeOfCare) and **A1** (Account) are shown for completeness but are not currently part of the MII Kerndatensatz specification. Note that for simplicity, only E0 is shown referencing these resources, but in practice any encounter in the hierarchy can reference the EpisodeOfCare and Account it belongs to.
+* **EP1** (EpisodeOfCare) and **A1** (Account) are shown for completeness but are not currently part of the MII Kerndatensatz specification. Selected Encounters at each hierarchy level are shown referencing A1 to illustrate their shared billing context; E0 additionally references EP1.
 
 #### Representation of Encounter Types in FHIR
 
 ##### Primary Encounters
-
-Based on the [FHIR DE Basisprofile guidance](https://ig.fhir.de/basisprofile-de/1.4.0/Ressourcen-AmbulanterStationaererFall.html):
 
 | | | |
 | :--- | :--- | :--- |
@@ -132,6 +134,8 @@ Based on the [FHIR DE Basisprofile guidance](https://ig.fhir.de/basisprofile-de/
 | Entbindung (Delivery) | - | `Encounter.class = IMP``Encounter.extension:Aufnahmegrund.extension:ErsteUndZweiteStelle = 05` |
 | Notfall (Emergency) | - | `Encounter.class = AMB``Encounter.extension:Aufnahmegrund.VierteStelle = 7`If subsequent inpatient admission occurs:`Encounter.hospitalization.admitSource = "N"`To emphasize treatment urgency:`Encounter.priority = http://terminology.hl7.org/CodeSystem/v3-ActPriority|EM` |
 
+**External source: The mapping of primary encounter types to HL7 V2 and FHIR in this table was adopted from the [German FHIR Base Profiles 1.6.0 – Ambulatory/inpatient case/contact](https://ig.fhir.de/basisprofile-de/1.6.0/ig-markdown-Ressourcen-AmbulanterStationaererFall.html).**
+
 ##### Secondary Encounters During Inpatient Stay
 
 | | | |
@@ -139,6 +143,8 @@ Based on the [FHIR DE Basisprofile guidance](https://ig.fhir.de/basisprofile-de/
 | Untersuchung und Behandlung (Examination and Treatment) | - | `Encounter.class = IMP``Encounter.type = ub` |
 | Konsil (Consultation) | - | `Encounter.class = IMP``Encounter.type = konsil` |
 | Operation (Surgery) | - | `Encounter.class = IMP``Encounter.type = operation` |
+
+**External source: The mapping of secondary encounters to HL7 V2 and FHIR in this table was adopted from the [German FHIR Base Profiles 1.6.0 – Ambulatory/inpatient case/contact](https://ig.fhir.de/basisprofile-de/1.6.0/ig-markdown-Ressourcen-AmbulanterStationaererFall.html).**
 
 #### Encounter Diagnosis
 

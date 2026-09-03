@@ -57,18 +57,19 @@ These define sets of codes used by systems conforming to this implementation gui
 
 | | |
 | :--- | :--- |
-| [ MII VS Diagnose Alpha-ID  ](ValueSet-mii-vs-diagnose-alphaid.md) | Enthaelt Alpha-ID-Codes der Versionen 2018 bis 2025 |
+| [ MII VS Diagnose Alpha-ID  ](ValueSet-mii-vs-diagnose-alphaid.md) | Enthaelt Alpha-ID-Codes der aller verfügbarer Versionen |
 | [ MII VS Diagnose BodyStructure SNOMED  ](ValueSet-mii-vs-diagnose-bodystructure-snomed.md) | Enthaelt alle SNOMED Body structure codes |
 | [ MII VS Diagnose Diagnose-Codes SNOMED  ](ValueSet-mii-vs-diagnose-diagnosecodes-snomed.md) | Enthaelt alle SNOMED Clinical finding, Event und Situation with explicit context codes |
-| [ MII VS Diagnose ICD-10-GM  ](ValueSet-mii-vs-diagnose-icd10gm.md) | Enthaelt ICD-10-GM-Codes der Versionen 2009 bis 2025 |
+| [ MII VS Diagnose ICD-10-GM  ](ValueSet-mii-vs-diagnose-icd10gm.md) | Enthaelt ICD-10-GM-Codes der aller verfügbarer Versionen |
 | [ MII VS Diagnose Orphanet  ](ValueSet-mii-vs-diagnose-orphanet.md) | Enthaelt alle Orpha-Kennnummern (ORPHAcodes) |
 | [ MII VS Fall Diagnosis Use  ](ValueSet-mii-vs-fall-diagnosis-use.md) | Diagnosetyp |
 | [ MII VS Fall Identifier Type Codes  ](ValueSet-mii-vs-fall-identifier-type-codes.md) | A coded type for an identifier that can be used to determine which identifier to use for a specific purpose. |
 | [ MII VS Fall Location Physical Type  ](ValueSet-mii-vs-fall-location-physical-type.md) | A coded type for the physical type of the location. |
 | [ MII VS Person ICD-10-WHO  ](ValueSet-mii-vs-person-icd10who.md) | MII VS Person ICD-10-WHO |
+| [ MII VS Person Recorded Sex or Gender SNOMED  ](ValueSet-mii-vs-person-recordedsexorgender-snomed.md) | Enthaelt SNOMED CT Codes für das dokumentierte Geschlecht |
 | [ MII VS Person Vitalstatus  ](ValueSet-mii-vs-person-vitalstatus.md) | Enthält alle Werte, die den Vitalstatus einer Person beschreiben. |
 | [ MII VS Prozedur Durchführungsabsicht [SNOMED CT]  ](ValueSet-mii-vs-prozedur-durchfuehrungsabsicht-snomedct.md) | Durchführungsabsicht / Intention mit der Prozedur ausgeführt wird |
-| [ MII VS Prozedur OPS  ](ValueSet-mii-vs-prozedur-ops.md) | Enthaelt OPS-Codes der Versionen 2010 bis 2025 |
+| [ MII VS Prozedur OPS  ](ValueSet-mii-vs-prozedur-ops.md) | Enthaelt OPS-Codes der aller verfügbarer Versionen |
 | [ MII VS Prozedur OPS Kategorien [SNOMED CT]  ](ValueSet-mii-vs-prozedur-opskategorien-snomedct.md) | Enthaelt alle SNOMED CT Codes für ein Mapping der OPS Klassentitel |
 | [ MII VS Prozedur Prozeduren [SNOMED CT]  ](ValueSet-mii-vs-prozedur-prozeduren-snomedct.md) | Enthaelt alle SNOMED CT Procedure Codes |
 

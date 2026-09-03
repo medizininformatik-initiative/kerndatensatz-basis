@@ -123,8 +123,8 @@
     "uses" : {
     },
     "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)",
-    "StructureDefinition-mii-lm-person.html" : "MII LM Person",
-    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient"
+    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient",
+    "StructureDefinition-mii-lm-person.html" : "MII LM Person"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/allergy-intolerance-category",
@@ -239,6 +239,19 @@
     "ValueSet-mii-vs-fall-diagnosis-use.html" : "MII VS Fall Diagnosis Use"
   },
   {
+    "url" : "http://hl7.org/fhir/ValueSet/iso3166-1-2",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "Iso3166-1-2",
+    "title" : "Iso 3166 Part 1: 2 Letter Codes",
+    "description" : "This value set defines the ISO 3166 Part 1 2-letter codes",
+    "systems" : ["urn:iso:std:iso:3166"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient",
+    "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)"
+  },
+  {
     "url" : "http://hl7.org/fhir/ValueSet/reaction-event-severity",
     "version" : "4.0.1",
     "status" : "draft",
@@ -280,6 +293,7 @@
     "sources" : ["2.16.840.1.113883.11.21029"],
     "uses" : {
     },
+    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient",
     "StructureDefinition-mii-lm-person.html" : "MII LM Person"
   },
   {
@@ -294,6 +308,7 @@
     "sources" : ["2.16.840.1.113883.4.642.3.3289"],
     "uses" : {
     },
+    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient",
     "StructureDefinition-mii-lm-person.html" : "MII LM Person"
   },
   {
@@ -314,7 +329,7 @@
     "status" : "active",
     "name" : "MII_VS_Diagnose_AlphaID",
     "title" : "MII VS Diagnose Alpha-ID",
-    "description" : "Enthaelt Alpha-ID-Codes der Versionen 2018 bis 2025",
+    "description" : "Enthaelt Alpha-ID-Codes der aller verfügbarer Versionen",
     "systems" : ["http://fhir.de/CodeSystem/bfarm/alpha-id"],
     "uses" : {
     },
@@ -338,7 +353,7 @@
     "status" : "active",
     "name" : "MII_VS_Diagnose_ICD10GM",
     "title" : "MII VS Diagnose ICD-10-GM",
-    "description" : "Enthaelt ICD-10-GM-Codes der Versionen 2009 bis 2025",
+    "description" : "Enthaelt ICD-10-GM-Codes der aller verfügbarer Versionen",
     "systems" : ["http://fhir.de/CodeSystem/bfarm/icd-10-gm"],
     "uses" : {
     },
@@ -423,7 +438,7 @@
     "status" : "active",
     "name" : "MII_VS_Prozedur_OPS",
     "title" : "MII VS Prozedur OPS",
-    "description" : "Enthaelt OPS-Codes der Versionen 2010 bis 2025",
+    "description" : "Enthaelt OPS-Codes der aller verfügbarer Versionen",
     "systems" : ["http://fhir.de/CodeSystem/bfarm/ops"],
     "uses" : {
     },
@@ -465,5 +480,17 @@
     "uses" : {
     },
     "StructureDefinition-mii-pr-prozedur-procedure.html" : "MII PR Prozedur Procedure"
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/modul-person/ValueSet/mii-vs-person-recordedsexorgender-snomed",
+    "version" : "2027.0.0-ballot.rc1",
+    "status" : "active",
+    "name" : "MII_VS_Person_recordedSexOrGender_SNOMED",
+    "title" : "MII VS Person Recorded Sex or Gender SNOMED",
+    "description" : "Enthaelt SNOMED CT Codes für das dokumentierte Geschlecht",
+    "systems" : ["http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient"
   }]
 }

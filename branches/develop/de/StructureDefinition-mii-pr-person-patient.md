@@ -25,10 +25,6 @@ Demografische und andere administrative Informationen über eine Patientin oder 
 
 Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Patient-Profil.
 
-##### Hinweis zu FHIR-Core-Extensions
-
-Das Profil enthält die HL7-Core-Extensions `patient-birthPlace`, `patient-citizenship` und `patient-nationality`, um Geburtsort, Staatsangehörigkeit und Nationalität dort abzubilden, wo sie benötigt werden.
-
 #### Patienten-Identifikation
 
 Die Patienten-Identifikation verwendet je nach Kontext verschiedene Identifier-Typen:
@@ -66,10 +62,25 @@ Die Geschlechtsdokumentation folgt den Vorgaben der [Deutschen FHIR-Basis-Profil
 
 * **`Patient.gender`**: Administratives Geschlecht (verpflichtend)
 * **`Patient.gender.extension:other-amtlich`**: Amtliche Geschlechtscodes gemäß deutscher Vorschriften für Fälle jenseits von männlich/weiblich/unbekannt
+* **[`Patient.extension:recordedSexOrGender`](https://hl7.org/fhir/extensions/StructureDefinition-individual-recordedSexOrGender.html)**: Wiederholbare Geschlechtsangaben, die aus einem Dokument oder einer anderen Aufzeichnung übernommen wurden. Diese Angaben werden getrennt vom administrativen Geschlecht in `Patient.gender` geführt und können beispielsweise das bei der Geburt zugewiesene Geschlecht abbilden. 
+* **`value`**: Der dokumentierte Wert. Das [MII ValueSet Person Recorded Sex or Gender SNOMED](ValueSet-mii-vs-person-recordedsexorgender-snomed.md) ist mit der Bindungsstärke `preferred` gebunden und enthält SNOMED-CT-Codes zum biologischen Geschlecht sowie `261665006 | Unknown (qualifier value) |`.
+* **`type`**: Kennzeichnet die Art der dokumentierten Geschlechtsangabe. Für das bei der Geburt zugewiesene Geschlecht SOLL `http://loinc.org|76689-9` (Sex assigned at birth) verwendet werden.
+* **`acquisitionDate`**: Zeitpunkt, zu dem die Angabe erfasst wurde.
+ 
 
-#### Geburtsdatum und Vitalstatus
+`Indeterminate sex` bezeichnet ein nicht bestimmbares Geschlecht, während `Unknown` bedeutet, dass die Angabe nicht bekannt ist oder nicht dokumentiert wurde. Implementierungen SOLLEN diese Unterscheidung beibehalten.
+
+#### Staatsbürgerschaft und Nationalität
+
+* **`Patient.extension:patient-citizenship`**: Rechtlicher Status des Patienten als Staatsbürger eines Landes. Mehrere Staatsbürgerschaften und ihre jeweiligen Gültigkeitszeiträume können abgebildet werden.
+* **`Patient.extension:patient-nationality`**: Nationalität des Patienten. Mehrere Nationalitäten und ihre jeweiligen Gültigkeitszeiträume können abgebildet werden.
+
+**Offener Klärungsbedarf:** Die vorgesehene Verwendung und Abgrenzung von `patient-citizenship` und `patient-nationality` muss noch geklärt werden. Insbesondere ist offen, ob der deutsche Begriff „Staatsangehörigkeit“ spezifisch die rechtliche Staatsbürgerschaft oder Nationalität in einem weiter gefassten rechtlichen, kulturellen oder ethnischen Sinn bezeichnet. Siehe [#86](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/86).
+
+#### Geburtsdatum, Geburtsort und Vitalstatus
 
 * **`Patient.birthDate`**: Vollständiges Geburtsdatum, wenn verfügbar. Siehe [Basisprofil - Geburtsdatum]
+* **`Patient.extension:birthPlace`**: Registrierter Geburtsort der PatientIn. Zur Abbildung des Geburtslandes ist `valueAddress.country` zu verwenden; die Extension `countryCode` unterstützt die Kodierung mit ISO-3166-1-Alpha-2-Codes über ein `preferred` Binding.
 * **`Patient.deceased[x]`**: 
 * `deceasedBoolean` SOLL, wo möglich, durch `deceasedDateTime` ersetzt werden, wenn die PatientIn verstorben ist und der Zeitpunkt bekannt ist
  
@@ -116,6 +127,8 @@ You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir
 
 Diese Struktur ist abgeleitet von [Patient](http://hl7.org/fhir/R4/patient.html) 
 
+#### Terminology Bindings (Differential)
+
 #### Constraints
 
 #### Terminology Bindings
@@ -127,7 +140,7 @@ Diese Struktur ist abgeleitet von [Patient](http://hl7.org/fhir/R4/patient.html)
 ** Summary **
 
 Mandatory: 0 element(18 nested mandatory elements)
- Must-Support: 93 elements
+ Must-Support: 136 elements
  Prohibited: 6 elements
 
 **Structures**
@@ -145,8 +158,10 @@ This structure refers to these other structures:
 This structure refers to these extensions:
 
 * [http://hl7.org/fhir/StructureDefinition/patient-birthPlace](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-patient-birthPlace.html)
+* [http://hl7.org/fhir/StructureDefinition/iso21090-codedString](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-iso21090-codedString.html)
 * [http://hl7.org/fhir/StructureDefinition/patient-citizenship](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-patient-citizenship.html)
 * [http://hl7.org/fhir/StructureDefinition/patient-nationality](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-patient-nationality.html)
+* [http://hl7.org/fhir/StructureDefinition/individual-recordedSexOrGender](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-individual-recordedSexOrGender.html)
 * [http://fhir.de/StructureDefinition/gender-amtlich-de](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/gender-amtlich-de)
 * [http://hl7.org/fhir/StructureDefinition/data-absent-reason](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-data-absent-reason.html)
 * [http://fhir.de/StructureDefinition/destatis/ags](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/destatis/ags)
@@ -170,6 +185,8 @@ This structure defines the following [Slices](http://hl7.org/fhir/R4/profiling.h
 
 Diese Struktur ist abgeleitet von [Patient](http://hl7.org/fhir/R4/patient.html) 
 
+#### Terminology Bindings (Differential)
+
 #### Constraints
 
  **Snapshot-AnsichtView** 
@@ -183,7 +200,7 @@ Diese Struktur ist abgeleitet von [Patient](http://hl7.org/fhir/R4/patient.html)
 ** Summary **
 
 Mandatory: 0 element(18 nested mandatory elements)
- Must-Support: 93 elements
+ Must-Support: 136 elements
  Prohibited: 6 elements
 
 **Structures**
@@ -201,8 +218,10 @@ This structure refers to these other structures:
 This structure refers to these extensions:
 
 * [http://hl7.org/fhir/StructureDefinition/patient-birthPlace](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-patient-birthPlace.html)
+* [http://hl7.org/fhir/StructureDefinition/iso21090-codedString](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-iso21090-codedString.html)
 * [http://hl7.org/fhir/StructureDefinition/patient-citizenship](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-patient-citizenship.html)
 * [http://hl7.org/fhir/StructureDefinition/patient-nationality](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-patient-nationality.html)
+* [http://hl7.org/fhir/StructureDefinition/individual-recordedSexOrGender](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-individual-recordedSexOrGender.html)
 * [http://fhir.de/StructureDefinition/gender-amtlich-de](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/gender-amtlich-de)
 * [http://hl7.org/fhir/StructureDefinition/data-absent-reason](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-data-absent-reason.html)
 * [http://fhir.de/StructureDefinition/destatis/ags](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/destatis/ags)
@@ -492,34 +511,406 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-perso
       "id" : "Patient.extension:birthPlace",
       "path" : "Patient.extension",
       "sliceName" : "birthPlace",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "de-DE"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Geburtsort"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        },
+        {
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "en-US"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Birth Place"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
       "min" : 0,
       "max" : "1",
       "type" : [{
         "code" : "Extension",
         "profile" : ["http://hl7.org/fhir/StructureDefinition/patient-birthPlace"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension:birthPlace.url",
+      "path" : "Patient.extension.url",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension:birthPlace.value[x]",
+      "path" : "Patient.extension.value[x]",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension:birthPlace.value[x].country",
+      "path" : "Patient.extension.value[x].country",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "de-DE"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Geburtsland"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        },
+        {
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "en-US"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Country of Birth"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension:birthPlace.value[x].country.extension",
+      "path" : "Patient.extension.value[x].country.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "ordered" : false,
+        "rules" : "open"
+      }
+    },
+    {
+      "id" : "Patient.extension:birthPlace.value[x].country.extension:countryCode",
+      "path" : "Patient.extension.value[x].country.extension",
+      "sliceName" : "countryCode",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/iso21090-codedString"]
       }]
+    },
+    {
+      "id" : "Patient.extension:birthPlace.value[x].country.extension:countryCode.value[x]",
+      "path" : "Patient.extension.value[x].country.extension.value[x]",
+      "binding" : {
+        "strength" : "preferred",
+        "valueSet" : "http://hl7.org/fhir/ValueSet/iso3166-1-2"
+      }
     },
     {
       "id" : "Patient.extension:patient-citizenship",
       "path" : "Patient.extension",
       "sliceName" : "patient-citizenship",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "de-DE"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Staatsbürgerschaft"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        },
+        {
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "en-US"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Citizenship"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
       "min" : 0,
       "max" : "*",
       "type" : [{
         "code" : "Extension",
         "profile" : ["http://hl7.org/fhir/StructureDefinition/patient-citizenship"]
-      }]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension:patient-citizenship.extension:code",
+      "path" : "Patient.extension.extension",
+      "sliceName" : "code",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension:patient-citizenship.extension:code.url",
+      "path" : "Patient.extension.extension.url",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension:patient-citizenship.extension:code.value[x]",
+      "path" : "Patient.extension.extension.value[x]",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension:patient-citizenship.extension:code.value[x].coding",
+      "path" : "Patient.extension.extension.value[x].coding",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension:patient-citizenship.extension:code.value[x].coding.system",
+      "path" : "Patient.extension.extension.value[x].coding.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension:patient-citizenship.extension:code.value[x].coding.code",
+      "path" : "Patient.extension.extension.value[x].coding.code",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension:patient-citizenship.extension:period",
+      "path" : "Patient.extension.extension",
+      "sliceName" : "period",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension:patient-citizenship.extension:period.url",
+      "path" : "Patient.extension.extension.url",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension:patient-citizenship.extension:period.value[x]",
+      "path" : "Patient.extension.extension.value[x]",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension:patient-citizenship.url",
+      "path" : "Patient.extension.url",
+      "mustSupport" : true
     },
     {
       "id" : "Patient.extension:patient-nationality",
       "path" : "Patient.extension",
       "sliceName" : "patient-nationality",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "de-DE"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Nationalität"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        },
+        {
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "en-US"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Nationality"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
       "min" : 0,
       "max" : "*",
       "type" : [{
         "code" : "Extension",
         "profile" : ["http://hl7.org/fhir/StructureDefinition/patient-nationality"]
-      }]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension:patient-nationality.extension:code",
+      "path" : "Patient.extension.extension",
+      "sliceName" : "code",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension:patient-nationality.extension:code.url",
+      "path" : "Patient.extension.extension.url",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension:patient-nationality.extension:code.value[x]",
+      "path" : "Patient.extension.extension.value[x]",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension:patient-nationality.extension:code.value[x].coding",
+      "path" : "Patient.extension.extension.value[x].coding",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension:patient-nationality.extension:code.value[x].coding.system",
+      "path" : "Patient.extension.extension.value[x].coding.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension:patient-nationality.extension:code.value[x].coding.code",
+      "path" : "Patient.extension.extension.value[x].coding.code",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension:patient-nationality.extension:period",
+      "path" : "Patient.extension.extension",
+      "sliceName" : "period",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension:patient-nationality.extension:period.url",
+      "path" : "Patient.extension.extension.url",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension:patient-nationality.extension:period.value[x]",
+      "path" : "Patient.extension.extension.value[x]",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension:patient-nationality.url",
+      "path" : "Patient.extension.url",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension:recordedSexOrGender",
+      "path" : "Patient.extension",
+      "sliceName" : "recordedSexOrGender",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "de-DE"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Dokumentiertes Geschlecht"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        },
+        {
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "en-US"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Recorded Sex or Gender"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/individual-recordedSexOrGender"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension:recordedSexOrGender.extension:value",
+      "path" : "Patient.extension.extension",
+      "sliceName" : "value",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension:recordedSexOrGender.extension:value.url",
+      "path" : "Patient.extension.extension.url",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension:recordedSexOrGender.extension:value.value[x]",
+      "path" : "Patient.extension.extension.value[x]",
+      "mustSupport" : true,
+      "binding" : {
+        "strength" : "preferred",
+        "valueSet" : "https://www.medizininformatik-initiative.de/fhir/modul-person/ValueSet/mii-vs-person-recordedsexorgender-snomed"
+      }
+    },
+    {
+      "id" : "Patient.extension:recordedSexOrGender.extension:value.value[x].coding",
+      "path" : "Patient.extension.extension.value[x].coding",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension:recordedSexOrGender.extension:value.value[x].coding.system",
+      "path" : "Patient.extension.extension.value[x].coding.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension:recordedSexOrGender.extension:value.value[x].coding.code",
+      "path" : "Patient.extension.extension.value[x].coding.code",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension:recordedSexOrGender.extension:type",
+      "path" : "Patient.extension.extension",
+      "sliceName" : "type",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension:recordedSexOrGender.extension:type.url",
+      "path" : "Patient.extension.extension.url",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension:recordedSexOrGender.extension:type.value[x]",
+      "path" : "Patient.extension.extension.value[x]",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension:recordedSexOrGender.extension:type.value[x].coding",
+      "path" : "Patient.extension.extension.value[x].coding",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension:recordedSexOrGender.extension:type.value[x].coding.system",
+      "path" : "Patient.extension.extension.value[x].coding.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension:recordedSexOrGender.extension:type.value[x].coding.code",
+      "path" : "Patient.extension.extension.value[x].coding.code",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension:recordedSexOrGender.extension:acquisitionDate",
+      "path" : "Patient.extension.extension",
+      "sliceName" : "acquisitionDate",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension:recordedSexOrGender.extension:acquisitionDate.url",
+      "path" : "Patient.extension.extension.url",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension:recordedSexOrGender.extension:acquisitionDate.value[x]",
+      "path" : "Patient.extension.extension.value[x]",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension:recordedSexOrGender.url",
+      "path" : "Patient.extension.url",
+      "mustSupport" : true
     },
     {
       "id" : "Patient.identifier",

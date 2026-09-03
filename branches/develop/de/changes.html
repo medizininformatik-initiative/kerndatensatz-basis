@@ -67,8 +67,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"11.1"}
-    h3,h4,h5,h6{--heading-prefix:"11.1"}</style>
+    <style type="text/css">h2{--heading-prefix:"11"}
+    h3,h4,h5,h6{--heading-prefix:"11"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -246,18 +246,8 @@
   <li>
     <a href="downloads.html">Downloads</a>
   </li>
-  <li class="dropdown">
-    <a data-toggle="dropdown" href="version-history.html" class="dropdown-toggle">Versionierung
-      <b class="caret"></b>
-    </a>
-    <ul class="dropdown-menu">
-      <li>
-        <a href="version-history.html">Versionierung</a>
-      </li>
-      <li>
-        <a href="changes.html">Changelog</a>
-      </li>
-    </ul>
+  <li>
+    <a href="changes.html">Changelog</a>
   </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="metadata.html" class="dropdown-toggle">Metadaten
@@ -266,6 +256,9 @@
     <ul class="dropdown-menu">
       <li>
         <a href="metadata.html">Metadatenübersicht</a>
+      </li>
+      <li>
+        <a href="version-history.html">Versionierung</a>
       </li>
     </ul>
   </li>
@@ -303,7 +296,7 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Inhaltsverzeichnis</b></a></li><li><a href='version-history.html'><b>Versionierung</b></a></li><li><b>Changelog</b></li>
+          <li><a href='toc.html'><b>Inhaltsverzeichnis</b></a></li><li><b>Changelog</b></li>
 
         </ul>
       </div>  <!-- /container -->
@@ -370,6 +363,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <ul>
   <li><strong>Added:</strong> Das Patient-Profil enthält nun die FHIR-Core-Extensions <code class="language-plaintext highlighter-rouge">patient-birthPlace</code>, <code class="language-plaintext highlighter-rouge">patient-citizenship</code> und <code class="language-plaintext highlighter-rouge">patient-nationality</code>, um Geburtsort, Staatsangehörigkeit und Nationalität im Modul Person abzubilden. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/86">#86</a></li>
+  <li><strong>Added:</strong> Das Patient-Profil unterstützt nun über die Extension <a href="https://hl7.org/fhir/extensions/StructureDefinition-individual-recordedSexOrGender.html"><code class="language-plaintext highlighter-rouge">individual-recordedSexOrGender</code></a> wiederholbare dokumentierte Geschlechtsangaben getrennt vom administrativen Geschlecht. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/81">#81</a></li>
 </ul>
 
 <h4 id="modul-diagnose">Modul Diagnose</h4>
@@ -395,6 +389,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h4 id="terminologie-updates">Terminologie-Updates</h4>
 
 <ul>
+  <li><strong>Added:</strong> Das neue <a href="ValueSet-mii-vs-person-recordedsexorgender-snomed.html">MII ValueSet Person Recorded Sex or Gender SNOMED</a> ist mit der Bindungsstärke <code class="language-plaintext highlighter-rouge">preferred</code> an <code class="language-plaintext highlighter-rouge">Patient.extension:recordedSexOrGender.extension:value</code> gebunden. Es enthält SNOMED-CT-Befunde zum biologischen Geschlecht und den Qualifier-Wert <code class="language-plaintext highlighter-rouge">Unknown</code>.</li>
   <li><strong>Changed:</strong> Ressourcen verwenden SNOMED CT-Version <code class="language-plaintext highlighter-rouge">http://snomed.info/sct/900000000000207008/version/20260701</code> (Juli 2026) modulübergreifend, um stabile <a href="http://hl7.org/fhir/R4/valueset.html#expansion">ValueSet-Expansion</a> zu gewährleisten</li>
 </ul>
 
@@ -725,7 +720,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-ballot.rc1 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Erstellt <span title="Wed, Sep 2, 2026 07:42+0000">2026-09-02</span>
+          Erstellt <span title="Thu, Sep 3, 2026 15:04+0000">2026-09-03</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.

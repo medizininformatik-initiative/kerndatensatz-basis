@@ -193,7 +193,7 @@ Enthaelt alle SNOMED CT Procedure Codes
   "compose" : {
     "include" : [{
       "system" : "http://snomed.info/sct",
-      "version" : "http://snomed.info/sct/900000000000207008/version/20250701",
+      "version" : "http://snomed.info/sct/900000000000207008/version/20260701",
       "filter" : [{
         "property" : "concept",
         "op" : "descendent-of",

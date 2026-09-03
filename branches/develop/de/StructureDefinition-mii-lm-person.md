@@ -46,7 +46,7 @@ Diese Struktur ist abgeleitet von [Element](http://hl7.org/fhir/R4/datatypes.htm
 
 ** Summary **
 
-Mandatory: 0 element(17 nested mandatory elements)
+Mandatory: 0 element(15 nested mandatory elements)
 
  **Schlüsselelemente-Ansicht** 
 
@@ -70,7 +70,7 @@ Diese Struktur ist abgeleitet von [Element](http://hl7.org/fhir/R4/datatypes.htm
 
 ** Summary **
 
-Mandatory: 0 element(17 nested mandatory elements)
+Mandatory: 0 element(15 nested mandatory elements)
 
  
 
@@ -146,13 +146,6 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-perso
 | Person.PatientIn.Versicherung.Versichertennummer | BackboneElement | Angaben zur Identifikation der versicherten Person |
 | Person.PatientIn.Versicherung.Versichertennummer.VersichertenIDGKV | string | Unveränderlicher Teil der Krankenversichertennummer (VersichertenID) bei GKV Patienten. Diese findet sich z.B. auf der Mitgliedskarte der Krankenkasse. |
 | Person.PatientIn.Versicherung.Versichertennummer.VersichertennummerPKV | string | Versichertennummer bei PKV Patienten. Vergabe erfolgt durch die jeweilige Private Krankenversicherung. |
-| Person.ProbandIn | BackboneElement | Person, die an einer Studie teilnimmt (unter Umständen, während sie Patient:in in einer Gesundheitseinrichtung ist) |
-| Person.ProbandIn.SubjektIdentifizierungscode | Identifier | Eindeutiger Identifikator eines Patienten im Kontext eines Forschungsprojekts (klinische Studie, Use Case) |
-| Person.ProbandIn.Rechtsgrundlage | Reference | Rechtsgrundlage (z.B. Einwilligung) aufgrund die PatientIn in die Studie eingeschlossen werden darf. |
-| Person.ProbandIn.BeginnTeilnahme | dateTime | Beginn der Teilnahme der Person an der Studie. |
-| Person.ProbandIn.EndeTeilnahme | dateTime | Ende der Teilnahme der Person an der Studie. |
-| Person.ProbandIn.StatusDerTeilnahme | code | Stand der Teilnahme einer Person an der Studie, z.B. eingeschlossen, widerrufen, abgeschlossen etc. |
-| Person.ProbandIn.BezeichnungDerStudie | Identifier | Identifikator der Studie |
 | Person.PatientInPseudonym | BackboneElement | Pseudonymisierte Repräsentation einer dazueghörigen Patient:in |
 | Person.PatientInPseudonym.Pseudonym | Identifier | Neu generierte Identifikation der PatientIn mit Bezug zum Original-Identifikator in einer Treuhandstelle. |
 
@@ -2165,175 +2158,6 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-perso
       "mapping" : [{
         "identity" : "FHIR",
         "map" : "Patient.identifier:versicherungsnummer_pkv"
-      }]
-    },
-    {
-      "id" : "Person.ProbandIn",
-      "path" : "Person.ProbandIn",
-      "short" : "Person, die an einer Studie teilnimmt (unter Umständen, während sie Patient:in in einer Gesundheitseinrichtung ist)",
-      "_short" : {
-        "extension" : [{
-          "extension" : [{
-            "url" : "lang",
-            "valueCode" : "en"
-          },
-          {
-            "url" : "content",
-            "valueString" : "Person participating in a study (in some circumstances, while being a patient in a health care facility)"
-          }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
-        }]
-      },
-      "definition" : "Person, die an einer Studie teilnimmt (unter Umständen, während sie Patient:in in einer Gesundheitseinrichtung ist)",
-      "min" : 0,
-      "max" : "*",
-      "type" : [{
-        "code" : "BackboneElement"
-      }]
-    },
-    {
-      "id" : "Person.ProbandIn.SubjektIdentifizierungscode",
-      "path" : "Person.ProbandIn.SubjektIdentifizierungscode",
-      "short" : "Eindeutiger Identifikator eines Patienten im Kontext eines Forschungsprojekts (klinische Studie, Use Case)",
-      "_short" : {
-        "extension" : [{
-          "extension" : [{
-            "url" : "lang",
-            "valueCode" : "en"
-          },
-          {
-            "url" : "content",
-            "valueString" : "Unique identifier of a patient in the context of a research project (clinical study, use case)"
-          }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
-        }]
-      },
-      "definition" : "Eindeutiger Identifikator eines Patienten im Kontext eines Forschungsprojekts (klinische Studie, Use Case)",
-      "min" : 0,
-      "max" : "*",
-      "type" : [{
-        "code" : "Identifier"
-      }]
-    },
-    {
-      "id" : "Person.ProbandIn.Rechtsgrundlage",
-      "path" : "Person.ProbandIn.Rechtsgrundlage",
-      "short" : "Rechtsgrundlage (z.B. Einwilligung) aufgrund die PatientIn in die Studie eingeschlossen werden darf.",
-      "_short" : {
-        "extension" : [{
-          "extension" : [{
-            "url" : "lang",
-            "valueCode" : "en"
-          },
-          {
-            "url" : "content",
-            "valueString" : "Legal basis (e.g. consent) on the basis of which the patient may be included in the study."
-          }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
-        }]
-      },
-      "definition" : "Rechtsgrundlage (z.B. Einwilligung) aufgrund die PatientIn in die Studie eingeschlossen werden darf.",
-      "min" : 0,
-      "max" : "*",
-      "type" : [{
-        "code" : "Reference",
-        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Consent"]
-      }]
-    },
-    {
-      "id" : "Person.ProbandIn.BeginnTeilnahme",
-      "path" : "Person.ProbandIn.BeginnTeilnahme",
-      "short" : "Beginn der Teilnahme der Person an der Studie.",
-      "_short" : {
-        "extension" : [{
-          "extension" : [{
-            "url" : "lang",
-            "valueCode" : "en"
-          },
-          {
-            "url" : "content",
-            "valueString" : "Start of the person's participation in the study"
-          }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
-        }]
-      },
-      "definition" : "Beginn der Teilnahme der Person an der Studie.",
-      "min" : 1,
-      "max" : "1",
-      "type" : [{
-        "code" : "dateTime"
-      }]
-    },
-    {
-      "id" : "Person.ProbandIn.EndeTeilnahme",
-      "path" : "Person.ProbandIn.EndeTeilnahme",
-      "short" : "Ende der Teilnahme der Person an der Studie.",
-      "_short" : {
-        "extension" : [{
-          "extension" : [{
-            "url" : "lang",
-            "valueCode" : "en"
-          },
-          {
-            "url" : "content",
-            "valueString" : "End of the person's participation in the study"
-          }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
-        }]
-      },
-      "definition" : "Ende der Teilnahme der Person an der Studie.",
-      "min" : 0,
-      "max" : "1",
-      "type" : [{
-        "code" : "dateTime"
-      }]
-    },
-    {
-      "id" : "Person.ProbandIn.StatusDerTeilnahme",
-      "path" : "Person.ProbandIn.StatusDerTeilnahme",
-      "short" : "Stand der Teilnahme einer Person an der Studie, z.B. eingeschlossen, widerrufen, abgeschlossen etc.",
-      "_short" : {
-        "extension" : [{
-          "extension" : [{
-            "url" : "lang",
-            "valueCode" : "en"
-          },
-          {
-            "url" : "content",
-            "valueString" : "Status of a person's participation in the study, e.g., \"included\", \"revoked\", \"completed\", etc."
-          }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
-        }]
-      },
-      "definition" : "Stand der Teilnahme einer Person an der Studie, z.B. eingeschlossen, widerrufen, abgeschlossen etc.",
-      "min" : 1,
-      "max" : "1",
-      "type" : [{
-        "code" : "code"
-      }]
-    },
-    {
-      "id" : "Person.ProbandIn.BezeichnungDerStudie",
-      "path" : "Person.ProbandIn.BezeichnungDerStudie",
-      "short" : "Identifikator der Studie",
-      "_short" : {
-        "extension" : [{
-          "extension" : [{
-            "url" : "lang",
-            "valueCode" : "en"
-          },
-          {
-            "url" : "content",
-            "valueString" : "Unique id of the study"
-          }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
-        }]
-      },
-      "definition" : "Identifikator der Studie",
-      "min" : 0,
-      "max" : "*",
-      "type" : [{
-        "code" : "Identifier"
       }]
     },
     {

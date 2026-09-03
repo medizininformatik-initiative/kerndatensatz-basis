@@ -691,6 +691,14 @@
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://www.medizininformatik-initiative.de/fhir/modul-person/ValueSet/mii-vs-person-recordedsexorgender-snomed"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
         <valueString value="profile-test-cases"/>
       </extension>
       <extension url="value">
@@ -1351,6 +1359,14 @@
       </extension>
       <extension url="value">
         <valueString value="https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/mii-vs-person-icd10who"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://www.medizininformatik-initiative.de/fhir/modul-person/ValueSet/mii-vs-person-recordedsexorgender-snomed"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -2097,7 +2113,7 @@
         <reference value="ValueSet/mii-vs-diagnose-alphaid"/>
       </reference>
       <name value="MII VS Diagnose Alpha-ID"/>
-      <description value="Enthaelt Alpha-ID-Codes der Versionen 2018 bis 2025"/>
+      <description value="Enthaelt Alpha-ID-Codes der aller verfügbarer Versionen"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2130,7 +2146,7 @@
         <reference value="ValueSet/mii-vs-diagnose-icd10gm"/>
       </reference>
       <name value="MII VS Diagnose ICD-10-GM"/>
-      <description value="Enthaelt ICD-10-GM-Codes der Versionen 2009 bis 2025"/>
+      <description value="Enthaelt ICD-10-GM-Codes der aller verfügbarer Versionen"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2193,6 +2209,17 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
+        <reference value="ValueSet/mii-vs-person-recordedsexorgender-snomed"/>
+      </reference>
+      <name value="MII VS Person Recorded Sex or Gender SNOMED"/>
+      <description value="Enthaelt SNOMED CT Codes für das dokumentierte Geschlecht"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
         <reference value="ValueSet/mii-vs-person-vitalstatus"/>
       </reference>
       <name value="MII VS Person Vitalstatus"/>
@@ -2218,7 +2245,7 @@
         <reference value="ValueSet/mii-vs-prozedur-ops"/>
       </reference>
       <name value="MII VS Prozedur OPS"/>
-      <description value="Enthaelt OPS-Codes der Versionen 2010 bis 2025"/>
+      <description value="Enthaelt OPS-Codes der aller verfügbarer Versionen"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2398,19 +2425,11 @@
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="version-history.html"/>
+          <valueUrl value="changes.html"/>
         </extension>
-        <nameUrl value="version-history.html"/>
-        <title value="Versioning"/>
+        <nameUrl value="changes.html"/>
+        <title value="Changelog"/>
         <generation value="markdown"/>
-        <page>
-          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="changes.html"/>
-          </extension>
-          <nameUrl value="changes.html"/>
-          <title value="Changelog"/>
-          <generation value="markdown"/>
-        </page>
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
@@ -2435,6 +2454,14 @@
         <nameUrl value="metadata.html"/>
         <title value="Metadata Overview"/>
         <generation value="markdown"/>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="version-history.html"/>
+          </extension>
+          <nameUrl value="version-history.html"/>
+          <title value="Versioning"/>
+          <generation value="markdown"/>
+        </page>
       </page>
     </page>
     <parameter>

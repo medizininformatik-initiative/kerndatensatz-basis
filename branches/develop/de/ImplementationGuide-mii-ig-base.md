@@ -59,7 +59,7 @@ This publication includes IP covered under the following statements.
 
 * This material contains content that is copyright of SNOMED International. Implementers of these specifications must have the appropriate SNOMED CT Affiliate license - for more information contact [https://www.snomed.org/get-snomed](https://www.snomed.org/get-snomed) or [info@snomed.org](mailto:info@snomed.org).
 
-* [SNOMED Clinical Terms&reg; (SNOMED CT&reg;)](http://hl7.org/fhir/R4/codesystem-snomedct.html): [Bundle/mii-exa-base-test-data-bundle-1](Bundle-mii-exa-base-test-data-bundle-1.md), [Condition/mii-exa-diagnose-appendicitis](Condition-mii-exa-diagnose-appendicitis.md)... Show 16 more, [Condition/mii-exa-diagnose-condition-elbow-contusion](Condition-mii-exa-diagnose-condition-elbow-contusion.md), [Condition/mii-exa-person-condition-todesursache](Condition-mii-exa-person-condition-todesursache.md), [MII_CS_Diagnose_Lebensphase_Supplement_SNOMED](CodeSystem-mii-cs-diagnose-lebensphase-supplement-snomed.md), [MII_EX_Prozedur_Durchfuehrungsabsicht](StructureDefinition-mii-ex-prozedur-durchfuehrungsabsicht.md), [MII_LM_Person](StructureDefinition-mii-lm-person.md), [MII_PR_Diagnose_Condition](StructureDefinition-mii-pr-diagnose-condition.md), [MII_PR_Person_Todesursache](StructureDefinition-mii-pr-person-todesursache.md), [MII_PR_Prozedur_Procedure](StructureDefinition-mii-pr-prozedur-procedure.md), [MII_VS_Diagnose_BodyStructure_SNOMED](ValueSet-mii-vs-diagnose-bodystructure-snomed.md), [MII_VS_Diagnose_DiagnoseCodes_SNOMED](ValueSet-mii-vs-diagnose-diagnosecodes-snomed.md), [MII_VS_Prozedur_Durchfuehrungsabsicht_SNOMEDCT](ValueSet-mii-vs-prozedur-durchfuehrungsabsicht-snomedct.md), [MII_VS_Prozedur_OpsKategorien_SNOMEDCT](ValueSet-mii-vs-prozedur-opskategorien-snomedct.md), [MII_VS_Prozedur_Prozeduren_SNOMEDCT](ValueSet-mii-vs-prozedur-prozeduren-snomedct.md), [Procedure/mii-exa-prozedur-imaging](Procedure-mii-exa-prozedur-imaging.md), [Procedure/mii-exa-prozedur-procedure](Procedure-mii-exa-prozedur-procedure.md) and [Procedure/mii-exa-prozedur-procedure-2](Procedure-mii-exa-prozedur-procedure-2.md)
+* [SNOMED Clinical Terms&reg; (SNOMED CT&reg;)](http://hl7.org/fhir/R4/codesystem-snomedct.html): [Bundle/mii-exa-base-test-data-bundle-1](Bundle-mii-exa-base-test-data-bundle-1.md), [Condition/mii-exa-diagnose-appendicitis](Condition-mii-exa-diagnose-appendicitis.md)... Show 18 more, [Condition/mii-exa-diagnose-condition-elbow-contusion](Condition-mii-exa-diagnose-condition-elbow-contusion.md), [Condition/mii-exa-person-condition-todesursache](Condition-mii-exa-person-condition-todesursache.md), [MII_CS_Diagnose_Lebensphase_Supplement_SNOMED](CodeSystem-mii-cs-diagnose-lebensphase-supplement-snomed.md), [MII_EX_Prozedur_Durchfuehrungsabsicht](StructureDefinition-mii-ex-prozedur-durchfuehrungsabsicht.md), [MII_LM_Person](StructureDefinition-mii-lm-person.md), [MII_PR_Diagnose_Condition](StructureDefinition-mii-pr-diagnose-condition.md), [MII_PR_Person_Patient](StructureDefinition-mii-pr-person-patient.md), [MII_PR_Person_Todesursache](StructureDefinition-mii-pr-person-todesursache.md), [MII_PR_Prozedur_Procedure](StructureDefinition-mii-pr-prozedur-procedure.md), [MII_VS_Diagnose_BodyStructure_SNOMED](ValueSet-mii-vs-diagnose-bodystructure-snomed.md), [MII_VS_Diagnose_DiagnoseCodes_SNOMED](ValueSet-mii-vs-diagnose-diagnosecodes-snomed.md), [MII_VS_Person_recordedSexOrGender_SNOMED](ValueSet-mii-vs-person-recordedsexorgender-snomed.md), [MII_VS_Prozedur_Durchfuehrungsabsicht_SNOMEDCT](ValueSet-mii-vs-prozedur-durchfuehrungsabsicht-snomedct.md), [MII_VS_Prozedur_OpsKategorien_SNOMEDCT](ValueSet-mii-vs-prozedur-opskategorien-snomedct.md), [MII_VS_Prozedur_Prozeduren_SNOMEDCT](ValueSet-mii-vs-prozedur-prozeduren-snomedct.md), [Procedure/mii-exa-prozedur-imaging](Procedure-mii-exa-prozedur-imaging.md), [Procedure/mii-exa-prozedur-procedure](Procedure-mii-exa-prozedur-procedure.md) and [Procedure/mii-exa-prozedur-procedure-2](Procedure-mii-exa-prozedur-procedure-2.md)
 
 
 * This material derives from the HL7 Terminology (THO). THO is copyright ©1989+ Health Level Seven International and is made available under the CC0 designation. For more licensing information see: [https://terminology.hl7.org/license.html](https://terminology.hl7.org/license.html)
@@ -1006,6 +1006,17 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
     {
       "extension" : [{
         "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://www.medizininformatik-initiative.de/fhir/modul-person/ValueSet/mii-vs-person-recordedsexorgender-snomed"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
         "valueString" : "profile-test-cases"
       },
       {
@@ -1912,6 +1923,17 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       {
         "url" : "value",
         "valueString" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/mii-vs-person-icd10who"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://www.medizininformatik-initiative.de/fhir/modul-person/ValueSet/mii-vs-person-recordedsexorgender-snomed"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -2982,7 +3004,7 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
         "reference" : "ValueSet/mii-vs-diagnose-alphaid"
       },
       "name" : "MII VS Diagnose Alpha-ID",
-      "description" : "Enthaelt Alpha-ID-Codes der Versionen 2018 bis 2025",
+      "description" : "Enthaelt Alpha-ID-Codes der aller verfügbarer Versionen",
       "exampleBoolean" : false
     },
     {
@@ -3030,7 +3052,7 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
         "reference" : "ValueSet/mii-vs-diagnose-icd10gm"
       },
       "name" : "MII VS Diagnose ICD-10-GM",
-      "description" : "Enthaelt ICD-10-GM-Codes der Versionen 2009 bis 2025",
+      "description" : "Enthaelt ICD-10-GM-Codes der aller verfügbarer Versionen",
       "exampleBoolean" : false
     },
     {
@@ -3120,6 +3142,22 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-person-recordedsexorgender-snomed.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mii-vs-person-recordedsexorgender-snomed"
+      },
+      "name" : "MII VS Person Recorded Sex or Gender SNOMED",
+      "description" : "Enthaelt SNOMED CT Codes für das dokumentierte Geschlecht",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
         "valueUri" : "ValueSet-mii-vs-person-vitalstatus.html"
       }],
       "reference" : {
@@ -3158,7 +3196,7 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
         "reference" : "ValueSet/mii-vs-prozedur-ops"
       },
       "name" : "MII VS Prozedur OPS",
-      "description" : "Enthaelt OPS-Codes der Versionen 2010 bis 2025",
+      "description" : "Enthaelt OPS-Codes der aller verfügbarer Versionen",
       "exampleBoolean" : false
     },
     {
@@ -3567,33 +3605,11 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "version-history.html"
+          "valueUrl" : "changes.html"
         }],
-        "nameUrl" : "version-history.html",
-        "title" : "Versioning",
-        "_title" : {
-          "extension" : [{
-            "extension" : [{
-              "url" : "lang",
-              "valueCode" : "de"
-            },
-            {
-              "url" : "content",
-              "valueString" : "Versionierung"
-            }],
-            "url" : "http://hl7.org/fhir/StructureDefinition/translation"
-          }]
-        },
-        "generation" : "markdown",
-        "page" : [{
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "changes.html"
-          }],
-          "nameUrl" : "changes.html",
-          "title" : "Changelog",
-          "generation" : "markdown"
-        }]
+        "nameUrl" : "changes.html",
+        "title" : "Changelog",
+        "generation" : "markdown"
       },
       {
         "extension" : [{
@@ -3659,7 +3675,29 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
             "url" : "http://hl7.org/fhir/StructureDefinition/translation"
           }]
         },
-        "generation" : "markdown"
+        "generation" : "markdown",
+        "page" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "version-history.html"
+          }],
+          "nameUrl" : "version-history.html",
+          "title" : "Versioning",
+          "_title" : {
+            "extension" : [{
+              "extension" : [{
+                "url" : "lang",
+                "valueCode" : "de"
+              },
+              {
+                "url" : "content",
+                "valueString" : "Versionierung"
+              }],
+              "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+            }]
+          },
+          "generation" : "markdown"
+        }]
       }]
     },
     "parameter" : [{

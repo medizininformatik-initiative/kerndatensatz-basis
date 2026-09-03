@@ -216,6 +216,9 @@
     "http://hl7.org/fhir/StructureDefinition/humanname-own-prefix": [
       "Patient.name.family"
     ],
+    "http://hl7.org/fhir/StructureDefinition/individual-recordedSexOrGender": [
+      "Patient"
+    ],
     "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator": [
       "Patient.address.line"
     ],
@@ -238,7 +241,8 @@
       "Patient.name.prefix"
     ],
     "http://hl7.org/fhir/StructureDefinition/iso21090-codedString": [
-      "Patient.address.country"
+      "Patient.address.country",
+      "Patient.extension.value[x].country"
     ],
     "http://hl7.org/fhir/StructureDefinition/package-source": [
       "Bundle.entry.resource.meta",

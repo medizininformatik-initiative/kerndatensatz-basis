@@ -71,6 +71,7 @@ graph BT
 
   A1E -->|partOf| E0
   A2E -->|partOf| E0
+  A2E -->|account| A1
 
   %% CARE UNIT LEVEL
   VS1["`**Encounter VS1**
@@ -96,8 +97,11 @@ graph BT
   VS3 -->|partOf| A2E
   VS4 -->|partOf| A2E
   VS5 -->|partOf| A2E
+  VS5 -->|account| A1
 
 ```
+
+**Account-Verknüpfung:** Die für ausgewählte Encounter dargestellten `account`-Referenzen veranschaulichen, wie Encounter auf jeder Ebene der Hierarchie mit demselben Account verknüpft werden können, um mehrere Encounter einem gemeinsamen Abrechnungskontext zuzuordnen. Zur besseren Lesbarkeit werden Account-Referenzen nur für ausgewählte Encounter gezeigt; die übrigen Encounter der Hierarchie können denselben Account auf die gleiche Weise referenzieren. Implementierungshinweise, insbesondere zur empfohlenen Verwendung der logischen Referenz `Encounter.account.identifier`, finden sich unter [Best Practice - Aufnahmenummer vs. Fallnummer](#best-practice-aufnahmenummer-vs-fallnummer).
 
 In diesem Beispiel:
 
@@ -106,13 +110,11 @@ In diesem Beispiel:
 * **A2E** ist der Abteilungskontakt für die Allgemeinchirurgie
 * **VS1-VS5** sind Versorgungsstellenkontakte für spezifische Orte: Notaufnahme Behandlungsraum 3, Radiologie CT, OP-Saal 4 (laparoskopische Appendektomie), Aufwachraum PACU und Chirurgische Station C3
 * Die Hierarchie wird durch `partOf`-Referenzen etabliert, die von Versorgungsstellen zu Abteilungen zur Einrichtung verweisen
-* **EP1** (EpisodeOfCare) und **A1** (Account) werden der Vollständigkeit halber gezeigt, sind aber derzeit nicht Teil der MII-Kerndatensatz-Spezifikation. Aus Vereinfachungsgründen wird nur E0 als referenzierend auf diese Ressourcen dargestellt, aber in der Praxis kann jeder Kontakt in der Hierarchie auf die EpisodeOfCare und das Account verweisen, zu denen er gehört.
+* **EP1** (EpisodeOfCare) und **A1** (Account) werden der Vollständigkeit halber gezeigt, sind aber derzeit nicht Teil der MII-Kerndatensatz-Spezifikation. Ausgewählte Encounter jeder Hierarchieebene werden mit einer Referenz auf A1 dargestellt, um ihren gemeinsamen Abrechnungskontext zu veranschaulichen; E0 referenziert zusätzlich EP1.
 
 #### Repräsentation der Fallarten in FHIR
 
 ##### Primärkontakte
-
-Siehe auch Leitfaden [FHIR DE Basisprofile](https://ig.fhir.de/basisprofile-de/1.4.0/Ressourcen-AmbulanterStationaererFall.html):
 
 | | | |
 | :--- | :--- | :--- |
@@ -132,6 +134,8 @@ Siehe auch Leitfaden [FHIR DE Basisprofile](https://ig.fhir.de/basisprofile-de/1
 | Entbindung (Delivery) | - | `Encounter.class = IMP``Encounter.extension:Aufnahmegrund.extension:ErsteUndZweiteStelle = 05` |
 | Notfall (Emergency) | - | `Encounter.class = AMB``Encounter.extension:Aufnahmegrund.VierteStelle = 7`If subsequent inpatient admission occurs:`Encounter.hospitalization.admitSource = "N"`To emphasize treatment urgency:`Encounter.priority = http://terminology.hl7.org/CodeSystem/v3-ActPriority|EM` |
 
+**Externe Quelle: Die Zuordnung der Primärkontakte zu HL7 V2 und FHIR in dieser Tabelle wurde aus den [Deutschen FHIR-Basisprofilen 1.6.0 – Ambulanter/stationärer Fall / Kontakt](https://ig.fhir.de/basisprofile-de/1.6.0/ig-markdown-Ressourcen-AmbulanterStationaererFall.html) übernommen.**
+
 ##### Sekundärkontakte bei stationärem Aufenthalt
 
 | | | |
@@ -139,6 +143,8 @@ Siehe auch Leitfaden [FHIR DE Basisprofile](https://ig.fhir.de/basisprofile-de/1
 | Untersuchung und Behandlung | - | `Encounter.class = IMP``Encounter.type = ub` |
 | Konsil | - | `Encounter.class = IMP``Encounter.type = konsil` |
 | Operation | - | `Encounter.class = IMP``Encounter.type = operation` |
+
+**Externe Quelle: Die Zuordnung der Sekundärkontakte zu HL7 V2 und FHIR in dieser Tabelle wurde aus den [Deutschen FHIR-Basisprofilen 1.6.0 – Ambulanter/stationärer Fall / Kontakt](https://ig.fhir.de/basisprofile-de/1.6.0/ig-markdown-Ressourcen-AmbulanterStationaererFall.html) übernommen.**
 
 #### Angaben zu Diagnosen
 

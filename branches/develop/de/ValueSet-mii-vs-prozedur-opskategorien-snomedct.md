@@ -193,7 +193,7 @@ Enthaelt alle SNOMED CT Codes für ein Mapping der OPS Klassentitel
   "compose" : {
     "include" : [{
       "system" : "http://snomed.info/sct",
-      "version" : "http://snomed.info/sct/900000000000207008/version/20250701",
+      "version" : "http://snomed.info/sct/900000000000207008/version/20260701",
       "concept" : [{
         "code" : "165197003",
         "display" : "Diagnostic assessment"

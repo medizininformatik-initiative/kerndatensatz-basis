@@ -13,7 +13,7 @@
 | **Copyright/Legal**: WHO, BfArM 1994 - 2025 - Die Erstellung erfolgt unter Verwendung der maschinenlesbaren Fassung des Bundesinstituts für Arzneimittel und Medizinprodukte (BfArM). | |
 
  
-Enthaelt Alpha-ID-Codes der Versionen 2018 bis 2025 
+Enthaelt Alpha-ID-Codes der aller verfügbarer Versionen 
 
  **References** 
 
@@ -181,7 +181,7 @@ Enthaelt Alpha-ID-Codes der Versionen 2018 bis 2025
       "value" : "https://www.medizininformatik-initiative.de/en"
     }]
   }],
-  "description" : "Enthaelt Alpha-ID-Codes der Versionen 2018 bis 2025",
+  "description" : "Enthaelt Alpha-ID-Codes der aller verfügbarer Versionen",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",

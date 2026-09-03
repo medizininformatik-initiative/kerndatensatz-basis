@@ -13,7 +13,7 @@
 | **Copyright/Rechtliches**: WHO, BfArM 1994 - 2025 - Die Erstellung erfolgt unter Verwendung der maschinenlesbaren Fassung des Bundesinstituts für Arzneimittel und Medizinprodukte (BfArM). | |
 
  
-Enthaelt ICD-10-GM-Codes der Versionen 2009 bis 2025 
+Enthaelt ICD-10-GM-Codes der aller verfügbarer Versionen 
 
  **References** 
 
@@ -181,7 +181,7 @@ Enthaelt ICD-10-GM-Codes der Versionen 2009 bis 2025
       "value" : "https://www.medizininformatik-initiative.de/en"
     }]
   }],
-  "description" : "Enthaelt ICD-10-GM-Codes der Versionen 2009 bis 2025",
+  "description" : "Enthaelt ICD-10-GM-Codes der aller verfügbarer Versionen",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
