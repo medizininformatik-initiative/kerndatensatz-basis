@@ -54,6 +54,7 @@ graph BT
 
   A1E -->|partOf| E0
   A2E -->|partOf| E0
+  A2E -->|account| A1
 
   %% CARE UNIT LEVEL
   VS1["`**Encounter VS1**
@@ -79,7 +80,10 @@ graph BT
   VS3 -->|partOf| A2E
   VS4 -->|partOf| A2E
   VS5 -->|partOf| A2E
+  VS5 -->|account| A1
 </code></pre>
+
+**Account-Verknüpfung:** Die für ausgewählte Encounter dargestellten `account`-Referenzen veranschaulichen, wie Encounter auf jeder Ebene der Hierarchie mit demselben Account verknüpft werden können, um mehrere Encounter einem gemeinsamen Abrechnungskontext zuzuordnen. Zur besseren Lesbarkeit werden Account-Referenzen nur für ausgewählte Encounter gezeigt; die übrigen Encounter der Hierarchie können denselben Account auf die gleiche Weise referenzieren. Implementierungshinweise, insbesondere zur empfohlenen Verwendung der logischen Referenz `Encounter.account.identifier`, finden sich unter [Best Practice - Aufnahmenummer vs. Fallnummer](#best-practice-aufnahmenummer-vs-fallnummer).
 
 In diesem Beispiel:
 - **E0** repräsentiert den gesamten Einrichtungskontakt für den Krankenhausaufenthalt
@@ -87,7 +91,7 @@ In diesem Beispiel:
 - **A2E** ist der Abteilungskontakt für die Allgemeinchirurgie
 - **VS1-VS5** sind Versorgungsstellenkontakte für spezifische Orte: Notaufnahme Behandlungsraum 3, Radiologie CT, OP-Saal 4 (laparoskopische Appendektomie), Aufwachraum PACU und Chirurgische Station C3
 - Die Hierarchie wird durch `partOf`-Referenzen etabliert, die von Versorgungsstellen zu Abteilungen zur Einrichtung verweisen
-- **EP1** (EpisodeOfCare) und **A1** (Account) werden der Vollständigkeit halber gezeigt, sind aber derzeit nicht Teil der MII-Kerndatensatz-Spezifikation. Aus Vereinfachungsgründen wird nur E0 als referenzierend auf diese Ressourcen dargestellt, aber in der Praxis kann jeder Kontakt in der Hierarchie auf die EpisodeOfCare und das Account verweisen, zu denen er gehört.
+- **EP1** (EpisodeOfCare) und **A1** (Account) werden der Vollständigkeit halber gezeigt, sind aber derzeit nicht Teil der MII-Kerndatensatz-Spezifikation. Ausgewählte Encounter jeder Hierarchieebene werden mit einer Referenz auf A1 dargestellt, um ihren gemeinsamen Abrechnungskontext zu veranschaulichen; E0 referenziert zusätzlich EP1.
 
 #### Repräsentation der Fallarten in FHIR
 
@@ -306,7 +310,7 @@ In den meisten Fällen ist die "Fallnummer" ein eindeutiger Identifier für den 
 Früher wurde empfohlen, dass die Aufnahmenummer in allen Encounter-Ressourcen unabhängig von Kontaktebene und Kontakttyp angegeben werden soll. Diese Empfehlung unterschied jedoch nicht klar zwischen Aufnahmenummer und Fallnummer.
 
 <div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
-<h5 style="color: #406A99; margin-top: 0;">Best Practice - Aufnahmenummer vs. Fallnummer</h5>
+<h5 id="best-practice-aufnahmenummer-vs-fallnummer" style="color: #406A99; margin-top: 0;">Best Practice - Aufnahmenummer vs. Fallnummer</h5>
 
 <p><em>Hinweis: Diese Empfehlung basiert auf der <a href="https://simplifier.net/packages/de.gematik.isik/5.1.0/files/3020028" target="_blank">ISiK-Spezifikation</a>.</em></p>
 
