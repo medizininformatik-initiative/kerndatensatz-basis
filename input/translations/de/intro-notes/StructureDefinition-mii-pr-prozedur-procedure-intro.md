@@ -14,20 +14,20 @@ Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Pro
 #### Codierungsanforderungen
 
 **Verpflichtende Codierung:**
-- **`Procedure.code`**: VERPFLICHTEND Kodierung entweder per OPS oder SNOMED CT
-- Mindestens eine kodierte Prozedur MUSS vorhanden sein
-- Weitere Kodierungen aus anderen Terminologien sind OPTIONAL
+- **`Procedure.code`**: VERPFLICHTEND Codierung entweder per OPS oder SNOMED CT
+- Mindestens eine codierte Prozedur MUSS vorhanden sein
+- Weitere Codierungen aus anderen Terminologien sind OPTIONAL
 
-**OPS-Kodierung:**
+**OPS-Codierung:**
 - **`Procedure.code:ops`**: OPS (Operationen- und Prozedurenschlüssel) ist das primäre Codiersystem für Prozeduren in Deutschland
-- Siehe [OPS-Kodierung - Deutsche Basisprofile] für detaillierte OPS-Codierungsanforderungen
+- Siehe [OPS-Codierung - Deutsche Basisprofile] für detaillierte OPS-Codierungsanforderungen
 - OPS-Codes umfassen:
   - `Procedure.code:ops.coding.code`: Vollständiger Prozedurenkode
   - `Procedure.code:ops.coding.system`: Codesystem (`http://fhir.de/CodeSystem/bfarm/ops`)
   - `Procedure.code:ops.coding.version`: OPS-Versionsjahr
   - `Procedure.code:ops.extension:seitenlokalisation`: Seitenlokalisation-Extension
 
-**SNOMED-CT-Kodierung:**
+**SNOMED-CT-Codierung:**
 - **`Procedure.code:sct`**: SNOMED-CT-Codierung
 - Kann als primäre Codierung oder neben OPS verwendet werden
 
@@ -38,15 +38,15 @@ Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Pro
 
 <p><strong>Verpflichtende Kategorisierung:</strong> <code>Procedure.category</code> SNOMED-CT-Kategorisierung auf Basis des Prozedurenkodes.</p>
 
-<p><strong>Mapping von OPS-Klassentiteln:</strong> Wenn die Prozedur per OPS kodiert wird, <strong>SOLL</strong> die Kategorie durch Mapping von OPS-Kapitel-/Klassentiteln auf SNOMED-CT-Konzepte abgeleitet werden. Siehe Abschnitt Terminologien in diesem IG für OPS-zu-SNOMED-CT-Kategorie-Mappings.</p>
+<p><strong>Mapping von OPS-Klassentiteln:</strong> Wenn die Prozedur per OPS codiert wird, <strong>SOLL</strong> die Kategorie durch Mapping von OPS-Kapitel-/Klassentiteln auf SNOMED-CT-Konzepte abgeleitet werden. Siehe Abschnitt Terminologien in diesem IG für OPS-zu-SNOMED-CT-Kategorie-Mappings.</p>
 
-<p><strong>Constraint proc-mii-1:</strong> Diese Anforderung ist nur relevant, wenn die Prozedur per OPS kodiert wird.</p>
+<p><strong>Constraint proc-mii-1:</strong> Diese Anforderung ist nur relevant, wenn die Prozedur per OPS codiert wird.</p>
 
 <p><strong>Zweck:</strong> Die Kategorisierung ermöglicht:</p>
 <ul>
   <li>Hochstufige Prozedur-Gruppierung für epidemiologische Analysen</li>
   <li>Filterung und Durchsuchen von Prozeduren nach breiten klinischen Kategorien</li>
-  <li>Semantische Konsistenz über unterschiedlich kodierte Prozeduren hinweg</li>
+  <li>Semantische Konsistenz über unterschiedlich codierte Prozeduren hinweg</li>
 </ul>
 </div>
 
@@ -66,31 +66,20 @@ Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Pro
 
 #### Dokumentation der Körperstelle
 
-<div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
-<h5 style="color: #406A99; margin-top: 0;">Hinweis zu FHIR-Core-Extensions</h5>
+Die Modellierung codierter und detaillierter anatomischer Lokalisationen wurde mit [gematik ISiK Prozedur 6.0.0](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKProzedur.html) harmonisiert. `Procedure.bodySite` unterstützt zwei Darstellungen:
 
-<p>Das Profil enthält die FHIR-Core-Extension <code>http://hl7.org/fhir/StructureDefinition/bodySite</code> auf <code>Procedure.bodySite</code>, um zusätzlich zu der codierten Körperstelle eine detaillierte anatomische Referenz, z.B. auf eine BodyStructure, abbilden zu können.</p>
-</div>
+- eine codierte anatomische Lokalisation, vorzugsweise mit SNOMED CT; oder
+- eine Referenz auf eine patientenbezogene `BodyStructure` über die Extension `http://hl7.org/fhir/StructureDefinition/bodySite`, wenn eine codierte Körperstelle allein nicht die erforderliche Detailtiefe bietet.
 
-<div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
-<h5 style="color: #406A99; margin-top: 0;">Best Practice - Körperstelle vs. Seitenlokalisation</h5>
+**EHDS-Ausblick:** [HL7 Europe Procedure (EU core) 2.0.0](https://hl7.eu/fhir/base/2.0.0/StructureDefinition-procedure-eu-core.html) verwendet dieselbe Darstellung durch Codierung oder Referenz und wendet die Invariante `eu-bodysite-1` an. Für zukünftige EHDS-Kompatibilität **SOLLTE** jedes Vorkommen von `Procedure.bodySite` entweder Codierung/Text oder die BodyStructure-Referenz-Extension enthalten, jedoch nicht beides.
 
-<p><strong>Zweck von bodySite:</strong> <code>Procedure.bodySite</code> bietet detaillierte Kodierung der anatomischen Lokalisation für die Prozedur mittels SNOMED CT.</p>
+**Körperstelle und Seitenlokalisation:**
 
-<p><strong>NICHT für Seitenlokalisation:</strong> <code>Procedure.bodySite</code> <strong>SOLL NICHT</strong> verwendet werden, um die Seitenlokalisation (links/rechts/beidseitig) abzubilden. Die Seitenlokalisation ist eine Eigenschaft des Prozedurenkodes selbst.</p>
-
-<p><strong>Darstellung der Seitenlokalisation:</strong></p>
-<ul>
-  <li>Für OPS-Codes: Verwenden Sie <code>Procedure.code:ops.extension:seitenlokalisation</code></li>
-  <li>Für SNOMED CT: Seitenlokalisation ist im Prozedurkonzept inhärent enthalten (z.B. "Appendektomie des rechten Appendix")</li>
-</ul>
-
-<p><strong>Wann bodySite zu verwenden ist:</strong></p>
-<ul>
-  <li>Um zusätzliche anatomische Details bereitzustellen, die über das hinausgehen, was der Code spezifiziert</li>
-  <li>Um präzise anatomische Strukturen mittels SNOMED-CT-Anatomiekonzepten zu spezifizieren</li>
-</ul>
-</div>
+- `Procedure.bodySite` bietet eine detaillierte Codierung der anatomischen Lokalisation für die Prozedur mittels SNOMED CT
+- `Procedure.bodySite` **SOLL NICHT** verwendet werden, um die Seitenlokalisation (links/rechts/beidseitig) abzubilden; die Seitenlokalisation ist eine Eigenschaft des Prozedurencodes selbst
+- Für OPS-Codes SOLL `Procedure.code:ops.extension:seitenlokalisation` verwendet werden
+- Bei SNOMED CT ist die Seitenlokalisation im Prozedurkonzept inhärent enthalten
+- `bodySite` SOLL verwendet werden, um über den Prozedurencode hinausgehende anatomische Details anzugeben oder auf eine patientenbezogene anatomische Struktur zu referenzieren
 
 #### Durchführungsabsicht
 
@@ -102,7 +91,7 @@ Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Pro
   - Prophylaktische Prozeduren
   - Palliative Prozeduren
   - etc.
-- Bietet klinischen Kontext für die Prozedur über den Prozedurenkode hinaus
+- Bietet klinischen Kontext für die Prozedur über den Prozedurencode hinaus
 
 #### Kontaktkontext
 

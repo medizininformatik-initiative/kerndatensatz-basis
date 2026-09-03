@@ -66,31 +66,20 @@ This section provides detailed implementation guidance for the MII Procedure (Pr
 
 #### Body Site Documentation
 
-<div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
-<h5 style="color: #406A99; margin-top: 0;">FHIR Core Extension Note</h5>
+The modeling of coded and detailed anatomical locations has been harmonized with [gematik ISiK Procedure 6.0.0](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKProzedur.html). `Procedure.bodySite` supports two representations:
 
-<p>The profile includes the FHIR core extension <code>http://hl7.org/fhir/StructureDefinition/bodySite</code> on <code>Procedure.bodySite</code> to allow a detailed anatomic reference, such as a BodyStructure, in addition to the coded procedure site.</p>
-</div>
+- a coded anatomical location, preferably using SNOMED CT; or
+- a reference to a patient-specific `BodyStructure` via the `http://hl7.org/fhir/StructureDefinition/bodySite` extension when a coded body site alone does not provide the required detail.
 
-<div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
-<h5 style="color: #406A99; margin-top: 0;">Best Practice - Body Site vs. Laterality</h5>
+**EHDS outlook:** [HL7 Europe Procedure (EU core) 2.0.0](https://hl7.eu/fhir/base/2.0.0/StructureDefinition-procedure-eu-core.html) uses the same coded-or-referenced representation and applies the `eu-bodysite-1` invariant. For future EHDS compatibility, each `Procedure.bodySite` occurrence **SHOULD** contain either coding/text or the BodyStructure-reference extension, but not both.
 
-<p><strong>Body Site Purpose:</strong> <code>Procedure.bodySite</code> provides detailed anatomical location coding for the procedure using SNOMED CT.</p>
+**Body Site vs. Laterality:**
 
-<p><strong>NOT for Laterality:</strong> <code>Procedure.bodySite</code> <strong>SHOULD NOT</strong> be used to represent laterality (left/right/bilateral). Laterality is a property of the procedure code itself.</p>
-
-<p><strong>Laterality Representation:</strong></p>
-<ul>
-  <li>For OPS codes: Use <code>Procedure.code:ops.extension:seitenlokalisation</code></li>
-  <li>For SNOMED CT: Laterality is inherent in the procedure concept (e.g., "Appendectomy of right appendix")</li>
-</ul>
-
-<p><strong>When to Use bodySite:</strong></p>
-<ul>
-  <li>To provide additional anatomical detail beyond what the code specifies</li>
-  <li>To specify precise anatomical structures using SNOMED CT anatomy concepts</li>
-</ul>
-</div>
+- `Procedure.bodySite` provides detailed anatomical location coding for the procedure using SNOMED CT
+- `Procedure.bodySite` **SHOULD NOT** be used to represent laterality (left/right/bilateral); laterality is a property of the procedure code itself
+- For OPS codes, use `Procedure.code:ops.extension:seitenlokalisation`
+- For SNOMED CT, laterality is inherent in the procedure concept
+- Use `bodySite` to provide anatomical details beyond the procedure code or to reference a specific anatomical structure
 
 #### Procedure Intent
 

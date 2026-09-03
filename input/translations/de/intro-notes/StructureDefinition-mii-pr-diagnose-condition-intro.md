@@ -13,7 +13,7 @@ Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Dia
 #### Codierungsanforderungen
 
 **Verpflichtende Codierung:**
-- **`Condition.code`**: Mindestens eine kodierte Diagnose MUSS enthalten sein
+- **`Condition.code`**: Mindestens eine codierte Diagnose MUSS enthalten sein
 - System frei wählbar aus: ICD-10-GM, Alpha-ID, SNOMED CT oder Orphanet
 - ICD-10-GM-Codierung ist das primäre Codiersystem für Diagnosen in Deutschland
 
@@ -26,7 +26,7 @@ Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Dia
 <div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
 <h5 style="color: #406A99; margin-top: 0;">Best Practice - ICD-10-GM-Extensions und Sonderzeichen</h5>
 
-<p><strong>Trennung von Sonderzeichen:</strong> Das Element <code>Condition.code.coding.where(system='http://fhir.de/CodeSystem/bfarm/icd-10-gm').code</code> <strong>SOLL NICHT</strong> ein Mehrfachkodierungskennzeichen oder Zusatzkennzeichen (z.B. Seitenlokalisation oder Diagnosesicherheit) enthalten.</p>
+<p><strong>Trennung von Sonderzeichen:</strong> Das Element <code>Condition.code.coding.where(system='http://fhir.de/CodeSystem/bfarm/icd-10-gm').code</code> <strong>SOLL NICHT</strong> ein Mehrfachcodierungskennzeichen oder Zusatzkennzeichen (z.B. Seitenlokalisation oder Diagnosesicherheit) enthalten.</p>
 
 <p><strong>Verwendung von Extensions:</strong></p>
 <ul>
@@ -69,16 +69,18 @@ Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Dia
 
 #### Dokumentation der Körperstelle
 
-<div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
-<h5 style="color: #406A99; margin-top: 0;">Hinweis zu FHIR-Core-Extensions</h5>
+Die Modellierung codierter und detaillierter anatomischer Lokalisationen wurde mit [gematik ISiK Diagnose 6.0.0](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKDiagnose.html) harmonisiert. `Condition.bodySite` unterstützt zwei Darstellungen:
 
-<p>Das Profil enthält die FHIR-Core-Extension <code>http://hl7.org/fhir/StructureDefinition/bodySite</code> auf <code>Condition.bodySite</code>, um zusätzlich zu der codierten Körperstelle eine detaillierte anatomische Referenz, z.B. auf eine BodyStructure, abbilden zu können.</p>
-</div>
+- eine codierte anatomische Lokalisation, vorzugsweise mit SNOMED CT; oder
+- eine Referenz auf eine patientenbezogene `BodyStructure` über die Extension `http://hl7.org/fhir/StructureDefinition/bodySite`, wenn eine codierte Körperstelle allein nicht die erforderliche Detailtiefe bietet.
+
+**EHDS-Ausblick:** [HL7 Europe Condition (EU core) 2.0.0](https://hl7.eu/fhir/base/2.0.0/StructureDefinition-condition-eu-core.html) verwendet dieselbe Darstellung durch Codierung oder Referenz und wendet die Invariante `eu-bodysite-1` an. Für zukünftige EHDS-Kompatibilität **SOLLTE** jedes Vorkommen von `Condition.bodySite` entweder Codierung/Text oder die BodyStructure-Referenz-Extension enthalten, jedoch nicht beides.
 
 **`Condition.bodySite`:**
 - OPTIONALES Element
 - Falls dieses optionale Element verwendet wird, SOLL die Körperstelle mindestens mit einem SNOMED CT-Code codiert werden
-- Hierbei DARF NICHT die Lateralität angegeben werden - verwenden Sie stattdessen die Extension Seitenlokalisation auf `Condition.code.coding:icd10-gm`
+- Die BodyStructure-Referenz-Extension SOLL verwendet werden, wenn die codierte Körperstelle nicht ausreichend präzise ist
+- Für die Lateralität bei ICD-10-GM SOLL die Extension Seitenlokalisation auf `Condition.code.coding:icd10-gm` verwendet werden, anstatt die Lateralität in `bodySite` zu codieren
 
 #### Verknüpfung mit dem Fall
 
