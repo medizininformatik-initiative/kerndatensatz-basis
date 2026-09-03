@@ -1,7 +1,7 @@
 ValueSet: MII_VS_Diagnose_ICD10GM
 Id: mii-vs-diagnose-icd10gm
 Title: "MII VS Diagnose ICD-10-GM"
-Description: "Enthaelt ICD-10-GM-Codes der Versionen 2009 bis 2025" 
+Description: "Enthaelt ICD-10-GM-Codes der aller verfügbarer Versionen" 
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
 * ^copyright = "WHO, BfArM 1994 - 2025 - Die Erstellung erfolgt unter Verwendung der maschinenlesbaren Fassung des Bundesinstituts für Arzneimittel und Medizinprodukte (BfArM)."
 * ^url = "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-icd10gm"

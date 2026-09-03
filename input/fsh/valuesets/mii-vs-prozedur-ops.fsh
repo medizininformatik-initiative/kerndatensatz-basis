@@ -1,7 +1,7 @@
 ValueSet: MII_VS_Prozedur_OPS
 Id: mii-vs-prozedur-ops
 Title: "MII VS Prozedur OPS"
-Description: "Enthaelt OPS-Codes der Versionen 2010 bis 2025" 
+Description: "Enthaelt OPS-Codes der aller verfügbarer Versionen" 
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
 * ^copyright = "WHO, BfArM 1994 - 2025 - Die Erstellung erfolgt unter Verwendung der maschinenlesbaren Fassung des Bundesinstituts für Arzneimittel und Medizinprodukte (BfArM)."
 * ^url = "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/mii-vs-prozedur-ops"
