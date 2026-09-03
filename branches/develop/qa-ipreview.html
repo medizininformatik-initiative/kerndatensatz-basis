@@ -864,7 +864,7 @@ Versehentliche(r) Schnitt, Punktion, Perforation oder Blutung: Bei sonstigen chi
 .  
           Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-ballot.rc1 basiert auf           <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>
 .
-          Erstellt           <span title="Thu, Sep 3, 2026 15:55+0000">2026-09-03</span>
+          Erstellt           <span title="Thu, Sep 3, 2026 16:29+0000">2026-09-03</span>
 
                     <br/>
 
@@ -1200,6 +1200,35 @@ KBV_VS_SFHIR_ICD_DIAGNOSESICHERHEIT <img src="external.png" alt="."/>          <
           <a href="https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKDiagnose.html">gemspec.gematik.de</a>
         </td>
         <td>
+Die Modellierung codierter und detaillierter anatomischer Lokalisationen wurde mit           <a href="https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKDiagnose.html">gematik ISiK Diagnose 6.0.0</a>
+ harmonisiert.           <code class="language-plaintext highlighter-rouge">Condition.bodySite</code>
+ unterstützt zwei Darstellungen:
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/StructureDefinition-mii-pr-diagnose-condition.html">web</a>
+        </td>
+        <td>
+          <a href="https://hl7.eu/fhir/base/2.0.0/StructureDefinition-condition-eu-core.html">hl7.eu</a>
+        </td>
+        <td>
+          <strong>EHDS-Ausblick:</strong>
+           <a href="https://hl7.eu/fhir/base/2.0.0/StructureDefinition-condition-eu-core.html">HL7 Europe Condition (EU core) 2.0.0</a>
+ verwendet dieselbe Darstellung durch Codierung oder Referenz und wendet die Invariante           <code class="language-plaintext highlighter-rouge">eu-bodysite-1</code>
+ an. Für zukünftige EHDS-Kompatibilität           <strong>SOLLTE</strong>
+ jedes Vorkommen von           <code class="language-plaintext highlighter-rouge">Condition.bodySite</code>
+ entweder Codierung/Text oder die BodyStructure-Referenz-Extension enthalten, jedoch nicht beides.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/StructureDefinition-mii-pr-diagnose-condition.html">web</a>
+        </td>
+        <td>
+          <a href="https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKDiagnose.html">gemspec.gematik.de</a>
+        </td>
+        <td>
 Die Modellierung von Erkrankungsbeginn und Erkrankungsende wurde mit           <a href="https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKDiagnose.html">gematik ISiK</a>
  harmonisiert. Implementierende           <strong>SOLLTEN</strong>
            <code>onsetDateTime</code>
@@ -1409,6 +1438,35 @@ Anforderungen an die Pseudonymisierung können je nach Projektkontext variieren 
         <td>
 Weitere Informationen siehe           <a href="https://www.bfarm.de/DE/Kodiersysteme/Klassifikationen/ICD/ICD-10-WHO/Todesursachenstatistik/_node.html">BfArM ICD-10-WHO</a>
  für offizielle Codierungshinweise und Anforderungen der Todesursachenstatistik
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/StructureDefinition-mii-pr-prozedur-procedure.html">web</a>
+        </td>
+        <td>
+          <a href="https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKProzedur.html">gemspec.gematik.de</a>
+        </td>
+        <td>
+Die Modellierung codierter und detaillierter anatomischer Lokalisationen wurde mit           <a href="https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKProzedur.html">gematik ISiK Prozedur 6.0.0</a>
+ harmonisiert.           <code class="language-plaintext highlighter-rouge">Procedure.bodySite</code>
+ unterstützt zwei Darstellungen:
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/StructureDefinition-mii-pr-prozedur-procedure.html">web</a>
+        </td>
+        <td>
+          <a href="https://hl7.eu/fhir/base/2.0.0/StructureDefinition-procedure-eu-core.html">hl7.eu</a>
+        </td>
+        <td>
+          <strong>EHDS-Ausblick:</strong>
+           <a href="https://hl7.eu/fhir/base/2.0.0/StructureDefinition-procedure-eu-core.html">HL7 Europe Procedure (EU core) 2.0.0</a>
+ verwendet dieselbe Darstellung durch Codierung oder Referenz und wendet die Invariante           <code class="language-plaintext highlighter-rouge">eu-bodysite-1</code>
+ an. Für zukünftige EHDS-Kompatibilität           <strong>SOLLTE</strong>
+ jedes Vorkommen von           <code class="language-plaintext highlighter-rouge">Procedure.bodySite</code>
+ entweder Codierung/Text oder die BodyStructure-Referenz-Extension enthalten, jedoch nicht beides.
         </td>
       </tr>
       <tr>
@@ -35163,7 +35221,7 @@ Gemäß           <a href="https://www.sozialgesetzbuch-sgb.de/sgbv/301.html">&s
 .  
           Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-ballot.rc1 based on           <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>
 .
-          Generated           <span title="Thu, Sep 3, 2026 15:55+0000">2026-09-03</span>
+          Generated           <span title="Thu, Sep 3, 2026 16:29+0000">2026-09-03</span>
 
                     <br/>
 
@@ -35418,6 +35476,35 @@ Gemäß           <a href="https://www.sozialgesetzbuch-sgb.de/sgbv/301.html">&s
           <a href="https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKDiagnose.html">gemspec.gematik.de</a>
         </td>
         <td>
+The modeling of coded and detailed anatomical locations has been harmonized with           <a href="https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKDiagnose.html">gematik ISiK Diagnosis 6.0.0</a>
+.           <code class="language-plaintext highlighter-rouge">Condition.bodySite</code>
+ supports two representations:
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-mii-pr-diagnose-condition.html">web</a>
+        </td>
+        <td>
+          <a href="https://hl7.eu/fhir/base/2.0.0/StructureDefinition-condition-eu-core.html">hl7.eu</a>
+        </td>
+        <td>
+          <strong>EHDS outlook:</strong>
+           <a href="https://hl7.eu/fhir/base/2.0.0/StructureDefinition-condition-eu-core.html">HL7 Europe Condition (EU core) 2.0.0</a>
+ uses the same coded-or-referenced representation and applies the           <code class="language-plaintext highlighter-rouge">eu-bodysite-1</code>
+ invariant. For future EHDS compatibility, each           <code class="language-plaintext highlighter-rouge">Condition.bodySite</code>
+ occurrence           <strong>SHOULD</strong>
+ contain either coding/text or the BodyStructure-reference extension, but not both.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-mii-pr-diagnose-condition.html">web</a>
+        </td>
+        <td>
+          <a href="https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKDiagnose.html">gemspec.gematik.de</a>
+        </td>
+        <td>
 The modeling of disease onset and abatement has been harmonized with           <a href="https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKDiagnose.html">gematik ISiK</a>
 . Implementers           <strong>SHOULD</strong>
  use           <code>onsetDateTime</code>
@@ -35595,6 +35682,35 @@ Refer to           <a href="https://www.bfarm.de/DE/Kodiersysteme/Klassifikation
         <td>
 See           <a href="https://ig.fhir.de/basisprofile-de/1.5.4/ig-markdown-Ressourcen-ProzedurenProcedure.html#ig-markdown-Ressourcen-Procedure-OPS">OPS Coding - German Base Profiles</a>
  for detailed OPS coding requirements
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-mii-pr-prozedur-procedure.html">web</a>
+        </td>
+        <td>
+          <a href="https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKProzedur.html">gemspec.gematik.de</a>
+        </td>
+        <td>
+The modeling of coded and detailed anatomical locations has been harmonized with           <a href="https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKProzedur.html">gematik ISiK Procedure 6.0.0</a>
+.           <code class="language-plaintext highlighter-rouge">Procedure.bodySite</code>
+ supports two representations:
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-mii-pr-prozedur-procedure.html">web</a>
+        </td>
+        <td>
+          <a href="https://hl7.eu/fhir/base/2.0.0/StructureDefinition-procedure-eu-core.html">hl7.eu</a>
+        </td>
+        <td>
+          <strong>EHDS outlook:</strong>
+           <a href="https://hl7.eu/fhir/base/2.0.0/StructureDefinition-procedure-eu-core.html">HL7 Europe Procedure (EU core) 2.0.0</a>
+ uses the same coded-or-referenced representation and applies the           <code class="language-plaintext highlighter-rouge">eu-bodysite-1</code>
+ invariant. For future EHDS compatibility, each           <code class="language-plaintext highlighter-rouge">Procedure.bodySite</code>
+ occurrence           <strong>SHOULD</strong>
+ contain either coding/text or the BodyStructure-reference extension, but not both.
         </td>
       </tr>
       <tr>

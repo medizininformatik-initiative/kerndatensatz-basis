@@ -69,16 +69,18 @@ This section provides detailed implementation guidance for the MII Diagnose (Dia
 
 #### Body Site Documentation
 
-<div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
-<h5 style="color: #406A99; margin-top: 0;">FHIR Core Extension Note</h5>
+The modeling of coded and detailed anatomical locations has been harmonized with [gematik ISiK Diagnosis 6.0.0](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKDiagnose.html). `Condition.bodySite` supports two representations:
 
-<p>The profile includes the FHIR core extension <code>http://hl7.org/fhir/StructureDefinition/bodySite</code> on <code>Condition.bodySite</code> to allow a detailed anatomic reference, such as a BodyStructure, in addition to the coded body site.</p>
-</div>
+- a coded anatomical location, preferably using SNOMED CT; or
+- a reference to a patient-specific `BodyStructure` via the `http://hl7.org/fhir/StructureDefinition/bodySite` extension when a coded body site alone does not provide the required detail.
+
+**EHDS outlook:** [HL7 Europe Condition (EU core) 2.0.0](https://hl7.eu/fhir/base/2.0.0/StructureDefinition-condition-eu-core.html) uses the same coded-or-referenced representation and applies the `eu-bodysite-1` invariant. For future EHDS compatibility, each `Condition.bodySite` occurrence **SHOULD** contain either coding/text or the BodyStructure-reference extension, but not both.
 
 **`Condition.bodySite`:**
 - OPTIONAL element
 - If used, body site **SHOULD** be coded with at least one SNOMED CT code
-- **DO NOT** include laterality in `bodySite` - use the Seitenlokalisation extension on `Condition.code.coding:icd10-gm` instead
+- Use the BodyStructure-reference extension when the coded body site is not sufficiently precise
+- For ICD-10-GM laterality, use the Seitenlokalisation extension on `Condition.code.coding:icd10-gm` instead of encoding laterality in `bodySite`
 
 #### Encounter Linkage
 

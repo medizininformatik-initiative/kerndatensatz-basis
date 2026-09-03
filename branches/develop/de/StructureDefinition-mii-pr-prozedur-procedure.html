@@ -468,15 +468,15 @@ MII PR Prozedur Procedure
 
 <p><strong>Verpflichtende Codierung:</strong></p>
 <ul>
-  <li><strong><code class="language-plaintext highlighter-rouge">Procedure.code</code></strong>: VERPFLICHTEND Kodierung entweder per OPS oder SNOMED CT</li>
-  <li>Mindestens eine kodierte Prozedur MUSS vorhanden sein</li>
-  <li>Weitere Kodierungen aus anderen Terminologien sind OPTIONAL</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">Procedure.code</code></strong>: VERPFLICHTEND Codierung entweder per OPS oder SNOMED CT</li>
+  <li>Mindestens eine codierte Prozedur MUSS vorhanden sein</li>
+  <li>Weitere Codierungen aus anderen Terminologien sind OPTIONAL</li>
 </ul>
 
-<p><strong>OPS-Kodierung:</strong></p>
+<p><strong>OPS-Codierung:</strong></p>
 <ul>
   <li><strong><code class="language-plaintext highlighter-rouge">Procedure.code:ops</code></strong>: OPS (Operationen- und Prozedurenschlüssel) ist das primäre Codiersystem für Prozeduren in Deutschland</li>
-  <li>Siehe [OPS-Kodierung - Deutsche Basisprofile] für detaillierte OPS-Codierungsanforderungen</li>
+  <li>Siehe [OPS-Codierung - Deutsche Basisprofile] für detaillierte OPS-Codierungsanforderungen</li>
   <li>OPS-Codes umfassen:
     <ul>
       <li><code class="language-plaintext highlighter-rouge">Procedure.code:ops.coding.code</code>: Vollständiger Prozedurenkode</li>
@@ -487,7 +487,7 @@ MII PR Prozedur Procedure
   </li>
 </ul>
 
-<p><strong>SNOMED-CT-Kodierung:</strong></p>
+<p><strong>SNOMED-CT-Codierung:</strong></p>
 <ul>
   <li><strong><code class="language-plaintext highlighter-rouge">Procedure.code:sct</code></strong>: SNOMED-CT-Codierung</li>
   <li>Kann als primäre Codierung oder neben OPS verwendet werden</li>
@@ -500,15 +500,15 @@ MII PR Prozedur Procedure
 
 <p><strong>Verpflichtende Kategorisierung:</strong> <code>Procedure.category</code> SNOMED-CT-Kategorisierung auf Basis des Prozedurenkodes.</p>
 
-<p><strong>Mapping von OPS-Klassentiteln:</strong> Wenn die Prozedur per OPS kodiert wird, <strong>SOLL</strong> die Kategorie durch Mapping von OPS-Kapitel-/Klassentiteln auf SNOMED-CT-Konzepte abgeleitet werden. Siehe Abschnitt Terminologien in diesem IG für OPS-zu-SNOMED-CT-Kategorie-Mappings.</p>
+<p><strong>Mapping von OPS-Klassentiteln:</strong> Wenn die Prozedur per OPS codiert wird, <strong>SOLL</strong> die Kategorie durch Mapping von OPS-Kapitel-/Klassentiteln auf SNOMED-CT-Konzepte abgeleitet werden. Siehe Abschnitt Terminologien in diesem IG für OPS-zu-SNOMED-CT-Kategorie-Mappings.</p>
 
-<p><strong>Constraint proc-mii-1:</strong> Diese Anforderung ist nur relevant, wenn die Prozedur per OPS kodiert wird.</p>
+<p><strong>Constraint proc-mii-1:</strong> Diese Anforderung ist nur relevant, wenn die Prozedur per OPS codiert wird.</p>
 
 <p><strong>Zweck:</strong> Die Kategorisierung ermöglicht:</p>
 <ul>
   <li>Hochstufige Prozedur-Gruppierung für epidemiologische Analysen</li>
   <li>Filterung und Durchsuchen von Prozeduren nach breiten klinischen Kategorien</li>
-  <li>Semantische Konsistenz über unterschiedlich kodierte Prozeduren hinweg</li>
+  <li>Semantische Konsistenz über unterschiedlich codierte Prozeduren hinweg</li>
 </ul>
 </div>
 
@@ -532,31 +532,24 @@ MII PR Prozedur Procedure
 
 <h4 id="dokumentation-der-körperstelle">Dokumentation der Körperstelle</h4>
 
-<div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
-<h5 style="color: #406A99; margin-top: 0;">Hinweis zu FHIR-Core-Extensions</h5>
+<p>Die Modellierung codierter und detaillierter anatomischer Lokalisationen wurde mit <a href="https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKProzedur.html">gematik ISiK Prozedur 6.0.0</a> harmonisiert. <code class="language-plaintext highlighter-rouge">Procedure.bodySite</code> unterstützt zwei Darstellungen:</p>
 
-<p>Das Profil enthält die FHIR-Core-Extension <code>http://hl7.org/fhir/StructureDefinition/bodySite</code> auf <code>Procedure.bodySite</code>, um zusätzlich zu der codierten Körperstelle eine detaillierte anatomische Referenz, z.B. auf eine BodyStructure, abbilden zu können.</p>
-</div>
-
-<div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
-<h5 style="color: #406A99; margin-top: 0;">Best Practice - Körperstelle vs. Seitenlokalisation</h5>
-
-<p><strong>Zweck von bodySite:</strong> <code>Procedure.bodySite</code> bietet detaillierte Kodierung der anatomischen Lokalisation für die Prozedur mittels SNOMED CT.</p>
-
-<p><strong>NICHT für Seitenlokalisation:</strong> <code>Procedure.bodySite</code> <strong>SOLL NICHT</strong> verwendet werden, um die Seitenlokalisation (links/rechts/beidseitig) abzubilden. Die Seitenlokalisation ist eine Eigenschaft des Prozedurenkodes selbst.</p>
-
-<p><strong>Darstellung der Seitenlokalisation:</strong></p>
 <ul>
-  <li>Für OPS-Codes: Verwenden Sie <code>Procedure.code:ops.extension:seitenlokalisation</code></li>
-  <li>Für SNOMED CT: Seitenlokalisation ist im Prozedurkonzept inhärent enthalten (z.B. "Appendektomie des rechten Appendix")</li>
+  <li>eine codierte anatomische Lokalisation, vorzugsweise mit SNOMED CT; oder</li>
+  <li>eine Referenz auf eine patientenbezogene <code class="language-plaintext highlighter-rouge">BodyStructure</code> über die Extension <code class="language-plaintext highlighter-rouge">http://hl7.org/fhir/StructureDefinition/bodySite</code>, wenn eine codierte Körperstelle allein nicht die erforderliche Detailtiefe bietet.</li>
 </ul>
 
-<p><strong>Wann bodySite zu verwenden ist:</strong></p>
+<p><strong>EHDS-Ausblick:</strong> <a href="https://hl7.eu/fhir/base/2.0.0/StructureDefinition-procedure-eu-core.html">HL7 Europe Procedure (EU core) 2.0.0</a> verwendet dieselbe Darstellung durch Codierung oder Referenz und wendet die Invariante <code class="language-plaintext highlighter-rouge">eu-bodysite-1</code> an. Für zukünftige EHDS-Kompatibilität <strong>SOLLTE</strong> jedes Vorkommen von <code class="language-plaintext highlighter-rouge">Procedure.bodySite</code> entweder Codierung/Text oder die BodyStructure-Referenz-Extension enthalten, jedoch nicht beides.</p>
+
+<p><strong>Körperstelle und Seitenlokalisation:</strong></p>
+
 <ul>
-  <li>Um zusätzliche anatomische Details bereitzustellen, die über das hinausgehen, was der Code spezifiziert</li>
-  <li>Um präzise anatomische Strukturen mittels SNOMED-CT-Anatomiekonzepten zu spezifizieren</li>
+  <li><code class="language-plaintext highlighter-rouge">Procedure.bodySite</code> bietet eine detaillierte Codierung der anatomischen Lokalisation für die Prozedur mittels SNOMED CT</li>
+  <li><code class="language-plaintext highlighter-rouge">Procedure.bodySite</code> <strong>SOLL NICHT</strong> verwendet werden, um die Seitenlokalisation (links/rechts/beidseitig) abzubilden; die Seitenlokalisation ist eine Eigenschaft des Prozedurencodes selbst</li>
+  <li>Für OPS-Codes SOLL <code class="language-plaintext highlighter-rouge">Procedure.code:ops.extension:seitenlokalisation</code> verwendet werden</li>
+  <li>Bei SNOMED CT ist die Seitenlokalisation im Prozedurkonzept inhärent enthalten</li>
+  <li><code class="language-plaintext highlighter-rouge">bodySite</code> SOLL verwendet werden, um über den Prozedurencode hinausgehende anatomische Details anzugeben oder auf eine patientenbezogene anatomische Struktur zu referenzieren</li>
 </ul>
-</div>
 
 <h4 id="durchführungsabsicht">Durchführungsabsicht</h4>
 
@@ -572,7 +565,7 @@ MII PR Prozedur Procedure
       <li>etc.</li>
     </ul>
   </li>
-  <li>Bietet klinischen Kontext für die Prozedur über den Prozedurenkode hinaus</li>
+  <li>Bietet klinischen Kontext für die Prozedur über den Prozedurencode hinaus</li>
 </ul>
 
 <h4 id="kontaktkontext">Kontaktkontext</h4>
@@ -1021,7 +1014,7 @@ Hierdurch wird der Tatsache Rechnung getragen, dass jede der jährlich neu ersch
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Hinweis<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // ef37ac6f-c5e6-453a-bb0b-4c079677c9c0
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // b3b68bce-a9bb-4489-b8df-1056e37920ca
 document.getElementById('cbmii-pr-prozedur-procedureK-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-prozedur-procedureK'), 'binding', document.getElementById('cbmii-pr-prozedur-procedureK-binding').checked, document.getElementById('ppmii-pr-prozedur-procedureK'));
 document.getElementById('cbmii-pr-prozedur-procedureK-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1582,7 +1575,7 @@ filterDesc(document.getElementById('mii-pr-prozedur-procedureK'), 'obligation', 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">*</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5; opacity: 0.5" href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Hinweis</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // ef37ac6f-c5e6-453a-bb0b-4c079677c9c0
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // b3b68bce-a9bb-4489-b8df-1056e37920ca
 document.getElementById('cbmii-pr-prozedur-procedureD-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-prozedur-procedureD'), 'binding', document.getElementById('cbmii-pr-prozedur-procedureD-binding').checked, document.getElementById('ppmii-pr-prozedur-procedureD'));
 document.getElementById('cbmii-pr-prozedur-procedureD-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -2461,7 +2454,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Coded items used during the procedure<br class="binding"/><span style="font-weight:bold" title="null" class="binding">Binding: </span><a href="http://hl7.org/fhir/R4/valueset-device-kind.html" title="http://hl7.org/fhir/ValueSet/device-kind" class="binding">FHIRDeviceTypes</a><span title="null" class="binding"> (</span><a href="http://hl7.org/fhir/R4/terminologies.html#example" title="Instances are not expected or even encouraged to draw from the specified value set.  The value set merely provides examples of the types of concepts intended to be included." class="binding">example</a><span title="null" class="binding">)</span><span title="null" class="binding">: </span><span title="null" class="binding">Codes describing items used during a procedure.</span><br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // ef37ac6f-c5e6-453a-bb0b-4c079677c9c0
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // b3b68bce-a9bb-4489-b8df-1056e37920ca
 document.getElementById('cbmii-pr-prozedur-procedureS-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-prozedur-procedureS'), 'binding', document.getElementById('cbmii-pr-prozedur-procedureS-binding').checked, document.getElementById('ppmii-pr-prozedur-procedureS'));
 document.getElementById('cbmii-pr-prozedur-procedureS-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -3543,7 +3536,7 @@ Hierdurch wird der Tatsache Rechnung getragen, dass jede der jährlich neu ersch
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Hinweis<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // ef37ac6f-c5e6-453a-bb0b-4c079677c9c0
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // b3b68bce-a9bb-4489-b8df-1056e37920ca
 document.getElementById('cbmii-pr-prozedur-procedureKA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-prozedur-procedureKA'), 'binding', document.getElementById('cbmii-pr-prozedur-procedureKA-binding').checked, document.getElementById('ppmii-pr-prozedur-procedureKA'));
 document.getElementById('cbmii-pr-prozedur-procedureKA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -4103,7 +4096,7 @@ filterDesc(document.getElementById('mii-pr-prozedur-procedureKA'), 'obligation',
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">*</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5; opacity: 0.5" href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Hinweis</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // ef37ac6f-c5e6-453a-bb0b-4c079677c9c0
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // b3b68bce-a9bb-4489-b8df-1056e37920ca
 document.getElementById('cbmii-pr-prozedur-procedureDA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-prozedur-procedureDA'), 'binding', document.getElementById('cbmii-pr-prozedur-procedureDA-binding').checked, document.getElementById('ppmii-pr-prozedur-procedureDA'));
 document.getElementById('cbmii-pr-prozedur-procedureDA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -4979,7 +4972,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Coded items used during the procedure<br class="binding"/><span style="font-weight:bold" title="null" class="binding">Binding: </span><a href="http://hl7.org/fhir/R4/valueset-device-kind.html" title="http://hl7.org/fhir/ValueSet/device-kind" class="binding">FHIRDeviceTypes</a><span title="null" class="binding"> (</span><a href="http://hl7.org/fhir/R4/terminologies.html#example" title="Instances are not expected or even encouraged to draw from the specified value set.  The value set merely provides examples of the types of concepts intended to be included." class="binding">example</a><span title="null" class="binding">)</span><span title="null" class="binding">: </span><span title="null" class="binding">Codes describing items used during a procedure.</span><br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // ef37ac6f-c5e6-453a-bb0b-4c079677c9c0
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // b3b68bce-a9bb-4489-b8df-1056e37920ca
 document.getElementById('cbmii-pr-prozedur-procedureSA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-prozedur-procedureSA'), 'binding', document.getElementById('cbmii-pr-prozedur-procedureSA-binding').checked, document.getElementById('ppmii-pr-prozedur-procedureSA'));
 document.getElementById('cbmii-pr-prozedur-procedureSA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -5723,7 +5716,7 @@ Summary
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-ballot.rc1 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Erstellt <span title="Thu, Sep 3, 2026 15:55+0000">2026-09-03</span>
+          Erstellt <span title="Thu, Sep 3, 2026 16:29+0000">2026-09-03</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.

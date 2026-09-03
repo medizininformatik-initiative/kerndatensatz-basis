@@ -526,17 +526,21 @@ MII PR Diagnose Condition
 
 <h4 id="body-site-documentation">Body Site Documentation</h4>
 
-<div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
-<h5 style="color: #406A99; margin-top: 0;">FHIR Core Extension Note</h5>
+<p>The modeling of coded and detailed anatomical locations has been harmonized with <a href="https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKDiagnose.html">gematik ISiK Diagnosis 6.0.0</a>. <code class="language-plaintext highlighter-rouge">Condition.bodySite</code> supports two representations:</p>
 
-<p>The profile includes the FHIR core extension <code>http://hl7.org/fhir/StructureDefinition/bodySite</code> on <code>Condition.bodySite</code> to allow a detailed anatomic reference, such as a BodyStructure, in addition to the coded body site.</p>
-</div>
+<ul>
+  <li>a coded anatomical location, preferably using SNOMED CT; or</li>
+  <li>a reference to a patient-specific <code class="language-plaintext highlighter-rouge">BodyStructure</code> via the <code class="language-plaintext highlighter-rouge">http://hl7.org/fhir/StructureDefinition/bodySite</code> extension when a coded body site alone does not provide the required detail.</li>
+</ul>
+
+<p><strong>EHDS outlook:</strong> <a href="https://hl7.eu/fhir/base/2.0.0/StructureDefinition-condition-eu-core.html">HL7 Europe Condition (EU core) 2.0.0</a> uses the same coded-or-referenced representation and applies the <code class="language-plaintext highlighter-rouge">eu-bodysite-1</code> invariant. For future EHDS compatibility, each <code class="language-plaintext highlighter-rouge">Condition.bodySite</code> occurrence <strong>SHOULD</strong> contain either coding/text or the BodyStructure-reference extension, but not both.</p>
 
 <p><strong><code class="language-plaintext highlighter-rouge">Condition.bodySite</code>:</strong></p>
 <ul>
   <li>OPTIONAL element</li>
   <li>If used, body site <strong>SHOULD</strong> be coded with at least one SNOMED CT code</li>
-  <li><strong>DO NOT</strong> include laterality in <code class="language-plaintext highlighter-rouge">bodySite</code> - use the Seitenlokalisation extension on <code class="language-plaintext highlighter-rouge">Condition.code.coding:icd10-gm</code> instead</li>
+  <li>Use the BodyStructure-reference extension when the coded body site is not sufficiently precise</li>
+  <li>For ICD-10-GM laterality, use the Seitenlokalisation extension on <code class="language-plaintext highlighter-rouge">Condition.code.coding:icd10-gm</code> instead of encoding laterality in <code class="language-plaintext highlighter-rouge">bodySite</code></li>
 </ul>
 
 <h4 id="encounter-linkage">Encounter Linkage</h4>
@@ -1266,7 +1270,7 @@ Hierdurch wird der Tatsache Rechnung getragen, dass jede der jährlich neu ersch
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Hinweis<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // ef37ac6f-c5e6-453a-bb0b-4c079677c9c0
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // b3b68bce-a9bb-4489-b8df-1056e37920ca
 document.getElementById('cbmii-pr-diagnose-conditionK-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-diagnose-conditionK'), 'binding', document.getElementById('cbmii-pr-diagnose-conditionK-binding').checked, document.getElementById('ppmii-pr-diagnose-conditionK'));
 document.getElementById('cbmii-pr-diagnose-conditionK-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -2183,7 +2187,7 @@ filterDesc(document.getElementById('mii-pr-diagnose-conditionK'), 'obligation', 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">*</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5; opacity: 0.5" href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Hinweis</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // ef37ac6f-c5e6-453a-bb0b-4c079677c9c0
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // b3b68bce-a9bb-4489-b8df-1056e37920ca
 document.getElementById('cbmii-pr-diagnose-conditionD-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-diagnose-conditionD'), 'binding', document.getElementById('cbmii-pr-diagnose-conditionD-binding').checked, document.getElementById('ppmii-pr-diagnose-conditionD'));
 document.getElementById('cbmii-pr-diagnose-conditionD-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -3517,7 +3521,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Hinweis<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // ef37ac6f-c5e6-453a-bb0b-4c079677c9c0
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // b3b68bce-a9bb-4489-b8df-1056e37920ca
 document.getElementById('cbmii-pr-diagnose-conditionS-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-diagnose-conditionS'), 'binding', document.getElementById('cbmii-pr-diagnose-conditionS-binding').checked, document.getElementById('ppmii-pr-diagnose-conditionS'));
 document.getElementById('cbmii-pr-diagnose-conditionS-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -5006,7 +5010,7 @@ Hierdurch wird der Tatsache Rechnung getragen, dass jede der jährlich neu ersch
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Hinweis<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // ef37ac6f-c5e6-453a-bb0b-4c079677c9c0
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // b3b68bce-a9bb-4489-b8df-1056e37920ca
 document.getElementById('cbmii-pr-diagnose-conditionKA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-diagnose-conditionKA'), 'binding', document.getElementById('cbmii-pr-diagnose-conditionKA-binding').checked, document.getElementById('ppmii-pr-diagnose-conditionKA'));
 document.getElementById('cbmii-pr-diagnose-conditionKA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -5922,7 +5926,7 @@ filterDesc(document.getElementById('mii-pr-diagnose-conditionKA'), 'obligation',
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">*</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5; opacity: 0.5" href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Hinweis</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // ef37ac6f-c5e6-453a-bb0b-4c079677c9c0
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // b3b68bce-a9bb-4489-b8df-1056e37920ca
 document.getElementById('cbmii-pr-diagnose-conditionDA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-diagnose-conditionDA'), 'binding', document.getElementById('cbmii-pr-diagnose-conditionDA-binding').checked, document.getElementById('ppmii-pr-diagnose-conditionDA'));
 document.getElementById('cbmii-pr-diagnose-conditionDA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -7253,7 +7257,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Hinweis<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // ef37ac6f-c5e6-453a-bb0b-4c079677c9c0
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // b3b68bce-a9bb-4489-b8df-1056e37920ca
 document.getElementById('cbmii-pr-diagnose-conditionSA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-diagnose-conditionSA'), 'binding', document.getElementById('cbmii-pr-diagnose-conditionSA-binding').checked, document.getElementById('ppmii-pr-diagnose-conditionSA'));
 document.getElementById('cbmii-pr-diagnose-conditionSA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -8143,7 +8147,7 @@ Summary
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-ballot.rc1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Generated <span title="Thu, Sep 3, 2026 15:55+0000">2026-09-03</span>
+          Generated <span title="Thu, Sep 3, 2026 16:29+0000">2026-09-03</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.

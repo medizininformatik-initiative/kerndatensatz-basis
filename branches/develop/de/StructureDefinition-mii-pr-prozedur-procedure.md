@@ -31,14 +31,14 @@ Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Pro
 
 **Verpflichtende Codierung:**
 
-* **`Procedure.code`**: VERPFLICHTEND Kodierung entweder per OPS oder SNOMED CT
-* Mindestens eine kodierte Prozedur MUSS vorhanden sein
-* Weitere Kodierungen aus anderen Terminologien sind OPTIONAL
+* **`Procedure.code`**: VERPFLICHTEND Codierung entweder per OPS oder SNOMED CT
+* Mindestens eine codierte Prozedur MUSS vorhanden sein
+* Weitere Codierungen aus anderen Terminologien sind OPTIONAL
 
-**OPS-Kodierung:**
+**OPS-Codierung:**
 
 * **`Procedure.code:ops`**: OPS (Operationen- und Prozedurenschlüssel) ist das primäre Codiersystem für Prozeduren in Deutschland
-* Siehe [OPS-Kodierung - Deutsche Basisprofile] für detaillierte OPS-Codierungsanforderungen
+* Siehe [OPS-Codierung - Deutsche Basisprofile] für detaillierte OPS-Codierungsanforderungen
 * OPS-Codes umfassen: 
 * `Procedure.code:ops.coding.code`: Vollständiger Prozedurenkode
 * `Procedure.code:ops.coding.system`: Codesystem (`http://fhir.de/CodeSystem/bfarm/ops`)
@@ -46,7 +46,7 @@ Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Pro
 * `Procedure.code:ops.extension:seitenlokalisation`: Seitenlokalisation-Extension
  
 
-**SNOMED-CT-Kodierung:**
+**SNOMED-CT-Codierung:**
 
 * **`Procedure.code:sct`**: SNOMED-CT-Codierung
 * Kann als primäre Codierung oder neben OPS verwendet werden
@@ -57,15 +57,15 @@ Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Pro
 
 **Verpflichtende Kategorisierung:** `Procedure.category` SNOMED-CT-Kategorisierung auf Basis des Prozedurenkodes.
 
-**Mapping von OPS-Klassentiteln:** Wenn die Prozedur per OPS kodiert wird, **SOLL** die Kategorie durch Mapping von OPS-Kapitel-/Klassentiteln auf SNOMED-CT-Konzepte abgeleitet werden. Siehe Abschnitt Terminologien in diesem IG für OPS-zu-SNOMED-CT-Kategorie-Mappings.
+**Mapping von OPS-Klassentiteln:** Wenn die Prozedur per OPS codiert wird, **SOLL** die Kategorie durch Mapping von OPS-Kapitel-/Klassentiteln auf SNOMED-CT-Konzepte abgeleitet werden. Siehe Abschnitt Terminologien in diesem IG für OPS-zu-SNOMED-CT-Kategorie-Mappings.
 
-**Constraint proc-mii-1:** Diese Anforderung ist nur relevant, wenn die Prozedur per OPS kodiert wird.
+**Constraint proc-mii-1:** Diese Anforderung ist nur relevant, wenn die Prozedur per OPS codiert wird.
 
 **Zweck:** Die Kategorisierung ermöglicht:
 
 * Hochstufige Prozedur-Gruppierung für epidemiologische Analysen
 * Filterung und Durchsuchen von Prozeduren nach breiten klinischen Kategorien
-* Semantische Konsistenz über unterschiedlich kodierte Prozeduren hinweg
+* Semantische Konsistenz über unterschiedlich codierte Prozeduren hinweg
 
 #### Zeitliche Informationen
 
@@ -85,25 +85,20 @@ Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Pro
 
 #### Dokumentation der Körperstelle
 
-##### Hinweis zu FHIR-Core-Extensions
+Die Modellierung codierter und detaillierter anatomischer Lokalisationen wurde mit [gematik ISiK Prozedur 6.0.0](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKProzedur.html) harmonisiert. `Procedure.bodySite` unterstützt zwei Darstellungen:
 
-Das Profil enthält die FHIR-Core-Extension `http://hl7.org/fhir/StructureDefinition/bodySite` auf `Procedure.bodySite`, um zusätzlich zu der codierten Körperstelle eine detaillierte anatomische Referenz, z.B. auf eine BodyStructure, abbilden zu können.
+* eine codierte anatomische Lokalisation, vorzugsweise mit SNOMED CT; oder
+* eine Referenz auf eine patientenbezogene `BodyStructure` über die Extension `http://hl7.org/fhir/StructureDefinition/bodySite`, wenn eine codierte Körperstelle allein nicht die erforderliche Detailtiefe bietet.
 
-##### Best Practice - Körperstelle vs. Seitenlokalisation
+**EHDS-Ausblick:** [HL7 Europe Procedure (EU core) 2.0.0](https://hl7.eu/fhir/base/2.0.0/StructureDefinition-procedure-eu-core.html) verwendet dieselbe Darstellung durch Codierung oder Referenz und wendet die Invariante `eu-bodysite-1` an. Für zukünftige EHDS-Kompatibilität **SOLLTE** jedes Vorkommen von `Procedure.bodySite` entweder Codierung/Text oder die BodyStructure-Referenz-Extension enthalten, jedoch nicht beides.
 
-**Zweck von bodySite:** `Procedure.bodySite` bietet detaillierte Kodierung der anatomischen Lokalisation für die Prozedur mittels SNOMED CT.
+**Körperstelle und Seitenlokalisation:**
 
-**NICHT für Seitenlokalisation:** `Procedure.bodySite` **SOLL NICHT** verwendet werden, um die Seitenlokalisation (links/rechts/beidseitig) abzubilden. Die Seitenlokalisation ist eine Eigenschaft des Prozedurenkodes selbst.
-
-**Darstellung der Seitenlokalisation:**
-
-* Für OPS-Codes: Verwenden Sie `Procedure.code:ops.extension:seitenlokalisation`
-* Für SNOMED CT: Seitenlokalisation ist im Prozedurkonzept inhärent enthalten (z.B. "Appendektomie des rechten Appendix")
-
-**Wann bodySite zu verwenden ist:**
-
-* Um zusätzliche anatomische Details bereitzustellen, die über das hinausgehen, was der Code spezifiziert
-* Um präzise anatomische Strukturen mittels SNOMED-CT-Anatomiekonzepten zu spezifizieren
+* `Procedure.bodySite` bietet eine detaillierte Codierung der anatomischen Lokalisation für die Prozedur mittels SNOMED CT
+* `Procedure.bodySite` **SOLL NICHT** verwendet werden, um die Seitenlokalisation (links/rechts/beidseitig) abzubilden; die Seitenlokalisation ist eine Eigenschaft des Prozedurencodes selbst
+* Für OPS-Codes SOLL `Procedure.code:ops.extension:seitenlokalisation` verwendet werden
+* Bei SNOMED CT ist die Seitenlokalisation im Prozedurkonzept inhärent enthalten
+* `bodySite` SOLL verwendet werden, um über den Prozedurencode hinausgehende anatomische Details anzugeben oder auf eine patientenbezogene anatomische Struktur zu referenzieren
 
 #### Durchführungsabsicht
 
@@ -117,7 +112,7 @@ Das Profil enthält die FHIR-Core-Extension `http://hl7.org/fhir/StructureDefini
 * Palliative Prozeduren
 * etc.
  
-* Bietet klinischen Kontext für die Prozedur über den Prozedurenkode hinaus
+* Bietet klinischen Kontext für die Prozedur über den Prozedurencode hinaus
 
 #### Kontaktkontext
 
