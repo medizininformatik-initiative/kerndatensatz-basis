@@ -14,6 +14,9 @@ Alias: $Vitalstatus = https://www.medizininformatik-initiative.de/fhir/core/modu
 Alias: $patient-birthPlace = http://hl7.org/fhir/StructureDefinition/patient-birthPlace
 Alias: $patient-nationality = http://hl7.org/fhir/StructureDefinition/patient-nationality
 Alias: $patient-citizenship = http://hl7.org/fhir/StructureDefinition/patient-citizenship
+Alias: $recordedSexOrGender = http://hl7.org/fhir/StructureDefinition/individual-recordedSexOrGender
+Alias: $iso21090-SC-coding = http://hl7.org/fhir/StructureDefinition/iso21090-codedString
+Alias: $iso3166-1-2 = http://hl7.org/fhir/ValueSet/iso3166-1-2
 
 // Diagnose
 Alias: $condition-clinical = http://terminology.hl7.org/CodeSystem/condition-clinical

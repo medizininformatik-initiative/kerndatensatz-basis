@@ -31,9 +31,62 @@ Description: "Dieses Profil beschreibt eine Patient*in in der Medizininformatik-
 //* meta.source MS
 * meta.profile MS
 * extension contains
-    $patient-birthPlace named birthPlace 0..1 and
-    $patient-citizenship named patient-citizenship 0..* and
-    $patient-nationality named patient-nationality 0..* 
+    $patient-birthPlace named birthPlace 0..1 MS and
+    $patient-citizenship named patient-citizenship 0..* MS and
+    $patient-nationality named patient-nationality 0..* MS and
+    $recordedSexOrGender named recordedSexOrGender 0..* MS
+* extension[birthPlace].url MS
+* extension[birthPlace].valueAddress MS
+* extension[birthPlace].valueAddress.country MS
+  * extension contains $iso21090-SC-coding named countryCode 0..1
+  * extension[countryCode].valueCoding from $iso3166-1-2 (preferred)
+* insert Translation(extension[birthPlace] ^short, de-DE, Geburtsort)
+* insert Translation(extension[birthPlace] ^short, en-US, Birth Place)
+* insert Translation(extension[birthPlace].valueAddress.country ^short, de-DE, Geburtsland)
+* insert Translation(extension[birthPlace].valueAddress.country ^short, en-US, Country of Birth)
+* extension[patient-citizenship].url MS
+* extension[patient-citizenship].extension[code] MS
+* extension[patient-citizenship].extension[code].url MS
+* extension[patient-citizenship].extension[code].valueCodeableConcept MS
+* extension[patient-citizenship].extension[code].valueCodeableConcept.coding MS
+* extension[patient-citizenship].extension[code].valueCodeableConcept.coding.system MS
+* extension[patient-citizenship].extension[code].valueCodeableConcept.coding.code MS
+* extension[patient-citizenship].extension[period] MS
+* extension[patient-citizenship].extension[period].url MS
+* extension[patient-citizenship].extension[period].valuePeriod MS
+* insert Translation(extension[patient-citizenship] ^short, de-DE, Staatsbürgerschaft)
+* insert Translation(extension[patient-citizenship] ^short, en-US, Citizenship)
+* extension[patient-nationality].url MS
+* extension[patient-nationality].extension[code] MS
+* extension[patient-nationality].extension[code].url MS
+* extension[patient-nationality].extension[code].valueCodeableConcept MS
+* extension[patient-nationality].extension[code].valueCodeableConcept.coding MS
+* extension[patient-nationality].extension[code].valueCodeableConcept.coding.system MS
+* extension[patient-nationality].extension[code].valueCodeableConcept.coding.code MS
+* extension[patient-nationality].extension[period] MS
+* extension[patient-nationality].extension[period].url MS
+* extension[patient-nationality].extension[period].valuePeriod MS
+* insert Translation(extension[patient-nationality] ^short, de-DE, Nationalität)
+* insert Translation(extension[patient-nationality] ^short, en-US, Nationality)
+* extension[recordedSexOrGender].url MS
+* extension[recordedSexOrGender].extension[value] MS
+* extension[recordedSexOrGender].extension[value].url MS
+* extension[recordedSexOrGender].extension[value].valueCodeableConcept MS
+* extension[recordedSexOrGender].extension[value].valueCodeableConcept from MII_VS_Person_recordedSexOrGender_SNOMED (preferred)
+* extension[recordedSexOrGender].extension[value].valueCodeableConcept.coding MS
+* extension[recordedSexOrGender].extension[value].valueCodeableConcept.coding.system MS
+* extension[recordedSexOrGender].extension[value].valueCodeableConcept.coding.code MS
+* extension[recordedSexOrGender].extension[type] MS
+* extension[recordedSexOrGender].extension[type].url MS
+* extension[recordedSexOrGender].extension[type].valueCodeableConcept MS
+* extension[recordedSexOrGender].extension[type].valueCodeableConcept.coding MS
+* extension[recordedSexOrGender].extension[type].valueCodeableConcept.coding.system MS
+* extension[recordedSexOrGender].extension[type].valueCodeableConcept.coding.code MS
+* extension[recordedSexOrGender].extension[acquisitionDate] MS
+* extension[recordedSexOrGender].extension[acquisitionDate].url MS
+* extension[recordedSexOrGender].extension[acquisitionDate].valueDateTime MS
+* insert Translation(extension[recordedSexOrGender] ^short, de-DE, Dokumentiertes Geschlecht)
+* insert Translation(extension[recordedSexOrGender] ^short, en-US, Recorded Sex or Gender)
 * identifier MS
 * identifier ^short = "Patienten-Identifikator"
 * insert Translation(identifier ^short, de-DE, Identifikator)

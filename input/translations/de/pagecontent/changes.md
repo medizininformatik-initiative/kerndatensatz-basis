@@ -13,6 +13,7 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 #### Modul Person
 
 - **Added:** Das Patient-Profil enthält nun die FHIR-Core-Extensions `patient-birthPlace`, `patient-citizenship` und `patient-nationality`, um Geburtsort, Staatsangehörigkeit und Nationalität im Modul Person abzubilden. Siehe: [#86](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/86)
+- **Added:** Das Patient-Profil unterstützt nun über die Extension [`individual-recordedSexOrGender`](https://hl7.org/fhir/extensions/StructureDefinition-individual-recordedSexOrGender.html) wiederholbare dokumentierte Geschlechtsangaben getrennt vom administrativen Geschlecht. Siehe: [#81](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/81)
 
 #### Modul Diagnose
 
@@ -30,6 +31,7 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 
 #### Terminologie-Updates
 
+- **Added:** Das neue [MII ValueSet Person Recorded Sex or Gender SNOMED](ValueSet-mii-vs-person-recordedsexorgender-snomed.html) ist mit der Bindungsstärke `preferred` an `Patient.extension:recordedSexOrGender.extension:value` gebunden. Es enthält SNOMED-CT-Befunde zum biologischen Geschlecht und den Qualifier-Wert `Unknown`.
 - **Changed:** Ressourcen verwenden SNOMED CT-Version `http://snomed.info/sct/900000000000207008/version/20260701` (Juli 2026) modulübergreifend, um stabile [ValueSet-Expansion](http://hl7.org/fhir/R4/valueset.html#expansion) zu gewährleisten
 
 ---
