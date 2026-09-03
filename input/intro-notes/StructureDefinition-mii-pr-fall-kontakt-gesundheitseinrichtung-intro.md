@@ -114,8 +114,6 @@ In this example:
 
 ##### Primary Encounters
 
-Based on the [FHIR DE Basisprofile guidance](https://ig.fhir.de/basisprofile-de/1.4.0/Ressourcen-AmbulanterStationaererFall.html):
-
 <table class="encounter-type-table">
 <thead>
 <tr>
@@ -203,6 +201,8 @@ Based on the [FHIR DE Basisprofile guidance](https://ig.fhir.de/basisprofile-de/
 </tbody>
 </table>
 
+*External source: The mapping of primary encounter types to HL7 V2 and FHIR in this table was adopted from the [German FHIR Base Profiles 1.6.0 – Ambulatory/inpatient case/contact](https://ig.fhir.de/basisprofile-de/1.6.0/ig-markdown-Ressourcen-AmbulanterStationaererFall.html).*
+
 ##### Secondary Encounters During Inpatient Stay
 
 <table class="encounter-type-table">
@@ -231,6 +231,8 @@ Based on the [FHIR DE Basisprofile guidance](https://ig.fhir.de/basisprofile-de/
 </tr>
 </tbody>
 </table>
+
+*External source: The mapping of secondary encounters to HL7 V2 and FHIR in this table was adopted from the [German FHIR Base Profiles 1.6.0 – Ambulatory/inpatient case/contact](https://ig.fhir.de/basisprofile-de/1.6.0/ig-markdown-Ressourcen-AmbulanterStationaererFall.html).*
 
 #### Encounter Diagnosis
 

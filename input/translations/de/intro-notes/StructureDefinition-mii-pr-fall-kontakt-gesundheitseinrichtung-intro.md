@@ -114,8 +114,6 @@ In diesem Beispiel:
 
 ##### Primärkontakte
 
-Siehe auch Leitfaden [FHIR DE Basisprofile](https://ig.fhir.de/basisprofile-de/1.4.0/Ressourcen-AmbulanterStationaererFall.html):
-
 <table class="encounter-type-table">
 <thead>
 <tr>
@@ -203,6 +201,8 @@ Siehe auch Leitfaden [FHIR DE Basisprofile](https://ig.fhir.de/basisprofile-de/1
 </tbody>
 </table>
 
+*Externe Quelle: Die Zuordnung der Primärkontakte zu HL7 V2 und FHIR in dieser Tabelle wurde aus den [Deutschen FHIR-Basisprofilen 1.6.0 – Ambulanter/stationärer Fall / Kontakt](https://ig.fhir.de/basisprofile-de/1.6.0/ig-markdown-Ressourcen-AmbulanterStationaererFall.html) übernommen.*
+
 ##### Sekundärkontakte bei stationärem Aufenthalt
 
 <table class="encounter-type-table">
@@ -231,6 +231,8 @@ Siehe auch Leitfaden [FHIR DE Basisprofile](https://ig.fhir.de/basisprofile-de/1
 </tr>
 </tbody>
 </table>
+
+*Externe Quelle: Die Zuordnung der Sekundärkontakte zu HL7 V2 und FHIR in dieser Tabelle wurde aus den [Deutschen FHIR-Basisprofilen 1.6.0 – Ambulanter/stationärer Fall / Kontakt](https://ig.fhir.de/basisprofile-de/1.6.0/ig-markdown-Ressourcen-AmbulanterStationaererFall.html) übernommen.*
 
 #### Angaben zu Diagnosen
 
