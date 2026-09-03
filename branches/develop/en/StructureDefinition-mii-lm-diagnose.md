@@ -81,12 +81,10 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-diagnose.c
 | Diagnose.ICD10GMDiagnoseKodiert.Diagnosesicherheit | Condition.code.coding.where(system='http://fhir.de/CodeSystem/bfarm/icd-10-gm').extension('http://fhir.de/StructureDefinition/icd-10-gm-diagnosesicherheit').valueCoding.code |
 | Diagnose.ICD10GMDiagnoseKodiert.Mehrfachkodierungskennzeichen | Condition.code.coding.where(system='http://fhir.de/CodeSystem/bfarm/icd-10-gm').extension('http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen').valueCoding.code |
 | Diagnose.ICD10GMDiagnoseKodiert.Seitenlokalisation | Condition.code.coding.where(system='http://fhir.de/CodeSystem/bfarm/icd-10-gm').extension('http://fhir.de/StructureDefinition/seitenlokalisation').valueCoding.code |
-| Diagnose.KlinischRelevanterZeitraum | Condition.onset[x] |
-| Diagnose.KlinischRelevanterZeitraum.Lebensphase.bis | Condition.onsetPeriod.end.extension('http://fhir.de/StructureDefinition/lebensphase').valueCodeableConcept |
-| Diagnose.KlinischRelevanterZeitraum.Lebensphase.von | Condition.onsetPeriod.start.extension('http://fhir.de/StructureDefinition/lebensphase').valueCodeableConcept |
-| Diagnose.KlinischRelevanterZeitraum.Zeitraum | Condition.onsetPeriod |
-| Diagnose.KlinischRelevanterZeitraum.Zeitraum.bis | Condition.onsetPeriod.end |
-| Diagnose.KlinischRelevanterZeitraum.Zeitraum.von | Condition.onsetPeriod.start |
+| Diagnose.KlinischRelevanterZeitraum.Lebensphase.bis | Condition.abatementAge.extension('http://fhir.de/StructureDefinition/lebensphase').valueCodeableConcept |
+| Diagnose.KlinischRelevanterZeitraum.Lebensphase.von | Condition.onsetAge.extension('http://fhir.de/StructureDefinition/lebensphase').valueCodeableConcept |
+| Diagnose.KlinischRelevanterZeitraum.Zeitraum.bis | Condition.abatementDateTime |
+| Diagnose.KlinischRelevanterZeitraum.Zeitraum.von | Condition.onsetDateTime |
 | Diagnose.KlinischerStatus | Condition.clinicalStatus |
 | Diagnose.Koerperstelle | Condition.bodySite |
 | Diagnose.ORPHANETDiagnoseKodiert | Condition.code.coding.where(system='http://www.orpha.net') |
@@ -556,10 +554,6 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-diagnose.c
       "max" : "1",
       "type" : [{
         "code" : "BackboneElement"
-      }],
-      "mapping" : [{
-        "identity" : "FHIR",
-        "map" : "Condition.onset[x]"
       }]
     },
     {
@@ -571,10 +565,6 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-diagnose.c
       "max" : "1",
       "type" : [{
         "code" : "BackboneElement"
-      }],
-      "mapping" : [{
-        "identity" : "FHIR",
-        "map" : "Condition.onsetPeriod"
       }]
     },
     {
@@ -589,7 +579,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-diagnose.c
       }],
       "mapping" : [{
         "identity" : "FHIR",
-        "map" : "Condition.onsetPeriod.start"
+        "map" : "Condition.onsetDateTime"
       }]
     },
     {
@@ -604,7 +594,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-diagnose.c
       }],
       "mapping" : [{
         "identity" : "FHIR",
-        "map" : "Condition.onsetPeriod.end"
+        "map" : "Condition.abatementDateTime"
       }]
     },
     {
@@ -630,7 +620,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-diagnose.c
       }],
       "mapping" : [{
         "identity" : "FHIR",
-        "map" : "Condition.onsetPeriod.start.extension('http://fhir.de/StructureDefinition/lebensphase').valueCodeableConcept"
+        "map" : "Condition.onsetAge.extension('http://fhir.de/StructureDefinition/lebensphase').valueCodeableConcept"
       }]
     },
     {
@@ -645,7 +635,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-diagnose.c
       }],
       "mapping" : [{
         "identity" : "FHIR",
-        "map" : "Condition.onsetPeriod.end.extension('http://fhir.de/StructureDefinition/lebensphase').valueCodeableConcept"
+        "map" : "Condition.abatementAge.extension('http://fhir.de/StructureDefinition/lebensphase').valueCodeableConcept"
       }]
     },
     {

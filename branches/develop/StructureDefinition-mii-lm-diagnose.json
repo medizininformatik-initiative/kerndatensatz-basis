@@ -1299,10 +1299,6 @@
         "expression" : "hasValue() or (children().count() > id.count())",
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }],
-      "mapping" : [{
-        "identity" : "FHIR",
-        "map" : "Condition.onset[x]"
       }]
     },
     {
@@ -1447,10 +1443,6 @@
         "expression" : "hasValue() or (children().count() > id.count())",
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }],
-      "mapping" : [{
-        "identity" : "FHIR",
-        "map" : "Condition.onsetPeriod"
       }]
     },
     {
@@ -1590,7 +1582,7 @@
       }],
       "mapping" : [{
         "identity" : "FHIR",
-        "map" : "Condition.onsetPeriod.start"
+        "map" : "Condition.onsetDateTime"
       }]
     },
     {
@@ -1610,7 +1602,7 @@
       }],
       "mapping" : [{
         "identity" : "FHIR",
-        "map" : "Condition.onsetPeriod.end"
+        "map" : "Condition.abatementDateTime"
       }]
     },
     {
@@ -1774,7 +1766,7 @@
       }],
       "mapping" : [{
         "identity" : "FHIR",
-        "map" : "Condition.onsetPeriod.start.extension('http://fhir.de/StructureDefinition/lebensphase').valueCodeableConcept"
+        "map" : "Condition.onsetAge.extension('http://fhir.de/StructureDefinition/lebensphase').valueCodeableConcept"
       }]
     },
     {
@@ -1794,7 +1786,7 @@
       }],
       "mapping" : [{
         "identity" : "FHIR",
-        "map" : "Condition.onsetPeriod.end.extension('http://fhir.de/StructureDefinition/lebensphase').valueCodeableConcept"
+        "map" : "Condition.abatementAge.extension('http://fhir.de/StructureDefinition/lebensphase').valueCodeableConcept"
       }]
     },
     {
@@ -2125,10 +2117,6 @@
       "max" : "1",
       "type" : [{
         "code" : "BackboneElement"
-      }],
-      "mapping" : [{
-        "identity" : "FHIR",
-        "map" : "Condition.onset[x]"
       }]
     },
     {
@@ -2140,10 +2128,6 @@
       "max" : "1",
       "type" : [{
         "code" : "BackboneElement"
-      }],
-      "mapping" : [{
-        "identity" : "FHIR",
-        "map" : "Condition.onsetPeriod"
       }]
     },
     {
@@ -2158,7 +2142,7 @@
       }],
       "mapping" : [{
         "identity" : "FHIR",
-        "map" : "Condition.onsetPeriod.start"
+        "map" : "Condition.onsetDateTime"
       }]
     },
     {
@@ -2173,7 +2157,7 @@
       }],
       "mapping" : [{
         "identity" : "FHIR",
-        "map" : "Condition.onsetPeriod.end"
+        "map" : "Condition.abatementDateTime"
       }]
     },
     {
@@ -2199,7 +2183,7 @@
       }],
       "mapping" : [{
         "identity" : "FHIR",
-        "map" : "Condition.onsetPeriod.start.extension('http://fhir.de/StructureDefinition/lebensphase').valueCodeableConcept"
+        "map" : "Condition.onsetAge.extension('http://fhir.de/StructureDefinition/lebensphase').valueCodeableConcept"
       }]
     },
     {
@@ -2214,7 +2198,7 @@
       }],
       "mapping" : [{
         "identity" : "FHIR",
-        "map" : "Condition.onsetPeriod.end.extension('http://fhir.de/StructureDefinition/lebensphase').valueCodeableConcept"
+        "map" : "Condition.abatementAge.extension('http://fhir.de/StructureDefinition/lebensphase').valueCodeableConcept"
       }]
     },
     {

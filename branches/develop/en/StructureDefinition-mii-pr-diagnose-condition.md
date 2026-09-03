@@ -102,11 +102,25 @@ The profile includes the FHIR core extension `http://hl7.org/fhir/StructureDefin
 
 #### Temporal Information
 
+##### Best Practice - Onset and Abatement
+
+The modeling of disease onset and abatement has been harmonized with [gematik ISiK](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKDiagnose.html). Implementers **SHOULD** use `onsetDateTime`/`abatementDateTime` for dates and `onsetAge`/`abatementAge` with the life-phase extension when only a life phase is known. `onsetPeriod` and `abatementPeriod` remain permitted solely for backwards compatibility and **SHOULD NOT** be used in new implementations.
+
+**EHDS outlook:** The published trial-use [HL7 Europe Condition (EU core) 2.0.0 profile](https://hl7.eu/fhir/base/2.0.0/StructureDefinition-condition-eu-core.html), which informs upcoming EHDS specifications, explicitly profiles the `dateTime` variants of onset and abatement. To facilitate future EHDS compliance, new implementations **SHOULD** therefore use `onsetDateTime` and `abatementDateTime` whenever a date is available.
+
 **`Condition.onset[x]`:**
 
-* **MAY** be captured as Period or dateTime
-* OPTIONAL: Use the extension to specify life phase as code when exact timepoints are unknown
+* **SHOULD** be captured as `dateTime` or `Age`
+* When using `Age`, the life-phase extension **MAY** specify a life phase as a code if the exact date is unknown
+* `Period` remains allowed for backwards compatibility but **SHOULD NOT** be used
 * Represents when the condition began or was first noticed
+
+**`Condition.abatement[x]`:**
+
+* **SHOULD** be captured as `dateTime` or `Age`
+* When using `Age`, the life-phase extension **MAY** specify a life phase as a code if the exact date is unknown
+* `Period` remains allowed for backwards compatibility but **SHOULD NOT** be used
+* Represents when the condition ended, resolved, or entered remission
 
 **`Condition.recordedDate`:**
 
@@ -1443,7 +1457,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-diagnose-c
           "url" : "http://hl7.org/fhir/StructureDefinition/translation"
         }]
       },
-      "definition" : "Geschätztes oder tatsächliches Datum oder Zeitraum, an dem die Erkrankung begonnen hat, nach Meinung des Klinikers.",
+      "definition" : "Geschätztes oder tatsächliches Datum oder Alter, an dem die Erkrankung begonnen hat.",
       "_definition" : {
         "extension" : [{
           "extension" : [{
@@ -1452,7 +1466,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-diagnose-c
           },
           {
             "url" : "content",
-            "valueString" : "Geschätztes oder tatsächliches Datum oder Zeitraum, an dem die Erkrankung begonnen hat, nach Meinung des Klinikers."
+            "valueString" : "Geschätztes oder tatsächliches Datum oder Alter, an dem die Erkrankung begonnen hat."
           }],
           "url" : "http://hl7.org/fhir/StructureDefinition/translation"
         },
@@ -1463,7 +1477,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-diagnose-c
           },
           {
             "url" : "content",
-            "valueString" : "Estimated or actual date or date-time the condition began, in the opinion of the clinician."
+            "valueString" : "Estimated or actual date, date-time, or age when the condition began."
           }],
           "url" : "http://hl7.org/fhir/StructureDefinition/translation"
         }]
@@ -1484,147 +1498,6 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-diagnose-c
       }]
     },
     {
-      "id" : "Condition.onset[x]:onsetPeriod",
-      "path" : "Condition.onset[x]",
-      "sliceName" : "onsetPeriod",
-      "short" : "Beginn Zeitraum",
-      "definition" : "Der Zeitraum, in dem die Erkrankung begonnen hat, nach Meinung des Klinikers.",
-      "min" : 0,
-      "max" : "1",
-      "type" : [{
-        "code" : "Period"
-      }],
-      "mustSupport" : true,
-      "mapping" : [{
-        "identity" : "LogicalModel",
-        "map" : "KlinischRelevanterZeitraum.Zeitraum"
-      }]
-    },
-    {
-      "id" : "Condition.onset[x]:onsetPeriod.start",
-      "path" : "Condition.onset[x].start",
-      "mustSupport" : true,
-      "mapping" : [{
-        "identity" : "LogicalModel",
-        "map" : "KlinischRelevanterZeitraum.Zeitraum.von"
-      }]
-    },
-    {
-      "id" : "Condition.onset[x]:onsetPeriod.start.extension",
-      "path" : "Condition.onset[x].start.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "ordered" : false,
-        "rules" : "open"
-      }
-    },
-    {
-      "id" : "Condition.onset[x]:onsetPeriod.start.extension:lebensphase-von",
-      "path" : "Condition.onset[x].start.extension",
-      "sliceName" : "lebensphase-von",
-      "min" : 0,
-      "max" : "1",
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["http://fhir.de/StructureDefinition/lebensphase"]
-      }],
-      "mustSupport" : true
-    },
-    {
-      "id" : "Condition.onset[x]:onsetPeriod.start.extension:lebensphase-von.url",
-      "path" : "Condition.onset[x].start.extension.url",
-      "mustSupport" : true
-    },
-    {
-      "id" : "Condition.onset[x]:onsetPeriod.start.extension:lebensphase-von.value[x]",
-      "path" : "Condition.onset[x].start.extension.value[x]",
-      "mustSupport" : true,
-      "mapping" : [{
-        "identity" : "LogicalModel",
-        "map" : "KlinischRelevanterZeitraum.Lebensphase.von"
-      }]
-    },
-    {
-      "id" : "Condition.onset[x]:onsetPeriod.start.extension:lebensphase-von.value[x].coding",
-      "path" : "Condition.onset[x].start.extension.value[x].coding",
-      "mustSupport" : true
-    },
-    {
-      "id" : "Condition.onset[x]:onsetPeriod.start.extension:lebensphase-von.value[x].coding.system",
-      "path" : "Condition.onset[x].start.extension.value[x].coding.system",
-      "mustSupport" : true
-    },
-    {
-      "id" : "Condition.onset[x]:onsetPeriod.start.extension:lebensphase-von.value[x].coding.code",
-      "path" : "Condition.onset[x].start.extension.value[x].coding.code",
-      "mustSupport" : true
-    },
-    {
-      "id" : "Condition.onset[x]:onsetPeriod.end",
-      "path" : "Condition.onset[x].end",
-      "mustSupport" : true,
-      "mapping" : [{
-        "identity" : "LogicalModel",
-        "map" : "KlinischRelevanterZeitraum.Zeitraum.bis"
-      }]
-    },
-    {
-      "id" : "Condition.onset[x]:onsetPeriod.end.extension",
-      "path" : "Condition.onset[x].end.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "ordered" : false,
-        "rules" : "open"
-      }
-    },
-    {
-      "id" : "Condition.onset[x]:onsetPeriod.end.extension:lebensphase-bis",
-      "path" : "Condition.onset[x].end.extension",
-      "sliceName" : "lebensphase-bis",
-      "min" : 0,
-      "max" : "1",
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["http://fhir.de/StructureDefinition/lebensphase"]
-      }],
-      "mustSupport" : true
-    },
-    {
-      "id" : "Condition.onset[x]:onsetPeriod.end.extension:lebensphase-bis.url",
-      "path" : "Condition.onset[x].end.extension.url",
-      "mustSupport" : true
-    },
-    {
-      "id" : "Condition.onset[x]:onsetPeriod.end.extension:lebensphase-bis.value[x]",
-      "path" : "Condition.onset[x].end.extension.value[x]",
-      "mustSupport" : true,
-      "mapping" : [{
-        "identity" : "LogicalModel",
-        "map" : "KlinischRelevanterZeitraum.Lebensphase.bis"
-      }]
-    },
-    {
-      "id" : "Condition.onset[x]:onsetPeriod.end.extension:lebensphase-bis.value[x].coding",
-      "path" : "Condition.onset[x].end.extension.value[x].coding",
-      "mustSupport" : true
-    },
-    {
-      "id" : "Condition.onset[x]:onsetPeriod.end.extension:lebensphase-bis.value[x].coding.system",
-      "path" : "Condition.onset[x].end.extension.value[x].coding.system",
-      "mustSupport" : true
-    },
-    {
-      "id" : "Condition.onset[x]:onsetPeriod.end.extension:lebensphase-bis.value[x].coding.code",
-      "path" : "Condition.onset[x].end.extension.value[x].coding.code",
-      "mustSupport" : true
-    },
-    {
       "id" : "Condition.onset[x]:onsetDateTime",
       "path" : "Condition.onset[x]",
       "sliceName" : "onsetDateTime",
@@ -1635,7 +1508,11 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-diagnose-c
       "type" : [{
         "code" : "dateTime"
       }],
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "LogicalModel",
+        "map" : "KlinischRelevanterZeitraum.Zeitraum.von"
+      }]
     },
     {
       "id" : "Condition.onset[x]:onsetAge",
@@ -1670,7 +1547,11 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-diagnose-c
     {
       "id" : "Condition.onset[x]:onsetAge.extension:Lebensphase-Beginn.value[x]",
       "path" : "Condition.onset[x].extension.value[x]",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "LogicalModel",
+        "map" : "KlinischRelevanterZeitraum.Lebensphase.von"
+      }]
     },
     {
       "id" : "Condition.onset[x]:onsetAge.extension:Lebensphase-Beginn.value[x].coding",
@@ -1685,6 +1566,105 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-diagnose-c
     {
       "id" : "Condition.onset[x]:onsetAge.extension:Lebensphase-Beginn.value[x].coding.code",
       "path" : "Condition.onset[x].extension.value[x].coding.code",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.abatement[x]",
+      "path" : "Condition.abatement[x]",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "type",
+          "path" : "$this"
+        }],
+        "ordered" : false,
+        "rules" : "open"
+      },
+      "short" : "Ende",
+      "definition" : "Geschätztes oder tatsächliches Datum oder Alter, an dem die Erkrankung beendet wurde.",
+      "type" : [{
+        "code" : "dateTime"
+      },
+      {
+        "code" : "Age"
+      },
+      {
+        "code" : "Period"
+      }],
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "LogicalModel",
+        "map" : "KlinischRelevanterZeitraum"
+      }]
+    },
+    {
+      "id" : "Condition.abatement[x]:abatementDateTime",
+      "path" : "Condition.abatement[x]",
+      "sliceName" : "abatementDateTime",
+      "short" : "Ende Datum",
+      "definition" : "Das Datum, an dem die Erkrankung beendet wurde.",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "dateTime"
+      }],
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "LogicalModel",
+        "map" : "KlinischRelevanterZeitraum.Zeitraum.bis"
+      }]
+    },
+    {
+      "id" : "Condition.abatement[x]:abatementAge",
+      "path" : "Condition.abatement[x]",
+      "sliceName" : "abatementAge",
+      "short" : "Erkrankungsende als Alter",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Age"
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.abatement[x]:abatementAge.extension:Lebensphase-Ende",
+      "path" : "Condition.abatement[x].extension",
+      "sliceName" : "Lebensphase-Ende",
+      "short" : "Lebensphase des Erkrankungsendes",
+      "comment" : "Alternative Angabe, wenn genauere Eingrenzungen des Zeitraums nicht möglich sind, insbesondere im Kontext anamnestischer Diagnosen",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://fhir.de/StructureDefinition/lebensphase"]
+      }]
+    },
+    {
+      "id" : "Condition.abatement[x]:abatementAge.extension:Lebensphase-Ende.url",
+      "path" : "Condition.abatement[x].extension.url",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.abatement[x]:abatementAge.extension:Lebensphase-Ende.value[x]",
+      "path" : "Condition.abatement[x].extension.value[x]",
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "LogicalModel",
+        "map" : "KlinischRelevanterZeitraum.Lebensphase.bis"
+      }]
+    },
+    {
+      "id" : "Condition.abatement[x]:abatementAge.extension:Lebensphase-Ende.value[x].coding",
+      "path" : "Condition.abatement[x].extension.value[x].coding",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.abatement[x]:abatementAge.extension:Lebensphase-Ende.value[x].coding.system",
+      "path" : "Condition.abatement[x].extension.value[x].coding.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.abatement[x]:abatementAge.extension:Lebensphase-Ende.value[x].coding.code",
+      "path" : "Condition.abatement[x].extension.value[x].coding.code",
       "mustSupport" : true
     },
     {

@@ -1266,10 +1266,6 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <mapping>
-        <identity value="FHIR"/>
-        <map value="Condition.onset[x]"/>
-      </mapping>
     </element>
     <element id="Diagnose.KlinischRelevanterZeitraum.id">
       <path value="Diagnose.KlinischRelevanterZeitraum.id"/>
@@ -1409,10 +1405,6 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <mapping>
-        <identity value="FHIR"/>
-        <map value="Condition.onsetPeriod"/>
-      </mapping>
     </element>
     <element id="Diagnose.KlinischRelevanterZeitraum.Zeitraum.id">
       <path value="Diagnose.KlinischRelevanterZeitraum.Zeitraum.id"/>
@@ -1546,7 +1538,7 @@
       </type>
       <mapping>
         <identity value="FHIR"/>
-        <map value="Condition.onsetPeriod.start"/>
+        <map value="Condition.onsetDateTime"/>
       </mapping>
     </element>
     <element id="Diagnose.KlinischRelevanterZeitraum.Zeitraum.bis">
@@ -1565,7 +1557,7 @@
       </type>
       <mapping>
         <identity value="FHIR"/>
-        <map value="Condition.onsetPeriod.end"/>
+        <map value="Condition.abatementDateTime"/>
       </mapping>
     </element>
     <element id="Diagnose.KlinischRelevanterZeitraum.Lebensphase">
@@ -1723,7 +1715,7 @@
       </type>
       <mapping>
         <identity value="FHIR"/>
-        <map value="Condition.onsetPeriod.start.extension('http://fhir.de/StructureDefinition/lebensphase').valueCodeableConcept"/>
+        <map value="Condition.onsetAge.extension('http://fhir.de/StructureDefinition/lebensphase').valueCodeableConcept"/>
       </mapping>
     </element>
     <element id="Diagnose.KlinischRelevanterZeitraum.Lebensphase.bis">
@@ -1742,7 +1734,7 @@
       </type>
       <mapping>
         <identity value="FHIR"/>
-        <map value="Condition.onsetPeriod.end.extension('http://fhir.de/StructureDefinition/lebensphase').valueCodeableConcept"/>
+        <map value="Condition.abatementAge.extension('http://fhir.de/StructureDefinition/lebensphase').valueCodeableConcept"/>
       </mapping>
     </element>
     <element id="Diagnose.Feststellungsdatum">
@@ -2052,10 +2044,6 @@
       <type>
         <code value="BackboneElement"/>
       </type>
-      <mapping>
-        <identity value="FHIR"/>
-        <map value="Condition.onset[x]"/>
-      </mapping>
     </element>
     <element id="Diagnose.KlinischRelevanterZeitraum.Zeitraum">
       <path value="Diagnose.KlinischRelevanterZeitraum.Zeitraum"/>
@@ -2066,10 +2054,6 @@
       <type>
         <code value="BackboneElement"/>
       </type>
-      <mapping>
-        <identity value="FHIR"/>
-        <map value="Condition.onsetPeriod"/>
-      </mapping>
     </element>
     <element id="Diagnose.KlinischRelevanterZeitraum.Zeitraum.von">
       <path value="Diagnose.KlinischRelevanterZeitraum.Zeitraum.von"/>
@@ -2082,7 +2066,7 @@
       </type>
       <mapping>
         <identity value="FHIR"/>
-        <map value="Condition.onsetPeriod.start"/>
+        <map value="Condition.onsetDateTime"/>
       </mapping>
     </element>
     <element id="Diagnose.KlinischRelevanterZeitraum.Zeitraum.bis">
@@ -2096,7 +2080,7 @@
       </type>
       <mapping>
         <identity value="FHIR"/>
-        <map value="Condition.onsetPeriod.end"/>
+        <map value="Condition.abatementDateTime"/>
       </mapping>
     </element>
     <element id="Diagnose.KlinischRelevanterZeitraum.Lebensphase">
@@ -2120,7 +2104,7 @@
       </type>
       <mapping>
         <identity value="FHIR"/>
-        <map value="Condition.onsetPeriod.start.extension('http://fhir.de/StructureDefinition/lebensphase').valueCodeableConcept"/>
+        <map value="Condition.onsetAge.extension('http://fhir.de/StructureDefinition/lebensphase').valueCodeableConcept"/>
       </mapping>
     </element>
     <element id="Diagnose.KlinischRelevanterZeitraum.Lebensphase.bis">
@@ -2134,7 +2118,7 @@
       </type>
       <mapping>
         <identity value="FHIR"/>
-        <map value="Condition.onsetPeriod.end.extension('http://fhir.de/StructureDefinition/lebensphase').valueCodeableConcept"/>
+        <map value="Condition.abatementAge.extension('http://fhir.de/StructureDefinition/lebensphase').valueCodeableConcept"/>
       </mapping>
     </element>
     <element id="Diagnose.Feststellungsdatum">
