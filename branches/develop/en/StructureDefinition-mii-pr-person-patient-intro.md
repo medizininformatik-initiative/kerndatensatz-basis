@@ -66,6 +66,9 @@ Gender documentation follows the [German Base Profile for Gender]:
 
 - **`Patient.birthDate`**: Full birth date when available. See [German Base Profile - Geburtsdatum]
 - **`Patient.extension:birthPlace`**: The patient's registered place of birth. To represent the country of birth, use `valueAddress.country`; the `countryCode` extension supports coding with ISO 3166-1 alpha-2 codes using a `preferred` binding.
+
+**EHDS outlook:** The use and cardinalities of the FHIR core extensions `patient-citizenship`, `patient-nationality`, and `patient-birthPlace` are aligned with [HL7 Europe Patient (EU base) 2.0.0](https://hl7.eu/fhir/base/2.0.0/StructureDefinition-patient-eu.html) and [HL7 Europe Patient (EU core) 2.0.0](https://hl7.eu/fhir/base/2.0.0/StructureDefinition-patient-eu-core.html). This supports future interoperability in an EHDS context.
+
 - **`Patient.deceased[x]`**: 
   - `deceasedBoolean` **SHOULD** be replaced by `deceasedDateTime` when the patient is deceased and the datetime is known
 
@@ -80,6 +83,8 @@ Address details follow the [German Base Profile - Adresse]:
   - `address.city` with extension for Gemeindeschlüssel and Stadtteil (for city-states)
   - `address.postalCode` for PLZ
   - `address.country` for Land
+
+**EHDS outlook:** Through the dependency on the German FHIR Base Profiles 1.6.0, the Patient address slices are based on [AddressDeBasis 1.6.0](https://simplifier.net/packages/de.basisprofil.r4/1.6.0/files/3644189). For a consistently coded country, implementations **SHOULD** use the inherited `Address.country.extension:countryCode` extension (`iso21090-codedString`) with an ISO 3166-1 alpha-2 code; source-system alpha-3 codes **MUST** be mapped to their alpha-2 equivalent when populating this extension. `AddressDeBasis` binds the extension with `required` strength to the `ISO 3166 Part 1: 2 Letter Codes` ValueSet. This uses the same extension and ValueSet as [HL7 Europe Address (EU) 2.0.0](https://hl7.eu/fhir/base/2.0.0/StructureDefinition-Address-eu.html), where the binding is `preferred`, and supports future EHDS interoperability. This recommendation concerns the coded representation in the extension; `Address.country` remains a string.
 
 <div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
 <h5 style="color: #406A99; margin-top: 0;">Best Practice - Address Components</h5>

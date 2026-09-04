@@ -21,12 +21,13 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 #### Modul Person
 
 * **Added:** Das Patient-Profil enthält nun die FHIR-Core-Extensions `patient-birthPlace`, `patient-citizenship` und `patient-nationality`, um Geburtsort, Staatsangehörigkeit und Nationalität im Modul Person abzubilden. Siehe: [#86](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/86)
+* **Added:** Die Hinweise zu Patient-Adressen empfehlen nun die aus `AddressDeBasis` geerbte Extension `countryCode` für ISO-3166-1-Alpha-2-Ländercodes und richten damit die codierte Länderangabe an HL7 Europe Address (EU) aus. Siehe: [#20](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/20)
 * **Added:** Das Patient-Profil unterstützt nun über die Extension [`individual-recordedSexOrGender`](https://hl7.org/fhir/extensions/StructureDefinition-individual-recordedSexOrGender.html) wiederholbare dokumentierte Geschlechtsangaben getrennt vom administrativen Geschlecht. Siehe: [#81](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/81)
 * **Removed:** `ProbandIn` und dessen Unterelemente aus dem logischen Modell Person entfernt. Siehe: [#90](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/90)
 
 #### Modul Diagnose
 
-* **Added:** Das Element `Condition.bodySite` enthält nun die FHIR-Core-Extension `http://hl7.org/fhir/StructureDefinition/bodySite`, um eine detaillierte anatomische Referenz, z.B. auf eine `BodyStructure`, zusätzlich zur kodierten Körperstelle abzubilden. Siehe: [#85](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/85)
+* **Added:** Das Element `Condition.bodySite` enthält nun die FHIR-Core-Extension `http://hl7.org/fhir/StructureDefinition/bodySite`, um eine detaillierte anatomische Referenz, z.B. auf eine `BodyStructure`, zusätzlich zur codierten Körperstelle abzubilden. Siehe: [#85](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/85)
 * **Changed:** Die Mappings für `Condition.onset[x]` und `Condition.abatement[x]` wurden klargestellt; Erkrankungsbeginn und Erkrankungsende werden nun getrennt abgebildet und mit ISiK harmonisiert. `Period` bleibt aus Gründen der Rückwärtskompatibilität zulässig, SOLL aber NICHT verwendet werden. Siehe: [#83](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/83)
 * **Changed:** Beziehung zwischen Diagnosen und Kontakten im Diagnose-UML angepasst, sodass der Abteilungskontakt als derzeit empfohlene Kontaktebene dargestellt wird und andere Kontaktebenen weiterhin möglich bleiben.
 
@@ -39,7 +40,7 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 #### Modul Prozedur
 
 * **Changed:** Beziehung zwischen Prozeduren und Kontakten im Prozedur-UML angepasst, sodass der Abteilungskontakt als derzeit empfohlener Kontaktkontext dargestellt wird und andere Kontaktebenen weiterhin möglich bleiben.
-* **Added:** Das Element `Procedure.bodySite` enthält nun die FHIR-Core-Extension `http://hl7.org/fhir/StructureDefinition/bodySite`, um eine detaillierte anatomische Referenz, z.B. auf eine `BodyStructure`, zusätzlich zur kodierten Körperstelle abzubilden. Siehe: [#85](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/85)
+* **Added:** Das Element `Procedure.bodySite` enthält nun die FHIR-Core-Extension `http://hl7.org/fhir/StructureDefinition/bodySite`, um eine detaillierte anatomische Referenz, z.B. auf eine `BodyStructure`, zusätzlich zur codierten Körperstelle abzubilden. Siehe: [#85](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/85)
 
 #### Terminologie-Updates
 

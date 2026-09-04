@@ -80,7 +80,10 @@ Die Geschlechtsdokumentation folgt den Vorgaben der [Deutschen FHIR-Basis-Profil
 #### Geburtsdatum, Geburtsort und Vitalstatus
 
 * **`Patient.birthDate`**: Vollständiges Geburtsdatum, wenn verfügbar. Siehe [Basisprofil - Geburtsdatum]
-* **`Patient.extension:birthPlace`**: Registrierter Geburtsort der PatientIn. Zur Abbildung des Geburtslandes ist `valueAddress.country` zu verwenden; die Extension `countryCode` unterstützt die Kodierung mit ISO-3166-1-Alpha-2-Codes über ein `preferred` Binding.
+* **`Patient.extension:birthPlace`**: Registrierter Geburtsort der PatientIn. Zur Abbildung des Geburtslandes ist `valueAddress.country` zu verwenden; die Extension `countryCode` unterstützt die Codierung mit ISO-3166-1-Alpha-2-Codes über ein `preferred` Binding.
+
+**EHDS-Ausblick:** Die Verwendung der FHIR-Core-Extensions `patient-citizenship`, `patient-nationality` und `patient-birthPlace` mit diesen Kardinalitäten ist an [HL7 Europe Patient (EU base) 2.0.0](https://hl7.eu/fhir/base/2.0.0/StructureDefinition-patient-eu.html) und [HL7 Europe Patient (EU core) 2.0.0](https://hl7.eu/fhir/base/2.0.0/StructureDefinition-patient-eu-core.html) ausgerichtet. Dies unterstützt die zukünftige Interoperabilität im EHDS-Kontext.
+
 * **`Patient.deceased[x]`**: 
 * `deceasedBoolean` SOLL, wo möglich, durch `deceasedDateTime` ersetzt werden, wenn die PatientIn verstorben ist und der Zeitpunkt bekannt ist
  
@@ -97,6 +100,8 @@ Adressdetails folgen dem [Basisprofil - Adresse]:
 * `address.postalCode` für PLZ
 * `address.country` für Land
  
+
+**EHDS-Ausblick:** Über die Abhängigkeit von den Deutschen FHIR-Basisprofilen 1.6.0 basieren die Adress-Slices des Patient-Profils auf [AddressDeBasis 1.6.0](https://simplifier.net/packages/de.basisprofil.r4/1.6.0/files/3644189). Für eine einheitlich codierte Länderangabe **SOLLTEN** Implementierungen die geerbte Extension `Address.country.extension:countryCode` (`iso21090-codedString`) mit einem ISO-3166-1-Alpha-2-Code verwenden; Alpha-3-Codes aus Quellsystemen **MÜSSEN** beim Befüllen dieser Extension in den entsprechenden Alpha-2-Code überführt werden. `AddressDeBasis` bindet den Wert der Extension mit der Bindungsstärke `required` an das ValueSet `ISO 3166 Part 1: 2 Letter Codes`. Damit werden dieselbe Extension und dasselbe ValueSet wie in [HL7 Europe Address (EU) 2.0.0](https://hl7.eu/fhir/base/2.0.0/StructureDefinition-Address-eu.html) verwendet, wo die Bindungsstärke `preferred` ist; dies unterstützt die zukünftige EHDS-Interoperabilität. Diese Empfehlung betrifft die codierte Darstellung in der Extension; `Address.country` bleibt ein String.
 
 ##### Best Practice - Adressbestandteile
 
@@ -140,7 +145,7 @@ Diese Struktur ist abgeleitet von [Patient](http://hl7.org/fhir/R4/patient.html)
 ** Summary **
 
 Mandatory: 0 element(18 nested mandatory elements)
- Must-Support: 136 elements
+ Must-Support: 140 elements
  Prohibited: 6 elements
 
 **Structures**
@@ -200,7 +205,7 @@ Diese Struktur ist abgeleitet von [Patient](http://hl7.org/fhir/R4/patient.html)
 ** Summary **
 
 Mandatory: 0 element(18 nested mandatory elements)
- Must-Support: 136 elements
+ Must-Support: 140 elements
  Prohibited: 6 elements
 
 **Structures**
@@ -603,15 +608,27 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-perso
       "type" : [{
         "code" : "Extension",
         "profile" : ["http://hl7.org/fhir/StructureDefinition/iso21090-codedString"]
-      }]
+      }],
+      "mustSupport" : true
     },
     {
       "id" : "Patient.extension:birthPlace.value[x].country.extension:countryCode.value[x]",
       "path" : "Patient.extension.value[x].country.extension.value[x]",
+      "mustSupport" : true,
       "binding" : {
         "strength" : "preferred",
         "valueSet" : "http://hl7.org/fhir/ValueSet/iso3166-1-2"
       }
+    },
+    {
+      "id" : "Patient.extension:birthPlace.value[x].country.extension:countryCode.value[x].system",
+      "path" : "Patient.extension.value[x].country.extension.value[x].system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.extension:birthPlace.value[x].country.extension:countryCode.value[x].code",
+      "path" : "Patient.extension.value[x].country.extension.value[x].code",
+      "mustSupport" : true
     },
     {
       "id" : "Patient.extension:patient-citizenship",

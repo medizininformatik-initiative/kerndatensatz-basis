@@ -864,7 +864,7 @@ Versehentliche(r) Schnitt, Punktion, Perforation oder Blutung: Bei sonstigen chi
 .  
           Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-ballot.rc1 basiert auf           <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>
 .
-          Erstellt           <span title="Fri, Sep 4, 2026 09:51+0000">2026-09-04</span>
+          Erstellt           <span title="Fri, Sep 4, 2026 11:45+0000">2026-09-04</span>
 
                     <br/>
 
@@ -1400,6 +1400,63 @@ Anforderungen an die Pseudonymisierung können je nach Projektkontext variieren 
  und           <code class="language-plaintext highlighter-rouge">patient-nationality</code>
  muss noch geklärt werden. Insbesondere ist offen, ob der deutsche Begriff „Staatsangehörigkeit“ spezifisch die rechtliche Staatsbürgerschaft oder Nationalität in einem weiter gefassten rechtlichen, kulturellen oder ethnischen Sinn bezeichnet. Siehe           <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/86">#86</a>
 .
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/StructureDefinition-mii-pr-person-patient.html">web</a>
+        </td>
+        <td>
+          <a href="https://hl7.eu/fhir/base/2.0.0/StructureDefinition-patient-eu.html">hl7.eu</a>
+        </td>
+        <td>
+          <strong>EHDS-Ausblick:</strong>
+ Die Verwendung der FHIR-Core-Extensions           <code class="language-plaintext highlighter-rouge">patient-citizenship</code>
+,           <code class="language-plaintext highlighter-rouge">patient-nationality</code>
+ und           <code class="language-plaintext highlighter-rouge">patient-birthPlace</code>
+ mit diesen Kardinalitäten ist an           <a href="https://hl7.eu/fhir/base/2.0.0/StructureDefinition-patient-eu.html">HL7 Europe Patient (EU base) 2.0.0</a>
+ und           <a href="https://hl7.eu/fhir/base/2.0.0/StructureDefinition-patient-eu-core.html">HL7 Europe Patient (EU core) 2.0.0</a>
+ ausgerichtet. Dies unterstützt die zukünftige Interoperabilität im EHDS-Kontext.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/StructureDefinition-mii-pr-person-patient.html">web</a>
+        </td>
+        <td>
+          <a href="https://hl7.eu/fhir/base/2.0.0/StructureDefinition-patient-eu-core.html">hl7.eu</a>
+        </td>
+        <td>
+          <strong>EHDS-Ausblick:</strong>
+ Die Verwendung der FHIR-Core-Extensions           <code class="language-plaintext highlighter-rouge">patient-citizenship</code>
+,           <code class="language-plaintext highlighter-rouge">patient-nationality</code>
+ und           <code class="language-plaintext highlighter-rouge">patient-birthPlace</code>
+ mit diesen Kardinalitäten ist an           <a href="https://hl7.eu/fhir/base/2.0.0/StructureDefinition-patient-eu.html">HL7 Europe Patient (EU base) 2.0.0</a>
+ und           <a href="https://hl7.eu/fhir/base/2.0.0/StructureDefinition-patient-eu-core.html">HL7 Europe Patient (EU core) 2.0.0</a>
+ ausgerichtet. Dies unterstützt die zukünftige Interoperabilität im EHDS-Kontext.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/StructureDefinition-mii-pr-person-patient.html">web</a>
+        </td>
+        <td>
+          <a href="https://hl7.eu/fhir/base/2.0.0/StructureDefinition-Address-eu.html">hl7.eu</a>
+        </td>
+        <td>
+          <strong>EHDS-Ausblick:</strong>
+ Über die Abhängigkeit von den Deutschen FHIR-Basisprofilen 1.6.0 basieren die Adress-Slices des Patient-Profils auf           <a href="https://simplifier.net/packages/de.basisprofil.r4/1.6.0/files/3644189">AddressDeBasis 1.6.0</a>
+. Für eine einheitlich codierte Länderangabe           <strong>SOLLTEN</strong>
+ Implementierungen die geerbte Extension           <code class="language-plaintext highlighter-rouge">Address.country.extension:countryCode</code>
+ (          <code class="language-plaintext highlighter-rouge">iso21090-codedString</code>
+) mit einem ISO-3166-1-Alpha-2-Code verwenden; Alpha-3-Codes aus Quellsystemen           <strong>MÜSSEN</strong>
+ beim Befüllen dieser Extension in den entsprechenden Alpha-2-Code überführt werden.           <code class="language-plaintext highlighter-rouge">AddressDeBasis</code>
+ bindet den Wert der Extension mit der Bindungsstärke           <code class="language-plaintext highlighter-rouge">required</code>
+ an das ValueSet           <code class="language-plaintext highlighter-rouge">ISO 3166 Part 1: 2 Letter Codes</code>
+. Damit werden dieselbe Extension und dasselbe ValueSet wie in           <a href="https://hl7.eu/fhir/base/2.0.0/StructureDefinition-Address-eu.html">HL7 Europe Address (EU) 2.0.0</a>
+ verwendet, wo die Bindungsstärke           <code class="language-plaintext highlighter-rouge">preferred</code>
+ ist; dies unterstützt die zukünftige EHDS-Interoperabilität. Diese Empfehlung betrifft die codierte Darstellung in der Extension;           <code class="language-plaintext highlighter-rouge">Address.country</code>
+ bleibt ein String.
         </td>
       </tr>
       <tr>
@@ -34721,6 +34778,20 @@ Die Modellierung codierter und detaillierter anatomischer Lokalisationen wurde m
           <a href="de/changes.html">web</a>
         </td>
         <td>
+          <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/20">github.com</a>
+        </td>
+        <td>
+          <strong>Added:</strong>
+ Die Hinweise zu Patient-Adressen empfehlen nun die aus           <code class="language-plaintext highlighter-rouge">AddressDeBasis</code>
+ geerbte Extension           <code class="language-plaintext highlighter-rouge">countryCode</code>
+ für ISO-3166-1-Alpha-2-Ländercodes und richten damit die codierte Länderangabe an HL7 Europe Address (EU) aus. Siehe:           <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/20">#20</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/changes.html">web</a>
+        </td>
+        <td>
           <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/81">github.com</a>
         </td>
         <td>
@@ -34755,7 +34826,7 @@ Die Modellierung codierter und detaillierter anatomischer Lokalisationen wurde m
  Das Element           <code class="language-plaintext highlighter-rouge">Condition.bodySite</code>
  enthält nun die FHIR-Core-Extension           <code class="language-plaintext highlighter-rouge">http://hl7.org/fhir/StructureDefinition/bodySite</code>
 , um eine detaillierte anatomische Referenz, z.B. auf eine           <code class="language-plaintext highlighter-rouge">BodyStructure</code>
-, zusätzlich zur kodierten Körperstelle abzubilden. Siehe:           <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/85">#85</a>
+, zusätzlich zur codierten Körperstelle abzubilden. Siehe:           <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/85">#85</a>
         </td>
       </tr>
       <tr>
@@ -34810,7 +34881,7 @@ Die Modellierung codierter und detaillierter anatomischer Lokalisationen wurde m
  Das Element           <code class="language-plaintext highlighter-rouge">Procedure.bodySite</code>
  enthält nun die FHIR-Core-Extension           <code class="language-plaintext highlighter-rouge">http://hl7.org/fhir/StructureDefinition/bodySite</code>
 , um eine detaillierte anatomische Referenz, z.B. auf eine           <code class="language-plaintext highlighter-rouge">BodyStructure</code>
-, zusätzlich zur kodierten Körperstelle abzubilden. Siehe:           <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/85">#85</a>
+, zusätzlich zur codierten Körperstelle abzubilden. Siehe:           <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/85">#85</a>
         </td>
       </tr>
       <tr>
@@ -35271,7 +35342,7 @@ Gemäß           <a href="https://www.sozialgesetzbuch-sgb.de/sgbv/301.html">&s
 .  
           Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-ballot.rc1 based on           <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>
 .
-          Generated           <span title="Fri, Sep 4, 2026 09:51+0000">2026-09-04</span>
+          Generated           <span title="Fri, Sep 4, 2026 11:45+0000">2026-09-04</span>
 
                     <br/>
 
@@ -35677,11 +35748,68 @@ Gender documentation follows the           <a href="https://ig.fhir.de/basisprof
           <a href="en/StructureDefinition-mii-pr-person-patient.html">web</a>
         </td>
         <td>
+          <a href="https://hl7.eu/fhir/base/2.0.0/StructureDefinition-patient-eu.html">hl7.eu</a>
+        </td>
+        <td>
+          <strong>EHDS outlook:</strong>
+ The use and cardinalities of the FHIR core extensions           <code class="language-plaintext highlighter-rouge">patient-citizenship</code>
+,           <code class="language-plaintext highlighter-rouge">patient-nationality</code>
+, and           <code class="language-plaintext highlighter-rouge">patient-birthPlace</code>
+ are aligned with           <a href="https://hl7.eu/fhir/base/2.0.0/StructureDefinition-patient-eu.html">HL7 Europe Patient (EU base) 2.0.0</a>
+ and           <a href="https://hl7.eu/fhir/base/2.0.0/StructureDefinition-patient-eu-core.html">HL7 Europe Patient (EU core) 2.0.0</a>
+. This supports future interoperability in an EHDS context.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-mii-pr-person-patient.html">web</a>
+        </td>
+        <td>
+          <a href="https://hl7.eu/fhir/base/2.0.0/StructureDefinition-patient-eu-core.html">hl7.eu</a>
+        </td>
+        <td>
+          <strong>EHDS outlook:</strong>
+ The use and cardinalities of the FHIR core extensions           <code class="language-plaintext highlighter-rouge">patient-citizenship</code>
+,           <code class="language-plaintext highlighter-rouge">patient-nationality</code>
+, and           <code class="language-plaintext highlighter-rouge">patient-birthPlace</code>
+ are aligned with           <a href="https://hl7.eu/fhir/base/2.0.0/StructureDefinition-patient-eu.html">HL7 Europe Patient (EU base) 2.0.0</a>
+ and           <a href="https://hl7.eu/fhir/base/2.0.0/StructureDefinition-patient-eu-core.html">HL7 Europe Patient (EU core) 2.0.0</a>
+. This supports future interoperability in an EHDS context.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-mii-pr-person-patient.html">web</a>
+        </td>
+        <td>
           <a href="https://ig.fhir.de/basisprofile-de/1.5.4/ig-markdown-Ressourcen-Patient.html#ig-markdown-Ressourcen-Patient-Addresse">ig.fhir.de</a>
         </td>
         <td>
 Address details follow the           <a href="https://ig.fhir.de/basisprofile-de/1.5.4/ig-markdown-Ressourcen-Patient.html#ig-markdown-Ressourcen-Patient-Addresse">German Base Profile - Adresse</a>
 :
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-mii-pr-person-patient.html">web</a>
+        </td>
+        <td>
+          <a href="https://hl7.eu/fhir/base/2.0.0/StructureDefinition-Address-eu.html">hl7.eu</a>
+        </td>
+        <td>
+          <strong>EHDS outlook:</strong>
+ Through the dependency on the German FHIR Base Profiles 1.6.0, the Patient address slices are based on           <a href="https://simplifier.net/packages/de.basisprofil.r4/1.6.0/files/3644189">AddressDeBasis 1.6.0</a>
+. For a consistently coded country, implementations           <strong>SHOULD</strong>
+ use the inherited           <code class="language-plaintext highlighter-rouge">Address.country.extension:countryCode</code>
+ extension (          <code class="language-plaintext highlighter-rouge">iso21090-codedString</code>
+) with an ISO 3166-1 alpha-2 code; source-system alpha-3 codes           <strong>MUST</strong>
+ be mapped to their alpha-2 equivalent when populating this extension.           <code class="language-plaintext highlighter-rouge">AddressDeBasis</code>
+ binds the extension with           <code class="language-plaintext highlighter-rouge">required</code>
+ strength to the           <code class="language-plaintext highlighter-rouge">ISO 3166 Part 1: 2 Letter Codes</code>
+ ValueSet. This uses the same extension and ValueSet as           <a href="https://hl7.eu/fhir/base/2.0.0/StructureDefinition-Address-eu.html">HL7 Europe Address (EU) 2.0.0</a>
+, where the binding is           <code class="language-plaintext highlighter-rouge">preferred</code>
+, and supports future EHDS interoperability. This recommendation concerns the coded representation in the extension;           <code class="language-plaintext highlighter-rouge">Address.country</code>
+ remains a string.
         </td>
       </tr>
       <tr>
@@ -35788,6 +35916,20 @@ The modeling of coded and detailed anatomical locations has been harmonized with
 ,           <code class="language-plaintext highlighter-rouge">patient-citizenship</code>
 , and           <code class="language-plaintext highlighter-rouge">patient-nationality</code>
  to represent place of birth, legal citizenship, and nationality in the Person module. See:           <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/86">#86</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/changes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/20">github.com</a>
+        </td>
+        <td>
+          <strong>Added:</strong>
+ Patient address guidance now recommends the           <code class="language-plaintext highlighter-rouge">countryCode</code>
+ extension inherited from           <code class="language-plaintext highlighter-rouge">AddressDeBasis</code>
+ for ISO 3166-1 alpha-2 country codes, aligning the coded country representation with HL7 Europe Address (EU). See:           <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/20">#20</a>
         </td>
       </tr>
       <tr>
