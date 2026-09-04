@@ -16,12 +16,14 @@ Usage: #definition
 * insert CRMIArtifactTopicInstance(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C25190)
 * insert CRMIArtifactTopicInstance(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C81239)
 * insert CRMIArtifactTopicInstance(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C25717)
+* insert CRMIArtifactTopicInstance(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C114476)
+* insert CRMIArtifactTopicInstance(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl, C71437)
 * insert CRMIArtifactContributorsInstance
 * name = "MII_CPS_Person_CapabilityStatement"
 * title = "MII CPS Person CapabilityStatement"
 * status = #active
 * experimental = false
-* date = "2026-09-01"
+* date = "2026-09-04"
 * publisher = "Medizininformatik Initiative"
 * contact.telecom.system = #url
 * contact.telecom.value = "https://www.medizininformatik-initiative.de"
@@ -575,3 +577,151 @@ Searches on `Condition.subject`. For further details see [FHIR core specificatio
 
 **Notes:**
 Searches on `Condition.subject` where the subject is a Patient. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#reference)."""
+* rest.resource[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].extension.valueCode = #SHALL
+* rest.resource[=].type = #AllergyIntolerance
+* rest.resource[=].supportedProfile = "https://www.medizininformatik-initiative.de/fhir/modul-person/StructureDefinition/AllergieUnvertraeglichkeit|2027.0.0-ballot.rc1"
+* rest.resource[=].interaction[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].interaction[=].extension.valueCode = #SHALL
+* rest.resource[=].interaction[=].code = #read
+* rest.resource[=].interaction[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].interaction[=].extension.valueCode = #SHALL
+* rest.resource[=].interaction[=].code = #search-type
+* rest.resource[=].searchParam[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
+* rest.resource[=].searchParam[=].name = "_count"
+* rest.resource[=].searchParam[=].type = #special
+* rest.resource[=].searchParam[=].documentation = """**Example:**
+`GET [base]/AllergyIntolerance?_count=10`
+
+**Notes:**
+For further details see FHIR core specification, section [Page Count](https://www.hl7.org/fhir/R4/search.html#count)."""
+* rest.resource[=].searchParam[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
+* rest.resource[=].searchParam[=].name = "_summary"
+* rest.resource[=].searchParam[=].type = #special
+* rest.resource[=].searchParam[=].documentation = """**Example:**
+`GET [base]/AllergyIntolerance?_summary=count`
+
+**Notes:**
+For further details see FHIR core specification, section [Summary](https://www.hl7.org/fhir/R4/search.html#summary)."""
+* rest.resource[=].searchParam[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
+* rest.resource[=].searchParam[=].name = "_id"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
+* rest.resource[=].searchParam[=].type = #token
+* rest.resource[=].searchParam[=].documentation = """**Example:**
+`GET [base]/AllergyIntolerance?_id=mii-exa-person-allergieunvertraeglichkeit-1`
+
+**Notes:**
+For further details see FHIR core specification, section [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)."""
+* rest.resource[=].searchParam[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
+* rest.resource[=].searchParam[=].name = "_profile"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Resource-profile"
+* rest.resource[=].searchParam[=].type = #uri
+* rest.resource[=].searchParam[=].documentation = """**Example:**
+`GET [base]/AllergyIntolerance?_profile=https://www.medizininformatik-initiative.de/fhir/modul-person/StructureDefinition/AllergieUnvertraeglichkeit|2027.0.0-ballot.rc1`
+
+**Notes:**
+Searches on `AllergyIntolerance.meta.profile`. For further details see FHIR core specification, section [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)."""
+* rest.resource[=].searchParam[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
+* rest.resource[=].searchParam[=].name = "clinical-status"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-clinical-status"
+* rest.resource[=].searchParam[=].type = #token
+* rest.resource[=].searchParam[=].documentation = """**Example:**
+`GET [base]/AllergyIntolerance?clinical-status=active`
+
+**Notes:**
+Searches on `AllergyIntolerance.clinicalStatus`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."""
+* rest.resource[=].searchParam[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
+* rest.resource[=].searchParam[=].name = "verification-status"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-verification-status"
+* rest.resource[=].searchParam[=].type = #token
+* rest.resource[=].searchParam[=].documentation = """**Example:**
+`GET [base]/AllergyIntolerance?verification-status=confirmed`
+
+**Notes:**
+Searches on `AllergyIntolerance.verificationStatus`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."""
+* rest.resource[=].searchParam[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
+* rest.resource[=].searchParam[=].name = "category"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-category"
+* rest.resource[=].searchParam[=].type = #token
+* rest.resource[=].searchParam[=].documentation = """**Example:**
+`GET [base]/AllergyIntolerance?category=medication`
+
+**Notes:**
+Searches on `AllergyIntolerance.category`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."""
+* rest.resource[=].searchParam[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
+* rest.resource[=].searchParam[=].name = "criticality"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-criticality"
+* rest.resource[=].searchParam[=].type = #token
+* rest.resource[=].searchParam[=].documentation = """**Example:**
+`GET [base]/AllergyIntolerance?criticality=high`
+
+**Notes:**
+Searches on `AllergyIntolerance.criticality`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."""
+* rest.resource[=].searchParam[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
+* rest.resource[=].searchParam[=].name = "code"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/clinical-code"
+* rest.resource[=].searchParam[=].type = #token
+* rest.resource[=].searchParam[=].documentation = """**Example:**
+`GET [base]/AllergyIntolerance?code=http://snomed.info/sct|91936005`
+
+**Notes:**
+Searches on `AllergyIntolerance.code` and `AllergyIntolerance.reaction.substance`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."""
+* rest.resource[=].searchParam[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
+* rest.resource[=].searchParam[=].name = "patient"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
+* rest.resource[=].searchParam[=].type = #reference
+* rest.resource[=].searchParam[=].documentation = """**Example:**
+`GET [base]/AllergyIntolerance?patient=Patient/mii-exa-person-patient-1`
+
+**Notes:**
+Searches on `AllergyIntolerance.patient`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#reference)."""
+* rest.resource[=].searchParam[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
+* rest.resource[=].searchParam[=].name = "date"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/clinical-date"
+* rest.resource[=].searchParam[=].type = #date
+* rest.resource[=].searchParam[=].documentation = """**Example:**
+`GET [base]/AllergyIntolerance?date=2026-08-15`
+
+**Notes:**
+Searches on `AllergyIntolerance.recordedDate`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#date)."""
+* rest.resource[=].searchParam[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
+* rest.resource[=].searchParam[=].name = "manifestation"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-manifestation"
+* rest.resource[=].searchParam[=].type = #token
+* rest.resource[=].searchParam[=].documentation = """**Example:**
+`GET [base]/AllergyIntolerance?manifestation=http://snomed.info/sct|39579001`
+
+**Notes:**
+Searches on `AllergyIntolerance.reaction.manifestation`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."""
+* rest.resource[=].searchParam[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
+* rest.resource[=].searchParam[=].name = "route"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-route"
+* rest.resource[=].searchParam[=].type = #token
+* rest.resource[=].searchParam[=].documentation = """**Example:**
+`GET [base]/AllergyIntolerance?route=http://snomed.info/sct|26643006`
+
+**Notes:**
+Searches on `AllergyIntolerance.reaction.exposureRoute`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."""
+* rest.resource[=].searchParam[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
+* rest.resource[=].searchParam[=].name = "severity"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-severity"
+* rest.resource[=].searchParam[=].type = #token
+* rest.resource[=].searchParam[=].documentation = """**Example:**
+`GET [base]/AllergyIntolerance?severity=severe`
+
+**Notes:**
+Searches on `AllergyIntolerance.reaction.severity`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."""

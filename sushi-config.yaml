@@ -151,6 +151,7 @@ dependencies:
   hl7.fhir.uv.crmi: 2.0.0
   hl7.terminology.r4: 7.1.0
   hl7.fhir.uv.extensions.r4: 5.2.0
+  hl7.fhir.uv.ips: 2.0.1
 #   hl7.fhir.us.mcode:
 #     id: mcode
 #     uri: http://hl7.org/fhir/us/mcode/ImplementationGuide/hl7.fhir.us.mcode
@@ -301,6 +302,7 @@ parameters:
     - https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/LogicalModel/Person
     - https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/mii-vs-person-icd10who
     - https://www.medizininformatik-initiative.de/fhir/modul-person/ValueSet/mii-vs-person-recordedsexorgender-snomed
+    - https://www.medizininformatik-initiative.de/fhir/modul-person/StructureDefinition/AllergieUnvertraeglichkeit
   profile-test-cases: tests/profiles/profiles.json
 
 #   excludettl: true

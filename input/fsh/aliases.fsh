@@ -17,6 +17,11 @@ Alias: $patient-citizenship = http://hl7.org/fhir/StructureDefinition/patient-ci
 Alias: $recordedSexOrGender = http://hl7.org/fhir/StructureDefinition/individual-recordedSexOrGender
 Alias: $iso21090-SC-coding = http://hl7.org/fhir/StructureDefinition/iso21090-codedString
 Alias: $iso3166-1-2 = http://hl7.org/fhir/ValueSet/iso3166-1-2
+Alias: $allergyintolerance-abatement = http://hl7.org/fhir/StructureDefinition/allergyintolerance-abatement
+Alias: $allergy-intolerance-uv-ips = http://hl7.org/fhir/uv/ips/ValueSet/allergies-intolerances-uv-ips
+Alias: $allergy-reaction-uv-ips = http://hl7.org/fhir/uv/ips/ValueSet/allergy-reaction-uv-ips
+Alias: $allergyintolerance-clinical = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
+Alias: $allergyintolerance-verification = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification
 
 // Diagnose
 Alias: $condition-clinical = http://terminology.hl7.org/CodeSystem/condition-clinical
