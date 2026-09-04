@@ -170,7 +170,7 @@ The following table applies this distinction to the profiles in this guide:
 
 For resource types not listed in the table, implementers **SHOULD** follow the resource-specific FHIR R4 lifecycle and status definitions rather than extrapolating a mapping from another resource type.
 
-#### Initial Load and Later Corrections
+#### Initial Load and Subsequent Correction Processing
 
 If a source record is already known to be an erroneous entry and no audit requirement calls for its representation in the FHIR repository, it **SHOULD** normally be excluded from the initial load. By contrast, a cancelled planned encounter or a procedure that was not done can be meaningful information and **MAY** be retained with the corresponding FHIR status.
 

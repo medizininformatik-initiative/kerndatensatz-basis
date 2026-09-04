@@ -613,7 +613,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>For resource types not listed in the table, implementers <strong>SHOULD</strong> follow the resource-specific FHIR R4 lifecycle and status definitions rather than extrapolating a mapping from another resource type.</p>
 
-<h4 id="initial-load-and-later-corrections">Initial Load and Later Corrections</h4>
+<h4 id="initial-load-and-subsequent-correction-processing">Initial Load and Subsequent Correction Processing</h4>
 
 <p>If a source record is already known to be an erroneous entry and no audit requirement calls for its representation in the FHIR repository, it <strong>SHOULD</strong> normally be excluded from the initial load. By contrast, a cancelled planned encounter or a procedure that was not done can be meaningful information and <strong>MAY</strong> be retained with the corresponding FHIR status.</p>
 
@@ -662,7 +662,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
           IG &copy; 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-ballot.rc1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Generated <span title="Fri, Sep 4, 2026 09:15+0000">2026-09-04</span>
+          Generated <span title="Fri, Sep 4, 2026 09:51+0000">2026-09-04</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
               <!-- Branding override for the fhir2.base.template footer fragment.
