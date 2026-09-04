@@ -16,10 +16,11 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 #### Dokumentation
 
 * **Added:** Allgemeine Leitlinien zum Umgang mit Storno-Kennzeichen aus Quellsystemen ergänzt, einschließlich ressourcenspezifischer Statusabbildungen, Filterung bei der Erstbeladung, späterer Korrekturen und Filterung für die Datennutzung. Siehe: [#71](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/71)
-* **Changed:** Abhängigkeiten auf `de.basisprofil.r4` 1.6.0, `de.medizininformatikinitiative.kerndatensatz.meta` 2027.0.0-ballot.rc3, `hl7.terminology.r4` 7.1.0 und `hl7.fhir.uv.extensions.r4` 5.2.0 aktualisiert.
+* **Changed:** Abhängigkeiten auf `de.basisprofil.r4` 1.6.0, `de.medizininformatikinitiative.kerndatensatz.meta` 2027.0.0-ballot.rc3, `hl7.terminology.r4` 7.1.0, `hl7.fhir.uv.extensions.r4` 5.2.0 und `hl7.fhir.uv.ips` 2.0.1 aktualisiert.
 
 #### Modul Person
 
+* **Added:** Ein AllergyIntolerance-Profil und zugehörige Elemente im logischen Modell zur Abbildung patientenbezogener Allergien und Unverträglichkeiten einschließlich auslösendem Stoff, klinischem Status, Kritikalität und beobachteten Reaktionen ergänzt.
 * **Added:** Das Patient-Profil enthält nun die FHIR-Core-Extensions `patient-birthPlace`, `patient-citizenship` und `patient-nationality`, um Geburtsort, Staatsangehörigkeit und Nationalität im Modul Person abzubilden. Siehe: [#86](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/86)
 * **Added:** Die Hinweise zu Patient-Adressen empfehlen nun die aus `AddressDeBasis` geerbte Extension `countryCode` für ISO-3166-1-Alpha-2-Ländercodes und richten damit die codierte Länderangabe an HL7 Europe Address (EU) aus. Siehe: [#20](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/20)
 * **Added:** Das Patient-Profil unterstützt nun über die Extension [`individual-recordedSexOrGender`](https://hl7.org/fhir/extensions/StructureDefinition-individual-recordedSexOrGender.html) wiederholbare dokumentierte Geschlechtsangaben getrennt vom administrativen Geschlecht. Siehe: [#81](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/81)

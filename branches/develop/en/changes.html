@@ -357,12 +357,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <ul>
   <li><strong>Added:</strong> General guidance for handling source-system cancellation flags, including resource-specific status mappings, initial-load filtering, later corrections, and filtering for data use. See: <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/71">#71</a></li>
-  <li><strong>Changed:</strong> Dependency updates to <code class="language-plaintext highlighter-rouge">de.basisprofil.r4</code> 1.6.0, <code class="language-plaintext highlighter-rouge">de.medizininformatikinitiative.kerndatensatz.meta</code> 2027.0.0-ballot.rc3, <code class="language-plaintext highlighter-rouge">hl7.terminology.r4</code> 7.1.0, and <code class="language-plaintext highlighter-rouge">hl7.fhir.uv.extensions.r4</code> 5.2.0.</li>
+  <li><strong>Changed:</strong> Dependency updates to <code class="language-plaintext highlighter-rouge">de.basisprofil.r4</code> 1.6.0, <code class="language-plaintext highlighter-rouge">de.medizininformatikinitiative.kerndatensatz.meta</code> 2027.0.0-ballot.rc3, <code class="language-plaintext highlighter-rouge">hl7.terminology.r4</code> 7.1.0, <code class="language-plaintext highlighter-rouge">hl7.fhir.uv.extensions.r4</code> 5.2.0, and <code class="language-plaintext highlighter-rouge">hl7.fhir.uv.ips</code> 2.0.1.</li>
 </ul>
 
 <h4 id="person-module">Person Module</h4>
 
 <ul>
+  <li><strong>Added:</strong> An AllergyIntolerance profile and corresponding logical-model elements for representing patient-related allergies and intolerances, including the causative substance, clinical status, criticality, and observed reactions.</li>
   <li><strong>Added:</strong> The Patient profile now includes the FHIR core extensions <code class="language-plaintext highlighter-rouge">patient-birthPlace</code>, <code class="language-plaintext highlighter-rouge">patient-citizenship</code>, and <code class="language-plaintext highlighter-rouge">patient-nationality</code> to represent place of birth, legal citizenship, and nationality in the Person module. See: <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/86">#86</a></li>
   <li><strong>Added:</strong> Patient address guidance now recommends the <code class="language-plaintext highlighter-rouge">countryCode</code> extension inherited from <code class="language-plaintext highlighter-rouge">AddressDeBasis</code> for ISO 3166-1 alpha-2 country codes, aligning the coded country representation with HL7 Europe Address (EU). See: <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/20">#20</a></li>
   <li><strong>Added:</strong> The Patient profile now supports repeatable recorded sex or gender statements via the <a href="https://hl7.org/fhir/extensions/StructureDefinition-individual-recordedSexOrGender.html"><code class="language-plaintext highlighter-rouge">individual-recordedSexOrGender</code></a> extension, separately from administrative gender. See: <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/81">#81</a></li>
@@ -726,7 +727,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-ballot.rc1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Generated <span title="Fri, Sep 4, 2026 11:45+0000">2026-09-04</span>
+          Generated <span title="Fri, Sep 4, 2026 15:43+0000">2026-09-04</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.

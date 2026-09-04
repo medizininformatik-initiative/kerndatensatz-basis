@@ -1,14 +1,15 @@
 MII_IG_Base : Validation Results
 =========================================
 
-err = 22, warn = 626, info = 3090
+err = 22, warn = 632, info = 3259
 $--
 Generated $--. FHIR version $-- for de.medizininformatikinitiative.kerndatensatz.base#$-- (canonical = https://www.medizininformatik-initiative.de/fhir/modul-base)
- Build Errors : 0 / 4 / 6
+ Build Errors : 0 / 5 / 6
+ /workspace/fsh-generated/resources/AllergyIntolerance-mii-exa-person-allergyintolerance-1 : 0 / 0 / 3
  /workspace/fsh-generated/resources/Bundle-mii-exa-base-test-data-bundle-1 : 0 / 55 / 67
  /workspace/fsh-generated/resources/CapabilityStatement-mii-cps-diagnose-capabilitystatement : 0 / 2 / 48
  /workspace/fsh-generated/resources/CapabilityStatement-mii-cps-fall-capabilitystatement : 0 / 2 / 41
- /workspace/fsh-generated/resources/CapabilityStatement-mii-cps-person-capabilitystatement : 0 / 2 / 67
+ /workspace/fsh-generated/resources/CapabilityStatement-mii-cps-person-capabilitystatement : 0 / 2 / 83
  /workspace/fsh-generated/resources/CapabilityStatement-mii-cps-prozedur-capabilitystatement : 0 / 2 / 35
  /workspace/fsh-generated/resources/CodeSystem-mii-cs-diagnose-lebensphase-supplement-snomed : 6 / 3 / 6
  /workspace/fsh-generated/resources/CodeSystem-mii-cs-fall-supplement-act-encounter-code : 0 / 3 / 13
@@ -34,7 +35,7 @@ Generated $--. FHIR version $-- for de.medizininformatikinitiative.kerndatensatz
  /workspace/fsh-generated/resources/Encounter-mii-exa-fall-kontakt-in-progress-status : 0 / 1 / 3
  /workspace/fsh-generated/resources/Encounter-mii-exa-fall-kontakt-onleave-status : 0 / 1 / 3
  /workspace/fsh-generated/resources/Encounter-mii-exa-fall-kontakt-unknown-status : 0 / 1 / 3
- /workspace/fsh-generated/resources/ImplementationGuide-mii-ig-base : 0 / 7 / 91
+ /workspace/fsh-generated/resources/ImplementationGuide-mii-ig-base : 0 / 7 / 92
  /workspace/fsh-generated/resources/Observation-mii-exa-person-observation-vitalstatus : 0 / 2 / 2
  /workspace/fsh-generated/resources/Observation-mii-exa-person-observation-vitalstatus-discharge : 0 / 2 / 2
  /workspace/fsh-generated/resources/Patient-mii-exa-person-patient-1 : 0 / 2 / 3
@@ -48,7 +49,8 @@ Generated $--. FHIR version $-- for de.medizininformatikinitiative.kerndatensatz
  /workspace/fsh-generated/resources/StructureDefinition-mii-lm-person : 0 / 175 / 143
  /workspace/fsh-generated/resources/StructureDefinition-mii-lm-prozedur : 0 / 30 / 37
  /workspace/fsh-generated/resources/StructureDefinition-mii-pr-diagnose-condition : 0 / 14 / 307
- /workspace/fsh-generated/resources/StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung : 0 / 6 / 417
+ /workspace/fsh-generated/resources/StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung : 0 / 7 / 417
+ /workspace/fsh-generated/resources/StructureDefinition-mii-pr-person-allergieunvertraeglichkeit : 0 / 4 / 154
  /workspace/fsh-generated/resources/StructureDefinition-mii-pr-person-patient : 2 / 33 / 608
  /workspace/fsh-generated/resources/StructureDefinition-mii-pr-person-patient-pseudonymisiert : 1 / 16 / 234
  /workspace/fsh-generated/resources/StructureDefinition-mii-pr-person-todesursache : 0 / 4 / 154
@@ -73,6 +75,7 @@ Generated $--. FHIR version $-- for de.medizininformatikinitiative.kerndatensatz
 </table>
 == n/a ==
 WARNING: ImplementationGuide.id: The Implementation Guide Resource id should be de.medizininformatikinitiative.kerndatensatz.base
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource AllergyIntolerance/mii-exa-person-allergyintolerance-1.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Parameters/mii-param-base-manifest.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 INFORMATION: de/StructureDefinition-mii-lm-diagnose.html: No conformance term found in the text: 301 und 
 INFORMATION: de/StructureDefinition-mii-lm-fall.html: No conformance term found in the text:  301 SGB V und des Datensatzes gemäß 
@@ -82,6 +85,9 @@ INFORMATION: en/StructureDefinition-mii-lm-fall.html: No conformance term found 
 INFORMATION: en/terminology.html: No conformance term found in the text:  301 and 
 WARNING: 2: An HTML fragment from the set [cross-version-analysis.xhtml, cross-version-analysis-inline.xhtml, cross-version-analysis.xhtml, cross-version-analysis-inline.xhtml] is not included anywhere in the produced implementation guide
 WARNING: 5: An HTML fragment from the set [expansion-params.xhtml, expansion-params.xhtml] is not included anywhere in the produced implementation guide
+== fsh-generated/resources/AllergyIntolerance-mii-exa-person-allergyintolerance-1.json ==
+INFORMATION: AllergyIntolerance/mii-exa-person-allergyintolerance-1: AllergyIntolerance.code: Reference to trial-use ValueSet http://hl7.org/fhir/uv/ips/ValueSet/allergies-intolerances-uv-ips|2.0.1
+INFORMATION: AllergyIntolerance/mii-exa-person-allergyintolerance-1: AllergyIntolerance.reaction[0].manifestation[0]: Reference to trial-use ValueSet http://hl7.org/fhir/uv/ips/ValueSet/allergy-reaction-uv-ips|2.0.1
 == fsh-generated/resources/Bundle-mii-exa-base-test-data-bundle-1.json ==
 WARNING: Bundle/mii-exa-base-test-data-bundle-1: Bundle.meta.extension[0].extension[2].value.ofType(uri): No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/modul-base'
 WARNING: Bundle/mii-exa-base-test-data-bundle-1: Bundle.identifier.system: No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/modul-base/sid/example-bundles'
@@ -292,6 +298,18 @@ INFORMATION: CapabilityStatement.rest[0].resource[2].searchParam[4].definition: 
 INFORMATION: CapabilityStatement.rest[0].resource[2].searchParam[5].definition: Pinned the version of http://hl7.org/fhir/SearchParameter/clinical-code to 4.0.1
 INFORMATION: CapabilityStatement.rest[0].resource[2].searchParam[6].definition: Pinned the version of http://hl7.org/fhir/SearchParameter/Condition-subject to 4.0.1
 INFORMATION: CapabilityStatement.rest[0].resource[2].searchParam[7].definition: Pinned the version of http://hl7.org/fhir/SearchParameter/clinical-patient to 4.0.1
+INFORMATION: CapabilityStatement.rest[0].resource[3].searchParam[2].definition: Pinned the version of http://hl7.org/fhir/SearchParameter/Resource-id to 4.0.1
+INFORMATION: CapabilityStatement.rest[0].resource[3].searchParam[3].definition: Pinned the version of http://hl7.org/fhir/SearchParameter/Resource-profile to 4.0.1
+INFORMATION: CapabilityStatement.rest[0].resource[3].searchParam[4].definition: Pinned the version of http://hl7.org/fhir/SearchParameter/AllergyIntolerance-clinical-status to 4.0.1
+INFORMATION: CapabilityStatement.rest[0].resource[3].searchParam[5].definition: Pinned the version of http://hl7.org/fhir/SearchParameter/AllergyIntolerance-verification-status to 4.0.1
+INFORMATION: CapabilityStatement.rest[0].resource[3].searchParam[6].definition: Pinned the version of http://hl7.org/fhir/SearchParameter/AllergyIntolerance-category to 4.0.1
+INFORMATION: CapabilityStatement.rest[0].resource[3].searchParam[7].definition: Pinned the version of http://hl7.org/fhir/SearchParameter/AllergyIntolerance-criticality to 4.0.1
+INFORMATION: CapabilityStatement.rest[0].resource[3].searchParam[8].definition: Pinned the version of http://hl7.org/fhir/SearchParameter/clinical-code to 4.0.1
+INFORMATION: CapabilityStatement.rest[0].resource[3].searchParam[9].definition: Pinned the version of http://hl7.org/fhir/SearchParameter/clinical-patient to 4.0.1
+INFORMATION: CapabilityStatement.rest[0].resource[3].searchParam[10].definition: Pinned the version of http://hl7.org/fhir/SearchParameter/clinical-date to 4.0.1
+INFORMATION: CapabilityStatement.rest[0].resource[3].searchParam[11].definition: Pinned the version of http://hl7.org/fhir/SearchParameter/AllergyIntolerance-manifestation to 4.0.1
+INFORMATION: CapabilityStatement.rest[0].resource[3].searchParam[12].definition: Pinned the version of http://hl7.org/fhir/SearchParameter/AllergyIntolerance-route to 4.0.1
+INFORMATION: CapabilityStatement.rest[0].resource[3].searchParam[13].definition: Pinned the version of http://hl7.org/fhir/SearchParameter/AllergyIntolerance-severity to 4.0.1
 INFORMATION: CapabilityStatement/mii-cps-person-capabilitystatement: CapabilityStatement.extension[4]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablecapabilitystatement|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: CapabilityStatement/mii-cps-person-capabilitystatement: CapabilityStatement.extension[5]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablecapabilitystatement|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: CapabilityStatement/mii-cps-person-capabilitystatement: CapabilityStatement.extension[6]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablecapabilitystatement|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
@@ -305,11 +323,15 @@ INFORMATION: CapabilityStatement/mii-cps-person-capabilitystatement: CapabilityS
 INFORMATION: CapabilityStatement/mii-cps-person-capabilitystatement: CapabilityStatement.extension[14]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablecapabilitystatement|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: CapabilityStatement/mii-cps-person-capabilitystatement: CapabilityStatement.extension[15]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablecapabilitystatement|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: CapabilityStatement/mii-cps-person-capabilitystatement: CapabilityStatement.extension[16]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablecapabilitystatement|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: CapabilityStatement/mii-cps-person-capabilitystatement: CapabilityStatement.extension[17]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablecapabilitystatement|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: CapabilityStatement/mii-cps-person-capabilitystatement: CapabilityStatement.extension[18]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablecapabilitystatement|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 WARNING: CapabilityStatement/mii-cps-person-capabilitystatement: CapabilityStatement.meta.extension[1].extension[2].value.ofType(uri): No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/modul-base'
 INFORMATION: CapabilityStatement/mii-cps-person-capabilitystatement: CapabilityStatement.extension[7].value.ofType(CodeableConcept): Reference to experimental CodeSystem http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl|25.6.0-e
 INFORMATION: CapabilityStatement/mii-cps-person-capabilitystatement: CapabilityStatement.extension[8].value.ofType(CodeableConcept): Reference to experimental CodeSystem http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl|25.6.0-e
 INFORMATION: CapabilityStatement/mii-cps-person-capabilitystatement: CapabilityStatement.extension[9].value.ofType(CodeableConcept): Reference to experimental CodeSystem http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl|25.6.0-e
 INFORMATION: CapabilityStatement/mii-cps-person-capabilitystatement: CapabilityStatement.extension[10].value.ofType(CodeableConcept): Reference to experimental CodeSystem http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl|25.6.0-e
+INFORMATION: CapabilityStatement/mii-cps-person-capabilitystatement: CapabilityStatement.extension[11].value.ofType(CodeableConcept): Reference to experimental CodeSystem http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl|25.6.0-e
+INFORMATION: CapabilityStatement/mii-cps-person-capabilitystatement: CapabilityStatement.extension[12].value.ofType(CodeableConcept): Reference to experimental CodeSystem http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl|25.6.0-e
 WARNING: CapabilityStatement/mii-cps-person-capabilitystatement: CapabilityStatement.jurisdiction[0].coding[0].system: A definition for CodeSystem 'urn:iso:std:iso:3166:-2' could not be found, so the code cannot be validated
 INFORMATION: CapabilityStatement/mii-cps-person-capabilitystatement: CapabilityStatement.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecapabilitystatement|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: CapabilityStatement/mii-cps-person-capabilitystatement: CapabilityStatement.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecapabilitystatement|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
@@ -552,6 +574,7 @@ INFORMATION: ImplementationGuide.definition.resource[33].profile[0]: Pinned the 
 INFORMATION: ImplementationGuide.definition.resource[34].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure to 2027.0.0-ballot.rc1
 INFORMATION: ImplementationGuide.definition.resource[35].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure to 2027.0.0-ballot.rc1
 INFORMATION: ImplementationGuide.definition.resource[36].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure to 2027.0.0-ballot.rc1
+INFORMATION: ImplementationGuide.definition.resource[64].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/modul-person/StructureDefinition/AllergieUnvertraeglichkeit to 2027.0.0-ballot.rc1
 INFORMATION: ImplementationGuide/mii-ig-base: ImplementationGuide.language: Reference to draft ValueSet http://hl7.org/fhir/ValueSet/languages|4.0.1
 INFORMATION: ImplementationGuide/mii-ig-base: ImplementationGuide.language: Reference to trial-use ValueSet http://hl7.org/fhir/ValueSet/languages|4.0.1
 WARNING: ImplementationGuide/mii-ig-base: ImplementationGuide.extension[4].extension[2].value.ofType(uri): No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/modul-base'
@@ -2014,6 +2037,7 @@ INFORMATION: StructureDefinition/mii-pr-fall-kontakt-gesundheitseinrichtung: Str
 WARNING: StructureDefinition/mii-pr-fall-kontakt-gesundheitseinrichtung: StructureDefinition.jurisdiction[0].coding[0].system: A definition for CodeSystem 'urn:iso:std:iso:3166:-2' could not be found, so the code cannot be validated
 WARNING: StructureDefinition/mii-pr-fall-kontakt-gesundheitseinrichtung: StructureDefinition.snapshot.element[83].pattern.ofType(CodeableConcept).coding[0].code: No code provided for CodeSystem 'http://fhir.de/CodeSystem/Kontaktebene' version '1.6.0'
 WARNING: StructureDefinition/mii-pr-fall-kontakt-gesundheitseinrichtung: StructureDefinition.snapshot.element[95].pattern.ofType(CodeableConcept).coding[0].code: No code provided for CodeSystem 'http://fhir.de/CodeSystem/kontaktart-de' version '1.6.0'
+WARNING: StructureDefinition/mii-pr-fall-kontakt-gesundheitseinrichtung: StructureDefinition.snapshot.element[214].binding.valueSet: There are multiple different potential matches for the url 'http://terminology.hl7.org/ValueSet/v2-0092'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer, or use the [IG Parameter `pin-canonicals`](https://hl7.org/fhir/tools/CodeSystem-ig-parameters.html). Using version '3.0.0', found versions: 2.0.0 (from hl7.terminology.r4#6.2.0), 3.0.0 (from hl7.terminology.r4#7.1.0). Suggested fix: change the canonical reference from 'http://terminology.hl7.org/ValueSet/v2-0092' to 'http://terminology.hl7.org/ValueSet/v2-0092|3.0.0'
 WARNING: StructureDefinition/mii-pr-fall-kontakt-gesundheitseinrichtung: StructureDefinition.differential.element[32].pattern.ofType(CodeableConcept).coding[0].code: No code provided for CodeSystem 'http://fhir.de/CodeSystem/Kontaktebene' version '1.6.0'
 WARNING: StructureDefinition/mii-pr-fall-kontakt-gesundheitseinrichtung: StructureDefinition.differential.element[35].pattern.ofType(CodeableConcept).coding[0].code: No code provided for CodeSystem 'http://fhir.de/CodeSystem/kontaktart-de' version '1.6.0'
 INFORMATION: StructureDefinition/mii-pr-fall-kontakt-gesundheitseinrichtung: StructureDefinition.differential.element[18].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
@@ -2032,6 +2056,161 @@ INFORMATION: StructureDefinition/mii-pr-fall-kontakt-gesundheitseinrichtung: Str
 INFORMATION: StructureDefinition/mii-pr-fall-kontakt-gesundheitseinrichtung: StructureDefinition.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-pr-fall-kontakt-gesundheitseinrichtung: StructureDefinition.meta.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Resource: The resource StructureDefinition/mii-pr-fall-kontakt-gesundheitseinrichtung could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+== fsh-generated/resources/StructureDefinition-mii-pr-person-allergieunvertraeglichkeit.json ==
+INFORMATION: StructureDefinition.meta.profile[0]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition to 2.0.0
+INFORMATION: StructureDefinition.meta.profile[1]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition to 2.0.0
+INFORMATION: StructureDefinition.baseDefinition: Pinned the version of http://hl7.org/fhir/StructureDefinition/AllergyIntolerance to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[0].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/AllergyIntolerance to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[0].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/AllergyIntolerance to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[0].constraint[2].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/DomainResource to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[0].constraint[3].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/DomainResource to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[0].constraint[4].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/DomainResource to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[0].constraint[5].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/DomainResource to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[0].constraint[6].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/DomainResource to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[2].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[4].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[4].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[5].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[6].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[7].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[8].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[9].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[10].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[11].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[12].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[12].binding.extension[0].value[x]: Pinned the version of http://hl7.org/fhir/ValueSet/all-languages to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[13].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[15].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[15].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[16].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/allergyintolerance-abatement to 5.3.0
+INFORMATION: StructureDefinition.snapshot.element[16].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[16].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[18].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[18].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[20].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[21].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[22].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[22].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[23].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[24].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[26].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[26].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[27].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[29].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[29].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[30].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[31].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[32].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[33].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[34].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[35].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[36].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[38].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[38].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[39].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[41].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[41].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[42].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[43].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[44].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[45].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[46].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[47].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[48].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[49].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[50].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[51].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[51].binding.valueSet: Pinned the version of http://hl7.org/fhir/uv/ips/ValueSet/allergies-intolerances-uv-ips to 2.0.1
+INFORMATION: StructureDefinition.snapshot.element[53].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[53].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[54].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[56].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[56].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[57].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[58].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[59].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[60].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[61].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[62].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[63].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[65].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[65].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[66].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[67].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[68].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[69].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[70].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[72].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[72].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[73].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[74].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[75].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[76].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[77].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[78].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[79].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[80].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[81].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[82].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[83].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[84].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[86].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[86].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[87].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[87].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[88].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[89].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[89].binding.valueSet: Pinned the version of http://hl7.org/fhir/uv/ips/ValueSet/allergy-reaction-uv-ips to 2.0.1
+INFORMATION: StructureDefinition.snapshot.element[91].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[91].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[92].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[94].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[94].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[95].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[96].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[97].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[98].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[99].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[100].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[101].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[102].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[103].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[104].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[106].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[106].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[107].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[109].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[109].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[110].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[111].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[112].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[113].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[114].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[115].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[116].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.differential.element[6].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/allergyintolerance-abatement to 5.3.0
+INFORMATION: StructureDefinition.differential.element[20].binding.valueSet: Pinned the version of http://hl7.org/fhir/uv/ips/ValueSet/allergies-intolerances-uv-ips to 2.0.1
+INFORMATION: StructureDefinition.differential.element[32].binding.valueSet: Pinned the version of http://hl7.org/fhir/uv/ips/ValueSet/allergy-reaction-uv-ips to 2.0.1
+INFORMATION: StructureDefinition/mii-pr-person-allergieunvertraeglichkeit: StructureDefinition.extension[4]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: StructureDefinition/mii-pr-person-allergieunvertraeglichkeit: StructureDefinition.extension[5]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: StructureDefinition/mii-pr-person-allergieunvertraeglichkeit: StructureDefinition.extension[6]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: StructureDefinition/mii-pr-person-allergieunvertraeglichkeit: StructureDefinition.extension[7]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: StructureDefinition/mii-pr-person-allergieunvertraeglichkeit: StructureDefinition.extension[8]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: StructureDefinition/mii-pr-person-allergieunvertraeglichkeit: StructureDefinition.extension[9]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: StructureDefinition/mii-pr-person-allergieunvertraeglichkeit: StructureDefinition.extension[10]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: StructureDefinition/mii-pr-person-allergieunvertraeglichkeit: StructureDefinition.extension[11]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: StructureDefinition/mii-pr-person-allergieunvertraeglichkeit: StructureDefinition.extension[12]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: StructureDefinition/mii-pr-person-allergieunvertraeglichkeit: StructureDefinition.extension[13]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+WARNING: StructureDefinition/mii-pr-person-allergieunvertraeglichkeit: StructureDefinition.meta.extension[1].extension[2].value.ofType(uri): No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/modul-base'
+INFORMATION: StructureDefinition/mii-pr-person-allergieunvertraeglichkeit: StructureDefinition.extension[6].value.ofType(CodeableConcept): Reference to experimental CodeSystem http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl|25.6.0-e
+INFORMATION: StructureDefinition/mii-pr-person-allergieunvertraeglichkeit: StructureDefinition.extension[7].value.ofType(CodeableConcept): Reference to experimental CodeSystem http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl|25.6.0-e
+WARNING: StructureDefinition/mii-pr-person-allergieunvertraeglichkeit: StructureDefinition.jurisdiction[0].coding[0].system: A definition for CodeSystem 'urn:iso:std:iso:3166:-2' could not be found, so the code cannot be validated
+WARNING: StructureDefinition/mii-pr-person-allergieunvertraeglichkeit: StructureDefinition.snapshot.element[16].type[0].profile[0]: There are multiple different potential matches for the url 'http://hl7.org/fhir/StructureDefinition/allergyintolerance-abatement'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer, or use the [IG Parameter `pin-canonicals`](https://hl7.org/fhir/tools/CodeSystem-ig-parameters.html). Using version '5.3.0', found versions: 5.2.0 (from hl7.fhir.uv.extensions.r4#5.2.0), 5.3.0 (from hl7.fhir.uv.extensions.r4#5.3.0). Suggested fix: change the canonical reference from 'http://hl7.org/fhir/StructureDefinition/allergyintolerance-abatement' to 'http://hl7.org/fhir/StructureDefinition/allergyintolerance-abatement|5.3.0'
+WARNING: StructureDefinition/mii-pr-person-allergieunvertraeglichkeit: StructureDefinition.differential.element[6].type[0].profile[0]: There are multiple different potential matches for the url 'http://hl7.org/fhir/StructureDefinition/allergyintolerance-abatement'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer, or use the [IG Parameter `pin-canonicals`](https://hl7.org/fhir/tools/CodeSystem-ig-parameters.html). Using version '5.3.0', found versions: 5.2.0 (from hl7.fhir.uv.extensions.r4#5.2.0), 5.3.0 (from hl7.fhir.uv.extensions.r4#5.3.0). Suggested fix: change the canonical reference from 'http://hl7.org/fhir/StructureDefinition/allergyintolerance-abatement' to 'http://hl7.org/fhir/StructureDefinition/allergyintolerance-abatement|5.3.0'
+INFORMATION: StructureDefinition/mii-pr-person-allergieunvertraeglichkeit: StructureDefinition.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: StructureDefinition/mii-pr-person-allergieunvertraeglichkeit: StructureDefinition.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: StructureDefinition/mii-pr-person-allergieunvertraeglichkeit: StructureDefinition.meta.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Resource: The resource StructureDefinition/mii-pr-person-allergieunvertraeglichkeit could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated/resources/StructureDefinition-mii-pr-person-patient.json ==
 INFORMATION: StructureDefinition.meta.profile[0]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition to 2.0.0
 INFORMATION: StructureDefinition.meta.profile[1]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition to 2.0.0
@@ -3626,7 +3805,7 @@ INFORMATION: ValueSet/mii-vs-fall-identifier-type-codes: ValueSet.extension[13]:
 WARNING: ValueSet/mii-vs-fall-identifier-type-codes: ValueSet.meta.extension[1].extension[2].value.ofType(uri): No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/modul-base'
 INFORMATION: ValueSet/mii-vs-fall-identifier-type-codes: ValueSet.extension[13].value.ofType(CodeableConcept): Reference to experimental CodeSystem http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl|25.6.0-e
 WARNING: ValueSet/mii-vs-fall-identifier-type-codes: ValueSet.jurisdiction[0].coding[0].system: A definition for CodeSystem 'urn:iso:std:iso:3166:-2' could not be found, so the code cannot be validated
-WARNING: ValueSet/mii-vs-fall-identifier-type-codes: ValueSet.compose.include[0].system: There are multiple different potential matches for the url 'http://terminology.hl7.org/CodeSystem/v2-0203'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer, or use the [IG Parameter `pin-canonicals`](https://hl7.org/fhir/tools/CodeSystem-ig-parameters.html). Using version '5.0.0', found versions: 2.9.0 (from hl7.fhir.uv.xver-r5.r4#0.1.0), 5.0.0 (from hl7.terminology.r4#7.1.0). Suggested fix: change the canonical reference from 'http://terminology.hl7.org/CodeSystem/v2-0203' to 'http://terminology.hl7.org/CodeSystem/v2-0203|5.0.0'
+WARNING: ValueSet/mii-vs-fall-identifier-type-codes: ValueSet.compose.include[0].system: There are multiple different potential matches for the url 'http://terminology.hl7.org/CodeSystem/v2-0203'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer, or use the [IG Parameter `pin-canonicals`](https://hl7.org/fhir/tools/CodeSystem-ig-parameters.html). Using version '5.0.0', found versions: 2.9.0 (from hl7.fhir.uv.xver-r5.r4#0.1.0), 4.0.0 (from hl7.terminology.r4#6.2.0), 5.0.0 (from hl7.terminology.r4#7.1.0). Suggested fix: change the canonical reference from 'http://terminology.hl7.org/CodeSystem/v2-0203' to 'http://terminology.hl7.org/CodeSystem/v2-0203|5.0.0'
 INFORMATION: ValueSet/mii-vs-fall-identifier-type-codes: ValueSet.extension[5]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablevalueset|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: ValueSet/mii-vs-fall-identifier-type-codes: ValueSet.extension[6]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablevalueset|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: ValueSet/mii-vs-fall-identifier-type-codes: ValueSet.extension[7]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablevalueset|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)

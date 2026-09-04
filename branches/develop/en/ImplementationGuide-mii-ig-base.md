@@ -25,6 +25,7 @@ This IG Contains the following dependencies on other IGs.
 
 
 
+
 ### Global Profiles
 
 *There are no Global profiles defined*
@@ -52,20 +53,26 @@ This publication includes IP covered under the following statements.
 * [KontaktArtDe](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/CodeSystem/kontaktart-de): [Bundle/mii-exa-base-test-data-bundle-1](Bundle-mii-exa-base-test-data-bundle-1.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-5.md) and [MII_PR_Fall_KontaktGesundheitseinrichtung](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.md)
 
 
+* ISO maintains the copyright on the country codes, and controls its use carefully. For further details see the ISO 3166 web page: [https://www.iso.org/iso-3166-country-codes.html](https://www.iso.org/iso-3166-country-codes.html)
+
+* [ISO 3166-1 Codes for the representation of names of countries and their subdivisions — Part 1: Country code](http://terminology.hl7.org/6.2.0/CodeSystem-ISO3166Part1.html): [MII_CPS_Diagnose_CapabilityStatement](CapabilityStatement-mii-cps-diagnose-capabilitystatement.md), [MII_CPS_Fall_CapabilityStatement](CapabilityStatement-mii-cps-fall-capabilitystatement.md)... Show 35 more, [MII_CPS_Person_CapabilityStatement](CapabilityStatement-mii-cps-person-capabilitystatement.md), [MII_CPS_Prozedur_CapabilityStatement](CapabilityStatement-mii-cps-prozedur-capabilitystatement.md), [MII_CS_Diagnose_Lebensphase_Supplement_SNOMED](CodeSystem-mii-cs-diagnose-lebensphase-supplement-snomed.md), [MII_CS_Fall_SupplementActEncounterCode](CodeSystem-mii-cs-fall-supplement-act-encounter-code.md), [MII_CS_Fall_SupplementPatientClass](CodeSystem-mii-cs-fall-supplement-patient-class.md), [MII_CS_Person_Vitalstatus](CodeSystem-mii-cs-person-vitalstatus.md), [MII_EX_Prozedur_Durchfuehrungsabsicht](StructureDefinition-mii-ex-prozedur-durchfuehrungsabsicht.md), [MII_IG_Base](index.md), [MII_LM_Diagnose](StructureDefinition-mii-lm-diagnose.md), [MII_LM_Fall](StructureDefinition-mii-lm-fall.md), [MII_LM_Person](StructureDefinition-mii-lm-person.md), [MII_LM_Prozedur](StructureDefinition-mii-lm-prozedur.md), [MII_PR_Diagnose_Condition](StructureDefinition-mii-pr-diagnose-condition.md), [MII_PR_Fall_KontaktGesundheitseinrichtung](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.md), [MII_PR_Person_AllergieUnvertraeglichkeit](StructureDefinition-mii-pr-person-allergieunvertraeglichkeit.md), [MII_PR_Person_Patient](StructureDefinition-mii-pr-person-patient.md), [MII_PR_Person_PatientPseudonymisiert](StructureDefinition-mii-pr-person-patient-pseudonymisiert.md), [MII_PR_Person_Todesursache](StructureDefinition-mii-pr-person-todesursache.md), [MII_PR_Person_Vitalstatus](StructureDefinition-mii-pr-person-vitalstatus.md), [MII_PR_Prozedur_Procedure](StructureDefinition-mii-pr-prozedur-procedure.md), [MII_VS_Diagnose_AlphaID](ValueSet-mii-vs-diagnose-alphaid.md), [MII_VS_Diagnose_BodyStructure_SNOMED](ValueSet-mii-vs-diagnose-bodystructure-snomed.md), [MII_VS_Diagnose_DiagnoseCodes_SNOMED](ValueSet-mii-vs-diagnose-diagnosecodes-snomed.md), [MII_VS_Diagnose_ICD10GM](ValueSet-mii-vs-diagnose-icd10gm.md), [MII_VS_Diagnose_Orphanet](ValueSet-mii-vs-diagnose-orphanet.md), [MII_VS_Fall_Diagnosis_Use](ValueSet-mii-vs-fall-diagnosis-use.md), [MII_VS_Fall_IdentifierTypeCodes](ValueSet-mii-vs-fall-identifier-type-codes.md), [MII_VS_Fall_LocationPhysicalType](ValueSet-mii-vs-fall-location-physical-type.md), [MII_VS_Person_ICD10WHO](ValueSet-mii-vs-person-icd10who.md), [MII_VS_Person_Vitalstatus](ValueSet-mii-vs-person-vitalstatus.md), [MII_VS_Person_recordedSexOrGender_SNOMED](ValueSet-mii-vs-person-recordedsexorgender-snomed.md), [MII_VS_Prozedur_Durchfuehrungsabsicht_SNOMEDCT](ValueSet-mii-vs-prozedur-durchfuehrungsabsicht-snomedct.md), [MII_VS_Prozedur_OPS](ValueSet-mii-vs-prozedur-ops.md), [MII_VS_Prozedur_OpsKategorien_SNOMEDCT](ValueSet-mii-vs-prozedur-opskategorien-snomedct.md) and [MII_VS_Prozedur_Prozeduren_SNOMEDCT](ValueSet-mii-vs-prozedur-prozeduren-snomedct.md)
+* [ISO 3166-2 Codes for the representation of names of countries and their subdivisions — Part 2: Country subdivision code](http://terminology.hl7.org/6.2.0/CodeSystem-v3-iso3166-2.html): [MII_LM_Person](StructureDefinition-mii-lm-person.md)
+
+
 * This material contains content from [LOINC](http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the [license](http://loinc.org/license). LOINC® is a registered United States trademark of Regenstrief Institute, Inc.
 
-* LOINC: [Bundle/mii-exa-base-test-data-bundle-1](Bundle-mii-exa-base-test-data-bundle-1.md), [Condition/mii-exa-person-condition-todesursache](Condition-mii-exa-person-condition-todesursache.md)... Show 5 more, [MII_LM_Person](StructureDefinition-mii-lm-person.md), [MII_PR_Person_Todesursache](StructureDefinition-mii-pr-person-todesursache.md), [MII_PR_Person_Vitalstatus](StructureDefinition-mii-pr-person-vitalstatus.md), [Observation/mii-exa-person-observation-vitalstatus](Observation-mii-exa-person-observation-vitalstatus.md) and [Observation/mii-exa-person-observation-vitalstatus-discharge](Observation-mii-exa-person-observation-vitalstatus-discharge.md)
+* [LOINC](http://terminology.hl7.org/6.2.0/CodeSystem-v3-loinc.html): [Bundle/mii-exa-base-test-data-bundle-1](Bundle-mii-exa-base-test-data-bundle-1.md), [Condition/mii-exa-person-condition-todesursache](Condition-mii-exa-person-condition-todesursache.md)... Show 5 more, [MII_LM_Person](StructureDefinition-mii-lm-person.md), [MII_PR_Person_Todesursache](StructureDefinition-mii-pr-person-todesursache.md), [MII_PR_Person_Vitalstatus](StructureDefinition-mii-pr-person-vitalstatus.md), [Observation/mii-exa-person-observation-vitalstatus](Observation-mii-exa-person-observation-vitalstatus.md) and [Observation/mii-exa-person-observation-vitalstatus-discharge](Observation-mii-exa-person-observation-vitalstatus-discharge.md)
 
 
 * This material contains content that is copyright of SNOMED International. Implementers of these specifications must have the appropriate SNOMED CT Affiliate license - for more information contact [https://www.snomed.org/get-snomed](https://www.snomed.org/get-snomed) or [info@snomed.org](mailto:info@snomed.org).
 
-* [SNOMED Clinical Terms&reg; (SNOMED CT&reg;)](http://hl7.org/fhir/R4/codesystem-snomedct.html): [Bundle/mii-exa-base-test-data-bundle-1](Bundle-mii-exa-base-test-data-bundle-1.md), [Condition/mii-exa-diagnose-appendicitis](Condition-mii-exa-diagnose-appendicitis.md)... Show 18 more, [Condition/mii-exa-diagnose-condition-elbow-contusion](Condition-mii-exa-diagnose-condition-elbow-contusion.md), [Condition/mii-exa-person-condition-todesursache](Condition-mii-exa-person-condition-todesursache.md), [MII_CS_Diagnose_Lebensphase_Supplement_SNOMED](CodeSystem-mii-cs-diagnose-lebensphase-supplement-snomed.md), [MII_EX_Prozedur_Durchfuehrungsabsicht](StructureDefinition-mii-ex-prozedur-durchfuehrungsabsicht.md), [MII_LM_Person](StructureDefinition-mii-lm-person.md), [MII_PR_Diagnose_Condition](StructureDefinition-mii-pr-diagnose-condition.md), [MII_PR_Person_Patient](StructureDefinition-mii-pr-person-patient.md), [MII_PR_Person_Todesursache](StructureDefinition-mii-pr-person-todesursache.md), [MII_PR_Prozedur_Procedure](StructureDefinition-mii-pr-prozedur-procedure.md), [MII_VS_Diagnose_BodyStructure_SNOMED](ValueSet-mii-vs-diagnose-bodystructure-snomed.md), [MII_VS_Diagnose_DiagnoseCodes_SNOMED](ValueSet-mii-vs-diagnose-diagnosecodes-snomed.md), [MII_VS_Person_recordedSexOrGender_SNOMED](ValueSet-mii-vs-person-recordedsexorgender-snomed.md), [MII_VS_Prozedur_Durchfuehrungsabsicht_SNOMEDCT](ValueSet-mii-vs-prozedur-durchfuehrungsabsicht-snomedct.md), [MII_VS_Prozedur_OpsKategorien_SNOMEDCT](ValueSet-mii-vs-prozedur-opskategorien-snomedct.md), [MII_VS_Prozedur_Prozeduren_SNOMEDCT](ValueSet-mii-vs-prozedur-prozeduren-snomedct.md), [Procedure/mii-exa-prozedur-imaging](Procedure-mii-exa-prozedur-imaging.md), [Procedure/mii-exa-prozedur-procedure](Procedure-mii-exa-prozedur-procedure.md) and [Procedure/mii-exa-prozedur-procedure-2](Procedure-mii-exa-prozedur-procedure-2.md)
+* [SNOMED Clinical Terms&reg; (SNOMED CT&reg;)](http://hl7.org/fhir/R4/codesystem-snomedct.html): [AllergyIntolerance/mii-exa-person-allergyintolerance-1](AllergyIntolerance-mii-exa-person-allergyintolerance-1.md), [Bundle/mii-exa-base-test-data-bundle-1](Bundle-mii-exa-base-test-data-bundle-1.md)... Show 20 more, [Condition/mii-exa-diagnose-appendicitis](Condition-mii-exa-diagnose-appendicitis.md), [Condition/mii-exa-diagnose-condition-elbow-contusion](Condition-mii-exa-diagnose-condition-elbow-contusion.md), [Condition/mii-exa-person-condition-todesursache](Condition-mii-exa-person-condition-todesursache.md), [MII_CS_Diagnose_Lebensphase_Supplement_SNOMED](CodeSystem-mii-cs-diagnose-lebensphase-supplement-snomed.md), [MII_EX_Prozedur_Durchfuehrungsabsicht](StructureDefinition-mii-ex-prozedur-durchfuehrungsabsicht.md), [MII_LM_Person](StructureDefinition-mii-lm-person.md), [MII_PR_Diagnose_Condition](StructureDefinition-mii-pr-diagnose-condition.md), [MII_PR_Person_AllergieUnvertraeglichkeit](StructureDefinition-mii-pr-person-allergieunvertraeglichkeit.md), [MII_PR_Person_Patient](StructureDefinition-mii-pr-person-patient.md), [MII_PR_Person_Todesursache](StructureDefinition-mii-pr-person-todesursache.md), [MII_PR_Prozedur_Procedure](StructureDefinition-mii-pr-prozedur-procedure.md), [MII_VS_Diagnose_BodyStructure_SNOMED](ValueSet-mii-vs-diagnose-bodystructure-snomed.md), [MII_VS_Diagnose_DiagnoseCodes_SNOMED](ValueSet-mii-vs-diagnose-diagnosecodes-snomed.md), [MII_VS_Person_recordedSexOrGender_SNOMED](ValueSet-mii-vs-person-recordedsexorgender-snomed.md), [MII_VS_Prozedur_Durchfuehrungsabsicht_SNOMEDCT](ValueSet-mii-vs-prozedur-durchfuehrungsabsicht-snomedct.md), [MII_VS_Prozedur_OpsKategorien_SNOMEDCT](ValueSet-mii-vs-prozedur-opskategorien-snomedct.md), [MII_VS_Prozedur_Prozeduren_SNOMEDCT](ValueSet-mii-vs-prozedur-prozeduren-snomedct.md), [Procedure/mii-exa-prozedur-imaging](Procedure-mii-exa-prozedur-imaging.md), [Procedure/mii-exa-prozedur-procedure](Procedure-mii-exa-prozedur-procedure.md) and [Procedure/mii-exa-prozedur-procedure-2](Procedure-mii-exa-prozedur-procedure-2.md)
 
 
 * This material derives from the HL7 Terminology (THO). THO is copyright ©1989+ Health Level Seven International and is made available under the CC0 designation. For more licensing information see: [https://terminology.hl7.org/license.html](https://terminology.hl7.org/license.html)
 
-* [AllergyIntolerance Clinical Status Codes](http://terminology.hl7.org/7.2.0/CodeSystem-allergyintolerance-clinical.html): [MII_LM_Person](StructureDefinition-mii-lm-person.md)
-* [AllergyIntolerance Verification Status](http://terminology.hl7.org/7.2.0/CodeSystem-allergyintolerance-verification.html): [MII_LM_Person](StructureDefinition-mii-lm-person.md)
+* [AllergyIntolerance Clinical Status Codes](http://terminology.hl7.org/7.2.0/CodeSystem-allergyintolerance-clinical.html): [AllergyIntolerance/mii-exa-person-allergyintolerance-1](AllergyIntolerance-mii-exa-person-allergyintolerance-1.md) and [MII_LM_Person](StructureDefinition-mii-lm-person.md)
+* [AllergyIntolerance Verification Status](http://terminology.hl7.org/7.2.0/CodeSystem-allergyintolerance-verification.html): [AllergyIntolerance/mii-exa-person-allergyintolerance-1](AllergyIntolerance-mii-exa-person-allergyintolerance-1.md) and [MII_LM_Person](StructureDefinition-mii-lm-person.md)
 * [Condition Clinical Status Codes](http://terminology.hl7.org/7.2.0/CodeSystem-condition-clinical.html): [Bundle/mii-exa-base-test-data-bundle-1](Bundle-mii-exa-base-test-data-bundle-1.md), [Condition/mii-exa-diagnose-appendicitis](Condition-mii-exa-diagnose-appendicitis.md)... Show 4 more, [Condition/mii-exa-diagnose-condition-elbow-contusion](Condition-mii-exa-diagnose-condition-elbow-contusion.md), [Condition/mii-exa-diagnose-condition-multiple-codings](Condition-mii-exa-diagnose-condition-multiple-codings.md), [Condition/mii-exa-diagnose-mehrfachcodierung-primaercode](Condition-mii-exa-diagnose-mehrfachcodierung-primaercode.md) and [Condition/mii-exa-diagnose-mehrfachcodierung-sekundaercode](Condition-mii-exa-diagnose-mehrfachcodierung-sekundaercode.md)
 * [ConditionVerificationStatus](http://terminology.hl7.org/7.2.0/CodeSystem-condition-ver-status.html): [Bundle/mii-exa-base-test-data-bundle-1](Bundle-mii-exa-base-test-data-bundle-1.md), [Condition/mii-exa-diagnose-appendicitis](Condition-mii-exa-diagnose-appendicitis.md)... Show 4 more, [Condition/mii-exa-diagnose-condition-elbow-contusion](Condition-mii-exa-diagnose-condition-elbow-contusion.md), [Condition/mii-exa-diagnose-condition-multiple-codings](Condition-mii-exa-diagnose-condition-multiple-codings.md), [Condition/mii-exa-diagnose-mehrfachcodierung-primaercode](Condition-mii-exa-diagnose-mehrfachcodierung-primaercode.md) and [Condition/mii-exa-diagnose-mehrfachcodierung-sekundaercode](Condition-mii-exa-diagnose-mehrfachcodierung-sekundaercode.md)
 * [Diagnosis Role](http://terminology.hl7.org/7.2.0/CodeSystem-diagnosis-role.html): [Bundle/mii-exa-base-test-data-bundle-1](Bundle-mii-exa-base-test-data-bundle-1.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.md) and [MII_PR_Fall_KontaktGesundheitseinrichtung](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.md)
@@ -385,6 +392,12 @@ Expansion parameters are query parameters that can be passed to a `ValueSet` `$e
     "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
     "packageId" : "hl7.fhir.uv.extensions.r4",
     "version" : "5.2.0"
+  },
+  {
+    "id" : "hl7_fhir_uv_ips",
+    "uri" : "http://hl7.org/fhir/uv/ips/ImplementationGuide/hl7.fhir.uv.ips",
+    "packageId" : "hl7.fhir.uv.ips",
+    "version" : "2.0.1"
   }],
   "definition" : {
     "extension" : [{
@@ -1011,6 +1024,17 @@ Expansion parameters are query parameters that can be passed to a `ValueSet` `$e
       {
         "url" : "value",
         "valueString" : "https://www.medizininformatik-initiative.de/fhir/modul-person/ValueSet/mii-vs-person-recordedsexorgender-snomed"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://www.medizininformatik-initiative.de/fhir/modul-person/StructureDefinition/AllergieUnvertraeglichkeit"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -1934,6 +1958,17 @@ Expansion parameters are query parameters that can be passed to a `ValueSet` `$e
       {
         "url" : "value",
         "valueString" : "https://www.medizininformatik-initiative.de/fhir/modul-person/ValueSet/mii-vs-person-recordedsexorgender-snomed"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://www.medizininformatik-initiative.de/fhir/modul-person/StructureDefinition/AllergieUnvertraeglichkeit"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -2918,6 +2953,22 @@ Expansion parameters are query parameters that can be passed to a `ValueSet` `$e
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-pr-person-allergieunvertraeglichkeit.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mii-pr-person-allergieunvertraeglichkeit"
+      },
+      "name" : "MII PR Person Allergy Intolerance",
+      "description" : "This profile describes an allergy or intolerance in the Medical Informatics Initiative.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
         "valueUri" : "StructureDefinition-mii-pr-person-patient.html"
       }],
       "reference" : {
@@ -3230,6 +3281,21 @@ Expansion parameters are query parameters that can be passed to a `ValueSet` `$e
       "name" : "MII VS Prozedur Prozeduren [SNOMED CT]",
       "description" : "Enthaelt alle SNOMED CT Procedure Codes",
       "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "AllergyIntolerance"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "AllergyIntolerance-mii-exa-person-allergyintolerance-1.html"
+      }],
+      "reference" : {
+        "reference" : "AllergyIntolerance/mii-exa-person-allergyintolerance-1"
+      },
+      "name" : "mii-exa-person-allergyintolerance-1",
+      "exampleCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-person/StructureDefinition/AllergieUnvertraeglichkeit"
     },
     {
       "extension" : [{

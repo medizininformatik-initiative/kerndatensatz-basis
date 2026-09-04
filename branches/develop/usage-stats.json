@@ -53,6 +53,12 @@
         "url": "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure",
         "title": "MII PR Prozedur Procedure"
       }
+    ],
+    "AllergyIntolerance": [
+      {
+        "url": "https://www.medizininformatik-initiative.de/fhir/modul-person/StructureDefinition/AllergieUnvertraeglichkeit",
+        "title": "MII PR Person Allergy Intolerance"
+      }
     ]
   },
   "usage": {
@@ -100,6 +106,9 @@
     ],
     "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate": [
       "Encounter"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/allergyintolerance-abatement": [
+      "AllergyIntolerance"
     ],
     "http://hl7.org/fhir/StructureDefinition/artifact-author": [
       "CapabilityStatement",

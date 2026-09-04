@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-person/CapabilityStatement/metadata | *Version*:2027.0.0-ballot.rc1 |
-| Active as of 2026-09-01 | *Computable Name*:MII_CPS_Person_CapabilityStatement |
+| Active as of 2026-09-04 | *Computable Name*:MII_CPS_Person_CapabilityStatement |
 
  
 Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein konformes System unterstützen muss um das Modul Person der Medizininformatik Initiative zu implementieren. 
@@ -125,6 +125,24 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
     }
   },
   {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-topic",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+        "code" : "C114476"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-topic",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+        "code" : "C71437"
+      }]
+    }
+  },
+  {
     "url" : "http://hl7.org/fhir/StructureDefinition/artifact-author",
     "valueContactDetail" : {
       "telecom" : [{
@@ -185,7 +203,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
   "title" : "MII CPS Person CapabilityStatement",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-01",
+  "date" : "2026-09-04",
   "publisher" : "Medical Informatics Initiative (MII)",
   "contact" : [{
     "name" : "Medical Informatics Initiative (MII)",
@@ -727,6 +745,166 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         "definition" : "http://hl7.org/fhir/SearchParameter/clinical-patient",
         "type" : "reference",
         "documentation" : "**Example:**\n`GET [base]/Condition?patient=Patient/mii-exa-person-patient-1`\n\n**Notes:**\nSearches on `Condition.subject` where the subject is a Patient. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#reference)."
+      }]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "SHALL"
+      }],
+      "type" : "AllergyIntolerance",
+      "supportedProfile" : ["https://www.medizininformatik-initiative.de/fhir/modul-person/StructureDefinition/AllergieUnvertraeglichkeit|2027.0.0-ballot.rc1"],
+      "interaction" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "read"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "search-type"
+      }],
+      "searchParam" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "_count",
+        "type" : "special",
+        "documentation" : "**Example:**\n`GET [base]/AllergyIntolerance?_count=10`\n\n**Notes:**\nFor further details see FHIR core specification, section [Page Count](https://www.hl7.org/fhir/R4/search.html#count)."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "_summary",
+        "type" : "special",
+        "documentation" : "**Example:**\n`GET [base]/AllergyIntolerance?_summary=count`\n\n**Notes:**\nFor further details see FHIR core specification, section [Summary](https://www.hl7.org/fhir/R4/search.html#summary)."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "_id",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-id",
+        "type" : "token",
+        "documentation" : "**Example:**\n`GET [base]/AllergyIntolerance?_id=mii-exa-person-allergieunvertraeglichkeit-1`\n\n**Notes:**\nFor further details see FHIR core specification, section [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "_profile",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-profile",
+        "type" : "uri",
+        "documentation" : "**Example:**\n`GET [base]/AllergyIntolerance?_profile=https://www.medizininformatik-initiative.de/fhir/modul-person/StructureDefinition/AllergieUnvertraeglichkeit|2027.0.0-ballot.rc1`\n\n**Notes:**\nSearches on `AllergyIntolerance.meta.profile`. For further details see FHIR core specification, section [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "clinical-status",
+        "definition" : "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-clinical-status",
+        "type" : "token",
+        "documentation" : "**Example:**\n`GET [base]/AllergyIntolerance?clinical-status=active`\n\n**Notes:**\nSearches on `AllergyIntolerance.clinicalStatus`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "verification-status",
+        "definition" : "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-verification-status",
+        "type" : "token",
+        "documentation" : "**Example:**\n`GET [base]/AllergyIntolerance?verification-status=confirmed`\n\n**Notes:**\nSearches on `AllergyIntolerance.verificationStatus`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "category",
+        "definition" : "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-category",
+        "type" : "token",
+        "documentation" : "**Example:**\n`GET [base]/AllergyIntolerance?category=medication`\n\n**Notes:**\nSearches on `AllergyIntolerance.category`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "criticality",
+        "definition" : "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-criticality",
+        "type" : "token",
+        "documentation" : "**Example:**\n`GET [base]/AllergyIntolerance?criticality=high`\n\n**Notes:**\nSearches on `AllergyIntolerance.criticality`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "code",
+        "definition" : "http://hl7.org/fhir/SearchParameter/clinical-code",
+        "type" : "token",
+        "documentation" : "**Example:**\n`GET [base]/AllergyIntolerance?code=http://snomed.info/sct|91936005`\n\n**Notes:**\nSearches on `AllergyIntolerance.code` and `AllergyIntolerance.reaction.substance`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "patient",
+        "definition" : "http://hl7.org/fhir/SearchParameter/clinical-patient",
+        "type" : "reference",
+        "documentation" : "**Example:**\n`GET [base]/AllergyIntolerance?patient=Patient/mii-exa-person-patient-1`\n\n**Notes:**\nSearches on `AllergyIntolerance.patient`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#reference)."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "date",
+        "definition" : "http://hl7.org/fhir/SearchParameter/clinical-date",
+        "type" : "date",
+        "documentation" : "**Example:**\n`GET [base]/AllergyIntolerance?date=2026-08-15`\n\n**Notes:**\nSearches on `AllergyIntolerance.recordedDate`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#date)."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "manifestation",
+        "definition" : "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-manifestation",
+        "type" : "token",
+        "documentation" : "**Example:**\n`GET [base]/AllergyIntolerance?manifestation=http://snomed.info/sct|39579001`\n\n**Notes:**\nSearches on `AllergyIntolerance.reaction.manifestation`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "route",
+        "definition" : "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-route",
+        "type" : "token",
+        "documentation" : "**Example:**\n`GET [base]/AllergyIntolerance?route=http://snomed.info/sct|26643006`\n\n**Notes:**\nSearches on `AllergyIntolerance.reaction.exposureRoute`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "severity",
+        "definition" : "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-severity",
+        "type" : "token",
+        "documentation" : "**Example:**\n`GET [base]/AllergyIntolerance?severity=severe`\n\n**Notes:**\nSearches on `AllergyIntolerance.reaction.severity`. For further details see [FHIR core specification](https://hl7.org/fhir/R4/search.html#token)."
       }]
     }]
   }]

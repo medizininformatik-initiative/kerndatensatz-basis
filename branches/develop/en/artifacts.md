@@ -37,6 +37,7 @@ These define constraints on FHIR resources for systems conforming to this implem
 | :--- | :--- |
 | [ MII PR Diagnose Condition  ](StructureDefinition-mii-pr-diagnose-condition.md) | Dieses Profil beschreibt eine Diagnose der Medizininformatik Initiative |
 | [ MII PR Fall Kontakt mit einer Gesundheitseinrichtung  ](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.md) | Kontakt zu einer Einrichtung, Abteilung oder Versorgungsstelle |
+| [ MII PR Person Allergy Intolerance  ](StructureDefinition-mii-pr-person-allergieunvertraeglichkeit.md) | This profile describes an allergy or intolerance in the Medical Informatics Initiative. |
 | [ MII PR Person Patient  ](StructureDefinition-mii-pr-person-patient.md) | Dieses Profil beschreibt eine Patient*in in der Medizininformatik-Initiative. |
 | [ MII PR Person Patient (Pseudonymisiert)  ](StructureDefinition-mii-pr-person-patient-pseudonymisiert.md) | Dieses Profil beschreibt eine**n pseudonymisierte**n Patient*in in der Medizininformatik-Initiative. |
 | [ MII PR Person Todesursache  ](StructureDefinition-mii-pr-person-todesursache.md) | Dieses Profil beschreibt den Todesursache der Patient*in als Element des Kerndatensatzes Medizininformatik-Initiative |
@@ -118,6 +119,7 @@ These are example instances that show what data produced and consumed by systems
 | [ MII EXA Prozedur Procedure Appendectomy  ](Procedure-mii-exa-prozedur-procedure.md) | Procedure: Surgical procedure (appendectomy) |
 | [ MII EXA Prozedur Procedure Imaging CT Abdomen  ](Procedure-mii-exa-prozedur-imaging.md) | Procedure: Diagnostic imaging procedure (CT abdomen) for appendicitis workup |
 | [ MII EXA Prozedur Procedure Physiotherapy  ](Procedure-mii-exa-prozedur-procedure-2.md) | Procedure: Physiotherapy procedure for bursitis treatment |
+| [ mii-exa-person-allergyintolerance-1  ](AllergyIntolerance-mii-exa-person-allergyintolerance-1.md) |  |
 
 ### Other 
 
