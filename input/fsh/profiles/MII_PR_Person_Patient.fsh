@@ -39,6 +39,10 @@ Description: "Dieses Profil beschreibt eine Patient*in in der Medizininformatik-
 * extension[birthPlace].valueAddress MS
 * extension[birthPlace].valueAddress.country MS
   * extension contains $iso21090-SC-coding named countryCode 0..1
+  * extension[countryCode] MS
+  * extension[countryCode].valueCoding MS
+  * extension[countryCode].valueCoding.system MS
+  * extension[countryCode].valueCoding.code MS
   * extension[countryCode].valueCoding from $iso3166-1-2 (preferred)
 * insert Translation(extension[birthPlace] ^short, de-DE, Geburtsort)
 * insert Translation(extension[birthPlace] ^short, en-US, Birth Place)
