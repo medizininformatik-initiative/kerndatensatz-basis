@@ -14,6 +14,7 @@ This page documents the changes and updates across versions of the MII Implement
 #### Person Module
 
 - **Added:** The Patient profile now includes the FHIR core extensions `patient-birthPlace`, `patient-citizenship`, and `patient-nationality` to represent place of birth, legal citizenship, and nationality in the Person module. See: [#86](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/86)
+- **Added:** Patient address guidance now recommends the `countryCode` extension inherited from `AddressDeBasis` for ISO 3166-1 alpha-2 country codes, aligning the coded country representation with HL7 Europe Address (EU). See: [#20](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/20)
 - **Added:** The Patient profile now supports repeatable recorded sex or gender statements via the [`individual-recordedSexOrGender`](https://hl7.org/fhir/extensions/StructureDefinition-individual-recordedSexOrGender.html) extension, separately from administrative gender. See: [#81](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/81)
 - **Removed:** `ProbandIn` and its child elements from the Person logical model. See: [#90](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/90)
 
