@@ -180,6 +180,42 @@ Einige Beispiele für Modifier, die in MII-Profilen möglicherweise keine Must S
 
 Implementierer **SOLLEN** die Profilseiten sorgfältig überprüfen, um zu verstehen, welche Elemente Modifier sind und wie sie die Interpretation der Ressource beeinflussen.
 
+### Umgang mit Storno-Kennzeichen aus Quellsystemen
+
+Quellsysteme können technische Storno- oder Löschkennzeichen (z.B. ein SAP-Storno-Flag) für Kontakte, Bewegungen, Diagnosen, Prozeduren, Dokumente und andere Datensätze verwenden. Ein solches Kennzeichen ist selbst kein FHIR-Lebenszyklusstatus und kann nicht ressourcenübergreifend einheitlich abgebildet werden. Seine Bedeutung kann von einem geplanten, aber nicht stattgefundenen Ereignis über eine unterbrochene Aktivität bis hin zu einem Duplikat oder einem anderweitig fehlerhaften Datensatz reichen.
+
+Der Zeitpunkt, zu dem das Storno erfasst wurde, reicht nicht aus, um einen FHIR-Status auszuwählen. Insbesondere belegt ein nach dem geplanten Beginn erfasstes Storno nicht, dass ein Kontakt oder eine Prozedur begonnen hat. Implementierer **SOLLEN** die fachliche Bedeutung für jedes Quellsystem, jeden Quellobjekttyp und, soweit vorhanden, jeden Stornogrund ermitteln und dokumentieren. Eine generische Regel, die jedes Storno-Kennzeichen aus einem Quellsystem auf `cancelled` oder `entered-in-error` abbildet, **SOLL NICHT** verwendet werden.
+
+Die folgende Tabelle wendet diese Unterscheidung auf die Profile dieses Leitfadens an:
+
+| Bedeutung im Quellsystem | Abbildung in FHIR R4 | Interpretation |
+|---|---|---|
+| Der Datensatz wurde irrtümlich angelegt und hätte nie Teil der Patientenakte sein sollen, z.B. wegen einer doppelten Erfassung oder einer Zuordnung zur falschen Person | `Encounter.status = entered-in-error`; `Procedure.status = entered-in-error`; oder `Condition.verificationStatus = entered-in-error` | Die Ressource ist ungültig und **SOLL** von der regulären klinischen und wissenschaftlichen Nutzung ausgeschlossen werden. Bei einer Condition mit `entered-in-error` **DARF** `Condition.clinicalStatus` **NICHT** vorhanden sein. |
+| Ein korrekt geplanter Kontakt hat nicht begonnen, einschließlich Nichterscheinen der Patientin oder des Patienten | `Encounter.status = cancelled` | Der Kontakt hat nicht stattgefunden. Dies gilt unabhängig davon, ob das Storno vor oder nach dem geplanten Beginn erfasst wurde. |
+| Ein Kontakt hat begonnen und wurde anschließend beendet, auch früher als geplant | `Encounter.status = finished`; vorangegangene Lebenszyklusphasen **KÖNNEN** über `Encounter.statusHistory` abgebildet werden | Der Kontakt hat stattgefunden und **SOLL NICHT** als `cancelled` abgebildet werden. In FHIR R4 gibt es für Encounter keinen Status `discontinued`. |
+| Die Hauptaktivität einer Prozedur hat nicht begonnen; Vorbereitungen können stattgefunden haben | `Procedure.status = not-done`; `Procedure.statusReason` verwenden, wenn der Grund bekannt ist | Die Prozedur wurde nicht durchgeführt. |
+| Eine Prozedur wurde vorübergehend unterbrochen und soll fortgesetzt werden | `Procedure.status = on-hold`; `Procedure.statusReason` verwenden, wenn der Grund bekannt ist | Der Status ist nicht terminal; die Prozedur soll fortgesetzt werden. |
+| Eine Prozedur wurde endgültig beendet, nachdem ein Teil der Hauptaktivität stattgefunden hat | `Procedure.status = stopped`; `Procedure.statusReason` verwenden, wenn der Grund bekannt ist | Die Prozedur hat zumindest teilweise stattgefunden und **SOLL NICHT** als `not-done` behandelt werden. |
+| Eine Diagnose wurde aufgrund diagnostischer und klinischer Evidenz ausgeschlossen | `Condition.verificationStatus = refuted` | Dies ist eine gültige negative klinische Aussage und kein fehlerhafter Datensatz. |
+| Eine zuvor gültige Diagnose ist nicht mehr aktiv | Den zutreffenden `Condition.clinicalStatus` verwenden, z.B. `inactive`, `remission` oder `resolved` | Die Diagnose bleibt eine gültige historische Diagnose und ist kein fehlerhafter Datensatz. |
+| Die Bedeutung des Storno-Kennzeichens aus dem Quellsystem kann nicht ermittelt werden | Es gibt keine sichere generische Statusabbildung | Der Datensatz **SOLL NICHT** mit einem Status exportiert werden, der Gültigkeit oder Durchführung behauptet. `unknown` ist kein Synonym für ein Storno-Kennzeichen und **SOLL** nur verwendet werden, wenn seine Definition für die jeweilige Ressource zutrifft. |
+
+Für nicht in der Tabelle aufgeführte Ressourcentypen **SOLLEN** Implementierer die ressourcenspezifischen Lebenszyklus- und Statusdefinitionen von FHIR R4 anwenden, anstatt eine Abbildung von einem anderen Ressourcentyp zu übertragen.
+
+#### Erstbeladung und spätere Korrekturen
+
+Wenn bereits bekannt ist, dass ein Quelldatensatz eine fehlerhafte Eingabe darstellt, und keine Audit-Anforderung seine Abbildung im FHIR-Repository erfordert, **SOLL** er üblicherweise von der Erstbeladung ausgeschlossen werden. Ein abgesagter geplanter Kontakt oder eine nicht durchgeführte Prozedur kann dagegen eine relevante Information sein und **KANN** mit dem entsprechenden FHIR-Status erhalten bleiben.
+
+Wenn eine Ressource bereits übertragen wurde, bevor das Storno im Quellsystem bekannt wurde, **SOLL** der ETL-Prozess sicherstellen, dass die aktuelle Repräsentation keinen unzutreffenden Zustand mehr behauptet. Sofern ein fachlich korrekter FHIR-Status vorhanden ist, **SOLL** die bestehende Ressource unter Beibehaltung ihrer logischen ID aktualisiert werden. Wenn keine sichere Statusabbildung existiert, **SOLL** die Ressource aus dem aktuellen Datenbestand entfernt werden, z.B. über die FHIR-RESTful-Interaktion `delete`, sofern das Ziel-Repository diese unterstützt und lokale Aufbewahrungs- und Audit-Anforderungen dies zulassen. Aktualisierungen oder Löschungen **SOLLEN** in replizierte Datenbestände weitergegeben werden. Ein Statuswert **SOLL NICHT** lediglich als Ersatz für eine technisch aufwendige Löschung ausgewählt werden. Diese Leitlinie begründet keine zusätzlichen Anforderungen an die RESTful-Interaktionen `update` oder `delete`; die [MII-CapabilityStatements](capability-statements.html) definieren die von diesem Leitfaden geforderten Interaktionen.
+
+Statusänderungen gelten für jede Ressource einzeln und werden nicht automatisch über Referenzen weitergegeben. Beispielsweise bestimmt die Kennzeichnung einer Encounter-Ressource als `entered-in-error` nicht von selbst den Status verknüpfter Condition- oder Procedure-Ressourcen; jede verknüpfte Ressource **SOLL** anhand ihrer eigenen Quellinformationen und ihrer fachlichen Bedeutung bewertet werden.
+
+#### Anforderungen an die Datennutzung
+
+Status- und Verifikationselemente, die [Modifier-Elemente](http://hl7.org/fhir/R4/conformance-rules.html#isModifier) sind, dürfen nicht ignoriert werden. Abfragen, Exporte und Auswertungen **SOLLEN** deshalb ressourcenspezifische Filter definieren und dokumentieren. Mit `entered-in-error` gekennzeichnete Datensätze **SOLLEN** standardmäßig ausgeschlossen werden. Andere Status erfordern eine anwendungsfallspezifische Behandlung: `cancelled` und `not-done` repräsentieren keine durchgeführten Ereignisse, `stopped` kann eine teilweise durchgeführte Aktivität abbilden und `refuted` ist eine gültige Aussage darüber, dass eine Diagnose ausgeschlossen wurde.
+
+Weitere Details enthalten die FHIR-R4-Hinweise zum [Ressourcenlebenszyklus und entered-in-error](http://hl7.org/fhir/R4/lifecycle.html#error), die [Implementer's Safety Check List](http://hl7.org/fhir/R4/safety.html) sowie die Definitionen der Status für [Encounter](http://hl7.org/fhir/R4/codesystem-encounter-status.html), [Ereignisse](http://hl7.org/fhir/R4/codesystem-event-status.html) und die [Verifikation von Conditions](http://hl7.org/fhir/R4/codesystem-condition-ver-status.html).
+
 ---
 
 Weitere Informationen finden Sie unter:

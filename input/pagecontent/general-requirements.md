@@ -169,7 +169,43 @@ Some examples of modifiers that may not be Must Support elements in MII Profiles
 * `Observation.valueQuantity.comparator`
 * `Patient.active`
 
-Implementers **SHOULD** review the profile pages carefully to understand which elements are modifiers and how they affect the interpretation of the resource
+Implementers **SHOULD** review the profile pages carefully to understand which elements are modifiers and how they affect the interpretation of the resource.
+
+### Handling Source-System Cancellation Flags
+
+Source systems may use technical cancellation or deletion indicators (for example, a SAP *Storno* flag) for encounters, movements, diagnoses, procedures, documents, and other records. Such an indicator is not itself a FHIR lifecycle status and has no resource-independent mapping. Its meaning may range from a planned event that did not occur, through an activity that was interrupted, to a duplicate or otherwise erroneous record.
+
+The time at which the cancellation was recorded is not sufficient to select a FHIR status. In particular, a cancellation recorded after the planned start time does not prove that an encounter or procedure began. Implementers **SHOULD** determine and document the business meaning for each source system, source object type, and, where available, cancellation reason. A generic rule that maps every source-system cancellation flag to `cancelled` or `entered-in-error` **SHOULD NOT** be used.
+
+The following table applies this distinction to the profiles in this guide:
+
+| Source-system meaning | FHIR R4 representation | Interpretation |
+|---|---|---|
+| The record was created accidentally and should never have been part of the patient's record, for example because of a duplicate entry or wrong-patient assignment | `Encounter.status = entered-in-error`; `Procedure.status = entered-in-error`; or `Condition.verificationStatus = entered-in-error` | The resource is invalid and **SHOULD** be excluded from ordinary clinical and research use. If a Condition is `entered-in-error`, `Condition.clinicalStatus` **MUST NOT** be present. |
+| A validly planned encounter did not begin, including when the patient did not attend | `Encounter.status = cancelled` | The encounter did not occur. This applies regardless of whether the cancellation was recorded before or after the planned start time. |
+| An encounter began and subsequently ended, including earlier than planned | `Encounter.status = finished`; `Encounter.statusHistory` **MAY** represent preceding lifecycle phases | The encounter occurred and **SHOULD NOT** be represented as `cancelled`. FHIR R4 has no `discontinued` Encounter status. |
+| The main activity of a procedure did not begin; preparation may have occurred | `Procedure.status = not-done`; use `Procedure.statusReason` when the reason is known | The procedure was not performed. |
+| A procedure was interrupted temporarily and is expected to resume | `Procedure.status = on-hold`; use `Procedure.statusReason` when the reason is known | The status is not terminal; the procedure is expected to resume. |
+| A procedure was permanently stopped after part of the main activity occurred | `Procedure.status = stopped`; use `Procedure.statusReason` when the reason is known | The procedure occurred at least in part and **SHOULD NOT** be treated as `not-done`. |
+| A diagnosis was ruled out based on diagnostic and clinical evidence | `Condition.verificationStatus = refuted` | This is a valid negative clinical assertion, not an erroneous record. |
+| A previously valid diagnosis is no longer active | Use the appropriate `Condition.clinicalStatus`, such as `inactive`, `remission`, or `resolved` | This remains a valid historical diagnosis and is not an erroneous record. |
+| The meaning of the source-system cancellation flag cannot be established | No safe generic status mapping exists | The record **SHOULD NOT** be exported with a status that asserts validity or occurrence. `unknown` is not a synonym for a cancellation flag and **SHOULD** only be used where its definition for the resource applies. |
+
+For resource types not listed in the table, implementers **SHOULD** follow the resource-specific FHIR R4 lifecycle and status definitions rather than extrapolating a mapping from another resource type.
+
+#### Initial Load and Later Corrections
+
+If a source record is already known to be an erroneous entry and no audit requirement calls for its representation in the FHIR repository, it **SHOULD** normally be excluded from the initial load. By contrast, a cancelled planned encounter or a procedure that was not done can be meaningful information and **MAY** be retained with the corresponding FHIR status.
+
+If a resource was transferred before the source-system cancellation became known, the ETL process **SHOULD** ensure that the current representation no longer asserts an incorrect state. Where a semantically correct FHIR status exists, the existing resource **SHOULD** be updated while retaining its logical id. If no safe status mapping exists, the resource **SHOULD** be removed from the current dataset, for example using the FHIR RESTful `delete` interaction where the target repository supports it, subject to local retention and audit requirements. Updates or deletions **SHOULD** be propagated to replicated datasets. A status value **SHOULD NOT** be selected merely as a substitute for a technically inconvenient deletion. This guidance does not add RESTful `update` or `delete` requirements; the [MII CapabilityStatements](capability-statements.html) define the interactions required by this guide.
+
+Status changes apply to each resource independently and do not automatically cascade through references. For example, marking an Encounter as `entered-in-error` does not by itself determine the status of related Conditions or Procedures; each related resource **SHOULD** be assessed according to its own source information and real-world meaning.
+
+#### Requirements for Data Use
+
+Status and verification elements that are [modifier elements](http://hl7.org/fhir/R4/conformance-rules.html#isModifier) cannot be safely ignored. Queries, exports, and analyses **SHOULD** therefore define and document resource-specific filters. Records marked `entered-in-error` **SHOULD** be excluded by default. Other statuses require use-case-specific handling: `cancelled` and `not-done` do not represent performed events, `stopped` can represent a partially performed activity, and `refuted` represents a valid assertion that a diagnosis was ruled out.
+
+For further details, see the FHIR R4 guidance on [resource lifecycle and entered-in-error](http://hl7.org/fhir/R4/lifecycle.html#error), the [Implementer's Safety Check List](http://hl7.org/fhir/R4/safety.html), and the definitions of the [Encounter](http://hl7.org/fhir/R4/codesystem-encounter-status.html), [event](http://hl7.org/fhir/R4/codesystem-event-status.html), and [Condition verification](http://hl7.org/fhir/R4/codesystem-condition-ver-status.html) statuses.
 
 ---
 
