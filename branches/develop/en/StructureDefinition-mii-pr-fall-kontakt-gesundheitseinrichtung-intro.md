@@ -238,6 +238,14 @@ In this example:
 
 *External source: The mapping of secondary encounters to HL7 V2 and FHIR in this table was adopted from the [German FHIR Base Profiles 1.6.0 – Ambulatory/inpatient case/contact](https://ig.fhir.de/basisprofile-de/1.6.0/ig-markdown-Ressourcen-AmbulanterStationaererFall.html).*
 
+##### Outpatient Encounter Hierarchy
+
+Outpatient encounters **SHOULD** also use all three encounter hierarchy levels—facility contact (Einrichtungskontakt), department contact (Abteilungskontakt), and care unit contact (Versorgungsstellenkontakt)—represented by separate Encounter resources and linked using `Encounter.partOf`.
+
+If the organizational units involved are known, they **SHOULD** be represented by the corresponding Encounter resources. If this information is unavailable, the Encounter resources for the hierarchy levels **SHOULD** still be created. An outpatient department (Ambulanz) **MAY** be represented at the facility, department, and care unit levels simultaneously and can therefore occur at all three encounter hierarchy levels.
+
+If actual patient tracking data are unavailable, timestamps **SHOULD NOT** be fabricated, and `Encounter.period.start` and `Encounter.period.end` **SHOULD NOT** be set to the same value merely to provide an end timestamp. If the end timestamp is unavailable, the Data Absent Reason extension on `Encounter.period.end` **SHOULD** be set with `valueCode = unsupported`. At the same time, `Encounter.status` **SHOULD** be set to `finished`.
+
 #### Encounter Diagnosis
 
 The `Encounter.diagnosis` element establishes the relationship between encounters and diagnoses/procedures, specifying their role within the encounter context.

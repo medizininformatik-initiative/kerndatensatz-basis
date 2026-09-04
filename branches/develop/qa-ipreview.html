@@ -357,7 +357,7 @@ This material derives from the HL7 Terminology (THO). THO is copyright &copy;198
 
           IG &copy; 2019+ Medical Informatics Initiative (MII).  
           Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-ballot.rc1 based on FHIR 4.0.1.
-          Generated 2026-09-03
+          Generated 2026-09-04
           
           
             
@@ -383,7 +383,7 @@ This material derives from the HL7 Terminology (THO). THO is copyright &copy;198
 
           IG &copy; 2019+ Medical Informatics Initiative (MII).  
           Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-ballot.rc1 basiert auf FHIR 4.0.1.
-          Erstellt 2026-09-03
+          Erstellt 2026-09-04
           
           
             
@@ -864,7 +864,7 @@ Versehentliche(r) Schnitt, Punktion, Perforation oder Blutung: Bei sonstigen chi
 .  
           Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-ballot.rc1 basiert auf           <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>
 .
-          Erstellt           <span title="Thu, Sep 3, 2026 16:29+0000">2026-09-03</span>
+          Erstellt           <span title="Fri, Sep 4, 2026 09:15+0000">2026-09-04</span>
 
                     <br/>
 
@@ -34694,6 +34694,18 @@ Die Modellierung codierter und detaillierter anatomischer Lokalisationen wurde m
           <a href="de/changes.html">web</a>
         </td>
         <td>
+          <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/71">github.com</a>
+        </td>
+        <td>
+          <strong>Added:</strong>
+ Allgemeine Leitlinien zum Umgang mit Storno-Kennzeichen aus Quellsystemen ergänzt, einschließlich ressourcenspezifischer Statusabbildungen, Filterung bei der Erstbeladung, späterer Korrekturen und Filterung für die Datennutzung. Siehe:           <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/71">#71</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/changes.html">web</a>
+        </td>
+        <td>
           <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/86">github.com</a>
         </td>
         <td>
@@ -34723,6 +34735,19 @@ Die Modellierung codierter und detaillierter anatomischer Lokalisationen wurde m
           <a href="de/changes.html">web</a>
         </td>
         <td>
+          <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/90">github.com</a>
+        </td>
+        <td>
+          <strong>Removed:</strong>
+           <code class="language-plaintext highlighter-rouge">ProbandIn</code>
+ und dessen Unterelemente aus dem logischen Modell Person entfernt. Siehe:           <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/90">#90</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/changes.html">web</a>
+        </td>
+        <td>
           <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/85">github.com</a>
         </td>
         <td>
@@ -34745,7 +34770,32 @@ Die Modellierung codierter und detaillierter anatomischer Lokalisationen wurde m
  Die Mappings für           <code class="language-plaintext highlighter-rouge">Condition.onset[x]</code>
  und           <code class="language-plaintext highlighter-rouge">Condition.abatement[x]</code>
  wurden klargestellt; Erkrankungsbeginn und Erkrankungsende werden nun getrennt abgebildet und mit ISiK harmonisiert.           <code class="language-plaintext highlighter-rouge">Period</code>
- bleibt aus Gründen der Rückwärtskompatibilität zulässig, SOLLTE aber NICHT verwendet werden. Siehe:           <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/83">#83</a>
+ bleibt aus Gründen der Rückwärtskompatibilität zulässig, SOLL aber NICHT verwendet werden. Siehe:           <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/83">#83</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/changes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/74">github.com</a>
+        </td>
+        <td>
+          <strong>Added:</strong>
+ Leitlinien für ambulante Encounter zur dreistufigen Encounter-Hierarchie, zu           <code class="language-plaintext highlighter-rouge">Encounter.partOf</code>
+-Beziehungen und zum Umgang mit nicht verfügbaren Zeitstempeln ergänzt. Siehe:           <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/74">#74</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/changes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/73">github.com</a>
+        </td>
+        <td>
+          <strong>Changed:</strong>
+ Encounter-Hierarchieabbildung erweitert, um zu veranschaulichen, wie Encounter auf jeder Hierarchieebene denselben Account referenzieren und einen gemeinsamen Abrechnungskontext teilen können. Siehe:           <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/73">#73</a>
         </td>
       </tr>
       <tr>
@@ -35221,7 +35271,7 @@ Gemäß           <a href="https://www.sozialgesetzbuch-sgb.de/sgbv/301.html">&s
 .  
           Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-ballot.rc1 based on           <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>
 .
-          Generated           <span title="Thu, Sep 3, 2026 16:29+0000">2026-09-03</span>
+          Generated           <span title="Fri, Sep 4, 2026 09:15+0000">2026-09-04</span>
 
                     <br/>
 
@@ -35718,6 +35768,18 @@ The modeling of coded and detailed anatomical locations has been harmonized with
           <a href="en/changes.html">web</a>
         </td>
         <td>
+          <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/71">github.com</a>
+        </td>
+        <td>
+          <strong>Added:</strong>
+ General guidance for handling source-system cancellation flags, including resource-specific status mappings, initial-load filtering, later corrections, and filtering for data use. See:           <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/71">#71</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/changes.html">web</a>
+        </td>
+        <td>
           <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/86">github.com</a>
         </td>
         <td>
@@ -35740,6 +35802,19 @@ The modeling of coded and detailed anatomical locations has been harmonized with
  The Patient profile now supports repeatable recorded sex or gender statements via the           <a href="https://hl7.org/fhir/extensions/StructureDefinition-individual-recordedSexOrGender.html">
 <code class="language-plaintext highlighter-rouge">individual-recordedSexOrGender</code>          </a>
  extension, separately from administrative gender. See:           <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/81">#81</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/changes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/90">github.com</a>
+        </td>
+        <td>
+          <strong>Removed:</strong>
+           <code class="language-plaintext highlighter-rouge">ProbandIn</code>
+ and its child elements from the Person logical model. See:           <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/90">#90</a>
         </td>
       </tr>
       <tr>
@@ -35770,6 +35845,31 @@ The modeling of coded and detailed anatomical locations has been harmonized with
  and           <code class="language-plaintext highlighter-rouge">Condition.abatement[x]</code>
 ; onset and abatement are now mapped separately and harmonized with ISiK.           <code class="language-plaintext highlighter-rouge">Period</code>
  remains allowed for backwards compatibility but SHOULD NOT be used. See:           <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/83">#83</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/changes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/74">github.com</a>
+        </td>
+        <td>
+          <strong>Added:</strong>
+ Guidance for outpatient Encounters covering the three-level Encounter hierarchy,           <code class="language-plaintext highlighter-rouge">Encounter.partOf</code>
+ relationships, and handling of unavailable timestamps. See:           <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/74">#74</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/changes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/73">github.com</a>
+        </td>
+        <td>
+          <strong>Changed:</strong>
+ The Encounter hierarchy figure now illustrates how Encounters at each hierarchy level can reference the same Account and share a billing context. See:           <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/73">#73</a>
         </td>
       </tr>
       <tr>

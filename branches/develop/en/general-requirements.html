@@ -339,6 +339,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><a href="#missing-data" id="markdown-toc-missing-data">Missing Data</a></li>
   <li><a href="#fhir-restful-search-api-requirements" id="markdown-toc-fhir-restful-search-api-requirements">FHIR RESTful Search API Requirements</a></li>
   <li><a href="#modifier-elements" id="markdown-toc-modifier-elements">Modifier Elements</a></li>
+  <li><a href="#handling-source-system-cancellation-flags" id="markdown-toc-handling-source-system-cancellation-flags">Handling Source-System Cancellation Flags</a></li>
 </ul>
 
 </div>
@@ -543,7 +544,88 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><code class="language-plaintext highlighter-rouge">Patient.active</code></li>
 </ul>
 
-<p>Implementers <strong>SHOULD</strong> review the profile pages carefully to understand which elements are modifiers and how they affect the interpretation of the resource</p>
+<p>Implementers <strong>SHOULD</strong> review the profile pages carefully to understand which elements are modifiers and how they affect the interpretation of the resource.</p>
+
+<h3 id="handling-source-system-cancellation-flags">Handling Source-System Cancellation Flags</h3>
+
+<p>Source systems may use technical cancellation or deletion indicators (for example, a SAP <em>Storno</em> flag) for encounters, movements, diagnoses, procedures, documents, and other records. Such an indicator is not itself a FHIR lifecycle status and has no resource-independent mapping. Its meaning may range from a planned event that did not occur, through an activity that was interrupted, to a duplicate or otherwise erroneous record.</p>
+
+<p>The time at which the cancellation was recorded is not sufficient to select a FHIR status. In particular, a cancellation recorded after the planned start time does not prove that an encounter or procedure began. Implementers <strong>SHOULD</strong> determine and document the business meaning for each source system, source object type, and, where available, cancellation reason. A generic rule that maps every source-system cancellation flag to <code class="language-plaintext highlighter-rouge">cancelled</code> or <code class="language-plaintext highlighter-rouge">entered-in-error</code> <strong>SHOULD NOT</strong> be used.</p>
+
+<p>The following table applies this distinction to the profiles in this guide:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Source-system meaning</th>
+      <th>FHIR R4 representation</th>
+      <th>Interpretation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>The record was created accidentally and should never have been part of the patient's record, for example because of a duplicate entry or wrong-patient assignment</td>
+      <td><code class="language-plaintext highlighter-rouge">Encounter.status = entered-in-error</code>; <code class="language-plaintext highlighter-rouge">Procedure.status = entered-in-error</code>; or <code class="language-plaintext highlighter-rouge">Condition.verificationStatus = entered-in-error</code></td>
+      <td>The resource is invalid and <strong>SHOULD</strong> be excluded from ordinary clinical and research use. If a Condition is <code class="language-plaintext highlighter-rouge">entered-in-error</code>, <code class="language-plaintext highlighter-rouge">Condition.clinicalStatus</code> <strong>MUST NOT</strong> be present.</td>
+    </tr>
+    <tr>
+      <td>A validly planned encounter did not begin, including when the patient did not attend</td>
+      <td><code class="language-plaintext highlighter-rouge">Encounter.status = cancelled</code></td>
+      <td>The encounter did not occur. This applies regardless of whether the cancellation was recorded before or after the planned start time.</td>
+    </tr>
+    <tr>
+      <td>An encounter began and subsequently ended, including earlier than planned</td>
+      <td><code class="language-plaintext highlighter-rouge">Encounter.status = finished</code>; <code class="language-plaintext highlighter-rouge">Encounter.statusHistory</code> <strong>MAY</strong> represent preceding lifecycle phases</td>
+      <td>The encounter occurred and <strong>SHOULD NOT</strong> be represented as <code class="language-plaintext highlighter-rouge">cancelled</code>. FHIR R4 has no <code class="language-plaintext highlighter-rouge">discontinued</code> Encounter status.</td>
+    </tr>
+    <tr>
+      <td>The main activity of a procedure did not begin; preparation may have occurred</td>
+      <td><code class="language-plaintext highlighter-rouge">Procedure.status = not-done</code>; use <code class="language-plaintext highlighter-rouge">Procedure.statusReason</code> when the reason is known</td>
+      <td>The procedure was not performed.</td>
+    </tr>
+    <tr>
+      <td>A procedure was interrupted temporarily and is expected to resume</td>
+      <td><code class="language-plaintext highlighter-rouge">Procedure.status = on-hold</code>; use <code class="language-plaintext highlighter-rouge">Procedure.statusReason</code> when the reason is known</td>
+      <td>The status is not terminal; the procedure is expected to resume.</td>
+    </tr>
+    <tr>
+      <td>A procedure was permanently stopped after part of the main activity occurred</td>
+      <td><code class="language-plaintext highlighter-rouge">Procedure.status = stopped</code>; use <code class="language-plaintext highlighter-rouge">Procedure.statusReason</code> when the reason is known</td>
+      <td>The procedure occurred at least in part and <strong>SHOULD NOT</strong> be treated as <code class="language-plaintext highlighter-rouge">not-done</code>.</td>
+    </tr>
+    <tr>
+      <td>A diagnosis was ruled out based on diagnostic and clinical evidence</td>
+      <td><code class="language-plaintext highlighter-rouge">Condition.verificationStatus = refuted</code></td>
+      <td>This is a valid negative clinical assertion, not an erroneous record.</td>
+    </tr>
+    <tr>
+      <td>A previously valid diagnosis is no longer active</td>
+      <td>Use the appropriate <code class="language-plaintext highlighter-rouge">Condition.clinicalStatus</code>, such as <code class="language-plaintext highlighter-rouge">inactive</code>, <code class="language-plaintext highlighter-rouge">remission</code>, or <code class="language-plaintext highlighter-rouge">resolved</code></td>
+      <td>This remains a valid historical diagnosis and is not an erroneous record.</td>
+    </tr>
+    <tr>
+      <td>The meaning of the source-system cancellation flag cannot be established</td>
+      <td>No safe generic status mapping exists</td>
+      <td>The record <strong>SHOULD NOT</strong> be exported with a status that asserts validity or occurrence. <code class="language-plaintext highlighter-rouge">unknown</code> is not a synonym for a cancellation flag and <strong>SHOULD</strong> only be used where its definition for the resource applies.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>For resource types not listed in the table, implementers <strong>SHOULD</strong> follow the resource-specific FHIR R4 lifecycle and status definitions rather than extrapolating a mapping from another resource type.</p>
+
+<h4 id="initial-load-and-later-corrections">Initial Load and Later Corrections</h4>
+
+<p>If a source record is already known to be an erroneous entry and no audit requirement calls for its representation in the FHIR repository, it <strong>SHOULD</strong> normally be excluded from the initial load. By contrast, a cancelled planned encounter or a procedure that was not done can be meaningful information and <strong>MAY</strong> be retained with the corresponding FHIR status.</p>
+
+<p>If a resource was transferred before the source-system cancellation became known, the ETL process <strong>SHOULD</strong> ensure that the current representation no longer asserts an incorrect state. Where a semantically correct FHIR status exists, the existing resource <strong>SHOULD</strong> be updated while retaining its logical id. If no safe status mapping exists, the resource <strong>SHOULD</strong> be removed from the current dataset, for example using the FHIR RESTful <code class="language-plaintext highlighter-rouge">delete</code> interaction where the target repository supports it, subject to local retention and audit requirements. Updates or deletions <strong>SHOULD</strong> be propagated to replicated datasets. A status value <strong>SHOULD NOT</strong> be selected merely as a substitute for a technically inconvenient deletion. This guidance does not add RESTful <code class="language-plaintext highlighter-rouge">update</code> or <code class="language-plaintext highlighter-rouge">delete</code> requirements; the <a href="capability-statements.html">MII CapabilityStatements</a> define the interactions required by this guide.</p>
+
+<p>Status changes apply to each resource independently and do not automatically cascade through references. For example, marking an Encounter as <code class="language-plaintext highlighter-rouge">entered-in-error</code> does not by itself determine the status of related Conditions or Procedures; each related resource <strong>SHOULD</strong> be assessed according to its own source information and real-world meaning.</p>
+
+<h4 id="requirements-for-data-use">Requirements for Data Use</h4>
+
+<p>Status and verification elements that are <a href="http://hl7.org/fhir/R4/conformance-rules.html#isModifier">modifier elements</a> cannot be safely ignored. Queries, exports, and analyses <strong>SHOULD</strong> therefore define and document resource-specific filters. Records marked <code class="language-plaintext highlighter-rouge">entered-in-error</code> <strong>SHOULD</strong> be excluded by default. Other statuses require use-case-specific handling: <code class="language-plaintext highlighter-rouge">cancelled</code> and <code class="language-plaintext highlighter-rouge">not-done</code> do not represent performed events, <code class="language-plaintext highlighter-rouge">stopped</code> can represent a partially performed activity, and <code class="language-plaintext highlighter-rouge">refuted</code> represents a valid assertion that a diagnosis was ruled out.</p>
+
+<p>For further details, see the FHIR R4 guidance on <a href="http://hl7.org/fhir/R4/lifecycle.html#error">resource lifecycle and entered-in-error</a>, the <a href="http://hl7.org/fhir/R4/safety.html">Implementer's Safety Check List</a>, and the definitions of the <a href="http://hl7.org/fhir/R4/codesystem-encounter-status.html">Encounter</a>, <a href="http://hl7.org/fhir/R4/codesystem-event-status.html">event</a>, and <a href="http://hl7.org/fhir/R4/codesystem-condition-ver-status.html">Condition verification</a> statuses.</p>
 
 <hr/>
 
@@ -580,7 +662,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
           IG &copy; 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-ballot.rc1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Generated <span title="Thu, Sep 3, 2026 16:29+0000">2026-09-03</span>
+          Generated <span title="Fri, Sep 4, 2026 09:15+0000">2026-09-04</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
               <!-- Branding override for the fhir2.base.template footer fragment.

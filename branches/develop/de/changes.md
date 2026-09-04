@@ -15,22 +15,26 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 
 #### Dokumentation
 
+* **Added:** Allgemeine Leitlinien zum Umgang mit Storno-Kennzeichen aus Quellsystemen ergänzt, einschließlich ressourcenspezifischer Statusabbildungen, Filterung bei der Erstbeladung, späterer Korrekturen und Filterung für die Datennutzung. Siehe: [#71](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/71)
 * **Changed:** Abhängigkeiten auf `de.basisprofil.r4` 1.6.0, `de.medizininformatikinitiative.kerndatensatz.meta` 2027.0.0-ballot.rc3, `hl7.terminology.r4` 7.1.0 und `hl7.fhir.uv.extensions.r4` 5.2.0 aktualisiert.
 
 #### Modul Person
 
 * **Added:** Das Patient-Profil enthält nun die FHIR-Core-Extensions `patient-birthPlace`, `patient-citizenship` und `patient-nationality`, um Geburtsort, Staatsangehörigkeit und Nationalität im Modul Person abzubilden. Siehe: [#86](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/86)
 * **Added:** Das Patient-Profil unterstützt nun über die Extension [`individual-recordedSexOrGender`](https://hl7.org/fhir/extensions/StructureDefinition-individual-recordedSexOrGender.html) wiederholbare dokumentierte Geschlechtsangaben getrennt vom administrativen Geschlecht. Siehe: [#81](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/81)
+* **Removed:** `ProbandIn` und dessen Unterelemente aus dem logischen Modell Person entfernt. Siehe: [#90](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/90)
 
 #### Modul Diagnose
 
 * **Added:** Das Element `Condition.bodySite` enthält nun die FHIR-Core-Extension `http://hl7.org/fhir/StructureDefinition/bodySite`, um eine detaillierte anatomische Referenz, z.B. auf eine `BodyStructure`, zusätzlich zur kodierten Körperstelle abzubilden. Siehe: [#85](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/85)
-* **Changed:** Die Mappings für `Condition.onset[x]` und `Condition.abatement[x]` wurden klargestellt; Erkrankungsbeginn und Erkrankungsende werden nun getrennt abgebildet und mit ISiK harmonisiert. `Period` bleibt aus Gründen der Rückwärtskompatibilität zulässig, SOLLTE aber NICHT verwendet werden. Siehe: [#83](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/83)
+* **Changed:** Die Mappings für `Condition.onset[x]` und `Condition.abatement[x]` wurden klargestellt; Erkrankungsbeginn und Erkrankungsende werden nun getrennt abgebildet und mit ISiK harmonisiert. `Period` bleibt aus Gründen der Rückwärtskompatibilität zulässig, SOLL aber NICHT verwendet werden. Siehe: [#83](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/83)
+* **Changed:** Beziehung zwischen Diagnosen und Kontakten im Diagnose-UML angepasst, sodass der Abteilungskontakt als derzeit empfohlene Kontaktebene dargestellt wird und andere Kontaktebenen weiterhin möglich bleiben.
 
 #### Modul Fall
 
 * **Changed:** UML-Modell des Moduls Fall angepasst, sodass die organisatorische Zuordnung zwischen Versorgungsstellen und Abteilungen als optionale n:m-Beziehung dargestellt wird.
-* **Changed:** Beziehungen zwischen Diagnosen und Kontakten in den UML-Diagrammen der Module Fall und Diagnose angepasst, sodass der Abteilungskontakt als derzeit empfohlene Kontaktebene dargestellt wird und andere Kontaktebenen weiterhin möglich bleiben.
+* **Added:** Leitlinien für ambulante Encounter zur dreistufigen Encounter-Hierarchie, zu `Encounter.partOf`-Beziehungen und zum Umgang mit nicht verfügbaren Zeitstempeln ergänzt. Siehe: [#74](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/74)
+* **Changed:** Encounter-Hierarchieabbildung erweitert, um zu veranschaulichen, wie Encounter auf jeder Hierarchieebene denselben Account referenzieren und einen gemeinsamen Abrechnungskontext teilen können. Siehe: [#73](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/73)
 
 #### Modul Prozedur
 

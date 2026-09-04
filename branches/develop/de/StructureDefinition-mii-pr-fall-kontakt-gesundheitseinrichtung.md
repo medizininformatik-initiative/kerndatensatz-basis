@@ -146,6 +146,14 @@ In diesem Beispiel:
 
 **Externe Quelle: Die Zuordnung der Sekundärkontakte zu HL7 V2 und FHIR in dieser Tabelle wurde aus den [Deutschen FHIR-Basisprofilen 1.6.0 – Ambulanter/stationärer Fall / Kontakt](https://ig.fhir.de/basisprofile-de/1.6.0/ig-markdown-Ressourcen-AmbulanterStationaererFall.html) übernommen.**
 
+##### Kontakthierarchie bei ambulanten Kontakten
+
+Auch für ambulante Kontakte **SOLLEN** alle drei Encounter-Hierarchieebenen – Einrichtungskontakt, Abteilungskontakt und Versorgungsstellenkontakt – durch separate Encounter-Ressourcen abgebildet und mittels `Encounter.partOf` miteinander verknüpft werden.
+
+Wenn die beteiligten Organisationseinheiten bekannt sind, **SOLLEN** sie durch die entsprechenden Encounter-Ressourcen abgebildet werden. Sind diese Informationen nicht verfügbar, **SOLLEN** die Encounter-Ressourcen für die Hierarchieebenen dennoch angelegt werden. Eine Ambulanz **KANN** gleichzeitig auf Einrichtungs-, Abteilungs- und Versorgungsstellenebene repräsentiert werden und somit auf allen drei Encounter-Hierarchieebenen vorkommen.
+
+Wenn kein echtes Patiententracking verfügbar ist, **SOLLEN** Zeitstempel **NICHT** erfunden und `Encounter.period.start` und `Encounter.period.end` **NICHT** lediglich zur Angabe eines Endzeitpunkts auf denselben Wert gesetzt werden. Fehlt der Endzeitpunkt, **SOLL** die Data-Absent-Reason-Extension am Element `Encounter.period.end` mit `valueCode = unsupported` gesetzt werden. Gleichzeitig **SOLL** `Encounter.status` auf `finished` gesetzt werden.
+
 #### Angaben zu Diagnosen
 
 Das Element `Encounter.diagnosis` stellt die Beziehung zwischen Kontakten und Diagnosen/Prozeduren her und spezifiziert deren Rolle im Kontaktkontext.

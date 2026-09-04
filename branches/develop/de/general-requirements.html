@@ -342,6 +342,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><a href="#fehlende-daten" id="markdown-toc-fehlende-daten">Fehlende Daten</a></li>
   <li><a href="#fhir-restful-search-api-anforderungen" id="markdown-toc-fhir-restful-search-api-anforderungen">FHIR RESTful Search API Anforderungen</a></li>
   <li><a href="#modifier-elemente" id="markdown-toc-modifier-elemente">Modifier-Elemente</a></li>
+  <li><a href="#umgang-mit-storno-kennzeichen-aus-quellsystemen" id="markdown-toc-umgang-mit-storno-kennzeichen-aus-quellsystemen">Umgang mit Storno-Kennzeichen aus Quellsystemen</a></li>
 </ul>
 
 </div>
@@ -560,6 +561,87 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Implementierer <strong>SOLLEN</strong> die Profilseiten sorgfältig überprüfen, um zu verstehen, welche Elemente Modifier sind und wie sie die Interpretation der Ressource beeinflussen.</p>
 
+<h3 id="umgang-mit-storno-kennzeichen-aus-quellsystemen">Umgang mit Storno-Kennzeichen aus Quellsystemen</h3>
+
+<p>Quellsysteme können technische Storno- oder Löschkennzeichen (z.B. ein SAP-Storno-Flag) für Kontakte, Bewegungen, Diagnosen, Prozeduren, Dokumente und andere Datensätze verwenden. Ein solches Kennzeichen ist selbst kein FHIR-Lebenszyklusstatus und kann nicht ressourcenübergreifend einheitlich abgebildet werden. Seine Bedeutung kann von einem geplanten, aber nicht stattgefundenen Ereignis über eine unterbrochene Aktivität bis hin zu einem Duplikat oder einem anderweitig fehlerhaften Datensatz reichen.</p>
+
+<p>Der Zeitpunkt, zu dem das Storno erfasst wurde, reicht nicht aus, um einen FHIR-Status auszuwählen. Insbesondere belegt ein nach dem geplanten Beginn erfasstes Storno nicht, dass ein Kontakt oder eine Prozedur begonnen hat. Implementierer <strong>SOLLEN</strong> die fachliche Bedeutung für jedes Quellsystem, jeden Quellobjekttyp und, soweit vorhanden, jeden Stornogrund ermitteln und dokumentieren. Eine generische Regel, die jedes Storno-Kennzeichen aus einem Quellsystem auf <code class="language-plaintext highlighter-rouge">cancelled</code> oder <code class="language-plaintext highlighter-rouge">entered-in-error</code> abbildet, <strong>SOLL NICHT</strong> verwendet werden.</p>
+
+<p>Die folgende Tabelle wendet diese Unterscheidung auf die Profile dieses Leitfadens an:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Bedeutung im Quellsystem</th>
+      <th>Abbildung in FHIR R4</th>
+      <th>Interpretation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Der Datensatz wurde irrtümlich angelegt und hätte nie Teil der Patientenakte sein sollen, z.B. wegen einer doppelten Erfassung oder einer Zuordnung zur falschen Person</td>
+      <td><code class="language-plaintext highlighter-rouge">Encounter.status = entered-in-error</code>; <code class="language-plaintext highlighter-rouge">Procedure.status = entered-in-error</code>; oder <code class="language-plaintext highlighter-rouge">Condition.verificationStatus = entered-in-error</code></td>
+      <td>Die Ressource ist ungültig und <strong>SOLL</strong> von der regulären klinischen und wissenschaftlichen Nutzung ausgeschlossen werden. Bei einer Condition mit <code class="language-plaintext highlighter-rouge">entered-in-error</code> <strong>DARF</strong> <code class="language-plaintext highlighter-rouge">Condition.clinicalStatus</code> <strong>NICHT</strong> vorhanden sein.</td>
+    </tr>
+    <tr>
+      <td>Ein korrekt geplanter Kontakt hat nicht begonnen, einschließlich Nichterscheinen der Patientin oder des Patienten</td>
+      <td><code class="language-plaintext highlighter-rouge">Encounter.status = cancelled</code></td>
+      <td>Der Kontakt hat nicht stattgefunden. Dies gilt unabhängig davon, ob das Storno vor oder nach dem geplanten Beginn erfasst wurde.</td>
+    </tr>
+    <tr>
+      <td>Ein Kontakt hat begonnen und wurde anschließend beendet, auch früher als geplant</td>
+      <td><code class="language-plaintext highlighter-rouge">Encounter.status = finished</code>; vorangegangene Lebenszyklusphasen <strong>KÖNNEN</strong> über <code class="language-plaintext highlighter-rouge">Encounter.statusHistory</code> abgebildet werden</td>
+      <td>Der Kontakt hat stattgefunden und <strong>SOLL NICHT</strong> als <code class="language-plaintext highlighter-rouge">cancelled</code> abgebildet werden. In FHIR R4 gibt es für Encounter keinen Status <code class="language-plaintext highlighter-rouge">discontinued</code>.</td>
+    </tr>
+    <tr>
+      <td>Die Hauptaktivität einer Prozedur hat nicht begonnen; Vorbereitungen können stattgefunden haben</td>
+      <td><code class="language-plaintext highlighter-rouge">Procedure.status = not-done</code>; <code class="language-plaintext highlighter-rouge">Procedure.statusReason</code> verwenden, wenn der Grund bekannt ist</td>
+      <td>Die Prozedur wurde nicht durchgeführt.</td>
+    </tr>
+    <tr>
+      <td>Eine Prozedur wurde vorübergehend unterbrochen und soll fortgesetzt werden</td>
+      <td><code class="language-plaintext highlighter-rouge">Procedure.status = on-hold</code>; <code class="language-plaintext highlighter-rouge">Procedure.statusReason</code> verwenden, wenn der Grund bekannt ist</td>
+      <td>Der Status ist nicht terminal; die Prozedur soll fortgesetzt werden.</td>
+    </tr>
+    <tr>
+      <td>Eine Prozedur wurde endgültig beendet, nachdem ein Teil der Hauptaktivität stattgefunden hat</td>
+      <td><code class="language-plaintext highlighter-rouge">Procedure.status = stopped</code>; <code class="language-plaintext highlighter-rouge">Procedure.statusReason</code> verwenden, wenn der Grund bekannt ist</td>
+      <td>Die Prozedur hat zumindest teilweise stattgefunden und <strong>SOLL NICHT</strong> als <code class="language-plaintext highlighter-rouge">not-done</code> behandelt werden.</td>
+    </tr>
+    <tr>
+      <td>Eine Diagnose wurde aufgrund diagnostischer und klinischer Evidenz ausgeschlossen</td>
+      <td><code class="language-plaintext highlighter-rouge">Condition.verificationStatus = refuted</code></td>
+      <td>Dies ist eine gültige negative klinische Aussage und kein fehlerhafter Datensatz.</td>
+    </tr>
+    <tr>
+      <td>Eine zuvor gültige Diagnose ist nicht mehr aktiv</td>
+      <td>Den zutreffenden <code class="language-plaintext highlighter-rouge">Condition.clinicalStatus</code> verwenden, z.B. <code class="language-plaintext highlighter-rouge">inactive</code>, <code class="language-plaintext highlighter-rouge">remission</code> oder <code class="language-plaintext highlighter-rouge">resolved</code></td>
+      <td>Die Diagnose bleibt eine gültige historische Diagnose und ist kein fehlerhafter Datensatz.</td>
+    </tr>
+    <tr>
+      <td>Die Bedeutung des Storno-Kennzeichens aus dem Quellsystem kann nicht ermittelt werden</td>
+      <td>Es gibt keine sichere generische Statusabbildung</td>
+      <td>Der Datensatz <strong>SOLL NICHT</strong> mit einem Status exportiert werden, der Gültigkeit oder Durchführung behauptet. <code class="language-plaintext highlighter-rouge">unknown</code> ist kein Synonym für ein Storno-Kennzeichen und <strong>SOLL</strong> nur verwendet werden, wenn seine Definition für die jeweilige Ressource zutrifft.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Für nicht in der Tabelle aufgeführte Ressourcentypen <strong>SOLLEN</strong> Implementierer die ressourcenspezifischen Lebenszyklus- und Statusdefinitionen von FHIR R4 anwenden, anstatt eine Abbildung von einem anderen Ressourcentyp zu übertragen.</p>
+
+<h4 id="erstbeladung-und-spätere-korrekturen">Erstbeladung und spätere Korrekturen</h4>
+
+<p>Wenn bereits bekannt ist, dass ein Quelldatensatz eine fehlerhafte Eingabe darstellt, und keine Audit-Anforderung seine Abbildung im FHIR-Repository erfordert, <strong>SOLL</strong> er üblicherweise von der Erstbeladung ausgeschlossen werden. Ein abgesagter geplanter Kontakt oder eine nicht durchgeführte Prozedur kann dagegen eine relevante Information sein und <strong>KANN</strong> mit dem entsprechenden FHIR-Status erhalten bleiben.</p>
+
+<p>Wenn eine Ressource bereits übertragen wurde, bevor das Storno im Quellsystem bekannt wurde, <strong>SOLL</strong> der ETL-Prozess sicherstellen, dass die aktuelle Repräsentation keinen unzutreffenden Zustand mehr behauptet. Sofern ein fachlich korrekter FHIR-Status vorhanden ist, <strong>SOLL</strong> die bestehende Ressource unter Beibehaltung ihrer logischen ID aktualisiert werden. Wenn keine sichere Statusabbildung existiert, <strong>SOLL</strong> die Ressource aus dem aktuellen Datenbestand entfernt werden, z.B. über die FHIR-RESTful-Interaktion <code class="language-plaintext highlighter-rouge">delete</code>, sofern das Ziel-Repository diese unterstützt und lokale Aufbewahrungs- und Audit-Anforderungen dies zulassen. Aktualisierungen oder Löschungen <strong>SOLLEN</strong> in replizierte Datenbestände weitergegeben werden. Ein Statuswert <strong>SOLL NICHT</strong> lediglich als Ersatz für eine technisch aufwendige Löschung ausgewählt werden. Diese Leitlinie begründet keine zusätzlichen Anforderungen an die RESTful-Interaktionen <code class="language-plaintext highlighter-rouge">update</code> oder <code class="language-plaintext highlighter-rouge">delete</code>; die <a href="capability-statements.html">MII-CapabilityStatements</a> definieren die von diesem Leitfaden geforderten Interaktionen.</p>
+
+<p>Statusänderungen gelten für jede Ressource einzeln und werden nicht automatisch über Referenzen weitergegeben. Beispielsweise bestimmt die Kennzeichnung einer Encounter-Ressource als <code class="language-plaintext highlighter-rouge">entered-in-error</code> nicht von selbst den Status verknüpfter Condition- oder Procedure-Ressourcen; jede verknüpfte Ressource <strong>SOLL</strong> anhand ihrer eigenen Quellinformationen und ihrer fachlichen Bedeutung bewertet werden.</p>
+
+<h4 id="anforderungen-an-die-datennutzung">Anforderungen an die Datennutzung</h4>
+
+<p>Status- und Verifikationselemente, die <a href="http://hl7.org/fhir/R4/conformance-rules.html#isModifier">Modifier-Elemente</a> sind, dürfen nicht ignoriert werden. Abfragen, Exporte und Auswertungen <strong>SOLLEN</strong> deshalb ressourcenspezifische Filter definieren und dokumentieren. Mit <code class="language-plaintext highlighter-rouge">entered-in-error</code> gekennzeichnete Datensätze <strong>SOLLEN</strong> standardmäßig ausgeschlossen werden. Andere Status erfordern eine anwendungsfallspezifische Behandlung: <code class="language-plaintext highlighter-rouge">cancelled</code> und <code class="language-plaintext highlighter-rouge">not-done</code> repräsentieren keine durchgeführten Ereignisse, <code class="language-plaintext highlighter-rouge">stopped</code> kann eine teilweise durchgeführte Aktivität abbilden und <code class="language-plaintext highlighter-rouge">refuted</code> ist eine gültige Aussage darüber, dass eine Diagnose ausgeschlossen wurde.</p>
+
+<p>Weitere Details enthalten die FHIR-R4-Hinweise zum <a href="http://hl7.org/fhir/R4/lifecycle.html#error">Ressourcenlebenszyklus und entered-in-error</a>, die <a href="http://hl7.org/fhir/R4/safety.html">Implementer's Safety Check List</a> sowie die Definitionen der Status für <a href="http://hl7.org/fhir/R4/codesystem-encounter-status.html">Encounter</a>, <a href="http://hl7.org/fhir/R4/codesystem-event-status.html">Ereignisse</a> und die <a href="http://hl7.org/fhir/R4/codesystem-condition-ver-status.html">Verifikation von Conditions</a>.</p>
+
 <hr />
 
 <p>Weitere Informationen finden Sie unter:</p>
@@ -595,7 +677,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-ballot.rc1 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Erstellt <span title="Thu, Sep 3, 2026 16:29+0000">2026-09-03</span>
+          Erstellt <span title="Fri, Sep 4, 2026 09:15+0000">2026-09-04</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.

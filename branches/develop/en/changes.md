@@ -15,22 +15,26 @@ This page documents the changes and updates across versions of the MII Implement
 
 #### Documentation
 
+* **Added:** General guidance for handling source-system cancellation flags, including resource-specific status mappings, initial-load filtering, later corrections, and filtering for data use. See: [#71](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/71)
 * **Changed:** Dependency updates to `de.basisprofil.r4` 1.6.0, `de.medizininformatikinitiative.kerndatensatz.meta` 2027.0.0-ballot.rc3, `hl7.terminology.r4` 7.1.0, and `hl7.fhir.uv.extensions.r4` 5.2.0.
 
 #### Person Module
 
 * **Added:** The Patient profile now includes the FHIR core extensions `patient-birthPlace`, `patient-citizenship`, and `patient-nationality` to represent place of birth, legal citizenship, and nationality in the Person module. See: [#86](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/86)
 * **Added:** The Patient profile now supports repeatable recorded sex or gender statements via the [`individual-recordedSexOrGender`](https://hl7.org/fhir/extensions/StructureDefinition-individual-recordedSexOrGender.html) extension, separately from administrative gender. See: [#81](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/81)
+* **Removed:** `ProbandIn` and its child elements from the Person logical model. See: [#90](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/90)
 
 #### Diagnosis Module
 
 * **Added:** The `Condition.bodySite` element now includes the FHIR core extension `http://hl7.org/fhir/StructureDefinition/bodySite` to support a detailed anatomic reference such as a `BodyStructure`. See: [#85](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/85)
 * **Changed:** Clarified the mappings for `Condition.onset[x]` and `Condition.abatement[x]`; onset and abatement are now mapped separately and harmonized with ISiK. `Period` remains allowed for backwards compatibility but SHOULD NOT be used. See: [#83](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/83)
+* **Changed:** Updated the relationship between diagnoses and contacts in the Diagnosis UML diagram to show the department contact as the currently recommended contact level while retaining the possibility of other contact levels.
 
 #### Treatment Case Module
 
 * **Changed:** Updated the Treatment Case UML model to represent the organizational assignment between care units and departments as an optional many-to-many association.
-* **Changed:** Updated the relationships between diagnoses and contacts in the Treatment Case and Diagnosis UML diagrams to show the department contact as the currently recommended contact level while retaining the possibility of other contact levels.
+* **Added:** Guidance for outpatient Encounters covering the three-level Encounter hierarchy, `Encounter.partOf` relationships, and handling of unavailable timestamps. See: [#74](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/74)
+* **Changed:** The Encounter hierarchy figure now illustrates how Encounters at each hierarchy level can reference the same Account and share a billing context. See: [#73](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/73)
 
 #### Procedure Module
 

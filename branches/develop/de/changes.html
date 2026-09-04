@@ -356,6 +356,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h4 id="dokumentation">Dokumentation</h4>
 
 <ul>
+  <li><strong>Added:</strong> Allgemeine Leitlinien zum Umgang mit Storno-Kennzeichen aus Quellsystemen ergänzt, einschließlich ressourcenspezifischer Statusabbildungen, Filterung bei der Erstbeladung, späterer Korrekturen und Filterung für die Datennutzung. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/71">#71</a></li>
   <li><strong>Changed:</strong> Abhängigkeiten auf <code class="language-plaintext highlighter-rouge">de.basisprofil.r4</code> 1.6.0, <code class="language-plaintext highlighter-rouge">de.medizininformatikinitiative.kerndatensatz.meta</code> 2027.0.0-ballot.rc3, <code class="language-plaintext highlighter-rouge">hl7.terminology.r4</code> 7.1.0 und <code class="language-plaintext highlighter-rouge">hl7.fhir.uv.extensions.r4</code> 5.2.0 aktualisiert.</li>
 </ul>
 
@@ -364,20 +365,23 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ul>
   <li><strong>Added:</strong> Das Patient-Profil enthält nun die FHIR-Core-Extensions <code class="language-plaintext highlighter-rouge">patient-birthPlace</code>, <code class="language-plaintext highlighter-rouge">patient-citizenship</code> und <code class="language-plaintext highlighter-rouge">patient-nationality</code>, um Geburtsort, Staatsangehörigkeit und Nationalität im Modul Person abzubilden. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/86">#86</a></li>
   <li><strong>Added:</strong> Das Patient-Profil unterstützt nun über die Extension <a href="https://hl7.org/fhir/extensions/StructureDefinition-individual-recordedSexOrGender.html"><code class="language-plaintext highlighter-rouge">individual-recordedSexOrGender</code></a> wiederholbare dokumentierte Geschlechtsangaben getrennt vom administrativen Geschlecht. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/81">#81</a></li>
+  <li><strong>Removed:</strong> <code class="language-plaintext highlighter-rouge">ProbandIn</code> und dessen Unterelemente aus dem logischen Modell Person entfernt. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/90">#90</a></li>
 </ul>
 
 <h4 id="modul-diagnose">Modul Diagnose</h4>
 
 <ul>
   <li><strong>Added:</strong> Das Element <code class="language-plaintext highlighter-rouge">Condition.bodySite</code> enthält nun die FHIR-Core-Extension <code class="language-plaintext highlighter-rouge">http://hl7.org/fhir/StructureDefinition/bodySite</code>, um eine detaillierte anatomische Referenz, z.B. auf eine <code class="language-plaintext highlighter-rouge">BodyStructure</code>, zusätzlich zur kodierten Körperstelle abzubilden. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/85">#85</a></li>
-  <li><strong>Changed:</strong> Die Mappings für <code class="language-plaintext highlighter-rouge">Condition.onset[x]</code> und <code class="language-plaintext highlighter-rouge">Condition.abatement[x]</code> wurden klargestellt; Erkrankungsbeginn und Erkrankungsende werden nun getrennt abgebildet und mit ISiK harmonisiert. <code class="language-plaintext highlighter-rouge">Period</code> bleibt aus Gründen der Rückwärtskompatibilität zulässig, SOLLTE aber NICHT verwendet werden. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/83">#83</a></li>
+  <li><strong>Changed:</strong> Die Mappings für <code class="language-plaintext highlighter-rouge">Condition.onset[x]</code> und <code class="language-plaintext highlighter-rouge">Condition.abatement[x]</code> wurden klargestellt; Erkrankungsbeginn und Erkrankungsende werden nun getrennt abgebildet und mit ISiK harmonisiert. <code class="language-plaintext highlighter-rouge">Period</code> bleibt aus Gründen der Rückwärtskompatibilität zulässig, SOLL aber NICHT verwendet werden. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/83">#83</a></li>
+  <li><strong>Changed:</strong> Beziehung zwischen Diagnosen und Kontakten im Diagnose-UML angepasst, sodass der Abteilungskontakt als derzeit empfohlene Kontaktebene dargestellt wird und andere Kontaktebenen weiterhin möglich bleiben.</li>
 </ul>
 
 <h4 id="modul-fall">Modul Fall</h4>
 
 <ul>
   <li><strong>Changed:</strong> UML-Modell des Moduls Fall angepasst, sodass die organisatorische Zuordnung zwischen Versorgungsstellen und Abteilungen als optionale n:m-Beziehung dargestellt wird.</li>
-  <li><strong>Changed:</strong> Beziehungen zwischen Diagnosen und Kontakten in den UML-Diagrammen der Module Fall und Diagnose angepasst, sodass der Abteilungskontakt als derzeit empfohlene Kontaktebene dargestellt wird und andere Kontaktebenen weiterhin möglich bleiben.</li>
+  <li><strong>Added:</strong> Leitlinien für ambulante Encounter zur dreistufigen Encounter-Hierarchie, zu <code class="language-plaintext highlighter-rouge">Encounter.partOf</code>-Beziehungen und zum Umgang mit nicht verfügbaren Zeitstempeln ergänzt. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/74">#74</a></li>
+  <li><strong>Changed:</strong> Encounter-Hierarchieabbildung erweitert, um zu veranschaulichen, wie Encounter auf jeder Hierarchieebene denselben Account referenzieren und einen gemeinsamen Abrechnungskontext teilen können. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/73">#73</a></li>
 </ul>
 
 <h4 id="modul-prozedur">Modul Prozedur</h4>
@@ -721,7 +725,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-ballot.rc1 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Erstellt <span title="Thu, Sep 3, 2026 16:29+0000">2026-09-03</span>
+          Erstellt <span title="Fri, Sep 4, 2026 09:15+0000">2026-09-04</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.
