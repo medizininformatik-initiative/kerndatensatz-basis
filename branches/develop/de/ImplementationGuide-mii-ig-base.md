@@ -333,20 +333,7 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "value" : "https://www.medizininformatik-initiative.de/en"
     }]
   }],
-  "description" : "Implementation Guide for the Core Dataset Base Modules Person, Diagnosis, Procedure, and Treatment Case",
-  "_description" : {
-    "extension" : [{
-      "extension" : [{
-        "url" : "lang",
-        "valueCode" : "de"
-      },
-      {
-        "url" : "content",
-        "valueString" : "Implementierungsleitfaden für die Kerndatensatz Basismodule Person, Diagnose, Prozedur, und Fall"
-      }],
-      "url" : "http://hl7.org/fhir/StructureDefinition/translation"
-    }]
-  },
+  "description" : "Implementation Guide for the Core Dataset Base Modules Person, Diagnosis, Procedure, and Treatment Case. Release notes: https://medizininformatik-initiative.github.io/kerndatensatz-basis/2027.0.0-ballot/changes.html",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
