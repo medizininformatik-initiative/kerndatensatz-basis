@@ -265,12 +265,11 @@ function validateEntry(
     );
   } else {
     const edition = editions[0];
-    assertEqual(
-      edition.name,
-      requiredString(request, "sequence", "Publication request"),
-      "edition.name",
-      errors,
-    );
+    const sequence = requiredString(request, "sequence", "Publication request");
+    // The IG Publisher appends " Ballot" to the sequence for ballot publications.
+    const expectedEditionName =
+      request.status === "ballot" ? `${sequence} Ballot` : sequence;
+    assertEqual(edition.name, expectedEditionName, "edition.name", errors);
     assertEqual(edition.package, `${packageId}#${version}`, "edition.package", errors);
     assertEqual(
       normalizeUrl(edition.url ?? "", "Generated edition URL"),
