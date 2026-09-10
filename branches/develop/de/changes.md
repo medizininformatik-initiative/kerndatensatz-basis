@@ -11,7 +11,7 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 
 ### Version 2027.0.0-ballot
 
-**Datum:** 2026-09-01
+**Datum:** 2026-09-10
 
 #### Dokumentation
 
