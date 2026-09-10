@@ -9,7 +9,7 @@ This page documents the changes and updates across versions of the MII Implement
 #### Documentation
 
 - **Added:** General guidance for handling source-system cancellation flags, including resource-specific status mappings, initial-load filtering, later corrections, and filtering for data use. See: [#71](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/71)
-- **Changed:** Dependency updates to `de.basisprofil.r4` 1.6.0, `de.medizininformatikinitiative.kerndatensatz.meta` 2027.0.0-ballot.rc3, `hl7.terminology.r4` 7.1.0, `hl7.fhir.uv.extensions.r4` 5.2.0, and `hl7.fhir.uv.ips` 2.0.1.
+- **Changed:** Dependency updates to `de.basisprofil.r4` 1.6.0, `de.medizininformatikinitiative.kerndatensatz.meta` 2027.0.0-ballot, `hl7.terminology.r4` 7.1.0, `hl7.fhir.uv.extensions.r4` 5.2.0, and `hl7.fhir.uv.ips` 2.0.1.
 
 #### Person Module
 
