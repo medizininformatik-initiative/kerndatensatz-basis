@@ -38,8 +38,8 @@ Usage: #definition
 * rest.resource[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].extension.valueCode = #SHALL
 * rest.resource[=].type = #Patient
-* rest.resource[=].supportedProfile[0] = "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient|2027.0.0-ballot.rc1"
-* rest.resource[=].supportedProfile[1] = "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert|2027.0.0-ballot.rc1"
+* rest.resource[=].supportedProfile[0] = "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient|2027.0.0-ballot"
+* rest.resource[=].supportedProfile[1] = "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert|2027.0.0-ballot"
 * rest.resource[=].interaction[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[=].extension.valueCode = #SHALL
 * rest.resource[=].interaction[=].code = #read
@@ -82,7 +82,7 @@ For further details see FHIR core specification, section [Parameters for all res
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Resource-profile"
 * rest.resource[=].searchParam[=].type = #uri
 * rest.resource[=].searchParam[=].documentation = """**Example:**
-`GET [base]/Patient?_profile=https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient|2027.0.0-ballot.rc1`
+`GET [base]/Patient?_profile=https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient|2027.0.0-ballot`
 
 **Notes:**
 Searches on `Patient.meta.profile`. For further details see FHIR core specification, section [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)."""
@@ -323,7 +323,7 @@ Searches on `Patient.link.other`. For further details see [FHIR core specificati
 // * rest.resource[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 // * rest.resource[=].extension.valueCode = #SHALL
 // * rest.resource[=].type = #ResearchSubject
-// * rest.resource[=].supportedProfile = "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/ResearchSubject|2027.0.0-ballot.rc1"
+// * rest.resource[=].supportedProfile = "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/ResearchSubject|2027.0.0-ballot"
 // * rest.resource[=].interaction[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 // * rest.resource[=].interaction[=].extension.valueCode = #SHALL
 // * rest.resource[=].interaction[=].code = #read
@@ -373,7 +373,7 @@ Searches on `Patient.link.other`. For further details see [FHIR core specificati
 * rest.resource[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].extension.valueCode = #SHALL
 * rest.resource[=].type = #Observation
-* rest.resource[=].supportedProfile = "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus|2027.0.0-ballot.rc1"
+* rest.resource[=].supportedProfile = "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus|2027.0.0-ballot"
 * rest.resource[=].interaction[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[=].extension.valueCode = #SHALL
 * rest.resource[=].interaction[=].code = #read
@@ -414,7 +414,7 @@ For further details see FHIR core specification, section [Parameters for all res
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Resource-profile"
 * rest.resource[=].searchParam[=].type = #uri
 * rest.resource[=].searchParam[=].documentation = """**Example:**
-`GET [base]/Observation?_profile=https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus|2027.0.0-ballot.rc1`
+`GET [base]/Observation?_profile=https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus|2027.0.0-ballot`
 
 **Notes:**
 Searches on `Observation.meta.profile`. For further details see FHIR core specification, section [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)."""
@@ -492,7 +492,7 @@ Combines `Observation.code` and `Observation.value` as CodeableConcept in a sing
 * rest.resource[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].extension.valueCode = #SHALL
 * rest.resource[=].type = #Condition
-* rest.resource[=].supportedProfile = "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Todesursache|2027.0.0-ballot.rc1"
+* rest.resource[=].supportedProfile = "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Todesursache|2027.0.0-ballot"
 * rest.resource[=].interaction[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[=].extension.valueCode = #SHALL
 * rest.resource[=].interaction[=].code = #read
@@ -533,7 +533,7 @@ For further details see FHIR core specification, section [Parameters for all res
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Resource-profile"
 * rest.resource[=].searchParam[=].type = #uri
 * rest.resource[=].searchParam[=].documentation = """**Example:**
-`GET [base]/Condition?_profile=https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2027.0.0-ballot.rc1`
+`GET [base]/Condition?_profile=https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2027.0.0-ballot`
 
 **Notes:**
 Searches on `Condition.meta.profile`. For further details see FHIR core specification, section [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)."""
@@ -580,7 +580,7 @@ Searches on `Condition.subject` where the subject is a Patient. For further deta
 * rest.resource[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].extension.valueCode = #SHALL
 * rest.resource[=].type = #AllergyIntolerance
-* rest.resource[=].supportedProfile = "https://www.medizininformatik-initiative.de/fhir/modul-person/StructureDefinition/AllergieUnvertraeglichkeit|2027.0.0-ballot.rc1"
+* rest.resource[=].supportedProfile = "https://www.medizininformatik-initiative.de/fhir/modul-person/StructureDefinition/AllergieUnvertraeglichkeit|2027.0.0-ballot"
 * rest.resource[=].interaction[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[=].extension.valueCode = #SHALL
 * rest.resource[=].interaction[=].code = #read
@@ -621,7 +621,7 @@ For further details see FHIR core specification, section [Parameters for all res
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Resource-profile"
 * rest.resource[=].searchParam[=].type = #uri
 * rest.resource[=].searchParam[=].documentation = """**Example:**
-`GET [base]/AllergyIntolerance?_profile=https://www.medizininformatik-initiative.de/fhir/modul-person/StructureDefinition/AllergieUnvertraeglichkeit|2027.0.0-ballot.rc1`
+`GET [base]/AllergyIntolerance?_profile=https://www.medizininformatik-initiative.de/fhir/modul-person/StructureDefinition/AllergieUnvertraeglichkeit|2027.0.0-ballot`
 
 **Notes:**
 Searches on `AllergyIntolerance.meta.profile`. For further details see FHIR core specification, section [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)."""
