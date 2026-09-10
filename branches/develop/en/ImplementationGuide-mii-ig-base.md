@@ -367,7 +367,7 @@ Expansion parameters are query parameters that can be passed to a `ValueSet` `$e
     "id" : "de_medizininformatikinitiative_kerndatensatz_meta",
     "uri" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/ImplementationGuide/mii-ig-meta",
     "packageId" : "de.medizininformatikinitiative.kerndatensatz.meta",
-    "version" : "2027.0.0-ballot.rc3"
+    "version" : "2027.0.0-ballot"
   },
   {
     "id" : "hl7_fhir_uv_xver_r5_r4",
