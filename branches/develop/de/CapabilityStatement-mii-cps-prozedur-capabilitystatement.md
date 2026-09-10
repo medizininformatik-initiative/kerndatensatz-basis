@@ -1,4 +1,4 @@
-# MII CPS Prozedur CapabilityStatement - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1
+# MII CPS Prozedur CapabilityStatement - MII Implementation Guide Core Dataset Base v2027.0.0-ballot
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Artefaktübersicht**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/CapabilityStatement/metadata | *Version*:2027.0.0-ballot.rc1 |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/CapabilityStatement/metadata | *Version*:2027.0.0-ballot |
 | Active Stand: 2026-09-01 | *Maschinenlesbarer Name*:MII_CPS_Prozedur_CapabilityStatement |
 
  
@@ -36,7 +36,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
       },
       {
         "url" : "version",
-        "valueString" : "2027.0.0-ballot.rc1"
+        "valueString" : "2027.0.0-ballot"
       },
       {
         "url" : "uri",
@@ -153,7 +153,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/CapabilityStatement/metadata",
-  "version" : "2027.0.0-ballot.rc1",
+  "version" : "2027.0.0-ballot",
   "name" : "MII_CPS_Prozedur_CapabilityStatement",
   "title" : "MII CPS Prozedur CapabilityStatement",
   "status" : "active",
@@ -188,7 +188,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
       }],
       "type" : "Procedure",
       "profile" : "http://hl7.org/fhir/StructureDefinition/Procedure",
-      "supportedProfile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2027.0.0-ballot.rc1"],
+      "supportedProfile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2027.0.0-ballot"],
       "_supportedProfile" : [{
         "extension" : [{
           "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
@@ -255,7 +255,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         "name" : "_profile",
         "definition" : "http://hl7.org/fhir/SearchParameter/Resource-profile",
         "type" : "uri",
-        "documentation" : "**Example:**\n`GET [base]/Procedure?_profile=https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2027.0.0-ballot.rc1`\n\n**Notes:**\nSearches on `Procedure.meta.profile`. For further details see FHIR core specification, section [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)."
+        "documentation" : "**Example:**\n`GET [base]/Procedure?_profile=https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2027.0.0-ballot`\n\n**Notes:**\nSearches on `Procedure.meta.profile`. For further details see FHIR core specification, section [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)."
       },
       {
         "extension" : [{

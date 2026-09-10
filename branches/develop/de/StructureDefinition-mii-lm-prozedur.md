@@ -1,4 +1,4 @@
-# MII LM Prozedur - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1
+# MII LM Prozedur - MII Implementation Guide Core Dataset Base v2027.0.0-ballot
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Artefaktübersicht**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/LogicalModel/Prozedur | *Version*:2027.0.0-ballot.rc1 |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/LogicalModel/Prozedur | *Version*:2027.0.0-ballot |
 | Active Stand: 2026-09-01 | *Maschinenlesbarer Name*:MII_LM_Prozedur |
 
  
@@ -123,7 +123,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-proze
       },
       {
         "url" : "version",
-        "valueString" : "2027.0.0-ballot.rc1"
+        "valueString" : "2027.0.0-ballot"
       },
       {
         "url" : "uri",
@@ -240,7 +240,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-proze
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/LogicalModel/Prozedur",
-  "version" : "2027.0.0-ballot.rc1",
+  "version" : "2027.0.0-ballot",
   "name" : "MII_LM_Prozedur",
   "title" : "MII LM Prozedur",
   "status" : "active",

@@ -1,4 +1,4 @@
-# Versionierung - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1
+# Versionierung - MII Implementation Guide Core Dataset Base v2027.0.0-ballot
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Metadatenübersicht**](metadata.md)

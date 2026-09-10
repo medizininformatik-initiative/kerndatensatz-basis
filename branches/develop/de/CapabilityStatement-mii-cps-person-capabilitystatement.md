@@ -1,4 +1,4 @@
-# MII CPS Person CapabilityStatement - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1
+# MII CPS Person CapabilityStatement - MII Implementation Guide Core Dataset Base v2027.0.0-ballot
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Artefaktübersicht**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-person/CapabilityStatement/metadata | *Version*:2027.0.0-ballot.rc1 |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-person/CapabilityStatement/metadata | *Version*:2027.0.0-ballot |
 | Active Stand: 2026-09-04 | *Maschinenlesbarer Name*:MII_CPS_Person_CapabilityStatement |
 
  
@@ -36,7 +36,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
       },
       {
         "url" : "version",
-        "valueString" : "2027.0.0-ballot.rc1"
+        "valueString" : "2027.0.0-ballot"
       },
       {
         "url" : "uri",
@@ -198,7 +198,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/CapabilityStatement/metadata",
-  "version" : "2027.0.0-ballot.rc1",
+  "version" : "2027.0.0-ballot",
   "name" : "MII_CPS_Person_CapabilityStatement",
   "title" : "MII CPS Person CapabilityStatement",
   "status" : "active",
@@ -232,8 +232,8 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         "valueCode" : "SHALL"
       }],
       "type" : "Patient",
-      "supportedProfile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient|2027.0.0-ballot.rc1",
-      "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert|2027.0.0-ballot.rc1"],
+      "supportedProfile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient|2027.0.0-ballot",
+      "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert|2027.0.0-ballot"],
       "interaction" : [{
         "extension" : [{
           "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
@@ -284,7 +284,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         "name" : "_profile",
         "definition" : "http://hl7.org/fhir/SearchParameter/Resource-profile",
         "type" : "uri",
-        "documentation" : "**Example:**\n`GET [base]/Patient?_profile=https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient|2027.0.0-ballot.rc1`\n\n**Notes:**\nSearches on `Patient.meta.profile`. For further details see FHIR core specification, section [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)."
+        "documentation" : "**Example:**\n`GET [base]/Patient?_profile=https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient|2027.0.0-ballot`\n\n**Notes:**\nSearches on `Patient.meta.profile`. For further details see FHIR core specification, section [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)."
       },
       {
         "extension" : [{
@@ -523,7 +523,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         "valueCode" : "SHALL"
       }],
       "type" : "Observation",
-      "supportedProfile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus|2027.0.0-ballot.rc1"],
+      "supportedProfile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus|2027.0.0-ballot"],
       "interaction" : [{
         "extension" : [{
           "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
@@ -574,7 +574,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         "name" : "_profile",
         "definition" : "http://hl7.org/fhir/SearchParameter/Resource-profile",
         "type" : "uri",
-        "documentation" : "**Example:**\n`GET [base]/Observation?_profile=https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus|2027.0.0-ballot.rc1`\n\n**Notes:**\nSearches on `Observation.meta.profile`. For further details see FHIR core specification, section [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)."
+        "documentation" : "**Example:**\n`GET [base]/Observation?_profile=https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus|2027.0.0-ballot`\n\n**Notes:**\nSearches on `Observation.meta.profile`. For further details see FHIR core specification, section [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)."
       },
       {
         "extension" : [{
@@ -653,7 +653,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         "valueCode" : "SHALL"
       }],
       "type" : "Condition",
-      "supportedProfile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Todesursache|2027.0.0-ballot.rc1"],
+      "supportedProfile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Todesursache|2027.0.0-ballot"],
       "interaction" : [{
         "extension" : [{
           "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
@@ -704,7 +704,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         "name" : "_profile",
         "definition" : "http://hl7.org/fhir/SearchParameter/Resource-profile",
         "type" : "uri",
-        "documentation" : "**Example:**\n`GET [base]/Condition?_profile=https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2027.0.0-ballot.rc1`\n\n**Notes:**\nSearches on `Condition.meta.profile`. For further details see FHIR core specification, section [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)."
+        "documentation" : "**Example:**\n`GET [base]/Condition?_profile=https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose|2027.0.0-ballot`\n\n**Notes:**\nSearches on `Condition.meta.profile`. For further details see FHIR core specification, section [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)."
       },
       {
         "extension" : [{
@@ -753,7 +753,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         "valueCode" : "SHALL"
       }],
       "type" : "AllergyIntolerance",
-      "supportedProfile" : ["https://www.medizininformatik-initiative.de/fhir/modul-person/StructureDefinition/AllergieUnvertraeglichkeit|2027.0.0-ballot.rc1"],
+      "supportedProfile" : ["https://www.medizininformatik-initiative.de/fhir/modul-person/StructureDefinition/AllergieUnvertraeglichkeit|2027.0.0-ballot"],
       "interaction" : [{
         "extension" : [{
           "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
@@ -804,7 +804,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
         "name" : "_profile",
         "definition" : "http://hl7.org/fhir/SearchParameter/Resource-profile",
         "type" : "uri",
-        "documentation" : "**Example:**\n`GET [base]/AllergyIntolerance?_profile=https://www.medizininformatik-initiative.de/fhir/modul-person/StructureDefinition/AllergieUnvertraeglichkeit|2027.0.0-ballot.rc1`\n\n**Notes:**\nSearches on `AllergyIntolerance.meta.profile`. For further details see FHIR core specification, section [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)."
+        "documentation" : "**Example:**\n`GET [base]/AllergyIntolerance?_profile=https://www.medizininformatik-initiative.de/fhir/modul-person/StructureDefinition/AllergieUnvertraeglichkeit|2027.0.0-ballot`\n\n**Notes:**\nSearches on `AllergyIntolerance.meta.profile`. For further details see FHIR core specification, section [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)."
       },
       {
         "extension" : [{

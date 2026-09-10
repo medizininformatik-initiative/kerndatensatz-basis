@@ -1,4 +1,4 @@
-# Handling Missing Data - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1
+# Handling Missing Data - MII Implementation Guide Core Dataset Base v2027.0.0-ballot
 
 * [**Table of Contents**](toc.md)
 * [**Conformance**](conformance.md)

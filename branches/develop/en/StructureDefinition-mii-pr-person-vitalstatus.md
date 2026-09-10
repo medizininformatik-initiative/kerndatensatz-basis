@@ -1,4 +1,4 @@
-# MII PR Person Vitalstatus - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1
+# MII PR Person Vitalstatus - MII Implementation Guide Core Dataset Base v2027.0.0-ballot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus | *Version*:2027.0.0-ballot.rc1 |
+| *Official URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus | *Version*:2027.0.0-ballot |
 | Active as of 2026-09-01 | *Computable Name*:MII_PR_Person_Vitalstatus |
 
  
@@ -126,7 +126,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-person-vit
       },
       {
         "url" : "version",
-        "valueString" : "2027.0.0-ballot.rc1"
+        "valueString" : "2027.0.0-ballot"
       },
       {
         "url" : "uri",
@@ -243,7 +243,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-person-vit
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus",
-  "version" : "2027.0.0-ballot.rc1",
+  "version" : "2027.0.0-ballot",
   "name" : "MII_PR_Person_Vitalstatus",
   "title" : "MII PR Person Vitalstatus",
   "_title" : {

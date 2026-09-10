@@ -1,4 +1,4 @@
-# MII LM Fall - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1
+# MII LM Fall - MII Implementation Guide Core Dataset Base v2027.0.0-ballot
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Artefaktübersicht**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/LogicalModel/Fall | *Version*:2027.0.0-ballot.rc1 |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/LogicalModel/Fall | *Version*:2027.0.0-ballot |
 | Active Stand: 2026-09-01 | *Maschinenlesbarer Name*:MII_LM_Fall |
 
  
@@ -142,7 +142,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-fall.
       },
       {
         "url" : "version",
-        "valueString" : "2027.0.0-ballot.rc1"
+        "valueString" : "2027.0.0-ballot"
       },
       {
         "url" : "uri",
@@ -259,7 +259,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-fall.
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/LogicalModel/Fall",
-  "version" : "2027.0.0-ballot.rc1",
+  "version" : "2027.0.0-ballot",
   "name" : "MII_LM_Fall",
   "title" : "MII LM Fall",
   "status" : "active",

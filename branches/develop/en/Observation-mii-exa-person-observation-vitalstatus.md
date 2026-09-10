@@ -1,4 +1,4 @@
-# MII EXA Person Observation Vitalstatus - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1
+# MII EXA Person Observation Vitalstatus - MII Implementation Guide Core Dataset Base v2027.0.0-ballot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@
 
 -------
 
-Profile: [MII PR Person Vitalstatus](StructureDefinition-mii-pr-person-vitalstatus.md) version: 2027.0.0-ballot.rc1
+Profile: [MII PR Person Vitalstatus](StructureDefinition-mii-pr-person-vitalstatus.md) version: 2027.0.0-ballot
 
 Security Label: [test health data (Details: ActReason code HTEST = 'test health data')](http://terminology.hl7.org/7.2.0/CodeSystem-v3-ActReason.html)
 
@@ -46,7 +46,7 @@ Security Label: [test health data (Details: ActReason code HTEST = 'test health 
       },
       {
         "url" : "version",
-        "valueString" : "2027.0.0-ballot.rc1"
+        "valueString" : "2027.0.0-ballot"
       },
       {
         "url" : "uri",
@@ -54,7 +54,7 @@ Security Label: [test health data (Details: ActReason code HTEST = 'test health 
       }],
       "url" : "http://hl7.org/fhir/StructureDefinition/package-source"
     }],
-    "profile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus|2027.0.0-ballot.rc1"],
+    "profile" : ["https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus|2027.0.0-ballot"],
     "security" : [{
       "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
       "code" : "HTEST",
