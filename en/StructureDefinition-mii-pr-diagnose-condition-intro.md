@@ -69,16 +69,18 @@ This section provides detailed implementation guidance for the MII Diagnose (Dia
 
 #### Body Site Documentation
 
-<div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
-<h5 style="color: #406A99; margin-top: 0;">FHIR Core Extension Note</h5>
+The modeling of coded and detailed anatomical locations has been harmonized with [gematik ISiK Diagnosis 6.0.0](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKDiagnose.html). `Condition.bodySite` supports two representations:
 
-<p>The profile includes the FHIR core extension <code>http://hl7.org/fhir/StructureDefinition/bodySite</code> on <code>Condition.bodySite</code> to allow a detailed anatomic reference, such as a BodyStructure, in addition to the coded body site.</p>
-</div>
+- a coded anatomical location, preferably using SNOMED CT; or
+- a reference to a patient-specific `BodyStructure` via the `http://hl7.org/fhir/StructureDefinition/bodySite` extension when a coded body site alone does not provide the required detail.
+
+**EHDS outlook:** [HL7 Europe Condition (EU core) 2.0.0](https://hl7.eu/fhir/base/2.0.0/StructureDefinition-condition-eu-core.html) uses the same coded-or-referenced representation and applies the `eu-bodysite-1` invariant. For future EHDS compatibility, each `Condition.bodySite` occurrence **SHOULD** contain either coding/text or the BodyStructure-reference extension, but not both.
 
 **`Condition.bodySite`:**
 - OPTIONAL element
 - If used, body site **SHOULD** be coded with at least one SNOMED CT code
-- **DO NOT** include laterality in `bodySite` - use the Seitenlokalisation extension on `Condition.code.coding:icd10-gm` instead
+- Use the BodyStructure-reference extension when the coded body site is not sufficiently precise
+- For ICD-10-GM laterality, use the Seitenlokalisation extension on `Condition.code.coding:icd10-gm` instead of encoding laterality in `bodySite`
 
 #### Encounter Linkage
 
@@ -97,10 +99,25 @@ This section provides detailed implementation guidance for the MII Diagnose (Dia
 
 #### Temporal Information
 
+<div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
+<h5 style="color: #406A99; margin-top: 0;">Best Practice - Onset and Abatement</h5>
+
+<p>The modeling of disease onset and abatement has been harmonized with <a href="https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKDiagnose.html">gematik ISiK</a>. Implementers <strong>SHOULD</strong> use <code>onsetDateTime</code>/<code>abatementDateTime</code> for dates and <code>onsetAge</code>/<code>abatementAge</code> with the life-phase extension when only a life phase is known. <code>onsetPeriod</code> and <code>abatementPeriod</code> remain permitted solely for backwards compatibility and <strong>SHOULD NOT</strong> be used in new implementations.</p>
+
+<p><strong>EHDS outlook:</strong> The published trial-use <a href="https://hl7.eu/fhir/base/2.0.0/StructureDefinition-condition-eu-core.html">HL7 Europe Condition (EU core) 2.0.0 profile</a>, which informs upcoming EHDS specifications, explicitly profiles the <code>dateTime</code> variants of onset and abatement. To facilitate future EHDS compliance, new implementations <strong>SHOULD</strong> therefore use <code>onsetDateTime</code> and <code>abatementDateTime</code> whenever a date is available.</p>
+</div>
+
 **`Condition.onset[x]`:**
-- **MAY** be captured as Period or dateTime
-- OPTIONAL: Use the extension to specify life phase as code when exact timepoints are unknown
+- **SHOULD** be captured as `dateTime` or `Age`
+- When using `Age`, the life-phase extension **MAY** specify a life phase as a code if the exact date is unknown
+- `Period` remains allowed for backwards compatibility but **SHOULD NOT** be used
 - Represents when the condition began or was first noticed
+
+**`Condition.abatement[x]`:**
+- **SHOULD** be captured as `dateTime` or `Age`
+- When using `Age`, the life-phase extension **MAY** specify a life phase as a code if the exact date is unknown
+- `Period` remains allowed for backwards compatibility but **SHOULD NOT** be used
+- Represents when the condition ended, resolved, or entered remission
 
 **`Condition.recordedDate`:**
 - Represents when the diagnosis was recorded in the system

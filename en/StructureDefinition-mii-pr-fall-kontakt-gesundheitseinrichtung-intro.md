@@ -54,6 +54,7 @@ graph BT
 
   A1E -->|partOf| E0
   A2E -->|partOf| E0
+  A2E -->|account| A1
 
   %% CARE UNIT LEVEL
   VS1["`**Encounter VS1**
@@ -79,7 +80,10 @@ graph BT
   VS3 -->|partOf| A2E
   VS4 -->|partOf| A2E
   VS5 -->|partOf| A2E
+  VS5 -->|account| A1
 </code></pre>
+
+**Account linkage:** The `account` references shown for selected Encounters illustrate how Encounters at each level of the hierarchy can be linked to the same Account, thereby assigning multiple Encounters to a shared billing context. To keep the diagram readable, Account references are shown only for selected Encounters; the other Encounters in the hierarchy can reference the same Account in the same way. For implementation guidance, including the recommended use of the logical reference `Encounter.account.identifier`, see [Best Practice - Aufnahmenummer vs. Fallnummer](#best-practice-aufnahmenummer-vs-fallnummer).
 
 In this example:
 - **E0** represents the overall facility contact (Einrichtungskontakt) for the hospital stay
@@ -87,7 +91,7 @@ In this example:
 - **A2E** is the department contact (Abteilungskontakt) for General Surgery (Allgemeinchirurgie)
 - **VS1-VS5** are care unit contacts (Versorgungsstellenkontakte) for specific locations: Emergency treatment room 3, Radiology CT, OR 4 (laparoscopic appendectomy), PACU, and Surgical Ward C3
 - The hierarchy is established through `partOf` references pointing upward from care units to departments to facility
-- **EP1** (EpisodeOfCare) and **A1** (Account) are shown for completeness but are not currently part of the MII Kerndatensatz specification. Note that for simplicity, only E0 is shown referencing these resources, but in practice any encounter in the hierarchy can reference the EpisodeOfCare and Account it belongs to.
+- **EP1** (EpisodeOfCare) and **A1** (Account) are shown for completeness but are not currently part of the MII Kerndatensatz specification. Selected Encounters at each hierarchy level are shown referencing A1 to illustrate their shared billing context; E0 additionally references EP1.
 
 #### Representation of Encounter Types in FHIR
 
@@ -113,8 +117,6 @@ In this example:
 </style>
 
 ##### Primary Encounters
-
-Based on the [FHIR DE Basisprofile guidance](https://ig.fhir.de/basisprofile-de/1.4.0/Ressourcen-AmbulanterStationaererFall.html):
 
 <table class="encounter-type-table">
 <thead>
@@ -203,6 +205,8 @@ Based on the [FHIR DE Basisprofile guidance](https://ig.fhir.de/basisprofile-de/
 </tbody>
 </table>
 
+*External source: The mapping of primary encounter types to HL7 V2 and FHIR in this table was adopted from the [German FHIR Base Profiles 1.6.0 – Ambulatory/inpatient case/contact](https://ig.fhir.de/basisprofile-de/1.6.0/ig-markdown-Ressourcen-AmbulanterStationaererFall.html).*
+
 ##### Secondary Encounters During Inpatient Stay
 
 <table class="encounter-type-table">
@@ -231,6 +235,16 @@ Based on the [FHIR DE Basisprofile guidance](https://ig.fhir.de/basisprofile-de/
 </tr>
 </tbody>
 </table>
+
+*External source: The mapping of secondary encounters to HL7 V2 and FHIR in this table was adopted from the [German FHIR Base Profiles 1.6.0 – Ambulatory/inpatient case/contact](https://ig.fhir.de/basisprofile-de/1.6.0/ig-markdown-Ressourcen-AmbulanterStationaererFall.html).*
+
+##### Outpatient Encounter Hierarchy
+
+Outpatient encounters **SHOULD** also use all three encounter hierarchy levels—facility contact (Einrichtungskontakt), department contact (Abteilungskontakt), and care unit contact (Versorgungsstellenkontakt)—represented by separate Encounter resources and linked using `Encounter.partOf`.
+
+If the organizational units involved are known, they **SHOULD** be represented by the corresponding Encounter resources. If this information is unavailable, the Encounter resources for the hierarchy levels **SHOULD** still be created. An outpatient department (Ambulanz) **MAY** be represented at the facility, department, and care unit levels simultaneously and can therefore occur at all three encounter hierarchy levels.
+
+If actual patient tracking data are unavailable, timestamps **SHOULD NOT** be fabricated, and `Encounter.period.start` and `Encounter.period.end` **SHOULD NOT** be set to the same value merely to provide an end timestamp. If the end timestamp is unavailable, the Data Absent Reason extension on `Encounter.period.end` **SHOULD** be set with `valueCode = unsupported`. At the same time, `Encounter.status` **SHOULD** be set to `finished`.
 
 #### Encounter Diagnosis
 
@@ -304,7 +318,7 @@ In most cases, the "Fallnummer" is a unique identifier for the billing case (Acc
 Previously, it was recommended that the Aufnahmenummer (admission number) should be provided across all Encounter resources regardless of contact level and type. However, this recommendation did not clearly distinguish between Aufnahmenummer and Fallnummer.
 
 <div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
-<h5 style="color: #406A99; margin-top: 0;">Best Practice - Aufnahmenummer vs. Fallnummer</h5>
+<h5 id="best-practice-aufnahmenummer-vs-fallnummer" style="color: #406A99; margin-top: 0;">Best Practice - Aufnahmenummer vs. Fallnummer</h5>
 
 <p><em>Note: This guidance is based on the <a href="https://simplifier.net/packages/de.gematik.isik/5.1.0/files/3020028" target="_blank">ISiK specification</a>.</em></p>
 

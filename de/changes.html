@@ -6,7 +6,7 @@
 <html xml:lang="de" xmlns="http://www.w3.org/1999/xhtml" lang="de" dir="ltr">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Changelog - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1</title>
+    <title>Changelog - MII Implementation Guide Core Dataset Base v2027.0.0-ballot</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -67,8 +67,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"11.1"}
-    h3,h4,h5,h6{--heading-prefix:"11.1"}</style>
+    <style type="text/css">h2{--heading-prefix:"11"}
+    h3,h4,h5,h6{--heading-prefix:"11"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -141,7 +141,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MII Implementierungsleitfaden Kerndatensatz Basis</span>
             <br/>
-            <span style="display:inline-block;">2027.0.0-ballot.rc1 - 
+            <span style="display:inline-block;">2027.0.0-ballot - 
 
 
 
@@ -246,18 +246,8 @@
   <li>
     <a href="downloads.html">Downloads</a>
   </li>
-  <li class="dropdown">
-    <a data-toggle="dropdown" href="version-history.html" class="dropdown-toggle">Versionierung
-      <b class="caret"></b>
-    </a>
-    <ul class="dropdown-menu">
-      <li>
-        <a href="version-history.html">Versionierung</a>
-      </li>
-      <li>
-        <a href="changes.html">Changelog</a>
-      </li>
-    </ul>
+  <li>
+    <a href="changes.html">Changelog</a>
   </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="metadata.html" class="dropdown-toggle">Metadaten
@@ -266,6 +256,9 @@
     <ul class="dropdown-menu">
       <li>
         <a href="metadata.html">Metadatenübersicht</a>
+      </li>
+      <li>
+        <a href="version-history.html">Versionierung</a>
       </li>
     </ul>
   </li>
@@ -303,7 +296,7 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Inhaltsverzeichnis</b></a></li><li><a href='version-history.html'><b>Versionierung</b></a></li><li><b>Changelog</b></li>
+          <li><a href='toc.html'><b>Inhaltsverzeichnis</b></a></li><li><b>Changelog</b></li>
 
         </ul>
       </div>  <!-- /container -->
@@ -323,7 +316,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the MII Implementation Guide Core Dataset Base (v2027.0.0-ballot.rc1: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="https://medizininformatik-initiative.github.io/kerndatensatz-basis/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the MII Implementation Guide Core Dataset Base (v2027.0.0-ballot: 2027 Ballot 1) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="https://medizininformatik-initiative.github.io/kerndatensatz-basis/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Changelog</h2>
   
 
@@ -358,43 +351,52 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="version-202700-ballot">Version 2027.0.0-ballot</h3>
 
-<p><strong>Datum:</strong> 2026-09-01</p>
+<p><strong>Datum:</strong> 2026-09-10</p>
 
 <h4 id="dokumentation">Dokumentation</h4>
 
 <ul>
-  <li><strong>Changed:</strong> Abhängigkeiten auf <code class="language-plaintext highlighter-rouge">de.basisprofil.r4</code> 1.6.0, <code class="language-plaintext highlighter-rouge">de.medizininformatikinitiative.kerndatensatz.meta</code> 2027.0.0-ballot.rc3, <code class="language-plaintext highlighter-rouge">hl7.terminology.r4</code> 7.1.0 und <code class="language-plaintext highlighter-rouge">hl7.fhir.uv.extensions.r4</code> 5.2.0 aktualisiert.</li>
+  <li><strong>Added:</strong> Allgemeine Leitlinien zum Umgang mit Storno-Kennzeichen aus Quellsystemen ergänzt, einschließlich ressourcenspezifischer Statusabbildungen, Filterung bei der Erstbeladung, späterer Korrekturen und Filterung für die Datennutzung. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/71">#71</a></li>
+  <li><strong>Changed:</strong> Abhängigkeiten auf <code class="language-plaintext highlighter-rouge">de.basisprofil.r4</code> 1.6.0, <code class="language-plaintext highlighter-rouge">de.medizininformatikinitiative.kerndatensatz.meta</code> 2027.0.0-ballot, <code class="language-plaintext highlighter-rouge">hl7.terminology.r4</code> 7.1.0, <code class="language-plaintext highlighter-rouge">hl7.fhir.uv.extensions.r4</code> 5.2.0 und <code class="language-plaintext highlighter-rouge">hl7.fhir.uv.ips</code> 2.0.1 aktualisiert.</li>
 </ul>
 
 <h4 id="modul-person">Modul Person</h4>
 
 <ul>
+  <li><strong>Added:</strong> Ein AllergyIntolerance-Profil und zugehörige Elemente im logischen Modell zur Abbildung patientenbezogener Allergien und Unverträglichkeiten einschließlich auslösendem Stoff, klinischem Status, Kritikalität und beobachteten Reaktionen ergänzt.</li>
   <li><strong>Added:</strong> Das Patient-Profil enthält nun die FHIR-Core-Extensions <code class="language-plaintext highlighter-rouge">patient-birthPlace</code>, <code class="language-plaintext highlighter-rouge">patient-citizenship</code> und <code class="language-plaintext highlighter-rouge">patient-nationality</code>, um Geburtsort, Staatsangehörigkeit und Nationalität im Modul Person abzubilden. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/86">#86</a></li>
+  <li><strong>Added:</strong> Die Hinweise zu Patient-Adressen empfehlen nun die aus <code class="language-plaintext highlighter-rouge">AddressDeBasis</code> geerbte Extension <code class="language-plaintext highlighter-rouge">countryCode</code> für ISO-3166-1-Alpha-2-Ländercodes und richten damit die codierte Länderangabe an HL7 Europe Address (EU) aus. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/20">#20</a></li>
+  <li><strong>Added:</strong> Das Patient-Profil unterstützt nun über die Extension <a href="https://hl7.org/fhir/extensions/StructureDefinition-individual-recordedSexOrGender.html"><code class="language-plaintext highlighter-rouge">individual-recordedSexOrGender</code></a> wiederholbare dokumentierte Geschlechtsangaben getrennt vom administrativen Geschlecht. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/81">#81</a></li>
+  <li><strong>Removed:</strong> <code class="language-plaintext highlighter-rouge">ProbandIn</code> und dessen Unterelemente aus dem logischen Modell Person entfernt. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/90">#90</a></li>
 </ul>
 
 <h4 id="modul-diagnose">Modul Diagnose</h4>
 
 <ul>
-  <li><strong>Added:</strong> Das Element <code class="language-plaintext highlighter-rouge">Condition.bodySite</code> enthält nun die FHIR-Core-Extension <code class="language-plaintext highlighter-rouge">http://hl7.org/fhir/StructureDefinition/bodySite</code>, um eine detaillierte anatomische Referenz, z.B. auf eine <code class="language-plaintext highlighter-rouge">BodyStructure</code>, zusätzlich zur kodierten Körperstelle abzubilden. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/85">#85</a></li>
+  <li><strong>Added:</strong> Das Element <code class="language-plaintext highlighter-rouge">Condition.bodySite</code> enthält nun die FHIR-Core-Extension <code class="language-plaintext highlighter-rouge">http://hl7.org/fhir/StructureDefinition/bodySite</code>, um eine detaillierte anatomische Referenz, z.B. auf eine <code class="language-plaintext highlighter-rouge">BodyStructure</code>, zusätzlich zur codierten Körperstelle abzubilden. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/85">#85</a></li>
+  <li><strong>Changed:</strong> Die Mappings für <code class="language-plaintext highlighter-rouge">Condition.onset[x]</code> und <code class="language-plaintext highlighter-rouge">Condition.abatement[x]</code> wurden klargestellt; Erkrankungsbeginn und Erkrankungsende werden nun getrennt abgebildet und mit ISiK harmonisiert. <code class="language-plaintext highlighter-rouge">Period</code> bleibt aus Gründen der Rückwärtskompatibilität zulässig, SOLL aber NICHT verwendet werden. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/83">#83</a></li>
+  <li><strong>Changed:</strong> Beziehung zwischen Diagnosen und Kontakten im Diagnose-UML angepasst, sodass der Abteilungskontakt als derzeit empfohlene Kontaktebene dargestellt wird und andere Kontaktebenen weiterhin möglich bleiben.</li>
 </ul>
 
 <h4 id="modul-fall">Modul Fall</h4>
 
 <ul>
   <li><strong>Changed:</strong> UML-Modell des Moduls Fall angepasst, sodass die organisatorische Zuordnung zwischen Versorgungsstellen und Abteilungen als optionale n:m-Beziehung dargestellt wird.</li>
-  <li><strong>Changed:</strong> Beziehungen zwischen Diagnosen und Kontakten in den UML-Diagrammen der Module Fall und Diagnose angepasst, sodass der Abteilungskontakt als derzeit empfohlene Kontaktebene dargestellt wird und andere Kontaktebenen weiterhin möglich bleiben.</li>
+  <li><strong>Added:</strong> Leitlinien für ambulante Encounter zur dreistufigen Encounter-Hierarchie, zu <code class="language-plaintext highlighter-rouge">Encounter.partOf</code>-Beziehungen und zum Umgang mit nicht verfügbaren Zeitstempeln ergänzt. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/74">#74</a></li>
+  <li><strong>Changed:</strong> Encounter-Hierarchieabbildung erweitert, um zu veranschaulichen, wie Encounter auf jeder Hierarchieebene denselben Account referenzieren und einen gemeinsamen Abrechnungskontext teilen können. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/73">#73</a></li>
 </ul>
 
 <h4 id="modul-prozedur">Modul Prozedur</h4>
 
 <ul>
   <li><strong>Changed:</strong> Beziehung zwischen Prozeduren und Kontakten im Prozedur-UML angepasst, sodass der Abteilungskontakt als derzeit empfohlener Kontaktkontext dargestellt wird und andere Kontaktebenen weiterhin möglich bleiben.</li>
-  <li><strong>Added:</strong> Das Element <code class="language-plaintext highlighter-rouge">Procedure.bodySite</code> enthält nun die FHIR-Core-Extension <code class="language-plaintext highlighter-rouge">http://hl7.org/fhir/StructureDefinition/bodySite</code>, um eine detaillierte anatomische Referenz, z.B. auf eine <code class="language-plaintext highlighter-rouge">BodyStructure</code>, zusätzlich zur kodierten Körperstelle abzubilden. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/85">#85</a></li>
+  <li><strong>Added:</strong> Das Element <code class="language-plaintext highlighter-rouge">Procedure.bodySite</code> enthält nun die FHIR-Core-Extension <code class="language-plaintext highlighter-rouge">http://hl7.org/fhir/StructureDefinition/bodySite</code>, um eine detaillierte anatomische Referenz, z.B. auf eine <code class="language-plaintext highlighter-rouge">BodyStructure</code>, zusätzlich zur codierten Körperstelle abzubilden. Siehe: <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/85">#85</a></li>
 </ul>
 
 <h4 id="terminologie-updates">Terminologie-Updates</h4>
 
 <ul>
+  <li><strong>Added:</strong> Das neue <a href="ValueSet-mii-vs-person-recordedsexorgender-snomed.html">MII ValueSet Person Recorded Sex or Gender SNOMED</a> ist mit der Bindungsstärke <code class="language-plaintext highlighter-rouge">preferred</code> an <code class="language-plaintext highlighter-rouge">Patient.extension:recordedSexOrGender.extension:value</code> gebunden. Es enthält SNOMED-CT-Befunde zum biologischen Geschlecht und den Qualifier-Wert <code class="language-plaintext highlighter-rouge">Unknown</code>.</li>
   <li><strong>Changed:</strong> Ressourcen verwenden SNOMED CT-Version <code class="language-plaintext highlighter-rouge">http://snomed.info/sct/900000000000207008/version/20260701</code> (Juli 2026) modulübergreifend, um stabile <a href="http://hl7.org/fhir/R4/valueset.html#expansion">ValueSet-Expansion</a> zu gewährleisten</li>
 </ul>
 
@@ -724,8 +726,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
-          Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-ballot.rc1 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Erstellt <span title="Tue, Sep 1, 2026 15:00+0000">2026-09-01</span>
+          Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-ballot basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Erstellt <span title="Thu, Sep 10, 2026 15:03+0000">2026-09-10</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.
