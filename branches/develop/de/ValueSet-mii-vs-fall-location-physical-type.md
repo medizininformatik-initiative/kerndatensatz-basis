@@ -1,4 +1,4 @@
-# MII VS Fall Location Physical Type - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1
+# MII VS Fall Location Physical Type - MII Implementation Guide Core Dataset Base v2027.0.0-ballot
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Artefaktübersicht**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/location-physical-type | *Version*:2027.0.0-ballot.rc1 |
+| *Offizielle URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/location-physical-type | *Version*:2027.0.0-ballot |
 | Active Stand: 2026-09-01 | *Maschinenlesbarer Name*:MII_VS_Fall_LocationPhysicalType |
 
  
@@ -48,7 +48,7 @@ A coded type for the physical type of the location.
       },
       {
         "url" : "version",
-        "valueString" : "2027.0.0-ballot.rc1"
+        "valueString" : "2027.0.0-ballot"
       },
       {
         "url" : "uri",
@@ -166,7 +166,7 @@ A coded type for the physical type of the location.
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/location-physical-type",
-  "version" : "2027.0.0-ballot.rc1",
+  "version" : "2027.0.0-ballot",
   "name" : "MII_VS_Fall_LocationPhysicalType",
   "title" : "MII VS Fall Location Physical Type",
   "status" : "active",

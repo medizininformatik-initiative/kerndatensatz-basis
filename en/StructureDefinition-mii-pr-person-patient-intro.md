@@ -9,12 +9,6 @@
 
 This section provides detailed implementation guidance for the MII Patient Profile.
 
-<div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
-<h5 style="color: #406A99; margin-top: 0;">FHIR Core Extension Note</h5>
-
-<p>The profile includes the FHIR core Patient extensions <code>patient-birthPlace</code>, <code>patient-citizenship</code>, and <code>patient-nationality</code> to represent the patient's place of birth, legal citizenship, and nationality where needed.</p>
-</div>
-
 #### Patient Identification
 
 Patient identification uses multiple identifier types depending on the context:
@@ -54,10 +48,27 @@ Gender documentation follows the [German Base Profile for Gender]:
 
 - **`Patient.gender`**: Administrative gender (required)
 - **`Patient.gender.extension:other-amtlich`**: Official gender codes according to German regulations for cases beyond male/female/unknown
+- **[`Patient.extension:recordedSexOrGender`](https://hl7.org/fhir/extensions/StructureDefinition-individual-recordedSexOrGender.html)**: Repeatable sex or gender statements taken from a document or other record. These statements are kept separate from the administrative gender in `Patient.gender` and can, for example, represent sex assigned at birth.
+  - **`value`**: The recorded value. The [MII ValueSet Person Recorded Sex or Gender SNOMED](ValueSet-mii-vs-person-recordedsexorgender-snomed.html) is bound with `preferred` strength and contains SNOMED CT findings related to biological sex as well as `261665006 | Unknown (qualifier value) |`.
+  - **`type`**: Identifies the kind of recorded sex or gender. `http://loinc.org|76689-9` (Sex assigned at birth) SHOULD be used when documenting sex assigned at birth.
+  - **`acquisitionDate`**: Date and time when the statement was first recorded in the system.
 
-#### Birth Date and Vital Status
+`Indeterminate sex` describes a sex that could not be determined, whereas `Unknown` indicates that the value is not known or was not recorded. Implementations SHOULD preserve this distinction.
+
+#### Citizenship and Nationality
+
+- **`Patient.extension:patient-citizenship`**: The patient's legal status as a citizen of a country. Multiple citizenships and their respective periods can be represented.
+- **`Patient.extension:patient-nationality`**: The patient's nationality. Multiple nationalities and their respective periods can be represented.
+
+**Open clarification:** The intended use and boundary between `patient-citizenship` and `patient-nationality` still need to be clarified. In particular, it remains unresolved whether the German concept “Staatsangehörigkeit” refers specifically to legal citizenship or to nationality in a broader legal, cultural, or ethnic sense. See [#86](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/86).
+
+#### Birth Date, Place of Birth, and Vital Status
 
 - **`Patient.birthDate`**: Full birth date when available. See [German Base Profile - Geburtsdatum]
+- **`Patient.extension:birthPlace`**: The patient's registered place of birth. To represent the country of birth, use `valueAddress.country`; the `countryCode` extension supports coding with ISO 3166-1 alpha-2 codes using a `preferred` binding.
+
+**EHDS outlook:** The use and cardinalities of the FHIR core extensions `patient-citizenship`, `patient-nationality`, and `patient-birthPlace` are aligned with [HL7 Europe Patient (EU base) 2.0.0](https://hl7.eu/fhir/base/2.0.0/StructureDefinition-patient-eu.html) and [HL7 Europe Patient (EU core) 2.0.0](https://hl7.eu/fhir/base/2.0.0/StructureDefinition-patient-eu-core.html). This supports future interoperability in an EHDS context.
+
 - **`Patient.deceased[x]`**: 
   - `deceasedBoolean` **SHOULD** be replaced by `deceasedDateTime` when the patient is deceased and the datetime is known
 
@@ -72,6 +83,8 @@ Address details follow the [German Base Profile - Adresse]:
   - `address.city` with extension for Gemeindeschlüssel and Stadtteil (for city-states)
   - `address.postalCode` for PLZ
   - `address.country` for Land
+
+**EHDS outlook:** Through the dependency on the German FHIR Base Profiles 1.6.0, the Patient address slices are based on [AddressDeBasis 1.6.0](https://simplifier.net/packages/de.basisprofil.r4/1.6.0/files/3644189). For a consistently coded country, implementations **SHOULD** use the inherited `Address.country.extension:countryCode` extension (`iso21090-codedString`) with an ISO 3166-1 alpha-2 code; source-system alpha-3 codes **MUST** be mapped to their alpha-2 equivalent when populating this extension. `AddressDeBasis` binds the extension with `required` strength to the `ISO 3166 Part 1: 2 Letter Codes` ValueSet. This uses the same extension and ValueSet as [HL7 Europe Address (EU) 2.0.0](https://hl7.eu/fhir/base/2.0.0/StructureDefinition-Address-eu.html), where the binding is `preferred`, and supports future EHDS interoperability. This recommendation concerns the coded representation in the extension; `Address.country` remains a string.
 
 <div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
 <h5 style="color: #406A99; margin-top: 0;">Best Practice - Address Components</h5>

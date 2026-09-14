@@ -1,4 +1,4 @@
-# MII ImplementationGuide Ressource - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1
+# MII ImplementationGuide Ressource - MII Implementation Guide Core Dataset Base v2027.0.0-ballot
 
 * [**Inhaltsverzeichnis**](toc.md)
 * **MII ImplementationGuide Ressource**
@@ -133,7 +133,7 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
     },
     {
       "url" : "version",
-      "valueString" : "2027.0.0-ballot.rc1"
+      "valueString" : "2027.0.0-ballot"
     },
     {
       "url" : "uri",
@@ -306,7 +306,7 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/modul-base/ImplementationGuide/mii-ig-base",
-  "version" : "2027.0.0-ballot.rc1",
+  "version" : "2027.0.0-ballot",
   "name" : "MII_IG_Base",
   "title" : "MII Implementation Guide Core Dataset Base",
   "_title" : {
@@ -324,7 +324,7 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
   },
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-01",
+  "date" : "2026-09-10",
   "publisher" : "Medical Informatics Initiative (MII)",
   "contact" : [{
     "name" : "Medical Informatics Initiative (MII)",
@@ -333,20 +333,7 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "value" : "https://www.medizininformatik-initiative.de/en"
     }]
   }],
-  "description" : "Implementation Guide for the Core Dataset Base Modules Person, Diagnosis, Procedure, and Treatment Case",
-  "_description" : {
-    "extension" : [{
-      "extension" : [{
-        "url" : "lang",
-        "valueCode" : "de"
-      },
-      {
-        "url" : "content",
-        "valueString" : "Implementierungsleitfaden für die Kerndatensatz Basismodule Person, Diagnose, Prozedur, und Fall"
-      }],
-      "url" : "http://hl7.org/fhir/StructureDefinition/translation"
-    }]
-  },
+  "description" : "Implementation Guide for the Core Dataset Base Modules Person, Diagnosis, Procedure, and Treatment Case. Release notes: https://medizininformatik-initiative.github.io/kerndatensatz-basis/2027.0.0-ballot/changes.html",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -367,7 +354,7 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
     "id" : "de_medizininformatikinitiative_kerndatensatz_meta",
     "uri" : "https://www.medizininformatik-initiative.de/fhir/modul-meta/ImplementationGuide/mii-ig-meta",
     "packageId" : "de.medizininformatikinitiative.kerndatensatz.meta",
-    "version" : "2027.0.0-ballot.rc3"
+    "version" : "2027.0.0-ballot"
   },
   {
     "id" : "hl7_fhir_uv_xver_r5_r4",

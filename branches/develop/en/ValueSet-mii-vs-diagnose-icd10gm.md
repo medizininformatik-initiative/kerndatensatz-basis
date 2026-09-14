@@ -1,4 +1,4 @@
-# MII VS Diagnose ICD-10-GM - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1
+# MII VS Diagnose ICD-10-GM - MII Implementation Guide Core Dataset Base v2027.0.0-ballot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-icd10gm | *Version*:2027.0.0-ballot.rc1 |
+| *Official URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-icd10gm | *Version*:2027.0.0-ballot |
 | Active as of 2026-09-01 | *Computable Name*:MII_VS_Diagnose_ICD10GM |
 | **Copyright/Legal**: WHO, BfArM 1994 - 2025 - Die Erstellung erfolgt unter Verwendung der maschinenlesbaren Fassung des Bundesinstituts für Arzneimittel und Medizinprodukte (BfArM). | |
 
@@ -49,7 +49,7 @@ Enthaelt ICD-10-GM-Codes der aller verfügbarer Versionen
       },
       {
         "url" : "version",
-        "valueString" : "2027.0.0-ballot.rc1"
+        "valueString" : "2027.0.0-ballot"
       },
       {
         "url" : "uri",
@@ -167,7 +167,7 @@ Enthaelt ICD-10-GM-Codes der aller verfügbarer Versionen
     "valueDate" : "2024-03-07"
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-icd10gm",
-  "version" : "2027.0.0-ballot.rc1",
+  "version" : "2027.0.0-ballot",
   "name" : "MII_VS_Diagnose_ICD10GM",
   "title" : "MII VS Diagnose ICD-10-GM",
   "status" : "active",

@@ -9,8 +9,8 @@
     "systems" : ["http://fhir.de/CodeSystem/KontaktDiagnoseProzedur"],
     "uses" : {
     },
-    "ValueSet-mii-vs-fall-diagnosis-use.html" : "MII VS Fall Diagnosis Use",
-    "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung"
+    "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung",
+    "ValueSet-mii-vs-fall-diagnosis-use.html" : "MII VS Fall Diagnosis Use"
   },
   {
     "url" : "http://fhir.de/ValueSet/Diagnosesubtyp",
@@ -23,8 +23,8 @@
     "http://fhir.de/CodeSystem/KontaktDiagnoseProzedur"],
     "uses" : {
     },
-    "ValueSet-mii-vs-fall-diagnosis-use.html" : "MII VS Fall Diagnosis Use",
-    "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung"
+    "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung",
+    "ValueSet-mii-vs-fall-diagnosis-use.html" : "MII VS Fall Diagnosis Use"
   },
   {
     "url" : "http://fhir.de/ValueSet/EncounterClassDE",
@@ -181,8 +181,8 @@
     "http://terminology.hl7.org/CodeSystem/v2-0203"],
     "uses" : {
     },
-    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient",
-    "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)"
+    "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)",
+    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient"
   },
   {
     "url" : "http://fhir.de/ValueSet/identifier-type-kvid-de-basis",
@@ -194,8 +194,8 @@
     "systems" : ["http://fhir.de/CodeSystem/identifier-type-de-basis"],
     "uses" : {
     },
-    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient",
-    "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)"
+    "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)",
+    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient"
   },
   {
     "url" : "http://fhir.de/ValueSet/iso/bundeslaender",
@@ -207,8 +207,8 @@
     "systems" : ["urn:iso:std:iso:3166-2:de"],
     "uses" : {
     },
-    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient",
-    "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)"
+    "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)",
+    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient"
   },
   {
     "url" : "http://fhir.de/ValueSet/kontaktart-de",
@@ -258,8 +258,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.69"],
     "uses" : {
     },
-    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient",
-    "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)"
+    "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)",
+    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/address-use",
@@ -273,8 +273,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.67"],
     "uses" : {
     },
-    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient",
-    "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)"
+    "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)",
+    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/administrative-gender",
@@ -288,9 +288,9 @@
     "sources" : ["2.16.840.1.113883.4.642.3.1"],
     "uses" : {
     },
-    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient",
     "StructureDefinition-mii-lm-person.html" : "MII LM Person",
-    "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)"
+    "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)",
+    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/allergy-intolerance-category",
@@ -304,7 +304,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.133"],
     "uses" : {
     },
-    "StructureDefinition-mii-lm-person.html" : "MII LM Person"
+    "StructureDefinition-mii-lm-person.html" : "MII LM Person",
+    "StructureDefinition-mii-pr-person-allergieunvertraeglichkeit.html" : "MII PR Person Allergy Intolerance"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/allergy-intolerance-criticality",
@@ -318,7 +319,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.129"],
     "uses" : {
     },
-    "StructureDefinition-mii-lm-person.html" : "MII LM Person"
+    "StructureDefinition-mii-lm-person.html" : "MII LM Person",
+    "StructureDefinition-mii-pr-person-allergieunvertraeglichkeit.html" : "MII PR Person Allergy Intolerance"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/allergy-intolerance-type",
@@ -332,7 +334,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.131"],
     "uses" : {
     },
-    "StructureDefinition-mii-lm-person.html" : "MII LM Person"
+    "StructureDefinition-mii-lm-person.html" : "MII LM Person",
+    "StructureDefinition-mii-pr-person-allergieunvertraeglichkeit.html" : "MII PR Person Allergy Intolerance"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/allergyintolerance-clinical",
@@ -346,7 +349,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.1372"],
     "uses" : {
     },
-    "StructureDefinition-mii-lm-person.html" : "MII LM Person"
+    "StructureDefinition-mii-lm-person.html" : "MII LM Person",
+    "StructureDefinition-mii-pr-person-allergieunvertraeglichkeit.html" : "MII PR Person Allergy Intolerance"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/allergyintolerance-code",
@@ -374,7 +378,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.1370"],
     "uses" : {
     },
-    "StructureDefinition-mii-lm-person.html" : "MII LM Person"
+    "StructureDefinition-mii-lm-person.html" : "MII LM Person",
+    "StructureDefinition-mii-pr-person-allergieunvertraeglichkeit.html" : "MII PR Person Allergy Intolerance"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/body-site",
@@ -390,8 +395,8 @@
     },
     "StructureDefinition-mii-pr-person-vitalstatus.html" : "MII PR Person Vitalstatus",
     "StructureDefinition-mii-pr-prozedur-procedure.html" : "MII PR Prozedur Procedure",
-    "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache",
-    "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition"
+    "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition",
+    "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/clinical-findings",
@@ -421,11 +426,12 @@
     },
     "StructureDefinition-mii-pr-person-vitalstatus.html" : "MII PR Person Vitalstatus",
     "StructureDefinition-mii-pr-prozedur-procedure.html" : "MII PR Prozedur Procedure",
-    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient",
+    "StructureDefinition-mii-pr-person-allergieunvertraeglichkeit.html" : "MII PR Person Allergy Intolerance",
+    "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition",
+    "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung",
     "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)",
     "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache",
-    "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung",
-    "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition"
+    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/condition-category",
@@ -439,8 +445,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.162"],
     "uses" : {
     },
-    "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache",
-    "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition"
+    "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition",
+    "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/condition-clinical",
@@ -454,8 +460,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.164"],
     "uses" : {
     },
-    "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache",
-    "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition"
+    "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition",
+    "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/condition-code",
@@ -470,8 +476,8 @@
     "uses" : {
     },
     "StructureDefinition-mii-pr-prozedur-procedure.html" : "MII PR Prozedur Procedure",
-    "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache",
-    "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition"
+    "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition",
+    "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/condition-severity",
@@ -485,8 +491,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.168"],
     "uses" : {
     },
-    "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache",
-    "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition"
+    "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition",
+    "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/condition-stage",
@@ -500,8 +506,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.170"],
     "uses" : {
     },
-    "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache",
-    "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition"
+    "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition",
+    "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/condition-stage-type",
@@ -515,8 +521,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.171"],
     "uses" : {
     },
-    "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache",
-    "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition"
+    "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition",
+    "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/condition-ver-status",
@@ -530,8 +536,22 @@
     "sources" : ["2.16.840.1.113883.4.642.3.166"],
     "uses" : {
     },
-    "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache",
-    "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition"
+    "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition",
+    "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/country",
+    "version" : "5.0.0",
+    "status" : "draft",
+    "name" : "CountryValueSet",
+    "title" : "Country ValueSet",
+    "description" : "This value set defines a base set of codes for countries.   \r\n   \r\n   Note: The codes for countries are taken from    [ISO 3166](https://www.iso.org/iso-3166-country-codes.html).",
+    "systems" : ["urn:iso:std:iso:3166"],
+    "oids" : ["2.16.840.1.113883.4.642.3.3297"],
+    "sources" : ["2.16.840.1.113883.4.642.3.3297"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/data-absent-reason",
@@ -744,9 +764,9 @@
     "sources" : ["2.16.840.1.113883.4.642.3.45"],
     "uses" : {
     },
-    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient",
+    "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung",
     "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)",
-    "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung"
+    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/identifier-use",
@@ -760,9 +780,9 @@
     "sources" : ["2.16.840.1.113883.4.642.3.57"],
     "uses" : {
     },
-    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient",
+    "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung",
     "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)",
-    "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung"
+    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/iso3166-1-2",
@@ -774,8 +794,8 @@
     "systems" : ["urn:iso:std:iso:3166"],
     "uses" : {
     },
-    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient",
-    "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)"
+    "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)",
+    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/languages",
@@ -791,11 +811,12 @@
     },
     "StructureDefinition-mii-pr-person-vitalstatus.html" : "MII PR Person Vitalstatus",
     "StructureDefinition-mii-pr-prozedur-procedure.html" : "MII PR Prozedur Procedure",
-    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient",
+    "StructureDefinition-mii-pr-person-allergieunvertraeglichkeit.html" : "MII PR Person Allergy Intolerance",
+    "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition",
+    "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung",
     "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)",
     "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache",
-    "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung",
-    "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition"
+    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/link-type",
@@ -809,8 +830,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.423"],
     "uses" : {
     },
-    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient",
-    "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)"
+    "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)",
+    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/manifestation-or-symptom",
@@ -824,8 +845,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.169"],
     "uses" : {
     },
-    "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache",
-    "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition"
+    "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition",
+    "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/marital-status",
@@ -840,8 +861,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.29"],
     "uses" : {
     },
-    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient",
-    "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)"
+    "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)",
+    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/name-use",
@@ -939,8 +960,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.1130"],
     "uses" : {
     },
-    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient",
-    "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)"
+    "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)",
+    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/performer-role",
@@ -1066,7 +1087,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.135"],
     "uses" : {
     },
-    "StructureDefinition-mii-lm-person.html" : "MII LM Person"
+    "StructureDefinition-mii-lm-person.html" : "MII LM Person",
+    "StructureDefinition-mii-pr-person-allergieunvertraeglichkeit.html" : "MII PR Person Allergy Intolerance"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/referencerange-appliesto",
@@ -1111,11 +1133,12 @@
     },
     "StructureDefinition-mii-pr-person-vitalstatus.html" : "MII PR Person Vitalstatus",
     "StructureDefinition-mii-pr-prozedur-procedure.html" : "MII PR Prozedur Procedure",
-    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient",
+    "StructureDefinition-mii-pr-person-allergieunvertraeglichkeit.html" : "MII PR Person Allergy Intolerance",
+    "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition",
+    "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung",
     "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)",
     "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache",
-    "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung",
-    "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition"
+    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/route-codes",
@@ -1129,7 +1152,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.98"],
     "uses" : {
     },
-    "StructureDefinition-mii-lm-person.html" : "MII LM Person"
+    "StructureDefinition-mii-lm-person.html" : "MII LM Person",
+    "StructureDefinition-mii-pr-person-allergieunvertraeglichkeit.html" : "MII PR Person Allergy Intolerance"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/security-labels",
@@ -1149,11 +1173,12 @@
     },
     "StructureDefinition-mii-pr-person-vitalstatus.html" : "MII PR Person Vitalstatus",
     "StructureDefinition-mii-pr-prozedur-procedure.html" : "MII PR Prozedur Procedure",
-    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient",
+    "StructureDefinition-mii-pr-person-allergieunvertraeglichkeit.html" : "MII PR Person Allergy Intolerance",
+    "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition",
+    "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung",
     "StructureDefinition-mii-pr-person-patient-pseudonymisiert.html" : "MII PR Person Patient (Pseudonymisiert)",
     "StructureDefinition-mii-pr-person-todesursache.html" : "MII PR Person Todesursache",
-    "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung",
-    "StructureDefinition-mii-pr-diagnose-condition.html" : "MII PR Diagnose Condition"
+    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/service-type",
@@ -1170,6 +1195,44 @@
     "StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung"
   },
   {
+    "url" : "http://hl7.org/fhir/ValueSet/substance-code",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "SubstanceCode",
+    "title" : "Substance Code",
+    "description" : "This value set contains concept codes for specific substances. It includes codes from [SNOMED](http://snomed.info/sct) where concept is-a 105590001 (Substance (substance)) and where concept is-a 373873005 (Pharmaceutical / biologic product (product))",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.473"],
+    "sources" : ["2.16.840.1.113883.4.642.3.473"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-pr-person-allergieunvertraeglichkeit.html" : "MII PR Person Allergy Intolerance"
+  },
+  {
+    "url" : "http://hl7.org/fhir/uv/ips/ValueSet/allergies-intolerances-uv-ips",
+    "version" : "2.0.1",
+    "status" : "active",
+    "name" : "AllergiesIntolerancesUvIps",
+    "title" : "Allergies & Intolerances - IPS",
+    "description" : "IPS allergy and intolerance codes value set. This value set includes codes from SNOMED CT®: all descendants of 373873005 \\|Pharmaceutical / biologic product (product)\\|; all descendants of 105590001 \\|Substance (substance)\\|; all descendants of 420134006 \\|Propensity to adverse reaction (finding)\\|; all descendants or self of 716186003 \\|No known allergy (situation)\\|\n\nSNOMED CT® ECL definition:\\\n< 373873005 \\|Pharmaceutical / biologic product (product)\\| OR < 105590001 \\|Substance (substance)\\| OR < 420134006 \\|Propensity to adverse reaction (finding)\\| OR \\<\\< 716186003 \\|No known allergy (situation)\\|",
+    "systems" : ["http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-pr-person-allergieunvertraeglichkeit.html" : "MII PR Person Allergy Intolerance"
+  },
+  {
+    "url" : "http://hl7.org/fhir/uv/ips/ValueSet/allergy-reaction-uv-ips",
+    "version" : "2.0.1",
+    "status" : "active",
+    "name" : "AllergyReactionUvIps",
+    "title" : "Allergy Reaction - IPS",
+    "description" : "IPS allergy reaction value set. This value set includes a set of SNOMED CT codes  and descendants (all top level codes are included in the SNOMED CT IPS Terminology) that may be used to represent allergy or intolerance reactions.\n\nSNOMED CT® ECL definition:\\\n\\<\\< 4386001 |Bronchospasm (finding)| OR \\<\\< 9826008 |Conjunctivitis (disorder)| OR \\<\\< 23924001 |Tight chest (finding)| OR \\<\\< 24079001 |Atopic dermatitis (disorder)| OR \\<\\< 31996006 |Vasculitis (disorder)| OR \\<\\< 39579001 |Anaphylaxis (disorder)| OR \\<\\< 41291007 |Angioedema (disorder)| OR \\<\\< 43116000 |Eczema (disorder)| OR \\<\\< 49727002 |Cough (finding)| OR \\<\\< 51599000 |Edema of larynx (disorder)| OR \\<\\< 62315008 |Diarrhea (finding)| OR \\<\\< 70076002 |Rhinitis (disorder)| OR \\<\\< 73442001 |Stevens-Johnson syndrome (disorder)| OR \\<\\< 76067001 |Sneezing (finding)| OR \\<\\< 91175000 |Seizure (finding)| OR \\<\\< 126485001 |Urticaria (disorder)| OR \\<\\< 162290004 |Dry eyes (finding)| OR \\<\\< 195967001 |Asthma (disorder)| OR \\<\\< 247472004 |Weal (disorder)| OR \\<\\< 267036007 |Dyspnea (finding)| OR \\<\\< 271757001 |Papular eruption (disorder)| OR \\<\\< 271759003 |Bullous eruption (disorder)| OR \\<\\< 271807003 |Eruption of skin (disorder)| OR \\<\\< 410430005 |Cardiorespiratory arrest (disorder)| OR \\<\\< 418363000 |Itching of skin (finding)| OR \\<\\< 422400008 |Vomiting (disorder)| OR \\<\\< 422587007 |Nausea (finding)| OR \\<\\< 698247007 |Cardiac arrhythmia (disorder)| OR \\<\\< 702809001 |Drug reaction with eosinophilia and systemic symptoms (disorder)| OR \\<\\< 768962006 |Lyell syndrome (disorder)| OR \\<\\< 781682005 |Hyperemia of eye (finding)|",
+    "systems" : ["http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-pr-person-allergieunvertraeglichkeit.html" : "MII PR Person Allergy Intolerance"
+  },
+  {
     "url" : "http://terminology.hl7.org/ValueSet/jurisdiction",
     "version" : "1.0.0",
     "status" : "active",
@@ -1183,7 +1246,8 @@
     "sources" : ["2.16.840.1.113883.11.21029"],
     "uses" : {
     },
-    "StructureDefinition-mii-lm-person.html" : "MII LM Person"
+    "StructureDefinition-mii-lm-person.html" : "MII LM Person",
+    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient"
   },
   {
     "url" : "http://terminology.hl7.org/ValueSet/recorded-sex-or-gender-type",
@@ -1197,7 +1261,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.3289"],
     "uses" : {
     },
-    "StructureDefinition-mii-lm-person.html" : "MII LM Person"
+    "StructureDefinition-mii-lm-person.html" : "MII LM Person",
+    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient"
   },
   {
     "url" : "http://terminology.hl7.org/ValueSet/v2-0092",
@@ -1268,7 +1333,7 @@
   },
   {
     "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/diagnoses-sct",
-    "version" : "2027.0.0-ballot.rc1",
+    "version" : "2027.0.0-ballot",
     "status" : "active",
     "name" : "MII_VS_Diagnose_DiagnoseCodes_SNOMED",
     "title" : "MII VS Diagnose Diagnose-Codes SNOMED",
@@ -1280,11 +1345,11 @@
   },
   {
     "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-alphaid",
-    "version" : "2027.0.0-ballot.rc1",
+    "version" : "2027.0.0-ballot",
     "status" : "active",
     "name" : "MII_VS_Diagnose_AlphaID",
     "title" : "MII VS Diagnose Alpha-ID",
-    "description" : "Enthaelt Alpha-ID-Codes der Versionen 2018 bis 2025",
+    "description" : "Enthaelt Alpha-ID-Codes der aller verfügbarer Versionen",
     "systems" : ["http://fhir.de/CodeSystem/bfarm/alpha-id"],
     "uses" : {
     },
@@ -1292,7 +1357,7 @@
   },
   {
     "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-bodystructure-snomed",
-    "version" : "2027.0.0-ballot.rc1",
+    "version" : "2027.0.0-ballot",
     "status" : "active",
     "name" : "MII_VS_Diagnose_BodyStructure_SNOMED",
     "title" : "MII VS Diagnose BodyStructure SNOMED",
@@ -1304,11 +1369,11 @@
   },
   {
     "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-icd10gm",
-    "version" : "2027.0.0-ballot.rc1",
+    "version" : "2027.0.0-ballot",
     "status" : "active",
     "name" : "MII_VS_Diagnose_ICD10GM",
     "title" : "MII VS Diagnose ICD-10-GM",
-    "description" : "Enthaelt ICD-10-GM-Codes der Versionen 2009 bis 2025",
+    "description" : "Enthaelt ICD-10-GM-Codes der aller verfügbarer Versionen",
     "systems" : ["http://fhir.de/CodeSystem/bfarm/icd-10-gm"],
     "uses" : {
     },
@@ -1316,7 +1381,7 @@
   },
   {
     "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-orphanet",
-    "version" : "2027.0.0-ballot.rc1",
+    "version" : "2027.0.0-ballot",
     "status" : "active",
     "name" : "MII_VS_Diagnose_Orphanet",
     "title" : "MII VS Diagnose Orphanet",
@@ -1328,7 +1393,7 @@
   },
   {
     "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/identifier-type-codes",
-    "version" : "2027.0.0-ballot.rc1",
+    "version" : "2027.0.0-ballot",
     "status" : "active",
     "name" : "MII_VS_Fall_IdentifierTypeCodes",
     "title" : "MII VS Fall Identifier Type Codes",
@@ -1340,7 +1405,7 @@
   },
   {
     "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/location-physical-type",
-    "version" : "2027.0.0-ballot.rc1",
+    "version" : "2027.0.0-ballot",
     "status" : "active",
     "name" : "MII_VS_Fall_LocationPhysicalType",
     "title" : "MII VS Fall Location Physical Type",
@@ -1352,7 +1417,7 @@
   },
   {
     "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/mii-vs-fall-diagnosis-use",
-    "version" : "2027.0.0-ballot.rc1",
+    "version" : "2027.0.0-ballot",
     "status" : "active",
     "name" : "MII_VS_Fall_Diagnosis_Use",
     "title" : "MII VS Fall Diagnosis Use",
@@ -1365,7 +1430,7 @@
   },
   {
     "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/Vitalstatus",
-    "version" : "2027.0.0-ballot.rc1",
+    "version" : "2027.0.0-ballot",
     "status" : "active",
     "name" : "MII_VS_Person_Vitalstatus",
     "title" : "MII VS Person Vitalstatus",
@@ -1377,7 +1442,7 @@
   },
   {
     "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/mii-vs-person-icd10who",
-    "version" : "2027.0.0-ballot.rc1",
+    "version" : "2027.0.0-ballot",
     "status" : "active",
     "name" : "MII_VS_Person_ICD10WHO",
     "title" : "MII VS Person ICD-10-WHO",
@@ -1389,11 +1454,11 @@
   },
   {
     "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/mii-vs-prozedur-ops",
-    "version" : "2027.0.0-ballot.rc1",
+    "version" : "2027.0.0-ballot",
     "status" : "active",
     "name" : "MII_VS_Prozedur_OPS",
     "title" : "MII VS Prozedur OPS",
-    "description" : "Enthaelt OPS-Codes der Versionen 2010 bis 2025",
+    "description" : "Enthaelt OPS-Codes der aller verfügbarer Versionen",
     "systems" : ["http://fhir.de/CodeSystem/bfarm/ops"],
     "uses" : {
     },
@@ -1401,7 +1466,7 @@
   },
   {
     "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-category-sct",
-    "version" : "2027.0.0-ballot.rc1",
+    "version" : "2027.0.0-ballot",
     "status" : "active",
     "name" : "MII_VS_Prozedur_OpsKategorien_SNOMEDCT",
     "title" : "MII VS Prozedur OPS Kategorien [SNOMED CT]",
@@ -1413,7 +1478,7 @@
   },
   {
     "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-intend",
-    "version" : "2027.0.0-ballot.rc1",
+    "version" : "2027.0.0-ballot",
     "status" : "active",
     "name" : "MII_VS_Prozedur_Durchfuehrungsabsicht_SNOMEDCT",
     "title" : "MII VS Prozedur Durchführungsabsicht [SNOMED CT]",
@@ -1421,12 +1486,12 @@
     "systems" : ["http://snomed.info/sct"],
     "uses" : {
     },
-    "StructureDefinition-mii-ex-prozedur-durchfuehrungsabsicht.html" : "MII EX Prozedur Durchführungsabsicht",
-    "StructureDefinition-mii-pr-prozedur-procedure.html" : "MII PR Prozedur Procedure"
+    "StructureDefinition-mii-pr-prozedur-procedure.html" : "MII PR Prozedur Procedure",
+    "StructureDefinition-mii-ex-prozedur-durchfuehrungsabsicht.html" : "MII EX Prozedur Durchführungsabsicht"
   },
   {
     "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-sct",
-    "version" : "2027.0.0-ballot.rc1",
+    "version" : "2027.0.0-ballot",
     "status" : "active",
     "name" : "MII_VS_Prozedur_Prozeduren_SNOMEDCT",
     "title" : "MII VS Prozedur Prozeduren [SNOMED CT]",
@@ -1435,5 +1500,17 @@
     "uses" : {
     },
     "StructureDefinition-mii-pr-prozedur-procedure.html" : "MII PR Prozedur Procedure"
+  },
+  {
+    "url" : "https://www.medizininformatik-initiative.de/fhir/modul-person/ValueSet/mii-vs-person-recordedsexorgender-snomed",
+    "version" : "2027.0.0-ballot",
+    "status" : "active",
+    "name" : "MII_VS_Person_recordedSexOrGender_SNOMED",
+    "title" : "MII VS Person Recorded Sex or Gender SNOMED",
+    "description" : "Enthaelt SNOMED CT Codes für das dokumentierte Geschlecht",
+    "systems" : ["http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-pr-person-patient.html" : "MII PR Person Patient"
   }]
 }

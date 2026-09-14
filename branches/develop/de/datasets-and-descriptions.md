@@ -1,4 +1,4 @@
-# Datensätze und Beschreibungen - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1
+# Datensätze und Beschreibungen - MII Implementation Guide Core Dataset Base v2027.0.0-ballot
 
 * [**Inhaltsverzeichnis**](toc.md)
 * [**Hinweise**](guidance.md)

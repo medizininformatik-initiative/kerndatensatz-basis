@@ -1,4 +1,4 @@
-# MII VS Diagnose Orphanet - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1
+# MII VS Diagnose Orphanet - MII Implementation Guide Core Dataset Base v2027.0.0-ballot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-orphanet | *Version*:2027.0.0-ballot.rc1 |
+| *Official URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-orphanet | *Version*:2027.0.0-ballot |
 | Active as of 2026-09-01 | *Computable Name*:MII_VS_Diagnose_Orphanet |
 | **Copyright/Legal**: INSERM US14 (Institut national de la santé et de la recherche médicale) | |
 
@@ -49,7 +49,7 @@ Enthaelt alle Orpha-Kennnummern (ORPHAcodes)
       },
       {
         "url" : "version",
-        "valueString" : "2027.0.0-ballot.rc1"
+        "valueString" : "2027.0.0-ballot"
       },
       {
         "url" : "uri",
@@ -167,7 +167,7 @@ Enthaelt alle Orpha-Kennnummern (ORPHAcodes)
     "valueDate" : "2024-03-07"
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-orphanet",
-  "version" : "2027.0.0-ballot.rc1",
+  "version" : "2027.0.0-ballot",
   "name" : "MII_VS_Diagnose_Orphanet",
   "title" : "MII VS Diagnose Orphanet",
   "status" : "active",

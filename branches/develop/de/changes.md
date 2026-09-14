@@ -1,4 +1,4 @@
-# Changelog - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1
+# Changelog - MII Implementation Guide Core Dataset Base v2027.0.0-ballot
 
 * [**Inhaltsverzeichnis**](toc.md)
 * **Changelog**
@@ -11,12 +11,12 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 
 ### Version 2027.0.0-ballot
 
-**Datum:** 2026-09-01
+**Datum:** 2026-09-10
 
 #### Dokumentation
 
 * **Added:** Allgemeine Leitlinien zum Umgang mit Storno-Kennzeichen aus Quellsystemen ergänzt, einschließlich ressourcenspezifischer Statusabbildungen, Filterung bei der Erstbeladung, späterer Korrekturen und Filterung für die Datennutzung. Siehe: [#71](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/71)
-* **Changed:** Abhängigkeiten auf `de.basisprofil.r4` 1.6.0, `de.medizininformatikinitiative.kerndatensatz.meta` 2027.0.0-ballot.rc3, `hl7.terminology.r4` 7.1.0, `hl7.fhir.uv.extensions.r4` 5.2.0 und `hl7.fhir.uv.ips` 2.0.1 aktualisiert.
+* **Changed:** Abhängigkeiten auf `de.basisprofil.r4` 1.6.0, `de.medizininformatikinitiative.kerndatensatz.meta` 2027.0.0-ballot, `hl7.terminology.r4` 7.1.0, `hl7.fhir.uv.extensions.r4` 5.2.0 und `hl7.fhir.uv.ips` 2.0.1 aktualisiert.
 
 #### Modul Person
 

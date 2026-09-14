@@ -1,4 +1,4 @@
-# MII PR Fall Kontakt mit einer Gesundheitseinrichtung - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1
+# MII PR Fall Kontakt mit einer Gesundheitseinrichtung - MII Implementation Guide Core Dataset Base v2027.0.0-ballot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung | *Version*:2027.0.0-ballot.rc1 |
+| *Official URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung | *Version*:2027.0.0-ballot |
 | Active as of 2026-09-01 | *Computable Name*:MII_PR_Fall_KontaktGesundheitseinrichtung |
 
  
@@ -292,7 +292,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-fall-konta
       },
       {
         "url" : "version",
-        "valueString" : "2027.0.0-ballot.rc1"
+        "valueString" : "2027.0.0-ballot"
       },
       {
         "url" : "uri",
@@ -409,7 +409,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-fall-konta
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung",
-  "version" : "2027.0.0-ballot.rc1",
+  "version" : "2027.0.0-ballot",
   "name" : "MII_PR_Fall_KontaktGesundheitseinrichtung",
   "title" : "MII PR Fall Kontakt mit einer Gesundheitseinrichtung",
   "_title" : {

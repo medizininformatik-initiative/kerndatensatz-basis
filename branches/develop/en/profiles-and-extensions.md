@@ -1,4 +1,4 @@
-# Profiles and Extensions - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1
+# Profiles and Extensions - MII Implementation Guide Core Dataset Base v2027.0.0-ballot
 
 * [**Table of Contents**](toc.md)
 * **Profiles and Extensions**

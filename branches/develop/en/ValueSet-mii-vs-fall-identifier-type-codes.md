@@ -1,4 +1,4 @@
-# MII VS Fall Identifier Type Codes - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1
+# MII VS Fall Identifier Type Codes - MII Implementation Guide Core Dataset Base v2027.0.0-ballot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/identifier-type-codes | *Version*:2027.0.0-ballot.rc1 |
+| *Official URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/identifier-type-codes | *Version*:2027.0.0-ballot |
 | Active as of 2026-09-01 | *Computable Name*:MII_VS_Fall_IdentifierTypeCodes |
 
  
@@ -48,7 +48,7 @@ A coded type for an identifier that can be used to determine which identifier to
       },
       {
         "url" : "version",
-        "valueString" : "2027.0.0-ballot.rc1"
+        "valueString" : "2027.0.0-ballot"
       },
       {
         "url" : "uri",
@@ -166,7 +166,7 @@ A coded type for an identifier that can be used to determine which identifier to
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/identifier-type-codes",
-  "version" : "2027.0.0-ballot.rc1",
+  "version" : "2027.0.0-ballot",
   "name" : "MII_VS_Fall_IdentifierTypeCodes",
   "title" : "MII VS Fall Identifier Type Codes",
   "status" : "active",

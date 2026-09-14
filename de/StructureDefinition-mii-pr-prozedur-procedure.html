@@ -7,7 +7,7 @@
 <html xml:lang="de" xmlns="http://www.w3.org/1999/xhtml" lang="de" dir="ltr">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>MII PR Prozedur Procedure - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1</title>
+    <title>MII PR Prozedur Procedure - MII Implementation Guide Core Dataset Base v2027.0.0-ballot</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -68,8 +68,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"15.15"}
-    h3,h4,h5,h6{--heading-prefix:"15.15"}</style>
+    <style type="text/css">h2{--heading-prefix:"15.16"}
+    h3,h4,h5,h6{--heading-prefix:"15.16"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -142,7 +142,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MII Implementierungsleitfaden Kerndatensatz Basis</span>
             <br/>
-            <span style="display:inline-block;">2027.0.0-ballot.rc1 - 
+            <span style="display:inline-block;">2027.0.0-ballot - 
 
 
 
@@ -247,18 +247,8 @@
   <li>
     <a href="downloads.html">Downloads</a>
   </li>
-  <li class="dropdown">
-    <a data-toggle="dropdown" href="version-history.html" class="dropdown-toggle">Versionierung
-      <b class="caret"></b>
-    </a>
-    <ul class="dropdown-menu">
-      <li>
-        <a href="version-history.html">Versionierung</a>
-      </li>
-      <li>
-        <a href="changes.html">Changelog</a>
-      </li>
-    </ul>
+  <li>
+    <a href="changes.html">Changelog</a>
   </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="metadata.html" class="dropdown-toggle">Metadaten
@@ -267,6 +257,9 @@
     <ul class="dropdown-menu">
       <li>
         <a href="metadata.html">Metadatenübersicht</a>
+      </li>
+      <li>
+        <a href="version-history.html">Versionierung</a>
       </li>
     </ul>
   </li>
@@ -318,7 +311,7 @@
 
 <!-- layouts\layout-profile -->
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the MII Implementation Guide Core Dataset Base (v2027.0.0-ballot.rc1: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="https://medizininformatik-initiative.github.io/kerndatensatz-basis/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the MII Implementation Guide Core Dataset Base (v2027.0.0-ballot: 2027 Ballot 1) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="https://medizininformatik-initiative.github.io/kerndatensatz-basis/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -404,7 +397,7 @@ MII PR Prozedur Procedure
       <td colspan="4"><i>Offizielle URL</i>: <span class="copy-text">https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure<button title="Klicken zum Kopieren der URL" class="btn-copy" data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure"/></span>
       </td>
       <td><i>Version</i>:
-      <span class="copy-text">2027.0.0-ballot.rc1<button title="Klicken zum Kopieren der versionierten URL" class="btn-copy" data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2027.0.0-ballot.rc1"/></span>
+      <span class="copy-text">2027.0.0-ballot<button title="Klicken zum Kopieren der versionierten URL" class="btn-copy" data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure|2027.0.0-ballot"/></span>
       </td>
     </tr>
 
@@ -475,15 +468,15 @@ MII PR Prozedur Procedure
 
 <p><strong>Verpflichtende Codierung:</strong></p>
 <ul>
-  <li><strong><code class="language-plaintext highlighter-rouge">Procedure.code</code></strong>: VERPFLICHTEND Kodierung entweder per OPS oder SNOMED CT</li>
-  <li>Mindestens eine kodierte Prozedur MUSS vorhanden sein</li>
-  <li>Weitere Kodierungen aus anderen Terminologien sind OPTIONAL</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">Procedure.code</code></strong>: VERPFLICHTEND Codierung entweder per OPS oder SNOMED CT</li>
+  <li>Mindestens eine codierte Prozedur MUSS vorhanden sein</li>
+  <li>Weitere Codierungen aus anderen Terminologien sind OPTIONAL</li>
 </ul>
 
-<p><strong>OPS-Kodierung:</strong></p>
+<p><strong>OPS-Codierung:</strong></p>
 <ul>
   <li><strong><code class="language-plaintext highlighter-rouge">Procedure.code:ops</code></strong>: OPS (Operationen- und Prozedurenschlüssel) ist das primäre Codiersystem für Prozeduren in Deutschland</li>
-  <li>Siehe [OPS-Kodierung - Deutsche Basisprofile] für detaillierte OPS-Codierungsanforderungen</li>
+  <li>Siehe [OPS-Codierung - Deutsche Basisprofile] für detaillierte OPS-Codierungsanforderungen</li>
   <li>OPS-Codes umfassen:
     <ul>
       <li><code class="language-plaintext highlighter-rouge">Procedure.code:ops.coding.code</code>: Vollständiger Prozedurenkode</li>
@@ -494,7 +487,7 @@ MII PR Prozedur Procedure
   </li>
 </ul>
 
-<p><strong>SNOMED-CT-Kodierung:</strong></p>
+<p><strong>SNOMED-CT-Codierung:</strong></p>
 <ul>
   <li><strong><code class="language-plaintext highlighter-rouge">Procedure.code:sct</code></strong>: SNOMED-CT-Codierung</li>
   <li>Kann als primäre Codierung oder neben OPS verwendet werden</li>
@@ -507,15 +500,15 @@ MII PR Prozedur Procedure
 
 <p><strong>Verpflichtende Kategorisierung:</strong> <code>Procedure.category</code> SNOMED-CT-Kategorisierung auf Basis des Prozedurenkodes.</p>
 
-<p><strong>Mapping von OPS-Klassentiteln:</strong> Wenn die Prozedur per OPS kodiert wird, <strong>SOLL</strong> die Kategorie durch Mapping von OPS-Kapitel-/Klassentiteln auf SNOMED-CT-Konzepte abgeleitet werden. Siehe Abschnitt Terminologien in diesem IG für OPS-zu-SNOMED-CT-Kategorie-Mappings.</p>
+<p><strong>Mapping von OPS-Klassentiteln:</strong> Wenn die Prozedur per OPS codiert wird, <strong>SOLL</strong> die Kategorie durch Mapping von OPS-Kapitel-/Klassentiteln auf SNOMED-CT-Konzepte abgeleitet werden. Siehe Abschnitt Terminologien in diesem IG für OPS-zu-SNOMED-CT-Kategorie-Mappings.</p>
 
-<p><strong>Constraint proc-mii-1:</strong> Diese Anforderung ist nur relevant, wenn die Prozedur per OPS kodiert wird.</p>
+<p><strong>Constraint proc-mii-1:</strong> Diese Anforderung ist nur relevant, wenn die Prozedur per OPS codiert wird.</p>
 
 <p><strong>Zweck:</strong> Die Kategorisierung ermöglicht:</p>
 <ul>
   <li>Hochstufige Prozedur-Gruppierung für epidemiologische Analysen</li>
   <li>Filterung und Durchsuchen von Prozeduren nach breiten klinischen Kategorien</li>
-  <li>Semantische Konsistenz über unterschiedlich kodierte Prozeduren hinweg</li>
+  <li>Semantische Konsistenz über unterschiedlich codierte Prozeduren hinweg</li>
 </ul>
 </div>
 
@@ -539,31 +532,24 @@ MII PR Prozedur Procedure
 
 <h4 id="dokumentation-der-körperstelle">Dokumentation der Körperstelle</h4>
 
-<div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
-<h5 style="color: #406A99; margin-top: 0;">Hinweis zu FHIR-Core-Extensions</h5>
+<p>Die Modellierung codierter und detaillierter anatomischer Lokalisationen wurde mit <a href="https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKProzedur.html">gematik ISiK Prozedur 6.0.0</a> harmonisiert. <code class="language-plaintext highlighter-rouge">Procedure.bodySite</code> unterstützt zwei Darstellungen:</p>
 
-<p>Das Profil enthält die FHIR-Core-Extension <code>http://hl7.org/fhir/StructureDefinition/bodySite</code> auf <code>Procedure.bodySite</code>, um zusätzlich zu der codierten Körperstelle eine detaillierte anatomische Referenz, z.B. auf eine BodyStructure, abbilden zu können.</p>
-</div>
-
-<div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
-<h5 style="color: #406A99; margin-top: 0;">Best Practice - Körperstelle vs. Seitenlokalisation</h5>
-
-<p><strong>Zweck von bodySite:</strong> <code>Procedure.bodySite</code> bietet detaillierte Kodierung der anatomischen Lokalisation für die Prozedur mittels SNOMED CT.</p>
-
-<p><strong>NICHT für Seitenlokalisation:</strong> <code>Procedure.bodySite</code> <strong>SOLL NICHT</strong> verwendet werden, um die Seitenlokalisation (links/rechts/beidseitig) abzubilden. Die Seitenlokalisation ist eine Eigenschaft des Prozedurenkodes selbst.</p>
-
-<p><strong>Darstellung der Seitenlokalisation:</strong></p>
 <ul>
-  <li>Für OPS-Codes: Verwenden Sie <code>Procedure.code:ops.extension:seitenlokalisation</code></li>
-  <li>Für SNOMED CT: Seitenlokalisation ist im Prozedurkonzept inhärent enthalten (z.B. "Appendektomie des rechten Appendix")</li>
+  <li>eine codierte anatomische Lokalisation, vorzugsweise mit SNOMED CT; oder</li>
+  <li>eine Referenz auf eine patientenbezogene <code class="language-plaintext highlighter-rouge">BodyStructure</code> über die Extension <code class="language-plaintext highlighter-rouge">http://hl7.org/fhir/StructureDefinition/bodySite</code>, wenn eine codierte Körperstelle allein nicht die erforderliche Detailtiefe bietet.</li>
 </ul>
 
-<p><strong>Wann bodySite zu verwenden ist:</strong></p>
+<p><strong>EHDS-Ausblick:</strong> <a href="https://hl7.eu/fhir/base/2.0.0/StructureDefinition-procedure-eu-core.html">HL7 Europe Procedure (EU core) 2.0.0</a> verwendet dieselbe Darstellung durch Codierung oder Referenz und wendet die Invariante <code class="language-plaintext highlighter-rouge">eu-bodysite-1</code> an. Für zukünftige EHDS-Kompatibilität <strong>SOLLTE</strong> jedes Vorkommen von <code class="language-plaintext highlighter-rouge">Procedure.bodySite</code> entweder Codierung/Text oder die BodyStructure-Referenz-Extension enthalten, jedoch nicht beides.</p>
+
+<p><strong>Körperstelle und Seitenlokalisation:</strong></p>
+
 <ul>
-  <li>Um zusätzliche anatomische Details bereitzustellen, die über das hinausgehen, was der Code spezifiziert</li>
-  <li>Um präzise anatomische Strukturen mittels SNOMED-CT-Anatomiekonzepten zu spezifizieren</li>
+  <li><code class="language-plaintext highlighter-rouge">Procedure.bodySite</code> bietet eine detaillierte Codierung der anatomischen Lokalisation für die Prozedur mittels SNOMED CT</li>
+  <li><code class="language-plaintext highlighter-rouge">Procedure.bodySite</code> <strong>SOLL NICHT</strong> verwendet werden, um die Seitenlokalisation (links/rechts/beidseitig) abzubilden; die Seitenlokalisation ist eine Eigenschaft des Prozedurencodes selbst</li>
+  <li>Für OPS-Codes SOLL <code class="language-plaintext highlighter-rouge">Procedure.code:ops.extension:seitenlokalisation</code> verwendet werden</li>
+  <li>Bei SNOMED CT ist die Seitenlokalisation im Prozedurkonzept inhärent enthalten</li>
+  <li><code class="language-plaintext highlighter-rouge">bodySite</code> SOLL verwendet werden, um über den Prozedurencode hinausgehende anatomische Details anzugeben oder auf eine patientenbezogene anatomische Struktur zu referenzieren</li>
 </ul>
-</div>
 
 <h4 id="durchführungsabsicht">Durchführungsabsicht</h4>
 
@@ -579,7 +565,7 @@ MII PR Prozedur Procedure
       <li>etc.</li>
     </ul>
   </li>
-  <li>Bietet klinischen Kontext für die Prozedur über den Prozedurenkode hinaus</li>
+  <li>Bietet klinischen Kontext für die Prozedur über den Prozedurencode hinaus</li>
 </ul>
 
 <h4 id="kontaktkontext">Kontaktkontext</h4>
@@ -1028,7 +1014,7 @@ Hierdurch wird der Tatsache Rechnung getragen, dass jede der jährlich neu ersch
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Hinweis<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 1e1e26d1-00b0-4c5a-85a0-ef71e5e4868d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 2f532233-e9e8-4e28-9a75-363350992fc7
 document.getElementById('cbmii-pr-prozedur-procedureK-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-prozedur-procedureK'), 'binding', document.getElementById('cbmii-pr-prozedur-procedureK-binding').checked, document.getElementById('ppmii-pr-prozedur-procedureK'));
 document.getElementById('cbmii-pr-prozedur-procedureK-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1071,7 +1057,7 @@ filterDesc(document.getElementById('mii-pr-prozedur-procedureK'), 'obligation', 
       <a style="opacity: 1.0" href="ValueSet-mii-vs-prozedur-durchfuehrungsabsicht-snomedct.html">MII VS Prozedur Durchführungsabsicht [SNOMED CT]</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-intend" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot.rc1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -1114,7 +1100,7 @@ filterDesc(document.getElementById('mii-pr-prozedur-procedureK'), 'obligation', 
       <a style="opacity: 1.0" href="ValueSet-mii-vs-prozedur-opskategorien-snomedct.html">MII VS Prozedur OPS Kategorien [SNOMED CT]</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-category-sct" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot.rc1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -1142,7 +1128,7 @@ filterDesc(document.getElementById('mii-pr-prozedur-procedureK'), 'obligation', 
       <a style="opacity: 1.0" href="ValueSet-mii-vs-prozedur-ops.html">MII VS Prozedur OPS</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/mii-vs-prozedur-ops" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot.rc1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -1171,7 +1157,7 @@ filterDesc(document.getElementById('mii-pr-prozedur-procedureK'), 'obligation', 
       <a style="opacity: 1.0" href="ValueSet-mii-vs-prozedur-prozeduren-snomedct.html">MII VS Prozedur Prozeduren [SNOMED CT]</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-sct" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot.rc1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -1589,7 +1575,7 @@ filterDesc(document.getElementById('mii-pr-prozedur-procedureK'), 'obligation', 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">*</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5; opacity: 0.5" href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Hinweis</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 1e1e26d1-00b0-4c5a-85a0-ef71e5e4868d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 2f532233-e9e8-4e28-9a75-363350992fc7
 document.getElementById('cbmii-pr-prozedur-procedureD-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-prozedur-procedureD'), 'binding', document.getElementById('cbmii-pr-prozedur-procedureD-binding').checked, document.getElementById('ppmii-pr-prozedur-procedureD'));
 document.getElementById('cbmii-pr-prozedur-procedureD-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1634,7 +1620,7 @@ filterDesc(document.getElementById('mii-pr-prozedur-procedureD'), 'obligation', 
       <a style="opacity: 0.5" href="ValueSet-mii-vs-prozedur-opskategorien-snomedct.html">MII VS Prozedur OPS Kategorien [SNOMED CT]</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-category-sct" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot.rc1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -1647,7 +1633,7 @@ filterDesc(document.getElementById('mii-pr-prozedur-procedureD'), 'obligation', 
       <a style="opacity: 0.5" href="ValueSet-mii-vs-prozedur-ops.html">MII VS Prozedur OPS</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/mii-vs-prozedur-ops" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot.rc1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -1660,7 +1646,7 @@ filterDesc(document.getElementById('mii-pr-prozedur-procedureD'), 'obligation', 
       <a style="opacity: 0.5" href="ValueSet-mii-vs-prozedur-prozeduren-snomedct.html">MII VS Prozedur Prozeduren [SNOMED CT]</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-sct" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot.rc1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot</td>
     <td>This IG</td>
   </tr>
 </table>
@@ -2468,7 +2454,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Coded items used during the procedure<br class="binding"/><span style="font-weight:bold" title="null" class="binding">Binding: </span><a href="http://hl7.org/fhir/R4/valueset-device-kind.html" title="http://hl7.org/fhir/ValueSet/device-kind" class="binding">FHIRDeviceTypes</a><span title="null" class="binding"> (</span><a href="http://hl7.org/fhir/R4/terminologies.html#example" title="Instances are not expected or even encouraged to draw from the specified value set.  The value set merely provides examples of the types of concepts intended to be included." class="binding">example</a><span title="null" class="binding">)</span><span title="null" class="binding">: </span><span title="null" class="binding">Codes describing items used during a procedure.</span><br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 1e1e26d1-00b0-4c5a-85a0-ef71e5e4868d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 2f532233-e9e8-4e28-9a75-363350992fc7
 document.getElementById('cbmii-pr-prozedur-procedureS-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-prozedur-procedureS'), 'binding', document.getElementById('cbmii-pr-prozedur-procedureS-binding').checked, document.getElementById('ppmii-pr-prozedur-procedureS'));
 document.getElementById('cbmii-pr-prozedur-procedureS-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -2557,7 +2543,7 @@ filterDesc(document.getElementById('mii-pr-prozedur-procedureS'), 'obligation', 
       <a style="opacity: 1.0" href="ValueSet-mii-vs-prozedur-durchfuehrungsabsicht-snomedct.html">MII VS Prozedur Durchführungsabsicht [SNOMED CT]</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-intend" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot.rc1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -2615,7 +2601,7 @@ filterDesc(document.getElementById('mii-pr-prozedur-procedureS'), 'obligation', 
       <a style="opacity: 1.0" href="ValueSet-mii-vs-prozedur-opskategorien-snomedct.html">MII VS Prozedur OPS Kategorien [SNOMED CT]</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-category-sct" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot.rc1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -2643,7 +2629,7 @@ filterDesc(document.getElementById('mii-pr-prozedur-procedureS'), 'obligation', 
       <a style="opacity: 1.0" href="ValueSet-mii-vs-prozedur-ops.html">MII VS Prozedur OPS</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/mii-vs-prozedur-ops" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot.rc1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -2672,7 +2658,7 @@ filterDesc(document.getElementById('mii-pr-prozedur-procedureS'), 'obligation', 
       <a style="opacity: 1.0" href="ValueSet-mii-vs-prozedur-prozeduren-snomedct.html">MII VS Prozedur Prozeduren [SNOMED CT]</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-sct" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot.rc1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -3550,7 +3536,7 @@ Hierdurch wird der Tatsache Rechnung getragen, dass jede der jährlich neu ersch
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Hinweis<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 1e1e26d1-00b0-4c5a-85a0-ef71e5e4868d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 2f532233-e9e8-4e28-9a75-363350992fc7
 document.getElementById('cbmii-pr-prozedur-procedureKA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-prozedur-procedureKA'), 'binding', document.getElementById('cbmii-pr-prozedur-procedureKA-binding').checked, document.getElementById('ppmii-pr-prozedur-procedureKA'));
 document.getElementById('cbmii-pr-prozedur-procedureKA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -3592,7 +3578,7 @@ filterDesc(document.getElementById('mii-pr-prozedur-procedureKA'), 'obligation',
       <a style="opacity: 1.0" href="ValueSet-mii-vs-prozedur-durchfuehrungsabsicht-snomedct.html">MII VS Prozedur Durchführungsabsicht [SNOMED CT]</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-intend" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot.rc1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -3635,7 +3621,7 @@ filterDesc(document.getElementById('mii-pr-prozedur-procedureKA'), 'obligation',
       <a style="opacity: 1.0" href="ValueSet-mii-vs-prozedur-opskategorien-snomedct.html">MII VS Prozedur OPS Kategorien [SNOMED CT]</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-category-sct" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot.rc1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -3663,7 +3649,7 @@ filterDesc(document.getElementById('mii-pr-prozedur-procedureKA'), 'obligation',
       <a style="opacity: 1.0" href="ValueSet-mii-vs-prozedur-ops.html">MII VS Prozedur OPS</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/mii-vs-prozedur-ops" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot.rc1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -3692,7 +3678,7 @@ filterDesc(document.getElementById('mii-pr-prozedur-procedureKA'), 'obligation',
       <a style="opacity: 1.0" href="ValueSet-mii-vs-prozedur-prozeduren-snomedct.html">MII VS Prozedur Prozeduren [SNOMED CT]</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-sct" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot.rc1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -4110,7 +4096,7 @@ filterDesc(document.getElementById('mii-pr-prozedur-procedureKA'), 'obligation',
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">*</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5; opacity: 0.5" href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Hinweis</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 1e1e26d1-00b0-4c5a-85a0-ef71e5e4868d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 2f532233-e9e8-4e28-9a75-363350992fc7
 document.getElementById('cbmii-pr-prozedur-procedureDA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-prozedur-procedureDA'), 'binding', document.getElementById('cbmii-pr-prozedur-procedureDA-binding').checked, document.getElementById('ppmii-pr-prozedur-procedureDA'));
 document.getElementById('cbmii-pr-prozedur-procedureDA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -4152,7 +4138,7 @@ filterDesc(document.getElementById('mii-pr-prozedur-procedureDA'), 'obligation',
       <a style="opacity: 0.5" href="ValueSet-mii-vs-prozedur-opskategorien-snomedct.html">MII VS Prozedur OPS Kategorien [SNOMED CT]</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-category-sct" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot.rc1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -4165,7 +4151,7 @@ filterDesc(document.getElementById('mii-pr-prozedur-procedureDA'), 'obligation',
       <a style="opacity: 0.5" href="ValueSet-mii-vs-prozedur-ops.html">MII VS Prozedur OPS</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/mii-vs-prozedur-ops" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot.rc1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -4178,7 +4164,7 @@ filterDesc(document.getElementById('mii-pr-prozedur-procedureDA'), 'obligation',
       <a style="opacity: 0.5" href="ValueSet-mii-vs-prozedur-prozeduren-snomedct.html">MII VS Prozedur Prozeduren [SNOMED CT]</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-sct" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot.rc1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot</td>
     <td>This IG</td>
   </tr>
 </table>
@@ -4986,7 +4972,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Coded items used during the procedure<br class="binding"/><span style="font-weight:bold" title="null" class="binding">Binding: </span><a href="http://hl7.org/fhir/R4/valueset-device-kind.html" title="http://hl7.org/fhir/ValueSet/device-kind" class="binding">FHIRDeviceTypes</a><span title="null" class="binding"> (</span><a href="http://hl7.org/fhir/R4/terminologies.html#example" title="Instances are not expected or even encouraged to draw from the specified value set.  The value set merely provides examples of the types of concepts intended to be included." class="binding">example</a><span title="null" class="binding">)</span><span title="null" class="binding">: </span><span title="null" class="binding">Codes describing items used during a procedure.</span><br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 1e1e26d1-00b0-4c5a-85a0-ef71e5e4868d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 2f532233-e9e8-4e28-9a75-363350992fc7
 document.getElementById('cbmii-pr-prozedur-procedureSA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-prozedur-procedureSA'), 'binding', document.getElementById('cbmii-pr-prozedur-procedureSA-binding').checked, document.getElementById('ppmii-pr-prozedur-procedureSA'));
 document.getElementById('cbmii-pr-prozedur-procedureSA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -5073,7 +5059,7 @@ filterDesc(document.getElementById('mii-pr-prozedur-procedureSA'), 'obligation',
       <a style="opacity: 1.0" href="ValueSet-mii-vs-prozedur-durchfuehrungsabsicht-snomedct.html">MII VS Prozedur Durchführungsabsicht [SNOMED CT]</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-intend" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot.rc1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -5131,7 +5117,7 @@ filterDesc(document.getElementById('mii-pr-prozedur-procedureSA'), 'obligation',
       <a style="opacity: 1.0" href="ValueSet-mii-vs-prozedur-opskategorien-snomedct.html">MII VS Prozedur OPS Kategorien [SNOMED CT]</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-category-sct" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot.rc1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -5159,7 +5145,7 @@ filterDesc(document.getElementById('mii-pr-prozedur-procedureSA'), 'obligation',
       <a style="opacity: 1.0" href="ValueSet-mii-vs-prozedur-ops.html">MII VS Prozedur OPS</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/mii-vs-prozedur-ops" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot.rc1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -5188,7 +5174,7 @@ filterDesc(document.getElementById('mii-pr-prozedur-procedureSA'), 'obligation',
       <a style="opacity: 1.0" href="ValueSet-mii-vs-prozedur-prozeduren-snomedct.html">MII VS Prozedur Prozeduren [SNOMED CT]</a>
       <button data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/ValueSet/procedures-sct" title="Click to copy URL" class="btn-copy"></button>
     </td>
-    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot.rc1</td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;2027.0.0-ballot</td>
     <td>This IG</td>
   </tr>
   <tr>
@@ -5729,8 +5715,8 @@ Summary
 
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
-          Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-ballot.rc1 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Erstellt <span title="Tue, Sep 1, 2026 15:00+0000">2026-09-01</span>
+          Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-ballot basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Erstellt <span title="Thu, Sep 10, 2026 15:03+0000">2026-09-10</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.

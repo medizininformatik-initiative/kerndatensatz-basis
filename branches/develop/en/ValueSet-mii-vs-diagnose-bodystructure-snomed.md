@@ -1,4 +1,4 @@
-# MII VS Diagnose BodyStructure SNOMED - MII Implementation Guide Core Dataset Base v2027.0.0-ballot.rc1
+# MII VS Diagnose BodyStructure SNOMED - MII Implementation Guide Core Dataset Base v2027.0.0-ballot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-bodystructure-snomed | *Version*:2027.0.0-ballot.rc1 |
+| *Official URL*:https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-bodystructure-snomed | *Version*:2027.0.0-ballot |
 | Active as of 2026-09-01 | *Computable Name*:MII_VS_Diagnose_BodyStructure_SNOMED |
 | **Copyright/Legal**: This material includes SNOMED Clinical Terms® (SNOMED CT®) which is used by permission of SNOMED International. All rights reserved. SNOMED CT®, was originally created by The College of American Pathologists. SNOMED and SNOMED CT are registered trademarks of SNOMED International. Implementers of these artefacts must have the appropriate SNOMED CT Affiliate license. | |
 
@@ -49,7 +49,7 @@ Enthaelt alle SNOMED Body structure codes
       },
       {
         "url" : "version",
-        "valueString" : "2027.0.0-ballot.rc1"
+        "valueString" : "2027.0.0-ballot"
       },
       {
         "url" : "uri",
@@ -167,7 +167,7 @@ Enthaelt alle SNOMED Body structure codes
     }
   }],
   "url" : "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/mii-vs-diagnose-bodystructure-snomed",
-  "version" : "2027.0.0-ballot.rc1",
+  "version" : "2027.0.0-ballot",
   "name" : "MII_VS_Diagnose_BodyStructure_SNOMED",
   "title" : "MII VS Diagnose BodyStructure SNOMED",
   "status" : "active",
