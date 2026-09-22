@@ -9,8 +9,11 @@ Kerndatensatzmodule Person, Diagnose, Prozedur, Fall
 - **Current deployment**: https://medizininformatik-initiative.github.io/kerndatensatz-basis/
 - **Development build (`develop`)**: https://medizininformatik-initiative.github.io/kerndatensatz-basis/branches/develop/
 
+### Ballot Release
+
+- **Release 2027.0.0-ballot**: https://medizininformatik-initiative.github.io/kerndatensatz-basis/2027.0.0-ballot
+
 ### Stable Releases
 
-- **Release 2027.0.0-ballot.rc1**: https://medizininformatik-initiative.github.io/kerndatensatz-basis/2027.0.0-ballot.rc1
 - **Release 2026.0.1**: https://medizininformatik-initiative.github.io/kerndatensatz-basis/2026.0.1/
 - **Release 2026.0.0**: https://medizininformatik-initiative.github.io/kerndatensatz-basis/2026.0.0/
