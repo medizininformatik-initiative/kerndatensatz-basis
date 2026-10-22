@@ -66,6 +66,8 @@ jobs:
 
           stale_count=0
           preserved_count=0
+          stale_entries=()
+          preserved_entries=()
           branch_is_active() {
             local candidate="$1"
             local active
@@ -88,23 +90,27 @@ jobs:
             if [[ "${deployment}" == "." ]]; then
               echo "Preserving formal publication root"
               preserved_count=$((preserved_count + 1))
+              preserved_entries+=("\`/\` (formal publication root)")
               continue
             fi
             relative_deployment="${deployment#./}"
             if [[ "${relative_deployment}" =~ ^[0-9]+\.[0-9]+\.[0-9]+([-.][0-9A-Za-z.-]+)?$ ]]; then
               echo "Preserving version-like permanent path ${relative_deployment}/"
               preserved_count=$((preserved_count + 1))
+              preserved_entries+=("\`${relative_deployment}/\` (version-like permanent path)")
               continue
             fi
             if [[ -z "${branch}" ]]; then
               echo "::warning::Ignoring empty preview marker at ${marker}"
               preserved_count=$((preserved_count + 1))
+              preserved_entries+=("\`${relative_deployment}/\` (empty marker)")
               continue
             fi
 
             if branch_is_active "${branch}"; then
               echo "Preserving ${deployment#./}/ (${branch})"
               preserved_count=$((preserved_count + 1))
+              preserved_entries+=("\`${relative_deployment}/\` (active branch \`${branch}\`)")
               continue
             fi
 
@@ -127,10 +133,12 @@ jobs:
             done
             if [[ "${has_active_descendant}" == "true" ]]; then
               preserved_count=$((preserved_count + 1))
+              preserved_entries+=("\`${relative_deployment}/\` (stale \`${branch}\`, contains active preview \`${descendant_branch}\`)")
               continue
             fi
 
             stale_count=$((stale_count + 1))
+            stale_entries+=("\`${relative_deployment}/\` (deleted branch \`${branch}\`)")
             if [[ "${DRY_RUN}" == "true" ]]; then
               echo "[dry run] Would remove ${deployment#./}/ (${branch})"
             else
@@ -138,6 +146,18 @@ jobs:
               rm -rf -- "${deployment}"
             fi
           done
+
+          # Previews deployed without a marker are never cleanup candidates;
+          # list them so they can be removed or marked by hand.
+          unmarked_entries=()
+          if [[ -d branches ]]; then
+            while IFS= read -r -d '' preview; do
+              if ! find "${preview}" -type f -name '.branch-name' -print -quit | grep -q .; then
+                echo "::warning::Unmarked preview ${preview}/ is not managed by this cleanup."
+                unmarked_entries+=("\`${preview}/\`")
+              fi
+            done < <(find branches -mindepth 1 -maxdepth 1 -type d -print0 | sort -z)
+          fi
 
           changed=false
           if [[ "${DRY_RUN}" != "true" ]]; then
@@ -166,6 +186,31 @@ jobs:
             echo "- Preserved: ${preserved_count}"
             echo "- Stale: ${stale_count}"
             echo "- Changed: ${changed}"
+            echo
+            if [[ "${DRY_RUN}" == "true" ]]; then
+              echo "#### Would remove"
+            else
+              echo "#### Removed"
+            fi
+            if (( ${#stale_entries[@]} > 0 )); then
+              printf -- '- %s\n' "${stale_entries[@]}"
+            else
+              echo "_None_"
+            fi
+            echo
+            echo "#### Preserved"
+            if (( ${#preserved_entries[@]} > 0 )); then
+              printf -- '- %s\n' "${preserved_entries[@]}"
+            else
+              echo "_None_"
+            fi
+            echo
+            echo "#### Unmarked previews (not managed, remove or add \`.branch-name\` by hand)"
+            if (( ${#unmarked_entries[@]} > 0 )); then
+              printf -- '- %s\n' "${unmarked_entries[@]}"
+            else
+              echo "_None_"
+            fi
           } >> "${GITHUB_STEP_SUMMARY}"
 
       - name: Configure GitHub Pages
