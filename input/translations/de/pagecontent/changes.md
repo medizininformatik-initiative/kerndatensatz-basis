@@ -2,6 +2,14 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 
 ---
 
+### Version 2027.0.0
+
+#### Modul Person
+
+- **Changed:** Im logischen Modell Person ist `Name.Praefix` nun ein BackboneElement mit den Unterelementen `Wert` (das Präfix) und `ArtdesPraefixes` (dessen Art), da ein primitives `string`-Element keine Unterelemente haben kann. Siehe: [#96](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/96)
+
+---
+
 ### Version 2027.0.0-ballot
 
 **Datum:** 2026-09-10
