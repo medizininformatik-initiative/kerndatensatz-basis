@@ -1,0 +1,126 @@
+**Beispielhafte Anwendungsszenarien:**
+
+- Dokumentation von Diagnosen für Patienten in der klinischen Versorgung mittels ICD-10-GM-Codierung
+- Unterstützung von Abrechnungsprozessen mit codierten Diagnoseinformationen
+- Ermöglichung epidemiologischer Forschung durch standardisierte Diagnosecodierung
+- Darstellung seltener Erkrankungen mittels Alpha-ID oder Orphanet-Codes neben ICD-10-GM
+- Verknüpfung von Diagnosen mit spezifischen Behandlungsfällen zur zeitlichen und kontextuellen Dokumentation
+
+### Profilspezifische Implementierungshinweise
+
+Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Diagnose-Profil.
+
+#### Codierungsanforderungen
+
+**Verpflichtende Codierung:**
+- **`Condition.code`**: Mindestens eine codierte Diagnose MUSS enthalten sein
+- System frei wählbar aus: ICD-10-GM, Alpha-ID, SNOMED CT oder Orphanet
+- ICD-10-GM-Codierung ist das primäre Codiersystem für Diagnosen in Deutschland
+
+**Mehrere Codiersysteme:**
+- Mehrfachcodierungen aus verschiedenen Terminologien sind erlaubt und werden, wo anwendbar, empfohlen
+- Beispiel: ICD-10-GM für Abrechnungszwecke + SNOMED CT für semantische Interoperabilität + Alpha-ID/Orphanet für seltene Erkrankungen
+
+#### ICD-10-GM-spezifische Extensions
+
+<div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
+<h5 style="color: #406A99; margin-top: 0;">Best Practice - ICD-10-GM-Extensions und Sonderzeichen</h5>
+
+<p><strong>Trennung von Sonderzeichen:</strong> Das Element <code>Condition.code.coding.where(system='http://fhir.de/CodeSystem/bfarm/icd-10-gm').code</code> <strong>SOLL NICHT</strong> ein Mehrfachcodierungskennzeichen oder Zusatzkennzeichen (z.B. Seitenlokalisation oder Diagnosesicherheit) enthalten.</p>
+
+<p><strong>Verwendung von Extensions:</strong></p>
+<ul>
+  <li><strong>Mehrfachcodierungs-Kennzeichen:</strong> Mehrfachcodierungskennzeichen (<code>*</code>, <code>†</code>, <code>!</code>) <strong>SOLLEN</strong> von den ICD-10-GM-Codes getrennt und in der Extension "Mehrfachcodierungs-Kennzeichen" erfasst werden</li>
+  <li><strong>Seitenlokalisation:</strong> Die Extension "Seitenlokalisation" <strong>SOLL</strong> zur Angabe der Seitenlokalisation in der ICD-10-GM-codierung verwendet werden</li>
+  <li><strong>Diagnosesicherheit:</strong> Die Extension "Diagnosesicherheit" <strong>SOLL</strong> zur Angabe der Diagnosesicherheit in der ICD-10-GM-codierung verwendet werden</li>
+</ul>
+
+<p><strong>Referenz:</strong> Siehe <a href="https://ig.fhir.de/basisprofile-de/1.5.4/ig-markdown-Datentypen-Coding.html#ig-markdown-Datentypen-ICD-10GM-Coding">ICD-10-GM Coding-Profil</a> und <a href="https://ig.fhir.de/basisprofile-de/1.5.4/ig-markdown-ExtensionsfrCondition.html">Diagnosesicherheit Extension</a> in den Deutschen Basisprofilen für detaillierte Constraints.</p>
+</div>
+
+#### Mehrfachcodierung mit ICD-10-GM Kreuz-Stern-System
+
+<div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
+<h5 style="color: #406A99; margin-top: 0;">Best Practice - Kreuz-Stern-System Implementierung</h5>
+
+<p><strong>Mehrere Condition-Instanzen:</strong> Bei der Verwendung von ICD-10-GM-Codes mit dem Kreuz-Stern-System wird für <strong>jeden ICD-10-Code eine separate Condition-Instanz</strong> erstellt (Ätiologie, Manifestation, Zusatzinformation).</p>
+
+<p><strong>Verknüpfung von Sekundär- zu Primärdiagnose:</strong></p>
+<ul>
+  <li>Die Primärdiagnose-Condition (Ätiologie mit †-Kennzeichen) ist die Hauptinstanz</li>
+  <li>Sekundärdiagnose-Conditions (Manifestation mit *-Kennzeichen, Zusatzinformation mit !-Kennzeichen) nutzen die <a href="http://hl7.org/fhir/R4/extension-condition-related.html">Extension Condition Related</a>, um auf die Primärdiagnose zu referenzieren</li>
+  <li>Dies erstellt eine explizite Beziehungskette: Manifestation → Ätiologie</li>
+</ul>
+
+<p><strong>Alpha-ID und Orphanet-Codes:</strong></p>
+<ul>
+  <li>Wenn Alpha-ID- oder Orphanet-Codes zu kombinierten ICD-10-GM-Codes gemappt sind, werden sie <strong>nur in der Primärdiagnose-Condition-Instanz</strong> angegeben</li>
+  <li>Alpha-ID/Orphanet-Codes werden nicht in Sekundärdiagnose-Condition-Instanzen dupliziert</li>
+</ul>
+
+<p><strong>Aspekte zur Diagnosesicherheit:</strong></p>
+<ul>
+  <li>Bei abweichenden Diagnosesicherheiten zwischen Primär- und Sekundärdiagnose MUSS sichergestellt werden, dass die Diagnosesicherheit der Primärcondition auf die assoziierte Alpha-ID zutrifft</li>
+  <li>Dies verhindert Inkonsistenzen, wenn bspw. Seltene-Erkrankungen-Codes (Alpha-ID/Orphanet) mit unsicheren ätiologischen Diagnosen verknüpft sind</li>
+</ul>
+
+<p><strong>Beispiel:</strong> Siehe Beispielressourcen für Alpha-ID <code>I97525</code> mit ICD-10-GM <code>A54.4†</code> (Ätiologie) und <code>M73.09*</code> (Manifestation).</p>
+</div>
+
+#### Dokumentation der Körperstelle
+
+Die Modellierung codierter und detaillierter anatomischer Lokalisationen wurde mit [gematik ISiK Diagnose 6.0.0](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKDiagnose.html) harmonisiert. `Condition.bodySite` unterstützt zwei Darstellungen:
+
+- eine codierte anatomische Lokalisation, vorzugsweise mit SNOMED CT; oder
+- eine Referenz auf eine patientenbezogene `BodyStructure` über die Extension `http://hl7.org/fhir/StructureDefinition/bodySite`, wenn eine codierte Körperstelle allein nicht die erforderliche Detailtiefe bietet.
+
+**EHDS-Ausblick:** [HL7 Europe Condition (EU core) 2.0.0](https://hl7.eu/fhir/base/2.0.0/StructureDefinition-condition-eu-core.html) verwendet dieselbe Darstellung durch Codierung oder Referenz und wendet die Invariante `eu-bodysite-1` an. Für zukünftige EHDS-Kompatibilität **SOLLTE** jedes Vorkommen von `Condition.bodySite` entweder Codierung/Text oder die BodyStructure-Referenz-Extension enthalten, jedoch nicht beides.
+
+**`Condition.bodySite`:**
+- OPTIONALES Element
+- Falls dieses optionale Element verwendet wird, SOLL die Körperstelle mindestens mit einem SNOMED CT-Code codiert werden
+- Die BodyStructure-Referenz-Extension SOLL verwendet werden, wenn die codierte Körperstelle nicht ausreichend präzise ist
+- Für die Lateralität bei ICD-10-GM SOLL die Extension Seitenlokalisation auf `Condition.code.coding:icd10-gm` verwendet werden, anstatt die Lateralität in `bodySite` zu codieren
+
+#### Verknüpfung mit dem Fall
+
+<div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
+<h5 style="color: #406A99; margin-top: 0;">Best Practice - Diagnose-Fall-Beziehungen</h5>
+
+<p><strong>Änderung gegenüber vorheriger Version:</strong> In früheren Versionen dieses Implementierungsleitfadens wurde empfohlen, <code>Encounter.diagnosis</code> zur Verknüpfung von Diagnosen mit Behandlungsfällen zu verwenden. Diese Empfehlung wurde aktualisiert, um sich an die gematik ISiK-Empfehlungen (Informationssysteme im Krankenhaus) anzupassen.</p>
+
+<p><strong>Aktuelle Empfehlung - Condition.encounter:</strong></p>
+<ul>
+  <li><strong>Ebene Abteilungskontakt:</strong> Die Zuordnung <strong>SOLL</strong> auf einen Encounter der Ebene "Abteilungskontakt" erfolgen</li>
+  <li>Bei der Auswahl des Encounters ist zu beachten, dass unter einer (Abrechnungs-)"Fallnummer" (hier: <code>Encounter.account</code>) unter Umständen mehrere Encounter gruppiert sein können (z.B. stationärer Besuch mit mehreren vor- und nachstationären Aufenthalten)</li>
+</ul>
+
+</div>
+
+#### Zeitliche Informationen
+
+<div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
+<h5 style="color: #406A99; margin-top: 0;">Best Practice - Erkrankungsbeginn und Erkrankungsende</h5>
+
+<p>Die Modellierung von Erkrankungsbeginn und Erkrankungsende wurde mit <a href="https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKDiagnose.html">gematik ISiK</a> harmonisiert. Implementierende <strong>SOLLTEN</strong> <code>onsetDateTime</code>/<code>abatementDateTime</code> für Datumsangaben und <code>onsetAge</code>/<code>abatementAge</code> mit der Lebensphasen-Extension verwenden, wenn nur eine Lebensphase bekannt ist. <code>onsetPeriod</code> und <code>abatementPeriod</code> bleiben ausschließlich aus Gründen der Rückwärtskompatibilität zulässig und <strong>SOLLTEN NICHT</strong> in neuen Implementierungen verwendet werden.</p>
+
+<p><strong>EHDS-Ausblick:</strong> Das veröffentlichte Trial-Use-Profil <a href="https://hl7.eu/fhir/base/2.0.0/StructureDefinition-condition-eu-core.html">HL7 Europe Condition (EU core) 2.0.0</a>, das in kommende EHDS-Spezifikationen einfließt, profiliert für Erkrankungsbeginn und Erkrankungsende ausdrücklich die <code>dateTime</code>-Varianten. Um die zukünftige EHDS-Konformität zu erleichtern, <strong>SOLLTEN</strong> neue Implementierungen daher <code>onsetDateTime</code> und <code>abatementDateTime</code> verwenden, sofern ein Datum verfügbar ist.</p>
+</div>
+
+**`Condition.onset[x]`:**
+- **SOLLTE** als `dateTime` oder `Age` erfasst werden
+- Bei Verwendung von `Age` **KANN** die Lebensphasen-Extension eine Lebensphase als Code angeben, wenn das genaue Datum unbekannt ist
+- `Period` bleibt aus Gründen der Rückwärtskompatibilität zulässig, aber **SOLLTE NICHT** verwendet werden
+- Repräsentiert, wann die Erkrankung begann oder erstmals bemerkt wurde
+
+**`Condition.abatement[x]`:**
+- **SOLLTE** als `dateTime` oder `Age` erfasst werden
+- Bei Verwendung von `Age` **KANN** die Lebensphasen-Extension eine Lebensphase als Code angeben, wenn das genaue Datum unbekannt ist
+- `Period` bleibt aus Gründen der Rückwärtskompatibilität zulässig, aber **SOLLTE NICHT** verwendet werden
+- Repräsentiert, wann die Erkrankung endete, abklang oder in Remission überging
+
+**`Condition.recordedDate`:**
+- Repräsentiert, wann die Diagnose im System erfasst wurde
+- Dient der zeitlichen Einordnung der Diagnose
+
+{% include link-list.md %}
