@@ -43,10 +43,6 @@ Diese Struktur ist abgeleitet von [Extension](http://hl7.org/fhir/R4/extensibili
 
 Diese Struktur ist abgeleitet von [Extension](http://hl7.org/fhir/R4/extensibility.html#Extension) 
 
-** Summary **
-
-Simple Extension with the type Coding: Intention der Prozedur
-
  **Differential-AnsichtDifferential View** 
 
 Diese Struktur ist abgeleitet von [Extension](http://hl7.org/fhir/R4/extensibility.html#Extension) 
@@ -60,10 +56,6 @@ Diese Struktur ist abgeleitet von [Extension](http://hl7.org/fhir/R4/extensibili
 #### Constraints
 
 Diese Struktur ist abgeleitet von [Extension](http://hl7.org/fhir/R4/extensibility.html#Extension) 
-
-** Summary **
-
-Simple Extension with the type Coding: Intention der Prozedur
 
  
 

@@ -61,8 +61,8 @@ Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Tod
 
 **Usages:**
 
-* Examples for this Profile: [Condition/mii-exa-person-condition-todesursache](Condition-mii-exa-person-condition-todesursache.md)
-* CapabilityStatements using this Profile: [MII CPS Person CapabilityStatement](CapabilityStatement-mii-cps-person-capabilitystatement.md)
+* Examples for this Profil: [Condition/mii-exa-person-condition-todesursache](Condition-mii-exa-person-condition-todesursache.md)
+* CapabilityStatements using this Profil: [MII CPS Person CapabilityStatement](CapabilityStatement-mii-cps-person-capabilitystatement.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/StructureDefinition-mii-pr-person-todesursache.json)
 
@@ -90,19 +90,6 @@ Diese Struktur ist abgeleitet von [Condition](http://hl7.org/fhir/R4/condition.h
 
 Diese Struktur ist abgeleitet von [Condition](http://hl7.org/fhir/R4/condition.html) 
 
-** Summary **
-
-Mandatory: 10 elements
- Must-Support: 33 elements
-
-**Slices**
-
-This structure defines the following [Slices](http://hl7.org/fhir/R4/profiling.html#slices):
-
-* The element 1 is sliced based on the value of Condition.category
-* The element 1 is sliced based on the value of Condition.category.coding
-* The element 1 is sliced based on the value of Condition.code.coding
-
  **Schlüsselelemente-Ansicht** 
 
 #### Terminology Bindings
@@ -122,19 +109,6 @@ Diese Struktur ist abgeleitet von [Condition](http://hl7.org/fhir/R4/condition.h
 #### Constraints
 
 Diese Struktur ist abgeleitet von [Condition](http://hl7.org/fhir/R4/condition.html) 
-
-** Summary **
-
-Mandatory: 10 elements
- Must-Support: 33 elements
-
-**Slices**
-
-This structure defines the following [Slices](http://hl7.org/fhir/R4/profiling.html#slices):
-
-* The element 1 is sliced based on the value of Condition.category
-* The element 1 is sliced based on the value of Condition.category.coding
-* The element 1 is sliced based on the value of Condition.code.coding
 
  
 

@@ -98,8 +98,8 @@ Ein Beispiel für diese Modellierung findet sich in der Beispielressource.
 
 **Usages:**
 
-* Examples for this Profile: [Patient/mii-exa-person-patient-pseudonymisiert](Patient-mii-exa-person-patient-pseudonymisiert.md)
-* CapabilityStatements using this Profile: [MII CPS Person CapabilityStatement](CapabilityStatement-mii-cps-person-capabilitystatement.md)
+* Examples for this Profil: [Patient/mii-exa-person-patient-pseudonymisiert](Patient-mii-exa-person-patient-pseudonymisiert.md)
+* CapabilityStatements using this Profil: [MII CPS Person CapabilityStatement](CapabilityStatement-mii-cps-person-capabilitystatement.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/StructureDefinition-mii-pr-person-patient-pseudonymisiert.json)
 
@@ -127,38 +127,6 @@ Diese Struktur ist abgeleitet von [Patient](http://hl7.org/fhir/R4/patient.html)
 
 Diese Struktur ist abgeleitet von [Patient](http://hl7.org/fhir/R4/patient.html) 
 
-** Summary **
-
-Mandatory: 1 element(9 nested mandatory elements)
- Must-Support: 28 elements
-
-**Structures**
-
-This structure refers to these other structures:
-
-* [Identifier-Profil für die 10-stellige Krankenversichertennummer (http://fhir.de/StructureDefinition/identifier-kvid-10)](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/identifier-kvid-10)
-* [Identifier-Profil für die Abbildung eines Institutionskennzeichens (IKNR) (http://fhir.de/StructureDefinition/identifier-iknr)](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/identifier-iknr)
-* [Adresse, deutsches Basisprofil (http://fhir.de/StructureDefinition/address-de-basis)](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/address-de-basis)
-
-**Extensions**
-
-This structure refers to these extensions:
-
-* [http://hl7.org/fhir/StructureDefinition/patient-birthPlace](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-patient-birthPlace.html)
-* [http://hl7.org/fhir/StructureDefinition/patient-citizenship](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-patient-citizenship.html)
-* [http://hl7.org/fhir/StructureDefinition/patient-nationality](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-patient-nationality.html)
-* [http://hl7.org/fhir/StructureDefinition/data-absent-reason](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-data-absent-reason.html)
-* [http://fhir.de/StructureDefinition/gender-amtlich-de](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/gender-amtlich-de)
-* [http://fhir.de/StructureDefinition/destatis/ags](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/destatis/ags)
-
-**Slices**
-
-This structure defines the following [Slices](http://hl7.org/fhir/R4/profiling.html#slices):
-
-* The element 1 is sliced based on the value of Patient.identifier
-* The element 1 is sliced based on the value of Patient.identifier.type.coding
-* The element 1 is sliced based on the value of Patient.address
-
  **Schlüsselelemente-Ansicht** 
 
 #### Terminology Bindings
@@ -178,38 +146,6 @@ Diese Struktur ist abgeleitet von [Patient](http://hl7.org/fhir/R4/patient.html)
 #### Constraints
 
 Diese Struktur ist abgeleitet von [Patient](http://hl7.org/fhir/R4/patient.html) 
-
-** Summary **
-
-Mandatory: 1 element(9 nested mandatory elements)
- Must-Support: 28 elements
-
-**Structures**
-
-This structure refers to these other structures:
-
-* [Identifier-Profil für die 10-stellige Krankenversichertennummer (http://fhir.de/StructureDefinition/identifier-kvid-10)](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/identifier-kvid-10)
-* [Identifier-Profil für die Abbildung eines Institutionskennzeichens (IKNR) (http://fhir.de/StructureDefinition/identifier-iknr)](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/identifier-iknr)
-* [Adresse, deutsches Basisprofil (http://fhir.de/StructureDefinition/address-de-basis)](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/address-de-basis)
-
-**Extensions**
-
-This structure refers to these extensions:
-
-* [http://hl7.org/fhir/StructureDefinition/patient-birthPlace](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-patient-birthPlace.html)
-* [http://hl7.org/fhir/StructureDefinition/patient-citizenship](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-patient-citizenship.html)
-* [http://hl7.org/fhir/StructureDefinition/patient-nationality](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-patient-nationality.html)
-* [http://hl7.org/fhir/StructureDefinition/data-absent-reason](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-data-absent-reason.html)
-* [http://fhir.de/StructureDefinition/gender-amtlich-de](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/gender-amtlich-de)
-* [http://fhir.de/StructureDefinition/destatis/ags](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/destatis/ags)
-
-**Slices**
-
-This structure defines the following [Slices](http://hl7.org/fhir/R4/profiling.html#slices):
-
-* The element 1 is sliced based on the value of Patient.identifier
-* The element 1 is sliced based on the value of Patient.identifier.type.coding
-* The element 1 is sliced based on the value of Patient.address
 
  
 

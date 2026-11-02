@@ -44,10 +44,6 @@ Diese Struktur ist abgeleitet von [Element](http://hl7.org/fhir/R4/datatypes.htm
 
 Diese Struktur ist abgeleitet von [Element](http://hl7.org/fhir/R4/datatypes.html#Element) 
 
-** Summary **
-
-Mandatory: 0 element(15 nested mandatory elements)
-
  **Schlüsselelemente-Ansicht** 
 
 #### Terminology Bindings
@@ -67,10 +63,6 @@ Diese Struktur ist abgeleitet von [Element](http://hl7.org/fhir/R4/datatypes.htm
 #### Constraints
 
 Diese Struktur ist abgeleitet von [Element](http://hl7.org/fhir/R4/datatypes.html#Element) 
-
-** Summary **
-
-Mandatory: 0 element(15 nested mandatory elements)
 
  
 

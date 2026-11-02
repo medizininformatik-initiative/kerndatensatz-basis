@@ -64,8 +64,9 @@ user content","",0,*,"","","","Extension {[]} {[]}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"Encounter.extension:Aufnahmegrund.extension:ErsteUndZweiteStelle","Encounter.extension.extension","ErsteUndZweiteStelle","","",0,1,"Y","","","Extension {[]} {[]}
-","1. und 2. Stelle","OPTIONAL, Aufnahmegrund (1. und 2. Stelle), Datenübermittlung nach § 301 Abs. 3 SGB V.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+"Encounter.extension:Aufnahmegrund.extension:ErsteUndZweiteStelle","Encounter.extension.extension","ErsteUndZweiteStelle","extensions
+user content","",0,1,"Y","","","Extension {[]} {[]}
+","1. und 2. Stelle","OPTIONAL, Aufnahmegrund (1. und 2. Stelle), Datenübermittlung nach § 301 Abs. 3 SGB V.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Encounter.extension:Aufnahmegrund.extension:ErsteUndZweiteStelle.id","Encounter.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -82,8 +83,9 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,"required","","http://fhir.de/ValueSet/dkgev/AufnahmegrundErsteUndZweiteStelle","",,,,"Extension.value[x]",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"Encounter.extension:Aufnahmegrund.extension:DritteStelle","Encounter.extension.extension","DritteStelle","","",0,1,"Y","","","Extension {[]} {[]}
-","3. Stelle","OPTIONAL, Aufnahmegrund (3. Stelle), Datenübermittlung nach § 301 Abs. 3 SGB V.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+"Encounter.extension:Aufnahmegrund.extension:DritteStelle","Encounter.extension.extension","DritteStelle","extensions
+user content","",0,1,"Y","","","Extension {[]} {[]}
+","3. Stelle","OPTIONAL, Aufnahmegrund (3. Stelle), Datenübermittlung nach § 301 Abs. 3 SGB V.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Encounter.extension:Aufnahmegrund.extension:DritteStelle.id","Encounter.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -100,8 +102,9 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,"required","","http://fhir.de/ValueSet/dkgev/AufnahmegrundDritteStelle","",,,,"Extension.value[x]",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"Encounter.extension:Aufnahmegrund.extension:VierteStelle","Encounter.extension.extension","VierteStelle","","",0,1,"Y","","","Extension {[]} {[]}
-","4. Stelle","OPTIONAL, Aufnahmegrund (4. Stelle), Datenübermittlung nach § 301 Abs. 3 SGB V.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+"Encounter.extension:Aufnahmegrund.extension:VierteStelle","Encounter.extension.extension","VierteStelle","extensions
+user content","",0,1,"Y","","","Extension {[]} {[]}
+","4. Stelle","OPTIONAL, Aufnahmegrund (4. Stelle), Datenübermittlung nach § 301 Abs. 3 SGB V.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Encounter.extension:Aufnahmegrund.extension:VierteStelle.id","Encounter.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -812,8 +815,9 @@ user content","",0,*,"","","","Extension {[]} {[]}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"Encounter.hospitalization.dischargeDisposition.extension:Entlassungsgrund.extension:ErsteUndZweiteStelle","Encounter.hospitalization.dischargeDisposition.extension.extension","ErsteUndZweiteStelle","","",0,1,"Y","","","Extension {[]} {[]}
-","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+"Encounter.hospitalization.dischargeDisposition.extension:Entlassungsgrund.extension:ErsteUndZweiteStelle","Encounter.hospitalization.dischargeDisposition.extension.extension","ErsteUndZweiteStelle","extensions
+user content","",0,1,"Y","","","Extension {[]} {[]}
+","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Encounter.hospitalization.dischargeDisposition.extension:Entlassungsgrund.extension:ErsteUndZweiteStelle.id","Encounter.hospitalization.dischargeDisposition.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -830,8 +834,9 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,"required","","http://fhir.de/ValueSet/dkgev/EntlassungsgrundErsteUndZweiteStelle","",,,,"Extension.value[x]",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"Encounter.hospitalization.dischargeDisposition.extension:Entlassungsgrund.extension:DritteStelle","Encounter.hospitalization.dischargeDisposition.extension.extension","DritteStelle","","",0,1,"Y","","","Extension {[]} {[]}
-","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+"Encounter.hospitalization.dischargeDisposition.extension:Entlassungsgrund.extension:DritteStelle","Encounter.hospitalization.dischargeDisposition.extension.extension","DritteStelle","extensions
+user content","",0,1,"Y","","","Extension {[]} {[]}
+","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Encounter.hospitalization.dischargeDisposition.extension:Entlassungsgrund.extension:DritteStelle.id","Encounter.hospitalization.dischargeDisposition.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -912,14 +917,14 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","planned | active | reserved | completed","The status of the participants' presence at the specified location during the period specified. If the participant is no longer at the location, then the period will have an end date/time.","When the patient is no longer active at a location, then the period end date is entered, and the status may be changed to completed.","","","","","<valueCode xmlns=""http://hl7.org/fhir"" value=""active""/>","","","",,"required","The status of the location.","http://hl7.org/fhir/ValueSet/encounter-location-status|4.0.1","",,,,"Encounter.location.status",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Encounter.location:Zimmer.physicalType","Encounter.location.physicalType","","","",1,1,"Y","","","CodeableConcept {[]} {[]}
-","Kontaktorttyp","SOLL, extensible Binding auf https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/location-physical-type","This information is de-normalized from the Location resource to support the easier understanding of the encounter resource and processing in messaging or query.
+","The physical type of the location (usually the level in the location hierachy - bed room ward etc.)","This will be used to specify the required levels (bed/ward/room/etc.) desired to be recorded to simplify either messaging or query.","This information is de-normalized from the Location resource to support the easier understanding of the encounter resource and processing in messaging or query.
 
 There may be many levels in the hierachy, and this may only pic specific levels that are required for a specific usage scenario.","","","","","<valueCodeableConcept xmlns=""http://hl7.org/fhir"">
   <coding>
     <system value=""http://terminology.hl7.org/CodeSystem/location-physical-type""/>
     <code value=""ro""/>
   </coding>
-</valueCodeableConcept>","","","",,"extensible","","https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/location-physical-type","",,,,"Encounter.location.physicalType",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+</valueCodeableConcept>","","","",,"example","Physical form of the location.","http://hl7.org/fhir/ValueSet/location-physical-type|4.0.1","",,,,"Encounter.location.physicalType",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Encounter.location:Zimmer.physicalType.id","Encounter.location.physicalType.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
@@ -981,14 +986,14 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","planned | active | reserved | completed","The status of the participants' presence at the specified location during the period specified. If the participant is no longer at the location, then the period will have an end date/time.","When the patient is no longer active at a location, then the period end date is entered, and the status may be changed to completed.","","","","","<valueCode xmlns=""http://hl7.org/fhir"" value=""active""/>","","","",,"required","The status of the location.","http://hl7.org/fhir/ValueSet/encounter-location-status|4.0.1","",,,,"Encounter.location.status",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Encounter.location:Bett.physicalType","Encounter.location.physicalType","","","",1,1,"Y","","","CodeableConcept {[]} {[]}
-","Kontaktorttyp","SOLL, extensible Binding auf https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/location-physical-type","This information is de-normalized from the Location resource to support the easier understanding of the encounter resource and processing in messaging or query.
+","The physical type of the location (usually the level in the location hierachy - bed room ward etc.)","This will be used to specify the required levels (bed/ward/room/etc.) desired to be recorded to simplify either messaging or query.","This information is de-normalized from the Location resource to support the easier understanding of the encounter resource and processing in messaging or query.
 
 There may be many levels in the hierachy, and this may only pic specific levels that are required for a specific usage scenario.","","","","","<valueCodeableConcept xmlns=""http://hl7.org/fhir"">
   <coding>
     <system value=""http://terminology.hl7.org/CodeSystem/location-physical-type""/>
     <code value=""bd""/>
   </coding>
-</valueCodeableConcept>","","","",,"extensible","","https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/location-physical-type","",,,,"Encounter.location.physicalType",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+</valueCodeableConcept>","","","",,"example","Physical form of the location.","http://hl7.org/fhir/ValueSet/location-physical-type|4.0.1","",,,,"Encounter.location.physicalType",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Encounter.location:Bett.physicalType.id","Encounter.location.physicalType.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
@@ -1050,14 +1055,14 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","planned | active | reserved | completed","The status of the participants' presence at the specified location during the period specified. If the participant is no longer at the location, then the period will have an end date/time.","When the patient is no longer active at a location, then the period end date is entered, and the status may be changed to completed.","","","","","<valueCode xmlns=""http://hl7.org/fhir"" value=""active""/>","","","",,"required","The status of the location.","http://hl7.org/fhir/ValueSet/encounter-location-status|4.0.1","",,,,"Encounter.location.status",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Encounter.location:Station.physicalType","Encounter.location.physicalType","","","",1,1,"Y","","","CodeableConcept {[]} {[]}
-","Kontaktorttyp","SOLL, extensible Binding auf https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/location-physical-type","This information is de-normalized from the Location resource to support the easier understanding of the encounter resource and processing in messaging or query.
+","The physical type of the location (usually the level in the location hierachy - bed room ward etc.)","This will be used to specify the required levels (bed/ward/room/etc.) desired to be recorded to simplify either messaging or query.","This information is de-normalized from the Location resource to support the easier understanding of the encounter resource and processing in messaging or query.
 
 There may be many levels in the hierachy, and this may only pic specific levels that are required for a specific usage scenario.","","","","","<valueCodeableConcept xmlns=""http://hl7.org/fhir"">
   <coding>
     <system value=""http://terminology.hl7.org/CodeSystem/location-physical-type""/>
     <code value=""wa""/>
   </coding>
-</valueCodeableConcept>","","","",,"extensible","","https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/location-physical-type","",,,,"Encounter.location.physicalType",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+</valueCodeableConcept>","","","",,"example","Physical form of the location.","http://hl7.org/fhir/ValueSet/location-physical-type|4.0.1","",,,,"Encounter.location.physicalType",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Encounter.location:Station.physicalType.id","Encounter.location.physicalType.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""

@@ -12,7 +12,7 @@
 
 -------
 
-Profile: [MII PR Diagnose Condition](StructureDefinition-mii-pr-diagnose-condition.md) version: 2027.0.0-ballot
+Profil: [MII PR Diagnose Condition](StructureDefinition-mii-pr-diagnose-condition.md) version: 2027.0.0-ballot
 
 Security Label: [test health data (Details: ActReason code HTEST = 'test health data')](http://terminology.hl7.org/7.2.0/CodeSystem-v3-ActReason.html)
 
@@ -24,9 +24,9 @@ Security Label: [test health data (Details: ActReason code HTEST = 'test health 
 
 **code**: Bursitis gonorrhoica: Hand
 
-**subject**: [Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Krankenaktennummer (use: usual, ))](Patient-mii-exa-person-patient-1.md)
+**subject**: [Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Krankenaktennummer: 42285243 (use: usual))](Patient-mii-exa-person-patient-1.md)
 
-**encounter**: [Encounter: identifier = Fallnummer; status = finished; class = ambulatory (ActCode#AMB); period = 2019-09-26 10:00:00+0200 --> 2019-09-26 12:00:00+0200](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-8.md)
+**encounter**: [Encounter: identifier = Fallnummer: F_20190926_001; status = finished; class = ambulatory (ActCode#AMB); period = 2019-09-26 10:00:00+0200 --> 2019-09-26 12:00:00+0200](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-8.md)
 
 **onset**: 2019-09-26
 

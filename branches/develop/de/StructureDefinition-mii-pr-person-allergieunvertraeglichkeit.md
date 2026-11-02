@@ -22,8 +22,8 @@ Das MII-Profil Allergie / Unverträglichkeit ist eine neue Ergänzung des Moduls
 
 **Usages:**
 
-* Examples for this Profile: [AllergyIntolerance/mii-exa-person-allergyintolerance-1](AllergyIntolerance-mii-exa-person-allergyintolerance-1.md)
-* CapabilityStatements using this Profile: [MII CPS Person CapabilityStatement](CapabilityStatement-mii-cps-person-capabilitystatement.md)
+* Examples for this Profil: [AllergyIntolerance/mii-exa-person-allergyintolerance-1](AllergyIntolerance-mii-exa-person-allergyintolerance-1.md)
+* CapabilityStatements using this Profil: [MII CPS Person CapabilityStatement](CapabilityStatement-mii-cps-person-capabilitystatement.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/StructureDefinition-mii-pr-person-allergieunvertraeglichkeit.json)
 
@@ -51,24 +51,6 @@ Diese Struktur ist abgeleitet von [AllergyIntolerance](http://hl7.org/fhir/R4/al
 
 Diese Struktur ist abgeleitet von [AllergyIntolerance](http://hl7.org/fhir/R4/allergyintolerance.html) 
 
-** Summary **
-
-Mandatory: 1 element
- Must-Support: 37 elements
-
-**Extensions**
-
-This structure refers to these extensions:
-
-* [http://hl7.org/fhir/StructureDefinition/allergyintolerance-abatement](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-allergyintolerance-abatement.html)
-
-**Slices**
-
-This structure defines the following [Slices](http://hl7.org/fhir/R4/profiling.html#slices):
-
-* The element 1 is sliced based on the value of AllergyIntolerance.extension.value[x]
-* The element 1 is sliced based on the value of AllergyIntolerance.onset[x]
-
  **Schlüsselelemente-Ansicht** 
 
 #### Terminology Bindings
@@ -88,24 +70,6 @@ Diese Struktur ist abgeleitet von [AllergyIntolerance](http://hl7.org/fhir/R4/al
 #### Constraints
 
 Diese Struktur ist abgeleitet von [AllergyIntolerance](http://hl7.org/fhir/R4/allergyintolerance.html) 
-
-** Summary **
-
-Mandatory: 1 element
- Must-Support: 37 elements
-
-**Extensions**
-
-This structure refers to these extensions:
-
-* [http://hl7.org/fhir/StructureDefinition/allergyintolerance-abatement](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-allergyintolerance-abatement.html)
-
-**Slices**
-
-This structure defines the following [Slices](http://hl7.org/fhir/R4/profiling.html#slices):
-
-* The element 1 is sliced based on the value of AllergyIntolerance.extension.value[x]
-* The element 1 is sliced based on the value of AllergyIntolerance.onset[x]
 
  
 

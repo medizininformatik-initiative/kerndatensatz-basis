@@ -12,7 +12,7 @@
 
 -------
 
-Profile: [MII PR Person Vitalstatus](StructureDefinition-mii-pr-person-vitalstatus.md) version: 2027.0.0-ballot
+Profil: [MII PR Person Vitalstatus](StructureDefinition-mii-pr-person-vitalstatus.md) version: 2027.0.0-ballot
 
 Security Label: [test health data (Details: ActReason code HTEST = 'test health data')](http://terminology.hl7.org/7.2.0/CodeSystem-v3-ActReason.html)
 
@@ -22,9 +22,9 @@ Security Label: [test health data (Details: ActReason code HTEST = 'test health 
 
 **code**: Patient Disposition
 
-**subject**: [Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Krankenaktennummer (use: usual, ))](Patient-mii-exa-person-patient-1.md)
+**subject**: [Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Krankenaktennummer: 42285243 (use: usual))](Patient-mii-exa-person-patient-1.md)
 
-**encounter**: [Encounter: extension = ; identifier = Fallnummer; status = finished; class = ambulatory (ActCode#AMB); type = Abteilungskontakt; priority = emergency; period = 2020-01-08 07:00:00+0100 --> 2020-01-08 09:00:00+0100](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-9.md)
+**encounter**: [Encounter: extension = ; identifier = Fallnummer: A1E; status = finished; class = ambulatory (ActCode#AMB); type = Abteilungskontakt; priority = emergency; period = 2020-01-08 07:00:00+0100 --> 2020-01-08 09:00:00+0100](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-9.md)
 
 **effective**: 2020-01-08 07:00:00+0100
 

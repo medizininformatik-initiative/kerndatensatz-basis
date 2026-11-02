@@ -16,14 +16,14 @@ Profile: [MII PR Person Patient](StructureDefinition-mii-pr-person-patient.md) v
 
 Security Label: [test health data (Details: ActReason code HTEST = 'test health data')](http://terminology.hl7.org/7.2.0/CodeSystem-v3-ActReason.html)
 
-Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))
+Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number: 42285243 (use: usual))
 
 -------
 
 | | |
 | :--- | :--- |
 | Deceased: | false |
-| Other Id: | Krankenversichertennummer/A999999999 (use: official, ) |
+| Other Id: | Krankenversichertennummer/A999999999 (use: official) |
 | Alt. Name: | Bachmann (Name changed for Marriage) |
 | Contact Detail | Anna-Louisa-Karsch Str. 2 Berlin DE-BE 10178 DE |
 

@@ -588,7 +588,7 @@ Reference is intended to point to a structure that can potentially be expressed 
 "
 "Condition.onset[x]","Condition.onset[x]","","","",0,1,"Y","","Y","dateTime {[]} {[]}
 Age {[]} {[]}Period {[]} {[]}","Beginn","Geschätztes oder tatsächliches Datum oder Alter, an dem die Erkrankung begonnen hat.","Age is generally used when the patient reports an age at which the Condition began to occur.","","","","","","","","",,,,,"","type:$this}
-","",,"open","Condition.onset[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","",,"closed","Condition.onset[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","KlinischRelevanterZeitraum","Event.occurrence[x]","PRB-16","FiveWs.init"
 "Condition.onset[x]:onsetDateTime","Condition.onset[x]","onsetDateTime","","",0,1,"Y","","Y","dateTime {[]} {[]}
 ","Beginn Datum","Das Datum, an dem die Erkrankung begonnen hat, nach Meinung des Klinikers.","Age is generally used when the patient reports an age at which the Condition began to occur.","","","","","","","","",,,,,"",,,,"Condition.onset[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
@@ -680,9 +680,12 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Condition.onset[x]:onsetAge.code","Condition.onset[x].code","","","",0,1,"","","Y","code {[]} {[]}
 ","Coded form of the unit","A computer processable form of the unit in some unit representation system.","The preferred system is UCUM, but SNOMED CT can also be used (for customary units) or ISO 4217 for currency.  The context of use may additionally require a code from a particular system.","Need a computable form of the unit that is fixed across all forms. UCUM provides this for quantities, but SNOMED CT provides many units of interest.","","","","","","","",,,,,"",,,,"Quantity.code",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","(see OBX.6 etc.) / CQ.2"
+"Condition.onset[x]:onsetPeriod","Condition.onset[x]","onsetPeriod","","",0,1,"","","Y","Period {[]} {[]}
+","Estimated or actual date,  date-time, or age","Estimated or actual date or date-time  the condition began, in the opinion of the clinician.","Age is generally used when the patient reports an age at which the Condition began to occur.","","","","","","","","",,,,,"",,,,"Condition.onset[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","Event.occurrence[x]","PRB-16","FiveWs.init"
 "Condition.abatement[x]","Condition.abatement[x]","","","",0,1,"Y","","","dateTime {[]} {[]}
 Age {[]} {[]}Period {[]} {[]}","Ende","Geschätztes oder tatsächliches Datum oder Alter, an dem die Erkrankung beendet wurde.","There is no explicit distinction between resolution and remission because in many cases the distinction is not clear. Age is generally used when the patient reports an age at which the Condition abated.  If there is no abatement element, it is unknown whether the condition has resolved or entered remission; applications and users should generally assume that the condition is still valid.  When abatementString exists, it implies the condition is abated.","","","","","","","","",,,,,"","type:$this}
-","",,"open","Condition.abatement[x]",0,1,"con-4
+","",,"closed","Condition.abatement[x]",0,1,"con-4
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","KlinischRelevanterZeitraum","FiveWs.done[x]"
 "Condition.abatement[x]:abatementDateTime","Condition.abatement[x]","abatementDateTime","","",0,1,"Y","","","dateTime {[]} {[]}
@@ -777,6 +780,10 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Condition.abatement[x]:abatementAge.code","Condition.abatement[x].code","","","",0,1,"","","Y","code {[]} {[]}
 ","Coded form of the unit","A computer processable form of the unit in some unit representation system.","The preferred system is UCUM, but SNOMED CT can also be used (for customary units) or ISO 4217 for currency.  The context of use may additionally require a code from a particular system.","Need a computable form of the unit that is fixed across all forms. UCUM provides this for quantities, but SNOMED CT provides many units of interest.","","","","","","","",,,,,"",,,,"Quantity.code",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","(see OBX.6 etc.) / CQ.2"
+"Condition.abatement[x]:abatementPeriod","Condition.abatement[x]","abatementPeriod","","",0,1,"","","","Period {[]} {[]}
+","When in resolution/remission","The date or estimated date that the condition resolved or went into remission. This is called ""abatement"" because of the many overloaded connotations associated with ""remission"" or ""resolution"" - Conditions are never really resolved, but they can abate.","There is no explicit distinction between resolution and remission because in many cases the distinction is not clear. Age is generally used when the patient reports an age at which the Condition abated.  If there is no abatement element, it is unknown whether the condition has resolved or entered remission; applications and users should generally assume that the condition is still valid.  When abatementString exists, it implies the condition is abated.","","","","","","","","",,,,,"",,,,"Condition.abatement[x]",0,1,"con-4
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","FiveWs.done[x]"
 "Condition.recordedDate","Condition.recordedDate","","","",1,1,"Y","","Y","dateTime {[]} {[]}
 ","Aufzeichnungsdatum","Datum, an dem die Diagnose erstmals dokumentiert wurde.","","","","","","","","","",,,,,"",,,,"Condition.recordedDate",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Dokumentationsdatum","REL-11","FiveWs.recorded"

@@ -133,8 +133,8 @@ Die Modellierung von Erkrankungsbeginn und Erkrankungsende wurde mit [gematik IS
 
 **Usages:**
 
-* Examples for this Profile: [Condition/mii-exa-diagnose-appendicitis](Condition-mii-exa-diagnose-appendicitis.md), [Condition/mii-exa-diagnose-condition-elbow-contusion](Condition-mii-exa-diagnose-condition-elbow-contusion.md), [Condition/mii-exa-diagnose-condition-multiple-codings](Condition-mii-exa-diagnose-condition-multiple-codings.md), [Condition/mii-exa-diagnose-mehrfachcodierung-primaercode](Condition-mii-exa-diagnose-mehrfachcodierung-primaercode.md) and [Condition/mii-exa-diagnose-mehrfachcodierung-sekundaercode](Condition-mii-exa-diagnose-mehrfachcodierung-sekundaercode.md)
-* CapabilityStatements using this Profile: [MII CPS Diagnose CapabilityStatement](CapabilityStatement-mii-cps-diagnose-capabilitystatement.md)
+* Examples for this Profil: [Condition/mii-exa-diagnose-appendicitis](Condition-mii-exa-diagnose-appendicitis.md), [Condition/mii-exa-diagnose-condition-elbow-contusion](Condition-mii-exa-diagnose-condition-elbow-contusion.md), [Condition/mii-exa-diagnose-condition-multiple-codings](Condition-mii-exa-diagnose-condition-multiple-codings.md), [Condition/mii-exa-diagnose-mehrfachcodierung-primaercode](Condition-mii-exa-diagnose-mehrfachcodierung-primaercode.md) and [Condition/mii-exa-diagnose-mehrfachcodierung-sekundaercode](Condition-mii-exa-diagnose-mehrfachcodierung-sekundaercode.md)
+* CapabilityStatements using this Profil: [MII CPS Diagnose CapabilityStatement](CapabilityStatement-mii-cps-diagnose-capabilitystatement.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/StructureDefinition-mii-pr-diagnose-condition.json)
 
@@ -162,36 +162,6 @@ Diese Struktur ist abgeleitet von [Condition](http://hl7.org/fhir/R4/condition.h
 
 Diese Struktur ist abgeleitet von [Condition](http://hl7.org/fhir/R4/condition.html) 
 
-** Summary **
-
-Mandatory: 3 elements(6 nested mandatory elements)
- Must-Support: 78 elements
-
-**Structures**
-
-This structure refers to these other structures:
-
-* [Coding-Profil für ICD-10-GM (http://fhir.de/StructureDefinition/CodingICD10GM)](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/CodingICD10GM)
-* [Coding-Profil für Alpha-ID (http://fhir.de/StructureDefinition/CodingAlphaID)](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/CodingAlphaID)
-
-**Extensions**
-
-This structure refers to these extensions:
-
-* [http://hl7.org/fhir/StructureDefinition/condition-related](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-condition-related.html)
-* [http://hl7.org/fhir/StructureDefinition/condition-assertedDate](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-condition-assertedDate.html)
-* [http://hl7.org/fhir/StructureDefinition/bodySite](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-bodySite.html)
-* [http://fhir.de/StructureDefinition/lebensphase](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/lebensphase)
-
-**Slices**
-
-This structure defines the following [Slices](http://hl7.org/fhir/R4/profiling.html#slices):
-
-* The element 1 is sliced based on the value of Condition.code.coding
-* The element 1 is sliced based on the value of Condition.bodySite.coding
-* The element 1 is sliced based on the value of Condition.onset[x]
-* The element 1 is sliced based on the value of Condition.abatement[x]
-
  **Schlüsselelemente-Ansicht** 
 
 #### Terminology Bindings
@@ -211,36 +181,6 @@ Diese Struktur ist abgeleitet von [Condition](http://hl7.org/fhir/R4/condition.h
 #### Constraints
 
 Diese Struktur ist abgeleitet von [Condition](http://hl7.org/fhir/R4/condition.html) 
-
-** Summary **
-
-Mandatory: 3 elements(6 nested mandatory elements)
- Must-Support: 78 elements
-
-**Structures**
-
-This structure refers to these other structures:
-
-* [Coding-Profil für ICD-10-GM (http://fhir.de/StructureDefinition/CodingICD10GM)](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/CodingICD10GM)
-* [Coding-Profil für Alpha-ID (http://fhir.de/StructureDefinition/CodingAlphaID)](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/CodingAlphaID)
-
-**Extensions**
-
-This structure refers to these extensions:
-
-* [http://hl7.org/fhir/StructureDefinition/condition-related](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-condition-related.html)
-* [http://hl7.org/fhir/StructureDefinition/condition-assertedDate](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-condition-assertedDate.html)
-* [http://hl7.org/fhir/StructureDefinition/bodySite](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-bodySite.html)
-* [http://fhir.de/StructureDefinition/lebensphase](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/lebensphase)
-
-**Slices**
-
-This structure defines the following [Slices](http://hl7.org/fhir/R4/profiling.html#slices):
-
-* The element 1 is sliced based on the value of Condition.code.coding
-* The element 1 is sliced based on the value of Condition.bodySite.coding
-* The element 1 is sliced based on the value of Condition.onset[x]
-* The element 1 is sliced based on the value of Condition.abatement[x]
 
  
 

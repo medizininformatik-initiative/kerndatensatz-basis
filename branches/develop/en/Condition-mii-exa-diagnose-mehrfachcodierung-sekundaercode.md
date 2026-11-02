@@ -24,9 +24,9 @@ Security Label: [test health data (Details: ActReason code HTEST = 'test health 
 
 **code**: Bursitis gonorrhoica: Hand
 
-**subject**: [Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))](Patient-mii-exa-person-patient-1.md)
+**subject**: [Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number: 42285243 (use: usual))](Patient-mii-exa-person-patient-1.md)
 
-**encounter**: [Encounter: identifier = Visit number; status = finished; class = ambulatory (ActCode#AMB); period = 2019-09-26 10:00:00+0200 --> 2019-09-26 12:00:00+0200](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-8.md)
+**encounter**: [Encounter: identifier = Visit number: F_20190926_001; status = finished; class = ambulatory (ActCode#AMB); period = 2019-09-26 10:00:00+0200 --> 2019-09-26 12:00:00+0200](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-8.md)
 
 **onset**: 2019-09-26
 

@@ -329,11 +329,11 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Observation.referenceRange.low","Observation.referenceRange.low","","","",0,1,"","","","Quantity {[CanonicalType[http://hl7.org/fhir/StructureDefinition/SimpleQuantity|4.0.1]]} {[]}
 ","Low Range, if relevant","The value of the low bound of the reference range.  The low bound of the reference range endpoint is inclusive of the value (e.g.  reference range is >=5 - <=9). If the low bound is omitted,  it is assumed to be meaningless (e.g. reference range is <=2.3).","","","","","","","","","",,,,,"",,,,"Observation.referenceRange.low",0,1,"obs-3
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","OBX-7"
+sqty-1:The comparator is not used on a SimpleQuantity {comparator.empty()}","OBX-7"
 "Observation.referenceRange.high","Observation.referenceRange.high","","","",0,1,"","","","Quantity {[CanonicalType[http://hl7.org/fhir/StructureDefinition/SimpleQuantity|4.0.1]]} {[]}
 ","High Range, if relevant","The value of the high bound of the reference range.  The high bound of the reference range endpoint is inclusive of the value (e.g.  reference range is >=5 - <=9). If the high bound is omitted,  it is assumed to be meaningless (e.g. reference range is >= 2.3).","","","","","","","","","",,,,,"",,,,"Observation.referenceRange.high",0,1,"obs-3
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","OBX-7"
+sqty-1:The comparator is not used on a SimpleQuantity {comparator.empty()}","OBX-7"
 "Observation.referenceRange.type","Observation.referenceRange.type","","","",0,1,"","","","CodeableConcept {[]} {[]}
 ","Reference range qualifier","Codes to indicate the what part of the targeted reference population it applies to. For example, the normal or therapeutic range.","This SHOULD be populated if there is more than one range.  If this element is not present then the normal range is assumed.","Need to be able to say what kind of reference range this is - normal, recommended, therapeutic, etc.,  - for proper interpretation.","","","","","","","",,"preferred","Code for the meaning of a reference range.","http://hl7.org/fhir/ValueSet/referencerange-meaning|4.0.1","",,,,"Observation.referenceRange.type",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","< 260245000 |Findings values| OR  < 365860008 |General clinical state finding| OR < 250171008 |Clinical history or observation findings| OR  < 415229000 |Racial group| OR < 365400002 |Finding of puberty stage| OR< 443938003 |Procedure carried out on subject|","OBX-10"

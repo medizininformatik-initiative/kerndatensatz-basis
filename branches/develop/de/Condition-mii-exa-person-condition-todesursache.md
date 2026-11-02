@@ -12,7 +12,7 @@
 
 -------
 
-Profile: [MII PR Person Todesursache](StructureDefinition-mii-pr-person-todesursache.md) version: 2027.0.0-ballot
+Profil: [MII PR Person Todesursache](StructureDefinition-mii-pr-person-todesursache.md) version: 2027.0.0-ballot
 
 Security Label: [test health data (Details: ActReason code HTEST = 'test health data')](http://terminology.hl7.org/7.2.0/CodeSystem-v3-ActReason.html)
 
@@ -20,7 +20,7 @@ Security Label: [test health data (Details: ActReason code HTEST = 'test health 
 
 **code**: Todeseintritt innerhalb von weniger als 24 Stunden nach Beginn der Symptome, ohne anderweitige Angabe
 
-**subject**: [Anonymous Patient Female, DoB: 1998 ( Krankenversichertennummer (use: official, ))](Patient-mii-exa-person-patient-pseudonymisiert.md)
+**subject**: [Anonymous Patient Female, DoB: 1998 ( Krankenversichertennummer: NamingSystemKVID#Absent because: masked (use: official))](Patient-mii-exa-person-patient-pseudonymisiert.md)
 
 
 

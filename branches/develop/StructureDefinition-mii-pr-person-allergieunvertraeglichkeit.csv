@@ -66,10 +66,22 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://hl7.org/fhir/StructureDefinition/allergyintolerance-abatement""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
 "AllergyIntolerance.extension:abatement.value[x]","AllergyIntolerance.extension.value[x]","","","",1,1,"","","","dateTime {[]} {[]}
 Age {[]} {[]}Period {[]} {[]}Range {[]} {[]}string {[]} {[]}","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"","type:$this}
-","",,"open","Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","",,"closed","Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "AllergyIntolerance.extension:abatement.value[x]:valueDateTime","AllergyIntolerance.extension.value[x]","valueDateTime","","",0,1,"Y","","","dateTime {[]} {[]}
 ","End date","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"AllergyIntolerance.extension:abatement.value[x]:valueAge","AllergyIntolerance.extension.value[x]","valueAge","","",0,1,"","","","Age {[]} {[]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"AllergyIntolerance.extension:abatement.value[x]:valuePeriod","AllergyIntolerance.extension.value[x]","valuePeriod","","",0,1,"","","","Period {[]} {[]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"AllergyIntolerance.extension:abatement.value[x]:valueRange","AllergyIntolerance.extension.value[x]","valueRange","","",0,1,"","","","Range {[]} {[]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"AllergyIntolerance.extension:abatement.value[x]:valueString","AllergyIntolerance.extension.value[x]","valueString","","",0,1,"","","","string {[]} {[]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "AllergyIntolerance.modifierExtension","AllergyIntolerance.modifierExtension","","extensions
 user content","",0,*,"","Y","","Extension {[]} {[]}
@@ -275,9 +287,21 @@ Reference is intended to point to a structure that can potentially be expressed 
 "
 "AllergyIntolerance.onset[x]","AllergyIntolerance.onset[x]","","","",0,1,"Y","","","dateTime {[]} {[]}
 Age {[]} {[]}Period {[]} {[]}Range {[]} {[]}string {[]} {[]}","Date of onset of the allergy or intolerance","The estimated or actual date, date-time, age, or other period when the allergy or intolerance was identified.","","","","","","","","","",,,,,"","type:$this}
-","",,"open","AllergyIntolerance.onset[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","",,"closed","AllergyIntolerance.onset[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","FiveWs.init"
 "AllergyIntolerance.onset[x]:onsetDateTime","AllergyIntolerance.onset[x]","onsetDateTime","","",0,1,"Y","","","dateTime {[]} {[]}
+","When allergy or intolerance was identified","Estimated or actual date,  date-time, or age when allergy or intolerance was identified.","","","","","","","","","",,,,,"",,,,"AllergyIntolerance.onset[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","FiveWs.init"
+"AllergyIntolerance.onset[x]:onsetAge","AllergyIntolerance.onset[x]","onsetAge","","",0,1,"","","","Age {[]} {[]}
+","When allergy or intolerance was identified","Estimated or actual date,  date-time, or age when allergy or intolerance was identified.","","","","","","","","","",,,,,"",,,,"AllergyIntolerance.onset[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","FiveWs.init"
+"AllergyIntolerance.onset[x]:onsetPeriod","AllergyIntolerance.onset[x]","onsetPeriod","","",0,1,"","","","Period {[]} {[]}
+","When allergy or intolerance was identified","Estimated or actual date,  date-time, or age when allergy or intolerance was identified.","","","","","","","","","",,,,,"",,,,"AllergyIntolerance.onset[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","FiveWs.init"
+"AllergyIntolerance.onset[x]:onsetRange","AllergyIntolerance.onset[x]","onsetRange","","",0,1,"","","","Range {[]} {[]}
+","When allergy or intolerance was identified","Estimated or actual date,  date-time, or age when allergy or intolerance was identified.","","","","","","","","","",,,,,"",,,,"AllergyIntolerance.onset[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","FiveWs.init"
+"AllergyIntolerance.onset[x]:onsetString","AllergyIntolerance.onset[x]","onsetString","","",0,1,"","","","string {[]} {[]}
 ","When allergy or intolerance was identified","Estimated or actual date,  date-time, or age when allergy or intolerance was identified.","","","","","","","","","",,,,,"",,,,"AllergyIntolerance.onset[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","FiveWs.init"
 "AllergyIntolerance.recordedDate","AllergyIntolerance.recordedDate","","","",0,1,"Y","","","dateTime {[]} {[]}

@@ -20,7 +20,7 @@ Security Label: [test health data (Details: ActReason code HTEST = 'test health 
 
 **code**: Todeseintritt innerhalb von weniger als 24 Stunden nach Beginn der Symptome, ohne anderweitige Angabe
 
-**subject**: [Anonymous Patient Female, DoB: 1998 ( Krankenversichertennummer (use: official, ))](Patient-mii-exa-person-patient-pseudonymisiert.md)
+**subject**: [Anonymous Patient Female, DoB: 1998 ( Krankenversichertennummer: NamingSystemKVID#Absent because: masked (use: official))](Patient-mii-exa-person-patient-pseudonymisiert.md)
 
 
 

@@ -12,7 +12,7 @@
 
 -------
 
-Profile: [MII PR Fall Kontakt mit einer Gesundheitseinrichtung](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.md) version: 2027.0.0-ballot
+Profil: [MII PR Fall Kontakt mit einer Gesundheitseinrichtung](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.md) version: 2027.0.0-ballot
 
 Security Label: [test health data (Details: ActReason code HTEST = 'test health data')](http://terminology.hl7.org/7.2.0/CodeSystem-v3-ActReason.html)
 
@@ -26,7 +26,7 @@ Security Label: [test health data (Details: ActReason code HTEST = 'test health 
 
 **serviceType**: Innere Medizin
 
-**subject**: [Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Krankenaktennummer (use: usual, ))](Patient-mii-exa-person-patient-1.md)
+**subject**: [Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Krankenaktennummer: 42285243 (use: usual))](Patient-mii-exa-person-patient-1.md)
 
 **period**: 2020-01-12 00:00:00+0100 --> 2020-01-17 18:00:00+0100
 
@@ -40,7 +40,7 @@ Security Label: [test health data (Details: ActReason code HTEST = 'test health 
 
 **serviceProvider**: Identifier: `http://fhir.de/sid/dkgev/iknr`/260950472
 
-**partOf**: [Encounter: identifier = Fallnummer; status = finished; class = inpatient encounter (ActCode#IMP); type = Einrichtungskontakt; period = 2020-01-08 07:00:00+0100 --> 2020-01-17 18:00:00+0100](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.md)
+**partOf**: [Encounter: identifier = Fallnummer: E0; status = finished; class = inpatient encounter (ActCode#IMP); type = Einrichtungskontakt; period = 2020-01-08 07:00:00+0100 --> 2020-01-17 18:00:00+0100](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.md)
 
 
 

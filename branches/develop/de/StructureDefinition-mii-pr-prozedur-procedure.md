@@ -138,8 +138,8 @@ Verwenden von `Procedure.encounter`, um von der Prozedur auf den Encounter vom T
 
 **Usages:**
 
-* Examples for this Profile: [Procedure/mii-exa-prozedur-imaging](Procedure-mii-exa-prozedur-imaging.md), [Procedure/mii-exa-prozedur-procedure-2](Procedure-mii-exa-prozedur-procedure-2.md) and [Procedure/mii-exa-prozedur-procedure](Procedure-mii-exa-prozedur-procedure.md)
-* CapabilityStatements using this Profile: [MII CPS Prozedur CapabilityStatement](CapabilityStatement-mii-cps-prozedur-capabilitystatement.md)
+* Examples for this Profil: [Procedure/mii-exa-prozedur-imaging](Procedure-mii-exa-prozedur-imaging.md), [Procedure/mii-exa-prozedur-procedure-2](Procedure-mii-exa-prozedur-procedure-2.md) and [Procedure/mii-exa-prozedur-procedure](Procedure-mii-exa-prozedur-procedure.md)
+* CapabilityStatements using this Profil: [MII CPS Prozedur CapabilityStatement](CapabilityStatement-mii-cps-prozedur-capabilitystatement.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/StructureDefinition-mii-pr-prozedur-procedure.json)
 
@@ -169,34 +169,6 @@ Diese Struktur ist abgeleitet von [Procedure](http://hl7.org/fhir/R4/procedure.h
 
 Diese Struktur ist abgeleitet von [Procedure](http://hl7.org/fhir/R4/procedure.html) 
 
-** Summary **
-
-Mandatory: 3 elements(6 nested mandatory elements)
- Must-Support: 47 elements
-
-**Structures**
-
-This structure refers to these other structures:
-
-* [Coding-Profil für OPS (http://fhir.de/StructureDefinition/CodingOPS)](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/CodingOPS)
-
-**Extensions**
-
-This structure refers to these extensions:
-
-* [http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum)
-* [https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Durchfuehrungsabsicht](StructureDefinition-mii-ex-prozedur-durchfuehrungsabsicht.md)
-* [http://hl7.org/fhir/StructureDefinition/bodySite](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-bodySite.html)
-
-**Slices**
-
-This structure defines the following [Slices](http://hl7.org/fhir/R4/profiling.html#slices):
-
-* The element 1 is sliced based on the value of Procedure.category.coding
-* The element 1 is sliced based on the value of Procedure.code.coding
-* The element 1 is sliced based on the value of Procedure.performed[x]
-* The element 1 is sliced based on the value of Procedure.bodySite.coding
-
  **Schlüsselelemente-Ansicht** 
 
 #### Terminology Bindings
@@ -218,34 +190,6 @@ Diese Struktur ist abgeleitet von [Procedure](http://hl7.org/fhir/R4/procedure.h
 #### Constraints
 
 Diese Struktur ist abgeleitet von [Procedure](http://hl7.org/fhir/R4/procedure.html) 
-
-** Summary **
-
-Mandatory: 3 elements(6 nested mandatory elements)
- Must-Support: 47 elements
-
-**Structures**
-
-This structure refers to these other structures:
-
-* [Coding-Profil für OPS (http://fhir.de/StructureDefinition/CodingOPS)](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/CodingOPS)
-
-**Extensions**
-
-This structure refers to these extensions:
-
-* [http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum)
-* [https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Durchfuehrungsabsicht](StructureDefinition-mii-ex-prozedur-durchfuehrungsabsicht.md)
-* [http://hl7.org/fhir/StructureDefinition/bodySite](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-bodySite.html)
-
-**Slices**
-
-This structure defines the following [Slices](http://hl7.org/fhir/R4/profiling.html#slices):
-
-* The element 1 is sliced based on the value of Procedure.category.coding
-* The element 1 is sliced based on the value of Procedure.code.coding
-* The element 1 is sliced based on the value of Procedure.performed[x]
-* The element 1 is sliced based on the value of Procedure.bodySite.coding
 
  
 

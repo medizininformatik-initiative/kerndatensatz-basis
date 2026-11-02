@@ -895,6 +895,10 @@
   },
   {
     "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/SimpleQuantity|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
     "valueCanonical" : "http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum|1.6.0"
   },
   {

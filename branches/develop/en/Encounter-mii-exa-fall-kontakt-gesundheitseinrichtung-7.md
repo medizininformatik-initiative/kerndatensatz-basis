@@ -26,7 +26,7 @@ Security Label: [test health data (Details: ActReason code HTEST = 'test health 
 
 **serviceType**: Innere Medizin
 
-**subject**: [Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))](Patient-mii-exa-person-patient-1.md)
+**subject**: [Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number: 42285243 (use: usual))](Patient-mii-exa-person-patient-1.md)
 
 **period**: 2020-01-12 00:00:00+0100 --> 2020-01-17 18:00:00+0100
 
@@ -40,7 +40,7 @@ Security Label: [test health data (Details: ActReason code HTEST = 'test health 
 
 **serviceProvider**: Identifier: `http://fhir.de/sid/dkgev/iknr`/260950472
 
-**partOf**: [Encounter: identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Einrichtungskontakt; period = 2020-01-08 07:00:00+0100 --> 2020-01-17 18:00:00+0100](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.md)
+**partOf**: [Encounter: identifier = Visit number: E0; status = finished; class = inpatient encounter (ActCode#IMP); type = Einrichtungskontakt; period = 2020-01-08 07:00:00+0100 --> 2020-01-17 18:00:00+0100](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.md)
 
 
 

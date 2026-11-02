@@ -12,7 +12,7 @@
 
 -------
 
-Profile: [MII PR Diagnose Condition](StructureDefinition-mii-pr-diagnose-condition.md) version: 2027.0.0-ballot
+Profil: [MII PR Diagnose Condition](StructureDefinition-mii-pr-diagnose-condition.md) version: 2027.0.0-ballot
 
 Security Label: [test health data (Details: ActReason code HTEST = 'test health data')](http://terminology.hl7.org/7.2.0/CodeSystem-v3-ActReason.html)
 
@@ -24,9 +24,9 @@ Security Label: [test health data (Details: ActReason code HTEST = 'test health 
 
 **code**: Sonstige näher bezeichnete Krankheiten des Innenohres
 
-**subject**: [Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Krankenaktennummer (use: usual, ))](Patient-mii-exa-person-patient-1.md)
+**subject**: [Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Krankenaktennummer: 42285243 (use: usual))](Patient-mii-exa-person-patient-1.md)
 
-**encounter**: [Encounter: identifier = Fallnummer; status = finished; class = inpatient encounter (ActCode#IMP); type = Abteilungskontakt; serviceType = Innere Medizin; period = 2020-01-12 00:00:00+0100 --> 2020-01-17 18:00:00+0100](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.md)
+**encounter**: [Encounter: identifier = Fallnummer: F_20200108_001_INME; status = finished; class = inpatient encounter (ActCode#IMP); type = Abteilungskontakt; serviceType = Innere Medizin; period = 2020-01-12 00:00:00+0100 --> 2020-01-17 18:00:00+0100](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.md)
 
 **onset**: 2020-01-13 14:00:00+0100
 

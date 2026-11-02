@@ -26,13 +26,13 @@ Security Label: [test health data (Details: ActReason code HTEST = 'test health 
 
 **serviceType**: Allgemeine Chirurgie
 
-**subject**: [Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number (use: usual, ))](Patient-mii-exa-person-patient-1.md)
+**subject**: [Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record number: 42285243 (use: usual))](Patient-mii-exa-person-patient-1.md)
 
 **period**: 2020-01-08 09:00:00+0100 --> 2020-01-11 23:59:00+0100
 
-> **diagnosis****condition**: [Condition Acute appendicitis](Condition-mii-exa-diagnose-appendicitis.md)**use**: Admission diagnosis
+> **diagnosis****condition**: [Condition Akute Appendizitis](Condition-mii-exa-diagnose-appendicitis.md)**use**: Admission diagnosis
 
-> **diagnosis****condition**: [Condition Acute appendicitis](Condition-mii-exa-diagnose-appendicitis.md)**use**: Behandlungsrelevante Diagnosen
+> **diagnosis****condition**: [Condition Akute Appendizitis](Condition-mii-exa-diagnose-appendicitis.md)**use**: Behandlungsrelevante Diagnosen
 
 > **diagnosis****condition**: [Condition Prellung des Ellenbogens](Condition-mii-exa-diagnose-condition-elbow-contusion.md)**use**: Behandlungsrelevante Diagnosen
 
@@ -40,7 +40,7 @@ Security Label: [test health data (Details: ActReason code HTEST = 'test health 
 
 **serviceProvider**: Identifier: `http://fhir.de/sid/dkgev/iknr`/260950472
 
-**partOf**: [Encounter: identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Einrichtungskontakt; period = 2020-01-08 07:00:00+0100 --> 2020-01-17 18:00:00+0100](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.md)
+**partOf**: [Encounter: identifier = Visit number: E0; status = finished; class = inpatient encounter (ActCode#IMP); type = Einrichtungskontakt; period = 2020-01-08 07:00:00+0100 --> 2020-01-17 18:00:00+0100](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.md)
 
 
 

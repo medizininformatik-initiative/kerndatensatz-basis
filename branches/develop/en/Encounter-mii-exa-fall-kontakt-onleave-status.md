@@ -20,7 +20,7 @@ Security Label: [test health data (Details: ActReason code HTEST = 'test health 
 
 **class**: [ActCode: IMP](http://terminology.hl7.org/7.2.0/CodeSystem-v3-ActCode.html#v3-ActCode-IMP) (inpatient encounter)
 
-**subject**: [Anonymous Patient Female, DoB: 1998 ( Krankenversichertennummer (use: official, ))](Patient-mii-exa-person-patient-pseudonymisiert.md)
+**subject**: [Anonymous Patient Female, DoB: 1998 ( Krankenversichertennummer: NamingSystemKVID#Absent because: masked (use: official))](Patient-mii-exa-person-patient-pseudonymisiert.md)
 
 **period**: 2024-06-14 --> (ongoing)
 

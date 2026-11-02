@@ -12,11 +12,11 @@
 
 -------
 
-Profile: [MII PR Person Patient (Pseudonymisiert)](StructureDefinition-mii-pr-person-patient-pseudonymisiert.md) version: 2027.0.0-ballot
+Profil: [MII PR Person Patient (Pseudonymisiert)](StructureDefinition-mii-pr-person-patient-pseudonymisiert.md) version: 2027.0.0-ballot
 
 Security Label: [test health data (Details: ActReason code HTEST = 'test health data')](http://terminology.hl7.org/7.2.0/CodeSystem-v3-ActReason.html)
 
-Anonymous Patient Female, DoB: 1998 ( Krankenversichertennummer (use: official, ))
+Anonymous Patient Female, DoB: 1998 ( Krankenversichertennummer: NamingSystemKVID#Absent because: masked (use: official))
 
 -------
 

@@ -259,8 +259,8 @@ GET [base]/Encounter?account:identifier=https://www.charite.de/fhir/sid/fallnumm
 
 **Usages:**
 
-* Examples for this Profile: [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-10.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-11](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-11.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.md)... Show 10 more, [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-3](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-3.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-4.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-5.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-6.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-8](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-8.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-9](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-9.md), [Encounter/mii-exa-fall-kontakt-in-progress-status](Encounter-mii-exa-fall-kontakt-in-progress-status.md), [Encounter/mii-exa-fall-kontakt-onleave-status](Encounter-mii-exa-fall-kontakt-onleave-status.md) and [Encounter/mii-exa-fall-kontakt-unknown-status](Encounter-mii-exa-fall-kontakt-unknown-status.md)
-* CapabilityStatements using this Profile: [MII CPS Fall CapabilityStatement](CapabilityStatement-mii-cps-fall-capabilitystatement.md)
+* Examples for this Profil: [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-10](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-10.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-11](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-11.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.md)... Show 10 more, [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-3](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-3.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-4](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-4.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-5](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-5.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-6](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-6.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-8](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-8.md), [Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-9](Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-9.md), [Encounter/mii-exa-fall-kontakt-in-progress-status](Encounter-mii-exa-fall-kontakt-in-progress-status.md), [Encounter/mii-exa-fall-kontakt-onleave-status](Encounter-mii-exa-fall-kontakt-onleave-status.md) and [Encounter/mii-exa-fall-kontakt-unknown-status](Encounter-mii-exa-fall-kontakt-unknown-status.md)
+* CapabilityStatements using this Profil: [MII CPS Fall CapabilityStatement](CapabilityStatement-mii-cps-fall-capabilitystatement.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.json)
 
@@ -290,31 +290,6 @@ Diese Struktur ist abgeleitet von [Encounter](http://hl7.org/fhir/R4/encounter.h
 
 Diese Struktur ist abgeleitet von [Encounter](http://hl7.org/fhir/R4/encounter.html) 
 
-** Summary **
-
-Mandatory: 1 element(20 nested mandatory elements)
- Must-Support: 97 elements
-
-**Extensions**
-
-This structure refers to these extensions:
-
-* [http://fhir.de/StructureDefinition/Aufnahmegrund](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/Aufnahmegrund)
-* [http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate](http://hl7.org/fhir/uv/xver-r5.r4/0.1.0/StructureDefinition-ext-R5-Encounter.plannedStartDate.html)
-* [http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedEndDate](http://hl7.org/fhir/uv/xver-r5.r4/0.1.0/StructureDefinition-ext-R5-Encounter.plannedEndDate.html)
-* [http://fhir.de/StructureDefinition/Entlassungsgrund](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/Entlassungsgrund)
-
-**Slices**
-
-This structure defines the following [Slices](http://hl7.org/fhir/R4/profiling.html#slices):
-
-* The element 1 is sliced based on the value of Encounter.identifier
-* The element 1 is sliced based on the value of Encounter.identifier.type.coding
-* The element 1 is sliced based on the value of Encounter.type
-* The element 1 is sliced based on the value of Encounter.serviceType.coding
-* The element 1 is sliced based on the value of Encounter.diagnosis.use.coding
-* The element 2 is sliced based on the values of Encounter.location
-
  **Schlüsselelemente-Ansicht** 
 
 #### Terminology Bindings
@@ -336,31 +311,6 @@ Diese Struktur ist abgeleitet von [Encounter](http://hl7.org/fhir/R4/encounter.h
 #### Constraints
 
 Diese Struktur ist abgeleitet von [Encounter](http://hl7.org/fhir/R4/encounter.html) 
-
-** Summary **
-
-Mandatory: 1 element(20 nested mandatory elements)
- Must-Support: 97 elements
-
-**Extensions**
-
-This structure refers to these extensions:
-
-* [http://fhir.de/StructureDefinition/Aufnahmegrund](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/Aufnahmegrund)
-* [http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate](http://hl7.org/fhir/uv/xver-r5.r4/0.1.0/StructureDefinition-ext-R5-Encounter.plannedStartDate.html)
-* [http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedEndDate](http://hl7.org/fhir/uv/xver-r5.r4/0.1.0/StructureDefinition-ext-R5-Encounter.plannedEndDate.html)
-* [http://fhir.de/StructureDefinition/Entlassungsgrund](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.de/StructureDefinition/Entlassungsgrund)
-
-**Slices**
-
-This structure defines the following [Slices](http://hl7.org/fhir/R4/profiling.html#slices):
-
-* The element 1 is sliced based on the value of Encounter.identifier
-* The element 1 is sliced based on the value of Encounter.identifier.type.coding
-* The element 1 is sliced based on the value of Encounter.type
-* The element 1 is sliced based on the value of Encounter.serviceType.coding
-* The element 1 is sliced based on the value of Encounter.diagnosis.use.coding
-* The element 2 is sliced based on the values of Encounter.location
 
  
 

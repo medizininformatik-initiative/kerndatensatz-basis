@@ -93,8 +93,8 @@ Siehe [Formal Views](#profile) für das vollständige ValueSet-Binding.
 
 **Usages:**
 
-* Examples for this Profile: [Observation/mii-exa-person-observation-vitalstatus-discharge](Observation-mii-exa-person-observation-vitalstatus-discharge.md) and [Observation/mii-exa-person-observation-vitalstatus](Observation-mii-exa-person-observation-vitalstatus.md)
-* CapabilityStatements using this Profile: [MII CPS Person CapabilityStatement](CapabilityStatement-mii-cps-person-capabilitystatement.md)
+* Examples for this Profil: [Observation/mii-exa-person-observation-vitalstatus-discharge](Observation-mii-exa-person-observation-vitalstatus-discharge.md) and [Observation/mii-exa-person-observation-vitalstatus](Observation-mii-exa-person-observation-vitalstatus.md)
+* CapabilityStatements using this Profil: [MII CPS Person CapabilityStatement](CapabilityStatement-mii-cps-person-capabilitystatement.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/de.medizininformatikinitiative.kerndatensatz.base|current/StructureDefinition/StructureDefinition-mii-pr-person-vitalstatus.json)
 
@@ -122,21 +122,6 @@ Diese Struktur ist abgeleitet von [Observation](http://hl7.org/fhir/R4/observati
 
 Diese Struktur ist abgeleitet von [Observation](http://hl7.org/fhir/R4/observation.html) 
 
-** Summary **
-
-Mandatory: 13 elements
- Must-Support: 25 elements
- Fixed: 1 element
- Prohibited: 4 elements
-
-**Slices**
-
-This structure defines the following [Slices](http://hl7.org/fhir/R4/profiling.html#slices):
-
-* The element 1 is sliced based on the value of Observation.category
-* The element 1 is sliced based on the value of Observation.code.coding
-* The element 1 is sliced based on the value of Observation.value[x].coding
-
  **Schlüsselelemente-Ansicht** 
 
 #### Terminology Bindings
@@ -156,21 +141,6 @@ Diese Struktur ist abgeleitet von [Observation](http://hl7.org/fhir/R4/observati
 #### Constraints
 
 Diese Struktur ist abgeleitet von [Observation](http://hl7.org/fhir/R4/observation.html) 
-
-** Summary **
-
-Mandatory: 13 elements
- Must-Support: 25 elements
- Fixed: 1 element
- Prohibited: 4 elements
-
-**Slices**
-
-This structure defines the following [Slices](http://hl7.org/fhir/R4/profiling.html#slices):
-
-* The element 1 is sliced based on the value of Observation.category
-* The element 1 is sliced based on the value of Observation.code.coding
-* The element 1 is sliced based on the value of Observation.value[x].coding
 
  
 

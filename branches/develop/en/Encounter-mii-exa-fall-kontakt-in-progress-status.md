@@ -24,7 +24,7 @@ Security Label: [test health data (Details: ActReason code HTEST = 'test health 
 
 **serviceType**: Orthopädie/Schwerpunkt Chirurgie
 
-**subject**: [Anonymous Patient Female, DoB: 1998 ( Krankenversichertennummer (use: official, ))](Patient-mii-exa-person-patient-pseudonymisiert.md)
+**subject**: [Anonymous Patient Female, DoB: 1998 ( Krankenversichertennummer: NamingSystemKVID#Absent because: masked (use: official))](Patient-mii-exa-person-patient-pseudonymisiert.md)
 
 **period**: 2024-06-14 --> (ongoing)
 
