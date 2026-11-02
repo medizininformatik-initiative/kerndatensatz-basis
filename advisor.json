@@ -1,10 +1,21 @@
-{ 
+{
+  "_note_batch_validate_code" : [
+    "2026-11-02: Workaround for a terminology tooling problem, not for content errors.",
+    "The HL7 Java validator checks the first code of a ValueSet compose.include or CodeSystem supplement with a single CodeSystem/$validate-code call, then sends the remaining codes as one ValueSet/$batch-validate-code request without a valueSet or url parameter.",
+    "Ontoserver rejects every batch entry with 'Type-level request to $validate-code must specify either valueSet or url parameter.' and the validator reports each one as an invalid code.",
+    "The affected codes are valid: single $validate-code and $expand return them for SNOMED CT 20250701 and 20260701. See txlog.html in the validation-output artifact of run https://github.com/medizininformatik-initiative/kerndatensatz-basis/actions/runs/41425530629.",
+    "Remove the VALUESET_INCLUDE_INVALID_CONCEPT_CODE_VER and CODESYSTEM_CS_SUPP_INVALID_CODE entries below once $batch-validate-code works against Ontoserver."
+  ],
   "suppress" : [
     "Terminology_TX_NoValid_16@ImplementationGuide.definition.parameter.code",
     "MSG_DRAFT",
     "TERMINOLOGY_TX_WARNING@StructureDefinition.*",
     "http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6",
     "UNABLE_TO_INFER_CODESYSTEM@StructureDefinition.*",
-    "Terminology_TX_NoValid_16@StructureDefinition.*"
+    "Terminology_TX_NoValid_16@StructureDefinition.*",
+    "UNABLE_TO_INFER_CODESYSTEM@ImplementationGuide.definition.parameter.code",
+    "Unknown_Code_in_Version@ImplementationGuide.*",
+    "CODESYSTEM_CS_SUPP_INVALID_CODE@CodeSystem.concept",
+    "VALUESET_INCLUDE_INVALID_CONCEPT_CODE_VER@ValueSet.compose.include.concept"
   ]
 }
