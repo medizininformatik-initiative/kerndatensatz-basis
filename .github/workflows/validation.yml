@@ -18,6 +18,8 @@ jobs:
       PATH_TO_CONFORMANCE_RESOURCES: fsh-generated/resources
       PATH_TO_EXAMPLES: fsh-generated/resources
       JAVA_VALIDATION_ENABLED: true
+      # Marked required in the reusable workflow, so it must be passed; keep in line with its default.
+      JAVA_VALIDATOR_VERSION: "6.10.4"
       JAVA_VALIDATION_OPTIONS: "-advisor-file advisor.json"
       # Pinned SUSHI, same as the template's validation.yml; overridable via the repo variable.
       SUSHI_VERSION: ${{ vars.SUSHI_VERSION || '3.21.0' }}
