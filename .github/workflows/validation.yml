@@ -1,0 +1,25 @@
+name: FHIR validation
+
+on:
+  pull_request:
+  push:
+    branches: [develop, main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  java-validation:
+    name: HL7 Java validator
+    uses: medizininformatik-initiative/mii-kds-module-template/.github/workflows/ci_java_validation.yml@9d464cddb17985b41df9ab6e0a5ff95870f902f2 # mii-kds-module-template dev @ 2026-11-02 (#49)
+    with:
+      ref: ${{ github.ref }}
+      PATH_TO_CONFORMANCE_RESOURCES: fsh-generated/resources
+      PATH_TO_EXAMPLES: fsh-generated/resources
+      # The validator version is the reusable workflow's default at the pinned SHA.
+      JAVA_VALIDATION_OPTIONS: "-advisor-file advisor.json"
+      # Pinned SUSHI, same as the template's validation.yml; overridable via the repo variable.
+      SUSHI_VERSION: ${{ vars.SUSHI_VERSION || '3.21.0' }}
+      SNAPSHOT_DEPENDENCIES: true
+    secrets: inherit
