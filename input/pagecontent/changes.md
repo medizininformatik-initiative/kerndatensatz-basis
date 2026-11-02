@@ -2,6 +2,14 @@ This page documents the changes and updates across versions of the MII Implement
 
 ---
 
+### Version 2027.0.0
+
+#### Person Module
+
+- **Changed:** In the Person logical model, `Name.Praefix` is now a BackboneElement with the child elements `Wert` (the prefix) and `ArtdesPraefixes` (its type), because a primitive `string` element cannot have child elements. See: [#96](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/96)
+
+---
+
 ### Version 2027.0.0-ballot
 
 **Date:** 2026-09-10
