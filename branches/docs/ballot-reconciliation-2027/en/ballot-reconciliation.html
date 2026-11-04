@@ -1,0 +1,921 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+
+
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Ballot Reconciliation 2027.0.0-ballot - MII Implementation Guide Core Dataset Base v2027.0.0-ballot</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link href="assets/css/project.css" rel="stylesheet"/>
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Branding override for the fhir2.base.template CSS placeholder
+     (base ships includes/fragment-css.html as a single comment; it is included
+     in <head> AFTER all base stylesheets, so the linked files win the
+     cascade).
+     Load model (docs/styleguide.md §1/§10): bootstrap-accessibility.css
+     (PayPal Bootstrap Accessibility Plugin v1.0.7, vendored + pinned - §8)
+     patches Bootstrap-3 component styling for accessibility (focus outlines,
+     alert contrast) and loads FIRST so the template's own rules can override;
+     then template-base.css carries the
+     brand-INDEPENDENT rule blocks and always loads; then EXACTLY ONE palette
+     file follows - num-diz.css, the DEFAULT design, unless the consuming IG
+     ships input/data/brand.json with { "design": "mii" } (read as
+     site.data.brand.design via the base's input/data -> _data pre-process),
+     which selects mii.css instead. Only the exact value 'mii' selects the
+     MII design; anything else - including no brand.json at all and unknown
+     values - renders NUM-DIZ. Both palettes declare the same variable set
+     (scripts/brand-switch.test.mjs). -->
+<link href="assets/css/bootstrap-accessibility.css" rel="stylesheet"/>
+<link href="assets/css/template-base.css" rel="stylesheet"/>
+
+<link href="assets/css/num-diz.css" rel="stylesheet"/>
+
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script type="text/javascript" src="assets/js/direction-management.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"12"}
+    h3,h4,h5,h6{--heading-prefix:"12"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Branding override for the fhir2.base.template header placeholder
+     (base ships includes/fragment-header.html as a single comment; it is included
+     inside "#segment-header > .container", before the #ig-status block).
+     Language handling: only the asset and its descriptive alt text switch on
+     include.lang (the pattern kerndatensatz-basis uses); no translatable UI
+     strings are hard-coded.
+     Brand handling: the project logo additionally switches on
+     site.data.brand.design (input/data/brand.json in the consuming IG, see
+     docs/styleguide.md §10). Only the exact value 'mii' selects the MII
+     logos - anything else, including no brand.json at all, falls through to
+     the NUM-DIZ default.
+     Two logos, mirroring kerndatensatz-basis: the HL7 FHIR logo (links to the
+     FHIR spec) in #family-nav, and the project logo in #project-nav.
+     fhir-logo-www.png is shipped by fhir2.base.template
+     (content/assets/images/), so it resolves from the inherited assets without
+     shipping it here. -->
+<div id="family-nav">
+  <a id="family-logo" no-external="true" href="https://hl7.org/fhir">
+    <img height="50" alt="HL7 FHIR" src="assets/images/fhir-logo-www.png"/>
+  </a>
+</div>
+<div id="project-nav">
+
+  <a id="project-logo" no-external="true" href="https://www.netzwerk-universitaetsmedizin.de/forschung/num-diz">
+
+    <img height="50" alt="NUM-DIZ (Network of University Medicine — Data Integration Center)" src="assets/images/logo-num-diz-en.svg"/>
+
+  </a>
+
+</div>
+<!-- Font-size control (A / A+ / A++): three reader-selectable levels; level A
+     is the untouched default. Logic in assets/js/font-size-control.js, the
+     zoom mapping + button styling in template-base.css ("font-size control"
+     block). All three buttons read "A" — the button's own font size shows the level; labels are language-neutral; only the aria texts switch
+     on include.lang. REMOVAL: delete this block, the js file and the CSS
+     block - one commit, styleguide §5a. -->
+
+<div class="ig-fontsize" role="group" aria-label="Font size">
+  <button type="button" data-level="0" aria-pressed="true" aria-label="Font size: default">A</button>
+  <button type="button" data-level="1" aria-pressed="false" aria-label="Font size: larger">A</button>
+  <button type="button" data-level="2" aria-pressed="false" aria-label="Font size: largest">A</button>
+</div>
+
+<script src="assets/js/font-size-control.js" defer></script>
+<!-- PayPal Bootstrap Accessibility Plugin v1.0.7 (vendored + pinned, §8):
+     patches the Bootstrap-3 components the publisher renders - navbar
+     dropdowns gain ARIA menu semantics + arrow-key navigation, tab panels
+     (structure-tabs) the full ARIA tabs pattern, alerts live-region
+     announcements. `defer` guarantees it executes AFTER the parser-inserted
+     bootstrap.min.js at the end of the body. Vendored from
+     paypal/bootstrap-accessibility-plugin @ v1.0.7 (the admin-ch fork was
+     evaluated and rejected: 151 commits behind upstream, its 6 deltas are
+     site-specific tab tweaks). REMOVAL: delete this tag, both vendored
+     assets and the fragment-css link - guard test pins the hashes. -->
+<script src="assets/js/bootstrap-accessibility.min.js" defer></script>
+<!-- Back-to-top button: appears after one viewport of scrolling (logic in
+     assets/js/back-to-top.js, styling in template-base.css "back-to-top"
+     block). Rendered here inside #segment-header, which is OUTSIDE the
+     data-fontsize zoom regions, so the fixed button never scales. REMOVAL:
+     this block, the js file and the CSS block - one commit, styleguide §8. -->
+
+<button type="button" class="ig-back-to-top" aria-label="Back to top">↑</button>
+
+<script src="assets/js/back-to-top.js" defer></script>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">MII Implementation Guide Core Dataset Base</span>
+            <br/>
+            <span style="display:inline-block;">2027.0.0-ballot - 
+
+
+
+  Germany
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="guidance.html" class="dropdown-toggle">Guidance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="guidance.html">Guidance</a>
+      </li>
+      <li>
+        <a href="researcher-guidance.html">Guidance for Researchers</a>
+      </li>
+      <li>
+        <a href="implementer-guidance.html">Guidance for Implementers</a>
+      </li>
+      <li>
+        <a href="datasets-and-descriptions.html">Datasets and Descriptions</a>
+      </li>
+      <li>
+        <a href="uml-diagrams.html">UML Diagrams</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="conformance.html" class="dropdown-toggle">Conformance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="conformance.html">Conformance</a>
+      </li>
+      <li>
+        <a href="general-requirements.html">General Requirements</a>
+      </li>
+      <li>
+        <a href="must-support.html">Must Support</a>
+      </li>
+      <li>
+        <a href="missing-data.html">Handling Missing Data</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="artifacts.html" class="dropdown-toggle">Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">Artifacts Summary</a>
+      </li>
+      <li>
+        <a href="profiles-and-extensions.html">Profiles and Extensions</a>
+      </li>
+      <li>
+        <a href="terminology.html">Terminology</a>
+      </li>
+      <li>
+        <a href="capability-statements.html">Capability Statements</a>
+      </li>
+      <li>
+        <a href="search-parameters-and-operations.html">Search Parameters and Operations</a>
+      </li>
+      <li>
+        <a href="logical-models.html">Logical Models</a>
+      </li>
+      <li>
+        <a href="examples.html">Examples</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+  <li>
+    <a href="changes.html">Changelog</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="metadata.html" class="dropdown-toggle">Metadata
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="metadata.html">Metadata Overview</a>
+      </li>
+      <li>
+        <a href="version-history.html">Versioning</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+            </div>  <!-- /.nav-collapse -->
+
+              
+
+
+
+
+<div style="float: var(--ig-right);padding: 8px 0px;" id="language">
+  <div id="select_flg" class="flaglist" style="background-image: url(assets/images/icon_arrow_down.png);background-position: 133px 3px;">
+    <div><img class="flag" alt="flag en" src="assets/images/lang-en.png"/>English</div>
+  </div>
+  <div style="float: var(--ig-right); margin: 2px 0px; padding: 1px 0;color: var(--btn-text-color);font-size:12px">Language:</div>
+ 	<div id="flaglist" class="flaglist" style="display: none;position: absolute;right: 0;z-index: 100;background-image: url(assets/images/icon_arrow_up.png);background-position: 133px 3px;">
+    <div><img class="flag" alt="flag en" src="assets/images/lang-en.png"/>English</div>
+
+    <div><a href="../de/ballot-reconciliation.html"><img class="flag" src="assets/images/lang-de.png" alt="flag de"/>Deutsch</a></div>
+
+  </div>
+</div>
+
+
+
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Ballot Reconciliation 2027.0.0-ballot</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">MII Implementation Guide Core Dataset Base - Local Development build (v2027.0.0-ballot) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://medizininformatik-initiative.github.io/kerndatensatz-basis/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Ballot Reconciliation 2027.0.0-ballot</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#a-proposed-accept--profile-changes" id="markdown-toc-a-proposed-accept--profile-changes">A. Proposed: accept – profile changes</a></li>
+  <li><a href="#b-proposed-accept--terminology-additions" id="markdown-toc-b-proposed-accept--terminology-additions">B. Proposed: accept – terminology additions</a></li>
+  <li><a href="#c-to-be-discussed" id="markdown-toc-c-to-be-discussed">C. To be discussed</a></li>
+  <li><a href="#d-proposed-accept--documentation-only" id="markdown-toc-d-proposed-accept--documentation-only">D. Proposed: accept – documentation only</a></li>
+  <li><a href="#e-planned-reply" id="markdown-toc-e-planned-reply">E. Planned reply</a></li>
+  <li><a href="#f-proposed-move-to-the-meta-module" id="markdown-toc-f-proposed-move-to-the-meta-module">F. Proposed: move to the Meta module</a></li>
+  <li><a href="#summary" id="markdown-toc-summary">Summary</a></li>
+</ul>
+
+</div>
+<p>This page is a <strong>working document</strong> for the reconciliation of the ballot comments on version <code class="language-plaintext highlighter-rouge">2027.0.0-ballot</code> of the MII Kerndatensatz Basis. It lists the open tickets from the HL7 Germany ballot, grouped by category, with a <strong>proposed</strong> resolution for each. Nothing on this page has been decided yet; the proposals are ratified in the reconciliation meeting.</p>
+
+<p><strong>Ticket set (frozen 2026-11-04):</strong> 36 tickets, exported on 2026-11-04 with the <a href="https://hl7germany.atlassian.net/issues/?jql=project%20%3D%20HDB%20AND%20created%20%3E%3D%20-200d%20AND%20%22Project%5BDropdown%5D%22%20in%20%28%22MII%20%E2%80%93%20Modul%20Basis%20%28Person%2C%20Fall%2C%20Diagnose%20%26%20Prozedur%29%22%29%20ORDER%20BY%20created%20DESC">Jira query</a> <code class="language-plaintext highlighter-rouge">project = HDB AND created &gt;= -200d AND "Project[Dropdown]" = "MII – Modul Basis (Person, Fall, Diagnose &amp; Prozedur)"</code>. Because the query uses a relative date, its result changes over time; this page covers exactly these keys:
+HDB-935, HDB-938, HDB-939, HDB-1010, HDB-1011, HDB-1012, HDB-1013, HDB-1014, HDB-1015, HDB-1016, HDB-1017, HDB-1018, HDB-1019, HDB-1020, HDB-1021, HDB-1022, HDB-1023, HDB-1024, HDB-1025, HDB-1026, HDB-1035, HDB-1036, HDB-1048, HDB-1052, HDB-1067, HDB-1068, HDB-1069, HDB-1070, HDB-1071, HDB-1072, HDB-1073, HDB-1074, HDB-1075, HDB-1076, HDB-1077, HDB-1124.
+Ticket titles are quoted in the original language (German).</p>
+
+<p><strong>How decisions are recorded:</strong> the published page cannot be edited. During the meeting, each decision is recorded in the Jira ticket (comment with the decision and, where applicable, the resolution). Afterwards the <em>Decision</em> column on this page is updated from Jira in a pull request, so the page and Jira stay consistent.</p>
+
+<h4 id="legend">Legend</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Status</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Proposed: accept</strong></td>
+      <td>Proposal to implement the change for <code class="language-plaintext highlighter-rouge">2027.0.0</code>; to be ratified in the meeting.</td>
+    </tr>
+    <tr>
+      <td><strong>Proposed: accept (docs)</strong></td>
+      <td>Proposal to change documentation or guidance only, no artefact changes; to be ratified.</td>
+    </tr>
+    <tr>
+      <td><strong>Discuss</strong></td>
+      <td>No proposed resolution yet; to be discussed in the meeting.</td>
+    </tr>
+    <tr>
+      <td><strong>Planned reply</strong></td>
+      <td>Question or cross-organisational topic; a reply in Jira is planned (draft or evidence still needed is given), no change in this IG.</td>
+    </tr>
+    <tr>
+      <td><strong>Proposed: move to Meta</strong></td>
+      <td>Concerns the Meta module (<code class="language-plaintext highlighter-rouge">kerndatensatz-meta</code>); proposal to move the ticket there.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Breaking</strong> = <em>yes</em> if implementations conforming to the previous release (<code class="language-plaintext highlighter-rouge">2026.0.x</code>) no longer conform after the change. Changes to artefacts first introduced in <code class="language-plaintext highlighter-rouge">2027.0.0-ballot</code> (e.g. the AllergyIntolerance profile) are not breaking. <em>Unassessed</em> means the impact still has to be checked.</p>
+
+<hr />
+
+<h3 id="a-proposed-accept--profile-changes">A. Proposed: accept – profile changes</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ticket</th>
+      <th>Topic</th>
+      <th>Proposed resolution</th>
+      <th>Status</th>
+      <th>Breaking</th>
+      <th>Decision</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://hl7germany.atlassian.net/browse/HDB-1075">HDB-1075</a></td>
+      <td>Extension Lebensphase in Datentyp "Range"</td>
+      <td>Move the Lebensphase extension from <code class="language-plaintext highlighter-rouge">Condition.onsetAge</code>/<code class="language-plaintext highlighter-rouge">abatementAge</code> to <code class="language-plaintext highlighter-rouge">onsetRange</code>/<code class="language-plaintext highlighter-rouge">abatementRange</code>. The extension context in <code class="language-plaintext highlighter-rouge">de.basisprofil.r4</code> 1.6.0 only allows <code class="language-plaintext highlighter-rouge">dateTime</code>, <code class="language-plaintext highlighter-rouge">Period.start</code>, <code class="language-plaintext highlighter-rouge">Period.end</code> and <code class="language-plaintext highlighter-rouge">Range</code>, so the current placement is invalid. Update the logical model mapping accordingly.</td>
+      <td>Proposed: accept</td>
+      <td><strong>yes</strong></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7germany.atlassian.net/browse/HDB-1069">HDB-1069</a></td>
+      <td>Constraint "pat-cnt-2or3-char" in Adress.country</td>
+      <td>Rewrite <code class="language-plaintext highlighter-rouge">pat-cnt-2or3-char</code> to check the <code class="language-plaintext highlighter-rouge">countryCode</code> extension (<code class="language-plaintext highlighter-rouge">iso21090-codedString</code>) instead of <code class="language-plaintext highlighter-rouge">Address.country</code>, so <code class="language-plaintext highlighter-rouge">country</code> may carry other values (e.g. DEÜV).</td>
+      <td>Proposed: accept</td>
+      <td>no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7germany.atlassian.net/browse/HDB-935">HDB-935</a></td>
+      <td>country constraints noch nicht angepasst?</td>
+      <td>Resolved together with HDB-1069.</td>
+      <td>Proposed: accept</td>
+      <td>no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7germany.atlassian.net/browse/HDB-1124">HDB-1124</a></td>
+      <td>Binding Strengh in Extension individual-recordedSexOrGender anpassen</td>
+      <td>Change the binding of <code class="language-plaintext highlighter-rouge">Patient.extension:recordedSexOrGender.extension:value.valueCodeableConcept</code> to <code class="language-plaintext highlighter-rouge">MII_VS_Person_recordedSexOrGender_SNOMED</code> from <em>preferred</em> to <em>extensible</em>. See HDB-1068 for the background of the binding.</td>
+      <td>Proposed: accept</td>
+      <td>no (new in ballot)</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7germany.atlassian.net/browse/HDB-1067">HDB-1067</a></td>
+      <td>Verwendung der Extension "Patient Sex Parameter For Clinical Use"</td>
+      <td>Add <code class="language-plaintext highlighter-rouge">patient-sexParameterForClinicalUse</code> (hl7.fhir.uv.extensions.r4 5.2.0) to the Patient profile as an optional extension.</td>
+      <td>Proposed: accept</td>
+      <td>no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7germany.atlassian.net/browse/HDB-1073">HDB-1073</a></td>
+      <td>Wahl der Valuesets in AllergyIntolerance.code und reaction.manifestation</td>
+      <td>Replace the IPS bindings (currently <em>preferred</em>) with the KBV ValueSets, aligned with the pending ISiK change (ISiK <code class="language-plaintext highlighter-rouge">main-stufe-6</code>; ISiK Basis 6.0.0 itself still uses FHIR core example bindings): <code class="language-plaintext highlighter-rouge">AllergyIntolerance.code.coding:snomed-ct</code> from <code class="language-plaintext highlighter-rouge">https://fhir.kbv.de/ValueSet/KBV_VS_AllergyIntolerance_Substance_SNOMED_CT|1.0.0</code> (<em>extensible</em>) and <code class="language-plaintext highlighter-rouge">AllergyIntolerance.reaction.manifestation.coding:snomed-ct</code> from <code class="language-plaintext highlighter-rouge">https://fhir.kbv.de/ValueSet/KBV_VS_AllergyIntolerance_Manifestation_SNOMED_CT|1.0.0</code> (<em>extensible</em>), matching the ISiK development source. Package identified: both ValueSets are in <code class="language-plaintext highlighter-rouge">kbv.all.terminology.allergyintolerance#1.0.0</code> (BfArM, protected: download requires accepting the conditions and a token); validation setup pending.</td>
+      <td>Proposed: accept</td>
+      <td>no (new in ballot)</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7germany.atlassian.net/browse/HDB-1019">HDB-1019</a></td>
+      <td>AllergyIntolerance.code.coding:snomed-ct</td>
+      <td>Align with ISiK Basis 6.0.0: <code class="language-plaintext highlighter-rouge">AllergyIntolerance.code.coding</code> 1..*, with a <strong>mandatory</strong> slice <code class="language-plaintext highlighter-rouge">coding:snomed-ct</code> 1..1 (bound as in HDB-1073). Allergies coded only in other systems would then no longer conform. This is a substantive MII policy choice and needs an explicit decision in the meeting.</td>
+      <td>Proposed: accept</td>
+      <td>no against <code class="language-plaintext highlighter-rouge">2026.0.x</code> (new in ballot), but stricter than the published ballot profile</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7germany.atlassian.net/browse/HDB-1072">HDB-1072</a></td>
+      <td>Verwendung der Lebensphase Extension in AllergyIntolerance</td>
+      <td>Allow the Lebensphase extension on <code class="language-plaintext highlighter-rouge">AllergyIntolerance.onsetRange</code> and on <code class="language-plaintext highlighter-rouge">AllergyIntolerance.extension:abatement.valueRange</code> (the <code class="language-plaintext highlighter-rouge">allergyintolerance-abatement</code> extension allows <code class="language-plaintext highlighter-rouge">Range</code>), consistent with HDB-1075.</td>
+      <td>Proposed: accept</td>
+      <td>no (new in ballot)</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7germany.atlassian.net/browse/HDB-1074">HDB-1074</a></td>
+      <td>BodyStructure Profile aus EU Core referenzieren</td>
+      <td>Recommendation: reference the EU profile <code class="language-plaintext highlighter-rouge">http://hl7.eu/fhir/base/StructureDefinition/bodyStructure-eu-core</code> (<code class="language-plaintext highlighter-rouge">hl7.fhir.eu.base</code> 2.0.1, new dependency) <strong>directly</strong> as the target of <code class="language-plaintext highlighter-rouge">Condition.bodySite.extension:bodySite.valueReference</code> and <code class="language-plaintext highlighter-rouge">Procedure.bodySite.extension:bodySite.valueReference</code>. An MII-specific derived profile is only needed if MII-specific constraints are required.</td>
+      <td>Proposed: accept</td>
+      <td>no (new in ballot)</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="b-proposed-accept--terminology-additions">B. Proposed: accept – terminology additions</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ticket</th>
+      <th>Topic</th>
+      <th>Proposed resolution</th>
+      <th>Status</th>
+      <th>Breaking</th>
+      <th>Decision</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://hl7germany.atlassian.net/browse/HDB-1068">HDB-1068</a></td>
+      <td>Wahl des Valueset in Extension "Recorded Sex or Gender"</td>
+      <td>Background: the upstream extension <code class="language-plaintext highlighter-rouge">individual-recordedSexOrGender</code> has only an <em>example</em> binding (<code class="language-plaintext highlighter-rouge">administrative-gender</code>) on <code class="language-plaintext highlighter-rouge">value</code>. The MII Patient profile binds <code class="language-plaintext highlighter-rouge">value</code> to the SNOMED CT ValueSet <code class="language-plaintext highlighter-rouge">MII_VS_Person_recordedSexOrGender_SNOMED</code> with <em>preferred</em> strength (<em>extensible</em> proposed in HDB-1124). The extension covers recorded sex or gender in general; the primary MII use case is the sex assigned at birth, which is why SNOMED CT codes are used rather than administrative gender. Proposal: add a ConceptMap from the SNOMED CT codes to <code class="language-plaintext highlighter-rouge">administrative-gender</code> with qualified relationships (e.g. <em>wider</em>, <em>narrower</em>, <em>inexact</em>) instead of implying equivalence.</td>
+      <td>Proposed: accept</td>
+      <td>no</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="c-to-be-discussed">C. To be discussed</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ticket</th>
+      <th>Topic</th>
+      <th>Open question</th>
+      <th>Status</th>
+      <th>Breaking</th>
+      <th>Decision</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://hl7germany.atlassian.net/browse/HDB-1077">HDB-1077</a></td>
+      <td>Constraint für die Lateralitätsangabe in Procedure</td>
+      <td>A MUST NOT on double laterality is questionable: the OPS laterality serves reimbursement, while <code class="language-plaintext highlighter-rouge">bodySite</code> can be more specific. At minimum both laterality statements must match. Needs research on how other specifications handle this.</td>
+      <td>Discuss</td>
+      <td>depends (<em>yes</em> for an error-level invariant, <em>no</em> for a warning)</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7germany.atlassian.net/browse/HDB-1070">HDB-1070</a></td>
+      <td>Verwendung von "pattern" Diskriminatoren</td>
+      <td><code class="language-plaintext highlighter-rouge">pattern</code> is deprecated from R5 on. Check first whether switching to <code class="language-plaintext highlighter-rouge">value</code> applies backwards to R4 without changing validation results (affects ~25 slicings).</td>
+      <td>Discuss</td>
+      <td>unassessed</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7germany.atlassian.net/browse/HDB-1071">HDB-1071</a></td>
+      <td>Kardinalität von Patient.birthDate</td>
+      <td>Making <code class="language-plaintext highlighter-rouge">birthDate</code> 1..1 (with <code class="language-plaintext highlighter-rouge">data-absent-reason</code>) needs discussion: the MII infrastructure is neither the ePA nor ISiK, and its data sources differ.</td>
+      <td>Discuss</td>
+      <td><strong>yes</strong></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7germany.atlassian.net/browse/HDB-1018">HDB-1018</a></td>
+      <td>Procedure.category Invarianten</td>
+      <td>Two separate decisions: <strong>(a)</strong> allow a text-only <code class="language-plaintext highlighter-rouge">Procedure.code</code> (ISiK <code class="language-plaintext highlighter-rouge">proc-ISiK-3</code>) – this <em>relaxes</em> <code class="language-plaintext highlighter-rouge">sct-ops-1</code> and <code class="language-plaintext highlighter-rouge">code.coding</code> 1..*, so consumers can no longer rely on a coded procedure; <strong>(b)</strong> adopt <code class="language-plaintext highlighter-rouge">proc-ISiK-2</code> (<code class="language-plaintext highlighter-rouge">code.coding.exists() implies category.coding.exists()</code>) – this <em>tightens</em> the rules: a SNOMED CT coded procedure without <code class="language-plaintext highlighter-rouge">category</code> currently conforms (<code class="language-plaintext highlighter-rouge">proc-mii-1</code> only requires a category for OPS codes) but would fail. The maintainers do not favour (a).</td>
+      <td>Discuss</td>
+      <td>(a) consumer impact · (b) <strong>yes</strong></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7germany.atlassian.net/browse/HDB-1016">HDB-1016</a></td>
+      <td>Encounter.type.Kontaktebene und .diagnosis.use.coding:Diagnosetyp und .hospitalization.admitSource</td>
+      <td>Cardinalities have deliberately not been tightened so far, for backwards compatibility. Discuss whether to align with ISiK and document the deviations.</td>
+      <td>Discuss</td>
+      <td><strong>yes</strong> if tightened</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="d-proposed-accept--documentation-only">D. Proposed: accept – documentation only</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ticket</th>
+      <th>Topic</th>
+      <th>Proposed resolution</th>
+      <th>Status</th>
+      <th>Breaking</th>
+      <th>Decision</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://hl7germany.atlassian.net/browse/HDB-1048">HDB-1048</a></td>
+      <td>Aufnahmenummer ungleich Fallnummer</td>
+      <td>Correct the description of <em>Aufnahmenummer</em> in the logical model Fall: admission number and case number are different identifiers. Coordinate with the ISiK encounter concept.</td>
+      <td>Proposed: accept (docs)</td>
+      <td>no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7germany.atlassian.net/browse/HDB-1010">HDB-1010</a></td>
+      <td>Fallart teilstationär Klarstellung</td>
+      <td>Document why day-care cases can use <code class="language-plaintext highlighter-rouge">IMP</code> (with bed allocation, e.g. night clinic) or <code class="language-plaintext highlighter-rouge">SS</code> (without bed allocation).</td>
+      <td>Proposed: accept (docs)</td>
+      <td>no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7germany.atlassian.net/browse/HDB-1011">HDB-1011</a></td>
+      <td>Bettenstellplatz</td>
+      <td>Use the term "Bettenstellplatz" for <code class="language-plaintext highlighter-rouge">Encounter.location:Bett</code> to distinguish the location from the device. The slice name stays unchanged.</td>
+      <td>Proposed: accept (docs)</td>
+      <td>no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7germany.atlassian.net/browse/HDB-1076">HDB-1076</a></td>
+      <td>Slicing auf Encounter.diagnosis.use.coding</td>
+      <td>The slicing on <code class="language-plaintext highlighter-rouge">coding</code> is intentional: one <code class="language-plaintext highlighter-rouge">use</code> <strong>can contain</strong> both a <em>Diagnosetyp</em> and a <em>DiagnosesubTyp</em> coding (each slice is optional, 0..1). The existing best-practice note in the Encounter profile notes, which tells implementers to create separate <code class="language-plaintext highlighter-rouge">Encounter.diagnosis</code> entries for Diagnosetyp and Diagnosesubtyp, contradicts this and will be replaced, including its example.</td>
+      <td>Proposed: accept (docs)</td>
+      <td>no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7germany.atlassian.net/browse/HDB-1052">HDB-1052</a></td>
+      <td>Extension von Diagnosen ValueSet in Fall-Profile</td>
+      <td><code class="language-plaintext highlighter-rouge">mii-vs-fall-diagnosis-use</code> already includes <code class="language-plaintext highlighter-rouge">DiagnoseTyp</code>, <code class="language-plaintext highlighter-rouge">Diagnosesubtyp</code> (CodeSystem KontaktDiagnoseProzedur) and <code class="language-plaintext highlighter-rouge">diagnosis-role</code> (extensible binding). Document this and add an example.</td>
+      <td>Proposed: accept (docs)</td>
+      <td>no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7germany.atlassian.net/browse/HDB-1020">HDB-1020</a></td>
+      <td>Condition .extension</td>
+      <td>Describe the use of <code class="language-plaintext highlighter-rouge">ReferenzPrimaerdiagnose</code> and <code class="language-plaintext highlighter-rouge">Feststellungsdatum</code>, and the difference between <code class="language-plaintext highlighter-rouge">Feststellungsdatum</code> (clinical diagnosis date) and <code class="language-plaintext highlighter-rouge">onset</code> (start of symptoms), based on the discussion in Jira.</td>
+      <td>Proposed: accept (docs)</td>
+      <td>no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7germany.atlassian.net/browse/HDB-1012">HDB-1012</a></td>
+      <td>Empfehlung Diagnosen an die Kontaktebene</td>
+      <td>Add a note on the recommendation to link diagnoses to the department encounter, taking the ongoing ISiK discussion (Stufe 7) into account.</td>
+      <td>Proposed: accept (docs)</td>
+      <td>no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7germany.atlassian.net/browse/HDB-1013">HDB-1013</a></td>
+      <td>UML Referenz Modul zu Patient</td>
+      <td>Add the link between Fall and Patient (via <em>Patientenidentifikator</em>) to the UML diagram.</td>
+      <td>Proposed: accept (docs)</td>
+      <td>no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7germany.atlassian.net/browse/HDB-939">HDB-939</a></td>
+      <td>Zuordnung - Encounter &lt;-&gt; Account</td>
+      <td>Make clear in the diagram or text that one Account can be linked to several facility encounters.</td>
+      <td>Proposed: accept (docs)</td>
+      <td>no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7germany.atlassian.net/browse/HDB-938">HDB-938</a></td>
+      <td>Station (Ward) -&gt; Location vs. Organization</td>
+      <td>Describe both options for representing a ward: as <code class="language-plaintext highlighter-rouge">Location</code> (<code class="language-plaintext highlighter-rouge">physicalType = wa</code>) or via the service provider <code class="language-plaintext highlighter-rouge">Organization</code>.</td>
+      <td>Proposed: accept (docs)</td>
+      <td>no</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="e-planned-reply">E. Planned reply</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ticket</th>
+      <th>Topic</th>
+      <th>Draft reply / evidence still needed</th>
+      <th>Status</th>
+      <th>Breaking</th>
+      <th>Decision</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://hl7germany.atlassian.net/browse/HDB-1017">HDB-1017</a></td>
+      <td>Procedure Extension Durchführungsabsicht</td>
+      <td>Draft: the extension records the intended purpose of a procedure (e.g. curative, palliative, diagnostic). <em>Evidence needed:</em> in which documentation contexts sites capture it, to judge whether it is suitable as Must Support in care (ISiK).</td>
+      <td>Planned reply</td>
+      <td>no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7germany.atlassian.net/browse/HDB-1021">HDB-1021</a></td>
+      <td>Vitalstatus</td>
+      <td>Draft: the profile is not derived from VitalSignDE because it is a different concept – VitalSignDE covers vital signs (e.g. blood pressure, heart rate), while the Vitalstatus profile records whether a patient is alive or deceased (LOINC 67162-8).</td>
+      <td>Planned reply</td>
+      <td>no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7germany.atlassian.net/browse/HDB-1024">HDB-1024</a></td>
+      <td>Vitalstatus (Observation) .note MS</td>
+      <td>Draft: <code class="language-plaintext highlighter-rouge">note</code> carries additional free-text information on the vital status (e.g. the source of the information). <em>Evidence needed:</em> whether sites use it in practice, to judge its relevance for care.</td>
+      <td>Planned reply</td>
+      <td>no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7germany.atlassian.net/browse/HDB-1025">HDB-1025</a></td>
+      <td>Warum Basis und Meta</td>
+      <td>Draft (to be confirmed): the Meta module holds module-independent specifications and conventions that all KDS modules reuse; the Basis module contains the base clinical profiles. The split lets cross-module rules evolve in their own release cycle; modules adopt a new Meta version through an explicit dependency update and compatibility assessment.</td>
+      <td>Planned reply</td>
+      <td>no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7germany.atlassian.net/browse/HDB-1026">HDB-1026</a></td>
+      <td>Condition.clinicalStatus - KlinischerStatus</td>
+      <td><em>Evidence needed:</em> how often DIZ sites receive a clinical status from the source systems. Then reply on whether the Must Support flag is justified.</td>
+      <td>Planned reply</td>
+      <td>no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7germany.atlassian.net/browse/HDB-1022">HDB-1022</a></td>
+      <td>ValueSets Konsolidieren</td>
+      <td>Draft: we support a joint consolidation of ValueSets with gematik, HL7 Germany TC Terminology and the BfArM terminology server (ZTS) and propose to agree on a joint curation process. The <code class="language-plaintext highlighter-rouge">bd</code> wording is handled with HDB-1011.</td>
+      <td>Planned reply</td>
+      <td>no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7germany.atlassian.net/browse/HDB-1023">HDB-1023</a></td>
+      <td>Fehlende Daten</td>
+      <td>Draft: we support bringing the guidance on missing data into the German base profiles jointly with gematik, so it can be maintained in one place.</td>
+      <td>Planned reply</td>
+      <td>no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7germany.atlassian.net/browse/HDB-1035">HDB-1035</a></td>
+      <td>Mutter-Kind-Beziehung</td>
+      <td>Draft: out of scope for this release; noted as a future topic.</td>
+      <td>Planned reply</td>
+      <td>no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7germany.atlassian.net/browse/HDB-1036">HDB-1036</a></td>
+      <td>Mehrlingsschwangerschaft</td>
+      <td>Draft: out of scope for this release; noted as a future topic.</td>
+      <td>Planned reply</td>
+      <td>no</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="f-proposed-move-to-the-meta-module">F. Proposed: move to the Meta module</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ticket</th>
+      <th>Topic</th>
+      <th>Proposed resolution</th>
+      <th>Status</th>
+      <th>Breaking</th>
+      <th>Decision</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://hl7germany.atlassian.net/browse/HDB-1014">HDB-1014</a></td>
+      <td>Meta CpS</td>
+      <td>Concerns the CapabilityStatement of the Meta module; move to <code class="language-plaintext highlighter-rouge">kerndatensatz-meta</code>.</td>
+      <td>Proposed: move to Meta</td>
+      <td>no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7germany.atlassian.net/browse/HDB-1015">HDB-1015</a></td>
+      <td>Externe Quelle github?</td>
+      <td>Concerns the conformance section of the Meta module; move to <code class="language-plaintext highlighter-rouge">kerndatensatz-meta</code>.</td>
+      <td>Proposed: move to Meta</td>
+      <td>no</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="summary">Summary</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Status</th>
+      <th>Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Proposed: accept</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>Proposed: accept (docs)</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>Discuss</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>Planned reply</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>Proposed: move to Meta</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td><strong>Total</strong></td>
+      <td><strong>36</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Compatibility:</strong></p>
+
+<ul>
+  <li>Breaking: HDB-1075.</li>
+  <li>Breaking depending on the decision: HDB-1071 (tightens <code class="language-plaintext highlighter-rouge">birthDate</code>), HDB-1016 (if cardinalities are tightened), HDB-1018 (part b, <code class="language-plaintext highlighter-rouge">proc-ISiK-2</code>), HDB-1077 (if an error-level invariant).</li>
+  <li>Unassessed: HDB-1070.</li>
+  <li>Not breaking against <code class="language-plaintext highlighter-rouge">2026.0.x</code>, but stricter than the published ballot profile: HDB-1019.</li>
+</ul>
+
+<p><strong>Open for the meeting:</strong> HDB-1077, HDB-1070, HDB-1071, HDB-1018, HDB-1016, and the explicit decision on the mandatory SNOMED CT slice in HDB-1019.</p>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script type="text/javascript" src="assets/js/flags.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+
+
+
+          IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
+          Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-ballot based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Generated <span title="Wed, Nov 4, 2026 20:52+0000">2026-11-04</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+            <!-- Branding override for the fhir2.base.template footer fragment.
+     Unlike header/css, the base footer fragment is NOT an empty placeholder: it
+     renders "Links: Table of Contents | QA Report [| feedback dashboards]".
+     The base uses site.data.stringsBase[include.lang][...] for the labels. The
+     reason this override supplies its own is the Imprint label: the base ships no
+     stringsBase key for it and a child template cannot add one (docs/styleguide.md
+     section 6), and the same include.lang branch then has to carry the other
+     labels too. (The blank-label problem that first motivated this is separately
+     mitigated: this repo vendors the base's own German catalogs into
+     translations/ — see translations/README.md.) The override preserves the base
+     links (TOC, QA, feedback dashboards) and appends the project information links.
+     NUM-DIZ takes over IG development and maintenance when MII funding ends
+     (end-2026), so the NUM-DIZ website link renders BEFORE the MII website link —
+     in BOTH brand designs and both languages; the MII links stay because the
+     modules remain MII content. Both anchors are the SITE ROOTS with the bare
+     domain as anchor text (TF-KDS feedback 2026-08-14: aligned anchor style;
+     domains are language-neutral, styleguide §6).
+     Imprint: points at the NUM-DIZ website's legal pages since 2026-08-14
+     (TF-KDS: NUM-DIZ takes over from MII in 2027, so legal-aspect links use
+     the NUM-DIZ counterpart where one exists) - German /impressum and English
+     /en/legal-notice (both verified HTTP 200 on 2026-08-14). -->
+
+          Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+                 
+                 | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://www.netzwerk-universitaetsmedizin.de/">netzwerk-universitaetsmedizin.de</a>
+                 | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://www.medizininformatik-initiative.de/">medizininformatik-initiative.de</a>
+                 | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://www.netzwerk-universitaetsmedizin.de/en/legal-notice">Legal notice</a>
+                 <br/>
+                 <!-- HL7 trademark attribution (required wherever the FHIR flame
+                      renders - the header shows it on every page; see HL7's
+                      trademark guidelines; permission request tracked in issue #109). The sentence is
+                      HL7's prescribed formula and stays in English on every
+                      language's pages (legal wording, styleguide §6). -->
+                 <span>HL7®, FHIR® and the FHIR flame design are registered trademarks of Health Level Seven International. Their use does not constitute endorsement by HL7.</span>
+
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

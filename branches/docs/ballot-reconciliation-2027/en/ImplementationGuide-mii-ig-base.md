@@ -2743,6 +2743,28 @@ Expansion parameters are query parameters that can be passed to a `ValueSet` `$e
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "ballot-reconciliation.html"
+        }],
+        "nameUrl" : "ballot-reconciliation.html",
+        "title" : "Ballot Reconciliation 2027.0.0-ballot",
+        "_title" : {
+          "extension" : [{
+            "extension" : [{
+              "url" : "lang",
+              "valueCode" : "de"
+            },
+            {
+              "url" : "content",
+              "valueString" : "Ballot-Kommentierung 2027.0.0-ballot"
+            }],
+            "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+          }]
+        },
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
           "valueUrl" : "ImplementationGuide-mii-ig-base.html"
         }],
         "nameUrl" : "ImplementationGuide-mii-ig-base.html",
