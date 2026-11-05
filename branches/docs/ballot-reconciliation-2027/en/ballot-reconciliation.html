@@ -340,17 +340,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><a href="#d-proposed-accept--documentation-only" id="markdown-toc-d-proposed-accept--documentation-only">D. Proposed: accept – documentation only</a></li>
   <li><a href="#e-planned-reply" id="markdown-toc-e-planned-reply">E. Planned reply</a></li>
   <li><a href="#f-proposed-move-to-the-meta-module" id="markdown-toc-f-proposed-move-to-the-meta-module">F. Proposed: move to the Meta module</a></li>
-  <li><a href="#summary" id="markdown-toc-summary">Summary</a></li>
 </ul>
 
 </div>
-<p>This page is a <strong>working document</strong> for the reconciliation of the ballot comments on version <code class="language-plaintext highlighter-rouge">2027.0.0-ballot</code> of the MII Kerndatensatz Basis. It lists the open tickets from the HL7 Germany ballot, grouped by category, with a <strong>proposed</strong> resolution for each. Nothing on this page has been decided yet; the proposals are ratified in the reconciliation meeting.</p>
-
-<p><strong>Ticket set (frozen 2026-11-04):</strong> 36 tickets, exported on 2026-11-04 with the <a href="https://hl7germany.atlassian.net/issues/?jql=project%20%3D%20HDB%20AND%20created%20%3E%3D%20-200d%20AND%20%22Project%5BDropdown%5D%22%20in%20%28%22MII%20%E2%80%93%20Modul%20Basis%20%28Person%2C%20Fall%2C%20Diagnose%20%26%20Prozedur%29%22%29%20ORDER%20BY%20created%20DESC">Jira query</a> <code class="language-plaintext highlighter-rouge">project = HDB AND created &gt;= -200d AND "Project[Dropdown]" = "MII – Modul Basis (Person, Fall, Diagnose &amp; Prozedur)"</code>. Because the query uses a relative date, its result changes over time; this page covers exactly these keys:
-HDB-935, HDB-938, HDB-939, HDB-1010, HDB-1011, HDB-1012, HDB-1013, HDB-1014, HDB-1015, HDB-1016, HDB-1017, HDB-1018, HDB-1019, HDB-1020, HDB-1021, HDB-1022, HDB-1023, HDB-1024, HDB-1025, HDB-1026, HDB-1035, HDB-1036, HDB-1048, HDB-1052, HDB-1067, HDB-1068, HDB-1069, HDB-1070, HDB-1071, HDB-1072, HDB-1073, HDB-1074, HDB-1075, HDB-1076, HDB-1077, HDB-1124.
-Ticket titles are quoted in the original language (German).</p>
-
-<p><strong>How decisions are recorded:</strong> the published page cannot be edited. During the meeting, each decision is recorded in the Jira ticket (comment with the decision and, where applicable, the resolution). Afterwards the <em>Decision</em> column on this page is updated from Jira in a pull request, so the page and Jira stay consistent.</p>
+<p>This page is a <strong>working document</strong> for the reconciliation of the ballot comments on version <code class="language-plaintext highlighter-rouge">2027.0.0-ballot</code> of the MII Kerndatensatz Basis. It lists the open tickets from the HL7 Germany ballot (<a href="https://hl7germany.atlassian.net/issues/?jql=project%20%3D%20HDB%20AND%20created%20%3E%3D%20-200d%20AND%20%22Project%5BDropdown%5D%22%20in%20%28%22MII%20%E2%80%93%20Modul%20Basis%20%28Person%2C%20Fall%2C%20Diagnose%20%26%20Prozedur%29%22%29%20ORDER%20BY%20created%20DESC">Jira query</a>), grouped by category, with a <strong>proposed</strong> resolution for each.</p>
 
 <h4 id="legend">Legend</h4>
 
@@ -399,7 +392,6 @@ Ticket titles are quoted in the original language (German).</p>
       <th>Proposed resolution</th>
       <th>Status</th>
       <th>Breaking</th>
-      <th>Decision</th>
     </tr>
   </thead>
   <tbody>
@@ -409,7 +401,6 @@ Ticket titles are quoted in the original language (German).</p>
       <td>Move the Lebensphase extension from <code class="language-plaintext highlighter-rouge">Condition.onsetAge</code>/<code class="language-plaintext highlighter-rouge">abatementAge</code> to <code class="language-plaintext highlighter-rouge">onsetRange</code>/<code class="language-plaintext highlighter-rouge">abatementRange</code>. The extension context in <code class="language-plaintext highlighter-rouge">de.basisprofil.r4</code> 1.6.0 only allows <code class="language-plaintext highlighter-rouge">dateTime</code>, <code class="language-plaintext highlighter-rouge">Period.start</code>, <code class="language-plaintext highlighter-rouge">Period.end</code> and <code class="language-plaintext highlighter-rouge">Range</code>, so the current placement is invalid. Update the logical model mapping accordingly.</td>
       <td>Proposed: accept</td>
       <td><strong>yes</strong></td>
-      <td> </td>
     </tr>
     <tr>
       <td><a href="https://hl7germany.atlassian.net/browse/HDB-1069">HDB-1069</a></td>
@@ -417,7 +408,6 @@ Ticket titles are quoted in the original language (German).</p>
       <td>Rewrite <code class="language-plaintext highlighter-rouge">pat-cnt-2or3-char</code> to check the <code class="language-plaintext highlighter-rouge">countryCode</code> extension (<code class="language-plaintext highlighter-rouge">iso21090-codedString</code>) instead of <code class="language-plaintext highlighter-rouge">Address.country</code>, so <code class="language-plaintext highlighter-rouge">country</code> may carry other values (e.g. DEÜV).</td>
       <td>Proposed: accept</td>
       <td>no</td>
-      <td> </td>
     </tr>
     <tr>
       <td><a href="https://hl7germany.atlassian.net/browse/HDB-935">HDB-935</a></td>
@@ -425,7 +415,6 @@ Ticket titles are quoted in the original language (German).</p>
       <td>Resolved together with HDB-1069.</td>
       <td>Proposed: accept</td>
       <td>no</td>
-      <td> </td>
     </tr>
     <tr>
       <td><a href="https://hl7germany.atlassian.net/browse/HDB-1124">HDB-1124</a></td>
@@ -433,7 +422,6 @@ Ticket titles are quoted in the original language (German).</p>
       <td>Change the binding of <code class="language-plaintext highlighter-rouge">Patient.extension:recordedSexOrGender.extension:value.valueCodeableConcept</code> to <code class="language-plaintext highlighter-rouge">MII_VS_Person_recordedSexOrGender_SNOMED</code> from <em>preferred</em> to <em>extensible</em>. See HDB-1068 for the background of the binding.</td>
       <td>Proposed: accept</td>
       <td>no (new in ballot)</td>
-      <td> </td>
     </tr>
     <tr>
       <td><a href="https://hl7germany.atlassian.net/browse/HDB-1067">HDB-1067</a></td>
@@ -441,7 +429,6 @@ Ticket titles are quoted in the original language (German).</p>
       <td>Add <code class="language-plaintext highlighter-rouge">patient-sexParameterForClinicalUse</code> (hl7.fhir.uv.extensions.r4 5.2.0) to the Patient profile as an optional extension.</td>
       <td>Proposed: accept</td>
       <td>no</td>
-      <td> </td>
     </tr>
     <tr>
       <td><a href="https://hl7germany.atlassian.net/browse/HDB-1073">HDB-1073</a></td>
@@ -449,7 +436,6 @@ Ticket titles are quoted in the original language (German).</p>
       <td>Replace the IPS bindings (currently <em>preferred</em>) with the KBV ValueSets, aligned with the pending ISiK change (ISiK <code class="language-plaintext highlighter-rouge">main-stufe-6</code>; ISiK Basis 6.0.0 itself still uses FHIR core example bindings): <code class="language-plaintext highlighter-rouge">AllergyIntolerance.code.coding:snomed-ct</code> from <code class="language-plaintext highlighter-rouge">https://fhir.kbv.de/ValueSet/KBV_VS_AllergyIntolerance_Substance_SNOMED_CT|1.0.0</code> (<em>extensible</em>) and <code class="language-plaintext highlighter-rouge">AllergyIntolerance.reaction.manifestation.coding:snomed-ct</code> from <code class="language-plaintext highlighter-rouge">https://fhir.kbv.de/ValueSet/KBV_VS_AllergyIntolerance_Manifestation_SNOMED_CT|1.0.0</code> (<em>extensible</em>), matching the ISiK development source. Package identified: both ValueSets are in <code class="language-plaintext highlighter-rouge">kbv.all.terminology.allergyintolerance#1.0.0</code> (BfArM, protected: download requires accepting the conditions and a token); validation setup pending.</td>
       <td>Proposed: accept</td>
       <td>no (new in ballot)</td>
-      <td> </td>
     </tr>
     <tr>
       <td><a href="https://hl7germany.atlassian.net/browse/HDB-1019">HDB-1019</a></td>
@@ -457,7 +443,6 @@ Ticket titles are quoted in the original language (German).</p>
       <td>Align with ISiK Basis 6.0.0: <code class="language-plaintext highlighter-rouge">AllergyIntolerance.code.coding</code> 1..*, with a <strong>mandatory</strong> slice <code class="language-plaintext highlighter-rouge">coding:snomed-ct</code> 1..1 (bound as in HDB-1073). Allergies coded only in other systems would then no longer conform. This is a substantive MII policy choice and needs an explicit decision in the meeting.</td>
       <td>Proposed: accept</td>
       <td>no against <code class="language-plaintext highlighter-rouge">2026.0.x</code> (new in ballot), but stricter than the published ballot profile</td>
-      <td> </td>
     </tr>
     <tr>
       <td><a href="https://hl7germany.atlassian.net/browse/HDB-1072">HDB-1072</a></td>
@@ -465,7 +450,6 @@ Ticket titles are quoted in the original language (German).</p>
       <td>Allow the Lebensphase extension on <code class="language-plaintext highlighter-rouge">AllergyIntolerance.onsetRange</code> and on <code class="language-plaintext highlighter-rouge">AllergyIntolerance.extension:abatement.valueRange</code> (the <code class="language-plaintext highlighter-rouge">allergyintolerance-abatement</code> extension allows <code class="language-plaintext highlighter-rouge">Range</code>), consistent with HDB-1075.</td>
       <td>Proposed: accept</td>
       <td>no (new in ballot)</td>
-      <td> </td>
     </tr>
     <tr>
       <td><a href="https://hl7germany.atlassian.net/browse/HDB-1074">HDB-1074</a></td>
@@ -473,7 +457,6 @@ Ticket titles are quoted in the original language (German).</p>
       <td>Recommendation: reference the EU profile <code class="language-plaintext highlighter-rouge">http://hl7.eu/fhir/base/StructureDefinition/bodyStructure-eu-core</code> (<code class="language-plaintext highlighter-rouge">hl7.fhir.eu.base</code> 2.0.1, new dependency) <strong>directly</strong> as the target of <code class="language-plaintext highlighter-rouge">Condition.bodySite.extension:bodySite.valueReference</code> and <code class="language-plaintext highlighter-rouge">Procedure.bodySite.extension:bodySite.valueReference</code>. An MII-specific derived profile is only needed if MII-specific constraints are required.</td>
       <td>Proposed: accept</td>
       <td>no (new in ballot)</td>
-      <td> </td>
     </tr>
   </tbody>
 </table>
@@ -488,7 +471,6 @@ Ticket titles are quoted in the original language (German).</p>
       <th>Proposed resolution</th>
       <th>Status</th>
       <th>Breaking</th>
-      <th>Decision</th>
     </tr>
   </thead>
   <tbody>
@@ -498,7 +480,6 @@ Ticket titles are quoted in the original language (German).</p>
       <td>Background: the upstream extension <code class="language-plaintext highlighter-rouge">individual-recordedSexOrGender</code> has only an <em>example</em> binding (<code class="language-plaintext highlighter-rouge">administrative-gender</code>) on <code class="language-plaintext highlighter-rouge">value</code>. The MII Patient profile binds <code class="language-plaintext highlighter-rouge">value</code> to the SNOMED CT ValueSet <code class="language-plaintext highlighter-rouge">MII_VS_Person_recordedSexOrGender_SNOMED</code> with <em>preferred</em> strength (<em>extensible</em> proposed in HDB-1124). The extension covers recorded sex or gender in general; the primary MII use case is the sex assigned at birth, which is why SNOMED CT codes are used rather than administrative gender. Proposal: add a ConceptMap from the SNOMED CT codes to <code class="language-plaintext highlighter-rouge">administrative-gender</code> with qualified relationships (e.g. <em>wider</em>, <em>narrower</em>, <em>inexact</em>) instead of implying equivalence.</td>
       <td>Proposed: accept</td>
       <td>no</td>
-      <td> </td>
     </tr>
   </tbody>
 </table>
@@ -513,7 +494,6 @@ Ticket titles are quoted in the original language (German).</p>
       <th>Open question</th>
       <th>Status</th>
       <th>Breaking</th>
-      <th>Decision</th>
     </tr>
   </thead>
   <tbody>
@@ -523,7 +503,6 @@ Ticket titles are quoted in the original language (German).</p>
       <td>A MUST NOT on double laterality is questionable: the OPS laterality serves reimbursement, while <code class="language-plaintext highlighter-rouge">bodySite</code> can be more specific. At minimum both laterality statements must match. Needs research on how other specifications handle this.</td>
       <td>Discuss</td>
       <td>depends (<em>yes</em> for an error-level invariant, <em>no</em> for a warning)</td>
-      <td> </td>
     </tr>
     <tr>
       <td><a href="https://hl7germany.atlassian.net/browse/HDB-1070">HDB-1070</a></td>
@@ -531,7 +510,6 @@ Ticket titles are quoted in the original language (German).</p>
       <td><code class="language-plaintext highlighter-rouge">pattern</code> is deprecated from R5 on. Check first whether switching to <code class="language-plaintext highlighter-rouge">value</code> applies backwards to R4 without changing validation results (affects ~25 slicings).</td>
       <td>Discuss</td>
       <td>unassessed</td>
-      <td> </td>
     </tr>
     <tr>
       <td><a href="https://hl7germany.atlassian.net/browse/HDB-1071">HDB-1071</a></td>
@@ -539,7 +517,6 @@ Ticket titles are quoted in the original language (German).</p>
       <td>Making <code class="language-plaintext highlighter-rouge">birthDate</code> 1..1 (with <code class="language-plaintext highlighter-rouge">data-absent-reason</code>) needs discussion: the MII infrastructure is neither the ePA nor ISiK, and its data sources differ.</td>
       <td>Discuss</td>
       <td><strong>yes</strong></td>
-      <td> </td>
     </tr>
     <tr>
       <td><a href="https://hl7germany.atlassian.net/browse/HDB-1018">HDB-1018</a></td>
@@ -547,7 +524,6 @@ Ticket titles are quoted in the original language (German).</p>
       <td>Two separate decisions: <strong>(a)</strong> allow a text-only <code class="language-plaintext highlighter-rouge">Procedure.code</code> (ISiK <code class="language-plaintext highlighter-rouge">proc-ISiK-3</code>) – this <em>relaxes</em> <code class="language-plaintext highlighter-rouge">sct-ops-1</code> and <code class="language-plaintext highlighter-rouge">code.coding</code> 1..*, so consumers can no longer rely on a coded procedure; <strong>(b)</strong> adopt <code class="language-plaintext highlighter-rouge">proc-ISiK-2</code> (<code class="language-plaintext highlighter-rouge">code.coding.exists() implies category.coding.exists()</code>) – this <em>tightens</em> the rules: a SNOMED CT coded procedure without <code class="language-plaintext highlighter-rouge">category</code> currently conforms (<code class="language-plaintext highlighter-rouge">proc-mii-1</code> only requires a category for OPS codes) but would fail. The maintainers do not favour (a).</td>
       <td>Discuss</td>
       <td>(a) consumer impact · (b) <strong>yes</strong></td>
-      <td> </td>
     </tr>
     <tr>
       <td><a href="https://hl7germany.atlassian.net/browse/HDB-1016">HDB-1016</a></td>
@@ -555,7 +531,6 @@ Ticket titles are quoted in the original language (German).</p>
       <td>Cardinalities have deliberately not been tightened so far, for backwards compatibility. Discuss whether to align with ISiK and document the deviations.</td>
       <td>Discuss</td>
       <td><strong>yes</strong> if tightened</td>
-      <td> </td>
     </tr>
   </tbody>
 </table>
@@ -570,7 +545,6 @@ Ticket titles are quoted in the original language (German).</p>
       <th>Proposed resolution</th>
       <th>Status</th>
       <th>Breaking</th>
-      <th>Decision</th>
     </tr>
   </thead>
   <tbody>
@@ -580,7 +554,6 @@ Ticket titles are quoted in the original language (German).</p>
       <td>Correct the description of <em>Aufnahmenummer</em> in the logical model Fall: admission number and case number are different identifiers. Coordinate with the ISiK encounter concept.</td>
       <td>Proposed: accept (docs)</td>
       <td>no</td>
-      <td> </td>
     </tr>
     <tr>
       <td><a href="https://hl7germany.atlassian.net/browse/HDB-1010">HDB-1010</a></td>
@@ -588,7 +561,6 @@ Ticket titles are quoted in the original language (German).</p>
       <td>Document why day-care cases can use <code class="language-plaintext highlighter-rouge">IMP</code> (with bed allocation, e.g. night clinic) or <code class="language-plaintext highlighter-rouge">SS</code> (without bed allocation).</td>
       <td>Proposed: accept (docs)</td>
       <td>no</td>
-      <td> </td>
     </tr>
     <tr>
       <td><a href="https://hl7germany.atlassian.net/browse/HDB-1011">HDB-1011</a></td>
@@ -596,7 +568,6 @@ Ticket titles are quoted in the original language (German).</p>
       <td>Use the term "Bettenstellplatz" for <code class="language-plaintext highlighter-rouge">Encounter.location:Bett</code> to distinguish the location from the device. The slice name stays unchanged.</td>
       <td>Proposed: accept (docs)</td>
       <td>no</td>
-      <td> </td>
     </tr>
     <tr>
       <td><a href="https://hl7germany.atlassian.net/browse/HDB-1076">HDB-1076</a></td>
@@ -604,7 +575,6 @@ Ticket titles are quoted in the original language (German).</p>
       <td>The slicing on <code class="language-plaintext highlighter-rouge">coding</code> is intentional: one <code class="language-plaintext highlighter-rouge">use</code> <strong>can contain</strong> both a <em>Diagnosetyp</em> and a <em>DiagnosesubTyp</em> coding (each slice is optional, 0..1). The existing best-practice note in the Encounter profile notes, which tells implementers to create separate <code class="language-plaintext highlighter-rouge">Encounter.diagnosis</code> entries for Diagnosetyp and Diagnosesubtyp, contradicts this and will be replaced, including its example.</td>
       <td>Proposed: accept (docs)</td>
       <td>no</td>
-      <td> </td>
     </tr>
     <tr>
       <td><a href="https://hl7germany.atlassian.net/browse/HDB-1052">HDB-1052</a></td>
@@ -612,7 +582,6 @@ Ticket titles are quoted in the original language (German).</p>
       <td><code class="language-plaintext highlighter-rouge">mii-vs-fall-diagnosis-use</code> already includes <code class="language-plaintext highlighter-rouge">DiagnoseTyp</code>, <code class="language-plaintext highlighter-rouge">Diagnosesubtyp</code> (CodeSystem KontaktDiagnoseProzedur) and <code class="language-plaintext highlighter-rouge">diagnosis-role</code> (extensible binding). Document this and add an example.</td>
       <td>Proposed: accept (docs)</td>
       <td>no</td>
-      <td> </td>
     </tr>
     <tr>
       <td><a href="https://hl7germany.atlassian.net/browse/HDB-1020">HDB-1020</a></td>
@@ -620,7 +589,6 @@ Ticket titles are quoted in the original language (German).</p>
       <td>Describe the use of <code class="language-plaintext highlighter-rouge">ReferenzPrimaerdiagnose</code> and <code class="language-plaintext highlighter-rouge">Feststellungsdatum</code>, and the difference between <code class="language-plaintext highlighter-rouge">Feststellungsdatum</code> (clinical diagnosis date) and <code class="language-plaintext highlighter-rouge">onset</code> (start of symptoms), based on the discussion in Jira.</td>
       <td>Proposed: accept (docs)</td>
       <td>no</td>
-      <td> </td>
     </tr>
     <tr>
       <td><a href="https://hl7germany.atlassian.net/browse/HDB-1012">HDB-1012</a></td>
@@ -628,7 +596,6 @@ Ticket titles are quoted in the original language (German).</p>
       <td>Add a note on the recommendation to link diagnoses to the department encounter, taking the ongoing ISiK discussion (Stufe 7) into account.</td>
       <td>Proposed: accept (docs)</td>
       <td>no</td>
-      <td> </td>
     </tr>
     <tr>
       <td><a href="https://hl7germany.atlassian.net/browse/HDB-1013">HDB-1013</a></td>
@@ -636,7 +603,6 @@ Ticket titles are quoted in the original language (German).</p>
       <td>Add the link between Fall and Patient (via <em>Patientenidentifikator</em>) to the UML diagram.</td>
       <td>Proposed: accept (docs)</td>
       <td>no</td>
-      <td> </td>
     </tr>
     <tr>
       <td><a href="https://hl7germany.atlassian.net/browse/HDB-939">HDB-939</a></td>
@@ -644,7 +610,6 @@ Ticket titles are quoted in the original language (German).</p>
       <td>Make clear in the diagram or text that one Account can be linked to several facility encounters.</td>
       <td>Proposed: accept (docs)</td>
       <td>no</td>
-      <td> </td>
     </tr>
     <tr>
       <td><a href="https://hl7germany.atlassian.net/browse/HDB-938">HDB-938</a></td>
@@ -652,7 +617,6 @@ Ticket titles are quoted in the original language (German).</p>
       <td>Describe both options for representing a ward: as <code class="language-plaintext highlighter-rouge">Location</code> (<code class="language-plaintext highlighter-rouge">physicalType = wa</code>) or via the service provider <code class="language-plaintext highlighter-rouge">Organization</code>.</td>
       <td>Proposed: accept (docs)</td>
       <td>no</td>
-      <td> </td>
     </tr>
   </tbody>
 </table>
@@ -667,7 +631,6 @@ Ticket titles are quoted in the original language (German).</p>
       <th>Draft reply / evidence still needed</th>
       <th>Status</th>
       <th>Breaking</th>
-      <th>Decision</th>
     </tr>
   </thead>
   <tbody>
@@ -677,7 +640,6 @@ Ticket titles are quoted in the original language (German).</p>
       <td>Draft: the extension records the intended purpose of a procedure (e.g. curative, palliative, diagnostic). <em>Evidence needed:</em> in which documentation contexts sites capture it, to judge whether it is suitable as Must Support in care (ISiK).</td>
       <td>Planned reply</td>
       <td>no</td>
-      <td> </td>
     </tr>
     <tr>
       <td><a href="https://hl7germany.atlassian.net/browse/HDB-1021">HDB-1021</a></td>
@@ -685,7 +647,6 @@ Ticket titles are quoted in the original language (German).</p>
       <td>Draft: the profile is not derived from VitalSignDE because it is a different concept – VitalSignDE covers vital signs (e.g. blood pressure, heart rate), while the Vitalstatus profile records whether a patient is alive or deceased (LOINC 67162-8).</td>
       <td>Planned reply</td>
       <td>no</td>
-      <td> </td>
     </tr>
     <tr>
       <td><a href="https://hl7germany.atlassian.net/browse/HDB-1024">HDB-1024</a></td>
@@ -693,7 +654,6 @@ Ticket titles are quoted in the original language (German).</p>
       <td>Draft: <code class="language-plaintext highlighter-rouge">note</code> carries additional free-text information on the vital status (e.g. the source of the information). <em>Evidence needed:</em> whether sites use it in practice, to judge its relevance for care.</td>
       <td>Planned reply</td>
       <td>no</td>
-      <td> </td>
     </tr>
     <tr>
       <td><a href="https://hl7germany.atlassian.net/browse/HDB-1025">HDB-1025</a></td>
@@ -701,15 +661,13 @@ Ticket titles are quoted in the original language (German).</p>
       <td>Draft (to be confirmed): the Meta module holds module-independent specifications and conventions that all KDS modules reuse; the Basis module contains the base clinical profiles. The split lets cross-module rules evolve in their own release cycle; modules adopt a new Meta version through an explicit dependency update and compatibility assessment.</td>
       <td>Planned reply</td>
       <td>no</td>
-      <td> </td>
     </tr>
     <tr>
       <td><a href="https://hl7germany.atlassian.net/browse/HDB-1026">HDB-1026</a></td>
       <td>Condition.clinicalStatus - KlinischerStatus</td>
-      <td><em>Evidence needed:</em> how often DIZ sites receive a clinical status from the source systems. Then reply on whether the Must Support flag is justified.</td>
+      <td><code class="language-plaintext highlighter-rouge">clinicalStatus</code> is a modifier element (<code class="language-plaintext highlighter-rouge">isModifier = true</code>): removing the Must Support flag does not remove the element, and a receiver still has to understand it whenever a sender populates it, because it changes the meaning of the Condition (e.g. <em>resolved</em>, <em>inactive</em>). <em>Evidence needed:</em> how often DIZ sites receive a clinical status from the source systems. Then reply on whether the Must Support flag is justified.</td>
       <td>Planned reply</td>
       <td>no</td>
-      <td> </td>
     </tr>
     <tr>
       <td><a href="https://hl7germany.atlassian.net/browse/HDB-1022">HDB-1022</a></td>
@@ -717,7 +675,6 @@ Ticket titles are quoted in the original language (German).</p>
       <td>Draft: we support a joint consolidation of ValueSets with gematik, HL7 Germany TC Terminology and the BfArM terminology server (ZTS) and propose to agree on a joint curation process. The <code class="language-plaintext highlighter-rouge">bd</code> wording is handled with HDB-1011.</td>
       <td>Planned reply</td>
       <td>no</td>
-      <td> </td>
     </tr>
     <tr>
       <td><a href="https://hl7germany.atlassian.net/browse/HDB-1023">HDB-1023</a></td>
@@ -725,7 +682,6 @@ Ticket titles are quoted in the original language (German).</p>
       <td>Draft: we support bringing the guidance on missing data into the German base profiles jointly with gematik, so it can be maintained in one place.</td>
       <td>Planned reply</td>
       <td>no</td>
-      <td> </td>
     </tr>
     <tr>
       <td><a href="https://hl7germany.atlassian.net/browse/HDB-1035">HDB-1035</a></td>
@@ -733,7 +689,6 @@ Ticket titles are quoted in the original language (German).</p>
       <td>Draft: out of scope for this release; noted as a future topic.</td>
       <td>Planned reply</td>
       <td>no</td>
-      <td> </td>
     </tr>
     <tr>
       <td><a href="https://hl7germany.atlassian.net/browse/HDB-1036">HDB-1036</a></td>
@@ -741,7 +696,6 @@ Ticket titles are quoted in the original language (German).</p>
       <td>Draft: out of scope for this release; noted as a future topic.</td>
       <td>Planned reply</td>
       <td>no</td>
-      <td> </td>
     </tr>
   </tbody>
 </table>
@@ -756,7 +710,6 @@ Ticket titles are quoted in the original language (German).</p>
       <th>Proposed resolution</th>
       <th>Status</th>
       <th>Breaking</th>
-      <th>Decision</th>
     </tr>
   </thead>
   <tbody>
@@ -766,7 +719,6 @@ Ticket titles are quoted in the original language (German).</p>
       <td>Concerns the CapabilityStatement of the Meta module; move to <code class="language-plaintext highlighter-rouge">kerndatensatz-meta</code>.</td>
       <td>Proposed: move to Meta</td>
       <td>no</td>
-      <td> </td>
     </tr>
     <tr>
       <td><a href="https://hl7germany.atlassian.net/browse/HDB-1015">HDB-1015</a></td>
@@ -774,60 +726,9 @@ Ticket titles are quoted in the original language (German).</p>
       <td>Concerns the conformance section of the Meta module; move to <code class="language-plaintext highlighter-rouge">kerndatensatz-meta</code>.</td>
       <td>Proposed: move to Meta</td>
       <td>no</td>
-      <td> </td>
     </tr>
   </tbody>
 </table>
-
-<hr />
-
-<h3 id="summary">Summary</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>Status</th>
-      <th>Count</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Proposed: accept</td>
-      <td>10</td>
-    </tr>
-    <tr>
-      <td>Proposed: accept (docs)</td>
-      <td>10</td>
-    </tr>
-    <tr>
-      <td>Discuss</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td>Planned reply</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <td>Proposed: move to Meta</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td><strong>Total</strong></td>
-      <td><strong>36</strong></td>
-    </tr>
-  </tbody>
-</table>
-
-<p><strong>Compatibility:</strong></p>
-
-<ul>
-  <li>Breaking: HDB-1075.</li>
-  <li>Breaking depending on the decision: HDB-1071 (tightens <code class="language-plaintext highlighter-rouge">birthDate</code>), HDB-1016 (if cardinalities are tightened), HDB-1018 (part b, <code class="language-plaintext highlighter-rouge">proc-ISiK-2</code>), HDB-1077 (if an error-level invariant).</li>
-  <li>Unassessed: HDB-1070.</li>
-  <li>Not breaking against <code class="language-plaintext highlighter-rouge">2026.0.x</code>, but stricter than the published ballot profile: HDB-1019.</li>
-</ul>
-
-<p><strong>Open for the meeting:</strong> HDB-1077, HDB-1070, HDB-1071, HDB-1018, HDB-1016, and the explicit decision on the mandatory SNOMED CT slice in HDB-1019.</p>
 
 
 
@@ -854,7 +755,7 @@ Ticket titles are quoted in the original language (German).</p>
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-ballot based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Generated <span title="Wed, Nov 4, 2026 20:52+0000">2026-11-04</span>
+          Generated <span title="Thu, Nov 5, 2026 13:48+0000">2026-11-05</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.
