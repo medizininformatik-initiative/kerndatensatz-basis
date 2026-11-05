@@ -378,7 +378,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </tbody>
 </table>
 
-<p><strong>Breaking</strong> = <em>ja</em>, wenn Implementierungen, die zur vorherigen Version (<code class="language-plaintext highlighter-rouge">2026.0.x</code>) konform sind, nach der Änderung nicht mehr konform sind. Änderungen an Artefakten, die erst mit <code class="language-plaintext highlighter-rouge">2027.0.0-ballot</code> eingeführt wurden (z. B. das AllergyIntolerance-Profil), sind nicht breaking. <em>Nicht bewertet</em> bedeutet, dass die Auswirkung noch geprüft werden muss.</p>
+<p><strong>Breaking</strong> = <em>ja</em>, wenn Implementierungen, die zur vorherigen Version (<code class="language-plaintext highlighter-rouge">2026.0.x</code>) konform sind, nach der Änderung nicht mehr konform sind. Änderungen an Artefakten, die erst mit <code class="language-plaintext highlighter-rouge">2027.0.0-ballot</code> eingeführt wurden (z. B. das AllergyIntolerance-Profil), sind nicht breaking.</p>
 
 <hr />
 
@@ -507,9 +507,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <td><a href="https://hl7germany.atlassian.net/browse/HDB-1070">HDB-1070</a></td>
       <td>Verwendung von "pattern" Diskriminatoren</td>
-      <td><code class="language-plaintext highlighter-rouge">pattern</code> ist ab R5 deprecated. Zuerst prüfen, ob die Umstellung auf <code class="language-plaintext highlighter-rouge">value</code> rückwirkend in R4 ohne geänderte Validierungsergebnisse möglich ist (betrifft ca. 25 Slicings).</td>
+      <td><code class="language-plaintext highlighter-rouge">pattern</code> ist ab R5 deprecated. <em>In R4 getestet (SUSHI 3.21.0, IG Publisher 2.3.4):</em> <code class="language-plaintext highlighter-rouge">#value</code> mit weiterhin in <code class="language-plaintext highlighter-rouge">pattern[x]</code> hinterlegten Werten liefert für <code class="language-plaintext highlighter-rouge">Coding</code>-, <code class="language-plaintext highlighter-rouge">CodeableConcept</code>- und <code class="language-plaintext highlighter-rouge">Identifier</code>-Slicings auf <code class="language-plaintext highlighter-rouge">$this</code> dieselben Validierungsergebnisse wie <code class="language-plaintext highlighter-rouge">#pattern</code>; SUSHI behält <code class="language-plaintext highlighter-rouge">pattern[x]</code> bei (nur <code class="language-plaintext highlighter-rouge">(exactly)</code> erzeugt <code class="language-plaintext highlighter-rouge">fixed[x]</code>). Lediglich der Deprecation-Hinweis zu <code class="language-plaintext highlighter-rouge">#pattern</code> entfällt. Betrifft 23 Slicings. Einschränkung: Abgeleitete Profile, die ein geerbtes Slicing mit <code class="language-plaintext highlighter-rouge">#pattern</code> erneut deklarieren, scheitern bei der Snapshot-Generierung („Slicing rules on differential … do not match those on base“) und müssen ebenfalls umgestellt werden, z. B. Onkologie <code class="language-plaintext highlighter-rouge">mii-pr-onko-diagnose-primaertumor</code> (<code class="language-plaintext highlighter-rouge">bodySite.coding</code>).</td>
       <td>Diskussion</td>
-      <td>nicht bewertet</td>
+      <td>nein (Instanzen); Migrationshinweis für abgeleitete Profile</td>
     </tr>
     <tr>
       <td><a href="https://hl7germany.atlassian.net/browse/HDB-1071">HDB-1071</a></td>
@@ -755,7 +755,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-ballot basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Erstellt <span title="Thu, Nov 5, 2026 13:48+0000">2026-11-05</span>
+          Erstellt <span title="Thu, Nov 5, 2026 15:44+0000">2026-11-05</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.

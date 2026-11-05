@@ -378,7 +378,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </tbody>
 </table>
 
-<p><strong>Breaking</strong> = <em>yes</em> if implementations conforming to the previous release (<code class="language-plaintext highlighter-rouge">2026.0.x</code>) no longer conform after the change. Changes to artefacts first introduced in <code class="language-plaintext highlighter-rouge">2027.0.0-ballot</code> (e.g. the AllergyIntolerance profile) are not breaking. <em>Unassessed</em> means the impact still has to be checked.</p>
+<p><strong>Breaking</strong> = <em>yes</em> if implementations conforming to the previous release (<code class="language-plaintext highlighter-rouge">2026.0.x</code>) no longer conform after the change. Changes to artefacts first introduced in <code class="language-plaintext highlighter-rouge">2027.0.0-ballot</code> (e.g. the AllergyIntolerance profile) are not breaking.</p>
 
 <hr />
 
@@ -507,9 +507,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <td><a href="https://hl7germany.atlassian.net/browse/HDB-1070">HDB-1070</a></td>
       <td>Verwendung von "pattern" Diskriminatoren</td>
-      <td><code class="language-plaintext highlighter-rouge">pattern</code> is deprecated from R5 on. Check first whether switching to <code class="language-plaintext highlighter-rouge">value</code> applies backwards to R4 without changing validation results (affects ~25 slicings).</td>
+      <td><code class="language-plaintext highlighter-rouge">pattern</code> is deprecated from R5 on. <em>Tested in R4 (SUSHI 3.21.0, IG Publisher 2.3.4):</em> <code class="language-plaintext highlighter-rouge">#value</code> with the values kept in <code class="language-plaintext highlighter-rouge">pattern[x]</code> gives the same validation results as <code class="language-plaintext highlighter-rouge">#pattern</code> for <code class="language-plaintext highlighter-rouge">Coding</code>, <code class="language-plaintext highlighter-rouge">CodeableConcept</code> and <code class="language-plaintext highlighter-rouge">Identifier</code> slicings on <code class="language-plaintext highlighter-rouge">$this</code>; SUSHI keeps <code class="language-plaintext highlighter-rouge">pattern[x]</code> (only <code class="language-plaintext highlighter-rouge">(exactly)</code> produces <code class="language-plaintext highlighter-rouge">fixed[x]</code>). Only the deprecation notice for <code class="language-plaintext highlighter-rouge">#pattern</code> disappears. Affects 23 slicings. Caveat: derived profiles that re-declare an inherited slicing with <code class="language-plaintext highlighter-rouge">#pattern</code> fail snapshot generation ("Slicing rules on differential … do not match those on base") and must switch too, e.g. Onkologie <code class="language-plaintext highlighter-rouge">mii-pr-onko-diagnose-primaertumor</code> (<code class="language-plaintext highlighter-rouge">bodySite.coding</code>).</td>
       <td>Discuss</td>
-      <td>unassessed</td>
+      <td>no (instances); migration note for derived profiles</td>
     </tr>
     <tr>
       <td><a href="https://hl7germany.atlassian.net/browse/HDB-1071">HDB-1071</a></td>
@@ -755,7 +755,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-ballot based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Generated <span title="Thu, Nov 5, 2026 13:48+0000">2026-11-05</span>
+          Generated <span title="Thu, Nov 5, 2026 15:44+0000">2026-11-05</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.
