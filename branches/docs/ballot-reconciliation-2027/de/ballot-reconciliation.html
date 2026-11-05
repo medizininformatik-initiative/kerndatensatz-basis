@@ -686,14 +686,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <td><a href="https://hl7germany.atlassian.net/browse/HDB-1035">HDB-1035</a></td>
       <td>Mutter-Kind-Beziehung</td>
-      <td>Entwurf: Nicht Teil dieser Version; wird als zukünftiges Thema vorgemerkt.</td>
+      <td>Entwurf: Keine Profiländerung in dieser Version. Antwort mit der empfohlenen Modellierung, angelehnt an ISiK <code class="language-plaintext highlighter-rouge">ISiKAngehoeriger</code> und die <a href="https://hl7.org/fhir/R4/patient.html#mother">FHIR-R4-Hinweise zu Mutter/Neugeborenem</a>: ein <code class="language-plaintext highlighter-rouge">RelatedPerson</code> für die Mutter mit <code class="language-plaintext highlighter-rouge">patient</code> → Kind und <code class="language-plaintext highlighter-rouge">relationship</code> = <code class="language-plaintext highlighter-rouge">MTH</code>; ist die Mutter selbst Patientin, verweist ihr <code class="language-plaintext highlighter-rouge">Patient.link.other</code> auf dieses <code class="language-plaintext highlighter-rouge">RelatedPerson</code> (Typ <code class="language-plaintext highlighter-rouge">seealso</code>); bei Mehrlingen ein <code class="language-plaintext highlighter-rouge">RelatedPerson</code> je Kind. Eine direkte Verknüpfung vom <code class="language-plaintext highlighter-rouge">Patient</code> der Mutter zum <code class="language-plaintext highlighter-rouge">Patient</code> des Kindes ist nicht korrekt, da <code class="language-plaintext highlighter-rouge">Patient.link</code> Datensätze derselben Person verknüpft. R4-Beispiel: <a href="https://www.fhir.ch/ig/ch-epreg/child-relationships.html">CH EPREG</a>.</td>
       <td>Antwort geplant</td>
       <td>nein</td>
     </tr>
     <tr>
       <td><a href="https://hl7germany.atlassian.net/browse/HDB-1036">HDB-1036</a></td>
       <td>Mehrlingsschwangerschaft</td>
-      <td>Entwurf: Nicht Teil dieser Version; wird als zukünftiges Thema vorgemerkt.</td>
+      <td>Entwurf: Keine Profiländerung in dieser Version; die Antwort trennt drei Sachverhalte: (1) <em>die Mutter hat eine Mehrlingsschwangerschaft</em>: ein Befund zur Mutter, vgl. KBV MIO Mutterpass 1.1.0 (<code class="language-plaintext highlighter-rouge">KBV_PR_MIO_MR_Observation_Pregnancy_Information</code>); (2) <em>das Kind ist Teil einer Mehrlingsgeburt</em>: <code class="language-plaintext highlighter-rouge">Patient.multipleBirth[x]</code> des Kindes (der Integer ist die Geburtsreihenfolge, nicht die Anzahl der Feten; bei der Mutter beschriebe er ihre eigene Geburt); (3) <em>Identifikation einzelner Feten während der Schwangerschaft</em>: nicht im Scope, Verweis auf <a href="https://build.fhir.org/ig/HL7/fetal_records/">HL7 IBCM</a> (R5, Ballot) und CH EPREG. Die Patient-Profile des Mutterpasses sind nicht direkt nachnutzbar (<code class="language-plaintext highlighter-rouge">Patient.link</code> und <code class="language-plaintext highlighter-rouge">multipleBirth[x]</code> sind <code class="language-plaintext highlighter-rouge">0..0</code>).</td>
       <td>Antwort geplant</td>
       <td>nein</td>
     </tr>
@@ -755,7 +755,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-ballot basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Erstellt <span title="Thu, Nov 5, 2026 15:44+0000">2026-11-05</span>
+          Erstellt <span title="Thu, Nov 5, 2026 15:59+0000">2026-11-05</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.
