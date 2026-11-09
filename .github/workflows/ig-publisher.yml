@@ -26,7 +26,7 @@ concurrency:
 jobs:
 
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04  # must match the publisher image OS: host libs are mounted into it via LD_LIBRARY_PATH
 
     steps:
       - name: Checkout
