@@ -339,7 +339,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><a href="#c-zur-diskussion" id="markdown-toc-c-zur-diskussion">C. Zur Diskussion</a></li>
   <li><a href="#d-vorschlag-annehmen--nur-dokumentation" id="markdown-toc-d-vorschlag-annehmen--nur-dokumentation">D. Vorschlag: annehmen – nur Dokumentation</a></li>
   <li><a href="#e-antwort-geplant" id="markdown-toc-e-antwort-geplant">E. Antwort geplant</a></li>
-  <li><a href="#f-vorschlag-nach-meta-verschieben" id="markdown-toc-f-vorschlag-nach-meta-verschieben">F. Vorschlag: nach Meta verschieben</a></li>
+  <li><a href="#f-modul-meta" id="markdown-toc-f-modul-meta">F. Modul Meta</a></li>
 </ul>
 
 </div>
@@ -370,10 +370,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <td><strong>Antwort geplant</strong></td>
       <td>Rückfrage oder organisationsübergreifendes Thema; eine Antwort in Jira ist geplant (Entwurf oder noch benötigte Informationen sind angegeben), keine Änderung in diesem Leitfaden.</td>
-    </tr>
-    <tr>
-      <td><strong>Vorschlag: nach Meta verschieben</strong></td>
-      <td>Betrifft das Modul Meta (<code class="language-plaintext highlighter-rouge">kerndatensatz-meta</code>); Vorschlag, das Ticket dorthin zu verschieben.</td>
     </tr>
   </tbody>
 </table>
@@ -498,13 +494,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </thead>
   <tbody>
     <tr>
-      <td><a href="https://hl7germany.atlassian.net/browse/HDB-1077">HDB-1077</a></td>
-      <td>Constraint für die Lateralitätsangabe in Procedure</td>
-      <td>Ein Verbot doppelter Lateralitätsangaben ist fraglich: Die OPS-Seitenlokalisation dient der Abrechnung, <code class="language-plaintext highlighter-rouge">bodySite</code> kann spezifischer sein. Mindestens müssen beide Angaben übereinstimmen. Es muss recherchiert werden, wie andere Spezifikationen damit umgehen.</td>
-      <td>Diskussion</td>
-      <td>abhängig (<em>ja</em> bei einer Invariante mit Schweregrad error, <em>nein</em> bei warning)</td>
-    </tr>
-    <tr>
       <td><a href="https://hl7germany.atlassian.net/browse/HDB-1070">HDB-1070</a></td>
       <td>Verwendung von "pattern" Diskriminatoren</td>
       <td><code class="language-plaintext highlighter-rouge">pattern</code> ist ab R5 deprecated. <em>In R4 getestet (SUSHI 3.21.0, IG Publisher 2.3.4):</em> <code class="language-plaintext highlighter-rouge">#value</code> mit weiterhin in <code class="language-plaintext highlighter-rouge">pattern[x]</code> hinterlegten Werten liefert für <code class="language-plaintext highlighter-rouge">Coding</code>-, <code class="language-plaintext highlighter-rouge">CodeableConcept</code>- und <code class="language-plaintext highlighter-rouge">Identifier</code>-Slicings auf <code class="language-plaintext highlighter-rouge">$this</code> dieselben Validierungsergebnisse wie <code class="language-plaintext highlighter-rouge">#pattern</code>; SUSHI behält <code class="language-plaintext highlighter-rouge">pattern[x]</code> bei (nur <code class="language-plaintext highlighter-rouge">(exactly)</code> erzeugt <code class="language-plaintext highlighter-rouge">fixed[x]</code>). Lediglich der Deprecation-Hinweis zu <code class="language-plaintext highlighter-rouge">#pattern</code> entfällt. Betrifft 23 Slicings. Einschränkung: Abgeleitete Profile, die ein geerbtes Slicing mit <code class="language-plaintext highlighter-rouge">#pattern</code> erneut deklarieren, scheitern bei der Snapshot-Generierung („Slicing rules on differential … do not match those on base“) und müssen ebenfalls umgestellt werden, z. B. Onkologie <code class="language-plaintext highlighter-rouge">mii-pr-onko-diagnose-primaertumor</code> (<code class="language-plaintext highlighter-rouge">bodySite.coding</code>).</td>
@@ -570,13 +559,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <td>nein</td>
     </tr>
     <tr>
-      <td><a href="https://hl7germany.atlassian.net/browse/HDB-1076">HDB-1076</a></td>
-      <td>Slicing auf Encounter.diagnosis.use.coding</td>
-      <td>Das Slicing auf <code class="language-plaintext highlighter-rouge">coding</code> ist beabsichtigt: Ein <code class="language-plaintext highlighter-rouge">use</code> <strong>kann</strong> sowohl ein <em>Diagnosetyp</em>- als auch ein <em>DiagnosesubTyp</em>-Coding <strong>enthalten</strong> (beide Slices sind optional, 0..1). Der bestehende Best-Practice-Hinweis in den Hinweisen zum Encounter-Profil, der für Diagnosetyp und Diagnosesubtyp getrennte <code class="language-plaintext highlighter-rouge">Encounter.diagnosis</code>-Einträge empfiehlt, widerspricht dem und wird einschließlich seines Beispiels ersetzt.</td>
-      <td>Vorschlag: annehmen (Doku)</td>
-      <td>nein</td>
-    </tr>
-    <tr>
       <td><a href="https://hl7germany.atlassian.net/browse/HDB-1052">HDB-1052</a></td>
       <td>Extension von Diagnosen ValueSet in Fall-Profile</td>
       <td><code class="language-plaintext highlighter-rouge">mii-vs-fall-diagnosis-use</code> enthält bereits <code class="language-plaintext highlighter-rouge">DiagnoseTyp</code>, <code class="language-plaintext highlighter-rouge">Diagnosesubtyp</code> (CodeSystem KontaktDiagnoseProzedur) und <code class="language-plaintext highlighter-rouge">diagnosis-role</code> (Binding extensible). Dies wird dokumentiert und mit einem Beispiel ergänzt.</td>
@@ -615,6 +597,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <td><a href="https://hl7germany.atlassian.net/browse/HDB-938">HDB-938</a></td>
       <td>Station (Ward) -&gt; Location vs. Organization</td>
       <td>Beide Möglichkeiten zur Abbildung einer Station werden beschrieben: als <code class="language-plaintext highlighter-rouge">Location</code> (<code class="language-plaintext highlighter-rouge">physicalType = wa</code>) oder über die <code class="language-plaintext highlighter-rouge">Organization</code> des Service Providers.</td>
+      <td>Vorschlag: annehmen (Doku)</td>
+      <td>nein</td>
+    </tr>
+    <tr>
+      <td><a href="https://hl7germany.atlassian.net/browse/HDB-1077">HDB-1077</a></td>
+      <td>Constraint für die Lateralitätsangabe in Procedure</td>
+      <td>Keine Invariante: Eine doppelte Seitenangabe lässt sich mit einem FHIRPath-Constraint allein anhand der Instanz nur schwer zuverlässig erkennen. Die Seitenlokalisation in der OPS-Extension (<code class="language-plaintext highlighter-rouge">Seitenlokalisation</code>) ist direkt prüfbar; bei einem SNOMED-CT-Prozedurcode müsste die Validierung dagegen den modellierten <code class="language-plaintext highlighter-rouge">Procedure site</code>-Beziehungen zu den anatomischen Konzepten folgen und dort die Lateralität ermitteln, bei einer referenzierten <code class="language-plaintext highlighter-rouge">BodyStructure</code> zunächst die Referenz auflösen und gegebenenfalls die Lateralität aus dem SNOMED-CT-Körperstellencode ableiten. Selbst wenn beide Seitenangaben ermittelt werden können, ist ihre gleichzeitige Belegung noch kein Beleg für eine redundante Angabe: Eine beidseitige Prozedur kann beispielsweise eine konkrete linksseitige Läsion als <code class="language-plaintext highlighter-rouge">BodyStructure</code> referenzieren. Vorschlag: Die Profilbeschreibung wird präzisiert, die Vermeidung redundanter Seitenangaben bleibt ein Modellierungshinweis.</td>
       <td>Vorschlag: annehmen (Doku)</td>
       <td>nein</td>
     </tr>
@@ -697,17 +686,26 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <td>Antwort geplant</td>
       <td>nein</td>
     </tr>
+    <tr>
+      <td><a href="https://hl7germany.atlassian.net/browse/HDB-1076">HDB-1076</a></td>
+      <td>Slicing auf Encounter.diagnosis.use.coding</td>
+      <td>Entwurf: keine Änderung; der bestehende Best-Practice-Hinweis in den Hinweisen zum Encounter-Profil (ein <code class="language-plaintext highlighter-rouge">Encounter.diagnosis</code>-Eintrag je Rolle, alle mit Referenz auf dieselbe Condition) ist korrekt und bleibt bestehen. Die <code class="language-plaintext highlighter-rouge">coding</code>-Slices <code class="language-plaintext highlighter-rouge">Diagnosetyp</code> und <code class="language-plaintext highlighter-rouge">DiagnosesubTyp</code> ermöglichen die Codierung von <code class="language-plaintext highlighter-rouge">use</code> aus den jeweiligen ValueSets; die Codings eines <code class="language-plaintext highlighter-rouge">use</code> dürfen jedoch keine unterschiedlichen Diagnoserollen (z. B. Aufnahme- und Entlassdiagnose) mischen: Laut FHIR-Definition von <a href="https://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a> gilt: <em>Each coding (also referred to as a 'translation') is a representation of the concept as described above and may have slightly different granularity due to the differences in the definitions of the underlying codes.</em> Ein Slicing weiter oben im Baum ist nicht möglich (<code class="language-plaintext highlighter-rouge">use</code> ist ein einzelnes CodeableConcept, 1..1) bzw. nicht sinnvoll (<code class="language-plaintext highlighter-rouge">Encounter.diagnosis</code>).</td>
+      <td>Antwort geplant</td>
+      <td>nein</td>
+    </tr>
   </tbody>
 </table>
 
-<h3 id="f-vorschlag-nach-meta-verschieben">F. Vorschlag: nach Meta verschieben</h3>
+<h3 id="f-modul-meta">F. Modul Meta</h3>
+
+<p>Diese Tickets betreffen das Modul Meta (<code class="language-plaintext highlighter-rouge">kerndatensatz-meta</code>).</p>
 
 <table>
   <thead>
     <tr>
       <th>Ticket</th>
       <th>Thema</th>
-      <th>Vorgeschlagenes Vorgehen</th>
+      <th>Hinweis</th>
       <th>Status</th>
       <th>Breaking</th>
     </tr>
@@ -716,15 +714,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <td><a href="https://hl7germany.atlassian.net/browse/HDB-1014">HDB-1014</a></td>
       <td>Meta CpS</td>
-      <td>Betrifft das CapabilityStatement des Moduls Meta; Verschiebung nach <code class="language-plaintext highlighter-rouge">kerndatensatz-meta</code>.</td>
-      <td>Vorschlag: nach Meta verschieben</td>
+      <td>Betrifft das CapabilityStatement des Moduls Meta.</td>
+      <td>Diskussion</td>
       <td>nein</td>
     </tr>
     <tr>
       <td><a href="https://hl7germany.atlassian.net/browse/HDB-1015">HDB-1015</a></td>
       <td>Externe Quelle github?</td>
-      <td>Betrifft den Abschnitt Konformität des Moduls Meta; Verschiebung nach <code class="language-plaintext highlighter-rouge">kerndatensatz-meta</code>.</td>
-      <td>Vorschlag: nach Meta verschieben</td>
+      <td>Betrifft den Abschnitt Konformität des Moduls Meta.</td>
+      <td>Diskussion</td>
       <td>nein</td>
     </tr>
   </tbody>
@@ -755,7 +753,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-ballot basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Erstellt <span title="Thu, Nov 5, 2026 15:59+0000">2026-11-05</span>
+          Erstellt <span title="Mon, Nov 9, 2026 10:03+0000">2026-11-09</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.
