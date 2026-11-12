@@ -52,6 +52,9 @@ Die Geschlechtsdokumentation folgt den Vorgaben der [Deutschen FHIR-Basis-Profil
   - **`value`**: Der dokumentierte Wert. Das [MII ValueSet Person Recorded Sex or Gender SNOMED](ValueSet-mii-vs-person-recordedsexorgender-snomed.html) ist mit der Bindungsstärke `extensible` gebunden ([HDB-1124](https://hl7germany.atlassian.net/browse/HDB-1124)): Passt ein Code daraus, **MUSS** er verwendet werden; andere Codes sind nur zulässig, wenn keiner passt. Es enthält SNOMED-CT-Codes zum biologischen Geschlecht sowie `261665006 | Unknown (qualifier value) |`.
   - **`type`**: Kennzeichnet die Art der dokumentierten Geschlechtsangabe. Für das bei der Geburt zugewiesene Geschlecht SOLL `http://loinc.org|76689-9` (Sex assigned at birth) verwendet werden.
   - **`acquisitionDate`**: Zeitpunkt, zu dem die Angabe erfasst wurde.
+- **[`Patient.extension:sexParameterForClinicalUse`](https://hl7.org/fhir/extensions/StructureDefinition-patient-sexParameterForClinicalUse.html)**: Ein Parameter für klinische Entscheidungen, die vom Geschlecht abhängen, etwa Referenzbereiche oder Dosierungen (z. B. *specified*, *female-typical*, *male-typical*). Er wird nicht automatisch aus `Patient.gender` oder `recordedSexOrGender` abgeleitet und von beiden getrennt geführt ([HDB-1067](https://hl7germany.atlassian.net/browse/HDB-1067)).
+  - **`value`**: Der Parameter, codiert aus dem ValueSet `sex-parameter-for-clinical-use`.
+  - **`period`**: Der Zeitraum, für den der Parameter gilt.
 
 `Indeterminate sex` bezeichnet ein nicht bestimmbares Geschlecht, während `Unknown` bedeutet, dass die Angabe nicht bekannt ist oder nicht dokumentiert wurde. Implementierungen SOLLEN diese Unterscheidung beibehalten.
 

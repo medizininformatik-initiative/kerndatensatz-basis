@@ -52,6 +52,9 @@ Gender documentation follows the [German Base Profile for Gender]:
   - **`value`**: The recorded value. The [MII ValueSet Person Recorded Sex or Gender SNOMED](ValueSet-mii-vs-person-recordedsexorgender-snomed.html) is bound with `extensible` strength ([HDB-1124](https://hl7germany.atlassian.net/browse/HDB-1124)): a code from it **SHALL** be used if one fits; other codes are allowed only if none applies. It contains SNOMED CT findings related to biological sex as well as `261665006 | Unknown (qualifier value) |`.
   - **`type`**: Identifies the kind of recorded sex or gender. `http://loinc.org|76689-9` (Sex assigned at birth) SHOULD be used when documenting sex assigned at birth.
   - **`acquisitionDate`**: Date and time when the statement was first recorded in the system.
+- **[`Patient.extension:sexParameterForClinicalUse`](https://hl7.org/fhir/extensions/StructureDefinition-patient-sexParameterForClinicalUse.html)**: A parameter for clinical decisions that depend on sex, such as reference ranges or dosing (e.g. *specified*, *female-typical*, *male-typical*). It is not derived automatically from `Patient.gender` or `recordedSexOrGender` and is kept separate from both ([HDB-1067](https://hl7germany.atlassian.net/browse/HDB-1067)).
+  - **`value`**: The parameter, coded from the ValueSet `sex-parameter-for-clinical-use`.
+  - **`period`**: The period during which the parameter applies.
 
 `Indeterminate sex` describes a sex that could not be determined, whereas `Unknown` indicates that the value is not known or was not recorded. Implementations SHOULD preserve this distinction.
 
