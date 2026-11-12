@@ -53,3 +53,7 @@ The code '255398004' is not declared in the base CodeSystem http://snomed.info/s
 The code '713153009' is not declared in the base CodeSystem http://snomed.info/sct so is not valid in the supplement
 The code '3658006' is not declared in the base CodeSystem http://snomed.info/sct so is not valid in the supplement
 The code '255407002' is not declared in the base CodeSystem http://snomed.info/sct so is not valid in the supplement
+# kbv.all.terminology.allergyintolerance is only published on the BfArM ZTS (installed in CI by .github/actions/zts-packages);
+# its package.json has no canonical, so SUSHI generates a placeholder dependsOn URI that does not resolve to an ImplementationGuide.
+The canonical URL http://fhir.org/packages/kbv.all.terminology.allergyintolerance/ImplementationGuide/kbv.all.terminology.allergyintolerance doesn't point to an actual ImplementationGuide resource
+A definition could not be found for Canonical URL 'http://fhir.org/packages/kbv.all.terminology.allergyintolerance/ImplementationGuide/kbv.all.terminology.allergyintolerance'
