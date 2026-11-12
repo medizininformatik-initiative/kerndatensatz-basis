@@ -2,6 +2,16 @@ This page documents the changes and updates across versions of the MII Implement
 
 ---
 
+### Version 2027.0.0
+
+**Date:** unreleased
+
+Changes from the ballot reconciliation of `2027.0.0-ballot`. From this version on, every entry starts with a link to the affected artifact.
+
+#### Diagnosis Module
+
+- **Changed:** [MII PR Diagnose Condition](StructureDefinition-mii-pr-diagnose-condition.html), [MII LM Diagnose](StructureDefinition-mii-lm-diagnose.html) — **breaking:** the life-phase extension `http://fhir.de/StructureDefinition/lebensphase` moved from `onsetAge`/`abatementAge` to `onsetRange`/`abatementRange` (`Range` added to `onset[x]` and `abatement[x]`), because its context in `de.basisprofil.r4` 1.6.0 does not allow `Age`. `Age` stays allowed without the extension; the logical model mapping follows. The context of the German extension and the HL7 Europe extension `periods-of-life` (which allows `Age`) are being monitored. See: [HDB-1075](https://hl7germany.atlassian.net/browse/HDB-1075)
+
 ### Version 2027.0.0-ballot
 
 **Date:** 2026-09-10

@@ -102,22 +102,30 @@ The modeling of coded and detailed anatomical locations has been harmonized with
 <div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
 <h5 style="color: #406A99; margin-top: 0;">Best Practice - Onset and Abatement</h5>
 
-<p>The modeling of disease onset and abatement has been harmonized with <a href="https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKDiagnose.html">gematik ISiK</a>. Implementers <strong>SHOULD</strong> use <code>onsetDateTime</code>/<code>abatementDateTime</code> for dates and <code>onsetAge</code>/<code>abatementAge</code> with the life-phase extension when only a life phase is known. <code>onsetPeriod</code> and <code>abatementPeriod</code> remain permitted solely for backwards compatibility and <strong>SHOULD NOT</strong> be used in new implementations.</p>
+<p>The modeling of disease onset and abatement has been harmonized with <a href="https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKDiagnose.html">gematik ISiK</a>. Implementers <strong>SHOULD</strong> use <code>onsetDateTime</code>/<code>abatementDateTime</code> for dates and <code>onsetRange</code>/<code>abatementRange</code> with the life-phase extension when only a life phase is known. <code>onsetPeriod</code> and <code>abatementPeriod</code> remain permitted solely for backwards compatibility and <strong>SHOULD NOT</strong> be used in new implementations.</p>
 
 <p><strong>EHDS outlook:</strong> The published trial-use <a href="https://hl7.eu/fhir/base/2.0.0/StructureDefinition-condition-eu-core.html">HL7 Europe Condition (EU core) 2.0.0 profile</a>, which informs upcoming EHDS specifications, explicitly profiles the <code>dateTime</code> variants of onset and abatement. To facilitate future EHDS compliance, new implementations <strong>SHOULD</strong> therefore use <code>onsetDateTime</code> and <code>abatementDateTime</code> whenever a date is available.</p>
 </div>
 
 **`Condition.onset[x]`:**
-- **SHOULD** be captured as `dateTime` or `Age`
-- When using `Age`, the life-phase extension **MAY** specify a life phase as a code if the exact date is unknown
+- **SHOULD** be captured as `dateTime`, `Age` or `Range`
+- When using `Range`, the life-phase extension **MAY** specify a life phase as a code if the exact date is unknown
 - `Period` remains allowed for backwards compatibility but **SHOULD NOT** be used
 - Represents when the condition began or was first noticed
 
 **`Condition.abatement[x]`:**
-- **SHOULD** be captured as `dateTime` or `Age`
-- When using `Age`, the life-phase extension **MAY** specify a life phase as a code if the exact date is unknown
+- **SHOULD** be captured as `dateTime`, `Age` or `Range`
+- When using `Range`, the life-phase extension **MAY** specify a life phase as a code if the exact date is unknown
 - `Period` remains allowed for backwards compatibility but **SHOULD NOT** be used
 - Represents when the condition ended, resolved, or entered remission
+
+<div style="background-color: #FFF8E1; border-left: 5px solid #E0A800; padding: 15px; margin: 10px 0;">
+<h5 style="color: #8A6D00; margin-top: 0;">Note - Life phase on <code>Range</code> instead of <code>Age</code></h5>
+
+<p>The life-phase extension <code>http://fhir.de/StructureDefinition/lebensphase</code> (<a href="https://simplifier.net/packages/de.basisprofil.r4/1.6.0">de.basisprofil.r4</a> 1.6.0) may only be used on <code>dateTime</code>, <code>Period.start</code>, <code>Period.end</code> and <code>Range</code>. It is therefore profiled on <code>onsetRange</code> and <code>abatementRange</code>, no longer on <code>onsetAge</code> and <code>abatementAge</code> (<a href="https://hl7germany.atlassian.net/browse/HDB-1075">HDB-1075</a>). <code>Age</code> remains allowed without the extension. This deviates from <a href="https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKDiagnose.html">ISiK Basis 6.0.0</a>, which profiles the extension on <code>Age</code>.</p>
+
+<p>The <a href="https://hl7.eu/fhir/extensions/StructureDefinition-periods-of-life.html">HL7 Europe extension <code>periods-of-life</code></a> also allows <code>Age</code> as context. If the context of the German extension changes in a future release of the German base profiles, or the EU extension is adopted, the placement will be reviewed.</p>
+</div>
 
 **`Condition.recordedDate`:**
 - Represents when the diagnosis was recorded in the system

@@ -161,7 +161,7 @@ Description: "Dieses Profil beschreibt eine Diagnose der Medizininformatik Initi
 * insert Translation(encounter ^definition, de-DE, Kontakt\, während dem die Diagnose erstellt wurde oder mit dem die Diagnose in Zusammenhang steht.)
 * insert Translation(encounter ^definition, en-US, The Encounter during which this Condition was created or to which the creation of this record is tightly associated.)
 * encounter.reference MS
-* onset[x] only dateTime or Period or Age
+* onset[x] only dateTime or Period or Age or Range
 * onset[x] MS
 * onset[x] ^short = "Beginn"
 * insert Translation(onset[x] ^short, de-DE, Beginn)
@@ -174,15 +174,17 @@ Description: "Dieses Profil beschreibt eine Diagnose der Medizininformatik Initi
 * onsetDateTime ^definition = "Das Datum, an dem die Erkrankung begonnen hat, nach Meinung des Klinikers."
 * onsetAge MS 
 * onsetAge ^short = "Erkrankungsbeginn als Alter"
-* onsetAge.extension contains ExtensionLebensphase named Lebensphase-Beginn 0..1
-* onsetAge.extension[Lebensphase-Beginn] ^short = "Lebensphase des Erkrankungsbeginns"
-* onsetAge.extension[Lebensphase-Beginn] ^comment = "Alternative Angabe, wenn genauere Eingrenzungen des Zeitraums nicht möglich sind, insbesondere im Kontext anamnestischer Diagnosen"
-* onsetAge.extension[Lebensphase-Beginn].url MS
-* onsetAge.extension[Lebensphase-Beginn].valueCodeableConcept MS
-* onsetAge.extension[Lebensphase-Beginn].valueCodeableConcept.coding MS
-* onsetAge.extension[Lebensphase-Beginn].valueCodeableConcept.coding.system MS
-* onsetAge.extension[Lebensphase-Beginn].valueCodeableConcept.coding.code MS
-* abatement[x] only dateTime or Period or Age
+* onsetRange MS
+* onsetRange ^short = "Erkrankungsbeginn als Altersbereich"
+* onsetRange.extension contains ExtensionLebensphase named Lebensphase-Beginn 0..1
+* onsetRange.extension[Lebensphase-Beginn] ^short = "Lebensphase des Erkrankungsbeginns"
+* onsetRange.extension[Lebensphase-Beginn] ^comment = "Alternative Angabe, wenn genauere Eingrenzungen des Zeitraums nicht möglich sind, insbesondere im Kontext anamnestischer Diagnosen"
+* onsetRange.extension[Lebensphase-Beginn].url MS
+* onsetRange.extension[Lebensphase-Beginn].valueCodeableConcept MS
+* onsetRange.extension[Lebensphase-Beginn].valueCodeableConcept.coding MS
+* onsetRange.extension[Lebensphase-Beginn].valueCodeableConcept.coding.system MS
+* onsetRange.extension[Lebensphase-Beginn].valueCodeableConcept.coding.code MS
+* abatement[x] only dateTime or Period or Age or Range
 * abatement[x] MS
 * abatement[x] ^short = "Ende"
 * abatement[x] ^definition = "Geschätztes oder tatsächliches Datum oder Alter, an dem die Erkrankung beendet wurde."
@@ -191,14 +193,16 @@ Description: "Dieses Profil beschreibt eine Diagnose der Medizininformatik Initi
 * abatementDateTime ^definition = "Das Datum, an dem die Erkrankung beendet wurde."
 * abatementAge MS
 * abatementAge ^short = "Erkrankungsende als Alter"
-* abatementAge.extension contains ExtensionLebensphase named Lebensphase-Ende 0..1
-* abatementAge.extension[Lebensphase-Ende] ^short = "Lebensphase des Erkrankungsendes"
-* abatementAge.extension[Lebensphase-Ende] ^comment = "Alternative Angabe, wenn genauere Eingrenzungen des Zeitraums nicht möglich sind, insbesondere im Kontext anamnestischer Diagnosen"
-* abatementAge.extension[Lebensphase-Ende].url MS
-* abatementAge.extension[Lebensphase-Ende].valueCodeableConcept MS
-* abatementAge.extension[Lebensphase-Ende].valueCodeableConcept.coding MS
-* abatementAge.extension[Lebensphase-Ende].valueCodeableConcept.coding.system MS
-* abatementAge.extension[Lebensphase-Ende].valueCodeableConcept.coding.code MS
+* abatementRange MS
+* abatementRange ^short = "Erkrankungsende als Altersbereich"
+* abatementRange.extension contains ExtensionLebensphase named Lebensphase-Ende 0..1
+* abatementRange.extension[Lebensphase-Ende] ^short = "Lebensphase des Erkrankungsendes"
+* abatementRange.extension[Lebensphase-Ende] ^comment = "Alternative Angabe, wenn genauere Eingrenzungen des Zeitraums nicht möglich sind, insbesondere im Kontext anamnestischer Diagnosen"
+* abatementRange.extension[Lebensphase-Ende].url MS
+* abatementRange.extension[Lebensphase-Ende].valueCodeableConcept MS
+* abatementRange.extension[Lebensphase-Ende].valueCodeableConcept.coding MS
+* abatementRange.extension[Lebensphase-Ende].valueCodeableConcept.coding.system MS
+* abatementRange.extension[Lebensphase-Ende].valueCodeableConcept.coding.code MS
 * recordedDate 1.. MS
 * recordedDate ^short = "Aufzeichnungsdatum"
 * insert Translation(recordedDate ^short, de-DE, Aufzeichnungsdatum)
@@ -233,10 +237,10 @@ Source: MII_PR_Diagnose_Condition
 * bodySite -> "Koerperstelle"
 * onset[x] -> "KlinischRelevanterZeitraum"
 * onsetDateTime -> "KlinischRelevanterZeitraum.Zeitraum.von"
-* onsetAge.extension[Lebensphase-Beginn].valueCodeableConcept -> "KlinischRelevanterZeitraum.Lebensphase.von"
+* onsetRange.extension[Lebensphase-Beginn].valueCodeableConcept -> "KlinischRelevanterZeitraum.Lebensphase.von"
 * abatement[x] -> "KlinischRelevanterZeitraum"
 * abatementDateTime -> "KlinischRelevanterZeitraum.Zeitraum.bis"
-* abatementAge.extension[Lebensphase-Ende].valueCodeableConcept -> "KlinischRelevanterZeitraum.Lebensphase.bis"
+* abatementRange.extension[Lebensphase-Ende].valueCodeableConcept -> "KlinischRelevanterZeitraum.Lebensphase.bis"
 * recordedDate -> "Dokumentationsdatum"
 * extension[Feststellungsdatum] -> "Feststellungsdatum"
 * note -> "Diagnoseerlaeuterung"
