@@ -8,6 +8,10 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 
 Änderungen aus der Ballot-Kommentierung zu `2027.0.0-ballot`. Ab dieser Version beginnt jeder Eintrag mit einem Link auf das betroffene Artefakt.
 
+#### Modul Person
+
+- **Changed:** [MII PR Person Patient](StructureDefinition-mii-pr-person-patient.html), [MII PR Person Patient (Pseudonymisiert)](StructureDefinition-mii-pr-person-patient-pseudonymisiert.html) — Die Invariante `pat-cnt-2or3-char` (Schweregrad warning) an den Adress-Slices prüft jetzt die Extension `Address.country.extension:countryCode` (`iso21090-codedString`, ISO 3166-1 alpha-2) statt `Address.country`, sodass `Address.country` auch andere Werte wie DEÜV-Länderschlüssel enthalten darf. Alpha-3-Codes werden nicht mehr akzeptiert, da `AddressDeBasis` die Extension an alpha-2 bindet (*required*). Die Beispiele codieren das Land jetzt in der Extension. Siehe: [HDB-1069](https://hl7germany.atlassian.net/browse/HDB-1069), [HDB-935](https://hl7germany.atlassian.net/browse/HDB-935)
+
 #### Modul Diagnose
 
 - **Changed:** [MII PR Diagnose Condition](StructureDefinition-mii-pr-diagnose-condition.html), [MII LM Diagnose](StructureDefinition-mii-lm-diagnose.html) — **breaking:** Die Lebensphasen-Extension `http://fhir.de/StructureDefinition/lebensphase` wurde von `onsetAge`/`abatementAge` nach `onsetRange`/`abatementRange` verschoben (`Range` in `onset[x]` und `abatement[x]` ergänzt), da ihr Kontext in `de.basisprofil.r4` 1.6.0 `Age` nicht zulässt. `Age` bleibt ohne die Extension zulässig; das Mapping im logischen Modell wurde angepasst. Der Kontext der deutschen Extension und die HL7-Europe-Extension `periods-of-life` (die `Age` zulässt) werden beobachtet. Siehe: [HDB-1075](https://hl7germany.atlassian.net/browse/HDB-1075)

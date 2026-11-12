@@ -8,6 +8,10 @@ This page documents the changes and updates across versions of the MII Implement
 
 Changes from the ballot reconciliation of `2027.0.0-ballot`. From this version on, every entry starts with a link to the affected artifact.
 
+#### Person Module
+
+- **Changed:** [MII PR Person Patient](StructureDefinition-mii-pr-person-patient.html), [MII PR Person Patient (Pseudonymisiert)](StructureDefinition-mii-pr-person-patient-pseudonymisiert.html) — the warning invariant `pat-cnt-2or3-char` on the address slices now checks the `Address.country.extension:countryCode` extension (`iso21090-codedString`, ISO 3166-1 alpha-2) instead of `Address.country`, so `Address.country` may carry other values such as DEÜV country codes. Alpha-3 codes are no longer accepted, because `AddressDeBasis` binds the extension to alpha-2 (*required*). Examples now code the country in the extension. See: [HDB-1069](https://hl7germany.atlassian.net/browse/HDB-1069), [HDB-935](https://hl7germany.atlassian.net/browse/HDB-935)
+
 #### Diagnosis Module
 
 - **Changed:** [MII PR Diagnose Condition](StructureDefinition-mii-pr-diagnose-condition.html), [MII LM Diagnose](StructureDefinition-mii-lm-diagnose.html) — **breaking:** the life-phase extension `http://fhir.de/StructureDefinition/lebensphase` moved from `onsetAge`/`abatementAge` to `onsetRange`/`abatementRange` (`Range` added to `onset[x]` and `abatement[x]`), because its context in `de.basisprofil.r4` 1.6.0 does not allow `Age`. `Age` stays allowed without the extension; the logical model mapping follows. The context of the German extension and the HL7 Europe extension `periods-of-life` (which allows `Age`) are being monitored. See: [HDB-1075](https://hl7germany.atlassian.net/browse/HDB-1075)
