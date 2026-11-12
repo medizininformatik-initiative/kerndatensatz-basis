@@ -19,8 +19,8 @@ Alias: $sexParameterForClinicalUse = http://hl7.org/fhir/StructureDefinition/pat
 Alias: $iso21090-SC-coding = http://hl7.org/fhir/StructureDefinition/iso21090-codedString
 Alias: $iso3166-1-2 = http://hl7.org/fhir/ValueSet/iso3166-1-2
 Alias: $allergyintolerance-abatement = http://hl7.org/fhir/StructureDefinition/allergyintolerance-abatement
-Alias: $allergy-intolerance-uv-ips = http://hl7.org/fhir/uv/ips/ValueSet/allergies-intolerances-uv-ips
-Alias: $allergy-reaction-uv-ips = http://hl7.org/fhir/uv/ips/ValueSet/allergy-reaction-uv-ips
+Alias: $kbv-vs-allergy-substance = https://fhir.kbv.de/ValueSet/KBV_VS_AllergyIntolerance_Substance_SNOMED_CT|1.0.0
+Alias: $kbv-vs-allergy-manifestation = https://fhir.kbv.de/ValueSet/KBV_VS_AllergyIntolerance_Manifestation_SNOMED_CT|1.0.0
 Alias: $allergyintolerance-clinical = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
 Alias: $allergyintolerance-verification = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification
 

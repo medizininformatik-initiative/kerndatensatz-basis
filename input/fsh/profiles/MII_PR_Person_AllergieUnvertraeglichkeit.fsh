@@ -69,10 +69,20 @@ Description: "This profile describes an allergy or intolerance in the Medical In
 * insert Translation(code ^short, de, Allergie oder Unverträglichkeit gegen)
 * code ^definition = "Code for an allergy or intolerance statement, including positive and negated or excluded statements. It may identify a substance, pharmaceutical product, substance class, allergy or intolerance condition, or a general categorical absence statement. A substance recorded for a specific reaction may be more specific than AllergyIntolerance.code but must remain semantically consistent with it. Implementations must be clinically safe when processing code without reaction.substance; if that consistency cannot be confirmed, reaction.substance should be ignored."
 * insert Translation(code ^definition, de, [[Stoff, Produkt, Stoffklasse oder Allergie-/Unverträglichkeitsbegriff, auf den sich die dokumentierte Gefährdung bezieht.]])
-* code from $allergy-intolerance-uv-ips (preferred)
 * code.coding MS
+* code.coding ^slicing.discriminator.type = #pattern
+* code.coding ^slicing.discriminator.path = "$this"
+* code.coding ^slicing.rules = #open
+* code.coding contains snomed-ct 0..1 MS
 * code.coding.system MS
 * code.coding.code MS
+* insert AddSnomedCodingTranslation(code.coding[snomed-ct])
+* code.coding[snomed-ct] ^patternCoding.system = "http://snomed.info/sct"
+* code.coding[snomed-ct] ^comment = "The substance ValueSet was developed by mio42 GmbH together with BfArM; it is bound extensible because its completeness cannot be guaranteed. Aligned with ISiK."
+* insert Translation(code.coding[snomed-ct] ^comment, de, [[Das ValueSet der auslösenden Substanzen wurde von der mio42 GmbH gemeinsam mit dem BfArM erarbeitet; es ist extensible gebunden, da seine Vollständigkeit nicht garantiert werden kann. Abgestimmt mit ISiK.]])
+* code.coding[snomed-ct] from $kbv-vs-allergy-substance (extensible)
+* code.coding[snomed-ct].system 1.. MS
+* code.coding[snomed-ct].code 1.. MS
 * patient MS
 * patient ^short = "Who the allergy or intolerance concerns"
 * insert Translation(patient ^short, de, Patient)
@@ -106,10 +116,18 @@ Description: "This profile describes an allergy or intolerance in the Medical In
 * insert Translation(reaction.manifestation ^short, de, Manifestation)
 * reaction.manifestation ^definition = "Clinical symptoms and/or signs observed or associated with the adverse reaction event."
 * insert Translation(reaction.manifestation ^definition, de, [[Klinische Symptome oder Befunde, die im Zusammenhang mit der unerwünschten Reaktion beobachtet wurden.]])
-* reaction.manifestation from $allergy-reaction-uv-ips (preferred)
 * reaction.manifestation.coding MS
+* reaction.manifestation.coding ^slicing.discriminator.type = #pattern
+* reaction.manifestation.coding ^slicing.discriminator.path = "$this"
+* reaction.manifestation.coding ^slicing.rules = #open
+* reaction.manifestation.coding contains snomed-ct 0..1 MS
 * reaction.manifestation.coding.system MS
 * reaction.manifestation.coding.code MS
+* insert AddSnomedCodingTranslation(reaction.manifestation.coding[snomed-ct])
+* reaction.manifestation.coding[snomed-ct] ^patternCoding.system = "http://snomed.info/sct"
+* reaction.manifestation.coding[snomed-ct] from $kbv-vs-allergy-manifestation (extensible)
+* reaction.manifestation.coding[snomed-ct].system 1.. MS
+* reaction.manifestation.coding[snomed-ct].code 1.. MS
 * reaction.severity MS
 * reaction.severity ^short = "Reaction severity"
 * insert Translation(reaction.severity ^short, de, Schweregrad)
