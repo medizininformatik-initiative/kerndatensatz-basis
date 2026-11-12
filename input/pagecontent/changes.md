@@ -11,6 +11,7 @@ Changes from the ballot reconciliation of `2027.0.0-ballot`. From this version o
 #### Person Module
 
 - **Changed:** [MII PR Person Patient](StructureDefinition-mii-pr-person-patient.html), [MII PR Person Patient (Pseudonymisiert)](StructureDefinition-mii-pr-person-patient-pseudonymisiert.html) — the warning invariant `pat-cnt-2or3-char` on the address slices now checks the `Address.country.extension:countryCode` extension (`iso21090-codedString`, ISO 3166-1 alpha-2) instead of `Address.country`, so `Address.country` may carry other values such as DEÜV country codes. Alpha-3 codes are no longer accepted, because `AddressDeBasis` binds the extension to alpha-2 (*required*). Examples now code the country in the extension. See: [HDB-1069](https://hl7germany.atlassian.net/browse/HDB-1069), [HDB-935](https://hl7germany.atlassian.net/browse/HDB-935)
+- **Changed:** [MII PR Person Patient](StructureDefinition-mii-pr-person-patient.html), [MII VS Person Recorded Sex or Gender SNOMED](ValueSet-mii-vs-person-recordedsexorgender-snomed.html) — the binding of `Patient.extension:recordedSexOrGender.extension:value.valueCodeableConcept` to the ValueSet changed from *preferred* to *extensible*. Not breaking, because the extension is new in `2027.0.0-ballot`. See: [HDB-1124](https://hl7germany.atlassian.net/browse/HDB-1124)
 
 #### Diagnosis Module
 

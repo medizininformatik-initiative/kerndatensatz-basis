@@ -11,6 +11,7 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 #### Modul Person
 
 - **Changed:** [MII PR Person Patient](StructureDefinition-mii-pr-person-patient.html), [MII PR Person Patient (Pseudonymisiert)](StructureDefinition-mii-pr-person-patient-pseudonymisiert.html) — Die Invariante `pat-cnt-2or3-char` (Schweregrad warning) an den Adress-Slices prüft jetzt die Extension `Address.country.extension:countryCode` (`iso21090-codedString`, ISO 3166-1 alpha-2) statt `Address.country`, sodass `Address.country` auch andere Werte wie DEÜV-Länderschlüssel enthalten darf. Alpha-3-Codes werden nicht mehr akzeptiert, da `AddressDeBasis` die Extension an alpha-2 bindet (*required*). Die Beispiele codieren das Land jetzt in der Extension. Siehe: [HDB-1069](https://hl7germany.atlassian.net/browse/HDB-1069), [HDB-935](https://hl7germany.atlassian.net/browse/HDB-935)
+- **Changed:** [MII PR Person Patient](StructureDefinition-mii-pr-person-patient.html), [MII VS Person Recorded Sex or Gender SNOMED](ValueSet-mii-vs-person-recordedsexorgender-snomed.html) — Die Bindung von `Patient.extension:recordedSexOrGender.extension:value.valueCodeableConcept` an das ValueSet wurde von *preferred* auf *extensible* geändert. Nicht breaking, da die Extension in `2027.0.0-ballot` neu ist. Siehe: [HDB-1124](https://hl7germany.atlassian.net/browse/HDB-1124)
 
 #### Modul Diagnose
 

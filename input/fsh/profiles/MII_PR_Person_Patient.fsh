@@ -76,7 +76,7 @@ Description: "Dieses Profil beschreibt eine Patient*in in der Medizininformatik-
 * extension[recordedSexOrGender].extension[value] MS
 * extension[recordedSexOrGender].extension[value].url MS
 * extension[recordedSexOrGender].extension[value].valueCodeableConcept MS
-* extension[recordedSexOrGender].extension[value].valueCodeableConcept from MII_VS_Person_recordedSexOrGender_SNOMED (preferred)
+* extension[recordedSexOrGender].extension[value].valueCodeableConcept from MII_VS_Person_recordedSexOrGender_SNOMED (extensible)
 * extension[recordedSexOrGender].extension[value].valueCodeableConcept.coding MS
 * extension[recordedSexOrGender].extension[value].valueCodeableConcept.coding.system MS
 * extension[recordedSexOrGender].extension[value].valueCodeableConcept.coding.code MS

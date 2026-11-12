@@ -49,7 +49,7 @@ Gender documentation follows the [German Base Profile for Gender]:
 - **`Patient.gender`**: Administrative gender (required)
 - **`Patient.gender.extension:other-amtlich`**: Official gender codes according to German regulations for cases beyond male/female/unknown
 - **[`Patient.extension:recordedSexOrGender`](https://hl7.org/fhir/extensions/StructureDefinition-individual-recordedSexOrGender.html)**: Repeatable sex or gender statements taken from a document or other record. These statements are kept separate from the administrative gender in `Patient.gender` and can, for example, represent sex assigned at birth.
-  - **`value`**: The recorded value. The [MII ValueSet Person Recorded Sex or Gender SNOMED](ValueSet-mii-vs-person-recordedsexorgender-snomed.html) is bound with `preferred` strength and contains SNOMED CT findings related to biological sex as well as `261665006 | Unknown (qualifier value) |`.
+  - **`value`**: The recorded value. The [MII ValueSet Person Recorded Sex or Gender SNOMED](ValueSet-mii-vs-person-recordedsexorgender-snomed.html) is bound with `extensible` strength ([HDB-1124](https://hl7germany.atlassian.net/browse/HDB-1124)): a code from it **SHALL** be used if one fits; other codes are allowed only if none applies. It contains SNOMED CT findings related to biological sex as well as `261665006 | Unknown (qualifier value) |`.
   - **`type`**: Identifies the kind of recorded sex or gender. `http://loinc.org|76689-9` (Sex assigned at birth) SHOULD be used when documenting sex assigned at birth.
   - **`acquisitionDate`**: Date and time when the statement was first recorded in the system.
 
