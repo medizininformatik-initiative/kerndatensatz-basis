@@ -149,9 +149,9 @@ Description: "Dieses Profil beschreibt eine Prozedur in der Medizininformatik-In
 * bodySite ^short = "Körperstelle"
 * insert Translation(bodySite ^short, de-DE, Körperstelle)
 * insert Translation(bodySite ^short, en-US, Body site)
-* bodySite ^definition = "Körperstelle der Prozedur mittels SNOMED CT inklusive Lateralität."
-* insert Translation(bodySite ^definition, de-DE, Körperstelle der Prozedur mittels SNOMED CT inklusive Lateralität.)
-* insert Translation(bodySite ^definition, en-US, The body site of the procedure using SNOMED CT including laterality.)
+* bodySite ^definition = "Körperstelle der Prozedur, vorzugsweise mittels SNOMED CT. SNOMED-CT-Prozedurcodes enthalten Körperstelle und Lateralität in der Regel bereits präkoordiniert; bei OPS wird die Lateralität über die Extension Seitenlokalisation angegeben. bodySite SOLL diese Angaben nicht lediglich wiederholen, sondern zusätzliche anatomische Details liefern."
+* insert Translation(bodySite ^definition, de-DE, Körperstelle der Prozedur\, vorzugsweise mittels SNOMED CT. SNOMED-CT-Prozedurcodes enthalten Körperstelle und Lateralität in der Regel bereits präkoordiniert; bei OPS wird die Lateralität über die Extension Seitenlokalisation angegeben. bodySite SOLL diese Angaben nicht lediglich wiederholen\, sondern zusätzliche anatomische Details liefern.)
+* insert Translation(bodySite ^definition, en-US, Body site of the procedure\, preferably using SNOMED CT. SNOMED CT procedure codes usually already include body site and laterality precoordinated; for OPS\, laterality is given in the extension Seitenlokalisation. bodySite SHOULD NOT merely repeat this information but provide additional anatomical detail.)
 //* bodySite ^binding.strength = #extensible
 * bodySite.coding MS
 * bodySite.coding ^slicing.discriminator.type = #pattern

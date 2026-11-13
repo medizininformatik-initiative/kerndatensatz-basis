@@ -418,6 +418,12 @@ jobs:
           docker logs publication-nginx
           exit 1
 
+      - name: Install ZTS packages
+        uses: ./automation/.github/actions/zts-packages
+        with:
+          accepted-download-conditions: ${{ vars.ZTS_ACCEPTED_DOWNLOAD_CONDITIONS }}
+          sushi-config: source/sushi-config.yaml
+
       - name: Run clean release build
         shell: bash
         run: |

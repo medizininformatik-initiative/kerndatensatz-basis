@@ -4,7 +4,8 @@
     "The HL7 Java validator checks the first code of a ValueSet compose.include or CodeSystem supplement with a single CodeSystem/$validate-code call, then sends the remaining codes as one ValueSet/$batch-validate-code request without a valueSet or url parameter.",
     "Ontoserver rejects every batch entry with 'Type-level request to $validate-code must specify either valueSet or url parameter.' and the validator reports each one as an invalid code.",
     "The affected codes are valid: single $validate-code and $expand return them for SNOMED CT 20250701 and 20260701. See txlog.html in the validation-output artifact of run https://github.com/medizininformatik-initiative/kerndatensatz-basis/actions/runs/41425530629.",
-    "Remove the VALUESET_INCLUDE_INVALID_CONCEPT_CODE_VER and CODESYSTEM_CS_SUPP_INVALID_CODE entries below once $batch-validate-code works against Ontoserver."
+    "2026-11-13: the same cause affects the source codes of ConceptMap mii-cm-person-recordedsexorgender-snomed-administrative-gender (CONCEPTMAP_VS_INVALID_CONCEPT_CODE_VER); the codes are in MII VS Person Recorded Sex or Gender SNOMED and are annotated in input/ignoreWarnings.txt for the IG Publisher. See run https://github.com/medizininformatik-initiative/kerndatensatz-basis/actions/runs/43478236491.",
+    "Remove the VALUESET_INCLUDE_INVALID_CONCEPT_CODE_VER, CODESYSTEM_CS_SUPP_INVALID_CODE and CONCEPTMAP_VS_INVALID_CONCEPT_CODE_VER entries below once $batch-validate-code works against Ontoserver."
   ],
   "suppress" : [
     "Terminology_TX_NoValid_16@ImplementationGuide.definition.parameter.code",
@@ -16,6 +17,7 @@
     "UNABLE_TO_INFER_CODESYSTEM@ImplementationGuide.definition.parameter.code",
     "Unknown_Code_in_Version@ImplementationGuide.*",
     "CODESYSTEM_CS_SUPP_INVALID_CODE@CodeSystem.concept",
-    "VALUESET_INCLUDE_INVALID_CONCEPT_CODE_VER@ValueSet.compose.include.concept"
+    "VALUESET_INCLUDE_INVALID_CONCEPT_CODE_VER@ValueSet.compose.include.concept",
+    "CONCEPTMAP_VS_INVALID_CONCEPT_CODE_VER@ConceptMap.group.element.code"
   ]
 }

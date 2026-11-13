@@ -51,6 +51,8 @@ Description: "Patient: with insurance identifier, name and address"
 * address.state = "DE-BE"
 * address.postalCode = "10178"
 * address.country = "DE"
+* address.country.extension[0].url = "http://hl7.org/fhir/StructureDefinition/iso21090-codedString"
+* address.country.extension[0].valueCoding = urn:iso:std:iso:3166#DE "Germany"
 // * managingOrganization = Reference(Organization/Charite-Universitaetsmedizin-Berlin)
 
 /*

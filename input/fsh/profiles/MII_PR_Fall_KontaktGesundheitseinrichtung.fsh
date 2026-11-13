@@ -95,8 +95,8 @@ Description: "Kontakt zu einer Einrichtung, Abteilung oder Versorgungsstelle"
     Jeder Encounter SOLLTE seine eigene eindeutige Aufnahmenummer haben. Die Aufnahmenummer ist nicht die Fallnummer, 
     welche sich auf den kompletten Abrechnungsfall bezieht. Hier wird ein Identifier angegeben, der den Kontakt eindeutig identifiziert.
     """
-* insert Translation(identifier[Aufnahmenummer] ^definition, de-DE, Aufnahmenummer/Fallnummer\, die Patient:in bei einer Aufnahme bekommt.)
-* insert Translation(identifier[Aufnahmenummer] ^definition, en-US, Admission number\, the patient receives during an admission.)
+* insert Translation(identifier[Aufnahmenummer] ^definition, de-DE, Aufnahmenummer\, die Patient:in bei einer Aufnahme bekommt; nicht die Fallnummer des Abrechnungsfalls.)
+* insert Translation(identifier[Aufnahmenummer] ^definition, en-US, Admission number\, the patient receives during an admission; not the case number of the billing case.)
 * identifier[Aufnahmenummer] ^patternIdentifier.type = $v2-0203#VN
 * identifier[Aufnahmenummer].type 1.. MS
 * identifier[Aufnahmenummer].type from mii-vs-fall-identifier-type-codes (extensible)
@@ -312,13 +312,13 @@ Description: "Kontakt zu einer Einrichtung, Abteilung oder Versorgungsstelle"
 * hospitalization ^definition = "OPTIONAL, Details zur Aufnahme und Entlassung"
 * insert Translation(hospitalization ^definition, de-DE, Details zur Aufnahme und Entlassung)
 * insert Translation(hospitalization ^definition, en-US, Details about admission and discharge)
-* hospitalization.admitSource 1.. MS
+* hospitalization.admitSource 0..1 MS
 * hospitalization.admitSource.coding MS
 * hospitalization.admitSource.coding.system MS
 * hospitalization.admitSource.coding.code MS
 * hospitalization.admitSource ^short = "Aufnahmeanlass"
 * hospitalization.admitSource ^definition = """
-        VERPFLICHTEND, Aufnahmeanlass. Preferred Binding auf http://fhir.de/ValueSet/dgkev/Aufnahmeanlass
+        OPTIONAL, Aufnahmeanlass. Preferred Binding auf http://fhir.de/ValueSet/dgkev/Aufnahmeanlass
         """
 * hospitalization.admitSource from $AufnahmeanlassVS (preferred)
 * hospitalization.dischargeDisposition MS
@@ -340,9 +340,9 @@ Description: "Kontakt zu einer Einrichtung, Abteilung oder Versorgungsstelle"
 * location ^short = "Kontaktort"
 * insert Translation(location ^short, de-DE, Kontaktort)
 * insert Translation(location ^short, en-US, Location)
-* insert Translation(location ^definition, de-DE, Details zum Kontaktort wie Zimmer\, Bett\, Station)
-* insert Translation(location ^definition, en-US, Details about location such as room\, bed\, ward)
-* location ^definition = "OPTIONAL, Details zum Kontaktort wie Zimmer, Bett, Station"
+* insert Translation(location ^definition, de-DE, Details zum Kontaktort wie Zimmer\, Bettenstellplatz\, Station)
+* insert Translation(location ^definition, en-US, Details about location such as room\, bed space\, ward)
+* location ^definition = "OPTIONAL, Details zum Kontaktort wie Zimmer, Bettenstellplatz, Station"
   * physicalType from mii-vs-fall-location-physical-type (extensible)
   * physicalType ^short = "Kontaktorttyp"
   * physicalType ^definition = """
@@ -353,7 +353,7 @@ Description: "Kontakt zu einer Einrichtung, Abteilung oder Versorgungsstelle"
 * location ^slicing.discriminator[+].type = #pattern
 * location ^slicing.discriminator[=].path = "status"
 * location ^slicing.rules = #open
-* location contains  Zimmer 0..1 and Bett 0..1 and Station 0..1
+* location contains  Zimmer 0..1 and Bettenstellplatz 0..1 and Station 0..1
 * location[Station] MS
 * location[Station] ^short = "Station"
 * location[Station] ^definition = "Die Station, auf welcher der Patient oder die Patientin während des Kontaktes behandelt wurde."
@@ -380,9 +380,9 @@ Description: "Kontakt zu einer Einrichtung, Abteilung oder Versorgungsstelle"
   * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#ro
   * status MS
   * status = #active
-* location[Bett] MS
-* location[Bett] ^short = "Bett"
-* location[Bett] ^definition = "Von Patient oder Patientin während des Kontaktes belegter Bettenstellplatz."
+* location[Bettenstellplatz] MS
+* location[Bettenstellplatz] ^short = "Bettenstellplatz"
+* location[Bettenstellplatz] ^definition = "Von Patient oder Patientin während des Kontaktes belegter Bettenstellplatz, also der Ort, an dem das Bett steht, nicht das Bett als Gerät."
   * location 1.. //MS
     //* identifier 1.. MS
     //* display 1.. MS
@@ -393,6 +393,10 @@ Description: "Kontakt zu einer Einrichtung, Abteilung oder Versorgungsstelle"
   * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#bd
   * status MS
   * status = #active
+* insert Translation(location[Bettenstellplatz] ^short, de-DE, Bettenstellplatz)
+* insert Translation(location[Bettenstellplatz] ^short, en-US, Bed space)
+* insert Translation(location[Bettenstellplatz] ^definition, de-DE, Von Patient oder Patientin während des Kontaktes belegter Bettenstellplatz\, also der Ort\, an dem das Bett steht\, nicht das Bett als Gerät.)
+* insert Translation(location[Bettenstellplatz] ^definition, en-US, Bed space occupied by the patient during the encounter\, i.e. the location where the bed stands\, not the bed as a device.)
 * serviceProvider //MS
 * serviceProvider ^short = "Leistungserbringer"
 * insert Translation(serviceProvider ^short, de-DE, Leistungserbringer)

@@ -21,6 +21,9 @@ The MII Fall module distinguishes three levels of encounters using `Encounter.ty
 
 These levels are linked using `Encounter.partOf` to create a hierarchical structure.
 
+<a id="encounter-partof-across-patients"></a>
+**`partOf` across patients:** Within the contact hierarchy, `Encounter.partOf` references an Encounter of the same patient. As the only exception, a newborn's Einrichtungskontakt **MAY** reference the mother's delivery Einrichtungskontakt (see [Mother and Newborn](StructureDefinition-mii-pr-person-patient.html#mother-and-newborn)). Such a reference to an Encounter with a different `Encounter.subject` only expresses the maternity association: hierarchy traversal **SHALL** stop at an Encounter whose `partOf` target has a different `subject`.
+
 **Example Encounter Hierarchy:**
 
 The following diagram illustrates how different encounter levels are linked together using `partOf` references, along with optional connections to EpisodeOfCare and Account resources:
@@ -84,6 +87,8 @@ graph BT
 </code></pre>
 
 **Account linkage:** The `account` references shown for selected Encounters illustrate how Encounters at each level of the hierarchy can be linked to the same Account, thereby assigning multiple Encounters to a shared billing context. To keep the diagram readable, Account references are shown only for selected Encounters; the other Encounters in the hierarchy can reference the same Account in the same way. For implementation guidance, including the recommended use of the logical reference `Encounter.account.identifier`, see [Best Practice - Aufnahmenummer vs. Fallnummer](#best-practice-aufnahmenummer-vs-fallnummer).
+
+**Several facility encounters per Account:** An Account can also be referenced by several facility encounters (Einrichtungskontakte), for example when separate pre-inpatient, inpatient and post-inpatient facility encounters are billed as one case, or when readmissions are merged into one DRG case (Fallzusammenführung). The relationship is n:1 from Encounter to Account: each Encounter references the Account in `Encounter.account`; the Account does not reference its Encounters.
 
 In this example:
 - **E0** represents the overall facility contact (Einrichtungskontakt) for the hospital stay
@@ -207,6 +212,13 @@ In this example:
 
 *External source: The mapping of primary encounter types to HL7 V2 and FHIR in this table was adopted from the [German FHIR Base Profiles 1.6.0 – Ambulatory/inpatient case/contact](https://ig.fhir.de/basisprofile-de/1.6.0/ig-markdown-Ressourcen-AmbulanterStationaererFall.html).*
 
+**Partial inpatient encounters: `IMP` or `SS`.** Partial inpatient (teilstationär) treatment covers different settings, so both classes are allowed:
+
+- `IMP` (inpatient encounter) when the patient is allocated a bed for the treatment, e.g. in a night clinic where the patient stays overnight;
+- `SS` (short stay) when the patient is treated without a bed allocation and does not stay overnight, typically in a day clinic.
+
+Whether an encounter is partial inpatient is expressed by `Encounter.type` (`teilstationaer`, `tagesklinik` or `nachtklinik`) and the admission reason `03`, not by `Encounter.class`. Data consumers SHOULD therefore evaluate these elements instead of relying on `Encounter.class` alone.
+
 ##### Secondary Encounters During Inpatient Stay
 
 <table class="encounter-type-table">
@@ -267,11 +279,13 @@ The `Encounter.diagnosis` element establishes the relationship between encounter
 <p><strong>Example:</strong> If a Condition serves as both a Diagnosetyp and a Diagnosesubtyp (or additional roles such as CC/CM), create separate <code>Encounter.diagnosis</code> references for each role, all pointing to the same Condition resource. A single Condition can be referenced multiple times with different <code>use</code> values.</p>
 
 <p><strong>Note on CC/CM Classification:</strong> If you want to classify a diagnosis as CC (Complication or Comorbidity) or CM (Comorbidity), this is typically billing-related information and <strong>SHOULD</strong> be placed in the Account resource rather than in <code>Encounter.diagnosis</code>. The Account resource is the appropriate location for billing case context and DRG-relevant classifications.</p>
+
+<p><strong>Note on DRG Diagnoses:</strong> The same applies to the DRG main and secondary diagnosis (<code>principle-DRG</code>, <code>secondary-DRG</code>) and to <code>hospital-main-diagnosis</code> from <code>http://fhir.de/CodeSystem/KontaktDiagnoseProzedur</code>. Because the binding of <code>Encounter.diagnosis.use</code> is extensible, such a coding is technically allowed, but these roles describe the billing case rather than a single encounter. They <strong>SHOULD</strong> therefore be given on the Account using the extension <code>http://fhir.de/StructureDefinition/ExtensionAbrechnungsDiagnoseProzedur</code> (ValueSet <code>http://fhir.de/ValueSet/AbrechnungsDiagnoseProzedur</code>), as in the ISiK Abrechnungsfall profile (see <a href="#best-practice-aufnahmenummer-vs-fallnummer">Best Practice - Aufnahmenummer vs. Fallnummer</a>).</p>
 </div>
 
 #### Encounter Location
 
-- Location details (room, bed, ward) can be specified using `Encounter.location`.
+- Location details (room, bed space, ward) can be specified using `Encounter.location`.
 - The physical type **SHOULD** use the MII-specific ValueSet for location physical types.
 - Location details are primarily relevant for Versorgungsstellenkontakt (care unit contacts).
 
@@ -282,12 +296,23 @@ The `Encounter.diagnosis` element establishes the relationship between encounter
 | Slice | physicalType | status | Cardinality |
 |---|---|---|---|
 | `Zimmer` (Room) | `ro` | `active` | 0..1 |
-| `Bett` (Bed) | `bd` | `active` | 0..1 |
+| `Bettenstellplatz` (Bed space) | `bd` | `active` | 0..1 |
 | `Station` (Ward) | `wa` | `active` | 0..1 |
 
-Each slice constrains `status = active` with cardinality 0..1. A conformant implementation SHALL NOT populate more than one active room, one active bed, or one active ward simultaneously within a single encounter.
+The slice `Bettenstellplatz` (bed space) describes the location where the patient's bed stands, as a Location with physical type `bd`. It does not describe the bed as a device. Up to version 2027.0.0-ballot the slice was named `Bett`.
+
+Each slice constrains `status = active` with cardinality 0..1. A conformant implementation SHALL NOT populate more than one active room, one active bed space, or one active ward simultaneously within a single encounter.
 
 Because the slicing is **open**, implementations MAY include additional `Encounter.location` entries beyond these three named slices. To record movement history during an encounter (e.g., previous wards, rooms, or beds the patient passed through), implementations SHOULD use `status = completed` for those entries. This keeps the historical record separate from the active-location slices without conflicting with them.
+
+**Ward as Location or Organization**
+
+A ward (Station) has a physical and an organizational aspect, which FHIR and [ISiK Kontakt Gesundheitseinrichtung 6.0.0](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKKontaktGesundheitseinrichtung.html) represent separately:
+
+- **As a Location:** `Encounter.location:Station` (`physicalType = wa`, `status = active`) references the ward as the physical place where the patient currently stays. ISiK uses the same slice and additionally requires `location.identifier` and `location.display`; implementers SHOULD populate both to stay compatible with ISiK.
+- **As an Organization:** `Encounter.serviceProvider` references the Organization responsible for the encounter. For care unit contacts (Versorgungsstellenkontakte) this can be the ward as an organizational unit, identified by its organizational unit ID as in the ISiK Organisation profile, whose identifier `OrganisationseinheitenID` explicitly covers departments and wards.
+
+Both representations MAY be used together. Data consumers SHOULD NOT assume that ward information is always given in only one of these elements.
 
 #### Planned Encounters
 
@@ -297,9 +322,18 @@ Planned encounters are represented with `Encounter.status = planned` and **SHOUL
 
 #### Admission and Discharge
 
-- **Admission source** (Aufnahmeanlass) is mandatory when hospitalization data is provided and uses codes from § 301 SGB V.
+- **Admission source** (Aufnahmeanlass) is optional (0..1, Must Support) and uses codes from § 301 SGB V. It is often not available in the HL7 v2 feed, so `hospitalization`, e.g. with `dischargeDisposition`, can be provided without it ([#53](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/53)).
 - **Admission reason** (Aufnahmegrund) with four-part structure (erste und zweite Stelle, dritte Stelle, vierte Stelle) according to § 301 SGB V.
 - **Discharge disposition** with Entlassungsgrund extension provides detailed discharge/transfer reasons.
+
+#### Differences to ISiK 6.0.0
+
+The following cardinalities deliberately differ from [ISiK Kontakt Gesundheitseinrichtung 6.0.0](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKKontaktGesundheitseinrichtung.html), for backwards compatibility with earlier MII versions ([HDB-1016](https://hl7germany.atlassian.net/browse/HDB-1016)):
+
+| Element | MII | ISiK 6.0.0 | Reason |
+|---|---|---|---|
+| `Encounter.type:Kontaktebene` | 0..1 | 1..1, fixed to `abteilungskontakt` | MII represents all three contact levels; ISiK only the department contact |
+| `Encounter.diagnosis.use.coding:Diagnosetyp` | 0..1 | 1..1 | not tightened for backwards compatibility |
 
 #### Encounter Identification
 
