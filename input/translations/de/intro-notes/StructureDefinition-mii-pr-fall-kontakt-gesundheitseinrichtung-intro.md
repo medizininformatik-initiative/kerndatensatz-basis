@@ -302,6 +302,15 @@ Jeder Slice schränkt `status = active` mit Kardinalität 0..1 ein. Eine konform
 
 Da das Slicing **offen** ist, KÖNNEN Implementierungen zusätzliche `Encounter.location`-Einträge über diese drei benannten Slices hinaus aufnehmen. Um die Bewegungshistorie während eines Kontakts zu erfassen (z.B. frühere Stationen, Zimmer oder Betten, durch die der Patient verlegt wurde), SOLLEN Implementierungen für diese Einträge `status = completed` verwenden. Damit wird die Verlaufshistorie klar von den Slices für aktive Orte getrennt, ohne mit diesen zu kollidieren.
 
+**Station als Location oder Organization**
+
+Eine Station hat einen räumlichen und einen organisatorischen Aspekt, die FHIR und [ISiK Kontakt Gesundheitseinrichtung 6.0.0](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKKontaktGesundheitseinrichtung.html) getrennt abbilden:
+
+- **Als Location:** `Encounter.location:Station` (`physicalType = wa`, `status = active`) referenziert die Station als räumlichen Ort, an dem sich die Patientin oder der Patient aktuell aufhält. ISiK verwendet denselben Slice und fordert zusätzlich `location.identifier` und `location.display`; Implementierende SOLLEN beide befüllen, um mit ISiK kompatibel zu bleiben.
+- **Als Organization:** `Encounter.serviceProvider` referenziert die für den Kontakt verantwortliche Organization. Bei Versorgungsstellenkontakten kann dies die Station als Organisationseinheit sein, identifiziert über ihre Organisationseinheiten-ID wie im ISiK-Profil Organisation, dessen Identifier `OrganisationseinheitenID` ausdrücklich Abteilungen und Stationen umfasst.
+
+Beide Darstellungen KÖNNEN gemeinsam verwendet werden. Datennutzende SOLLEN NICHT davon ausgehen, dass Stationsangaben immer nur in einem dieser Elemente stehen.
+
 #### Geplante Kontakte
 
 Geplante Kontakte werden mit `Encounter.status = planned` abgebildet und SOLLEN zusätzlich angeben:

@@ -302,6 +302,15 @@ Each slice constrains `status = active` with cardinality 0..1. A conformant impl
 
 Because the slicing is **open**, implementations MAY include additional `Encounter.location` entries beyond these three named slices. To record movement history during an encounter (e.g., previous wards, rooms, or beds the patient passed through), implementations SHOULD use `status = completed` for those entries. This keeps the historical record separate from the active-location slices without conflicting with them.
 
+**Ward as Location or Organization**
+
+A ward (Station) has a physical and an organizational aspect, which FHIR and [ISiK Kontakt Gesundheitseinrichtung 6.0.0](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKKontaktGesundheitseinrichtung.html) represent separately:
+
+- **As a Location:** `Encounter.location:Station` (`physicalType = wa`, `status = active`) references the ward as the physical place where the patient currently stays. ISiK uses the same slice and additionally requires `location.identifier` and `location.display`; implementers SHOULD populate both to stay compatible with ISiK.
+- **As an Organization:** `Encounter.serviceProvider` references the Organization responsible for the encounter. For care unit contacts (Versorgungsstellenkontakte) this can be the ward as an organizational unit, identified by its organizational unit ID as in the ISiK Organisation profile, whose identifier `OrganisationseinheitenID` explicitly covers departments and wards.
+
+Both representations MAY be used together. Data consumers SHOULD NOT assume that ward information is always given in only one of these elements.
+
 #### Planned Encounters
 
 Planned encounters are represented with `Encounter.status = planned` and **SHOULD** include:
