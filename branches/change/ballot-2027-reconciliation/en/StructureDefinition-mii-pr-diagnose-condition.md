@@ -62,8 +62,9 @@ This section provides detailed implementation guidance for the MII Diagnose (Dia
 **Linking Secondary to Primary:**
 
 * The primary diagnosis Condition (etiology/Ätiologie with † marker) is the main instance
-* Secondary diagnosis Conditions (manifestation/Manifestation with * marker, additional information with ! marker) use the [Condition Related Extension](http://hl7.org/fhir/R4/extension-condition-related.html) to reference the primary diagnosis
+* Secondary diagnosis Conditions (manifestation/Manifestation with * marker, additional information with ! marker) use the slice `extension:ReferenzPrimaerdiagnose` ([Condition Related Extension](http://hl7.org/fhir/R4/extension-condition-related.html)) to reference the primary diagnosis
 * This creates an explicit relationship chain: manifestation → etiology
+* Only the secondary Conditions populate `extension:ReferenzPrimaerdiagnose`; the primary Condition does not reference its secondary Conditions
 
 **Alpha-ID and Orphanet Codes:**
 
@@ -104,6 +105,8 @@ The modeling of coded and detailed anatomical locations has been harmonized with
 * **Department Contact Level:** The reference **SHOULD** be to an Encounter at the "Abteilungskontakt" (department contact) level.
 * When selecting the Encounter, note that multiple Encounters may be grouped under a single (billing) case number (`Encounter.account`), such as an inpatient visit with multiple pre- and post-hospitalization contacts
 
+**Outlook:** The contact level to which diagnoses are linked is currently being discussed for ISiK stage 7. The MII will follow the outcome of this discussion to keep both specifications aligned. Until then, the recommendation to reference the department contact (Abteilungskontakt) applies.
+
 #### Temporal Information
 
 ##### Best Practice - Onset and Abatement
@@ -132,9 +135,22 @@ The life-phase extension `http://fhir.de/StructureDefinition/lebensphase` ([de.b
 
 The [HL7 Europe extension `periods-of-life`](https://hl7.eu/fhir/extensions/StructureDefinition-periods-of-life.html) also allows `Age` as context. If the context of the German extension changes in a future release of the German base profiles, or the EU extension is adopted, the placement will be reviewed.
 
+**`Condition.extension:Feststellungsdatum`** (`http://hl7.org/fhir/StructureDefinition/condition-assertedDate`):
+
+* Represents when the diagnosis was clinically established, e.g. by a physician on the basis of findings
+* Is independent of when the condition began and of when it was documented
+
 **`Condition.recordedDate`:**
 
 * Represents when the diagnosis was recorded in the system
+
+##### Best Practice - Onset, Feststellungsdatum and recordedDate
+
+The three elements describe different points in time and **SHOULD NOT** be used interchangeably:
+
+* `onset[x]`: when the disease or its symptoms began (clinical course)
+* `extension:Feststellungsdatum`: when the diagnosis was established (diagnostic process)
+* `recordedDate`: when the diagnosis was first documented in the source system (documentation process)
 
 **Usages:**
 
@@ -435,6 +451,56 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-diagnose-c
       "id" : "Condition.extension:ReferenzPrimaerdiagnose",
       "path" : "Condition.extension",
       "sliceName" : "ReferenzPrimaerdiagnose",
+      "short" : "Referenz auf Primärdiagnose",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "de-DE"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Referenz auf Primärdiagnose"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        },
+        {
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "en-US"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Reference to primary diagnosis"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "definition" : "Referenz einer Sekundärdiagnose, z. B. eines Stern- oder Ausrufezeichen-Codes im ICD-10-GM-Kreuz-Stern-System, auf die zugehörige Primärdiagnose mit Kreuz-Code.",
+      "_definition" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "de-DE"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Referenz einer Sekundärdiagnose, z. B. eines Stern- oder Ausrufezeichen-Codes im ICD-10-GM-Kreuz-Stern-System, auf die zugehörige Primärdiagnose mit Kreuz-Code."
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        },
+        {
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "en-US"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Reference from a secondary diagnosis, e.g. an asterisk or exclamation mark code in the ICD-10-GM dagger-asterisk system, to the associated primary diagnosis with the dagger code."
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
       "min" : 0,
       "max" : "1",
       "type" : [{

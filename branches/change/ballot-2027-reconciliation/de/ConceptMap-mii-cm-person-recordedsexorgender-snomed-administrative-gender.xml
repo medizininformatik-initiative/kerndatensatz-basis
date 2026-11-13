@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ConceptMap xmlns="http://hl7.org/fhir">
+  <id value="mii-cm-person-recordedsexorgender-snomed-administrative-gender"/>
+  <meta>
+    <extension url="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-license">
+      <valueCode value="CC-BY-4.0"/>
+    </extension>
+  </meta>
+  <language value="de"/>
+  <text>
+    <status value="generated"/><div xml:lang="de" lang="de"><hr/><p><b>German</b></p><hr/><p class="res-header-id"><b>Generated Narrative: ConceptMap mii-cm-person-recordedsexorgender-snomed-administrative-gender</b></p><a name="de-mii-cm-person-recordedsexorgender-snomed-administrative-gender"> </a><a name="de-hcmii-cm-person-recordedsexorgender-snomed-administrative-gender"> </a><div style="display: inline-block; background-color: #fbffeb; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/></div><p>Mapping from <a href="ValueSet-mii-vs-person-recordedsexorgender-snomed.html">MII VS Person Recorded Sex or Gender SNOMED</a> to <a href="http://hl7.org/fhir/R4/valueset-administrative-gender.html">AdministrativeGender</a></p><br/><p>Mapping from <a href="http://hl7.org/fhir/R4/codesystem-snomedct.html">SNOMED CT (all versions)</a> to <a href="http://hl7.org/fhir/R4/codesystem-administrative-gender.html">AdministrativeGender</a></p><table class="grid"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td><td><b>Comment</b></td></tr><tr><td>248153007 (Male)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-inexact" title="inexact">maps loosely to</a></td><td>male</td><td>Recorded (biological) sex and administrative gender overlap but are different concepts; a person may have a different administrative gender.</td></tr><tr><td>248152002 (Female)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-inexact" title="inexact">maps loosely to</a></td><td>female</td><td>Recorded (biological) sex and administrative gender overlap but are different concepts; a person may have a different administrative gender.</td></tr><tr><td>32570691000036108 (Intersex)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-inexact" title="inexact">maps loosely to</a></td><td>other</td><td>In Germany, the administrative entries 'divers' (D) and 'ohne Angabe' (X) are represented as 'other' with the extension http://fhir.de/StructureDefinition/gender-amtlich-de; which of them applies cannot be derived from the recorded sex.</td></tr><tr><td>32570681000036106 (Indeterminate sex)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-inexact" title="inexact">maps loosely to</a></td><td>other</td><td>In Germany, a sex that cannot be determined at birth is registered as 'ohne Angabe' (X) or 'divers' (D), both represented as 'other' with the extension http://fhir.de/StructureDefinition/gender-amtlich-de.</td></tr><tr><td>261665006 (Unknown)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-source-is-narrower-than-target" title="source-is-narrower-than-target">is narrower than</a></td><td>unknown</td><td>AdministrativeGender 'unknown' also covers a gender that could not be uniquely defined, so the target is wider than the source.</td></tr></table></div>
+  </text>
+  <url value="https://www.medizininformatik-initiative.de/fhir/modul-person/ConceptMap/mii-cm-person-recordedsexorgender-snomed-administrative-gender"/>
+  <version value="2027.0.0-ballot"/>
+  <name value="MII_CM_Person_RecordedSexOrGender_SNOMED_AdministrativeGender"/>
+  <title value="MII CM Person Recorded Sex or Gender SNOMED to Administrative Gender"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-11-12"/>
+  <publisher value="Medical Informatics Initiative (MII)"/>
+  <contact>
+    <name value="Medical Informatics Initiative (MII)"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.medizininformatik-initiative.de/en"/>
+    </telecom>
+  </contact>
+  <description value="Maps the SNOMED CT codes of MII VS Person Recorded Sex or Gender SNOMED to FHIR AdministrativeGender. Recorded sex (e.g. sex assigned at birth) and administrative gender are different concepts, so no mapping is equivalent; each relationship is qualified."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <purpose value="Support deriving or checking Patient.gender from a recorded sex or gender in the Patient extension individual-recordedSexOrGender, without implying that both concepts are equivalent. It is not intended for the reverse direction."/>
+  <copyright value="This material includes SNOMED Clinical Terms® (SNOMED CT®) which is used by permission of SNOMED International. All rights reserved. SNOMED CT®, was originally created by The College of American Pathologists. SNOMED and SNOMED CT are registered trademarks of SNOMED International. Implementers of these artefacts must have the appropriate SNOMED CT Affiliate license."/>
+  <sourceCanonical value="https://www.medizininformatik-initiative.de/fhir/modul-person/ValueSet/mii-vs-person-recordedsexorgender-snomed"/>
+  <targetCanonical value="http://hl7.org/fhir/ValueSet/administrative-gender"/>
+  <group>
+    <source value="http://snomed.info/sct"/>
+    <target value="http://hl7.org/fhir/administrative-gender"/>
+    <element>
+      <code value="248153007"/>
+      <display value="Male"/>
+      <target>
+        <code value="male"/>
+        <display value="Male"/>
+        <equivalence value="inexact"/>
+        <comment value="Recorded (biological) sex and administrative gender overlap but are different concepts; a person may have a different administrative gender."/>
+      </target>
+    </element>
+    <element>
+      <code value="248152002"/>
+      <display value="Female"/>
+      <target>
+        <code value="female"/>
+        <display value="Female"/>
+        <equivalence value="inexact"/>
+        <comment value="Recorded (biological) sex and administrative gender overlap but are different concepts; a person may have a different administrative gender."/>
+      </target>
+    </element>
+    <element>
+      <code value="32570691000036108"/>
+      <display value="Intersex"/>
+      <target>
+        <code value="other"/>
+        <display value="Other"/>
+        <equivalence value="inexact"/>
+        <comment value="In Germany, the administrative entries 'divers' (D) and 'ohne Angabe' (X) are represented as 'other' with the extension http://fhir.de/StructureDefinition/gender-amtlich-de; which of them applies cannot be derived from the recorded sex."/>
+      </target>
+    </element>
+    <element>
+      <code value="32570681000036106"/>
+      <display value="Indeterminate sex"/>
+      <target>
+        <code value="other"/>
+        <display value="Other"/>
+        <equivalence value="inexact"/>
+        <comment value="In Germany, a sex that cannot be determined at birth is registered as 'ohne Angabe' (X) or 'divers' (D), both represented as 'other' with the extension http://fhir.de/StructureDefinition/gender-amtlich-de."/>
+      </target>
+    </element>
+    <element>
+      <code value="261665006"/>
+      <display value="Unknown"/>
+      <target>
+        <code value="unknown"/>
+        <display value="Unknown"/>
+        <equivalence value="wider"/>
+        <comment value="AdministrativeGender 'unknown' also covers a gender that could not be uniquely defined, so the target is wider than the source."/>
+      </target>
+    </element>
+  </group>
+</ConceptMap>

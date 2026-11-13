@@ -1,9 +1,9 @@
 MII_IG_Base : Validation Results
 =========================================
 
-err = 54, warn = 845, info = 3362, broken links = 0
+err = 59, warn = 846, info = 3416, broken links = 0
 IG Publisher Version: 3.0.3
-Generated Thu Nov 12 20:24:18 UTC 2026. FHIR version 4.0.1 for de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-ballot (canonical = https://www.medizininformatik-initiative.de/fhir/modul-base)
+Generated Fri Nov 13 18:07:27 UTC 2026. FHIR version 4.0.1 for de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-ballot (canonical = https://www.medizininformatik-initiative.de/fhir/modul-base)
  Build Errors : 30 / 213 / 6
  /workspace/fsh-generated/resources/AllergyIntolerance-mii-exa-person-allergyintolerance-1 : 0 / 0 / 1
  /workspace/fsh-generated/resources/Bundle-mii-exa-base-test-data-bundle-1 : 0 / 55 / 68
@@ -15,6 +15,7 @@ Generated Thu Nov 12 20:24:18 UTC 2026. FHIR version 4.0.1 for de.medizininforma
  /workspace/fsh-generated/resources/CodeSystem-mii-cs-fall-supplement-act-encounter-code : 0 / 4 / 13
  /workspace/fsh-generated/resources/CodeSystem-mii-cs-fall-supplement-patient-class : 0 / 4 / 11
  /workspace/fsh-generated/resources/CodeSystem-mii-cs-person-vitalstatus : 0 / 3 / 34
+ /workspace/fsh-generated/resources/ConceptMap-mii-cm-person-recordedsexorgender-snomed-administrative-gender : 5 / 1 / 8
  /workspace/fsh-generated/resources/Condition-mii-exa-diagnose-appendicitis : 0 / 1 / 3
  /workspace/fsh-generated/resources/Condition-mii-exa-diagnose-condition-elbow-contusion : 0 / 1 / 3
  /workspace/fsh-generated/resources/Condition-mii-exa-diagnose-condition-multiple-codings : 0 / 1 / 3
@@ -50,7 +51,7 @@ Generated Thu Nov 12 20:24:18 UTC 2026. FHIR version 4.0.1 for de.medizininforma
  /workspace/fsh-generated/resources/StructureDefinition-mii-lm-prozedur : 0 / 30 / 37
  /workspace/fsh-generated/resources/StructureDefinition-mii-pr-diagnose-condition : 0 / 14 / 309
  /workspace/fsh-generated/resources/StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung : 0 / 7 / 414
- /workspace/fsh-generated/resources/StructureDefinition-mii-pr-person-allergieunvertraeglichkeit : 0 / 4 / 178
+ /workspace/fsh-generated/resources/StructureDefinition-mii-pr-person-allergieunvertraeglichkeit : 0 / 4 / 228
  /workspace/fsh-generated/resources/StructureDefinition-mii-pr-person-patient : 2 / 35 / 677
  /workspace/fsh-generated/resources/StructureDefinition-mii-pr-person-patient-pseudonymisiert : 1 / 16 / 241
  /workspace/fsh-generated/resources/StructureDefinition-mii-pr-person-todesursache : 0 / 4 / 154
@@ -120,7 +121,7 @@ WARNING: /workspace/output/de/StructureDefinition-mii-lm-prozedur.profile.histor
 WARNING: /workspace/output/de/StructureDefinition-mii-lm-prozedur.profile.history.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 405 column 9
 ERROR: /workspace/output/de/StructureDefinition-mii-lm-prozedur.profile.history.html: The page has more than one top level heading: <h2> (no text) is at the same level as the first heading on the page (<h2> 'Logisches Modell: MII LM Prozedur - Änderungshistorie' (id=root)). A page must have exactly one top level heading, with every other heading beneath it (WCAG compliance test)
 WARNING: /workspace/output/de/StructureDefinition-mii-lm-prozedur.profile.history.html: The html source has duplicate element ids: root. An id must be unique in a page - a link to one of these is ambiguous, and it is invalid HTML
-WARNING: /workspace/output/de/StructureDefinition-mii-pr-diagnose-condition.html: The html source is not well formed: Found "</p>" expecting "</div>" at line 7943 column 13
+WARNING: /workspace/output/de/StructureDefinition-mii-pr-diagnose-condition.html: The html source is not well formed: Found "</p>" expecting "</div>" at line 7963 column 13
 WARNING: /workspace/output/de/StructureDefinition-mii-pr-diagnose-condition.profile.history.html: The html source is not well formed: Found "</div>" expecting "</h2>" at line 410 column 7
 WARNING: /workspace/output/de/StructureDefinition-mii-pr-diagnose-condition.profile.history.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 412 column 15
 WARNING: /workspace/output/de/StructureDefinition-mii-pr-diagnose-condition.profile.history.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 413 column 13
@@ -128,7 +129,7 @@ WARNING: /workspace/output/de/StructureDefinition-mii-pr-diagnose-condition.prof
 WARNING: /workspace/output/de/StructureDefinition-mii-pr-diagnose-condition.profile.history.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 415 column 9
 ERROR: /workspace/output/de/StructureDefinition-mii-pr-diagnose-condition.profile.history.html: The page has more than one top level heading: <h2> (no text) is at the same level as the first heading on the page (<h2> 'Ressourcenprofil: MII PR Diagnose Condition - Änderungshi...' (id=root)). A page must have exactly one top level heading, with every other heading beneath it (WCAG compliance test)
 WARNING: /workspace/output/de/StructureDefinition-mii-pr-diagnose-condition.profile.history.html: The html source has duplicate element ids: root. An id must be unique in a page - a link to one of these is ambiguous, and it is invalid HTML
-WARNING: /workspace/output/de/StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html: The html source is not well formed: Found "</p>" expecting "</div>" at line 11280 column 13
+WARNING: /workspace/output/de/StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html: The html source is not well formed: Found "</p>" expecting "</div>" at line 11338 column 13
 WARNING: /workspace/output/de/StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.profile.history.html: The html source is not well formed: Found "</div>" expecting "</h2>" at line 410 column 7
 WARNING: /workspace/output/de/StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.profile.history.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 412 column 15
 WARNING: /workspace/output/de/StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.profile.history.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 413 column 13
@@ -136,7 +137,7 @@ WARNING: /workspace/output/de/StructureDefinition-mii-pr-fall-kontakt-gesundheit
 WARNING: /workspace/output/de/StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.profile.history.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 415 column 9
 ERROR: /workspace/output/de/StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.profile.history.html: The page has more than one top level heading: <h2> (no text) is at the same level as the first heading on the page (<h2> 'Ressourcenprofil: MII PR Fall Kontakt mit einer Gesundhei...' (id=root)). A page must have exactly one top level heading, with every other heading beneath it (WCAG compliance test)
 WARNING: /workspace/output/de/StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.profile.history.html: The html source has duplicate element ids: root. An id must be unique in a page - a link to one of these is ambiguous, and it is invalid HTML
-WARNING: /workspace/output/de/StructureDefinition-mii-pr-person-allergieunvertraeglichkeit.html: The html source is not well formed: Found "</p>" expecting "</div>" at line 5198 column 13
+WARNING: /workspace/output/de/StructureDefinition-mii-pr-person-allergieunvertraeglichkeit.html: The html source is not well formed: Found "</p>" expecting "</div>" at line 6111 column 13
 WARNING: /workspace/output/de/StructureDefinition-mii-pr-person-allergieunvertraeglichkeit.profile.history.html: The html source is not well formed: Found "</div>" expecting "</h2>" at line 410 column 7
 WARNING: /workspace/output/de/StructureDefinition-mii-pr-person-allergieunvertraeglichkeit.profile.history.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 412 column 15
 WARNING: /workspace/output/de/StructureDefinition-mii-pr-person-allergieunvertraeglichkeit.profile.history.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 413 column 13
@@ -154,7 +155,7 @@ WARNING: /workspace/output/de/StructureDefinition-mii-pr-person-patient-pseudony
 WARNING: /workspace/output/de/StructureDefinition-mii-pr-person-patient-pseudonymisiert.profile.history.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 415 column 9
 ERROR: /workspace/output/de/StructureDefinition-mii-pr-person-patient-pseudonymisiert.profile.history.html: The page has more than one top level heading: <h2> (no text) is at the same level as the first heading on the page (<h2> 'Ressourcenprofil: MII PR Person Patient (Pseudonymisiert)...' (id=root)). A page must have exactly one top level heading, with every other heading beneath it (WCAG compliance test)
 WARNING: /workspace/output/de/StructureDefinition-mii-pr-person-patient-pseudonymisiert.profile.history.html: The html source has duplicate element ids: root. An id must be unique in a page - a link to one of these is ambiguous, and it is invalid HTML
-WARNING: /workspace/output/de/StructureDefinition-mii-pr-person-patient.html: The html source is not well formed: Found "</p>" expecting "</div>" at line 14871 column 13
+WARNING: /workspace/output/de/StructureDefinition-mii-pr-person-patient.html: The html source is not well formed: Found "</p>" expecting "</div>" at line 14968 column 13
 WARNING: /workspace/output/de/StructureDefinition-mii-pr-person-patient.profile.history.html: The html source is not well formed: Found "</div>" expecting "</h2>" at line 410 column 7
 WARNING: /workspace/output/de/StructureDefinition-mii-pr-person-patient.profile.history.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 412 column 15
 WARNING: /workspace/output/de/StructureDefinition-mii-pr-person-patient.profile.history.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 413 column 13
@@ -178,7 +179,7 @@ WARNING: /workspace/output/de/StructureDefinition-mii-pr-person-vitalstatus.prof
 WARNING: /workspace/output/de/StructureDefinition-mii-pr-person-vitalstatus.profile.history.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 415 column 9
 ERROR: /workspace/output/de/StructureDefinition-mii-pr-person-vitalstatus.profile.history.html: The page has more than one top level heading: <h2> (no text) is at the same level as the first heading on the page (<h2> 'Ressourcenprofil: MII PR Person Vitalstatus - Änderungshi...' (id=root)). A page must have exactly one top level heading, with every other heading beneath it (WCAG compliance test)
 WARNING: /workspace/output/de/StructureDefinition-mii-pr-person-vitalstatus.profile.history.html: The html source has duplicate element ids: root. An id must be unique in a page - a link to one of these is ambiguous, and it is invalid HTML
-WARNING: /workspace/output/de/StructureDefinition-mii-pr-prozedur-procedure.html: The html source is not well formed: Found "</p>" expecting "</div>" at line 5559 column 13
+WARNING: /workspace/output/de/StructureDefinition-mii-pr-prozedur-procedure.html: The html source is not well formed: Found "</p>" expecting "</div>" at line 5564 column 13
 WARNING: /workspace/output/de/StructureDefinition-mii-pr-prozedur-procedure.profile.history.html: The html source is not well formed: Found "</div>" expecting "</h2>" at line 410 column 7
 WARNING: /workspace/output/de/StructureDefinition-mii-pr-prozedur-procedure.profile.history.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 412 column 15
 WARNING: /workspace/output/de/StructureDefinition-mii-pr-prozedur-procedure.profile.history.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 413 column 13
@@ -238,7 +239,7 @@ WARNING: /workspace/output/en/StructureDefinition-mii-lm-prozedur.profile.histor
 WARNING: /workspace/output/en/StructureDefinition-mii-lm-prozedur.profile.history.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 405 column 9
 ERROR: /workspace/output/en/StructureDefinition-mii-lm-prozedur.profile.history.html: The page has more than one top level heading: <h2> (no text) is at the same level as the first heading on the page (<h2> 'Logical Model: MII LM Prozedur - Change History' (id=root)). A page must have exactly one top level heading, with every other heading beneath it (WCAG compliance test)
 WARNING: /workspace/output/en/StructureDefinition-mii-lm-prozedur.profile.history.html: The html source has duplicate element ids: root. An id must be unique in a page - a link to one of these is ambiguous, and it is invalid HTML
-WARNING: /workspace/output/en/StructureDefinition-mii-pr-diagnose-condition.html: The html source is not well formed: Found "</p>" expecting "</div>" at line 7934 column 13
+WARNING: /workspace/output/en/StructureDefinition-mii-pr-diagnose-condition.html: The html source is not well formed: Found "</p>" expecting "</div>" at line 7954 column 13
 WARNING: /workspace/output/en/StructureDefinition-mii-pr-diagnose-condition.profile.history.html: The html source is not well formed: Found "</div>" expecting "</h2>" at line 410 column 7
 WARNING: /workspace/output/en/StructureDefinition-mii-pr-diagnose-condition.profile.history.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 412 column 15
 WARNING: /workspace/output/en/StructureDefinition-mii-pr-diagnose-condition.profile.history.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 413 column 13
@@ -246,7 +247,7 @@ WARNING: /workspace/output/en/StructureDefinition-mii-pr-diagnose-condition.prof
 WARNING: /workspace/output/en/StructureDefinition-mii-pr-diagnose-condition.profile.history.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 415 column 9
 ERROR: /workspace/output/en/StructureDefinition-mii-pr-diagnose-condition.profile.history.html: The page has more than one top level heading: <h2> (no text) is at the same level as the first heading on the page (<h2> 'Resource Profile: MII PR Diagnose Condition - Change History' (id=root)). A page must have exactly one top level heading, with every other heading beneath it (WCAG compliance test)
 WARNING: /workspace/output/en/StructureDefinition-mii-pr-diagnose-condition.profile.history.html: The html source has duplicate element ids: root. An id must be unique in a page - a link to one of these is ambiguous, and it is invalid HTML
-WARNING: /workspace/output/en/StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html: The html source is not well formed: Found "</p>" expecting "</div>" at line 11272 column 13
+WARNING: /workspace/output/en/StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html: The html source is not well formed: Found "</p>" expecting "</div>" at line 11330 column 13
 WARNING: /workspace/output/en/StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.profile.history.html: The html source is not well formed: Found "</div>" expecting "</h2>" at line 410 column 7
 WARNING: /workspace/output/en/StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.profile.history.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 412 column 15
 WARNING: /workspace/output/en/StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.profile.history.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 413 column 13
@@ -254,7 +255,7 @@ WARNING: /workspace/output/en/StructureDefinition-mii-pr-fall-kontakt-gesundheit
 WARNING: /workspace/output/en/StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.profile.history.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 415 column 9
 ERROR: /workspace/output/en/StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.profile.history.html: The page has more than one top level heading: <h2> (no text) is at the same level as the first heading on the page (<h2> 'Resource Profile: MII PR Fall Kontakt mit einer Gesundhei...' (id=root)). A page must have exactly one top level heading, with every other heading beneath it (WCAG compliance test)
 WARNING: /workspace/output/en/StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.profile.history.html: The html source has duplicate element ids: root. An id must be unique in a page - a link to one of these is ambiguous, and it is invalid HTML
-WARNING: /workspace/output/en/StructureDefinition-mii-pr-person-allergieunvertraeglichkeit.html: The html source is not well formed: Found "</p>" expecting "</div>" at line 5190 column 13
+WARNING: /workspace/output/en/StructureDefinition-mii-pr-person-allergieunvertraeglichkeit.html: The html source is not well formed: Found "</p>" expecting "</div>" at line 6103 column 13
 WARNING: /workspace/output/en/StructureDefinition-mii-pr-person-allergieunvertraeglichkeit.profile.history.html: The html source is not well formed: Found "</div>" expecting "</h2>" at line 410 column 7
 WARNING: /workspace/output/en/StructureDefinition-mii-pr-person-allergieunvertraeglichkeit.profile.history.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 412 column 15
 WARNING: /workspace/output/en/StructureDefinition-mii-pr-person-allergieunvertraeglichkeit.profile.history.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 413 column 13
@@ -272,7 +273,7 @@ WARNING: /workspace/output/en/StructureDefinition-mii-pr-person-patient-pseudony
 WARNING: /workspace/output/en/StructureDefinition-mii-pr-person-patient-pseudonymisiert.profile.history.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 415 column 9
 ERROR: /workspace/output/en/StructureDefinition-mii-pr-person-patient-pseudonymisiert.profile.history.html: The page has more than one top level heading: <h2> (no text) is at the same level as the first heading on the page (<h2> 'Resource Profile: MII PR Person Patient (Pseudonymisiert)...' (id=root)). A page must have exactly one top level heading, with every other heading beneath it (WCAG compliance test)
 WARNING: /workspace/output/en/StructureDefinition-mii-pr-person-patient-pseudonymisiert.profile.history.html: The html source has duplicate element ids: root. An id must be unique in a page - a link to one of these is ambiguous, and it is invalid HTML
-WARNING: /workspace/output/en/StructureDefinition-mii-pr-person-patient.html: The html source is not well formed: Found "</p>" expecting "</div>" at line 14863 column 13
+WARNING: /workspace/output/en/StructureDefinition-mii-pr-person-patient.html: The html source is not well formed: Found "</p>" expecting "</div>" at line 14960 column 13
 WARNING: /workspace/output/en/StructureDefinition-mii-pr-person-patient.profile.history.html: The html source is not well formed: Found "</div>" expecting "</h2>" at line 410 column 7
 WARNING: /workspace/output/en/StructureDefinition-mii-pr-person-patient.profile.history.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 412 column 15
 WARNING: /workspace/output/en/StructureDefinition-mii-pr-person-patient.profile.history.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 413 column 13
@@ -296,7 +297,7 @@ WARNING: /workspace/output/en/StructureDefinition-mii-pr-person-vitalstatus.prof
 WARNING: /workspace/output/en/StructureDefinition-mii-pr-person-vitalstatus.profile.history.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 415 column 9
 ERROR: /workspace/output/en/StructureDefinition-mii-pr-person-vitalstatus.profile.history.html: The page has more than one top level heading: <h2> (no text) is at the same level as the first heading on the page (<h2> 'Resource Profile: MII PR Person Vitalstatus - Change History' (id=root)). A page must have exactly one top level heading, with every other heading beneath it (WCAG compliance test)
 WARNING: /workspace/output/en/StructureDefinition-mii-pr-person-vitalstatus.profile.history.html: The html source has duplicate element ids: root. An id must be unique in a page - a link to one of these is ambiguous, and it is invalid HTML
-WARNING: /workspace/output/en/StructureDefinition-mii-pr-prozedur-procedure.html: The html source is not well formed: Found "</p>" expecting "</div>" at line 5551 column 13
+WARNING: /workspace/output/en/StructureDefinition-mii-pr-prozedur-procedure.html: The html source is not well formed: Found "</p>" expecting "</div>" at line 5556 column 13
 WARNING: /workspace/output/en/StructureDefinition-mii-pr-prozedur-procedure.profile.history.html: The html source is not well formed: Found "</div>" expecting "</h2>" at line 410 column 7
 WARNING: /workspace/output/en/StructureDefinition-mii-pr-prozedur-procedure.profile.history.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 412 column 15
 WARNING: /workspace/output/en/StructureDefinition-mii-pr-prozedur-procedure.profile.history.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 413 column 13
@@ -711,6 +712,19 @@ INFORMATION: CodeSystem/mii-cs-person-vitalstatus: CodeSystem.meta.extension[0]:
 WARNING: Resource: The resource CodeSystem/mii-cs-person-vitalstatus should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
 
 
+== fsh-generated/resources/ConceptMap-mii-cm-person-recordedsexorgender-snomed-administrative-gender.json ==
+INFORMATION: ConceptMap.sourceScope[x]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/modul-person/ValueSet/mii-vs-person-recordedsexorgender-snomed to 2027.0.0-ballot
+INFORMATION: ConceptMap.targetScope[x]: Pinned the version of http://hl7.org/fhir/ValueSet/administrative-gender to 4.0.1
+INFORMATION: ConceptMap.group[0].target: Pinned the version of http://hl7.org/fhir/administrative-gender to 4.0.1
+WARNING: ConceptMap/mii-cm-person-recordedsexorgender-snomed-administrative-gender: ConceptMap.jurisdiction[0].coding[0].system: A definition for CodeSystem 'urn:iso:std:iso:3166:-2' could not be found, so the code cannot be validated
+ERROR: ConceptMap/mii-cm-person-recordedsexorgender-snomed-administrative-gender: ConceptMap.group[0].element[0].code: The code '248153007' in the system http://snomed.info/sct version http://snomed.info/sct/900000000000207008/version/20260701 is not valid in the value set 'null'
+ERROR: ConceptMap/mii-cm-person-recordedsexorgender-snomed-administrative-gender: ConceptMap.group[0].element[1].code: The code '248152002' in the system http://snomed.info/sct version http://snomed.info/sct/900000000000207008/version/20260701 is not valid in the value set 'null'
+ERROR: ConceptMap/mii-cm-person-recordedsexorgender-snomed-administrative-gender: ConceptMap.group[0].element[2].code: The code '32570691000036108' in the system http://snomed.info/sct version http://snomed.info/sct/900000000000207008/version/20260701 is not valid in the value set 'null'
+ERROR: ConceptMap/mii-cm-person-recordedsexorgender-snomed-administrative-gender: ConceptMap.group[0].element[3].code: The code '32570681000036106' in the system http://snomed.info/sct version http://snomed.info/sct/900000000000207008/version/20260701 is not valid in the value set 'null'
+ERROR: ConceptMap/mii-cm-person-recordedsexorgender-snomed-administrative-gender: ConceptMap.group[0].element[4].code: The code '261665006' in the system http://snomed.info/sct version http://snomed.info/sct/900000000000207008/version/20260701 is not valid in the value set 'null'
+INFORMATION: Resource: The resource ConceptMap/mii-cm-person-recordedsexorgender-snomed-administrative-gender could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
+
+
 == fsh-generated/resources/Condition-mii-exa-diagnose-appendicitis.json ==
 WARNING: Condition/mii-exa-diagnose-appendicitis: Condition.meta.extension[0].extension[2].value.ofType(uri): No definition could be found for URL value 'https://www.medizininformatik-initiative.de/fhir/modul-base'
 INFORMATION: Condition/mii-exa-diagnose-appendicitis: Condition.code.coding[1]: Reference to experimental ValueSet https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/ValueSet/diagnoses-sct|2027.0.0-ballot
@@ -850,12 +864,11 @@ INFORMATION: Encounter/mii-exa-fall-kontakt-unknown-status: Encounter.status: Re
 INFORMATION: ImplementationGuide.meta.profile[0]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareableimplementationguide to 2.0.0
 INFORMATION: ImplementationGuide.meta.profile[1]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishableimplementationguide to 2.0.0
 INFORMATION: ImplementationGuide.meta.profile[2]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-implementationguide to 2.0.0
-INFORMATION: ImplementationGuide.definition.resource[10].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose to 2027.0.0-ballot
 INFORMATION: ImplementationGuide.definition.resource[11].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose to 2027.0.0-ballot
 INFORMATION: ImplementationGuide.definition.resource[12].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose to 2027.0.0-ballot
 INFORMATION: ImplementationGuide.definition.resource[13].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose to 2027.0.0-ballot
 INFORMATION: ImplementationGuide.definition.resource[14].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose to 2027.0.0-ballot
-INFORMATION: ImplementationGuide.definition.resource[15].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2027.0.0-ballot
+INFORMATION: ImplementationGuide.definition.resource[15].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose to 2027.0.0-ballot
 INFORMATION: ImplementationGuide.definition.resource[16].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2027.0.0-ballot
 INFORMATION: ImplementationGuide.definition.resource[17].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2027.0.0-ballot
 INFORMATION: ImplementationGuide.definition.resource[18].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2027.0.0-ballot
@@ -869,15 +882,16 @@ INFORMATION: ImplementationGuide.definition.resource[25].profile[0]: Pinned the 
 INFORMATION: ImplementationGuide.definition.resource[26].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2027.0.0-ballot
 INFORMATION: ImplementationGuide.definition.resource[27].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2027.0.0-ballot
 INFORMATION: ImplementationGuide.definition.resource[28].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2027.0.0-ballot
-INFORMATION: ImplementationGuide.definition.resource[29].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Todesursache to 2027.0.0-ballot
-INFORMATION: ImplementationGuide.definition.resource[30].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus to 2027.0.0-ballot
+INFORMATION: ImplementationGuide.definition.resource[29].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung to 2027.0.0-ballot
+INFORMATION: ImplementationGuide.definition.resource[30].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Todesursache to 2027.0.0-ballot
 INFORMATION: ImplementationGuide.definition.resource[31].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus to 2027.0.0-ballot
-INFORMATION: ImplementationGuide.definition.resource[32].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient to 2027.0.0-ballot
-INFORMATION: ImplementationGuide.definition.resource[33].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert to 2027.0.0-ballot
-INFORMATION: ImplementationGuide.definition.resource[34].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure to 2027.0.0-ballot
+INFORMATION: ImplementationGuide.definition.resource[32].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus to 2027.0.0-ballot
+INFORMATION: ImplementationGuide.definition.resource[33].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient to 2027.0.0-ballot
+INFORMATION: ImplementationGuide.definition.resource[34].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert to 2027.0.0-ballot
 INFORMATION: ImplementationGuide.definition.resource[35].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure to 2027.0.0-ballot
 INFORMATION: ImplementationGuide.definition.resource[36].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure to 2027.0.0-ballot
-INFORMATION: ImplementationGuide.definition.resource[64].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/modul-person/StructureDefinition/AllergieUnvertraeglichkeit to 2027.0.0-ballot
+INFORMATION: ImplementationGuide.definition.resource[37].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure to 2027.0.0-ballot
+INFORMATION: ImplementationGuide.definition.resource[65].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/modul-person/StructureDefinition/AllergieUnvertraeglichkeit to 2027.0.0-ballot
 INFORMATION: ImplementationGuide.description: Unused 'de' translation 'Implementation Guide for the Core Dataset Base Modules Person, Diagnosis, Procedure, and Treatment Case' -> 'Implementierungsleitfaden für die Kerndatensatz Basismodule Person, Diagnose, Prozedur, und Fall'
 INFORMATION: ImplementationGuide/mii-ig-base: ImplementationGuide.language: Reference to draft ValueSet http://hl7.org/fhir/ValueSet/languages|4.0.1
 INFORMATION: ImplementationGuide/mii-ig-base: ImplementationGuide.language: Reference to trial-use ValueSet http://hl7.org/fhir/ValueSet/languages|4.0.1
@@ -2427,53 +2441,57 @@ INFORMATION: StructureDefinition.snapshot.element[18].constraint[1].source: Pinn
 INFORMATION: StructureDefinition.snapshot.element[20].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[21].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[22].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[23].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[24].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[24].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[25].type[0].profile[0]: Pinned the version of http://fhir.de/StructureDefinition/lebensphase to 1.6.0
 INFORMATION: StructureDefinition.snapshot.element[25].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[26].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[26].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[25].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[27].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[28].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[30].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[30].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[27].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[29].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[31].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[33].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[33].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[31].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[32].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[32].binding.valueSet: Pinned the version of http://fhir.de/ValueSet/lebensphase-de to 1.6.0
 INFORMATION: StructureDefinition.snapshot.element[34].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[34].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[35].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[36].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[37].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[38].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[39].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[40].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[41].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[41].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/SimpleQuantity to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[42].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[42].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[42].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/SimpleQuantity to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[43].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[44].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[45].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[45].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[46].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[46].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[47].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[48].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[49].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[50].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[50].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[51].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[52].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[53].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[53].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[54].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[55].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[56].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[57].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[57].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[58].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[59].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[60].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[60].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[61].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[62].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[62].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[63].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[64].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[65].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[65].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[66].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[67].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[68].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[68].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[69].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[70].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[71].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
@@ -2484,16 +2502,16 @@ INFORMATION: StructureDefinition.snapshot.element[75].constraint[0].source: Pinn
 INFORMATION: StructureDefinition.snapshot.element[77].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[77].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[78].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[79].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[80].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[80].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[81].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[82].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[83].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[84].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[84].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[85].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[86].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[87].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[88].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[88].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[89].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[90].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[91].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
@@ -2501,45 +2519,48 @@ INFORMATION: StructureDefinition.snapshot.element[92].constraint[0].source: Pinn
 INFORMATION: StructureDefinition.snapshot.element[93].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[94].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[95].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[96].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[97].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[97].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[98].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[99].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[100].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[101].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[102].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[102].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[103].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[103].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[104].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[104].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[105].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[106].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[107].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[107].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[108].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[109].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[110].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[110].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[111].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[112].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[113].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[113].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[114].type[0].profile[0]: Pinned the version of http://fhir.de/StructureDefinition/lebensphase to 1.6.0
 INFORMATION: StructureDefinition.snapshot.element[114].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[115].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[114].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[116].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[116].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[118].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[118].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[119].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[120].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[120].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[121].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[122].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[121].binding.valueSet: Pinned the version of http://fhir.de/ValueSet/lebensphase-de to 1.6.0
 INFORMATION: StructureDefinition.snapshot.element[123].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[123].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[124].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[125].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[126].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[127].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[128].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[129].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[130].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[130].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[130].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/SimpleQuantity to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[131].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[131].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/SimpleQuantity to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[132].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[133].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-INFORMATION: StructureDefinition.snapshot.element[133].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[134].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[135].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[136].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
@@ -2547,7 +2568,50 @@ INFORMATION: StructureDefinition.snapshot.element[137].constraint[0].source: Pin
 INFORMATION: StructureDefinition.snapshot.element[138].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[139].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.snapshot.element[140].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[142].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[142].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[143].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[143].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[144].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[145].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[147].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[147].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[148].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[150].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[150].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[151].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[152].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[153].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[154].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[155].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[156].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[158].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[158].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[159].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[160].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[161].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[162].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[163].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[164].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[165].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[166].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[167].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[168].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[170].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[170].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[171].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[173].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[173].constraint[1].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[174].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[175].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[176].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[177].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[178].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[179].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
+INFORMATION: StructureDefinition.snapshot.element[180].constraint[0].source: Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
 INFORMATION: StructureDefinition.differential.element[6].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/allergyintolerance-abatement to 5.3.0
+INFORMATION: StructureDefinition.differential.element[10].type[0].profile[0]: Pinned the version of http://fhir.de/StructureDefinition/lebensphase to 1.6.0
+INFORMATION: StructureDefinition.differential.element[41].type[0].profile[0]: Pinned the version of http://fhir.de/StructureDefinition/lebensphase to 1.6.0
 INFORMATION: StructureDefinition/mii-pr-person-allergieunvertraeglichkeit: StructureDefinition.extension[4]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-pr-person-allergieunvertraeglichkeit: StructureDefinition.extension[5]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-pr-person-allergieunvertraeglichkeit: StructureDefinition.extension[6]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
@@ -2564,10 +2628,10 @@ INFORMATION: StructureDefinition/mii-pr-person-allergieunvertraeglichkeit: Struc
 WARNING: StructureDefinition/mii-pr-person-allergieunvertraeglichkeit: StructureDefinition.jurisdiction[0].coding[0].system: A definition for CodeSystem 'urn:iso:std:iso:3166:-2' could not be found, so the code cannot be validated
 WARNING: StructureDefinition/mii-pr-person-allergieunvertraeglichkeit: StructureDefinition.snapshot.element[16].type[0].profile[0]: There are multiple different potential matches for the url 'http://hl7.org/fhir/StructureDefinition/allergyintolerance-abatement'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer, or use the [IG Parameter `pin-canonicals`](https://hl7.org/fhir/tools/CodeSystem-ig-parameters.html). Using version '5.3.0', found versions: 5.2.0 (from hl7.fhir.uv.extensions.r4#5.2.0), 5.3.0 (from hl7.fhir.uv.extensions.r4#5.3.0). Suggested fix: change the canonical reference from 'http://hl7.org/fhir/StructureDefinition/allergyintolerance-abatement' to 'http://hl7.org/fhir/StructureDefinition/allergyintolerance-abatement|5.3.0'
 WARNING: StructureDefinition/mii-pr-person-allergieunvertraeglichkeit: StructureDefinition.differential.element[6].type[0].profile[0]: There are multiple different potential matches for the url 'http://hl7.org/fhir/StructureDefinition/allergyintolerance-abatement'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer, or use the [IG Parameter `pin-canonicals`](https://hl7.org/fhir/tools/CodeSystem-ig-parameters.html). Using version '5.3.0', found versions: 5.2.0 (from hl7.fhir.uv.extensions.r4#5.2.0), 5.3.0 (from hl7.fhir.uv.extensions.r4#5.3.0). Suggested fix: change the canonical reference from 'http://hl7.org/fhir/StructureDefinition/allergyintolerance-abatement' to 'http://hl7.org/fhir/StructureDefinition/allergyintolerance-abatement|5.3.0'
-INFORMATION: StructureDefinition/mii-pr-person-allergieunvertraeglichkeit: StructureDefinition.differential.element[21].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
-INFORMATION: StructureDefinition/mii-pr-person-allergieunvertraeglichkeit: StructureDefinition.differential.element[36].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
-INFORMATION: StructureDefinition/mii-pr-person-allergieunvertraeglichkeit: StructureDefinition.snapshot.element[58].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
-INFORMATION: StructureDefinition/mii-pr-person-allergieunvertraeglichkeit: StructureDefinition.snapshot.element[108].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
+INFORMATION: StructureDefinition/mii-pr-person-allergieunvertraeglichkeit: StructureDefinition.differential.element[28].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
+INFORMATION: StructureDefinition/mii-pr-person-allergieunvertraeglichkeit: StructureDefinition.differential.element[50].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
+INFORMATION: StructureDefinition/mii-pr-person-allergieunvertraeglichkeit: StructureDefinition.snapshot.element[78].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
+INFORMATION: StructureDefinition/mii-pr-person-allergieunvertraeglichkeit: StructureDefinition.snapshot.element[148].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: StructureDefinition/mii-pr-person-allergieunvertraeglichkeit: StructureDefinition.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-pr-person-allergieunvertraeglichkeit: StructureDefinition.extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: StructureDefinition/mii-pr-person-allergieunvertraeglichkeit: StructureDefinition.meta.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuredefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)

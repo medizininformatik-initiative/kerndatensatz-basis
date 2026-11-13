@@ -63,7 +63,7 @@ Gender documentation follows the [German Base Profile for Gender](https://ig.fhi
 * **`Patient.gender`**: Administrative gender (required)
 * **`Patient.gender.extension:other-amtlich`**: Official gender codes according to German regulations for cases beyond male/female/unknown
 * **[`Patient.extension:recordedSexOrGender`](https://hl7.org/fhir/extensions/StructureDefinition-individual-recordedSexOrGender.html)**: Repeatable sex or gender statements taken from a document or other record. These statements are kept separate from the administrative gender in `Patient.gender` and can, for example, represent sex assigned at birth. 
-* **`value`**: The recorded value. The [MII ValueSet Person Recorded Sex or Gender SNOMED](ValueSet-mii-vs-person-recordedsexorgender-snomed.md) is bound with `extensible` strength ([HDB-1124](https://hl7germany.atlassian.net/browse/HDB-1124)): a code from it **SHALL** be used if one fits; other codes are allowed only if none applies. It contains SNOMED CT findings related to biological sex as well as `261665006 | Unknown (qualifier value) |`.
+* **`value`**: The recorded value. The [MII ValueSet Person Recorded Sex or Gender SNOMED](ValueSet-mii-vs-person-recordedsexorgender-snomed.md) is bound with `extensible` strength ([HDB-1124](https://hl7germany.atlassian.net/browse/HDB-1124)): a code from it **SHALL** be used if one fits; other codes are allowed only if none applies. It contains SNOMED CT findings related to biological sex as well as `261665006 | Unknown (qualifier value) |`. The ConceptMap [MII CM Person Recorded Sex or Gender SNOMED to Administrative Gender](ConceptMap-mii-cm-person-recordedsexorgender-snomed-administrative-gender.md) relates these codes to `Patient.gender`; none of the relationships is equivalent, because recorded sex and administrative gender are different concepts ([HDB-1068](https://hl7germany.atlassian.net/browse/HDB-1068)).
 * **`type`**: Identifies the kind of recorded sex or gender. `http://loinc.org|76689-9` (Sex assigned at birth) SHOULD be used when documenting sex assigned at birth.
 * **`acquisitionDate`**: Date and time when the statement was first recorded in the system.
  
@@ -83,7 +83,9 @@ Gender documentation follows the [German Base Profile for Gender](https://ig.fhi
 
 #### Birth Date, Place of Birth, and Vital Status
 
-* **`Patient.birthDate`**: Full birth date when available. See [German Base Profile - Geburtsdatum](https://ig.fhir.de/basisprofile-de/1.5.4/ig-markdown-Ressourcen-Patient.html#ig-markdown-Ressourcen-Patient-Geburtsdatum)
+* **`Patient.birthDate`**: Full birth date when available. See [German Base Profile - Geburtsdatum](https://ig.fhir.de/basisprofile-de/1.5.4/ig-markdown-Ressourcen-Patient.html#ig-markdown-Ressourcen-Patient-Geburtsdatum) 
+* **Deliberate deviation:** `birthDate` stays optional (0..1). Other specifications such as ISiK require it (1..1, with `data-absent-reason` if unknown). The MII deliberately does not follow this: for privacy reasons (data minimisation) it may be omitted or provided only in reduced precision ([HDB-1071](https://hl7germany.atlassian.net/browse/HDB-1071)).
+ 
 * **`Patient.extension:birthPlace`**: The patient's registered place of birth. To represent the country of birth, use `valueAddress.country`; the `countryCode` extension supports coding with ISO 3166-1 alpha-2 codes using a `preferred` binding.
 
 **EHDS outlook:** The use and cardinalities of the FHIR core extensions `patient-citizenship`, `patient-nationality`, and `patient-birthPlace` are aligned with [HL7 Europe Patient (EU base) 2.0.0](https://hl7.eu/fhir/base/2.0.0/StructureDefinition-patient-eu.html) and [HL7 Europe Patient (EU core) 2.0.0](https://hl7.eu/fhir/base/2.0.0/StructureDefinition-patient-eu-core.html). This supports future interoperability in an EHDS context.
@@ -91,6 +93,71 @@ Gender documentation follows the [German Base Profile for Gender](https://ig.fhi
 * **`Patient.deceased[x]`**: 
 * `deceasedBoolean` **SHOULD** be replaced by `deceasedDateTime` when the patient is deceased and the datetime is known
  
+
+#### Mother and Newborn
+
+After birth, mother and child are represented by separate `Patient` resources. Three different relationships are modelled separately ([FHIR R4 – Mother and newborn relationships](https://hl7.org/fhir/R4/patient.html#mother)):
+
+* the **family relationship** between mother and child: `RelatedPerson`;
+* the **maternity episode**, i.e. the encounters of mother and child: `Encounter`;
+* the **billing cases**: Fallnummer in `Encounter.account.identifier` or an `Account`.
+
+**Family relationship:**
+
+```
+%%{init: {'flowchart': {'htmlLabels': false}, 'theme': 'base', 'themeVariables': {'primaryColor': '#E8F4F8', 'primaryBorderColor': '#406A99', 'primaryTextColor': '#000000', 'lineColor': '#5C8DB3', 'fontSize': '14px'}}}%%
+flowchart TD
+  M["`**Patient**
+      Mother's own record`"]
+  R["`**RelatedPerson**
+      Mother in relation to this child
+      relationship.coding.code = MTH`"]
+  C["`**Patient**
+      Child's own record`"]
+
+  M -.->|"`link.other (optional link)
+      link.type = seealso`"| R
+  R -->|"`RelatedPerson.patient`"| C
+
+```
+
+The mother appears twice: as a `RelatedPerson` that references the child, and, if she is a patient herself, as her own `Patient`. There is deliberately no reference from the mother's `Patient` to the child's `Patient`.
+
+* The mother **SHOULD** be represented as a `RelatedPerson` with `RelatedPerson.patient` referencing the child's `Patient` and `RelatedPerson.relationship` = `MTH` from `http://terminology.hl7.org/CodeSystem/v3-RoleCode`. `MTH` covers a woman who conceives, gives birth to, or raises and nurtures the child; where the distinction matters, more specific codes such as `NMTH` (natural mother), `GESTM` (gestational mother), `ADOPTM` (adoptive mother) or `STPMTH` (stepmother) **SHOULD** be used.
+* If the mother is also a patient, her own `Patient.link.other` **MAY** reference this `RelatedPerson` with `Patient.link.type` = `seealso`.
+* `Patient.link` **SHALL NOT** be used to link the mother's `Patient` directly to the child's `Patient`: it links resources that concern the same actual person.
+* **Reference profile:** [ISiKAngehoeriger 6.0.0](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKAngehoeriger.html) is the German hospital profile for `RelatedPerson` (`patient.reference` 1..1, `relationship` Must Support). Its Must Support elements (official name, telecom, address) target relatives as letter and invoice recipients. A `RelatedPerson` built only from the mother's identifier, e.g. from HL7 v2 `PID-21`, can claim conformance to ISiKAngehoeriger only if it follows the [ISiK rules for missing data](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/UebergreifendeFestlegungen_UmgangFehlendeDaten.html): if no name is available, `RelatedPerson.name` carries the `data-absent-reason` extension; unknown optional Must Support elements such as telecom and address are omitted.
+* `Patient.contact` is a contact-party entry within the child's `Patient`; it can carry a relationship code such as `MTH` and contact details. `RelatedPerson` **SHOULD** be used when the mother needs to be independently referenceable, e.g. from her own `Patient.link` or from other resources.
+* `FamilyMemberHistory` describes the clinically relevant history of relatives; it is not intended to link an identified mother.
+
+**Encounters:**
+
+* The newborn's Einrichtungskontakt **MAY** reference the mother's delivery Einrichtungskontakt via `Encounter.partOf`, as described in FHIR R4.
+* Such a `partOf` reference to an Encounter with a different `Encounter.subject` only expresses the maternity association. It is not part of the contact hierarchy: hierarchy traversal stops at the newborn's Einrichtungskontakt (see [Encounter Hierarchies and Contact Levels](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.md#encounter-partof-across-patients)).
+
+**Billing:**
+
+* If a separate billing case exists for the newborn, its Fallnummer can be given in the newborn's `Encounter.account.identifier`, as a logical reference even when no Account resource is available (see [Best Practice - Aufnahmenummer vs. Fallnummer](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.md#best-practice-aufnahmenummer-vs-fallnummer)).
+* Whether a separate case exists follows the German billing rules of the respective year, not the `partOf` reference. For 2026, [FPV 2026 § 1 (5)](https://www.g-drg.de/content/download/17465/file/2025_11_14_FPV_2026.pdf#page=3) requires a separate case and invoice for each newborn who is cared for in hospital after the delivery room, with exceptions, e.g. when the minimum length of stay is not reached.
+
+**Multiple pregnancy and multiple birth:**
+
+* A multiple pregnancy is a finding about the **mother**, recorded as an Observation for the pregnant patient, e.g. in the KBV MIO Mutterpass 1.1.0 profile [`KBV_PR_MIO_MR_Observation_Pregnancy_Information`](https://hub.kbv.de/spaces/MP1X1X0/pages/109842757/9.3.2.2%2BAngaben%2Bzur%2BSchwangerschaft) (SNOMED CT `370386005` with a Boolean value).
+* After birth, each child is a separate `Patient`. If multiple-birth information is available, it is given in `Patient.multipleBirth[x]` (0..1). `multipleBirthInteger` is the birth order, not the number of children; `multipleBirthBoolean` = `true` only indicates a multiple birth. On the mother's `Patient`, `multipleBirth[x]` would describe her own birth.
+* Each child gets its own `RelatedPerson` for the mother, as in the [CH EPREG example for multiple children](https://www.fhir.ch/ig/ch-epreg/child-relationships.html).
+
+Example for twins:
+
+| | |
+| :--- | :--- |
+| `Patient`child 1 | `multipleBirthInteger`=`1`(or`multipleBirthBoolean`=`true`if the order is unknown) |
+| `Patient`child 2 | `multipleBirthInteger`=`2`(or`multipleBirthBoolean`=`true`if the order is unknown) |
+| `RelatedPerson`mother for child 1 | `patient`→ child 1,`relationship`=`MTH` |
+| `RelatedPerson`mother for child 2 | `patient`→ child 2,`relationship`=`MTH` |
+
+**Out of scope:** Identifying individual fetuses during pregnancy is not covered by this module; see the [HL7 International Birth and Child Model](https://build.fhir.org/ig/HL7/fetal_records/) and CH EPREG. The same applies to the questions raised in [HDB-1035](https://hl7germany.atlassian.net/browse/HDB-1035) on assigning identifiers at birth, linking prenatal findings to the later child, and attributing cord-blood specimens to mother or child. These are deferred to obstetric and perinatal guidance.
+
+**HL7 v2:** According to the [HL7 v2-to-FHIR mapping](https://build.fhir.org/ig/HL7/v2-to-fhir/ConceptMap-segment-pid-to-patient.html), `PID-21` (Mother's Identifier) maps to a `RelatedPerson` for the mother, `PID-25` (Birth Order) to `multipleBirthInteger` and `PID-24` (Multiple Birth Indicator) to `multipleBirthBoolean` if `PID-25` is not valued.
 
 #### Address Information
 

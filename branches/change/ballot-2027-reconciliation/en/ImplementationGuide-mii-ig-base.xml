@@ -720,6 +720,14 @@
         <valueCode value="special-url"/>
       </extension>
       <extension url="value">
+        <valueString value="https://www.medizininformatik-initiative.de/fhir/modul-person/ConceptMap/mii-cm-person-recordedsexorgender-snomed-administrative-gender"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
         <valueString value="https://www.medizininformatik-initiative.de/fhir/modul-person/StructureDefinition/AllergieUnvertraeglichkeit"/>
       </extension>
     </extension>
@@ -931,6 +939,17 @@
         <valueString value="false"/>
       </extension>
     </extension>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/mii-cm-person-recordedsexorgender-snomed-administrative-gender"/>
+      </reference>
+      <name value="MII CM Person Recorded Sex or Gender SNOMED to Administrative Gender"/>
+      <description value="Maps the SNOMED CT codes of MII VS Person Recorded Sex or Gender SNOMED to FHIR AdministrativeGender. Recorded sex (e.g. sex assigned at birth) and administrative gender are different concepts, so no mapping is equivalent; each relationship is qualified."/>
+      <exampleBoolean value="false"/>
+    </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="CapabilityStatement"/>

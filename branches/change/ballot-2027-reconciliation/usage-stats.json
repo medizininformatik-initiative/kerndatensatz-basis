@@ -93,6 +93,8 @@
       "Condition.code.coding"
     ],
     "http://fhir.de/StructureDefinition/lebensphase": [
+      "AllergyIntolerance.extension.value[x]",
+      "AllergyIntolerance.onset[x]",
       "Condition.abatement[x]",
       "Condition.onset[x]"
     ],
@@ -351,6 +353,7 @@
     "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-license": [
       "CapabilityStatement.meta",
       "CodeSystem.meta",
+      "ConceptMap.meta",
       "StructureDefinition.meta",
       "ValueSet.meta"
     ],

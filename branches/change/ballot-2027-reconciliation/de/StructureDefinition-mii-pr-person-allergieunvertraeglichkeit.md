@@ -24,6 +24,10 @@ Das MII-Profil Allergie / Unverträglichkeit ist eine neue Ergänzung des Moduls
 
 `code.coding:snomed-ct` und `reaction.manifestation.coding:snomed-ct` sind wie in ISiK **extensible** an die von der mio42 GmbH gemeinsam mit dem BfArM erarbeiteten ValueSets der auslösenden Substanzen und Manifestationen gebunden (`KBV_VS_AllergyIntolerance_Substance_SNOMED_CT` und `KBV_VS_AllergyIntolerance_Manifestation_SNOMED_CT`, Version 1.0.0). Die SNOMED-CT-Slices sind optional: Allergien, die nur mit anderen Codes, z.B. ATC, dokumentiert sind, bleiben valide. Die ValueSets sind im Paket `kbv.all.terminology.allergyintolerance` 1.0.0 veröffentlicht, das nur auf dem [BfArM-ZTS](https://terminologien.bfarm.de) nach Akzeptanz der Downloadbedingungen verfügbar ist.
 
+### Beginn und Ende als Lebensphase
+
+Sind Beginn oder Ende nur als Lebensphase bekannt (z.B. Kindheit), kann die Extension [Lebensphase](http://fhir.de/StructureDefinition/lebensphase) aus den deutschen Basisprofilen an `onsetRange` und an `extension:abatement.valueRange` verwendet werden, wie im Condition-Profil. Der Kontext der Extension lässt `Age` nicht zu.
+
 **Usages:**
 
 * Examples for this Profil: [AllergyIntolerance/mii-exa-person-allergyintolerance-1](AllergyIntolerance-mii-exa-person-allergyintolerance-1.md)
@@ -369,6 +373,95 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-perso
       "type" : [{
         "code" : "dateTime"
       }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "AllergyIntolerance.extension:abatement.value[x]:valueRange",
+      "path" : "AllergyIntolerance.extension.value[x]",
+      "sliceName" : "valueRange",
+      "short" : "End as age range",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "de"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Ende als Altersbereich"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Range"
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "AllergyIntolerance.extension:abatement.value[x]:valueRange.extension:Lebensphase-Ende",
+      "path" : "AllergyIntolerance.extension.value[x].extension",
+      "sliceName" : "Lebensphase-Ende",
+      "short" : "Life phase in which the allergy or intolerance ended",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "de"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Lebensphase des Endes"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "comment" : "Alternative when a more precise period cannot be given, especially for anamnestic information.",
+      "_comment" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "de"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Alternative Angabe, wenn genauere Eingrenzungen des Zeitraums nicht möglich sind, insbesondere im Kontext anamnestischer Angaben."
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://fhir.de/StructureDefinition/lebensphase"]
+      }]
+    },
+    {
+      "id" : "AllergyIntolerance.extension:abatement.value[x]:valueRange.extension:Lebensphase-Ende.url",
+      "path" : "AllergyIntolerance.extension.value[x].extension.url",
+      "mustSupport" : true
+    },
+    {
+      "id" : "AllergyIntolerance.extension:abatement.value[x]:valueRange.extension:Lebensphase-Ende.value[x]",
+      "path" : "AllergyIntolerance.extension.value[x].extension.value[x]",
+      "mustSupport" : true
+    },
+    {
+      "id" : "AllergyIntolerance.extension:abatement.value[x]:valueRange.extension:Lebensphase-Ende.value[x].coding",
+      "path" : "AllergyIntolerance.extension.value[x].extension.value[x].coding",
+      "mustSupport" : true
+    },
+    {
+      "id" : "AllergyIntolerance.extension:abatement.value[x]:valueRange.extension:Lebensphase-Ende.value[x].coding.system",
+      "path" : "AllergyIntolerance.extension.value[x].extension.value[x].coding.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "AllergyIntolerance.extension:abatement.value[x]:valueRange.extension:Lebensphase-Ende.value[x].coding.code",
+      "path" : "AllergyIntolerance.extension.value[x].extension.value[x].coding.code",
       "mustSupport" : true
     },
     {
@@ -837,6 +930,95 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-perso
       "type" : [{
         "code" : "dateTime"
       }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "AllergyIntolerance.onset[x]:onsetRange",
+      "path" : "AllergyIntolerance.onset[x]",
+      "sliceName" : "onsetRange",
+      "short" : "Onset as age range",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "de"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Beginn als Altersbereich"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Range"
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "AllergyIntolerance.onset[x]:onsetRange.extension:Lebensphase-Beginn",
+      "path" : "AllergyIntolerance.onset[x].extension",
+      "sliceName" : "Lebensphase-Beginn",
+      "short" : "Life phase in which the allergy or intolerance began",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "de"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Lebensphase des Beginns"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "comment" : "Alternative when a more precise period cannot be given, especially for anamnestic information.",
+      "_comment" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "de"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Alternative Angabe, wenn genauere Eingrenzungen des Zeitraums nicht möglich sind, insbesondere im Kontext anamnestischer Angaben."
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://fhir.de/StructureDefinition/lebensphase"]
+      }]
+    },
+    {
+      "id" : "AllergyIntolerance.onset[x]:onsetRange.extension:Lebensphase-Beginn.url",
+      "path" : "AllergyIntolerance.onset[x].extension.url",
+      "mustSupport" : true
+    },
+    {
+      "id" : "AllergyIntolerance.onset[x]:onsetRange.extension:Lebensphase-Beginn.value[x]",
+      "path" : "AllergyIntolerance.onset[x].extension.value[x]",
+      "mustSupport" : true
+    },
+    {
+      "id" : "AllergyIntolerance.onset[x]:onsetRange.extension:Lebensphase-Beginn.value[x].coding",
+      "path" : "AllergyIntolerance.onset[x].extension.value[x].coding",
+      "mustSupport" : true
+    },
+    {
+      "id" : "AllergyIntolerance.onset[x]:onsetRange.extension:Lebensphase-Beginn.value[x].coding.system",
+      "path" : "AllergyIntolerance.onset[x].extension.value[x].coding.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "AllergyIntolerance.onset[x]:onsetRange.extension:Lebensphase-Beginn.value[x].coding.code",
+      "path" : "AllergyIntolerance.onset[x].extension.value[x].coding.code",
       "mustSupport" : true
     },
     {

@@ -361,14 +361,41 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ul>
   <li><strong>Changed:</strong> <a href="StructureDefinition-mii-pr-person-patient.html">MII PR Person Patient</a>, <a href="StructureDefinition-mii-pr-person-patient-pseudonymisiert.html">MII PR Person Patient (Pseudonymisiert)</a> — the warning invariant <code class="language-plaintext highlighter-rouge">pat-cnt-2or3-char</code> on the address slices now checks the <code class="language-plaintext highlighter-rouge">Address.country.extension:countryCode</code> extension (<code class="language-plaintext highlighter-rouge">iso21090-codedString</code>, ISO 3166-1 alpha-2) instead of <code class="language-plaintext highlighter-rouge">Address.country</code>, so <code class="language-plaintext highlighter-rouge">Address.country</code> may carry other values such as DEÜV country codes. Alpha-3 codes are no longer accepted, because <code class="language-plaintext highlighter-rouge">AddressDeBasis</code> binds the extension to alpha-2 (<em>required</em>). Examples now code the country in the extension. See: <a href="https://hl7germany.atlassian.net/browse/HDB-1069">HDB-1069</a>, <a href="https://hl7germany.atlassian.net/browse/HDB-935">HDB-935</a></li>
   <li><strong>Changed:</strong> <a href="StructureDefinition-mii-pr-person-patient.html">MII PR Person Patient</a>, <a href="ValueSet-mii-vs-person-recordedsexorgender-snomed.html">MII VS Person Recorded Sex or Gender SNOMED</a> — the binding of <code class="language-plaintext highlighter-rouge">Patient.extension:recordedSexOrGender.extension:value.valueCodeableConcept</code> to the ValueSet changed from <em>preferred</em> to <em>extensible</em>. Not breaking, because the extension is new in <code class="language-plaintext highlighter-rouge">2027.0.0-ballot</code>. See: <a href="https://hl7germany.atlassian.net/browse/HDB-1124">HDB-1124</a></li>
+  <li><strong>Added:</strong> <a href="ConceptMap-mii-cm-person-recordedsexorgender-snomed-administrative-gender.html">MII CM Person Recorded Sex or Gender SNOMED to Administrative Gender</a> — ConceptMap from the SNOMED CT codes of <a href="ValueSet-mii-vs-person-recordedsexorgender-snomed.html">MII VS Person Recorded Sex or Gender SNOMED</a> to <code class="language-plaintext highlighter-rouge">administrative-gender</code>. All relationships are qualified (<em>inexact</em>, <em>wider</em>) instead of equivalent, because recorded sex and administrative gender are different concepts. See: <a href="https://hl7germany.atlassian.net/browse/HDB-1068">HDB-1068</a></li>
+  <li><strong>Added:</strong> <a href="StructureDefinition-mii-pr-person-patient.html">MII PR Person Patient</a> — documentation only: <code class="language-plaintext highlighter-rouge">Patient.birthDate</code> deliberately stays 0..1, unlike ISiK (1..1 with <code class="language-plaintext highlighter-rouge">data-absent-reason</code>); the note explains the deviation. See: <a href="https://hl7germany.atlassian.net/browse/HDB-1071">HDB-1071</a></li>
   <li><strong>Added:</strong> <a href="StructureDefinition-mii-pr-person-patient.html">MII PR Person Patient</a> — optional extension <a href="https://hl7.org/fhir/extensions/StructureDefinition-patient-sexParameterForClinicalUse.html"><code class="language-plaintext highlighter-rouge">patient-sexParameterForClinicalUse</code></a> (<code class="language-plaintext highlighter-rouge">hl7.fhir.uv.extensions.r4</code> 5.2.0) with Must Support on <code class="language-plaintext highlighter-rouge">value</code> (coding system and code) and <code class="language-plaintext highlighter-rouge">period</code>. Not added to the pseudonymised Patient profile or the logical model. See: <a href="https://hl7germany.atlassian.net/browse/HDB-1067">HDB-1067</a></li>
   <li><strong>Changed:</strong> <a href="StructureDefinition-mii-pr-person-allergieunvertraeglichkeit.html">MII PR Person AllergieUnvertraeglichkeit</a> — the <em>preferred</em> IPS bindings on <code class="language-plaintext highlighter-rouge">AllergyIntolerance.code</code> and <code class="language-plaintext highlighter-rouge">AllergyIntolerance.reaction.manifestation</code> are replaced by optional slices <code class="language-plaintext highlighter-rouge">coding:snomed-ct</code> (0..1, Must Support), bound <em>extensible</em> to the KBV ValueSets <code class="language-plaintext highlighter-rouge">KBV_VS_AllergyIntolerance_Substance_SNOMED_CT</code> 1.0.0 and <code class="language-plaintext highlighter-rouge">KBV_VS_AllergyIntolerance_Manifestation_SNOMED_CT</code> 1.0.0, aligned with ISiK. The slices are not mandatory, because allergies may be documented with other codes only, for example ATC. New dependency <code class="language-plaintext highlighter-rouge">kbv.all.terminology.allergyintolerance</code> 1.0.0, which is only available on the <a href="https://terminologien.bfarm.de">BfArM ZTS</a> after accepting its download conditions. The example now uses a manifestation from the KBV ValueSet. See: <a href="https://hl7germany.atlassian.net/browse/HDB-1073">HDB-1073</a>, <a href="https://hl7germany.atlassian.net/browse/HDB-1019">HDB-1019</a></li>
+  <li><strong>Added:</strong> <a href="StructureDefinition-mii-pr-person-allergieunvertraeglichkeit.html">MII PR Person AllergieUnvertraeglichkeit</a> — optional life-phase extension <code class="language-plaintext highlighter-rouge">http://fhir.de/StructureDefinition/lebensphase</code> on <code class="language-plaintext highlighter-rouge">AllergyIntolerance.onsetRange</code> and on <code class="language-plaintext highlighter-rouge">AllergyIntolerance.extension:abatement.valueRange</code> (<code class="language-plaintext highlighter-rouge">allergyintolerance-abatement</code>), with Must Support on the Range and the extension's coding, consistent with the Condition profile. Not breaking, because the profile is new in <code class="language-plaintext highlighter-rouge">2027.0.0-ballot</code>. See: <a href="https://hl7germany.atlassian.net/browse/HDB-1072">HDB-1072</a></li>
+  <li><strong>Added:</strong> <a href="StructureDefinition-mii-pr-person-patient.html">MII PR Person Patient</a>, <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">MII PR Fall Kontakt mit einer Gesundheitseinrichtung</a> — documentation only: new section "Mother and Newborn" on the mother–child relationship (<code class="language-plaintext highlighter-rouge">RelatedPerson</code>, <code class="language-plaintext highlighter-rouge">MTH</code>), the optional <code class="language-plaintext highlighter-rouge">Encounter.partOf</code> from the newborn's to the mother's delivery encounter with a traversal rule, conditional newborn billing cases, multiple pregnancy and multiple birth (<code class="language-plaintext highlighter-rouge">multipleBirth[x]</code>, twin example) and the HL7 v2 mapping. See: <a href="https://hl7germany.atlassian.net/browse/HDB-1035">HDB-1035</a>, <a href="https://hl7germany.atlassian.net/browse/HDB-1036">HDB-1036</a></li>
 </ul>
 
 <h4 id="diagnosis-module">Diagnosis Module</h4>
 
 <ul>
   <li><strong>Changed:</strong> <a href="StructureDefinition-mii-pr-diagnose-condition.html">MII PR Diagnose Condition</a>, <a href="StructureDefinition-mii-lm-diagnose.html">MII LM Diagnose</a> — <strong>breaking:</strong> the life-phase extension <code class="language-plaintext highlighter-rouge">http://fhir.de/StructureDefinition/lebensphase</code> moved from <code class="language-plaintext highlighter-rouge">onsetAge</code>/<code class="language-plaintext highlighter-rouge">abatementAge</code> to <code class="language-plaintext highlighter-rouge">onsetRange</code>/<code class="language-plaintext highlighter-rouge">abatementRange</code> (<code class="language-plaintext highlighter-rouge">Range</code> added to <code class="language-plaintext highlighter-rouge">onset[x]</code> and <code class="language-plaintext highlighter-rouge">abatement[x]</code>), because its context in <code class="language-plaintext highlighter-rouge">de.basisprofil.r4</code> 1.6.0 does not allow <code class="language-plaintext highlighter-rouge">Age</code>. <code class="language-plaintext highlighter-rouge">Age</code> stays allowed without the extension; the logical model mapping follows. The context of the German extension and the HL7 Europe extension <code class="language-plaintext highlighter-rouge">periods-of-life</code> (which allows <code class="language-plaintext highlighter-rouge">Age</code>) are being monitored. See: <a href="https://hl7germany.atlassian.net/browse/HDB-1075">HDB-1075</a></li>
+  <li><strong>Added:</strong> <a href="StructureDefinition-mii-pr-diagnose-condition.html">MII PR Diagnose Condition</a> — documentation only: described <code class="language-plaintext highlighter-rouge">extension:Feststellungsdatum</code> and how it differs from <code class="language-plaintext highlighter-rouge">onset[x]</code> and <code class="language-plaintext highlighter-rouge">recordedDate</code>, with an example, and clarified the use of <code class="language-plaintext highlighter-rouge">extension:ReferenzPrimaerdiagnose</code> (short and definition added). See: <a href="https://hl7germany.atlassian.net/browse/HDB-1020">HDB-1020</a></li>
+  <li><strong>Added:</strong> <a href="StructureDefinition-mii-pr-diagnose-condition.html">MII PR Diagnose Condition</a> — documentation only: note that the recommended contact level for <code class="language-plaintext highlighter-rouge">Condition.encounter</code> (department contact) is under discussion for ISiK stage 7 and that the MII will follow its outcome. See: <a href="https://hl7germany.atlassian.net/browse/HDB-1012">HDB-1012</a></li>
+</ul>
+
+<h4 id="treatment-case-module">Treatment Case Module</h4>
+
+<ul>
+  <li><strong>Added:</strong> <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">MII PR Fall Kontakt mit einer Gesundheitseinrichtung</a> — documentation only: a table of the deliberate cardinality differences to ISiK 6.0.0 for <code class="language-plaintext highlighter-rouge">type:Kontaktebene</code> and <code class="language-plaintext highlighter-rouge">diagnosis.use.coding:Diagnosetyp</code>; these cardinalities remain unchanged. See: <a href="https://hl7germany.atlassian.net/browse/HDB-1016">HDB-1016</a></li>
+  <li><strong>Changed:</strong> <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">MII PR Fall Kontakt mit einer Gesundheitseinrichtung</a> — <code class="language-plaintext highlighter-rouge">Encounter.hospitalization.admitSource</code> relaxed from 1..1 to 0..1 (Must Support), as in ISiK 6.0.0 and the logical model, because the admission source is often not available in the HL7 v2 feed. Not breaking for existing instances. See: <a href="https://hl7germany.atlassian.net/browse/HDB-1016">HDB-1016</a>, <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/53">#53</a></li>
+  <li><strong>Changed:</strong> <a href="StructureDefinition-mii-lm-fall.html">MII LM Fall</a> — documentation only: corrected the descriptions of <em>Aufnahmenummer</em> and <em>PatientenIdentifikator</em>, which equated the admission number with the case number (Fallnummer). The admission number identifies a single encounter; the case number identifies the billing case (Account) and is given in <code class="language-plaintext highlighter-rouge">Encounter.account.identifier</code>, as described in the Encounter profile and ISiK. The profile's translated definitions of <code class="language-plaintext highlighter-rouge">identifier:Aufnahmenummer</code> were aligned. See: <a href="https://hl7germany.atlassian.net/browse/HDB-1048">HDB-1048</a></li>
+  <li><strong>Added:</strong> <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">MII PR Fall Kontakt mit einer Gesundheitseinrichtung</a> — documentation only: explains why partial inpatient encounters can use <code class="language-plaintext highlighter-rouge">Encounter.class</code> <code class="language-plaintext highlighter-rouge">IMP</code> (with bed allocation, e.g. night clinic) or <code class="language-plaintext highlighter-rouge">SS</code> (without bed allocation, e.g. day clinic), and that <code class="language-plaintext highlighter-rouge">Encounter.type</code> and the admission reason identify them as partial inpatient. See: <a href="https://hl7germany.atlassian.net/browse/HDB-1010">HDB-1010</a></li>
+  <li><strong>Changed:</strong> <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">MII PR Fall Kontakt mit einer Gesundheitseinrichtung</a> — the slice <code class="language-plaintext highlighter-rouge">Encounter.location:Bett</code> was renamed to <code class="language-plaintext highlighter-rouge">Encounter.location:Bettenstellplatz</code> and is described as the bed space, i.e. the location where the bed stands, to distinguish it from the bed as a device. Discriminator, cardinality and constraints are unchanged; not breaking, existing instances and implementations are unaffected. See: <a href="https://hl7germany.atlassian.net/browse/HDB-1011">HDB-1011</a></li>
+  <li><strong>Added:</strong> <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">MII PR Fall Kontakt mit einer Gesundheitseinrichtung</a> — documentation only: DRG main and secondary diagnoses (<code class="language-plaintext highlighter-rouge">principle-DRG</code>, <code class="language-plaintext highlighter-rouge">secondary-DRG</code>) and <code class="language-plaintext highlighter-rouge">hospital-main-diagnosis</code> SHOULD be given on the Account with <code class="language-plaintext highlighter-rouge">ExtensionAbrechnungsDiagnoseProzedur</code>, as in ISiK, not in <code class="language-plaintext highlighter-rouge">Encounter.diagnosis.use</code>; <code class="language-plaintext highlighter-rouge">mii-vs-fall-diagnosis-use</code> is unchanged. See: <a href="https://hl7germany.atlassian.net/browse/HDB-1052">HDB-1052</a></li>
+  <li><strong>Changed:</strong> <a href="uml-diagrams.html">UML diagram of the Treatment Case module</a> — documentation only: added the association from Einrichtungskontakt to Patient (Modul Person) via <em>Patientenidentifikator</em> (<code class="language-plaintext highlighter-rouge">Encounter.subject</code>). See: <a href="https://hl7germany.atlassian.net/browse/HDB-1013">HDB-1013</a></li>
+  <li><strong>Added:</strong> <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">MII PR Fall Kontakt mit einer Gesundheitseinrichtung</a> — documentation only: clarified that one Account can be referenced by several facility encounters (Einrichtungskontakte), e.g. pre-/post-inpatient encounters or merged readmissions; the Encounter hierarchy figure already shows shared Account references (see <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/73">#73</a>). See: <a href="https://hl7germany.atlassian.net/browse/HDB-939">HDB-939</a></li>
+  <li><strong>Added:</strong> <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html">MII PR Fall Kontakt mit einer Gesundheitseinrichtung</a> — documentation only: described the two ways to represent a ward, as Location (<code class="language-plaintext highlighter-rouge">location:Station</code>, <code class="language-plaintext highlighter-rouge">physicalType = wa</code>) and as Organization (<code class="language-plaintext highlighter-rouge">serviceProvider</code>), in line with ISiK 6.0.0. See: <a href="https://hl7germany.atlassian.net/browse/HDB-938">HDB-938</a></li>
+</ul>
+
+<h4 id="procedure-module">Procedure Module</h4>
+
+<ul>
+  <li><strong>Added:</strong> <a href="StructureDefinition-mii-pr-prozedur-procedure.html">MII PR Prozedur Procedure</a> — documentation only: a note on the differences to ISiK 6.0.0 regarding <code class="language-plaintext highlighter-rouge">proc-ISiK-2</code> (coded category for every coded procedure) and <code class="language-plaintext highlighter-rouge">proc-ISiK-3</code> (text-only procedure code). The MII invariants <code class="language-plaintext highlighter-rouge">proc-mii-1</code> and <code class="language-plaintext highlighter-rouge">sct-ops-1</code> remain unchanged. See: <a href="https://hl7germany.atlassian.net/browse/HDB-1018">HDB-1018</a></li>
+  <li><strong>Changed:</strong> <a href="StructureDefinition-mii-pr-prozedur-procedure.html">MII PR Prozedur Procedure</a> — documentation only: clarified the definition of <code class="language-plaintext highlighter-rouge">bodySite</code> (SNOMED CT procedure codes usually include body site and laterality precoordinated; <code class="language-plaintext highlighter-rouge">bodySite</code> SHOULD NOT merely repeat them) and explained why no invariant checks redundant laterality statements. See: <a href="https://hl7germany.atlassian.net/browse/HDB-1077">HDB-1077</a></li>
 </ul>
 
 <h3 id="version-202700-ballot">Version 2027.0.0-ballot</h3>
@@ -400,7 +427,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Changed:</strong> Updated the relationship between diagnoses and contacts in the Diagnosis UML diagram to show the department contact as the currently recommended contact level while retaining the possibility of other contact levels.</li>
 </ul>
 
-<h4 id="treatment-case-module">Treatment Case Module</h4>
+<h4 id="treatment-case-module-1">Treatment Case Module</h4>
 
 <ul>
   <li><strong>Changed:</strong> Updated the Treatment Case UML model to represent the organizational assignment between care units and departments as an optional many-to-many association.</li>
@@ -408,7 +435,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Changed:</strong> The Encounter hierarchy figure now illustrates how Encounters at each hierarchy level can reference the same Account and share a billing context. See: <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/73">#73</a></li>
 </ul>
 
-<h4 id="procedure-module">Procedure Module</h4>
+<h4 id="procedure-module-1">Procedure Module</h4>
 
 <ul>
   <li><strong>Changed:</strong> Updated the Procedure UML diagram to show the department contact as the currently recommended contact context while retaining the possibility of other contact levels.</li>
@@ -454,7 +481,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Added:</strong> Profile <a href="StructureDefinition-mii-pr-person-patient-pseudonymisiert.html">Patient Pseudonymized</a>: Added optional <code class="language-plaintext highlighter-rouge">type.coding</code> sub-slice <code class="language-plaintext highlighter-rouge">mr</code> (<code class="language-plaintext highlighter-rouge">http://terminology.hl7.org/CodeSystem/v2-0203|MR</code>) to <code class="language-plaintext highlighter-rouge">PseudonymisierterIdentifier</code>. When the pseudonym replaces a Medical Record Number, this code SHOULD be set to allow site-independent discovery of the pseudonymized identifier. See: <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/63">#63</a></li>
 </ul>
 
-<h4 id="treatment-case-module-1">Treatment Case Module</h4>
+<h4 id="treatment-case-module-2">Treatment Case Module</h4>
 
 <ul>
   <li><strong>Added:</strong> Clarified <code class="language-plaintext highlighter-rouge">Encounter.location</code> slicing and semantics in the documentation. See: <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-fall/issues/62">#62</a></li>
@@ -496,7 +523,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Note:</strong> This represents a change from previous versions where Encounter.diagnosis was the primary linkage method</li>
 </ul>
 
-<h4 id="treatment-case-module-2">Treatment Case Module</h4>
+<h4 id="treatment-case-module-3">Treatment Case Module</h4>
 
 <ul>
   <li><strong>Changed:</strong> Updated guidance on billing case context (Abrechnungsfallkontext) and Account references based on gematik ISiK specification</li>
@@ -505,7 +532,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Changed:</strong> Each Encounter SHOULD have its own unique Aufnahmenummer in <code class="language-plaintext highlighter-rouge">Encounter.identifier:Aufnahmenummer</code></li>
 </ul>
 
-<h4 id="procedure-module-1">Procedure Module</h4>
+<h4 id="procedure-module-2">Procedure Module</h4>
 
 <ul>
   <li><strong>Changed:</strong> Added guidance recommending use of <code class="language-plaintext highlighter-rouge">Procedure.encounter</code> to establish encounter context, aligned with Condition module recommendations</li>
@@ -530,7 +557,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Changed</strong>: Dependency updated to <a href="https://simplifier.net/packages/de.basisprofil.r4/1.5.4">de.basisprofil.r4 1.5.4</a>. This release of the FHIR Base Profiles contains a fix for the kvid-2 invariant applied to <code class="language-plaintext highlighter-rouge">Patient.identifier:versichertenId.type</code> in the Patient profile</li>
 </ul>
 
-<h4 id="treatment-case-module-3">Treatment Case Module</h4>
+<h4 id="treatment-case-module-4">Treatment Case Module</h4>
 <p><strong>Date:</strong> 2025-10-28</p>
 
 <ul>
@@ -547,7 +574,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Updated</strong>: CapabilityStatement now contains requirement documentation for search parameters <code class="language-plaintext highlighter-rouge">_count</code> and <code class="language-plaintext highlighter-rouge">_summary</code></li>
 </ul>
 
-<h4 id="procedure-module-2">Procedure Module</h4>
+<h4 id="procedure-module-3">Procedure Module</h4>
 <p><strong>Date:</strong> 2025-10-22</p>
 
 <ul>
@@ -575,7 +602,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Enhanced</strong>: Profiles contain additional descriptions and translations for implementers and the Research Data Portal for Health (FDPG)</li>
 </ul>
 
-<h4 id="treatment-case-module-4">Treatment Case Module</h4>
+<h4 id="treatment-case-module-5">Treatment Case Module</h4>
 <p><strong>Date:</strong> 2024-12-10</p>
 
 <ul>
@@ -604,7 +631,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Added</strong>: <code class="language-plaintext highlighter-rouge">Condition.verificationStatus</code> now has MustSupport label. See: <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-diagnose/issues/64">#64</a></li>
 </ul>
 
-<h4 id="procedure-module-3">Procedure Module</h4>
+<h4 id="procedure-module-4">Procedure Module</h4>
 <p><strong>Date:</strong> 2024-12-09</p>
 
 <ul>
@@ -619,7 +646,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="version-202401">Version 2024.0.1</h3>
 
-<h4 id="treatment-case-module-5">Treatment Case Module</h4>
+<h4 id="treatment-case-module-6">Treatment Case Module</h4>
 <p><strong>Date:</strong> 2024-04-17</p>
 
 <ul>
@@ -651,7 +678,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Changed</strong>: Data types in the logical model were adjusted to match the data types of elements in the FHIR profile to which they are mapped</li>
 </ul>
 
-<h4 id="treatment-case-module-6">Treatment Case Module</h4>
+<h4 id="treatment-case-module-7">Treatment Case Module</h4>
 <p><strong>Date:</strong> 2024-03-28</p>
 
 <ul>
@@ -693,7 +720,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Added</strong>: Module was extended with SearchParameter resources enabling search for ICD-10-GM codes in combination with multiple coding indicators, laterality and diagnostic certainty</li>
 </ul>
 
-<h4 id="procedure-module-4">Procedure Module</h4>
+<h4 id="procedure-module-5">Procedure Module</h4>
 <p><strong>Date:</strong> 2024-04-16</p>
 
 <ul>
@@ -749,7 +776,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-ballot based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Generated <span title="Thu, Nov 12, 2026 20:19+0000">2026-11-12</span>
+          Generated <span title="Fri, Nov 13, 2026 18:01+0000">2026-11-13</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.

@@ -52,7 +52,7 @@ anonymous resourcescontained resources","",0,*,"","","","Resource {[]} {[]}
 ","",,"open","DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Condition.extension:ReferenzPrimaerdiagnose","Condition.extension","ReferenzPrimaerdiagnose","","",0,1,"Y","","","Extension {[CanonicalType[http://hl7.org/fhir/StructureDefinition/condition-related]]} {[]}
-","Conditions associated with this condition","This condition has an unspecified relationship with another condition.","When the relationship is specified, use the more specific extension, such as condition-dueTo, condition-occurredFollowing, or condition-part of.","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","Referenz auf Primärdiagnose","Referenz einer Sekundärdiagnose, z. B. eines Stern- oder Ausrufezeichen-Codes im ICD-10-GM-Kreuz-Stern-System, auf die zugehörige Primärdiagnose mit Kreuz-Code.","When the relationship is specified, use the more specific extension, such as condition-dueTo, condition-occurredFollowing, or condition-part of.","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Condition.extension:ReferenzPrimaerdiagnose.id","Condition.extension.id","","","",0,1,"","","","string {[]} {[]}

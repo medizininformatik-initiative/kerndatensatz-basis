@@ -512,7 +512,7 @@ MII PR Person Patient
   <li><strong><code class="language-plaintext highlighter-rouge">Patient.gender.extension:other-amtlich</code></strong>: Amtliche Geschlechtscodes gemäß deutscher Vorschriften für Fälle jenseits von männlich/weiblich/unbekannt</li>
   <li><strong><a href="https://hl7.org/fhir/extensions/StructureDefinition-individual-recordedSexOrGender.html"><code class="language-plaintext highlighter-rouge">Patient.extension:recordedSexOrGender</code></a></strong>: Wiederholbare Geschlechtsangaben, die aus einem Dokument oder einer anderen Aufzeichnung übernommen wurden. Diese Angaben werden getrennt vom administrativen Geschlecht in <code class="language-plaintext highlighter-rouge">Patient.gender</code> geführt und können beispielsweise das bei der Geburt zugewiesene Geschlecht abbilden.
     <ul>
-      <li><strong><code class="language-plaintext highlighter-rouge">value</code></strong>: Der dokumentierte Wert. Das <a href="ValueSet-mii-vs-person-recordedsexorgender-snomed.html">MII ValueSet Person Recorded Sex or Gender SNOMED</a> ist mit der Bindungsstärke <code class="language-plaintext highlighter-rouge">extensible</code> gebunden (<a href="https://hl7germany.atlassian.net/browse/HDB-1124">HDB-1124</a>): Passt ein Code daraus, <strong>MUSS</strong> er verwendet werden; andere Codes sind nur zulässig, wenn keiner passt. Es enthält SNOMED-CT-Codes zum biologischen Geschlecht sowie <code class="language-plaintext highlighter-rouge">261665006 | Unknown (qualifier value) |</code>.</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">value</code></strong>: Der dokumentierte Wert. Das <a href="ValueSet-mii-vs-person-recordedsexorgender-snomed.html">MII ValueSet Person Recorded Sex or Gender SNOMED</a> ist mit der Bindungsstärke <code class="language-plaintext highlighter-rouge">extensible</code> gebunden (<a href="https://hl7germany.atlassian.net/browse/HDB-1124">HDB-1124</a>): Passt ein Code daraus, <strong>MUSS</strong> er verwendet werden; andere Codes sind nur zulässig, wenn keiner passt. Es enthält SNOMED-CT-Codes zum biologischen Geschlecht sowie <code class="language-plaintext highlighter-rouge">261665006 | Unknown (qualifier value) |</code>. Die ConceptMap <a href="ConceptMap-mii-cm-person-recordedsexorgender-snomed-administrative-gender.html">MII CM Person Recorded Sex or Gender SNOMED to Administrative Gender</a> setzt diese Codes in Beziehung zu <code class="language-plaintext highlighter-rouge">Patient.gender</code>; keine der Beziehungen ist äquivalent, da dokumentiertes und administratives Geschlecht unterschiedliche Konzepte sind (<a href="https://hl7germany.atlassian.net/browse/HDB-1068">HDB-1068</a>).</li>
       <li><strong><code class="language-plaintext highlighter-rouge">type</code></strong>: Kennzeichnet die Art der dokumentierten Geschlechtsangabe. Für das bei der Geburt zugewiesene Geschlecht SOLL <code class="language-plaintext highlighter-rouge">http://loinc.org|76689-9</code> (Sex assigned at birth) verwendet werden.</li>
       <li><strong><code class="language-plaintext highlighter-rouge">acquisitionDate</code></strong>: Zeitpunkt, zu dem die Angabe erfasst wurde.</li>
     </ul>
@@ -539,7 +539,11 @@ MII PR Person Patient
 <h4 id="geburtsdatum-geburtsort-und-vitalstatus">Geburtsdatum, Geburtsort und Vitalstatus</h4>
 
 <ul>
-  <li><strong><code class="language-plaintext highlighter-rouge">Patient.birthDate</code></strong>: Vollständiges Geburtsdatum, wenn verfügbar. Siehe [Basisprofil - Geburtsdatum]</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">Patient.birthDate</code></strong>: Vollständiges Geburtsdatum, wenn verfügbar. Siehe [Basisprofil - Geburtsdatum]
+    <ul>
+      <li><strong>Bewusste Abweichung:</strong> <code class="language-plaintext highlighter-rouge">birthDate</code> bleibt optional (0..1). Andere Spezifikationen wie ISiK fordern es verpflichtend (1..1, bei unbekanntem Datum mit <code class="language-plaintext highlighter-rouge">data-absent-reason</code>). Die MII folgt dem bewusst nicht: aus Datenschutzgründen (Datenminimierung) kann es weggelassen oder nur mit reduzierter Genauigkeit übermittelt werden (<a href="https://hl7germany.atlassian.net/browse/HDB-1071">HDB-1071</a>).</li>
+    </ul>
+  </li>
   <li><strong><code class="language-plaintext highlighter-rouge">Patient.extension:birthPlace</code></strong>: Registrierter Geburtsort der PatientIn. Zur Abbildung des Geburtslandes ist <code class="language-plaintext highlighter-rouge">valueAddress.country</code> zu verwenden; die Extension <code class="language-plaintext highlighter-rouge">countryCode</code> unterstützt die Codierung mit ISO-3166-1-Alpha-2-Codes über ein <code class="language-plaintext highlighter-rouge">preferred</code> Binding.</li>
 </ul>
 
@@ -552,6 +556,99 @@ MII PR Person Patient
     </ul>
   </li>
 </ul>
+
+<h4 id="mother-and-newborn">Mutter und Neugeborenes</h4>
+
+<p>Nach der Geburt werden Mutter und Kind durch getrennte <code class="language-plaintext highlighter-rouge">Patient</code>-Ressourcen abgebildet. Drei unterschiedliche Beziehungen werden getrennt modelliert (<a href="https://hl7.org/fhir/R4/patient.html#mother">FHIR R4 – Mother and newborn relationships</a>):</p>
+
+<ul>
+  <li>die <strong>familiäre Beziehung</strong> zwischen Mutter und Kind: <code class="language-plaintext highlighter-rouge">RelatedPerson</code>;</li>
+  <li>die <strong>geburtshilfliche Episode</strong>, d. h. die Kontakte von Mutter und Kind: <code class="language-plaintext highlighter-rouge">Encounter</code>;</li>
+  <li>die <strong>Abrechnungsfälle</strong>: Fallnummer in <code class="language-plaintext highlighter-rouge">Encounter.account.identifier</code> oder ein <code class="language-plaintext highlighter-rouge">Account</code>.</li>
+</ul>
+
+<p><strong>Familiäre Beziehung:</strong></p>
+
+<pre class="language-mermaid"><code class="language-mermaid">%%{init: {'flowchart': {'htmlLabels': false}, 'theme': 'base', 'themeVariables': {'primaryColor': '#E8F4F8', 'primaryBorderColor': '#406A99', 'primaryTextColor': '#000000', 'lineColor': '#5C8DB3', 'fontSize': '14px'}}}%%
+flowchart TD
+  M["`**Patient**
+      Eigener Datensatz der Mutter`"]
+  R["`**RelatedPerson**
+      Mutter dieses Kindes
+      relationship.coding.code = MTH`"]
+  C["`**Patient**
+      Eigener Datensatz des Kindes`"]
+
+  M -.-&gt;|"`link.other (optional)
+      link.type = seealso`"| R
+  R --&gt;|"`RelatedPerson.patient`"| C
+</code></pre>
+
+<p>Die Mutter erscheint zweimal: als <code class="language-plaintext highlighter-rouge">RelatedPerson</code>, die auf das Kind verweist, und, wenn sie selbst Patientin ist, als eigener <code class="language-plaintext highlighter-rouge">Patient</code>. Eine Referenz vom <code class="language-plaintext highlighter-rouge">Patient</code> der Mutter auf den <code class="language-plaintext highlighter-rouge">Patient</code> des Kindes gibt es bewusst nicht.</p>
+
+<ul>
+  <li>Die Mutter <strong>SOLL</strong> als <code class="language-plaintext highlighter-rouge">RelatedPerson</code> abgebildet werden, mit <code class="language-plaintext highlighter-rouge">RelatedPerson.patient</code> als Referenz auf den <code class="language-plaintext highlighter-rouge">Patient</code> des Kindes und <code class="language-plaintext highlighter-rouge">RelatedPerson.relationship</code> = <code class="language-plaintext highlighter-rouge">MTH</code> aus <code class="language-plaintext highlighter-rouge">http://terminology.hl7.org/CodeSystem/v3-RoleCode</code>. <code class="language-plaintext highlighter-rouge">MTH</code> umfasst eine Frau, die das Kind gezeugt, geboren oder großgezogen hat; wo die Unterscheidung relevant ist, <strong>SOLLEN</strong> spezifischere Codes wie <code class="language-plaintext highlighter-rouge">NMTH</code> (leibliche Mutter), <code class="language-plaintext highlighter-rouge">GESTM</code> (austragende Mutter), <code class="language-plaintext highlighter-rouge">ADOPTM</code> (Adoptivmutter) oder <code class="language-plaintext highlighter-rouge">STPMTH</code> (Stiefmutter) verwendet werden.</li>
+  <li>Ist die Mutter selbst Patientin, <strong>KANN</strong> ihr eigenes <code class="language-plaintext highlighter-rouge">Patient.link.other</code> mit <code class="language-plaintext highlighter-rouge">Patient.link.type</code> = <code class="language-plaintext highlighter-rouge">seealso</code> auf diese <code class="language-plaintext highlighter-rouge">RelatedPerson</code> verweisen.</li>
+  <li><code class="language-plaintext highlighter-rouge">Patient.link</code> <strong>DARF NICHT</strong> verwendet werden, um den <code class="language-plaintext highlighter-rouge">Patient</code> der Mutter direkt mit dem <code class="language-plaintext highlighter-rouge">Patient</code> des Kindes zu verknüpfen: Es verknüpft Ressourcen, die dieselbe tatsächliche Person betreffen.</li>
+  <li><strong>Referenzprofil:</strong> <a href="https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKAngehoeriger.html">ISiKAngehoeriger 6.0.0</a> ist das deutsche Krankenhausprofil für <code class="language-plaintext highlighter-rouge">RelatedPerson</code> (<code class="language-plaintext highlighter-rouge">patient.reference</code> 1..1, <code class="language-plaintext highlighter-rouge">relationship</code> Must Support). Seine Must-Support-Elemente (offizieller Name, Telekommunikation, Adresse) zielen auf Angehörige als Brief- und Rechnungsempfänger. Eine <code class="language-plaintext highlighter-rouge">RelatedPerson</code>, die nur aus dem Identifikator der Mutter gebildet wird, z. B. aus HL7 v2 <code class="language-plaintext highlighter-rouge">PID-21</code>, kann Konformität zu ISiKAngehoeriger nur beanspruchen, wenn sie den <a href="https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/UebergreifendeFestlegungen_UmgangFehlendeDaten.html">ISiK-Regeln zum Umgang mit fehlenden Daten</a> folgt: Liegt kein Name vor, trägt <code class="language-plaintext highlighter-rouge">RelatedPerson.name</code> die Extension <code class="language-plaintext highlighter-rouge">data-absent-reason</code>; unbekannte optionale Must-Support-Elemente wie Telekommunikation und Adresse werden weggelassen.</li>
+  <li><code class="language-plaintext highlighter-rouge">Patient.contact</code> ist ein Eintrag für eine Kontaktperson innerhalb des <code class="language-plaintext highlighter-rouge">Patient</code> des Kindes; er kann einen Beziehungscode wie <code class="language-plaintext highlighter-rouge">MTH</code> und Kontaktdaten enthalten. <code class="language-plaintext highlighter-rouge">RelatedPerson</code> <strong>SOLL</strong> verwendet werden, wenn die Mutter eigenständig referenzierbar sein muss, z. B. aus ihrem eigenen <code class="language-plaintext highlighter-rouge">Patient.link</code> oder aus anderen Ressourcen.</li>
+  <li><code class="language-plaintext highlighter-rouge">FamilyMemberHistory</code> beschreibt die klinisch relevante Vorgeschichte von Angehörigen; es dient nicht der Verknüpfung mit einer identifizierten Mutter.</li>
+</ul>
+
+<p><strong>Kontakte:</strong></p>
+
+<ul>
+  <li>Der Einrichtungskontakt des Neugeborenen <strong>KANN</strong> über <code class="language-plaintext highlighter-rouge">Encounter.partOf</code> auf den Entbindungs-Einrichtungskontakt der Mutter verweisen, wie in FHIR R4 beschrieben.</li>
+  <li>Eine solche <code class="language-plaintext highlighter-rouge">partOf</code>-Referenz auf einen Encounter mit anderem <code class="language-plaintext highlighter-rouge">Encounter.subject</code> drückt nur die geburtshilfliche Zuordnung aus. Sie ist nicht Teil der Kontakthierarchie: Die Traversierung der Hierarchie endet am Einrichtungskontakt des Neugeborenen (siehe <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html#encounter-partof-across-patients">Kontakthierarchien und Kontaktebenen</a>).</li>
+</ul>
+
+<p><strong>Abrechnung:</strong></p>
+
+<ul>
+  <li>Besteht für das Neugeborene ein eigener Abrechnungsfall, kann dessen Fallnummer in <code class="language-plaintext highlighter-rouge">Encounter.account.identifier</code> des Neugeborenen angegeben werden, als logische Referenz auch ohne verfügbare Account-Ressource (siehe <a href="StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html#best-practice-aufnahmenummer-vs-fallnummer">Best Practice - Aufnahmenummer vs. Fallnummer</a>).</li>
+  <li>Ob ein eigener Fall besteht, richtet sich nach den Abrechnungsregeln des jeweiligen Jahres, nicht nach der <code class="language-plaintext highlighter-rouge">partOf</code>-Referenz. Für 2026 sieht <a href="https://www.g-drg.de/content/download/17465/file/2025_11_14_FPV_2026.pdf#page=3">FPV 2026 § 1 Abs. 5</a> für jedes Neugeborene, das nach der Versorgung im Kreißsaal weiter im Krankenhaus versorgt wird, einen eigenen Fall und eine eigene Rechnung vor, mit Ausnahmen, z. B. wenn die Mindestverweildauer nicht erreicht wird.</li>
+</ul>
+
+<p><strong>Mehrlingsschwangerschaft und Mehrlingsgeburt:</strong></p>
+
+<ul>
+  <li>Eine Mehrlingsschwangerschaft ist ein Befund der <strong>Mutter</strong> und wird als Observation zur schwangeren Patientin erfasst, z. B. im KBV-MIO-Mutterpass-1.1.0-Profil <a href="https://hub.kbv.de/spaces/MP1X1X0/pages/109842757/9.3.2.2%2BAngaben%2Bzur%2BSchwangerschaft"><code class="language-plaintext highlighter-rouge">KBV_PR_MIO_MR_Observation_Pregnancy_Information</code></a> (SNOMED CT <code class="language-plaintext highlighter-rouge">370386005</code> mit booleschem Wert).</li>
+  <li>Nach der Geburt ist jedes Kind ein eigener <code class="language-plaintext highlighter-rouge">Patient</code>. Liegen Angaben zur Mehrlingsgeburt vor, werden sie in <code class="language-plaintext highlighter-rouge">Patient.multipleBirth[x]</code> (0..1) angegeben. <code class="language-plaintext highlighter-rouge">multipleBirthInteger</code> ist die Geburtsreihenfolge, nicht die Anzahl der Kinder; <code class="language-plaintext highlighter-rouge">multipleBirthBoolean</code> = <code class="language-plaintext highlighter-rouge">true</code> zeigt nur eine Mehrlingsgeburt an. Am <code class="language-plaintext highlighter-rouge">Patient</code> der Mutter würde <code class="language-plaintext highlighter-rouge">multipleBirth[x]</code> ihre eigene Geburt beschreiben.</li>
+  <li>Jedes Kind erhält eine eigene <code class="language-plaintext highlighter-rouge">RelatedPerson</code> für die Mutter, wie im <a href="https://www.fhir.ch/ig/ch-epreg/child-relationships.html">CH-EPREG-Beispiel für mehrere Kinder</a>.</li>
+</ul>
+
+<p>Beispiel für Zwillinge:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ressource</th>
+      <th>Inhalt</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Patient</code> Kind 1</td>
+      <td><code class="language-plaintext highlighter-rouge">multipleBirthInteger</code> = <code class="language-plaintext highlighter-rouge">1</code> (oder <code class="language-plaintext highlighter-rouge">multipleBirthBoolean</code> = <code class="language-plaintext highlighter-rouge">true</code>, wenn die Reihenfolge unbekannt ist)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Patient</code> Kind 2</td>
+      <td><code class="language-plaintext highlighter-rouge">multipleBirthInteger</code> = <code class="language-plaintext highlighter-rouge">2</code> (oder <code class="language-plaintext highlighter-rouge">multipleBirthBoolean</code> = <code class="language-plaintext highlighter-rouge">true</code>, wenn die Reihenfolge unbekannt ist)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">RelatedPerson</code> Mutter für Kind 1</td>
+      <td><code class="language-plaintext highlighter-rouge">patient</code> → Kind 1, <code class="language-plaintext highlighter-rouge">relationship</code> = <code class="language-plaintext highlighter-rouge">MTH</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">RelatedPerson</code> Mutter für Kind 2</td>
+      <td><code class="language-plaintext highlighter-rouge">patient</code> → Kind 2, <code class="language-plaintext highlighter-rouge">relationship</code> = <code class="language-plaintext highlighter-rouge">MTH</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Nicht im Umfang:</strong> Die Identifikation einzelner Feten während der Schwangerschaft ist nicht Gegenstand dieses Moduls; siehe <a href="https://build.fhir.org/ig/HL7/fetal_records/">HL7 International Birth and Child Model</a> und CH EPREG. Gleiches gilt für die in <a href="https://hl7germany.atlassian.net/browse/HDB-1035">HDB-1035</a> aufgeworfenen Fragen zur Vergabe von Identifikatoren bei der Geburt, zur Verknüpfung pränataler Befunde mit dem späteren Kind und zur Zuordnung von Nabelschnurblut-Proben zu Mutter oder Kind. Diese werden an geburtshilfliche und perinatale Leitfäden verwiesen.</p>
+
+<p><strong>HL7 v2:</strong> Gemäß dem <a href="https://build.fhir.org/ig/HL7/v2-to-fhir/ConceptMap-segment-pid-to-patient.html">HL7-v2-to-FHIR-Mapping</a> wird <code class="language-plaintext highlighter-rouge">PID-21</code> (Mother's Identifier) auf eine <code class="language-plaintext highlighter-rouge">RelatedPerson</code> für die Mutter abgebildet, <code class="language-plaintext highlighter-rouge">PID-25</code> (Birth Order) auf <code class="language-plaintext highlighter-rouge">multipleBirthInteger</code> und <code class="language-plaintext highlighter-rouge">PID-24</code> (Multiple Birth Indicator) auf <code class="language-plaintext highlighter-rouge">multipleBirthBoolean</code>, wenn <code class="language-plaintext highlighter-rouge">PID-25</code> nicht befüllt ist.</p>
 
 <h4 id="adressinformationen">Adressinformationen</h4>
 
@@ -1994,7 +2091,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="" class="hierarchy xhtCellBorder0">1..1</td>
 <td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#code">code</a></td>
 <td style="" class="hierarchy xhtCellBorder0">replaced-by | replaces | refer | seealso<br class="binding"/><span class="xhtPieceBold binding">Binding: </span><a href="http://hl7.org/fhir/R4/valueset-link-type.html" title="http://hl7.org/fhir/ValueSet/link-type" class="binding">LinkType</a><span class="binding"> (</span><a href="http://hl7.org/fhir/R4/terminologies.html#required" title="To be conformant, the concept in this element SHALL be from the specified value set." class="binding">required</a><span class="binding">)</span><span class="binding">: </span><span class="binding">The type of link between this patient resource and another patient resource.</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4a7cce79-8b64-47e8-abaa-f9766f1d8375
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 9b93636e-95e4-4633-b629-3a36f08d1860
 document.getElementById('cbmii-pr-person-patientK-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-person-patientK'), 'binding', document.getElementById('cbmii-pr-person-patientK-binding').checked, document.getElementById('ppmii-pr-person-patientK'));
 document.getElementById('cbmii-pr-person-patientK-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -3635,7 +3732,7 @@ filterDesc(document.getElementById('mii-pr-person-patientK'), 'obligation', docu
 <td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">1</span><span class="xhtPieceDeEmphasized">..</span><span class="xhtPieceDeEmphasized">1</span></td>
 <td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#code" class="xhtPieceDeEmphasized">code</a></td>
 <td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">replaced-by | replaces | refer | seealso</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4a7cce79-8b64-47e8-abaa-f9766f1d8375
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 9b93636e-95e4-4633-b629-3a36f08d1860
 document.getElementById('cbmii-pr-person-patientD-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-person-patientD'), 'binding', document.getElementById('cbmii-pr-person-patientD-binding').checked, document.getElementById('ppmii-pr-person-patientD'));
 document.getElementById('cbmii-pr-person-patientD-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -6374,7 +6471,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="" class="hierarchy xhtCellBorder0">1..1</td>
 <td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#code">code</a></td>
 <td style="" class="hierarchy xhtCellBorder0">replaced-by | replaces | refer | seealso<br class="binding"/><span class="xhtPieceBold binding">Binding: </span><a href="http://hl7.org/fhir/R4/valueset-link-type.html" title="http://hl7.org/fhir/ValueSet/link-type" class="binding">LinkType</a><span class="binding"> (</span><a href="http://hl7.org/fhir/R4/terminologies.html#required" title="To be conformant, the concept in this element SHALL be from the specified value set." class="binding">required</a><span class="binding">)</span><span class="binding">: </span><span class="binding">The type of link between this patient resource and another patient resource.</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4a7cce79-8b64-47e8-abaa-f9766f1d8375
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 9b93636e-95e4-4633-b629-3a36f08d1860
 document.getElementById('cbmii-pr-person-patientS-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-person-patientS'), 'binding', document.getElementById('cbmii-pr-person-patientS-binding').checked, document.getElementById('ppmii-pr-person-patientS'));
 document.getElementById('cbmii-pr-person-patientS-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -9141,7 +9238,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="" class="hierarchy xhtCellBorder0">1..1</td>
 <td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#code">code</a></td>
 <td style="" class="hierarchy xhtCellBorder0">replaced-by | replaces | refer | seealso<br class="binding"/><span class="xhtPieceBold binding">Binding: </span><a href="http://hl7.org/fhir/R4/valueset-link-type.html" title="http://hl7.org/fhir/ValueSet/link-type" class="binding">LinkType</a><span class="binding"> (</span><a href="http://hl7.org/fhir/R4/terminologies.html#required" title="To be conformant, the concept in this element SHALL be from the specified value set." class="binding">required</a><span class="binding">)</span><span class="binding">: </span><span class="binding">The type of link between this patient resource and another patient resource.</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4a7cce79-8b64-47e8-abaa-f9766f1d8375
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 9b93636e-95e4-4633-b629-3a36f08d1860
 document.getElementById('cbmii-pr-person-patientKA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-person-patientKA'), 'binding', document.getElementById('cbmii-pr-person-patientKA-binding').checked, document.getElementById('ppmii-pr-person-patientKA'));
 document.getElementById('cbmii-pr-person-patientKA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -10781,7 +10878,7 @@ filterDesc(document.getElementById('mii-pr-person-patientKA'), 'obligation', doc
 <td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">1</span><span class="xhtPieceDeEmphasized">..</span><span class="xhtPieceDeEmphasized">1</span></td>
 <td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#code" class="xhtPieceDeEmphasized">code</a></td>
 <td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">replaced-by | replaces | refer | seealso</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4a7cce79-8b64-47e8-abaa-f9766f1d8375
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 9b93636e-95e4-4633-b629-3a36f08d1860
 document.getElementById('cbmii-pr-person-patientDA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-person-patientDA'), 'binding', document.getElementById('cbmii-pr-person-patientDA-binding').checked, document.getElementById('ppmii-pr-person-patientDA'));
 document.getElementById('cbmii-pr-person-patientDA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -13517,7 +13614,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="" class="hierarchy xhtCellBorder0">1..1</td>
 <td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#code">code</a></td>
 <td style="" class="hierarchy xhtCellBorder0">replaced-by | replaces | refer | seealso<br class="binding"/><span class="xhtPieceBold binding">Binding: </span><a href="http://hl7.org/fhir/R4/valueset-link-type.html" title="http://hl7.org/fhir/ValueSet/link-type" class="binding">LinkType</a><span class="binding"> (</span><a href="http://hl7.org/fhir/R4/terminologies.html#required" title="To be conformant, the concept in this element SHALL be from the specified value set." class="binding">required</a><span class="binding">)</span><span class="binding">: </span><span class="binding">The type of link between this patient resource and another patient resource.</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4a7cce79-8b64-47e8-abaa-f9766f1d8375
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 9b93636e-95e4-4633-b629-3a36f08d1860
 document.getElementById('cbmii-pr-person-patientSA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('mii-pr-person-patientSA'), 'binding', document.getElementById('cbmii-pr-person-patientSA-binding').checked, document.getElementById('ppmii-pr-person-patientSA'));
 document.getElementById('cbmii-pr-person-patientSA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -14952,7 +15049,7 @@ Summary
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-ballot basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Erstellt <span title="Thu, Nov 12, 2026 20:19+0000">2026-11-12</span>
+          Erstellt <span title="Fri, Nov 13, 2026 18:01+0000">2026-11-13</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.

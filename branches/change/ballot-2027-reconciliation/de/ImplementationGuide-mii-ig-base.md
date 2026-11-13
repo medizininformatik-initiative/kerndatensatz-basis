@@ -56,7 +56,7 @@ This publication includes IP covered under the following statements.
 
 * ISO maintains the copyright on the country codes, and controls its use carefully. For further details see the ISO 3166 web page: [https://www.iso.org/iso-3166-country-codes.html](https://www.iso.org/iso-3166-country-codes.html)
 
-* [ISO 3166-1 Codes for the representation of names of countries and their subdivisions — Part 1: Country code](http://terminology.hl7.org/6.2.0/CodeSystem-ISO3166Part1.html): [Bundle/mii-exa-base-test-data-bundle-1](Bundle-mii-exa-base-test-data-bundle-1.md), [MII_CPS_Diagnose_CapabilityStatement](CapabilityStatement-mii-cps-diagnose-capabilitystatement.md)... Show 38 more, [MII_CPS_Fall_CapabilityStatement](CapabilityStatement-mii-cps-fall-capabilitystatement.md), [MII_CPS_Person_CapabilityStatement](CapabilityStatement-mii-cps-person-capabilitystatement.md), [MII_CPS_Prozedur_CapabilityStatement](CapabilityStatement-mii-cps-prozedur-capabilitystatement.md), [MII_CS_Diagnose_Lebensphase_Supplement_SNOMED](CodeSystem-mii-cs-diagnose-lebensphase-supplement-snomed.md), [MII_CS_Fall_SupplementActEncounterCode](CodeSystem-mii-cs-fall-supplement-act-encounter-code.md), [MII_CS_Fall_SupplementPatientClass](CodeSystem-mii-cs-fall-supplement-patient-class.md), [MII_CS_Person_Vitalstatus](CodeSystem-mii-cs-person-vitalstatus.md), [MII_EX_Prozedur_Durchfuehrungsabsicht](StructureDefinition-mii-ex-prozedur-durchfuehrungsabsicht.md), [MII_IG_Base](index.md), [MII_LM_Diagnose](StructureDefinition-mii-lm-diagnose.md), [MII_LM_Fall](StructureDefinition-mii-lm-fall.md), [MII_LM_Person](StructureDefinition-mii-lm-person.md), [MII_LM_Prozedur](StructureDefinition-mii-lm-prozedur.md), [MII_PR_Diagnose_Condition](StructureDefinition-mii-pr-diagnose-condition.md), [MII_PR_Fall_KontaktGesundheitseinrichtung](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.md), [MII_PR_Person_AllergieUnvertraeglichkeit](StructureDefinition-mii-pr-person-allergieunvertraeglichkeit.md), [MII_PR_Person_Patient](StructureDefinition-mii-pr-person-patient.md), [MII_PR_Person_PatientPseudonymisiert](StructureDefinition-mii-pr-person-patient-pseudonymisiert.md), [MII_PR_Person_Todesursache](StructureDefinition-mii-pr-person-todesursache.md), [MII_PR_Person_Vitalstatus](StructureDefinition-mii-pr-person-vitalstatus.md), [MII_PR_Prozedur_Procedure](StructureDefinition-mii-pr-prozedur-procedure.md), [MII_VS_Diagnose_AlphaID](ValueSet-mii-vs-diagnose-alphaid.md), [MII_VS_Diagnose_BodyStructure_SNOMED](ValueSet-mii-vs-diagnose-bodystructure-snomed.md), [MII_VS_Diagnose_DiagnoseCodes_SNOMED](ValueSet-mii-vs-diagnose-diagnosecodes-snomed.md), [MII_VS_Diagnose_ICD10GM](ValueSet-mii-vs-diagnose-icd10gm.md), [MII_VS_Diagnose_Orphanet](ValueSet-mii-vs-diagnose-orphanet.md), [MII_VS_Fall_Diagnosis_Use](ValueSet-mii-vs-fall-diagnosis-use.md), [MII_VS_Fall_IdentifierTypeCodes](ValueSet-mii-vs-fall-identifier-type-codes.md), [MII_VS_Fall_LocationPhysicalType](ValueSet-mii-vs-fall-location-physical-type.md), [MII_VS_Person_ICD10WHO](ValueSet-mii-vs-person-icd10who.md), [MII_VS_Person_Vitalstatus](ValueSet-mii-vs-person-vitalstatus.md), [MII_VS_Person_recordedSexOrGender_SNOMED](ValueSet-mii-vs-person-recordedsexorgender-snomed.md), [MII_VS_Prozedur_Durchfuehrungsabsicht_SNOMEDCT](ValueSet-mii-vs-prozedur-durchfuehrungsabsicht-snomedct.md), [MII_VS_Prozedur_OPS](ValueSet-mii-vs-prozedur-ops.md), [MII_VS_Prozedur_OpsKategorien_SNOMEDCT](ValueSet-mii-vs-prozedur-opskategorien-snomedct.md), [MII_VS_Prozedur_Prozeduren_SNOMEDCT](ValueSet-mii-vs-prozedur-prozeduren-snomedct.md), [Patient/mii-exa-person-patient-1](Patient-mii-exa-person-patient-1.md) and [Patient/mii-exa-person-patient-pseudonymisiert](Patient-mii-exa-person-patient-pseudonymisiert.md)
+* [ISO 3166-1 Codes for the representation of names of countries and their subdivisions — Part 1: Country code](http://terminology.hl7.org/6.2.0/CodeSystem-ISO3166Part1.html): [Bundle/mii-exa-base-test-data-bundle-1](Bundle-mii-exa-base-test-data-bundle-1.md), [MII_CM_Person_RecordedSexOrGender_SNOMED_AdministrativeGender](ConceptMap-mii-cm-person-recordedsexorgender-snomed-administrative-gender.md)... Show 39 more, [MII_CPS_Diagnose_CapabilityStatement](CapabilityStatement-mii-cps-diagnose-capabilitystatement.md), [MII_CPS_Fall_CapabilityStatement](CapabilityStatement-mii-cps-fall-capabilitystatement.md), [MII_CPS_Person_CapabilityStatement](CapabilityStatement-mii-cps-person-capabilitystatement.md), [MII_CPS_Prozedur_CapabilityStatement](CapabilityStatement-mii-cps-prozedur-capabilitystatement.md), [MII_CS_Diagnose_Lebensphase_Supplement_SNOMED](CodeSystem-mii-cs-diagnose-lebensphase-supplement-snomed.md), [MII_CS_Fall_SupplementActEncounterCode](CodeSystem-mii-cs-fall-supplement-act-encounter-code.md), [MII_CS_Fall_SupplementPatientClass](CodeSystem-mii-cs-fall-supplement-patient-class.md), [MII_CS_Person_Vitalstatus](CodeSystem-mii-cs-person-vitalstatus.md), [MII_EX_Prozedur_Durchfuehrungsabsicht](StructureDefinition-mii-ex-prozedur-durchfuehrungsabsicht.md), [MII_IG_Base](index.md), [MII_LM_Diagnose](StructureDefinition-mii-lm-diagnose.md), [MII_LM_Fall](StructureDefinition-mii-lm-fall.md), [MII_LM_Person](StructureDefinition-mii-lm-person.md), [MII_LM_Prozedur](StructureDefinition-mii-lm-prozedur.md), [MII_PR_Diagnose_Condition](StructureDefinition-mii-pr-diagnose-condition.md), [MII_PR_Fall_KontaktGesundheitseinrichtung](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.md), [MII_PR_Person_AllergieUnvertraeglichkeit](StructureDefinition-mii-pr-person-allergieunvertraeglichkeit.md), [MII_PR_Person_Patient](StructureDefinition-mii-pr-person-patient.md), [MII_PR_Person_PatientPseudonymisiert](StructureDefinition-mii-pr-person-patient-pseudonymisiert.md), [MII_PR_Person_Todesursache](StructureDefinition-mii-pr-person-todesursache.md), [MII_PR_Person_Vitalstatus](StructureDefinition-mii-pr-person-vitalstatus.md), [MII_PR_Prozedur_Procedure](StructureDefinition-mii-pr-prozedur-procedure.md), [MII_VS_Diagnose_AlphaID](ValueSet-mii-vs-diagnose-alphaid.md), [MII_VS_Diagnose_BodyStructure_SNOMED](ValueSet-mii-vs-diagnose-bodystructure-snomed.md), [MII_VS_Diagnose_DiagnoseCodes_SNOMED](ValueSet-mii-vs-diagnose-diagnosecodes-snomed.md), [MII_VS_Diagnose_ICD10GM](ValueSet-mii-vs-diagnose-icd10gm.md), [MII_VS_Diagnose_Orphanet](ValueSet-mii-vs-diagnose-orphanet.md), [MII_VS_Fall_Diagnosis_Use](ValueSet-mii-vs-fall-diagnosis-use.md), [MII_VS_Fall_IdentifierTypeCodes](ValueSet-mii-vs-fall-identifier-type-codes.md), [MII_VS_Fall_LocationPhysicalType](ValueSet-mii-vs-fall-location-physical-type.md), [MII_VS_Person_ICD10WHO](ValueSet-mii-vs-person-icd10who.md), [MII_VS_Person_Vitalstatus](ValueSet-mii-vs-person-vitalstatus.md), [MII_VS_Person_recordedSexOrGender_SNOMED](ValueSet-mii-vs-person-recordedsexorgender-snomed.md), [MII_VS_Prozedur_Durchfuehrungsabsicht_SNOMEDCT](ValueSet-mii-vs-prozedur-durchfuehrungsabsicht-snomedct.md), [MII_VS_Prozedur_OPS](ValueSet-mii-vs-prozedur-ops.md), [MII_VS_Prozedur_OpsKategorien_SNOMEDCT](ValueSet-mii-vs-prozedur-opskategorien-snomedct.md), [MII_VS_Prozedur_Prozeduren_SNOMEDCT](ValueSet-mii-vs-prozedur-prozeduren-snomedct.md), [Patient/mii-exa-person-patient-1](Patient-mii-exa-person-patient-1.md) and [Patient/mii-exa-person-patient-pseudonymisiert](Patient-mii-exa-person-patient-pseudonymisiert.md)
 * [ISO 3166-2 Codes for the representation of names of countries and their subdivisions — Part 2: Country subdivision code](http://terminology.hl7.org/6.2.0/CodeSystem-v3-iso3166-2.html): [MII_LM_Person](StructureDefinition-mii-lm-person.md)
 
 
@@ -1038,6 +1038,17 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       },
       {
         "url" : "value",
+        "valueString" : "https://www.medizininformatik-initiative.de/fhir/modul-person/ConceptMap/mii-cm-person-recordedsexorgender-snomed-administrative-gender"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
         "valueString" : "https://www.medizininformatik-initiative.de/fhir/modul-person/StructureDefinition/AllergieUnvertraeglichkeit"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
@@ -1329,6 +1340,22 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`-`$expand`-Opera
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     }],
     "resource" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ConceptMap-mii-cm-person-recordedsexorgender-snomed-administrative-gender.html"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/mii-cm-person-recordedsexorgender-snomed-administrative-gender"
+      },
+      "name" : "MII CM Person Recorded Sex or Gender SNOMED to Administrative Gender",
+      "description" : "Maps the SNOMED CT codes of MII VS Person Recorded Sex or Gender SNOMED to FHIR AdministrativeGender. Recorded sex (e.g. sex assigned at birth) and administrative gender are different concepts, so no mapping is equivalent; each relationship is qualified.",
+      "exampleBoolean" : false
+    },
+    {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CapabilityStatement"

@@ -227,12 +227,6 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
-    <sch:title>f:Encounter/f:hospitalization</sch:title>
-    <sch:rule context="f:Encounter/f:hospitalization">
-      <sch:assert test="count(f:admitSource) &gt;= 1">admitSource: minimum cardinality of 'admitSource' is 1</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
     <sch:title>f:Encounter/f:hospitalization/f:admitSource</sch:title>
     <sch:rule context="f:Encounter/f:hospitalization/f:admitSource">
       <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
