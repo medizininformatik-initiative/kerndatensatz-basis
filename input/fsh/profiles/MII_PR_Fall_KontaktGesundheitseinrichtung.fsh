@@ -95,8 +95,8 @@ Description: "Kontakt zu einer Einrichtung, Abteilung oder Versorgungsstelle"
     Jeder Encounter SOLLTE seine eigene eindeutige Aufnahmenummer haben. Die Aufnahmenummer ist nicht die Fallnummer, 
     welche sich auf den kompletten Abrechnungsfall bezieht. Hier wird ein Identifier angegeben, der den Kontakt eindeutig identifiziert.
     """
-* insert Translation(identifier[Aufnahmenummer] ^definition, de-DE, Aufnahmenummer/Fallnummer\, die Patient:in bei einer Aufnahme bekommt.)
-* insert Translation(identifier[Aufnahmenummer] ^definition, en-US, Admission number\, the patient receives during an admission.)
+* insert Translation(identifier[Aufnahmenummer] ^definition, de-DE, Aufnahmenummer\, die Patient:in bei einer Aufnahme bekommt; nicht die Fallnummer des Abrechnungsfalls.)
+* insert Translation(identifier[Aufnahmenummer] ^definition, en-US, Admission number\, the patient receives during an admission; not the case number of the billing case.)
 * identifier[Aufnahmenummer] ^patternIdentifier.type = $v2-0203#VN
 * identifier[Aufnahmenummer].type 1.. MS
 * identifier[Aufnahmenummer].type from mii-vs-fall-identifier-type-codes (extensible)
