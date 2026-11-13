@@ -1,10 +1,10 @@
 MII_IG_Base : Validation Results
 =========================================
 
-err = 56, warn = 843, info = 3298, broken links = 0
+err = 56, warn = 843, info = 3298, broken links = 4
 $--
 Generated $--. FHIR version $-- for de.medizininformatikinitiative.kerndatensatz.base#$-- (canonical = https://www.medizininformatik-initiative.de/fhir/modul-base)
- Build Errors : 32 / 213 / 6
+ Build Errors : 36 / 213 / 6
  /workspace/fsh-generated/resources/AllergyIntolerance-mii-exa-person-allergyintolerance-1 : 0 / 0 / 3
  /workspace/fsh-generated/resources/Bundle-mii-exa-base-test-data-bundle-1 : 0 / 55 / 67
  /workspace/fsh-generated/resources/CapabilityStatement-mii-cps-diagnose-capabilitystatement : 0 / 2 / 48
@@ -187,6 +187,8 @@ WARNING: /workspace/output/de/StructureDefinition-mii-pr-prozedur-procedure.prof
 ERROR: /workspace/output/de/StructureDefinition-mii-pr-prozedur-procedure.profile.history.html: The page has more than one top level heading: <h2> (no text) is at the same level as the first heading on the page (<h2> 'Ressourcenprofil: MII PR Prozedur Procedure - Änderungshi...' (id=root)). A page must have exactly one top level heading, with every other heading beneath it (WCAG compliance test)
 WARNING: /workspace/output/de/StructureDefinition-mii-pr-prozedur-procedure.profile.history.html: The html source has duplicate element ids: root. An id must be unique in a page - a link to one of these is ambiguous, and it is invalid HTML
 ERROR: /workspace/output/de/ballot-reconciliation.html: The page skips a heading level: <h4> 'Legende' (id=legende) follows <h2> 'Ballot-Kommentierung 2027.0.0-ballot', so it should be <h3>. Heading levels must not skip a level going down (WCAG compliance test)
+ERROR: de/ballot-reconciliation.html#/html/body/div/div/div/div/div/table/tbody/tr/td/a at Line 484, column 125: The link 'ConceptMap-mii-cm-person-recordedsexorgender-snomed-administrative-gender.html' for "ConceptMap" cannot be resolved
+ERROR: de/ballot-reconciliation.html#/html/body/div/div/div/div/div/table/tbody/tr/td/a at Line 621, column 50: The link 'StructureDefinition-mii-pr-person-patient.html#mother-and-newborn' for "Mutter und Neugeborenes" cannot be resolved (valid targets: 3480 targets)
 WARNING: /workspace/output/de/searchform.html: The html source is not well formed: Found "</a>" expecting "</img>" at line 34 column 175
 WARNING: /workspace/output/de/searchform.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 79 column 9
 WARNING: /workspace/output/de/searchform.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 80 column 8
@@ -306,6 +308,8 @@ WARNING: /workspace/output/en/StructureDefinition-mii-pr-prozedur-procedure.prof
 ERROR: /workspace/output/en/StructureDefinition-mii-pr-prozedur-procedure.profile.history.html: The page has more than one top level heading: <h2> (no text) is at the same level as the first heading on the page (<h2> 'Resource Profile: MII PR Prozedur Procedure - Change History' (id=root)). A page must have exactly one top level heading, with every other heading beneath it (WCAG compliance test)
 WARNING: /workspace/output/en/StructureDefinition-mii-pr-prozedur-procedure.profile.history.html: The html source has duplicate element ids: root. An id must be unique in a page - a link to one of these is ambiguous, and it is invalid HTML
 ERROR: /workspace/output/en/ballot-reconciliation.html: The page skips a heading level: <h4> 'Legend' (id=legend) follows <h2> 'Ballot Reconciliation 2027.0.0-ballot', so it should be <h3>. Heading levels must not skip a level going down (WCAG compliance test)
+ERROR: en/ballot-reconciliation.html#/html/body/div/div/div/div/div/table/tbody/tr/td/a at Line 484, column 109: The link 'ConceptMap-mii-cm-person-recordedsexorgender-snomed-administrative-gender.html' for "ConceptMap" cannot be resolved
+ERROR: en/ballot-reconciliation.html#/html/body/div/div/div/div/div/table/tbody/tr/td/a at Line 621, column 43: The link 'StructureDefinition-mii-pr-person-patient.html#mother-and-newborn' for "Mother and Newborn" cannot be resolved (valid targets: 3480 targets)
 WARNING: /workspace/output/en/searchform.html: The html source is not well formed: Found "</a>" expecting "</img>" at line 34 column 175
 WARNING: /workspace/output/en/searchform.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 79 column 9
 WARNING: /workspace/output/en/searchform.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 80 column 8

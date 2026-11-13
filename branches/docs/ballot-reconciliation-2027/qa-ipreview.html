@@ -384,7 +384,7 @@ This material derives from the HL7 Terminology (THO). THO is copyright &copy;198
 
           IG &copy; 2019+ Medical Informatics Initiative (MII).  
           Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-ballot based on FHIR 4.0.1.
-          Generated 2026-11-09
+          Generated 2026-11-13
           
           
             
@@ -410,7 +410,7 @@ This material derives from the HL7 Terminology (THO). THO is copyright &copy;198
 
           IG &copy; 2019+ Medical Informatics Initiative (MII).  
           Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-ballot basiert auf FHIR 4.0.1.
-          Erstellt 2026-11-09
+          Erstellt 2026-11-13
           
           
             
@@ -891,7 +891,7 @@ Versehentliche(r) Schnitt, Punktion, Perforation oder Blutung: Bei sonstigen chi
 .  
           Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-ballot basiert auf           <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>
 .
-          Erstellt           <span title="Mon, Nov 9, 2026 10:03+0000">2026-11-09</span>
+          Erstellt           <span title="Fri, Nov 13, 2026 16:59+0000">2026-11-13</span>
 
                     <br/>
 
@@ -34841,11 +34841,11 @@ Die Modellierung codierter und detaillierter anatomischer Lokalisationen wurde m
           <a href="https://hl7germany.atlassian.net/issues/?jql=project%20%3D%20HDB%20AND%20created%20%3E%3D%20-200d%20AND%20%22Project%5BDropdown%5D%22%20in%20%28%22MII%20%E2%80%93%20Modul%20Basis%20%28Person%2C%20Fall%2C%20Diagnose%20%26%20Prozedur%29%22%29%20ORDER%20BY%20created%20DESC">hl7germany.atlassian.net</a>
         </td>
         <td>
-Diese Seite ist ein           <strong>Arbeitsdokument</strong>
- für die Bearbeitung der Ballot-Kommentare zur Version           <code class="language-plaintext highlighter-rouge">2027.0.0-ballot</code>
- des MII Kerndatensatz Basis. Sie listet die offenen Tickets aus dem Ballot von HL7 Deutschland (          <a href="https://hl7germany.atlassian.net/issues/?jql=project%20%3D%20HDB%20AND%20created%20%3E%3D%20-200d%20AND%20%22Project%5BDropdown%5D%22%20in%20%28%22MII%20%E2%80%93%20Modul%20Basis%20%28Person%2C%20Fall%2C%20Diagnose%20%26%20Prozedur%29%22%29%20ORDER%20BY%20created%20DESC">Jira-Abfrage</a>
-) nach Kategorie gruppiert mit einem           <strong>vorgeschlagenen</strong>
- Vorgehen auf.
+Diese Seite dokumentiert die Bearbeitung der Ballot-Kommentare zur Version           <code class="language-plaintext highlighter-rouge">2027.0.0-ballot</code>
+ des MII Kerndatensatz Basis. Sie listet die Tickets aus dem Ballot von HL7 Deutschland (          <a href="https://hl7germany.atlassian.net/issues/?jql=project%20%3D%20HDB%20AND%20created%20%3E%3D%20-200d%20AND%20%22Project%5BDropdown%5D%22%20in%20%28%22MII%20%E2%80%93%20Modul%20Basis%20%28Person%2C%20Fall%2C%20Diagnose%20%26%20Prozedur%29%22%29%20ORDER%20BY%20created%20DESC">Jira-Abfrage</a>
+) nach Kategorie gruppiert mit der Entscheidung und ihrer Umsetzung auf. Die einzelnen Änderungen stehen im           <a href="changes.html">Changelog</a>
+ unter Version           <code class="language-plaintext highlighter-rouge">2027.0.0</code>
+.
         </td>
       </tr>
       <tr>
@@ -34857,6 +34857,26 @@ Diese Seite ist ein           <strong>Arbeitsdokument</strong>
         </td>
         <td>
           <a href="https://hl7germany.atlassian.net/browse/HDB-1075">HDB-1075</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/ballot-reconciliation.html">web</a>
+        </td>
+        <td>
+          <a href="https://hl7.eu/fhir/extensions/StructureDefinition-periods-of-life.html">hl7.eu</a>
+        </td>
+        <td>
+Die Extension Lebensphase wurde von           <code class="language-plaintext highlighter-rouge">Condition.onsetAge</code>
+/          <code class="language-plaintext highlighter-rouge">abatementAge</code>
+ nach           <code class="language-plaintext highlighter-rouge">onsetRange</code>
+/          <code class="language-plaintext highlighter-rouge">abatementRange</code>
+ verschoben, da ihr Kontext in           <code class="language-plaintext highlighter-rouge">de.basisprofil.r4</code>
+ 1.6.0           <code class="language-plaintext highlighter-rouge">Age</code>
+ nicht erlaubt; das Mapping im logischen Modell folgt.           <code class="language-plaintext highlighter-rouge">Age</code>
+ bleibt ohne die Extension erlaubt. Der Kontext der deutschen Extension und der HL7-Europe-Extension           <a href="https://hl7.eu/fhir/extensions/StructureDefinition-periods-of-life.html">
+<code class="language-plaintext highlighter-rouge">periods-of-life</code>          </a>
+ wird auf künftige Änderungen beobachtet.
         </td>
       </tr>
       <tr>
@@ -34912,6 +34932,25 @@ Diese Seite ist ein           <strong>Arbeitsdokument</strong>
         </td>
         <td>
           <a href="https://hl7germany.atlassian.net/browse/HDB-1073">HDB-1073</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/ballot-reconciliation.html">web</a>
+        </td>
+        <td>
+          <a href="https://terminologien.bfarm.de">terminologien.bfarm.de</a>
+        </td>
+        <td>
+Die IPS-Bindings wurden durch optionale Slices           <code class="language-plaintext highlighter-rouge">coding:snomed-ct</code>
+ (0..1, Must Support) an           <code class="language-plaintext highlighter-rouge">AllergyIntolerance.code</code>
+ und           <code class="language-plaintext highlighter-rouge">reaction.manifestation</code>
+ ersetzt,           <em>extensible</em>
+ gebunden an           <code class="language-plaintext highlighter-rouge">KBV_VS_AllergyIntolerance_Substance_SNOMED_CT</code>
+ und           <code class="language-plaintext highlighter-rouge">KBV_VS_AllergyIntolerance_Manifestation_SNOMED_CT</code>
+ (1.0.0), abgestimmt mit ISiK. Neue Abhängigkeit           <code class="language-plaintext highlighter-rouge">kbv.all.terminology.allergyintolerance</code>
+ 1.0.0, nur auf dem           <a href="https://terminologien.bfarm.de">BfArM-ZTS</a>
+ verfügbar; die CI installiert sie mit einer Composite Action, nachdem die Download-Bedingungen akzeptiert wurden.
         </td>
       </tr>
       <tr>
@@ -35000,6 +35039,21 @@ Diese Seite ist ein           <strong>Arbeitsdokument</strong>
         </td>
         <td>
           <a href="https://hl7germany.atlassian.net/browse/HDB-1016">HDB-1016</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/ballot-reconciliation.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/53">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">type:Kontaktebene</code>
+ und           <code class="language-plaintext highlighter-rouge">diagnosis.use.coding:Diagnosetyp</code>
+ behalten ihre Kardinalitäten; die Seite zum Encounter-Profil dokumentiert die Abweichungen von ISiK 6.0.0 in einer Tabelle.           <code class="language-plaintext highlighter-rouge">hospitalization.admitSource</code>
+ wird von 1..1 auf 0..1 (Must Support) gelockert, wie in ISiK und im logischen Modell, da der Aufnahmeanlass im HL7-v2-Feed oft fehlt (          <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/53">#53</a>
+).
         </td>
       </tr>
       <tr>
@@ -35117,6 +35171,28 @@ Diese Seite ist ein           <strong>Arbeitsdokument</strong>
           <a href="de/ballot-reconciliation.html">web</a>
         </td>
         <td>
+          <a href="https://hl7germany.atlassian.net/browse/HDB-1035">hl7germany.atlassian.net</a>
+        </td>
+        <td>
+          <a href="https://hl7germany.atlassian.net/browse/HDB-1035">HDB-1035</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/ballot-reconciliation.html">web</a>
+        </td>
+        <td>
+          <a href="https://hl7germany.atlassian.net/browse/HDB-1036">hl7germany.atlassian.net</a>
+        </td>
+        <td>
+          <a href="https://hl7germany.atlassian.net/browse/HDB-1036">HDB-1036</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/ballot-reconciliation.html">web</a>
+        </td>
+        <td>
           <a href="https://hl7germany.atlassian.net/browse/HDB-1017">hl7germany.atlassian.net</a>
         </td>
         <td>
@@ -35187,53 +35263,6 @@ Diese Seite ist ein           <strong>Arbeitsdokument</strong>
         </td>
         <td>
           <a href="https://hl7germany.atlassian.net/browse/HDB-1023">HDB-1023</a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="de/ballot-reconciliation.html">web</a>
-        </td>
-        <td>
-          <a href="https://hl7germany.atlassian.net/browse/HDB-1035">hl7germany.atlassian.net</a>
-        </td>
-        <td>
-          <a href="https://hl7germany.atlassian.net/browse/HDB-1035">HDB-1035</a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="de/ballot-reconciliation.html">web</a>
-        </td>
-        <td>
-          <a href="https://www.fhir.ch/ig/ch-epreg/child-relationships.html">www.fhir.ch</a>
-        </td>
-        <td>
-Entwurf: Keine Profiländerung in dieser Version. Antwort mit der empfohlenen Modellierung, angelehnt an ISiK           <code class="language-plaintext highlighter-rouge">ISiKAngehoeriger</code>
- und die           <a href="https://hl7.org/fhir/R4/patient.html#mother">FHIR-R4-Hinweise zu Mutter/Neugeborenem</a>
-: ein           <code class="language-plaintext highlighter-rouge">RelatedPerson</code>
- für die Mutter mit           <code class="language-plaintext highlighter-rouge">patient</code>
- → Kind und           <code class="language-plaintext highlighter-rouge">relationship</code>
- =           <code class="language-plaintext highlighter-rouge">MTH</code>
-; ist die Mutter selbst Patientin, verweist ihr           <code class="language-plaintext highlighter-rouge">Patient.link.other</code>
- auf dieses           <code class="language-plaintext highlighter-rouge">RelatedPerson</code>
- (Typ           <code class="language-plaintext highlighter-rouge">seealso</code>
-); bei Mehrlingen ein           <code class="language-plaintext highlighter-rouge">RelatedPerson</code>
- je Kind. Eine direkte Verknüpfung vom           <code class="language-plaintext highlighter-rouge">Patient</code>
- der Mutter zum           <code class="language-plaintext highlighter-rouge">Patient</code>
- des Kindes ist nicht korrekt, da           <code class="language-plaintext highlighter-rouge">Patient.link</code>
- Datensätze derselben Person verknüpft. R4-Beispiel:           <a href="https://www.fhir.ch/ig/ch-epreg/child-relationships.html">CH EPREG</a>
-.
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="de/ballot-reconciliation.html">web</a>
-        </td>
-        <td>
-          <a href="https://hl7germany.atlassian.net/browse/HDB-1036">hl7germany.atlassian.net</a>
-        </td>
-        <td>
-          <a href="https://hl7germany.atlassian.net/browse/HDB-1036">HDB-1036</a>
         </td>
       </tr>
       <tr>
@@ -35865,7 +35894,7 @@ Gemäß           <a href="https://www.sozialgesetzbuch-sgb.de/sgbv/301.html">&s
 .  
           Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-ballot based on           <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>
 .
-          Generated           <span title="Mon, Nov 9, 2026 10:03+0000">2026-11-09</span>
+          Generated           <span title="Fri, Nov 13, 2026 16:59+0000">2026-11-13</span>
 
                     <br/>
 
@@ -36445,11 +36474,11 @@ The modeling of coded and detailed anatomical locations has been harmonized with
           <a href="https://hl7germany.atlassian.net/issues/?jql=project%20%3D%20HDB%20AND%20created%20%3E%3D%20-200d%20AND%20%22Project%5BDropdown%5D%22%20in%20%28%22MII%20%E2%80%93%20Modul%20Basis%20%28Person%2C%20Fall%2C%20Diagnose%20%26%20Prozedur%29%22%29%20ORDER%20BY%20created%20DESC">hl7germany.atlassian.net</a>
         </td>
         <td>
-This page is a           <strong>working document</strong>
- for the reconciliation of the ballot comments on version           <code class="language-plaintext highlighter-rouge">2027.0.0-ballot</code>
- of the MII Kerndatensatz Basis. It lists the open tickets from the HL7 Germany ballot (          <a href="https://hl7germany.atlassian.net/issues/?jql=project%20%3D%20HDB%20AND%20created%20%3E%3D%20-200d%20AND%20%22Project%5BDropdown%5D%22%20in%20%28%22MII%20%E2%80%93%20Modul%20Basis%20%28Person%2C%20Fall%2C%20Diagnose%20%26%20Prozedur%29%22%29%20ORDER%20BY%20created%20DESC">Jira query</a>
-), grouped by category, with a           <strong>proposed</strong>
- resolution for each.
+This page documents the reconciliation of the ballot comments on version           <code class="language-plaintext highlighter-rouge">2027.0.0-ballot</code>
+ of the MII Kerndatensatz Basis. It lists the tickets from the HL7 Germany ballot (          <a href="https://hl7germany.atlassian.net/issues/?jql=project%20%3D%20HDB%20AND%20created%20%3E%3D%20-200d%20AND%20%22Project%5BDropdown%5D%22%20in%20%28%22MII%20%E2%80%93%20Modul%20Basis%20%28Person%2C%20Fall%2C%20Diagnose%20%26%20Prozedur%29%22%29%20ORDER%20BY%20created%20DESC">Jira query</a>
+), grouped by category, with the decision and its implementation. The individual changes are listed in the           <a href="changes.html">changelog</a>
+ under version           <code class="language-plaintext highlighter-rouge">2027.0.0</code>
+.
         </td>
       </tr>
       <tr>
@@ -36457,24 +36486,53 @@ This page is a           <strong>working document</strong>
           <a href="en/ballot-reconciliation.html">web</a>
         </td>
         <td>
-          <a href="https://www.fhir.ch/ig/ch-epreg/child-relationships.html">www.fhir.ch</a>
+          <a href="https://hl7.eu/fhir/extensions/StructureDefinition-periods-of-life.html">hl7.eu</a>
         </td>
         <td>
-Draft: no profile change in this release. Reply with the recommended modelling, aligned with ISiK           <code class="language-plaintext highlighter-rouge">ISiKAngehoeriger</code>
- and the           <a href="https://hl7.org/fhir/R4/patient.html#mother">FHIR R4 mother/newborn guidance</a>
-: a           <code class="language-plaintext highlighter-rouge">RelatedPerson</code>
- for the mother with           <code class="language-plaintext highlighter-rouge">patient</code>
- → child and           <code class="language-plaintext highlighter-rouge">relationship</code>
- =           <code class="language-plaintext highlighter-rouge">MTH</code>
-; if the mother is also a patient, her           <code class="language-plaintext highlighter-rouge">Patient.link.other</code>
- → this           <code class="language-plaintext highlighter-rouge">RelatedPerson</code>
- (type           <code class="language-plaintext highlighter-rouge">seealso</code>
-); one           <code class="language-plaintext highlighter-rouge">RelatedPerson</code>
- per child for twins. A direct link from the mother's           <code class="language-plaintext highlighter-rouge">Patient</code>
- to the child's           <code class="language-plaintext highlighter-rouge">Patient</code>
- is not correct, because           <code class="language-plaintext highlighter-rouge">Patient.link</code>
- links records of the same person. R4 worked example:           <a href="https://www.fhir.ch/ig/ch-epreg/child-relationships.html">CH EPREG</a>
-.
+The Lebensphase extension moved from           <code class="language-plaintext highlighter-rouge">Condition.onsetAge</code>
+/          <code class="language-plaintext highlighter-rouge">abatementAge</code>
+ to           <code class="language-plaintext highlighter-rouge">onsetRange</code>
+/          <code class="language-plaintext highlighter-rouge">abatementRange</code>
+, because its context in           <code class="language-plaintext highlighter-rouge">de.basisprofil.r4</code>
+ 1.6.0 does not allow           <code class="language-plaintext highlighter-rouge">Age</code>
+; the logical model mapping follows.           <code class="language-plaintext highlighter-rouge">Age</code>
+ stays allowed without the extension. The context of the German extension and of the HL7 Europe extension           <a href="https://hl7.eu/fhir/extensions/StructureDefinition-periods-of-life.html">
+<code class="language-plaintext highlighter-rouge">periods-of-life</code>          </a>
+ is monitored for future changes.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ballot-reconciliation.html">web</a>
+        </td>
+        <td>
+          <a href="https://terminologien.bfarm.de">terminologien.bfarm.de</a>
+        </td>
+        <td>
+The IPS bindings are replaced by optional slices           <code class="language-plaintext highlighter-rouge">coding:snomed-ct</code>
+ (0..1, Must Support) on           <code class="language-plaintext highlighter-rouge">AllergyIntolerance.code</code>
+ and           <code class="language-plaintext highlighter-rouge">reaction.manifestation</code>
+, bound           <em>extensible</em>
+ to           <code class="language-plaintext highlighter-rouge">KBV_VS_AllergyIntolerance_Substance_SNOMED_CT</code>
+ and           <code class="language-plaintext highlighter-rouge">KBV_VS_AllergyIntolerance_Manifestation_SNOMED_CT</code>
+ (1.0.0), aligned with ISiK. New dependency           <code class="language-plaintext highlighter-rouge">kbv.all.terminology.allergyintolerance</code>
+ 1.0.0, available only on the           <a href="https://terminologien.bfarm.de">BfArM ZTS</a>
+; the CI installs it with a composite action after the download conditions are accepted.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ballot-reconciliation.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/53">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">type:Kontaktebene</code>
+ and           <code class="language-plaintext highlighter-rouge">diagnosis.use.coding:Diagnosetyp</code>
+ keep their cardinalities; the Encounter page documents the deviations from ISiK 6.0.0 in a table.           <code class="language-plaintext highlighter-rouge">hospitalization.admitSource</code>
+ is relaxed from 1..1 to 0..1 (Must Support), as in ISiK and the logical model, because the admission source is often missing in the HL7 v2 feed (          <a href="https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/53">#53</a>
+).
         </td>
       </tr>
       <tr>

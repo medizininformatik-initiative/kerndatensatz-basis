@@ -113,6 +113,8 @@ Generic: line 0, col 0, Warning - The html source is not well formed: Found "</d
 Generic: line 0, col 0, Error - The page has more than one top level heading: <h2> (no text) is at the same level as the first heading on the page (<h2> 'Ressourcenprofil: MII PR Prozedur Procedure - Änderungshi...' (id=root)). A page must have exactly one top level heading, with every other heading beneath it (WCAG compliance test) (STRUCTURE)
 Generic: line 0, col 0, Warning - The html source has duplicate element ids: root. An id must be unique in a page - a link to one of these is ambiguous, and it is invalid HTML (BUSINESSRULE)
 Generic: line 0, col 0, Error - The page skips a heading level: <h4> 'Legende' (id=legende) follows <h2> 'Ballot-Kommentierung 2027.0.0-ballot', so it should be <h3>. Heading levels must not skip a level going down (WCAG compliance test) (STRUCTURE)
+Generic: line 0, col 0, Error - The link 'ConceptMap-mii-cm-person-recordedsexorgender-snomed-administrative-gender.html' for "ConceptMap" cannot be resolved (NOTFOUND)
+Generic: line 0, col 0, Error - The link 'StructureDefinition-mii-pr-person-patient.html#mother-and-newborn' for "Mutter und Neugeborenes" cannot be resolved (valid targets: 3480 targets) (NOTFOUND)
 Generic: line 0, col 0, Warning - The html source is not well formed: Found "</a>" expecting "</img>" at line 34 column 175 (STRUCTURE)
 Generic: line 0, col 0, Warning - The html source is not well formed: Found "</div>" expecting "</body>" at line 79 column 9 (STRUCTURE)
 Generic: line 0, col 0, Warning - The html source is not well formed: Found "</div>" expecting "</body>" at line 80 column 8 (STRUCTURE)
@@ -232,6 +234,8 @@ Generic: line 0, col 0, Warning - The html source is not well formed: Found "</d
 Generic: line 0, col 0, Error - The page has more than one top level heading: <h2> (no text) is at the same level as the first heading on the page (<h2> 'Resource Profile: MII PR Prozedur Procedure - Change History' (id=root)). A page must have exactly one top level heading, with every other heading beneath it (WCAG compliance test) (STRUCTURE)
 Generic: line 0, col 0, Warning - The html source has duplicate element ids: root. An id must be unique in a page - a link to one of these is ambiguous, and it is invalid HTML (BUSINESSRULE)
 Generic: line 0, col 0, Error - The page skips a heading level: <h4> 'Legend' (id=legend) follows <h2> 'Ballot Reconciliation 2027.0.0-ballot', so it should be <h3>. Heading levels must not skip a level going down (WCAG compliance test) (STRUCTURE)
+Generic: line 0, col 0, Error - The link 'ConceptMap-mii-cm-person-recordedsexorgender-snomed-administrative-gender.html' for "ConceptMap" cannot be resolved (NOTFOUND)
+Generic: line 0, col 0, Error - The link 'StructureDefinition-mii-pr-person-patient.html#mother-and-newborn' for "Mother and Newborn" cannot be resolved (valid targets: 3480 targets) (NOTFOUND)
 Generic: line 0, col 0, Warning - The html source is not well formed: Found "</a>" expecting "</img>" at line 34 column 175 (STRUCTURE)
 Generic: line 0, col 0, Warning - The html source is not well formed: Found "</div>" expecting "</body>" at line 79 column 9 (STRUCTURE)
 Generic: line 0, col 0, Warning - The html source is not well formed: Found "</div>" expecting "</body>" at line 80 column 8 (STRUCTURE)
@@ -4199,5 +4203,5 @@ Generic: line 0, col 0, Warning - An HTML fragment from the set [expansion-param
 /workspace/fsh-generated/resources/ValueSet-mii-vs-prozedur-prozeduren-snomedct.json: line 1, col 186, Info - This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice) (INFORMATIONAL)
 /workspace/fsh-generated/resources/ValueSet-mii-vs-prozedur-prozeduren-snomedct.json: line 0, col 0, Warning - The resource ValueSet/mii-vs-prozedur-prozeduren-snomedct should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html) (BUSINESSRULE)
 
-err = 56, warn = 843, info = 3298, broken links = 0
+err = 56, warn = 843, info = 3298, broken links = 4
 IG Publisher Version: 3.0.3
