@@ -180,7 +180,7 @@ In diesem Beispiel:
 <tr>
 <td>Teilstationär (Partial Inpatient)</td>
 <td>TS</td>
-<td><code>Encounter.class = IMP</code> or <code>SS</code><br/><code>Encounter.extension:Aufnahmegrund.extension:ErsteUndZweiteStelle = 03</code><br/><code>Encounter.type = teilstationaer | tagesklinik | nachtklinik</code></td>
+<td><code>Encounter.class = IMP</code> oder <code>SS</code><br/><code>Encounter.extension:Aufnahmegrund.extension:ErsteUndZweiteStelle = 03</code><br/><code>Encounter.type = teilstationaer | tagesklinik | nachtklinik</code></td>
 </tr>
 <tr>
 <td>Begleitperson (Accompanying Person)</td>
@@ -206,6 +206,13 @@ In diesem Beispiel:
 </table>
 
 *Externe Quelle: Die Zuordnung der Primärkontakte zu HL7 V2 und FHIR in dieser Tabelle wurde aus den [Deutschen FHIR-Basisprofilen 1.6.0 – Ambulanter/stationärer Fall / Kontakt](https://ig.fhir.de/basisprofile-de/1.6.0/ig-markdown-Ressourcen-AmbulanterStationaererFall.html) übernommen.*
+
+**Teilstationäre Kontakte: `IMP` oder `SS`.** Teilstationäre Behandlung umfasst unterschiedliche Versorgungsformen, daher sind beide Klassen zulässig:
+
+- `IMP` (stationärer Kontakt), wenn der Patientin oder dem Patienten für die Behandlung ein Bett zugewiesen ist, z. B. in einer Nachtklinik mit Übernachtung;
+- `SS` (Kurzaufenthalt), wenn die Behandlung ohne Bettenzuweisung und ohne Übernachtung erfolgt, typischerweise in einer Tagesklinik.
+
+Ob ein Kontakt teilstationär ist, wird durch `Encounter.type` (`teilstationaer`, `tagesklinik` oder `nachtklinik`) und den Aufnahmegrund `03` ausgedrückt, nicht durch `Encounter.class`. Datennutzende SOLLTEN daher diese Elemente auswerten, statt sich allein auf `Encounter.class` zu stützen.
 
 ##### Sekundärkontakte bei stationärem Aufenthalt
 

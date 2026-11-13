@@ -207,6 +207,13 @@ In this example:
 
 *External source: The mapping of primary encounter types to HL7 V2 and FHIR in this table was adopted from the [German FHIR Base Profiles 1.6.0 – Ambulatory/inpatient case/contact](https://ig.fhir.de/basisprofile-de/1.6.0/ig-markdown-Ressourcen-AmbulanterStationaererFall.html).*
 
+**Partial inpatient encounters: `IMP` or `SS`.** Partial inpatient (teilstationär) treatment covers different settings, so both classes are allowed:
+
+- `IMP` (inpatient encounter) when the patient is allocated a bed for the treatment, e.g. in a night clinic where the patient stays overnight;
+- `SS` (short stay) when the patient is treated without a bed allocation and does not stay overnight, typically in a day clinic.
+
+Whether an encounter is partial inpatient is expressed by `Encounter.type` (`teilstationaer`, `tagesklinik` or `nachtklinik`) and the admission reason `03`, not by `Encounter.class`. Data consumers SHOULD therefore evaluate these elements instead of relying on `Encounter.class` alone.
+
 ##### Secondary Encounters During Inpatient Stay
 
 <table class="encounter-type-table">
