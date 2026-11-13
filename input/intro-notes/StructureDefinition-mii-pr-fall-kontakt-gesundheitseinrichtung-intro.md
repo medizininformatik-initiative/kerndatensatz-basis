@@ -85,6 +85,8 @@ graph BT
 
 **Account linkage:** The `account` references shown for selected Encounters illustrate how Encounters at each level of the hierarchy can be linked to the same Account, thereby assigning multiple Encounters to a shared billing context. To keep the diagram readable, Account references are shown only for selected Encounters; the other Encounters in the hierarchy can reference the same Account in the same way. For implementation guidance, including the recommended use of the logical reference `Encounter.account.identifier`, see [Best Practice - Aufnahmenummer vs. Fallnummer](#best-practice-aufnahmenummer-vs-fallnummer).
 
+**Several facility encounters per Account:** An Account can also be referenced by several facility encounters (Einrichtungskontakte), for example when separate pre-inpatient, inpatient and post-inpatient facility encounters are billed as one case, or when readmissions are merged into one DRG case (Fallzusammenführung). The relationship is n:1 from Encounter to Account: each Encounter references the Account in `Encounter.account`; the Account does not reference its Encounters.
+
 In this example:
 - **E0** represents the overall facility contact (Einrichtungskontakt) for the hospital stay
 - **A1E** is the department contact (Abteilungskontakt) for the Emergency Department (Notaufnahme)

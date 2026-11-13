@@ -85,6 +85,8 @@ graph BT
 
 **Account-Verknüpfung:** Die für ausgewählte Encounter dargestellten `account`-Referenzen veranschaulichen, wie Encounter auf jeder Ebene der Hierarchie mit demselben Account verknüpft werden können, um mehrere Encounter einem gemeinsamen Abrechnungskontext zuzuordnen. Zur besseren Lesbarkeit werden Account-Referenzen nur für ausgewählte Encounter gezeigt; die übrigen Encounter der Hierarchie können denselben Account auf die gleiche Weise referenzieren. Implementierungshinweise, insbesondere zur empfohlenen Verwendung der logischen Referenz `Encounter.account.identifier`, finden sich unter [Best Practice - Aufnahmenummer vs. Fallnummer](#best-practice-aufnahmenummer-vs-fallnummer).
 
+**Mehrere Einrichtungskontakte je Account:** Ein Account kann auch von mehreren Einrichtungskontakten referenziert werden, z. B. wenn getrennte vorstationäre, stationäre und nachstationäre Einrichtungskontakte als ein Fall abgerechnet werden oder wenn Wiederaufnahmen zu einem DRG-Fall zusammengeführt werden (Fallzusammenführung). Die Beziehung ist n:1 vom Encounter zum Account: Jeder Encounter referenziert den Account in `Encounter.account`; der Account referenziert seine Encounter nicht.
+
 In diesem Beispiel:
 - **E0** repräsentiert den gesamten Einrichtungskontakt für den Krankenhausaufenthalt
 - **A1E** ist der Abteilungskontakt für die Notaufnahme
