@@ -76,6 +76,69 @@ Die Geschlechtsdokumentation folgt den Vorgaben der [Deutschen FHIR-Basis-Profil
 - **`Patient.deceased[x]`**: 
   - `deceasedBoolean` SOLL, wo möglich, durch `deceasedDateTime` ersetzt werden, wenn die PatientIn verstorben ist und der Zeitpunkt bekannt ist
 
+#### Mutter und Neugeborenes {#mother-and-newborn}
+
+Nach der Geburt werden Mutter und Kind durch getrennte `Patient`-Ressourcen abgebildet. Drei unterschiedliche Beziehungen werden getrennt modelliert ([FHIR R4 – Mother and newborn relationships](https://hl7.org/fhir/R4/patient.html#mother)):
+
+- die **familiäre Beziehung** zwischen Mutter und Kind: `RelatedPerson`;
+- die **geburtshilfliche Episode**, d. h. die Kontakte von Mutter und Kind: `Encounter`;
+- die **Abrechnungsfälle**: Fallnummer in `Encounter.account.identifier` oder ein `Account`.
+
+**Familiäre Beziehung:**
+
+<pre class="language-mermaid"><code class="language-mermaid">%%{init: {'flowchart': {'htmlLabels': false}, 'theme': 'base', 'themeVariables': {'primaryColor': '#E8F4F8', 'primaryBorderColor': '#406A99', 'primaryTextColor': '#000000', 'lineColor': '#5C8DB3', 'fontSize': '14px'}}}%%
+flowchart TD
+  M["`**Patient**
+      Eigener Datensatz der Mutter`"]
+  R["`**RelatedPerson**
+      Mutter dieses Kindes
+      relationship.coding.code = MTH`"]
+  C["`**Patient**
+      Eigener Datensatz des Kindes`"]
+
+  M -.->|"`link.other (optional)
+      link.type = seealso`"| R
+  R -->|"`RelatedPerson.patient`"| C
+</code></pre>
+
+Die Mutter erscheint zweimal: als `RelatedPerson`, die auf das Kind verweist, und, wenn sie selbst Patientin ist, als eigener `Patient`. Eine Referenz vom `Patient` der Mutter auf den `Patient` des Kindes gibt es bewusst nicht.
+
+- Die Mutter **SOLL** als `RelatedPerson` abgebildet werden, mit `RelatedPerson.patient` als Referenz auf den `Patient` des Kindes und `RelatedPerson.relationship` = `MTH` aus `http://terminology.hl7.org/CodeSystem/v3-RoleCode`. `MTH` umfasst eine Frau, die das Kind gezeugt, geboren oder großgezogen hat; wo die Unterscheidung relevant ist, **SOLLEN** spezifischere Codes wie `NMTH` (leibliche Mutter), `GESTM` (austragende Mutter), `ADOPTM` (Adoptivmutter) oder `STPMTH` (Stiefmutter) verwendet werden.
+- Ist die Mutter selbst Patientin, **KANN** ihr eigenes `Patient.link.other` mit `Patient.link.type` = `seealso` auf diese `RelatedPerson` verweisen.
+- `Patient.link` **DARF NICHT** verwendet werden, um den `Patient` der Mutter direkt mit dem `Patient` des Kindes zu verknüpfen: Es verknüpft Ressourcen, die dieselbe tatsächliche Person betreffen.
+- **Referenzprofil:** [ISiKAngehoeriger 6.0.0](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKAngehoeriger.html) ist das deutsche Krankenhausprofil für `RelatedPerson` (`patient.reference` 1..1, `relationship` Must Support). Seine Must-Support-Elemente (offizieller Name, Telekommunikation, Adresse) zielen auf Angehörige als Brief- und Rechnungsempfänger. Eine `RelatedPerson`, die nur aus dem Identifikator der Mutter gebildet wird, z. B. aus HL7 v2 `PID-21`, kann Konformität zu ISiKAngehoeriger nur beanspruchen, wenn sie den [ISiK-Regeln zum Umgang mit fehlenden Daten](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/UebergreifendeFestlegungen_UmgangFehlendeDaten.html) folgt: Liegt kein Name vor, trägt `RelatedPerson.name` die Extension `data-absent-reason`; unbekannte optionale Must-Support-Elemente wie Telekommunikation und Adresse werden weggelassen.
+- `Patient.contact` ist ein Eintrag für eine Kontaktperson innerhalb des `Patient` des Kindes; er kann einen Beziehungscode wie `MTH` und Kontaktdaten enthalten. `RelatedPerson` **SOLL** verwendet werden, wenn die Mutter eigenständig referenzierbar sein muss, z. B. aus ihrem eigenen `Patient.link` oder aus anderen Ressourcen.
+- `FamilyMemberHistory` beschreibt die klinisch relevante Vorgeschichte von Angehörigen; es dient nicht der Verknüpfung mit einer identifizierten Mutter.
+
+**Kontakte:**
+
+- Der Einrichtungskontakt des Neugeborenen **KANN** über `Encounter.partOf` auf den Entbindungs-Einrichtungskontakt der Mutter verweisen, wie in FHIR R4 beschrieben.
+- Eine solche `partOf`-Referenz auf einen Encounter mit anderem `Encounter.subject` drückt nur die geburtshilfliche Zuordnung aus. Sie ist nicht Teil der Kontakthierarchie: Die Traversierung der Hierarchie endet am Einrichtungskontakt des Neugeborenen (siehe [Kontakthierarchien und Kontaktebenen](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html#encounter-partof-across-patients)).
+
+**Abrechnung:**
+
+- Besteht für das Neugeborene ein eigener Abrechnungsfall, kann dessen Fallnummer in `Encounter.account.identifier` des Neugeborenen angegeben werden, als logische Referenz auch ohne verfügbare Account-Ressource (siehe [Best Practice - Aufnahmenummer vs. Fallnummer](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html#best-practice-aufnahmenummer-vs-fallnummer)).
+- Ob ein eigener Fall besteht, richtet sich nach den Abrechnungsregeln des jeweiligen Jahres, nicht nach der `partOf`-Referenz. Für 2026 sieht [FPV 2026 § 1 Abs. 5](https://www.g-drg.de/content/download/17465/file/2025_11_14_FPV_2026.pdf#page=3) für jedes Neugeborene, das nach der Versorgung im Kreißsaal weiter im Krankenhaus versorgt wird, einen eigenen Fall und eine eigene Rechnung vor, mit Ausnahmen, z. B. wenn die Mindestverweildauer nicht erreicht wird.
+
+**Mehrlingsschwangerschaft und Mehrlingsgeburt:**
+
+- Eine Mehrlingsschwangerschaft ist ein Befund der **Mutter** und wird als Observation zur schwangeren Patientin erfasst, z. B. im KBV-MIO-Mutterpass-1.1.0-Profil [`KBV_PR_MIO_MR_Observation_Pregnancy_Information`](https://hub.kbv.de/spaces/MP1X1X0/pages/109842757/9.3.2.2%2BAngaben%2Bzur%2BSchwangerschaft) (SNOMED CT `370386005` mit booleschem Wert).
+- Nach der Geburt ist jedes Kind ein eigener `Patient`. Liegen Angaben zur Mehrlingsgeburt vor, werden sie in `Patient.multipleBirth[x]` (0..1) angegeben. `multipleBirthInteger` ist die Geburtsreihenfolge, nicht die Anzahl der Kinder; `multipleBirthBoolean` = `true` zeigt nur eine Mehrlingsgeburt an. Am `Patient` der Mutter würde `multipleBirth[x]` ihre eigene Geburt beschreiben.
+- Jedes Kind erhält eine eigene `RelatedPerson` für die Mutter, wie im [CH-EPREG-Beispiel für mehrere Kinder](https://www.fhir.ch/ig/ch-epreg/child-relationships.html).
+
+Beispiel für Zwillinge:
+
+| Ressource | Inhalt |
+|---|---|
+| `Patient` Kind 1 | `multipleBirthInteger` = `1` (oder `multipleBirthBoolean` = `true`, wenn die Reihenfolge unbekannt ist) |
+| `Patient` Kind 2 | `multipleBirthInteger` = `2` (oder `multipleBirthBoolean` = `true`, wenn die Reihenfolge unbekannt ist) |
+| `RelatedPerson` Mutter für Kind 1 | `patient` → Kind 1, `relationship` = `MTH` |
+| `RelatedPerson` Mutter für Kind 2 | `patient` → Kind 2, `relationship` = `MTH` |
+
+**Nicht im Umfang:** Die Identifikation einzelner Feten während der Schwangerschaft ist nicht Gegenstand dieses Moduls; siehe [HL7 International Birth and Child Model](https://build.fhir.org/ig/HL7/fetal_records/) und CH EPREG. Gleiches gilt für die in [HDB-1035](https://hl7germany.atlassian.net/browse/HDB-1035) aufgeworfenen Fragen zur Vergabe von Identifikatoren bei der Geburt, zur Verknüpfung pränataler Befunde mit dem späteren Kind und zur Zuordnung von Nabelschnurblut-Proben zu Mutter oder Kind. Diese werden an geburtshilfliche und perinatale Leitfäden verwiesen.
+
+**HL7 v2:** Gemäß dem [HL7-v2-to-FHIR-Mapping](https://build.fhir.org/ig/HL7/v2-to-fhir/ConceptMap-segment-pid-to-patient.html) wird `PID-21` (Mother's Identifier) auf eine `RelatedPerson` für die Mutter abgebildet, `PID-25` (Birth Order) auf `multipleBirthInteger` und `PID-24` (Multiple Birth Indicator) auf `multipleBirthBoolean`, wenn `PID-25` nicht befüllt ist.
+
 #### Adressinformationen
 
 Adressdetails folgen dem [Basisprofil - Adresse]:

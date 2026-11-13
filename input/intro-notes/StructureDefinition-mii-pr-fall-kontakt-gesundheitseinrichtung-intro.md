@@ -21,6 +21,9 @@ The MII Fall module distinguishes three levels of encounters using `Encounter.ty
 
 These levels are linked using `Encounter.partOf` to create a hierarchical structure.
 
+<a id="encounter-partof-across-patients"></a>
+**`partOf` across patients:** Within the contact hierarchy, `Encounter.partOf` references an Encounter of the same patient. As the only exception, a newborn's Einrichtungskontakt **MAY** reference the mother's delivery Einrichtungskontakt (see [Mother and Newborn](StructureDefinition-mii-pr-person-patient.html#mother-and-newborn)). Such a reference to an Encounter with a different `Encounter.subject` only expresses the maternity association: hierarchy traversal **SHALL** stop at an Encounter whose `partOf` target has a different `subject`.
+
 **Example Encounter Hierarchy:**
 
 The following diagram illustrates how different encounter levels are linked together using `partOf` references, along with optional connections to EpisodeOfCare and Account resources:

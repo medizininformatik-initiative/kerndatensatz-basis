@@ -21,6 +21,9 @@ Das MII-Fall-Modul unterscheidet drei Ebenen von Kontakten mittels `Encounter.ty
 
 Diese Ebenen werden mittels `Encounter.partOf` verknüpft, um eine hierarchische Struktur zu erstellen.
 
+<a id="encounter-partof-across-patients"></a>
+**`partOf` über Patienten hinweg:** Innerhalb der Kontakthierarchie referenziert `Encounter.partOf` einen Encounter desselben Patienten. Einzige Ausnahme: Der Einrichtungskontakt eines Neugeborenen **KANN** auf den Entbindungs-Einrichtungskontakt der Mutter verweisen (siehe [Mutter und Neugeborenes](StructureDefinition-mii-pr-person-patient.html#mother-and-newborn)). Eine solche Referenz auf einen Encounter mit anderem `Encounter.subject` drückt nur die geburtshilfliche Zuordnung aus: Die Traversierung der Hierarchie **MUSS** an einem Encounter enden, dessen `partOf`-Ziel ein anderes `subject` hat.
+
 **Beispiel einer Kontakthierarchie:**
 
 Das folgende Diagramm veranschaulicht, wie verschiedene Kontaktebenen mittels `partOf`-Referenzen miteinander verknüpft werden, zusammen mit optionalen Verbindungen zu EpisodeOfCare- und Account-Ressourcen:
