@@ -278,7 +278,7 @@ Das Element `Encounter.diagnosis` stellt die Beziehung zwischen Kontakten und Di
 
 #### Kontaktort
 
-- Details zum Kontaktort (Zimmer, Bett, Station) können mittels `Encounter.location` angegeben werden.
+- Details zum Kontaktort (Zimmer, Bettenstellplatz, Station) können mittels `Encounter.location` angegeben werden.
 - Der physische Typ SOLL das MII-spezifische ValueSet für location physical types verwenden.
 - Angaben zum Kontaktort sind primär relevant für Versorgungsstellenkontakte.
 
@@ -289,10 +289,12 @@ Das Element `Encounter.diagnosis` stellt die Beziehung zwischen Kontakten und Di
 | Slice | physicalType | status | Kardinalität |
 |---|---|---|---|
 | `Zimmer` | `ro` | `active` | 0..1 |
-| `Bett` | `bd` | `active` | 0..1 |
+| `Bettenstellplatz` | `bd` | `active` | 0..1 |
 | `Station` | `wa` | `active` | 0..1 |
 
-Jeder Slice schränkt `status = active` mit Kardinalität 0..1 ein. Eine konforme Implementierung DARF NICHT mehr als ein aktives Zimmer, ein aktives Bett oder eine aktive Station gleichzeitig innerhalb eines einzelnen Encounters befüllen.
+Der Slice `Bettenstellplatz` beschreibt den Ort, an dem das Bett der Patientin oder des Patienten steht, als Location mit dem physischen Typ `bd`. Er beschreibt nicht das Bett als Gerät. Bis einschließlich Version 2027.0.0-ballot hieß der Slice `Bett`.
+
+Jeder Slice schränkt `status = active` mit Kardinalität 0..1 ein. Eine konforme Implementierung DARF NICHT mehr als ein aktives Zimmer, einen aktiven Bettenstellplatz oder eine aktive Station gleichzeitig innerhalb eines einzelnen Encounters befüllen.
 
 Da das Slicing **offen** ist, KÖNNEN Implementierungen zusätzliche `Encounter.location`-Einträge über diese drei benannten Slices hinaus aufnehmen. Um die Bewegungshistorie während eines Kontakts zu erfassen (z.B. frühere Stationen, Zimmer oder Betten, durch die der Patient verlegt wurde), SOLLEN Implementierungen für diese Einträge `status = completed` verwenden. Damit wird die Verlaufshistorie klar von den Slices für aktive Orte getrennt, ohne mit diesen zu kollidieren.
 

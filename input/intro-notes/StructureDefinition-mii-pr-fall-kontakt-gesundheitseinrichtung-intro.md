@@ -278,7 +278,7 @@ The `Encounter.diagnosis` element establishes the relationship between encounter
 
 #### Encounter Location
 
-- Location details (room, bed, ward) can be specified using `Encounter.location`.
+- Location details (room, bed space, ward) can be specified using `Encounter.location`.
 - The physical type **SHOULD** use the MII-specific ValueSet for location physical types.
 - Location details are primarily relevant for Versorgungsstellenkontakt (care unit contacts).
 
@@ -289,10 +289,12 @@ The `Encounter.diagnosis` element establishes the relationship between encounter
 | Slice | physicalType | status | Cardinality |
 |---|---|---|---|
 | `Zimmer` (Room) | `ro` | `active` | 0..1 |
-| `Bett` (Bed) | `bd` | `active` | 0..1 |
+| `Bettenstellplatz` (Bed space) | `bd` | `active` | 0..1 |
 | `Station` (Ward) | `wa` | `active` | 0..1 |
 
-Each slice constrains `status = active` with cardinality 0..1. A conformant implementation SHALL NOT populate more than one active room, one active bed, or one active ward simultaneously within a single encounter.
+The slice `Bettenstellplatz` (bed space) describes the location where the patient's bed stands, as a Location with physical type `bd`. It does not describe the bed as a device. Up to version 2027.0.0-ballot the slice was named `Bett`.
+
+Each slice constrains `status = active` with cardinality 0..1. A conformant implementation SHALL NOT populate more than one active room, one active bed space, or one active ward simultaneously within a single encounter.
 
 Because the slicing is **open**, implementations MAY include additional `Encounter.location` entries beyond these three named slices. To record movement history during an encounter (e.g., previous wards, rooms, or beds the patient passed through), implementations SHOULD use `status = completed` for those entries. This keeps the historical record separate from the active-location slices without conflicting with them.
 
