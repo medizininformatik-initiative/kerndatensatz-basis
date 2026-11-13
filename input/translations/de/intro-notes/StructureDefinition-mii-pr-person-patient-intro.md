@@ -68,6 +68,7 @@ Die Geschlechtsdokumentation folgt den Vorgaben der [Deutschen FHIR-Basis-Profil
 #### Geburtsdatum, Geburtsort und Vitalstatus
 
 - **`Patient.birthDate`**: Vollständiges Geburtsdatum, wenn verfügbar. Siehe [Basisprofil - Geburtsdatum]
+  - **Bewusste Abweichung:** `birthDate` bleibt optional (0..1). Andere Spezifikationen wie ISiK fordern es verpflichtend (1..1, bei unbekanntem Datum mit `data-absent-reason`). Die MII folgt dem bewusst nicht: aus Datenschutzgründen (Datenminimierung) kann es weggelassen oder nur mit reduzierter Genauigkeit übermittelt werden ([HDB-1071](https://hl7germany.atlassian.net/browse/HDB-1071)).
 - **`Patient.extension:birthPlace`**: Registrierter Geburtsort der PatientIn. Zur Abbildung des Geburtslandes ist `valueAddress.country` zu verwenden; die Extension `countryCode` unterstützt die Codierung mit ISO-3166-1-Alpha-2-Codes über ein `preferred` Binding.
 
 **EHDS-Ausblick:** Die Verwendung der FHIR-Core-Extensions `patient-citizenship`, `patient-nationality` und `patient-birthPlace` mit diesen Kardinalitäten ist an [HL7 Europe Patient (EU base) 2.0.0](https://hl7.eu/fhir/base/2.0.0/StructureDefinition-patient-eu.html) und [HL7 Europe Patient (EU core) 2.0.0](https://hl7.eu/fhir/base/2.0.0/StructureDefinition-patient-eu-core.html) ausgerichtet. Dies unterstützt die zukünftige Interoperabilität im EHDS-Kontext.

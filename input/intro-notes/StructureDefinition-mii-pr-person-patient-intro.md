@@ -68,6 +68,7 @@ Gender documentation follows the [German Base Profile for Gender]:
 #### Birth Date, Place of Birth, and Vital Status
 
 - **`Patient.birthDate`**: Full birth date when available. See [German Base Profile - Geburtsdatum]
+  - **Deliberate deviation:** `birthDate` stays optional (0..1). Other specifications such as ISiK require it (1..1, with `data-absent-reason` if unknown). The MII deliberately does not follow this: for privacy reasons (data minimisation) it may be omitted or provided only in reduced precision ([HDB-1071](https://hl7germany.atlassian.net/browse/HDB-1071)).
 - **`Patient.extension:birthPlace`**: The patient's registered place of birth. To represent the country of birth, use `valueAddress.country`; the `countryCode` extension supports coding with ISO 3166-1 alpha-2 codes using a `preferred` binding.
 
 **EHDS outlook:** The use and cardinalities of the FHIR core extensions `patient-citizenship`, `patient-nationality`, and `patient-birthPlace` are aligned with [HL7 Europe Patient (EU base) 2.0.0](https://hl7.eu/fhir/base/2.0.0/StructureDefinition-patient-eu.html) and [HL7 Europe Patient (EU core) 2.0.0](https://hl7.eu/fhir/base/2.0.0/StructureDefinition-patient-eu-core.html). This supports future interoperability in an EHDS context.
