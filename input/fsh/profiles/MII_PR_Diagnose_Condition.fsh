@@ -40,6 +40,12 @@ Description: "Dieses Profil beschreibt eine Diagnose der Medizininformatik Initi
 * insert Translation(extension[Feststellungsdatum] ^definition, en-US, Date the condition was first asserted)
 * extension[Feststellungsdatum].url MS
 * extension[Feststellungsdatum].valueDateTime MS
+* extension[ReferenzPrimaerdiagnose] ^short = "Referenz auf Primärdiagnose"
+* insert Translation(extension[ReferenzPrimaerdiagnose] ^short, de-DE, Referenz auf Primärdiagnose)
+* insert Translation(extension[ReferenzPrimaerdiagnose] ^short, en-US, Reference to primary diagnosis)
+* extension[ReferenzPrimaerdiagnose] ^definition = "Referenz einer Sekundärdiagnose, z. B. eines Stern- oder Ausrufezeichen-Codes im ICD-10-GM-Kreuz-Stern-System, auf die zugehörige Primärdiagnose mit Kreuz-Code."
+* insert Translation(extension[ReferenzPrimaerdiagnose] ^definition, de-DE, Referenz einer Sekundärdiagnose\, z. B. eines Stern- oder Ausrufezeichen-Codes im ICD-10-GM-Kreuz-Stern-System\, auf die zugehörige Primärdiagnose mit Kreuz-Code.)
+* insert Translation(extension[ReferenzPrimaerdiagnose] ^definition, en-US, Reference from a secondary diagnosis\, e.g. an asterisk or exclamation mark code in the ICD-10-GM dagger-asterisk system\, to the associated primary diagnosis with the dagger code.)
 * extension[ReferenzPrimaerdiagnose].url MS
 * extension[ReferenzPrimaerdiagnose].valueReference MS
 * clinicalStatus MS

@@ -48,8 +48,9 @@ Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Dia
 <p><strong>Verknüpfung von Sekundär- zu Primärdiagnose:</strong></p>
 <ul>
   <li>Die Primärdiagnose-Condition (Ätiologie mit †-Kennzeichen) ist die Hauptinstanz</li>
-  <li>Sekundärdiagnose-Conditions (Manifestation mit *-Kennzeichen, Zusatzinformation mit !-Kennzeichen) nutzen die <a href="http://hl7.org/fhir/R4/extension-condition-related.html">Extension Condition Related</a>, um auf die Primärdiagnose zu referenzieren</li>
+  <li>Sekundärdiagnose-Conditions (Manifestation mit *-Kennzeichen, Zusatzinformation mit !-Kennzeichen) nutzen den Slice <code>extension:ReferenzPrimaerdiagnose</code> (<a href="http://hl7.org/fhir/R4/extension-condition-related.html">Extension Condition Related</a>), um auf die Primärdiagnose zu referenzieren</li>
   <li>Dies erstellt eine explizite Beziehungskette: Manifestation → Ätiologie</li>
+  <li>Nur die Sekundärdiagnose-Conditions befüllen <code>extension:ReferenzPrimaerdiagnose</code>; die Primärdiagnose-Condition referenziert ihre Sekundärdiagnosen nicht</li>
 </ul>
 
 <p><strong>Alpha-ID und Orphanet-Codes:</strong></p>
@@ -127,8 +128,23 @@ Die Modellierung codierter und detaillierter anatomischer Lokalisationen wurde m
 <p>Die <a href="https://hl7.eu/fhir/extensions/StructureDefinition-periods-of-life.html">HL7-Europe-Extension <code>periods-of-life</code></a> lässt auch <code>Age</code> als Kontext zu. Ändert sich der Kontext der deutschen Extension in einer künftigen Version der deutschen Basisprofile oder wird die EU-Extension übernommen, wird die Platzierung überprüft.</p>
 </div>
 
+**`Condition.extension:Feststellungsdatum`** (`http://hl7.org/fhir/StructureDefinition/condition-assertedDate`):
+- Repräsentiert, wann die Diagnose klinisch festgestellt wurde, z. B. durch eine Ärztin oder einen Arzt auf Grundlage von Befunden
+- Ist unabhängig davon, wann die Erkrankung begann und wann sie dokumentiert wurde
+
 **`Condition.recordedDate`:**
 - Repräsentiert, wann die Diagnose im System erfasst wurde
 - Dient der zeitlichen Einordnung der Diagnose
+
+<div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
+<h5 style="color: #406A99; margin-top: 0;">Best Practice - Onset, Feststellungsdatum und recordedDate</h5>
+
+<p>Die drei Elemente beschreiben unterschiedliche Zeitpunkte und <strong>SOLLEN NICHT</strong> gegeneinander ausgetauscht werden:</p>
+<ul>
+  <li><code>onset[x]</code>: wann die Erkrankung oder ihre Symptome begonnen haben (Krankheitsverlauf)</li>
+  <li><code>extension:Feststellungsdatum</code>: wann die Diagnose gestellt wurde (diagnostischer Prozess)</li>
+  <li><code>recordedDate</code>: wann die Diagnose erstmals im Quellsystem dokumentiert wurde (Dokumentationsprozess)</li>
+</ul>
+</div>
 
 {% include link-list.md %}

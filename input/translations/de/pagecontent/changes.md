@@ -21,6 +21,7 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 #### Modul Diagnose
 
 - **Changed:** [MII PR Diagnose Condition](StructureDefinition-mii-pr-diagnose-condition.html), [MII LM Diagnose](StructureDefinition-mii-lm-diagnose.html) — **breaking:** Die Lebensphasen-Extension `http://fhir.de/StructureDefinition/lebensphase` wurde von `onsetAge`/`abatementAge` nach `onsetRange`/`abatementRange` verschoben (`Range` in `onset[x]` und `abatement[x]` ergänzt), da ihr Kontext in `de.basisprofil.r4` 1.6.0 `Age` nicht zulässt. `Age` bleibt ohne die Extension zulässig; das Mapping im logischen Modell wurde angepasst. Der Kontext der deutschen Extension und die HL7-Europe-Extension `periods-of-life` (die `Age` zulässt) werden beobachtet. Siehe: [HDB-1075](https://hl7germany.atlassian.net/browse/HDB-1075)
+- **Added:** [MII PR Diagnose Condition](StructureDefinition-mii-pr-diagnose-condition.html) — nur Dokumentation: `extension:Feststellungsdatum` und die Abgrenzung zu `onset[x]` und `recordedDate` mit Beispiel beschrieben sowie die Verwendung von `extension:ReferenzPrimaerdiagnose` präzisiert (Short und Definition ergänzt). Siehe: [HDB-1020](https://hl7germany.atlassian.net/browse/HDB-1020)
 
 #### Modul Fall
 

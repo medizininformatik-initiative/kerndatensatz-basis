@@ -48,8 +48,9 @@ This section provides detailed implementation guidance for the MII Diagnose (Dia
 <p><strong>Linking Secondary to Primary:</strong></p>
 <ul>
   <li>The primary diagnosis Condition (etiology/Ätiologie with † marker) is the main instance</li>
-  <li>Secondary diagnosis Conditions (manifestation/Manifestation with * marker, additional information with ! marker) use the <a href="http://hl7.org/fhir/R4/extension-condition-related.html">Condition Related Extension</a> to reference the primary diagnosis</li>
+  <li>Secondary diagnosis Conditions (manifestation/Manifestation with * marker, additional information with ! marker) use the slice <code>extension:ReferenzPrimaerdiagnose</code> (<a href="http://hl7.org/fhir/R4/extension-condition-related.html">Condition Related Extension</a>) to reference the primary diagnosis</li>
   <li>This creates an explicit relationship chain: manifestation → etiology</li>
+  <li>Only the secondary Conditions populate <code>extension:ReferenzPrimaerdiagnose</code>; the primary Condition does not reference its secondary Conditions</li>
 </ul>
 
 <p><strong>Alpha-ID and Orphanet Codes:</strong></p>
@@ -127,7 +128,22 @@ The modeling of coded and detailed anatomical locations has been harmonized with
 <p>The <a href="https://hl7.eu/fhir/extensions/StructureDefinition-periods-of-life.html">HL7 Europe extension <code>periods-of-life</code></a> also allows <code>Age</code> as context. If the context of the German extension changes in a future release of the German base profiles, or the EU extension is adopted, the placement will be reviewed.</p>
 </div>
 
+**`Condition.extension:Feststellungsdatum`** (`http://hl7.org/fhir/StructureDefinition/condition-assertedDate`):
+- Represents when the diagnosis was clinically established, e.g. by a physician on the basis of findings
+- Is independent of when the condition began and of when it was documented
+
 **`Condition.recordedDate`:**
 - Represents when the diagnosis was recorded in the system
+
+<div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
+<h5 style="color: #406A99; margin-top: 0;">Best Practice - Onset, Feststellungsdatum and recordedDate</h5>
+
+<p>The three elements describe different points in time and <strong>SHOULD NOT</strong> be used interchangeably:</p>
+<ul>
+  <li><code>onset[x]</code>: when the disease or its symptoms began (clinical course)</li>
+  <li><code>extension:Feststellungsdatum</code>: when the diagnosis was established (diagnostic process)</li>
+  <li><code>recordedDate</code>: when the diagnosis was first documented in the source system (documentation process)</li>
+</ul>
+</div>
 
 {% include link-list.md %}
