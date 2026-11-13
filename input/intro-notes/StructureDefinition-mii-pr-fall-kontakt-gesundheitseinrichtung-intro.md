@@ -297,9 +297,18 @@ Planned encounters are represented with `Encounter.status = planned` and **SHOUL
 
 #### Admission and Discharge
 
-- **Admission source** (Aufnahmeanlass) is mandatory when hospitalization data is provided and uses codes from § 301 SGB V.
+- **Admission source** (Aufnahmeanlass) is optional (0..1, Must Support) and uses codes from § 301 SGB V. It is often not available in the HL7 v2 feed, so `hospitalization`, e.g. with `dischargeDisposition`, can be provided without it ([#53](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/53)).
 - **Admission reason** (Aufnahmegrund) with four-part structure (erste und zweite Stelle, dritte Stelle, vierte Stelle) according to § 301 SGB V.
 - **Discharge disposition** with Entlassungsgrund extension provides detailed discharge/transfer reasons.
+
+#### Differences to ISiK 6.0.0
+
+The following cardinalities deliberately differ from [ISiK Kontakt Gesundheitseinrichtung 6.0.0](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKKontaktGesundheitseinrichtung.html), for backwards compatibility with earlier MII versions ([HDB-1016](https://hl7germany.atlassian.net/browse/HDB-1016)):
+
+| Element | MII | ISiK 6.0.0 | Reason |
+|---|---|---|---|
+| `Encounter.type:Kontaktebene` | 0..1 | 1..1, fixed to `abteilungskontakt` | MII represents all three contact levels; ISiK only the department contact |
+| `Encounter.diagnosis.use.coding:Diagnosetyp` | 0..1 | 1..1 | not tightened for backwards compatibility |
 
 #### Encounter Identification
 

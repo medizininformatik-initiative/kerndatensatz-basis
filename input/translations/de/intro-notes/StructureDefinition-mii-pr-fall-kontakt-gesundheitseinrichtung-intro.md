@@ -297,9 +297,18 @@ Geplante Kontakte werden mit `Encounter.status = planned` abgebildet und SOLLEN 
 
 #### Aufnahme und Entlassung
 
-- **Aufnahmeanlass** ist verpflichtend, wenn Hospitalisierungsdaten angegeben werden, und verwendet Codes aus § 301 SGB V.
+- **Aufnahmeanlass** ist optional (0..1, Must Support) und verwendet Codes aus § 301 SGB V. Er liegt im HL7-v2-Strom oft nicht vor, daher kann `hospitalization`, z.B. mit `dischargeDisposition`, auch ohne ihn angegeben werden ([#53](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/53)).
 - **Aufnahmegrund** mit vierteiliger Struktur (erste und zweite Stelle, dritte Stelle, vierte Stelle) gemäß § 301 SGB V.
 - **Entlassungsgrund** mit Entlassungsgrund-Extension liefert detaillierte Entlassungs-/Verlegungsgründe.
+
+#### Abweichungen von ISiK 6.0.0
+
+Die folgenden Kardinalitäten weichen zur Rückwärtskompatibilität mit früheren MII-Versionen bewusst von [ISiK Kontakt Gesundheitseinrichtung 6.0.0](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKKontaktGesundheitseinrichtung.html) ab ([HDB-1016](https://hl7germany.atlassian.net/browse/HDB-1016)):
+
+| Element | MII | ISiK 6.0.0 | Grund |
+|---|---|---|---|
+| `Encounter.type:Kontaktebene` | 0..1 | 1..1, fest auf `abteilungskontakt` | Die MII bildet alle drei Kontaktebenen ab, ISiK nur den Abteilungskontakt |
+| `Encounter.diagnosis.use.coding:Diagnosetyp` | 0..1 | 1..1 | zur Rückwärtskompatibilität nicht verschärft |
 
 #### Identifikation von Kontakten
 

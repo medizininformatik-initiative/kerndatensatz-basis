@@ -312,13 +312,13 @@ Description: "Kontakt zu einer Einrichtung, Abteilung oder Versorgungsstelle"
 * hospitalization ^definition = "OPTIONAL, Details zur Aufnahme und Entlassung"
 * insert Translation(hospitalization ^definition, de-DE, Details zur Aufnahme und Entlassung)
 * insert Translation(hospitalization ^definition, en-US, Details about admission and discharge)
-* hospitalization.admitSource 1.. MS
+* hospitalization.admitSource 0..1 MS
 * hospitalization.admitSource.coding MS
 * hospitalization.admitSource.coding.system MS
 * hospitalization.admitSource.coding.code MS
 * hospitalization.admitSource ^short = "Aufnahmeanlass"
 * hospitalization.admitSource ^definition = """
-        VERPFLICHTEND, Aufnahmeanlass. Preferred Binding auf http://fhir.de/ValueSet/dgkev/Aufnahmeanlass
+        OPTIONAL, Aufnahmeanlass. Preferred Binding auf http://fhir.de/ValueSet/dgkev/Aufnahmeanlass
         """
 * hospitalization.admitSource from $AufnahmeanlassVS (preferred)
 * hospitalization.dischargeDisposition MS

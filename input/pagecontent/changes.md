@@ -22,6 +22,11 @@ Changes from the ballot reconciliation of `2027.0.0-ballot`. From this version o
 
 - **Changed:** [MII PR Diagnose Condition](StructureDefinition-mii-pr-diagnose-condition.html), [MII LM Diagnose](StructureDefinition-mii-lm-diagnose.html) — **breaking:** the life-phase extension `http://fhir.de/StructureDefinition/lebensphase` moved from `onsetAge`/`abatementAge` to `onsetRange`/`abatementRange` (`Range` added to `onset[x]` and `abatement[x]`), because its context in `de.basisprofil.r4` 1.6.0 does not allow `Age`. `Age` stays allowed without the extension; the logical model mapping follows. The context of the German extension and the HL7 Europe extension `periods-of-life` (which allows `Age`) are being monitored. See: [HDB-1075](https://hl7germany.atlassian.net/browse/HDB-1075)
 
+#### Treatment Case Module
+
+- **Added:** [MII PR Fall Kontakt mit einer Gesundheitseinrichtung](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html) — documentation only: a table of the deliberate cardinality differences to ISiK 6.0.0 for `type:Kontaktebene` and `diagnosis.use.coding:Diagnosetyp`; these cardinalities remain unchanged. See: [HDB-1016](https://hl7germany.atlassian.net/browse/HDB-1016)
+- **Changed:** [MII PR Fall Kontakt mit einer Gesundheitseinrichtung](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html) — `Encounter.hospitalization.admitSource` relaxed from 1..1 to 0..1 (Must Support), as in ISiK 6.0.0 and the logical model, because the admission source is often not available in the HL7 v2 feed. Not breaking for existing instances. See: [HDB-1016](https://hl7germany.atlassian.net/browse/HDB-1016), [#53](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/53)
+
 #### Procedure Module
 
 - **Added:** [MII PR Prozedur Procedure](StructureDefinition-mii-pr-prozedur-procedure.html) — documentation only: a note on the differences to ISiK 6.0.0 regarding `proc-ISiK-2` (coded category for every coded procedure) and `proc-ISiK-3` (text-only procedure code). The MII invariants `proc-mii-1` and `sct-ops-1` remain unchanged. See: [HDB-1018](https://hl7germany.atlassian.net/browse/HDB-1018)

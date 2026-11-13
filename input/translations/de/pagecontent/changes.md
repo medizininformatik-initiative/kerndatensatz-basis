@@ -22,6 +22,11 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 
 - **Changed:** [MII PR Diagnose Condition](StructureDefinition-mii-pr-diagnose-condition.html), [MII LM Diagnose](StructureDefinition-mii-lm-diagnose.html) — **breaking:** Die Lebensphasen-Extension `http://fhir.de/StructureDefinition/lebensphase` wurde von `onsetAge`/`abatementAge` nach `onsetRange`/`abatementRange` verschoben (`Range` in `onset[x]` und `abatement[x]` ergänzt), da ihr Kontext in `de.basisprofil.r4` 1.6.0 `Age` nicht zulässt. `Age` bleibt ohne die Extension zulässig; das Mapping im logischen Modell wurde angepasst. Der Kontext der deutschen Extension und die HL7-Europe-Extension `periods-of-life` (die `Age` zulässt) werden beobachtet. Siehe: [HDB-1075](https://hl7germany.atlassian.net/browse/HDB-1075)
 
+#### Modul Fall
+
+- **Added:** [MII PR Fall Kontakt mit einer Gesundheitseinrichtung](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html) — nur Dokumentation: Tabelle der bewussten Kardinalitätsabweichungen von ISiK 6.0.0 bei `type:Kontaktebene` und `diagnosis.use.coding:Diagnosetyp`; diese Kardinalitäten bleiben unverändert. Siehe: [HDB-1016](https://hl7germany.atlassian.net/browse/HDB-1016)
+- **Changed:** [MII PR Fall Kontakt mit einer Gesundheitseinrichtung](StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html) — `Encounter.hospitalization.admitSource` von 1..1 auf 0..1 (Must Support) gelockert, wie in ISiK 6.0.0 und im logischen Modell, da der Aufnahmeanlass im HL7-v2-Strom oft nicht vorliegt. Nicht breaking für bestehende Instanzen. Siehe: [HDB-1016](https://hl7germany.atlassian.net/browse/HDB-1016), [#53](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/53)
+
 #### Modul Prozedur
 
 - **Added:** [MII PR Prozedur Procedure](StructureDefinition-mii-pr-prozedur-procedure.html) — nur Dokumentation: Hinweis auf die Unterschiede zu ISiK 6.0.0 bei `proc-ISiK-2` (codierte Kategorie für jede codierte Prozedur) und `proc-ISiK-3` (rein textueller Prozedur-Code). Die MII-Invarianten `proc-mii-1` und `sct-ops-1` bleiben unverändert. Siehe: [HDB-1018](https://hl7germany.atlassian.net/browse/HDB-1018)
