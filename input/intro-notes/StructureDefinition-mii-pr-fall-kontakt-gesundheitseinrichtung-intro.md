@@ -274,6 +274,8 @@ The `Encounter.diagnosis` element establishes the relationship between encounter
 <p><strong>Example:</strong> If a Condition serves as both a Diagnosetyp and a Diagnosesubtyp (or additional roles such as CC/CM), create separate <code>Encounter.diagnosis</code> references for each role, all pointing to the same Condition resource. A single Condition can be referenced multiple times with different <code>use</code> values.</p>
 
 <p><strong>Note on CC/CM Classification:</strong> If you want to classify a diagnosis as CC (Complication or Comorbidity) or CM (Comorbidity), this is typically billing-related information and <strong>SHOULD</strong> be placed in the Account resource rather than in <code>Encounter.diagnosis</code>. The Account resource is the appropriate location for billing case context and DRG-relevant classifications.</p>
+
+<p><strong>Note on DRG Diagnoses:</strong> The same applies to the DRG main and secondary diagnosis (<code>principle-DRG</code>, <code>secondary-DRG</code>) and to <code>hospital-main-diagnosis</code> from <code>http://fhir.de/CodeSystem/KontaktDiagnoseProzedur</code>. Because the binding of <code>Encounter.diagnosis.use</code> is extensible, such a coding is technically allowed, but these roles describe the billing case rather than a single encounter. They <strong>SHOULD</strong> therefore be given on the Account using the extension <code>http://fhir.de/StructureDefinition/ExtensionAbrechnungsDiagnoseProzedur</code> (ValueSet <code>http://fhir.de/ValueSet/AbrechnungsDiagnoseProzedur</code>), as in the ISiK Abrechnungsfall profile (see <a href="#best-practice-aufnahmenummer-vs-fallnummer">Best Practice - Aufnahmenummer vs. Fallnummer</a>).</p>
 </div>
 
 #### Encounter Location
