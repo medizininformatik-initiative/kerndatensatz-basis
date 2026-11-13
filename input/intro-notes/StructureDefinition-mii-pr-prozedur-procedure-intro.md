@@ -80,8 +80,11 @@ The modeling of coded and detailed anatomical locations has been harmonized with
 - `Procedure.bodySite` provides detailed anatomical location coding for the procedure using SNOMED CT
 - `Procedure.bodySite` **SHOULD NOT** be used to represent laterality (left/right/bilateral); laterality is a property of the procedure code itself
 - For OPS codes, use `Procedure.code:ops.extension:seitenlokalisation`
-- For SNOMED CT, laterality is inherent in the procedure concept
+- SNOMED CT procedure codes usually already include body site and laterality precoordinated; `bodySite` SHOULD NOT merely repeat them
 - Use `bodySite` to provide anatomical details beyond the procedure code or to reference a specific anatomical structure
+- A body site with its own laterality is allowed when it adds information, e.g. a bilateral procedure that references a specific left-sided lesion as `BodyStructure`
+
+**No invariant for redundant laterality:** Whether a laterality statement in `bodySite` is redundant cannot be decided reliably from the instance alone. For OPS, the extension `Seitenlokalisation` can be checked directly, but for a SNOMED CT procedure code the validation would have to follow the modelled *Procedure site* relationships to derive the laterality, and for a referenced `BodyStructure` it would first have to resolve the reference. Even if both laterality statements are known, their simultaneous presence does not prove redundancy (see the example above). Avoiding redundant laterality statements therefore remains a modelling recommendation.
 
 #### Procedure Intent
 

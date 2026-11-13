@@ -80,8 +80,11 @@ Die Modellierung codierter und detaillierter anatomischer Lokalisationen wurde m
 - `Procedure.bodySite` bietet eine detaillierte Codierung der anatomischen Lokalisation für die Prozedur mittels SNOMED CT
 - `Procedure.bodySite` **SOLL NICHT** verwendet werden, um die Seitenlokalisation (links/rechts/beidseitig) abzubilden; die Seitenlokalisation ist eine Eigenschaft des Prozedurencodes selbst
 - Für OPS-Codes SOLL `Procedure.code:ops.extension:seitenlokalisation` verwendet werden
-- Bei SNOMED CT ist die Seitenlokalisation im Prozedurkonzept inhärent enthalten
+- SNOMED-CT-Prozedurcodes enthalten Körperstelle und Seitenlokalisation in der Regel bereits präkoordiniert; `bodySite` SOLL diese nicht lediglich wiederholen
 - `bodySite` SOLL verwendet werden, um über den Prozedurencode hinausgehende anatomische Details anzugeben oder auf eine patientenbezogene anatomische Struktur zu referenzieren
+- Eine Körperstelle mit eigener Seitenangabe ist zulässig, wenn sie zusätzliche Information liefert, z. B. eine beidseitige Prozedur, die eine bestimmte linksseitige Läsion als `BodyStructure` referenziert
+
+**Keine Invariante für redundante Seitenangaben:** Ob eine Seitenangabe in `bodySite` redundant ist, lässt sich allein aus der Instanz nicht zuverlässig entscheiden. Bei OPS kann die Extension `Seitenlokalisation` direkt geprüft werden; bei einem SNOMED-CT-Prozedurcode müsste die Validierung jedoch den modellierten *Procedure site*-Beziehungen folgen, um die Seitenlokalisation abzuleiten, und bei einer referenzierten `BodyStructure` zunächst die Referenz auflösen. Selbst wenn beide Seitenangaben bekannt sind, beweist ihr gleichzeitiges Vorhandensein keine Redundanz (siehe Beispiel oben). Die Vermeidung redundanter Seitenangaben bleibt daher eine Modellierungsempfehlung.
 
 #### Durchführungsabsicht
 

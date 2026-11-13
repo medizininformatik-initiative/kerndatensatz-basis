@@ -39,6 +39,7 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 #### Modul Prozedur
 
 - **Added:** [MII PR Prozedur Procedure](StructureDefinition-mii-pr-prozedur-procedure.html) — nur Dokumentation: Hinweis auf die Unterschiede zu ISiK 6.0.0 bei `proc-ISiK-2` (codierte Kategorie für jede codierte Prozedur) und `proc-ISiK-3` (rein textueller Prozedur-Code). Die MII-Invarianten `proc-mii-1` und `sct-ops-1` bleiben unverändert. Siehe: [HDB-1018](https://hl7germany.atlassian.net/browse/HDB-1018)
+- **Changed:** [MII PR Prozedur Procedure](StructureDefinition-mii-pr-prozedur-procedure.html) — nur Dokumentation: Definition von `bodySite` präzisiert (SNOMED-CT-Prozedurcodes enthalten Körperstelle und Lateralität in der Regel präkoordiniert; `bodySite` SOLL diese nicht lediglich wiederholen) und erläutert, warum keine Invariante redundante Seitenangaben prüft. Siehe: [HDB-1077](https://hl7germany.atlassian.net/browse/HDB-1077)
 
 ### Version 2027.0.0-ballot
 

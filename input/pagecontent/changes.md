@@ -39,6 +39,7 @@ Changes from the ballot reconciliation of `2027.0.0-ballot`. From this version o
 #### Procedure Module
 
 - **Added:** [MII PR Prozedur Procedure](StructureDefinition-mii-pr-prozedur-procedure.html) — documentation only: a note on the differences to ISiK 6.0.0 regarding `proc-ISiK-2` (coded category for every coded procedure) and `proc-ISiK-3` (text-only procedure code). The MII invariants `proc-mii-1` and `sct-ops-1` remain unchanged. See: [HDB-1018](https://hl7germany.atlassian.net/browse/HDB-1018)
+- **Changed:** [MII PR Prozedur Procedure](StructureDefinition-mii-pr-prozedur-procedure.html) — documentation only: clarified the definition of `bodySite` (SNOMED CT procedure codes usually include body site and laterality precoordinated; `bodySite` SHOULD NOT merely repeat them) and explained why no invariant checks redundant laterality statements. See: [HDB-1077](https://hl7germany.atlassian.net/browse/HDB-1077)
 
 ### Version 2027.0.0-ballot
 
