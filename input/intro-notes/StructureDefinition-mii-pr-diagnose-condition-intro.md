@@ -96,6 +96,8 @@ The modeling of coded and detailed anatomical locations has been harmonized with
   <li>When selecting the Encounter, note that multiple Encounters may be grouped under a single (billing) case number (<code>Encounter.account</code>), such as an inpatient visit with multiple pre- and post-hospitalization contacts</li>
 </ul>
 
+<p><strong>Outlook:</strong> The contact level to which diagnoses are linked is currently being discussed for ISiK stage 7. The MII will follow the outcome of this discussion to keep both specifications aligned. Until then, the recommendation to reference the department contact (Abteilungskontakt) applies.</p>
+
 </div>
 
 #### Temporal Information

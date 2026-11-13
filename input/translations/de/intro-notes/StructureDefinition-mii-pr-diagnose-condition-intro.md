@@ -96,6 +96,8 @@ Die Modellierung codierter und detaillierter anatomischer Lokalisationen wurde m
   <li>Bei der Auswahl des Encounters ist zu beachten, dass unter einer (Abrechnungs-)"Fallnummer" (hier: <code>Encounter.account</code>) unter Umständen mehrere Encounter gruppiert sein können (z.B. stationärer Besuch mit mehreren vor- und nachstationären Aufenthalten)</li>
 </ul>
 
+<p><strong>Ausblick:</strong> Auf welcher Kontaktebene Diagnosen verknüpft werden, wird derzeit für ISiK Stufe 7 diskutiert. Die MII wird dem Ergebnis dieser Diskussion folgen, damit beide Spezifikationen aufeinander abgestimmt bleiben. Bis dahin gilt die Empfehlung, auf den Abteilungskontakt zu referenzieren.</p>
+
 </div>
 
 #### Zeitliche Informationen

@@ -22,6 +22,7 @@ Changes from the ballot reconciliation of `2027.0.0-ballot`. From this version o
 
 - **Changed:** [MII PR Diagnose Condition](StructureDefinition-mii-pr-diagnose-condition.html), [MII LM Diagnose](StructureDefinition-mii-lm-diagnose.html) — **breaking:** the life-phase extension `http://fhir.de/StructureDefinition/lebensphase` moved from `onsetAge`/`abatementAge` to `onsetRange`/`abatementRange` (`Range` added to `onset[x]` and `abatement[x]`), because its context in `de.basisprofil.r4` 1.6.0 does not allow `Age`. `Age` stays allowed without the extension; the logical model mapping follows. The context of the German extension and the HL7 Europe extension `periods-of-life` (which allows `Age`) are being monitored. See: [HDB-1075](https://hl7germany.atlassian.net/browse/HDB-1075)
 - **Added:** [MII PR Diagnose Condition](StructureDefinition-mii-pr-diagnose-condition.html) — documentation only: described `extension:Feststellungsdatum` and how it differs from `onset[x]` and `recordedDate`, with an example, and clarified the use of `extension:ReferenzPrimaerdiagnose` (short and definition added). See: [HDB-1020](https://hl7germany.atlassian.net/browse/HDB-1020)
+- **Added:** [MII PR Diagnose Condition](StructureDefinition-mii-pr-diagnose-condition.html) — documentation only: note that the recommended contact level for `Condition.encounter` (department contact) is under discussion for ISiK stage 7 and that the MII will follow its outcome. See: [HDB-1012](https://hl7germany.atlassian.net/browse/HDB-1012)
 
 #### Treatment Case Module
 
