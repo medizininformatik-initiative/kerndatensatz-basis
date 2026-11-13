@@ -22,6 +22,10 @@ Diese Seite dokumentiert die Änderungen und Updates über Versionen des MII-Imp
 
 - **Changed:** [MII PR Diagnose Condition](StructureDefinition-mii-pr-diagnose-condition.html), [MII LM Diagnose](StructureDefinition-mii-lm-diagnose.html) — **breaking:** Die Lebensphasen-Extension `http://fhir.de/StructureDefinition/lebensphase` wurde von `onsetAge`/`abatementAge` nach `onsetRange`/`abatementRange` verschoben (`Range` in `onset[x]` und `abatement[x]` ergänzt), da ihr Kontext in `de.basisprofil.r4` 1.6.0 `Age` nicht zulässt. `Age` bleibt ohne die Extension zulässig; das Mapping im logischen Modell wurde angepasst. Der Kontext der deutschen Extension und die HL7-Europe-Extension `periods-of-life` (die `Age` zulässt) werden beobachtet. Siehe: [HDB-1075](https://hl7germany.atlassian.net/browse/HDB-1075)
 
+#### Modul Prozedur
+
+- **Added:** [MII PR Prozedur Procedure](StructureDefinition-mii-pr-prozedur-procedure.html) — nur Dokumentation: Hinweis auf die Unterschiede zu ISiK 6.0.0 bei `proc-ISiK-2` (codierte Kategorie für jede codierte Prozedur) und `proc-ISiK-3` (rein textueller Prozedur-Code). Die MII-Invarianten `proc-mii-1` und `sct-ops-1` bleiben unverändert. Siehe: [HDB-1018](https://hl7germany.atlassian.net/browse/HDB-1018)
+
 ### Version 2027.0.0-ballot
 
 **Datum:** 2026-09-10

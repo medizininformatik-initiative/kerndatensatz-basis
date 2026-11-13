@@ -22,6 +22,10 @@ Changes from the ballot reconciliation of `2027.0.0-ballot`. From this version o
 
 - **Changed:** [MII PR Diagnose Condition](StructureDefinition-mii-pr-diagnose-condition.html), [MII LM Diagnose](StructureDefinition-mii-lm-diagnose.html) — **breaking:** the life-phase extension `http://fhir.de/StructureDefinition/lebensphase` moved from `onsetAge`/`abatementAge` to `onsetRange`/`abatementRange` (`Range` added to `onset[x]` and `abatement[x]`), because its context in `de.basisprofil.r4` 1.6.0 does not allow `Age`. `Age` stays allowed without the extension; the logical model mapping follows. The context of the German extension and the HL7 Europe extension `periods-of-life` (which allows `Age`) are being monitored. See: [HDB-1075](https://hl7germany.atlassian.net/browse/HDB-1075)
 
+#### Procedure Module
+
+- **Added:** [MII PR Prozedur Procedure](StructureDefinition-mii-pr-prozedur-procedure.html) — documentation only: a note on the differences to ISiK 6.0.0 regarding `proc-ISiK-2` (coded category for every coded procedure) and `proc-ISiK-3` (text-only procedure code). The MII invariants `proc-mii-1` and `sct-ops-1` remain unchanged. See: [HDB-1018](https://hl7germany.atlassian.net/browse/HDB-1018)
+
 ### Version 2027.0.0-ballot
 
 **Date:** 2026-09-10

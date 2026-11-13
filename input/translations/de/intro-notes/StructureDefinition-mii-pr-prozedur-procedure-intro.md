@@ -42,6 +42,8 @@ Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Pro
 
 <p><strong>Constraint proc-mii-1:</strong> Diese Anforderung ist nur relevant, wenn die Prozedur per OPS codiert wird.</p>
 
+<p><strong>Unterschied zu <a href="https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKProzedur.html">ISiK 6.0.0</a>:</strong> ISiK fordert für jede codierte Prozedur eine codierte Kategorie (<code>proc-ISiK-2</code>) und erlaubt einen rein textuellen <code>Procedure.code</code> (<code>proc-ISiK-3</code>). Die MII fordert die Kategorie nur für OPS-codierte Prozeduren und immer eine codierte Prozedur (<code>sct-ops-1</code>) (<a href="https://hl7germany.atlassian.net/browse/HDB-1018">HDB-1018</a>).</p>
+
 <p><strong>Zweck:</strong> Die Kategorisierung ermöglicht:</p>
 <ul>
   <li>Hochstufige Prozedur-Gruppierung für epidemiologische Analysen</li>

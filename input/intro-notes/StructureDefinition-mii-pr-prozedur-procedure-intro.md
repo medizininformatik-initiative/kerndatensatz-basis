@@ -42,6 +42,8 @@ This section provides detailed implementation guidance for the MII Procedure (Pr
 
 <p><strong>Constraint proc-mii-1:</strong> This requirement is only relevant when the procedure is coded using OPS.</p>
 
+<p><strong>Difference to <a href="https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKProzedur.html">ISiK 6.0.0</a>:</strong> ISiK requires a coded category for every coded procedure (<code>proc-ISiK-2</code>) and allows a text-only <code>Procedure.code</code> (<code>proc-ISiK-3</code>). The MII requires the category only for OPS-coded procedures and always requires a coded procedure (<code>sct-ops-1</code>) (<a href="https://hl7germany.atlassian.net/browse/HDB-1018">HDB-1018</a>).</p>
+
 <p><strong>Purpose:</strong> Category classification enables:</p>
 <ul>
   <li>High-level procedure grouping for epidemiological analyses</li>
