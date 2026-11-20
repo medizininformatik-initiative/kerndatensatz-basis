@@ -34,7 +34,8 @@ Description: "Dieses Profil beschreibt eine Patient*in in der Medizininformatik-
     $patient-birthPlace named birthPlace 0..1 MS and
     $patient-citizenship named patient-citizenship 0..* MS and
     $patient-nationality named patient-nationality 0..* MS and
-    $recordedSexOrGender named recordedSexOrGender 0..* MS
+    $recordedSexOrGender named recordedSexOrGender 0..* MS and
+    $sexParameterForClinicalUse named sexParameterForClinicalUse 0..* MS
 * extension[birthPlace].url MS
 * extension[birthPlace].valueAddress MS
 * extension[birthPlace].valueAddress.country MS
@@ -76,7 +77,7 @@ Description: "Dieses Profil beschreibt eine Patient*in in der Medizininformatik-
 * extension[recordedSexOrGender].extension[value] MS
 * extension[recordedSexOrGender].extension[value].url MS
 * extension[recordedSexOrGender].extension[value].valueCodeableConcept MS
-* extension[recordedSexOrGender].extension[value].valueCodeableConcept from MII_VS_Person_recordedSexOrGender_SNOMED (preferred)
+* extension[recordedSexOrGender].extension[value].valueCodeableConcept from MII_VS_Person_recordedSexOrGender_SNOMED (extensible)
 * extension[recordedSexOrGender].extension[value].valueCodeableConcept.coding MS
 * extension[recordedSexOrGender].extension[value].valueCodeableConcept.coding.system MS
 * extension[recordedSexOrGender].extension[value].valueCodeableConcept.coding.code MS
@@ -91,6 +92,18 @@ Description: "Dieses Profil beschreibt eine Patient*in in der Medizininformatik-
 * extension[recordedSexOrGender].extension[acquisitionDate].valueDateTime MS
 * insert Translation(extension[recordedSexOrGender] ^short, de-DE, Dokumentiertes Geschlecht)
 * insert Translation(extension[recordedSexOrGender] ^short, en-US, Recorded Sex or Gender)
+* extension[sexParameterForClinicalUse].url MS
+* extension[sexParameterForClinicalUse].extension[value] MS
+* extension[sexParameterForClinicalUse].extension[value].url MS
+* extension[sexParameterForClinicalUse].extension[value].valueCodeableConcept MS
+* extension[sexParameterForClinicalUse].extension[value].valueCodeableConcept.coding MS
+* extension[sexParameterForClinicalUse].extension[value].valueCodeableConcept.coding.system MS
+* extension[sexParameterForClinicalUse].extension[value].valueCodeableConcept.coding.code MS
+* extension[sexParameterForClinicalUse].extension[period] MS
+* extension[sexParameterForClinicalUse].extension[period].url MS
+* extension[sexParameterForClinicalUse].extension[period].valuePeriod MS
+* insert Translation(extension[sexParameterForClinicalUse] ^short, de-DE, Geschlechtsparameter für die klinische Verwendung)
+* insert Translation(extension[sexParameterForClinicalUse] ^short, en-US, Sex Parameter for Clinical Use)
 * identifier MS
 * identifier ^short = "Patienten-Identifikator"
 * insert Translation(identifier ^short, de-DE, Identifikator)

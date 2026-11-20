@@ -10,5 +10,5 @@ Usage: #example
 * patient = Reference(mii-exa-person-patient-1)
 * encounter = Reference(mii-exa-fall-kontakt-gesundheitseinrichtung-9)
 * recordedDate = "2020-01-08"
-* reaction[0].manifestation[0].coding[0] = $sct-no-ver#24079001 "Atopic dermatitis"
+* reaction[0].manifestation[0].coding[0] = $sct-no-ver#247471006 "Maculopapular eruption"
 * reaction[0].severity = #severe

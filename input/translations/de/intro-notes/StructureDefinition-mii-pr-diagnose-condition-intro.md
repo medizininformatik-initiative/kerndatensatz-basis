@@ -48,8 +48,9 @@ Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Dia
 <p><strong>Verknüpfung von Sekundär- zu Primärdiagnose:</strong></p>
 <ul>
   <li>Die Primärdiagnose-Condition (Ätiologie mit †-Kennzeichen) ist die Hauptinstanz</li>
-  <li>Sekundärdiagnose-Conditions (Manifestation mit *-Kennzeichen, Zusatzinformation mit !-Kennzeichen) nutzen die <a href="http://hl7.org/fhir/R4/extension-condition-related.html">Extension Condition Related</a>, um auf die Primärdiagnose zu referenzieren</li>
+  <li>Sekundärdiagnose-Conditions (Manifestation mit *-Kennzeichen, Zusatzinformation mit !-Kennzeichen) nutzen den Slice <code>extension:ReferenzPrimaerdiagnose</code> (<a href="http://hl7.org/fhir/R4/extension-condition-related.html">Extension Condition Related</a>), um auf die Primärdiagnose zu referenzieren</li>
   <li>Dies erstellt eine explizite Beziehungskette: Manifestation → Ätiologie</li>
+  <li>Nur die Sekundärdiagnose-Conditions befüllen <code>extension:ReferenzPrimaerdiagnose</code>; die Primärdiagnose-Condition referenziert ihre Sekundärdiagnosen nicht</li>
 </ul>
 
 <p><strong>Alpha-ID und Orphanet-Codes:</strong></p>
@@ -95,6 +96,8 @@ Die Modellierung codierter und detaillierter anatomischer Lokalisationen wurde m
   <li>Bei der Auswahl des Encounters ist zu beachten, dass unter einer (Abrechnungs-)"Fallnummer" (hier: <code>Encounter.account</code>) unter Umständen mehrere Encounter gruppiert sein können (z.B. stationärer Besuch mit mehreren vor- und nachstationären Aufenthalten)</li>
 </ul>
 
+<p><strong>Ausblick:</strong> Auf welcher Kontaktebene Diagnosen verknüpft werden, wird derzeit für ISiK Stufe 7 diskutiert. Die MII wird dem Ergebnis dieser Diskussion folgen, damit beide Spezifikationen aufeinander abgestimmt bleiben. Bis dahin gilt die Empfehlung, auf den Abteilungskontakt zu referenzieren.</p>
+
 </div>
 
 #### Zeitliche Informationen
@@ -102,25 +105,48 @@ Die Modellierung codierter und detaillierter anatomischer Lokalisationen wurde m
 <div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
 <h5 style="color: #406A99; margin-top: 0;">Best Practice - Erkrankungsbeginn und Erkrankungsende</h5>
 
-<p>Die Modellierung von Erkrankungsbeginn und Erkrankungsende wurde mit <a href="https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKDiagnose.html">gematik ISiK</a> harmonisiert. Implementierende <strong>SOLLTEN</strong> <code>onsetDateTime</code>/<code>abatementDateTime</code> für Datumsangaben und <code>onsetAge</code>/<code>abatementAge</code> mit der Lebensphasen-Extension verwenden, wenn nur eine Lebensphase bekannt ist. <code>onsetPeriod</code> und <code>abatementPeriod</code> bleiben ausschließlich aus Gründen der Rückwärtskompatibilität zulässig und <strong>SOLLTEN NICHT</strong> in neuen Implementierungen verwendet werden.</p>
+<p>Die Modellierung von Erkrankungsbeginn und Erkrankungsende wurde mit <a href="https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKDiagnose.html">gematik ISiK</a> harmonisiert. Implementierende <strong>SOLLTEN</strong> <code>onsetDateTime</code>/<code>abatementDateTime</code> für Datumsangaben und <code>onsetRange</code>/<code>abatementRange</code> mit der Lebensphasen-Extension verwenden, wenn nur eine Lebensphase bekannt ist. <code>onsetPeriod</code> und <code>abatementPeriod</code> bleiben ausschließlich aus Gründen der Rückwärtskompatibilität zulässig und <strong>SOLLTEN NICHT</strong> in neuen Implementierungen verwendet werden.</p>
 
 <p><strong>EHDS-Ausblick:</strong> Das veröffentlichte Trial-Use-Profil <a href="https://hl7.eu/fhir/base/2.0.0/StructureDefinition-condition-eu-core.html">HL7 Europe Condition (EU core) 2.0.0</a>, das in kommende EHDS-Spezifikationen einfließt, profiliert für Erkrankungsbeginn und Erkrankungsende ausdrücklich die <code>dateTime</code>-Varianten. Um die zukünftige EHDS-Konformität zu erleichtern, <strong>SOLLTEN</strong> neue Implementierungen daher <code>onsetDateTime</code> und <code>abatementDateTime</code> verwenden, sofern ein Datum verfügbar ist.</p>
 </div>
 
 **`Condition.onset[x]`:**
-- **SOLLTE** als `dateTime` oder `Age` erfasst werden
-- Bei Verwendung von `Age` **KANN** die Lebensphasen-Extension eine Lebensphase als Code angeben, wenn das genaue Datum unbekannt ist
+- **SOLLTE** als `dateTime`, `Age` oder `Range` erfasst werden
+- Bei Verwendung von `Range` **KANN** die Lebensphasen-Extension eine Lebensphase als Code angeben, wenn das genaue Datum unbekannt ist
 - `Period` bleibt aus Gründen der Rückwärtskompatibilität zulässig, aber **SOLLTE NICHT** verwendet werden
 - Repräsentiert, wann die Erkrankung begann oder erstmals bemerkt wurde
 
 **`Condition.abatement[x]`:**
-- **SOLLTE** als `dateTime` oder `Age` erfasst werden
-- Bei Verwendung von `Age` **KANN** die Lebensphasen-Extension eine Lebensphase als Code angeben, wenn das genaue Datum unbekannt ist
+- **SOLLTE** als `dateTime`, `Age` oder `Range` erfasst werden
+- Bei Verwendung von `Range` **KANN** die Lebensphasen-Extension eine Lebensphase als Code angeben, wenn das genaue Datum unbekannt ist
 - `Period` bleibt aus Gründen der Rückwärtskompatibilität zulässig, aber **SOLLTE NICHT** verwendet werden
 - Repräsentiert, wann die Erkrankung endete, abklang oder in Remission überging
+
+<div style="background-color: #FFF8E1; border-left: 5px solid #E0A800; padding: 15px; margin: 10px 0;">
+<h5 style="color: #8A6D00; margin-top: 0;">Hinweis - Lebensphase an <code>Range</code> statt an <code>Age</code></h5>
+
+<p>Die Lebensphasen-Extension <code>http://fhir.de/StructureDefinition/lebensphase</code> (<a href="https://simplifier.net/packages/de.basisprofil.r4/1.6.0">de.basisprofil.r4</a> 1.6.0) ist nur an <code>dateTime</code>, <code>Period.start</code>, <code>Period.end</code> und <code>Range</code> zulässig. Sie ist daher an <code>onsetRange</code> und <code>abatementRange</code> profiliert, nicht mehr an <code>onsetAge</code> und <code>abatementAge</code> (<a href="https://hl7germany.atlassian.net/browse/HDB-1075">HDB-1075</a>). <code>Age</code> bleibt ohne die Extension zulässig. Dies weicht von <a href="https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKDiagnose.html">ISiK Basis 6.0.0</a> ab, das die Extension an <code>Age</code> profiliert.</p>
+
+<p>Die <a href="https://hl7.eu/fhir/extensions/StructureDefinition-periods-of-life.html">HL7-Europe-Extension <code>periods-of-life</code></a> lässt auch <code>Age</code> als Kontext zu. Ändert sich der Kontext der deutschen Extension in einer künftigen Version der deutschen Basisprofile oder wird die EU-Extension übernommen, wird die Platzierung überprüft.</p>
+</div>
+
+**`Condition.extension:Feststellungsdatum`** (`http://hl7.org/fhir/StructureDefinition/condition-assertedDate`):
+- Repräsentiert, wann die Diagnose klinisch festgestellt wurde, z. B. durch eine Ärztin oder einen Arzt auf Grundlage von Befunden
+- Ist unabhängig davon, wann die Erkrankung begann und wann sie dokumentiert wurde
 
 **`Condition.recordedDate`:**
 - Repräsentiert, wann die Diagnose im System erfasst wurde
 - Dient der zeitlichen Einordnung der Diagnose
+
+<div style="background-color: #E8F4F8; border-left: 5px solid #5C8DB3; padding: 15px; margin: 10px 0;">
+<h5 style="color: #406A99; margin-top: 0;">Best Practice - Onset, Feststellungsdatum und recordedDate</h5>
+
+<p>Die drei Elemente beschreiben unterschiedliche Zeitpunkte und <strong>SOLLEN NICHT</strong> gegeneinander ausgetauscht werden:</p>
+<ul>
+  <li><code>onset[x]</code>: wann die Erkrankung oder ihre Symptome begonnen haben (Krankheitsverlauf)</li>
+  <li><code>extension:Feststellungsdatum</code>: wann die Diagnose gestellt wurde (diagnostischer Prozess)</li>
+  <li><code>recordedDate</code>: wann die Diagnose erstmals im Quellsystem dokumentiert wurde (Dokumentationsprozess)</li>
+</ul>
+</div>
 
 {% include link-list.md %}
