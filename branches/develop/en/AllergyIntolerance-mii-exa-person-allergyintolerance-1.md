@@ -37,7 +37,7 @@ Profile: [MII PR Person Allergy Intolerance](StructureDefinition-mii-pr-person-a
 | | | |
 | :--- | :--- | :--- |
 | - | **Manifestation** | **Severity** |
-| * | Atopic dermatitis | Severe |
+| * | Maculopapular eruption | Severe |
 
 
 
@@ -83,8 +83,8 @@ Profile: [MII PR Person Allergy Intolerance](StructureDefinition-mii-pr-person-a
     "manifestation" : [{
       "coding" : [{
         "system" : "http://snomed.info/sct",
-        "code" : "24079001",
-        "display" : "Atopic dermatitis"
+        "code" : "247471006",
+        "display" : "Maculopapular eruption"
       }]
     }],
     "severity" : "severe"

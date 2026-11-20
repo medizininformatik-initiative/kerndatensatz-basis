@@ -9,7 +9,7 @@
   "language" : "de",
   "text" : {
     "status" : "generated",
-    "div" : "<div xml:lang=\"de\" lang=\"de\"><hr/><p><b>German</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide mii-ig-base</b></p><a name=\"de-mii-ig-base\"> </a><a name=\"de-hcmii-ig-base\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: en</p><p style=\"margin-bottom: 0px\">Profils: <a href=\"http://hl7.org/fhir/uv/crmi/STU2/StructureDefinition-crmi-shareableimplementationguide.html\">CRMI Shareable ImplementationGuide</a>, <a href=\"http://hl7.org/fhir/uv/crmi/STU2/StructureDefinition-crmi-publishableimplementationguide.html\">CRMI Publishable ImplementationGuide</a>, <a href=\"http://hl7.org/fhir/uv/crmi/STU2/StructureDefinition-crmi-implementationguide.html\">CRMI ImplementationGuide</a></p></div><h2>MII_IG_Base</h2><p>The official URL for this implementation guide is: </p><pre>https://www.medizininformatik-initiative.de/fhir/modul-base/ImplementationGuide/mii-ig-base</pre><div><p>Implementation Guide for the Core Dataset Base Modules Person, Diagnosis, Procedure, and Treatment Case. Release notes: https://medizininformatik-initiative.github.io/kerndatensatz-basis/2027.0.0-ballot/changes.html</p>\n</div></div>"
+    "div" : "<div xml:lang=\"de\" lang=\"de\"><hr/><p><b>German</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide mii-ig-base</b></p><a name=\"de-mii-ig-base\"> </a><a name=\"de-hcmii-ig-base\"> </a><div style=\"display: inline-block; background-color: #fbffeb; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: en</p><p style=\"margin-bottom: 0px\">Profils: <a href=\"http://hl7.org/fhir/uv/crmi/STU2/StructureDefinition-crmi-shareableimplementationguide.html\">CRMI Shareable ImplementationGuide</a>, <a href=\"http://hl7.org/fhir/uv/crmi/STU2/StructureDefinition-crmi-publishableimplementationguide.html\">CRMI Publishable ImplementationGuide</a>, <a href=\"http://hl7.org/fhir/uv/crmi/STU2/StructureDefinition-crmi-implementationguide.html\">CRMI ImplementationGuide</a></p></div><h2>MII_IG_Base</h2><p>The official URL for this implementation guide is: </p><pre>https://www.medizininformatik-initiative.de/fhir/modul-base/ImplementationGuide/mii-ig-base</pre><div><p>Implementation Guide for the Core Dataset Base Modules Person, Diagnosis, Procedure, and Treatment Case. Release notes: https://medizininformatik-initiative.github.io/kerndatensatz-basis/2027.0.0-ballot/changes.html</p>\n</div></div>"
   },
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/resource-approvalDate",
@@ -279,6 +279,12 @@
     "uri" : "http://hl7.org/fhir/uv/ips/ImplementationGuide/hl7.fhir.uv.ips",
     "packageId" : "hl7.fhir.uv.ips",
     "version" : "2.0.1"
+  },
+  {
+    "id" : "kbv_all_terminology_allergyintolerance",
+    "uri" : "http://fhir.org/packages/kbv.all.terminology.allergyintolerance/ImplementationGuide/kbv.all.terminology.allergyintolerance",
+    "packageId" : "kbv.all.terminology.allergyintolerance",
+    "version" : "1.0.0"
   }],
   "definition" : {
     "extension" : [{
@@ -925,6 +931,17 @@
       },
       {
         "url" : "value",
+        "valueString" : "https://www.medizininformatik-initiative.de/fhir/modul-person/ConceptMap/mii-cm-person-recordedsexorgender-snomed-administrative-gender"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
         "valueString" : "https://www.medizininformatik-initiative.de/fhir/modul-person/StructureDefinition/AllergieUnvertraeglichkeit"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
@@ -1216,6 +1233,18 @@
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     }],
     "resource" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/mii-cm-person-recordedsexorgender-snomed-administrative-gender"
+      },
+      "name" : "MII CM Person Recorded Sex or Gender SNOMED to Administrative Gender",
+      "description" : "Maps the SNOMED CT codes of MII VS Person Recorded Sex or Gender SNOMED to FHIR AdministrativeGender. Recorded sex (e.g. sex assigned at birth) and administrative gender are different concepts, so no mapping is equivalent; each relationship is qualified.",
+      "exampleBoolean" : false
+    },
+    {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CapabilityStatement"

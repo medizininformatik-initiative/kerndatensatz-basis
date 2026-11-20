@@ -94,7 +94,17 @@ Anonymous Patient Female, DoB: 1998 ( Krankenversichertennummer: NamingSystemKVI
   "address" : [{
     "type" : "both",
     "postalCode" : "10",
-    "country" : "DE"
+    "country" : "DE",
+    "_country" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-codedString",
+        "valueCoding" : {
+          "system" : "urn:iso:std:iso:3166",
+          "code" : "DE",
+          "display" : "Germany"
+        }
+      }]
+    }
   }]
 }
 

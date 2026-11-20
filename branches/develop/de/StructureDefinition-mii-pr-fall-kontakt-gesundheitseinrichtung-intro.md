@@ -21,6 +21,9 @@ Das MII-Fall-Modul unterscheidet drei Ebenen von Kontakten mittels `Encounter.ty
 
 Diese Ebenen werden mittels `Encounter.partOf` verknüpft, um eine hierarchische Struktur zu erstellen.
 
+<a id="encounter-partof-across-patients"></a>
+**`partOf` über Patienten hinweg:** Innerhalb der Kontakthierarchie referenziert `Encounter.partOf` einen Encounter desselben Patienten. Einzige Ausnahme: Der Einrichtungskontakt eines Neugeborenen **KANN** auf den Entbindungs-Einrichtungskontakt der Mutter verweisen (siehe [Mutter und Neugeborenes](StructureDefinition-mii-pr-person-patient.html#mother-and-newborn)). Eine solche Referenz auf einen Encounter mit anderem `Encounter.subject` drückt nur die geburtshilfliche Zuordnung aus: Die Traversierung der Hierarchie **MUSS** an einem Encounter enden, dessen `partOf`-Ziel ein anderes `subject` hat.
+
 **Beispiel einer Kontakthierarchie:**
 
 Das folgende Diagramm veranschaulicht, wie verschiedene Kontaktebenen mittels `partOf`-Referenzen miteinander verknüpft werden, zusammen mit optionalen Verbindungen zu EpisodeOfCare- und Account-Ressourcen:
@@ -84,6 +87,8 @@ graph BT
 </code></pre>
 
 **Account-Verknüpfung:** Die für ausgewählte Encounter dargestellten `account`-Referenzen veranschaulichen, wie Encounter auf jeder Ebene der Hierarchie mit demselben Account verknüpft werden können, um mehrere Encounter einem gemeinsamen Abrechnungskontext zuzuordnen. Zur besseren Lesbarkeit werden Account-Referenzen nur für ausgewählte Encounter gezeigt; die übrigen Encounter der Hierarchie können denselben Account auf die gleiche Weise referenzieren. Implementierungshinweise, insbesondere zur empfohlenen Verwendung der logischen Referenz `Encounter.account.identifier`, finden sich unter [Best Practice - Aufnahmenummer vs. Fallnummer](#best-practice-aufnahmenummer-vs-fallnummer).
+
+**Mehrere Einrichtungskontakte je Account:** Ein Account kann auch von mehreren Einrichtungskontakten referenziert werden, z. B. wenn getrennte vorstationäre, stationäre und nachstationäre Einrichtungskontakte als ein Fall abgerechnet werden oder wenn Wiederaufnahmen zu einem DRG-Fall zusammengeführt werden (Fallzusammenführung). Die Beziehung ist n:1 vom Encounter zum Account: Jeder Encounter referenziert den Account in `Encounter.account`; der Account referenziert seine Encounter nicht.
 
 In diesem Beispiel:
 - **E0** repräsentiert den gesamten Einrichtungskontakt für den Krankenhausaufenthalt
@@ -180,7 +185,7 @@ In diesem Beispiel:
 <tr>
 <td>Teilstationär (Partial Inpatient)</td>
 <td>TS</td>
-<td><code>Encounter.class = IMP</code> or <code>SS</code><br/><code>Encounter.extension:Aufnahmegrund.extension:ErsteUndZweiteStelle = 03</code><br/><code>Encounter.type = teilstationaer | tagesklinik | nachtklinik</code></td>
+<td><code>Encounter.class = IMP</code> oder <code>SS</code><br/><code>Encounter.extension:Aufnahmegrund.extension:ErsteUndZweiteStelle = 03</code><br/><code>Encounter.type = teilstationaer | tagesklinik | nachtklinik</code></td>
 </tr>
 <tr>
 <td>Begleitperson (Accompanying Person)</td>
@@ -206,6 +211,13 @@ In diesem Beispiel:
 </table>
 
 *Externe Quelle: Die Zuordnung der Primärkontakte zu HL7 V2 und FHIR in dieser Tabelle wurde aus den [Deutschen FHIR-Basisprofilen 1.6.0 – Ambulanter/stationärer Fall / Kontakt](https://ig.fhir.de/basisprofile-de/1.6.0/ig-markdown-Ressourcen-AmbulanterStationaererFall.html) übernommen.*
+
+**Teilstationäre Kontakte: `IMP` oder `SS`.** Teilstationäre Behandlung umfasst unterschiedliche Versorgungsformen, daher sind beide Klassen zulässig:
+
+- `IMP` (stationärer Kontakt), wenn der Patientin oder dem Patienten für die Behandlung ein Bett zugewiesen ist, z. B. in einer Nachtklinik mit Übernachtung;
+- `SS` (Kurzaufenthalt), wenn die Behandlung ohne Bettenzuweisung und ohne Übernachtung erfolgt, typischerweise in einer Tagesklinik.
+
+Ob ein Kontakt teilstationär ist, wird durch `Encounter.type` (`teilstationaer`, `tagesklinik` oder `nachtklinik`) und den Aufnahmegrund `03` ausgedrückt, nicht durch `Encounter.class`. Datennutzende SOLLTEN daher diese Elemente auswerten, statt sich allein auf `Encounter.class` zu stützen.
 
 ##### Sekundärkontakte bei stationärem Aufenthalt
 
@@ -267,11 +279,13 @@ Das Element `Encounter.diagnosis` stellt die Beziehung zwischen Kontakten und Di
 <p><strong>Beispiel:</strong> Wenn eine Condition sowohl als Diagnosetyp als auch als Diagnosesubtyp (oder zusätzliche Rollen wie CC/CM) dient, erstellen Sie separate <code>Encounter.diagnosis</code>-Referenzen für jede Rolle, die alle auf dieselbe Condition-Ressource verweisen. Eine einzelne Condition kann mehrfach mit unterschiedlichen <code>use</code>-Werten referenziert werden.</p>
 
 <p><strong>Hinweis zur CC/CM-Klassifikation:</strong> Wenn Sie eine Diagnose als CC (Komplikation oder Komorbidität) oder CM (Komorbidität) klassifizieren möchten, handelt es sich hierbei typischerweise um abrechnungsrelevante Informationen, die in der Account-Ressource und nicht in <code>Encounter.diagnosis</code> platziert werden <strong>SOLLEN</strong>. Die Account-Ressource ist der geeignete Ort für Abrechnungsfallkontext und DRG-relevante Klassifikationen.</p>
+
+<p><strong>Hinweis zu DRG-Diagnosen:</strong> Gleiches gilt für die DRG-Haupt- und Nebendiagnose (<code>principle-DRG</code>, <code>secondary-DRG</code>) sowie für <code>hospital-main-diagnosis</code> aus <code>http://fhir.de/CodeSystem/KontaktDiagnoseProzedur</code>. Da das Binding von <code>Encounter.diagnosis.use</code> extensible ist, ist eine solche Codierung technisch zulässig. Diese Rollen beschreiben jedoch den Abrechnungsfall und nicht einen einzelnen Kontakt. Sie <strong>SOLLEN</strong> daher am Account mit der Extension <code>http://fhir.de/StructureDefinition/ExtensionAbrechnungsDiagnoseProzedur</code> (ValueSet <code>http://fhir.de/ValueSet/AbrechnungsDiagnoseProzedur</code>) angegeben werden, wie im ISiK-Profil Abrechnungsfall (siehe <a href="#best-practice-aufnahmenummer-vs-fallnummer">Best Practice - Aufnahmenummer vs. Fallnummer</a>).</p>
 </div>
 
 #### Kontaktort
 
-- Details zum Kontaktort (Zimmer, Bett, Station) können mittels `Encounter.location` angegeben werden.
+- Details zum Kontaktort (Zimmer, Bettenstellplatz, Station) können mittels `Encounter.location` angegeben werden.
 - Der physische Typ SOLL das MII-spezifische ValueSet für location physical types verwenden.
 - Angaben zum Kontaktort sind primär relevant für Versorgungsstellenkontakte.
 
@@ -282,12 +296,23 @@ Das Element `Encounter.diagnosis` stellt die Beziehung zwischen Kontakten und Di
 | Slice | physicalType | status | Kardinalität |
 |---|---|---|---|
 | `Zimmer` | `ro` | `active` | 0..1 |
-| `Bett` | `bd` | `active` | 0..1 |
+| `Bettenstellplatz` | `bd` | `active` | 0..1 |
 | `Station` | `wa` | `active` | 0..1 |
 
-Jeder Slice schränkt `status = active` mit Kardinalität 0..1 ein. Eine konforme Implementierung DARF NICHT mehr als ein aktives Zimmer, ein aktives Bett oder eine aktive Station gleichzeitig innerhalb eines einzelnen Encounters befüllen.
+Der Slice `Bettenstellplatz` beschreibt den Ort, an dem das Bett der Patientin oder des Patienten steht, als Location mit dem physischen Typ `bd`. Er beschreibt nicht das Bett als Gerät. Bis einschließlich Version 2027.0.0-ballot hieß der Slice `Bett`.
+
+Jeder Slice schränkt `status = active` mit Kardinalität 0..1 ein. Eine konforme Implementierung DARF NICHT mehr als ein aktives Zimmer, einen aktiven Bettenstellplatz oder eine aktive Station gleichzeitig innerhalb eines einzelnen Encounters befüllen.
 
 Da das Slicing **offen** ist, KÖNNEN Implementierungen zusätzliche `Encounter.location`-Einträge über diese drei benannten Slices hinaus aufnehmen. Um die Bewegungshistorie während eines Kontakts zu erfassen (z.B. frühere Stationen, Zimmer oder Betten, durch die der Patient verlegt wurde), SOLLEN Implementierungen für diese Einträge `status = completed` verwenden. Damit wird die Verlaufshistorie klar von den Slices für aktive Orte getrennt, ohne mit diesen zu kollidieren.
+
+**Station als Location oder Organization**
+
+Eine Station hat einen räumlichen und einen organisatorischen Aspekt, die FHIR und [ISiK Kontakt Gesundheitseinrichtung 6.0.0](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKKontaktGesundheitseinrichtung.html) getrennt abbilden:
+
+- **Als Location:** `Encounter.location:Station` (`physicalType = wa`, `status = active`) referenziert die Station als räumlichen Ort, an dem sich die Patientin oder der Patient aktuell aufhält. ISiK verwendet denselben Slice und fordert zusätzlich `location.identifier` und `location.display`; Implementierende SOLLEN beide befüllen, um mit ISiK kompatibel zu bleiben.
+- **Als Organization:** `Encounter.serviceProvider` referenziert die für den Kontakt verantwortliche Organization. Bei Versorgungsstellenkontakten kann dies die Station als Organisationseinheit sein, identifiziert über ihre Organisationseinheiten-ID wie im ISiK-Profil Organisation, dessen Identifier `OrganisationseinheitenID` ausdrücklich Abteilungen und Stationen umfasst.
+
+Beide Darstellungen KÖNNEN gemeinsam verwendet werden. Datennutzende SOLLEN NICHT davon ausgehen, dass Stationsangaben immer nur in einem dieser Elemente stehen.
 
 #### Geplante Kontakte
 
@@ -297,9 +322,18 @@ Geplante Kontakte werden mit `Encounter.status = planned` abgebildet und SOLLEN 
 
 #### Aufnahme und Entlassung
 
-- **Aufnahmeanlass** ist verpflichtend, wenn Hospitalisierungsdaten angegeben werden, und verwendet Codes aus § 301 SGB V.
+- **Aufnahmeanlass** ist optional (0..1, Must Support) und verwendet Codes aus § 301 SGB V. Er liegt im HL7-v2-Strom oft nicht vor, daher kann `hospitalization`, z.B. mit `dischargeDisposition`, auch ohne ihn angegeben werden ([#53](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/53)).
 - **Aufnahmegrund** mit vierteiliger Struktur (erste und zweite Stelle, dritte Stelle, vierte Stelle) gemäß § 301 SGB V.
 - **Entlassungsgrund** mit Entlassungsgrund-Extension liefert detaillierte Entlassungs-/Verlegungsgründe.
+
+#### Abweichungen von ISiK 6.0.0
+
+Die folgenden Kardinalitäten weichen zur Rückwärtskompatibilität mit früheren MII-Versionen bewusst von [ISiK Kontakt Gesundheitseinrichtung 6.0.0](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKKontaktGesundheitseinrichtung.html) ab ([HDB-1016](https://hl7germany.atlassian.net/browse/HDB-1016)):
+
+| Element | MII | ISiK 6.0.0 | Grund |
+|---|---|---|---|
+| `Encounter.type:Kontaktebene` | 0..1 | 1..1, fest auf `abteilungskontakt` | Die MII bildet alle drei Kontaktebenen ab, ISiK nur den Abteilungskontakt |
+| `Encounter.diagnosis.use.coding:Diagnosetyp` | 0..1 | 1..1 | zur Rückwärtskompatibilität nicht verschärft |
 
 #### Identifikation von Kontakten
 

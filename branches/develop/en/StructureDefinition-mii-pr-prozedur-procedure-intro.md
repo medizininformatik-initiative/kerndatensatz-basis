@@ -42,6 +42,8 @@ This section provides detailed implementation guidance for the MII Procedure (Pr
 
 <p><strong>Constraint proc-mii-1:</strong> This requirement is only relevant when the procedure is coded using OPS.</p>
 
+<p><strong>Difference to <a href="https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKProzedur.html">ISiK 6.0.0</a>:</strong> ISiK requires a coded category for every coded procedure (<code>proc-ISiK-2</code>) and allows a text-only <code>Procedure.code</code> (<code>proc-ISiK-3</code>). The MII requires the category only for OPS-coded procedures and always requires a coded procedure (<code>sct-ops-1</code>) (<a href="https://hl7germany.atlassian.net/browse/HDB-1018">HDB-1018</a>).</p>
+
 <p><strong>Purpose:</strong> Category classification enables:</p>
 <ul>
   <li>High-level procedure grouping for epidemiological analyses</li>
@@ -78,8 +80,11 @@ The modeling of coded and detailed anatomical locations has been harmonized with
 - `Procedure.bodySite` provides detailed anatomical location coding for the procedure using SNOMED CT
 - `Procedure.bodySite` **SHOULD NOT** be used to represent laterality (left/right/bilateral); laterality is a property of the procedure code itself
 - For OPS codes, use `Procedure.code:ops.extension:seitenlokalisation`
-- For SNOMED CT, laterality is inherent in the procedure concept
+- SNOMED CT procedure codes usually already include body site and laterality precoordinated; `bodySite` SHOULD NOT merely repeat them
 - Use `bodySite` to provide anatomical details beyond the procedure code or to reference a specific anatomical structure
+- A body site with its own laterality is allowed when it adds information, e.g. a bilateral procedure that references a specific left-sided lesion as `BodyStructure`
+
+**No invariant for redundant laterality:** Whether a laterality statement in `bodySite` is redundant cannot be decided reliably from the instance alone. For OPS, the extension `Seitenlokalisation` can be checked directly, but for a SNOMED CT procedure code the validation would have to follow the modelled *Procedure site* relationships to derive the laterality, and for a referenced `BodyStructure` it would first have to resolve the reference. Even if both laterality statements are known, their simultaneous presence does not prove redundancy (see the example above). Avoiding redundant laterality statements therefore remains a modelling recommendation.
 
 #### Procedure Intent
 

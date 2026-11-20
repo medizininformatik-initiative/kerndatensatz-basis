@@ -93,6 +93,8 @@
       "Condition.code.coding"
     ],
     "http://fhir.de/StructureDefinition/lebensphase": [
+      "AllergyIntolerance.extension.value[x]",
+      "AllergyIntolerance.onset[x]",
       "Condition.abatement[x]",
       "Condition.onset[x]"
     ],
@@ -249,6 +251,7 @@
       "Patient.name.prefix"
     ],
     "http://hl7.org/fhir/StructureDefinition/iso21090-codedString": [
+      "Bundle.entry.resource.address.country",
       "Patient.address.country",
       "Patient.extension.value[x].country"
     ],
@@ -273,6 +276,9 @@
       "Patient"
     ],
     "http://hl7.org/fhir/StructureDefinition/patient-nationality": [
+      "Patient"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/patient-sexParameterForClinicalUse": [
       "Patient"
     ],
     "http://hl7.org/fhir/StructureDefinition/regex": [
@@ -307,8 +313,10 @@
       "ImplementationGuide.definition.page.title",
       "ImplementationGuide.title",
       "StructureDefinition.description",
+      "StructureDefinition.differential.element.comment",
       "StructureDefinition.differential.element.definition",
       "StructureDefinition.differential.element.short",
+      "StructureDefinition.snapshot.element.comment",
       "StructureDefinition.snapshot.element.definition",
       "StructureDefinition.snapshot.element.short",
       "StructureDefinition.title"
@@ -345,6 +353,7 @@
     "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-license": [
       "CapabilityStatement.meta",
       "CodeSystem.meta",
+      "ConceptMap.meta",
       "StructureDefinition.meta",
       "ValueSet.meta"
     ],

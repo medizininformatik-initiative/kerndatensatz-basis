@@ -70,8 +70,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"15.37"}
-    h3,h4,h5,h6{--heading-prefix:"15.37"}</style>
+    <style type="text/css">h2{--heading-prefix:"15.38"}
+    h3,h4,h5,h6{--heading-prefix:"15.38"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -504,7 +504,16 @@
           &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.city">city</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.state">state</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;DE-BE&quot;/&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.postalCode">postalCode</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;10178&quot;/&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.country">country</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;DE&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.country">country</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;DE&quot;&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#string.extension">extension</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/iso21090-codedString&quot;&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueCoding</a>&gt;
+                &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;urn:iso:std:iso:3166&quot;/&gt;
+                &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;DE&quot;/&gt;
+                &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Germany&quot;/&gt;
+              &lt;/<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueCoding</a>&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#string.extension">extension</a>&gt;
+          &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.country">country</a>&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/patient.html#Patient.address">address</a>&gt;
       &lt;/<a href="http://hl7.org/fhir/R4/patient.html#Patient">Patient</a>&gt;
     &lt;/resource&gt;
@@ -562,7 +571,7 @@
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://terminology.hl7.org/CodeSystem/v3-ActCode&quot;/&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;AMB&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.class">class</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.subject">subject</a>&gt;<a href="Patient-mii-exa-person-patient-1.html" style="color: Maroon">&#x1F517;</a> 
+        &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.subject">subject</a>&gt;<a href="Patient-mii-exa-person-patient-1.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Patient/mii-exa-person-patient-1&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.subject">subject</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.period">period</a>&gt;
@@ -637,7 +646,7 @@
             &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;einrichtungskontakt&quot;/&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.type">type</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.subject">subject</a>&gt;<a href="Patient-mii-exa-person-patient-1.html" style="color: Maroon">&#x1F517;</a> 
+        &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.subject">subject</a>&gt;<a href="Patient-mii-exa-person-patient-1.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Patient/mii-exa-person-patient-1&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.subject">subject</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.period">period</a>&gt;
@@ -767,7 +776,7 @@
             &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;EM&quot;/&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.priority">priority</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.subject">subject</a>&gt;<a href="Patient-mii-exa-person-patient-1.html" style="color: Maroon">&#x1F517;</a> 
+        &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.subject">subject</a>&gt;<a href="Patient-mii-exa-person-patient-1.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Patient/mii-exa-person-patient-1&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.subject">subject</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.period">period</a>&gt;
@@ -788,7 +797,7 @@
             &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;260950472&quot;/&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.identifier">identifier</a>&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.serviceProvider">serviceProvider</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.partOf">partOf</a>&gt;<a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.html" style="color: Maroon">&#x1F517;</a> 
+        &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.partOf">partOf</a>&gt;<a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>
                      <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.partOf">partOf</a>&gt;
@@ -854,7 +863,7 @@
             &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;versorgungsstellenkontakt&quot;/&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.type">type</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.subject">subject</a>&gt;<a href="Patient-mii-exa-person-patient-1.html" style="color: Maroon">&#x1F517;</a> 
+        &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.subject">subject</a>&gt;<a href="Patient-mii-exa-person-patient-1.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Patient/mii-exa-person-patient-1&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.subject">subject</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.period">period</a>&gt;
@@ -888,7 +897,7 @@
             &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;260950472&quot;/&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.identifier">identifier</a>&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.serviceProvider">serviceProvider</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.partOf">partOf</a>&gt;<a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-9.html" style="color: Maroon">&#x1F517;</a> 
+        &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.partOf">partOf</a>&gt;<a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-9.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>
                      <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-9&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.partOf">partOf</a>&gt;
@@ -962,7 +971,7 @@
             &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Allgemeine Chirurgie&quot;/&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.serviceType">serviceType</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.subject">subject</a>&gt;<a href="Patient-mii-exa-person-patient-1.html" style="color: Maroon">&#x1F517;</a> 
+        &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.subject">subject</a>&gt;<a href="Patient-mii-exa-person-patient-1.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Patient/mii-exa-person-patient-1&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.subject">subject</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.period">period</a>&gt;
@@ -970,7 +979,7 @@
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.end">end</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2020-01-11T23:59:00+01:00&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.period">period</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.diagnosis">diagnosis</a>&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.diagnosis.condition">condition</a>&gt;<a href="Condition-mii-exa-diagnose-appendicitis.html" style="color: Maroon">&#x1F517;</a> 
+          &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.diagnosis.condition">condition</a>&gt;<a href="Condition-mii-exa-diagnose-appendicitis.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
             &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Condition/mii-exa-diagnose-appendicitis&quot;/&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.diagnosis.condition">condition</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.diagnosis.use">use</a>&gt;
@@ -983,7 +992,7 @@
           &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.diagnosis.use">use</a>&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.diagnosis">diagnosis</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.diagnosis">diagnosis</a>&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.diagnosis.condition">condition</a>&gt;<a href="Condition-mii-exa-diagnose-appendicitis.html" style="color: Maroon">&#x1F517;</a> 
+          &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.diagnosis.condition">condition</a>&gt;<a href="Condition-mii-exa-diagnose-appendicitis.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
             &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Condition/mii-exa-diagnose-appendicitis&quot;/&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.diagnosis.condition">condition</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.diagnosis.use">use</a>&gt;
@@ -995,7 +1004,7 @@
           &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.diagnosis.use">use</a>&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.diagnosis">diagnosis</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.diagnosis">diagnosis</a>&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.diagnosis.condition">condition</a>&gt;<a href="Condition-mii-exa-diagnose-condition-elbow-contusion.html" style="color: Maroon">&#x1F517;</a> 
+          &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.diagnosis.condition">condition</a>&gt;<a href="Condition-mii-exa-diagnose-condition-elbow-contusion.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
             &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>
                        <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Condition/mii-exa-diagnose-condition-elbow-contusion&quot;/&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.diagnosis.condition">condition</a>&gt;
@@ -1021,7 +1030,7 @@
             &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;260950472&quot;/&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.identifier">identifier</a>&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.serviceProvider">serviceProvider</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.partOf">partOf</a>&gt;<a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.html" style="color: Maroon">&#x1F517;</a> 
+        &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.partOf">partOf</a>&gt;<a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>
                      <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.partOf">partOf</a>&gt;
@@ -1087,7 +1096,7 @@
             &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;versorgungsstellenkontakt&quot;/&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.type">type</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.subject">subject</a>&gt;<a href="Patient-mii-exa-person-patient-1.html" style="color: Maroon">&#x1F517;</a> 
+        &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.subject">subject</a>&gt;<a href="Patient-mii-exa-person-patient-1.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Patient/mii-exa-person-patient-1&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.subject">subject</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.period">period</a>&gt;
@@ -1122,7 +1131,7 @@
             &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;260950472&quot;/&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.identifier">identifier</a>&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.serviceProvider">serviceProvider</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.partOf">partOf</a>&gt;<a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html" style="color: Maroon">&#x1F517;</a> 
+        &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.partOf">partOf</a>&gt;<a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>
                      <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.partOf">partOf</a>&gt;
@@ -1194,7 +1203,7 @@
             &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;operation&quot;/&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.type">type</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.subject">subject</a>&gt;<a href="Patient-mii-exa-person-patient-1.html" style="color: Maroon">&#x1F517;</a> 
+        &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.subject">subject</a>&gt;<a href="Patient-mii-exa-person-patient-1.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Patient/mii-exa-person-patient-1&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.subject">subject</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.period">period</a>&gt;
@@ -1229,7 +1238,7 @@
             &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;260950472&quot;/&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.identifier">identifier</a>&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.serviceProvider">serviceProvider</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.partOf">partOf</a>&gt;<a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html" style="color: Maroon">&#x1F517;</a> 
+        &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.partOf">partOf</a>&gt;<a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>
                      <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.partOf">partOf</a>&gt;
@@ -1295,7 +1304,7 @@
             &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;versorgungsstellenkontakt&quot;/&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.type">type</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.subject">subject</a>&gt;<a href="Patient-mii-exa-person-patient-1.html" style="color: Maroon">&#x1F517;</a> 
+        &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.subject">subject</a>&gt;<a href="Patient-mii-exa-person-patient-1.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Patient/mii-exa-person-patient-1&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.subject">subject</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.period">period</a>&gt;
@@ -1330,7 +1339,7 @@
             &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;260950472&quot;/&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.identifier">identifier</a>&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.serviceProvider">serviceProvider</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.partOf">partOf</a>&gt;<a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html" style="color: Maroon">&#x1F517;</a> 
+        &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.partOf">partOf</a>&gt;<a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>
                      <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.partOf">partOf</a>&gt;
@@ -1396,7 +1405,7 @@
             &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;versorgungsstellenkontakt&quot;/&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.type">type</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.subject">subject</a>&gt;<a href="Patient-mii-exa-person-patient-1.html" style="color: Maroon">&#x1F517;</a> 
+        &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.subject">subject</a>&gt;<a href="Patient-mii-exa-person-patient-1.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Patient/mii-exa-person-patient-1&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.subject">subject</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.period">period</a>&gt;
@@ -1431,7 +1440,7 @@
             &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;260950472&quot;/&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.identifier">identifier</a>&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.serviceProvider">serviceProvider</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.partOf">partOf</a>&gt;<a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html" style="color: Maroon">&#x1F517;</a> 
+        &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.partOf">partOf</a>&gt;<a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>
                      <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.partOf">partOf</a>&gt;
@@ -1505,7 +1514,7 @@
             &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Innere Medizin&quot;/&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.serviceType">serviceType</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.subject">subject</a>&gt;<a href="Patient-mii-exa-person-patient-1.html" style="color: Maroon">&#x1F517;</a> 
+        &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.subject">subject</a>&gt;<a href="Patient-mii-exa-person-patient-1.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Patient/mii-exa-person-patient-1&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.subject">subject</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.period">period</a>&gt;
@@ -1513,7 +1522,7 @@
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.end">end</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2020-01-17T18:00:00+01:00&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.period">period</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.diagnosis">diagnosis</a>&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.diagnosis.condition">condition</a>&gt;<a href="Condition-mii-exa-diagnose-condition-multiple-codings.html" style="color: Maroon">&#x1F517;</a> 
+          &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.diagnosis.condition">condition</a>&gt;<a href="Condition-mii-exa-diagnose-condition-multiple-codings.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
             &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>
                        <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Condition/mii-exa-diagnose-condition-multiple-codings&quot;/&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.diagnosis.condition">condition</a>&gt;
@@ -1527,7 +1536,7 @@
           &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.diagnosis.use">use</a>&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.diagnosis">diagnosis</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.diagnosis">diagnosis</a>&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.diagnosis.condition">condition</a>&gt;<a href="Condition-mii-exa-diagnose-condition-multiple-codings.html" style="color: Maroon">&#x1F517;</a> 
+          &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.diagnosis.condition">condition</a>&gt;<a href="Condition-mii-exa-diagnose-condition-multiple-codings.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
             &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>
                        <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Condition/mii-exa-diagnose-condition-multiple-codings&quot;/&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.diagnosis.condition">condition</a>&gt;
@@ -1541,7 +1550,7 @@
           &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.diagnosis.use">use</a>&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.diagnosis">diagnosis</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.diagnosis">diagnosis</a>&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.diagnosis.condition">condition</a>&gt;<a href="Condition-mii-exa-diagnose-mehrfachcodierung-primaercode.html" style="color: Maroon">&#x1F517;</a> 
+          &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.diagnosis.condition">condition</a>&gt;<a href="Condition-mii-exa-diagnose-mehrfachcodierung-primaercode.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
             &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>
                        <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Condition/mii-exa-diagnose-mehrfachcodierung-primaercode&quot;/&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.diagnosis.condition">condition</a>&gt;
@@ -1567,7 +1576,7 @@
             &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;260950472&quot;/&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.identifier">identifier</a>&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.serviceProvider">serviceProvider</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.partOf">partOf</a>&gt;<a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.html" style="color: Maroon">&#x1F517;</a> 
+        &lt;<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.partOf">partOf</a>&gt;<a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-1.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>
                      <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-1&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.partOf">partOf</a>&gt;
@@ -1665,10 +1674,10 @@
             &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;I97525&quot;/&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/condition.html#Condition.code">code</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/condition.html#Condition.subject">subject</a>&gt;<a href="Patient-mii-exa-person-patient-1.html" style="color: Maroon">&#x1F517;</a> 
+        &lt;<a href="http://hl7.org/fhir/R4/condition.html#Condition.subject">subject</a>&gt;<a href="Patient-mii-exa-person-patient-1.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Patient/mii-exa-person-patient-1&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/condition.html#Condition.subject">subject</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/condition.html#Condition.encounter">encounter</a>&gt;<a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-8.html" style="color: Maroon">&#x1F517;</a> 
+        &lt;<a href="http://hl7.org/fhir/R4/condition.html#Condition.encounter">encounter</a>&gt;<a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-8.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>
                      <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-8&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/condition.html#Condition.encounter">encounter</a>&gt;
@@ -1717,7 +1726,7 @@
         &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Condition.text">text</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Condition.extension">extension</a>
                    <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/condition-related&quot;&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueReference</a>&gt;<a href="Condition-mii-exa-diagnose-mehrfachcodierung-primaercode.html" style="color: Maroon">&#x1F517;</a> 
+          &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueReference</a>&gt;<a href="Condition-mii-exa-diagnose-mehrfachcodierung-primaercode.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
             &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>
                        <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Condition/mii-exa-diagnose-mehrfachcodierung-primaercode&quot;/&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueReference</a>&gt;
@@ -1752,10 +1761,10 @@
           &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Bursitis gonorrhoica: Hand&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/condition.html#Condition.code">code</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/condition.html#Condition.subject">subject</a>&gt;<a href="Patient-mii-exa-person-patient-1.html" style="color: Maroon">&#x1F517;</a> 
+        &lt;<a href="http://hl7.org/fhir/R4/condition.html#Condition.subject">subject</a>&gt;<a href="Patient-mii-exa-person-patient-1.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Patient/mii-exa-person-patient-1&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/condition.html#Condition.subject">subject</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/condition.html#Condition.encounter">encounter</a>&gt;<a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-8.html" style="color: Maroon">&#x1F517;</a> 
+        &lt;<a href="http://hl7.org/fhir/R4/condition.html#Condition.encounter">encounter</a>&gt;<a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-8.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>
                      <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-8&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/condition.html#Condition.encounter">encounter</a>&gt;
@@ -1833,10 +1842,10 @@
           &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Akute Appendizitis&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/condition.html#Condition.code">code</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/condition.html#Condition.subject">subject</a>&gt;<a href="Patient-mii-exa-person-patient-1.html" style="color: Maroon">&#x1F517;</a> 
+        &lt;<a href="http://hl7.org/fhir/R4/condition.html#Condition.subject">subject</a>&gt;<a href="Patient-mii-exa-person-patient-1.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Patient/mii-exa-person-patient-1&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/condition.html#Condition.subject">subject</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/condition.html#Condition.encounter">encounter</a>&gt;<a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html" style="color: Maroon">&#x1F517;</a> 
+        &lt;<a href="http://hl7.org/fhir/R4/condition.html#Condition.encounter">encounter</a>&gt;<a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>
                      <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/condition.html#Condition.encounter">encounter</a>&gt;
@@ -1914,10 +1923,10 @@
             &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Contusion of elbow&quot;/&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/condition.html#Condition.code">code</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/condition.html#Condition.subject">subject</a>&gt;<a href="Patient-mii-exa-person-patient-1.html" style="color: Maroon">&#x1F517;</a> 
+        &lt;<a href="http://hl7.org/fhir/R4/condition.html#Condition.subject">subject</a>&gt;<a href="Patient-mii-exa-person-patient-1.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Patient/mii-exa-person-patient-1&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/condition.html#Condition.subject">subject</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/condition.html#Condition.encounter">encounter</a>&gt;<a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html" style="color: Maroon">&#x1F517;</a> 
+        &lt;<a href="http://hl7.org/fhir/R4/condition.html#Condition.encounter">encounter</a>&gt;<a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>
                      <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/condition.html#Condition.encounter">encounter</a>&gt;
@@ -2001,10 +2010,10 @@
             &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Semicircular canal dehiscence syndrome&quot;/&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/condition.html#Condition.code">code</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/condition.html#Condition.subject">subject</a>&gt;<a href="Patient-mii-exa-person-patient-1.html" style="color: Maroon">&#x1F517;</a> 
+        &lt;<a href="http://hl7.org/fhir/R4/condition.html#Condition.subject">subject</a>&gt;<a href="Patient-mii-exa-person-patient-1.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Patient/mii-exa-person-patient-1&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/condition.html#Condition.subject">subject</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/condition.html#Condition.encounter">encounter</a>&gt;<a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.html" style="color: Maroon">&#x1F517;</a> 
+        &lt;<a href="http://hl7.org/fhir/R4/condition.html#Condition.encounter">encounter</a>&gt;<a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>
                      <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/condition.html#Condition.encounter">encounter</a>&gt;
@@ -2081,10 +2090,10 @@
           &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Appendektomie&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/procedure.html#Procedure.code">code</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/procedure.html#Procedure.subject">subject</a>&gt;<a href="Patient-mii-exa-person-patient-1.html" style="color: Maroon">&#x1F517;</a> 
+        &lt;<a href="http://hl7.org/fhir/R4/procedure.html#Procedure.subject">subject</a>&gt;<a href="Patient-mii-exa-person-patient-1.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Patient/mii-exa-person-patient-1&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/procedure.html#Procedure.subject">subject</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/procedure.html#Procedure.encounter">encounter</a>&gt;<a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html" style="color: Maroon">&#x1F517;</a> 
+        &lt;<a href="http://hl7.org/fhir/R4/procedure.html#Procedure.encounter">encounter</a>&gt;<a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>
                      <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/procedure.html#Procedure.encounter">encounter</a>&gt;
@@ -2166,10 +2175,10 @@
           &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Funktionsorientierte physikalische Monotherapie&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/procedure.html#Procedure.code">code</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/procedure.html#Procedure.subject">subject</a>&gt;<a href="Patient-mii-exa-person-patient-1.html" style="color: Maroon">&#x1F517;</a> 
+        &lt;<a href="http://hl7.org/fhir/R4/procedure.html#Procedure.subject">subject</a>&gt;<a href="Patient-mii-exa-person-patient-1.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Patient/mii-exa-person-patient-1&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/procedure.html#Procedure.subject">subject</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/procedure.html#Procedure.encounter">encounter</a>&gt;<a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.html" style="color: Maroon">&#x1F517;</a> 
+        &lt;<a href="http://hl7.org/fhir/R4/procedure.html#Procedure.encounter">encounter</a>&gt;<a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>
                      <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/procedure.html#Procedure.encounter">encounter</a>&gt;
@@ -2255,10 +2264,10 @@
           &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Native Computertomographie des Abdomens&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/procedure.html#Procedure.code">code</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/procedure.html#Procedure.subject">subject</a>&gt;<a href="Patient-mii-exa-person-patient-1.html" style="color: Maroon">&#x1F517;</a> 
+        &lt;<a href="http://hl7.org/fhir/R4/procedure.html#Procedure.subject">subject</a>&gt;<a href="Patient-mii-exa-person-patient-1.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Patient/mii-exa-person-patient-1&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/procedure.html#Procedure.subject">subject</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/procedure.html#Procedure.encounter">encounter</a>&gt;<a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html" style="color: Maroon">&#x1F517;</a> 
+        &lt;<a href="http://hl7.org/fhir/R4/procedure.html#Procedure.encounter">encounter</a>&gt;<a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-2.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>
                      <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-2&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/procedure.html#Procedure.encounter">encounter</a>&gt;
@@ -2325,10 +2334,10 @@
             &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;67162-8&quot;/&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.code">code</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.subject">subject</a>&gt;<a href="Patient-mii-exa-person-patient-1.html" style="color: Maroon">&#x1F517;</a> 
+        &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.subject">subject</a>&gt;<a href="Patient-mii-exa-person-patient-1.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Patient/mii-exa-person-patient-1&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.subject">subject</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.encounter">encounter</a>&gt;<a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-9.html" style="color: Maroon">&#x1F517;</a> 
+        &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.encounter">encounter</a>&gt;<a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-9.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>
                      <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-9&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.encounter">encounter</a>&gt;
@@ -2397,10 +2406,10 @@
           &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vital status&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.code">code</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.subject">subject</a>&gt;<a href="Patient-mii-exa-person-patient-1.html" style="color: Maroon">&#x1F517;</a> 
+        &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.subject">subject</a>&gt;<a href="Patient-mii-exa-person-patient-1.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Patient/mii-exa-person-patient-1&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.subject">subject</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.encounter">encounter</a>&gt;<a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.html" style="color: Maroon">&#x1F517;</a> 
+        &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.encounter">encounter</a>&gt;<a href="Encounter-mii-exa-fall-kontakt-gesundheitseinrichtung-7.html" class="targetLink" aria-label="Link to the referenced resource (repeats the reference, can be ignored)">&#x1F517;</a> 
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>
                      <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Encounter/mii-exa-fall-kontakt-gesundheitseinrichtung-7&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.encounter">encounter</a>&gt;
@@ -2451,7 +2460,7 @@
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de/en">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.base#2027.0.0-ballot basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Erstellt <span title="Mon, Nov 2, 2026 14:32+0000">2026-11-02</span>
+          Erstellt <span title="Fri, Nov 20, 2026 13:34+0000">2026-11-20</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.

@@ -61,6 +61,8 @@ Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Pro
 
 **Constraint proc-mii-1:** Diese Anforderung ist nur relevant, wenn die Prozedur per OPS codiert wird.
 
+**Unterschied zu [ISiK 6.0.0](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKProzedur.html):** ISiK fordert für jede codierte Prozedur eine codierte Kategorie (`proc-ISiK-2`) und erlaubt einen rein textuellen `Procedure.code` (`proc-ISiK-3`). Die MII fordert die Kategorie nur für OPS-codierte Prozeduren und immer eine codierte Prozedur (`sct-ops-1`) ([HDB-1018](https://hl7germany.atlassian.net/browse/HDB-1018)).
+
 **Zweck:** Die Kategorisierung ermöglicht:
 
 * Hochstufige Prozedur-Gruppierung für epidemiologische Analysen
@@ -97,8 +99,11 @@ Die Modellierung codierter und detaillierter anatomischer Lokalisationen wurde m
 * `Procedure.bodySite` bietet eine detaillierte Codierung der anatomischen Lokalisation für die Prozedur mittels SNOMED CT
 * `Procedure.bodySite` **SOLL NICHT** verwendet werden, um die Seitenlokalisation (links/rechts/beidseitig) abzubilden; die Seitenlokalisation ist eine Eigenschaft des Prozedurencodes selbst
 * Für OPS-Codes SOLL `Procedure.code:ops.extension:seitenlokalisation` verwendet werden
-* Bei SNOMED CT ist die Seitenlokalisation im Prozedurkonzept inhärent enthalten
+* SNOMED-CT-Prozedurcodes enthalten Körperstelle und Seitenlokalisation in der Regel bereits präkoordiniert; `bodySite` SOLL diese nicht lediglich wiederholen
 * `bodySite` SOLL verwendet werden, um über den Prozedurencode hinausgehende anatomische Details anzugeben oder auf eine patientenbezogene anatomische Struktur zu referenzieren
+* Eine Körperstelle mit eigener Seitenangabe ist zulässig, wenn sie zusätzliche Information liefert, z. B. eine beidseitige Prozedur, die eine bestimmte linksseitige Läsion als `BodyStructure` referenziert
+
+**Keine Invariante für redundante Seitenangaben:** Ob eine Seitenangabe in `bodySite` redundant ist, lässt sich allein aus der Instanz nicht zuverlässig entscheiden. Bei OPS kann die Extension `Seitenlokalisation` direkt geprüft werden; bei einem SNOMED-CT-Prozedurcode müsste die Validierung jedoch den modellierten **Procedure site**-Beziehungen folgen, um die Seitenlokalisation abzuleiten, und bei einer referenzierten `BodyStructure` zunächst die Referenz auflösen. Selbst wenn beide Seitenangaben bekannt sind, beweist ihr gleichzeitiges Vorhandensein keine Redundanz (siehe Beispiel oben). Die Vermeidung redundanter Seitenangaben bleibt daher eine Modellierungsempfehlung.
 
 #### Durchführungsabsicht
 
@@ -1349,7 +1354,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-proze
           "url" : "http://hl7.org/fhir/StructureDefinition/translation"
         }]
       },
-      "definition" : "Körperstelle der Prozedur mittels SNOMED CT inklusive Lateralität.",
+      "definition" : "Körperstelle der Prozedur, vorzugsweise mittels SNOMED CT. SNOMED-CT-Prozedurcodes enthalten Körperstelle und Lateralität in der Regel bereits präkoordiniert; bei OPS wird die Lateralität über die Extension Seitenlokalisation angegeben. bodySite SOLL diese Angaben nicht lediglich wiederholen, sondern zusätzliche anatomische Details liefern.",
       "_definition" : {
         "extension" : [{
           "extension" : [{
@@ -1358,7 +1363,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-proze
           },
           {
             "url" : "content",
-            "valueString" : "Körperstelle der Prozedur mittels SNOMED CT inklusive Lateralität."
+            "valueString" : "Körperstelle der Prozedur, vorzugsweise mittels SNOMED CT. SNOMED-CT-Prozedurcodes enthalten Körperstelle und Lateralität in der Regel bereits präkoordiniert; bei OPS wird die Lateralität über die Extension Seitenlokalisation angegeben. bodySite SOLL diese Angaben nicht lediglich wiederholen, sondern zusätzliche anatomische Details liefern."
           }],
           "url" : "http://hl7.org/fhir/StructureDefinition/translation"
         },
@@ -1369,7 +1374,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-proze
           },
           {
             "url" : "content",
-            "valueString" : "The body site of the procedure using SNOMED CT including laterality."
+            "valueString" : "Body site of the procedure, preferably using SNOMED CT. SNOMED CT procedure codes usually already include body site and laterality precoordinated; for OPS, laterality is given in the extension Seitenlokalisation. bodySite SHOULD NOT merely repeat this information but provide additional anatomical detail."
           }],
           "url" : "http://hl7.org/fhir/StructureDefinition/translation"
         }]

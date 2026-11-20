@@ -1074,8 +1074,8 @@ Other representations of profile: [CSV](../StructureDefinition-mii-pr-person-pat
       "constraint" : [{
         "key" : "pat-cnt-2or3-char",
         "severity" : "warning",
-        "human" : "The content of the country element (if present) SHALL be selected EITHER from ValueSet ISO Country Alpha-2 http://hl7.org/fhir/ValueSet/iso3166-1-2 OR MAY be selected from ISO Country Alpha-3 Value Set http://hl7.org/fhir/ValueSet/iso3166-1-3, IF the country is not specified in value Set ISO Country Alpha-2 http://hl7.org/fhir/ValueSet/iso3166-1-2.",
-        "expression" : "country.empty() or (country.memberOf('http://hl7.org/fhir/ValueSet/iso3166-1-2') or country.memberOf('http://hl7.org/fhir/ValueSet/iso3166-1-3'))",
+        "human" : "If the country element is present, the country SHOULD also be coded in the extension countryCode (http://hl7.org/fhir/StructureDefinition/iso21090-codedString) with a code from ValueSet ISO Country Alpha-2 http://hl7.org/fhir/ValueSet/iso3166-1-2. Address.country itself may carry other values (e.g. DEÜV country codes).",
+        "expression" : "country.empty() or country.extension('http://hl7.org/fhir/StructureDefinition/iso21090-codedString').where(value.memberOf('http://hl7.org/fhir/ValueSet/iso3166-1-2')).exists()",
         "source" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert"
       }],
       "mustSupport" : true

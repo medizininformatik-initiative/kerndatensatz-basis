@@ -37,6 +37,8 @@ Das MII-Fall-Modul unterscheidet drei Ebenen von Kontakten mittels `Encounter.ty
 
 Diese Ebenen werden mittels `Encounter.partOf` verknüpft, um eine hierarchische Struktur zu erstellen.
 
+ **`partOf` über Patienten hinweg:** Innerhalb der Kontakthierarchie referenziert `Encounter.partOf` einen Encounter desselben Patienten. Einzige Ausnahme: Der Einrichtungskontakt eines Neugeborenen **KANN** auf den Entbindungs-Einrichtungskontakt der Mutter verweisen (siehe [Mutter und Neugeborenes](StructureDefinition-mii-pr-person-patient.md#mother-and-newborn)). Eine solche Referenz auf einen Encounter mit anderem `Encounter.subject` drückt nur die geburtshilfliche Zuordnung aus: Die Traversierung der Hierarchie **MUSS** an einem Encounter enden, dessen `partOf`-Ziel ein anderes `subject` hat.
+
 **Beispiel einer Kontakthierarchie:**
 
 Das folgende Diagramm veranschaulicht, wie verschiedene Kontaktebenen mittels `partOf`-Referenzen miteinander verknüpft werden, zusammen mit optionalen Verbindungen zu EpisodeOfCare- und Account-Ressourcen:
@@ -103,6 +105,8 @@ graph BT
 
 **Account-Verknüpfung:** Die für ausgewählte Encounter dargestellten `account`-Referenzen veranschaulichen, wie Encounter auf jeder Ebene der Hierarchie mit demselben Account verknüpft werden können, um mehrere Encounter einem gemeinsamen Abrechnungskontext zuzuordnen. Zur besseren Lesbarkeit werden Account-Referenzen nur für ausgewählte Encounter gezeigt; die übrigen Encounter der Hierarchie können denselben Account auf die gleiche Weise referenzieren. Implementierungshinweise, insbesondere zur empfohlenen Verwendung der logischen Referenz `Encounter.account.identifier`, finden sich unter [Best Practice - Aufnahmenummer vs. Fallnummer](#best-practice-aufnahmenummer-vs-fallnummer).
 
+**Mehrere Einrichtungskontakte je Account:** Ein Account kann auch von mehreren Einrichtungskontakten referenziert werden, z. B. wenn getrennte vorstationäre, stationäre und nachstationäre Einrichtungskontakte als ein Fall abgerechnet werden oder wenn Wiederaufnahmen zu einem DRG-Fall zusammengeführt werden (Fallzusammenführung). Die Beziehung ist n:1 vom Encounter zum Account: Jeder Encounter referenziert den Account in `Encounter.account`; der Account referenziert seine Encounter nicht.
+
 In diesem Beispiel:
 
 * **E0** repräsentiert den gesamten Einrichtungskontakt für den Krankenhausaufenthalt
@@ -128,13 +132,20 @@ In diesem Beispiel:
 | Virtuell (Virtual) | - | `Encounter.class = VR` |
 | Vorstationär (Pre-inpatient) | V | `Encounter.class = AMB``Encounter.type = vorstationaer` |
 | Nachstationär (Post-inpatient) | NS | `Encounter.class = AMB``Encounter.type = nachstationaer` |
-| Teilstationär (Partial Inpatient) | TS | `Encounter.class = IMP`or`SS``Encounter.extension:Aufnahmegrund.extension:ErsteUndZweiteStelle = 03``Encounter.type = teilstationaer | tagesklinik | nachtklinik` |
+| Teilstationär (Partial Inpatient) | TS | `Encounter.class = IMP`oder`SS``Encounter.extension:Aufnahmegrund.extension:ErsteUndZweiteStelle = 03``Encounter.type = teilstationaer | tagesklinik | nachtklinik` |
 | Begleitperson (Accompanying Person) | H | `Encounter.class = IMP``Encounter.type = begleitperson` |
 | Stationsäquivalent (Hospital-equivalent Home Care) | - | `Encounter.class = HH``Encounter.type = stationsaequivalent``Encounter.extension:Aufnahmegrund.extension:ErsteUndZweiteStelle = 10` |
 | Entbindung (Delivery) | - | `Encounter.class = IMP``Encounter.extension:Aufnahmegrund.extension:ErsteUndZweiteStelle = 05` |
 | Notfall (Emergency) | - | `Encounter.class = AMB``Encounter.extension:Aufnahmegrund.VierteStelle = 7`If subsequent inpatient admission occurs:`Encounter.hospitalization.admitSource = "N"`To emphasize treatment urgency:`Encounter.priority = http://terminology.hl7.org/CodeSystem/v3-ActPriority|EM` |
 
 **Externe Quelle: Die Zuordnung der Primärkontakte zu HL7 V2 und FHIR in dieser Tabelle wurde aus den [Deutschen FHIR-Basisprofilen 1.6.0 – Ambulanter/stationärer Fall / Kontakt](https://ig.fhir.de/basisprofile-de/1.6.0/ig-markdown-Ressourcen-AmbulanterStationaererFall.html) übernommen.**
+
+**Teilstationäre Kontakte: `IMP` oder `SS`.** Teilstationäre Behandlung umfasst unterschiedliche Versorgungsformen, daher sind beide Klassen zulässig:
+
+* `IMP` (stationärer Kontakt), wenn der Patientin oder dem Patienten für die Behandlung ein Bett zugewiesen ist, z. B. in einer Nachtklinik mit Übernachtung;
+* `SS` (Kurzaufenthalt), wenn die Behandlung ohne Bettenzuweisung und ohne Übernachtung erfolgt, typischerweise in einer Tagesklinik.
+
+Ob ein Kontakt teilstationär ist, wird durch `Encounter.type` (`teilstationaer`, `tagesklinik` oder `nachtklinik`) und den Aufnahmegrund `03` ausgedrückt, nicht durch `Encounter.class`. Datennutzende SOLLTEN daher diese Elemente auswerten, statt sich allein auf `Encounter.class` zu stützen.
 
 ##### Sekundärkontakte bei stationärem Aufenthalt
 
@@ -174,9 +185,11 @@ Da `Encounter.diagnosis.use` die Kardinalität 1..1 hat, benötigt eine Diagnose
 
 **Hinweis zur CC/CM-Klassifikation:** Wenn Sie eine Diagnose als CC (Komplikation oder Komorbidität) oder CM (Komorbidität) klassifizieren möchten, handelt es sich hierbei typischerweise um abrechnungsrelevante Informationen, die in der Account-Ressource und nicht in `Encounter.diagnosis` platziert werden **SOLLEN**. Die Account-Ressource ist der geeignete Ort für Abrechnungsfallkontext und DRG-relevante Klassifikationen.
 
+**Hinweis zu DRG-Diagnosen:** Gleiches gilt für die DRG-Haupt- und Nebendiagnose (`principle-DRG`, `secondary-DRG`) sowie für `hospital-main-diagnosis` aus `http://fhir.de/CodeSystem/KontaktDiagnoseProzedur`. Da das Binding von `Encounter.diagnosis.use` extensible ist, ist eine solche Codierung technisch zulässig. Diese Rollen beschreiben jedoch den Abrechnungsfall und nicht einen einzelnen Kontakt. Sie **SOLLEN** daher am Account mit der Extension `http://fhir.de/StructureDefinition/ExtensionAbrechnungsDiagnoseProzedur` (ValueSet `http://fhir.de/ValueSet/AbrechnungsDiagnoseProzedur`) angegeben werden, wie im ISiK-Profil Abrechnungsfall (siehe [Best Practice - Aufnahmenummer vs. Fallnummer](#best-practice-aufnahmenummer-vs-fallnummer)).
+
 #### Kontaktort
 
-* Details zum Kontaktort (Zimmer, Bett, Station) können mittels `Encounter.location` angegeben werden.
+* Details zum Kontaktort (Zimmer, Bettenstellplatz, Station) können mittels `Encounter.location` angegeben werden.
 * Der physische Typ SOLL das MII-spezifische ValueSet für location physical types verwenden.
 * Angaben zum Kontaktort sind primär relevant für Versorgungsstellenkontakte.
 
@@ -187,12 +200,23 @@ Da `Encounter.diagnosis.use` die Kardinalität 1..1 hat, benötigt eine Diagnose
 | | | | |
 | :--- | :--- | :--- | :--- |
 | `Zimmer` | `ro` | `active` | 0..1 |
-| `Bett` | `bd` | `active` | 0..1 |
+| `Bettenstellplatz` | `bd` | `active` | 0..1 |
 | `Station` | `wa` | `active` | 0..1 |
 
-Jeder Slice schränkt `status = active` mit Kardinalität 0..1 ein. Eine konforme Implementierung DARF NICHT mehr als ein aktives Zimmer, ein aktives Bett oder eine aktive Station gleichzeitig innerhalb eines einzelnen Encounters befüllen.
+Der Slice `Bettenstellplatz` beschreibt den Ort, an dem das Bett der Patientin oder des Patienten steht, als Location mit dem physischen Typ `bd`. Er beschreibt nicht das Bett als Gerät. Bis einschließlich Version 2027.0.0-ballot hieß der Slice `Bett`.
+
+Jeder Slice schränkt `status = active` mit Kardinalität 0..1 ein. Eine konforme Implementierung DARF NICHT mehr als ein aktives Zimmer, einen aktiven Bettenstellplatz oder eine aktive Station gleichzeitig innerhalb eines einzelnen Encounters befüllen.
 
 Da das Slicing **offen** ist, KÖNNEN Implementierungen zusätzliche `Encounter.location`-Einträge über diese drei benannten Slices hinaus aufnehmen. Um die Bewegungshistorie während eines Kontakts zu erfassen (z.B. frühere Stationen, Zimmer oder Betten, durch die der Patient verlegt wurde), SOLLEN Implementierungen für diese Einträge `status = completed` verwenden. Damit wird die Verlaufshistorie klar von den Slices für aktive Orte getrennt, ohne mit diesen zu kollidieren.
+
+**Station als Location oder Organization**
+
+Eine Station hat einen räumlichen und einen organisatorischen Aspekt, die FHIR und [ISiK Kontakt Gesundheitseinrichtung 6.0.0](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKKontaktGesundheitseinrichtung.html) getrennt abbilden:
+
+* **Als Location:** `Encounter.location:Station` (`physicalType = wa`, `status = active`) referenziert die Station als räumlichen Ort, an dem sich die Patientin oder der Patient aktuell aufhält. ISiK verwendet denselben Slice und fordert zusätzlich `location.identifier` und `location.display`; Implementierende SOLLEN beide befüllen, um mit ISiK kompatibel zu bleiben.
+* **Als Organization:** `Encounter.serviceProvider` referenziert die für den Kontakt verantwortliche Organization. Bei Versorgungsstellenkontakten kann dies die Station als Organisationseinheit sein, identifiziert über ihre Organisationseinheiten-ID wie im ISiK-Profil Organisation, dessen Identifier `OrganisationseinheitenID` ausdrücklich Abteilungen und Stationen umfasst.
+
+Beide Darstellungen KÖNNEN gemeinsam verwendet werden. Datennutzende SOLLEN NICHT davon ausgehen, dass Stationsangaben immer nur in einem dieser Elemente stehen.
 
 #### Geplante Kontakte
 
@@ -203,9 +227,18 @@ Geplante Kontakte werden mit `Encounter.status = planned` abgebildet und SOLLEN 
 
 #### Aufnahme und Entlassung
 
-* **Aufnahmeanlass** ist verpflichtend, wenn Hospitalisierungsdaten angegeben werden, und verwendet Codes aus § 301 SGB V.
+* **Aufnahmeanlass** ist optional (0..1, Must Support) und verwendet Codes aus § 301 SGB V. Er liegt im HL7-v2-Strom oft nicht vor, daher kann `hospitalization`, z.B. mit `dischargeDisposition`, auch ohne ihn angegeben werden ([#53](https://github.com/medizininformatik-initiative/kerndatensatz-basis/issues/53)).
 * **Aufnahmegrund** mit vierteiliger Struktur (erste und zweite Stelle, dritte Stelle, vierte Stelle) gemäß § 301 SGB V.
 * **Entlassungsgrund** mit Entlassungsgrund-Extension liefert detaillierte Entlassungs-/Verlegungsgründe.
+
+#### Abweichungen von ISiK 6.0.0
+
+Die folgenden Kardinalitäten weichen zur Rückwärtskompatibilität mit früheren MII-Versionen bewusst von [ISiK Kontakt Gesundheitseinrichtung 6.0.0](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKKontaktGesundheitseinrichtung.html) ab ([HDB-1016](https://hl7germany.atlassian.net/browse/HDB-1016)):
+
+| | | | |
+| :--- | :--- | :--- | :--- |
+| `Encounter.type:Kontaktebene` | 0..1 | 1..1, fest auf`abteilungskontakt` | Die MII bildet alle drei Kontaktebenen ab, ISiK nur den Abteilungskontakt |
+| `Encounter.diagnosis.use.coding:Diagnosetyp` | 0..1 | 1..1 | zur Rückwärtskompatibilität nicht verschärft |
 
 #### Identifikation von Kontakten
 
@@ -991,7 +1024,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-fall-
           },
           {
             "url" : "content",
-            "valueString" : "Aufnahmenummer/Fallnummer, die Patient:in bei einer Aufnahme bekommt."
+            "valueString" : "Aufnahmenummer, die Patient:in bei einer Aufnahme bekommt; nicht die Fallnummer des Abrechnungsfalls."
           }],
           "url" : "http://hl7.org/fhir/StructureDefinition/translation"
         },
@@ -1002,7 +1035,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-fall-
           },
           {
             "url" : "content",
-            "valueString" : "Admission number, the patient receives during an admission."
+            "valueString" : "Admission number, the patient receives during an admission; not the case number of the billing case."
           }],
           "url" : "http://hl7.org/fhir/StructureDefinition/translation"
         }]
@@ -2025,8 +2058,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-fall-
       "id" : "Encounter.hospitalization.admitSource",
       "path" : "Encounter.hospitalization.admitSource",
       "short" : "Aufnahmeanlass",
-      "definition" : "VERPFLICHTEND, Aufnahmeanlass. Preferred Binding auf http://fhir.de/ValueSet/dgkev/Aufnahmeanlass",
-      "min" : 1,
+      "definition" : "OPTIONAL, Aufnahmeanlass. Preferred Binding auf http://fhir.de/ValueSet/dgkev/Aufnahmeanlass",
       "mustSupport" : true,
       "binding" : {
         "strength" : "preferred",
@@ -2145,7 +2177,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-fall-
           "url" : "http://hl7.org/fhir/StructureDefinition/translation"
         }]
       },
-      "definition" : "OPTIONAL, Details zum Kontaktort wie Zimmer, Bett, Station",
+      "definition" : "OPTIONAL, Details zum Kontaktort wie Zimmer, Bettenstellplatz, Station",
       "_definition" : {
         "extension" : [{
           "extension" : [{
@@ -2154,7 +2186,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-fall-
           },
           {
             "url" : "content",
-            "valueString" : "Details zum Kontaktort wie Zimmer, Bett, Station"
+            "valueString" : "Details zum Kontaktort wie Zimmer, Bettenstellplatz, Station"
           }],
           "url" : "http://hl7.org/fhir/StructureDefinition/translation"
         },
@@ -2165,7 +2197,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-fall-
           },
           {
             "url" : "content",
-            "valueString" : "Details about location such as room, bed, ward"
+            "valueString" : "Details about location such as room, bed space, ward"
           }],
           "url" : "http://hl7.org/fhir/StructureDefinition/translation"
         }]
@@ -2227,24 +2259,72 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-fall-
       "mustSupport" : true
     },
     {
-      "id" : "Encounter.location:Bett",
+      "id" : "Encounter.location:Bettenstellplatz",
       "path" : "Encounter.location",
-      "sliceName" : "Bett",
-      "short" : "Bett",
-      "definition" : "Von Patient oder Patientin während des Kontaktes belegter Bettenstellplatz.",
+      "sliceName" : "Bettenstellplatz",
+      "short" : "Bettenstellplatz",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "de-DE"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Bettenstellplatz"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        },
+        {
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "en-US"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Bed space"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "definition" : "Von Patient oder Patientin während des Kontaktes belegter Bettenstellplatz, also der Ort, an dem das Bett steht, nicht das Bett als Gerät.",
+      "_definition" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "de-DE"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Von Patient oder Patientin während des Kontaktes belegter Bettenstellplatz, also der Ort, an dem das Bett steht, nicht das Bett als Gerät."
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        },
+        {
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "en-US"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Bed space occupied by the patient during the encounter, i.e. the location where the bed stands, not the bed as a device."
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
       "min" : 0,
       "max" : "1",
       "mustSupport" : true
     },
     {
-      "id" : "Encounter.location:Bett.status",
+      "id" : "Encounter.location:Bettenstellplatz.status",
       "path" : "Encounter.location.status",
       "min" : 1,
       "patternCode" : "active",
       "mustSupport" : true
     },
     {
-      "id" : "Encounter.location:Bett.physicalType",
+      "id" : "Encounter.location:Bettenstellplatz.physicalType",
       "path" : "Encounter.location.physicalType",
       "min" : 1,
       "patternCodeableConcept" : {
@@ -2256,17 +2336,17 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-fall-
       "mustSupport" : true
     },
     {
-      "id" : "Encounter.location:Bett.physicalType.coding",
+      "id" : "Encounter.location:Bettenstellplatz.physicalType.coding",
       "path" : "Encounter.location.physicalType.coding",
       "mustSupport" : true
     },
     {
-      "id" : "Encounter.location:Bett.physicalType.coding.system",
+      "id" : "Encounter.location:Bettenstellplatz.physicalType.coding.system",
       "path" : "Encounter.location.physicalType.coding.system",
       "mustSupport" : true
     },
     {
-      "id" : "Encounter.location:Bett.physicalType.coding.code",
+      "id" : "Encounter.location:Bettenstellplatz.physicalType.coding.code",
       "path" : "Encounter.location.physicalType.coding.code",
       "mustSupport" : true
     },
