@@ -1,7 +1,7 @@
 ### Tabellenansicht
 
-{% include sql-44-fragment.xhtml %}
+{% include sql-20-fragment.xhtml %}
 
 ### Mapping LogicalModel Fall -> FHIR
 
-{% include sql-45-fragment.xhtml %}
+{% include sql-21-fragment.xhtml %}
