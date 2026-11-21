@@ -82,7 +82,8 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-perso
 | Person.Name.Familienname | string | Der vollständige Familienname, einschließlich aller Vorsatz- und Zusatzwörter, mit Leerzeichen getrennt. |
 | Person.Name.Vorsatzwort | string | Vorsatzwort wie z.B.: von, van, zu Vgl. auch VSDM-Spezifikation der Gematik (Versichertenstammdatenmanagement, "eGK") |
 | Person.Name.Namenszusatz | string | Namenszusatz als Bestandteil das Nachnamens, wie in VSDM (Versichertenstammdatenmanagement, "eGK") definiert. Beispiele: Gräfin, Prinz oder Fürst |
-| Person.Name.Praefix | string | Namensteile vor dem Vornamen, z.B. akademischer Grad |
+| Person.Name.Praefix | BackboneElement | Namensteile vor dem Vornamen, z.B. akademischer Grad |
+| Person.Name.Praefix.Wert | string | Präfix, z.B. akademischer Grad |
 | Person.Name.Praefix.ArtdesPraefixes | code | Art des Präfixes, z.B. "AC" für Akademische Titel |
 | Person.Name.Geburtsname | string | Familienname einer Person zum Zeitpunkt ihrer Geburt. Kann sich danach z.B. durch Heirat und Annahme eines anderen Familiennamens ändern. |
 | Person.Demographie | BackboneElement | Das Basismodul Demographie enthält demographische Parameter (Alter, Geschlecht etc.). |
@@ -174,6 +175,7 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-perso
 | Person.Name.Namenszusatz | Patient.name.family.extension.namenszusatz |
 | Person.Name.Praefix | Patient.name.prefix |
 | Person.Name.Praefix.ArtdesPraefixes | Patient.name.prefix.extension-prefix-qualifier |
+| Person.Name.Praefix.Wert | Patient.name.prefix |
 | Person.Name.Vorname | Patient.name.given |
 | Person.Name.Vorsatzwort | Patient.name.family.extension.vorsatzwort |
 | Person.PatientIn.PatientenIdentifikator.PatientenIdentifikator | Patient.identifier:pid |
@@ -595,6 +597,34 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-lm-perso
       "definition" : "Namensteile vor dem Vornamen, z.B. akademischer Grad",
       "min" : 0,
       "max" : "*",
+      "type" : [{
+        "code" : "BackboneElement"
+      }],
+      "mapping" : [{
+        "identity" : "FHIR",
+        "map" : "Patient.name.prefix"
+      }]
+    },
+    {
+      "id" : "Person.Name.Praefix.Wert",
+      "path" : "Person.Name.Praefix.Wert",
+      "short" : "Präfix, z.B. akademischer Grad",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "en"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Prefix, e.g. academic degree"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "definition" : "Präfix, z.B. akademischer Grad",
+      "min" : 1,
+      "max" : "1",
       "type" : [{
         "code" : "string"
       }],
