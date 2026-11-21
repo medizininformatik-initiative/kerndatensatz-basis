@@ -19,5 +19,7 @@ Description: "Patient: with pseudonym and masked insurance identifier (maskierte
 * address.type = #both
 * address.postalCode = "10"
 * address.country = "DE"
+* address.country.extension[0].url = "http://hl7.org/fhir/StructureDefinition/iso21090-codedString"
+* address.country.extension[0].valueCoding = urn:iso:std:iso:3166#DE "Germany"
 * gender = #female
 * birthDate = "1998"

@@ -113,4 +113,7 @@ Abteilungskontakt         "1" -- "0..*" Versorgungsstellenkontakt
 Einrichtungskontakt "0..*" --> "0..*" Diagnose : Diagnoserolle
 
 Patient "1" --> "0..*" Diagnose
+
+' Every contact references the patient via Patientenidentifikator (Encounter.subject).
+Einrichtungskontakt "0..*" --> "1" Patient : Patientenidentifikator
 @enduml

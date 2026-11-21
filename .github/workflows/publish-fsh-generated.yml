@@ -29,6 +29,11 @@ jobs:
       - name: Install SUSHI
         run: npm install -g fsh-sushi@latest
       
+      - name: Install ZTS packages
+        uses: ./.github/actions/zts-packages
+        with:
+          accepted-download-conditions: ${{ vars.ZTS_ACCEPTED_DOWNLOAD_CONDITIONS }}
+
       - name: Run SUSHI
         run: sushi .
       

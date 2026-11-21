@@ -1,0 +1,131 @@
+name: Install FHIR packages from the BfArM ZTS
+description: >-
+  Downloads FHIR packages that are published only on the BfArM Zentraler
+  Terminologieserver (ZTS) into the local FHIR package cache, so that SUSHI,
+  the IG Publisher and the validator find them there instead of looking them
+  up on the public package registries. It does not run SUSHI.
+
+  The packages are the direct dependencies in sushi-config.yaml plus the
+  optional input `packages`; only packages listed in the ZTS catalog are
+  handled. A ZTS package whose download conditions are not accepted in
+  `accepted-download-conditions` fails the step. Without ZTS packages the
+  step does nothing.
+
+  Setting `accepted-download-conditions` accepts the BfArM download
+  conditions for these packages (https://terminologien.bfarm.de). The
+  package contents must not be redistributed: never upload the package
+  cache as a build artifact.
+
+inputs:
+  accepted-download-conditions:
+    description: >-
+      Comma-separated package names whose BfArM download conditions are
+      accepted, normally `vars.ZTS_ACCEPTED_DOWNLOAD_CONDITIONS`.
+    required: false
+    default: ''
+  sushi-config:
+    description: Path to sushi-config.yaml; its direct dependencies are checked.
+    required: false
+    default: sushi-config.yaml
+  packages:
+    description: >-
+      Additional comma-separated `name#version` entries, for ZTS packages
+      needed only transitively.
+    required: false
+    default: ''
+  fhir-home:
+    description: FHIR home directory; packages go to `<fhir-home>/packages`.
+    required: false
+    default: ~/.fhir
+
+runs:
+  using: composite
+  steps:
+    - name: Install ZTS packages
+      shell: bash
+      env:
+        ACCEPTED: ${{ inputs.accepted-download-conditions }}
+        SUSHI_CONFIG: ${{ inputs.sushi-config }}
+        EXTRA_PACKAGES: ${{ inputs.packages }}
+        FHIR_HOME_INPUT: ${{ inputs.fhir-home }}
+      run: |
+        set -euo pipefail
+
+        zts=https://terminologien.bfarm.de
+        user_agent="mii-kds-ci/1.0 (+https://github.com/${GITHUB_REPOSITORY})"
+        fhir_home="${FHIR_HOME_INPUT/#\~/$HOME}"
+        work="$(mktemp -d)"
+        trap 'rm -rf "${work}"' EXIT
+        # Create the cache as the runner user, also when nothing is installed,
+        # so a container mounting it does not create it as root.
+        mkdir -p "${fhir_home}/packages"
+
+        # Requested packages as "name#version": direct dependencies (plain
+        # `name: version` or the object form with id/version) plus extras.
+        {
+          if [[ -f "${SUSHI_CONFIG}" ]]; then
+            yq -o=json '.dependencies // {}' "${SUSHI_CONFIG}" |
+              jq -r 'to_entries[]
+                | if (.value | type) == "object"
+                  then "\(.value.id // .key)#\(.value.version)"
+                  else "\(.key)#\(.value)" end'
+          else
+            echo "::warning::${SUSHI_CONFIG} not found; only the input 'packages' is checked." >&2
+          fi
+          tr ',' '\n' <<< "${EXTRA_PACKAGES}"
+        } | tr -d '[:blank:]' | grep -E '^[^#]+#[^#]+$' | sort -u > "${work}/requested.txt" || true
+
+        curl --fail --silent --show-error --retry 3 --user-agent "${user_agent}" \
+          -H 'Accept: application/json' "${zts}/packages/catalog" > "${work}/catalog.json"
+
+        # Keep the requested packages that the ZTS catalog lists.
+        jq -rn --rawfile requested "${work}/requested.txt" --slurpfile catalog "${work}/catalog.json" '
+          ($catalog[0] | map({key: .name, value: (.packageVersions // [])}) | from_entries) as $zts
+          | $requested | split("\n")[] | select(length > 0)
+          | split("#") as [$name, $version]
+          | select($zts[$name] != null)
+          | if ($zts[$name] | index($version)) == null
+            then error("\($name)#\($version) is not in the ZTS catalog (available: \($zts[$name] | join(", ")))")
+            else "\($name)#\($version)" end
+        ' > "${work}/zts.txt"
+
+        if [[ ! -s "${work}/zts.txt" ]]; then
+          echo "No ZTS packages required."
+          exit 0
+        fi
+
+        # Every required ZTS package needs accepted download conditions.
+        tr ',' '\n' <<< "${ACCEPTED}" | tr -d '[:blank:]' | sed '/^$/d' | sort -u > "${work}/accepted.txt"
+        missing="$(cut -d '#' -f1 "${work}/zts.txt" | sort -u | comm -23 - "${work}/accepted.txt")"
+        if [[ -n "${missing}" ]]; then
+          echo "::error::These packages are only available on the BfArM ZTS, but their download conditions are not accepted: $(echo ${missing}). Add them to the Actions variable ZTS_ACCEPTED_DOWNLOAD_CONDITIONS after reviewing the conditions on https://terminologien.bfarm.de."
+          exit 1
+        fi
+
+        body="$(cut -d '#' -f1 "${work}/zts.txt" | sort -u | jq -R . | jq -sc '{packages: .}')"
+        token="$(curl --fail --silent --show-error --retry 3 --user-agent "${user_agent}" \
+          -X POST -H 'Content-Type: application/json' -d "${body}" \
+          "${zts}/api/generate-token" | jq -er '.token')"
+        echo "::add-mask::${token}"
+
+        while IFS='#' read -r name version; do
+          target="${fhir_home}/packages/${name}#${version}"
+          if [[ -f "${target}/package/package.json" ]]; then
+            echo "${name}#${version} is already in the package cache."
+            continue
+          fi
+          echo "Downloading ${name}#${version} from the ZTS"
+          curl --fail --silent --show-error --retry 3 --user-agent "${user_agent}" \
+            -H "Authorization: Bearer ${token}" \
+            -o "${work}/package.tgz" "${zts}/packages/${name}/${version}"
+          rm -rf "${target}"
+          mkdir -p "${target}"
+          tar -xzf "${work}/package.tgz" -C "${target}"
+          rm -f "${work}/package.tgz"
+          actual="$(jq -r '"\(.name)#\(.version)"' "${target}/package/package.json")"
+          if [[ "${actual}" != "${name}#${version}" ]]; then
+            echo "::error::The ZTS returned ${actual} instead of ${name}#${version}."
+            exit 1
+          fi
+          echo "Installed ${name}#${version} into ${fhir_home}/packages"
+        done < "${work}/zts.txt"

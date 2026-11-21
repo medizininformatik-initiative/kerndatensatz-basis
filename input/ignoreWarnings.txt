@@ -45,6 +45,12 @@ The code '18629005' is not valid in the system http://snomed.info/sct version ht
 The code '277132007' is not valid in the system http://snomed.info/sct version http://snomed.info/sct/900000000000207008/version/20260701 (277132007)
 The code '394841004' is not valid in the system http://snomed.info/sct version http://snomed.info/sct/900000000000207008/version/20260701 (394841004)
 The code '363679005' is not valid in the system http://snomed.info/sct version http://snomed.info/sct/900000000000207008/version/20260701 (363679005)
+# Same cause for the source codes of ConceptMap mii-cm-person-recordedsexorgender-snomed-administrative-gender (CodeSystem/$batch-validate-code)
+The code '248153007' in the system http://snomed.info/sct version http://snomed.info/sct/900000000000207008/version/20260701 is not valid in the value set 'null'
+The code '248152002' in the system http://snomed.info/sct version http://snomed.info/sct/900000000000207008/version/20260701 is not valid in the value set 'null'
+The code '32570691000036108' in the system http://snomed.info/sct version http://snomed.info/sct/900000000000207008/version/20260701 is not valid in the value set 'null'
+The code '32570681000036106' in the system http://snomed.info/sct version http://snomed.info/sct/900000000000207008/version/20260701 is not valid in the value set 'null'
+The code '261665006' in the system http://snomed.info/sct version http://snomed.info/sct/900000000000207008/version/20260701 is not valid in the value set 'null'
 
 # Temporary: SNOMED supplement currently not supported
 The code '41847000' is not declared in the base CodeSystem http://snomed.info/sct so is not valid in the supplement
@@ -53,3 +59,7 @@ The code '255398004' is not declared in the base CodeSystem http://snomed.info/s
 The code '713153009' is not declared in the base CodeSystem http://snomed.info/sct so is not valid in the supplement
 The code '3658006' is not declared in the base CodeSystem http://snomed.info/sct so is not valid in the supplement
 The code '255407002' is not declared in the base CodeSystem http://snomed.info/sct so is not valid in the supplement
+# kbv.all.terminology.allergyintolerance is only published on the BfArM ZTS (installed in CI by .github/actions/zts-packages);
+# its package.json has no canonical, so SUSHI generates a placeholder dependsOn URI that does not resolve to an ImplementationGuide.
+The canonical URL http://fhir.org/packages/kbv.all.terminology.allergyintolerance/ImplementationGuide/kbv.all.terminology.allergyintolerance doesn't point to an actual ImplementationGuide resource
+A definition could not be found for Canonical URL 'http://fhir.org/packages/kbv.all.terminology.allergyintolerance/ImplementationGuide/kbv.all.terminology.allergyintolerance'

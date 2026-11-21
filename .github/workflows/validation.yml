@@ -12,7 +12,7 @@ permissions:
 jobs:
   java-validation:
     name: HL7 Java validator
-    uses: medizininformatik-initiative/mii-kds-module-template/.github/workflows/ci_java_validation.yml@9d464cddb17985b41df9ab6e0a5ff95870f902f2 # mii-kds-module-template dev @ 2026-11-02 (#49)
+    uses: medizininformatik-initiative/mii-kds-module-template/.github/workflows/ci_java_validation.yml@2700849d47c0d1a991b8780ff4b631fed8ec9eef # mii-kds-module-template dev @ 2026-11-13 (#57)
     with:
       ref: ${{ github.ref }}
       PATH_TO_CONFORMANCE_RESOURCES: fsh-generated/resources
@@ -22,4 +22,8 @@ jobs:
       # Pinned SUSHI, same as the template's validation.yml; overridable via the repo variable.
       SUSHI_VERSION: ${{ vars.SUSHI_VERSION || '3.21.0' }}
       SNAPSHOT_DEPENDENCIES: true
+      # FHIR packages that exist only on the BfArM ZTS (template #55), e.g.
+      # kbv.all.terminology.allergyintolerance; empty = no-op.
+      ZTS_ACCEPTED_DOWNLOAD_CONDITIONS: ${{ vars.ZTS_ACCEPTED_DOWNLOAD_CONDITIONS }}
+      ZTS_PACKAGES: ${{ vars.ZTS_PACKAGES }}
     secrets: inherit

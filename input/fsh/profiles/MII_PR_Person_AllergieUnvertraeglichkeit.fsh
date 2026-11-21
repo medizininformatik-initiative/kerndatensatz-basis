@@ -32,6 +32,19 @@ Description: "This profile describes an allergy or intolerance in the Medical In
 * extension[abatement].valueDateTime ^short = "End date"
 * insert Translation(extension[abatement].valueDateTime ^short, de, Enddatum)
 * extension[abatement].valueDateTime MS
+* extension[abatement].valueRange MS
+* extension[abatement].valueRange ^short = "End as age range"
+* insert Translation(extension[abatement].valueRange ^short, de, Ende als Altersbereich)
+* extension[abatement].valueRange.extension contains ExtensionLebensphase named Lebensphase-Ende 0..1
+* extension[abatement].valueRange.extension[Lebensphase-Ende] ^short = "Life phase in which the allergy or intolerance ended"
+* insert Translation(extension[abatement].valueRange.extension[Lebensphase-Ende] ^short, de, Lebensphase des Endes)
+* extension[abatement].valueRange.extension[Lebensphase-Ende] ^comment = "Alternative when a more precise period cannot be given, especially for anamnestic information."
+* insert Translation(extension[abatement].valueRange.extension[Lebensphase-Ende] ^comment, de, [[Alternative Angabe, wenn genauere Eingrenzungen des Zeitraums nicht möglich sind, insbesondere im Kontext anamnestischer Angaben.]])
+* extension[abatement].valueRange.extension[Lebensphase-Ende].url MS
+* extension[abatement].valueRange.extension[Lebensphase-Ende].valueCodeableConcept MS
+* extension[abatement].valueRange.extension[Lebensphase-Ende].valueCodeableConcept.coding MS
+* extension[abatement].valueRange.extension[Lebensphase-Ende].valueCodeableConcept.coding.system MS
+* extension[abatement].valueRange.extension[Lebensphase-Ende].valueCodeableConcept.coding.code MS
 // Element metadata uses concise English text based on FHIR R4 Core and HL7 EU as its base value and German logical-model text as a `de` translation.
 * clinicalStatus MS
 * clinicalStatus ^short = "Current allergy or intolerance status"
@@ -69,10 +82,20 @@ Description: "This profile describes an allergy or intolerance in the Medical In
 * insert Translation(code ^short, de, Allergie oder Unverträglichkeit gegen)
 * code ^definition = "Code for an allergy or intolerance statement, including positive and negated or excluded statements. It may identify a substance, pharmaceutical product, substance class, allergy or intolerance condition, or a general categorical absence statement. A substance recorded for a specific reaction may be more specific than AllergyIntolerance.code but must remain semantically consistent with it. Implementations must be clinically safe when processing code without reaction.substance; if that consistency cannot be confirmed, reaction.substance should be ignored."
 * insert Translation(code ^definition, de, [[Stoff, Produkt, Stoffklasse oder Allergie-/Unverträglichkeitsbegriff, auf den sich die dokumentierte Gefährdung bezieht.]])
-* code from $allergy-intolerance-uv-ips (preferred)
 * code.coding MS
+* code.coding ^slicing.discriminator.type = #pattern
+* code.coding ^slicing.discriminator.path = "$this"
+* code.coding ^slicing.rules = #open
+* code.coding contains snomed-ct 0..1 MS
 * code.coding.system MS
 * code.coding.code MS
+* insert AddSnomedCodingTranslation(code.coding[snomed-ct])
+* code.coding[snomed-ct] ^patternCoding.system = "http://snomed.info/sct"
+* code.coding[snomed-ct] ^comment = "The substance ValueSet was developed by mio42 GmbH together with BfArM; it is bound extensible because its completeness cannot be guaranteed. Aligned with ISiK."
+* insert Translation(code.coding[snomed-ct] ^comment, de, [[Das ValueSet der auslösenden Substanzen wurde von der mio42 GmbH gemeinsam mit dem BfArM erarbeitet; es ist extensible gebunden, da seine Vollständigkeit nicht garantiert werden kann. Abgestimmt mit ISiK.]])
+* code.coding[snomed-ct] from $kbv-vs-allergy-substance (extensible)
+* code.coding[snomed-ct].system 1.. MS
+* code.coding[snomed-ct].code 1.. MS
 * patient MS
 * patient ^short = "Who the allergy or intolerance concerns"
 * insert Translation(patient ^short, de, Patient)
@@ -91,6 +114,19 @@ Description: "This profile describes an allergy or intolerance in the Medical In
 * onset[x] ^definition = "The estimated or actual date, date-time, age, or other period when the allergy or intolerance was identified."
 * insert Translation(onset[x] ^definition, de, [[Zeitpunkt, Zeitraum, Lebensalter oder andere zeitliche Angabe zum erstmaligen Auftreten der Allergie oder Unverträglichkeit.]])
 * onsetDateTime MS
+* onsetRange MS
+* onsetRange ^short = "Onset as age range"
+* insert Translation(onsetRange ^short, de, Beginn als Altersbereich)
+* onsetRange.extension contains ExtensionLebensphase named Lebensphase-Beginn 0..1
+* onsetRange.extension[Lebensphase-Beginn] ^short = "Life phase in which the allergy or intolerance began"
+* insert Translation(onsetRange.extension[Lebensphase-Beginn] ^short, de, Lebensphase des Beginns)
+* onsetRange.extension[Lebensphase-Beginn] ^comment = "Alternative when a more precise period cannot be given, especially for anamnestic information."
+* insert Translation(onsetRange.extension[Lebensphase-Beginn] ^comment, de, [[Alternative Angabe, wenn genauere Eingrenzungen des Zeitraums nicht möglich sind, insbesondere im Kontext anamnestischer Angaben.]])
+* onsetRange.extension[Lebensphase-Beginn].url MS
+* onsetRange.extension[Lebensphase-Beginn].valueCodeableConcept MS
+* onsetRange.extension[Lebensphase-Beginn].valueCodeableConcept.coding MS
+* onsetRange.extension[Lebensphase-Beginn].valueCodeableConcept.coding.system MS
+* onsetRange.extension[Lebensphase-Beginn].valueCodeableConcept.coding.code MS
 * recordedDate MS
 * recordedDate ^short = "Date when the allergy or intolerance was recorded"
 * insert Translation(recordedDate ^short, de, Dokumentationsdatum)
@@ -106,10 +142,18 @@ Description: "This profile describes an allergy or intolerance in the Medical In
 * insert Translation(reaction.manifestation ^short, de, Manifestation)
 * reaction.manifestation ^definition = "Clinical symptoms and/or signs observed or associated with the adverse reaction event."
 * insert Translation(reaction.manifestation ^definition, de, [[Klinische Symptome oder Befunde, die im Zusammenhang mit der unerwünschten Reaktion beobachtet wurden.]])
-* reaction.manifestation from $allergy-reaction-uv-ips (preferred)
 * reaction.manifestation.coding MS
+* reaction.manifestation.coding ^slicing.discriminator.type = #pattern
+* reaction.manifestation.coding ^slicing.discriminator.path = "$this"
+* reaction.manifestation.coding ^slicing.rules = #open
+* reaction.manifestation.coding contains snomed-ct 0..1 MS
 * reaction.manifestation.coding.system MS
 * reaction.manifestation.coding.code MS
+* insert AddSnomedCodingTranslation(reaction.manifestation.coding[snomed-ct])
+* reaction.manifestation.coding[snomed-ct] ^patternCoding.system = "http://snomed.info/sct"
+* reaction.manifestation.coding[snomed-ct] from $kbv-vs-allergy-manifestation (extensible)
+* reaction.manifestation.coding[snomed-ct].system 1.. MS
+* reaction.manifestation.coding[snomed-ct].code 1.. MS
 * reaction.severity MS
 * reaction.severity ^short = "Reaction severity"
 * insert Translation(reaction.severity ^short, de, Schweregrad)
