@@ -38,8 +38,10 @@ Description: "Logische Repräsentation des Basismoduls Person"
   * Vorsatzwort insert Translation(^short, en, [[Prefix word such as: \"von\", \"van\", \"zu\", cf. also VSDM specification of Gematik (Versichertenstammdatenmanagement, \"eGK\")]])
   * Namenszusatz 0..1 string "Namenszusatz als Bestandteil das Nachnamens, wie in VSDM (Versichertenstammdatenmanagement, \"eGK\") definiert. Beispiele: Gräfin, Prinz oder Fürst" "Namenszusatz als Bestandteil das Nachnamens, wie in VSDM (Versichertenstammdatenmanagement, \"eGK\") definiert. Beispiele: Gräfin, Prinz oder Fürst"
   * Namenszusatz insert Translation(^short, en, [[Name suffix as part of the last name, as defined in VSDM (Versichertenstammdatenmanagement, \"eGK\"). Examples: Countess, Prince, or Prince]])
-  * Praefix 0..* string "Namensteile vor dem Vornamen, z.B. akademischer Grad" "Namensteile vor dem Vornamen, z.B. akademischer Grad"
+  * Praefix 0..* BackboneElement "Namensteile vor dem Vornamen, z.B. akademischer Grad" "Namensteile vor dem Vornamen, z.B. akademischer Grad"
   * Praefix insert Translation(^short, en, [[Parts of the name before the first name, e.g. academic degree]])
+    * Wert 1..1 string "Präfix, z.B. akademischer Grad" "Präfix, z.B. akademischer Grad"
+    * Wert insert Translation(^short, en, [[Prefix, e.g. academic degree]])
     * ArtdesPraefixes 0..1 code "Art des Präfixes, z.B. \"AC\" für Akademische Titel" "Art des Präfixes, z.B. \"AC\" für Akademische Titel"
     * ArtdesPraefixes insert Translation(^short, en, [[Type of prefix, e.g. \"AC\" for Academic Titel]])
   * Geburtsname 0..1 string "Familienname einer Person zum Zeitpunkt ihrer Geburt. Kann sich danach z.B. durch Heirat und Annahme eines anderen Familiennamens ändern." "Familienname einer Person zum Zeitpunkt ihrer Geburt. Kann sich danach z.B. durch Heirat und Annahme eines anderen Familiennamens ändern."
@@ -203,6 +205,7 @@ Target: "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
   * Vorsatzwort -> "Patient.name.family.extension.vorsatzwort"
   * Namenszusatz -> "Patient.name.family.extension.namenszusatz"
   * Praefix -> "Patient.name.prefix"
+    * Wert -> "Patient.name.prefix"
     * ArtdesPraefixes -> "Patient.name.prefix.extension-prefix-qualifier"
   * Geburtsname -> "Patient.name.use"
 * Demographie.AdministrativesGeschlecht -> "Patient.gender"
