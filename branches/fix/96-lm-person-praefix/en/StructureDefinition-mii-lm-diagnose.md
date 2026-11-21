@@ -81,8 +81,8 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-diagnose.c
 | Diagnose.ICD10GMDiagnoseKodiert.Diagnosesicherheit | Condition.code.coding.where(system='http://fhir.de/CodeSystem/bfarm/icd-10-gm').extension('http://fhir.de/StructureDefinition/icd-10-gm-diagnosesicherheit').valueCoding.code |
 | Diagnose.ICD10GMDiagnoseKodiert.Mehrfachkodierungskennzeichen | Condition.code.coding.where(system='http://fhir.de/CodeSystem/bfarm/icd-10-gm').extension('http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen').valueCoding.code |
 | Diagnose.ICD10GMDiagnoseKodiert.Seitenlokalisation | Condition.code.coding.where(system='http://fhir.de/CodeSystem/bfarm/icd-10-gm').extension('http://fhir.de/StructureDefinition/seitenlokalisation').valueCoding.code |
-| Diagnose.KlinischRelevanterZeitraum.Lebensphase.bis | Condition.abatementAge.extension('http://fhir.de/StructureDefinition/lebensphase').valueCodeableConcept |
-| Diagnose.KlinischRelevanterZeitraum.Lebensphase.von | Condition.onsetAge.extension('http://fhir.de/StructureDefinition/lebensphase').valueCodeableConcept |
+| Diagnose.KlinischRelevanterZeitraum.Lebensphase.bis | Condition.abatementRange.extension('http://fhir.de/StructureDefinition/lebensphase').valueCodeableConcept |
+| Diagnose.KlinischRelevanterZeitraum.Lebensphase.von | Condition.onsetRange.extension('http://fhir.de/StructureDefinition/lebensphase').valueCodeableConcept |
 | Diagnose.KlinischRelevanterZeitraum.Zeitraum.bis | Condition.abatementDateTime |
 | Diagnose.KlinischRelevanterZeitraum.Zeitraum.von | Condition.onsetDateTime |
 | Diagnose.KlinischerStatus | Condition.clinicalStatus |
@@ -620,7 +620,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-diagnose.c
       }],
       "mapping" : [{
         "identity" : "FHIR",
-        "map" : "Condition.onsetAge.extension('http://fhir.de/StructureDefinition/lebensphase').valueCodeableConcept"
+        "map" : "Condition.onsetRange.extension('http://fhir.de/StructureDefinition/lebensphase').valueCodeableConcept"
       }]
     },
     {
@@ -635,7 +635,7 @@ Other representations of profile: [CSV](../StructureDefinition-mii-lm-diagnose.c
       }],
       "mapping" : [{
         "identity" : "FHIR",
-        "map" : "Condition.abatementAge.extension('http://fhir.de/StructureDefinition/lebensphase').valueCodeableConcept"
+        "map" : "Condition.abatementRange.extension('http://fhir.de/StructureDefinition/lebensphase').valueCodeableConcept"
       }]
     },
     {

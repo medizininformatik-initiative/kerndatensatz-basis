@@ -134,7 +134,17 @@ Maja Julia Van-der-Dussen (official) Female, DoB: 1998-09-19 ( Medical record nu
     },
     "state" : "DE-BE",
     "postalCode" : "10178",
-    "country" : "DE"
+    "country" : "DE",
+    "_country" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-codedString",
+        "valueCoding" : {
+          "system" : "urn:iso:std:iso:3166",
+          "code" : "DE",
+          "display" : "Germany"
+        }
+      }]
+    }
   }]
 }
 

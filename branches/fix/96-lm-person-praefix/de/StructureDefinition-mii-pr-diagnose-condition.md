@@ -62,8 +62,9 @@ Dieser Abschnitt enthält detaillierte Implementierungshinweise für das MII-Dia
 **Verknüpfung von Sekundär- zu Primärdiagnose:**
 
 * Die Primärdiagnose-Condition (Ätiologie mit †-Kennzeichen) ist die Hauptinstanz
-* Sekundärdiagnose-Conditions (Manifestation mit *-Kennzeichen, Zusatzinformation mit !-Kennzeichen) nutzen die [Extension Condition Related](http://hl7.org/fhir/R4/extension-condition-related.html), um auf die Primärdiagnose zu referenzieren
+* Sekundärdiagnose-Conditions (Manifestation mit *-Kennzeichen, Zusatzinformation mit !-Kennzeichen) nutzen den Slice `extension:ReferenzPrimaerdiagnose` ([Extension Condition Related](http://hl7.org/fhir/R4/extension-condition-related.html)), um auf die Primärdiagnose zu referenzieren
 * Dies erstellt eine explizite Beziehungskette: Manifestation → Ätiologie
+* Nur die Sekundärdiagnose-Conditions befüllen `extension:ReferenzPrimaerdiagnose`; die Primärdiagnose-Condition referenziert ihre Sekundärdiagnosen nicht
 
 **Alpha-ID und Orphanet-Codes:**
 
@@ -104,32 +105,53 @@ Die Modellierung codierter und detaillierter anatomischer Lokalisationen wurde m
 * **Ebene Abteilungskontakt:** Die Zuordnung **SOLL** auf einen Encounter der Ebene "Abteilungskontakt" erfolgen
 * Bei der Auswahl des Encounters ist zu beachten, dass unter einer (Abrechnungs-)"Fallnummer" (hier: `Encounter.account`) unter Umständen mehrere Encounter gruppiert sein können (z.B. stationärer Besuch mit mehreren vor- und nachstationären Aufenthalten)
 
+**Ausblick:** Auf welcher Kontaktebene Diagnosen verknüpft werden, wird derzeit für ISiK Stufe 7 diskutiert. Die MII wird dem Ergebnis dieser Diskussion folgen, damit beide Spezifikationen aufeinander abgestimmt bleiben. Bis dahin gilt die Empfehlung, auf den Abteilungskontakt zu referenzieren.
+
 #### Zeitliche Informationen
 
 ##### Best Practice - Erkrankungsbeginn und Erkrankungsende
 
-Die Modellierung von Erkrankungsbeginn und Erkrankungsende wurde mit [gematik ISiK](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKDiagnose.html) harmonisiert. Implementierende **SOLLTEN** `onsetDateTime`/`abatementDateTime` für Datumsangaben und `onsetAge`/`abatementAge` mit der Lebensphasen-Extension verwenden, wenn nur eine Lebensphase bekannt ist. `onsetPeriod` und `abatementPeriod` bleiben ausschließlich aus Gründen der Rückwärtskompatibilität zulässig und **SOLLTEN NICHT** in neuen Implementierungen verwendet werden.
+Die Modellierung von Erkrankungsbeginn und Erkrankungsende wurde mit [gematik ISiK](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKDiagnose.html) harmonisiert. Implementierende **SOLLTEN** `onsetDateTime`/`abatementDateTime` für Datumsangaben und `onsetRange`/`abatementRange` mit der Lebensphasen-Extension verwenden, wenn nur eine Lebensphase bekannt ist. `onsetPeriod` und `abatementPeriod` bleiben ausschließlich aus Gründen der Rückwärtskompatibilität zulässig und **SOLLTEN NICHT** in neuen Implementierungen verwendet werden.
 
 **EHDS-Ausblick:** Das veröffentlichte Trial-Use-Profil [HL7 Europe Condition (EU core) 2.0.0](https://hl7.eu/fhir/base/2.0.0/StructureDefinition-condition-eu-core.html), das in kommende EHDS-Spezifikationen einfließt, profiliert für Erkrankungsbeginn und Erkrankungsende ausdrücklich die `dateTime`-Varianten. Um die zukünftige EHDS-Konformität zu erleichtern, **SOLLTEN** neue Implementierungen daher `onsetDateTime` und `abatementDateTime` verwenden, sofern ein Datum verfügbar ist.
 
 **`Condition.onset[x]`:**
 
-* **SOLLTE** als `dateTime` oder `Age` erfasst werden
-* Bei Verwendung von `Age` **KANN** die Lebensphasen-Extension eine Lebensphase als Code angeben, wenn das genaue Datum unbekannt ist
+* **SOLLTE** als `dateTime`, `Age` oder `Range` erfasst werden
+* Bei Verwendung von `Range` **KANN** die Lebensphasen-Extension eine Lebensphase als Code angeben, wenn das genaue Datum unbekannt ist
 * `Period` bleibt aus Gründen der Rückwärtskompatibilität zulässig, aber **SOLLTE NICHT** verwendet werden
 * Repräsentiert, wann die Erkrankung begann oder erstmals bemerkt wurde
 
 **`Condition.abatement[x]`:**
 
-* **SOLLTE** als `dateTime` oder `Age` erfasst werden
-* Bei Verwendung von `Age` **KANN** die Lebensphasen-Extension eine Lebensphase als Code angeben, wenn das genaue Datum unbekannt ist
+* **SOLLTE** als `dateTime`, `Age` oder `Range` erfasst werden
+* Bei Verwendung von `Range` **KANN** die Lebensphasen-Extension eine Lebensphase als Code angeben, wenn das genaue Datum unbekannt ist
 * `Period` bleibt aus Gründen der Rückwärtskompatibilität zulässig, aber **SOLLTE NICHT** verwendet werden
 * Repräsentiert, wann die Erkrankung endete, abklang oder in Remission überging
+
+##### Hinweis - Lebensphase an Range statt an Age
+
+Die Lebensphasen-Extension `http://fhir.de/StructureDefinition/lebensphase` ([de.basisprofil.r4](https://simplifier.net/packages/de.basisprofil.r4/1.6.0) 1.6.0) ist nur an `dateTime`, `Period.start`, `Period.end` und `Range` zulässig. Sie ist daher an `onsetRange` und `abatementRange` profiliert, nicht mehr an `onsetAge` und `abatementAge` ([HDB-1075](https://hl7germany.atlassian.net/browse/HDB-1075)). `Age` bleibt ohne die Extension zulässig. Dies weicht von [ISiK Basis 6.0.0](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKDiagnose.html) ab, das die Extension an `Age` profiliert.
+
+Die [HL7-Europe-Extension `periods-of-life`](https://hl7.eu/fhir/extensions/StructureDefinition-periods-of-life.html) lässt auch `Age` als Kontext zu. Ändert sich der Kontext der deutschen Extension in einer künftigen Version der deutschen Basisprofile oder wird die EU-Extension übernommen, wird die Platzierung überprüft.
+
+**`Condition.extension:Feststellungsdatum`** (`http://hl7.org/fhir/StructureDefinition/condition-assertedDate`):
+
+* Repräsentiert, wann die Diagnose klinisch festgestellt wurde, z. B. durch eine Ärztin oder einen Arzt auf Grundlage von Befunden
+* Ist unabhängig davon, wann die Erkrankung begann und wann sie dokumentiert wurde
 
 **`Condition.recordedDate`:**
 
 * Repräsentiert, wann die Diagnose im System erfasst wurde
 * Dient der zeitlichen Einordnung der Diagnose
+
+##### Best Practice - Onset, Feststellungsdatum und recordedDate
+
+Die drei Elemente beschreiben unterschiedliche Zeitpunkte und **SOLLEN NICHT** gegeneinander ausgetauscht werden:
+
+* `onset[x]`: wann die Erkrankung oder ihre Symptome begonnen haben (Krankheitsverlauf)
+* `extension:Feststellungsdatum`: wann die Diagnose gestellt wurde (diagnostischer Prozess)
+* `recordedDate`: wann die Diagnose erstmals im Quellsystem dokumentiert wurde (Dokumentationsprozess)
 
 **Usages:**
 
@@ -470,6 +492,56 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-diagn
       "id" : "Condition.extension:ReferenzPrimaerdiagnose",
       "path" : "Condition.extension",
       "sliceName" : "ReferenzPrimaerdiagnose",
+      "short" : "Referenz auf Primärdiagnose",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "de-DE"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Referenz auf Primärdiagnose"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        },
+        {
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "en-US"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Reference to primary diagnosis"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "definition" : "Referenz einer Sekundärdiagnose, z. B. eines Stern- oder Ausrufezeichen-Codes im ICD-10-GM-Kreuz-Stern-System, auf die zugehörige Primärdiagnose mit Kreuz-Code.",
+      "_definition" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "de-DE"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Referenz einer Sekundärdiagnose, z. B. eines Stern- oder Ausrufezeichen-Codes im ICD-10-GM-Kreuz-Stern-System, auf die zugehörige Primärdiagnose mit Kreuz-Code."
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        },
+        {
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "en-US"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Reference from a secondary diagnosis, e.g. an asterisk or exclamation mark code in the ICD-10-GM dagger-asterisk system, to the associated primary diagnosis with the dagger code."
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
       "min" : 0,
       "max" : "1",
       "type" : [{
@@ -1535,6 +1607,9 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-diagn
       },
       {
         "code" : "Period"
+      },
+      {
+        "code" : "Range"
       }],
       "mustSupport" : true,
       "mapping" : [{
@@ -1572,7 +1647,19 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-diagn
       "mustSupport" : true
     },
     {
-      "id" : "Condition.onset[x]:onsetAge.extension:Lebensphase-Beginn",
+      "id" : "Condition.onset[x]:onsetRange",
+      "path" : "Condition.onset[x]",
+      "sliceName" : "onsetRange",
+      "short" : "Erkrankungsbeginn als Altersbereich",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Range"
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.onset[x]:onsetRange.extension:Lebensphase-Beginn",
       "path" : "Condition.onset[x].extension",
       "sliceName" : "Lebensphase-Beginn",
       "short" : "Lebensphase des Erkrankungsbeginns",
@@ -1585,12 +1672,12 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-diagn
       }]
     },
     {
-      "id" : "Condition.onset[x]:onsetAge.extension:Lebensphase-Beginn.url",
+      "id" : "Condition.onset[x]:onsetRange.extension:Lebensphase-Beginn.url",
       "path" : "Condition.onset[x].extension.url",
       "mustSupport" : true
     },
     {
-      "id" : "Condition.onset[x]:onsetAge.extension:Lebensphase-Beginn.value[x]",
+      "id" : "Condition.onset[x]:onsetRange.extension:Lebensphase-Beginn.value[x]",
       "path" : "Condition.onset[x].extension.value[x]",
       "mustSupport" : true,
       "mapping" : [{
@@ -1599,17 +1686,17 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-diagn
       }]
     },
     {
-      "id" : "Condition.onset[x]:onsetAge.extension:Lebensphase-Beginn.value[x].coding",
+      "id" : "Condition.onset[x]:onsetRange.extension:Lebensphase-Beginn.value[x].coding",
       "path" : "Condition.onset[x].extension.value[x].coding",
       "mustSupport" : true
     },
     {
-      "id" : "Condition.onset[x]:onsetAge.extension:Lebensphase-Beginn.value[x].coding.system",
+      "id" : "Condition.onset[x]:onsetRange.extension:Lebensphase-Beginn.value[x].coding.system",
       "path" : "Condition.onset[x].extension.value[x].coding.system",
       "mustSupport" : true
     },
     {
-      "id" : "Condition.onset[x]:onsetAge.extension:Lebensphase-Beginn.value[x].coding.code",
+      "id" : "Condition.onset[x]:onsetRange.extension:Lebensphase-Beginn.value[x].coding.code",
       "path" : "Condition.onset[x].extension.value[x].coding.code",
       "mustSupport" : true
     },
@@ -1634,6 +1721,9 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-diagn
       },
       {
         "code" : "Period"
+      },
+      {
+        "code" : "Range"
       }],
       "mustSupport" : true,
       "mapping" : [{
@@ -1671,7 +1761,19 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-diagn
       "mustSupport" : true
     },
     {
-      "id" : "Condition.abatement[x]:abatementAge.extension:Lebensphase-Ende",
+      "id" : "Condition.abatement[x]:abatementRange",
+      "path" : "Condition.abatement[x]",
+      "sliceName" : "abatementRange",
+      "short" : "Erkrankungsende als Altersbereich",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Range"
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.abatement[x]:abatementRange.extension:Lebensphase-Ende",
       "path" : "Condition.abatement[x].extension",
       "sliceName" : "Lebensphase-Ende",
       "short" : "Lebensphase des Erkrankungsendes",
@@ -1684,12 +1786,12 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-diagn
       }]
     },
     {
-      "id" : "Condition.abatement[x]:abatementAge.extension:Lebensphase-Ende.url",
+      "id" : "Condition.abatement[x]:abatementRange.extension:Lebensphase-Ende.url",
       "path" : "Condition.abatement[x].extension.url",
       "mustSupport" : true
     },
     {
-      "id" : "Condition.abatement[x]:abatementAge.extension:Lebensphase-Ende.value[x]",
+      "id" : "Condition.abatement[x]:abatementRange.extension:Lebensphase-Ende.value[x]",
       "path" : "Condition.abatement[x].extension.value[x]",
       "mustSupport" : true,
       "mapping" : [{
@@ -1698,17 +1800,17 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-diagn
       }]
     },
     {
-      "id" : "Condition.abatement[x]:abatementAge.extension:Lebensphase-Ende.value[x].coding",
+      "id" : "Condition.abatement[x]:abatementRange.extension:Lebensphase-Ende.value[x].coding",
       "path" : "Condition.abatement[x].extension.value[x].coding",
       "mustSupport" : true
     },
     {
-      "id" : "Condition.abatement[x]:abatementAge.extension:Lebensphase-Ende.value[x].coding.system",
+      "id" : "Condition.abatement[x]:abatementRange.extension:Lebensphase-Ende.value[x].coding.system",
       "path" : "Condition.abatement[x].extension.value[x].coding.system",
       "mustSupport" : true
     },
     {
-      "id" : "Condition.abatement[x]:abatementAge.extension:Lebensphase-Ende.value[x].coding.code",
+      "id" : "Condition.abatement[x]:abatementRange.extension:Lebensphase-Ende.value[x].coding.code",
       "path" : "Condition.abatement[x].extension.value[x].coding.code",
       "mustSupport" : true
     },

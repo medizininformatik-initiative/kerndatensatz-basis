@@ -85,6 +85,14 @@ These define new code systems used by systems conforming to this implementation 
 | [ MII CS Fall Supplement PatientClass  ](CodeSystem-mii-cs-fall-supplement-patient-class.md) | CodeSystem Supplement für v2-0004 |
 | [ MII CS Person Vitalstatus  ](CodeSystem-mii-cs-person-vitalstatus.md) | Vitalstatus des Patienten |
 
+### Terminology: Concept Maps 
+
+These define transformations to convert between codes by systems conforming with this implementation guide.
+
+| | |
+| :--- | :--- |
+| [ MII CM Person Recorded Sex or Gender SNOMED to Administrative Gender  ](ConceptMap-mii-cm-person-recordedsexorgender-snomed-administrative-gender.md) | Maps the SNOMED CT codes of MII VS Person Recorded Sex or Gender SNOMED to FHIR AdministrativeGender. Recorded sex (e.g. sex assigned at birth) and administrative gender are different concepts, so no mapping is equivalent; each relationship is qualified. |
+
 ### Example: Example Instances 
 
 These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like.

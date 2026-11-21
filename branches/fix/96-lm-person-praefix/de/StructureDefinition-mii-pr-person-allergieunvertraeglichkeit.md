@@ -20,6 +20,14 @@ Das MII-Profil Allergie / Unverträglichkeit ist eine neue Ergänzung des Moduls
 * [ISiK 6.0.0](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/StructureDefinition-ISiKAllergieUnvertraeglichkeit.html)
 * und [HL7 Europe Base 2.0.0](https://hl7.eu/fhir/base/2.0.0/StructureDefinition-allergyIntolerance-eu-core.html)
 
+### Terminologie
+
+`code.coding:snomed-ct` und `reaction.manifestation.coding:snomed-ct` sind wie in ISiK **extensible** an die von der mio42 GmbH gemeinsam mit dem BfArM erarbeiteten ValueSets der auslösenden Substanzen und Manifestationen gebunden (`KBV_VS_AllergyIntolerance_Substance_SNOMED_CT` und `KBV_VS_AllergyIntolerance_Manifestation_SNOMED_CT`, Version 1.0.0). Die SNOMED-CT-Slices sind optional: Allergien, die nur mit anderen Codes, z.B. ATC, dokumentiert sind, bleiben valide. Die ValueSets sind im Paket `kbv.all.terminology.allergyintolerance` 1.0.0 veröffentlicht, das nur auf dem [BfArM-ZTS](https://terminologien.bfarm.de) nach Akzeptanz der Downloadbedingungen verfügbar ist.
+
+### Beginn und Ende als Lebensphase
+
+Sind Beginn oder Ende nur als Lebensphase bekannt (z.B. Kindheit), kann die Extension [Lebensphase](http://fhir.de/StructureDefinition/lebensphase) aus den deutschen Basisprofilen an `onsetRange` und an `extension:abatement.valueRange` verwendet werden, wie im Condition-Profil. Der Kontext der Extension lässt `Age` nicht zu.
+
 **Usages:**
 
 * Examples for this Profil: [AllergyIntolerance/mii-exa-person-allergyintolerance-1](AllergyIntolerance-mii-exa-person-allergyintolerance-1.md)
@@ -368,6 +376,95 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-perso
       "mustSupport" : true
     },
     {
+      "id" : "AllergyIntolerance.extension:abatement.value[x]:valueRange",
+      "path" : "AllergyIntolerance.extension.value[x]",
+      "sliceName" : "valueRange",
+      "short" : "End as age range",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "de"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Ende als Altersbereich"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Range"
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "AllergyIntolerance.extension:abatement.value[x]:valueRange.extension:Lebensphase-Ende",
+      "path" : "AllergyIntolerance.extension.value[x].extension",
+      "sliceName" : "Lebensphase-Ende",
+      "short" : "Life phase in which the allergy or intolerance ended",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "de"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Lebensphase des Endes"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "comment" : "Alternative when a more precise period cannot be given, especially for anamnestic information.",
+      "_comment" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "de"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Alternative Angabe, wenn genauere Eingrenzungen des Zeitraums nicht möglich sind, insbesondere im Kontext anamnestischer Angaben."
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://fhir.de/StructureDefinition/lebensphase"]
+      }]
+    },
+    {
+      "id" : "AllergyIntolerance.extension:abatement.value[x]:valueRange.extension:Lebensphase-Ende.url",
+      "path" : "AllergyIntolerance.extension.value[x].extension.url",
+      "mustSupport" : true
+    },
+    {
+      "id" : "AllergyIntolerance.extension:abatement.value[x]:valueRange.extension:Lebensphase-Ende.value[x]",
+      "path" : "AllergyIntolerance.extension.value[x].extension.value[x]",
+      "mustSupport" : true
+    },
+    {
+      "id" : "AllergyIntolerance.extension:abatement.value[x]:valueRange.extension:Lebensphase-Ende.value[x].coding",
+      "path" : "AllergyIntolerance.extension.value[x].extension.value[x].coding",
+      "mustSupport" : true
+    },
+    {
+      "id" : "AllergyIntolerance.extension:abatement.value[x]:valueRange.extension:Lebensphase-Ende.value[x].coding.system",
+      "path" : "AllergyIntolerance.extension.value[x].extension.value[x].coding.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "AllergyIntolerance.extension:abatement.value[x]:valueRange.extension:Lebensphase-Ende.value[x].coding.code",
+      "path" : "AllergyIntolerance.extension.value[x].extension.value[x].coding.code",
+      "mustSupport" : true
+    },
+    {
       "id" : "AllergyIntolerance.clinicalStatus",
       "path" : "AllergyIntolerance.clinicalStatus",
       "short" : "Current allergy or intolerance status",
@@ -594,15 +691,18 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-perso
         }]
       },
       "min" : 1,
-      "mustSupport" : true,
-      "binding" : {
-        "strength" : "preferred",
-        "valueSet" : "http://hl7.org/fhir/uv/ips/ValueSet/allergies-intolerances-uv-ips"
-      }
+      "mustSupport" : true
     },
     {
       "id" : "AllergyIntolerance.code.coding",
       "path" : "AllergyIntolerance.code.coding",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "pattern",
+          "path" : "$this"
+        }],
+        "rules" : "open"
+      },
       "mustSupport" : true
     },
     {
@@ -614,6 +714,95 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-perso
       "id" : "AllergyIntolerance.code.coding.code",
       "path" : "AllergyIntolerance.code.coding.code",
       "mustSupport" : true
+    },
+    {
+      "id" : "AllergyIntolerance.code.coding:snomed-ct",
+      "path" : "AllergyIntolerance.code.coding",
+      "sliceName" : "snomed-ct",
+      "short" : "SNOMED CT Code",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "de-DE"
+          },
+          {
+            "url" : "content",
+            "valueString" : "SNOMED CT Code"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        },
+        {
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "en-US"
+          },
+          {
+            "url" : "content",
+            "valueString" : "SNOMED CT code"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "definition" : "Ein Verweis auf einen von SNOMED CT definierten Code",
+      "_definition" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "de-DE"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Ein Verweis auf einen von SNOMED CT definierten Code"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        },
+        {
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "en-US"
+          },
+          {
+            "url" : "content",
+            "valueString" : "A reference to a code defined by SNOMED CT"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "comment" : "The substance ValueSet was developed by mio42 GmbH together with BfArM; it is bound extensible because its completeness cannot be guaranteed. Aligned with ISiK.",
+      "_comment" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "de"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Das ValueSet der auslösenden Substanzen wurde von der mio42 GmbH gemeinsam mit dem BfArM erarbeitet; es ist extensible gebunden, da seine Vollständigkeit nicht garantiert werden kann. Abgestimmt mit ISiK."
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "min" : 0,
+      "max" : "1",
+      "patternCoding" : {
+        "system" : "http://snomed.info/sct"
+      },
+      "mustSupport" : true,
+      "binding" : {
+        "strength" : "extensible",
+        "valueSet" : "https://fhir.kbv.de/ValueSet/KBV_VS_AllergyIntolerance_Substance_SNOMED_CT|1.0.0"
+      }
+    },
+    {
+      "id" : "AllergyIntolerance.code.coding:snomed-ct.system",
+      "path" : "AllergyIntolerance.code.coding.system",
+      "min" : 1
+    },
+    {
+      "id" : "AllergyIntolerance.code.coding:snomed-ct.code",
+      "path" : "AllergyIntolerance.code.coding.code",
+      "min" : 1
     },
     {
       "id" : "AllergyIntolerance.patient",
@@ -744,6 +933,95 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-perso
       "mustSupport" : true
     },
     {
+      "id" : "AllergyIntolerance.onset[x]:onsetRange",
+      "path" : "AllergyIntolerance.onset[x]",
+      "sliceName" : "onsetRange",
+      "short" : "Onset as age range",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "de"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Beginn als Altersbereich"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Range"
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "AllergyIntolerance.onset[x]:onsetRange.extension:Lebensphase-Beginn",
+      "path" : "AllergyIntolerance.onset[x].extension",
+      "sliceName" : "Lebensphase-Beginn",
+      "short" : "Life phase in which the allergy or intolerance began",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "de"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Lebensphase des Beginns"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "comment" : "Alternative when a more precise period cannot be given, especially for anamnestic information.",
+      "_comment" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "de"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Alternative Angabe, wenn genauere Eingrenzungen des Zeitraums nicht möglich sind, insbesondere im Kontext anamnestischer Angaben."
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://fhir.de/StructureDefinition/lebensphase"]
+      }]
+    },
+    {
+      "id" : "AllergyIntolerance.onset[x]:onsetRange.extension:Lebensphase-Beginn.url",
+      "path" : "AllergyIntolerance.onset[x].extension.url",
+      "mustSupport" : true
+    },
+    {
+      "id" : "AllergyIntolerance.onset[x]:onsetRange.extension:Lebensphase-Beginn.value[x]",
+      "path" : "AllergyIntolerance.onset[x].extension.value[x]",
+      "mustSupport" : true
+    },
+    {
+      "id" : "AllergyIntolerance.onset[x]:onsetRange.extension:Lebensphase-Beginn.value[x].coding",
+      "path" : "AllergyIntolerance.onset[x].extension.value[x].coding",
+      "mustSupport" : true
+    },
+    {
+      "id" : "AllergyIntolerance.onset[x]:onsetRange.extension:Lebensphase-Beginn.value[x].coding.system",
+      "path" : "AllergyIntolerance.onset[x].extension.value[x].coding.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "AllergyIntolerance.onset[x]:onsetRange.extension:Lebensphase-Beginn.value[x].coding.code",
+      "path" : "AllergyIntolerance.onset[x].extension.value[x].coding.code",
+      "mustSupport" : true
+    },
+    {
       "id" : "AllergyIntolerance.recordedDate",
       "path" : "AllergyIntolerance.recordedDate",
       "short" : "Date when the allergy or intolerance was recorded",
@@ -840,15 +1118,18 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-perso
           "url" : "http://hl7.org/fhir/StructureDefinition/translation"
         }]
       },
-      "mustSupport" : true,
-      "binding" : {
-        "strength" : "preferred",
-        "valueSet" : "http://hl7.org/fhir/uv/ips/ValueSet/allergy-reaction-uv-ips"
-      }
+      "mustSupport" : true
     },
     {
       "id" : "AllergyIntolerance.reaction.manifestation.coding",
       "path" : "AllergyIntolerance.reaction.manifestation.coding",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "pattern",
+          "path" : "$this"
+        }],
+        "rules" : "open"
+      },
       "mustSupport" : true
     },
     {
@@ -860,6 +1141,81 @@ Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-mii-pr-perso
       "id" : "AllergyIntolerance.reaction.manifestation.coding.code",
       "path" : "AllergyIntolerance.reaction.manifestation.coding.code",
       "mustSupport" : true
+    },
+    {
+      "id" : "AllergyIntolerance.reaction.manifestation.coding:snomed-ct",
+      "path" : "AllergyIntolerance.reaction.manifestation.coding",
+      "sliceName" : "snomed-ct",
+      "short" : "SNOMED CT Code",
+      "_short" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "de-DE"
+          },
+          {
+            "url" : "content",
+            "valueString" : "SNOMED CT Code"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        },
+        {
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "en-US"
+          },
+          {
+            "url" : "content",
+            "valueString" : "SNOMED CT code"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "definition" : "Ein Verweis auf einen von SNOMED CT definierten Code",
+      "_definition" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "de-DE"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Ein Verweis auf einen von SNOMED CT definierten Code"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        },
+        {
+          "extension" : [{
+            "url" : "lang",
+            "valueCode" : "en-US"
+          },
+          {
+            "url" : "content",
+            "valueString" : "A reference to a code defined by SNOMED CT"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/translation"
+        }]
+      },
+      "min" : 0,
+      "max" : "1",
+      "patternCoding" : {
+        "system" : "http://snomed.info/sct"
+      },
+      "mustSupport" : true,
+      "binding" : {
+        "strength" : "extensible",
+        "valueSet" : "https://fhir.kbv.de/ValueSet/KBV_VS_AllergyIntolerance_Manifestation_SNOMED_CT|1.0.0"
+      }
+    },
+    {
+      "id" : "AllergyIntolerance.reaction.manifestation.coding:snomed-ct.system",
+      "path" : "AllergyIntolerance.reaction.manifestation.coding.system",
+      "min" : 1
+    },
+    {
+      "id" : "AllergyIntolerance.reaction.manifestation.coding:snomed-ct.code",
+      "path" : "AllergyIntolerance.reaction.manifestation.coding.code",
+      "min" : 1
     },
     {
       "id" : "AllergyIntolerance.reaction.severity",

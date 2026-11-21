@@ -90,6 +90,18 @@
     "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/CodeSystem/Vitalstatus|2027.0.0-ballot"
   },
   {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-person/ValueSet/mii-vs-person-recordedsexorgender-snomed|2027.0.0-ballot"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://hl7.org/fhir/ValueSet/administrative-gender|4.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://hl7.org/fhir/administrative-gender|4.0.1"
+  },
+  {
     "name" : "default-canonical-version",
     "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablecapabilitystatement|2.0.0"
   },
@@ -503,10 +515,6 @@
   },
   {
     "name" : "default-valueset-version",
-    "valueCanonical" : "http://hl7.org/fhir/ValueSet/administrative-gender|4.0.1"
-  },
-  {
-    "name" : "default-valueset-version",
     "valueCanonical" : "http://terminology.hl7.org/ValueSet/recorded-sex-or-gender-type|2.0.0"
   },
   {
@@ -647,6 +655,10 @@
   },
   {
     "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/SimpleQuantity|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
     "valueCanonical" : "http://fhir.de/StructureDefinition/Aufnahmegrund|1.6.0"
   },
   {
@@ -740,14 +752,6 @@
   {
     "name" : "default-canonical-version",
     "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/allergyintolerance-abatement|5.3.0"
-  },
-  {
-    "name" : "default-valueset-version",
-    "valueCanonical" : "http://hl7.org/fhir/uv/ips/ValueSet/allergies-intolerances-uv-ips|2.0.1"
-  },
-  {
-    "name" : "default-valueset-version",
-    "valueCanonical" : "http://hl7.org/fhir/uv/ips/ValueSet/allergy-reaction-uv-ips|2.0.1"
   },
   {
     "name" : "default-canonical-version",
@@ -846,8 +850,20 @@
     "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/individual-recordedSexOrGender|5.3.0"
   },
   {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/patient-sexParameterForClinicalUse|5.3.0"
+  },
+  {
     "name" : "default-valueset-version",
-    "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/modul-person/ValueSet/mii-vs-person-recordedsexorgender-snomed|2027.0.0-ballot"
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/sex-parameter-for-clinical-use|2.0.0"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Resource|4.0.1"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://hl7.org/fhir/ValueSet/therapy|5.0.0"
   },
   {
     "name" : "default-canonical-version",
@@ -892,10 +908,6 @@
   {
     "name" : "default-valueset-version",
     "valueCanonical" : "https://www.medizininformatik-initiative.de/fhir/core/modul-person/ValueSet/Vitalstatus|2027.0.0-ballot"
-  },
-  {
-    "name" : "default-canonical-version",
-    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/SimpleQuantity|4.0.1"
   },
   {
     "name" : "default-canonical-version",
