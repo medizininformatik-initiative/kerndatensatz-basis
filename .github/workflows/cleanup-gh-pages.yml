@@ -147,6 +147,13 @@ jobs:
             fi
           done
 
+          # Removing branches/<prefix>/<name>/ leaves an empty branches/<prefix>/
+          # behind (branch names with a slash). Prune empty folders so they are
+          # neither reported as unmarked previews nor uploaded to Pages.
+          if [[ "${DRY_RUN}" != "true" && -d branches ]]; then
+            find branches -mindepth 1 -type d -empty -delete
+          fi
+
           # Previews deployed without a marker are never cleanup candidates;
           # list them so they can be removed or marked by hand.
           unmarked_entries=()
