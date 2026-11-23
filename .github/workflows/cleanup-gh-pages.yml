@@ -28,7 +28,7 @@ jobs:
 
     steps:
       - name: Checkout gh-pages branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           ref: gh-pages
           fetch-depth: 1
@@ -222,11 +222,11 @@ jobs:
 
       - name: Configure GitHub Pages
         if: steps.cleanup.outputs.changed == 'true' && vars.PAGES_ACTIONS_ENABLED == 'true'
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       - name: Upload GitHub Pages artifact
         if: steps.cleanup.outputs.changed == 'true' && vars.PAGES_ACTIONS_ENABLED == 'true'
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           path: .
 
@@ -245,4 +245,4 @@ jobs:
     steps:
       - name: Deploy Pages artifact
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
