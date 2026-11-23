@@ -82,6 +82,9 @@ Description: "This profile describes an allergy or intolerance in the Medical In
 * insert Translation(code ^short, de, Allergie oder Unverträglichkeit gegen)
 * code ^definition = "Code for an allergy or intolerance statement, including positive and negated or excluded statements. It may identify a substance, pharmaceutical product, substance class, allergy or intolerance condition, or a general categorical absence statement. A substance recorded for a specific reaction may be more specific than AllergyIntolerance.code but must remain semantically consistent with it. Implementations must be clinically safe when processing code without reaction.substance; if that consistency cannot be confirmed, reaction.substance should be ignored."
 * insert Translation(code ^definition, de, [[Stoff, Produkt, Stoffklasse oder Allergie-/Unverträglichkeitsbegriff, auf den sich die dokumentierte Gefährdung bezieht.]])
+* code from $allergy-intolerance-uv-ips (preferred)
+* code ^comment = "Two-level binding to align with several specifications: the element is bound *preferred* to the IPS ValueSet, as in IPS and HL7 Europe Base (EHDS); the SNOMED CT slice is bound *extensible* to the KBV ValueSet, as in ISiK. The KBV substance codes are a subset of the IPS ValueSet."
+* insert Translation(code ^comment, de, [[Zweistufige Bindung zur Abstimmung mit mehreren Spezifikationen: Das Element ist *preferred* an das IPS-ValueSet gebunden, wie in IPS und HL7 Europe Base (EHDS); der SNOMED-CT-Slice ist *extensible* an das KBV-ValueSet gebunden, wie in ISiK. Die KBV-Substanzcodes sind eine Teilmenge des IPS-ValueSets.]])
 * code.coding MS
 * code.coding ^slicing.discriminator.type = #pattern
 * code.coding ^slicing.discriminator.path = "$this"
@@ -142,6 +145,9 @@ Description: "This profile describes an allergy or intolerance in the Medical In
 * insert Translation(reaction.manifestation ^short, de, Manifestation)
 * reaction.manifestation ^definition = "Clinical symptoms and/or signs observed or associated with the adverse reaction event."
 * insert Translation(reaction.manifestation ^definition, de, [[Klinische Symptome oder Befunde, die im Zusammenhang mit der unerwünschten Reaktion beobachtet wurden.]])
+* reaction.manifestation from $allergy-reaction-uv-ips (preferred)
+* reaction.manifestation ^comment = "Two-level binding to align with several specifications: the element is bound *preferred* to the IPS ValueSet, as in IPS and HL7 Europe Base (EHDS); the SNOMED CT slice is bound *extensible* to the KBV ValueSet, as in ISiK. A few KBV manifestation codes (e.g. loss of consciousness, low blood pressure) lie outside the IPS ValueSet; they remain valid, because the IPS binding is only preferred."
+* insert Translation(reaction.manifestation ^comment, de, [[Zweistufige Bindung zur Abstimmung mit mehreren Spezifikationen: Das Element ist *preferred* an das IPS-ValueSet gebunden, wie in IPS und HL7 Europe Base (EHDS); der SNOMED-CT-Slice ist *extensible* an das KBV-ValueSet gebunden, wie in ISiK. Einige KBV-Manifestationscodes (z. B. Bewusstlosigkeit, niedriger Blutdruck) liegen außerhalb des IPS-ValueSets; sie bleiben gültig, da die IPS-Bindung nur preferred ist.]])
 * reaction.manifestation.coding MS
 * reaction.manifestation.coding ^slicing.discriminator.type = #pattern
 * reaction.manifestation.coding ^slicing.discriminator.path = "$this"
